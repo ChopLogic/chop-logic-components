@@ -1,0 +1,25 @@
+{
+  "name": "chop-logic-components",
+  "version": "1.0.0",
+  "description": "React UI components library for Chop Logic project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
+  },
+  "keywords": [
+    "React",
+    "TypeScript",
+    "Storybook",
+    "Chop Logic"
+  ],
+  "author": "Dmitrii Suroviagin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavouryGin/chop-logic-components/issues"
+  },
+  "homepage": "https://github.com/SavouryGin/chop-logic-components#readme"
+}

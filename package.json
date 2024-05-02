@@ -1,5 +1,5 @@
 {
-  "name": "@SavouryGin/chop-logic-components",
+  "name": "chop-logic-components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@SavouryGin"
   },

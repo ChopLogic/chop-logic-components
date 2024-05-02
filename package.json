@@ -4,10 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React UI components library for Chop Logic project",
   "type": "module",
   "main": "dist/index.cjs.js",

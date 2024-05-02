@@ -1,7 +1,11 @@
 {
   "name": "@savourygin/chop-logic-components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
+  },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@savourygin"
+    "registry": "https://npm.pkg.github.com/SavouryGin"
   },
   "version": "1.0.0",
   "description": "React UI components library for Chop Logic project",
@@ -28,10 +32,6 @@
       "npm run lint",
       "npm run test"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
   },
   "keywords": [
     "React",

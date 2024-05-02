@@ -17,4 +17,13 @@ export default defineConfig({
     emptyOutDir: true, // Clears the output directory before building.
   },
   plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  resolve: {
+    alias: [
+      { find: 'components', replacement: '/src/components' },
+      { find: 'assets', replacement: '/src/assets' },
+      { find: 'utils', replacement: '/src/utils' },
+      { find: 'common', replacement: '/src/common' },
+      { find: '__mocks__', replacement: '/src/__mocks__' },
+    ],
+  },
 });

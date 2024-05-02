@@ -1,7 +1,7 @@
 {
-  "name": "chop-logic-components",
+  "name": "@savourygin/chop-logic-components",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@SavouryGin"
+    "registry": "https://npm.pkg.github.com/@savourygin"
   },
   "version": "1.0.0",
   "description": "React UI components library for Chop Logic project",

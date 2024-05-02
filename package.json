@@ -10,10 +10,12 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,8 @@
   },
   "homepage": "https://github.com/SavouryGin/chop-logic-components#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.6",
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
@@ -42,11 +46,13 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.8.0",
+    "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "styled-components": "^6.1.9",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
-    "vite-plugin-dts": "^3.9.0"
+    "vite-plugin-dts": "^3.9.0",
+    "vitest": "^1.5.3"
   },
   "peerDependencies": {
     "react": "^18.3.1"

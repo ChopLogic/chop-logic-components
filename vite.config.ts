@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { peerDependencies } from './package.json';
@@ -25,5 +27,10 @@ export default defineConfig({
       { find: 'common', replacement: '/src/common' },
       { find: '__mocks__', replacement: '/src/__mocks__' },
     ],
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setup-tests.ts',
   },
 });

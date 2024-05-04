@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import Button, { ButtonProps } from '../Button';
+import Button, { ChopLogicButtonProps } from '../Button';
 
-const Example: FC<ButtonProps> = ({ disabled = false, onClick = () => {}, primary = true, size = 'small', text = 'Button' }) => {
+const Example: FC<ChopLogicButtonProps> = ({ disabled = false, onClick = () => {}, text = 'Button' }) => {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ const Example: FC<ButtonProps> = ({ disabled = false, onClick = () => {}, primar
         height: '100%',
       }}
     >
-      <Button size={size} text={text} disabled={disabled} onClick={onClick} primary={primary} />
+      <Button text={text} disabled={disabled} onClick={onClick} />
     </div>
   );
 };

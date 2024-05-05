@@ -30,5 +30,5 @@
     }
   },
   "include": ["src"], // Specifies the directory to include when searching for TypeScript files.
-  "exclude": ["src/**/__docs__", "src/**/__test__"]
+  "exclude": ["src/**/__docs__", "src/__tests__"]
 }

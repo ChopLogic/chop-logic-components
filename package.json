@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React UI components library for Chop Logic project",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -45,6 +45,8 @@
   "homepage": "https://github.com/SavouryGin/chop-logic-components#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@storybook/addon-essentials": "^8.0.9",
     "@storybook/addon-interactions": "^8.0.9",
     "@storybook/addon-links": "^8.0.9",
@@ -70,7 +72,6 @@
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "storybook": "^8.0.9",
-    "styled-components": "^6.1.9",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",

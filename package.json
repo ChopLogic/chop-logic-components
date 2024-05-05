@@ -45,6 +45,8 @@
   "homepage": "https://github.com/SavouryGin/chop-logic-components#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@storybook/addon-essentials": "^8.0.9",
     "@storybook/addon-interactions": "^8.0.9",
     "@storybook/addon-links": "^8.0.9",

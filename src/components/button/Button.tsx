@@ -10,8 +10,19 @@ export type ChopLogicButtonProps = {
   mode?: 'primary' | 'secondary';
 };
 
-const Button: React.FC<ChopLogicButtonProps> = ({ disabled, text, onClick, type = 'button', mode = 'primary', ...props }) => {
-  const buttonClass = createClassName([styles.common, { [styles.primary]: mode === 'primary', [styles.secondary]: mode === 'secondary' }]);
+const Button: React.FC<ChopLogicButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  disabled,
+  onClick,
+  text = 'Ok',
+  type = 'button',
+  mode = 'primary',
+  ...props
+}) => {
+  const buttonClass = createClassName([
+    styles.common,
+    props?.className,
+    { [styles.primary]: mode === 'primary', [styles.secondary]: mode === 'secondary' },
+  ]);
 
   return (
     <button type={type} className={buttonClass} onClick={onClick} disabled={disabled} {...props}>

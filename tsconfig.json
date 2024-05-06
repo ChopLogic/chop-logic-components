@@ -29,6 +29,5 @@
       "__mocks__/*": ["./src/__mocks__/*"]
     }
   },
-  "include": ["src"], // Specifies the directory to include when searching for TypeScript files.
-  "exclude": ["src/**/__docs__", "src/__tests__"]
+  "include": ["src"] // Specifies the directory to include when searching for TypeScript files.
 }

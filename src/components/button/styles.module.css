@@ -1,3 +1,11 @@
-.button {
+.common {
   background-color: red;
+}
+
+.primary {
+  background-color: red;
+}
+
+.secondary {
+  background-color: blue;
 }

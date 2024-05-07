@@ -1,11 +1,11 @@
 .common {
-  background-color: red;
+  color: var(--cl-color-black);
 }
 
 .primary {
-  background-color: red;
+  background: var(--cl-color-accent);
 }
 
 .secondary {
-  background-color: blue;
+  background: var(--cl-color-moonstone);
 }

@@ -1,4 +1,5 @@
 import React, { MouseEventHandler } from 'react';
+import 'assets/common.module.css';
 import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 
@@ -19,7 +20,7 @@ const Button: React.FC<ChopLogicButtonProps & React.ButtonHTMLAttributes<HTMLBut
   ...props
 }) => {
   const buttonClass = createClassName([
-    styles.common,
+    styles.button,
     props?.className,
     { [styles.primary]: mode === 'primary', [styles.secondary]: mode === 'secondary' },
   ]);

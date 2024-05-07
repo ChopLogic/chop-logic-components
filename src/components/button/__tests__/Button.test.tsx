@@ -5,12 +5,12 @@ import Button from '../Button';
 
 describe('ChopLogicButton component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Button text='Test' id='test-id' className='testClass' />);
+    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the accessible role', () => {
-    render(<Button />);
+    render(<Button id='test-id' />);
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 });

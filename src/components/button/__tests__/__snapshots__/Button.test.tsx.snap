@@ -3,7 +3,7 @@
 exports[`ChopLogicButton component > should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="testClass"
+    class="test-class"
     id="test-id"
     type="button"
   >

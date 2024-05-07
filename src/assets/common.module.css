@@ -1,0 +1,15 @@
+:root {
+  /** primary colors **/
+  --cl-color-black: hsl(0, 0, 13);
+  --cl-color-white: hsl(0, 0, 100);
+  --cl-color-primary: hsl(209, 69, 35);
+  --cl-color-primary-dark: #063661;
+  --cl-color-primary-light: #5b8cb8;
+  --cl-color-moonstone: hsl(190, 30, 53);
+  --cl-color-powder: hsl(214, 45, 82);
+
+  /** complimentary colors **/
+  --cl-color-accent: hsl(35, 84%, 52%);
+  --cl-color-accent-dark: hsl(35, 100%, 29%);
+  --cl-color-accent-light: #ffc574;
+}

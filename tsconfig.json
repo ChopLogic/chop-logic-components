@@ -27,7 +27,9 @@
       "assets/*": ["./src/assets/*"],
       "utils/*": ["./src/utils/*"],
       "__mocks__/*": ["./src/__mocks__/*"]
-    }
+    },
+
+    "types": ["node", "@testing-library/jest-dom"]
   },
   "include": ["src"] // Specifies the directory to include when searching for TypeScript files.
 }

@@ -12,9 +12,8 @@ type Story = StoryObj<typeof Example>;
 export const Primary: Story = {
   args: {
     text: 'Submit',
+    view: 'primary',
     disabled: false,
-    mode: 'primary',
-    type: 'submit',
     onClick: () => console.log('Submit'),
   },
 };
@@ -22,7 +21,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     text: 'Cancel',
-    mode: 'secondary',
+    view: 'secondary',
     disabled: false,
     onClick: () => console.log('Cancel'),
   },

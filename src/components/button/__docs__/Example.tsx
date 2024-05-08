@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Button, { ChopLogicButtonProps } from '../Button';
 
-const Example: FC<ChopLogicButtonProps> = ({ disabled = false, onClick = () => {}, text = 'Button' }) => {
+const Example: React.FC<ChopLogicButtonProps> = ({ disabled = false, onClick = () => {}, text = 'Button' }) => {
   return (
     <div
       style={{

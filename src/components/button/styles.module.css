@@ -9,3 +9,7 @@
 .secondary {
   background: var(--cl-color-moonstone);
 }
+
+.disabled {
+  pointer-events: none;
+}

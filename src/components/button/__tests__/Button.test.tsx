@@ -20,4 +20,13 @@ describe('ChopLogicButton component', () => {
     await userEvent.click(screen.getByRole('button'));
     expect(mockedCallback).toHaveBeenCalledOnce();
   });
+
+  it('should not call the callback function on click if the button is disabled', async () => {
+    const mockedCallback = vi.fn();
+    render(<Button onClick={mockedCallback} disabled={true} />);
+    const button = screen.getByRole('button');
+    expect(button).toBeDisabled();
+    await userEvent.click(button);
+    expect(mockedCallback).not.toHaveBeenCalledOnce();
+  });
 });

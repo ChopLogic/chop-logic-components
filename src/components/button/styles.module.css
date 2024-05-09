@@ -1,13 +1,21 @@
-.common {
-  color: var(--cl-color-black);
+.button {
+  min-height: 44px;
+  min-width: 44px;
+  border: none;
+  cursor: pointer;
+  padding: 0px 12px;
+  font-size: 1rem;
 }
 
 .primary {
-  background: var(--cl-color-accent);
+  border-radius: 6px;
+  color: var(--cl-color-white);
+  background: var(--cl-primary-gradient);
 }
 
 .secondary {
-  background: var(--cl-color-moonstone);
+  background: none;
+  color: var(--cl-color-primary);
 }
 
 .disabled {

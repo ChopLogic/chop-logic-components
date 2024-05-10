@@ -5,17 +5,18 @@
   cursor: pointer;
   padding: 0px 12px;
   font-size: 1rem;
+  font-family: var(--core-font);
 }
 
 .primary {
   border-radius: 6px;
-  color: var(--cl-color-white);
+  color: var(--cl-color-ivory);
   background: var(--cl-primary-gradient);
 }
 
 .secondary {
   background: none;
-  color: var(--cl-color-primary);
+  color: var(---cl-color-celtic-blue);
 }
 
 .disabled {

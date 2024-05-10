@@ -1,19 +1,50 @@
 :root {
-  /** primary colors **/
-  --cl-color-black: #212121;
-  --cl-color-white: #ffffff;
-  --cl-color-primary: #1c5b97;
-  --cl-color-primary-dark: #063661;
-  --cl-color-primary-light: #5b8cb8;
-  --cl-color-moonstone: #639fab;
-  --cl-color-powder: #bccee6;
-
-  /** complimentary colors **/
-  --cl-color-accent: #eb961e;
-  --cl-color-accent-dark: #945600;
-  --cl-color-accent-light: #ffc574;
+  /** colors **/
+  --cl-color-black: #222222;
+  --cl-color-ivory: #f6f7eb;
+  --cl-color-celtic-blue: #266dd3;
+  --cl-color-celestial-blue: #5998c5;
+  --cl-color-syracuse-red: #e53d00;
 
   /* gradients */
-  --cl-primary-gradient: linear-gradient(0deg, #212121, #1c5b97);
-  --cl-accent-gradient: linear-gradient(0deg, #945600, #ffc674);
+  --cl-primary-gradient: linear-gradient(0deg, #222222, #266dd3);
+  --cl-accent-gradient: linear-gradient(0deg, #222222, #e53d00);
+
+  /* fonts */
+  --core-font: 'Cyrge', Helvetica, sans-serif;
+  --core-font-bold: 'CyrgeBold', Helvetica, sans-serif;
+  --core-font-italic: 'CyrgeItalic', Helvetica, sans-serif;
+  --monospace-font: 'Zector', Courier, monospace;
+}
+
+@font-face {
+  font-family: 'Cyrge';
+  src:
+    local('Cyrge'),
+    url('../assets/fonts/cyrge/Cygre-Regular.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CyrgeBold';
+  src:
+    local('CyrgeBold'),
+    url('../assets/fonts/cyrge/Cygre-Bold.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CyrgeItalic';
+  src:
+    local('CyrgeItalic'),
+    url('../assets/fonts/cyrge/Cygre-RegularIt.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zector';
+  src:
+    local('Zector'),
+    url('../assets/fonts/zector/Zector.ttf') format('truetype-variations');
+  font-display: swap;
 }

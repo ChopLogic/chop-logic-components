@@ -6,7 +6,7 @@ import createClassName from 'utils/create-class-name';
 export type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   text?: string;
   onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
-  view?: 'primary' | 'secondary';
+  view?: 'primary' | 'secondary' | 'danger';
   disabled?: boolean;
 };
 
@@ -14,7 +14,12 @@ const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text = 'Ok'
   const buttonClass = createClassName([
     styles.button,
     props?.className,
-    { [styles.primary]: view === 'primary', [styles.secondary]: view === 'secondary', [styles.disabled]: !!disabled },
+    {
+      [styles.primary]: view === 'primary',
+      [styles.secondary]: view === 'secondary',
+      [styles.danger]: view === 'danger',
+      [styles.disabled]: !!disabled,
+    },
   ]);
 
   return (

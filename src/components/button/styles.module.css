@@ -8,17 +8,45 @@
   font-family: var(--core-font);
 }
 
-.primary {
+.primary,
+.danger {
   border-radius: 6px;
   color: var(--cl-color-ivory);
+  box-shadow: var(--box-shadow);
+}
+
+.primary:hover,
+.primary:active,
+.danger:hover,
+.danger:active {
+  filter: brightness(130%);
+}
+
+.primary {
   background: var(--cl-primary-gradient);
+}
+
+.danger {
+  background: var(--cl-accent-gradient);
 }
 
 .secondary {
   background: none;
-  color: var(---cl-color-celtic-blue);
+  color: var(--cl-color-black);
+  text-decoration: underline;
+}
+
+.secondary:hover,
+.secondary:active {
+  text-shadow: var(--text-shadow);
 }
 
 .disabled {
   pointer-events: none;
+  filter: grayscale(80%);
+  opacity: 0.9;
+}
+
+.disabled.secondary {
+  opacity: 0.6;
 }

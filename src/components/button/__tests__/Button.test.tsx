@@ -29,4 +29,20 @@ describe('ChopLogicButton component', () => {
     await userEvent.click(button);
     expect(mockedCallback).not.toHaveBeenCalledOnce();
   });
+
+  it('should have focus on Tab press', () => {
+    render(<Button />);
+    const button = screen.getByRole('button');
+    expect(button).not.toHaveFocus();
+    button.focus();
+  });
+
+  it('should call the callback function on Enter press', async () => {
+    const mockedCallback = vi.fn();
+    render(<Button onClick={mockedCallback} />);
+    const button = screen.getByRole('button');
+    button.focus();
+    await userEvent.keyboard('{Enter}');
+    expect(mockedCallback).toHaveBeenCalledOnce();
+  });
 });

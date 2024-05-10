@@ -17,12 +17,3 @@ export const Primary: Story = {
     onClick: () => console.log('Submit'),
   },
 };
-
-export const Secondary: Story = {
-  args: {
-    text: 'Cancel',
-    view: 'secondary',
-    disabled: false,
-    onClick: () => console.log('Cancel'),
-  },
-};

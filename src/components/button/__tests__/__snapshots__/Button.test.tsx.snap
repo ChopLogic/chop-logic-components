@@ -7,7 +7,14 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
     id="test-id"
     type="button"
   >
-    Test
+    <span>
+      ★
+    </span>
+    <span
+      class="_text_48af00"
+    >
+      Test
+    </span>
   </button>
 </DocumentFragment>
 `;

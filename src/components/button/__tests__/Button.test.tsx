@@ -5,7 +5,7 @@ import { userEvent } from '@testing-library/user-event';
 
 describe('ChopLogicButton component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' />);
+    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' icon='Star' />);
     expect(asFragment()).toMatchSnapshot();
   });
 

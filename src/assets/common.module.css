@@ -16,9 +16,12 @@
   --core-font-italic: 'CyrgeItalic', Helvetica, sans-serif;
   --monospace-font: 'Zector', Courier, monospace;
 
-  /* shadow */
+  /* shadows */
   --box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.6);
+
+  /* misc values */
+  --block-border-radius: 0.375rem;
 }
 
 @font-face {

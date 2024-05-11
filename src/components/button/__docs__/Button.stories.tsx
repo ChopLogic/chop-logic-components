@@ -13,6 +13,7 @@ export const Primary: Story = {
   args: {
     text: 'Submit',
     view: 'primary',
+    icon: 'CheckMark',
     disabled: false,
     onClick: () => console.log('Submit'),
   },

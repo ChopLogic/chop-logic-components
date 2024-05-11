@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Button, { ChopLogicButtonProps } from '../Button';
 
-const Example: FC<ChopLogicButtonProps> = ({ disabled = false, onClick = () => {}, text = 'Button' }) => {
+const ExampleButton: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, view, type, icon }) => {
   return (
     <div
       style={{
@@ -11,9 +11,9 @@ const Example: FC<ChopLogicButtonProps> = ({ disabled = false, onClick = () => {
         height: '100%',
       }}
     >
-      <Button text={text} disabled={disabled} onClick={onClick} />
+      <Button text={text} disabled={disabled} view={view} onClick={onClick} type={type} icon={icon} />
     </div>
   );
 };
 
-export default Example;
+export default ExampleButton;

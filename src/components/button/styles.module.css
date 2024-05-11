@@ -1,3 +1,63 @@
 .button {
-  background-color: red;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  font-family: var(--core-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.primary,
+.danger {
+  border-radius: var(--block-border-radius);
+  color: var(--cl-color-ivory);
+  box-shadow: var(--box-shadow);
+  filter: brightness(100%);
+  transition: 0.3s;
+}
+
+.primary:hover,
+.primary:active,
+.danger:hover,
+.danger:active {
+  filter: brightness(130%);
+}
+
+.primary {
+  background: var(--cl-primary-gradient);
+}
+
+.danger {
+  background: var(--cl-accent-gradient);
+}
+
+.secondary {
+  background: none;
+  color: var(--cl-color-black);
+  text-shadow: none;
+  transition: 0.3s;
+}
+
+.secondary .text {
+  text-decoration: underline;
+}
+
+.secondary:hover,
+.secondary:active {
+  text-shadow: var(--text-shadow);
+}
+
+.disabled {
+  pointer-events: none;
+  filter: grayscale(80%);
+  opacity: 0.9;
+}
+
+.disabled.secondary {
+  opacity: 0.6;
 }

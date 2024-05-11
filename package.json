@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React UI components library for Chop Logic project",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -17,9 +17,9 @@
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
     "build": "tsc && vite build",
-    "test": "vitest run",
-    "test-watch": "vitest",
-    "test:ui": "vitest --ui",
+    "test": "vitest",
+    "test:ci": "vitest run",
+    "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "npm run build"
@@ -28,7 +28,7 @@
     "*.{ts,tsx}": [
       "npm run format",
       "npm run lint",
-      "npm run test"
+      "npm run test:ci"
     ]
   },
   "keywords": [
@@ -57,6 +57,7 @@
     "@storybook/test": "^8.0.9",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.6",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.8.0",

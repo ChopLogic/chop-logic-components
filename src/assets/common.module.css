@@ -1,0 +1,57 @@
+:root {
+  /** colors **/
+  --cl-color-black: #222222;
+  --cl-color-ivory: #f6f7eb;
+  --cl-color-celtic-blue: #266dd3;
+  --cl-color-celestial-blue: #5998c5;
+  --cl-color-syracuse-red: #e53d00;
+
+  /* gradients */
+  --cl-primary-gradient: linear-gradient(0deg, #222222, #266dd3);
+  --cl-accent-gradient: linear-gradient(0deg, #222222, #e53d00);
+
+  /* fonts */
+  --core-font: 'Cyrge', Helvetica, sans-serif;
+  --core-font-bold: 'CyrgeBold', Helvetica, sans-serif;
+  --core-font-italic: 'CyrgeItalic', Helvetica, sans-serif;
+  --monospace-font: 'Zector', Courier, monospace;
+
+  /* shadows */
+  --box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.6);
+
+  /* misc values */
+  --block-border-radius: 0.375rem;
+}
+
+@font-face {
+  font-family: 'Cyrge';
+  src:
+    local('Cyrge'),
+    url('../assets/fonts/cyrge/Cygre-Regular.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CyrgeBold';
+  src:
+    local('CyrgeBold'),
+    url('../assets/fonts/cyrge/Cygre-Bold.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CyrgeItalic';
+  src:
+    local('CyrgeItalic'),
+    url('../assets/fonts/cyrge/Cygre-RegularIt.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zector';
+  src:
+    local('Zector'),
+    url('../assets/fonts/zector/Zector.ttf') format('truetype-variations');
+  font-display: swap;
+}

@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicButton component > should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="test-class"
+    id="test-id"
+    type="button"
+  >
+    <span>
+      ★
+    </span>
+    <span
+      class="_text_48af00"
+    >
+      Test
+    </span>
+  </button>
+</DocumentFragment>
+`;

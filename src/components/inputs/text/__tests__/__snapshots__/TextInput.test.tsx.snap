@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTextInput component > should render correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="_button_aea932"
+    type="text"
+  />
+</DocumentFragment>
+`;

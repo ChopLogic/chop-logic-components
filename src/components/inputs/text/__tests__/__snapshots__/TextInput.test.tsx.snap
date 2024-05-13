@@ -2,9 +2,13 @@
 
 exports[`ChopLogicTextInput component > should render correctly 1`] = `
 <DocumentFragment>
-  <input
-    class="_button_aea932"
-    type="text"
-  />
+  <label>
+    Enter your name:
+    <input
+      class="_button_aea932"
+      placeholder="Type here..."
+      type="text"
+    />
+  </label>
 </DocumentFragment>
 `;

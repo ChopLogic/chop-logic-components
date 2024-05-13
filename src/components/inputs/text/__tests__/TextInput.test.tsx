@@ -4,7 +4,7 @@ import TextInput from '../TextInput';
 
 describe('ChopLogicTextInput component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<TextInput />);
+    const { asFragment } = render(<TextInput label='Enter your name:' />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

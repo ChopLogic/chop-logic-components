@@ -1,0 +1,33 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as TextInput from './TextInput.stories.tsx';
+
+<Meta of={TextInput} title='TextInput' />
+
+# TextInput
+
+TextInput component with different props.
+
+#### Example
+
+<Canvas of={TextInput.Default} />
+
+## Usage
+
+```tsx
+import { TextInput } from 'sld-ui';
+
+const Example = () => {
+  return <TextInput placeholder='Enter your name...' label='Input' valid={true} required={false} />;
+};
+
+export default Example;
+```
+
+#### Props
+
+- **disabled** - A boolean indicating whether the input should be disabled or not. When disabled, the input cannot be interacted with.
+- **placeholder** - A string that represents the placeholder text inside the input field.
+- **label** - A string that represents the label for the input field.
+- **valid** - A boolean indicating whether the input is valid or not. When invalid, the input field may have a different style to indicate the error state.
+- **required** - A boolean indicating whether the input is required or not.

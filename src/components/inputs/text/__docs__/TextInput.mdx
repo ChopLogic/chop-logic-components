@@ -18,7 +18,7 @@ TextInput component with different props.
 import { TextInput } from 'sld-ui';
 
 const Example = () => {
-  return <TextInput placeholder='Enter your name...' label='Input' valid={true} required={false} />;
+  return <ChopLogicTextInput label='Enter your name:' name='name' id='name-input' />;
 };
 
 export default Example;
@@ -26,6 +26,9 @@ export default Example;
 
 #### Props
 
+- **label** - A visible label that describes the input purpose.
+- **name** - A string that describes the input for internal use inside a form or another container.
+- **id** - A unique string that identifies the input on the page and connects it with the label.
 - **disabled** - A boolean indicating whether the input should be disabled or not. When disabled, the input cannot be interacted with.
 - **placeholder** - A string that represents the placeholder text inside the input field.
 - **label** - A string that represents the label for the input field.

@@ -1,0 +1,15 @@
+.label {
+  font-size: 1rem;
+  font-family: var(--core-font);
+  display: flex;
+  align-items: center;
+  gap: var(--small-gap);
+  cursor: pointer;
+}
+
+.required {
+  font-size: 1rem;
+  font-family: var(--core-font);
+  text-decoration: none;
+  color: var(--cl-color-syracuse-red);
+}

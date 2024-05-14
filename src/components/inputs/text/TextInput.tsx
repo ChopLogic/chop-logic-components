@@ -6,21 +6,25 @@ import { UTFIconNames } from 'assets/icons/utf-icons';
 import ChopLogicLabel from '../label/Label';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
+  name: string;
+  label: string;
   icon?: UTFIconNames;
   valid?: boolean;
-  label?: string;
 };
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
+  id,
+  name,
+  label,
   disabled,
   placeholder = 'Type here...',
-  label = 'Input',
   valid = true,
   required = false,
   ...props
 }) => {
   const inputClass = createClassName([
-    styles.button,
+    styles.input,
     props?.className,
     {
       [styles.disabled]: !!disabled,
@@ -29,9 +33,19 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   ]);
 
   return (
-    <ChopLogicLabel label={label} required={required}>
-      <input type='text' className={inputClass} disabled={disabled} placeholder={placeholder} required={required} {...props} />
-    </ChopLogicLabel>
+    <div className={styles.container}>
+      <ChopLogicLabel label={label} required={required} inputId={id} />
+      <input
+        id={id}
+        name={name}
+        type='text'
+        className={inputClass}
+        disabled={disabled}
+        placeholder={placeholder}
+        required={required}
+        {...props}
+      />
+    </div>
   );
 };
 

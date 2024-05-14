@@ -2,13 +2,22 @@
 
 exports[`ChopLogicTextInput component > should render correctly 1`] = `
 <DocumentFragment>
-  <label>
-    Enter your name:
+  <div
+    class="_container_aea932"
+  >
+    <label
+      class="_label_0ea6b1"
+      for="test-id"
+    >
+      Test Label
+    </label>
     <input
-      class="_button_aea932"
+      class="_input_aea932"
+      id="test-id"
+      name="testName"
       placeholder="Type here..."
       type="text"
     />
-  </label>
+  </div>
 </DocumentFragment>
 `;

@@ -20,6 +20,10 @@
   --box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.6);
 
+  /* units */
+  --small-gap: 0.4rem;
+  --standard-gap: 1rem;
+
   /* misc values */
   --block-border-radius: 0.375rem;
 }

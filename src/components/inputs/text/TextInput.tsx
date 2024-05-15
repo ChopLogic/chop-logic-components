@@ -23,8 +23,8 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   required = false,
   ...props
 }) => {
-  const inputClass = createClassName([
-    styles.input,
+  const containerClass = createClassName([
+    styles.container,
     props?.className,
     {
       [styles.disabled]: !!disabled,
@@ -33,18 +33,18 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   ]);
 
   return (
-    <div className={styles.container}>
-      <ChopLogicLabel label={label} required={required} inputId={id} />
+    <div className={containerClass}>
       <input
         id={id}
         name={name}
         type='text'
-        className={inputClass}
+        className={styles.input}
         disabled={disabled}
         placeholder={placeholder}
         required={required}
         {...props}
       />
+      <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />
     </div>
   );
 };

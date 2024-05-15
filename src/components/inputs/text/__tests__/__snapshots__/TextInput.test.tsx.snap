@@ -5,19 +5,19 @@ exports[`ChopLogicTextInput component > should render correctly 1`] = `
   <div
     class="_container_aea932"
   >
-    <label
-      class="_label_0ea6b1"
-      for="test-id"
-    >
-      Test Label
-    </label>
     <input
       class="_input_aea932"
-      id="test-id"
-      name="testName"
+      id="test-input-id"
+      name="testInput"
       placeholder="Type here..."
       type="text"
     />
+    <label
+      class="_label_0ea6b1 _label_aea932"
+      for="test-input-id"
+    >
+      Test Label:
+    </label>
   </div>
 </DocumentFragment>
 `;

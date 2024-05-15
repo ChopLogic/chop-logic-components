@@ -4,9 +4,9 @@ import TextInput from '../TextInput';
 
 describe('ChopLogicTextInput component', () => {
   const testProps = {
-    id: 'test-id',
-    name: 'testName',
-    label: 'Test Label',
+    id: 'test-input-id',
+    name: 'testInput',
+    label: 'Test Label:',
   };
 
   it('should render correctly', () => {

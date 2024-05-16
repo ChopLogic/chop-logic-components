@@ -6,7 +6,7 @@ describe('ChopLogicTextInput component', () => {
   const testProps = {
     id: 'test-input-id',
     name: 'testInput',
-    label: 'Test Label:',
+    label: 'Test Input:',
   };
 
   it('should render correctly', () => {

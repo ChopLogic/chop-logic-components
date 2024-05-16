@@ -5,6 +5,12 @@ exports[`ChopLogicTextInput component > should render correctly 1`] = `
   <div
     class="_container_aea932"
   >
+    <label
+      class="_label_0ea6b1 _label_aea932"
+      for="test-input-id"
+    >
+      Test Input:
+    </label>
     <input
       class="_input_aea932"
       id="test-input-id"
@@ -12,12 +18,6 @@ exports[`ChopLogicTextInput component > should render correctly 1`] = `
       placeholder="Type here..."
       type="text"
     />
-    <label
-      class="_label_0ea6b1 _label_aea932"
-      for="test-input-id"
-    >
-      Test Label:
-    </label>
   </div>
 </DocumentFragment>
 `;

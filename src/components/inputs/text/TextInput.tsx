@@ -34,6 +34,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
 
   return (
     <div className={containerClass}>
+      <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />
       <input
         id={id}
         name={name}
@@ -44,7 +45,6 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
         required={required}
         {...props}
       />
-      <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />
     </div>
   );
 };

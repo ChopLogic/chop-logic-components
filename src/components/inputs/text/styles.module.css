@@ -1,6 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: var(--medium-gap);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: var(--medium-gap);
   padding: var(--medium-gap);
@@ -26,46 +32,10 @@
   color: var(--cl-color-black);
 }
 
-/* .container {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
+.error {
+  padding-inline-start: var(--medium-gap);
 }
 
-
-.input::placeholder {
-  color: transparent;
+.invalid {
+  border-bottom: var(--thick-accent-border);
 }
-
-.input:placeholder-shown ~ .label {
-  font-size: 1.3rem;
-  cursor: text;
-  top: 20px;
-}
-
-.label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: var(--cl-color-black);
-}
-
-.input:focus ~ .label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: var(--cl-color-celtic-blue);
-  font-weight: 700;
-}
-
-.input:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: var(--cl-primary-gradient);
-  border-image-slice: 1;
-} */

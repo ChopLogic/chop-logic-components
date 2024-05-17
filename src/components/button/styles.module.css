@@ -12,6 +12,11 @@
   gap: var(--small-gap);
 }
 
+.button:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
 .primary,
 .danger {
   border-radius: var(--block-border-radius);

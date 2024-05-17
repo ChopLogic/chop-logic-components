@@ -7,9 +7,10 @@ describe('ChopLogicTextInput component', () => {
     id: 'test-input-id',
     name: 'testInput',
     label: 'Test Input:',
+    valid: true,
   };
 
-  it('should render correctly', () => {
+  it('should render the valid input correctly', () => {
     const { asFragment } = render(<TextInput {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });

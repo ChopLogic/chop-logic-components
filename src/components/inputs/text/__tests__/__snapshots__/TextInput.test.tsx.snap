@@ -21,3 +21,37 @@ exports[`ChopLogicTextInput component > should render correctly 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`ChopLogicTextInput component > should render the valid input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_container_aea932"
+  >
+    <div
+      class="_wrapper_aea932"
+    >
+      <label
+        class="_label_0ea6b1 _label_aea932"
+        for="test-input-id"
+      >
+        Test Input:
+      </label>
+      <input
+        aria-errormessage="test-input-id_error"
+        aria-invalid="false"
+        class="_input_aea932"
+        id="test-input-id"
+        name="testInput"
+        placeholder="Type here..."
+        type="text"
+      />
+    </div>
+    <span
+      class="_message_4bc4c6 _error_aea932"
+      id="test-input-id_error"
+    >
+      Invalid input
+    </span>
+  </div>
+</DocumentFragment>
+`;

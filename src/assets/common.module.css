@@ -11,6 +11,7 @@
   --cl-primary-gradient: linear-gradient(0deg, #222222, #266dd3);
   --cl-accent-gradient: linear-gradient(0deg, #222222, #e53d00);
   --cl-tint-gradient: linear-gradient(0deg, #e9edf0, #f6f7eb);
+  --cl-tint-gradient: linear-gradient(0deg, #e9edf0, #f6f7eb);
 
   /* fonts */
   --core-font: 'Cyrge', Helvetica, sans-serif;
@@ -32,7 +33,8 @@
   /* borders & outlines */
   --thing-blue-border: 1px solid #5998c5;
   --thick-blue-border: 3px solid #266dd3;
-  --accent-block-border: 1px solid #e53d00;
+  --thick-accent-border: 3px solid #e53d00;
+  --focus-outline: 2px dashed #e53d00;
 }
 
 @font-face {

@@ -13,12 +13,12 @@ type ChopLogicLabelProps = {
 const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({ label, required, inputId, className }) => {
   return (
     <label htmlFor={inputId} className={createClassName([styles.label, className])}>
+      {label}
       {required && (
         <abbr title='required' className={styles.required}>
           *
         </abbr>
       )}
-      {label}
     </label>
   );
 };

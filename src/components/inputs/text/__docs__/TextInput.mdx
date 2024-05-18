@@ -18,7 +18,14 @@ TextInput component with different props.
 import { TextInput } from 'sld-ui';
 
 const Example = () => {
-  return <ChopLogicTextInput label='Enter your name:' name='name' id='name-input' />;
+  return (
+    <ChopLogicTextInput
+      label='Enter the formula:'
+      name='formula'
+      id='formula-input'
+      errorMessage='Cannot parse the entered text'
+    />;
+  );
 };
 
 export default Example;
@@ -34,3 +41,6 @@ export default Example;
 - **label** - A string that represents the label for the input field.
 - **valid** - A boolean indicating whether the input is valid or not. When invalid, the input field may have a different style to indicate the error state.
 - **required** - A boolean indicating whether the input is required or not.
+- **errorMessage** - An optional string that displays when the input value is incorrect.
+- **InputHTMLAttributes** - all standard HTML input attributes (**value**, **pattern**, **readOnly**, etc.).
+- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

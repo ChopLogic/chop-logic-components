@@ -28,12 +28,13 @@
 
   /* shadows */
   --box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.6);
+  --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3);
+  --inset-shadow: -5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset;
 
   /* borders & outlines */
-  --thing-blue-border: 1px solid #5998c5;
-  --thick-blue-border: 3px solid #266dd3;
-  --thick-accent-border: 3px solid #e53d00;
+  --light-blue-border: 1px solid #5998c5;
+  --dark-blue-border: 1px solid #266dd3;
+  --accent-border: 1px solid #e53d00;
   --focus-outline: 2px dashed #e53d00;
 }
 

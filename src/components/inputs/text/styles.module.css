@@ -15,11 +15,16 @@
   background: var(--cl-tint-gradient);
   border-top-left-radius: var(--block-border-radius);
   border-top-right-radius: var(--block-border-radius);
-  border-bottom: var(--thing-blue-border);
+  border-bottom: var(--light-blue-border);
 }
 
-.container:has(.input:focus-visible) {
-  border-bottom: var(--thick-blue-border);
+.wrapper:has(.input:focus-visible) {
+  border-bottom: var(--dark-blue-border);
+  box-shadow: var(--inset-shadow);
+}
+
+.invalid {
+  border-bottom: var(--accent-border);
 }
 
 .input {
@@ -34,8 +39,4 @@
 
 .error {
   padding-inline-start: var(--medium-gap);
-}
-
-.invalid {
-  border-bottom: var(--thick-accent-border);
 }

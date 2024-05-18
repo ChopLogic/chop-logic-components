@@ -9,6 +9,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
   placeholder = 'Type here...',
   valid = true,
   required = false,
+  errorMessage,
 }) => {
   return (
     <div
@@ -20,7 +21,16 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         padding: '20px',
       }}
     >
-      <TextInput id={id} name={name} placeholder={placeholder} label={label} valid={valid} required={required} disabled={disabled} />
+      <TextInput
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        label={label}
+        valid={valid}
+        required={required}
+        disabled={disabled}
+        errorMessage={errorMessage}
+      />
     </div>
   );
 };

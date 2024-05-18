@@ -1,27 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicTextInput component > should render correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="_container_aea932"
-  >
-    <label
-      class="_label_0ea6b1 _label_aea932"
-      for="test-input-id"
-    >
-      Test Input:
-    </label>
-    <input
-      class="_input_aea932"
-      id="test-input-id"
-      name="testInput"
-      placeholder="Type here..."
-      type="text"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`ChopLogicTextInput component > should render the valid input correctly 1`] = `
 <DocumentFragment>
   <div

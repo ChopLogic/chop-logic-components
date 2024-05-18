@@ -12,10 +12,11 @@ type Story = StoryObj<typeof Example>;
 export const Default: Story = {
   args: {
     placeholder: 'Type here...',
-    label: 'Enter your name:',
-    name: 'name',
-    id: 'name-input',
+    label: 'Enter the formula:',
+    name: 'formula',
+    id: 'formula-input',
     valid: true,
     required: false,
+    errorMessage: 'Cannot parse the entered text',
   },
 };

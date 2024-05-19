@@ -10,13 +10,23 @@ describe('ChopLogicTextInput component', () => {
     valid: true,
   };
 
-  it('should render the valid input correctly', () => {
+  it('should render the input correctly', () => {
     const { asFragment } = render(<TextInput {...testProps} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render the required input correctly', () => {
+    const { asFragment } = render(<TextInput {...testProps} required={true} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should display the label text', () => {
     render(<TextInput {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
+  });
+
+  it('should be required if required prop is true', () => {
+    render(<TextInput {...testProps} required />);
+    expect(screen.getByRole('textbox')).toBeRequired();
   });
 });

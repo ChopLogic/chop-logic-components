@@ -15,8 +15,6 @@
 
   /* fonts */
   --core-font: 'Cyrge', Helvetica, sans-serif;
-  --core-font-bold: 'CyrgeBold', Helvetica, sans-serif;
-  --core-font-italic: 'CyrgeItalic', Helvetica, sans-serif;
   --monospace-font: 'Zector', Courier, monospace;
 
   /* units */
@@ -43,22 +41,6 @@
   src:
     local('Cyrge'),
     url('../assets/fonts/cyrge/Cygre-Regular.ttf') format('truetype-variations');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CyrgeBold';
-  src:
-    local('CyrgeBold'),
-    url('../assets/fonts/cyrge/Cygre-Bold.ttf') format('truetype-variations');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CyrgeItalic';
-  src:
-    local('CyrgeItalic'),
-    url('../assets/fonts/cyrge/Cygre-RegularIt.ttf') format('truetype-variations');
   font-display: swap;
 }
 

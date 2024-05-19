@@ -17,6 +17,7 @@ export const Default: Story = {
     id: 'formula-input',
     valid: true,
     required: false,
+    disabled: false,
     errorMessage: 'Cannot parse the entered text',
   },
 };

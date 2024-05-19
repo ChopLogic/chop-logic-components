@@ -30,7 +30,6 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   const containerClass = createClassName([styles.container, props?.className]);
   const wrapperClass = createClassName([
     styles.wrapper,
-    props?.className,
     {
       [styles.disabled]: !!disabled,
       [styles.invalid]: !valid,

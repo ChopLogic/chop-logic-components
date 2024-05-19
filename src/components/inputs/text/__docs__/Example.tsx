@@ -5,11 +5,11 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
   id,
   name,
   label,
-  disabled,
+  errorMessage,
   placeholder = 'Type here...',
+  disabled = false,
   valid = true,
   required = false,
-  errorMessage,
 }) => {
   return (
     <div

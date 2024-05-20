@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'assets/common.module.css';
 import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
-import { UTFIconNames } from 'assets/icons/utf-icons';
 import ChopLogicLabel from '../label/Label';
 import ChopLogicErrorMessage from '../error-message/ErrorMessage';
 
@@ -10,9 +9,9 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   id: string;
   name: string;
   label: string;
-  icon?: UTFIconNames;
   valid?: boolean;
   errorMessage?: string;
+  defaultValue?: string;
 };
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
@@ -24,8 +23,11 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   valid = true,
   required = false,
   errorMessage,
+  defaultValue,
+  onChange,
   ...props
 }) => {
+  const [inputValue, setInputValue] = useState<string>(defaultValue ?? '');
   const errorId = `${id}_error`;
   const containerClass = createClassName([styles.container, props?.className]);
   const wrapperClass = createClassName([
@@ -35,6 +37,12 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
       [styles.invalid]: !valid,
     },
   ]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value = '' } = e.target;
+    setInputValue(value);
+    if (onChange) onChange(e);
+  };
 
   return (
     <div className={containerClass}>
@@ -50,6 +58,8 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
+          value={inputValue}
+          onChange={handleChange}
           {...props}
         />
       </div>

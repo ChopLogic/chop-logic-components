@@ -2,6 +2,7 @@
   /** colors **/
   --cl-color-black: #222222;
   --cl-color-ivory: #f6f7eb;
+  --cl-color-tint: #e9edf0;
   --cl-color-celtic-blue: #266dd3;
   --cl-color-celestial-blue: #5998c5;
   --cl-color-syracuse-red: #e53d00;
@@ -9,19 +10,30 @@
   /* gradients */
   --cl-primary-gradient: linear-gradient(0deg, #222222, #266dd3);
   --cl-accent-gradient: linear-gradient(0deg, #222222, #e53d00);
+  --cl-tint-gradient: linear-gradient(0deg, #e9edf0, #f6f7eb);
+  --cl-tint-gradient: linear-gradient(0deg, #e9edf0, #f6f7eb);
 
   /* fonts */
   --core-font: 'Cyrge', Helvetica, sans-serif;
-  --core-font-bold: 'CyrgeBold', Helvetica, sans-serif;
-  --core-font-italic: 'CyrgeItalic', Helvetica, sans-serif;
   --monospace-font: 'Zector', Courier, monospace;
+
+  /* units */
+  --small-gap: 0.25rem;
+  --medium-gap: 0.6rem;
+  --big-gap: 1rem;
+  --min-element-size: 2.75rem;
+  --block-border-radius: 0.375rem;
 
   /* shadows */
   --box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.6);
+  --text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3);
+  --inset-shadow: -5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset;
 
-  /* misc values */
-  --block-border-radius: 0.375rem;
+  /* borders & outlines */
+  --light-blue-border: 1px solid #5998c5;
+  --dark-blue-border: 1px solid #266dd3;
+  --accent-border: 1px solid #e53d00;
+  --focus-outline: 2px dashed #e53d00;
 }
 
 @font-face {
@@ -29,22 +41,6 @@
   src:
     local('Cyrge'),
     url('../assets/fonts/cyrge/Cygre-Regular.ttf') format('truetype-variations');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CyrgeBold';
-  src:
-    local('CyrgeBold'),
-    url('../assets/fonts/cyrge/Cygre-Bold.ttf') format('truetype-variations');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CyrgeItalic';
-  src:
-    local('CyrgeItalic'),
-    url('../assets/fonts/cyrge/Cygre-RegularIt.ttf') format('truetype-variations');
   font-display: swap;
 }
 

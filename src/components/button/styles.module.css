@@ -1,6 +1,6 @@
 .button {
-  min-height: 2.75rem;
-  min-width: 2.75rem;
+  min-height: var(--min-element-size);
+  min-width: var(--min-element-size);
   border: none;
   cursor: pointer;
   padding: 0 0.75rem;
@@ -9,7 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: var(--small-gap);
+}
+
+.button:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
 }
 
 .primary,

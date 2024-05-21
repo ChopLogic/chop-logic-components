@@ -1,0 +1,10 @@
+.message {
+  font-size: 0.8rem;
+  font-family: var(--core-font);
+  color: var(--cl-color-syracuse-red);
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

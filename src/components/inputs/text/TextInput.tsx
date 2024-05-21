@@ -11,7 +11,6 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   label: string;
   valid?: boolean;
   errorMessage?: string;
-  defaultValue?: string;
 };
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
@@ -27,7 +26,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   onChange,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<string>(defaultValue ?? '');
+  const [inputValue, setInputValue] = useState<string>(typeof defaultValue === 'string' ? defaultValue : '');
   const errorId = `${id}_error`;
   const containerClass = createClassName([styles.container, props?.className]);
   const wrapperClass = createClassName([

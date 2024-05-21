@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import TextInput from '../TextInput';
 import userEvent from '@testing-library/user-event';
@@ -29,6 +29,27 @@ describe('ChopLogicTextInput component', () => {
   it('should be required if required prop is true', () => {
     render(<TextInput {...testProps} required />);
     expect(screen.getByRole('textbox')).toBeRequired();
+  });
+
+  it('should be disabled if disabled prop is true', () => {
+    render(<TextInput {...testProps} disabled />);
+    expect(screen.getByRole('textbox')).toBeDisabled();
+  });
+
+  it('should be display an error message', () => {
+    const testMessage = 'Test Error';
+    render(<TextInput {...testProps} valid={false} errorMessage={testMessage} />);
+    expect(screen.getByText(testMessage)).toBeInTheDocument();
+  });
+
+  it('should call onChange handler when a user types something', async () => {
+    const mockedOnChange = vi.fn();
+    render(<TextInput {...testProps} onChange={mockedOnChange} />);
+    const input = screen.getByRole('textbox');
+    await userEvent.type(input, '1');
+    expect(mockedOnChange).toHaveBeenCalledOnce();
+    await userEvent.type(input, '23');
+    expect(mockedOnChange).toHaveBeenCalledTimes(3);
   });
 
   it('should display the entered text', async () => {

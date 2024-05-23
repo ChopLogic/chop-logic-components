@@ -1,0 +1,25 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as Select from './Select.stories.tsx';
+
+<Meta of={Select} title='Select' />
+
+# Select
+
+Select component with custom styling and behavior.
+
+#### Example
+
+<Canvas of={Select.Default} />
+
+## Usage
+
+```tsx
+import { ChopLogicSelect } from 'sld-ui';
+
+const Example = () => {
+  return <ChopLogicSelect id='example-select' className='custom-class' />;
+};
+
+export default Example;
+```

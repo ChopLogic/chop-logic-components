@@ -6,11 +6,17 @@ import createClassName from 'utils/create-class-name';
 import SelectCombobox from './SelectCombobox';
 import SelectDropdown from './SelectDropdown';
 
-type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
+  values: SelectValue[];
 };
 
-const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id }) => {
+export type SelectValue = {
+  id: string;
+  label: string;
+};
+
+const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values }) => {
   const [isOpened, setIsOpened] = useState(false);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
@@ -26,7 +32,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id }) => {
   return (
     <div className={wrapperClass} ref={ref}>
       <SelectCombobox isOpened={isOpened} comboboxId={comboboxId} dropdownId={dropdownId} onClick={handleToggle} />
-      <SelectDropdown values={[]} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} />
+      <SelectDropdown values={values} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} />
     </div>
   );
 };

@@ -2,35 +2,39 @@ import { KeyboardEvent } from 'react';
 
 import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
+import { SelectValue } from './Select';
+import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
+import SelectOption from './SelectOption';
 
 type SelectDropdownProps = {
-  values: { id: string; label: string }[];
+  values: SelectValue[];
   isOpened: boolean;
   dropdownId: string;
+  comboboxId: string;
   onClose: () => void;
-  selectedId?: string;
+  selected?: SelectValue;
+  onSelect: (id: string) => void;
 };
 
-const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, dropdownId }) => {
-  const dropdownClass = createClassName([styles.dropdown, { [styles.closed]: !isOpened }]);
+const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
+  const dropdownClass = createClassName([styles.dropdown, { [styles.dropdown_opened]: isOpened }]);
 
-  //   const selectAndClose = (id: string) => {
-  //     const patient = patients.find((patient) => patient.id === id);
-  //     if (patient && setSelectedPatient) setSelectedPatient?.(patient);
-  //     onClose();
-  //     moveFocusOnElementById(PROFILE_SELECTOR_COMBOBOX_ID);
-  //   };
+  const selectAndClose = (id: string) => {
+    onSelect(id);
+    onClose();
+    moveFocusOnElementById(comboboxId);
+  };
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
-    // let focusedId: string = '';
-    // patients.forEach((patient) => {
-    //   const element = document.getElementById(patient.id);
-    //   if (element === document.activeElement) {
-    //     focusedId = patient.id;
-    //   }
-    // });
+    let focusedId: string = '';
+    values.forEach((value) => {
+      const element = document.getElementById(value.id);
+      if (element === document.activeElement) {
+        focusedId = value.id;
+      }
+    });
 
-    // const currentFocusIndex = patients.findIndex((patient) => patient.id === focusedId);
+    const currentFocusIndex = values.findIndex((value) => value.id === focusedId);
 
     switch (e.key) {
       case 'Escape':
@@ -39,17 +43,17 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
         break;
       case 'ArrowUp': {
         e.preventDefault();
-        // const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : patients.length - 1;
-        // const previousPatient = patients[previousOptionIndex];
-        // if (previousPatient) moveFocusOnElementById(previousPatient.id);
+        const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : values.length - 1;
+        const previousValue = values[previousOptionIndex];
+        if (previousValue) moveFocusOnElementById(previousValue.id);
         break;
       }
       case 'ArrowDown':
       case 'Tab': {
         e.preventDefault();
-        // const nextOptionIndex = currentFocusIndex === patients.length - 1 ? 0 : currentFocusIndex + 1;
-        // const nextPatient = patients[nextOptionIndex];
-        // if (nextPatient) moveFocusOnElementById(nextPatient.id);
+        const nextOptionIndex = currentFocusIndex === values.length - 1 ? 0 : currentFocusIndex + 1;
+        const nextValue = values[nextOptionIndex];
+        if (nextValue) moveFocusOnElementById(nextValue.id);
         break;
       }
       default:
@@ -60,7 +64,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
   return (
     <ul className={dropdownClass} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
       {values.map((item) => (
-        <option key={item.id}>{item.label}</option>
+        <SelectOption key={item.id} value={item} onSelect={() => selectAndClose(item.id)} isSelected={item.id === selected?.id} />
       ))}
     </ul>
   );

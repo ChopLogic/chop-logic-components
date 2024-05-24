@@ -1,0 +1,13 @@
+.combobox {
+}
+
+.combobox_opened {
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown_opened {
+  display: block;
+}

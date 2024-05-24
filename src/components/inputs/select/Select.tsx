@@ -9,6 +9,7 @@ import SelectDropdown from './SelectDropdown';
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
   values: SelectValue[];
+  onSelect?: (value?: SelectValue) => void;
 };
 
 export type SelectValue = {
@@ -16,8 +17,9 @@ export type SelectValue = {
   label: string;
 };
 
-const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values }) => {
+const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values, onSelect }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const [selected, setSelected] = useState<SelectValue | undefined>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName([styles.wrapper, className]);
@@ -27,12 +29,27 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values
 
   const handleToggle = () => setIsOpened(!isOpened);
 
+  const handleSelect = (id: string) => {
+    const newValue = values.find((item) => item.id === id);
+    console.log('newValue', newValue);
+    setSelected(newValue);
+    onSelect?.(newValue);
+  };
+
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
 
   return (
     <div className={wrapperClass} ref={ref}>
-      <SelectCombobox isOpened={isOpened} comboboxId={comboboxId} dropdownId={dropdownId} onClick={handleToggle} />
-      <SelectDropdown values={values} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} />
+      <SelectCombobox isOpened={isOpened} comboboxId={comboboxId} dropdownId={dropdownId} onClick={handleToggle} selected={selected} />
+      <SelectDropdown
+        values={values}
+        selected={selected}
+        isOpened={isOpened}
+        onClose={handleClose}
+        dropdownId={dropdownId}
+        comboboxId={comboboxId}
+        onSelect={handleSelect}
+      />
     </div>
   );
 };

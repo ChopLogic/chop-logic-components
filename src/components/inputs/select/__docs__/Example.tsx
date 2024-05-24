@@ -1,10 +1,10 @@
 import React from 'react';
 import ChopLogicSelect, { ChopLogicSelectProps } from '../Select';
 
-const Example: React.FC<ChopLogicSelectProps> = ({ id = 'example-select', className = 'custom-class' }) => {
+const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelect }) => {
   return (
     <div>
-      <ChopLogicSelect id={id} className={className} />
+      <ChopLogicSelect id={id} values={values} onSelect={onSelect} />
     </div>
   );
 };

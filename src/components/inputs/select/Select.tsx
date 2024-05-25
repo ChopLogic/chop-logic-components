@@ -5,11 +5,15 @@ import { useClickOutside } from 'utils/use-click-outside';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './SelectCombobox';
 import SelectDropdown from './SelectDropdown';
+import ChopLogicLabel from '../label/Label';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
+  name: string;
+  label: string;
   values: SelectValue[];
   onSelect?: (value?: SelectValue) => void;
+  placeholder?: string;
 };
 
 export type SelectValue = {
@@ -17,12 +21,21 @@ export type SelectValue = {
   label: string;
 };
 
-const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values, onSelect }) => {
+const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
+  id,
+  values,
+  onSelect,
+  name,
+  placeholder = 'Select',
+  label,
+  required = false,
+  ...props
+}) => {
   const [isOpened, setIsOpened] = useState(false);
   const [selected, setSelected] = useState<SelectValue | undefined>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const wrapperClass = createClassName([styles.wrapper, className]);
+  const wrapperClass = createClassName([styles.wrapper, props?.className]);
   const ref = useRef(null);
 
   const handleClose = () => setIsOpened(false);
@@ -40,7 +53,16 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({ className, id, values
 
   return (
     <div className={wrapperClass} ref={ref}>
-      <SelectCombobox isOpened={isOpened} comboboxId={comboboxId} dropdownId={dropdownId} onClick={handleToggle} selected={selected} />
+      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className={styles.label} />
+      <SelectCombobox
+        name={name}
+        isOpened={isOpened}
+        comboboxId={comboboxId}
+        dropdownId={dropdownId}
+        onClick={handleToggle}
+        selected={selected}
+        placeholder={placeholder}
+      />
       <SelectDropdown
         values={values}
         selected={selected}

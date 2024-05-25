@@ -28,6 +28,10 @@ const SELECT_VALUES: SelectValue[] = [
 export const Default: Story = {
   args: {
     id: 'example-select',
+    label: 'Select your language',
     values: SELECT_VALUES,
+    name: 'language',
+    placeholder: 'Click to select',
+    onSelect: () => console.log('Selected'),
   },
 };

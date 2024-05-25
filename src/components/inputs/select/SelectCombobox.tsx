@@ -11,13 +11,18 @@ type SelectComboboxProps = {
   comboboxId: string;
   dropdownId: string;
   selected?: SelectValue;
+  placeholder?: string;
+  name: string;
 };
 
-const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comboboxId, dropdownId, selected }) => {
+const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comboboxId, dropdownId, selected, name, placeholder }) => {
   const comboboxClass = createClassName([styles.combobox, { [styles.opened]: isOpened }]);
 
   return (
-    <button
+    <input
+      type='button'
+      name={name}
+      value={selected?.label ?? placeholder}
       role='combobox'
       aria-haspopup='listbox'
       aria-label='Select one of the options'
@@ -26,9 +31,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comb
       id={comboboxId}
       className={comboboxClass}
       onClick={onClick}
-    >
-      {selected?.label ?? 'Click to select'}
-    </button>
+    />
   );
 };
 

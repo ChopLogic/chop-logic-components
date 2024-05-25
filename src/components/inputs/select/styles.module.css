@@ -1,3 +1,18 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--medium-gap);
+  padding: var(--medium-gap);
+  font-family: var(--core-font);
+  color: var(--cl-color-black);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: var(--block-border-radius);
+  border-top-right-radius: var(--block-border-radius);
+  border: var(--light-blue-border);
+}
+
 .combobox {
 }
 
@@ -6,6 +21,9 @@
 
 .dropdown {
   display: none;
+  position: absolute;
+  z-index: 2;
+  top: 58px;
 }
 
 .dropdown_opened {

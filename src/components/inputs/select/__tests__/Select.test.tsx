@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import ChopLogicSelect, { SelectValue } from '../Select';
 
@@ -18,8 +18,17 @@ const LANGUAGES: SelectValue[] = [
 ];
 
 describe('ChopLogicSelect component', () => {
+  const testProps = {
+    id: 'test-select-id',
+    name: 'language',
+    label: 'Select your language',
+    values: LANGUAGES,
+    onSelect: vi.fn(),
+    placeholder: 'Test placeholder',
+  };
+
   it('should render correctly', () => {
-    const { asFragment } = render(<ChopLogicSelect values={LANGUAGES} id='test-select-id' />);
+    const { asFragment } = render(<ChopLogicSelect {...testProps} />);
     screen.debug();
     expect(asFragment()).toMatchSnapshot();
   });

@@ -26,9 +26,9 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   values,
   onSelect,
   name,
-  placeholder = 'Select',
   label,
   required = false,
+  placeholder = 'Not selected',
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);

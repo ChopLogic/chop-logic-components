@@ -3,6 +3,7 @@ import { KeyboardEvent } from 'react';
 import styles from './styles.module.css';
 import { SelectValue } from './Select';
 import createClassName from 'utils/create-class-name';
+import { UTF_ICONS } from 'assets/icons/utf-icons';
 
 type SelectOptionProps = {
   value: SelectValue;
@@ -38,8 +39,8 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
     >
-      {label}
-      {isSelected && '+'}
+      <span>{label}</span>
+      {isSelected && <span>{UTF_ICONS['CheckMark']}</span>}
     </li>
   );
 };

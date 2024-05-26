@@ -33,5 +33,6 @@ export const Default: Story = {
     name: 'language',
     placeholder: 'Click to select',
     onSelect: () => console.log('Selected'),
+    required: false,
   },
 };

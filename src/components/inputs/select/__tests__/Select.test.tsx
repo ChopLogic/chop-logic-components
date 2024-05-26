@@ -29,7 +29,11 @@ describe('ChopLogicSelect component', () => {
 
   it('should render correctly', () => {
     const { asFragment } = render(<ChopLogicSelect {...testProps} />);
-    screen.debug();
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should display the label', () => {
+    render(<ChopLogicSelect {...testProps} />);
+    expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 });

@@ -36,4 +36,19 @@ describe('ChopLogicSelect component', () => {
     render(<ChopLogicSelect {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
+
+  it('should have accessible roles', () => {
+    render(<ChopLogicSelect {...testProps} />);
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
+  });
+
+  it('should display all values as options', () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const options = screen.getAllByRole('option');
+    expect(options).toHaveLength(LANGUAGES.length);
+    options.forEach((option, index) => {
+      expect(option).toHaveTextContent(LANGUAGES[index].label);
+    });
+  });
 });

@@ -1,10 +1,10 @@
 import { KeyboardEvent } from 'react';
 
-import styles from './styles.module.css';
+import styles from '../styles.module.css';
 import createClassName from 'utils/create-class-name';
-import { SelectValue } from './Select';
+import { SelectValue } from '../Select';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
-import SelectOption from './SelectOption';
+import SelectOption from './Option';
 
 type SelectDropdownProps = {
   values: SelectValue[];

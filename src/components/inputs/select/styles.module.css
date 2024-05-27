@@ -27,14 +27,13 @@
   color: var(--cl-color-black);
   font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 .combobox:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
-}
-
-.combobox_opened {
 }
 
 .dropdown {
@@ -56,6 +55,7 @@
   box-shadow: var(--box-shadow);
   overflow-y: auto;
   max-height: 180px;
+  border-radius: var(--block-border-radius);
 }
 
 .dropdown_opened {

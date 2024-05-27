@@ -11,7 +11,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
     >
       Select your language
     </label>
-    <input
+    <button
       aria-controls="test-select-id_dropdown"
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -22,7 +22,14 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       role="combobox"
       type="button"
       value="Test placeholder"
-    />
+    >
+      <span>
+        Test placeholder
+      </span>
+      <span>
+        ⇩
+      </span>
+    </button>
     <ul
       class="_dropdown_b2e794"
       id="test-select-id_dropdown"
@@ -30,7 +37,6 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       tabindex="-1"
     >
       <li
-        aria-label="English"
         aria-selected="false"
         class="_option_b2e794"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
@@ -42,7 +48,6 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-label="Russian"
         aria-selected="false"
         class="_option_b2e794"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
@@ -54,7 +59,6 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-label="German"
         aria-selected="false"
         class="_option_b2e794"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"

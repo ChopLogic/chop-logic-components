@@ -1,9 +1,6 @@
-import createClassName from 'utils/create-class-name';
-import styles from './styles.module.css';
-import { SelectValue } from './Select';
-
-export const PROFILE_SELECTOR_DROPDOWN_ID = 'profile-selector-dropdown';
-export const PROFILE_SELECTOR_COMBOBOX_ID = 'profile-selector-combobox';
+import styles from '../styles.module.css';
+import { SelectValue } from '../Select';
+import { UTF_ICONS } from 'assets/icons/utf-icons';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -16,22 +13,23 @@ type SelectComboboxProps = {
 };
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comboboxId, dropdownId, selected, name, placeholder }) => {
-  const comboboxClass = createClassName([styles.combobox, { [styles.opened]: isOpened }]);
-
   return (
-    <input
+    <button
       type='button'
       name={name}
-      value={selected?.label ?? placeholder}
+      value={selected?.id ?? placeholder}
       role='combobox'
       aria-haspopup='listbox'
       aria-label='Select one of the options'
       aria-expanded={isOpened}
       aria-controls={dropdownId}
       id={comboboxId}
-      className={comboboxClass}
+      className={styles.combobox}
       onClick={onClick}
-    />
+    >
+      <span>{selected?.label ?? placeholder}</span>
+      <span>{isOpened ? UTF_ICONS['Upwards'] : UTF_ICONS['Downwards']}</span>
+    </button>
   );
 };
 

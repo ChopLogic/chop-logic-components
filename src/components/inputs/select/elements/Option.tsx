@@ -1,7 +1,7 @@
 import { KeyboardEvent } from 'react';
 
-import styles from './styles.module.css';
-import { SelectValue } from './Select';
+import styles from '../styles.module.css';
+import { SelectValue } from '../Select';
 import createClassName from 'utils/create-class-name';
 import { UTF_ICONS } from 'assets/icons/utf-icons';
 
@@ -34,7 +34,6 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       role='option'
       className={optionClass}
       aria-selected={isSelected}
-      aria-label={label}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}

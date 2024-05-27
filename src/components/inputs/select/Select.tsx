@@ -3,8 +3,8 @@ import { useRef, useState } from 'react';
 import styles from './styles.module.css';
 import { useClickOutside } from 'utils/use-click-outside';
 import createClassName from 'utils/create-class-name';
-import SelectCombobox from './SelectCombobox';
-import SelectDropdown from './SelectDropdown';
+import SelectCombobox from './elements/Combobox';
+import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../label/Label';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {

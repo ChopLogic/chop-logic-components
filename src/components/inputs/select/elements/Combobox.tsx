@@ -17,7 +17,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comb
     <button
       type='button'
       name={name}
-      value={selected?.id ?? placeholder}
+      value={selected?.id}
       role='combobox'
       aria-haspopup='listbox'
       aria-label='Select one of the options'

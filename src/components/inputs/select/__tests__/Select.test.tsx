@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import ChopLogicSelect, { SelectValue } from '../Select';
+import userEvent from '@testing-library/user-event';
 
 const LANGUAGES: SelectValue[] = [
   {
@@ -50,5 +51,15 @@ describe('ChopLogicSelect component', () => {
     options.forEach((option, index) => {
       expect(option).toHaveTextContent(LANGUAGES[index].label);
     });
+  });
+
+  it('should allow the use to select an option', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveValue('');
+    await userEvent.click(combobox);
+    const option = screen.getByText(LANGUAGES[1].label);
+    await userEvent.click(option);
+    expect(combobox).toHaveValue(LANGUAGES[1].id);
   });
 });

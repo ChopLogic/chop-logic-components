@@ -18,6 +18,10 @@
   border: var(--light-blue-border);
 }
 
+.wrapper:hover {
+  background-color: var(--cl-color-ivory);
+}
+
 .wrapper:has(.input:focus-visible) {
   border: var(--dark-blue-border);
   font-weight: bold;

@@ -44,7 +44,6 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
 
   const handleSelect = (id: string) => {
     const newValue = values.find((item) => item.id === id);
-    console.log('newValue', newValue);
     setSelected(newValue);
     onSelect?.(newValue);
   };

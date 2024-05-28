@@ -21,7 +21,6 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       name="language"
       role="combobox"
       type="button"
-      value="Test placeholder"
     >
       <span>
         Test placeholder

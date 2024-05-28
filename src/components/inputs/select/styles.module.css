@@ -13,6 +13,10 @@
   border: var(--light-blue-border);
 }
 
+.wrapper:hover {
+  background-color: var(--cl-color-ivory);
+}
+
 .wrapper:has(.combobox:focus-visible) {
   border: var(--dark-blue-border);
   outline: var(--dark-blue-border);

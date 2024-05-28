@@ -44,6 +44,16 @@ describe('ChopLogicSelect component', () => {
     expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
 
+  it('could be disabled', () => {
+    render(<ChopLogicSelect {...testProps} disabled />);
+    expect(screen.getByRole('combobox')).toBeDisabled();
+  });
+
+  it('could be required', () => {
+    render(<ChopLogicSelect {...testProps} required />);
+    expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
+  });
+
   it('should display all values as options', () => {
     render(<ChopLogicSelect {...testProps} />);
     const options = screen.getAllByRole('option');
@@ -53,7 +63,7 @@ describe('ChopLogicSelect component', () => {
     });
   });
 
-  it('should allow the use to select an option', async () => {
+  it('should allow the user to select an option', async () => {
     render(<ChopLogicSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');

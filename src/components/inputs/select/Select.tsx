@@ -29,13 +29,14 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   label,
   required = false,
   placeholder = 'Not selected',
+  disabled = false,
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [selected, setSelected] = useState<SelectValue | undefined>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const wrapperClass = createClassName([styles.wrapper, props?.className]);
+  const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
   const ref = useRef(null);
 
   const handleClose = () => setIsOpened(false);
@@ -61,6 +62,8 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         onClick={handleToggle}
         selected={selected}
         placeholder={placeholder}
+        disabled={disabled}
+        required={required}
       />
       <SelectDropdown
         values={values}

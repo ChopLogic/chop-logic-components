@@ -83,3 +83,9 @@
   outline: var(--focus-outline);
   outline-offset: -2px;
 }
+
+.disabled {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  pointer-events: none;
+}

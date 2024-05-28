@@ -4,6 +4,8 @@ import { UTF_ICONS } from 'assets/icons/utf-icons';
 
 type SelectComboboxProps = {
   isOpened: boolean;
+  disabled: boolean;
+  required: boolean;
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
@@ -12,7 +14,17 @@ type SelectComboboxProps = {
   name: string;
 };
 
-const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comboboxId, dropdownId, selected, name, placeholder }) => {
+const SelectCombobox: React.FC<SelectComboboxProps> = ({
+  isOpened,
+  onClick,
+  comboboxId,
+  dropdownId,
+  selected,
+  name,
+  placeholder,
+  disabled,
+  required,
+}) => {
   return (
     <button
       type='button'
@@ -26,6 +38,8 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({ isOpened, onClick, comb
       id={comboboxId}
       className={styles.combobox}
       onClick={onClick}
+      disabled={disabled}
+      aria-required={required}
     >
       <span>{selected?.label ?? placeholder}</span>
       <span>{isOpened ? UTF_ICONS['Upwards'] : UTF_ICONS['Downwards']}</span>

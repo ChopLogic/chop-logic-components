@@ -1,7 +1,7 @@
 import React from 'react';
 import ChopLogicSelect, { ChopLogicSelectProps } from '../Select';
 
-const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelect, name, placeholder, label, required }) => {
+const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelect, name, placeholder, label, required, disabled }) => {
   return (
     <div
       style={{
@@ -21,6 +21,7 @@ const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelect, name, p
         placeholder={placeholder}
         label={label}
         required={required}
+        disabled={disabled}
       />
     </div>
   );

@@ -20,7 +20,6 @@
 
 .wrapper:has(.input:focus-visible) {
   border: var(--dark-blue-border);
-  font-weight: bold;
   outline: var(--dark-blue-border);
   outline-offset: -3px;
 }

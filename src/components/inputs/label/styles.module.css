@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   gap: var(--small-gap);
+  color: var(--cl-color-black);
 }
 
 .required {

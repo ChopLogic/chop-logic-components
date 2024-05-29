@@ -27,7 +27,7 @@ describe('ChopLogicButton component', () => {
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
     await userEvent.click(button);
-    expect(mockedCallback).not.toHaveBeenCalledOnce();
+    expect(mockedCallback).not.toHaveBeenCalled();
   });
 
   it('should have focus on Tab press', () => {

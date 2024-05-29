@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicSelect component > should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_b2e794"
+  >
+    <label
+      class="_label_0ea6b1 _label_b2e794"
+      for="test-select-id_combobox"
+    >
+      Select your language
+    </label>
+    <button
+      aria-controls="test-select-id_dropdown"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Select one of the options"
+      aria-required="false"
+      class="_combobox_b2e794"
+      id="test-select-id_combobox"
+      name="language"
+      role="combobox"
+      type="button"
+    >
+      <span
+        class="_combobox_label_b2e794"
+      >
+        Test placeholder
+      </span>
+      <span>
+        ⇩
+      </span>
+    </button>
+    <ul
+      class="_dropdown_b2e794"
+      id="test-select-id_dropdown"
+      role="listbox"
+      tabindex="-1"
+    >
+      <li
+        aria-selected="false"
+        class="_option_b2e794"
+        id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
+        role="option"
+        tabindex="0"
+      >
+        <span>
+          English
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="_option_b2e794"
+        id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
+        role="option"
+        tabindex="0"
+      >
+        <span>
+          Russian
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="_option_b2e794"
+        id="641fc722-af5a-4426-8f8a-1566cc492b91"
+        role="option"
+        tabindex="0"
+      >
+        <span>
+          German
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

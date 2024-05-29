@@ -41,7 +41,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span>{selected?.label ?? placeholder}</span>
+      <span className={styles.combobox_label}>{selected?.label ?? placeholder}</span>
       <span>{isOpened ? UTF_ICONS['Upwards'] : UTF_ICONS['Downwards']}</span>
     </button>
   );

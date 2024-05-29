@@ -23,7 +23,9 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       role="combobox"
       type="button"
     >
-      <span>
+      <span
+        class="_combobox_label_b2e794"
+      >
         Test placeholder
       </span>
       <span>

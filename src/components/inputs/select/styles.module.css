@@ -11,10 +11,7 @@
   border-top-left-radius: var(--block-border-radius);
   border-top-right-radius: var(--block-border-radius);
   border: var(--light-blue-border);
-}
-
-.wrapper:hover {
-  background-color: var(--cl-color-ivory);
+  max-width: 100%;
 }
 
 .wrapper:has(.combobox:focus-visible) {
@@ -33,11 +30,17 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .combobox:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+}
+
+.combobox_label {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdown {
@@ -53,13 +56,12 @@
   list-style: none;
   z-index: var(--dropdown-z-index);
   width: 100%;
-  top: 64px;
+  top: 66px;
   left: 0;
   border: var(--light-blue-border);
   box-shadow: var(--box-shadow);
   overflow-y: auto;
   max-height: 180px;
-  border-radius: var(--block-border-radius);
 }
 
 .dropdown_opened {

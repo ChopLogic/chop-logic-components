@@ -10,11 +10,17 @@
   align-items: center;
   justify-content: center;
   gap: var(--small-gap);
+  overflow: hidden;
 }
 
 .button:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .primary,

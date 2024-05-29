@@ -63,6 +63,15 @@ describe('ChopLogicSelect component', () => {
     });
   });
 
+  it('should call onSelect handler', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    await userEvent.click(combobox);
+    const option = screen.getByText(LANGUAGES[0].label);
+    await userEvent.click(option);
+    expect(testProps.onSelect).toHaveBeenCalledOnce();
+  });
+
   it('should allow the user to select an option', async () => {
     render(<ChopLogicSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
@@ -71,5 +80,51 @@ describe('ChopLogicSelect component', () => {
     const option = screen.getByText(LANGUAGES[1].label);
     await userEvent.click(option);
     expect(combobox).toHaveValue(LANGUAGES[1].id);
+  });
+
+  it('should move the focus correctly on Tab press', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    await userEvent.click(combobox);
+
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.tab();
+    expect(options[1]).toHaveFocus();
+    await userEvent.tab();
+    expect(options[2]).toHaveFocus();
+    await userEvent.tab();
+    expect(options[0]).toHaveFocus();
+  });
+
+  it('should move the focus correctly on Tab press', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    await userEvent.click(combobox);
+
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.tab();
+    expect(options[1]).toHaveFocus();
+    await userEvent.tab();
+    expect(options[2]).toHaveFocus();
+    await userEvent.tab();
+    expect(options[0]).toHaveFocus();
+  });
+
+  it('pressing ArrowDown button should move focus to the next option', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.keyboard('[ArrowDown]');
+    expect(options[1]).toHaveFocus();
+  });
+
+  it('pressing ArrowUp button should move focus to the previous option', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const options = screen.getAllByRole('option');
+    options[1].focus();
+    await userEvent.keyboard('[ArrowUp]');
+    expect(options[0]).toHaveFocus();
   });
 });

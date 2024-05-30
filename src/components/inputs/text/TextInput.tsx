@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import 'assets/common.module.css';
 import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
-import ChopLogicLabel from '../label/Label';
-import ChopLogicErrorMessage from '../error-message/ErrorMessage';
+import ChopLogicLabel from '../../misc/label/Label';
+import ChopLogicErrorMessage from '../../misc/error-message/ErrorMessage';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   id: string;

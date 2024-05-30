@@ -5,7 +5,7 @@ import { useClickOutside } from 'utils/use-click-outside';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import ChopLogicLabel from '../label/Label';
+import ChopLogicLabel from '../../misc/label/Label';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;

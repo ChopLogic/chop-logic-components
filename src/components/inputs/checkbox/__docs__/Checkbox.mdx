@@ -1,0 +1,46 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as Checkbox from './Checkbox.stories.tsx';
+
+<Meta of={Checkbox} title='Checkbox' />
+
+# Checkbox
+
+Checkbox component with different props and behaviors.
+
+#### Example
+
+<Canvas of={Checkbox.Default} />
+
+## Usage
+
+```tsx
+import { Checkbox } from 'chop-logic-components';
+
+const Example = () => {
+  return (
+    <Checkbox
+      id='example-checkbox'
+      name='example'
+      label='Accept Terms and Conditions'
+      required={true}
+      onChange={(e) => console.log('Checkbox state:', e.target.checked)}
+      disabled={false}
+      labelPosition='right'
+    />
+  );
+};
+
+export default Example;
+```
+
+#### Props
+
+- **id** - A unique identifier for the Checkbox component.
+- **name** - A string representing the name attribute of the Checkbox component, used for form submissions.
+- **label** - A string that represents the label for the Checkbox component.
+- **disabled** - A boolean indicating whether the checkbox should be disabled. When disabled, the checkbox cannot be interacted with.
+- **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
+- **onChange** - A function that is called when the checkbox state changes. It receives a change event.
+- **isLabelHidden** - A boolean indicating whether the label should be hidden or not.
+- **labelPosition** - A string that sets the position of the label relative to the checkbox. It can be 'left' or 'right'.

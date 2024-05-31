@@ -8,12 +8,26 @@ export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
   id: string;
   name: string;
   label: string;
+  isLabelHidden?: boolean;
+  labelPosition?: 'left' | 'right';
 };
 
-const Checkbox: React.FC<ChopLogicCheckboxProps> = ({ id, name, label, disabled, required = false, onChange, ...props }) => {
+const Checkbox: React.FC<ChopLogicCheckboxProps> = ({
+  id,
+  name,
+  label,
+  disabled,
+  required = false,
+  onChange,
+  isLabelHidden,
+  labelPosition = 'right',
+  className,
+  ...props
+}) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
-  const errorId = `${id}_error`;
-  const wrapperClass = createClassName([styles.wrapper, { [styles.disabled]: !!disabled }]);
+  const wrapperClass = createClassName([styles.wrapper, className, { [styles.disabled]: !!disabled }]);
+  const isLeftLabel = !isLabelHidden && labelPosition === 'left';
+  const isRightLabel = !isLabelHidden && labelPosition === 'right';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
@@ -21,8 +35,11 @@ const Checkbox: React.FC<ChopLogicCheckboxProps> = ({ id, name, label, disabled,
     if (onChange) onChange(e);
   };
 
+  const labelElement = <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />;
+
   return (
     <div className={wrapperClass}>
+      {isLeftLabel && labelElement}
       <input
         id={id}
         name={name}
@@ -30,12 +47,12 @@ const Checkbox: React.FC<ChopLogicCheckboxProps> = ({ id, name, label, disabled,
         className={styles.input}
         disabled={disabled}
         required={required}
-        aria-errormessage={errorId}
         checked={isChecked}
         onChange={handleChange}
+        aria-label={isLabelHidden ? label : undefined}
         {...props}
       />
-      <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />
+      {isRightLabel && labelElement}
     </div>
   );
 };

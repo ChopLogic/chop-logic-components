@@ -6,7 +6,6 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
     class="_wrapper_c29caf"
   >
     <input
-      aria-errormessage="test-checkbox-id_error"
       class="_input_c29caf"
       id="test-checkbox-id"
       name="testCheckbox"

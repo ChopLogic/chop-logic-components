@@ -15,4 +15,9 @@ describe('ChopLogicTextInput component', () => {
     screen.debug();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should display the label', () => {
+    render(<Checkbox {...testProps} />);
+    expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
+  });
 });

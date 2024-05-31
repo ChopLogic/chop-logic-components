@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTextInput component > should render the input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_c29caf"
+  >
+    <input
+      aria-errormessage="test-checkbox-id_error"
+      class="_input_c29caf"
+      id="test-checkbox-id"
+      name="testCheckbox"
+      type="checkbox"
+    />
+    <label
+      class="_label_c383e9 _label_c29caf"
+      for="test-checkbox-id"
+    >
+      Test checkbox:
+    </label>
+  </div>
+</DocumentFragment>
+`;

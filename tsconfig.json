@@ -26,6 +26,7 @@
       "components/*": ["./src/components/*"],
       "assets/*": ["./src/assets/*"],
       "utils/*": ["./src/utils/*"],
+      "enums/*": ["./src/enums/*"],
       "__mocks__/*": ["./src/__mocks__/*"]
     },
 

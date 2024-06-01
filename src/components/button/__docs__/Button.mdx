@@ -15,15 +15,14 @@ A simple button component with different props.
 ## Usage
 
 ```ts
-import { ChopLogicButton } from "chop-logic-components";
+import { ChopLogicButton, ChopIcon } from "chop-logic-components";
 
 const Example = () => {
   return (
       <ChopLogicButton
-        text="Submit"
+        text="Copy"
         onClick={()=> console.log("Clicked")}
-        type='submit'
-        icon='CheckMark'
+        icon={ChopIcon.Copy}
       />
   );
 };

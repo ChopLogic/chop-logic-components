@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import 'assets/common.module.css';
 import styles from './styles.module.css';
+import 'assets/common.module.css';
 import createClassName from 'utils/create-class-name';
 import ChopLogicLabel from '../../misc/label/Label';
 

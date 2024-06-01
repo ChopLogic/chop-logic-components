@@ -7,9 +7,9 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
     id="test-id"
     type="button"
   >
-    <span>
-      ★
-    </span>
+    <span
+      class="chop-icon__bin2"
+    />
     <span
       class="_text_48af00"
     >

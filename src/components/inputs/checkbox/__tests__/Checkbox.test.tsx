@@ -20,4 +20,9 @@ describe('ChopLogicTextInput component', () => {
     render(<Checkbox {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
+
+  it('should be enabled by default', () => {
+    render(<Checkbox {...testProps} />);
+    expect(screen.getByRole('checkbox')).toBeEnabled();
+  });
 });

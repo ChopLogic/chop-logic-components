@@ -30,6 +30,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  gap: var(--medium-gap);
   overflow: hidden;
 }
 
@@ -74,6 +75,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  gap: var(--medium-gap);
 }
 
 .option:hover,
@@ -90,4 +92,8 @@
   filter: grayscale(100%);
   opacity: 0.8;
   pointer-events: none;
+}
+
+.icon {
+  color: var(--cl-color-celtic-blue);
 }

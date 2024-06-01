@@ -1,5 +1,5 @@
 export enum Icon {
-  Default = 'chop-icon__check',
+  CheckMark = 'chop-icon__check',
   Home = 'chop-icon__home',
   Menu = 'chop-icon__menu',
   Enlarge = 'chop-icon__enlarge2',
@@ -27,8 +27,8 @@ export enum Icon {
   English = 'chop-icon__english-lang',
   Russian = 'chop-icon__russian-lang',
   Required = 'chop-icon__fire',
-  Check = 'chop-icon__checkbox-checked',
-  Uncheck = 'chop-icon__checkbox-unchecked',
+  Checked = 'chop-icon__checkbox-checked',
+  Unchecked = 'chop-icon__checkbox-unchecked',
   Info = 'chop-icon__exclamation-triangle',
   LinkedIn = 'chop-icon__linkedin-square',
   File = 'chop-icon__file-empty',

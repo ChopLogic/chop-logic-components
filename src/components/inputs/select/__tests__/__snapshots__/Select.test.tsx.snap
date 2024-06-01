@@ -28,9 +28,10 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       >
         Not selected yet
       </span>
-      <span>
-        ⇩
-      </span>
+      <span
+        aria-hidden="true"
+        class="_icon_b2e794 chop-icon__caret-down"
+      />
     </button>
     <ul
       class="_dropdown_b2e794"

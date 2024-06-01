@@ -1,6 +1,7 @@
 import styles from '../styles.module.css';
 import { SelectValue } from '../Select';
-import { UTF_ICONS } from 'assets/icons/utf-icons';
+import { Icon } from 'enums/icon';
+import createClassName from 'utils/create-class-name';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -25,6 +26,8 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   disabled,
   required,
 }) => {
+  const iconClass = createClassName([styles.icon, { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
+
   return (
     <button
       type='button'
@@ -42,7 +45,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       aria-required={required}
     >
       <span className={styles.combobox_label}>{selected?.label ?? placeholder}</span>
-      <span>{isOpened ? UTF_ICONS['Upwards'] : UTF_ICONS['Downwards']}</span>
+      <span className={iconClass} aria-hidden='true'></span>
     </button>
   );
 };

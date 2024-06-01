@@ -8,6 +8,7 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
     type="button"
   >
     <span
+      aria-hidden="true"
       class="chop-icon__bin2"
     />
     <span

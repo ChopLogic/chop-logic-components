@@ -25,4 +25,9 @@ describe('ChopLogicTextInput component', () => {
     render(<Checkbox {...testProps} />);
     expect(screen.getByRole('checkbox')).toBeEnabled();
   });
+
+  it('could be disable by prop', () => {
+    render(<Checkbox {...testProps} disabled />);
+    expect(screen.getByRole('checkbox')).toBeDisabled();
+  });
 });

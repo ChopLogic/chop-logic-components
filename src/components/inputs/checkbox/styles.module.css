@@ -2,13 +2,30 @@
   display: flex;
   gap: var(--small-gap);
   padding: var(--small-gap) 0;
+  position: relative;
 }
 
 .input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 4px;
+  left: 0;
+  margin: 0;
+}
+
+.input:focus-visible + label {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
 }
 
 .label {
   cursor: pointer;
+  align-items: stretch;
+}
+
+.label::before {
+  color: var(--cl-color-celtic-blue);
 }
 
 .label:hover,

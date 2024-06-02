@@ -12,7 +12,9 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
         class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        Test Input:
+        <span>
+          Test Input:
+        </span>
       </label>
       <input
         aria-errormessage="test-input-id_error"
@@ -47,7 +49,9 @@ exports[`ChopLogicTextInput component > should render the required input correct
         class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        Test Input:
+        <span>
+          Test Input:
+        </span>
         <abbr
           class="_required_c383e9"
           title="required"

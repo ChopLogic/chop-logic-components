@@ -17,6 +17,5 @@ export const Default: Story = {
     required: true,
     disabled: false,
     isLabelHidden: false,
-    labelPosition: 'right',
   },
 };

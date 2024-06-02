@@ -9,7 +9,6 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
   onChange = (e) => console.log('Checkbox state:', e.target.checked),
   disabled = false,
   isLabelHidden = false,
-  labelPosition = 'right',
 }) => {
   return (
     <div>
@@ -21,7 +20,6 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
         onChange={onChange}
         disabled={disabled}
         isLabelHidden={isLabelHidden}
-        labelPosition={labelPosition}
       />
     </div>
   );

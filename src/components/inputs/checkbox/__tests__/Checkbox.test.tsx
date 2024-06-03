@@ -1,7 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
 import Checkbox from '../Checkbox';
+import userEvent from '@testing-library/user-event';
 
 describe('ChopLogicTextInput component', () => {
   const testProps = {
@@ -29,5 +30,13 @@ describe('ChopLogicTextInput component', () => {
   it('could be disable by prop', () => {
     render(<Checkbox {...testProps} disabled />);
     expect(screen.getByRole('checkbox')).toBeDisabled();
+  });
+
+  it('should call onChange handler on click', async () => {
+    const mockOnChange = vi.fn();
+    render(<Checkbox {...testProps} onChange={mockOnChange} />);
+    const checkbox = screen.getByRole('checkbox');
+    await userEvent.click(checkbox);
+    expect(mockOnChange).toHaveBeenCalledOnce();
   });
 });

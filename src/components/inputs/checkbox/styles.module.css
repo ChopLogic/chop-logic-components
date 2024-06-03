@@ -3,6 +3,7 @@
   gap: var(--small-gap);
   padding: var(--small-gap) 0;
   position: relative;
+  overflow: hidden;
 }
 
 .input {
@@ -21,7 +22,8 @@
 
 .label {
   cursor: pointer;
-  align-items: stretch;
+  align-items: stretch !important;
+  font-size: 1rem !important;
 }
 
 .label::before {
@@ -31,4 +33,10 @@
 .label:hover,
 .label:active {
   text-shadow: var(--text-shadow);
+}
+
+.disabled {
+  pointer-events: none;
+  filter: grayscale(80%);
+  opacity: 0.6;
 }

@@ -28,6 +28,7 @@ const Checkbox: React.FC<ChopLogicCheckboxProps> = ({
   const labelClass = createClassName([styles.label, { [Icon.Checked]: isChecked, [Icon.Unchecked]: !isChecked }]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (disabled) return;
     const checked = e.target.checked;
     setIsChecked(checked);
     if (onChange) onChange(e);

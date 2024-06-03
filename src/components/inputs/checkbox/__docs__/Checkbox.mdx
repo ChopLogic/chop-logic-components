@@ -23,7 +23,7 @@ const Example = () => {
       id='example-checkbox'
       name='example'
       label='Accept Terms and Conditions'
-      required={true}
+      required
       onChange={(e) => console.log('Checkbox state:', e.target.checked)}
       disabled={false}
     />
@@ -42,4 +42,3 @@ export default Example;
 - **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
 - **onChange** - A function that is called when the checkbox state changes. It receives a change event.
 - **isLabelHidden** - A boolean indicating whether the label should be hidden or not.
-- **labelPosition** - A string that sets the position of the label relative to the checkbox. It can be 'left' or 'right'.

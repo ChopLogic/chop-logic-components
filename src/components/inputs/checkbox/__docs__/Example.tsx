@@ -11,7 +11,14 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
   isLabelHidden = false,
 }) => {
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+      }}
+    >
       <Checkbox
         id={id}
         name={name}

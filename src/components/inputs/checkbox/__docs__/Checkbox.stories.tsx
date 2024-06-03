@@ -11,8 +11,8 @@ type Story = StoryObj<typeof Example>;
 
 export const Default: Story = {
   args: {
-    id: 'example-checkbox',
-    name: 'example',
+    id: 'accept-terms-checkbox',
+    name: 'isTermsAccepted',
     label: 'Accept Terms and Conditions',
     required: true,
     disabled: false,

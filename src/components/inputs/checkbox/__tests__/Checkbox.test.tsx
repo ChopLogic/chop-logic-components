@@ -13,7 +13,6 @@ describe('ChopLogicTextInput component', () => {
 
   it('should render the input correctly', () => {
     const { asFragment } = render(<Checkbox {...testProps} />);
-    screen.debug();
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -32,11 +31,32 @@ describe('ChopLogicTextInput component', () => {
     expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
+  it('should check and uncheck the checkbox on click', async () => {
+    render(<Checkbox {...testProps} />);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).not.toBeChecked();
+    await userEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+    await userEvent.click(checkbox);
+    expect(checkbox).not.toBeChecked();
+  });
+
   it('should call onChange handler on click', async () => {
     const mockOnChange = vi.fn();
     render(<Checkbox {...testProps} onChange={mockOnChange} />);
     const checkbox = screen.getByRole('checkbox');
     await userEvent.click(checkbox);
     expect(mockOnChange).toHaveBeenCalledOnce();
+    expect(checkbox).toBeChecked();
+  });
+
+  it('should call onChange handler on Space key press', async () => {
+    const mockOnChange = vi.fn();
+    render(<Checkbox {...testProps} onChange={mockOnChange} />);
+    const checkbox = screen.getByRole('checkbox');
+    checkbox.focus();
+    await userEvent.keyboard('[Space]');
+    expect(mockOnChange).toHaveBeenCalledOnce();
+    expect(checkbox).toBeChecked();
   });
 });

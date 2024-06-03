@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  gap: var(--small-gap);
+  padding: var(--small-gap) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 4px;
+  left: 0;
+  margin: 0;
+}
+
+.input:focus-visible + label {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.label {
+  cursor: pointer;
+  align-items: stretch !important;
+  font-size: 1rem !important;
+}
+
+.label::before {
+  color: var(--cl-color-celtic-blue);
+}
+
+.label:hover,
+.label:active {
+  text-shadow: var(--text-shadow);
+}
+
+.disabled {
+  pointer-events: none;
+  filter: grayscale(80%);
+  opacity: 0.6;
+}

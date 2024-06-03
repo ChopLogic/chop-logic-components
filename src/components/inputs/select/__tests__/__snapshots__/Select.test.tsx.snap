@@ -6,10 +6,12 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
     class="_wrapper_b2e794"
   >
     <label
-      class="_label_0ea6b1 _label_b2e794"
+      class="_label_c383e9 _label_b2e794"
       for="test-select-id_combobox"
     >
-      Select your language
+      <span>
+        Select your language
+      </span>
     </label>
     <button
       aria-controls="test-select-id_dropdown"
@@ -26,11 +28,12 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <span
         class="_combobox_label_b2e794"
       >
-        Test placeholder
+        Not selected yet
       </span>
-      <span>
-        ⇩
-      </span>
+      <span
+        aria-hidden="true"
+        class="_icon_b2e794 chop-icon__caret-down"
+      />
     </button>
     <ul
       class="_dropdown_b2e794"

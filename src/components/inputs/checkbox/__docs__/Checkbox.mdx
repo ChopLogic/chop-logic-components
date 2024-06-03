@@ -1,0 +1,46 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as Checkbox from './Checkbox.stories.tsx';
+
+<Meta of={Checkbox} title='Checkbox' />
+
+# ChopLogicCheckbox
+
+Checkbox component with different props and behaviors.
+
+#### Example
+
+<Canvas of={Checkbox.Default} />
+
+## Usage
+
+```tsx
+import { ChopLogicCheckbox } from 'chop-logic-components';
+
+const Example = () => {
+  return (
+    <ChopLogicCheckbox
+      id='example-checkbox'
+      name='example'
+      label='Accept Terms and Conditions'
+      required
+      onChange={(e) => console.log('Checkbox state:', e.target.checked)}
+      disabled={false}
+    />
+  );
+};
+
+export default Example;
+```
+
+#### Props
+
+- **id** - A unique identifier for the Checkbox component.
+- **name** - A string representing the name attribute of the Checkbox component, used for form submissions.
+- **label** - A string that represents the label for the Checkbox component.
+- **disabled** - A boolean indicating whether the checkbox should be disabled. When disabled, the checkbox cannot be interacted with.
+- **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
+- **onChange** - A function that is called when the checkbox state changes. It receives a change event.
+- **isLabelHidden** - A boolean indicating whether the label should be hidden or not. The label prop is still required in this case, because it's used for aria-label attribure.
+- **InputHTMLAttributes** - all standard HTML input attributes (**value**, **form**, **readOnly**, etc.).
+- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

@@ -2,10 +2,11 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Button from '../Button';
 import { userEvent } from '@testing-library/user-event';
+import { Icon } from 'enums/icon';
 
 describe('ChopLogicButton component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' icon='Star' />);
+    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' icon={Icon.Delete} />);
     expect(asFragment()).toMatchSnapshot();
   });
 

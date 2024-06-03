@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ExampleButton from './Example';
+import { Icon } from 'enums/icon';
 
 const meta: Meta<typeof ExampleButton> = {
   title: 'Button',
@@ -11,9 +12,10 @@ type Story = StoryObj<typeof ExampleButton>;
 
 export const Primary: Story = {
   args: {
-    text: 'Submit',
+    text: 'Copy',
     view: 'primary',
-    icon: 'CheckMark',
+    icon: Icon.Copy,
+    type: 'button',
     disabled: false,
     onClick: () => console.log('Submit'),
   },

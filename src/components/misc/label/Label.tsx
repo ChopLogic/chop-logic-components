@@ -8,12 +8,19 @@ type ChopLogicLabelProps = {
   required: boolean;
   inputId: string;
   className?: string;
+  isTextHidden?: boolean;
 };
 
-const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({ label, required, inputId, className }) => {
+const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
+  label,
+  required,
+  inputId,
+  className,
+  isTextHidden = false,
+}) => {
   return (
     <label htmlFor={inputId} className={createClassName([styles.label, className])}>
-      {label}
+      {!isTextHidden && <span>{label}</span>}
       {required && (
         <abbr title='required' className={styles.required}>
           *

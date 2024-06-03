@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTextInput component > should render the input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_c29caf"
+  >
+    <input
+      class="_input_c29caf"
+      id="test-checkbox-id"
+      name="testCheckbox"
+      type="checkbox"
+    />
+    <label
+      class="_label_c383e9 _label_c29caf chop-icon__checkbox-unchecked"
+      for="test-checkbox-id"
+    >
+      <span>
+        Test checkbox:
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;

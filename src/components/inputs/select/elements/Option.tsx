@@ -3,7 +3,7 @@ import { KeyboardEvent } from 'react';
 import styles from '../styles.module.css';
 import { SelectValue } from '../Select';
 import createClassName from 'utils/create-class-name';
-import { UTF_ICONS } from 'assets/icons/utf-icons';
+import { Icon } from 'enums/icon';
 
 type SelectOptionProps = {
   value: SelectValue;
@@ -13,7 +13,7 @@ type SelectOptionProps = {
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect }) => {
   const { id, label } = value;
-  const optionClass = createClassName([styles.option]);
+  const iconClass = createClassName([styles.icon, Icon.CheckMark]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -32,14 +32,14 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
     <li
       id={id}
       role='option'
-      className={optionClass}
+      className={styles.option}
       aria-selected={isSelected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
     >
       <span>{label}</span>
-      {isSelected && <span>{UTF_ICONS['CheckMark']}</span>}
+      {isSelected && <span className={iconClass} aria-hidden='true'></span>}
     </li>
   );
 };

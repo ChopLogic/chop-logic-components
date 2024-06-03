@@ -9,10 +9,12 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
       class="_wrapper_aea932"
     >
       <label
-        class="_label_0ea6b1 _label_aea932"
+        class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        Test Input:
+        <span>
+          Test Input:
+        </span>
       </label>
       <input
         aria-errormessage="test-input-id_error"
@@ -26,7 +28,7 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
       />
     </div>
     <span
-      class="_message_4bc4c6 _error_aea932"
+      class="_message_3415cb _error_aea932"
       id="test-input-id_error"
     >
       Invalid input
@@ -44,12 +46,14 @@ exports[`ChopLogicTextInput component > should render the required input correct
       class="_wrapper_aea932"
     >
       <label
-        class="_label_0ea6b1 _label_aea932"
+        class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        Test Input:
+        <span>
+          Test Input:
+        </span>
         <abbr
-          class="_required_0ea6b1"
+          class="_required_c383e9"
           title="required"
         >
           *
@@ -68,7 +72,7 @@ exports[`ChopLogicTextInput component > should render the required input correct
       />
     </div>
     <span
-      class="_message_4bc4c6 _error_aea932"
+      class="_message_3415cb _error_aea932"
       id="test-input-id_error"
     >
       Invalid input

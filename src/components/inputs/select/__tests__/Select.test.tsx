@@ -25,7 +25,7 @@ describe('ChopLogicSelect component', () => {
     label: 'Select your language',
     values: LANGUAGES,
     onSelect: vi.fn(),
-    placeholder: 'Not selected yet',
+    placeholder: 'Not selected',
   };
 
   it('should render correctly', () => {

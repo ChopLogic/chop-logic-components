@@ -28,7 +28,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <span
         class="_combobox_label_b2e794"
       >
-        Not selected yet
+        Not selected
       </span>
       <span
         aria-hidden="true"

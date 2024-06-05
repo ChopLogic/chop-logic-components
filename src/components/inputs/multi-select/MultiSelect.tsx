@@ -11,20 +11,19 @@ export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectEle
   id: string;
   name: string;
   label: string;
-  values: SelectValue[];
-  onSelect?: (value?: SelectValue) => void;
+  values: MultiSelectValue[];
   placeholder?: string;
 };
 
-export type SelectValue = {
+export type MultiSelectValue = {
   id: string;
   label: string;
+  selected: boolean;
 };
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   id,
   values,
-  onSelect,
   name,
   label,
   required = false,
@@ -33,7 +32,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue | undefined>();
+  const [selected, setSelected] = useState<MultiSelectValue[]>(values);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
@@ -44,9 +43,10 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    const newValue = values.find((item) => item.id === id);
-    setSelected(newValue);
-    onSelect?.(newValue);
+    const newValues = selected.map((item) => {
+      return item.id === id ? { ...item, selected: true } : item;
+    });
+    setSelected(newValues);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
@@ -65,15 +65,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
         disabled={disabled}
         required={required}
       />
-      <SelectDropdown
-        values={values}
-        selected={selected}
-        isOpened={isOpened}
-        onClose={handleClose}
-        dropdownId={dropdownId}
-        comboboxId={comboboxId}
-        onSelect={handleSelect}
-      />
+      <SelectDropdown values={values} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
     </div>
   );
 };

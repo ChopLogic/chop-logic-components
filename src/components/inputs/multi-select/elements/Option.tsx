@@ -1,17 +1,16 @@
 import { KeyboardEvent } from 'react';
 
 import styles from '../styles.module.css';
-import { SelectValue } from '../Select';
 import createClassName from 'utils/create-class-name';
 import { Icon } from 'enums/icon';
+import { MultiSelectValue } from '../MultiSelect';
 
 type SelectOptionProps = {
-  value: SelectValue;
-  isSelected: boolean;
+  value: MultiSelectValue;
   onSelect: (id: string) => void;
 };
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect }) => {
+const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
   const { id, label } = value;
   const iconClass = createClassName([styles.icon, Icon.CheckMark]);
 
@@ -33,13 +32,13 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       id={id}
       role='option'
       className={styles.option}
-      aria-selected={isSelected}
+      aria-selected={value.selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
     >
       <span>{label}</span>
-      {isSelected && <span className={iconClass} aria-hidden='true'></span>}
+      {value.selected && <span className={iconClass} aria-hidden='true'></span>}
     </li>
   );
 };

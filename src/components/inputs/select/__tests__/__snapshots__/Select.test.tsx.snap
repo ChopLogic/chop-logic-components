@@ -7,20 +7,20 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
   >
     <label
       class="_label_c383e9 _label_b2e794"
-      for="test-select-id_combobox"
+      for="language-select-id_combobox"
     >
       <span>
         Select your language
       </span>
     </label>
     <button
-      aria-controls="test-select-id_dropdown"
+      aria-controls="language-select-id_dropdown"
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Select one of the options"
       aria-required="false"
       class="_combobox_b2e794"
-      id="test-select-id_combobox"
+      id="language-select-id_combobox"
       name="language"
       role="combobox"
       type="button"
@@ -37,7 +37,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
     </button>
     <ul
       class="_dropdown_b2e794"
-      id="test-select-id_dropdown"
+      id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >

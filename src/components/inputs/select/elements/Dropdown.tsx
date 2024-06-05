@@ -19,7 +19,7 @@ type SelectDropdownProps = {
 const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
   const dropdownClass = createClassName([styles.dropdown, { [styles.dropdown_opened]: isOpened }]);
 
-  const selectAndClose = (id: string) => {
+  const handleOptionSelect = (id: string) => {
     onSelect(id);
     onClose();
     moveFocusOnElementById(comboboxId);
@@ -64,7 +64,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
   return (
     <ul className={dropdownClass} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
       {values.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => selectAndClose(item.id)} isSelected={item.id === selected?.id} />
+        <SelectOption key={item.id} value={item} onSelect={() => handleOptionSelect(item.id)} isSelected={item.id === selected?.id} />
       ))}
     </ul>
   );

@@ -1,7 +1,7 @@
 import styles from '../styles.module.css';
-import { SelectValue } from '../Select';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
+import { MultiSelectValue } from '../MultiSelect';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -10,7 +10,7 @@ type SelectComboboxProps = {
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
-  selected?: SelectValue;
+  selected?: MultiSelectValue[];
   placeholder?: string;
   name: string;
 };
@@ -32,7 +32,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
     <button
       type='button'
       name={name}
-      value={selected?.id}
+      // value={selected?.id}
       role='combobox'
       aria-haspopup='listbox'
       aria-label='Select one of the options'
@@ -44,7 +44,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span className={styles.combobox_label}>{selected?.label ?? placeholder}</span>
+      <span className={styles.combobox_label}>{selected?.length ?? placeholder}</span>
       <span className={iconClass} aria-hidden='true'></span>
     </button>
   );

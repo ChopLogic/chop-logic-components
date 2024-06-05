@@ -20,7 +20,7 @@ const LANGUAGES: SelectValue[] = [
 
 describe('ChopLogicSelect component', () => {
   const testProps = {
-    id: 'test-select-id',
+    id: 'language-select-id',
     name: 'language',
     label: 'Select your language',
     values: LANGUAGES,

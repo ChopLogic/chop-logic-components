@@ -1,0 +1,49 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as MultiSelect from './MultiSelect.stories.tsx';
+
+<Meta of={MultiSelect} title='MultiSelect' />
+
+# MultiSelect
+
+MultiSelect component with custom styling and behavior.
+
+#### Example
+
+<Canvas of={MultiSelect.Default} />
+
+## Usage
+
+```tsx
+import { ChopLogicMultiSelect } from 'sld-ui';
+
+const Example = () => {
+  return (
+    <ChopLogicMultiSelect
+      id='example-multiselect'
+      name='languages'
+      label='Select Languages'
+      values={[
+        { id: '1', label: 'English', selected: false },
+        { id: '2', label: 'Spanish', selected: false },
+        { id: '3', label: 'French', selected: false },
+      ]}
+      placeholder='Select languages'
+      required={true}
+      disabled={false}
+    />
+  );
+};
+
+export default Example;
+```
+
+#### Props
+
+- **id** - A unique identifier for the MultiSelect component.
+- **name** - A string representing the name attribute of the MultiSelect component, used for form submissions.
+- **label** - A string that represents the label for the MultiSelect component.
+- **values** - An array of objects representing the options available in the MultiSelect dropdown. Each object should have id, label, and selected properties.
+- **placeholder** - A string that represents the placeholder text when no option is selected. Default is 'Not selected'.
+- **required** - A boolean indicating whether the MultiSelect component is required in a form. When required, a selection must be made before form submission.
+- **disabled** - A boolean indicating whether the MultiSelect component should be disabled. When disabled, the component cannot be interacted with.

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Example from './Example';
+import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
 
 const meta: Meta<typeof Example> = {
   title: 'MultiSelect',
@@ -14,11 +15,7 @@ export const Default: Story = {
     id: 'example-multiselect',
     name: 'languages',
     label: 'Select Languages',
-    values: [
-      { id: '1', label: 'English', selected: false },
-      { id: '2', label: 'Spanish', selected: false },
-      { id: '3', label: 'French', selected: false },
-    ],
+    values: MULTI_SELECT_VALUES,
     placeholder: 'Select languages',
     required: true,
     disabled: false,

@@ -1,32 +1,15 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import ChopLogicMultiSelect, { MultiSelectValue } from '../MultiSelect';
-
-const LANGUAGES: MultiSelectValue[] = [
-  {
-    id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7',
-    label: 'English',
-    selected: false,
-  },
-  {
-    id: 'b4b08a09-e287-400b-ba65-afd6ae1f6fd7',
-    label: 'Russian',
-    selected: false,
-  },
-  {
-    id: '641fc722-af5a-4426-8f8a-1566cc492b91',
-    label: 'German',
-    selected: false,
-  },
-];
+import ChopLogicMultiSelect from '../MultiSelect';
+import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
 
 describe('ChopLogicSelect component', () => {
   const testProps = {
     id: 'language-select-id',
     name: 'language',
     label: 'Select your language',
-    values: LANGUAGES,
+    values: MULTI_SELECT_VALUES,
     onSelect: vi.fn(),
     placeholder: 'Not selected',
   };

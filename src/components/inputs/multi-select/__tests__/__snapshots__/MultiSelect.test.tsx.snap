@@ -28,7 +28,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <span
         class="_combobox_label_ace282"
       >
-        3
+        4
       </span>
       <span
         aria-hidden="true"
@@ -55,12 +55,23 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <li
         aria-selected="false"
         class="_option_ace282"
-        id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
+        id="583e8b60-0177-4e38-a423-4b1d5d0a2236"
         role="option"
         tabindex="0"
       >
         <span>
-          Russian
+          Spanish
+        </span>
+      </li>
+      <li
+        aria-selected="false"
+        class="_option_ace282"
+        id="b20bea7b-8172-4d12-b172-d5feac02d863"
+        role="option"
+        tabindex="0"
+      >
+        <span>
+          French
         </span>
       </li>
       <li

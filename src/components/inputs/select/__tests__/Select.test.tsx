@@ -1,29 +1,15 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ChopLogicSelect, { SelectValue } from '../Select';
+import ChopLogicSelect from '../Select';
 import userEvent from '@testing-library/user-event';
-
-const LANGUAGES: SelectValue[] = [
-  {
-    id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7',
-    label: 'English',
-  },
-  {
-    id: 'b4b08a09-e287-400b-ba65-afd6ae1f6fd7',
-    label: 'Russian',
-  },
-  {
-    id: '641fc722-af5a-4426-8f8a-1566cc492b91',
-    label: 'German',
-  },
-];
+import { SELECT_LANGUAGES } from '__mocks__/select-values';
 
 describe('ChopLogicSelect component', () => {
   const testProps = {
     id: 'language-select-id',
     name: 'language',
     label: 'Select your language',
-    values: LANGUAGES,
+    values: SELECT_LANGUAGES,
     onSelect: vi.fn(),
     placeholder: 'Not selected',
   };
@@ -57,9 +43,9 @@ describe('ChopLogicSelect component', () => {
   it('should display all values as options', () => {
     render(<ChopLogicSelect {...testProps} />);
     const options = screen.getAllByRole('option');
-    expect(options).toHaveLength(LANGUAGES.length);
+    expect(options).toHaveLength(SELECT_LANGUAGES.length);
     options.forEach((option, index) => {
-      expect(option).toHaveTextContent(LANGUAGES[index].label);
+      expect(option).toHaveTextContent(SELECT_LANGUAGES[index].label);
     });
   });
 
@@ -67,7 +53,7 @@ describe('ChopLogicSelect component', () => {
     render(<ChopLogicSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
-    const option = screen.getByText(LANGUAGES[0].label);
+    const option = screen.getByText(SELECT_LANGUAGES[0].label);
     await userEvent.click(option);
     expect(testProps.onSelect).toHaveBeenCalledOnce();
   });
@@ -77,9 +63,9 @@ describe('ChopLogicSelect component', () => {
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
-    const option = screen.getByText(LANGUAGES[1].label);
+    const option = screen.getByText(SELECT_LANGUAGES[1].label);
     await userEvent.click(option);
-    expect(combobox).toHaveValue(LANGUAGES[1].id);
+    expect(combobox).toHaveValue(SELECT_LANGUAGES[1].id);
   });
 
   it('should move the focus correctly on Tab press', async () => {

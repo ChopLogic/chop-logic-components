@@ -15,7 +15,8 @@ MultiSelect component with custom styling and behavior.
 ## Usage
 
 ```tsx
-import { ChopLogicMultiSelect } from 'sld-ui';
+import { ChopLogicMultiSelect } from 'chop-logic-components';
+import { LANGUAGES } from 'constants/languages';
 
 const Example = () => {
   return (
@@ -23,11 +24,7 @@ const Example = () => {
       id='example-multiselect'
       name='languages'
       label='Select Languages'
-      values={[
-        { id: '1', label: 'English', selected: false },
-        { id: '2', label: 'Spanish', selected: false },
-        { id: '3', label: 'French', selected: false },
-      ]}
+      values={LANGUAGES}
       placeholder='Select languages'
       required={true}
       disabled={false}

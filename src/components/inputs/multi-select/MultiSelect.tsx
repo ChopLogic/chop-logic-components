@@ -43,7 +43,6 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    console.log('id', id);
     const targetItem = selectedValues.find((item) => item.id === id);
 
     const newValues = selectedValues.map((item) => {

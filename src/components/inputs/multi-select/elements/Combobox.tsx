@@ -24,17 +24,26 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   placeholder,
   disabled,
   required,
+  values,
 }) => {
   const iconClass = createClassName([styles.icon, { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
+  const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
+  const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
+  let visiblePlaceholder = placeholder;
+
+  if (selectedLabels && selectedLabels.length > 1) {
+    visiblePlaceholder = `${selectedLabels.length} items selected`;
+  } else if (selectedLabels && selectedLabels.length === 1) {
+    visiblePlaceholder = selectedLabels[0];
+  }
 
   return (
     <button
       type='button'
       name={name}
-      // value={selected?.id}
+      value={selectedIds}
       role='combobox'
       aria-haspopup='listbox'
-      aria-label='Select one of the options'
       aria-expanded={isOpened}
       aria-controls={dropdownId}
       id={comboboxId}
@@ -43,7 +52,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span className={styles.combobox_label}>{placeholder}</span>
+      <span className={styles.combobox_label}>{visiblePlaceholder}</span>
       <span className={iconClass} aria-hidden='true'></span>
     </button>
   );

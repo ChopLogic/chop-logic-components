@@ -25,30 +25,30 @@ describe('ChopLogicSelect component', () => {
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
-  //   it('should have accessible roles', () => {
-  //     render(<ChopLogicSelect {...testProps} />);
-  //     expect(screen.getByRole('combobox')).toBeInTheDocument();
-  //     expect(screen.getByRole('listbox')).toBeInTheDocument();
-  //   });
+  it('should have accessible roles', () => {
+    render(<ChopLogicMultiSelect {...testProps} />);
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
+  });
 
-  //   it('could be disabled', () => {
-  //     render(<ChopLogicSelect {...testProps} disabled />);
-  //     expect(screen.getByRole('combobox')).toBeDisabled();
-  //   });
+  it('could be disabled', () => {
+    render(<ChopLogicMultiSelect {...testProps} disabled />);
+    expect(screen.getByRole('combobox')).toBeDisabled();
+  });
 
-  //   it('could be required', () => {
-  //     render(<ChopLogicSelect {...testProps} required />);
-  //     expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
-  //   });
+  it('could be required', () => {
+    render(<ChopLogicMultiSelect {...testProps} required />);
+    expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
+  });
 
-  //   it('should display all values as options', () => {
-  //     render(<ChopLogicSelect {...testProps} />);
-  //     const options = screen.getAllByRole('option');
-  //     expect(options).toHaveLength(LANGUAGES.length);
-  //     options.forEach((option, index) => {
-  //       expect(option).toHaveTextContent(LANGUAGES[index].label);
-  //     });
-  //   });
+  it('should display all values as options', () => {
+    render(<ChopLogicMultiSelect {...testProps} />);
+    const options = screen.getAllByRole('option');
+    expect(options).toHaveLength(MULTI_SELECT_VALUES.length);
+    options.forEach((option, index) => {
+      expect(option).toHaveTextContent(MULTI_SELECT_VALUES[index].label);
+    });
+  });
 
   //   it('should call onSelect handler', async () => {
   //     render(<ChopLogicSelect {...testProps} />);

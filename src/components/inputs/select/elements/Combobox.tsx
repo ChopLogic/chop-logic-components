@@ -35,7 +35,6 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       value={selected?.id}
       role='combobox'
       aria-haspopup='listbox'
-      aria-label='Select one of the options'
       aria-expanded={isOpened}
       aria-controls={dropdownId}
       id={comboboxId}

@@ -11,8 +11,8 @@ type SelectOptionProps = {
 };
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
-  const { id, label } = value;
-  const iconClass = createClassName([styles.icon, Icon.CheckMark]);
+  const { id, label, selected } = value;
+  const checkboxClass = createClassName([styles.checkbox, { [Icon.Checked]: selected, [Icon.Unchecked]: !selected }]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -32,13 +32,13 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
       id={id}
       role='option'
       className={styles.option}
-      aria-selected={value.selected}
+      aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
     >
+      <span className={checkboxClass} aria-hidden='true'></span>
       <span>{label}</span>
-      {value.selected && <span className={iconClass} aria-hidden='true'></span>}
     </li>
   );
 };

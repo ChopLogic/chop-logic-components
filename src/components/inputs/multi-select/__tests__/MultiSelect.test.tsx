@@ -20,10 +20,10 @@ describe('ChopLogicSelect component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  //   it('should display the label', () => {
-  //     render(<ChopLogicSelect {...testProps} />);
-  //     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
-  //   });
+  it('should display the label', () => {
+    render(<ChopLogicMultiSelect {...testProps} />);
+    expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
+  });
 
   //   it('should have accessible roles', () => {
   //     render(<ChopLogicSelect {...testProps} />);

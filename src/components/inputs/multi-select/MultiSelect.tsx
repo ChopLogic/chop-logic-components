@@ -32,7 +32,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<MultiSelectValue[]>(values);
+  const [selectedValues, setSelectedValues] = useState<MultiSelectValue[]>(values);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
@@ -43,10 +43,13 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    const newValues = selected.map((item) => {
-      return item.id === id ? { ...item, selected: true } : item;
+    console.log('id', id);
+    const targetItem = selectedValues.find((item) => item.id === id);
+
+    const newValues = selectedValues.map((item) => {
+      return item.id === id ? { ...item, selected: !targetItem?.selected } : item;
     });
-    setSelected(newValues);
+    setSelectedValues(newValues);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
@@ -60,12 +63,12 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
         comboboxId={comboboxId}
         dropdownId={dropdownId}
         onClick={handleToggle}
-        selected={selected}
+        values={selectedValues}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
       />
-      <SelectDropdown values={values} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
+      <SelectDropdown values={selectedValues} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
     </div>
   );
 };

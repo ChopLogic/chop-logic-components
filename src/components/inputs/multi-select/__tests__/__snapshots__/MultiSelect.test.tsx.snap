@@ -28,7 +28,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <span
         class="_combobox_label_ace282"
       >
-        4
+        Not selected
       </span>
       <span
         aria-hidden="true"
@@ -48,6 +48,10 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
+        <span
+          aria-hidden="true"
+          class="_checkbox_ace282 chop-icon__checkbox-unchecked"
+        />
         <span>
           English
         </span>
@@ -59,6 +63,10 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
+        <span
+          aria-hidden="true"
+          class="_checkbox_ace282 chop-icon__checkbox-unchecked"
+        />
         <span>
           Spanish
         </span>
@@ -70,6 +78,10 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
+        <span
+          aria-hidden="true"
+          class="_checkbox_ace282 chop-icon__checkbox-unchecked"
+        />
         <span>
           French
         </span>
@@ -81,6 +93,10 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
+        <span
+          aria-hidden="true"
+          class="_checkbox_ace282 chop-icon__checkbox-unchecked"
+        />
         <span>
           German
         </span>

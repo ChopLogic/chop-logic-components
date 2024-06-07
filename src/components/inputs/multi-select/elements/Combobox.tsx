@@ -10,7 +10,7 @@ type SelectComboboxProps = {
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
-  selected?: MultiSelectValue[];
+  values?: MultiSelectValue[];
   placeholder?: string;
   name: string;
 };
@@ -20,7 +20,6 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   onClick,
   comboboxId,
   dropdownId,
-  selected,
   name,
   placeholder,
   disabled,
@@ -44,7 +43,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span className={styles.combobox_label}>{selected?.length ?? placeholder}</span>
+      <span className={styles.combobox_label}>{placeholder}</span>
       <span className={iconClass} aria-hidden='true'></span>
     </button>
   );

@@ -32,7 +32,7 @@ export default Example;
 - **values** - An array of onjects (each object should conaint two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown.
 - **name** - A string representing the name attribute of the Select component, used for form submissions.
 - **placeholder** - A string that represents the placeholder text when no option is selected.
-- **onSelect** - A function that is called when an option is selected. It can be used to handle the selection event.
+- **onSelectChange** - A function that is called when an option is selected. It can be used to handle the selection event.
 - **required** - A boolean indicating whether the Select component is required in a form. When required, a selection must be made before form submission.
 - **disabled** - A boolean indicating whether the Select should be disabled or not. When disabled, the Select cannot be clicked or interacted with.
 - **SelectHTMLAttributes** - all standard HTML select attributes (**name**, **value**, **form**, etc.). Note that not all of them are applicable to `ChopLogicSelect`, because the component does not use default `<select>` tag. For example, if you pass `multiple` attribute, it's not gonna work, use `ChopLogicMultiSelect` component instead.

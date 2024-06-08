@@ -12,7 +12,7 @@ export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement>
   name: string;
   label: string;
   values: SelectValue[];
-  onSelect?: (value?: SelectValue) => void;
+  onSelectChange?: (value?: SelectValue) => void;
   placeholder?: string;
 };
 
@@ -24,7 +24,7 @@ export type SelectValue = {
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,
   values,
-  onSelect,
+  onSelectChange,
   name,
   label,
   required = false,
@@ -46,7 +46,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const handleSelect = (id: string) => {
     const newValue = values.find((item) => item.id === id);
     setSelected(newValue);
-    onSelect?.(newValue);
+    onSelectChange?.(newValue);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });

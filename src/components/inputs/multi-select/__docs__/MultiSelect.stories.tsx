@@ -17,6 +17,13 @@ export const Default: Story = {
     label: 'Select Languages',
     values: MULTI_SELECT_VALUES,
     placeholder: 'Select languages',
+    onSelectChange: (values) =>
+      console.log(
+        `Selected ${values
+          ?.filter((item) => item.selected)
+          .map((value) => value.label)
+          .join(', ')}`,
+      ),
     required: true,
     disabled: false,
   },

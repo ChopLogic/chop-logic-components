@@ -17,6 +17,6 @@ export const Primary: Story = {
     icon: Icon.Copy,
     type: 'button',
     disabled: false,
-    onClick: () => console.log('Submit'),
+    onClick: () => console.log('Copy clicked'),
   },
 };

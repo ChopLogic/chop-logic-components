@@ -11,13 +11,12 @@ describe('ChopLogicSelect component', () => {
     name: 'languages',
     label: 'Select your languages',
     values: MULTI_SELECT_VALUES,
-    onSelect: vi.fn(),
+    onSelectChange: vi.fn(),
     placeholder: 'Not selected',
   };
 
   it('should render correctly', () => {
     const { asFragment } = render(<ChopLogicMultiSelect {...testProps} />);
-    screen.debug();
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -51,14 +50,13 @@ describe('ChopLogicSelect component', () => {
     });
   });
 
-  it('should call onSelect handler', async () => {
+  it('should call onSelectChange handler', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const option = screen.getAllByRole('option')[0];
-    screen.debug(option);
     await userEvent.click(option);
-    expect(testProps.onSelect).toHaveBeenCalledOnce();
+    expect(testProps.onSelectChange).toHaveBeenCalledOnce();
   });
 
   it('should allow the user to select an option', async () => {

@@ -17,7 +17,7 @@ export const Default: Story = {
     values: SELECT_LANGUAGES,
     name: 'language',
     placeholder: 'Click to select',
-    onSelect: () => console.log('Selected'),
+    onSelectChange: (value) => console.log(`Selected ${value?.label}`),
     required: false,
     disabled: false,
   },

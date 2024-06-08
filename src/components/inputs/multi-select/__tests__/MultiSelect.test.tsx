@@ -8,8 +8,8 @@ import userEvent from '@testing-library/user-event';
 describe('ChopLogicSelect component', () => {
   const testProps = {
     id: 'language-select-id',
-    name: 'language',
-    label: 'Select your language',
+    name: 'languages',
+    label: 'Select your languages',
     values: MULTI_SELECT_VALUES,
     onSelect: vi.fn(),
     placeholder: 'Not selected',

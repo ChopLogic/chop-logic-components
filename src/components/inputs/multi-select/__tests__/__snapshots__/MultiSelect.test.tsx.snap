@@ -12,7 +12,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       <span
         class="_text_c383e9"
       >
-        Select your language
+        Select your languages
       </span>
     </label>
     <button
@@ -22,7 +22,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       aria-required="false"
       class="_combobox_ace282"
       id="language-select-id_combobox"
-      name="language"
+      name="languages"
       role="combobox"
       type="button"
       value=""

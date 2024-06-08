@@ -7,33 +7,34 @@ import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../misc/label/Label';
 
-export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
   name: string;
   label: string;
-  values: SelectValue[];
-  onSelectChange?: (value?: SelectValue) => void;
+  values: MultiSelectValue[];
+  onSelectChange?: (values?: MultiSelectValue[]) => void;
   placeholder?: string;
 };
 
-export type SelectValue = {
+export type MultiSelectValue = {
   id: string;
   label: string;
+  selected: boolean;
 };
 
-const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
+const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   id,
   values,
-  onSelectChange,
   name,
   label,
   required = false,
   placeholder = 'Not selected',
   disabled = false,
+  onSelectChange,
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue | undefined>();
+  const [selectedValues, setSelectedValues] = useState<MultiSelectValue[]>(values);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
@@ -44,9 +45,13 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    const newValue = values.find((item) => item.id === id);
-    setSelected(newValue);
-    onSelectChange?.(newValue);
+    const targetItem = selectedValues.find((item) => item.id === id);
+
+    const newValues = selectedValues.map((item) => {
+      return item.id === id ? { ...item, selected: !targetItem?.selected } : item;
+    });
+    setSelectedValues(newValues);
+    onSelectChange?.(newValues);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
@@ -60,22 +65,14 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         comboboxId={comboboxId}
         dropdownId={dropdownId}
         onClick={handleToggle}
-        selected={selected}
+        values={selectedValues}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
       />
-      <SelectDropdown
-        values={values}
-        selected={selected}
-        isOpened={isOpened}
-        onClose={handleClose}
-        dropdownId={dropdownId}
-        comboboxId={comboboxId}
-        onSelect={handleSelect}
-      />
+      <SelectDropdown values={selectedValues} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
     </div>
   );
 };
 
-export default ChopLogicSelect;
+export default ChopLogicMultiSelect;

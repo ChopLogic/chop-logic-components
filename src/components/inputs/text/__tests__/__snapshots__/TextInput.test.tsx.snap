@@ -12,7 +12,9 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
         class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        <span>
+        <span
+          class="_text_c383e9"
+        >
           Test Input:
         </span>
       </label>
@@ -49,7 +51,9 @@ exports[`ChopLogicTextInput component > should render the required input correct
         class="_label_c383e9 _label_aea932"
         for="test-input-id"
       >
-        <span>
+        <span
+          class="_text_c383e9"
+        >
           Test Input:
         </span>
         <abbr

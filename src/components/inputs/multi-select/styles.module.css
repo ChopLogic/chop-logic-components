@@ -1,0 +1,104 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--medium-gap);
+  padding: var(--medium-gap);
+  font-family: var(--core-font);
+  color: var(--cl-color-black);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: var(--block-border-radius);
+  border-top-right-radius: var(--block-border-radius);
+  border: var(--light-blue-border);
+  max-width: 100%;
+}
+
+.wrapper:has(.combobox:focus-visible) {
+  border: var(--dark-blue-border);
+  outline: var(--dark-blue-border);
+  outline-offset: -3px;
+}
+
+.combobox {
+  border: none;
+  text-align: left;
+  padding: 0;
+  background: transparent;
+  color: var(--cl-color-black);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--medium-gap);
+  overflow: hidden;
+}
+
+.combobox:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.combobox_label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.3s linear;
+  position: absolute;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: var(--dropdown-z-index);
+  width: 100%;
+  top: 66px;
+  left: 0;
+  border: var(--light-blue-border);
+  box-shadow: var(--box-shadow);
+  overflow-y: auto;
+  max-height: 180px;
+}
+
+.dropdown_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.option {
+  padding: var(--medium-gap);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--medium-gap);
+}
+
+.checkbox::before {
+  color: var(--cl-color-celtic-blue);
+}
+
+.option:hover,
+.option.active {
+  background-color: var(--cl-color-tint);
+}
+
+.option:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: -2px;
+}
+
+.disabled {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.icon {
+  color: var(--cl-color-celtic-blue);
+}

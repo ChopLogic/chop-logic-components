@@ -1,7 +1,7 @@
 import styles from '../styles.module.css';
-import { SelectValue } from '../Select';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
+import { MultiSelectValue } from '../MultiSelect';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -10,7 +10,7 @@ type SelectComboboxProps = {
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
-  selected?: SelectValue;
+  values?: MultiSelectValue[];
   placeholder?: string;
   name: string;
 };
@@ -20,19 +20,28 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   onClick,
   comboboxId,
   dropdownId,
-  selected,
   name,
   placeholder,
   disabled,
   required,
+  values,
 }) => {
   const iconClass = createClassName([styles.icon, { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
+  const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
+  const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
+  let visiblePlaceholder = placeholder;
+
+  if (selectedLabels && selectedLabels.length > 1) {
+    visiblePlaceholder = `${selectedLabels.length} items selected`;
+  } else if (selectedLabels && selectedLabels.length === 1) {
+    visiblePlaceholder = selectedLabels[0];
+  }
 
   return (
     <button
       type='button'
       name={name}
-      value={selected?.id}
+      value={selectedIds}
       role='combobox'
       aria-haspopup='listbox'
       aria-expanded={isOpened}
@@ -43,7 +52,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span className={styles.combobox_label}>{selected?.label ?? placeholder}</span>
+      <span className={styles.combobox_label}>{visiblePlaceholder}</span>
       <span className={iconClass} aria-hidden='true'></span>
     </button>
   );

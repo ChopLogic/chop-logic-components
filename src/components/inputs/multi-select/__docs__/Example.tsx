@@ -1,7 +1,7 @@
 import React from 'react';
-import ChopLogicSelect, { ChopLogicSelectProps } from '../Select';
+import ChopLogicMultiSelect, { ChopLogicMultiSelectProps } from '../MultiSelect';
 
-const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelectChange, name, placeholder, label, required, disabled }) => {
+const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, values, placeholder, required, disabled, onSelectChange }) => {
   return (
     <div
       style={{
@@ -13,15 +13,15 @@ const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelectChange, n
         padding: '20px',
       }}
     >
-      <ChopLogicSelect
+      <ChopLogicMultiSelect
         id={id}
-        values={values}
-        onSelectChange={onSelectChange}
         name={name}
-        placeholder={placeholder}
         label={label}
+        values={values}
+        placeholder={placeholder}
         required={required}
         disabled={disabled}
+        onSelectChange={onSelectChange}
       />
     </div>
   );

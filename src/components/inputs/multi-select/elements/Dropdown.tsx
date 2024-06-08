@@ -2,28 +2,20 @@ import { KeyboardEvent } from 'react';
 
 import styles from '../styles.module.css';
 import createClassName from 'utils/create-class-name';
-import { SelectValue } from '../Select';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import SelectOption from './Option';
+import { MultiSelectValue } from '../MultiSelect';
 
 type SelectDropdownProps = {
-  values: SelectValue[];
+  values: MultiSelectValue[];
   isOpened: boolean;
   dropdownId: string;
-  comboboxId: string;
   onClose: () => void;
-  selected?: SelectValue;
   onSelect: (id: string) => void;
 };
 
-const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
+const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId }) => {
   const dropdownClass = createClassName([styles.dropdown, { [styles.dropdown_opened]: isOpened }]);
-
-  const handleOptionSelect = (id: string) => {
-    onSelect(id);
-    onClose();
-    moveFocusOnElementById(comboboxId);
-  };
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
     let focusedId: string = '';
@@ -64,7 +56,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
   return (
     <ul className={dropdownClass} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
       {values.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => handleOptionSelect(item.id)} isSelected={item.id === selected?.id} />
+        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
     </ul>
   );

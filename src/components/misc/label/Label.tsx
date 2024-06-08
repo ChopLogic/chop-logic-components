@@ -20,7 +20,7 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
 }) => {
   return (
     <label htmlFor={inputId} className={createClassName([styles.label, className])}>
-      {!isTextHidden && <span>{label}</span>}
+      {!isTextHidden && <span className={styles.text}>{label}</span>}
       {required && (
         <abbr title='required' className={styles.required}>
           *

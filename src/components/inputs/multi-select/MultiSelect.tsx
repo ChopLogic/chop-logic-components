@@ -12,6 +12,7 @@ export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectEle
   name: string;
   label: string;
   values: MultiSelectValue[];
+  onSelect?: (values?: MultiSelectValue[]) => void;
   placeholder?: string;
 };
 
@@ -29,6 +30,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   required = false,
   placeholder = 'Not selected',
   disabled = false,
+  onSelect,
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -49,6 +51,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
       return item.id === id ? { ...item, selected: !targetItem?.selected } : item;
     });
     setSelectedValues(newValues);
+    onSelect?.(newValues);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });

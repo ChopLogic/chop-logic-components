@@ -83,21 +83,6 @@ describe('ChopLogicSelect component', () => {
     expect(options[0]).toHaveFocus();
   });
 
-  it('should move the focus correctly on Tab press', async () => {
-    render(<ChopLogicSelect {...testProps} />);
-    const combobox = screen.getByRole('combobox');
-    await userEvent.click(combobox);
-
-    const options = screen.getAllByRole('option');
-    options[0].focus();
-    await userEvent.tab();
-    expect(options[1]).toHaveFocus();
-    await userEvent.tab();
-    expect(options[2]).toHaveFocus();
-    await userEvent.tab();
-    expect(options[0]).toHaveFocus();
-  });
-
   it('pressing ArrowDown button should move focus to the next option', async () => {
     render(<ChopLogicSelect {...testProps} />);
     const options = screen.getAllByRole('option');

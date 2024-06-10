@@ -9,12 +9,12 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
   >
     <span
       aria-hidden="true"
-      class="chop-icon__bin2"
+      class="chop-icon__copy"
     />
     <span
       class="_text_48af00"
     >
-      Test
+      Copy
     </span>
   </button>
 </DocumentFragment>

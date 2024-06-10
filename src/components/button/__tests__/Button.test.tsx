@@ -6,7 +6,7 @@ import { Icon } from 'enums/icon';
 
 describe('ChopLogicButton component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Button text='Test' id='test-id' className='test-class' icon={Icon.Delete} />);
+    const { asFragment } = render(<Button text='Copy' id='test-id' className='test-class' icon={Icon.Copy} />);
     expect(asFragment()).toMatchSnapshot();
   });
 

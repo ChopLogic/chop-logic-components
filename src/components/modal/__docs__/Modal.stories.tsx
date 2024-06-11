@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Example>;
 
 export const Default: Story = {
   args: {
-    isOpened: true,
+    isOpened: false,
     onClose: () => console.log('Modal closed'),
     title: 'Example Modal',
     className: '',

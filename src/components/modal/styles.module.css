@@ -1,0 +1,24 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cl-modal-transparent);
+}
+
+.window {
+  width: fit-content;
+  height: fit-content;
+  z-index: var(--modal-z-index);
+  min-width: 40%;
+  min-height: 30%;
+  padding: var(--big-gap);
+  border-radius: var(--block-border-radius);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}

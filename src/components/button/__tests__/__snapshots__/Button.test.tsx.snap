@@ -4,7 +4,7 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="test-class"
-    id="test-id"
+    id="test-button-id"
     type="button"
   >
     <span
@@ -14,7 +14,7 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
     <span
       class="_text_48af00"
     >
-      Copy
+      Test button
     </span>
   </button>
 </DocumentFragment>

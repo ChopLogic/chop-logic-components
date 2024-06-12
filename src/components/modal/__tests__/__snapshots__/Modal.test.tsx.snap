@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicModal component > should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-modal="true"
+    class="_window_cee13f"
+    id="test-id"
+    role="dialog"
+  >
+    <header
+      class="modal-window__header"
+      id="modal-window-heading"
+    >
+      Test modal
+      <button>
+        X
+      </button>
+    </header>
+    <div
+      aria-labelledby="modal-window-heading"
+      role="region"
+    >
+      <div>
+        Test content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
+import styles from '../styles.module.css';
 
-type ModalLayoutProps = {
-  windowClassName: string;
-  contentClassName: string;
+type ModalLayoutProps = PropsWithChildren & {
   title: string;
   onClose: () => void;
   id?: string;
-  content?: React.ReactElement;
 };
 
-const ChopLogicModalLayout = ({ windowClassName, contentClassName, title, id, onClose, content }: ModalLayoutProps): React.ReactElement => {
+const ChopLogicModalLayout = ({ title, id, onClose, children }: ModalLayoutProps): React.ReactElement => {
   return (
-    <div className={windowClassName} role='dialog' aria-modal='true' id={id}>
+    <div role='dialog' aria-modal='true' id={id} className={styles.window}>
       <header className='modal-window__header' id='modal-window-heading'>
         {title}
         <button onClick={onClose}>X</button>
       </header>
-      <div className={contentClassName} role='region' aria-labelledby='modal-window-heading'>
-        {content}
+      <div role='region' aria-labelledby='modal-window-heading'>
+        {children}
       </div>
     </div>
   );

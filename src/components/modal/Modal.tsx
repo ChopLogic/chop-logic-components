@@ -3,8 +3,9 @@ import styles from './styles.module.css';
 import { useMount } from 'utils/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
+import { PropsWithChildren } from 'react';
 
-export type ChopLogicModalProps = {
+export type ChopLogicModalProps = PropsWithChildren & {
   isOpened: boolean;
   onClose: () => void;
   title: string;
@@ -12,7 +13,14 @@ export type ChopLogicModalProps = {
   openDelay?: number;
 };
 
-const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, openDelay }: ChopLogicModalProps) => {
+const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
+  isOpened,
+  onClose,
+  className,
+  title,
+  openDelay,
+  children,
+}: ChopLogicModalProps) => {
   const isMounted = useMount(isOpened, openDelay);
   const isClosing = isMounted && !isOpened;
 
@@ -20,13 +28,14 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, clas
     return null;
   }
 
-  const backgroundClassNames = createClassName([styles.background, { [styles.closing]: isClosing }]);
-  const windowClassNames = createClassName([styles.window, className, { [styles.closing]: isClosing }]);
+  const backgroundClassNames = createClassName([className, styles.background, { [styles.closing]: isClosing }]);
 
   return (
     <ChopLogicPortal>
       <div className={backgroundClassNames}>
-        <ChopLogicModalLayout title={title} windowClassName={windowClassNames} contentClassName={styles.content} onClose={onClose} />
+        <ChopLogicModalLayout title={title} onClose={onClose}>
+          {children}
+        </ChopLogicModalLayout>
       </div>
     </ChopLogicPortal>
   );

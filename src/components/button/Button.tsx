@@ -8,12 +8,13 @@ import { Icon } from 'enums/icon';
 export type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   text?: string;
   onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
-  view?: 'primary' | 'secondary' | 'danger';
+  view?: 'primary' | 'secondary' | 'danger' | 'icon';
   disabled?: boolean;
   icon?: Icon;
+  label?: string;
 };
 
-const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text = 'Ok', type = 'button', view = 'primary', icon, ...props }) => {
+const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, type = 'button', view = 'primary', icon, label, ...props }) => {
   const buttonClass = createClassName([
     styles.button,
     props?.className,
@@ -21,12 +22,13 @@ const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text = 'Ok'
       [styles.primary]: view === 'primary',
       [styles.secondary]: view === 'secondary',
       [styles.danger]: view === 'danger',
+      [styles.icon]: view === 'icon',
       [styles.disabled]: !!disabled,
     },
   ]);
 
   return (
-    <button type={type} className={buttonClass} onClick={disabled ? undefined : onClick} disabled={disabled} {...props}>
+    <button aria-label={label} type={type} className={buttonClass} onClick={disabled ? undefined : onClick} disabled={disabled} {...props}>
       {icon && <span className={icon} aria-hidden='true'></span>}
       <span className={styles.text}>{text}</span>
     </button>

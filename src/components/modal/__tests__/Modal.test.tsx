@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ChopLogicModalLayout from '../elements/Layout';
+import ChopLogicModalLayoutHeader from '../elements/Header';
 
 describe('ChopLogicModal component', () => {
   const testLayoutProps = {
@@ -9,12 +10,18 @@ describe('ChopLogicModal component', () => {
     onClose: vi.fn(),
   };
 
-  it('should render correctly', () => {
+  it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps}>
         <div>Test content</div>
       </ChopLogicModalLayout>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChopLogicModalLayoutHeader should display the modal title and the close button', () => {
+    render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
+    expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 });

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ChopLogicModal, { ChopLogicModalProps } from '../Modal';
-import { ChopLogicButton, ChopLogicSelect } from 'components/index';
-import { SELECT_LANGUAGES } from '__mocks__/select-values';
+import { ChopLogicButton } from 'components/index';
 
 const Example: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title, className, openDelay }) => {
   const [modalOpen, setModalOpen] = useState(isOpened);
@@ -14,8 +13,10 @@ const Example: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title, clas
 
   const modalContent = (
     <div>
-      <p>Modal content</p>
-      <ChopLogicSelect id='example-select' name='laguage' values={SELECT_LANGUAGES} label='Select your language' />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, neque soluta ullam repudiandae facere dolore modi reiciendis
+        doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
+      </p>
     </div>
   );
 

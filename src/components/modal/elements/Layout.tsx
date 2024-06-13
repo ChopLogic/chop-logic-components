@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import styles from '../styles.module.css';
+import ChopLogicModalLayoutHeader from './Header';
 
 type ModalLayoutProps = PropsWithChildren & {
   title: string;
@@ -10,13 +11,8 @@ type ModalLayoutProps = PropsWithChildren & {
 const ChopLogicModalLayout = ({ title, id, onClose, children }: ModalLayoutProps): React.ReactElement => {
   return (
     <div role='dialog' aria-modal='true' id={id} className={styles.window}>
-      <header className='modal-window__header' id='modal-window-heading'>
-        {title}
-        <button onClick={onClose}>X</button>
-      </header>
-      <div role='region' aria-labelledby='modal-window-heading'>
-        {children}
-      </div>
+      <ChopLogicModalLayoutHeader title={title} onClose={onClose} />
+      <div>{children}</div>
     </div>
   );
 };

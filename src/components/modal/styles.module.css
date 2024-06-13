@@ -17,8 +17,21 @@
   z-index: var(--modal-z-index);
   min-width: 40%;
   min-height: 30%;
-  padding: var(--big-gap);
+  max-width: 90%;
+  max-height: 90%;
   border-radius: var(--block-border-radius);
   background-color: white;
   box-shadow: var(--box-shadow);
+  font-family: var(--core-font);
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--big-gap);
+  padding: var(--big-gap);
+  border-bottom: var(--light-blue-border);
 }

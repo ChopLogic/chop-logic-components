@@ -20,41 +20,9 @@ exports[`ChopLogicModal component > ChopLogicModalLayout should render correctly
           aria-hidden="true"
           class="chop-icon__close"
         />
-        <span
-          class="_text_48af00"
-        />
       </button>
     </header>
     <div>
-      <div>
-        Test content
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ChopLogicModal component > should render correctly 1`] = `
-<DocumentFragment>
-  <div
-    aria-modal="true"
-    class="_window_cee13f"
-    id="test-id"
-    role="dialog"
-  >
-    <header
-      class="modal-window__header"
-      id="modal-window-heading"
-    >
-      Test modal
-      <button>
-        X
-      </button>
-    </header>
-    <div
-      aria-labelledby="modal-window-heading"
-      role="region"
-    >
       <div>
         Test content
       </div>

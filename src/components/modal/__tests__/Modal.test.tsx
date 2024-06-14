@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import ChopLogicModalLayout from '../elements/Layout';
 import ChopLogicModalLayoutHeader from '../elements/Header';
+import userEvent from '@testing-library/user-event';
 
 describe('ChopLogicModal component', () => {
   const testLayoutProps = {
@@ -23,5 +24,11 @@ describe('ChopLogicModal component', () => {
     render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+
+  it('ChopLogicModalLayoutHeader should call onClose handler', async () => {
+    render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
+    await userEvent.click(screen.getByRole('button'));
+    expect(testLayoutProps.onClose).toHaveBeenCalledOnce();
   });
 });

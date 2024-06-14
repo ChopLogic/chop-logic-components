@@ -30,7 +30,7 @@ const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, type 
   return (
     <button aria-label={label} type={type} className={buttonClass} onClick={disabled ? undefined : onClick} disabled={disabled} {...props}>
       {icon && <span className={icon} aria-hidden='true'></span>}
-      <span className={styles.text}>{text}</span>
+      {view !== 'icon' && <span className={styles.text}>{text}</span>}
     </button>
   );
 };

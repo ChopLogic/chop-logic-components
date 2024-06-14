@@ -22,6 +22,11 @@ describe('ChopLogicButton component', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
+  it('should not render the text if view is icon', () => {
+    render(<Button {...testProps} view='icon' />);
+    expect(screen.queryByRole(testProps.text)).not.toBeInTheDocument();
+  });
+
   it('should call the callback function on click', async () => {
     const mockedCallback = vi.fn();
     render(<Button {...testProps} onClick={mockedCallback} />);

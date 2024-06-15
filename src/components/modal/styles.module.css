@@ -35,3 +35,8 @@
   padding: var(--big-gap);
   border-bottom: var(--light-blue-border);
 }
+
+.content {
+  padding: var(--big-gap);
+  font-size: 1rem;
+}

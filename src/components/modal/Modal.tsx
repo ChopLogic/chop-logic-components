@@ -33,7 +33,7 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
   return (
     <ChopLogicPortal>
       <div className={backgroundClassNames}>
-        <ChopLogicModalLayout title={title} onClose={onClose}>
+        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened}>
           {children}
         </ChopLogicModalLayout>
       </div>

@@ -22,7 +22,9 @@ exports[`ChopLogicModal component > ChopLogicModalLayout should render correctly
         />
       </button>
     </header>
-    <div>
+    <div
+      class="_content_cee13f"
+    >
       <div>
         Test content
       </div>

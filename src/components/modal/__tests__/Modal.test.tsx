@@ -13,7 +13,7 @@ describe('ChopLogicModal component', () => {
 
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
-      <ChopLogicModalLayout {...testLayoutProps}>
+      <ChopLogicModalLayout {...testLayoutProps} isOpened>
         <div>Test content</div>
       </ChopLogicModalLayout>,
     );

@@ -20,6 +20,15 @@ describe('ChopLogicModal component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('ChopLogicModalLayout the dialog element', () => {
+    render(
+      <ChopLogicModalLayout {...testLayoutProps} isOpened>
+        <div>Test content</div>
+      </ChopLogicModalLayout>,
+    );
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
   it('ChopLogicModalLayoutHeader should display the modal title and the close button', () => {
     render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();

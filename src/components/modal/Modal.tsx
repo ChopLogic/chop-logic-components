@@ -5,13 +5,14 @@ import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
 
-export type ChopLogicModalProps = PropsWithChildren & {
-  isOpened: boolean;
-  onClose: () => void;
-  title: string;
-  className?: string;
-  openDelay?: number;
-};
+export type ChopLogicModalProps = PropsWithChildren &
+  React.HTMLAttributes<HTMLDivElement> & {
+    isOpened: boolean;
+    onClose: () => void;
+    title: string;
+    className?: string;
+    openDelay?: number;
+  };
 
 const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
   isOpened,
@@ -20,6 +21,7 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
   title,
   openDelay,
   children,
+  ...rest
 }: ChopLogicModalProps) => {
   const isMounted = useMount(isOpened, openDelay);
   const isClosing = isMounted && !isOpened;
@@ -33,7 +35,7 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
   return (
     <ChopLogicPortal>
       <div className={backgroundClassNames}>
-        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened}>
+        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened} {...rest}>
           {children}
         </ChopLogicModalLayout>
       </div>

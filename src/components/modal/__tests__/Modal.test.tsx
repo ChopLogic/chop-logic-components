@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import ChopLogicModalLayout from '../elements/Layout';
 import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
+import ChopLogicModal from '../Modal';
 
 describe('ChopLogicModal component', () => {
   const testLayoutProps = {
@@ -10,6 +11,16 @@ describe('ChopLogicModal component', () => {
     title: 'Test modal',
     onClose: vi.fn(),
   };
+
+  it('ChopLogicModal should render the window correctly after a delay', async () => {
+    render(
+      <ChopLogicModal {...testLayoutProps} isOpened>
+        <div>Test content</div>
+      </ChopLogicModal>,
+    );
+    const window = await screen.findByRole('dialog');
+    expect(window).toBeInTheDocument();
+  });
 
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(

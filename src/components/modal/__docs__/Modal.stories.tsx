@@ -15,6 +15,5 @@ export const Default: Story = {
     onClose: () => console.log('Modal closed'),
     title: 'Example Modal',
     className: '',
-    openDelay: 300,
   },
 };

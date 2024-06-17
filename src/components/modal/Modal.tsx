@@ -11,26 +11,17 @@ export type ChopLogicModalProps = PropsWithChildren &
     onClose: () => void;
     title: string;
     className?: string;
-    openDelay?: number;
   };
 
-const ChopLogicModal: React.FC<ChopLogicModalProps> = ({
-  isOpened,
-  onClose,
-  className,
-  title,
-  openDelay,
-  children,
-  ...rest
-}: ChopLogicModalProps) => {
-  const isMounted = useMount(isOpened, openDelay);
+const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }: ChopLogicModalProps) => {
+  const isMounted = useMount(isOpened, 300);
   const isClosing = isMounted && !isOpened;
 
   if (!isMounted) {
     return null;
   }
 
-  const backgroundClassNames = createClassName([className, styles.background, { [styles.closing]: isClosing }]);
+  const backgroundClassNames = createClassName([className, styles.background, { [styles.background_closing]: isClosing }]);
 
   return (
     <ChopLogicPortal>

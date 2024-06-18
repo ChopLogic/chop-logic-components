@@ -37,7 +37,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleClose = () => setIsOpened(false);
 

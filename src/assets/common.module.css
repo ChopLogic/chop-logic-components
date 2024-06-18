@@ -1,3 +1,15 @@
+/* Breakpoints for common device groups */
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
 :root {
   /** colors **/
   --cl-color-black: #222222;
@@ -6,6 +18,9 @@
   --cl-color-celtic-blue: #266dd3;
   --cl-color-celestial-blue: #5998c5;
   --cl-color-syracuse-red: #e53d00;
+
+  /* backgrounds */
+  --cl-modal-transparent: rgba(0, 0, 0, 0.3);
 
   /* gradients */
   --cl-primary-gradient: linear-gradient(0deg, #222222, #266dd3);
@@ -37,6 +52,7 @@
 
   /* z-indexes */
   --dropdown-z-index: 100;
+  --modal-z-index: 200;
 }
 
 @font-face {

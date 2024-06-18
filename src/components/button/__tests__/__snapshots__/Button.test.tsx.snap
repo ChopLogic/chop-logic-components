@@ -4,17 +4,17 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="test-class"
-    id="test-id"
+    id="test-button-id"
     type="button"
   >
     <span
       aria-hidden="true"
-      class="chop-icon__bin2"
+      class="chop-icon__copy"
     />
     <span
       class="_text_48af00"
     >
-      Test
+      Test button
     </span>
   </button>
 </DocumentFragment>

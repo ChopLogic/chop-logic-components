@@ -1,21 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect } from 'react';
 
-/**
- * Hook that handles clicks outside of the passed ref
- */
-
 type UseClickOutsideParams = {
-  ref: React.MutableRefObject<any>;
+  ref: React.RefObject<HTMLDivElement>;
   onClickOutsideHandler: () => void;
-  dependentRef?: React.MutableRefObject<any>;
+  dependentRef?: React.RefObject<HTMLDivElement>;
 };
 
 export const useClickOutside = ({ ref, onClickOutsideHandler, dependentRef }: UseClickOutsideParams) => {
   useEffect(() => {
-    const handleClickOutside = (event: Event) => {
-      const isOutsideRef = ref?.current && !ref.current.contains(event.target);
-      const isOutsideDependentRef = !dependentRef?.current ? true : !dependentRef.current.contains(event.target);
+    const handleClickOutside = (event: MouseEvent) => {
+      const isOutsideRef = ref?.current && !ref.current.contains(event.target as Node);
+      const isOutsideDependentRef = !dependentRef?.current ? true : !dependentRef.current.contains(event.target as Node);
       if (isOutsideRef && isOutsideDependentRef) {
         onClickOutsideHandler();
       }

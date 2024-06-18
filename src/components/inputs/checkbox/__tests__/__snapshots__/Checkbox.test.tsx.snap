@@ -7,13 +7,13 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
   >
     <input
       class="_input_c29caf"
-      id="test-checkbox-id"
+      id="test-checkbox"
       name="testCheckbox"
       type="checkbox"
     />
     <label
       class="_label_c383e9 _label_c29caf chop-icon__checkbox-unchecked"
-      for="test-checkbox-id"
+      for="test-checkbox"
     >
       <span
         class="_text_c383e9"

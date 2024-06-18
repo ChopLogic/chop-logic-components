@@ -59,4 +59,12 @@ describe('ChopLogicTextInput component', () => {
     await userEvent.type(input, 'test');
     expect(input).toHaveValue('test');
   });
+
+  it('should allow to remove the entered text', async () => {
+    render(<TextInput {...testProps} />);
+    const input = screen.getByRole('textbox');
+    await userEvent.type(input, 't');
+    await userEvent.keyboard('[Backspace]');
+    expect(input).toHaveValue('');
+  });
 });

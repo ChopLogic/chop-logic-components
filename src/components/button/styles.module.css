@@ -63,6 +63,20 @@
   text-shadow: var(--text-shadow);
 }
 
+.icon {
+  gap: 0;
+  background: transparent;
+  font-weight: normal;
+  font-size: 1.4rem;
+  border-radius: var(--block-border-radius);
+  color: var(--cl-color-celtic-blue);
+}
+
+.icon:hover,
+.icon:active {
+  background-color: var(--cl-color-tint);
+}
+
 .disabled {
   pointer-events: none;
   filter: grayscale(80%);

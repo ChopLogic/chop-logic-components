@@ -15,15 +15,13 @@ A simple button component with different props.
 ## Usage
 
 ```ts
-import { ChopLogicButton, ChopIcon } from "chop-logic-components";
+import { ChopLogicButton, ChopIcon } from 'chop-logic-components';
+import { createCopy } from 'utils/copy';
+import { Icon } from 'chop-logic-components';
 
 const Example = () => {
   return (
-      <ChopLogicButton
-        text="Copy"
-        onClick={()=> console.log("Clicked")}
-        icon={ChopIcon.Copy}
-      />
+    <ChopLogicButton text="Copy" onCick={createCopy} icon={Icon.Copy} />
   );
 };
 
@@ -32,7 +30,11 @@ export default Example;
 
 #### Props
 
-- **view** - An appearance of the button. Can be `primary` (by default), `danger` (accented) or `secondary` (a clickable text).
+- **view** - An appearance of the button:
+  - `primary`: default blue button
+  - `secondary`: button in the form of clickable text
+  - `danger`: red button to highlight important
+  - `icon`: button without text, only icon
 - **text** - A string that represents the text content of the button (`Ok` by default).
 - **onClick** _`() => void`_ - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments.
 - **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.

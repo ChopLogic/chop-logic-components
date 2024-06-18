@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('ChopLogicTextInput component', () => {
   const testProps = {
-    id: 'test-checkbox-id',
+    id: 'test-checkbox',
     name: 'testCheckbox',
     label: 'Test checkbox:',
   };

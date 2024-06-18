@@ -22,6 +22,16 @@ describe('ChopLogicModal component', () => {
     expect(window).toBeInTheDocument();
   });
 
+  it('ChopLogicModal should render the window if isOpened is false', () => {
+    render(
+      <ChopLogicModal {...testLayoutProps} isOpened={false}>
+        <div>Test content</div>
+      </ChopLogicModal>,
+    );
+    const window = screen.queryByRole('dialog');
+    expect(window).not.toBeInTheDocument();
+  });
+
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>

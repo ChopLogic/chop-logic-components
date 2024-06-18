@@ -15,8 +15,9 @@ Modal component with custom styling and behavior.
 ## Usage
 
 ```tsx
-import { ChopLogicModal } from 'sld-ui';
+import { ChopLogicModal } from 'chop-logic-components';
 import { useState } from 'react';
+import { MyModalContent } from 'components';
 
 const Example = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -27,7 +28,9 @@ const Example = () => {
   return (
     <>
       <button onClick={handleOpen}>Open Modal</button>
-      <ChopLogicModal isOpened={isOpened} onClose={handleClose} title='Example Modal' />
+      <ChopLogicModal isOpened={isOpened} onClose={handleClose} title='Example Modal'>
+        <MyModalContent />
+      </ChopLogicModal>
     </>
   );
 };
@@ -40,4 +43,5 @@ export default Example;
 - **isOpened** - A boolean indicating whether the modal is open.
 - **onClose** - A function that is called when the modal is closed.
 - **title** - A string that represents the title of the modal.
-- **className** - A string representing additional CSS class names to apply to the modal window.
+- **children** - Contents of the modal window. Any React component enclosed between tags `<ChopLogicModal>` and `</ChopLogicModal>` will be rendered inside the modal using `ReactDOM.createPortal`.
+- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

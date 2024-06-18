@@ -12,7 +12,7 @@ const ChopLogicModalLayoutHeader = ({ title, onClose }: ChopLogicModalLayoutHead
   return (
     <header className={styles.header}>
       {title}
-      <ChopLogicButton icon={Icon.Cancel} view='icon' onClick={onClose} />
+      <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close modal window' onClick={onClose} />
     </header>
   );
 };

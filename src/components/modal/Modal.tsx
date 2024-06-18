@@ -10,7 +10,6 @@ export type ChopLogicModalProps = PropsWithChildren &
     isOpened: boolean;
     onClose: () => void;
     title: string;
-    className?: string;
   };
 
 const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }: ChopLogicModalProps) => {

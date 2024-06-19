@@ -16,6 +16,7 @@
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
+    "check-types": "tsc --pretty --noEmit",
     "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run",

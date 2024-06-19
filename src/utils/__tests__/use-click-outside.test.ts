@@ -6,7 +6,7 @@ import { useClickOutside } from '../use-click-outside';
 
 test('useClickOutside() hook should return no data', () => {
   const mockParams = {
-    ref: createRef(),
+    ref: createRef<HTMLDivElement>(),
     onClickOutsideHandler: vi.fn(),
   };
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useMount = (isOpened: boolean, delay = 200): boolean => {
+export const useMount = (isOpened: boolean, delay = 300): boolean => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

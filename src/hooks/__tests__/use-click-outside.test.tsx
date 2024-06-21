@@ -24,7 +24,7 @@ const TestComponent = ({ onClickOutsideHandler }: { onClickOutsideHandler: () =>
   );
 };
 
-describe('useClickOutside', () => {
+describe('useClickOutside tests:', () => {
   it('should call onClickOutsideHandler when clicking outside the ref element', async () => {
     const onClickOutsideHandler = vi.fn();
     const { getByTestId } = render(<TestComponent onClickOutsideHandler={onClickOutsideHandler} />);

@@ -6,6 +6,7 @@ import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../misc/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useKeyPress } from 'hooks/use-key-press';
 
 export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
@@ -55,6 +56,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
+  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
     <div className={wrapperClass} ref={ref}>

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 import userEvent from '@testing-library/user-event';
@@ -18,10 +18,9 @@ const TestModal = ({ isOpened }: { isOpened: boolean }) => {
   );
 };
 
-describe('useModalFocusTrap', () => {
+describe('useModalFocusTrap  tests:', () => {
   it('should trap focus inside the modal when it is opened', async () => {
     const { getByText } = render(<TestModal isOpened={true} />);
-    screen.debug();
 
     const button1 = getByText('Button 1');
     const button2 = getByText('Button 2');

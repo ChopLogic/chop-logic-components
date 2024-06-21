@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useRef } from 'react';
 import styles from '../styles.module.css';
 import ChopLogicModalLayoutHeader from './Header';
-import { useModalFocusTrap } from 'utils/use-modal-focus-trap';
+import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 
 type ModalLayoutProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {

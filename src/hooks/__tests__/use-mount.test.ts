@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { useMount } from 'utils/use-mount';
+import { useMount } from 'hooks/use-mount';
 import { describe, expect, it } from 'vitest';
 
 describe('useMount() hook should a boolean value', () => {

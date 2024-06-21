@@ -1,9 +1,9 @@
-import ChopLogicPortal from 'components/misc/portal';
 import styles from './styles.module.css';
-import { useMount } from 'utils/use-mount';
+import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
+import ChopLogicPortal from 'components/misc/portal/Portal';
 
 export type ChopLogicModalProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {

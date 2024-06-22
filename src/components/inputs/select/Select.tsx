@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import 'assets/common.module.css';
 import styles from './styles.module.css';
-import { useClickOutside } from 'utils/use-click-outside';
+import { useClickOutside } from 'hooks/use-click-outside';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../misc/label/Label';
+import { useKeyPress } from 'hooks/use-key-press';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
@@ -50,6 +51,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
+  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
     <div className={wrapperClass} ref={ref}>

@@ -26,6 +26,7 @@ export default defineConfig({
       { find: 'utils', replacement: '/src/utils' },
       { find: 'common', replacement: '/src/common' },
       { find: 'enums', replacement: '/src/enums' },
+      { find: 'hooks', replacement: '/src/hooks' },
       { find: '__mocks__', replacement: '/src/__mocks__' },
     ],
   },

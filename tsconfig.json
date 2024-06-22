@@ -27,6 +27,7 @@
       "assets/*": ["./src/assets/*"],
       "utils/*": ["./src/utils/*"],
       "enums/*": ["./src/enums/*"],
+      "hooks/*": ["./src/hooks/*"],
       "__mocks__/*": ["./src/__mocks__/*"]
     },
 

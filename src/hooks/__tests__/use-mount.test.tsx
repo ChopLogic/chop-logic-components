@@ -13,7 +13,7 @@ const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number 
   return <div data-testid='test-element'>{isMounted ? 'Mounted' : 'Not Mounted'}</div>;
 };
 
-describe('useMount', () => {
+describe('useMount test:', () => {
   beforeAll(() => {
     vi.useFakeTimers();
   });

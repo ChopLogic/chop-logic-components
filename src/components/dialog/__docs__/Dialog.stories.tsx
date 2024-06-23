@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Example from './Example';
 
 const meta: Meta<typeof Example> = {
-  title: 'Modal',
+  title: 'Dialog',
   component: Example,
 };
 
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Example>;
 export const Default: Story = {
   args: {
     isOpened: false,
-    onClose: () => console.log('Modal closed'),
-    title: 'Example Modal',
+    onClose: () => console.log('Dialog closed'),
+    title: 'Example Dialog',
   },
 };

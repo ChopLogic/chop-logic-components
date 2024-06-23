@@ -12,7 +12,14 @@ export type ChopLogicModalProps = PropsWithChildren &
     title: string;
   };
 
-const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }: ChopLogicModalProps) => {
+const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({
+  isOpened,
+  onClose,
+  className,
+  title,
+  children,
+  ...rest
+}: ChopLogicModalProps) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 
@@ -33,4 +40,4 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, clas
   );
 };
 
-export default ChopLogicModal;
+export default ChopLogicDialog;

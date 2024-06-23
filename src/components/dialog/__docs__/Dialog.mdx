@@ -1,0 +1,47 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './Example.tsx';
+import * as Dialog from './Dialog.stories.tsx';
+
+<Meta of={Dialog} title='Dialog' />
+
+# Dialog
+
+Dialog component with custom styling and behavior.
+
+#### Example
+
+<Canvas of={Dialog.Default} />
+
+## Usage
+
+```tsx
+import { ChopLogicDialog } from 'chop-logic-components';
+import { useState } from 'react';
+import { MyModalContent } from 'components';
+
+const Example = () => {
+  const [isOpened, setIsOpened] = useState(true);
+
+  const handleOpen = () => setIsOpened(true);
+  const handleClose = () => setIsOpened(false);
+
+  return (
+    <>
+      <button onClick={handleOpen}>Open Dialog</button>
+      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Example Dialog'>
+        <MyModalContent />
+      </ChopLogicDialog>
+    </>
+  );
+};
+
+export default Example;
+```
+
+### Props
+
+- **isOpened** - A boolean indicating whether the dialog is open.
+- **onClose** - A function that is called when the dialog is closed.
+- **title** - A string that represents the title of the dialog.
+- **children** - Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`.
+- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

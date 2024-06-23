@@ -3,30 +3,30 @@ import { render, screen } from '@testing-library/react';
 import ChopLogicModalLayout from '../elements/Layout';
 import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
-import ChopLogicModal from '../Modal';
+import ChopLogicDialog from '../Dialog';
 
-describe('ChopLogicModal component', () => {
+describe('ChopLogicDialog component', () => {
   const testLayoutProps = {
     id: 'test-id',
     title: 'Test modal',
     onClose: vi.fn(),
   };
 
-  it('ChopLogicModal should render the window correctly after a delay', async () => {
+  it('ChopLogicDialog should render the window correctly after a delay', async () => {
     render(
-      <ChopLogicModal {...testLayoutProps} isOpened>
+      <ChopLogicDialog {...testLayoutProps} isOpened>
         <div>Test content</div>
-      </ChopLogicModal>,
+      </ChopLogicDialog>,
     );
     const window = await screen.findByRole('dialog');
     expect(window).toBeInTheDocument();
   });
 
-  it('ChopLogicModal should render the window if isOpened is false', () => {
+  it('ChopLogicDialog should render the window if isOpened is false', () => {
     render(
-      <ChopLogicModal {...testLayoutProps} isOpened={false}>
+      <ChopLogicDialog {...testLayoutProps} isOpened={false}>
         <div>Test content</div>
-      </ChopLogicModal>,
+      </ChopLogicDialog>,
     );
     const window = screen.queryByRole('dialog');
     expect(window).not.toBeInTheDocument();

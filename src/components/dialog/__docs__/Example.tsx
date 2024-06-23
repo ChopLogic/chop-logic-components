@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import ChopLogicModal, { ChopLogicModalProps } from '../Modal';
+import ChopLogicDialog, { ChopLogicModalProps } from '../Dialog';
 import { ChopLogicButton } from 'components/index';
 
-const Example: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title }) => {
-  const [modalOpen, setModalOpen] = useState(isOpened);
+const Example: React.FC<ChopLogicModalProps> = ({ onClose, title }) => {
+  const [isOpened, setIsOpened] = useState(false);
 
-  const handleOpen = () => setModalOpen(true);
+  const handleOpen = () => setIsOpened(true);
   const handleClose = () => {
-    setModalOpen(false);
+    setIsOpened(false);
     if (onClose) onClose();
   };
 
@@ -19,7 +19,7 @@ const Example: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title }) =>
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ChopLogicButton text='Action' view='primary' />
-        <ChopLogicButton text='Close modal' view='secondary' onClick={handleClose} />
+        <ChopLogicButton text='Close dialog' view='secondary' onClick={handleClose} />
       </div>
     </div>
   );
@@ -34,10 +34,10 @@ const Example: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title }) =>
         padding: '20px',
       }}
     >
-      <ChopLogicButton text='Open modal' onClick={handleOpen} />
-      <ChopLogicModal isOpened={modalOpen} onClose={handleClose} title={title}>
+      <ChopLogicButton text='Open dialog' onClick={handleOpen} />
+      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
         {modalContent}
-      </ChopLogicModal>
+      </ChopLogicDialog>
     </div>
   );
 };

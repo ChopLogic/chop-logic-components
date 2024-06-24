@@ -6,11 +6,11 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
     class="_wrapper_ace282"
   >
     <label
-      class="_label_c383e9 _label_ace282"
+      class="_label_ef7494 _label_ace282"
       for="language-select-id_combobox"
     >
       <span
-        class="_text_c383e9"
+        class="_text_ef7494"
       >
         Select your languages
       </span>

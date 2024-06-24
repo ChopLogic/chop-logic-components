@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import ChopLogicLabel from '../../misc/label/Label';
+import ChopLogicLabel from '../../elements/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 

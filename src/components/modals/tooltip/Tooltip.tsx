@@ -1,18 +1,16 @@
 import styles from './styles.module.css';
 import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
-import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
 
-export type ChopLogicModalProps = PropsWithChildren &
+export type ChopLogicTooltipProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {
     isOpened: boolean;
     onClose: () => void;
-    title: string;
   };
 
-const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }) => {
+const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({ isOpened, className, children, ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 
@@ -24,13 +22,11 @@ const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, cla
 
   return (
     <ChopLogicPortal>
-      <div className={backgroundClassNames}>
-        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened} {...rest}>
-          {children}
-        </ChopLogicModalLayout>
+      <div className={backgroundClassNames} {...rest}>
+        {children}
       </div>
     </ChopLogicPortal>
   );
 };
 
-export default ChopLogicDialog;
+export default ChopLogicTooltip;

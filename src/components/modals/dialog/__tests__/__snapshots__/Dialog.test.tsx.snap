@@ -14,7 +14,7 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
       Test modal
       <button
         aria-label="Close modal window"
-        class="_button_48af00 _icon_48af00"
+        class="_button_abfaef _icon_abfaef"
         type="button"
       >
         <span

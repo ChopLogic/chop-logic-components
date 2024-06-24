@@ -12,7 +12,7 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
       class="chop-icon__copy"
     />
     <span
-      class="_text_48af00"
+      class="_text_abfaef"
     >
       Test button
     </span>

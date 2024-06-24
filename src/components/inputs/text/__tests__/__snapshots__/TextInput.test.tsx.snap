@@ -9,11 +9,11 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
       class="_wrapper_aea932"
     >
       <label
-        class="_label_c383e9 _label_aea932"
+        class="_label_ef7494 _label_aea932"
         for="test-input-id"
       >
         <span
-          class="_text_c383e9"
+          class="_text_ef7494"
         >
           Test Input:
         </span>
@@ -30,7 +30,7 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
       />
     </div>
     <span
-      class="_message_3415cb _error_aea932"
+      class="_message_a256d5 _error_aea932"
       id="test-input-id_error"
     >
       Invalid input
@@ -48,16 +48,16 @@ exports[`ChopLogicTextInput component > should render the required input correct
       class="_wrapper_aea932"
     >
       <label
-        class="_label_c383e9 _label_aea932"
+        class="_label_ef7494 _label_aea932"
         for="test-input-id"
       >
         <span
-          class="_text_c383e9"
+          class="_text_ef7494"
         >
           Test Input:
         </span>
         <abbr
-          class="_required_c383e9"
+          class="_required_ef7494"
           title="required"
         >
           *
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput component > should render the required input correct
       />
     </div>
     <span
-      class="_message_3415cb _error_aea932"
+      class="_message_a256d5 _error_aea932"
       id="test-input-id_error"
     >
       Invalid input

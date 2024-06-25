@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Example from './DialogExample';
+import Example from './TooltipExample';
 
 const meta: Meta<typeof Example> = {
-  title: 'Dialog',
+  title: 'Tooltip',
   component: Example,
 };
 
@@ -10,9 +10,5 @@ export default meta;
 type Story = StoryObj<typeof Example>;
 
 export const Default: Story = {
-  args: {
-    isOpened: false,
-    onClose: () => console.log('Dialog closed'),
-    title: 'Example Dialog',
-  },
+  args: {},
 };

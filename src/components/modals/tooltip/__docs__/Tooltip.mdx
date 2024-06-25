@@ -1,23 +1,22 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './Example.tsx';
-import * as Dialog from './Dialog.stories.tsx';
+import Example from './TooltipExample.tsx';
+import * as Tooltip from './Tooltip.stories.tsx';
 
-<Meta of={Dialog} title='Dialog' />
+<Meta of={Tooltip} title='Tooltip' />
 
-# Dialog
+# Tooltip
 
-Dialog component with custom styling and behavior.
+Tooltip component with custom styling and behavior.
 
 #### Example
 
-<Canvas of={Dialog.Default} />
+<Canvas of={Tooltip.Default} />
 
 ## Usage
 
 ```tsx
-import { ChopLogicDialog } from 'chop-logic-components';
+import { ChopLogicTooltip } from 'chop-logic-components';
 import { useState } from 'react';
-import { MyModalContent } from 'components';
 
 const Example = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -28,9 +27,9 @@ const Example = () => {
   return (
     <>
       <button onClick={handleOpen}>Open Dialog</button>
-      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Example Dialog'>
-        <MyModalContent />
-      </ChopLogicDialog>
+      <ChopLogicTooltip isOpened={isOpened} onClose={handleClose}>
+        <div>Some text</div>
+      </ChopLogicTooltip>
     </>
   );
 };
@@ -44,5 +43,4 @@ export default Example;
 - **onClose** - A function that is called when the dialog is closed.
 - **title** - A string that represents the title of the dialog.
 - **children** - Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`.
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-  ./DialogExample.tsx
+- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.)../TooltipExample.tsx./Tooltip.stories.tsx

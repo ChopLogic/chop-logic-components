@@ -1,31 +1,30 @@
 import styles from './styles.module.css';
-import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
 
-export type ChopLogicTooltipProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLDivElement> & {
-    isOpened: boolean;
-    onClose: () => void;
+export type ChopLogicTooltipProps = PropsWithChildren & React.HTMLAttributes<HTMLSpanElement>;
+
+const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({ className, children, ...rest }) => {
+  const [isOpened, setIsOpened] = useState(false);
+
+  const handleContainerClick = () => {
+    setIsOpened(!isOpened);
   };
 
-const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({ isOpened, className, children, ...rest }) => {
-  const isMounted = useMount(isOpened);
-  const isClosing = isMounted && !isOpened;
-
-  if (!isMounted) {
-    return null;
-  }
-
-  const backgroundClassNames = createClassName([className, styles.background, { [styles.background_closing]: isClosing }]);
+  const containerClass = createClassName([className, styles.background]);
 
   return (
-    <ChopLogicPortal>
-      <div className={backgroundClassNames} {...rest}>
+    <>
+      <span className={containerClass} {...rest} onClick={handleContainerClick}>
         {children}
-      </div>
-    </ChopLogicPortal>
+      </span>
+      {isOpened && (
+        <ChopLogicPortal>
+          <div>Tooltip</div>
+        </ChopLogicPortal>
+      )}
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
   <div
     aria-modal="true"
     class="_window_8289eb"
-    id="test-id"
+    id="test-modal-id"
     role="dialog"
   >
     <header

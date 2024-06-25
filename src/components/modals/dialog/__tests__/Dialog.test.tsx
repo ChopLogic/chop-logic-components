@@ -7,7 +7,7 @@ import ChopLogicDialog from '../Dialog';
 
 describe('ChopLogicDialog component', () => {
   const testLayoutProps = {
-    id: 'test-id',
+    id: 'test-modal-id',
     title: 'Test modal',
     onClose: vi.fn(),
   };

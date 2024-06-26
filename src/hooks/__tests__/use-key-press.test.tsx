@@ -4,7 +4,6 @@ import { describe, it, expect, vi } from 'vitest';
 import { useKeyPress } from 'hooks/use-key-press';
 import userEvent from '@testing-library/user-event';
 
-// Mock component to test the hook
 const TestComponent = ({ keyCode, onKeyPress }: { keyCode: string; onKeyPress: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);
   useKeyPress({ ref, keyCode, onKeyPress });

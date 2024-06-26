@@ -53,6 +53,7 @@
   /* z-indexes */
   --dropdown-z-index: 100;
   --modal-z-index: 200;
+  --tooltip-z-index: 300;
 }
 
 @font-face {

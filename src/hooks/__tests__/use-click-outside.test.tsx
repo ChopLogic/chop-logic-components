@@ -4,7 +4,6 @@ import { describe, it, expect, vi } from 'vitest';
 import { useClickOutside } from 'hooks/use-click-outside';
 import userEvent from '@testing-library/user-event';
 
-// Mock component to test the hook
 const TestComponent = ({ onClickOutsideHandler }: { onClickOutsideHandler: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);
   const dependentRef = useRef<HTMLDivElement>(null);

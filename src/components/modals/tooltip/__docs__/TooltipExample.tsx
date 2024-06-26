@@ -6,16 +6,16 @@ const Example: React.FC<ChopLogicTooltipProps> = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
         padding: '20px',
       }}
     >
+      Lorem ipsum dolor, sit amet consectetur
       <ChopLogicTooltip>
-        <div>Test content</div>
+        <strong> adipisicing elit</strong>
       </ChopLogicTooltip>
+      . At, voluptatum modi maxime sapiente facere voluptatibus, eos voluptates quae earum repudiandae nemo perspiciatis ea non laudantium
+      accusamus labore sed tempore provident?
+      <div>Test content</div>
     </div>
   );
 };

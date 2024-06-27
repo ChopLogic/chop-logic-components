@@ -30,7 +30,6 @@ describe('useClickOutside tests:', () => {
 
     const outsideElement = getByTestId('outside-element');
 
-    // Simulate click outside the ref element
     await userEvent.click(outsideElement);
 
     expect(onClickOutsideHandler).toHaveBeenCalled();
@@ -42,7 +41,6 @@ describe('useClickOutside tests:', () => {
 
     const insideElement = getByTestId('inside-element');
 
-    // Simulate click inside the ref element
     await userEvent.click(insideElement);
 
     expect(onClickOutsideHandler).not.toHaveBeenCalled();
@@ -54,7 +52,6 @@ describe('useClickOutside tests:', () => {
 
     const outsideElement = getByTestId('outside-element');
 
-    // Simulate click outside both ref and dependent ref elements
     await userEvent.click(outsideElement);
 
     expect(onClickOutsideHandler).toHaveBeenCalled();
@@ -66,7 +63,6 @@ describe('useClickOutside tests:', () => {
 
     const dependentElement = getByTestId('dependent-element');
 
-    // Simulate click inside the dependent ref element
     await userEvent.click(dependentElement);
 
     expect(onClickOutsideHandler).not.toHaveBeenCalled();

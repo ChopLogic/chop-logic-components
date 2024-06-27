@@ -9,7 +9,8 @@ const Example: React.FC<ChopLogicTooltipProps> = () => {
         padding: '20px',
       }}
     >
-      Lorem ipsum dolor, sit amet consectetur
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at animi nostrum nulla illo ad sit facere velit illum in quaerat ratione
+      temporibus porro sint consequuntur, non rerum. Sequi, nostrum. Lorem ipsum dolor, sit amet consectetur
       <ChopLogicTooltip>
         <strong> adipisicing elit</strong>
       </ChopLogicTooltip>

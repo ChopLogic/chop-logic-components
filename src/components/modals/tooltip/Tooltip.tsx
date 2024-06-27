@@ -8,8 +8,10 @@ export type ChopLogicTooltipProps = PropsWithChildren & React.HTMLAttributes<HTM
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({ className, children, ...rest }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-  const { top, left } = useTooltipPosition(ref, isOpened);
+  const wrapperRef = useRef<HTMLSpanElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
+  console.log('top', top, 'left', left);
 
   const handleContainerClick = () => {
     setIsOpened(!isOpened);
@@ -18,12 +20,12 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({ className, children
   const tooltipClass = createClassName([className, styles.tooltip]);
 
   return (
-    <span className={styles.container} {...rest} onClick={handleContainerClick} tabIndex={-1} ref={ref}>
+    <span className={styles.container} {...rest} onClick={handleContainerClick} tabIndex={-1} ref={wrapperRef}>
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <div className={tooltipClass} style={{ top: top, left: left }}>
-            Tooltip
+          <div className={tooltipClass} style={{ top: top, left: left }} ref={tooltipRef}>
+            TooltipTooltipTooltipTooltipTooltip
           </div>
         </ChopLogicPortal>
       )}

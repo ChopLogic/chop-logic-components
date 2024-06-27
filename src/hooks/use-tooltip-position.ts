@@ -1,24 +1,31 @@
 import { useState, useEffect } from 'react';
+import { useContainerDimensions } from './use-container-dimensions';
 
-export const useTooltipPosition = (ref: React.RefObject<HTMLSpanElement>, isOpened: boolean) => {
+type useTooltipPositionParams = {
+  wrapperRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
+  tooltipRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
+  isOpened: boolean;
+  spacing?: number;
+};
+
+export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing = 4 }: useTooltipPositionParams) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
+  const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({ ref: tooltipRef, isVisible: isOpened });
+  console.log('dim', tooltipHeight, tooltipWidth);
 
   useEffect(() => {
-    if (isOpened && ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      const tooltipHeight = 40; // Adjust based on tooltip height
-      const tooltipWidth = 100; // Adjust based on tooltip width
-      const spacing = 8; // Space between the element and the tooltip
+    if (isOpened && wrapperRef.current) {
+      const rect = wrapperRef.current.getBoundingClientRect();
 
-      let top = rect.bottom + spacing;
-      let left = rect.left;
+      let top = Math.round(rect.bottom + spacing);
+      let left = Math.round(rect.left);
 
       // Adjust position if tooltip goes beyond the viewport
       if (top + tooltipHeight > window.innerHeight) {
-        top = rect.top - tooltipHeight - spacing;
+        top = Math.round(rect.top - tooltipHeight - spacing);
       }
       if (left + tooltipWidth > window.innerWidth) {
-        left = window.innerWidth - tooltipWidth - spacing;
+        left = Math.round(window.innerWidth - tooltipWidth - spacing);
       }
       if (left < 0) {
         left = spacing;
@@ -26,7 +33,7 @@ export const useTooltipPosition = (ref: React.RefObject<HTMLSpanElement>, isOpen
 
       setPosition({ top, left });
     }
-  }, [isOpened, ref]);
+  }, [isOpened, wrapperRef, tooltipHeight, tooltipWidth, spacing]);
 
   return position;
 };

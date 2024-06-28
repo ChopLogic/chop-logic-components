@@ -10,7 +10,7 @@ const TestComponent = ({ keyCode, onKeyPress }: { keyCode: string; onKeyPress: (
 
   return (
     <div ref={ref} data-testid='test-element'>
-      Test Element
+      Test Text
     </div>
   );
 };

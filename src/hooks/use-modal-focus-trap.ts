@@ -5,15 +5,6 @@ type ModalFocusTrapParams = {
   isOpened: boolean;
 };
 
-/**
- * Traps the focus within a modal element when it is opened.
- *
- * @param {ModalFocusTrapParams} params - An object containing the modal reference and a boolean indicating whether the modal is opened.
- * @param {React.RefObject<HTMLDivElement>} params.modalRef - A reference to the modal element.
- * @param {boolean} params.isOpened - A boolean indicating whether the modal is opened.
- * @return {void} This function does not return anything.
- */
-
 export const useModalFocusTrap = ({ modalRef, isOpened }: ModalFocusTrapParams) => {
   useEffect(() => {
     const modalElement = modalRef.current;

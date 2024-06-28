@@ -10,7 +10,6 @@ export const useContainerDimensions = ({ ref, isVisible }: useContainerDimension
 
   useEffect(() => {
     if (ref.current && isVisible) {
-      console.log('HERE', ref.current);
       setDimensions({
         width: ref.current.offsetWidth,
         height: ref.current.offsetHeight,

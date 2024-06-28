@@ -3,6 +3,10 @@
   cursor: pointer;
 }
 
+.container:focus-visible {
+  outline: var(--focus-outline);
+}
+
 .tooltip {
   position: absolute;
   left: 0;

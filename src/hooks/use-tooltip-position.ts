@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useContainerDimensions } from './use-container-dimensions';
+import { useWindowDimensions } from './use-window-dimensions';
 
 type useTooltipPositionParams = {
   wrapperRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
@@ -11,7 +12,7 @@ type useTooltipPositionParams = {
 export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing = 4 }: useTooltipPositionParams) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({ ref: tooltipRef, isVisible: isOpened });
-  console.log('dim', tooltipHeight, tooltipWidth);
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
 
   useEffect(() => {
     if (isOpened && wrapperRef.current) {
@@ -33,7 +34,7 @@ export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing =
 
       setPosition({ top, left });
     }
-  }, [isOpened, wrapperRef, tooltipHeight, tooltipWidth, spacing]);
+  }, [isOpened, wrapperRef, tooltipHeight, tooltipWidth, spacing, windowWidth, windowHeight]);
 
   return position;
 };

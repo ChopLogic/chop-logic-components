@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ExampleButton from './Example';
+import ExampleButton from './ButtonExample';
 import { Icon } from 'enums/icon';
 
 const meta: Meta<typeof ExampleButton> = {

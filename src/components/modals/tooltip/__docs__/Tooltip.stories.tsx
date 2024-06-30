@@ -1,18 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Example from './TooltipExample';
+import TooltipExample from './TooltipExample';
 
-const meta: Meta<typeof Example> = {
+const meta: Meta<typeof TooltipExample> = {
   title: 'Tooltip',
-  component: Example,
+  component: TooltipExample,
 };
 
 export default meta;
-type Story = StoryObj<typeof Example>;
+type Story = StoryObj<typeof TooltipExample>;
 
 export const Default: Story = {
   args: {
-    tooltipContent: 'Tooltip content',
+    tooltipContent: 'This is a tooltip',
     containerTag: 'span',
     visibleOn: 'hover',
+  },
+};
+
+export const ClickToShow: Story = {
+  args: {
+    tooltipContent: 'This is a tooltip',
+    containerTag: 'div',
+    visibleOn: 'click',
+  },
+};
+
+export const FocusToShow: Story = {
+  args: {
+    tooltipContent: 'This is a tooltip',
+    containerTag: 'div',
+    visibleOn: 'focus',
   },
 };

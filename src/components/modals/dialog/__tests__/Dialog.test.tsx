@@ -15,7 +15,7 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicDialog should render the window correctly after a delay', async () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicDialog>,
     );
     const window = await screen.findByRole('dialog');
@@ -25,7 +25,7 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicDialog should render the window if isOpened is false', () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened={false}>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicDialog>,
     );
     const window = screen.queryByRole('dialog');
@@ -35,7 +35,7 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicModalLayout>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicModalLayout the dialog element', () => {
     render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicModalLayout>,
     );
     expect(screen.getByRole('dialog')).toBeInTheDocument();

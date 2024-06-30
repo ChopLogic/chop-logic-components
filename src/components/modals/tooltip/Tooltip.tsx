@@ -29,26 +29,23 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
 
   const closeTooltip = () => setIsOpened(false);
   const openTooltip = () => setIsOpened(true);
+  const toggleTooltip = () => setIsOpened(!isOpened);
 
   useKeyPress({ keyCode: 'Escape', ref: tooltipRef, onKeyPress: closeTooltip });
   useClickOutside({ ref: tooltipRef, onClickOutsideHandler: closeTooltip, dependentRef: wrapperRef });
-
-  const handleContainerClick = () => {
-    if (visibleOn === 'click') {
-      openTooltip();
-    }
-  };
 
   const tooltipClass = createClassName([className, styles.tooltip]);
 
   return (
     <ContainerComponent
       className={styles.container}
-      {...rest}
-      onClick={handleContainerClick}
+      onClick={visibleOn === 'click' ? toggleTooltip : undefined}
       onMouseOver={visibleOn === 'hover' ? openTooltip : undefined}
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
+      onFocus={visibleOn === 'focus' ? openTooltip : undefined}
+      onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
       tabIndex={0}
+      {...rest}
       ref={wrapperRef}
     >
       {children}

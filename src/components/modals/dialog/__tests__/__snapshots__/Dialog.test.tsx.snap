@@ -27,7 +27,7 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
       class="_content_8289eb"
     >
       <div>
-        Test content
+        Modal content
       </div>
     </div>
   </div>

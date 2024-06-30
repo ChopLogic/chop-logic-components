@@ -6,7 +6,7 @@ import * as Tooltip from './Tooltip.stories.tsx';
 
 # Tooltip
 
-Tooltip component with custom styling and behavior.
+The `Tooltip` component displays a tooltip with customizable content when the user hovers over, clicks, or focuses on the container element.
 
 #### Example
 
@@ -16,31 +16,31 @@ Tooltip component with custom styling and behavior.
 
 ```tsx
 import { ChopLogicTooltip } from 'chop-logic-components';
-import { useState } from 'react';
 
-const Example = () => {
-  const [isOpened, setIsOpened] = useState(true);
-
-  const handleOpen = () => setIsOpened(true);
-  const handleClose = () => setIsOpened(false);
-
+const TooltipUsageExample = () => {
   return (
-    <>
-      <button onClick={handleOpen}>Open Dialog</button>
-      <ChopLogicTooltip isOpened={isOpened} onClose={handleClose}>
-        <div>Some text</div>
-      </ChopLogicTooltip>
-    </>
+    <ChopLogicTooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover'>
+      Hover over me
+    </ChopLogicTooltip>
   );
 };
 
-export default Example;
+export default TooltipUsageExample;
 ```
 
 ### Props
 
-- **isOpened** - A boolean indicating whether the dialog is open.
-- **onClose** - A function that is called when the dialog is closed.
-- **title** - A string that represents the title of the dialog.
-- **children** - Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`.
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.)../TooltipExample.tsx./Tooltip.stories.tsx
+- **tooltipContent**
+  - Type: `string | React.ReactElement`
+  - Description: The content to be displayed inside the tooltip.
+- **containerTag**
+  - Type: `'span' | 'div' | 'p' | 'strong' | 'em'`
+  - Default: `'span'`
+  - Description: The HTML tag to be used for the container element.
+- **visibleOn**
+  - Type: `'hover' | 'click' | 'focus'`
+  - Default: `'hover'`
+  - Description: The event that triggers the tooltip to be displayed.
+- children
+  - Type: `React.ReactNode`
+  - Description: The content inside the container element that triggers the tooltip.

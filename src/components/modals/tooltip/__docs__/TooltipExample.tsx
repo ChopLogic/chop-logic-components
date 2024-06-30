@@ -1,23 +1,23 @@
 import React from 'react';
-
 import ChopLogicTooltip, { ChopLogicTooltipProps } from '../Tooltip';
 
-const Example: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn }: ChopLogicTooltipProps) => {
+const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn }) => {
   return (
     <div
       style={{
-        padding: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
       }}
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at animi nostrum nulla illo ad sit facere velit illum in quaerat ratione
-      temporibus porro sint consequuntur, non rerum. Sequi, nostrum. Lorem ipsum dolor, sit amet consectetur
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn}>
-        <strong> adipisicing elit</strong>
+        {visibleOn === 'click' && <button>Click me</button>}
+        {visibleOn === 'hover' && <span>Hover over me</span>}
+        {visibleOn === 'focus' && <p>Focus on me</p>}
       </ChopLogicTooltip>
-      . At, voluptatum modi maxime sapiente facere voluptatibus, eos voluptates quae earum repudiandae nemo perspiciatis ea non laudantium
-      accusamus labore sed tempore provident?
     </div>
   );
 };
 
-export default Example;
+export default TooltipExample;

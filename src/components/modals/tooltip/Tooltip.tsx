@@ -9,8 +9,9 @@ import { useClickOutside } from 'hooks/use-click-outside';
 export type ChopLogicTooltipProps = PropsWithChildren &
   React.HTMLAttributes<HTMLElement> & {
     tooltipContent: string | React.ReactElement;
+    id: string;
     containerTag?: 'span' | 'div' | 'p' | 'strong' | 'em';
-    visibleOn: 'hover' | 'click' | 'focus';
+    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
   };
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
@@ -19,6 +20,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   tooltipContent,
   containerTag = 'span',
   visibleOn = 'hover',
+  id,
   ...rest
 }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -44,14 +46,16 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
       onFocus={visibleOn === 'focus' ? openTooltip : undefined}
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
+      onContextMenu={visibleOn === 'contextmenu' ? openTooltip : undefined}
       tabIndex={0}
       {...rest}
       ref={wrapperRef}
+      aria-describedby={id}
     >
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <div className={tooltipClass} style={{ top: top, left: left }} ref={tooltipRef}>
+          <div className={tooltipClass} style={{ top: top, left: left }} ref={tooltipRef} role='tooltip' id={id}>
             {tooltipContent}
           </div>
         </ChopLogicPortal>

@@ -14,6 +14,7 @@ export const Default: Story = {
     tooltipContent: 'This is a tooltip',
     containerTag: 'span',
     visibleOn: 'hover',
+    id: 'tooltip',
   },
 };
 
@@ -22,6 +23,7 @@ export const ClickToShow: Story = {
     tooltipContent: 'This is a tooltip',
     containerTag: 'div',
     visibleOn: 'click',
+    id: 'tooltip',
   },
 };
 
@@ -30,5 +32,15 @@ export const FocusToShow: Story = {
     tooltipContent: 'This is a tooltip',
     containerTag: 'div',
     visibleOn: 'focus',
+    id: 'tooltip',
+  },
+};
+
+export const ContextMenuToShow: Story = {
+  args: {
+    tooltipContent: 'This is a tooltip',
+    containerTag: 'div',
+    visibleOn: 'contextmenu',
+    id: 'tooltip',
   },
 };

@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTooltip component > ChopLogicTooltip should render the content 1`] = `
+<DocumentFragment>
+  <span
+    aria-describedby="test-id"
+    class="_container_1d30ab"
+    tabindex="0"
+  >
+    <span>
+      Modal content
+    </span>
+  </span>
+</DocumentFragment>
+`;

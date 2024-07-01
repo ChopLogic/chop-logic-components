@@ -19,7 +19,7 @@ import { ChopLogicTooltip } from 'chop-logic-components';
 
 const TooltipUsageExample = () => {
   return (
-    <ChopLogicTooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover'>
+    <ChopLogicTooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover' id='tooltip'>
       Hover over me
     </ChopLogicTooltip>
   );
@@ -33,12 +33,15 @@ export default TooltipUsageExample;
 - **tooltipContent**
   - Type: `string | React.ReactElement`
   - Description: The content to be displayed inside the tooltip.
+- **id**
+  - Type: `string`
+  - Description: A unique string that identidies the tooltip container on the page
 - **containerTag**
   - Type: `'span' | 'div' | 'p' | 'strong' | 'em'`
   - Default: `'span'`
   - Description: The HTML tag to be used for the container element.
 - **visibleOn**
-  - Type: `'hover' | 'click' | 'focus'`
+  - Type: `'hover' | 'click' | 'focus' | 'contextmenu'`
   - Default: `'hover'`
   - Description: The event that triggers the tooltip to be displayed.
 - children

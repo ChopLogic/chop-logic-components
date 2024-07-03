@@ -19,7 +19,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.getByText('Hover or Click me')).toBeInTheDocument();
   });
 
-  it('shows and hides tooltip on hover', async () => {
+  it('should show and hide tooltip on hover', async () => {
     renderTooltip({ visibleOn: 'hover' });
     const triggerElement = screen.getByText('Hover or Click me');
     await userEvent.hover(triggerElement);
@@ -28,7 +28,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.queryByText(tooltipContent)).not.toBeInTheDocument();
   });
 
-  it('shows and hides tooltip on click', async () => {
+  it('should show and hide tooltip on click', async () => {
     renderTooltip({ visibleOn: 'click' });
     const triggerElement = screen.getByText('Hover or Click me');
     await userEvent.click(triggerElement);
@@ -37,7 +37,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.queryByText(tooltipContent)).not.toBeInTheDocument();
   });
 
-  it('shows and hides tooltip on focus', async () => {
+  it('should show and hide tooltip on focus', async () => {
     renderTooltip({ visibleOn: 'focus' });
     const triggerElement = screen.getByText('Hover or Click me');
     fireEvent.focus(triggerElement);
@@ -46,7 +46,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.queryByText(tooltipContent)).not.toBeInTheDocument();
   });
 
-  it('shows and hides tooltip on contextmenu', async () => {
+  it('should show and hide tooltip on contextmenu', async () => {
     renderTooltip({ visibleOn: 'contextmenu' });
     const triggerElement = screen.getByText('Hover or Click me');
     await userEvent.pointer([{ keys: '[MouseRight]', target: triggerElement }]);
@@ -55,7 +55,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.queryByText(tooltipContent)).not.toBeInTheDocument();
   });
 
-  it('closes tooltip on Escape key press', async () => {
+  it('should close tooltip on Escape key press', async () => {
     renderTooltip({ visibleOn: 'click' });
     const triggerElement = screen.getByText('Hover or Click me');
     await userEvent.click(triggerElement);
@@ -64,7 +64,7 @@ describe('ChopLogicTooltip', () => {
     expect(screen.queryByText(tooltipContent)).not.toBeInTheDocument();
   });
 
-  it('closes tooltip when clicking outside', async () => {
+  it('should close tooltip when clicking outside', async () => {
     renderTooltip({ visibleOn: 'click' });
     const triggerElement = screen.getByText('Hover or Click me');
     await userEvent.click(triggerElement);

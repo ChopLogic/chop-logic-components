@@ -1,5 +1,6 @@
 import React from 'react';
 import ChopLogicTooltip, { ChopLogicTooltipProps } from '../Tooltip';
+import { ChopLogicButton } from 'components/index';
 
 const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
   return (
@@ -12,7 +13,7 @@ const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, conta
       }}
     >
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id}>
-        {visibleOn === 'click' && <button>Click me</button>}
+        {visibleOn === 'click' && <ChopLogicButton text='Click me' />}
         {visibleOn === 'hover' && <span>Hover over me</span>}
         {visibleOn === 'focus' && <p>Focus on me</p>}
         {visibleOn === 'contextmenu' && <strong>Right click on me</strong>}

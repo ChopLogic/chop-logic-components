@@ -58,7 +58,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <div className={tooltipClass} style={{ top: top, left: left }} ref={tooltipRef} role='tooltip' id={id}>
+          <div className={tooltipClass} style={{ top, left }} ref={tooltipRef} role='tooltip' id={id}>
             {tooltipContent}
           </div>
         </ChopLogicPortal>

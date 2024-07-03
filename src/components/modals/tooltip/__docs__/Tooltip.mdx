@@ -1,0 +1,49 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import Example from './TooltipExample.tsx';
+import * as Tooltip from './Tooltip.stories.tsx';
+
+<Meta of={Tooltip} title='Tooltip' />
+
+# Tooltip
+
+The `Tooltip` component displays a tooltip with customizable content when the user hovers over, clicks, or focuses on the container element.
+
+#### Example
+
+<Canvas of={Tooltip.Default} />
+
+## Usage
+
+```tsx
+import { ChopLogicTooltip } from 'chop-logic-components';
+
+const TooltipUsageExample = () => {
+  return (
+    <ChopLogicTooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover' id='tooltip'>
+      <span>Hover over me</span>
+    </ChopLogicTooltip>
+  );
+};
+
+export default TooltipUsageExample;
+```
+
+### Props
+
+- **tooltipContent**
+  - Type: `string | React.ReactElement`
+  - Description: The content to be displayed inside the tooltip.
+- **id**
+  - Type: `string`
+  - Description: A unique string that identidies the tooltip container on the page
+- **containerTag**
+  - Type: `'span' | 'div' | 'p' | 'strong' | 'em'`
+  - Default: `'span'`
+  - Description: The HTML tag to be used for the container element.
+- **visibleOn**
+  - Type: `'hover' | 'click' | 'focus' | 'contextmenu'`
+  - Default: `'hover'`
+  - Description: The event that triggers the tooltip to be displayed.
+- children
+  - Type: `React.ReactNode`
+  - Description: The content inside the container element that triggers the tooltip.

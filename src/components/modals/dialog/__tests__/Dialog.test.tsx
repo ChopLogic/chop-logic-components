@@ -3,30 +3,30 @@ import { render, screen } from '@testing-library/react';
 import ChopLogicModalLayout from '../elements/Layout';
 import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
-import ChopLogicModal from '../Modal';
+import ChopLogicDialog from '../Dialog';
 
-describe('ChopLogicModal component', () => {
+describe('ChopLogicDialog component', () => {
   const testLayoutProps = {
-    id: 'test-id',
+    id: 'test-modal-id',
     title: 'Test modal',
     onClose: vi.fn(),
   };
 
-  it('ChopLogicModal should render the window correctly after a delay', async () => {
+  it('ChopLogicDialog should render the window correctly after a delay', async () => {
     render(
-      <ChopLogicModal {...testLayoutProps} isOpened>
-        <div>Test content</div>
-      </ChopLogicModal>,
+      <ChopLogicDialog {...testLayoutProps} isOpened>
+        <div>Modal content</div>
+      </ChopLogicDialog>,
     );
     const window = await screen.findByRole('dialog');
     expect(window).toBeInTheDocument();
   });
 
-  it('ChopLogicModal should render the window if isOpened is false', () => {
+  it('ChopLogicDialog should render the window if isOpened is false', () => {
     render(
-      <ChopLogicModal {...testLayoutProps} isOpened={false}>
-        <div>Test content</div>
-      </ChopLogicModal>,
+      <ChopLogicDialog {...testLayoutProps} isOpened={false}>
+        <div>Modal content</div>
+      </ChopLogicDialog>,
     );
     const window = screen.queryByRole('dialog');
     expect(window).not.toBeInTheDocument();
@@ -35,7 +35,7 @@ describe('ChopLogicModal component', () => {
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicModalLayout>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('ChopLogicModal component', () => {
   it('ChopLogicModalLayout the dialog element', () => {
     render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Test content</div>
+        <div>Modal content</div>
       </ChopLogicModalLayout>,
     );
     expect(screen.getByRole('dialog')).toBeInTheDocument();

@@ -3,7 +3,6 @@ import { render, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
 import { useMount } from 'hooks/use-mount';
 
-// Mock component to test the hook
 const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number }) => {
   const isMounted = useMount(isOpened, delay);
   useEffect(() => {

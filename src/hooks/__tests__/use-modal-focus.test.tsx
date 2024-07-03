@@ -4,7 +4,6 @@ import { describe, it, expect } from 'vitest';
 import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 import userEvent from '@testing-library/user-event';
 
-// Mock component to test the hook
 const TestModal = ({ isOpened }: { isOpened: boolean }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   useModalFocusTrap({ modalRef, isOpened });

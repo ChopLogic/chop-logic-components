@@ -8,7 +8,7 @@ type ChopLogicModalLayoutHeaderProps = {
   onClose: () => void;
 };
 
-const ChopLogicModalLayoutHeader = ({ title, onClose }: ChopLogicModalLayoutHeaderProps): React.ReactElement => {
+const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({ title, onClose }): React.ReactElement => {
   return (
     <header className={styles.header}>
       {title}

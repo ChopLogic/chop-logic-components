@@ -3,7 +3,7 @@ import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
-import ChopLogicPortal from 'components/misc/portal/Portal';
+import ChopLogicPortal from 'components/elements/portal/Portal';
 
 export type ChopLogicModalProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {
@@ -12,7 +12,7 @@ export type ChopLogicModalProps = PropsWithChildren &
     title: string;
   };
 
-const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }: ChopLogicModalProps) => {
+const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 
@@ -33,4 +33,4 @@ const ChopLogicModal: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, clas
   );
 };
 
-export default ChopLogicModal;
+export default ChopLogicDialog;

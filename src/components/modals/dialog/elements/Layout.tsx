@@ -11,7 +11,7 @@ type ModalLayoutProps = PropsWithChildren &
     isOpened: boolean;
   };
 
-const ChopLogicModalLayout = ({ title, onClose, isOpened, children, ...rest }: ModalLayoutProps): React.ReactElement => {
+const ChopLogicModalLayout: React.FC<ModalLayoutProps> = ({ title, onClose, isOpened, children, ...rest }): React.ReactElement => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useModalFocusTrap({ modalRef, isOpened });

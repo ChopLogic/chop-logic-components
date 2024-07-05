@@ -8,6 +8,7 @@ describe('ChopLogicTextInput component', () => {
     id: 'test-input-id',
     name: 'testInput',
     label: 'Test Input:',
+    placeholder: 'Enter text here...',
     valid: true,
   };
 

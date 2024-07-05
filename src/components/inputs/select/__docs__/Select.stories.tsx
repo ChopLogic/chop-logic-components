@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Example from './SelectExample';
+import SelectExample from './SelectExample';
 import { SELECT_LANGUAGES } from '__mocks__/select-values';
 
-const meta: Meta<typeof Example> = {
-  title: 'Select',
-  component: Example,
+const meta: Meta<typeof SelectExample> = {
+  title: 'Inputs/Select',
+  component: SelectExample,
 };
 
 export default meta;
-type Story = StoryObj<typeof Example>;
+type Story = StoryObj<typeof SelectExample>;
 
 export const Default: Story = {
   args: {

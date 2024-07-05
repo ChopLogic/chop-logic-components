@@ -5,13 +5,13 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
   <div
     aria-modal="true"
     class="_window_8289eb"
-    id="test-modal-id"
+    id="test-dialog-id"
     role="dialog"
   >
     <header
       class="_header_8289eb"
     >
-      Test modal
+      Test dialog
       <button
         aria-label="Close modal window"
         class="_button_abfaef _icon_abfaef"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Dimensions } from './use-window-dimensions';
+import { Dimensions } from '../use-window-dimensions';
 
 type useContainerDimensionsParams = {
   ref: React.RefObject<HTMLDivElement | HTMLSpanElement>;

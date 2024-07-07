@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicLabel component > should render correctly as not required label 1`] = `
+<DocumentFragment>
+  <label
+    class="_label_ef7494 test-class-name"
+    for="test-input-id"
+  >
+    <span
+      class="_text_ef7494"
+    >
+      Test label
+    </span>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicLabel component > should render correctly as required label 1`] = `
+<DocumentFragment>
+  <label
+    class="_label_ef7494 test-class-name"
+    for="test-input-id"
+  >
+    <span
+      class="_text_ef7494"
+    >
+      Test label
+    </span>
+    <abbr
+      class="_required_ef7494"
+      title="required"
+    >
+      *
+    </abbr>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicLabel component > should render correctly without text 1`] = `
+<DocumentFragment>
+  <label
+    class="_label_ef7494 test-class-name"
+    for="test-input-id"
+  />
+</DocumentFragment>
+`;

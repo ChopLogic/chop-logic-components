@@ -12,7 +12,7 @@ describe('ChopLogicDialog component', () => {
     onClose: vi.fn(),
   };
 
-  it('ChopLogicDialog should render the window correctly after a delay', async () => {
+  it('ChopLogicDialog should render the dialog correctly after a delay', async () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened>
         <div>Dialog content</div>
@@ -22,7 +22,7 @@ describe('ChopLogicDialog component', () => {
     expect(window).toBeInTheDocument();
   });
 
-  it('ChopLogicDialog should render the window if isOpened is false', () => {
+  it('ChopLogicDialog should render the dialog if isOpened is false', () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened={false}>
         <div>Modal content</div>

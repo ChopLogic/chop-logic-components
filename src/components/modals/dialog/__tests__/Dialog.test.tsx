@@ -5,7 +5,7 @@ import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
 import ChopLogicDialog from '../Dialog';
 
-describe('ChopLogicDialog component', () => {
+describe('ChopLogicDialog tests:', () => {
   const testLayoutProps = {
     id: 'test-dialog-id',
     title: 'Test dialog',

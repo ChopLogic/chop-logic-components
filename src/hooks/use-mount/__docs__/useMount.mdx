@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as UseMountStories from './useMount.stories.tsx';
+
+<Meta of={UseMountStories} title='Hooks/useMount' />
+
+# useMount
+
+The `useMount` hook manages the mounting state of a component with a delay.
+
+<Canvas>
+  <Story of={UseMountStories.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React, { useState } from 'react';
+import { useMount } from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const [isOpened, setIsOpened] = useState(false);
+  const isMounted = useMount(isOpened, 1000);
+
+  return (
+    <div>
+      <button onClick={() => setIsOpened(!isOpened)}>Toggle Component</button>
+      {isMounted && <div>Component is mounted!</div>}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Params
+
+- **isOpened**
+  Type: boolean
+  Description: A boolean indicating whether the component is opened or not.
+- **delay**
+  Type: number
+  Description: The delay in milliseconds before the component is unmounted. Default is 300.

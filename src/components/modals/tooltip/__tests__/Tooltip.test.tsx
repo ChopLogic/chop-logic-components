@@ -13,7 +13,7 @@ const renderTooltip = (props: Partial<ChopLogicTooltipProps> = {}) => {
   );
 };
 
-describe('ChopLogicTooltip', () => {
+describe('ChopLogicTooltip tests:', () => {
   it('renders the child component', () => {
     renderTooltip();
     expect(screen.getByText('Hover or Click me')).toBeInTheDocument();

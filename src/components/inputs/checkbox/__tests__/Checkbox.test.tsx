@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import Checkbox from '../Checkbox';
 import userEvent from '@testing-library/user-event';
 
-describe('ChopLogicTextInput component', () => {
+describe('ChopLogicTextInput tests:', () => {
   const testProps = {
     id: 'test-checkbox',
     name: 'testCheckbox',

@@ -33,3 +33,37 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
   </div>
 </DocumentFragment>
 `;
+
+exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-modal="true"
+    class="_window_8289eb"
+    id="test-dialog-id"
+    role="dialog"
+  >
+    <header
+      class="_header_8289eb"
+    >
+      Test dialog
+      <button
+        aria-label="Close modal window"
+        class="_button_abfaef _icon_abfaef"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="chop-icon__close"
+        />
+      </button>
+    </header>
+    <div
+      class="_content_8289eb"
+    >
+      <div>
+        Modal content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Example from './DialogExample';
+import DialogExample from './DialogExample';
 
-const meta: Meta<typeof Example> = {
-  title: 'Dialog',
-  component: Example,
+const meta: Meta<typeof DialogExample> = {
+  title: 'Modals/Dialog',
+  component: DialogExample,
 };
 
 export default meta;
-type Story = StoryObj<typeof Example>;
+type Story = StoryObj<typeof DialogExample>;
 
 export const Default: Story = {
   args: {

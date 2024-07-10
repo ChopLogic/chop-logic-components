@@ -24,7 +24,7 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
         class="_input_aea932"
         id="test-input-id"
         name="testInput"
-        placeholder="Type here..."
+        placeholder="Enter text here..."
         type="text"
         value=""
       />
@@ -69,7 +69,7 @@ exports[`ChopLogicTextInput component > should render the required input correct
         class="_input_aea932"
         id="test-input-id"
         name="testInput"
-        placeholder="Type here..."
+        placeholder="Enter text here..."
         required=""
         type="text"
         value=""

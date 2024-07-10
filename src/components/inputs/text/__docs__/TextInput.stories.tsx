@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Example from './TextInputExample';
+import TextInputExample from './TextInputExample';
 
-const meta: Meta<typeof Example> = {
-  title: 'TextInput',
-  component: Example,
+const meta: Meta<typeof TextInputExample> = {
+  title: 'Inputs/TextInput',
+  component: TextInputExample,
 };
 
 export default meta;
-type Story = StoryObj<typeof Example>;
+type Story = StoryObj<typeof TextInputExample>;
 
 export const Default: Story = {
   args: {

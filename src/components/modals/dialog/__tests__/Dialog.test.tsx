@@ -5,27 +5,27 @@ import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
 import ChopLogicDialog from '../Dialog';
 
-describe('ChopLogicDialog component', () => {
+describe('ChopLogicDialog tests:', () => {
   const testLayoutProps = {
-    id: 'test-modal-id',
-    title: 'Test modal',
+    id: 'test-dialog-id',
+    title: 'Test dialog',
     onClose: vi.fn(),
   };
 
-  it('ChopLogicDialog should render the window correctly after a delay', async () => {
+  it('ChopLogicDialog should render the dialog correctly after a delay', async () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened>
-        <div>Modal content</div>
+        <div>Dialog content</div>
       </ChopLogicDialog>,
     );
     const window = await screen.findByRole('dialog');
     expect(window).toBeInTheDocument();
   });
 
-  it('ChopLogicDialog should render the window if isOpened is false', () => {
+  it('ChopLogicDialog should render the dialog if isOpened is false', () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened={false}>
-        <div>Modal content</div>
+        <div>Dialog content</div>
       </ChopLogicDialog>,
     );
     const window = screen.queryByRole('dialog');
@@ -35,7 +35,7 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicModalLayout should render correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Modal content</div>
+        <div>Dialog content</div>
       </ChopLogicModalLayout>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -44,13 +44,13 @@ describe('ChopLogicDialog component', () => {
   it('ChopLogicModalLayout the dialog element', () => {
     render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
-        <div>Modal content</div>
+        <div>Dialog content</div>
       </ChopLogicModalLayout>,
     );
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('ChopLogicModalLayoutHeader should display the modal title and the close button', () => {
+  it('ChopLogicModalLayoutHeader should display the dialog title and the close button', () => {
     render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();

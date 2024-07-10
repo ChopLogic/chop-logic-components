@@ -1,17 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctly 1`] = `
+exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1`] = `
 <DocumentFragment>
   <div
     aria-modal="true"
     class="_window_8289eb"
-    id="test-modal-id"
+    id="test-dialog-id"
     role="dialog"
   >
     <header
       class="_header_8289eb"
     >
-      Test modal
+      Test dialog
       <button
         aria-label="Close modal window"
         class="_button_abfaef _icon_abfaef"
@@ -27,7 +27,7 @@ exports[`ChopLogicDialog component > ChopLogicModalLayout should render correctl
       class="_content_8289eb"
     >
       <div>
-        Modal content
+        Dialog content
       </div>
     </div>
   </div>

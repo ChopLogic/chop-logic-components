@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as UseContainerDimensionsStories from './useContainerDimensions.stories.tsx';
+
+<Meta of={UseContainerDimensionsStories} title='Hooks/useContainerDimensions' />
+
+# useContainerDimensions
+
+The `useContainerDimensions` hook measures the dimensions (width and height) of a container element and returns these values as an object.
+
+<Canvas>
+  <Story of={UseContainerDimensionsStories.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React, { useRef } from 'react';
+import { useContainerDimensions } from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const ref = useRef(null);
+  const { width, height } = useContainerDimensions({ ref, isVisible: true });
+
+  return (
+    <div ref={ref} style={{ width: '200px', height: '150px', border: '1px solid black' }}>
+      <p>Width: {width}px</p>
+      <p>Height: {height}px</p>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Params
+
+- **ref**
+  - Type: `React.RefObject<HTMLElement>`
+  - Description: A ref to the element whose dimensions will be measured.
+- **isVisible**
+  - Type: boolean
+  - Optional: true
+  - Description: A flag to indicate whether the element is visible. If true, the dimensions will be measured.

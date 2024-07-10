@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicErrorMessage component > should render correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="_message_a256d5 custom-error _visible_a256d5"
+    id="test-error-id"
+  >
+    Incorrect input
+  </span>
+</DocumentFragment>
+`;

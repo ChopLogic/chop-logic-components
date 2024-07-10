@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ExampleButton from './ButtonExample';
+import ButtonExample from './ButtonExample';
 import { Icon } from 'enums/icon';
 
-const meta: Meta<typeof ExampleButton> = {
-  title: 'Button',
-  component: ExampleButton,
+const meta: Meta<typeof ButtonExample> = {
+  title: 'Controls/Button',
+  component: ButtonExample,
 };
 
 export default meta;
-type Story = StoryObj<typeof ExampleButton>;
+type Story = StoryObj<typeof ButtonExample>;
 
 export const Primary: Story = {
   args: {

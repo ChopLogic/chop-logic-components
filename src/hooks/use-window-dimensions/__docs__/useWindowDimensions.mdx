@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as UseWindowDimensionsStories from './useWindowDimensions.stories.tsx';
+
+<Meta of={UseWindowDimensionsStories} title='Hooks/useWindowDimensions' />
+
+# useWindowDimensions
+
+The `useWindowDimensions` hook tracks and provides the current window dimensions.
+
+<Canvas>
+  <Story of={UseWindowDimensionsStories.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React from 'react';
+import { useWindowDimensions } from 'your-library';
+
+const ExampleComponent = () => {
+  const { width, height } = useWindowDimensions();
+
+  return (
+    <div>
+      <p>Window width: {width}px</p>
+      <p>Window height: {height}px</p>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Returns
+
+- **windowDimensions**
+  - Type: `{ width: number; height: number }`
+  - Description: An object containing the current window width and height.

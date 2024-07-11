@@ -4,7 +4,7 @@ import Button from '../Button';
 import { userEvent } from '@testing-library/user-event';
 import { Icon } from 'enums/icon';
 
-describe('ChopLogicButton component', () => {
+describe('ChopLogicButton test:', () => {
   const testProps = {
     id: 'test-button-id',
     text: 'Test button',

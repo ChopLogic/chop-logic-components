@@ -19,3 +19,23 @@ exports[`ChopLogicButton component > should render correctly 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`ChopLogicButton test: > should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="test-class"
+    id="test-button-id"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="chop-icon__copy"
+    />
+    <span
+      class="_text_abfaef"
+    >
+      Test button
+    </span>
+  </button>
+</DocumentFragment>
+`;

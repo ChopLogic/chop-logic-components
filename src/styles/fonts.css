@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Cyrge';
+  src:
+    local('Cyrge'),
+    url('../assets/fonts/cyrge/Cygre-Regular.ttf') format('truetype-variations');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zector';
+  src:
+    local('Zector'),
+    url('../assets/fonts/zector/Zector.ttf') format('truetype-variations');
+  font-display: swap;
+}

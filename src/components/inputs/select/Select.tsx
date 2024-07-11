@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import 'assets/common.module.css';
 import styles from './styles.module.css';
 import { useClickOutside } from 'hooks/use-click-outside';
 import createClassName from 'utils/create-class-name';
@@ -7,6 +6,7 @@ import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useKeyPress } from 'hooks/use-key-press';
+import 'styles';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;

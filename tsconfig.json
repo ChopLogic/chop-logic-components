@@ -28,6 +28,7 @@
       "utils/*": ["./src/utils/*"],
       "enums/*": ["./src/enums/*"],
       "hooks/*": ["./src/hooks/*"],
+      "styles/*": ["./src/styles/*"],
       "__mocks__/*": ["./src/__mocks__/*"]
     },
 

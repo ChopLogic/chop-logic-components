@@ -4,6 +4,7 @@ import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
+import 'styles';
 
 export type ChopLogicModalProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox, { ChopLogicCheckboxProps } from '../Checkbox';
+import ChopLogicCheckbox, { ChopLogicCheckboxProps } from '../Checkbox';
 
 const Example: React.FC<ChopLogicCheckboxProps> = ({
   id = 'example-checkbox',
@@ -19,7 +19,7 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
         height: '100%',
       }}
     >
-      <Checkbox
+      <ChopLogicCheckbox
         id={id}
         name={name}
         label={label}

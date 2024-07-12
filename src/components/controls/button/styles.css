@@ -1,4 +1,4 @@
-.button {
+.cl-button {
   min-height: var(--min-element-size);
   min-width: var(--min-element-size);
   border: none;
@@ -13,18 +13,18 @@
   overflow: hidden;
 }
 
-.button:focus-visible {
+.cl-button:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
 
-.text {
+.cl-button__text {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.primary,
-.danger {
+.cl-button_primary,
+.cl-button_danger {
   border-radius: var(--block-border-radius);
   color: var(--cl-color-ivory);
   box-shadow: var(--box-shadow);
@@ -32,38 +32,38 @@
   transition: 0.3s;
 }
 
-.primary:hover,
-.primary:active,
-.danger:hover,
-.danger:active {
+.cl-button_primary:hover,
+.cl-button_primary:active,
+.cl-button_danger:hover,
+.cl-button_danger:active {
   filter: brightness(130%);
 }
 
-.primary {
+.cl-button_primary {
   background: var(--cl-primary-gradient);
 }
 
-.danger {
+.cl-button_danger {
   background: var(--cl-accent-gradient);
 }
 
-.secondary {
+.cl-button_secondary {
   background: none;
   color: var(--cl-color-black);
   text-shadow: none;
   transition: 0.3s;
 }
 
-.secondary .text {
+.cl-button_secondary .cl-button__text {
   text-decoration: underline;
 }
 
-.secondary:hover,
-.secondary:active {
+.cl-button_secondary:hover,
+.cl-button_secondary:active {
   text-shadow: var(--text-shadow);
 }
 
-.icon {
+.cl-button_icon {
   gap: 0;
   background: transparent;
   font-weight: normal;
@@ -72,17 +72,17 @@
   color: var(--cl-color-celtic-blue);
 }
 
-.icon:hover,
-.icon:active {
+.cl-button_icon:hover,
+.cl-button_icon:active {
   background-color: var(--cl-color-tint);
 }
 
-.disabled {
+.cl-button_disabled {
   pointer-events: none;
   filter: grayscale(80%);
   opacity: 0.9;
 }
 
-.disabled.secondary {
+.cl-button_disabled.cl-button_secondary {
   opacity: 0.6;
 }

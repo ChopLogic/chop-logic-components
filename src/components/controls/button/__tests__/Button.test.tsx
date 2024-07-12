@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Button from '../Button';
 import { userEvent } from '@testing-library/user-event';
 import { Icon } from 'enums/icon';
+import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton test:', () => {
   const testProps = {
@@ -10,6 +11,8 @@ describe('ChopLogicButton test:', () => {
     text: 'Test button',
     icon: Icon.Copy,
     className: 'test-class',
+    view: 'danger' as ChopLogicButtonView,
+    disabled: false,
   };
 
   it('should render correctly', () => {

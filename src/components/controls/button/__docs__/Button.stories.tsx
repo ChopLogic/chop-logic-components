@@ -10,13 +10,50 @@ const meta: Meta<typeof ButtonExample> = {
 export default meta;
 type Story = StoryObj<typeof ButtonExample>;
 
-export const Primary: Story = {
+export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
     view: 'primary',
     icon: Icon.Copy,
     type: 'button',
     disabled: false,
-    onClick: () => console.log('Copy clicked'),
+  },
+};
+
+export const SecondaryButton: Story = {
+  args: {
+    text: 'Learn more...',
+    view: 'secondary',
+    type: 'button',
+    disabled: false,
+  },
+};
+
+export const DangerButton: Story = {
+  args: {
+    text: 'Delete',
+    view: 'danger',
+    icon: Icon.Delete,
+    type: 'button',
+    disabled: false,
+  },
+};
+
+export const IconButton: Story = {
+  args: {
+    view: 'icon',
+    type: 'button',
+    icon: Icon.Cut,
+    disabled: false,
+  },
+};
+
+export const DisabledButton: Story = {
+  args: {
+    text: 'Copy',
+    view: 'primary',
+    icon: Icon.Copy,
+    type: 'button',
+    disabled: true,
   },
 };

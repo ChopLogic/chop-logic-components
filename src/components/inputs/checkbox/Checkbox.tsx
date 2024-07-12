@@ -12,7 +12,7 @@ export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
   isLabelHidden?: boolean;
 };
 
-const Checkbox: React.FC<ChopLogicCheckboxProps> = ({
+const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   id,
   name,
   label,
@@ -53,4 +53,4 @@ const Checkbox: React.FC<ChopLogicCheckboxProps> = ({
   );
 };
 
-export default Checkbox;
+export default ChopLogicCheckbox;

@@ -1,25 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicButton component > should render correctly 1`] = `
-<DocumentFragment>
-  <button
-    class="test-class"
-    id="test-button-id"
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="chop-icon__copy"
-    />
-    <span
-      class="_text_abfaef"
-    >
-      Test button
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
 exports[`ChopLogicButton test: > should render correctly 1`] = `
 <DocumentFragment>
   <button
@@ -32,7 +12,7 @@ exports[`ChopLogicButton test: > should render correctly 1`] = `
       class="chop-icon__copy"
     />
     <span
-      class="_text_abfaef"
+      class="cl-button__text"
     >
       Test button
     </span>

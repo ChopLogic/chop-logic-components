@@ -9,7 +9,7 @@ const meta: Meta<typeof TooltipExample> = {
 export default meta;
 type Story = StoryObj<typeof TooltipExample>;
 
-export const Default: Story = {
+export const VisibleOnHover: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
     containerTag: 'span',
@@ -18,7 +18,7 @@ export const Default: Story = {
   },
 };
 
-export const ClickToShow: Story = {
+export const VisibleOnClick: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
     containerTag: 'div',
@@ -27,7 +27,7 @@ export const ClickToShow: Story = {
   },
 };
 
-export const FocusToShow: Story = {
+export const VisibleOnFocus: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
     containerTag: 'div',
@@ -36,7 +36,7 @@ export const FocusToShow: Story = {
   },
 };
 
-export const ContextMenuToShow: Story = {
+export const VisibleOnContextMenu: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
     containerTag: 'div',

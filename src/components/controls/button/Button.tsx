@@ -1,7 +1,8 @@
 import React from 'react';
 import createClassName from 'utils/create-class-name';
-import './styles.css';
 import { ChopLogicButtonProps } from './types';
+import 'styles';
+import './Button.styles.css';
 
 const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, type = 'button', view = 'primary', icon, label, ...props }) => {
   const buttonClass = createClassName([

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
-import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import 'styles';
+import './ErrorMessage.styles.css';
 
 type ChopLogicErrorMessageProps = {
   errorId: string;
@@ -17,7 +17,7 @@ const ChopLogicErrorMessage: React.FC<PropsWithChildren<ChopLogicErrorMessagePro
   visible = false,
 }) => {
   return (
-    <span id={errorId} className={createClassName([styles.message, className, { [styles.visible]: visible }])}>
+    <span id={errorId} className={createClassName(['cl-error-message', className, { 'cl-error-message_visible': visible }])}>
       {message}
     </span>
   );

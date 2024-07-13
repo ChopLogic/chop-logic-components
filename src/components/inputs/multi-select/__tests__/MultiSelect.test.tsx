@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('ChopLogicSelect component', () => {
   const testProps = {
-    id: 'language-select-id',
+    id: 'language-multi-select-id',
     name: 'languages',
     label: 'Select your languages',
     values: MULTI_SELECT_VALUES,

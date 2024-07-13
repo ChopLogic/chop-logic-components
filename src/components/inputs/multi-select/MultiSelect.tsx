@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
@@ -7,6 +6,7 @@ import ChopLogicLabel from '../../elements/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 import 'styles';
+import './MultiSelect.styles.css';
 
 export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
@@ -38,7 +38,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   const [selectedValues, setSelectedValues] = useState<MultiSelectValue[]>(values);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
+  const wrapperClass = createClassName(['cl-multi-select', props?.className, { 'cl-multi-select_disabled': disabled }]);
   const ref = useRef(null);
 
   const handleClose = () => setIsOpened(false);
@@ -60,7 +60,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <div className={wrapperClass} ref={ref}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className={styles.label} />
+      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-multi-select__label' />
       <SelectCombobox
         name={name}
         isOpened={isOpened}

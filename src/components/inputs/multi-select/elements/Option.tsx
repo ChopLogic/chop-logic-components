@@ -1,9 +1,8 @@
 import { KeyboardEvent } from 'react';
-
-import styles from '../styles.module.css';
 import createClassName from 'utils/create-class-name';
 import { Icon } from 'enums/icon';
 import { MultiSelectValue } from '../MultiSelect';
+import '../MultiSelect.styles.css';
 
 type SelectOptionProps = {
   value: MultiSelectValue;
@@ -12,7 +11,7 @@ type SelectOptionProps = {
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
   const { id, label, selected } = value;
-  const checkboxClass = createClassName([styles.checkbox, { [Icon.Checked]: selected, [Icon.Unchecked]: !selected }]);
+  const checkboxClass = createClassName(['cl-multi-select__checkbox', { [Icon.Checked]: selected, [Icon.Unchecked]: !selected }]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -31,7 +30,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
     <li
       id={id}
       role='option'
-      className={styles.option}
+      className='cl-multi-select__option'
       aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}

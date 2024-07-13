@@ -3,7 +3,7 @@
 exports[`ChopLogicErrorMessage component > should render correctly 1`] = `
 <DocumentFragment>
   <span
-    class="_message_a256d5 custom-error _visible_a256d5"
+    class="cl-error-message custom-error cl-error-message_visible"
     id="test-error-id"
   >
     Incorrect input

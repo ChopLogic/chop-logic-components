@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
-import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import 'styles';
+import './Label.styles.css';
 
 type ChopLogicLabelProps = {
   label: string;
@@ -19,10 +19,10 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
   isTextHidden = false,
 }) => {
   return (
-    <label htmlFor={inputId} className={createClassName([styles.label, className])}>
-      {!isTextHidden && <span className={styles.text}>{label}</span>}
+    <label htmlFor={inputId} className={createClassName(['cl-label', className])}>
+      {!isTextHidden && <span className='cl-label__text'>{label}</span>}
       {required && (
-        <abbr title='required' className={styles.required}>
+        <abbr title='required' className='cl-label__required'>
           *
         </abbr>
       )}

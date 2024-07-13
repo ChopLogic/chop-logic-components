@@ -1,7 +1,7 @@
-import styles from '../styles.module.css';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
 import { MultiSelectValue } from '../MultiSelect';
+import '../MultiSelect.styles.css';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -26,7 +26,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   required,
   values,
 }) => {
-  const iconClass = createClassName([styles.icon, { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
+  const iconClass = createClassName(['cl-multi-select__icon', { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
   let visiblePlaceholder = placeholder;
@@ -47,12 +47,12 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       aria-expanded={isOpened}
       aria-controls={dropdownId}
       id={comboboxId}
-      className={styles.combobox}
+      className='cl-multi-select__combobox'
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
     >
-      <span className={styles.combobox_label}>{visiblePlaceholder}</span>
+      <span className='cl-multi-select__placeholder'>{visiblePlaceholder}</span>
       <span className={iconClass} aria-hidden='true'></span>
     </button>
   );

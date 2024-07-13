@@ -1,10 +1,9 @@
 import { KeyboardEvent } from 'react';
-
-import styles from '../styles.module.css';
 import createClassName from 'utils/create-class-name';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import SelectOption from './Option';
 import { MultiSelectValue } from '../MultiSelect';
+import '../MultiSelect.styles.css';
 
 type SelectDropdownProps = {
   values: MultiSelectValue[];
@@ -15,7 +14,7 @@ type SelectDropdownProps = {
 };
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId }) => {
-  const dropdownClass = createClassName([styles.dropdown, { [styles.dropdown_opened]: isOpened }]);
+  const dropdownClass = createClassName(['cl-multi-select__dropdown', { 'cl-multi-select__dropdown_opened': isOpened }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
     let focusedId: string = '';

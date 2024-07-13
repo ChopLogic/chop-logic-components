@@ -1,4 +1,4 @@
-.label {
+.cl-label {
   font-size: 0.8rem;
   font-family: var(--core-font);
   display: flex;
@@ -7,13 +7,13 @@
   color: var(--cl-color-black);
 }
 
-.text {
+.cl-label__text {
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.required {
+.cl-label__required {
   font-size: 0.8rem;
   font-family: var(--core-font);
   text-decoration: none;

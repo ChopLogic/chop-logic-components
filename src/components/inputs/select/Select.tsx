@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react';
-import styles from './styles.module.css';
 import { useClickOutside } from 'hooks/use-click-outside';
 import createClassName from 'utils/create-class-name';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useKeyPress } from 'hooks/use-key-press';
-import 'styles';
+import './Select.styles.css';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
@@ -37,7 +36,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const [selected, setSelected] = useState<SelectValue | undefined>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const wrapperClass = createClassName([styles.wrapper, props?.className, { [styles.disabled]: disabled }]);
+  const wrapperClass = createClassName(['cl-select', props?.className, { 'cl-select_disabled': disabled }]);
   const ref = useRef<HTMLDivElement>(null);
 
   const handleClose = () => setIsOpened(false);
@@ -55,7 +54,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
 
   return (
     <div className={wrapperClass} ref={ref}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className={styles.label} />
+      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-select__label' />
       <SelectCombobox
         name={name}
         isOpened={isOpened}

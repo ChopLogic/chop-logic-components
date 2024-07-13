@@ -4,12 +4,12 @@ exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1
 <DocumentFragment>
   <div
     aria-modal="true"
-    class="_window_8289eb"
+    class="cl-dialog"
     id="test-dialog-id"
     role="dialog"
   >
     <header
-      class="_header_8289eb"
+      class="cl-dialog__header"
     >
       Test dialog
       <button
@@ -24,7 +24,7 @@ exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1
       </button>
     </header>
     <div
-      class="_content_8289eb"
+      class="cl-dialog__content"
     >
       <div>
         Dialog content

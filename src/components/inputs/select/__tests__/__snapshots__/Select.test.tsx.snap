@@ -3,10 +3,10 @@
 exports[`ChopLogicSelect component > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_wrapper_b2e794"
+    class="cl-select"
   >
     <label
-      class="cl-label _label_b2e794"
+      class="cl-label cl-select__label"
       for="language-select-id_combobox"
     >
       <span
@@ -20,31 +20,31 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="_combobox_b2e794"
+      class="cl-select__combobox"
       id="language-select-id_combobox"
       name="language"
       role="combobox"
       type="button"
     >
       <span
-        class="_combobox_label_b2e794"
+        class="cl-select__placeholder"
       >
         Not selected
       </span>
       <span
         aria-hidden="true"
-        class="_icon_b2e794 chop-icon__caret-down"
+        class="cl-select__icon chop-icon__caret-down"
       />
     </button>
     <ul
-      class="_dropdown_b2e794"
+      class="cl-select__dropdown"
       id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="_option_b2e794"
+        class="cl-select__option"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -55,7 +55,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="_option_b2e794"
+        class="cl-select__option"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -66,7 +66,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="_option_b2e794"
+        class="cl-select__option"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

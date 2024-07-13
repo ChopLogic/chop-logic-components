@@ -1,4 +1,3 @@
-import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import { PropsWithChildren, useRef, useState } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
@@ -6,6 +5,7 @@ import { useTooltipPosition } from 'hooks/use-tooltip-position';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useClickOutside } from 'hooks/use-click-outside';
 import 'styles';
+import './Tooltip.styles.css';
 
 export type ChopLogicTooltipProps = PropsWithChildren &
   React.HTMLAttributes<HTMLElement> & {
@@ -29,7 +29,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
   const ContainerComponent = containerTag;
-  const tooltipClass = createClassName([className, styles.tooltip]);
+  const tooltipClass = createClassName([className, 'cl-tooltip']);
 
   const closeTooltip = () => setIsOpened(false);
   const openTooltip = () => setIsOpened(true);
@@ -44,7 +44,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
 
   return (
     <ContainerComponent
-      className={styles.container}
+      className='cl-tooltip__container'
       onClick={visibleOn === 'click' ? toggleTooltip : undefined}
       onMouseOver={visibleOn === 'hover' ? openTooltip : undefined}
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}

@@ -1,10 +1,10 @@
-import styles from './styles.module.css';
 import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import { PropsWithChildren } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
 import 'styles';
+import './Dialog.styles.css';
 
 export type ChopLogicModalProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {
@@ -21,7 +21,7 @@ const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, cla
     return null;
   }
 
-  const backgroundClassNames = createClassName([className, styles.background, { [styles.background_closing]: isClosing }]);
+  const backgroundClassNames = createClassName([className, 'cl-dialog__background', { 'cl-dialog__background_closing': isClosing }]);
 
   return (
     <ChopLogicPortal>

@@ -13,7 +13,7 @@ const Example: React.FC<ChopLogicModalProps> = ({ onClose, title }) => {
 
   const modalContent = (
     <div>
-      <p>
+      <p style={{ marginBottom: '20px' }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, neque soluta ullam repudiandae facere dolore modi reiciendis
         doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
       </p>

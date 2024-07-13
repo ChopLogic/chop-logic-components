@@ -1,10 +1,10 @@
-.container {
+.cl-text-input {
   display: flex;
   flex-direction: column;
   gap: var(--medium-gap);
 }
 
-.wrapper {
+.cl-text-input__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,23 +18,23 @@
   border: var(--light-blue-border);
 }
 
-.wrapper:has(.input:focus-visible) {
+.cl-text-input__wrapper:has(.cl-text-input__textbox:focus-visible) {
   border: var(--dark-blue-border);
   outline: var(--dark-blue-border);
   outline-offset: -3px;
 }
 
-.invalid {
+.cl-text-input__wrapper_invalid {
   border: var(--accent-border);
 }
 
-.invalid:has(.input:focus-visible) {
+.cl-text-input__wrapper_invalid:has(.cl-text-input__textbox:focus-visible) {
   border: var(--accent-border);
   outline: var(--accent-border);
   outline-offset: -3px;
 }
 
-.input {
+.cl-text-input__textbox {
   outline: 0;
   border: none;
   font-size: 1rem;
@@ -44,16 +44,16 @@
   color: var(--cl-color-black);
 }
 
-.error {
+.cl-text-input__error {
   padding-inline-start: var(--medium-gap);
 }
 
-.disabled {
+.cl-text-input__wrapper_disabled {
   filter: grayscale(100%);
   opacity: 0.8;
   pointer-events: none;
 }
 
-.disabled .input::placeholder {
+.cl-text-input__wrapper_disabled .cl-text-input__textbox::placeholder {
   color: transparent;
 }

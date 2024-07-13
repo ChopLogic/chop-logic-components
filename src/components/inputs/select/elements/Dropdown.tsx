@@ -1,10 +1,9 @@
 import { KeyboardEvent } from 'react';
-
-import styles from '../styles.module.css';
 import createClassName from 'utils/create-class-name';
 import { SelectValue } from '../Select';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import SelectOption from './Option';
+import '../Select.styles.css';
 
 type SelectDropdownProps = {
   values: SelectValue[];
@@ -17,7 +16,7 @@ type SelectDropdownProps = {
 };
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
-  const dropdownClass = createClassName([styles.dropdown, { [styles.dropdown_opened]: isOpened }]);
+  const dropdownClass = createClassName(['cl-select__dropdown', { 'cl-select__dropdown_opened': isOpened }]);
 
   const handleOptionSelect = (id: string) => {
     onSelect(id);

@@ -1,4 +1,4 @@
-.background {
+.cl-dialog__background {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,13 +14,13 @@
   -moz-animation: fadeIn ease 400ms;
 }
 
-.background_closing {
+.cl-dialog__background_closing {
   animation: fadeOut ease 400ms;
   -webkit-animation: fadeOut ease 400ms;
   -moz-animation: fadeOut ease 400ms;
 }
 
-.window {
+.cl-dialog {
   z-index: var(--modal-z-index);
   background-color: white;
   box-shadow: var(--box-shadow);
@@ -37,7 +37,7 @@
   -moz-animation: fadeIn ease 400ms;
 }
 
-.header {
+.cl-dialog__header {
   font-size: 1.6rem;
   font-weight: bold;
   display: flex;
@@ -48,13 +48,13 @@
   border-bottom: var(--light-blue-border);
 }
 
-.content {
+.cl-dialog__content {
   padding: var(--big-gap);
   font-size: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .window {
+  .cl-dialog {
     width: fit-content;
     height: fit-content;
     position: relative;
@@ -65,7 +65,7 @@
     border-bottom-right-radius: var(--block-border-radius);
   }
 
-  .header {
+  .cl-dialog__header {
     font-size: 2rem;
   }
 }

@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useRef } from 'react';
-import styles from '../styles.module.css';
 import ChopLogicModalLayoutHeader from './Header';
 import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 import { useKeyPress } from 'hooks/use-key-press';
+import '../Dialog.styles.css';
 
 type ModalLayoutProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {
@@ -18,9 +18,9 @@ const ChopLogicModalLayout: React.FC<ModalLayoutProps> = ({ title, onClose, isOp
   useKeyPress({ keyCode: 'Escape', ref: modalRef, onKeyPress: onClose });
 
   return (
-    <div ref={modalRef} role='dialog' aria-modal='true' className={styles.window} {...rest}>
+    <div ref={modalRef} role='dialog' aria-modal='true' className='cl-dialog' {...rest}>
       <ChopLogicModalLayoutHeader title={title} onClose={onClose} />
-      <div className={styles.content}>{children}</div>
+      <div className='cl-dialog__content'>{children}</div>
     </div>
   );
 };

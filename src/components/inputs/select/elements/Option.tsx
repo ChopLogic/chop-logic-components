@@ -1,9 +1,8 @@
 import { KeyboardEvent } from 'react';
-
-import styles from '../styles.module.css';
 import { SelectValue } from '../Select';
 import createClassName from 'utils/create-class-name';
 import { Icon } from 'enums/icon';
+import '../Select.styles.css';
 
 type SelectOptionProps = {
   value: SelectValue;
@@ -13,7 +12,7 @@ type SelectOptionProps = {
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect }) => {
   const { id, label } = value;
-  const iconClass = createClassName([styles.icon, Icon.CheckMark]);
+  const iconClass = createClassName(['cl-select__icon', Icon.CheckMark]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -32,7 +31,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
     <li
       id={id}
       role='option'
-      className={styles.option}
+      className='cl-select__option'
       aria-selected={isSelected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}

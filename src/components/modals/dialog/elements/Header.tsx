@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../styles.module.css';
 import { ChopLogicButton } from 'components/index';
 import { Icon } from 'enums/icon';
+import '../Dialog.styles.css';
 
 type ChopLogicModalLayoutHeaderProps = {
   title: string;
@@ -10,7 +10,7 @@ type ChopLogicModalLayoutHeaderProps = {
 
 const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({ title, onClose }): React.ReactElement => {
   return (
-    <header className={styles.header}>
+    <header className='cl-dialog__header'>
       {title}
       <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close modal window' onClick={onClose} />
     </header>

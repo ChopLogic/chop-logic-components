@@ -7,7 +7,7 @@ const tooltipContent = 'Tooltip content';
 
 const renderTooltip = (props: Partial<ChopLogicTooltipProps> = {}) => {
   return render(
-    <ChopLogicTooltip id='test-tooltip' tooltipContent={tooltipContent} {...props}>
+    <ChopLogicTooltip id='test-tooltip-id' tooltipContent={tooltipContent} {...props}>
       <button>Hover or Click me</button>
     </ChopLogicTooltip>,
   );

@@ -1,13 +1,4 @@
-.container {
-  position: relative;
-  cursor: pointer;
-}
-
-.container:focus-visible {
-  outline: var(--focus-outline);
-}
-
-.tooltip {
+.cl-tooltip {
   position: absolute;
   left: 0;
   top: 0;
@@ -23,6 +14,15 @@
   animation: fadeIn ease 400ms;
   -webkit-animation: fadeIn ease 400ms;
   -moz-animation: fadeIn ease 400ms;
+}
+
+.cl-tooltip__container {
+  position: relative;
+  cursor: pointer;
+}
+
+.cl-tooltip__container:focus-visible {
+  outline: var(--focus-outline);
 }
 
 @keyframes fadeIn {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from './styles.module.css';
 import createClassName from 'utils/create-class-name';
 import ChopLogicLabel from '../../elements/label/Label';
 import ChopLogicErrorMessage from '../../elements/error-message/ErrorMessage';
 import 'styles';
+import './TextInput.styles.css';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   id: string;
@@ -28,12 +28,12 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState<string>(typeof defaultValue === 'string' ? defaultValue : '');
   const errorId = `${id}_error`;
-  const containerClass = createClassName([styles.container, props?.className]);
+  const containerClass = createClassName(['cl-text-input', props?.className]);
   const wrapperClass = createClassName([
-    styles.wrapper,
+    'cl-text-input__wrapper',
     {
-      [styles.disabled]: !!disabled,
-      [styles.invalid]: !valid,
+      'cl-text-input__wrapper_disabled': !!disabled,
+      'cl-text-input__wrapper_invalid': !valid,
     },
   ]);
 
@@ -46,12 +46,12 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   return (
     <div className={containerClass}>
       <div className={wrapperClass}>
-        <ChopLogicLabel label={label} required={required} inputId={id} className={styles.label} />
+        <ChopLogicLabel label={label} required={required} inputId={id} className='cl-text-input__label' />
         <input
           id={id}
           name={name}
           type='text'
-          className={styles.input}
+          className='cl-text-input__textbox'
           disabled={disabled}
           placeholder={placeholder}
           required={required}
@@ -62,7 +62,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           {...props}
         />
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} className={styles.error} visible={!valid} />
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} className='cl-text-input__error' visible={!valid} />
     </div>
   );
 };

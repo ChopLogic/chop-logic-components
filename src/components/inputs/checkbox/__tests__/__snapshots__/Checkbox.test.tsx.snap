@@ -7,13 +7,13 @@ exports[`ChopLogicTextInput tests: > should render the input correctly 1`] = `
   >
     <input
       class="cl-checkbox__input"
-      id="test-checkbox"
+      id="test-checkbox-id"
       name="testCheckbox"
       type="checkbox"
     />
     <label
-      class="cl-label cl-checkbox__label chop-icon__checkbox-unchecked"
-      for="test-checkbox"
+      class="cl-label cl-checkbox__label cl-icon__checkbox-unchecked"
+      for="test-checkbox-id"
     >
       <span
         class="cl-label__text"

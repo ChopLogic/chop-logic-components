@@ -19,7 +19,7 @@ exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1
       >
         <span
           aria-hidden="true"
-          class="chop-icon__close"
+          class="cl-icon__close"
         />
       </button>
     </header>

@@ -33,7 +33,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="cl-select__icon chop-icon__caret-down"
+        class="cl-select__icon cl-icon__caret-down"
       />
     </button>
     <ul

@@ -9,7 +9,7 @@ exports[`ChopLogicButton test: > should render correctly 1`] = `
   >
     <span
       aria-hidden="true"
-      class="chop-icon__copy"
+      class="cl-icon__copy"
     />
     <span
       class="cl-button__text"

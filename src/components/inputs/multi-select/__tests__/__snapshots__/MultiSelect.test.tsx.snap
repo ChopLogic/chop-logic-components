@@ -34,7 +34,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="cl-multi-select__icon chop-icon__caret-down"
+        class="cl-multi-select__icon cl-icon__caret-down"
       />
     </button>
     <ul
@@ -52,7 +52,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       >
         <span
           aria-hidden="true"
-          class="cl-multi-select__checkbox chop-icon__checkbox-unchecked"
+          class="cl-multi-select__checkbox cl-icon__checkbox-unchecked"
         />
         <span>
           English
@@ -67,7 +67,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       >
         <span
           aria-hidden="true"
-          class="cl-multi-select__checkbox chop-icon__checkbox-unchecked"
+          class="cl-multi-select__checkbox cl-icon__checkbox-unchecked"
         />
         <span>
           Spanish
@@ -82,7 +82,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       >
         <span
           aria-hidden="true"
-          class="cl-multi-select__checkbox chop-icon__checkbox-unchecked"
+          class="cl-multi-select__checkbox cl-icon__checkbox-unchecked"
         />
         <span>
           French
@@ -97,7 +97,7 @@ exports[`ChopLogicSelect component > should render correctly 1`] = `
       >
         <span
           aria-hidden="true"
-          class="cl-multi-select__checkbox chop-icon__checkbox-unchecked"
+          class="cl-multi-select__checkbox cl-icon__checkbox-unchecked"
         />
         <span>
           German

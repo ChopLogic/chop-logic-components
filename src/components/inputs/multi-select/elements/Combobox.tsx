@@ -1,7 +1,7 @@
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
-import { MultiSelectValue } from '../MultiSelect';
 import '../MultiSelect.styles.css';
+import { MultiSelectValue } from '../types';
 
 type SelectComboboxProps = {
   isOpened: boolean;

@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import ChopLogicTooltip, { ChopLogicTooltipProps } from '../Tooltip';
+import ChopLogicTooltip from '../Tooltip';
 import userEvent from '@testing-library/user-event';
+import { ChopLogicTooltipProps } from '../types';
 
 const tooltipContent = 'Tooltip content';
 

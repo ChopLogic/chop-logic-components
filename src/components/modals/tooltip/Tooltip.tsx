@@ -1,19 +1,12 @@
 import createClassName from 'utils/create-class-name';
-import { PropsWithChildren, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import ChopLogicPortal from 'components/elements/portal/Portal';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useClickOutside } from 'hooks/use-click-outside';
 import 'styles';
 import './Tooltip.styles.css';
-
-export type ChopLogicTooltipProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLElement> & {
-    tooltipContent: string | React.ReactElement;
-    id: string;
-    containerTag?: 'span' | 'div' | 'p' | 'strong' | 'em';
-    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
-  };
+import { ChopLogicTooltipProps } from './types';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   className,

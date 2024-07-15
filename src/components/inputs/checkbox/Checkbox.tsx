@@ -4,13 +4,7 @@ import ChopLogicLabel from '../../elements/label/Label';
 import { Icon } from 'enums/icon';
 import 'styles';
 import './Checkbox.styles.css';
-
-export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
-  name: string;
-  label: string;
-  isLabelHidden?: boolean;
-};
+import { ChopLogicCheckboxProps } from './types';
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   id,

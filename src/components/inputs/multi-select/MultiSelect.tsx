@@ -7,21 +7,7 @@ import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 import 'styles';
 import './MultiSelect.styles.css';
-
-export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
-  name: string;
-  label: string;
-  values: MultiSelectValue[];
-  onSelectChange?: (values?: MultiSelectValue[]) => void;
-  placeholder?: string;
-};
-
-export type MultiSelectValue = {
-  id: string;
-  label: string;
-  selected: boolean;
-};
+import { ChopLogicMultiSelectProps, MultiSelectValue } from './types';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   id,

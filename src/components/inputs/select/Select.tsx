@@ -6,20 +6,7 @@ import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useKeyPress } from 'hooks/use-key-press';
 import './Select.styles.css';
-
-export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
-  name: string;
-  label: string;
-  values: SelectValue[];
-  onSelectChange?: (value?: SelectValue) => void;
-  placeholder?: string;
-};
-
-export type SelectValue = {
-  id: string;
-  label: string;
-};
+import { ChopLogicSelectProps, SelectValue } from './types';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,
@@ -33,7 +20,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue | undefined>();
+  const [selected, setSelected] = useState<SelectValue>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const wrapperClass = createClassName(['cl-select', props?.className, { 'cl-select_disabled': disabled }]);

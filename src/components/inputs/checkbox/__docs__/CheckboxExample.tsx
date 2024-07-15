@@ -1,5 +1,6 @@
 import React from 'react';
-import ChopLogicCheckbox, { ChopLogicCheckboxProps } from '../Checkbox';
+import ChopLogicCheckbox from '../Checkbox';
+import { ChopLogicCheckboxProps } from '../types';
 
 const Example: React.FC<ChopLogicCheckboxProps> = ({
   id = 'example-checkbox',

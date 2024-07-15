@@ -1,7 +1,7 @@
-import { SelectValue } from '../Select';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
 import '../Select.styles.css';
+import { SelectValue } from '../types';
 
 type SelectComboboxProps = {
   isOpened: boolean;

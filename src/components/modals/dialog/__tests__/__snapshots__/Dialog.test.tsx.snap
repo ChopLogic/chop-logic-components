@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicDialog tests: > ChopLogicModalLayout should render correctly 1`] = `
+exports[`ChopLogicDialog > should render the layout correctly 1`] = `
 <DocumentFragment>
   <div
     aria-modal="true"

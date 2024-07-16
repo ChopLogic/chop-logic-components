@@ -1,0 +1,22 @@
+.cl-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cl-color-ivory);
+  border-radius: var(--block-border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--medium-gap);
+  z-index: var(--modal-z-index);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--medium-gap);
+  font-family: var(--core-font);
+  color: var(--cl-color-black);
+  animation: fadeIn ease 400ms;
+  -webkit-animation: fadeIn ease 400ms;
+  -moz-animation: fadeIn ease 400ms;
+  width: 100%;
+  max-width: 500px;
+}

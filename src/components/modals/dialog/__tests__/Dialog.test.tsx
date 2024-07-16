@@ -5,14 +5,14 @@ import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
 import ChopLogicDialog from '../Dialog';
 
-describe('ChopLogicDialog tests:', () => {
+describe('ChopLogicDialog', () => {
   const testLayoutProps = {
     id: 'test-dialog-id',
     title: 'Test dialog',
     onClose: vi.fn(),
   };
 
-  it('ChopLogicDialog should render the dialog correctly after a delay', async () => {
+  it('should render the dialog correctly after a delay', async () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened>
         <div>Dialog content</div>
@@ -22,7 +22,7 @@ describe('ChopLogicDialog tests:', () => {
     expect(window).toBeInTheDocument();
   });
 
-  it('ChopLogicDialog should render the dialog if isOpened is false', () => {
+  it('should render the dialog if isOpened is false', () => {
     render(
       <ChopLogicDialog {...testLayoutProps} isOpened={false}>
         <div>Dialog content</div>
@@ -32,7 +32,7 @@ describe('ChopLogicDialog tests:', () => {
     expect(window).not.toBeInTheDocument();
   });
 
-  it('ChopLogicModalLayout should render correctly', () => {
+  it('should render the layout correctly', () => {
     const { asFragment } = render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
         <div>Dialog content</div>
@@ -41,7 +41,7 @@ describe('ChopLogicDialog tests:', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ChopLogicModalLayout the dialog element', () => {
+  it('should have the dialog role', () => {
     render(
       <ChopLogicModalLayout {...testLayoutProps} isOpened>
         <div>Dialog content</div>
@@ -50,13 +50,13 @@ describe('ChopLogicDialog tests:', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('ChopLogicModalLayoutHeader should display the dialog title and the close button', () => {
+  it('should display the dialog title and the close button', () => {
     render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('ChopLogicModalLayoutHeader should call onClose handler', async () => {
+  it('should call onClose handler', async () => {
     render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     await userEvent.click(screen.getByRole('button'));
     expect(testLayoutProps.onClose).toHaveBeenCalledOnce();

@@ -5,7 +5,7 @@ import { userEvent } from '@testing-library/user-event';
 import { Icon } from 'enums/icon';
 import { ChopLogicButtonView } from '../types';
 
-describe('ChopLogicButton test:', () => {
+describe('ChopLogicButton', () => {
   const testProps = {
     id: 'test-button-id',
     text: 'Test button',

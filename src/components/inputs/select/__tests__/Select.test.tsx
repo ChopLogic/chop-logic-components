@@ -4,7 +4,7 @@ import ChopLogicSelect from '../Select';
 import userEvent from '@testing-library/user-event';
 import { SELECT_LANGUAGES } from '__mocks__/select-values';
 
-describe('ChopLogicSelect component', () => {
+describe('ChopLogicSelect', () => {
   const testProps = {
     id: 'language-select-id',
     name: 'language',

@@ -5,7 +5,7 @@ import ChopLogicMultiSelect from '../MultiSelect';
 import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
 import userEvent from '@testing-library/user-event';
 
-describe('ChopLogicSelect component', () => {
+describe('ChopLogicSelect', () => {
   const testProps = {
     id: 'language-multi-select-id',
     name: 'languages',

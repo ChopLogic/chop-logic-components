@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
 import ChopLogicLabel from '../label/Label';
 
-describe('ChopLogicLabel component', () => {
+describe('ChopLogicLabel', () => {
   const testProps = {
     label: 'Test label',
     required: true,

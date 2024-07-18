@@ -2,7 +2,7 @@ import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicPortal from 'components/elements/portal/Portal';
 import 'styles';
-import './Dialog.styles.css';
+import './Alert.styles.css';
 import { ChopLogicAlertProps } from './types';
 import { Icon } from 'enums/icon';
 import ChopLogicButton from 'components/controls/button/Button';

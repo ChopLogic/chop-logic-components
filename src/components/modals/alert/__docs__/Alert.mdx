@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as Alert from './Alert.stories.tsx';
+
+<Meta of={Alert} title='Alert' />
+
+# Alert
+
+The `ChopLogicAlert` component displays an alert message with various modes such as success, error, warning, and info.
+
+<Canvas>
+  <Story of={Alert.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React, { useState } from 'react';
+import ChopLogicAlert from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const [isOpened, setIsOpened] = useState(true);
+
+  const handleClose = () => setIsOpened(false);
+
+  return <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title='Alert Title' message='This is an alert message.' mode='info' />;
+};
+
+export default ExampleComponent;
+```
+
+## Props
+
+- **isOpened**
+  Type: boolean
+  Description: Determines if the alert is open.
+- **onClose**
+  Type: `() => void`
+  Description: Function that suppose to close the alert and handle additional logic.
+- **title**
+  Type: string
+  Description: The title of the alert.
+- **message**
+  Type: string
+  Description: The message content of the alert.
+- **mode**
+  Type: ChopLogicAlertMode
+  Description: The mode of the alert. Can be success, error, warning, or info.

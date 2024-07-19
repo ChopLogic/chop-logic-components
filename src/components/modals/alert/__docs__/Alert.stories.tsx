@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import ChopLogicAlert from '../Alert';
 import { ChopLogicAlertProps } from '../types';
+import ChopLogicButton from 'components/controls/button/Button';
 
 const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
-  const [isOpened, setIsOpened] = useState(true);
+  const [isOpened, setIsOpened] = useState(false);
 
+  const handleOpen = () => setIsOpened(true);
   const handleClose = () => setIsOpened(false);
 
-  return <ChopLogicAlert {...props} isOpened={isOpened} onClose={handleClose} />;
+  return (
+    <>
+      <ChopLogicButton onClick={handleOpen} text='Toggle Alert' view='danger' />
+      <ChopLogicAlert {...props} isOpened={isOpened} onClose={handleClose} />
+    </>
+  );
 };
 
 const meta: Meta<typeof ExampleComponent> = {

@@ -1,5 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`ChopLogicButton > should match the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="test-class"
+    id="test-button-id"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="cl-icon__copy"
+    />
+    <span
+      class="cl-button__text"
+    >
+      Test button
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`ChopLogicButton > should render correctly 1`] = `
 <DocumentFragment>
   <button

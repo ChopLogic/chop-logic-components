@@ -18,9 +18,11 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, clas
   return (
     <ChopLogicPortal>
       <div className={alertClass} {...rest}>
-        <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} />
-        <h3>{title}</h3>
-        <p>{message}</p>
+        <div className='cl-alert__content'>
+          <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} />
+          <h3>{title}</h3>
+          <p>{message}</p>
+        </div>
       </div>
     </ChopLogicPortal>
   );

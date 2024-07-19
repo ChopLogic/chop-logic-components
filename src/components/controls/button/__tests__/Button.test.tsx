@@ -15,7 +15,7 @@ describe('ChopLogicButton', () => {
     disabled: false,
   };
 
-  it('should render correctly', () => {
+  it('should match the snapshot', () => {
     const { asFragment } = render(<Button {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });

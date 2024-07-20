@@ -5,5 +5,5 @@ export type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
   onClose: () => void;
   title: string;
   message: string;
-  mode: ChopLogicAlertMode;
+  mode?: ChopLogicAlertMode;
 };

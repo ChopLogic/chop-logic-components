@@ -4,33 +4,30 @@ import ChopLogicPortal from 'components/elements/portal/Portal';
 import 'styles';
 import './Alert.styles.css';
 import { ChopLogicAlertProps } from './types';
-import { Icon } from 'enums/icon';
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicAlertHeader from './elements/Header';
 
-const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, className, title, message, ...rest }) => {
+const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, title, message, mode = 'info', ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 
   if (!isMounted) return null;
 
-  const alertClass = createClassName([className, 'cl-alert', { 'cl-alert_closing': isClosing }]);
+  const wrapperClass = createClassName([rest.className, 'cl-alert', { 'cl-alert_closing': isClosing }]);
+  const contentClass = createClassName([
+    'cl-alert__content',
+    {
+      'cl-alert__content_info': mode === 'info',
+      'cl-alert__content_warning': mode === 'warning',
+      'cl-alert__content_error': mode === 'error',
+      'cl-alert__content_success': mode === 'success',
+    },
+  ]);
 
   return (
     <ChopLogicPortal>
-      <div className={alertClass} {...rest}>
-        <div className='cl-alert__content'>
-          <header className='cl-alert__header'>
-            <h3 className='cl-alert__title'>
-              {title}
-              <ChopLogicButton
-                icon={Icon.Cancel}
-                view='icon'
-                aria-label='Close alert popup'
-                onClick={onClose}
-                className='cl-alert__close-button'
-              />
-            </h3>
-          </header>
+      <div className={wrapperClass} {...rest}>
+        <div className={contentClass}>
+          <ChopLogicAlertHeader title={title} onClose={onClose} mode={mode} />
           <p className='cl-alert__message'>{message}</p>
         </div>
       </div>

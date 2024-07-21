@@ -1,11 +1,8 @@
 .cl-alert {
   position: fixed;
-  bottom: var(--medium-gap);
-  left: var(--medium-gap);
-  width: fit-content;
-  height: fit-content;
-  max-width: 90%;
-  max-height: 50%;
+  bottom: var(--big-gap);
+  left: 50%;
+  transform: translateX(-50%);
   z-index: var(--modal-z-index);
 }
 
@@ -19,13 +16,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--medium-gap);
-  background-color: white;
   box-shadow: var(--box-shadow);
   font-family: var(--core-font);
-  width: 100%;
-  max-width: 400px;
+  width: 95vw;
   padding: var(--medium-gap);
   border-radius: var(--block-border-radius);
+}
+
+.cl-alert__content_info {
+  background-color: var(--cl-color-ivory);
+}
+
+.cl-alert__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes fadeIn {

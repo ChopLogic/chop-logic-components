@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicAlert > should have different headers depending on the mode 1`] = `
+<DocumentFragment>
+  <header
+    class="cl-alert__header"
+  >
+    <h3
+      class="cl-alert__title cl-icon__bomb"
+    >
+      Alert Title
+    </h3>
+    <button
+      aria-label="Close alert popup"
+      class="cl-button cl-button_icon"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="cl-icon__close"
+      />
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicAlert > should have different headers depending on the mode 2`] = `
+<DocumentFragment>
+  <header
+    class="cl-alert__header"
+  >
+    <h3
+      class="cl-alert__title cl-icon__warning"
+    >
+      Alert Title
+    </h3>
+    <button
+      aria-label="Close alert popup"
+      class="cl-button cl-button_icon"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="cl-icon__close"
+      />
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicAlert > should have different headers depending on the mode 3`] = `
+<DocumentFragment>
+  <header
+    class="cl-alert__header"
+  >
+    <h3
+      class="cl-alert__title cl-icon__support"
+    >
+      Alert Title
+    </h3>
+    <button
+      aria-label="Close alert popup"
+      class="cl-button cl-button_icon"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="cl-icon__close"
+      />
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicAlert > should have different headers depending on the mode 4`] = `
+<DocumentFragment>
+  <header
+    class="cl-alert__header"
+  >
+    <h3
+      class="cl-alert__title cl-icon__notification"
+    >
+      Alert Title
+    </h3>
+    <button
+      aria-label="Close alert popup"
+      class="cl-button cl-button_icon"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="cl-icon__close"
+      />
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicAlert > should have different headers depending on the mode 5`] = `
+<DocumentFragment>
+  <header
+    class="cl-alert__header"
+  >
+    <h3
+      class="cl-alert__title cl-icon__check"
+    >
+      Alert Title
+    </h3>
+    <button
+      aria-label="Close alert popup"
+      class="cl-button cl-button_icon"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="cl-icon__close"
+      />
+    </button>
+  </header>
+</DocumentFragment>
+`;

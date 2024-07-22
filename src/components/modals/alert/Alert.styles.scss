@@ -4,30 +4,30 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--modal-z-index);
-}
 
-.cl-alert_closing {
-  animation: fadeOut ease 400ms;
-  -webkit-animation: fadeOut ease 400ms;
-  -moz-animation: fadeOut ease 400ms;
-}
+  &_closing {
+    animation: fadeOut ease 400ms;
+    -webkit-animation: fadeOut ease 400ms;
+    -moz-animation: fadeOut ease 400ms;
+  }
 
-.cl-alert__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--medium-gap);
-  box-shadow: var(--box-shadow);
-  font-family: var(--core-font);
-  width: 95vw;
-  padding: var(--medium-gap);
-  border-radius: var(--block-border-radius);
-  background-color: var(--cl-color-ivory);
-}
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.cl-alert__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+    box-shadow: var(--box-shadow);
+    font-family: var(--core-font);
+    width: 95vw;
+    padding: var(--medium-gap);
+    border-radius: var(--block-border-radius);
+    background-color: var(--cl-color-ivory);
+  }
 }
 
 @keyframes fadeIn {

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'styles';
-import '../Alert.styles.css';
+import '../Alert.styles.scss';
 import { Icon } from 'enums/icon';
 import ChopLogicButton from 'components/controls/button/Button';
 import { ChopLogicAlertMode } from '../types';

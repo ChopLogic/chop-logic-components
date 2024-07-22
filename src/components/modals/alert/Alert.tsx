@@ -20,6 +20,7 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, titl
       'cl-alert__content_warning': mode === 'warning',
       'cl-alert__content_error': mode === 'error',
       'cl-alert__content_success': mode === 'success',
+      'cl-alert__content_help': mode === 'help',
     },
   ]);
 

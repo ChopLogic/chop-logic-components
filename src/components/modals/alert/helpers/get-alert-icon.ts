@@ -4,13 +4,15 @@ import { ChopLogicAlertMode } from '../types';
 export function getAlertIcon(mode: ChopLogicAlertMode): Icon {
   switch (mode) {
     case 'info':
-      return Icon.Info;
+      return Icon.Notification;
     case 'warning':
-      return Icon.Info;
+      return Icon.Warning;
     case 'error':
-      return Icon.Info;
+      return Icon.Bomb;
     case 'success':
-      return Icon.Checked;
+      return Icon.CheckMark;
+    case 'help':
+      return Icon.Support;
     default:
       return Icon.Info;
   }

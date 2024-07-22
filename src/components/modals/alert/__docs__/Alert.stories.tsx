@@ -34,7 +34,7 @@ const meta: Meta<typeof ExampleComponent> = {
     message: { control: 'text' },
     mode: {
       control: 'select',
-      options: ['success', 'error', 'warning', 'info'],
+      options: ['success', 'error', 'warning', 'info', 'help'],
     },
   },
 };

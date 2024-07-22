@@ -21,9 +21,6 @@
   width: 95vw;
   padding: var(--medium-gap);
   border-radius: var(--block-border-radius);
-}
-
-.cl-alert__content_info {
   background-color: var(--cl-color-ivory);
 }
 

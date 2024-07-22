@@ -44,4 +44,9 @@ export enum Icon {
   Cut = 'cl-icon__scissors',
   Reset = 'cl-icon__trash',
   Clear = 'cl-icon__cross',
+  Support = 'cl-icon__support',
+  Bomb = 'cl-icon__bomb',
+  Quill = 'cl-icon__quill',
+  Warning = 'cl-icon__warning',
+  Notification = 'cl-icon__notification',
 }

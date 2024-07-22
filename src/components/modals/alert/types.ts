@@ -1,4 +1,4 @@
-export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info';
+export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
 
 export type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpened: boolean;

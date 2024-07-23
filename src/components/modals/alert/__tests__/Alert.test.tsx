@@ -8,7 +8,7 @@ describe('ChopLogicAlert', () => {
   const testAlertProps = {
     isOpened: true,
     onClose: vi.fn(),
-    title: 'Alert Title',
+    title: 'Test Title',
     message: 'This is an alert message.',
   };
 

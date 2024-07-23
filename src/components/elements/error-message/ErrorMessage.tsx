@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from 'react';
 import createClassName from 'utils/create-class-name';
-import 'styles';
 import './ErrorMessage.styles.css';
 
 type ChopLogicErrorMessageProps = {

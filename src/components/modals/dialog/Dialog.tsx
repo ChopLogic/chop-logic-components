@@ -2,7 +2,6 @@ import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import ChopLogicPortal from 'components/elements/portal/Portal';
-import 'styles';
 import './Dialog.styles.css';
 import { ChopLogicModalProps } from './types';
 

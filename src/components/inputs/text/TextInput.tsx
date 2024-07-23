@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import createClassName from 'utils/create-class-name';
 import ChopLogicLabel from '../../elements/label/Label';
 import ChopLogicErrorMessage from '../../elements/error-message/ErrorMessage';
-import 'styles';
 import './TextInput.styles.css';
 import { ChopLogicTextInputProps } from './types';
 

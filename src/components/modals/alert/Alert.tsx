@@ -1,8 +1,7 @@
 import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicPortal from 'components/elements/portal/Portal';
-import 'styles';
-import './Alert.styles.scss';
+import './Alert.scss';
 import { ChopLogicAlertProps } from './types';
 import ChopLogicAlertHeader from './elements/Header';
 

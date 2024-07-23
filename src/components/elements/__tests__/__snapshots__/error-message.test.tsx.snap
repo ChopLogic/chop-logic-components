@@ -10,14 +10,3 @@ exports[`ChopLogicErrorMessage > should render correctly 1`] = `
   </span>
 </DocumentFragment>
 `;
-
-exports[`ChopLogicErrorMessage component > should render correctly 1`] = `
-<DocumentFragment>
-  <span
-    class="cl-error-message custom-error cl-error-message_visible"
-    id="test-error-id"
-  >
-    Incorrect input
-  </span>
-</DocumentFragment>
-`;

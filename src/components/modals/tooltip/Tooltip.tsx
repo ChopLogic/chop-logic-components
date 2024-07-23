@@ -4,7 +4,6 @@ import ChopLogicPortal from 'components/elements/portal/Portal';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useClickOutside } from 'hooks/use-click-outside';
-import 'styles';
 import './Tooltip.styles.css';
 import { ChopLogicTooltipProps } from './types';
 

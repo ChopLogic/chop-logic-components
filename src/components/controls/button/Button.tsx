@@ -1,7 +1,6 @@
 import React from 'react';
 import createClassName from 'utils/create-class-name';
 import { ChopLogicButtonProps } from './types';
-import 'styles';
 import './Button.styles.css';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({

@@ -5,7 +5,6 @@ import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
-import 'styles';
 import './MultiSelect.styles.css';
 import { ChopLogicMultiSelectProps, MultiSelectValue } from './types';
 

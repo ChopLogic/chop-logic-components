@@ -10,7 +10,7 @@ describe('ChopLogicButton', () => {
     id: 'test-button-id',
     text: 'Test button',
     icon: Icon.Copy,
-    className: 'test-class',
+    className: 'test-button-class',
     view: 'danger' as ChopLogicButtonView,
     disabled: false,
   };

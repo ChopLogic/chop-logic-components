@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 describe('ChopLogicCheckbox', () => {
   const testProps = {
     id: 'test-checkbox-id',
-    name: 'testCheckbox',
+    name: 'checkbox',
     label: 'Test checkbox label',
   };
 

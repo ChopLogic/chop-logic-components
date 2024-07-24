@@ -8,7 +8,7 @@ exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
     <input
       class="cl-checkbox__input"
       id="test-checkbox-id"
-      name="testCheckbox"
+      name="checkbox"
       type="checkbox"
     />
     <label

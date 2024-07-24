@@ -1,0 +1,24 @@
+@import 'styles/global.scss';
+
+.cl-label {
+  font-size: 0.8rem;
+  font-family: var(--core-font);
+  display: flex;
+  align-items: center;
+  gap: var(--small-gap);
+  color: var(--cl-color-black);
+
+  &__text {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__required {
+    font-size: 0.8rem;
+    font-family: var(--core-font);
+    text-decoration: none;
+    color: var(--cl-color-syracuse-red);
+    cursor: pointer;
+  }
+}

@@ -5,7 +5,7 @@ import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useKeyPress } from 'hooks/use-key-press';
-import './Select.styles.css';
+import './Select.scss';
 import { ChopLogicSelectProps, SelectValue } from './types';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({

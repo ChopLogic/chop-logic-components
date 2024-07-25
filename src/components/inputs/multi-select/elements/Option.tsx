@@ -1,7 +1,7 @@
 import { KeyboardEvent } from 'react';
 import createClassName from 'utils/create-class-name';
 import { Icon } from 'enums/icon';
-import '../MultiSelect.styles.css';
+import '../MultiSelect.scss';
 import { MultiSelectValue } from '../types';
 
 type SelectOptionProps = {

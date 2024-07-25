@@ -1,6 +1,6 @@
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
-import '../MultiSelect.styles.css';
+import '../MultiSelect.scss';
 import { MultiSelectValue } from '../types';
 
 type SelectComboboxProps = {

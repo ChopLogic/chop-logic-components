@@ -5,7 +5,7 @@ import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
-import './MultiSelect.styles.css';
+import './MultiSelect.scss';
 import { ChopLogicMultiSelectProps, MultiSelectValue } from './types';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({

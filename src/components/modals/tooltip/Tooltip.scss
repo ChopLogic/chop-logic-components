@@ -1,0 +1,26 @@
+@import 'styles/global.scss';
+
+.cl-tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: var(--tooltip-z-index);
+  background-color: var(--cl-color-celtic-blue);
+  color: white;
+  padding: var(--small-gap) var(--medium-gap);
+  font-size: 0.8rem;
+  border-radius: var(--block-border-radius);
+  box-shadow: var(--box-shadow);
+  pointer-events: none;
+  white-space: nowrap;
+  @include fade-in();
+
+  &__container {
+    position: relative;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: var(--focus-outline);
+    }
+  }
+}

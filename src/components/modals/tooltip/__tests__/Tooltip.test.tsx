@@ -8,14 +8,14 @@ const tooltipContent = 'Tooltip content';
 
 const renderTooltip = (props: Partial<ChopLogicTooltipProps> = {}) => {
   return render(
-    <ChopLogicTooltip id='test-tooltip-id' tooltipContent={tooltipContent} {...props}>
+    <ChopLogicTooltip id='tooltip-id' tooltipContent={tooltipContent} {...props}>
       <button>Hover or Click me</button>
     </ChopLogicTooltip>,
   );
 };
 
-describe('ChopLogicTooltip tests:', () => {
-  it('renders the child component', () => {
+describe('ChopLogicTooltip', () => {
+  it('should render the child component', () => {
     renderTooltip();
     expect(screen.getByText('Hover or Click me')).toBeInTheDocument();
   });

@@ -3,33 +3,33 @@
 .cl-text-input {
   display: flex;
   flex-direction: column;
-  gap: var(--medium-gap);
+  gap: $medium-gap;
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--medium-gap);
-    padding: var(--medium-gap);
-    font-family: var(--core-font);
-    color: var(--cl-color-black);
-    box-shadow: var(--box-shadow);
-    border-top-left-radius: var(--block-border-radius);
-    border-top-right-radius: var(--block-border-radius);
-    border: var(--light-blue-border);
+    gap: $medium-gap;
+    padding: $medium-gap;
+    font-family: $core-font;
+    color: $cl-color-black;
+    box-shadow: $box-shadow;
+    border-top-left-radius: $block-border-radius;
+    border-top-right-radius: $block-border-radius;
+    border: $light-blue-border;
 
     &:has(.cl-text-input__textbox:focus-visible) {
-      border: var(--dark-blue-border);
-      outline: var(--dark-blue-border);
+      border: $dark-blue-border;
+      outline: $dark-blue-border;
       outline-offset: -3px;
     }
 
     &_invalid {
-      border: var(--accent-border);
+      border: $accent-border;
 
       &:has(.cl-text-input__textbox:focus-visible) {
-        border: var(--accent-border);
-        outline: var(--accent-border);
+        border: $accent-border;
+        outline: $accent-border;
         outline-offset: -3px;
       }
     }
@@ -51,11 +51,11 @@
     font-size: 1rem;
     padding: 0;
     background: transparent;
-    font-family: var(--core-font);
-    color: var(--cl-color-black);
+    font-family: $core-font;
+    color: $cl-color-black;
   }
 
   &__error {
-    padding-inline-start: var(--medium-gap);
+    padding-inline-start: $medium-gap;
   }
 }

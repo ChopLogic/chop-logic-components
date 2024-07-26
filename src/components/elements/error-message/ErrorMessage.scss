@@ -2,8 +2,8 @@
 
 .cl-error-message {
   font-size: 0.8rem;
-  font-family: var(--core-font);
-  color: var(--cl-color-syracuse-red);
+  font-family: $core-font;
+  color: $cl-color-syracuse-red;
   visibility: hidden;
 
   &_visible {

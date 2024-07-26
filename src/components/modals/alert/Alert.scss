@@ -2,10 +2,10 @@
 
 .cl-alert {
   position: fixed;
-  bottom: var(--big-gap);
+  bottom: $big-gap;
   left: 50%;
   transform: translateX(-50%);
-  z-index: var(--modal-z-index);
+  z-index: $modal-z-index;
   @include fade-in();
 
   &_closing {
@@ -21,12 +21,12 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: var(--medium-gap);
-    box-shadow: var(--box-shadow);
-    font-family: var(--core-font);
+    gap: $medium-gap;
+    box-shadow: $box-shadow;
+    font-family: $core-font;
     width: 95vw;
-    padding: var(--medium-gap);
-    border-radius: var(--block-border-radius);
-    background-color: var(--cl-color-ivory);
+    padding: $medium-gap;
+    border-radius: $block-border-radius;
+    background-color: $cl-color-ivory;
   }
 }

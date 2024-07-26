@@ -10,6 +10,7 @@ describe('ChopLogicAlert', () => {
     onClose: vi.fn(),
     title: 'Test Title',
     message: 'This is an alert message.',
+    className: 'dialog-class',
   };
 
   it('should render the alert correctly after a delay', async () => {

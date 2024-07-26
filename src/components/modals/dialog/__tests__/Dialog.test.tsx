@@ -9,6 +9,7 @@ describe('ChopLogicDialog', () => {
   const testLayoutProps = {
     id: 'dialog-id',
     title: 'Test dialog',
+    className: 'dialog-class',
     onClose: vi.fn(),
   };
 

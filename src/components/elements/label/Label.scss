@@ -2,11 +2,11 @@
 
 .cl-label {
   font-size: 0.8rem;
-  font-family: var(--core-font);
+  font-family: $core-font;
   display: flex;
   align-items: center;
-  gap: var(--small-gap);
-  color: var(--cl-color-black);
+  gap: $small-gap;
+  color: $cl-color-black;
 
   &__text {
     text-wrap: nowrap;
@@ -16,9 +16,9 @@
 
   &__required {
     font-size: 0.8rem;
-    font-family: var(--core-font);
+    font-family: $core-font;
     text-decoration: none;
-    color: var(--cl-color-syracuse-red);
+    color: $cl-color-syracuse-red;
     cursor: pointer;
   }
 }

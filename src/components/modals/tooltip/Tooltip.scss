@@ -4,13 +4,13 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: var(--tooltip-z-index);
-  background-color: var(--cl-color-celtic-blue);
+  z-index: $tooltip-z-index;
+  background-color: $cl-color-celtic-blue;
   color: white;
-  padding: var(--small-gap) var(--medium-gap);
+  padding: $small-gap $medium-gap;
   font-size: 0.8rem;
-  border-radius: var(--block-border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: $block-border-radius;
+  box-shadow: $box-shadow;
   pointer-events: none;
   white-space: nowrap;
   @include fade-in();
@@ -20,7 +20,7 @@
     cursor: pointer;
 
     &:focus-visible {
-      outline: var(--focus-outline);
+      outline: $focus-outline;
     }
   }
 }

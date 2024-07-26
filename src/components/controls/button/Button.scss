@@ -1,21 +1,21 @@
 @import 'styles/global.scss';
 
 .cl-button {
-  min-height: var(--min-element-size);
-  min-width: var(--min-element-size);
+  min-height: $min-element-size;
+  min-width: $min-element-size;
   border: none;
   cursor: pointer;
   padding: 0 0.75rem;
   font-size: 1rem;
-  font-family: var(--core-font);
+  font-family: $core-font;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--small-gap);
+  gap: $small-gap;
   overflow: hidden;
 
   &:focus-visible {
-    outline: var(--focus-outline);
+    outline: $focus-outline;
     outline-offset: 2px;
   }
 
@@ -26,12 +26,12 @@
 
   // Primary styles
   &_primary {
-    border-radius: var(--block-border-radius);
-    color: var(--cl-color-ivory);
-    box-shadow: var(--box-shadow);
+    border-radius: $block-border-radius;
+    color: $cl-color-ivory;
+    box-shadow: $box-shadow;
     filter: brightness(100%);
     transition: 0.3s;
-    background: var(--cl-primary-gradient);
+    background: $cl-primary-gradient;
 
     &:hover,
     &:active {
@@ -42,7 +42,7 @@
   // Secondary styles
   &_secondary {
     background: none;
-    color: var(--cl-color-black);
+    color: $cl-color-black;
     text-shadow: none;
     transition: 0.3s;
 
@@ -52,7 +52,7 @@
 
     &:hover,
     &:active {
-      text-shadow: var(--text-shadow);
+      text-shadow: $text-shadow;
     }
 
     &.cl-button_disabled {
@@ -62,12 +62,12 @@
 
   // Danger styles
   &_danger {
-    border-radius: var(--block-border-radius);
-    color: var(--cl-color-ivory);
-    box-shadow: var(--box-shadow);
+    border-radius: $block-border-radius;
+    color: $cl-color-ivory;
+    box-shadow: $box-shadow;
     filter: brightness(100%);
     transition: 0.3s;
-    background: var(--cl-accent-gradient);
+    background: $cl-accent-gradient;
 
     &:hover,
     &:active {
@@ -81,12 +81,12 @@
     background: transparent;
     font-weight: normal;
     font-size: 1.4rem;
-    border-radius: var(--block-border-radius);
-    color: var(--cl-color-celtic-blue);
+    border-radius: $block-border-radius;
+    color: $cl-color-celtic-blue;
 
     &:hover,
     &:active {
-      background-color: var(--cl-color-tint);
+      background-color: $cl-color-tint;
     }
   }
 

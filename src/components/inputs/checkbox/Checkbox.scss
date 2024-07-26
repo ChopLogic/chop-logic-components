@@ -2,8 +2,8 @@
 
 .cl-checkbox {
   display: flex;
-  gap: var(--small-gap);
-  padding: var(--small-gap) 0;
+  gap: $small-gap;
+  padding: $small-gap 0;
   position: relative;
   overflow: hidden;
 
@@ -16,7 +16,7 @@
     margin: 0;
 
     &:focus-visible + label {
-      outline: var(--focus-outline);
+      outline: $focus-outline;
       outline-offset: 2px;
     }
   }
@@ -27,12 +27,12 @@
     font-size: 1rem !important;
 
     &::before {
-      color: var(--cl-color-celtic-blue);
+      color: $cl-color-celtic-blue;
     }
 
     &:hover,
     &:active {
-      text-shadow: var(--text-shadow);
+      text-shadow: $text-shadow;
     }
   }
 

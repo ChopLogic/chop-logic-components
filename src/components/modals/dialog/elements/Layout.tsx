@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useRef } from 'react';
 import ChopLogicModalLayoutHeader from './Header';
 import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 import { useKeyPress } from 'hooks/use-key-press';
-import '../Dialog.styles.css';
+import '../Dialog.scss';
 
 type ModalLayoutProps = PropsWithChildren &
   React.HTMLAttributes<HTMLDivElement> & {

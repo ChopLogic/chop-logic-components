@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicButton } from 'components/index';
 import { Icon } from 'enums/icon';
-import '../Dialog.styles.css';
+import '../Dialog.scss';
 
 type ChopLogicModalLayoutHeaderProps = {
   title: string;

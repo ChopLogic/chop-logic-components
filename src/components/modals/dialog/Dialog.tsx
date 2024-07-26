@@ -2,7 +2,7 @@ import { useMount } from 'hooks/use-mount';
 import createClassName from 'utils/create-class-name';
 import ChopLogicModalLayout from './elements/Layout';
 import ChopLogicPortal from 'components/elements/portal/Portal';
-import './Dialog.styles.css';
+import './Dialog.scss';
 import { ChopLogicModalProps } from './types';
 
 const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }) => {

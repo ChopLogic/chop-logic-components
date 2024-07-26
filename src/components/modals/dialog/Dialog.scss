@@ -1,0 +1,69 @@
+@import 'styles/global.scss';
+
+.cl-dialog {
+  z-index: var(--modal-z-index);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  font-family: var(--core-font);
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: var(--block-border-radius);
+  border-top-right-radius: var(--block-border-radius);
+  animation: fadeIn ease 400ms;
+  -webkit-animation: fadeIn ease 400ms;
+  -moz-animation: fadeIn ease 400ms;
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cl-modal-transparent);
+    @include fade-in();
+
+    &_closing {
+      @include fade-out();
+    }
+  }
+
+  &__header {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--big-gap);
+    padding: var(--big-gap);
+    border-bottom: var(--light-blue-border);
+  }
+
+  &__content {
+    padding: var(--big-gap);
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cl-dialog {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    min-width: 40%;
+    max-width: 90%;
+    max-height: 90%;
+    border-bottom-left-radius: var(--block-border-radius);
+    border-bottom-right-radius: var(--block-border-radius);
+
+    &__header {
+      font-size: 2rem;
+    }
+  }
+}

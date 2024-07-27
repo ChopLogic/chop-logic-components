@@ -15,11 +15,8 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, titl
   const contentClass = createClassName([
     'cl-alert__content',
     {
-      'cl-alert__content_info': mode === 'info',
-      'cl-alert__content_warning': mode === 'warning',
       'cl-alert__content_error': mode === 'error',
       'cl-alert__content_success': mode === 'success',
-      'cl-alert__content_help': mode === 'help',
     },
   ]);
 

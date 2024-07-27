@@ -26,7 +26,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   ]);
 
   return (
-    <button aria-label={label} type={type} className={buttonClass} onClick={onClick} disabled={disabled} {...props}>
+    <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...props} className={buttonClass}>
       {icon && <span className={icon} aria-hidden='true'></span>}
       {view !== 'icon' && <span className='cl-button__text'>{text}</span>}
     </button>

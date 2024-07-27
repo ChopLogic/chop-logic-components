@@ -21,7 +21,7 @@ const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onCl
   return (
     <header className='cl-alert__header'>
       <h3 className={titleClass}>{alertTitle}</h3>
-      <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} />
+      <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} className='cl-alert__close-button' />
     </header>
   );
 };

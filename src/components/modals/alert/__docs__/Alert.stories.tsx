@@ -11,10 +11,19 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
   const handleClose = () => setIsOpened(false);
 
   return (
-    <>
-      <ChopLogicButton onClick={handleOpen} text='Toggle Alert' view='danger' />
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        padding: '20px',
+      }}
+    >
+      <ChopLogicButton onClick={handleOpen} text='Open Alert' view='danger' />
       <ChopLogicAlert {...props} isOpened={isOpened} onClose={handleClose} />
-    </>
+    </div>
   );
 };
 

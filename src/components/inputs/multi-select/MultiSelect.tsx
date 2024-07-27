@@ -44,7 +44,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <div className={wrapperClass} ref={ref}>
+    <div className={wrapperClass} ref={ref} style={props.style}>
       <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-multi-select__label' />
       <SelectCombobox
         name={name}

@@ -23,6 +23,7 @@ const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, values,
         required={required}
         disabled={disabled}
         onSelectChange={onSelectChange}
+        style={{ width: '180px' }}
       />
     </div>
   );

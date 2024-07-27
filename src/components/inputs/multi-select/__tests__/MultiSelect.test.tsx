@@ -5,7 +5,7 @@ import ChopLogicMultiSelect from '../MultiSelect';
 import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
 import userEvent from '@testing-library/user-event';
 
-describe('ChopLogicSelect component', () => {
+describe('ChopLogicMultiSelect', () => {
   const testProps = {
     id: 'language-multi-select-id',
     name: 'languages',
@@ -112,7 +112,7 @@ describe('ChopLogicSelect component', () => {
     expect(options[0]).toHaveFocus();
   });
 
-  it('pressing ArrowDown button should move focus to the next option', async () => {
+  it('should move focus to the next option on pressing ArrowDown button', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
     const options = screen.getAllByRole('option');
     options[0].focus();
@@ -120,7 +120,7 @@ describe('ChopLogicSelect component', () => {
     expect(options[1]).toHaveFocus();
   });
 
-  it('pressing ArrowUp button should move focus to the previous option', async () => {
+  it('should move focus to the previous option pressing ArrowUp button', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
     const options = screen.getAllByRole('option');
     options[1].focus();

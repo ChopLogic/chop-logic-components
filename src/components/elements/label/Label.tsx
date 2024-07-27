@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import createClassName from 'utils/create-class-name';
-import 'styles';
-import './Label.styles.css';
+import './Label.scss';
 
 type ChopLogicLabelProps = {
   label: string;

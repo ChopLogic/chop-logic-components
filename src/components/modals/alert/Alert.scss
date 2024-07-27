@@ -1,0 +1,57 @@
+@import 'styles/global.scss';
+
+.cl-alert {
+  position: fixed;
+  bottom: $big-gap;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $modal-z-index;
+  @include fade-in();
+
+  &_closing {
+    @include fade-out();
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__close-button {
+    position: relative;
+    left: 8px;
+    bottom: 6px;
+    color: $cl-color-black !important;
+  }
+
+  &__title::before {
+    margin-right: $medium-gap;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $medium-gap;
+    box-shadow: $box-shadow;
+    font-family: $core-font;
+    width: 95vw;
+    padding: $medium-gap;
+    border-radius: $block-border-radius;
+    background: $cl-tint-gradient;
+
+    &_success {
+      color: $cl-color-celtic-blue;
+      .cl-alert__close-button {
+        color: $cl-color-celtic-blue !important;
+      }
+    }
+
+    &_error {
+      color: $cl-color-syracuse-red;
+      .cl-alert__close-button {
+        color: $cl-color-syracuse-red !important;
+      }
+    }
+  }
+}

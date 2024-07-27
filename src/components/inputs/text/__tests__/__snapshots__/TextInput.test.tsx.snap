@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicTextInput component > should render the input correctly 1`] = `
+exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
     class="cl-text-input"
@@ -39,7 +39,7 @@ exports[`ChopLogicTextInput component > should render the input correctly 1`] = 
 </DocumentFragment>
 `;
 
-exports[`ChopLogicTextInput component > should render the required input correctly 1`] = `
+exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
     class="cl-text-input"

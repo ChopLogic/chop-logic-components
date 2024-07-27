@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicTextInput tests: > should render the input correctly 1`] = `
+exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
     class="cl-checkbox"
@@ -8,7 +8,7 @@ exports[`ChopLogicTextInput tests: > should render the input correctly 1`] = `
     <input
       class="cl-checkbox__input"
       id="test-checkbox-id"
-      name="testCheckbox"
+      name="checkbox"
       type="checkbox"
     />
     <label

@@ -1,10 +1,18 @@
 import React from 'react';
 import createClassName from 'utils/create-class-name';
 import { ChopLogicButtonProps } from './types';
-import 'styles';
-import './Button.styles.css';
+import './Button.scss';
 
-const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, type = 'button', view = 'primary', icon, label, ...props }) => {
+const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
+  disabled,
+  onClick,
+  text,
+  type = 'button',
+  view = 'primary',
+  icon,
+  label,
+  ...props
+}) => {
   const buttonClass = createClassName([
     'cl-button',
     props?.className,
@@ -18,11 +26,11 @@ const Button: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, type 
   ]);
 
   return (
-    <button aria-label={label} type={type} className={buttonClass} onClick={onClick} disabled={disabled} {...props}>
+    <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...props} className={buttonClass}>
       {icon && <span className={icon} aria-hidden='true'></span>}
       {view !== 'icon' && <span className='cl-button__text'>{text}</span>}
     </button>
   );
 };
 
-export default Button;
+export default ChopLogicButton;

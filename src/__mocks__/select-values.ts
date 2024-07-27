@@ -1,5 +1,5 @@
-import { MultiSelectValue } from 'components/inputs/multi-select/MultiSelect';
-import { SelectValue } from 'components/inputs/select/Select';
+import { MultiSelectValue } from 'components/inputs/multi-select/types';
+import { SelectValue } from 'components/inputs/select/types';
 
 export const SELECT_LANGUAGES: SelectValue[] = [
   {

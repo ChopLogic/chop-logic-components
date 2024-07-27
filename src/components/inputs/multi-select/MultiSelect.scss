@@ -1,0 +1,106 @@
+@import 'styles/global.scss';
+
+.cl-multi-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $medium-gap;
+  padding: $medium-gap;
+  font-family: $core-font;
+  color: $cl-color-black;
+  box-shadow: $box-shadow;
+  border-top-left-radius: $block-border-radius;
+  border-top-right-radius: $block-border-radius;
+  border: $light-blue-border;
+  max-width: 100%;
+
+  &_disabled {
+    filter: grayscale(100%);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &_icon {
+    color: $cl-color-celtic-blue;
+  }
+
+  &:has(.cl-multi-select__combobox:focus-visible) {
+    border: $dark-blue-border;
+    outline: $dark-blue-border;
+    outline-offset: -3px;
+  }
+
+  &__combobox {
+    border: none;
+    text-align: left;
+    padding: 0;
+    background: transparent;
+    color: $cl-color-black;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: $medium-gap;
+    overflow: hidden;
+
+    &:focus-visible {
+      outline: $focus-outline;
+      outline-offset: 2px;
+    }
+  }
+
+  &__placeholder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      visibility 0s,
+      opacity 0.3s linear;
+    position: absolute;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: $dropdown-z-index;
+    width: 100%;
+    top: 66px;
+    left: 0;
+    border: $light-blue-border;
+    box-shadow: $box-shadow;
+    overflow-y: auto;
+    max-height: 180px;
+
+    &_opened {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__option {
+    padding: $medium-gap;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $medium-gap;
+
+    &:hover,
+    &.active {
+      background-color: $cl-color-tint;
+    }
+
+    &:focus-visible {
+      outline: $focus-outline;
+      outline-offset: -2px;
+    }
+  }
+
+  &__checkbox::before {
+    color: $cl-color-celtic-blue;
+  }
+}

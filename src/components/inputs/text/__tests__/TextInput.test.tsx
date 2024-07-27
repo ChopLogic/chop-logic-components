@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import TextInput from '../TextInput';
 import userEvent from '@testing-library/user-event';
 
-describe('ChopLogicTextInput component', () => {
+describe('ChopLogicTextInput', () => {
   const testProps = {
     id: 'test-input-id',
     name: 'testInput',

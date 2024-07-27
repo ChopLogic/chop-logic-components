@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
 import ChopLogicErrorMessage from '../error-message/ErrorMessage';
 
-describe('ChopLogicErrorMessage component', () => {
+describe('ChopLogicErrorMessage', () => {
   const testProps = {
     errorId: 'test-error-id',
     visible: true,

@@ -1,0 +1,61 @@
+@import 'styles/global.scss';
+
+.cl-text-input {
+  display: flex;
+  flex-direction: column;
+  gap: $medium-gap;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $medium-gap;
+    padding: $medium-gap;
+    font-family: $core-font;
+    color: $cl-color-black;
+    box-shadow: $box-shadow;
+    border-top-left-radius: $block-border-radius;
+    border-top-right-radius: $block-border-radius;
+    border: $light-blue-border;
+
+    &:has(.cl-text-input__textbox:focus-visible) {
+      border: $dark-blue-border;
+      outline: $dark-blue-border;
+      outline-offset: -3px;
+    }
+
+    &_invalid {
+      border: $accent-border;
+
+      &:has(.cl-text-input__textbox:focus-visible) {
+        border: $accent-border;
+        outline: $accent-border;
+        outline-offset: -3px;
+      }
+    }
+
+    &_disabled {
+      filter: grayscale(100%);
+      opacity: 0.8;
+      pointer-events: none;
+
+      & .cl-text-input__textbox::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &__textbox {
+    outline: 0;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+    background: transparent;
+    font-family: $core-font;
+    color: $cl-color-black;
+  }
+
+  &__error {
+    padding-inline-start: $medium-gap;
+  }
+}

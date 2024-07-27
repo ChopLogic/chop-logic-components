@@ -1,0 +1,98 @@
+@import 'styles/global.scss';
+
+.cl-button {
+  min-height: $min-element-size;
+  min-width: $min-element-size;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  font-family: $core-font;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $small-gap;
+  overflow: hidden;
+
+  &:focus-visible {
+    outline: $focus-outline;
+    outline-offset: 2px;
+  }
+
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Primary styles
+  &_primary {
+    border-radius: $block-border-radius;
+    color: $cl-color-ivory;
+    box-shadow: $box-shadow;
+    filter: brightness(100%);
+    transition: 0.3s;
+    background: $cl-primary-gradient;
+
+    &:hover,
+    &:active {
+      filter: brightness(130%);
+    }
+  }
+
+  // Secondary styles
+  &_secondary {
+    background: none;
+    color: $cl-color-black;
+    text-shadow: none;
+    transition: 0.3s;
+
+    & .cl-button__text {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:active {
+      text-shadow: $text-shadow;
+    }
+
+    &.cl-button_disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Danger styles
+  &_danger {
+    border-radius: $block-border-radius;
+    color: $cl-color-ivory;
+    box-shadow: $box-shadow;
+    filter: brightness(100%);
+    transition: 0.3s;
+    background: $cl-accent-gradient;
+
+    &:hover,
+    &:active {
+      filter: brightness(130%);
+    }
+  }
+
+  // Icon styles
+  &_icon {
+    gap: 0;
+    background: transparent;
+    font-weight: normal;
+    font-size: 1.4rem;
+    border-radius: $block-border-radius;
+    color: $cl-color-celtic-blue;
+
+    &:hover,
+    &:active {
+      background-color: $cl-color-tint;
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    filter: grayscale(80%);
+    opacity: 0.9;
+  }
+}

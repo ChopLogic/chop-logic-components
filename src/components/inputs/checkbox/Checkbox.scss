@@ -1,0 +1,44 @@
+@import 'styles/global.scss';
+
+.cl-checkbox {
+  display: flex;
+  gap: $small-gap;
+  padding: $small-gap 0;
+  position: relative;
+  overflow: hidden;
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 4px;
+    left: 0;
+    margin: 0;
+
+    &:focus-visible + label {
+      outline: $focus-outline;
+      outline-offset: 2px;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    align-items: stretch !important;
+    font-size: 1rem !important;
+
+    &::before {
+      color: $cl-color-celtic-blue;
+    }
+
+    &:hover,
+    &:active {
+      text-shadow: $text-shadow;
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    filter: grayscale(80%);
+    opacity: 0.6;
+  }
+}

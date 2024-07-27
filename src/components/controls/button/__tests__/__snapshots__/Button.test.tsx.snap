@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicButton test: > should render correctly 1`] = `
+exports[`ChopLogicButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="test-class"
+    class="cl-button test-button-class cl-button_danger"
     id="test-button-id"
     type="button"
   >

@@ -5,23 +5,8 @@ import SelectDropdown from './elements/Dropdown';
 import ChopLogicLabel from '../../elements/label/Label';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
-import 'styles';
-import './MultiSelect.styles.css';
-
-export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
-  name: string;
-  label: string;
-  values: MultiSelectValue[];
-  onSelectChange?: (values?: MultiSelectValue[]) => void;
-  placeholder?: string;
-};
-
-export type MultiSelectValue = {
-  id: string;
-  label: string;
-  selected: boolean;
-};
+import './MultiSelect.scss';
+import { ChopLogicMultiSelectProps, MultiSelectValue } from './types';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   id,
@@ -59,7 +44,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <div className={wrapperClass} ref={ref}>
+    <div className={wrapperClass} ref={ref} style={props.style}>
       <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-multi-select__label' />
       <SelectCombobox
         name={name}

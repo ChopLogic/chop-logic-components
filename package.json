@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
   },
-  "version": "0.6.3",
+  "version": "0.7.0",
   "description": "React UI components library for Chop Logic project",
   "type": "module",
   "main": "dist/index.cjs.js",

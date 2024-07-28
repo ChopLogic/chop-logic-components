@@ -18,18 +18,18 @@ const renderAlert = (props: Partial<ChopLogicAlertProps> = {}) => {
 };
 
 describe('ChopLogicAlert', () => {
-  it('renders nothing when not opened', () => {
+  it('should render nothing when not opened', () => {
     renderAlert();
     expect(screen.queryByText('This is a test message')).toBeNull();
   });
 
-  it('renders the alert when opened', () => {
+  it('should render the alert when opened', () => {
     renderAlert({ isOpened: true });
     expect(screen.getByText('This is a test message')).toBeInTheDocument();
     expect(screen.getByText('Test Title')).toBeInTheDocument();
   });
 
-  it('calls onClose when the close button is clicked', async () => {
+  it('should call onClose when the close button is clicked', async () => {
     const onCloseMock = vi.fn();
     renderAlert({ isOpened: true, onClose: onCloseMock });
     const closeButton = screen.getByRole('button', { name: /close/i });
@@ -37,7 +37,7 @@ describe('ChopLogicAlert', () => {
     expect(onCloseMock).toHaveBeenCalled();
   });
 
-  it('applies the correct mode class based on the mode prop', () => {
+  it('should apply the correct mode class based on the mode prop', () => {
     const { rerender } = renderAlert({ isOpened: true, mode: 'error' });
     expect(screen.getByText('This is a test message').closest('.cl-alert__content')).toHaveClass('cl-alert__content_error');
 
@@ -45,13 +45,13 @@ describe('ChopLogicAlert', () => {
     expect(screen.getByText('This is a test message').closest('.cl-alert__content')).toHaveClass('cl-alert__content_success');
   });
 
-  it('adds the closing class when closing', async () => {
+  it('should add the closing class when closing', async () => {
     const { rerender } = renderAlert({ isOpened: true });
     rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);
     expect(screen.getByText('This is a test message').closest('.cl-alert')).toHaveClass('cl-alert_closing');
   });
 
-  it('unmounts the alert when it is closed', async () => {
+  it('should unmount the alert when it is closed', async () => {
     const { rerender } = renderAlert({ isOpened: true });
     rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);
     await waitFor(() => {

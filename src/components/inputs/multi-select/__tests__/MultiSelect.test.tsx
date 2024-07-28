@@ -1,9 +1,9 @@
-import { describe, expect, it, vi } from 'vitest';
+import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicMultiSelect from '../MultiSelect';
-import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
-import userEvent from '@testing-library/user-event';
 
 describe('ChopLogicMultiSelect', () => {
   const testProps = {

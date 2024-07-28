@@ -1,9 +1,10 @@
-import { describe, expect, it, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import ChopLogicAlert from '../Alert';
 import userEvent from '@testing-library/user-event';
-import { ChopLogicAlertProps } from '../types';
+import { describe, expect, it, vi } from 'vitest';
+
+import ChopLogicAlert from '../Alert';
 import ChopLogicAlertHeader from '../elements/Header';
+import { ChopLogicAlertProps } from '../types';
 
 const defaultProps: ChopLogicAlertProps = {
   isOpened: false,

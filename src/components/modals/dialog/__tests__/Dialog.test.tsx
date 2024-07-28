@@ -1,9 +1,10 @@
-import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ChopLogicModalLayout from '../elements/Layout';
-import ChopLogicModalLayoutHeader from '../elements/Header';
 import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+
 import ChopLogicDialog from '../Dialog';
+import ChopLogicModalLayoutHeader from '../elements/Header';
+import ChopLogicModalLayout from '../elements/Layout';
 
 describe('ChopLogicDialog', () => {
   const testLayoutProps = {

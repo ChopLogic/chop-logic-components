@@ -1,6 +1,6 @@
-import { expect } from 'vitest';
 import * as matchers from '@testing-library/jest-dom/matchers';
 import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
+import { expect } from 'vitest';
 
 declare module 'vitest' {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

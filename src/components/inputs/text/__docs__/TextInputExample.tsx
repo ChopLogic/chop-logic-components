@@ -1,4 +1,5 @@
 import React from 'react';
+
 import TextInput from '../TextInput';
 import { ChopLogicTextInputProps } from '../types';
 

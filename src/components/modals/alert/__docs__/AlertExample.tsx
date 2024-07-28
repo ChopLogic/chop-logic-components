@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import ChopLogicAlert from '../Alert';
+
 import ChopLogicButton from 'components/controls/button/Button';
+
+import ChopLogicAlert from '../Alert';
 
 const Example = () => {
   const [isOpened, setIsOpened] = useState(false);

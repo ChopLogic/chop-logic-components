@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { useClickOutside } from '..';
 
 const ExampleComponent: React.FC = () => {

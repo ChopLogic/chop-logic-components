@@ -1,5 +1,5 @@
-import { Icon } from 'enums/icon';
 import { MouseEventHandler } from 'react';
+import { Icon } from 'enums/icon';
 
 export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
 

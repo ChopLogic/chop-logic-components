@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import MultiSelectExample from './MultiSelectExample';
 import { MULTI_SELECT_VALUES } from '__mocks__/select-values';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import MultiSelectExample from './MultiSelectExample';
 
 const meta: Meta<typeof MultiSelectExample> = {
   title: 'Inputs/MultiSelect',

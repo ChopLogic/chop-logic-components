@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { useContainerDimensions } from '../use-container-dimensions';
 import { useWindowDimensions } from '../use-window-dimensions';
 

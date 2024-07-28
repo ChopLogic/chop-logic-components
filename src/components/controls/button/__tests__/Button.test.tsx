@@ -1,8 +1,9 @@
-import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Button from '../Button';
 import { userEvent } from '@testing-library/user-event';
 import { Icon } from 'enums/icon';
+import { describe, expect, it, vi } from 'vitest';
+
+import Button from '../Button';
 import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {

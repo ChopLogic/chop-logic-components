@@ -1,12 +1,15 @@
 import { useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useKeyPress } from 'hooks/use-key-press';
 import createClassName from 'utils/create-class-name';
+
+import ChopLogicLabel from '../../elements/label/Label';
+
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import ChopLogicLabel from '../../elements/label/Label';
-import { useKeyPress } from 'hooks/use-key-press';
-import './Select.scss';
 import { ChopLogicSelectProps, SelectValue } from './types';
+
+import './Select.scss';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,

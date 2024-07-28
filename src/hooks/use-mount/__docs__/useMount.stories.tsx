@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { useMount } from '..';
 
 const ExampleComponent: React.FC = () => {

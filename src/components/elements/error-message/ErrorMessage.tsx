@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from 'react';
+import styled from 'styled-components';
 import createClassName from 'utils/create-class-name';
-
-import './ErrorMessage.scss';
 
 type ChopLogicErrorMessageProps = {
   errorId: string;
@@ -10,6 +9,13 @@ type ChopLogicErrorMessageProps = {
   className?: string;
 };
 
+const StyledErrorMessage = styled.span<{ $visible: boolean }>`
+  font-size: 0.8rem;
+  font-family: 'Cyrge', Helvetica, sans-serif;
+  color: #e53d00;
+  visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
+`;
+
 const ChopLogicErrorMessage: React.FC<PropsWithChildren<ChopLogicErrorMessageProps>> = ({
   errorId,
   message = 'Invalid input',
@@ -17,9 +23,13 @@ const ChopLogicErrorMessage: React.FC<PropsWithChildren<ChopLogicErrorMessagePro
   visible = false,
 }) => {
   return (
-    <span id={errorId} className={createClassName(['cl-error-message', className, { 'cl-error-message_visible': visible }])}>
+    <StyledErrorMessage
+      id={errorId}
+      $visible={visible}
+      className={createClassName(['cl-error-message', className, { 'cl-error-message_visible': visible }])}
+    >
       {message}
-    </span>
+    </StyledErrorMessage>
   );
 };
 

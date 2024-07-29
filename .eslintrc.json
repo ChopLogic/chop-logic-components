@@ -26,6 +26,13 @@
     "plugin:storybook/recommended" // Recommended rules for Storybook
   ],
 
+  "settings": {
+    "react": {
+      "version": "detect", // React version. "detect" automatically picks the version you have installed.
+      "defaultVersion": "18.0" // Default React version to use when the version you have installed cannot be detected.
+    }
+  },
+
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

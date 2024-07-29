@@ -75,6 +75,7 @@
     "prettier": "^3.2.5",
     "sass": "^1.77.8",
     "storybook": "^8.2.6",
+    "styled-components": "^6.1.12",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",

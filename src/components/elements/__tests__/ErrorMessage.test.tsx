@@ -11,7 +11,7 @@ describe('ChopLogicErrorMessage', () => {
     className: 'custom-error',
   };
 
-  it('should render correctly', () => {
+  it('should match the snapshot', () => {
     const { asFragment } = render(<ChopLogicErrorMessage {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ChopLogicMultiSelect from '../MultiSelect';
 import { ChopLogicMultiSelectProps } from '../types';
 

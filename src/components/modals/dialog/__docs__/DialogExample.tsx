@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import ChopLogicDialog from '../Dialog';
+
 import { ChopLogicButton } from 'components/index';
+
+import ChopLogicDialog from '../Dialog';
 import { ChopLogicModalProps } from '../types';
 
 const Example: React.FC<ChopLogicModalProps> = ({ onClose, title }) => {

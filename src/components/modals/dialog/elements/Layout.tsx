@@ -1,7 +1,9 @@
 import React, { PropsWithChildren, useRef } from 'react';
-import ChopLogicModalLayoutHeader from './Header';
-import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 import { useKeyPress } from 'hooks/use-key-press';
+import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
+
+import ChopLogicModalLayoutHeader from './Header';
+
 import '../Dialog.scss';
 
 type ModalLayoutProps = PropsWithChildren &

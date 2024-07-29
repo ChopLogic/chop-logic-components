@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ChopLogicCheckbox from '../Checkbox';
 import { ChopLogicCheckboxProps } from '../types';
 

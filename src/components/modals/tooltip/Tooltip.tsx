@@ -1,11 +1,14 @@
-import createClassName from 'utils/create-class-name';
 import { useRef, useState } from 'react';
-import ChopLogicPortal from 'components/elements/portal/Portal';
-import { useTooltipPosition } from 'hooks/use-tooltip-position';
-import { useKeyPress } from 'hooks/use-key-press';
 import { useClickOutside } from 'hooks/use-click-outside';
-import './Tooltip.scss';
+import { useKeyPress } from 'hooks/use-key-press';
+import { useTooltipPosition } from 'hooks/use-tooltip-position';
+import createClassName from 'utils/create-class-name';
+
+import ChopLogicPortal from 'components/elements/portal/Portal';
+
 import { ChopLogicTooltipProps } from './types';
+
+import './Tooltip.scss';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   className,

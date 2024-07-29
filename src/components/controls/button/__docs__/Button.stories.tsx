@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ButtonExample from './ButtonExample';
 import { Icon } from 'enums/icon';
+
+import ButtonExample from './ButtonExample';
 
 const meta: Meta<typeof ButtonExample> = {
   title: 'Controls/Button',

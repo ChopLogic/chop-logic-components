@@ -1,5 +1,5 @@
-import { useContainerDimensions } from 'hooks/index';
 import { useRef } from 'react';
+import { useContainerDimensions } from 'hooks/index';
 
 const Example = () => {
   const ref = useRef(null);

@@ -1,4 +1,5 @@
 import { Icon } from 'enums/icon';
+
 import { ChopLogicAlertMode } from '../types';
 
 export function getAlertIcon(mode: ChopLogicAlertMode): Icon {

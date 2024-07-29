@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import SelectExample from './SelectExample';
 import { SELECT_LANGUAGES } from '__mocks__/select-values';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import SelectExample from './SelectExample';
 
 const meta: Meta<typeof SelectExample> = {
   title: 'Inputs/Select',

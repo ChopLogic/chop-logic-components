@@ -30,7 +30,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       />
     </div>
     <span
-      class="cl-error-message cl-text-input__error"
+      class="sc-braxZu iPKdgT cl-error-message cl-text-input__error"
       id="test-input-id_error"
     >
       Invalid input
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       />
     </div>
     <span
-      class="cl-error-message cl-text-input__error"
+      class="sc-braxZu iPKdgT cl-error-message cl-text-input__error"
       id="test-input-id_error"
     >
       Invalid input

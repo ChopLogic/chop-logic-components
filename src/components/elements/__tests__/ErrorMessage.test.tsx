@@ -1,5 +1,6 @@
-import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+
 import ChopLogicErrorMessage from '../error-message/ErrorMessage';
 
 describe('ChopLogicErrorMessage', () => {
@@ -10,7 +11,7 @@ describe('ChopLogicErrorMessage', () => {
     className: 'custom-error',
   };
 
-  it('should render correctly', () => {
+  it('should match the snapshot', () => {
     const { asFragment } = render(<ChopLogicErrorMessage {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });

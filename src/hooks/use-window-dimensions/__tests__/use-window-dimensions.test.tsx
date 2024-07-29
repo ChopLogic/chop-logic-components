@@ -1,4 +1,4 @@
-import { render, act } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { useWindowDimensions } from 'hooks/use-window-dimensions';
 import { beforeAll, describe, expect, it } from 'vitest';
 

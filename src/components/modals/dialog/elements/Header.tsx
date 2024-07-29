@@ -1,6 +1,8 @@
 import React from 'react';
-import { ChopLogicButton } from 'components/index';
 import { Icon } from 'enums/icon';
+
+import { ChopLogicButton } from 'components/index';
+
 import '../Dialog.scss';
 
 type ChopLogicModalLayoutHeaderProps = {

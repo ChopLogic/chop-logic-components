@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+
 import { useTooltipPosition } from '..';
 
 const Example = () => {

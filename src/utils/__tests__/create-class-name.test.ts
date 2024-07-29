@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import createClassName from 'utils/create-class-name';
+import { describe, expect, it } from 'vitest';
 
 describe('createClassName tests:', () => {
   it('should return a string for input [string]', () => {

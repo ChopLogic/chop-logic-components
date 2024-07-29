@@ -1,11 +1,14 @@
 import React from 'react';
-import '../Alert.scss';
 import { Icon } from 'enums/icon';
-import ChopLogicButton from 'components/controls/button/Button';
-import { ChopLogicAlertMode } from '../types';
-import { getAlertTitle } from '../helpers/get-alert-title';
-import { getAlertIcon } from '../helpers/get-alert-icon';
 import createClassName from 'utils/create-class-name';
+
+import ChopLogicButton from 'components/controls/button/Button';
+
+import { getAlertIcon } from '../helpers/get-alert-icon';
+import { getAlertTitle } from '../helpers/get-alert-title';
+import { ChopLogicAlertMode } from '../types';
+
+import '../Alert.scss';
 
 type ChopLogicAlertHeaderProps = {
   onClose: () => void;

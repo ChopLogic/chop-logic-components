@@ -1,8 +1,9 @@
-import { describe, expect, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import ChopLogicSelect from '../Select';
-import userEvent from '@testing-library/user-event';
 import { SELECT_LANGUAGES } from '__mocks__/select-values';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+
+import ChopLogicSelect from '../Select';
 
 describe('ChopLogicSelect', () => {
   const testProps = {

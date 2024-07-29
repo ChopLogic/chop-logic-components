@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import createClassName from 'utils/create-class-name';
-import ChopLogicLabel from '../../elements/label/Label';
+
 import ChopLogicErrorMessage from '../../elements/error-message/ErrorMessage';
-import './TextInput.scss';
+import ChopLogicLabel from '../../elements/label/Label';
+
 import { ChopLogicTextInputProps } from './types';
+
+import './TextInput.scss';
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
   id,

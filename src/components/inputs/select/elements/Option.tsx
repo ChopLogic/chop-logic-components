@@ -1,8 +1,10 @@
 import { KeyboardEvent } from 'react';
-import createClassName from 'utils/create-class-name';
 import { Icon } from 'enums/icon';
-import '../Select.scss';
+import createClassName from 'utils/create-class-name';
+
 import { SelectValue } from '../types';
+
+import '../Select.scss';
 
 type SelectOptionProps = {
   value: SelectValue;

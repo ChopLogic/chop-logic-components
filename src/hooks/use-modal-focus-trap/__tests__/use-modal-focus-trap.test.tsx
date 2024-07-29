@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
+import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
+import { describe, expect, it } from 'vitest';
 
 const TestModal = ({ isOpened }: { isOpened: boolean }) => {
   const modalRef = useRef<HTMLDivElement>(null);

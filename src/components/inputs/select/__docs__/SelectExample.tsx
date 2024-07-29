@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ChopLogicSelect from '../Select';
 import { ChopLogicSelectProps } from '../types';
 

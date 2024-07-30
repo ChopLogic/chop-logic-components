@@ -1,18 +1,19 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import createClassName from 'utils/create-class-name';
+import { CL_COLORS } from 'styles/variables';
 
 type ChopLogicErrorMessageProps = {
   errorId: string;
   visible?: boolean;
   message?: string;
   className?: string;
+  testId?: string;
 };
 
-const StyledErrorMessage = styled.span<{ $visible: boolean }>`
+export const StyledErrorMessage = styled.span<{ $visible: boolean }>`
   font-size: 0.8rem;
   font-family: 'Cyrge', Helvetica, sans-serif;
-  color: #e53d00;
+  color: ${CL_COLORS.syracuseRed};
   visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
 `;
 
@@ -21,13 +22,10 @@ const ChopLogicErrorMessage: React.FC<PropsWithChildren<ChopLogicErrorMessagePro
   message = 'Invalid input',
   className,
   visible = false,
+  testId,
 }) => {
   return (
-    <StyledErrorMessage
-      id={errorId}
-      $visible={visible}
-      className={createClassName(['cl-error-message', className, { 'cl-error-message_visible': visible }])}
-    >
+    <StyledErrorMessage id={errorId} $visible={visible} className={className} data-testid={testId}>
       {message}
     </StyledErrorMessage>
   );

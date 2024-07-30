@@ -3,18 +3,7 @@
 exports[`ChopLogicErrorMessage > should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-braxZu jeqSFf cl-error-message custom-error cl-error-message_visible"
-    id="test-error-id"
-  >
-    Incorrect input
-  </span>
-</DocumentFragment>
-`;
-
-exports[`ChopLogicErrorMessage > should render correctly 1`] = `
-<DocumentFragment>
-  <span
-    class="sc-braxZu jeqSFf cl-error-message custom-error cl-error-message_visible"
+    class="sc-braxZu kWpgIR custom-error"
     id="test-error-id"
   >
     Incorrect input

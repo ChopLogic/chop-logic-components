@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
+import { COLORS, FONTS } from 'constants/style-variables';
 import styled from 'styled-components';
-import { CL_COLORS } from 'styles/variables';
 
 type ChopLogicErrorMessageProps = {
   errorId: string;
@@ -12,8 +12,8 @@ type ChopLogicErrorMessageProps = {
 
 export const StyledErrorMessage = styled.span<{ $visible: boolean }>`
   font-size: 0.8rem;
-  font-family: 'Cyrge', Helvetica, sans-serif;
-  color: ${CL_COLORS.syracuseRed};
+  font-family: ${FONTS.core};
+  color: ${COLORS.accent};
   visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
 `;
 

@@ -29,6 +29,8 @@
       "enums/*": ["./src/enums/*"],
       "hooks/*": ["./src/hooks/*"],
       "styles/*": ["./src/styles/*"],
+      "constants/*": ["./src/constants/*"],
+      "misc/*": ["./src/misc/*"],
       "__mocks__/*": ["./src/__mocks__/*"]
     },
 

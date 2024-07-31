@@ -1,1 +1,1 @@
-export { Icon as ChopIcon } from './icon';
+export { Icon as ChopLogicIcon } from './icon';

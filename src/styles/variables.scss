@@ -1,10 +1,10 @@
 /** colors **/
-$cl-color-black: #222222;
-$cl-color-ivory: #f6f7eb;
-$cl-color-tint: #e9edf0;
-$cl-color-celtic-blue: #266dd3;
-$cl-color-celestial-blue: #5998c5;
-$cl-color-syracuse-red: #e53d00;
+$cl-color-black: hsl(0, 0%, 13%);
+$cl-color-ivory: hsl(65, 43%, 95%);
+$cl-color-tint: hsl(206, 19%, 93%);
+$cl-color-celtic-blue: hsl(215, 69%, 49%);
+$cl-color-celestial-blue: hsl(205, 48%, 56%);
+$cl-color-syracuse-red: hsl(16, 100%, 45%);
 
 /* backgrounds */
 $cl-modal-transparent: rgba(0, 0, 0, 0.3);

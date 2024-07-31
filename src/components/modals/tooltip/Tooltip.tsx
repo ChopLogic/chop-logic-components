@@ -4,7 +4,7 @@ import { useKeyPress } from 'hooks/use-key-press';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
 import createClassName from 'utils/create-class-name';
 
-import ChopLogicPortal from 'components/elements/portal/Portal';
+import ChopLogicPortal from 'components/misc/portal';
 
 import { ChopLogicTooltipProps } from './types';
 

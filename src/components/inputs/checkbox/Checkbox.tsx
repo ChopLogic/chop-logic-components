@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
 
-import ChopLogicLabel from '../../elements/label/Label';
+import ChopLogicLabel from 'components/misc/label';
 
 import { ChopLogicCheckboxProps } from './types';
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import createClassName from 'utils/create-class-name';
 
-import ChopLogicErrorMessage from '../../elements/error-message/ErrorMessage';
-import ChopLogicLabel from '../../elements/label/Label';
+import ChopLogicErrorMessage from 'components/misc/error-message';
+import ChopLogicLabel from 'components/misc/label';
 
 import { ChopLogicTextInputProps } from './types';
 

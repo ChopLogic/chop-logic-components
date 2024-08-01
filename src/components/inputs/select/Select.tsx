@@ -3,7 +3,7 @@ import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 import createClassName from 'utils/create-class-name';
 
-import ChopLogicLabel from 'components/misc/label';
+import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';

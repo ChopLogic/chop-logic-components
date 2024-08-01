@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import CheckboxCheckedIcon from 'assets/icons/CheckboxChecked';
 import CheckboxUncheckedIcon from 'assets/icons/CheckboxUnchecked';
-import createClassName from 'utils/create-class-name';
 
-import ChopLogicLabel from 'components/misc/label';
+import ChopLogicLabel from 'components/misc/label/Label';
 
-import { ChopLogicCheckboxProps } from './types';
+import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';
 
-import './Checkbox.scss';
+export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
+  name: string;
+  label: string;
+  isLabelHidden?: boolean;
+  iconPosition?: 'left' | 'right';
+};
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   id,
   name,
   label,
   disabled,
-  required = false,
   onChange,
   isLabelHidden,
-  className,
+  required = false,
   iconPosition = 'left',
   ...props
 }) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
-  const wrapperClass = createClassName(['cl-checkbox', className, { 'cl-checkbox_disabled': !!disabled }]);
-  const labelClass = createClassName(['cl-checkbox__label']);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
@@ -33,8 +35,8 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   };
 
   return (
-    <div className={wrapperClass}>
-      <input
+    <StyledCheckboxWrapper $disabled={!!disabled}>
+      <StyledCheckboxInput
         id={id}
         name={name}
         type='checkbox'
@@ -50,12 +52,11 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         label={label}
         required={required}
         inputId={id}
-        className={labelClass}
         isTextHidden={isLabelHidden}
         icon={isChecked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}
       />
-    </div>
+    </StyledCheckboxWrapper>
   );
 };
 

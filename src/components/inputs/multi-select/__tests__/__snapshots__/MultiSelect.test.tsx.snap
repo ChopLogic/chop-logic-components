@@ -6,11 +6,11 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
     class="cl-multi-select"
   >
     <label
-      class="cl-label cl-multi-select__label"
+      class="sc-braxZu eZLZgi cl-label cl-multi-select__label"
       for="language-multi-select-id_combobox"
     >
       <span
-        class="cl-label__text"
+        class="sc-gJhJTp dwLsey cl-label__text"
       >
         Select your languages
       </span>

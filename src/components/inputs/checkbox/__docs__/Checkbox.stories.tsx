@@ -18,5 +18,6 @@ export const Default: Story = {
     required: true,
     disabled: false,
     isLabelHidden: false,
+    iconPosition: 'left',
   },
 };

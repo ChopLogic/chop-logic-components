@@ -7,6 +7,10 @@
   position: relative;
   overflow: hidden;
 
+  &__checked-icon {
+    color: $cl-color-celtic-blue;
+  }
+
   &__input {
     position: absolute;
     z-index: -1;

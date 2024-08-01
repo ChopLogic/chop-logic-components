@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Icon } from 'enums/icon';
+import CheckboxCheckedIcon from 'assets/icons/CheckboxChecked';
+import CheckboxUncheckedIcon from 'assets/icons/CheckboxUnchecked';
 import createClassName from 'utils/create-class-name';
 
 import ChopLogicLabel from 'components/misc/label';
@@ -17,11 +18,12 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   onChange,
   isLabelHidden,
   className,
+  iconPosition = 'left',
   ...props
 }) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const wrapperClass = createClassName(['cl-checkbox', className, { 'cl-checkbox_disabled': !!disabled }]);
-  const labelClass = createClassName(['cl-checkbox__label', { [Icon.Checked]: isChecked, [Icon.Unchecked]: !isChecked }]);
+  const labelClass = createClassName(['cl-checkbox__label']);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
@@ -44,7 +46,15 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         aria-label={isLabelHidden ? label : undefined}
         {...props}
       />
-      <ChopLogicLabel label={label} required={required} inputId={id} className={labelClass} isTextHidden={isLabelHidden} />
+      <ChopLogicLabel
+        label={label}
+        required={required}
+        inputId={id}
+        className={labelClass}
+        isTextHidden={isLabelHidden}
+        icon={isChecked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
+        iconPosition={iconPosition}
+      />
     </div>
   );
 };

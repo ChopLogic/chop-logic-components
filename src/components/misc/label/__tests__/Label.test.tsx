@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
+import CheckboxCheckedIcon from 'assets/icons/CheckboxChecked';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicLabel from '../label';
+import ChopLogicLabel from 'components/misc/label';
 
 describe('ChopLogicLabel', () => {
   const testProps = {
@@ -23,6 +24,16 @@ describe('ChopLogicLabel', () => {
 
   it('should render correctly without text', () => {
     const { asFragment } = render(<ChopLogicLabel {...testProps} required={false} isTextHidden />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render left icon', () => {
+    const { asFragment } = render(<ChopLogicLabel {...testProps} required={false} icon={<CheckboxCheckedIcon />} iconPosition='left' />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render right icon', () => {
+    const { asFragment } = render(<ChopLogicLabel {...testProps} required={false} icon={<CheckboxCheckedIcon />} iconPosition='left' />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

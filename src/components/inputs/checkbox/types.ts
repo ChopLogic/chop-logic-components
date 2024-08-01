@@ -3,4 +3,5 @@ export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
   name: string;
   label: string;
   isLabelHidden?: boolean;
+  iconPosition?: 'left' | 'right';
 };

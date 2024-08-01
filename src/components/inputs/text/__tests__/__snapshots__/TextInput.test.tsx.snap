@@ -9,11 +9,11 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       class="cl-text-input__wrapper"
     >
       <label
-        class="cl-label cl-text-input__label"
+        class="sc-gJhJTp djgZQL cl-label cl-text-input__label"
         for="test-input-id"
       >
         <span
-          class="cl-label__text"
+          class="sc-elDIKY ha-DLBP cl-label__text"
         >
           Test Input:
         </span>
@@ -30,7 +30,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kLHPRi cl-text-input__error"
+      class="sc-braxZu kmOXHf cl-text-input__error"
       id="test-input-id_error"
     >
       Invalid input
@@ -48,16 +48,16 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       class="cl-text-input__wrapper"
     >
       <label
-        class="cl-label cl-text-input__label"
+        class="sc-gJhJTp djgZQL cl-label cl-text-input__label"
         for="test-input-id"
       >
         <span
-          class="cl-label__text"
+          class="sc-elDIKY ha-DLBP cl-label__text"
         >
           Test Input:
         </span>
         <abbr
-          class="cl-label__required"
+          class="sc-fQpRED uWPVK cl-label__required"
           title="required"
         >
           *
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kLHPRi cl-text-input__error"
+      class="sc-braxZu kmOXHf cl-text-input__error"
       id="test-input-id_error"
     >
       Invalid input

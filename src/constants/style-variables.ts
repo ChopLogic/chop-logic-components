@@ -8,7 +8,7 @@ export const COLORS = Object.freeze({
 });
 
 export const FONTS = Object.freeze({
-  core: `Verdana, Geneva, Tahoma, sans-serif`,
+  core: `Arial, Helvetica, sans-serif`,
   monospace: `'Courier New', Courier, monospace`,
 });
 

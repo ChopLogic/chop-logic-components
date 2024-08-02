@@ -1,16 +1,12 @@
 import { KeyboardEvent } from 'react';
-import createClassName from 'utils/create-class-name';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 
+import { StyledMultiSelectDropdown } from '../MultiSelect.styled';
 import { MultiSelectDropdownProps } from '../types';
 
 import SelectOption from './Option';
 
-import '../MultiSelect.scss';
-
-const SelectDropdown: React.FC<MultiSelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId }) => {
-  const dropdownClass = createClassName(['cl-multi-select__dropdown', { 'cl-multi-select__dropdown_opened': isOpened }]);
-
+const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId }) => {
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
     let focusedId: string = '';
     values.forEach((value) => {
@@ -48,12 +44,12 @@ const SelectDropdown: React.FC<MultiSelectDropdownProps> = ({ values, isOpened, 
   };
 
   return (
-    <ul className={dropdownClass} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
+    <StyledMultiSelectDropdown $opened={isOpened} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
       {values.map((item) => (
         <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
-    </ul>
+    </StyledMultiSelectDropdown>
   );
 };
 
-export default SelectDropdown;
+export default MultiSelectDropdown;

@@ -32,3 +32,9 @@ export const BORDERS = Object.freeze({
   accent: '1px solid #e53d00',
   focusOutline: '2px dashed #e53d00',
 });
+
+export const Z_INDEXES = Object.freeze({
+  dropdown: 1000,
+  modal: 2000,
+  tooltip: 3000,
+});

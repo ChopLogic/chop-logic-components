@@ -14,6 +14,7 @@ export const StyledLabelText = styled.span`
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 2px 0;
 `;
 
 export const StyledRequiredSign = styled.abbr`

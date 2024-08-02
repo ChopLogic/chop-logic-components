@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import createClassName from 'utils/create-class-name';
 
 import { StyledLabel, StyledLabelText, StyledRequiredSign } from './Label.styled';
 
@@ -24,16 +23,12 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
-  const requiredSign = (
-    <StyledRequiredSign title='required' className='cl-label__required'>
-      *
-    </StyledRequiredSign>
-  );
+  const requiredSign = <StyledRequiredSign title='required'>*</StyledRequiredSign>;
 
   return (
-    <StyledLabel htmlFor={inputId} className={createClassName(['cl-label', className])}>
+    <StyledLabel htmlFor={inputId} className={className}>
       {isLeftIconVisible && icon}
-      {!isTextHidden && <StyledLabelText className='cl-label__text'>{label}</StyledLabelText>}
+      {!isTextHidden && <StyledLabelText>{label}</StyledLabelText>}
       {required && requiredSign}
       {isRightIconVisible && icon}
     </StyledLabel>

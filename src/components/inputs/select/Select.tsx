@@ -1,15 +1,13 @@
 import { useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
-import createClassName from 'utils/create-class-name';
 
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
+import { StyledSelectWrapper } from './Select.styled';
 import { ChopLogicSelectProps, SelectValue } from './types';
-
-import './Select.scss';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,
@@ -26,7 +24,6 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const [selected, setSelected] = useState<SelectValue>();
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const wrapperClass = createClassName(['cl-select', props?.className, { 'cl-select_disabled': disabled }]);
   const ref = useRef<HTMLDivElement>(null);
 
   const handleClose = () => setIsOpened(false);
@@ -43,8 +40,8 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <div className={wrapperClass} ref={ref} style={props.style}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-select__label' />
+    <StyledSelectWrapper ref={ref} $disabled={disabled} style={props.style} className={props?.className}>
+      <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
       <SelectCombobox
         name={name}
         isOpened={isOpened}
@@ -65,7 +62,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         comboboxId={comboboxId}
         onSelect={handleSelect}
       />
-    </div>
+    </StyledSelectWrapper>
   );
 };
 

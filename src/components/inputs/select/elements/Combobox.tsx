@@ -1,9 +1,8 @@
-import { Icon } from 'enums/icon';
-import createClassName from 'utils/create-class-name';
+import BoxDownArrow from 'assets/icons/BoxDownArrow';
+import BoxUpArrow from 'assets/icons/BoxUpArrow';
 
+import { StyledSelectCombobox, StyledSelectPlaceholder } from '../Select.styled';
 import { SelectValue } from '../types';
-
-import '../Select.scss';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -28,10 +27,8 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   disabled,
   required,
 }) => {
-  const iconClass = createClassName(['cl-select__icon', { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
-
   return (
-    <button
+    <StyledSelectCombobox
       type='button'
       name={name}
       value={selected?.id}
@@ -45,9 +42,9 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <span className='cl-select__placeholder'>{selected?.label ?? placeholder}</span>
-      <span className={iconClass} aria-hidden='true'></span>
-    </button>
+      <StyledSelectPlaceholder>{selected?.label ?? placeholder}</StyledSelectPlaceholder>
+      {isOpened ? <BoxUpArrow /> : <BoxDownArrow />}
+    </StyledSelectCombobox>
   );
 };
 

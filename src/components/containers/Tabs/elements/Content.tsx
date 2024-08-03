@@ -1,8 +1,14 @@
 import React from 'react';
 
-const ChopLogicTabContent = ({ content, tabId }: { content?: React.ReactElement; tabId: string }): React.ReactElement => {
+type ChopLogicTabContentProps = {
+  content?: React.ReactElement;
+  tabId: string;
+  tabPanelId: string;
+};
+
+const ChopLogicTabContent: React.FC<ChopLogicTabContentProps> = ({ content, tabId, tabPanelId }): React.ReactElement => {
   return (
-    <section role='tabpanel' aria-labelledby={tabId} className='tab-list__content'>
+    <section role='tabpanel' aria-labelledby={tabId} id={tabPanelId}>
       {content}
     </section>
   );

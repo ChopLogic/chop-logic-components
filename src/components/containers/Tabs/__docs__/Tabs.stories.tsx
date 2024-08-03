@@ -5,9 +5,9 @@ import ChopLogicTabs from '../Tabs';
 import { ChopLogicTabItem } from '../types';
 
 const tabs: ChopLogicTabItem[] = [
-  { id: 'tab1', title: 'Tab 1', tabContent: <div>Content for Tab 1</div> },
-  { id: 'tab2', title: 'Tab 2', tabContent: <div>Content for Tab 2</div> },
-  { id: 'tab3', title: 'Tab 3', tabContent: <div>Content for Tab 3</div> },
+  { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
+  { id: 'tab2', title: 'Tab 2', content: <div>Content for Tab 2</div> },
+  { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
 ];
 
 const meta: Meta<typeof ChopLogicTabs> = {
@@ -31,12 +31,6 @@ export default meta;
 type Story = StoryObj<typeof ChopLogicTabs>;
 
 export const Default: Story = {};
-
-export const WithToolbar: Story = {
-  args: {
-    toolBar: <button onClick={() => alert('Toolbar button clicked!')}>Toolbar Button</button>,
-  },
-};
 
 export const VerticalTabs: Story = {
   args: {

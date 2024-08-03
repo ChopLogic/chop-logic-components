@@ -1,22 +1,23 @@
 import React from 'react';
 
-type TabProps = {
+type ChopLogicTabButtonProps = {
   title: string;
   tabId: string;
+  tabPanelId: string;
   isActive: boolean;
   onSelect: (value: React.SetStateAction<string>) => void;
 };
 
-const ChopLogicTab = ({ title, onSelect, tabId, isActive }: TabProps): React.ReactElement => {
+const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({ title, onSelect, tabId, isActive, tabPanelId }) => {
   const onClickTab = () => {
     onSelect(tabId);
   };
 
   return (
-    <button role='tab' id={tabId} onClick={onClickTab} aria-selected={isActive} data-testid={tabId}>
+    <button role='tab' id={tabId} onClick={onClickTab} aria-selected={isActive} aria-controls={tabPanelId}>
       {title}
     </button>
   );
 };
 
-export default ChopLogicTab;
+export default ChopLogicTabButton;

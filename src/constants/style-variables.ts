@@ -1,6 +1,7 @@
 export const COLORS = Object.freeze({
   primary: 'hsl(0, 0%, 13%)', // black
-  background: 'hsl(65, 43%, 95%)', // ivory
+  background: 'hsl(0, 0%, 100%)', // white
+  highlight: 'hsl(65, 43%, 95%)', // ivory
   shade: 'hsl(206, 19%, 93%)', // tint
   secondary: 'hsl(215, 69%, 49%)', // celticBlue
   tertiary: 'hsl(205, 48%, 56%)', // celestialBlue

@@ -7,9 +7,10 @@ import TextInput from '../TextInput';
 describe('ChopLogicTextInput', () => {
   const testProps = {
     id: 'test-input-id',
-    name: 'testInput',
+    name: 'test',
     label: 'Test Input:',
     placeholder: 'Enter text here...',
+    className: 'test-class',
     valid: true,
   };
 

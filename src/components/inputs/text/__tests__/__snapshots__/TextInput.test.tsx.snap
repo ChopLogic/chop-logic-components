@@ -3,13 +3,13 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="cl-text-input"
+    class="sc-dsLQwm cymheT"
   >
     <div
-      class="cl-text-input__wrapper"
+      class="sc-iKTcqh ewOKgd"
     >
       <label
-        class="sc-gJhJTp djgZQL cl-text-input__label"
+        class="sc-gJhJTp djgZQL"
         for="test-input-id"
       >
         <span
@@ -21,16 +21,16 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="cl-text-input__textbox"
+        class="sc-gnpbhQ gfDOsA"
         id="test-input-id"
-        name="testInput"
+        name="test"
         placeholder="Enter text here..."
         type="text"
         value=""
       />
     </div>
     <span
-      class="sc-braxZu kmOXHf cl-text-input__error"
+      class="sc-braxZu kmOXHf"
       id="test-input-id_error"
     >
       Invalid input
@@ -42,13 +42,13 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="cl-text-input"
+    class="sc-dsLQwm cymheT"
   >
     <div
-      class="cl-text-input__wrapper"
+      class="sc-iKTcqh ewOKgd"
     >
       <label
-        class="sc-gJhJTp djgZQL cl-text-input__label"
+        class="sc-gJhJTp djgZQL"
         for="test-input-id"
       >
         <span
@@ -66,9 +66,9 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="cl-text-input__textbox"
+        class="sc-gnpbhQ gfDOsA"
         id="test-input-id"
-        name="testInput"
+        name="test"
         placeholder="Enter text here..."
         required=""
         type="text"
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kmOXHf cl-text-input__error"
+      class="sc-braxZu kmOXHf"
       id="test-input-id_error"
     >
       Invalid input

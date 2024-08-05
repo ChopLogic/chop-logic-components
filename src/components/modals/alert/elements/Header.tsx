@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from 'enums/icon';
 import createClassName from 'utils/create-class-name';
 
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicButton from 'components/inputs/button/Button';
 
 import { getAlertIcon } from '../helpers/get-alert-icon';
 import { getAlertTitle } from '../helpers/get-alert-title';

@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import { Icon } from 'enums/icon';
 import { describe, expect, it, vi } from 'vitest';
 
 import Button from '../Button';
-import { ChopLogicButtonView } from '../types';
+import { ChopLogicButtonIcon, ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {
   const testProps = {
     id: 'test-button-id',
     text: 'Test button',
-    icon: Icon.Copy,
+    icon: 'copy' as ChopLogicButtonIcon,
     className: 'test-button-class',
     view: 'danger' as ChopLogicButtonView,
     disabled: false,

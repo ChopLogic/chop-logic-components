@@ -3,7 +3,7 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dsLQwm cymheT"
+    class="sc-dsLQwm cymheT test-class"
   >
     <div
       class="sc-iKTcqh ewOKgd"
@@ -21,7 +21,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-gnpbhQ gfDOsA"
+        class="sc-gnpbhQ gfDOsA test-class"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -42,7 +42,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dsLQwm cymheT"
+    class="sc-dsLQwm cymheT test-class"
   >
     <div
       class="sc-iKTcqh ewOKgd"
@@ -66,7 +66,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-gnpbhQ gfDOsA"
+        class="sc-gnpbhQ gfDOsA test-class"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."

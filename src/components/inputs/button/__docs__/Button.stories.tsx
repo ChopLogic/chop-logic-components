@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from 'enums/icon';
 
 import ButtonExample from './ButtonExample';
 
 const meta: Meta<typeof ButtonExample> = {
-  title: 'Controls/Button',
+  title: 'Inputs/Button',
   component: ButtonExample,
 };
 
@@ -15,7 +14,7 @@ export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
     view: 'primary',
-    icon: Icon.Copy,
+    icon: 'copy',
     type: 'button',
     disabled: false,
   },
@@ -34,7 +33,7 @@ export const DangerButton: Story = {
   args: {
     text: 'Delete',
     view: 'danger',
-    icon: Icon.Delete,
+    icon: 'delete',
     type: 'button',
     disabled: false,
   },
@@ -44,7 +43,7 @@ export const IconButton: Story = {
   args: {
     view: 'icon',
     type: 'button',
-    icon: Icon.Cut,
+    icon: 'cancel',
     disabled: false,
   },
 };
@@ -53,7 +52,7 @@ export const DisabledButton: Story = {
   args: {
     text: 'Copy',
     view: 'primary',
-    icon: Icon.Copy,
+    icon: 'copy',
     type: 'button',
     disabled: true,
   },

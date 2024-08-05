@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicButton from 'components/inputs/button/Button';
 
 import ChopLogicAlert from '../Alert';
 import { ChopLogicAlertProps } from '../types';

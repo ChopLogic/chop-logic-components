@@ -14,14 +14,8 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
       Test dialog
       <button
         aria-label="Close modal window"
-        class="cl-button cl-button_icon"
         type="button"
-      >
-        <span
-          aria-hidden="true"
-          class="cl-icon__close"
-        />
-      </button>
+      />
     </header>
     <div
       class="cl-dialog__content"

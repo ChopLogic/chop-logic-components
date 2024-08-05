@@ -8,4 +8,5 @@ export type ChopLogicTabItem = {
   content: React.ReactElement;
   title: string;
   id: string;
+  disabled?: boolean;
 };

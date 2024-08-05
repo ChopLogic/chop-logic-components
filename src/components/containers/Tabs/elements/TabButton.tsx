@@ -1,18 +1,36 @@
 import React from 'react';
 
+import { StyledTabButton } from '../Tabs.styled';
+
 type ChopLogicTabButtonProps = {
   title: string;
   tabId: string;
+  onTabSelect: (id: string) => void;
   tabPanelId: string;
   isSelected: boolean;
-  onTabSelect: (id: string) => void;
+  isDisabled?: boolean;
 };
 
-const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({ title, onTabSelect, tabId, isSelected, tabPanelId }) => {
+const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
+  title,
+  onTabSelect,
+  tabId,
+  isSelected,
+  isDisabled = false,
+  tabPanelId,
+}) => {
   return (
-    <button role='tab' id={tabId} onClick={() => onTabSelect(tabId)} aria-selected={isSelected} aria-controls={tabPanelId}>
+    <StyledTabButton
+      role='tab'
+      id={tabId}
+      onClick={() => onTabSelect(tabId)}
+      aria-selected={isSelected}
+      aria-controls={tabPanelId}
+      $selected={isSelected}
+      $disabled={isDisabled}
+    >
       {title}
-    </button>
+    </StyledTabButton>
   );
 };
 

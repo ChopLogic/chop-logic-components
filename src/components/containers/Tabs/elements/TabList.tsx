@@ -14,7 +14,7 @@ type ChopLogicTabListProps = {
 const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds }) => {
   return (
     <div role='tablist'>
-      {tabs.map(({ id, title }, index) => {
+      {tabs.map(({ id, title, disabled }, index) => {
         return (
           <ChopLogicTabButton
             key={id}
@@ -22,6 +22,7 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
             onTabSelect={onTabSelect}
             tabId={id}
             isSelected={id === selectedTabId}
+            isDisabled={disabled}
             tabPanelId={tabPanelIds[index]}
           />
         );

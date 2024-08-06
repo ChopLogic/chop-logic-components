@@ -17,7 +17,14 @@ const ChopLogicTabs = ({ tabs, defaultTabId, mode = 'horizontal' }: ChopLogicTab
 
   return (
     <StyledTabsContainer $mode={mode}>
-      <ChopLogicTabList tabs={tabs} selectedTabId={selectedTabId} tabPanelIds={tabPanelIds} onTabSelect={handleTabSelect} mode={mode} />
+      <ChopLogicTabList
+        tabs={tabs}
+        selectedTabId={selectedTabId}
+        tabPanelIds={tabPanelIds}
+        onTabSelect={handleTabSelect}
+        mode={mode}
+        tabIds={tabIds}
+      />
       <ChopLogicTabContent tabs={tabs} selectedTabId={selectedTabId} />
     </StyledTabsContainer>
   );

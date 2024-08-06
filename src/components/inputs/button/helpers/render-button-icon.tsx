@@ -5,7 +5,7 @@ import DeleteIcon from 'assets/icons/Delete';
 
 import { ChopLogicButtonIcon } from '../types';
 
-export function getButtonIcon(icon?: ChopLogicButtonIcon): React.ReactElement | null {
+export function renderButtonIcon(icon?: ChopLogicButtonIcon): React.ReactElement | null {
   switch (icon) {
     case 'confirm':
       return <CheckMarkIcon />;

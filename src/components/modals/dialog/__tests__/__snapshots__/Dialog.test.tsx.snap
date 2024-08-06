@@ -14,6 +14,7 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
       Test dialog
       <button
         aria-label="Close modal window"
+        class="sc-braxZu kxFaoR"
         type="button"
       />
     </header>

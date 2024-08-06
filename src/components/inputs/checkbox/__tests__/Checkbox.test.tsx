@@ -8,7 +8,7 @@ describe('ChopLogicCheckbox', () => {
   const testProps = {
     id: 'test-checkbox-id',
     name: 'checkbox',
-    label: 'Test checkbox label',
+    label: 'Test label',
   };
 
   it('should render the input correctly', () => {

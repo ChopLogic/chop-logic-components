@@ -12,7 +12,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="cl-alert__close-button"
+      class="sc-braxZu kxFaoR cl-alert__close-button"
       type="button"
     />
   </header>
@@ -31,7 +31,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="cl-alert__close-button"
+      class="sc-braxZu kxFaoR cl-alert__close-button"
       type="button"
     />
   </header>
@@ -50,7 +50,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="cl-alert__close-button"
+      class="sc-braxZu kxFaoR cl-alert__close-button"
       type="button"
     />
   </header>
@@ -69,7 +69,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="cl-alert__close-button"
+      class="sc-braxZu kxFaoR cl-alert__close-button"
       type="button"
     />
   </header>
@@ -88,7 +88,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 5`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="cl-alert__close-button"
+      class="sc-braxZu kxFaoR cl-alert__close-button"
       type="button"
     />
   </header>

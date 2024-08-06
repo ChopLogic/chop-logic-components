@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { userEvent } from '@testing-library/user-event';
+import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import Button from '../Button';
@@ -42,7 +42,9 @@ describe('ChopLogicButton', () => {
     render(<Button {...testProps} onClick={mockedCallback} disabled={true} />);
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
-    await userEvent.click(button);
+    await userEvent.click(button, {
+      pointerEventsCheck: PointerEventsCheckLevel.Never,
+    });
     expect(mockedCallback).not.toHaveBeenCalled();
   });
 

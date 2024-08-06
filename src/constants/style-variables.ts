@@ -39,3 +39,9 @@ export const Z_INDEXES = Object.freeze({
   modal: 2000,
   tooltip: 3000,
 });
+
+export const GRADIENTS = Object.freeze({
+  primary: `linear-gradient(0deg, #222222, #266dd3)`,
+  accent: `linear-gradient(0deg, #222222, #e53d00)`,
+  tint: `linear-gradient(0deg, #e9edf0, #f6f7eb)`,
+});

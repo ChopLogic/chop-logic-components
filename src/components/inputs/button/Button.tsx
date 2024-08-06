@@ -1,23 +1,24 @@
 import React from 'react';
 
-import { getButtonIcon } from './helpers/get-button-icon';
+import { renderButtonIcon } from './helpers/render-button-icon';
+import { StyledButton, StyledButtonText } from './Button.styled';
 import { ChopLogicButtonProps } from './types';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
-  disabled,
   onClick,
   text,
-  type = 'button',
-  view = 'primary',
   icon,
   label,
+  disabled = false,
+  type = 'button',
+  view = 'primary',
   ...props
 }) => {
   return (
-    <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...props}>
-      {getButtonIcon(icon)}
-      {view !== 'icon' && <span className='cl-button__text'>{text}</span>}
-    </button>
+    <StyledButton aria-label={label} type={type} onClick={onClick} disabled={disabled} $view={view} $disabled={disabled} {...props}>
+      {renderButtonIcon(icon)}
+      {view !== 'icon' && <StyledButtonText>{text}</StyledButtonText>}
+    </StyledButton>
   );
 };
 

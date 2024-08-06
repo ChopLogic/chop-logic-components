@@ -3,7 +3,7 @@
 exports[`ChopLogicButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="test-button-class"
+    class="sc-braxZu byrRxN test-button-class"
     id="test-button-id"
     type="button"
   >
@@ -25,7 +25,7 @@ exports[`ChopLogicButton > should match the snapshot 1`] = `
       />
     </svg>
     <span
-      class="cl-button__text"
+      class="sc-gJhJTp gPhVOc"
     >
       Test button
     </span>

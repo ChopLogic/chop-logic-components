@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Chop Logic Icons > BackIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 512 512"
+    width="1em"
+  >
+    <path
+      d="M328 112L184 256l144 144"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="48"
+    />
+  </svg>
+</DocumentFragment>
+`;

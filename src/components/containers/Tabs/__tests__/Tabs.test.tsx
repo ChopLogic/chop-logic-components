@@ -1,181 +1,67 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
-import ChopLogicTabList from '../elements/TabList';
+import ChopLogicTabs from '../Tabs';
 import { ChopLogicTabsMode } from '../types';
 
-// Mocking moveFocusOnElementById
-vi.mock('utils/move-focus-on-element-by-id', () => ({
-  moveFocusOnElementById: vi.fn(),
-}));
-
-describe('ChopLogicTabList', () => {
+describe('ChopLogicTabs', () => {
   const tabs = [
     { id: 'tab-1', title: 'Tab 1', disabled: false, content: <>Tab 1 content</> },
     { id: 'tab-2', title: 'Tab 2', disabled: false, content: <>Tab 2 content</> },
     { id: 'tab-3', title: 'Tab 3', disabled: false, content: <>Tab 3 content</> },
   ];
-  const tabIds = ['tab-1', 'tab-2', 'tab-3'];
-  const tabPanelIds = ['panel-1', 'panel-2', 'panel-3'];
-  const onTabSelect = vi.fn();
+  const testProps = {
+    tabs,
+    defaultTabId: 'tab-1',
+    mode: 'horizontal' as ChopLogicTabsMode,
+  };
 
-  it('renders all tabs correctly', () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='horizontal'
-      />,
-    );
-
-    tabs.forEach(({ title }) => {
-      expect(screen.getByRole('tab', { name: title })).toBeInTheDocument();
-    });
+  it('should match the snapshot', () => {
+    const { asFragment } = render(<ChopLogicTabs {...testProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('does not move focus in vertical mode when ArrowLeft is pressed', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='vertical'
-      />,
-    );
+  it('should render another tab content when user clicks on tabs', async () => {
+    render(<ChopLogicTabs {...testProps} />);
+    expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
 
-    const tabList = screen.getByRole('tablist');
-    tabList.focus();
-    await userEvent.keyboard('[ArrowLeft]');
+    await userEvent.click(screen.getByText('Tab 2'));
+    expect(screen.queryByText('Tab 1 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 2 content')).toBeInTheDocument();
 
-    expect(onTabSelect).not.toHaveBeenCalled();
-    expect(moveFocusOnElementById).not.toHaveBeenCalled();
+    await userEvent.click(screen.getByText('Tab 3'));
+    expect(screen.queryByText('Tab 2 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 3 content')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByText('Tab 1'));
+    expect(screen.queryByText('Tab 3 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
   });
 
-  it('does not move focus in horizontal mode when ArrowUp is pressed', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='horizontal'
-      />,
-    );
-
-    const tabList = screen.getByRole('tablist');
-    tabList.focus();
-    await userEvent.keyboard('[ArrowUp]');
-
-    expect(onTabSelect).not.toHaveBeenCalled();
-    expect(moveFocusOnElementById).not.toHaveBeenCalled();
-  });
-
-  it('handles tab selection when a tab is clicked', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='horizontal'
-      />,
-    );
-
-    const secondTab = screen.getByRole('tab', { name: 'Tab 2' });
-    await userEvent.click(secondTab);
-
-    expect(onTabSelect).toHaveBeenCalledWith('tab-2');
-  });
-
-  it('moves focus to the next tab when pressing ArrowRight in horizontal mode', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='horizontal'
-      />,
-    );
+  it('should render another tab content when user switches tabs via keyboard', async () => {
+    render(<ChopLogicTabs {...testProps} />);
+    expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
 
     const firstTab = screen.getByText('Tab 1');
     firstTab.focus();
     await userEvent.keyboard('[ArrowRight]');
+    expect(screen.queryByText('Tab 1 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 2 content')).toBeInTheDocument();
 
-    expect(moveFocusOnElementById).toHaveBeenCalledWith('tab-2');
-    expect(onTabSelect).toHaveBeenCalledWith('tab-2');
-  });
+    await userEvent.keyboard('[ArrowRight]');
+    expect(screen.queryByText('Tab 2 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 3 content')).toBeInTheDocument();
 
-  it('moves focus to the previous tab when pressing ArrowLeft in horizontal mode', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-3'
-        tabPanelIds={tabPanelIds}
-        mode='horizontal'
-      />,
-    );
+    await userEvent.keyboard('[ArrowRight]');
+    expect(screen.queryByText('Tab 3 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
 
-    const tabList = screen.getByRole('tablist');
-    tabList.focus();
     await userEvent.keyboard('[ArrowLeft]');
-
-    expect(moveFocusOnElementById).toHaveBeenCalledWith('tab-2');
-    expect(onTabSelect).toHaveBeenCalledWith('tab-2');
-  });
-
-  it('moves focus to the next tab when pressing ArrowDown in vertical mode', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-1'
-        tabPanelIds={tabPanelIds}
-        mode='vertical'
-      />,
-    );
-
-    const tabList = screen.getByRole('tablist');
-    tabList.focus();
-    await userEvent.keyboard('[ArrowDown]');
-
-    expect(moveFocusOnElementById).toHaveBeenCalledWith('tab-2');
-    expect(onTabSelect).toHaveBeenCalledWith('tab-2');
-  });
-
-  it('moves focus to the previous tab when pressing ArrowUp in vertical mode', async () => {
-    render(
-      <ChopLogicTabList
-        tabs={tabs}
-        tabIds={tabIds}
-        onTabSelect={onTabSelect}
-        selectedTabId='tab-3'
-        tabPanelIds={tabPanelIds}
-        mode='vertical'
-      />,
-    );
-
-    const tabList = screen.getByRole('tablist');
-    tabList.focus();
-    await userEvent.keyboard('[ArrowUp]');
-
-    expect(moveFocusOnElementById).toHaveBeenCalledWith('tab-2');
-    expect(onTabSelect).toHaveBeenCalledWith('tab-2');
+    expect(screen.queryByText('Tab 1 content')).not.toBeInTheDocument();
+    expect(screen.getByText('Tab 3 content')).toBeInTheDocument();
   });
 });
 

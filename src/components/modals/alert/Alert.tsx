@@ -4,9 +4,8 @@ import createClassName from 'utils/create-class-name';
 import ChopLogicPortal from 'components/misc/portal';
 
 import ChopLogicAlertHeader from './elements/Header';
+import { StyledAlertContent, StyledAlertWrapper } from './Alert.styled';
 import { ChopLogicAlertProps } from './types';
-
-import './Alert.scss';
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, title, message, mode = 'info', ...rest }) => {
   const isMounted = useMount(isOpened);
@@ -14,7 +13,6 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, titl
 
   if (!isMounted) return null;
 
-  const wrapperClass = createClassName([rest.className, 'cl-alert', { 'cl-alert_closing': isClosing }]);
   const contentClass = createClassName([
     'cl-alert__content',
     {
@@ -25,12 +23,12 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, titl
 
   return (
     <ChopLogicPortal>
-      <div className={wrapperClass} {...rest}>
-        <div className={contentClass}>
+      <StyledAlertWrapper $isClosing={isClosing} {...rest}>
+        <StyledAlertContent className={contentClass}>
           <ChopLogicAlertHeader title={title} onClose={onClose} mode={mode} />
-          <p className='cl-alert__message'>{message}</p>
-        </div>
-      </div>
+          <p>{message}</p>
+        </StyledAlertContent>
+      </StyledAlertWrapper>
     </ChopLogicPortal>
   );
 };

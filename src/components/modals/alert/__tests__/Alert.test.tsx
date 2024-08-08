@@ -46,12 +46,6 @@ describe('ChopLogicAlert', () => {
     expect(screen.getByText('This is a test message').closest('.cl-alert__content')).toHaveClass('cl-alert__content_success');
   });
 
-  it('should add the closing class when closing', async () => {
-    const { rerender } = renderAlert({ isOpened: true });
-    rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);
-    expect(screen.getByText('This is a test message').closest('.cl-alert')).toHaveClass('cl-alert_closing');
-  });
-
   it('should unmount the alert when it is closed', async () => {
     const { rerender } = renderAlert({ isOpened: true });
     rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);

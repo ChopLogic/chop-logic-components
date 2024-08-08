@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from 'enums/icon';
 
 import { ChopLogicButton } from 'components/index';
 
@@ -14,7 +13,7 @@ const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({
   return (
     <header className='cl-dialog__header'>
       {title}
-      <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close modal window' onClick={onClose} />
+      <ChopLogicButton icon='cancel' view='icon' aria-label='Close modal window' onClick={onClose} />
     </header>
   );
 };

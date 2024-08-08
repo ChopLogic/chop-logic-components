@@ -1,5 +1,5 @@
-import BoxDownArrow from 'assets/icons/BoxDownArrow';
-import BoxUpArrow from 'assets/icons/BoxUpArrow';
+import ArrowDownIcon from 'assets/icons/ArrowDown';
+import ArrowUpIcon from 'assets/icons/ArrowUp';
 
 import { StyledMultiSelectCombobox, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
 import { MultiSelectValue } from '../types';
@@ -52,7 +52,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       aria-required={required}
     >
       <StyledMultiSelectPlaceholder>{visiblePlaceholder}</StyledMultiSelectPlaceholder>
-      {isOpened ? <BoxUpArrow /> : <BoxDownArrow />}
+      {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledMultiSelectCombobox>
   );
 };

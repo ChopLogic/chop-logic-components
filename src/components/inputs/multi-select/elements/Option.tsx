@@ -1,6 +1,6 @@
 import { KeyboardEvent } from 'react';
-import CheckboxCheckedIcon from 'assets/icons/CheckboxChecked';
-import CheckboxUncheckedIcon from 'assets/icons/CheckboxUnchecked';
+import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
+import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 
 import { StyledMultiSelectOption } from '../MultiSelect.styled';
 import { MultiSelectValue } from '../types';

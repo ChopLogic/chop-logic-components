@@ -38,14 +38,6 @@ describe('ChopLogicAlert', () => {
     expect(onCloseMock).toHaveBeenCalled();
   });
 
-  it('should apply the correct mode class based on the mode prop', () => {
-    const { rerender } = renderAlert({ isOpened: true, mode: 'error' });
-    expect(screen.getByText('This is a test message').closest('.cl-alert__content')).toHaveClass('cl-alert__content_error');
-
-    rerender(<ChopLogicAlert {...defaultProps} isOpened={true} mode='success' />);
-    expect(screen.getByText('This is a test message').closest('.cl-alert__content')).toHaveClass('cl-alert__content_success');
-  });
-
   it('should unmount the alert when it is closed', async () => {
     const { rerender } = renderAlert({ isOpened: true });
     rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);

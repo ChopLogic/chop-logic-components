@@ -1,11 +1,12 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import ArrowDownIcon from '../ArrowDown';
-import ArrowUpIcon from '../ArrowUp';
-import BackIcon from '../Back';
+import ArrowDownIcon from '../elements/ArrowDown';
+import ArrowUpIcon from '../elements/ArrowUp';
+import BackIcon from '../elements/Back';
+import CancelIcon from '../elements/Cancel';
 
-describe('Chop Logic Icons', () => {
+describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
     const { asFragment } = render(<BackIcon />);
     expect(asFragment()).toMatchSnapshot();
@@ -18,6 +19,11 @@ describe('Chop Logic Icons', () => {
 
   it('ArrowUpIcon should match the snapshot', () => {
     const { asFragment } = render(<ArrowUpIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('CancelIcon should match the snapshot', () => {
+    const { asFragment } = render(<CancelIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

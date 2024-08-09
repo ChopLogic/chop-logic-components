@@ -2,14 +2,16 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { CLIcon } from 'components/misc/icon/types';
+
 import Button from '../Button';
-import { ChopLogicButtonIcon, ChopLogicButtonView } from '../types';
+import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {
   const testProps = {
     id: 'test-button-id',
     text: 'Test button',
-    icon: 'copy' as ChopLogicButtonIcon,
+    icon: CLIcon.Copy,
     className: 'test-button-class',
     view: 'danger' as ChopLogicButtonView,
     disabled: false,

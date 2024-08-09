@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import CheckboxCheckedIcon from 'assets/icons/CheckboxChecked';
+import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import { describe, expect, it } from 'vitest';
 
 import ChopLogicLabel from 'components/misc/label/Label';

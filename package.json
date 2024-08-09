@@ -23,7 +23,7 @@
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "npm run build"
+    "prepare": "npm run build && husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -69,7 +69,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-storybook": "^0.8.0",
-    "husky": "^9.1.4",
+    "husky-init": "^8.0.0",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
@@ -78,7 +78,8 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
-    "vitest": "^1.5.3"
+    "vitest": "^1.5.3",
+    "husky": "^8.0.0"
   },
   "peerDependencies": {
     "react": "^18.3.1"

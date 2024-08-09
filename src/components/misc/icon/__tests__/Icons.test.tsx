@@ -5,6 +5,8 @@ import ArrowDownIcon from '../elements/ArrowDown';
 import ArrowUpIcon from '../elements/ArrowUp';
 import BackIcon from '../elements/Back';
 import CancelIcon from '../elements/Cancel';
+import CheckboxCheckedIcon from '../elements/CheckboxChecked';
+import CheckboxUncheckedIcon from '../elements/CheckboxUnchecked';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -24,6 +26,16 @@ describe('ChopLogicIcon', () => {
 
   it('CancelIcon should match the snapshot', () => {
     const { asFragment } = render(<CancelIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('CheckboxCheckedIcon should match the snapshot', () => {
+    const { asFragment } = render(<CheckboxCheckedIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('CheckboxUncheckedIcon should match the snapshot', () => {
+    const { asFragment } = render(<CheckboxUncheckedIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

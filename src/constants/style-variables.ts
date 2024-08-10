@@ -6,6 +6,7 @@ export const COLORS = Object.freeze({
   secondary: 'hsl(215, 69%, 49%)', // celticBlue
   tertiary: 'hsl(205, 48%, 56%)', // celestialBlue
   accent: 'hsl(16, 100%, 45%)', // syracuseRed
+  transparentBackground: 'hsla(0, 0%, 0%, 0.3)', // gray transparent background
 });
 
 export const FONTS = Object.freeze({
@@ -44,4 +45,23 @@ export const GRADIENTS = Object.freeze({
   primary: `linear-gradient(0deg, #222222, #266dd3)`,
   accent: `linear-gradient(0deg, #222222, #e53d00)`,
   tint: `linear-gradient(0deg, #e9edf0, #f6f7eb)`,
+});
+
+/* Breakpoints for common device groups */
+export const SCREEN_BREAKPOINTS = Object.freeze({
+  /* Extra small devices (phones, 600px and down) */
+  /* @media only screen and (max-width: 600px) {...} */
+  phones: 'only screen and (max-width: 600px)',
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  /* @media only screen and (min-width: 600px) {...} */
+  portraitTablets: 'only screen and (min-width: 600px)',
+  /* Medium devices (landscape tablets, 768px and up) */
+  /* @media only screen and (min-width: 768px) {...} */
+  landscapeTablets: 'only screen and (min-width: 768px)',
+  /* Large devices (laptops/desktops, 992px and up) */
+  /* @media only screen and (min-width: 992px) {...} */
+  laptops: 'only screen and (min-width: 992px)',
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  /* @media only screen and (min-width: 1200px) {...} */
+  desktops: 'only screen and (min-width: 1200px)',
 });

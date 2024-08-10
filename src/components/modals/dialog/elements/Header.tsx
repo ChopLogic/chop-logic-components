@@ -3,7 +3,7 @@ import React from 'react';
 import { ChopLogicButton } from 'components/index';
 import { CLIcon } from 'components/misc/icon/types';
 
-import '../Dialog.scss';
+import { StyledDialogHeader } from '../Dialog.styled';
 
 type ChopLogicModalLayoutHeaderProps = {
   title: string;
@@ -12,10 +12,10 @@ type ChopLogicModalLayoutHeaderProps = {
 
 const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({ title, onClose }): React.ReactElement => {
   return (
-    <header className='cl-dialog__header'>
+    <StyledDialogHeader>
       {title}
       <ChopLogicButton icon={CLIcon.Cancel} view='icon' aria-label='Close modal window' onClick={onClose} />
-    </header>
+    </StyledDialogHeader>
   );
 };
 

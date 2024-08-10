@@ -7,6 +7,29 @@ import ButtonExample from './ButtonExample';
 const meta: Meta<typeof ButtonExample> = {
   title: 'Inputs/Button',
   component: ButtonExample,
+  args: {
+    text: 'Button',
+    type: 'button',
+    icon: CLIcon.Copy,
+    view: 'primary',
+    disabled: false,
+  },
+  argTypes: {
+    text: { control: 'text' },
+    disabled: { control: 'boolean' },
+    type: {
+      control: 'select',
+      options: ['button', 'submit', 'reset'],
+    },
+    icon: {
+      control: 'select',
+      options: Object.values(CLIcon),
+    },
+    view: {
+      control: 'select',
+      options: ['primary', 'secondary', 'danger', 'icon'],
+    },
+  },
 };
 
 export default meta;

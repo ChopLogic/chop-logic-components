@@ -10,6 +10,13 @@ export const StyledAlertHeader = styled.header`
   h3 {
     display: flex;
     gap: ${UNITS.mediumGap};
+    align-items: center;
+    margin: 0;
+    color: ${COLORS.secondary};
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;
 

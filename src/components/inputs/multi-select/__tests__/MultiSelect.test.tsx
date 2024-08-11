@@ -25,8 +25,10 @@ describe('ChopLogicMultiSelect', () => {
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
-  it('should have accessible roles', () => {
+  it('should have accessible roles', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
     expect(screen.getByRole('combobox')).toBeInTheDocument();
     expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
@@ -41,8 +43,10 @@ describe('ChopLogicMultiSelect', () => {
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
   });
 
-  it('should display all values as options', () => {
+  it('should display all values as options', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(MULTI_SELECT_VALUES.length);
     options.forEach((option, index) => {
@@ -95,6 +99,21 @@ describe('ChopLogicMultiSelect', () => {
     expect(combobox).toHaveValue(`${MULTI_SELECT_VALUES[0].id},${MULTI_SELECT_VALUES[1].id},${MULTI_SELECT_VALUES[2].id}`);
   });
 
+  it('should display a correct placeholder', async () => {
+    render(<ChopLogicMultiSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    expect(screen.getByText(testProps.placeholder)).toBeInTheDocument();
+    await userEvent.click(combobox);
+    const optionOne = screen.getByText(MULTI_SELECT_VALUES[0].label);
+    const optionTwo = screen.getByText(MULTI_SELECT_VALUES[1].label);
+    const optionThree = screen.getByText(MULTI_SELECT_VALUES[2].label);
+    await userEvent.click(optionOne);
+    await userEvent.click(optionTwo);
+    expect(screen.getByText('2 items selected')).toBeInTheDocument();
+    await userEvent.click(optionThree);
+    expect(screen.getByText('3 items selected')).toBeInTheDocument();
+  });
+
   it('should move the focus correctly on Tab press', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
@@ -114,6 +133,8 @@ describe('ChopLogicMultiSelect', () => {
 
   it('should move focus to the next option on pressing ArrowDown button', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
     const options = screen.getAllByRole('option');
     options[0].focus();
     await userEvent.keyboard('[ArrowDown]');
@@ -122,6 +143,8 @@ describe('ChopLogicMultiSelect', () => {
 
   it('should move focus to the previous option pressing ArrowUp button', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
     const options = screen.getAllByRole('option');
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');

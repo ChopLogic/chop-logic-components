@@ -23,12 +23,12 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'components', replacement: '/src/components' },
-      { find: 'assets', replacement: '/src/assets' },
       { find: 'utils', replacement: '/src/utils' },
       { find: 'common', replacement: '/src/common' },
       { find: 'enums', replacement: '/src/enums' },
       { find: 'hooks', replacement: '/src/hooks' },
-      { find: 'styles', replacement: '/src/styles' },
+      { find: 'constants', replacement: '/src/constants' },
+      { find: 'misc', replacement: '/src/misc' },
       { find: '__mocks__', replacement: '/src/__mocks__' },
     ],
   },

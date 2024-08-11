@@ -2,21 +2,18 @@ import { useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
-import createClassName from 'utils/create-class-name';
 
-import ChopLogicPortal from 'components/elements/portal/Portal';
+import ChopLogicPortal from 'components/misc/portal';
 
+import { StyledTooltip } from './Tooltip.styled';
 import { ChopLogicTooltipProps } from './types';
 
-import './Tooltip.scss';
-
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
-  className,
   children,
   tooltipContent,
+  id,
   containerTag = 'span',
   visibleOn = 'hover',
-  id,
   ...rest
 }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -24,7 +21,6 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
   const ContainerComponent = containerTag;
-  const tooltipClass = createClassName([className, 'cl-tooltip']);
 
   const closeTooltip = () => setIsOpened(false);
   const openTooltip = () => setIsOpened(true);
@@ -39,13 +35,13 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
 
   return (
     <ContainerComponent
-      className='cl-tooltip__container'
+      style={{ position: 'relative', cursor: 'pointer' }}
       onClick={visibleOn === 'click' ? toggleTooltip : undefined}
       onMouseOver={visibleOn === 'hover' ? openTooltip : undefined}
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
       onFocus={visibleOn === 'focus' ? openTooltip : undefined}
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
-      onContextMenu={visibleOn === 'contextmenu' ? (e) => handleContextMenu(e) : undefined}
+      onContextMenu={visibleOn === 'contextmenu' ? (e: React.MouseEvent) => handleContextMenu(e) : undefined}
       tabIndex={0}
       {...rest}
       ref={wrapperRef}
@@ -54,9 +50,9 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <div className={tooltipClass} style={{ top, left }} ref={tooltipRef} role='tooltip' id={id}>
+          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={id}>
             {tooltipContent}
-          </div>
+          </StyledTooltip>
         </ChopLogicPortal>
       )}
     </ContainerComponent>

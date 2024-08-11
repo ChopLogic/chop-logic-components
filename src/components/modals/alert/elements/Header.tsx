@@ -1,31 +1,32 @@
 import React from 'react';
-import { Icon } from 'enums/icon';
-import createClassName from 'utils/create-class-name';
 
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicButton from 'components/inputs/button/Button';
+import { CLIcon } from 'components/misc/icon/types';
 
-import { getAlertIcon } from '../helpers/get-alert-icon';
+import { StyledAlertHeader } from '../Alert.styled';
 import { getAlertTitle } from '../helpers/get-alert-title';
+import { renderAlertIcon } from '../helpers/render-alert-icon';
 import { ChopLogicAlertMode } from '../types';
-
-import '../Alert.scss';
 
 type ChopLogicAlertHeaderProps = {
   onClose: () => void;
-  title?: string;
   mode: ChopLogicAlertMode;
+  title?: string;
+  icon?: CLIcon;
 };
 
-const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode }) => {
+const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode, icon }) => {
   const alertTitle = getAlertTitle(mode, title);
-  const alertIcon = getAlertIcon(mode);
-  const titleClass = createClassName(['cl-alert__title', alertIcon]);
+  const alertIcon = renderAlertIcon(mode, icon);
 
   return (
-    <header className='cl-alert__header'>
-      <h3 className={titleClass}>{alertTitle}</h3>
-      <ChopLogicButton icon={Icon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} className='cl-alert__close-button' />
-    </header>
+    <StyledAlertHeader>
+      <h3>
+        {alertIcon}
+        {alertTitle}
+      </h3>
+      <ChopLogicButton icon={CLIcon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} />
+    </StyledAlertHeader>
   );
 };
 

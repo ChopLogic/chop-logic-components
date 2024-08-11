@@ -25,9 +25,10 @@ describe('ChopLogicSelect', () => {
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
-  it('should have accessible roles', () => {
+  it('should have accessible roles', async () => {
     render(<ChopLogicSelect {...testProps} />);
     expect(screen.getByRole('combobox')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('combobox'));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
 
@@ -41,8 +42,9 @@ describe('ChopLogicSelect', () => {
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
   });
 
-  it('should display all values as options', () => {
+  it('should display all values as options', async () => {
     render(<ChopLogicSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(SELECT_LANGUAGES.length);
     options.forEach((option, index) => {
@@ -86,6 +88,7 @@ describe('ChopLogicSelect', () => {
 
   it('should move focus to the next option by pressing ArrowDown button', async () => {
     render(<ChopLogicSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     options[0].focus();
     await userEvent.keyboard('[ArrowDown]');
@@ -94,6 +97,7 @@ describe('ChopLogicSelect', () => {
 
   it('should move focus to the previous option by pressing ArrowUp button', async () => {
     render(<ChopLogicSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');

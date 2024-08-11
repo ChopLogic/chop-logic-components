@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicButton from 'components/inputs/button/Button';
 
 import ChopLogicAlert from '../Alert';
 

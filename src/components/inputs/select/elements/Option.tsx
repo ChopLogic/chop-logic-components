@@ -1,10 +1,8 @@
 import { KeyboardEvent } from 'react';
-import { Icon } from 'enums/icon';
-import createClassName from 'utils/create-class-name';
+import CheckMarkIcon from 'components/misc/icon/elements/CheckMark';
 
+import { StyledSelectOption } from '../Select.styled';
 import { SelectValue } from '../types';
-
-import '../Select.scss';
 
 type SelectOptionProps = {
   value: SelectValue;
@@ -14,7 +12,6 @@ type SelectOptionProps = {
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect }) => {
   const { id, label } = value;
-  const iconClass = createClassName(['cl-select__icon', Icon.CheckMark]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -30,7 +27,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
   };
 
   return (
-    <li
+    <StyledSelectOption
       id={id}
       role='option'
       className='cl-select__option'
@@ -40,8 +37,8 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       onClick={() => onSelect(id)}
     >
       <span>{label}</span>
-      {isSelected && <span className={iconClass} aria-hidden='true'></span>}
-    </li>
+      {isSelected && <CheckMarkIcon />}
+    </StyledSelectOption>
   );
 };
 

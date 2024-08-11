@@ -3,14 +3,14 @@
 exports[`ChopLogicSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="cl-select"
+    class="sc-fQpRED dHvRyE"
   >
     <label
-      class="cl-label cl-select__label"
+      class="sc-braxZu eZLZgi"
       for="language-select-id_combobox"
     >
       <span
-        class="cl-label__text"
+        class="sc-gJhJTp cDfTBm"
       >
         Select your language
       </span>
@@ -20,31 +20,37 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="cl-select__combobox"
+      class="sc-dsLQwm cjRPZt cl-select__combobox"
       id="language-select-id_combobox"
       name="language"
       role="combobox"
       type="button"
     >
       <span
-        class="cl-select__placeholder"
+        class="sc-iKTcqh efYZsT"
       >
         Not selected
       </span>
-      <span
-        aria-hidden="true"
-        class="cl-select__icon cl-icon__caret-down"
-      />
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
+        />
+      </svg>
     </button>
     <ul
-      class="cl-select__dropdown"
+      class="sc-gnpbhQ RhwRN"
       id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="cl-select__option"
+        class="sc-la-DxNn hQzSFN cl-select__option"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -55,7 +61,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="cl-select__option"
+        class="sc-la-DxNn hQzSFN cl-select__option"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -66,7 +72,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="cl-select__option"
+        class="sc-la-DxNn hQzSFN cl-select__option"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

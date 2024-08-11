@@ -1,9 +1,8 @@
-import { Icon } from 'enums/icon';
-import createClassName from 'utils/create-class-name';
+import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
+import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
+import { StyledMultiSelectCombobox, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
 import { MultiSelectValue } from '../types';
-
-import '../MultiSelect.scss';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -28,7 +27,6 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   required,
   values,
 }) => {
-  const iconClass = createClassName(['cl-multi-select__icon', { [Icon.CaretUp]: isOpened, [Icon.CaretDown]: !isOpened }]);
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
   let visiblePlaceholder = placeholder;
@@ -40,7 +38,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   }
 
   return (
-    <button
+    <StyledMultiSelectCombobox
       type='button'
       name={name}
       value={selectedIds}
@@ -49,14 +47,13 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       aria-expanded={isOpened}
       aria-controls={dropdownId}
       id={comboboxId}
-      className='cl-multi-select__combobox'
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
     >
-      <span className='cl-multi-select__placeholder'>{visiblePlaceholder}</span>
-      <span className={iconClass} aria-hidden='true'></span>
-    </button>
+      <StyledMultiSelectPlaceholder>{visiblePlaceholder}</StyledMultiSelectPlaceholder>
+      {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+    </StyledMultiSelectCombobox>
   );
 };
 

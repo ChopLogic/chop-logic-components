@@ -1,12 +1,10 @@
 import { KeyboardEvent } from 'react';
-import createClassName from 'utils/create-class-name';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 
+import { StyledSelectDropdown } from '../Select.styled';
 import { SelectValue } from '../types';
 
 import SelectOption from './Option';
-
-import '../Select.scss';
 
 type SelectDropdownProps = {
   values: SelectValue[];
@@ -19,8 +17,6 @@ type SelectDropdownProps = {
 };
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
-  const dropdownClass = createClassName(['cl-select__dropdown', { 'cl-select__dropdown_opened': isOpened }]);
-
   const handleOptionSelect = (id: string) => {
     onSelect(id);
     onClose();
@@ -64,11 +60,11 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
   };
 
   return (
-    <ul className={dropdownClass} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
+    <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={isOpened}>
       {values.map((item) => (
         <SelectOption key={item.id} value={item} onSelect={() => handleOptionSelect(item.id)} isSelected={item.id === selected?.id} />
       ))}
-    </ul>
+    </StyledSelectDropdown>
   );
 };
 

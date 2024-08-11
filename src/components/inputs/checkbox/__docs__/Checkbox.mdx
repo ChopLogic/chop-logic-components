@@ -23,6 +23,7 @@ const Example = () => {
       id='example-checkbox'
       name='example'
       label='Accept Terms and Conditions'
+      iconPosition='left'
       required
       onChange={(e) => console.log('Checkbox state:', e.target.checked)}
       disabled={false}
@@ -42,6 +43,7 @@ export default Example;
 - **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
 - **onChange** - A function that is called when the checkbox state changes. It receives a change event.
 - **isLabelHidden** - A boolean indicating whether the label should be hidden or not. The label prop is still required in this case, because it's used for aria-label attribure.
+- **iconPosition** - The place where the checkbox icon will be rendered (left or right).
 - **InputHTMLAttributes** - all standard HTML input attributes (**value**, **form**, **readOnly**, etc.).
 - **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
   ./CheckboxExample.tsx

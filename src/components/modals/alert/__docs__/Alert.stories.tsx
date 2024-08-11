@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ChopLogicButton from 'components/controls/button/Button';
+import ChopLogicButton from 'components/inputs/button/Button';
+import { CLIcon } from 'components/misc/icon/types';
 
 import ChopLogicAlert from '../Alert';
 import { ChopLogicAlertProps } from '../types';
@@ -37,7 +38,7 @@ const meta: Meta<typeof ExampleComponent> = {
     title: 'Alert Title',
     message: 'This is an alert message.',
     mode: 'info',
-    onClose: () => {},
+    icon: CLIcon.Info,
   },
   argTypes: {
     isOpened: { control: 'boolean' },
@@ -46,6 +47,10 @@ const meta: Meta<typeof ExampleComponent> = {
     mode: {
       control: 'select',
       options: ['success', 'error', 'warning', 'info', 'help'],
+    },
+    icon: {
+      control: 'select',
+      options: Object.values(CLIcon),
     },
   },
 };

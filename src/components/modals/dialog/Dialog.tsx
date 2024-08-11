@@ -1,14 +1,12 @@
 import { useMount } from 'hooks/use-mount';
-import createClassName from 'utils/create-class-name';
 
-import ChopLogicPortal from 'components/elements/portal/Portal';
+import ChopLogicPortal from 'components/misc/portal';
 
 import ChopLogicModalLayout from './elements/Layout';
+import { StyledDialogBackground } from './Dialog.styled';
 import { ChopLogicModalProps } from './types';
 
-import './Dialog.scss';
-
-const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, className, title, children, ...rest }) => {
+const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title, children, ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 
@@ -16,15 +14,13 @@ const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, cla
     return null;
   }
 
-  const backgroundClassNames = createClassName([className, 'cl-dialog__background', { 'cl-dialog__background_closing': isClosing }]);
-
   return (
     <ChopLogicPortal>
-      <div className={backgroundClassNames}>
+      <StyledDialogBackground $isClosing={isClosing}>
         <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened} {...rest}>
           {children}
         </ChopLogicModalLayout>
-      </div>
+      </StyledDialogBackground>
     </ChopLogicPortal>
   );
 };

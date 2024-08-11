@@ -1,0 +1,179 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicIcon > ArrowDownIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > ArrowUpIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M3 19h18a1.002 1.002 0 00.823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 003 19zm9-12.243L19.092 17H4.908L12 6.757z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > BackIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 512 512"
+    width="1em"
+  >
+    <path
+      d="M328 112L184 256l144 144"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="48"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CancelIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 470 1000"
+    width="1em"
+  >
+    <path
+      d="M452 656c12 12 18 26.333 18 43s-6 31-18 43c-12 10.667-26.333 16-43 16s-31-5.333-43-16L234 590 102 742c-12 10.667-26.333 16-43 16s-31-5.333-43-16C5.333 730 0 715.667 0 699s5.333-31 16-43l138-156L16 342C5.333 330 0 315.667 0 299s5.333-31 16-43c12-10.667 26.333-16 43-16s31 5.333 43 16l132 152 132-152c12-10.667 26.333-16 43-16s31 5.333 43 16c12 12 18 26.333 18 43s-6 31-18 43L314 500l138 156"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CheckMarkIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 512 512"
+    width="1em"
+  >
+    <path
+      d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CheckboxCheckedIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zM7 12.414L3.293 8.707l1.414-1.414L7 9.586l4.793-4.793 1.414 1.414L7 12.414z"
+      fill="currentColor"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CheckboxUncheckedIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+      fill="currentColor"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CopyIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="1em"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M11 9 H20 A2 2 0 0 1 22 11 V20 A2 2 0 0 1 20 22 H11 A2 2 0 0 1 9 20 V11 A2 2 0 0 1 11 9 z"
+    />
+    <path
+      d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > CutIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="1em"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      stroke="none"
+    />
+    <path
+      d="M10 17 A3 3 0 0 1 7 20 A3 3 0 0 1 4 17 A3 3 0 0 1 10 17 z"
+    />
+    <path
+      d="M20 17 A3 3 0 0 1 17 20 A3 3 0 0 1 14 17 A3 3 0 0 1 20 17 z"
+    />
+    <path
+      d="M9.15 14.85L18 4M6 4l8.85 10.85"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > DeleteIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 1024 1024"
+    width="1em"
+  >
+    <path
+      d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+    />
+  </svg>
+</DocumentFragment>
+`;

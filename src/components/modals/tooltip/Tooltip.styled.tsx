@@ -1,6 +1,6 @@
+import { fadeInAnimation } from 'constants/animations';
 import { COLORS, SHADOWS, UNITS, Z_INDEXES } from 'constants/style-variables';
 import styled from 'styled-components';
-import { fadeInAnimation } from 'styles/animations';
 
 export const StyledTooltip = styled.div`
   position: absolute;

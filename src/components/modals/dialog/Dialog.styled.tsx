@@ -1,6 +1,6 @@
+import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
 import { BORDERS, COLORS, FONTS, SCREEN_BREAKPOINTS, SHADOWS, UNITS, Z_INDEXES } from 'constants/style-variables';
 import styled from 'styled-components';
-import { fadeInAnimation, fadeOutAnimation } from 'styles/animations';
 
 export const StyledDialogLayout = styled.div`
   z-index: ${Z_INDEXES.modal};

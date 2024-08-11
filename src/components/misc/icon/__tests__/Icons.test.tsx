@@ -10,6 +10,7 @@ import CheckboxUncheckedIcon from '../elements/CheckboxUnchecked';
 import CheckMarkIcon from '../elements/CheckMark';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
+import DeleteIcon from '../elements/Delete';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -54,6 +55,11 @@ describe('ChopLogicIcon', () => {
 
   it('CutIcon should match the snapshot', () => {
     const { asFragment } = render(<CutIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('DeleteIcon should match the snapshot', () => {
+    const { asFragment } = render(<DeleteIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

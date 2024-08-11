@@ -1,6 +1,6 @@
+import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
 import { COLORS, FONTS, SHADOWS, UNITS, Z_INDEXES } from 'constants/style-variables';
 import styled from 'styled-components';
-import { fadeInAnimation, fadeOutAnimation } from 'styles/animations';
 
 export const StyledAlertHeader = styled.header`
   display: flex;

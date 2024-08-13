@@ -9,7 +9,7 @@ const ChopLogicTabs = ({ tabs, defaultTabId, toolBar }: ChopLogicTabsProps): Rea
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
   const [activeTab, setActiveTab] = useState(defaultId);
 
-  const titles = tabs.map((item) => {
+  const tabButtons = tabs.map((item) => {
     const { id, title } = item;
 
     return <ChopLogicTab key={id} title={title} onSelect={setActiveTab} tabId={id} isActive={id === activeTab} />;
@@ -20,7 +20,7 @@ const ChopLogicTabs = ({ tabs, defaultTabId, toolBar }: ChopLogicTabsProps): Rea
   return (
     <div>
       <div role='tablist'>
-        {titles}
+        {tabButtons}
         {toolBar && <div>{toolBar}</div>}
       </div>
       {<ChopLogicTabContent content={tabContent} tabId={activeTab} />}

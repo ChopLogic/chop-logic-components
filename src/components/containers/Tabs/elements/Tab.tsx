@@ -8,15 +8,14 @@ type TabProps = {
 };
 
 const ChopLogicTab = ({ title, onSelect, tabId, isActive }: TabProps): React.ReactElement => {
-  const onClickTab = (e: React.MouseEvent<HTMLHeadingElement>) => {
-    e.stopPropagation();
+  const onClickTab = () => {
     onSelect(tabId);
   };
 
   return (
-    <h3 role='tab' id={tabId} onClick={onClickTab} aria-selected={isActive} data-testid={tabId}>
+    <button role='tab' id={tabId} onClick={onClickTab} aria-selected={isActive} data-testid={tabId}>
       {title}
-    </h3>
+    </button>
   );
 };
 

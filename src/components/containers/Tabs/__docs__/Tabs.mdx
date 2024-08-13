@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as ChopLogicTabsStories from './ChopLogicTabs.stories.tsx';
+
+<Meta title='Components/ChopLogicTabs' />
+
+# Tabs
+
+The `ChopLogicTabs` component is a versatile tab component that allows you to switch between different pieces of content by clicking on corresponding tabs.
+
+#### Example
+
+<Canvas>
+  <Story of={ChopLogicTabsStories.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React from 'react';
+import ChopLogicTabs, { ChopLogicTabItem } from 'your-library/ChopLogicTabs';
+
+const tabs: ChopLogicTabItem[] = [
+  { id: 'tab1', title: 'Tab 1', tabContent: <div>Content for Tab 1</div> },
+  { id: 'tab2', title: 'Tab 2', tabContent: <div>Content for Tab 2</div> },
+  { id: 'tab3', title: 'Tab 3', tabContent: <div>Content for Tab 3</div> },
+];
+
+const ExampleComponent = () => <ChopLogicTabs tabs={tabs} defaultTabId='tab1' />;
+
+export default ExampleComponent;
+```
+
+### Props:
+
+- **tabs**
+  - Type: ChopLogicTabItem[]
+  - Description: An array of tab items, each containing an id, title, and the content to display.
+- **defaultTabId**
+  - Type: string
+  - Description: The id of the tab that should be active by default.
+- **mode**
+  - Type: 'vertical' | 'horizontal'
+  - Description: The orientation of the tabs. Defaults to 'horizontal'.
+- **toolBar**
+  - Type: React.ReactElement
+  - Description: An optional toolbar element to display next to the tabs.

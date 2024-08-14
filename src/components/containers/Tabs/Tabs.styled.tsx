@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: boolean }>`
   background: transparent;
+  position: relative;
   outline: none;
   border: none;
   padding: ${UNITS.smallGap} ${UNITS.bigGap};
+  margin-left: ${UNITS.smallGap};
   min-height: ${UNITS.minElementSize};
   min-width: ${UNITS.minElementSize};
   cursor: pointer;
@@ -34,7 +36,24 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
 
   ${(props) =>
     props.$selected &&
-    `
-        border: ${BORDERS.darkBlue};
+    `   
+        border-top: ${BORDERS.lightBlue};
+        border-right: ${BORDERS.lightBlue};
+        border-left: ${BORDERS.lightBlue};
+        background-color: ${COLORS.background};
+        top: 2px;
     `}
+`;
+
+export const StyledTabList = styled.div`
+  border-bottom: ${BORDERS.lightBlue};
+  padding: 0 ${UNITS.mediumGap};
+`;
+
+export const StyledTabContent = styled.div`
+  background-color: ${COLORS.background};
+  font-size: 1rem;
+  font-family: ${FONTS.core};
+  padding: ${UNITS.bigGap};
+  height: 100%;
 `;

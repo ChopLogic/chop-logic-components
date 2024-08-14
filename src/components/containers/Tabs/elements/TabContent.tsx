@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { StyledTabContent } from '../Tabs.styled';
 import { ChopLogicTabItem } from '../types';
 
 type ChopLogicTabContentProps = {
@@ -12,9 +13,9 @@ const ChopLogicTabContent: React.FC<ChopLogicTabContentProps> = ({ tabs, selecte
   const contentId = `tabpanel_${selectedTabId}`;
 
   return (
-    <div role='tabpanel' aria-labelledby={selectedTabId} id={contentId}>
+    <StyledTabContent role='tabpanel' aria-labelledby={selectedTabId} id={contentId}>
       {content}
-    </div>
+    </StyledTabContent>
   );
 };
 

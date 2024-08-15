@@ -1,7 +1,7 @@
 export type ChopLogicTabsProps = React.HTMLAttributes<HTMLDivElement> & {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
-  mode?: 'vertical' | 'horizontal';
+  mode?: ChopLogicTabsMode;
 };
 
 export type ChopLogicTabItem = {
@@ -10,3 +10,5 @@ export type ChopLogicTabItem = {
   id: string;
   disabled?: boolean;
 };
+
+export type ChopLogicTabsMode = 'vertical' | 'horizontal';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledTabList } from '../Tabs.styled';
-import { ChopLogicTabItem } from '../types';
+import { ChopLogicTabItem, ChopLogicTabsMode } from '../types';
 
 import ChopLogicTabButton from './TabButton';
 
@@ -10,11 +10,12 @@ type ChopLogicTabListProps = {
   onTabSelect: (id: string) => void;
   selectedTabId: string;
   tabPanelIds: string[];
+  mode: ChopLogicTabsMode;
 };
 
-const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds }) => {
+const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode }) => {
   return (
-    <StyledTabList role='tablist'>
+    <StyledTabList role='tablist' $mode={mode}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <ChopLogicTabButton
@@ -25,6 +26,7 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
             isSelected={id === selectedTabId}
             isDisabled={disabled}
             tabPanelId={tabPanelIds[index]}
+            mode={mode}
           />
         );
       })}

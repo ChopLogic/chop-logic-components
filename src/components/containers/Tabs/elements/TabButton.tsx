@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { StyledTabButton } from '../Tabs.styled';
+import { ChopLogicTabsMode } from '../types';
 
 type ChopLogicTabButtonProps = {
   title: string;
@@ -8,6 +9,7 @@ type ChopLogicTabButtonProps = {
   onTabSelect: (id: string) => void;
   tabPanelId: string;
   isSelected: boolean;
+  mode: ChopLogicTabsMode;
   isDisabled?: boolean;
 };
 
@@ -18,6 +20,7 @@ const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
   isSelected,
   isDisabled = false,
   tabPanelId,
+  mode,
 }) => {
   return (
     <StyledTabButton
@@ -28,6 +31,7 @@ const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
       aria-controls={tabPanelId}
       $selected={isSelected}
       $disabled={isDisabled}
+      $mode={mode}
     >
       {title}
     </StyledTabButton>

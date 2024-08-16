@@ -72,7 +72,7 @@ export const StyledTabContent = styled.div`
   font-size: 1rem;
   font-family: ${FONTS.core};
   padding: ${UNITS.bigGap};
-  height: 100%;
+  flex-grow: 1;
 `;
 
 export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`

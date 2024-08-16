@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTabButton > should match the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="panel-id-1"
+    aria-selected="true"
+    class="sc-braxZu qYJCb"
+    id="id-1"
+    role="tab"
+  >
+    Tab button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicTabContent > should match the snapshot for the first tab 1`] = `
+<DocumentFragment>
+  <div
+    aria-labelledby="tab-1"
+    class="sc-gJhJTp TZTZm"
+    id="tabpanel_tab-1"
+    role="tabpanel"
+  >
+    Tab 1 content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] = `
+<DocumentFragment>
+  <div
+    aria-labelledby="tab-2"
+    class="sc-gJhJTp TZTZm"
+    id="tabpanel_tab-2"
+    role="tabpanel"
+  >
+    Tab 2 content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicTabs > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fQpRED gsDjrZ"
+  >
+    <div
+      class="sc-elDIKY MvQyF"
+      role="tablist"
+    >
+      <button
+        aria-controls="tabpanel_tab-1"
+        aria-selected="true"
+        class="sc-braxZu hWCBOZ"
+        id="tab-1"
+        role="tab"
+      >
+        Tab 1
+      </button>
+      <button
+        aria-controls="tabpanel_tab-2"
+        aria-selected="false"
+        class="sc-braxZu hBKSkC"
+        id="tab-2"
+        role="tab"
+      >
+        Tab 2
+      </button>
+      <button
+        aria-controls="tabpanel_tab-3"
+        aria-selected="false"
+        class="sc-braxZu hBKSkC"
+        id="tab-3"
+        role="tab"
+      >
+        Tab 3
+      </button>
+    </div>
+    <div
+      aria-labelledby="tab-1"
+      class="sc-gJhJTp TZTZm"
+      id="tabpanel_tab-1"
+      role="tabpanel"
+    >
+      Tab 1 content
+    </div>
+  </div>
+</DocumentFragment>
+`;

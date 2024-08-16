@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ChopLogicTabs from '../Tabs';
 import { ChopLogicTabItem } from '../types';
 

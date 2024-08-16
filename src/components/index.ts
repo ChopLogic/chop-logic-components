@@ -8,3 +8,5 @@ export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 export { default as ChopLogicAlert } from './modals/alert/Alert';
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
+// Containers
+export { default as ChopLogicTabs } from './containers/tabs/Tabs';

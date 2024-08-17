@@ -1,7 +1,6 @@
 import React from 'react';
 
-import ChopLogicSelect from '../Select';
-import { ChopLogicSelectProps } from '../types';
+import ChopLogicSelect, { ChopLogicSelectProps } from '../Select';
 
 const Example: React.FC<ChopLogicSelectProps> = ({ id, values, onSelectChange, name, placeholder, label, required, disabled }) => {
   return (

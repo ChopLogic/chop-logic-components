@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MultiSelectValue } from '../types';
+import { MultiSelectValue } from '../MultiSelect';
 
 import MultiSelectExample from './MultiSelectExample';
 

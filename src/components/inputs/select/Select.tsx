@@ -7,7 +7,20 @@ import ChopLogicLabel from 'components/misc/label/Label';
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import { StyledSelectWrapper } from './Select.styled';
-import { ChopLogicSelectProps, SelectValue } from './types';
+
+export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+  id: string;
+  name: string;
+  label: string;
+  values: SelectValue[];
+  onSelectChange?: (value?: SelectValue) => void;
+  placeholder?: string;
+};
+
+export type SelectValue = {
+  id: string;
+  label: string;
+};
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,

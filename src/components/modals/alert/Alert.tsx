@@ -1,10 +1,21 @@
 import { useMount } from 'hooks/use-mount';
 
+import { CLIcon } from 'components/misc/icon/Icon';
 import ChopLogicPortal from 'components/misc/portal';
 
 import ChopLogicAlertHeader from './elements/Header';
 import { StyledAlertContent, StyledAlertWrapper } from './Alert.styled';
-import { ChopLogicAlertProps } from './types';
+
+export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
+
+export type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
+  isOpened: boolean;
+  onClose: () => void;
+  message: string;
+  title?: string;
+  mode?: ChopLogicAlertMode;
+  icon?: CLIcon;
+};
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, title, message, mode = 'info', icon, ...rest }) => {
   const isMounted = useMount(isOpened);

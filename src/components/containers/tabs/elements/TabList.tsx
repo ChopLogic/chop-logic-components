@@ -1,8 +1,8 @@
 import React, { KeyboardEvent } from 'react';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 
+import { ChopLogicTabItem, ChopLogicTabsMode } from '../Tabs';
 import { StyledTabList } from '../Tabs.styled';
-import { ChopLogicTabItem, ChopLogicTabsMode } from '../types';
 
 import ChopLogicTabButton from './TabButton';
 

@@ -1,8 +1,9 @@
 import { KeyboardEvent } from 'react';
+
 import CheckMarkIcon from 'components/misc/icon/elements/CheckMark';
 
+import { SelectValue } from '../Select';
 import { StyledSelectOption } from '../Select.styled';
-import { SelectValue } from '../types';
 
 type SelectOptionProps = {
   value: SelectValue;

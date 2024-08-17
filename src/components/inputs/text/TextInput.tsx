@@ -4,7 +4,14 @@ import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
-import { ChopLogicTextInputProps } from './types';
+
+export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
+  name: string;
+  label: string;
+  valid?: boolean;
+  errorMessage?: string;
+};
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
   id,

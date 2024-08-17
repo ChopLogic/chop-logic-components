@@ -1,4 +1,4 @@
-import { ChopLogicAlertMode } from '../types';
+import { ChopLogicAlertMode } from '../Alert';
 
 export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
   if (title) return title;

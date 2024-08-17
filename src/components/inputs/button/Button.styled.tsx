@@ -1,7 +1,7 @@
 import { BORDERS, COLORS, FONTS, GRADIENTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-import { ChopLogicButtonView } from './types';
+import { ChopLogicButtonView } from './Button';
 
 const primaryStyles = `
     border-radius: ${UNITS.blockBorderRadius};

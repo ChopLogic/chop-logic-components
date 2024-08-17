@@ -2,8 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicMultiSelect from '../MultiSelect';
-import { MultiSelectValue } from '../types';
+import ChopLogicMultiSelect, { MultiSelectValue } from '../MultiSelect';
 
 describe('ChopLogicMultiSelect', () => {
   const MULTI_SELECT_VALUES: MultiSelectValue[] = [

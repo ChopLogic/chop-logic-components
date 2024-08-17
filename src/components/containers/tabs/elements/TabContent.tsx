@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { ChopLogicTabItem } from '../Tabs';
 import { StyledTabContent } from '../Tabs.styled';
-import { ChopLogicTabItem } from '../types';
 
 type ChopLogicTabContentProps = {
   tabs: ChopLogicTabItem[];

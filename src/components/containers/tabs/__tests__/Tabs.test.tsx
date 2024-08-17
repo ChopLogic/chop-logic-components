@@ -4,8 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
-import ChopLogicTabs from '../Tabs';
-import { ChopLogicTabsMode } from '../types';
+import ChopLogicTabs, { ChopLogicTabsMode } from '../Tabs';
 
 describe('ChopLogicTabs', () => {
   const tabs = [

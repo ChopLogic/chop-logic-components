@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CLIcon } from 'components/misc/icon/types';
+import { CLIcon } from 'components/misc/icon/Icon';
 
 import ButtonExample from './ButtonExample';
 

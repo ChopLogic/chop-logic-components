@@ -11,6 +11,7 @@ import CheckMarkIcon from '../elements/CheckMark';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
 import DeleteIcon from '../elements/Delete';
+import DownloadIcon from '../elements/Download';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -60,6 +61,11 @@ describe('ChopLogicIcon', () => {
 
   it('DeleteIcon should match the snapshot', () => {
     const { asFragment } = render(<DeleteIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('DownloadIcon should match the snapshot', () => {
+    const { asFragment } = render(<DownloadIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

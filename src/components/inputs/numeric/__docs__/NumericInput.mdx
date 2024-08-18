@@ -1,29 +1,29 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './TextInputExample.tsx';
-import * as TextInput from './TextInput.stories.tsx';
+import Example from './NumericInputExample.tsx';
+import * as NumericInput from './NumericInput.stories.tsx';
 
-<Meta of={TextInput} title='TextInput' />
+<Meta of={NumericInput} title='NumericInput' />
 
-# ChopLogicTextInput
+# ChopLogicNumericInput
 
-Text input component with standard HTML attributes.
+Numeric input component with standard HTML attributes.
 
 #### Example
 
-<Canvas of={TextInput.Default} />
+<Canvas of={NumericInput.Default} />
 
 ## Usage
 
 ```tsx
-import { TextInput } from 'chop-logic-components';
+import { NumericInput } from 'chop-logic-components';
 
 const Example = () => {
   return (
-    <ChopLogicTextInput
-      label='Enter the formula:'
-      name='formula'
-      id='formula-input'
-      errorMessage='Cannot parse the entered text'
+    <ChopLogicNumericInput
+      label='Enter the number:'
+      name='number'
+      id='number-input'
+      errorMessage='Cannot parse the entered number'
     />;
   );
 };

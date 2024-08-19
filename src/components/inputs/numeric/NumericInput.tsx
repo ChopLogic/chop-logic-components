@@ -33,7 +33,8 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   const errorId = `${id}_error`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(Number(e.target.value));
+    const value = Number(e.target.value);
+    setInputValue(value);
     if (onChange) onChange(e);
   };
 
@@ -50,7 +51,7 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue}
+          value={inputValue.toString()}
           onChange={handleChange}
           max={max}
           min={min}

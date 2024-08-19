@@ -14,6 +14,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
   step = 1,
   max = Number.MAX_SAFE_INTEGER,
   min = Number.MIN_SAFE_INTEGER,
+  defaultValue,
 }) => {
   return (
     <div
@@ -37,6 +38,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
         max={max}
         min={min}
         step={step}
+        defaultValue={defaultValue}
       />
     </div>
   );

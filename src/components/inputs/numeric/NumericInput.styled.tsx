@@ -57,4 +57,14 @@ export const StyledNumericInput = styled.input`
   background: transparent;
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
 `;

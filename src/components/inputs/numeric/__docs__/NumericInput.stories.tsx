@@ -13,6 +13,7 @@ type Story = StoryObj<typeof NumericInputExample>;
 export const Default: Story = {
   args: {
     placeholder: '0',
+    defaultValue: 0,
     label: 'Enter the number:',
     name: 'number',
     id: 'number-input',

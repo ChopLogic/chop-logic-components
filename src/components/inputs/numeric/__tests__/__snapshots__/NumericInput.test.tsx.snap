@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NumericInput > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dsLQwm cymheT"
+  >
+    <div
+      class="sc-iKTcqh ewOKgd"
+    >
+      <label
+        class="sc-gJhJTp djgZQL"
+        for="numeric-input"
+      >
+        <span
+          class="sc-elDIKY QGqgT"
+        >
+          Quantity
+        </span>
+      </label>
+      <input
+        aria-errormessage="numeric-input_error"
+        aria-invalid="false"
+        class="sc-gnpbhQ ibqDXh"
+        id="numeric-input"
+        max="9007199254740991"
+        min="-9007199254740991"
+        name="quantity"
+        placeholder="0"
+        step="1"
+        type="number"
+        value="0"
+      />
+    </div>
+    <span
+      class="sc-braxZu kmOXHf"
+      id="numeric-input_error"
+    >
+      Invalid input
+    </span>
+  </div>
+</DocumentFragment>
+`;

@@ -31,6 +31,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         required={required}
         disabled={disabled}
         errorMessage={errorMessage}
+        style={{ width: '180px' }}
       />
     </div>
   );

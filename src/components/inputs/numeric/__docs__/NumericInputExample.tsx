@@ -39,6 +39,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
         min={min}
         step={step}
         defaultValue={defaultValue}
+        style={{ width: '180px' }}
       />
     </div>
   );

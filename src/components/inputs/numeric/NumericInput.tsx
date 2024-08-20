@@ -42,7 +42,7 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   };
 
   return (
-    <StyledNumericInputContainer className={props?.className}>
+    <StyledNumericInputContainer className={props?.className} style={props?.style}>
       <StyledNumericInputWrapper $disabled={disabled} $invalid={!valid}>
         <ChopLogicLabel label={label} required={required} inputId={id} />
         <StyledNumericInput

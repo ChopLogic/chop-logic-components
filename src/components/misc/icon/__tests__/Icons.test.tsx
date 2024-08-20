@@ -14,6 +14,7 @@ import DeleteIcon from '../elements/Delete';
 import DownloadIcon from '../elements/Download';
 import ErrorIcon from '../elements/Error';
 import ForwardIcon from '../elements/Forward';
+import HelpIcon from '../elements/Help';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -78,6 +79,11 @@ describe('ChopLogicIcon', () => {
 
   it('ForwardIcon should match the snapshot', () => {
     const { asFragment } = render(<ForwardIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('HelpIcon should match the snapshot', () => {
+    const { asFragment } = render(<HelpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

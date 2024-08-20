@@ -36,7 +36,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   };
 
   return (
-    <StyledTextInputContainer className={props?.className}>
+    <StyledTextInputContainer className={props?.className} style={props?.style}>
       <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
         <ChopLogicLabel label={label} required={required} inputId={id} />
         <StyledTextInput

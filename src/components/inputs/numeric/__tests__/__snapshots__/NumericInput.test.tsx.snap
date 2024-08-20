@@ -6,7 +6,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
     class="sc-dsLQwm cymheT"
   >
     <div
-      class="sc-iKTcqh ewOKgd"
+      class="sc-iKTcqh hIspWY"
     >
       <label
         class="sc-gJhJTp djgZQL"
@@ -33,7 +33,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kmOXHf"
+      class="sc-braxZu cSYJYD"
       id="numeric-input_error"
     >
       Invalid input

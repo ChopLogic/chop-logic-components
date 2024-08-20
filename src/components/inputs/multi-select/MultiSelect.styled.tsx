@@ -16,6 +16,7 @@ export const StyledMultiSelectWrapper = styled.div<{ $disabled: boolean }>`
   border: ${BORDERS.lightBlue};
   max-width: 100%;
   background-color: ${COLORS.background};
+  height: ${UNITS.inputWrapperHeight};
 
   ${(props) =>
     props.$disabled &&

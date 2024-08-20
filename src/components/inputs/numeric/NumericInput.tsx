@@ -25,15 +25,18 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   valid = true,
   required = false,
   step = 1,
-  max = Number.MAX_SAFE_INTEGER,
-  min = Number.MIN_SAFE_INTEGER,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<number>(typeof defaultValue === 'number' ? defaultValue : 0);
+  const [inputValue, setInputValue] = useState<number | string>(typeof defaultValue === 'number' ? defaultValue : 0);
   const errorId = `${id}_error`;
+  const max = props?.max ? Number(props.max) : Number.MAX_SAFE_INTEGER;
+  const min = props?.min ? Number(props.min) : Number.MIN_SAFE_INTEGER;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+    let value = Number(e.target.value);
+    if (value > max) value = max;
+    if (value < min) value = min;
+
     setInputValue(value);
     if (onChange) onChange(e);
   };

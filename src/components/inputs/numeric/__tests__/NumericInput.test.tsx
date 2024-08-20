@@ -71,10 +71,10 @@ describe('NumericInput', () => {
 
     const input = screen.getByRole('spinbutton');
     fireEvent.change(input, { target: { value: '-1' } });
-    expect(input).toHaveValue(-1); // Although it goes out of the range, input still accepts the value.
+    expect(input).toHaveValue(1);
 
     fireEvent.change(input, { target: { value: '11' } });
-    expect(input).toHaveValue(11);
+    expect(input).toHaveValue(10);
   });
 
   it('does not allow non-numeric input', () => {

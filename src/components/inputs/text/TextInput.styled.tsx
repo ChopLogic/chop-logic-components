@@ -20,6 +20,7 @@ export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid:
   border-top-right-radius: ${UNITS.blockBorderRadius};
   border: ${BORDERS.lightBlue};
   background-color: ${COLORS.background};
+  height: ${UNITS.inputWrapperHeight};
 
   &:has(input:focus) {
     outline: ${BORDERS.lightBlue};

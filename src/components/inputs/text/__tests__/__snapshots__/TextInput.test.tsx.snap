@@ -6,7 +6,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     class="sc-dsLQwm cymheT test-class"
   >
     <div
-      class="sc-iKTcqh ewOKgd"
+      class="sc-iKTcqh hIspWY"
     >
       <label
         class="sc-gJhJTp djgZQL"
@@ -30,7 +30,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kmOXHf"
+      class="sc-braxZu cSYJYD"
       id="test-input-id_error"
     >
       Invalid input
@@ -45,7 +45,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     class="sc-dsLQwm cymheT test-class"
   >
     <div
-      class="sc-iKTcqh ewOKgd"
+      class="sc-iKTcqh hIspWY"
     >
       <label
         class="sc-gJhJTp djgZQL"
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu kmOXHf"
+      class="sc-braxZu cSYJYD"
       id="test-input-id_error"
     >
       Invalid input

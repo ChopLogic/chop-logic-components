@@ -20,6 +20,7 @@ export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $inval
   border-top-right-radius: ${UNITS.blockBorderRadius};
   border: ${BORDERS.lightBlue};
   background-color: ${COLORS.background};
+  height: ${UNITS.inputWrapperHeight};
 
   &:has(input:focus) {
     outline: ${BORDERS.lightBlue};

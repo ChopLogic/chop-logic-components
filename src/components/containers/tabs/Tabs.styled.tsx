@@ -1,7 +1,7 @@
 import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-import { ChopLogicTabsMode } from './types';
+import { ChopLogicTabsMode } from './Tabs';
 
 export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: boolean; $mode: ChopLogicTabsMode }>`
   background: transparent;

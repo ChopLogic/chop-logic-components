@@ -23,13 +23,9 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'components', replacement: '/src/components' },
-      { find: 'utils', replacement: '/src/utils' },
-      { find: 'common', replacement: '/src/common' },
-      { find: 'enums', replacement: '/src/enums' },
-      { find: 'hooks', replacement: '/src/hooks' },
       { find: 'constants', replacement: '/src/constants' },
-      { find: 'misc', replacement: '/src/misc' },
-      { find: '__mocks__', replacement: '/src/__mocks__' },
+      { find: 'hooks', replacement: '/src/hooks' },
+      { find: 'utils', replacement: '/src/utils' },
     ],
   },
   test: {

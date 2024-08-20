@@ -11,6 +11,10 @@ import CheckMarkIcon from '../elements/CheckMark';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
 import DeleteIcon from '../elements/Delete';
+import DownloadIcon from '../elements/Download';
+import ErrorIcon from '../elements/Error';
+import ForwardIcon from '../elements/Forward';
+import HelpIcon from '../elements/Help';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -60,6 +64,26 @@ describe('ChopLogicIcon', () => {
 
   it('DeleteIcon should match the snapshot', () => {
     const { asFragment } = render(<DeleteIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('DownloadIcon should match the snapshot', () => {
+    const { asFragment } = render(<DownloadIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ErrorIcon should match the snapshot', () => {
+    const { asFragment } = render(<ErrorIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ForwardIcon should match the snapshot', () => {
+    const { asFragment } = render(<ForwardIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('HelpIcon should match the snapshot', () => {
+    const { asFragment } = render(<HelpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

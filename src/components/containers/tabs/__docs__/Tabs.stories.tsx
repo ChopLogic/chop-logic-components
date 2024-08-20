@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ChopLogicTabs from '../Tabs';
-import { ChopLogicTabItem } from '../types';
+import ChopLogicTabs, { ChopLogicTabItem } from '../Tabs';
 
 const tabs: ChopLogicTabItem[] = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },

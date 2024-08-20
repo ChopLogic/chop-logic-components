@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { PropsWithChildren, useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
@@ -6,7 +6,14 @@ import { useTooltipPosition } from 'hooks/use-tooltip-position';
 import ChopLogicPortal from 'components/misc/portal';
 
 import { StyledTooltip } from './Tooltip.styled';
-import { ChopLogicTooltipProps } from './types';
+
+export type ChopLogicTooltipProps = PropsWithChildren &
+  React.HTMLAttributes<HTMLElement> & {
+    tooltipContent: string | React.ReactElement;
+    id: string;
+    containerTag?: 'span' | 'div' | 'p' | 'strong' | 'em';
+    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
+  };
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,

@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
-import ChopLogicIcon from 'components/misc/icon/Icon';
+import ChopLogicIcon, { CLIcon } from 'components/misc/icon/Icon';
 
 import { StyledButton, StyledButtonText } from './Button.styled';
-import { ChopLogicButtonProps } from './types';
+
+export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
+
+export type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
+  view?: ChopLogicButtonView;
+  label?: string;
+  icon?: CLIcon;
+  text?: string;
+};
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ChopLogicButton } from 'components/index';
-import { CLIcon } from 'components/misc/icon/types';
+import { CLIcon } from 'components/misc/icon/Icon';
 
 import { StyledDialogHeader } from '../Dialog.styled';
 

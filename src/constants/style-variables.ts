@@ -20,6 +20,7 @@ export const UNITS = Object.freeze({
   bigGap: '1rem',
   minElementSize: '2.75rem',
   blockBorderRadius: '0.375rem',
+  inputWrapperHeight: '3rem',
 });
 
 export const SHADOWS = Object.freeze({

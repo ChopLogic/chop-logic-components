@@ -1,16 +1,20 @@
 import React from 'react';
 
-import TextInput, { ChopLogicTextInputProps } from '../TextInput';
+import NumericInput, { ChopLogicNumericInputProps } from '../NumericInput';
 
-const Example: React.FC<ChopLogicTextInputProps> = ({
+const Example: React.FC<ChopLogicNumericInputProps> = ({
   id,
   name,
   label,
   errorMessage,
-  placeholder = 'Type here...',
+  placeholder = '0',
   disabled = false,
   valid = true,
   required = false,
+  step = 1,
+  max = Number.MAX_SAFE_INTEGER,
+  min = Number.MIN_SAFE_INTEGER,
+  defaultValue,
 }) => {
   return (
     <div
@@ -22,7 +26,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         padding: '20px',
       }}
     >
-      <TextInput
+      <NumericInput
         id={id}
         name={name}
         placeholder={placeholder}
@@ -31,6 +35,10 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         required={required}
         disabled={disabled}
         errorMessage={errorMessage}
+        max={max}
+        min={min}
+        step={step}
+        defaultValue={defaultValue}
         style={{ width: '180px' }}
       />
     </div>

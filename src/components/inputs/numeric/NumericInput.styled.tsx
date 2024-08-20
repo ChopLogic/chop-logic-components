@@ -1,13 +1,13 @@
 import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-export const StyledTextInputContainer = styled.div`
+export const StyledNumericInputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${UNITS.mediumGap};
 `;
 
-export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
+export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,7 +50,7 @@ export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid:
     `}
 `;
 
-export const StyledTextInput = styled.input`
+export const StyledNumericInput = styled.input`
   outline: 0;
   border: none;
   font-size: 1rem;
@@ -58,4 +58,14 @@ export const StyledTextInput = styled.input`
   background: transparent;
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
-
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';

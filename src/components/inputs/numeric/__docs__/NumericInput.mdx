@@ -1,29 +1,29 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './TextInputExample.tsx';
-import * as TextInput from './TextInput.stories.tsx';
+import Example from './NumericInputExample.tsx';
+import * as NumericInput from './NumericInput.stories.tsx';
 
-<Meta of={TextInput} title='TextInput' />
+<Meta of={NumericInput} title='NumericInput' />
 
-# ChopLogicTextInput
+# ChopLogicNumericInput
 
-Text input component with standard HTML attributes.
+Numeric input component with standard HTML attributes.
 
 #### Example
 
-<Canvas of={TextInput.Default} />
+<Canvas of={NumericInput.Default} />
 
 ## Usage
 
 ```tsx
-import { TextInput } from 'chop-logic-components';
+import { NumericInput } from 'chop-logic-components';
 
 const Example = () => {
   return (
-    <ChopLogicTextInput
-      label='Enter the formula:'
-      name='formula'
-      id='formula-input'
-      errorMessage='Cannot parse the entered text'
+    <ChopLogicNumericInput
+      label='Enter the number:'
+      name='number'
+      id='number-input'
+      errorMessage='Cannot parse the entered number'
     />;
   );
 };
@@ -41,6 +41,9 @@ export default Example;
 - **valid** - A boolean indicating whether the input is valid or not. When invalid, the input becomes highlighted and displays an error message.
 - **required** - A boolean indicating whether the input is required or not.
 - **errorMessage** - An optional string that displays when the input value is incorrect.
+- **max** - The maximum possible numeric value in the input.
+- **min** - The munimum possible numeric value in the input.
+- **step** - The step at which the value is incremented/decremented.
 - **onChange** _`(e) => void`_ - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
 - **InputHTMLAttributes** - all standard HTML input attributes (**value**, **pattern**, **readOnly**, etc.).
 - **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

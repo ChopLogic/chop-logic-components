@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
-import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import { describe, expect, it } from 'vitest';
 
+import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 describe('ChopLogicLabel', () => {

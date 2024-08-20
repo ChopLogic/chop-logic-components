@@ -4,7 +4,14 @@ import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
-import { ChopLogicTextInputProps } from './types';
+
+export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
+  name: string;
+  label: string;
+  valid?: boolean;
+  errorMessage?: string;
+};
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
   id,
@@ -29,7 +36,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   };
 
   return (
-    <StyledTextInputContainer className={props?.className}>
+    <StyledTextInputContainer className={props?.className} style={props?.style}>
       <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
         <ChopLogicLabel label={label} required={required} inputId={id} />
         <StyledTextInput

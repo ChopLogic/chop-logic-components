@@ -19,7 +19,6 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   label,
   errorMessage,
   defaultValue,
-  onChange,
   placeholder = '0',
   disabled = false,
   valid = true,
@@ -38,7 +37,7 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
     if (value < min) value = min;
 
     setInputValue(value);
-    if (onChange) onChange(e);
+    if (props?.onChange) props.onChange(e);
   };
 
   return (
@@ -59,7 +58,10 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
           max={max}
           min={min}
           step={step}
-          {...props}
+          readOnly={props?.readOnly}
+          pattern={props?.pattern}
+          onBlur={props?.onBlur}
+          onFocus={props?.onFocus}
         />
       </StyledNumericInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />

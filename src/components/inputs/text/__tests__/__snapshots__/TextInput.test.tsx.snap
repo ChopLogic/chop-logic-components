@@ -3,17 +3,17 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dsLQwm cymheT test-class"
+    class="sc-iKTcqh hgmKXD test-class"
   >
     <div
-      class="sc-iKTcqh hIspWY"
+      class="sc-gnpbhQ bQWpPO"
     >
       <label
-        class="sc-gJhJTp djgZQL"
+        class="sc-elDIKY gnGMO"
         for="test-input-id"
       >
         <span
-          class="sc-elDIKY QGqgT"
+          class="sc-fQpRED crYybt"
         >
           Test Input:
         </span>
@@ -21,7 +21,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-gnpbhQ gfDOsA test-class"
+        class="sc-la-DxNn bCcJBq"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -29,8 +29,26 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
         value=""
       />
     </div>
+    <div
+      class="sc-braxZu kDQiNE"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 64 64"
+        width="1em"
+      >
+        <path
+          d="M18.947 17.153l26.098 25.903M19.045 43.153l25.902-26.097"
+          fill="none"
+          stroke="currentColor"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
     <span
-      class="sc-braxZu cSYJYD"
+      class="sc-gJhJTp kdUplm"
       id="test-input-id_error"
     >
       Invalid input
@@ -42,22 +60,22 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dsLQwm cymheT test-class"
+    class="sc-iKTcqh hgmKXD test-class"
   >
     <div
-      class="sc-iKTcqh hIspWY"
+      class="sc-gnpbhQ bQWpPO"
     >
       <label
-        class="sc-gJhJTp djgZQL"
+        class="sc-elDIKY gnGMO"
         for="test-input-id"
       >
         <span
-          class="sc-elDIKY QGqgT"
+          class="sc-fQpRED crYybt"
         >
           Test Input:
         </span>
         <abbr
-          class="sc-fQpRED uWPVK"
+          class="sc-dsLQwm goLSTG"
           title="required"
         >
           *
@@ -66,7 +84,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-gnpbhQ gfDOsA test-class"
+        class="sc-la-DxNn bCcJBq"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -75,8 +93,26 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
         value=""
       />
     </div>
+    <div
+      class="sc-braxZu kDQiNE"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 64 64"
+        width="1em"
+      >
+        <path
+          d="M18.947 17.153l26.098 25.903M19.045 43.153l25.902-26.097"
+          fill="none"
+          stroke="currentColor"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
     <span
-      class="sc-braxZu cSYJYD"
+      class="sc-gJhJTp kdUplm"
       id="test-input-id_error"
     >
       Invalid input

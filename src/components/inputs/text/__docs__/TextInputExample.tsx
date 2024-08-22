@@ -11,6 +11,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
   disabled = false,
   valid = true,
   required = false,
+  hasClearButton = true,
 }) => {
   return (
     <div
@@ -31,6 +32,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         required={required}
         disabled={disabled}
         errorMessage={errorMessage}
+        hasClearButton={hasClearButton}
         style={{ width: '180px' }}
       />
     </div>

@@ -67,7 +67,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <StyledMultiSelectWrapper ref={ref} $disabled={disabled} className={props?.className} style={props?.style}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} className='cl-multi-select__label' />
+      <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
       <SelectCombobox
         name={name}
         isOpened={isOpened}

@@ -14,7 +14,6 @@ export const StyledCheckboxWrapper = styled.div<{ $disabled: boolean }>`
 
   label {
     cursor: pointer;
-    align-items: stretch !important;
     font-size: 1rem !important;
     &:hover,
     &:active {

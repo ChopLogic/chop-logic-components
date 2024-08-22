@@ -37,6 +37,7 @@ export const StyledMultiSelectCombobox = styled.button`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: ${UNITS.mediumGap};
     overflow: hidden;
 

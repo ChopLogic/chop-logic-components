@@ -8,6 +8,7 @@ export const StyledNumericInputContainer = styled.div`
 `;
 
 export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

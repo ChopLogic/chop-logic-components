@@ -19,6 +19,7 @@ export const Default: Story = {
     valid: true,
     required: false,
     disabled: false,
+    hasClearButton: true,
     errorMessage: 'Cannot parse the entered text',
   },
 };

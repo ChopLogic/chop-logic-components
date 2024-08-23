@@ -64,7 +64,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
         />
-        <ClearInputButton onClear={handleClear} visible={hasClearButton && !!inputValue?.length} />
+        <ClearInputButton onClear={handleClear} visible={hasClearButton && !!inputValue?.length} label={label} />
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>

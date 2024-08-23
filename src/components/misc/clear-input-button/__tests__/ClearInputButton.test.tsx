@@ -8,6 +8,7 @@ describe('ClearInputButton', () => {
   const testProps = {
     onClear: vi.fn(),
     visible: true,
+    label: 'Test input',
   };
 
   it('should match the snapshot', () => {
@@ -17,7 +18,7 @@ describe('ClearInputButton', () => {
 
   it('should have the accessible label', () => {
     render(<ClearInputButton {...testProps} />);
-    expect(screen.getByLabelText('Clear the input')).toBeInTheDocument();
+    expect(screen.getByLabelText(`Clear the input for ${testProps.label}`)).toBeInTheDocument();
   });
 
   it('should call onClear handler', async () => {

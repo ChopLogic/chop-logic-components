@@ -43,7 +43,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-gnpbhQ RhwRN"
+      class="sc-gnpbhQ eifmYD"
       id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"

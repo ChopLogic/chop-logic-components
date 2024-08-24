@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas } from '@storybook/blocks';
-import * as ChopLogicTabsStories from './ChopLogicTabs.stories.tsx';
+import * as ChopLogicTabsStories from './Tabs.stories.tsx';
 
-<Meta title='Components/ChopLogicTabs' />
+<Meta of={ChopLogicTabsStories} title='Tabs' />
 
-# Tabs
+# ChopLogicTabs
 
 The `ChopLogicTabs` component is a versatile tab component that allows you to switch between different pieces of content by clicking on corresponding tabs.
 
@@ -33,14 +33,11 @@ export default ExampleComponent;
 ### Props:
 
 - **tabs**
-  - Type: ChopLogicTabItem[]
+  - Type: `ChopLogicTabItem[]`
   - Description: An array of tab items, each containing an id, title, and the content to display.
 - **defaultTabId**
-  - Type: string
+  - Type: `string`
   - Description: The id of the tab that should be active by default.
 - **mode**
-  - Type: 'vertical' | 'horizontal'
-  - Description: The orientation of the tabs. Defaults to 'horizontal'.
-- **toolBar**
-  - Type: React.ReactElement
-  - Description: An optional toolbar element to display next to the tabs.
+  - Type: `'vertical' | 'horizontal'`
+  - Description: The orientation of the tabs. Defaults to `'horizontal'`.

@@ -8,6 +8,7 @@ export const StyledTextInputContainer = styled.div`
 `;
 
 export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

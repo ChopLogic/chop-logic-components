@@ -70,4 +70,12 @@ describe('ChopLogicTextInput', () => {
     await userEvent.keyboard('[Backspace]');
     expect(input).toHaveValue('');
   });
+
+  it('should allow to clear the entered text via Clear button', async () => {
+    render(<TextInput {...testProps} />);
+    const input = screen.getByRole('textbox');
+    await userEvent.type(input, 't');
+    await userEvent.click(screen.getByRole('button'));
+    expect(input).toHaveValue('');
+  });
 });

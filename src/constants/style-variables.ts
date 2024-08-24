@@ -19,6 +19,7 @@ export const UNITS = Object.freeze({
   mediumGap: '0.6rem',
   bigGap: '1rem',
   minElementSize: '2.75rem',
+  smallIconSize: '1.6rem',
   blockBorderRadius: '0.375rem',
   inputWrapperHeight: '3rem',
 });

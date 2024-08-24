@@ -37,6 +37,7 @@ export const StyledSelectCombobox = styled.button`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: ${UNITS.mediumGap};
     overflow: hidden;
 
@@ -70,8 +71,8 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean }>`
   list-style: none;
   z-index: ${Z_INDEXES.dropdown};
   width: 100%;
-  top: 70px;
-  left: 0;
+  top: 72px;
+  left: -1px;
   border: ${BORDERS.lightBlue};
   box-shadow: ${SHADOWS.box};
   overflow-y: auto;

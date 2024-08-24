@@ -17,6 +17,7 @@ import HelpIcon from './elements/Help';
 import InfoIcon from './elements/Info';
 import PasteIcon from './elements/Paste';
 import QuestionIcon from './elements/Question';
+import RemoveIcon from './elements/Remove';
 import SaveIcon from './elements/Save';
 import UploadIcon from './elements/Upload';
 import WarningIcon from './elements/Warning';
@@ -42,6 +43,7 @@ export enum CLIcon {
   Save = 'save',
   Upload = 'upload',
   Warning = 'warning',
+  Remove = 'remove',
 }
 
 const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElement | null => {
@@ -86,6 +88,8 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <UploadIcon />;
     case CLIcon.Warning:
       return <WarningIcon />;
+    case CLIcon.Remove:
+      return <RemoveIcon />;
     default:
       return null;
   }

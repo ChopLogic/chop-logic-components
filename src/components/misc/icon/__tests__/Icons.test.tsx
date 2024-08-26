@@ -18,6 +18,7 @@ import HelpIcon from '../elements/Help';
 import InfoIcon from '../elements/Info';
 import PasteIcon from '../elements/Paste';
 import QuestionIcon from '../elements/Question';
+import RemoveIcon from '../elements/Remove';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -102,6 +103,11 @@ describe('ChopLogicIcon', () => {
 
   it('QuestionIcon should match the snapshot', () => {
     const { asFragment } = render(<QuestionIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('RemoveIcon should match the snapshot', () => {
+    const { asFragment } = render(<RemoveIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

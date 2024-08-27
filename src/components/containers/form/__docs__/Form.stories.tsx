@@ -5,6 +5,10 @@ import FormExample from './FormExample';
 const meta: Meta<typeof FormExample> = {
   title: 'Containers/Form',
   component: FormExample,
+  args: {
+    columns: 1,
+    hasReset: true,
+  },
 };
 
 export default meta;

@@ -2,7 +2,7 @@ import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
 import { MultiSelectValue } from '../MultiSelect';
-import { StyledMultiSelectCombobox, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
+import { StyledMultiSelectCombobox, StyledMultiSelectLabel, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -29,12 +29,12 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
 }) => {
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
-  let visiblePlaceholder = placeholder;
+  let selectedValues = <StyledMultiSelectPlaceholder>{placeholder}</StyledMultiSelectPlaceholder>;
 
   if (selectedLabels && selectedLabels.length > 1) {
-    visiblePlaceholder = `${selectedLabels.length} items selected`;
+    selectedValues = <StyledMultiSelectLabel>{`${selectedLabels.length} items selected`}</StyledMultiSelectLabel>;
   } else if (selectedLabels && selectedLabels.length === 1) {
-    visiblePlaceholder = selectedLabels[0];
+    selectedValues = <StyledMultiSelectLabel>{selectedLabels[0]}</StyledMultiSelectLabel>;
   }
 
   return (
@@ -51,7 +51,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <StyledMultiSelectPlaceholder>{visiblePlaceholder}</StyledMultiSelectPlaceholder>
+      {selectedValues}
       {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledMultiSelectCombobox>
   );

@@ -1,12 +1,20 @@
 import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'components/index';
+import ChopLogicMultiSelect, { MultiSelectValue } from 'components/inputs/multi-select/MultiSelect';
 import ChopLogicSelect, { SelectValue } from 'components/inputs/select/Select';
 
 import ChopLogicForm, { ChopLogicFormProps } from '../Form';
 
 const SELECT_LANGUAGES: SelectValue[] = [
-  { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
-  { id: 'b4b08a09-e287-400b-ba65-afd6ae1f6fd7', label: 'Russian' },
-  { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },
+  { id: 'lang-1', label: 'English' },
+  { id: 'lang-2', label: 'Russian' },
+  { id: 'lang-3', label: 'German' },
+];
+
+const MULTI_SELECT_VALUES: MultiSelectValue[] = [
+  { id: 'pr-lang-1', label: 'JavaScript', selected: false },
+  { id: 'pr-lang-2', label: 'Python', selected: false },
+  { id: 'pr-lang-3', label: 'Java', selected: false },
+  { id: 'pr-lang-4', label: 'C#', selected: false },
 ];
 
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => (
@@ -24,7 +32,13 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => (
       <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
       <ChopLogicNumericInput name='age' id='age' label='Age' />
       <ChopLogicSelect name='language' id='language' label='Language' values={SELECT_LANGUAGES} />
-      <ChopLogicCheckbox name='terms' id='terms' label='Accept Terms and Conditions' />
+      <ChopLogicMultiSelect
+        name='programmingLanguages'
+        id='programming-languages'
+        label='Programming Languages'
+        values={MULTI_SELECT_VALUES}
+      />
+      <ChopLogicCheckbox name='isTermsAccepted' id='terms' label='Accept Terms and Conditions' />
     </ChopLogicForm>
   </div>
 );

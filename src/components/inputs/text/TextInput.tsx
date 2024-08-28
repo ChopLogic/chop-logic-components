@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
@@ -21,7 +21,6 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
   label,
   errorMessage,
-  defaultValue,
   placeholder = 'Type here...',
   disabled = false,
   valid = true,
@@ -29,17 +28,15 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   hasClearButton = true,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<string>(typeof defaultValue === 'string' ? defaultValue : '');
   const errorId = `${id}_error`;
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value = '' } = e.target;
-    setInputValue(value);
-    if (props?.onChange) props.onChange(e);
-  };
+  const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
 
-  const handleClear = () => {
-    setInputValue('');
+    if (inputRef?.current?.value) {
+      inputRef.current.value = '';
+    }
     if (props?.onClear) props.onClear();
   };
 
@@ -49,6 +46,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
         <ChopLogicLabel label={label} required={required} inputId={id} />
         <StyledTextInput
           id={id}
+          ref={inputRef}
           name={name}
           type='text'
           disabled={disabled}
@@ -56,15 +54,16 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue}
-          onChange={handleChange}
+          value={props?.value}
           readOnly={props?.readOnly}
           maxLength={props?.maxLength}
           pattern={props?.pattern}
+          defaultValue={props?.defaultValue}
+          onChange={props?.onChange}
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
         />
-        <ClearInputButton onClear={handleClear} visible={hasClearButton && !!inputValue?.length} label={label} />
+        {hasClearButton && <ClearInputButton onClear={handleClear} label={label} />}
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>

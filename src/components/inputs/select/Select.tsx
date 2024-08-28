@@ -49,6 +49,11 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
     onSelectChange?.(newValue);
   };
 
+  const handleClear = () => {
+    setSelected(undefined);
+    onSelectChange?.(undefined);
+  };
+
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
@@ -74,6 +79,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         dropdownId={dropdownId}
         comboboxId={comboboxId}
         onSelect={handleSelect}
+        onClear={handleClear}
       />
     </StyledSelectWrapper>
   );

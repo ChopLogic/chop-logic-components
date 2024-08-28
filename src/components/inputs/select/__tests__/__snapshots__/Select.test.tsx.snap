@@ -27,7 +27,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       type="button"
     >
       <span
-        class="sc-iKTcqh efYZsT"
+        class="sc-iKTcqh etVCtb"
       >
         Not selected
       </span>
@@ -43,14 +43,14 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-gnpbhQ eifmYD"
+      class="sc-la-DxNn cdtRWl"
       id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="sc-la-DxNn hQzSFN cl-select__option"
+        class="sc-iCZwEW gNWjZo cl-select__option"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -61,7 +61,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-la-DxNn hQzSFN cl-select__option"
+        class="sc-iCZwEW gNWjZo cl-select__option"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -72,7 +72,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-la-DxNn hQzSFN cl-select__option"
+        class="sc-iCZwEW gNWjZo cl-select__option"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

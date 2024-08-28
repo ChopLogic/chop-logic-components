@@ -76,6 +76,18 @@ describe('ChopLogicSelect', () => {
     expect(combobox).toHaveValue(SELECT_LANGUAGES[1].id);
   });
 
+  it('should allow the user to deselect the same option', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveValue('');
+    await userEvent.click(combobox);
+    const option = screen.getByText(SELECT_LANGUAGES[1].label);
+    await userEvent.click(option);
+    expect(combobox).toHaveValue(SELECT_LANGUAGES[1].id);
+    await userEvent.click(option);
+    expect(combobox).not.toHaveValue(SELECT_LANGUAGES[1].id);
+  });
+
   it('should move the focus correctly on Tab press', async () => {
     render(<ChopLogicSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');

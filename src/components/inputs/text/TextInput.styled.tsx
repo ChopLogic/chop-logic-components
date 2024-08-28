@@ -59,4 +59,8 @@ export const StyledTextInput = styled.input`
   background: transparent;
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
+
+  &:placeholder-shown + button {
+    visibility: hidden;
+  }
 `;

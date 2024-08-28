@@ -9,10 +9,19 @@ type SelectOptionProps = {
   value: SelectValue;
   isSelected: boolean;
   onSelect: (id: string) => void;
+  onClear: () => void;
 };
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect }) => {
+const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect, onClear }) => {
   const { id, label } = value;
+
+  const handleOptionSelect = (id: string) => {
+    if (isSelected) {
+      onClear();
+    } else {
+      onSelect(id);
+    }
+  };
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -20,7 +29,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       case 'SpaceBar':
       case 'Enter':
         e.preventDefault();
-        onSelect(id);
+        handleOptionSelect(id);
         break;
       default:
         break;
@@ -35,7 +44,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
       aria-selected={isSelected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
-      onClick={() => onSelect(id)}
+      onClick={() => handleOptionSelect(id)}
     >
       <span>{label}</span>
       {isSelected && <CheckMarkIcon />}

@@ -14,9 +14,19 @@ type SelectDropdownProps = {
   onClose: () => void;
   selected?: SelectValue;
   onSelect: (id: string) => void;
+  onClear: () => void;
 };
 
-const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClose, onSelect, dropdownId, comboboxId, selected }) => {
+const SelectDropdown: React.FC<SelectDropdownProps> = ({
+  values,
+  isOpened,
+  onClose,
+  onSelect,
+  dropdownId,
+  comboboxId,
+  selected,
+  onClear,
+}) => {
   const handleOptionSelect = (id: string) => {
     onSelect(id);
     onClose();
@@ -62,7 +72,13 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ values, isOpened, onClo
   return (
     <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={isOpened}>
       {values.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => handleOptionSelect(item.id)} isSelected={item.id === selected?.id} />
+        <SelectOption
+          key={item.id}
+          value={item}
+          onSelect={() => handleOptionSelect(item.id)}
+          onClear={onClear}
+          isSelected={item.id === selected?.id}
+        />
       ))}
     </StyledSelectDropdown>
   );

@@ -1,20 +1,15 @@
 import { BORDERS, COLORS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-export const StyledClearButton = styled.button<{ $visible: boolean }>`
+export const StyledClearButton = styled.button`
   position: absolute;
-  bottom: 5px;
-  right: 3px;
+  bottom: 2px;
+  right: 2px;
+  padding: 2px;
   background: ${COLORS.background};
   border: none;
   font-size: 1rem;
   color: ${COLORS.secondary};
-  padding: ${UNITS.smallGap};
-  height: ${UNITS.smallIconSize};
-  width: ${UNITS.smallIconSize};
-  visibility: hidden;
-
-  ${(props) => props.$visible && `visibility: visible;`}
 
   &:focus-visible {
     outline: ${BORDERS.focusOutline};
@@ -27,5 +22,7 @@ export const StyledClearButton = styled.button<{ $visible: boolean }>`
 
   svg {
     cursor: pointer;
+    height: ${UNITS.smallIconSize};
+    width: ${UNITS.smallIconSize};
   }
 `;

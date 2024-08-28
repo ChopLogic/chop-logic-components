@@ -4,7 +4,8 @@ exports[`ClearInputButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-label="Clear the input for Test input"
-    class="sc-braxZu lkDNcq"
+    class="sc-braxZu fkiLQb"
+    type="button"
   >
     <svg
       fill="currentColor"

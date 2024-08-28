@@ -2,7 +2,7 @@ import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
 import { SelectValue } from '../Select';
-import { StyledSelectCombobox, StyledSelectPlaceholder } from '../Select.styled';
+import { StyledSelectCombobox, StyledSelectLabel, StyledSelectPlaceholder } from '../Select.styled';
 
 type SelectComboboxProps = {
   isOpened: boolean;
@@ -41,7 +41,11 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      <StyledSelectPlaceholder>{selected?.label ?? placeholder}</StyledSelectPlaceholder>
+      {selected?.label ? (
+        <StyledSelectLabel>{selected?.label}</StyledSelectLabel>
+      ) : (
+        <StyledSelectPlaceholder>{placeholder}</StyledSelectPlaceholder>
+      )}
       {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledSelectCombobox>
   );

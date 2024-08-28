@@ -55,6 +55,15 @@ export const StyledSelectCombobox = styled.button`
 export const StyledSelectPlaceholder = styled.span`
   overflow: hidden;
   text-overflow: ellipsis;
+  color: ${COLORS.primary};
+  padding: 2px 0;
+  opacity: 0.6;
+`;
+
+export const StyledSelectLabel = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${COLORS.primary};
   padding: 2px 0;
 `;
 

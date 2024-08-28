@@ -21,16 +21,16 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-la-DxNn bCcJBq"
+        class="sc-la-DxNn fhkQCf"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
         type="text"
-        value=""
       />
       <button
         aria-label="Clear the input for Test Input:"
-        class="sc-braxZu fFATyr"
+        class="sc-braxZu fkiLQb"
+        type="button"
       >
         <svg
           fill="currentColor"
@@ -85,17 +85,17 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
-        class="sc-la-DxNn bCcJBq"
+        class="sc-la-DxNn fhkQCf"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
         required=""
         type="text"
-        value=""
       />
       <button
         aria-label="Clear the input for Test Input:"
-        class="sc-braxZu fFATyr"
+        class="sc-braxZu fkiLQb"
+        type="button"
       >
         <svg
           fill="currentColor"

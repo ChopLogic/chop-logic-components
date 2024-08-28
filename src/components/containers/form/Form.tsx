@@ -16,6 +16,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, ha
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log('onSubmit');
 
     const formData = new FormData(event?.target as HTMLFormElement);
     const formObject = Object.fromEntries(formData.entries());

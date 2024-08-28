@@ -26,4 +26,9 @@ describe('ClearInputButton', () => {
     await userEvent.click(screen.getByRole('button'));
     expect(testProps.onClear).toHaveBeenCalledOnce();
   });
+
+  it('should have type button', () => {
+    render(<ClearInputButton {...testProps} />);
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
+  });
 });

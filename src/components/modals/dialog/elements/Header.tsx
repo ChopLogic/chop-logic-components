@@ -14,7 +14,7 @@ const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({
   return (
     <StyledDialogHeader>
       {title}
-      <ChopLogicButton icon={CLIcon.Cancel} view='icon' aria-label='Close modal window' onClick={onClose} />
+      <ChopLogicButton icon={CLIcon.Cancel} view='icon' label='Close modal window' onClick={onClose} />
     </StyledDialogHeader>
   );
 };

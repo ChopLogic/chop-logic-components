@@ -13,24 +13,24 @@ export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement>
   id: string;
   name: string;
   label: string;
-  values: SelectValue[];
-  onSelectChange?: (value?: SelectValue) => void;
+  options: SelectValue[];
+  onChange?: (value?: SelectValue) => void;
   placeholder?: string;
 };
 
 export type SelectValue = {
   id: string;
   label: string;
-};
+} & { [key in string]: unknown };
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   id,
-  values,
-  onSelectChange,
+  options,
+  onChange,
   name,
   label,
-  required = false,
   placeholder = 'Not selected',
+  required = false,
   disabled = false,
   ...props
 }) => {
@@ -46,15 +46,15 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    const newValue = values.find((item) => item.id === id);
+    const newValue = options.find((item) => item.id === id);
     setSelected(newValue);
-    onSelectChange?.(newValue);
+    onChange?.(newValue);
     onChangeFormInput?.({ name, value: newValue });
   };
 
   const handleClear = () => {
     setSelected(undefined);
-    onSelectChange?.(undefined);
+    onChange?.(undefined);
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
@@ -75,7 +75,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         required={required}
       />
       <SelectDropdown
-        values={values}
+        options={options}
         selected={selected}
         isOpened={isOpened}
         onClose={handleClose}

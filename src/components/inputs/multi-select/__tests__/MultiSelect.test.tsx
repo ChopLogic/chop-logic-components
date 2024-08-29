@@ -2,22 +2,24 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicMultiSelect, { MultiSelectValue } from '../MultiSelect';
+import { SelectValue } from 'components/inputs/select/Select';
+
+import ChopLogicMultiSelect from '../MultiSelect';
 
 describe('ChopLogicMultiSelect', () => {
-  const MULTI_SELECT_VALUES: MultiSelectValue[] = [
-    { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English', selected: false },
-    { id: '583e8b60-0177-4e38-a423-4b1d5d0a2236', label: 'Spanish', selected: false },
-    { id: 'b20bea7b-8172-4d12-b172-d5feac02d863', label: 'French', selected: false },
-    { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German', selected: false },
+  const MULTI_SELECT_VALUES: SelectValue[] = [
+    { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
+    { id: '583e8b60-0177-4e38-a423-4b1d5d0a2236', label: 'Spanish' },
+    { id: 'b20bea7b-8172-4d12-b172-d5feac02d863', label: 'French' },
+    { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },
   ];
 
   const testProps = {
     id: 'language-multi-select-id',
     name: 'languages',
     label: 'Select your languages',
-    values: MULTI_SELECT_VALUES,
-    onSelectChange: vi.fn(),
+    options: MULTI_SELECT_VALUES,
+    onChange: vi.fn(),
     placeholder: 'Not selected',
   };
 
@@ -65,8 +67,9 @@ describe('ChopLogicMultiSelect', () => {
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const option = screen.getAllByRole('option')[0];
+    screen.debug(option);
     await userEvent.click(option);
-    expect(testProps.onSelectChange).toHaveBeenCalledOnce();
+    expect(testProps.onChange).toHaveBeenCalledOnce();
   });
 
   it('should allow the user to select an option', async () => {

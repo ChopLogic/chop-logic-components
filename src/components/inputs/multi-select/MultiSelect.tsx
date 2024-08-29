@@ -5,27 +5,25 @@ import { useKeyPress } from 'hooks/use-key-press';
 import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import ChopLogicLabel from 'components/misc/label/Label';
 
+import { SelectValue } from '../select/Select';
+
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import { StyledMultiSelectWrapper } from './MultiSelect.styled';
 
-export type MultiSelectValue = {
-  id: string;
-  label: string;
-  selected: boolean;
-};
+export type MultiSelectValue = SelectValue & { selected: boolean };
 
 export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
   name: string;
   label: string;
-  values: MultiSelectValue[];
-  onSelectChange?: (values?: MultiSelectValue[]) => void;
+  options: SelectValue[];
+  onChange?: (values?: SelectValue[]) => void;
   placeholder?: string;
 };
 
 export type MultiSelectDropdownProps = {
-  values: MultiSelectValue[];
+  options: MultiSelectValue[];
   isOpened: boolean;
   dropdownId: string;
   onClose: () => void;
@@ -34,17 +32,17 @@ export type MultiSelectDropdownProps = {
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   id,
-  values,
+  options,
   name,
   label,
   required = false,
   placeholder = 'Not selected',
   disabled = false,
-  onSelectChange,
+  onChange,
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selectedValues, setSelectedValues] = useState<MultiSelectValue[]>(values);
+  const [values, setValues] = useState<MultiSelectValue[]>(options.map((item) => ({ ...item, selected: false })));
   const { onChangeFormInput } = useContext(ChopLogicFormContext);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
@@ -55,14 +53,15 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   const handleToggle = () => setIsOpened(!isOpened);
 
   const handleSelect = (id: string) => {
-    const targetItem = selectedValues.find((item) => item.id === id);
-
-    const newValues = selectedValues.map((item) => {
+    const targetItem = values.find((item) => item.id === id);
+    const newValues = values.map((item) => {
       return item.id === id ? { ...item, selected: !targetItem?.selected } : item;
     });
-    setSelectedValues(newValues);
-    onSelectChange?.(newValues);
-    onChangeFormInput?.({ name, value: newValues });
+    const formValues: SelectValue[] = newValues.filter((item) => item.selected);
+
+    setValues(newValues);
+    onChange?.(newValues);
+    onChangeFormInput?.({ name, value: formValues });
   };
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
@@ -77,12 +76,12 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
         comboboxId={comboboxId}
         dropdownId={dropdownId}
         onClick={handleToggle}
-        values={selectedValues}
+        values={values}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
       />
-      <SelectDropdown values={selectedValues} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
+      <SelectDropdown options={values} isOpened={isOpened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
     </StyledMultiSelectWrapper>
   );
 };

@@ -1,18 +1,18 @@
 import { Canvas, Meta } from '@storybook/blocks';
 import Example from './CheckboxExample.tsx';
-import * as Checkbox from './Checkbox.stories.tsx';
+import * as CheckboxStories from './Checkbox.stories.tsx';
 
-<Meta of={Checkbox} title='Checkbox' />
+<Meta of={CheckboxStories} title='Checkbox' />
 
 # ChopLogicCheckbox
 
-Checkbox component with different props and behaviors.
+Styled checkbox component with an optional label and floating checkbox icon. Can be used as input for ChopLogicForm.
 
-#### Example
+### Default View
 
-<Canvas of={Checkbox.Default} />
+<Canvas of={CheckboxStories.LeftIconCheckbox} />
 
-## Usage
+### Usage
 
 ```tsx
 import { ChopLogicCheckbox } from 'chop-logic-components';
@@ -20,8 +20,8 @@ import { ChopLogicCheckbox } from 'chop-logic-components';
 const Example = () => {
   return (
     <ChopLogicCheckbox
-      id='example-checkbox'
-      name='example'
+      id='terms-and-conditions-checkbox'
+      name='isTermsAccepted'
       label='Accept Terms and Conditions'
       iconPosition='left'
       required
@@ -34,16 +34,15 @@ const Example = () => {
 export default Example;
 ```
 
-#### Props
+### Props
 
 - **id** - A unique identifier for the Checkbox component.
 - **name** - A string representing the name attribute of the Checkbox component, used for form submissions.
 - **label** - A string that represents the label for the Checkbox component.
 - **disabled** - A boolean indicating whether the checkbox should be disabled. When disabled, the checkbox cannot be interacted with.
 - **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
+- **defaultChecked** - A boolean indicating whether the checkbox is checked by default or not.
 - **onChange** - A function that is called when the checkbox state changes. It receives a change event.
 - **isLabelHidden** - A boolean indicating whether the label should be hidden or not. The label prop is still required in this case, because it's used for aria-label attribure.
 - **iconPosition** - The place where the checkbox icon will be rendered (left or right).
-- **InputHTMLAttributes** - all standard HTML input attributes (**value**, **form**, **readOnly**, etc.).
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-  ./CheckboxExample.tsx
+- **HTMLAttributes** - additional global HTML attributes (**className**, **title**, **tabIndex**, **style** are supported, others are ignored).

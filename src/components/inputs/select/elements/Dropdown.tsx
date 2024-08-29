@@ -7,7 +7,7 @@ import { StyledSelectDropdown } from '../Select.styled';
 import SelectOption from './Option';
 
 type SelectDropdownProps = {
-  values: SelectValue[];
+  options: SelectValue[];
   isOpened: boolean;
   dropdownId: string;
   comboboxId: string;
@@ -18,7 +18,7 @@ type SelectDropdownProps = {
 };
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
-  values,
+  options,
   isOpened,
   onClose,
   onSelect,
@@ -35,14 +35,14 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
     let focusedId: string = '';
-    values.forEach((value) => {
+    options.forEach((value) => {
       const element = document.getElementById(value.id);
       if (element === document.activeElement) {
         focusedId = value.id;
       }
     });
 
-    const currentFocusIndex = values.findIndex((value) => value.id === focusedId);
+    const currentFocusIndex = options.findIndex((value) => value.id === focusedId);
 
     switch (e.key) {
       case 'Escape':
@@ -51,16 +51,16 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
         break;
       case 'ArrowUp': {
         e.preventDefault();
-        const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : values.length - 1;
-        const previousValue = values[previousOptionIndex];
+        const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : options.length - 1;
+        const previousValue = options[previousOptionIndex];
         if (previousValue) moveFocusOnElementById(previousValue.id);
         break;
       }
       case 'ArrowDown':
       case 'Tab': {
         e.preventDefault();
-        const nextOptionIndex = currentFocusIndex === values.length - 1 ? 0 : currentFocusIndex + 1;
-        const nextValue = values[nextOptionIndex];
+        const nextOptionIndex = currentFocusIndex === options.length - 1 ? 0 : currentFocusIndex + 1;
+        const nextValue = options[nextOptionIndex];
         if (nextValue) moveFocusOnElementById(nextValue.id);
         break;
       }
@@ -71,7 +71,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
 
   return (
     <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={isOpened}>
-      {values.map((item) => (
+      {options.map((item) => (
         <SelectOption
           key={item.id}
           value={item}

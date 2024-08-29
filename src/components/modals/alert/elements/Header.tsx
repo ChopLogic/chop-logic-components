@@ -25,7 +25,7 @@ const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onCl
         {alertIcon}
         {alertTitle}
       </h3>
-      <ChopLogicButton icon={CLIcon.Cancel} view='icon' aria-label='Close alert popup' onClick={onClose} />
+      <ChopLogicButton icon={CLIcon.Cancel} view='icon' label='Close alert popup' onClick={onClose} />
     </StyledAlertHeader>
   );
 };

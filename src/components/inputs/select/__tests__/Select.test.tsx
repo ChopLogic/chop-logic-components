@@ -15,8 +15,8 @@ describe('ChopLogicSelect', () => {
     id: 'language-select-id',
     name: 'language',
     label: 'Select your language',
-    values: SELECT_LANGUAGES,
-    onSelectChange: vi.fn(),
+    options: SELECT_LANGUAGES,
+    onChange: vi.fn(),
     placeholder: 'Not selected',
   };
 
@@ -63,7 +63,7 @@ describe('ChopLogicSelect', () => {
     await userEvent.click(combobox);
     const option = screen.getByText(SELECT_LANGUAGES[0].label);
     await userEvent.click(option);
-    expect(testProps.onSelectChange).toHaveBeenCalledOnce();
+    expect(testProps.onChange).toHaveBeenCalledOnce();
   });
 
   it('should allow the user to select an option', async () => {

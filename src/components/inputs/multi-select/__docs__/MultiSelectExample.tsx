@@ -2,7 +2,7 @@ import React from 'react';
 
 import ChopLogicMultiSelect, { ChopLogicMultiSelectProps } from '../MultiSelect';
 
-const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, values, placeholder, required, disabled, onSelectChange }) => {
+const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, options, placeholder, required, disabled, onChange }) => {
   return (
     <div
       style={{
@@ -18,11 +18,11 @@ const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, values,
         id={id}
         name={name}
         label={label}
-        values={values}
+        options={options}
         placeholder={placeholder}
         required={required}
         disabled={disabled}
-        onSelectChange={onSelectChange}
+        onChange={onChange}
         style={{ width: '180px' }}
       />
     </div>

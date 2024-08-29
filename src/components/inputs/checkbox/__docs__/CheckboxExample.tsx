@@ -5,8 +5,8 @@ import ChopLogicCheckbox, { ChopLogicCheckboxProps } from '../Checkbox';
 const Example: React.FC<ChopLogicCheckboxProps> = ({
   id = 'example-checkbox',
   name = 'example',
-  label = 'Accept Terms and Conditions',
-  iconPosition = 'left',
+  label,
+  iconPosition,
   required = true,
   onChange = (e) => console.log('Checkbox state:', e.target.checked),
   disabled = false,
@@ -19,7 +19,7 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
+        height: '100vh',
       }}
     >
       <ChopLogicCheckbox

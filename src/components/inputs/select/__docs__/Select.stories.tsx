@@ -22,10 +22,10 @@ export const Default: Story = {
   args: {
     id: 'example-select',
     label: 'Select your language',
-    values: SELECT_LANGUAGES,
+    options: SELECT_LANGUAGES,
     name: 'language',
     placeholder: 'Click to select',
-    onSelectChange: (value) => console.log(`Selected ${value?.label}`),
+    onChange: (value) => console.log(value),
     required: false,
     disabled: false,
   },

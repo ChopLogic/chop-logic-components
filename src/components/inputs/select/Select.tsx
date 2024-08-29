@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 
+import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
@@ -35,6 +36,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [selected, setSelected] = useState<SelectValue>();
+  const { onChangeFormInput } = useContext(ChopLogicFormContext);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const ref = useRef<HTMLDivElement>(null);
@@ -47,6 +49,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
     const newValue = values.find((item) => item.id === id);
     setSelected(newValue);
     onSelectChange?.(newValue);
+    onChangeFormInput?.({ name, value: newValue });
   };
 
   const handleClear = () => {

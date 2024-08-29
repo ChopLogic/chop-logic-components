@@ -23,21 +23,29 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   isLabelHidden,
   required = false,
   iconPosition = 'left',
+  defaultChecked,
+  onChange,
   ...props
 }) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(!!defaultChecked);
   const { onChangeFormInput } = useContext(ChopLogicFormContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
     const checked = e.target.checked;
     setIsChecked(checked);
-    props?.onChange?.(e);
+    onChange?.(e);
     onChangeFormInput?.({ name, value: checked });
   };
 
   return (
-    <StyledCheckboxWrapper $disabled={!!disabled}>
+    <StyledCheckboxWrapper
+      $disabled={!!disabled}
+      className={props?.className}
+      tabIndex={props?.tabIndex}
+      style={props?.style}
+      title={props?.title}
+    >
       <StyledCheckboxInput
         id={id}
         name={name}
@@ -48,7 +56,6 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         checked={isChecked}
         onChange={handleChange}
         aria-label={isLabelHidden ? label : undefined}
-        {...props}
       />
       <ChopLogicLabel
         label={label}

@@ -26,6 +26,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
         name="test"
         placeholder="Enter text here..."
         type="text"
+        value=""
       />
       <button
         aria-label="Clear the input for Test Input:"
@@ -91,6 +92,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
         placeholder="Enter text here..."
         required=""
         type="text"
+        value=""
       />
       <button
         aria-label="Clear the input for Test Input:"

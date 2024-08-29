@@ -31,6 +31,11 @@ describe('ChopLogicCheckbox', () => {
     expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
+  it('could be checked by default', () => {
+    render(<Checkbox {...testProps} defaultChecked />);
+    expect(screen.getByRole('checkbox')).toBeChecked();
+  });
+
   it('should check and uncheck the checkbox on click', async () => {
     render(<Checkbox {...testProps} />);
     const checkbox = screen.getByRole('checkbox');

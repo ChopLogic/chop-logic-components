@@ -18,6 +18,13 @@ export const Default: Story = {
     required: true,
     disabled: false,
     isLabelHidden: false,
+    defaultChecked: false,
     iconPosition: 'left',
+  },
+  argTypes: {
+    iconPosition: {
+      control: 'select',
+      options: ['left', 'right'],
+    },
   },
 };

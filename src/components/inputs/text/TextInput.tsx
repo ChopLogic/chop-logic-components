@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
+import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
@@ -30,6 +31,16 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
 }) => {
   const errorId = `${id}_error`;
   const inputRef = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState<string>();
+  const { onChangeFormInput } = useContext(ChopLogicFormContext);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    setInputValue(value);
+    props?.onChange?.(event);
+    onChangeFormInput?.({ name, value });
+  };
 
   const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
@@ -54,12 +65,11 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={props?.value}
+          value={inputValue}
+          onChange={handleChange}
           readOnly={props?.readOnly}
           maxLength={props?.maxLength}
           pattern={props?.pattern}
-          defaultValue={props?.defaultValue}
-          onChange={props?.onChange}
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
         />

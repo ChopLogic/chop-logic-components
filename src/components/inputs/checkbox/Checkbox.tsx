@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
+import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 import ChopLogicLabel from 'components/misc/label/Label';
@@ -19,19 +20,20 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,
   label,
   disabled,
-  onChange,
   isLabelHidden,
   required = false,
   iconPosition = 'left',
   ...props
 }) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
+  const { onChangeFormInput } = useContext(ChopLogicFormContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
     const checked = e.target.checked;
     setIsChecked(checked);
-    if (onChange) onChange(e);
+    props?.onChange?.(e);
+    onChangeFormInput?.({ name, value: checked });
   };
 
   return (

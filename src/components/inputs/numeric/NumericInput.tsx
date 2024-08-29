@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
+import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
@@ -27,6 +28,7 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   ...props
 }) => {
   const [inputValue, setInputValue] = useState<number | string>(typeof defaultValue === 'number' ? defaultValue : 0);
+  const { onChangeFormInput } = useContext(ChopLogicFormContext);
   const errorId = `${id}_error`;
   const max = props?.max ? Number(props.max) : Number.MAX_SAFE_INTEGER;
   const min = props?.min ? Number(props.min) : Number.MIN_SAFE_INTEGER;
@@ -37,7 +39,8 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
     if (value < min) value = min;
 
     setInputValue(value);
-    if (props?.onChange) props.onChange(e);
+    props?.onChange?.(e);
+    onChangeFormInput?.({ name, value });
   };
 
   return (

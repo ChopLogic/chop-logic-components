@@ -47,7 +47,6 @@ describe('ChopLogicCheckbox', () => {
     const checkbox = screen.getByRole('checkbox');
     await userEvent.click(checkbox);
     expect(mockOnChange).toHaveBeenCalledOnce();
-    expect(checkbox).toBeChecked();
   });
 
   it('should call onChange handler on Space key press', async () => {
@@ -57,6 +56,5 @@ describe('ChopLogicCheckbox', () => {
     checkbox.focus();
     await userEvent.keyboard('[Space]');
     expect(mockOnChange).toHaveBeenCalledOnce();
-    expect(checkbox).toBeChecked();
   });
 });

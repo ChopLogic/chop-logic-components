@@ -20,6 +20,7 @@ import PasteIcon from '../elements/Paste';
 import QuestionIcon from '../elements/Question';
 import RemoveIcon from '../elements/Remove';
 import SaveIcon from '../elements/Save';
+import UploadIcon from '../elements/Upload';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -114,6 +115,11 @@ describe('ChopLogicIcon', () => {
 
   it('SaveIcon should match the snapshot', () => {
     const { asFragment } = render(<SaveIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('UploadIcon should match the snapshot', () => {
+    const { asFragment } = render(<UploadIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

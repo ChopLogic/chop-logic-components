@@ -9,11 +9,10 @@ import { ChopLogicFormContext, ChopLogicFormData, ChopLogicFormInputParams } fro
 export type ChopLogicFormProps = PropsWithChildren &
   React.HTMLAttributes<HTMLFormElement> & {
     columns?: number;
-    hasReset?: boolean;
     initialValues?: ChopLogicFormData;
   };
 
-const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, hasReset = true, initialValues }) => {
+const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, initialValues }) => {
   const [formData, setFormData] = useState(initialValues);
 
   const handleFormInputChange = (params: ChopLogicFormInputParams) => {
@@ -24,24 +23,14 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, ha
     event.preventDefault();
     console.log('onSubmit');
     console.log(formData);
-
-    // const formData = new FormData(event?.target as HTMLFormElement);
-    // const formObject = Object.fromEntries(formData.entries());
-
-    // console.log(formObject);
-  };
-
-  const handleReset = () => {
-    setFormData(initialValues);
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns}>
+    <StyledForm onSubmit={handleSubmit} $columns={columns}>
       <ChopLogicFormContext.Provider value={{ formData, onChangeFormInput: handleFormInputChange }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' view='danger' icon={CLIcon.Delete} />}
-          <ChopLogicButton type='submit' text='Submit' icon={CLIcon.Forward} />
+          <ChopLogicButton type='submit' text='Submit' icon={CLIcon.Forward} extended />
         </StyledFormButtonContainer>
       </ChopLogicFormContext.Provider>
     </StyledForm>

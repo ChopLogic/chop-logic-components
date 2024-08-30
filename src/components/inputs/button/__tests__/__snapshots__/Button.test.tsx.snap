@@ -3,7 +3,7 @@
 exports[`ChopLogicButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-braxZu byrRxN test-button-class"
+    class="sc-braxZu hToSfH test-button-class"
     id="test-button-id"
     type="button"
   >

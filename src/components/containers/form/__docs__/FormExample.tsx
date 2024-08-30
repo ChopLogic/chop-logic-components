@@ -17,7 +17,7 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-4', label: 'C#' },
 ];
 
-const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => (
+const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => (
   <div
     style={{
       display: 'flex',
@@ -27,7 +27,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => (
       paddingTop: '2rem',
     }}
   >
-    <ChopLogicForm columns={columns} hasReset={hasReset}>
+    <ChopLogicForm columns={columns}>
       <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
       <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
       <ChopLogicNumericInput name='age' id='age' label='Age' />

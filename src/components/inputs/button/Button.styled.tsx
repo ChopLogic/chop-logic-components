@@ -65,7 +65,7 @@ const iconStyles = `
     }
 `;
 
-export const StyledButton = styled.button<{ $view: ChopLogicButtonView; $disabled: boolean }>`
+export const StyledButton = styled.button<{ $view: ChopLogicButtonView; $disabled: boolean; $extended: boolean }>`
   min-height: ${UNITS.minElementSize};
   min-width: ${UNITS.minElementSize};
   border: none;
@@ -102,10 +102,12 @@ export const StyledButton = styled.button<{ $view: ChopLogicButtonView; $disable
   ${(props) =>
     props.$disabled &&
     `
-    pointer-events: none;
-    filter: grayscale(80%);
-    opacity: 0.9;
+      pointer-events: none;
+      filter: grayscale(80%);
+      opacity: 0.9;
     `}
+
+    ${(props) => props.$extended && `width: 100%;`}
 `;
 
 export const StyledButtonText = styled.span`

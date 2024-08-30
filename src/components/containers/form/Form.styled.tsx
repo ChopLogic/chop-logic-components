@@ -18,6 +18,8 @@ export const StyledFormButtonContainer = styled.div<{ $columns: number }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: ${UNITS.bigGap};
+
   ${({ $columns }) => `
     grid-column: 1 / ${$columns + 1};
   `}

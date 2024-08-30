@@ -7,7 +7,10 @@ const meta: Meta<typeof FormExample> = {
   component: FormExample,
   args: {
     columns: 1,
-    hasReset: true,
+    initialValues: {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
   },
 };
 

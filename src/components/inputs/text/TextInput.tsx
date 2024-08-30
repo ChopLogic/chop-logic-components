@@ -45,6 +45,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
 
   const handleClear = () => {
     setInputValue('');
+    onChangeFormInput?.({ name, value: '' });
   };
 
   return (

@@ -17,30 +17,37 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-4', label: 'C#' },
 ];
 
-const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100%',
-      paddingTop: '2rem',
-    }}
-  >
-    <ChopLogicForm columns={columns}>
-      <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-      <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-      <ChopLogicNumericInput name='age' id='age' label='Age' />
-      <ChopLogicSelect name='language' id='language' label='Language' options={SELECT_LANGUAGES} />
-      <ChopLogicMultiSelect
-        name='programmingLanguages'
-        id='programming-languages'
-        label='Programming Languages'
-        options={MULTI_SELECT_VALUES}
-      />
-      <ChopLogicCheckbox name='isTermsAccepted' id='terms' label='Accept Terms and Conditions' />
-    </ChopLogicForm>
-  </div>
-);
+const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
+  const initialValues = {
+    firstName: 'John',
+    lastName: 'Doe',
+  };
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        paddingTop: '2rem',
+      }}
+    >
+      <ChopLogicForm columns={columns} initialValues={initialValues}>
+        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
+        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <ChopLogicSelect name='language' id='language' label='Language' options={SELECT_LANGUAGES} />
+        <ChopLogicMultiSelect
+          name='programmingLanguages'
+          id='programming-languages'
+          label='Programming Languages'
+          options={MULTI_SELECT_VALUES}
+        />
+        <ChopLogicCheckbox name='isTermsAccepted' id='terms' label='Accept Terms and Conditions' />
+      </ChopLogicForm>
+    </div>
+  );
+};
 
 export default FormExample;

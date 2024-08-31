@@ -27,7 +27,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, in
 
   return (
     <StyledForm onSubmit={handleSubmit} $columns={columns}>
-      <ChopLogicFormContext.Provider value={{ formData, onChangeFormInput: handleFormInputChange }}>
+      <ChopLogicFormContext.Provider value={{ formData, onChangeFormInput: handleFormInputChange, initialValues }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>
           <ChopLogicButton type='submit' text='Submit' icon={CLIcon.Forward} extended />

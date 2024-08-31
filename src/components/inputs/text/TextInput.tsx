@@ -27,13 +27,12 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   valid = true,
   required = false,
   hasClearButton = true,
-  defaultValue,
   ...props
 }) => {
   const errorId = `${id}_error`;
   const inputRef = useRef<HTMLInputElement>(null);
-  const [inputValue, setInputValue] = useState<string>(typeof defaultValue === 'string' ? defaultValue : '');
-  const { onChangeFormInput } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const [inputValue, setInputValue] = useState<string>((initialValues?.[name] as string) ?? '');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

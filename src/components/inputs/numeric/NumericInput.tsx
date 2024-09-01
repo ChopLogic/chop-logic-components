@@ -4,6 +4,7 @@ import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
+import { getNumericInputInitialValue } from './helpers';
 import { StyledNumericInput, StyledNumericInputContainer, StyledNumericInputWrapper } from './NumericInput.styled';
 
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -27,8 +28,8 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   step = 1,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<number | string>(typeof defaultValue === 'number' ? defaultValue : 0);
-  const { onChangeFormInput } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const [inputValue, setInputValue] = useState<number | string>(getNumericInputInitialValue({ initialValues, defaultValue, name }));
   const errorId = `${id}_error`;
   const max = props?.max ? Number(props.max) : Number.MAX_SAFE_INTEGER;
   const min = props?.min ? Number(props.min) : Number.MIN_SAFE_INTEGER;

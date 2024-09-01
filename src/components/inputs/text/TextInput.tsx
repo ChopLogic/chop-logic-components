@@ -5,6 +5,7 @@ import ClearInputButton from 'components/misc/clear-input-button/ClearInputButto
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
+import { getTextInputInitialValue } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -27,12 +28,13 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   valid = true,
   required = false,
   hasClearButton = true,
+  defaultValue,
   ...props
 }) => {
   const errorId = `${id}_error`;
   const inputRef = useRef<HTMLInputElement>(null);
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
-  const [inputValue, setInputValue] = useState<string>((initialValues?.[name] as string) ?? '');
+  const [inputValue, setInputValue] = useState<string>(getTextInputInitialValue({ initialValues, defaultValue, name }));
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

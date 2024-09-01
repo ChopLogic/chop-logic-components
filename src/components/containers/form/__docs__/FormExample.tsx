@@ -20,7 +20,8 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
   const initialValues = {
     firstName: 'John',
-    lastName: 'Doe',
+    // lastName: 'Doe',
+    age: 33,
   };
 
   return (

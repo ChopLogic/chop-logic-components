@@ -23,6 +23,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
     lastName: 'Doe',
     age: 33,
     language: SELECT_LANGUAGES[1],
+    programmingLanguages: ['pr-lang-1', 'pr-lang-3', MULTI_SELECT_VALUES[3]],
   };
 
   return (

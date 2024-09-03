@@ -67,7 +67,6 @@ describe('ChopLogicMultiSelect', () => {
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const option = screen.getAllByRole('option')[0];
-    screen.debug(option);
     await userEvent.click(option);
     expect(testProps.onChange).toHaveBeenCalledOnce();
   });

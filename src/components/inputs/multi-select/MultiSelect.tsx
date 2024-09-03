@@ -2,13 +2,14 @@ import { useContext, useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { SelectValue } from '../select/Select';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
+import { getMultiSelectInitialValues } from './helpers';
 import { StyledMultiSelectWrapper } from './MultiSelect.styled';
 
 export type MultiSelectValue = SelectValue & { selected: boolean };
@@ -39,11 +40,12 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   placeholder = 'Not selected',
   disabled = false,
   onChange,
+  defaultValue,
   ...props
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [values, setValues] = useState<MultiSelectValue[]>(options.map((item) => ({ ...item, selected: false })));
-  const { onChangeFormInput } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const [values, setValues] = useState<MultiSelectValue[]>(getMultiSelectInitialValues({ name, options, initialValues, defaultValue }));
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
   const ref = useRef(null);

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 

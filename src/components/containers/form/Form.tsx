@@ -3,8 +3,8 @@ import React, { FormEvent, PropsWithChildren, useState } from 'react';
 import ChopLogicButton from 'components/inputs/button/Button';
 import { CLIcon } from 'components/misc/icon/Icon';
 
+import { ChopLogicFormContext, ChopLogicFormData, ChopLogicFormInputParams } from './elements/FormContext';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
-import { ChopLogicFormContext, ChopLogicFormData, ChopLogicFormInputParams } from './FormContext';
 
 export type ChopLogicFormProps = PropsWithChildren &
   React.HTMLAttributes<HTMLFormElement> & {

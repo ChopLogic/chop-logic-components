@@ -1,4 +1,4 @@
-import { ChopLogicFormData } from 'components/containers/form/FormContext';
+import { ChopLogicFormData } from 'components/containers/form/elements/FormContext';
 
 export function getNumericInputInitialValue({
   name,

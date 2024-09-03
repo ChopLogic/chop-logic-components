@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 import ChopLogicLabel from 'components/misc/label/Label';

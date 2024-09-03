@@ -1,4 +1,4 @@
-import { ChopLogicFormData } from 'components/containers/form/FormContext';
+import { ChopLogicFormData } from 'components/containers/form/elements/FormContext';
 
 export function getTextInputInitialValue({
   name,
@@ -9,8 +9,8 @@ export function getTextInputInitialValue({
   initialValues?: ChopLogicFormData;
   defaultValue?: string | number | readonly string[];
 }): string {
-  if (initialValues && initialValues[name]) {
-    return initialValues[name].toString();
+  if (initialValues && initialValues?.[name]) {
+    return (initialValues[name] as string).toString();
   }
 
   if (defaultValue && typeof defaultValue === 'string') {

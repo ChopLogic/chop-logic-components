@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
@@ -33,8 +33,9 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
 }) => {
   const errorId = `${id}_error`;
   const inputRef = useRef<HTMLInputElement>(null);
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
-  const [inputValue, setInputValue] = useState<string>(getTextInputInitialValue({ initialValues, defaultValue, name }));
+  const { onChangeFormInput, initialValues, resetSignal } = useContext(ChopLogicFormContext);
+  const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
+  const [inputValue, setInputValue] = useState<string>(initialValue);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -48,6 +49,14 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
     setInputValue('');
     onChangeFormInput?.({ name, value: '' });
   };
+
+  useEffect(() => {
+    if (resetSignal) {
+      console.log('Text input reset', initialValue);
+      setInputValue(initialValue);
+      onChangeFormInput?.({ name, value: initialValue });
+    }
+  }, [resetSignal]);
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>

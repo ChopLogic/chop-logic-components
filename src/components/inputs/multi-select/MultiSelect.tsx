@@ -59,7 +59,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
     const newValues = values.map((item) => {
       return item.id === id ? { ...item, selected: !targetItem?.selected } : item;
     });
-    const formValues: SelectValue[] = newValues.filter((item) => item.selected);
+    const formValues: string[] = newValues.filter((item) => item.selected).map((item) => item.id);
 
     setValues(newValues);
     onChange?.(newValues);

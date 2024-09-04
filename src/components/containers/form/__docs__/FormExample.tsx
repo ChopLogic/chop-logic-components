@@ -22,8 +22,8 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
     firstName: 'John',
     lastName: 'Doe',
     age: 33,
-    language: SELECT_LANGUAGES[1],
-    programmingLanguages: ['pr-lang-1', 'pr-lang-3', MULTI_SELECT_VALUES[3]],
+    language: SELECT_LANGUAGES[1].id,
+    programmingLanguages: ['pr-lang-1', 'pr-lang-3'],
   };
 
   return (
@@ -48,6 +48,11 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
           options={MULTI_SELECT_VALUES}
         />
         <ChopLogicCheckbox name='isTermsAccepted' id='terms' label='Accept Terms and Conditions' />
+        <input type='text' name='test2' placeholder='test2 value' />
+        <input type='tel' name='test3' placeholder='test3 value' />
+        <label>
+          Check me <input type='checkbox' name='test4' />
+        </label>
       </ChopLogicForm>
     </div>
   );

@@ -51,7 +51,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
     const newValue = options.find((item) => item.id === id);
     setSelected(newValue);
     onChange?.(newValue);
-    onChangeFormInput?.({ name, value: newValue });
+    onChangeFormInput?.({ name, value: newValue?.id });
   };
 
   const handleClear = () => {

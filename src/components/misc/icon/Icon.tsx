@@ -7,6 +7,7 @@ import CancelIcon from './elements/Cancel';
 import CheckboxCheckedIcon from './elements/CheckboxChecked';
 import CheckboxUncheckedIcon from './elements/CheckboxUnchecked';
 import CheckMarkIcon from './elements/CheckMark';
+import ClearIcon from './elements/Clear';
 import CopyIcon from './elements/Copy';
 import CutIcon from './elements/Cut';
 import DeleteIcon from './elements/Delete';
@@ -30,6 +31,7 @@ export enum CLIcon {
   CheckboxChecked = 'checkbox-checked',
   CheckboxUnchecked = 'checkbox-unchecked',
   CheckMark = 'check-mark',
+  Clear = 'clear',
   Copy = 'copy',
   Cut = 'cut',
   Delete = 'delete',
@@ -62,6 +64,8 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <CheckboxUncheckedIcon />;
     case CLIcon.CheckMark:
       return <CheckMarkIcon />;
+    case CLIcon.Clear:
+      return <ClearIcon />;
     case CLIcon.Copy:
       return <CopyIcon />;
     case CLIcon.Cut:

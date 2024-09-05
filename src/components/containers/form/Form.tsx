@@ -11,14 +11,22 @@ export type ChopLogicFormProps = PropsWithChildren &
     columns?: number;
     initialValues?: ChopLogicFormData;
     hasReset?: boolean;
+    onClickSubmit?: (data: ChopLogicFormData) => void;
   };
 
-const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, initialValues, hasReset = true, onReset }) => {
+const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
+  children,
+  columns = 1,
+  initialValues,
+  hasReset = true,
+  onReset,
+  onSubmit,
+  onClickSubmit,
+}) => {
   const [formData, setFormData] = useState(initialValues);
   const [resetSignal, setResetSignal] = useState(0);
 
-  const handleFormInputChange = (params: ChopLogicFormInputParams) => {
-    console.log('OnChange', params);
+  const handleInputChange = (params: ChopLogicFormInputParams) => {
     setFormData({ ...formData, [params.name]: params.value });
   };
 
@@ -28,7 +36,8 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, in
     const uncontrolledData = Object.fromEntries(new FormData(event.target as HTMLFormElement));
     const resultData = { ...uncontrolledData, ...formData };
 
-    console.log('resultData', resultData);
+    onSubmit?.(event);
+    onClickSubmit?.(resultData);
   };
 
   const handleReset = (event: FormEvent<HTMLFormElement>) => {
@@ -39,7 +48,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({ children, columns = 1, in
 
   return (
     <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns}>
-      <ChopLogicFormContext.Provider value={{ formData, onChangeFormInput: handleFormInputChange, initialValues, resetSignal }}>
+      <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>
           {hasReset && <ChopLogicButton type='reset' text='Reset' icon={CLIcon.Clear} view='danger' />}

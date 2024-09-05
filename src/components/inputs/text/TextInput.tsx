@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
-import { getTextInputInitialValue } from './helpers';
+import { useTextInputController } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -24,39 +23,17 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   label,
   errorMessage,
   placeholder = 'Type here...',
+  defaultValue,
+  onChange,
   disabled = false,
   valid = true,
   required = false,
   hasClearButton = true,
-  defaultValue,
+  autoComplete = 'off',
   ...props
 }) => {
   const errorId = `${id}_error`;
-  const inputRef = useRef<HTMLInputElement>(null);
-  const { onChangeFormInput, initialValues, resetSignal } = useContext(ChopLogicFormContext);
-  const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
-  const [inputValue, setInputValue] = useState<string>(initialValue);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-
-    setInputValue(value);
-    props?.onChange?.(event);
-    onChangeFormInput?.({ name, value });
-  };
-
-  const handleClear = () => {
-    setInputValue('');
-    onChangeFormInput?.({ name, value: '' });
-  };
-
-  useEffect(() => {
-    if (resetSignal) {
-      console.log('Text input reset', initialValue);
-      setInputValue(initialValue);
-      onChangeFormInput?.({ name, value: initialValue });
-    }
-  }, [resetSignal]);
+  const { value, handleChange, handleClear } = useTextInputController({ defaultValue, name, onChange });
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
@@ -64,15 +41,15 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
         <ChopLogicLabel label={label} required={required} inputId={id} />
         <StyledTextInput
           id={id}
-          ref={inputRef}
           name={name}
           type='text'
           disabled={disabled}
           placeholder={placeholder}
           required={required}
+          autoComplete={autoComplete}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue}
+          value={value}
           onChange={handleChange}
           readOnly={props?.readOnly}
           maxLength={props?.maxLength}

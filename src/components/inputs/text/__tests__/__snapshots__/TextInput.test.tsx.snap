@@ -21,6 +21,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
+        autocomplete="off"
         class="sc-kkmypM fJXpTS"
         id="test-input-id"
         name="test"
@@ -86,6 +87,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
+        autocomplete="off"
         class="sc-kkmypM fJXpTS"
         id="test-input-id"
         name="test"

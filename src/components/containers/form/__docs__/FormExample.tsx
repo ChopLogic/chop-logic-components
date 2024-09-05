@@ -1,7 +1,10 @@
+import { useState } from 'react';
+
 import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'components/index';
 import ChopLogicMultiSelect from 'components/inputs/multi-select/MultiSelect';
 import ChopLogicSelect, { SelectValue } from 'components/inputs/select/Select';
 
+import { ChopLogicFormData } from '../elements/FormContext';
 import ChopLogicForm, { ChopLogicFormProps } from '../Form';
 
 const SELECT_LANGUAGES: SelectValue[] = [
@@ -18,6 +21,8 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
 ];
 
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
+  const [data, setData] = useState<ChopLogicFormData>();
+
   const initialValues = {
     firstName: 'John',
     lastName: 'Doe',
@@ -30,13 +35,19 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
     <div
       style={{
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
         paddingTop: '2rem',
       }}
     >
-      <ChopLogicForm columns={columns} initialValues={initialValues}>
+      <ChopLogicForm
+        columns={columns}
+        initialValues={initialValues}
+        onReset={() => setData(undefined)}
+        onClickSubmit={(data) => setData(data)}
+      >
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />
@@ -54,6 +65,18 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
           Check me <input type='checkbox' name='test4' />
         </label>
       </ChopLogicForm>
+      {data && (
+        <ul style={{ listStyle: 'none' }}>
+          {Object.entries(data).map((item) => {
+            return (
+              <li key={item[0]}>
+                <strong>{item[0]}: </strong>
+                <span>{item[1]?.toString()}</span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

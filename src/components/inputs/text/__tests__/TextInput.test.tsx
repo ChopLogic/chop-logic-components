@@ -81,6 +81,12 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveValue('');
   });
 
+  it('should have attribute autocomplete = off by default', () => {
+    render(<TextInput {...testProps} />);
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('autocomplete', 'off');
+  });
+
   it('should take an initial value from the form context', async () => {
     render(
       <ChopLogicForm initialValues={{ test: 'testValue' }}>

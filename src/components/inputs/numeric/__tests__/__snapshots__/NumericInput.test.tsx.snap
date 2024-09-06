@@ -3,17 +3,17 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dsLQwm cymheT"
+    class="sc-iCZwEW cXogve"
   >
     <div
-      class="sc-iKTcqh einZNi"
+      class="sc-knesRu fhmHHy"
     >
       <label
-        class="sc-gJhJTp djgZQL"
+        class="sc-iKTcqh dCKerg"
         for="numeric-input"
       >
         <span
-          class="sc-elDIKY QGqgT"
+          class="sc-gnpbhQ eBqzwP"
         >
           Quantity
         </span>
@@ -21,7 +21,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="sc-gnpbhQ ibqDXh"
+        class="sc-dnaUSb hkjNZA"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"
@@ -33,7 +33,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       />
     </div>
     <span
-      class="sc-braxZu cSYJYD"
+      class="sc-dsLQwm Oiwth"
       id="numeric-input_error"
     >
       Invalid input

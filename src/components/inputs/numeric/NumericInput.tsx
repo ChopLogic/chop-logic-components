@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
-import { getNumericInputInitialValue } from './helpers';
+import { useNumericInputController } from './helpers';
 import { StyledNumericInput, StyledNumericInputContainer, StyledNumericInputWrapper } from './NumericInput.styled';
 
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -26,23 +25,13 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   valid = true,
   required = false,
   step = 1,
+  onChange,
+  min,
+  max,
   ...props
 }) => {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
-  const [inputValue, setInputValue] = useState<number | string>(getNumericInputInitialValue({ initialValues, defaultValue, name }));
   const errorId = `${id}_error`;
-  const max = props?.max ? Number(props.max) : Number.MAX_SAFE_INTEGER;
-  const min = props?.min ? Number(props.min) : Number.MIN_SAFE_INTEGER;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = Number(e.target.value);
-    if (value > max) value = max;
-    if (value < min) value = min;
-
-    setInputValue(value);
-    props?.onChange?.(e);
-    onChangeFormInput?.({ name, value });
-  };
+  const { value, handleChange, minValue, maxValue } = useNumericInputController({ name, defaultValue, min, max, onChange });
 
   return (
     <StyledNumericInputContainer className={props?.className} style={props?.style}>
@@ -57,10 +46,10 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue.toString()}
+          value={value.toString()}
           onChange={handleChange}
-          max={max}
-          min={min}
+          min={minValue}
+          max={maxValue}
           step={step}
           readOnly={props?.readOnly}
           pattern={props?.pattern}

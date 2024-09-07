@@ -1,13 +1,12 @@
-import { useContext, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
 import { useKeyPress } from 'hooks/use-key-press';
 
-import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import { getSelectInitialValue } from './helpers';
+import { useSelectInputController } from './helpers';
 import { StyledSelectWrapper } from './Select.styled';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
@@ -36,28 +35,15 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   defaultValue,
   ...props
 }) => {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
-  const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue | undefined>(getSelectInitialValue({ name, options, defaultValue, initialValues }));
+  const ref = useRef<HTMLDivElement>(null);
   const comboboxId = `${id}_combobox`;
   const dropdownId = `${id}_dropdown`;
-  const ref = useRef<HTMLDivElement>(null);
-
-  const handleClose = () => setIsOpened(false);
-
-  const handleToggle = () => setIsOpened(!isOpened);
-
-  const handleSelect = (id: string) => {
-    const newValue = options.find((item) => item.id === id);
-    setSelected(newValue);
-    onChange?.(newValue);
-    onChangeFormInput?.({ name, value: newValue?.id });
-  };
-
-  const handleClear = () => {
-    setSelected(undefined);
-    onChange?.(undefined);
-  };
+  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useSelectInputController({
+    options,
+    onChange,
+    defaultValue,
+    name,
+  });
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
@@ -67,7 +53,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
       <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
       <SelectCombobox
         name={name}
-        isOpened={isOpened}
+        opened={opened}
         comboboxId={comboboxId}
         dropdownId={dropdownId}
         onClick={handleToggle}
@@ -79,7 +65,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
       <SelectDropdown
         options={options}
         selected={selected}
-        isOpened={isOpened}
+        opened={opened}
         onClose={handleClose}
         dropdownId={dropdownId}
         comboboxId={comboboxId}

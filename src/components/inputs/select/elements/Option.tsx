@@ -40,7 +40,6 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
     <StyledSelectOption
       id={id}
       role='option'
-      className='cl-select__option'
       aria-selected={isSelected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}

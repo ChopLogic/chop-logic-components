@@ -5,7 +5,7 @@ import { SelectValue } from '../Select';
 import { StyledSelectCombobox, StyledSelectLabel, StyledSelectPlaceholder } from '../Select.styled';
 
 type SelectComboboxProps = {
-  isOpened: boolean;
+  opened: boolean;
   disabled: boolean;
   required: boolean;
   onClick: () => void;
@@ -17,7 +17,7 @@ type SelectComboboxProps = {
 };
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
-  isOpened,
+  opened,
   onClick,
   comboboxId,
   dropdownId,
@@ -34,7 +34,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       value={selected?.id}
       role='combobox'
       aria-haspopup='listbox'
-      aria-expanded={isOpened}
+      aria-expanded={opened}
       aria-controls={dropdownId}
       id={comboboxId}
       onClick={onClick}
@@ -46,7 +46,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       ) : (
         <StyledSelectPlaceholder>{placeholder}</StyledSelectPlaceholder>
       )}
-      {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledSelectCombobox>
   );
 };

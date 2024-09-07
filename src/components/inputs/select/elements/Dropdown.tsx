@@ -8,7 +8,7 @@ import SelectOption from './Option';
 
 type SelectDropdownProps = {
   options: SelectValue[];
-  isOpened: boolean;
+  opened: boolean;
   dropdownId: string;
   comboboxId: string;
   onClose: () => void;
@@ -19,7 +19,7 @@ type SelectDropdownProps = {
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
   options,
-  isOpened,
+  opened,
   onClose,
   onSelect,
   dropdownId,
@@ -70,7 +70,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
   };
 
   return (
-    <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={isOpened}>
+    <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={opened}>
       {options.map((item) => (
         <SelectOption
           key={item.id}

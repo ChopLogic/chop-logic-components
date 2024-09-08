@@ -5,7 +5,7 @@ import { MultiSelectValue } from '../MultiSelect';
 import { StyledMultiSelectCombobox, StyledMultiSelectLabel, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
 
 type SelectComboboxProps = {
-  isOpened: boolean;
+  opened: boolean;
   disabled: boolean;
   required: boolean;
   onClick: () => void;
@@ -17,7 +17,7 @@ type SelectComboboxProps = {
 };
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
-  isOpened,
+  opened,
   onClick,
   comboboxId,
   dropdownId,
@@ -44,7 +44,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       value={selectedIds}
       role='combobox'
       aria-haspopup='listbox'
-      aria-expanded={isOpened}
+      aria-expanded={opened}
       aria-controls={dropdownId}
       id={comboboxId}
       onClick={onClick}
@@ -52,7 +52,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       aria-required={required}
     >
       {selectedValues}
-      {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledMultiSelectCombobox>
   );
 };

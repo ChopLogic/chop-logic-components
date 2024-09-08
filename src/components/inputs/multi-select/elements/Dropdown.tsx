@@ -6,7 +6,7 @@ import { StyledMultiSelectDropdown } from '../MultiSelect.styled';
 
 import SelectOption from './Option';
 
-const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, isOpened, onClose, onSelect, dropdownId }) => {
+const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId }) => {
   const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
     let focusedId: string = '';
     options.forEach((value) => {
@@ -44,7 +44,7 @@ const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, isOp
   };
 
   return (
-    <StyledMultiSelectDropdown $opened={isOpened} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
+    <StyledMultiSelectDropdown $opened={opened} role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown}>
       {options.map((item) => (
         <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}

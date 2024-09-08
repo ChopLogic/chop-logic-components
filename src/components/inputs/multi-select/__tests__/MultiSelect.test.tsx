@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import ChopLogicForm from 'components/containers/form/Form';
 import { SelectValue } from 'components/inputs/select/Select';
 
 import ChopLogicMultiSelect from '../MultiSelect';
@@ -157,5 +158,16 @@ describe('ChopLogicMultiSelect', () => {
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');
     expect(options[0]).toHaveFocus();
+  });
+
+  it('should take an initial value from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ languages: [MULTI_SELECT_VALUES[2], MULTI_SELECT_VALUES[3]] }}>
+        <ChopLogicMultiSelect {...testProps} />
+      </ChopLogicForm>,
+    );
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveValue(`${MULTI_SELECT_VALUES[2].id},${MULTI_SELECT_VALUES[3].id}`);
+    expect(screen.getByText('2 items selected')).toBeInTheDocument();
   });
 });

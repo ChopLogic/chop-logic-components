@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/elements/FormContext';
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';
+import { useCheckboxInputController } from './helpers';
 
 export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   id: string;
@@ -27,16 +27,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   onChange,
   ...props
 }) => {
-  const [isChecked, setIsChecked] = useState<boolean>(!!defaultChecked);
-  const { onChangeFormInput } = useContext(ChopLogicFormContext);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) return;
-    const checked = e.target.checked;
-    setIsChecked(checked);
-    onChange?.(e);
-    onChangeFormInput?.({ name, value: checked });
-  };
+  const { handleChange, checked } = useCheckboxInputController({ name, defaultChecked, onChange });
 
   return (
     <StyledCheckboxWrapper
@@ -50,10 +41,9 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         id={id}
         name={name}
         type='checkbox'
-        className='cl-checkbox__input'
         disabled={disabled}
         required={required}
-        checked={isChecked}
+        checked={checked}
         onChange={handleChange}
         aria-label={isLabelHidden ? label : undefined}
       />
@@ -62,7 +52,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         required={required}
         inputId={id}
         isTextHidden={isLabelHidden}
-        icon={isChecked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
+        icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}
       />
     </StyledCheckboxWrapper>

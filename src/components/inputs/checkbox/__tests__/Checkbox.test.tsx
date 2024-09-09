@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import ChopLogicForm from 'components/containers/form/Form';
+
 import Checkbox from '../Checkbox';
 
 describe('ChopLogicCheckbox', () => {
@@ -61,5 +63,23 @@ describe('ChopLogicCheckbox', () => {
     checkbox.focus();
     await userEvent.keyboard('[Space]');
     expect(mockOnChange).toHaveBeenCalledOnce();
+  });
+
+  it('should take an initial value from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ checkbox: true }}>
+        <Checkbox {...testProps} />
+      </ChopLogicForm>,
+    );
+    expect(screen.getByRole('checkbox')).toBeChecked();
+  });
+
+  it('should ignore the defaultChecked prop is initial values is provided from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ checkbox: false }}>
+        <Checkbox {...testProps} defaultChecked />
+      </ChopLogicForm>,
+    );
+    expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
 });

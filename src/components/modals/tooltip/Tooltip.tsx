@@ -1,5 +1,6 @@
 import { PropsWithChildren, useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useElementIds } from 'hooks/use-element-id';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
 
@@ -10,7 +11,6 @@ import { StyledTooltip } from './Tooltip.styled';
 export type ChopLogicTooltipProps = PropsWithChildren &
   React.HTMLAttributes<HTMLElement> & {
     tooltipContent: string | React.ReactElement;
-    id: string;
     containerTag?: 'span' | 'div' | 'p' | 'strong' | 'em';
     visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
   };
@@ -18,7 +18,6 @@ export type ChopLogicTooltipProps = PropsWithChildren &
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,
   tooltipContent,
-  id,
   containerTag = 'span',
   visibleOn = 'hover',
   ...rest
@@ -27,6 +26,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   const wrapperRef = useRef(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
+  const { elementId } = useElementIds(rest?.id);
   const ContainerComponent = containerTag;
 
   const closeTooltip = () => setIsOpened(false);
@@ -52,12 +52,12 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       tabIndex={0}
       {...rest}
       ref={wrapperRef}
-      aria-describedby={id}
+      aria-describedby={elementId}
     >
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={id}>
+          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={elementId}>
             {tooltipContent}
           </StyledTooltip>
         </ChopLogicPortal>

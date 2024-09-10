@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useElementIds } from 'hooks/use-element-id';
 import { useKeyPress } from 'hooks/use-key-press';
 
 import ChopLogicLabel from 'components/misc/label/Label';
@@ -10,7 +11,6 @@ import { useSelectInputController } from './helpers';
 import { StyledSelectWrapper } from './Select.styled';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
   name: string;
   label: string;
   options: SelectValue[];
@@ -24,7 +24,6 @@ export type SelectValue = {
 } & { [key in string]: unknown };
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
-  id,
   options,
   onChange,
   name,
@@ -36,8 +35,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const comboboxId = `${id}_combobox`;
-  const dropdownId = `${id}_dropdown`;
+  const { elementId, dropdownId } = useElementIds(props?.id);
   const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useSelectInputController({
     options,
     onChange,
@@ -50,11 +48,11 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
 
   return (
     <StyledSelectWrapper ref={ref} $disabled={disabled} style={props.style} className={props?.className}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}
-        comboboxId={comboboxId}
+        comboboxId={elementId}
         dropdownId={dropdownId}
         onClick={handleToggle}
         selected={selected}
@@ -68,7 +66,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         opened={opened}
         onClose={handleClose}
         dropdownId={dropdownId}
-        comboboxId={comboboxId}
+        comboboxId={elementId}
         onSelect={handleSelect}
         onClear={handleClear}
       />

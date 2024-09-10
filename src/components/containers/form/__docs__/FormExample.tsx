@@ -49,22 +49,12 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
         onReset={() => setData(undefined)}
         onClickSubmit={(data) => setData(data)}
       >
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
-        <ChopLogicSelect name='language' id='language' label='Language' options={SELECT_LANGUAGES} />
-        <ChopLogicMultiSelect
-          name='programmingLanguages'
-          id='programming-languages'
-          label='Programming Languages'
-          options={MULTI_SELECT_VALUES}
-        />
-        <ChopLogicCheckbox name='isTermsAccepted' id='terms' label='Accept Terms and Conditions' />
-        <input type='text' name='test2' placeholder='test2 value' />
-        <input type='tel' name='test3' placeholder='test3 value' />
-        <label>
-          Check me <input type='checkbox' name='test4' />
-        </label>
+        <ChopLogicTextInput name='firstName' label='First Name' />
+        <ChopLogicTextInput name='lastName' label='Last Name' />
+        <ChopLogicNumericInput name='age' label='Age' />
+        <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} />
+        <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} />
+        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' />
       </ChopLogicForm>
       {data && (
         <ul style={{ listStyle: 'none' }}>
@@ -72,7 +62,9 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
             return (
               <li key={item[0]}>
                 <strong>{item[0]}: </strong>
-                <span>{item[1]?.toString()}</span>
+                <span>
+                  {item[1]?.toString()} {typeof item[1]}
+                </span>
               </li>
             );
           })}

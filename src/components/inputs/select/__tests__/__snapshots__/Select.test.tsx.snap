@@ -7,7 +7,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
   >
     <label
       class="sc-dsLQwm cmpKZQ"
-      for="language-select-id_combobox"
+      for="language-select-id"
     >
       <span
         class="sc-iKTcqh cyAOBd"
@@ -21,7 +21,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-haspopup="listbox"
       aria-required="false"
       class="sc-iCZwEW hbHPwu"
-      id="language-select-id_combobox"
+      id="language-select-id"
       name="language"
       role="combobox"
       type="button"

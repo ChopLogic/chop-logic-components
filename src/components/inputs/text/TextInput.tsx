@@ -1,4 +1,5 @@
 import React from 'react';
+import { useElementIds } from 'hooks/use-element-id';
 
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
@@ -8,7 +9,6 @@ import { useTextInputController } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
   name: string;
   label: string;
   valid?: boolean;
@@ -18,13 +18,12 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
 };
 
 const TextInput: React.FC<ChopLogicTextInputProps> = ({
-  id,
   name,
   label,
   errorMessage,
-  placeholder = 'Type here...',
   defaultValue,
   onChange,
+  placeholder = 'Type here...',
   disabled = false,
   valid = true,
   required = false,
@@ -32,15 +31,15 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   autoComplete = 'off',
   ...props
 }) => {
-  const errorId = `${id}_error`;
+  const { elementId, errorId } = useElementIds(props?.id);
   const { value, handleChange, handleClear } = useTextInputController({ defaultValue, name, onChange });
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
       <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
-        <ChopLogicLabel label={label} required={required} inputId={id} />
+        <ChopLogicLabel label={label} required={required} inputId={elementId} />
         <StyledTextInput
-          id={id}
+          id={elementId}
           name={name}
           type='text'
           disabled={disabled}

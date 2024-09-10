@@ -7,7 +7,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
   >
     <label
       class="sc-dsLQwm cmpKZQ"
-      for="language-multi-select-id_combobox"
+      for="language-multi-select-id"
     >
       <span
         class="sc-iKTcqh cyAOBd"
@@ -21,7 +21,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       aria-haspopup="listbox"
       aria-required="false"
       class="sc-iCZwEW hbHPwu"
-      id="language-multi-select-id_combobox"
+      id="language-multi-select-id"
       name="languages"
       role="combobox"
       type="button"

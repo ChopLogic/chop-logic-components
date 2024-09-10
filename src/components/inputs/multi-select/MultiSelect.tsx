@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useElementIds } from 'hooks/use-element-id';
 import { useKeyPress } from 'hooks/use-key-press';
 
 import ChopLogicLabel from 'components/misc/label/Label';
@@ -14,7 +15,6 @@ import { StyledMultiSelectWrapper } from './MultiSelect.styled';
 export type MultiSelectValue = SelectValue & { selected: boolean };
 
 export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
   name: string;
   label: string;
   options: SelectValue[];
@@ -31,7 +31,6 @@ export type MultiSelectDropdownProps = {
 };
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
-  id,
   options,
   name,
   label,
@@ -42,9 +41,8 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   defaultValue,
   ...props
 }) => {
-  const comboboxId = `${id}_combobox`;
-  const dropdownId = `${id}_dropdown`;
   const ref = useRef(null);
+  const { elementId, dropdownId } = useElementIds(props?.id);
   const { handleClose, handleSelect, handleToggle, opened, values } = useMultiSelectInputController({
     name,
     options,
@@ -57,11 +55,11 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <StyledMultiSelectWrapper ref={ref} $disabled={disabled} className={props?.className} style={props?.style}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}
-        comboboxId={comboboxId}
+        comboboxId={elementId}
         dropdownId={dropdownId}
         onClick={handleToggle}
         values={values}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useElementIds } from 'hooks/use-element-id';
 
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
@@ -8,7 +9,6 @@ import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';
 import { useCheckboxInputController } from './helpers';
 
 export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
   name: string;
   label: string;
   isLabelHidden?: boolean;
@@ -16,7 +16,6 @@ export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
 };
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
-  id,
   name,
   label,
   disabled,
@@ -28,6 +27,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   ...props
 }) => {
   const { handleChange, checked } = useCheckboxInputController({ name, defaultChecked, onChange });
+  const { elementId } = useElementIds(props?.id);
 
   return (
     <StyledCheckboxWrapper
@@ -38,7 +38,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
       title={props?.title}
     >
       <StyledCheckboxInput
-        id={id}
+        id={elementId}
         name={name}
         type='checkbox'
         disabled={disabled}
@@ -50,7 +50,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
       <ChopLogicLabel
         label={label}
         required={required}
-        inputId={id}
+        inputId={elementId}
         isTextHidden={isLabelHidden}
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}

@@ -57,18 +57,22 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
         <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' />
       </ChopLogicForm>
       {data && (
-        <ul style={{ listStyle: 'none' }}>
+        <table style={{ marginTop: '2rem', fontFamily: 'Arial', textAlign: 'left' }}>
+          <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Type</th>
+          </tr>
           {Object.entries(data).map((item) => {
             return (
-              <li key={item[0]}>
-                <strong>{item[0]}: </strong>
-                <span>
-                  {item[1]?.toString()} {typeof item[1]}
-                </span>
-              </li>
+              <tr key={item[0]}>
+                <td>{item[0]}</td>
+                <td>{item[1]?.toString()}</td>
+                <td>{typeof item[1]}</td>
+              </tr>
             );
           })}
-        </ul>
+        </table>
       )}
     </div>
   );

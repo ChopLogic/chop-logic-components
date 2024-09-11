@@ -19,7 +19,7 @@ function getCheckboxInitialValue({
   return !!defaultChecked;
 }
 
-export function useCheckboxInputController({
+export function useChopLogicCheckboxController({
   name,
   defaultChecked,
   onChange,

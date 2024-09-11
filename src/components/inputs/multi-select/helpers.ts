@@ -36,7 +36,7 @@ export function getMultiSelectInitialValues({
   });
 }
 
-export function useMultiSelectInputController({
+export function useChopLogicMultiSelectController({
   name,
   defaultValue,
   onChange,

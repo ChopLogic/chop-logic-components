@@ -4,7 +4,7 @@ import { useElementIds } from 'hooks/use-element-id';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
-import { useNumericInputController } from './helpers';
+import { useChopLogicNumericInputController } from './helpers';
 import { StyledNumericInput, StyledNumericInputContainer, StyledNumericInputWrapper } from './NumericInput.styled';
 
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -14,7 +14,7 @@ export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElem
   errorMessage?: string;
 };
 
-const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
+const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
   label,
   errorMessage,
@@ -30,7 +30,7 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   ...props
 }) => {
   const { elementId, errorId } = useElementIds(props?.id);
-  const { value, handleChange, minValue, maxValue } = useNumericInputController({ name, defaultValue, min, max, onChange });
+  const { value, handleChange, minValue, maxValue } = useChopLogicNumericInputController({ name, defaultValue, min, max, onChange });
 
   return (
     <StyledNumericInputContainer className={props?.className} style={props?.style}>
@@ -61,4 +61,4 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   );
 };
 
-export default NumericInput;
+export default ChopLogicNumericInput;

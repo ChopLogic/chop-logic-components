@@ -7,7 +7,7 @@ import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import { useSelectInputController } from './helpers';
+import { useChopLogicSelectController } from './helpers';
 import { StyledSelectWrapper } from './Select.styled';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
@@ -36,7 +36,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { elementId, dropdownId } = useElementIds(props?.id);
-  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useSelectInputController({
+  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useChopLogicSelectController({
     options,
     onChange,
     defaultValue,

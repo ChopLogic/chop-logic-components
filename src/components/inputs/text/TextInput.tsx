@@ -5,7 +5,7 @@ import ClearInputButton from 'components/misc/clear-input-button/ClearInputButto
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
-import { useTextInputController } from './helpers';
+import { useChopLogicTextInputController } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -17,7 +17,7 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   onClear?: () => void;
 };
 
-const TextInput: React.FC<ChopLogicTextInputProps> = ({
+const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
   label,
   errorMessage,
@@ -32,7 +32,7 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   ...props
 }) => {
   const { elementId, errorId } = useElementIds(props?.id);
-  const { value, handleChange, handleClear } = useTextInputController({ defaultValue, name, onChange });
+  const { value, handleChange, handleClear } = useChopLogicTextInputController({ defaultValue, name, onChange });
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
@@ -63,4 +63,4 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
   );
 };
 
-export default TextInput;
+export default ChopLogicTextInput;

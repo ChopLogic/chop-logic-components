@@ -23,7 +23,7 @@ export function getTextInputInitialValue({
   return '';
 }
 
-export function useTextInputController({
+export function useChopLogicTextInputController({
   name,
   defaultValue,
   onChange,

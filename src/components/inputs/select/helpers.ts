@@ -29,7 +29,7 @@ export function getSelectInitialValue({
   return options.find((item) => item.id === valueId);
 }
 
-export function useSelectInputController({
+export function useChopLogicSelectController({
   name,
   defaultValue,
   onChange,

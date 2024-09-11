@@ -23,7 +23,7 @@ export function getNumericInputInitialValue({
   return 0;
 }
 
-export function useNumericInputController({
+export function useChopLogicNumericInputController({
   name,
   defaultValue,
   onChange,

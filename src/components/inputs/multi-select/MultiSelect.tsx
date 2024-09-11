@@ -9,7 +9,7 @@ import { SelectValue } from '../select/Select';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import { useMultiSelectInputController } from './helpers';
+import { useChopLogicMultiSelectController } from './helpers';
 import { StyledMultiSelectWrapper } from './MultiSelect.styled';
 
 export type MultiSelectValue = SelectValue & { selected: boolean };
@@ -43,7 +43,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 }) => {
   const ref = useRef(null);
   const { elementId, dropdownId } = useElementIds(props?.id);
-  const { handleClose, handleSelect, handleToggle, opened, values } = useMultiSelectInputController({
+  const { handleClose, handleSelect, handleToggle, opened, values } = useChopLogicMultiSelectController({
     name,
     options,
     defaultValue,

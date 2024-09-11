@@ -6,7 +6,7 @@ import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUncheck
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';
-import { useCheckboxInputController } from './helpers';
+import { useChopLogicCheckboxController } from './helpers';
 
 export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
@@ -26,7 +26,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   onChange,
   ...props
 }) => {
-  const { handleChange, checked } = useCheckboxInputController({ name, defaultChecked, onChange });
+  const { handleChange, checked } = useChopLogicCheckboxController({ name, defaultChecked, onChange });
   const { elementId } = useElementIds(props?.id);
 
   return (

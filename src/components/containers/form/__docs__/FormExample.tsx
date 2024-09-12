@@ -26,10 +26,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
   const initialValues = {
     firstName: 'John',
     lastName: 'Doe',
-    age: 33,
-    language: SELECT_LANGUAGES[1].id,
-    programmingLanguages: ['pr-lang-1', 'pr-lang-3'],
-    isTermsAccepted: true,
+    age: 42,
   };
 
   return (
@@ -58,20 +55,24 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
       </ChopLogicForm>
       {data && (
         <table style={{ marginTop: '2rem', fontFamily: 'Arial', textAlign: 'left' }}>
-          <tr>
-            <th>Name</th>
-            <th>Value</th>
-            <th>Type</th>
-          </tr>
-          {Object.entries(data).map((item) => {
-            return (
-              <tr key={item[0]}>
-                <td>{item[0]}</td>
-                <td>{item[1]?.toString()}</td>
-                <td>{typeof item[1]}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(data).map((item) => {
+              return (
+                <tr key={item[0]}>
+                  <td>{item[0]}</td>
+                  <td>{item[1]?.toString()}</td>
+                  <td>{typeof item[1]}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       )}
     </div>

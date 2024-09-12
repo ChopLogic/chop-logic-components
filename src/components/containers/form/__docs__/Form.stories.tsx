@@ -6,11 +6,14 @@ const meta: Meta<typeof FormExample> = {
   title: 'Containers/Form',
   component: FormExample,
   args: {
-    columns: 1,
+    columns: 2,
+    hasReset: true,
     initialValues: {
       firstName: 'John',
       lastName: 'Doe',
+      age: 42,
     },
+    onClickSubmit: (data) => console.log(data),
   },
 };
 

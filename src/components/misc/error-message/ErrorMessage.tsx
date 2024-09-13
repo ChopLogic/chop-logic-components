@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
 import { StyledErrorMessage } from './ErrorMessage.styled';
 
@@ -10,7 +10,7 @@ type ChopLogicErrorMessageProps = {
   testId?: string;
 };
 
-const ChopLogicErrorMessage: React.FC<PropsWithChildren<ChopLogicErrorMessageProps>> = ({
+const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({
   errorId,
   className,
   testId,

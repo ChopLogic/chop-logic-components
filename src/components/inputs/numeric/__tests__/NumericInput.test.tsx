@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
+import ChopLogicForm from 'components/containers/form/Form';
+
 import NumericInput from '../NumericInput';
 
 describe('NumericInput', () => {
@@ -93,5 +95,15 @@ describe('NumericInput', () => {
     fireEvent.change(input, { target: { value: '4' } });
 
     expect(input).toHaveValue(4);
+  });
+
+  it('should take an initial value from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ quantity: 13 }}>
+        <NumericInput {...testProps} />
+      </ChopLogicForm>,
+    );
+    const input = screen.getByRole('spinbutton');
+    expect(input).toHaveValue(13);
   });
 });

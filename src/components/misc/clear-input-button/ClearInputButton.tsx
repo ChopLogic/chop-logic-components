@@ -5,14 +5,13 @@ import ChopLogicIcon, { CLIcon } from 'components/misc/icon/Icon';
 import { StyledClearButton } from './ClearInputButton.styled';
 
 type ClearInputButtonProps = {
-  onClear: () => void;
-  visible: boolean;
+  onClear: (event: React.MouseEvent<HTMLButtonElement>) => void;
   label: string;
 };
 
-const ClearInputButton: React.FC<ClearInputButtonProps> = ({ onClear, visible, label }) => {
+const ClearInputButton: React.FC<ClearInputButtonProps> = ({ onClear, label }) => {
   return (
-    <StyledClearButton onClick={onClear} $visible={visible} aria-label={`Clear the input for ${label}`}>
+    <StyledClearButton onClick={onClear} aria-label={`Clear the input for ${label}`} type='button'>
       <ChopLogicIcon name={CLIcon.Remove} />
     </StyledClearButton>
   );

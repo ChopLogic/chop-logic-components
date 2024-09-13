@@ -12,6 +12,7 @@ export type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
   label?: string;
   icon?: CLIcon;
   text?: string;
+  extended?: boolean;
 };
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
@@ -20,12 +21,25 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   icon,
   label,
   disabled = false,
+  extended = false,
   type = 'button',
   view = 'primary',
   ...props
 }) => {
   return (
-    <StyledButton aria-label={label} type={type} onClick={onClick} disabled={disabled} $view={view} $disabled={disabled} {...props}>
+    <StyledButton
+      $view={view}
+      $disabled={disabled}
+      $extended={extended}
+      aria-label={label}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      id={props?.id}
+      className={props?.className}
+      style={props?.style}
+      tabIndex={props?.tabIndex}
+    >
       <ChopLogicIcon name={icon} />
       {view !== 'icon' && <StyledButtonText>{text}</StyledButtonText>}
     </StyledButton>

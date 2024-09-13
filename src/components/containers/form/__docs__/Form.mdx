@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as ChopLogicFormStories from './Form.stories';
+
+<Meta of={ChopLogicFormStories} title='Form' />
+
+# ChopLogicForm
+
+The `ChopLogicForm` component.
+
+#### Example
+
+<Canvas>
+  <Story of={ChopLogicFormStories.Default} />
+</Canvas>
+
+## Usage
+
+```tsx
+import React from 'react';
+import ChopLogicForm, ChopLogicTextInput, ChopLogicNumericInput from 'chop-logic-components';
+
+const INITIAL_VALUES = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 42
+}
+
+const ExampleComponent = () => (
+  <ChopLogicForm initialValues={INITIAL_VALUES} columns={2}>
+    <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
+    <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+    <ChopLogicNumericInput name='age' id='age' label='Age' />
+  </ChopLogicForm>
+);
+
+export default ExampleComponent;
+```
+
+### Props:

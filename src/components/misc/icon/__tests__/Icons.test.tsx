@@ -8,6 +8,7 @@ import CancelIcon from '../elements/Cancel';
 import CheckboxCheckedIcon from '../elements/CheckboxChecked';
 import CheckboxUncheckedIcon from '../elements/CheckboxUnchecked';
 import CheckMarkIcon from '../elements/CheckMark';
+import ClearIcon from '../elements/Clear';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
 import DeleteIcon from '../elements/Delete';
@@ -17,6 +18,11 @@ import ForwardIcon from '../elements/Forward';
 import HelpIcon from '../elements/Help';
 import InfoIcon from '../elements/Info';
 import PasteIcon from '../elements/Paste';
+import QuestionIcon from '../elements/Question';
+import RemoveIcon from '../elements/Remove';
+import SaveIcon from '../elements/Save';
+import UploadIcon from '../elements/Upload';
+import WarningIcon from '../elements/Warning';
 
 describe('ChopLogicIcon', () => {
   it('BackIcon should match the snapshot', () => {
@@ -51,6 +57,11 @@ describe('ChopLogicIcon', () => {
 
   it('CheckMarkIcon should match the snapshot', () => {
     const { asFragment } = render(<CheckMarkIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ClearIcon should match the snapshot', () => {
+    const { asFragment } = render(<ClearIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -96,6 +107,31 @@ describe('ChopLogicIcon', () => {
 
   it('PasteIcon should match the snapshot', () => {
     const { asFragment } = render(<PasteIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('QuestionIcon should match the snapshot', () => {
+    const { asFragment } = render(<QuestionIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('RemoveIcon should match the snapshot', () => {
+    const { asFragment } = render(<RemoveIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('SaveIcon should match the snapshot', () => {
+    const { asFragment } = render(<SaveIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('UploadIcon should match the snapshot', () => {
+    const { asFragment } = render(<UploadIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('WarningIcon should match the snapshot', () => {
+    const { asFragment } = render(<WarningIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

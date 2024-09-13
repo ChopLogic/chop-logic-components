@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import ChopLogicForm from 'components/containers/form/Form';
+
 import ChopLogicSelect, { SelectValue } from '../Select';
 
 describe('ChopLogicSelect', () => {
@@ -15,8 +17,8 @@ describe('ChopLogicSelect', () => {
     id: 'language-select-id',
     name: 'language',
     label: 'Select your language',
-    values: SELECT_LANGUAGES,
-    onSelectChange: vi.fn(),
+    options: SELECT_LANGUAGES,
+    onChange: vi.fn(),
     placeholder: 'Not selected',
   };
 
@@ -63,7 +65,7 @@ describe('ChopLogicSelect', () => {
     await userEvent.click(combobox);
     const option = screen.getByText(SELECT_LANGUAGES[0].label);
     await userEvent.click(option);
-    expect(testProps.onSelectChange).toHaveBeenCalledOnce();
+    expect(testProps.onChange).toHaveBeenCalledOnce();
   });
 
   it('should allow the user to select an option', async () => {
@@ -74,6 +76,18 @@ describe('ChopLogicSelect', () => {
     const option = screen.getByText(SELECT_LANGUAGES[1].label);
     await userEvent.click(option);
     expect(combobox).toHaveValue(SELECT_LANGUAGES[1].id);
+  });
+
+  it('should allow the user to deselect the same option', async () => {
+    render(<ChopLogicSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveValue('');
+    await userEvent.click(combobox);
+    const option = screen.getByText(SELECT_LANGUAGES[1].label);
+    await userEvent.click(option);
+    expect(combobox).toHaveValue(SELECT_LANGUAGES[1].id);
+    await userEvent.click(option);
+    expect(combobox).not.toHaveValue(SELECT_LANGUAGES[1].id);
   });
 
   it('should move the focus correctly on Tab press', async () => {
@@ -107,5 +121,15 @@ describe('ChopLogicSelect', () => {
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');
     expect(options[0]).toHaveFocus();
+  });
+
+  it('should take an initial value from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ language: SELECT_LANGUAGES[2] }}>
+        <ChopLogicSelect {...testProps} />
+      </ChopLogicForm>,
+    );
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveValue(SELECT_LANGUAGES[2].id);
   });
 });

@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useElementIds } from 'hooks/use-element-id';
 
 import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
+import { useChopLogicTextInputController } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
   name: string;
   label: string;
   valid?: boolean;
@@ -16,47 +17,38 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   onClear?: () => void;
 };
 
-const TextInput: React.FC<ChopLogicTextInputProps> = ({
-  id,
+const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
   label,
   errorMessage,
   defaultValue,
+  onChange,
   placeholder = 'Type here...',
   disabled = false,
   valid = true,
   required = false,
   hasClearButton = true,
+  autoComplete = 'off',
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<string>(typeof defaultValue === 'string' ? defaultValue : '');
-  const errorId = `${id}_error`;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value = '' } = e.target;
-    setInputValue(value);
-    if (props?.onChange) props.onChange(e);
-  };
-
-  const handleClear = () => {
-    setInputValue('');
-    if (props?.onClear) props.onClear();
-  };
+  const { elementId, errorId } = useElementIds(props?.id);
+  const { value, handleChange, handleClear } = useChopLogicTextInputController({ defaultValue, name, onChange });
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
       <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
-        <ChopLogicLabel label={label} required={required} inputId={id} />
+        <ChopLogicLabel label={label} required={required} inputId={elementId} />
         <StyledTextInput
-          id={id}
+          id={elementId}
           name={name}
           type='text'
           disabled={disabled}
           placeholder={placeholder}
           required={required}
+          autoComplete={autoComplete}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue}
+          value={value}
           onChange={handleChange}
           readOnly={props?.readOnly}
           maxLength={props?.maxLength}
@@ -64,11 +56,11 @@ const TextInput: React.FC<ChopLogicTextInputProps> = ({
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
         />
-        <ClearInputButton onClear={handleClear} visible={hasClearButton && !!inputValue?.length} label={label} />
+        {hasClearButton && <ClearInputButton onClear={handleClear} label={label} />}
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>
   );
 };
 
-export default TextInput;
+export default ChopLogicTextInput;

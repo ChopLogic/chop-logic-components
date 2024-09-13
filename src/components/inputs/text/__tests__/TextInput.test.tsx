@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import ChopLogicForm from 'components/containers/form/Form';
+
 import TextInput from '../TextInput';
 
 describe('ChopLogicTextInput', () => {
@@ -77,5 +79,21 @@ describe('ChopLogicTextInput', () => {
     await userEvent.type(input, 't');
     await userEvent.click(screen.getByRole('button'));
     expect(input).toHaveValue('');
+  });
+
+  it('should have attribute autocomplete = off by default', () => {
+    render(<TextInput {...testProps} />);
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('autocomplete', 'off');
+  });
+
+  it('should take an initial value from the form context', async () => {
+    render(
+      <ChopLogicForm initialValues={{ test: 'testValue' }}>
+        <TextInput {...testProps} />
+      </ChopLogicForm>,
+    );
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveValue('testValue');
   });
 });

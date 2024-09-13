@@ -24,15 +24,9 @@ export const Default: Story = {
     id: 'example-multiselect',
     name: 'languages',
     label: 'Select Languages',
-    values: MULTI_SELECT_VALUES,
+    options: MULTI_SELECT_VALUES,
     placeholder: 'Select languages',
-    onSelectChange: (values) =>
-      console.log(
-        `Selected ${values
-          ?.filter((item) => item.selected)
-          .map((value) => value.label)
-          .join(', ')}`,
-      ),
+    onChange: (values) => console.log(values),
     required: true,
     disabled: false,
   },

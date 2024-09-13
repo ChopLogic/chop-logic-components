@@ -2,10 +2,10 @@ import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
 import { SelectValue } from '../Select';
-import { StyledSelectCombobox, StyledSelectPlaceholder } from '../Select.styled';
+import { StyledSelectCombobox, StyledSelectLabel, StyledSelectPlaceholder } from '../Select.styled';
 
 type SelectComboboxProps = {
-  isOpened: boolean;
+  opened: boolean;
   disabled: boolean;
   required: boolean;
   onClick: () => void;
@@ -17,7 +17,7 @@ type SelectComboboxProps = {
 };
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
-  isOpened,
+  opened,
   onClick,
   comboboxId,
   dropdownId,
@@ -34,15 +34,19 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       value={selected?.id}
       role='combobox'
       aria-haspopup='listbox'
-      aria-expanded={isOpened}
+      aria-expanded={opened}
       aria-controls={dropdownId}
       id={comboboxId}
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
     >
-      <StyledSelectPlaceholder>{selected?.label ?? placeholder}</StyledSelectPlaceholder>
-      {isOpened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      {selected?.label ? (
+        <StyledSelectLabel>{selected?.label}</StyledSelectLabel>
+      ) : (
+        <StyledSelectPlaceholder>{placeholder}</StyledSelectPlaceholder>
+      )}
+      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledSelectCombobox>
   );
 };

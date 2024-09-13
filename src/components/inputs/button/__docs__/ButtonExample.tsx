@@ -9,7 +9,6 @@ const ExampleButton: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
       }}
     >
       <Button text={text} disabled={disabled} view={view} onClick={onClick} type={type} icon={icon} />

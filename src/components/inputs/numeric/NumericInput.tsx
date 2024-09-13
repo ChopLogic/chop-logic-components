@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useElementIds } from 'hooks/use-element-id';
 
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
 
+import { useChopLogicNumericInputController } from './helpers';
 import { StyledNumericInput, StyledNumericInputContainer, StyledNumericInputWrapper } from './NumericInput.styled';
 
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  id: string;
   name: string;
   label: string;
   valid?: boolean;
   errorMessage?: string;
 };
 
-const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
-  id,
+const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
   label,
   errorMessage,
   defaultValue,
+  onChange,
+  min,
+  max,
   placeholder = '0',
   disabled = false,
   valid = true,
@@ -26,26 +29,15 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   step = 1,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState<number | string>(typeof defaultValue === 'number' ? defaultValue : 0);
-  const errorId = `${id}_error`;
-  const max = props?.max ? Number(props.max) : Number.MAX_SAFE_INTEGER;
-  const min = props?.min ? Number(props.min) : Number.MIN_SAFE_INTEGER;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = Number(e.target.value);
-    if (value > max) value = max;
-    if (value < min) value = min;
-
-    setInputValue(value);
-    if (props?.onChange) props.onChange(e);
-  };
+  const { elementId, errorId } = useElementIds(props?.id);
+  const { value, handleChange, minValue, maxValue } = useChopLogicNumericInputController({ name, defaultValue, min, max, onChange });
 
   return (
     <StyledNumericInputContainer className={props?.className} style={props?.style}>
       <StyledNumericInputWrapper $disabled={disabled} $invalid={!valid}>
-        <ChopLogicLabel label={label} required={required} inputId={id} />
+        <ChopLogicLabel label={label} required={required} inputId={elementId} />
         <StyledNumericInput
-          id={id}
+          id={elementId}
           name={name}
           type='number'
           disabled={disabled}
@@ -53,10 +45,10 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
-          value={inputValue.toString()}
+          value={value.toString()}
           onChange={handleChange}
-          max={max}
-          min={min}
+          min={minValue}
+          max={maxValue}
           step={step}
           readOnly={props?.readOnly}
           pattern={props?.pattern}
@@ -69,4 +61,4 @@ const NumericInput: React.FC<ChopLogicNumericInputProps> = ({
   );
 };
 
-export default NumericInput;
+export default ChopLogicNumericInput;

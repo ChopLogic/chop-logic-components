@@ -3,16 +3,16 @@
 exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fQpRED hsJkmH"
+    class="sc-la-DxNn fQhKbf"
   >
     <input
-      class="sc-dsLQwm iEHRMh cl-checkbox__input"
+      class="sc-iCZwEW gHJHRE"
       id="test-checkbox-id"
       name="checkbox"
       type="checkbox"
     />
     <label
-      class="sc-braxZu eZLZgi"
+      class="sc-dsLQwm cmpKZQ"
       for="test-checkbox-id"
     >
       <svg
@@ -27,7 +27,7 @@ exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
         />
       </svg>
       <span
-        class="sc-gJhJTp cDfTBm"
+        class="sc-iKTcqh cyAOBd"
       >
         Test label
       </span>

@@ -1,64 +1,58 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
+import { useElementIds } from 'hooks/use-element-id';
 import { useKeyPress } from 'hooks/use-key-press';
 
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
+import { useChopLogicSelectController } from './helpers';
 import { StyledSelectWrapper } from './Select.styled';
 
 export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  id: string;
   name: string;
   label: string;
-  values: SelectValue[];
-  onSelectChange?: (value?: SelectValue) => void;
+  options: SelectValue[];
+  onChange?: (value?: SelectValue) => void;
   placeholder?: string;
 };
 
 export type SelectValue = {
   id: string;
   label: string;
-};
+} & { [key in string]: unknown };
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
-  id,
-  values,
-  onSelectChange,
+  options,
+  onChange,
   name,
   label,
-  required = false,
   placeholder = 'Not selected',
+  required = false,
   disabled = false,
+  defaultValue,
   ...props
 }) => {
-  const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue>();
-  const comboboxId = `${id}_combobox`;
-  const dropdownId = `${id}_dropdown`;
   const ref = useRef<HTMLDivElement>(null);
-
-  const handleClose = () => setIsOpened(false);
-
-  const handleToggle = () => setIsOpened(!isOpened);
-
-  const handleSelect = (id: string) => {
-    const newValue = values.find((item) => item.id === id);
-    setSelected(newValue);
-    onSelectChange?.(newValue);
-  };
+  const { elementId, dropdownId } = useElementIds(props?.id);
+  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useChopLogicSelectController({
+    options,
+    onChange,
+    defaultValue,
+    name,
+  });
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
     <StyledSelectWrapper ref={ref} $disabled={disabled} style={props.style} className={props?.className}>
-      <ChopLogicLabel label={label} required={required} inputId={comboboxId} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
-        isOpened={isOpened}
-        comboboxId={comboboxId}
+        opened={opened}
+        comboboxId={elementId}
         dropdownId={dropdownId}
         onClick={handleToggle}
         selected={selected}
@@ -67,13 +61,14 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         required={required}
       />
       <SelectDropdown
-        values={values}
+        options={options}
         selected={selected}
-        isOpened={isOpened}
+        opened={opened}
         onClose={handleClose}
         dropdownId={dropdownId}
-        comboboxId={comboboxId}
+        comboboxId={elementId}
         onSelect={handleSelect}
+        onClear={handleClear}
       />
     </StyledSelectWrapper>
   );

@@ -3,8 +3,8 @@ import React, { PropsWithChildren } from 'react';
 import ChopLogicButton from 'components/inputs/button/Button';
 import { CLIcon } from 'components/misc/icon/Icon';
 
-import { ChopLogicFormContext, ChopLogicFormData } from './elements/FormContext';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
+import { ChopLogicFormContext, ChopLogicFormData } from './FormContext';
 import { useChopLogicFormController } from './helpers';
 
 export type ChopLogicFormProps = PropsWithChildren &

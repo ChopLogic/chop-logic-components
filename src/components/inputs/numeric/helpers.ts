@@ -1,7 +1,7 @@
 import { ChangeEventHandler, useCallback, useContext, useState } from 'react';
 import { useResetFormInput } from 'hooks/use-reset-form-input';
 
-import { ChopLogicFormContext, ChopLogicFormData } from 'components/containers/form/elements/FormContext';
+import { ChopLogicFormContext, ChopLogicFormData } from 'components/containers/form/FormContext';
 
 export function getNumericInputInitialValue({
   name,

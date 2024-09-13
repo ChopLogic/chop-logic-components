@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicFormData } from 'components/containers/form/elements/FormContext';
+import { ChopLogicFormData } from 'components/containers/form/FormContext';
 import { SelectValue } from 'components/inputs/select/Select';
 
 import { getMultiSelectInitialValues } from '../helpers';

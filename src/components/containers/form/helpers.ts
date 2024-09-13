@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-import { ChopLogicFormData, ChopLogicFormInputParams } from './elements/FormContext';
+import { ChopLogicFormData, ChopLogicFormInputParams } from './FormContext';
 
 export function useChopLogicFormController({
   initialValues,

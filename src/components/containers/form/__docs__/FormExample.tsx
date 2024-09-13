@@ -4,8 +4,8 @@ import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'co
 import ChopLogicMultiSelect from 'components/inputs/multi-select/MultiSelect';
 import ChopLogicSelect, { SelectValue } from 'components/inputs/select/Select';
 
-import { ChopLogicFormData } from '../elements/FormContext';
 import ChopLogicForm, { ChopLogicFormProps } from '../Form';
+import { ChopLogicFormData } from '../FormContext';
 
 const SELECT_LANGUAGES: SelectValue[] = [
   { id: 'lang-1', label: 'English' },

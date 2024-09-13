@@ -36,8 +36,7 @@ export default Example;
 
 ### Props
 
-- **id** - A unique identifier for the Checkbox component.
-- **name** - A string representing the name attribute of the Checkbox component, used for form submissions.
+- **name** - A required string representing the name attribute of the Checkbox component, used for form submissions.
 - **label** - A string that represents the label for the Checkbox component.
 - **disabled** - A boolean indicating whether the checkbox should be disabled. When disabled, the checkbox cannot be interacted with.
 - **required** - A boolean indicating whether the checkbox is required in a form. When required, the checkbox must be checked before form submission.
@@ -45,4 +44,4 @@ export default Example;
 - **onChange** - A function that is called when the checkbox state changes. It receives a change event.
 - **isLabelHidden** - A boolean indicating whether the label should be hidden or not. The label prop is still required in this case, because it's used for aria-label attribure.
 - **iconPosition** - The place where the checkbox icon will be rendered (left or right).
-- **HTMLAttributes** - additional global HTML attributes (**className**, **title**, **tabIndex**, **style** are supported, others are ignored).
+- **HTMLAttributes** - additional global HTML attributes (**id**, **className**, **title**, **tabIndex**, **style** are supported, others are ignored).

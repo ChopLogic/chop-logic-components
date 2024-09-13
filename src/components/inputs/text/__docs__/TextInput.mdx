@@ -33,14 +33,13 @@ export default Example;
 
 #### Props
 
+- **name** - A required string that describes the input for internal use inside a form or another container.
 - **label** - A visible label that describes the input purpose.
-- **name** - A string that describes the input for internal use inside a form or another container.
-- **id** - A unique string that identifies the input on the page and connects it with the label.
 - **placeholder** - A string that represents the placeholder text inside the input field.
 - **disabled** - A boolean indicating whether the input should be disabled or not. When disabled, the input cannot be interacted with.
 - **valid** - A boolean indicating whether the input is valid or not. When invalid, the input becomes highlighted and displays an error message.
 - **required** - A boolean indicating whether the input is required or not.
 - **errorMessage** - An optional string that displays when the input value is incorrect.
 - **onChange** _`(e) => void`_ - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
-- **InputHTMLAttributes** - all standard HTML input attributes (**value**, **pattern**, **readOnly**, etc.).
+- **InputHTMLAttributes** - all standard HTML input attributes (**pattern**, **readOnly**, etc.).
 - **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).

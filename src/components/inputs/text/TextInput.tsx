@@ -8,6 +8,13 @@ import ChopLogicLabel from 'components/misc/label/Label';
 import { useChopLogicTextInputController } from './helpers';
 import { StyledTextInput, StyledTextInputContainer, StyledTextInputWrapper } from './TextInput.styled';
 
+export type RegExpWithFlags = {
+  regexp: string;
+  flags?: string;
+};
+
+export type ValidationFunction = (input: string) => boolean;
+
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   label: string;
@@ -15,6 +22,8 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   errorMessage?: string;
   hasClearButton?: boolean;
   onClear?: () => void;
+  type?: 'text' | 'email' | 'password';
+  validator?: RegExpWithFlags | ValidationFunction;
 };
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
@@ -25,14 +34,21 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   onChange,
   placeholder = 'Type here...',
   disabled = false,
-  valid = true,
   required = false,
   hasClearButton = true,
   autoComplete = 'off',
+  type = 'text',
+  validator,
   ...props
 }) => {
   const { elementId, errorId } = useElementIds(props?.id);
-  const { value, handleChange, handleClear } = useChopLogicTextInputController({ defaultValue, name, onChange });
+  const { value, valid, handleChange, handleClear } = useChopLogicTextInputController({
+    defaultValue,
+    name,
+    onChange,
+    required,
+    validator,
+  });
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
@@ -41,7 +57,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
         <StyledTextInput
           id={elementId}
           name={name}
-          type='text'
+          type={type}
           disabled={disabled}
           placeholder={placeholder}
           required={required}

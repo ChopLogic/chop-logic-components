@@ -7,9 +7,9 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
   name,
   label,
   errorMessage,
+  validator,
   placeholder = 'Type here...',
   disabled = false,
-  valid = true,
   required = false,
   hasClearButton = true,
 }) => {
@@ -28,7 +28,7 @@ const Example: React.FC<ChopLogicTextInputProps> = ({
         name={name}
         placeholder={placeholder}
         label={label}
-        valid={valid}
+        validator={validator}
         required={required}
         disabled={disabled}
         errorMessage={errorMessage}

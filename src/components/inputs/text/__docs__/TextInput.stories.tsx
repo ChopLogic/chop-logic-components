@@ -16,10 +16,10 @@ export const Default: Story = {
     label: 'Enter the formula:',
     name: 'formula',
     id: 'formula-input',
-    valid: true,
     required: false,
     disabled: false,
     hasClearButton: true,
-    errorMessage: 'Cannot parse the entered text',
+    errorMessage: 'Only latin letters are allowed',
+    validator: { regexp: '^[A-Za-z ]+$' },
   },
 };

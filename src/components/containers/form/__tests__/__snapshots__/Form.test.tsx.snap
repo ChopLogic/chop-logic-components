@@ -139,7 +139,6 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           max="9007199254740991"
           min="-9007199254740991"
           name="age"
-          placeholder="0"
           step="1"
           type="number"
           value="0"

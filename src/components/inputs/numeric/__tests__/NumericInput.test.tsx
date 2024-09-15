@@ -10,6 +10,7 @@ describe('NumericInput', () => {
     id: 'numeric-input',
     name: 'quantity',
     label: 'Quantity',
+    placeholder: '0',
   };
 
   it('should match the snapshot', () => {
@@ -73,10 +74,12 @@ describe('NumericInput', () => {
 
     const input = screen.getByRole('spinbutton');
     fireEvent.change(input, { target: { value: '-1' } });
-    expect(input).toHaveValue(1);
+    expect(input).toHaveValue(-1);
+    expect(input).toBeInvalid();
 
     fireEvent.change(input, { target: { value: '11' } });
-    expect(input).toHaveValue(10);
+    expect(input).toHaveValue(11);
+    expect(input).toBeInvalid();
   });
 
   it('does not allow non-numeric input', () => {
@@ -88,7 +91,7 @@ describe('NumericInput', () => {
     expect(input).toHaveValue(0); // If non-numeric input is entered, it should revert to 0.
   });
 
-  it('respects step increment', () => {
+  it('should respect step increment', () => {
     render(<NumericInput {...testProps} step={2} defaultValue={0} />);
 
     const input = screen.getByRole('spinbutton');

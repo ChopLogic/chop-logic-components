@@ -3,7 +3,7 @@ import { useResetFormInput } from 'hooks/use-reset-form-input';
 
 import { ChopLogicFormContext, ChopLogicFormData } from 'components/containers/form/FormContext';
 
-import { RegExpWithFlags, ValidationFunction } from './TextInput';
+import { RegExpWithFlags, TextValidationFunction } from './TextInput';
 
 export function validateTextInputValue({
   value,
@@ -12,7 +12,7 @@ export function validateTextInputValue({
 }: {
   value: string;
   required: boolean;
-  validator?: RegExpWithFlags | ValidationFunction;
+  validator?: RegExpWithFlags | TextValidationFunction;
 }): boolean {
   if (required && !validator && !value.length) {
     return false;
@@ -58,7 +58,7 @@ export function useChopLogicTextInputController({
 }: {
   name: string;
   required: boolean;
-  validator?: RegExpWithFlags | ValidationFunction;
+  validator?: RegExpWithFlags | TextValidationFunction;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { getTextInputInitialValue, validateTextInputValue } from '../helpers';
-import { RegExpWithFlags, ValidationFunction } from '../TextInput';
+import { RegExpWithFlags, TextValidationFunction } from '../TextInput';
 
 describe('getTextInputInitialValue', () => {
   it('should return the value from initialValues if it exists', () => {
@@ -65,13 +65,13 @@ describe('validateTextInputValue', () => {
   });
 
   it('should return true when validator is a function and it returns true', () => {
-    const mockValidator: ValidationFunction = (input: string) => input === 'valid';
+    const mockValidator: TextValidationFunction = (input: string) => input === 'valid';
     const result = validateTextInputValue({ value: 'valid', required: true, validator: mockValidator });
     expect(result).toBe(true);
   });
 
   it('should return false when validator is a function and it returns false', () => {
-    const mockValidator: ValidationFunction = (input: string) => input === 'valid';
+    const mockValidator: TextValidationFunction = (input: string) => input === 'valid';
     const result = validateTextInputValue({ value: 'invalid', required: true, validator: mockValidator });
     expect(result).toBe(false);
   });

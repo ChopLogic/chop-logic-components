@@ -13,7 +13,7 @@ export type RegExpWithFlags = {
   flags?: string;
 };
 
-export type ValidationFunction = (input: string) => boolean;
+export type TextValidationFunction = (input: string) => boolean;
 
 export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
@@ -23,7 +23,7 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   hasClearButton?: boolean;
   onClear?: () => void;
   type?: 'text' | 'email' | 'password';
-  validator?: RegExpWithFlags | ValidationFunction;
+  validator?: RegExpWithFlags | TextValidationFunction;
 };
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({

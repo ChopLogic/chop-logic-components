@@ -24,6 +24,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <input
           aria-errormessage="first-name_error"
           aria-invalid="false"
+          aria-readonly="false"
           autocomplete="off"
           class="sc-huvEkS cAOPpd"
           id="first-name"
@@ -79,6 +80,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <input
           aria-errormessage="last-name_error"
           aria-invalid="false"
+          aria-readonly="false"
           autocomplete="off"
           class="sc-huvEkS cAOPpd"
           id="last-name"

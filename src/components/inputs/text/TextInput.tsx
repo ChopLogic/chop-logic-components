@@ -20,7 +20,7 @@ export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement
   label: string;
   valid?: boolean;
   errorMessage?: string;
-  hasClearButton?: boolean;
+  clearable?: boolean;
   onClear?: () => void;
   type?: 'text' | 'email' | 'password';
   validator?: RegExpWithFlags | TextValidationFunction;
@@ -35,7 +35,8 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   placeholder = 'Type here...',
   disabled = false,
   required = false,
-  hasClearButton = true,
+  clearable = true,
+  readOnly = false,
   autoComplete = 'off',
   type = 'text',
   validator,
@@ -61,18 +62,19 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           disabled={disabled}
           placeholder={placeholder}
           required={required}
+          readOnly={readOnly}
           autoComplete={autoComplete}
           aria-invalid={!valid}
           aria-errormessage={errorId}
+          aria-readonly={readOnly}
           value={value}
           onChange={handleChange}
-          readOnly={props?.readOnly}
           maxLength={props?.maxLength}
-          pattern={props?.pattern}
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
+          tabIndex={props?.tabIndex}
         />
-        {hasClearButton && <ClearInputButton onClear={handleClear} label={label} />}
+        {clearable && <ClearInputButton onClear={handleClear} label={label} />}
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>

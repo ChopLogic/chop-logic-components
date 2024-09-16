@@ -9,12 +9,12 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
   errorMessage,
   placeholder = '0',
   disabled = false,
-  valid = true,
   required = false,
   step = 1,
   max = Number.MAX_SAFE_INTEGER,
   min = Number.MIN_SAFE_INTEGER,
   defaultValue,
+  validator,
 }) => {
   return (
     <div
@@ -31,7 +31,6 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
         name={name}
         placeholder={placeholder}
         label={label}
-        valid={valid}
         required={required}
         disabled={disabled}
         errorMessage={errorMessage}
@@ -40,6 +39,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
         step={step}
         defaultValue={defaultValue}
         style={{ width: '180px' }}
+        validator={validator}
       />
     </div>
   );

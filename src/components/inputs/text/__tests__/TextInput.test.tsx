@@ -81,6 +81,16 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveValue('');
   });
 
+  it('should not display the Clear button if clearable prop is false', () => {
+    render(<TextInput {...testProps} clearable={false} />);
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('should support the readOnly attribute', () => {
+    render(<TextInput {...testProps} readOnly />);
+    expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
+  });
+
   it('should have attribute autocomplete = off by default', () => {
     render(<TextInput {...testProps} />);
     const input = screen.getByRole('textbox');

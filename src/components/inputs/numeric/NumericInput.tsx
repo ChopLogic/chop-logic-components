@@ -1,5 +1,5 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-id';
+import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';

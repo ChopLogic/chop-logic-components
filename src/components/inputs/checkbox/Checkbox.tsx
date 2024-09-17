@@ -1,5 +1,5 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-id';
+import { useElementIds } from 'hooks/use-element-ids';
 
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';

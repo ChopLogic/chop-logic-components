@@ -1,6 +1,6 @@
 import { PropsWithChildren, useRef, useState } from 'react';
 import { useClickOutside } from 'hooks/use-click-outside';
-import { useElementIds } from 'hooks/use-element-id';
+import { useElementIds } from 'hooks/use-element-ids';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useTooltipPosition } from 'hooks/use-tooltip-position';
 

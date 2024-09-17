@@ -1,7 +1,7 @@
 import { BORDERS, COLORS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-export const StyledClearButton = styled.button`
+export const StyledInputInnerButton = styled.button`
   position: absolute;
   bottom: 2px;
   right: 2px;

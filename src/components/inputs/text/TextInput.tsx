@@ -1,8 +1,9 @@
 import React from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
 
-import ClearInputButton from 'components/misc/clear-input-button/ClearInputButton';
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
+import { CLIcon } from 'components/misc/icon/Icon';
+import InputInnerButton from 'components/misc/input-inner-button/InputInnerButton';
 import ChopLogicLabel from 'components/misc/label/Label';
 
 import { useChopLogicTextInputController } from './helpers';
@@ -74,7 +75,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           onFocus={props?.onFocus}
           tabIndex={props?.tabIndex}
         />
-        {clearable && <ClearInputButton onClear={handleClear} label={label} />}
+        {clearable && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={CLIcon.Remove} />}
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>

@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ClearInputButton > should match the snapshot 1`] = `
+exports[`InputInnerButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    aria-label="Clear the input for Test input"
+    aria-label="Test input"
     class="sc-braxZu fkiLQb"
     type="button"
   >

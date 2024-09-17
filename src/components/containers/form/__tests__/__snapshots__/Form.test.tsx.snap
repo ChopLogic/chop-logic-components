@@ -34,7 +34,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           value=""
         />
         <button
-          aria-label="Clear the input for First Name"
+          aria-label="Clear input for First Name"
           class="sc-dENhDJ ijAbWM"
           type="button"
         >
@@ -90,7 +90,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           value=""
         />
         <button
-          aria-label="Clear the input for Last Name"
+          aria-label="Clear input for Last Name"
           class="sc-dENhDJ ijAbWM"
           type="button"
         >

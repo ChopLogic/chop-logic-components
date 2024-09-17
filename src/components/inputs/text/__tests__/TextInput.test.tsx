@@ -10,7 +10,7 @@ describe('ChopLogicTextInput', () => {
   const testProps = {
     id: 'test-input-id',
     name: 'test',
-    label: 'Test Input:',
+    label: 'Test Input',
     placeholder: 'Enter text here...',
     className: 'test-class',
     valid: true,

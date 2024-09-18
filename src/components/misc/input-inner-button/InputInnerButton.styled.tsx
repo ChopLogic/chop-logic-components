@@ -9,7 +9,7 @@ export const StyledInputInnerButton = styled.button`
   background: ${COLORS.background};
   border: none;
   font-size: 1rem;
-  color: ${COLORS.secondary};
+  color: ${COLORS.tertiary};
 
   &:focus-visible {
     outline: ${BORDERS.focusOutline};
@@ -17,7 +17,7 @@ export const StyledInputInnerButton = styled.button`
   }
 
   &:hover {
-    color: ${COLORS.accent};
+    color: ${COLORS.secondary};
   }
 
   svg {

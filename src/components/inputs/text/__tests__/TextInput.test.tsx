@@ -13,7 +13,6 @@ describe('ChopLogicTextInput', () => {
     label: 'Test Input',
     placeholder: 'Enter text here...',
     className: 'test-class',
-    valid: true,
   };
 
   it('should render the input correctly', () => {
@@ -105,5 +104,20 @@ describe('ChopLogicTextInput', () => {
     );
     const input = screen.getByRole('textbox');
     expect(input).toHaveValue('testValue');
+  });
+
+  it('should display the password toggle when input type is password', () => {
+    render(<TextInput {...testProps} type='password' />);
+    expect(screen.getByLabelText('Toggle password visibility')).toBeInTheDocument();
+  });
+
+  it('should toggle password visibility', async () => {
+    render(<TextInput {...testProps} type='password' />);
+    const input = screen.getByPlaceholderText(testProps.placeholder);
+    expect(input).toHaveAttribute('type', 'password');
+    await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+    expect(input).toHaveAttribute('type', 'text');
+    await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+    expect(input).toHaveAttribute('type', 'password');
   });
 });

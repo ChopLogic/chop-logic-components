@@ -66,6 +66,7 @@ export function useChopLogicTextInputController({
   const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
   const [value, setValue] = useState<string>(initialValue);
   const [valid, setValid] = useState<boolean>(true);
+  const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -88,12 +89,18 @@ export function useChopLogicTextInputController({
     onChangeFormInput?.({ name, value: initialValue });
   }, [name]);
 
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   useResetFormInput(handleReset);
 
   return {
     value,
     valid,
+    passwordShown,
     handleChange,
     handleClear,
+    togglePassword,
   };
 }

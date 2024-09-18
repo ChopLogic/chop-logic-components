@@ -43,14 +43,16 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   validator,
   ...props
 }) => {
-  const { elementId, errorId } = useElementIds(props?.id);
-  const { value, valid, handleChange, handleClear } = useChopLogicTextInputController({
+  const { value, valid, handleChange, handleClear, passwordShown, togglePassword } = useChopLogicTextInputController({
     defaultValue,
     name,
     onChange,
     required,
     validator,
   });
+  const { elementId, errorId } = useElementIds(props?.id);
+  const isClearButtonVisible = clearable && type !== 'password';
+  const isPasswordButtonVisible = type === 'password';
 
   return (
     <StyledTextInputContainer className={props?.className} style={props?.style}>
@@ -59,7 +61,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
         <StyledTextInput
           id={elementId}
           name={name}
-          type={type}
+          type={passwordShown ? 'text' : type}
           disabled={disabled}
           placeholder={placeholder}
           required={required}
@@ -75,7 +77,14 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           onFocus={props?.onFocus}
           tabIndex={props?.tabIndex}
         />
-        {clearable && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={CLIcon.Remove} />}
+        {isClearButtonVisible && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={CLIcon.Remove} />}
+        {isPasswordButtonVisible && (
+          <InputInnerButton
+            onClick={togglePassword}
+            label={'Toggle password visibility'}
+            icon={passwordShown ? CLIcon.Hide : CLIcon.Show}
+          />
+        )}
       </StyledTextInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInputContainer>

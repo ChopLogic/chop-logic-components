@@ -46,8 +46,18 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
         onReset={() => setData(undefined)}
         onClickSubmit={(data) => setData(data)}
       >
-        <ChopLogicTextInput name='firstName' label='First Name' />
-        <ChopLogicTextInput name='lastName' label='Last Name' />
+        <ChopLogicTextInput
+          name='firstName'
+          label='First Name'
+          errorMessage='Only latin letters are allowed'
+          validator={{ regexp: '^[A-Za-z ]+$' }}
+        />
+        <ChopLogicTextInput
+          name='lastName'
+          label='Last Name'
+          errorMessage='Only latin letters are allowed'
+          validator={{ regexp: '^[A-Za-z ]+$' }}
+        />
         <ChopLogicNumericInput name='age' label='Age' />
         <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} />
         <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} />

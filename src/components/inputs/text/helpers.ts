@@ -70,23 +70,24 @@ export function useChopLogicTextInputController({
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    const valid = validateTextInputValue({ value, required, validator });
 
     setValue(value);
-    setValid(validateTextInputValue({ value, required, validator }));
+    setValid(valid);
+    onChangeFormInput?.({ name, value, valid });
     onChange?.(event);
-    onChangeFormInput?.({ name, value });
   };
 
   const handleClear = () => {
     setValue('');
     setValid(true);
-    onChangeFormInput?.({ name, value: '' });
+    onChangeFormInput?.({ name, value: '', valid: true });
   };
 
   const handleReset = useCallback(() => {
     setValue(initialValue);
     setValid(true);
-    onChangeFormInput?.({ name, value: initialValue });
+    onChangeFormInput?.({ name, value: initialValue, valid: true });
   }, [name]);
 
   const togglePassword = () => {

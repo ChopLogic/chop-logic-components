@@ -78,17 +78,18 @@ export function useChopLogicNumericInputController({
   const [valid, setValid] = useState<boolean>(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = Number(event.target.value);
+    const value = Number(event.target.value);
+    const valid = validateNumericInputValue({ value, required, validator, maxValue, minValue });
 
-    setValue(newValue);
-    setValid(validateNumericInputValue({ value: newValue, required, validator, maxValue, minValue }));
+    setValue(value);
+    setValid(valid);
+    onChangeFormInput?.({ name, value, valid });
     onChange?.(event);
-    onChangeFormInput?.({ name, value: newValue });
   };
 
   const handleReset = useCallback(() => {
     setValue(initialValue);
-    onChangeFormInput?.({ name, value: initialValue });
+    onChangeFormInput?.({ name, value: initialValue, valid: true });
   }, [name]);
 
   useResetFormInput(handleReset);

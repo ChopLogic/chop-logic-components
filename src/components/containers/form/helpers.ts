@@ -2,6 +2,18 @@ import { FormEvent, useState } from 'react';
 
 import { ChopLogicFormData, ChopLogicFormInputParams } from './FormContext';
 
+export function validateChopLogicFormData(data?: ChopLogicFormData): boolean {
+  if (!data) return true;
+
+  const valid = true;
+
+  for (const key in data) {
+    console.log('key', key, 'value', data[key]);
+  }
+
+  return valid;
+}
+
 export function useChopLogicFormController({
   initialValues,
   onReset,
@@ -15,9 +27,12 @@ export function useChopLogicFormController({
 }) {
   const [formData, setFormData] = useState(initialValues);
   const [resetSignal, setResetSignal] = useState(0);
+  const [valid, setValid] = useState(true);
 
   const handleInputChange = (params: ChopLogicFormInputParams) => {
-    setFormData({ ...formData, [params.name]: params.value });
+    const newData = { ...formData, [params.name]: params.value };
+    setValid(validateChopLogicFormData(newData));
+    setFormData(newData);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -25,6 +40,7 @@ export function useChopLogicFormController({
 
     const uncontrolledData = Object.fromEntries(new FormData(event.target as HTMLFormElement));
     const resultData = { ...uncontrolledData, ...formData };
+    console.log(resultData);
 
     onSubmit?.(event);
     onClickSubmit?.(resultData);
@@ -41,5 +57,6 @@ export function useChopLogicFormController({
     handleSubmit,
     handleReset,
     resetSignal,
+    valid,
   };
 }

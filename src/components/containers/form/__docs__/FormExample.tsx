@@ -61,7 +61,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
         <ChopLogicNumericInput name='age' label='Age' />
         <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} />
         <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} />
-        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' />
+        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required />
       </ChopLogicForm>
       {data && (
         <table style={{ marginTop: '2rem', fontFamily: 'Arial', textAlign: 'left' }}>

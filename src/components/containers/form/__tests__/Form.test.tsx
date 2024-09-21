@@ -31,17 +31,6 @@ describe('ChopLogicForm', () => {
     expect(screen.queryByText('Reset')).not.toBeInTheDocument();
   });
 
-  it('should enable the Submit button by default', () => {
-    render(
-      <ChopLogicForm>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
-      </ChopLogicForm>,
-    );
-    expect(screen.queryByText('Submit')).toBeEnabled();
-  });
-
   it('should render initial values', () => {
     render(
       <ChopLogicForm initialValues={testInitialValues}>

@@ -264,6 +264,21 @@ exports[`ChopLogicIcon > HelpIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
+exports[`ChopLogicIcon > HideIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M12 19c.946 0 1.81-.103 2.598-.281l-1.757-1.757c-.273.021-.55.038-.841.038-5.351 0-7.424-3.846-7.926-5a8.642 8.642 0 011.508-2.297L4.184 8.305c-1.538 1.667-2.121 3.346-2.132 3.379a.994.994 0 000 .633C2.073 12.383 4.367 19 12 19zm0-14c-1.837 0-3.346.396-4.604.981L3.707 2.293 2.293 3.707l18 18 1.414-1.414-3.319-3.319c2.614-1.951 3.547-4.615 3.561-4.657a.994.994 0 000-.633C21.927 11.617 19.633 5 12 5zm4.972 10.558l-2.28-2.28c.19-.39.308-.819.308-1.278 0-1.641-1.359-3-3-3-.459 0-.888.118-1.277.309L8.915 7.501A9.26 9.26 0 0112 7c5.351 0 7.424 3.846 7.926 5-.302.692-1.166 2.342-2.954 3.558z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
 exports[`ChopLogicIcon > InfoIcon should match the snapshot 1`] = `
 <DocumentFragment>
   <svg
@@ -332,15 +347,23 @@ exports[`ChopLogicIcon > RemoveIcon should match the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
-    viewBox="0 0 64 64"
+    viewBox="0 0 512 512"
     width="1em"
   >
     <path
-      d="M18.947 17.153l26.098 25.903M19.045 43.153l25.902-26.097"
+      d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
       fill="none"
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width="2"
+      stroke-linejoin="round"
+      stroke-width="32"
+    />
+    <path
+      d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="32"
     />
   </svg>
 </DocumentFragment>
@@ -356,6 +379,24 @@ exports[`ChopLogicIcon > SaveIcon should match the snapshot 1`] = `
   >
     <path
       d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > ShowIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M12 9a3.02 3.02 0 00-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"
+    />
+    <path
+      d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"
     />
   </svg>
 </DocumentFragment>

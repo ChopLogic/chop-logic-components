@@ -15,11 +15,13 @@ import DownloadIcon from './elements/Download';
 import ErrorIcon from './elements/Error';
 import ForwardIcon from './elements/Forward';
 import HelpIcon from './elements/Help';
+import HideIcon from './elements/Hide';
 import InfoIcon from './elements/Info';
 import PasteIcon from './elements/Paste';
 import QuestionIcon from './elements/Question';
 import RemoveIcon from './elements/Remove';
 import SaveIcon from './elements/Save';
+import ShowIcon from './elements/Show';
 import UploadIcon from './elements/Upload';
 import WarningIcon from './elements/Warning';
 
@@ -39,10 +41,12 @@ export enum CLIcon {
   Error = 'error',
   Forward = 'forward',
   Help = 'help',
+  Hide = 'hide',
   Info = 'info',
   Paste = 'paste',
   Question = 'question',
   Save = 'save',
+  Show = 'show',
   Upload = 'upload',
   Warning = 'warning',
   Remove = 'remove',
@@ -80,6 +84,8 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <ForwardIcon />;
     case CLIcon.Help:
       return <HelpIcon />;
+    case CLIcon.Hide:
+      return <HideIcon />;
     case CLIcon.Info:
       return <InfoIcon />;
     case CLIcon.Paste:
@@ -88,6 +94,8 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <QuestionIcon />;
     case CLIcon.Save:
       return <SaveIcon />;
+    case CLIcon.Show:
+      return <ShowIcon />;
     case CLIcon.Upload:
       return <UploadIcon />;
     case CLIcon.Warning:

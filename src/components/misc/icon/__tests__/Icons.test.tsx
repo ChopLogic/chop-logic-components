@@ -16,11 +16,13 @@ import DownloadIcon from '../elements/Download';
 import ErrorIcon from '../elements/Error';
 import ForwardIcon from '../elements/Forward';
 import HelpIcon from '../elements/Help';
+import HideIcon from '../elements/Hide';
 import InfoIcon from '../elements/Info';
 import PasteIcon from '../elements/Paste';
 import QuestionIcon from '../elements/Question';
 import RemoveIcon from '../elements/Remove';
 import SaveIcon from '../elements/Save';
+import ShowIcon from '../elements/Show';
 import UploadIcon from '../elements/Upload';
 import WarningIcon from '../elements/Warning';
 
@@ -100,6 +102,11 @@ describe('ChopLogicIcon', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('HideIcon should match the snapshot', () => {
+    const { asFragment } = render(<HideIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('InfoIcon should match the snapshot', () => {
     const { asFragment } = render(<InfoIcon />);
     expect(asFragment()).toMatchSnapshot();
@@ -122,6 +129,11 @@ describe('ChopLogicIcon', () => {
 
   it('SaveIcon should match the snapshot', () => {
     const { asFragment } = render(<SaveIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ShowIcon should match the snapshot', () => {
+    const { asFragment } = render(<ShowIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 

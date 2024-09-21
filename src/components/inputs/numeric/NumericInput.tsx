@@ -1,5 +1,5 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-id';
+import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/misc/label/Label';
@@ -7,11 +7,14 @@ import ChopLogicLabel from 'components/misc/label/Label';
 import { useChopLogicNumericInputController } from './helpers';
 import { StyledNumericInput, StyledNumericInputContainer, StyledNumericInputWrapper } from './NumericInput.styled';
 
+export type NumericValidationFunction = (input?: number) => boolean;
+
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   label: string;
   valid?: boolean;
   errorMessage?: string;
+  validator?: NumericValidationFunction;
 };
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
@@ -22,15 +25,22 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   onChange,
   min,
   max,
-  placeholder = '0',
   disabled = false,
-  valid = true,
   required = false,
   step = 1,
+  validator,
   ...props
 }) => {
   const { elementId, errorId } = useElementIds(props?.id);
-  const { value, handleChange, minValue, maxValue } = useChopLogicNumericInputController({ name, defaultValue, min, max, onChange });
+  const { value, valid, handleChange, minValue, maxValue } = useChopLogicNumericInputController({
+    name,
+    defaultValue,
+    min,
+    max,
+    onChange,
+    required,
+    validator,
+  });
 
   return (
     <StyledNumericInputContainer className={props?.className} style={props?.style}>
@@ -41,7 +51,6 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           name={name}
           type='number'
           disabled={disabled}
-          placeholder={placeholder}
           required={required}
           aria-invalid={!valid}
           aria-errormessage={errorId}
@@ -50,6 +59,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           min={minValue}
           max={maxValue}
           step={step}
+          placeholder={props?.placeholder}
           readOnly={props?.readOnly}
           pattern={props?.pattern}
           onBlur={props?.onBlur}

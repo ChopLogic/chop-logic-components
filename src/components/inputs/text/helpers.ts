@@ -3,6 +3,32 @@ import { useResetFormInput } from 'hooks/use-reset-form-input';
 
 import { ChopLogicFormContext, ChopLogicFormData } from 'components/containers/form/FormContext';
 
+import { RegExpWithFlags, TextValidationFunction } from './TextInput';
+
+export function validateTextInputValue({
+  value,
+  required,
+  validator,
+}: {
+  value: string;
+  required: boolean;
+  validator?: RegExpWithFlags | TextValidationFunction;
+}): boolean {
+  if (required && !validator && !value.length) {
+    return false;
+  }
+
+  if (validator && typeof validator === 'function') {
+    return validator(value);
+  }
+
+  if (validator && typeof validator === 'object') {
+    return new RegExp(validator.regexp, validator?.flags).test(value);
+  }
+
+  return true;
+}
+
 export function getTextInputInitialValue({
   name,
   initialValues,
@@ -27,38 +53,55 @@ export function useChopLogicTextInputController({
   name,
   defaultValue,
   onChange,
+  required,
+  validator,
 }: {
   name: string;
+  required: boolean;
+  validator?: RegExpWithFlags | TextValidationFunction;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
   const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
   const [value, setValue] = useState<string>(initialValue);
+  const [valid, setValid] = useState<boolean>(true);
+  const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    const valid = validateTextInputValue({ value, required, validator });
 
     setValue(value);
+    setValid(valid);
+    onChangeFormInput?.({ name, value, valid });
     onChange?.(event);
-    onChangeFormInput?.({ name, value });
   };
 
   const handleClear = () => {
     setValue('');
-    onChangeFormInput?.({ name, value: '' });
+    setValid(true);
+    onChangeFormInput?.({ name, value: '', valid: true });
   };
 
   const handleReset = useCallback(() => {
     setValue(initialValue);
-    onChangeFormInput?.({ name, value: initialValue });
+    setValid(true);
+    onChangeFormInput?.({ name, value: initialValue, valid: true });
   }, [name]);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   useResetFormInput(handleReset);
 
   return {
     value,
+    valid,
+    passwordShown,
     handleChange,
     handleClear,
+    togglePassword,
   };
 }

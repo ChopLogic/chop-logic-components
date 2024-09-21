@@ -2,33 +2,35 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ClearInputButton from '../ClearInputButton';
+import { CLIcon } from 'components/misc/icon/Icon';
 
-describe('ClearInputButton', () => {
+import InputInnerButton from '../InputInnerButton';
+
+describe('InputInnerButton', () => {
   const testProps = {
-    onClear: vi.fn(),
-    visible: true,
+    onClick: vi.fn(),
     label: 'Test input',
+    icon: CLIcon.Remove,
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ClearInputButton {...testProps} />);
+    const { asFragment } = render(<InputInnerButton {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the accessible label', () => {
-    render(<ClearInputButton {...testProps} />);
-    expect(screen.getByLabelText(`Clear the input for ${testProps.label}`)).toBeInTheDocument();
+    render(<InputInnerButton {...testProps} />);
+    expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
   it('should call onClear handler', async () => {
-    render(<ClearInputButton {...testProps} />);
+    render(<InputInnerButton {...testProps} />);
     await userEvent.click(screen.getByRole('button'));
-    expect(testProps.onClear).toHaveBeenCalledOnce();
+    expect(testProps.onClick).toHaveBeenCalledOnce();
   });
 
   it('should have type button', () => {
-    render(<ClearInputButton {...testProps} />);
+    render(<InputInnerButton {...testProps} />);
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
   });
 });

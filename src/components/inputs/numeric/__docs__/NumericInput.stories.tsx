@@ -12,17 +12,15 @@ type Story = StoryObj<typeof NumericInputExample>;
 
 export const Default: Story = {
   args: {
-    placeholder: '0',
     defaultValue: 0,
     label: 'Enter the number:',
     name: 'number',
     id: 'number-input',
-    valid: true,
     required: false,
     disabled: false,
-    errorMessage: 'Cannot parse the entered number',
-    max: 1000,
-    min: -1000,
+    errorMessage: 'Enter a number between -100 and 100',
+    max: 100,
+    min: -100,
     step: 1,
   },
 };

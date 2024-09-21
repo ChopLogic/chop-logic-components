@@ -1,7 +1,7 @@
 import { BORDERS, COLORS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-export const StyledClearButton = styled.button`
+export const StyledInputInnerButton = styled.button`
   position: absolute;
   bottom: 2px;
   right: 2px;
@@ -9,7 +9,7 @@ export const StyledClearButton = styled.button`
   background: ${COLORS.background};
   border: none;
   font-size: 1rem;
-  color: ${COLORS.secondary};
+  color: ${COLORS.tertiary};
 
   &:focus-visible {
     outline: ${BORDERS.focusOutline};
@@ -17,7 +17,7 @@ export const StyledClearButton = styled.button`
   }
 
   &:hover {
-    color: ${COLORS.accent};
+    color: ${COLORS.secondary};
   }
 
   svg {

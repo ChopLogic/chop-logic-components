@@ -10,10 +10,9 @@ describe('ChopLogicTextInput', () => {
   const testProps = {
     id: 'test-input-id',
     name: 'test',
-    label: 'Test Input:',
+    label: 'Test Input',
     placeholder: 'Enter text here...',
     className: 'test-class',
-    valid: true,
   };
 
   it('should render the input correctly', () => {
@@ -81,6 +80,16 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveValue('');
   });
 
+  it('should not display the Clear button if clearable prop is false', () => {
+    render(<TextInput {...testProps} clearable={false} />);
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('should support the readOnly attribute', () => {
+    render(<TextInput {...testProps} readOnly />);
+    expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
+  });
+
   it('should have attribute autocomplete = off by default', () => {
     render(<TextInput {...testProps} />);
     const input = screen.getByRole('textbox');
@@ -95,5 +104,20 @@ describe('ChopLogicTextInput', () => {
     );
     const input = screen.getByRole('textbox');
     expect(input).toHaveValue('testValue');
+  });
+
+  it('should display the password toggle when input type is password', () => {
+    render(<TextInput {...testProps} type='password' />);
+    expect(screen.getByLabelText('Toggle password visibility')).toBeInTheDocument();
+  });
+
+  it('should toggle password visibility', async () => {
+    render(<TextInput {...testProps} type='password' />);
+    const input = screen.getByPlaceholderText(testProps.placeholder);
+    expect(input).toHaveAttribute('type', 'password');
+    await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+    expect(input).toHaveAttribute('type', 'text');
+    await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+    expect(input).toHaveAttribute('type', 'password');
   });
 });

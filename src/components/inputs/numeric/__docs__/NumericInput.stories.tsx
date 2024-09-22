@@ -12,15 +12,17 @@ type Story = StoryObj<typeof NumericInputExample>;
 
 export const Default: Story = {
   args: {
+    name: 'age',
+    label: 'Enter your age:',
+    id: 'age-input',
     defaultValue: 0,
-    label: 'Enter the number:',
-    name: 'number',
-    id: 'number-input',
+    max: 100,
+    min: 0,
+    step: 1,
     required: false,
     disabled: false,
-    errorMessage: 'Enter a number between -100 and 100',
-    max: 100,
-    min: -100,
-    step: 1,
+    readOnly: false,
+    errorMessage: 'Enter a number between 1 and 99',
+    validator: (age) => !!age && age >= 1 && age < 100,
   },
 };

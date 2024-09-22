@@ -20,10 +20,10 @@ import { NumericInput } from 'chop-logic-components';
 const Example = () => {
   return (
     <ChopLogicNumericInput
-      label='Enter the number:'
-      name='number'
-      id='number-input'
-      errorMessage='Cannot parse the entered number'
+      label='Enter your age'
+      name='age'
+      errorMessage='Enter a number between 1 and 99'
+      validator={(age) => !!age && age >= 1 && age < 100}
     />;
   );
 };
@@ -33,15 +33,24 @@ export default Example;
 
 #### Props
 
-- **name** - A required string that describes the input for internal use inside a form or another container.
-- **label** - A visible label that describes the input purpose.
-- **placeholder** - A string that represents the placeholder text inside the input field.
-- **disabled** - A boolean indicating whether the input should be disabled or not. When disabled, the input cannot be interacted with.
-- **required** - A boolean indicating whether the input is required or not.
+_Required props_
+
+- **name** `string` - A string that describes the input for internal use inside a form or another container. Use `camelCase` for the input name.
+- **label** `string` - A visible label that describes the input purpose. Any string is acceptable.
+
+_Optional props_
+
+- **id** `string` - Unique identifier of the input on the page. If not specified, the id will be generated automatically.
+- **disabled** `boolean` - When disabled, the input cannot be interacted with. `false` by default.
+- **readOnly** `boolean` - When readonly, the input cannot be changed. `false` by default.
+- **required** `boolean` - A boolean indicating whether the input is required or not. Required input is marked with a red asterisk. `false` by default.
+- **validator** `(input: string) => boolean` - A function that checks whether the input value matches the given conditions. When invalid, the input becomes highlighted and displays an error message.
 - **errorMessage** - An optional string that displays when the input value is incorrect.
-- **max** - The maximum possible numeric value in the input.
-- **min** - The munimum possible numeric value in the input.
-- **step** - The step at which the value is incremented/decremented.
-- **onChange** _`(e) => void`_ - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
-- **InputHTMLAttributes** - all standard HTML input attributes (**value**, **pattern**, **readOnly**, etc.).
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+- **onChange** `(event: React.ChangeEvent<HTMLInputElement>) => void` - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
+- **onFocus** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus is set on the input.
+- **onBlur** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus leaves the input.
+- **step** `number` - The number by which the input value is incremented/decremented when pressing keyboard keys. `1` by default.
+- **max** `number` - Maximum number in the input. `false` by default.
+- **min** `number` - Minimum number in the input.
+- **defaultValue** `number` - Initial number in the input. `0` by default.
+- **HTMLAttributes** - global HTML attributes: **className**, **title**, **style**, **tabIndex**, etc.

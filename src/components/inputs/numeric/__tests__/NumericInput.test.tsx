@@ -10,7 +10,6 @@ describe('NumericInput', () => {
     id: 'numeric-input',
     name: 'quantity',
     label: 'Quantity',
-    placeholder: '0',
   };
 
   it('should match the snapshot', () => {
@@ -28,7 +27,6 @@ describe('NumericInput', () => {
     const input = screen.getByRole('spinbutton');
     expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute('type', 'number');
-    expect(input).toHaveAttribute('placeholder', '0');
   });
 
   it('displays the correct default value', () => {
@@ -56,8 +54,8 @@ describe('NumericInput', () => {
     expect(input).toBeDisabled();
   });
 
-  it('displays error message when invalid', () => {
-    render(<NumericInput {...testProps} valid={false} errorMessage='Invalid input' />);
+  it('displays error message', () => {
+    render(<NumericInput {...testProps} errorMessage='Invalid input' />);
 
     expect(screen.getByText(/Invalid input/i)).toBeInTheDocument();
   });

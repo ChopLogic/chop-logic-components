@@ -12,7 +12,6 @@ export type NumericValidationFunction = (input?: number) => boolean;
 export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   label: string;
-  valid?: boolean;
   errorMessage?: string;
   validator?: NumericValidationFunction;
 };
@@ -21,14 +20,15 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
   label,
   errorMessage,
-  defaultValue,
   onChange,
+  validator,
   min,
   max,
   disabled = false,
   required = false,
+  readOnly = false,
+  defaultValue = 0,
   step = 1,
-  validator,
   ...props
 }) => {
   const { elementId, errorId } = useElementIds(props?.id);
@@ -52,6 +52,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           type='number'
           disabled={disabled}
           required={required}
+          readOnly={readOnly}
           aria-invalid={!valid}
           aria-errormessage={errorId}
           value={value.toString()}
@@ -59,11 +60,9 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           min={minValue}
           max={maxValue}
           step={step}
-          placeholder={props?.placeholder}
-          readOnly={props?.readOnly}
-          pattern={props?.pattern}
           onBlur={props?.onBlur}
           onFocus={props?.onFocus}
+          tabIndex={props?.tabIndex}
         />
       </StyledNumericInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />

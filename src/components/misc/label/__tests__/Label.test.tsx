@@ -9,7 +9,6 @@ describe('ChopLogicLabel', () => {
     label: 'Test label',
     required: true,
     inputId: 'test-input-id',
-    className: 'test-class-name',
   };
 
   it('should render correctly as required label', () => {

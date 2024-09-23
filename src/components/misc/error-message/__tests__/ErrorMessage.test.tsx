@@ -8,7 +8,6 @@ describe('ChopLogicErrorMessage', () => {
     errorId: 'test-error-id',
     visible: true,
     message: 'Incorrect input',
-    className: 'custom-error',
   };
 
   it('should match the snapshot', () => {

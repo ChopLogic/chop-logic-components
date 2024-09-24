@@ -3,13 +3,13 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-dJDBYC bdFbQA"
+    class="sc-dorvvM gjMSAm"
   >
     <div
       class="sc-eEPDDI glqkae"
     >
       <div
-        class="sc-gutikT hKaewG"
+        class="sc-gutikT jPDHqG"
       >
         <label
           class="sc-elDIKY gnGMO"
@@ -21,46 +21,54 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             First Name
           </span>
         </label>
-        <input
-          aria-errormessage="first-name_error"
-          aria-invalid="false"
-          aria-readonly="false"
-          autocomplete="off"
-          class="sc-huvEkS cAOPpd"
-          id="first-name"
-          name="firstName"
-          placeholder="Type here..."
-          type="text"
-          value=""
-        />
-        <button
-          aria-label="Clear input for First Name"
-          class="sc-dENhDJ bnDGKP"
-          type="button"
+        <span
+          class="sc-fLVwEd iDoyET"
         >
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 512 512"
-            width="1em"
+          <input
+            aria-errormessage="first-name_error"
+            aria-invalid="false"
+            aria-readonly="false"
+            autocomplete="off"
+            class="sc-huvEkS gnPqdu"
+            id="first-name"
+            name="firstName"
+            placeholder="Type here..."
+            type="text"
+            value=""
+          />
+          <span
+            class="sc-gLXSEc cHzqKq"
           >
-            <path
-              d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-              fill="none"
-              stroke="currentColor"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-            <path
-              d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-          </svg>
-        </button>
+            <button
+              aria-label="Clear input for First Name"
+              class="sc-dENhDJ kHGEJW"
+              type="button"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
       </div>
       <span
         class="sc-jCbFiK cJIhwu"
@@ -73,7 +81,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-eEPDDI glqkae"
     >
       <div
-        class="sc-gutikT hKaewG"
+        class="sc-gutikT jPDHqG"
       >
         <label
           class="sc-elDIKY gnGMO"
@@ -85,46 +93,54 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             Last Name
           </span>
         </label>
-        <input
-          aria-errormessage="last-name_error"
-          aria-invalid="false"
-          aria-readonly="false"
-          autocomplete="off"
-          class="sc-huvEkS cAOPpd"
-          id="last-name"
-          name="lastName"
-          placeholder="Type here..."
-          type="text"
-          value=""
-        />
-        <button
-          aria-label="Clear input for Last Name"
-          class="sc-dENhDJ bnDGKP"
-          type="button"
+        <span
+          class="sc-fLVwEd iDoyET"
         >
-          <svg
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 512 512"
-            width="1em"
+          <input
+            aria-errormessage="last-name_error"
+            aria-invalid="false"
+            aria-readonly="false"
+            autocomplete="off"
+            class="sc-huvEkS gnPqdu"
+            id="last-name"
+            name="lastName"
+            placeholder="Type here..."
+            type="text"
+            value=""
+          />
+          <span
+            class="sc-gLXSEc cHzqKq"
           >
-            <path
-              d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-              fill="none"
-              stroke="currentColor"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-            <path
-              d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-          </svg>
-        </button>
+            <button
+              aria-label="Clear input for Last Name"
+              class="sc-dENhDJ kHGEJW"
+              type="button"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
       </div>
       <span
         class="sc-jCbFiK cJIhwu"
@@ -170,7 +186,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-kTYLvb jyjoEi"
+      class="sc-kyMESl eINfot"
     >
       <button
         class="sc-braxZu hToSfH"

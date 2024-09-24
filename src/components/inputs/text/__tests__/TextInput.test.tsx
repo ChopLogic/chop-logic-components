@@ -120,4 +120,9 @@ describe('ChopLogicTextInput', () => {
     await userEvent.click(screen.getByLabelText('Toggle password visibility'));
     expect(input).toHaveAttribute('type', 'password');
   });
+
+  it('should have the correct email type', () => {
+    render(<TextInput {...testProps} type='email' />);
+    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
+  });
 });

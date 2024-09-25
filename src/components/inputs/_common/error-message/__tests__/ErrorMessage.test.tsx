@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
+import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
 
 describe('ChopLogicErrorMessage', () => {
   const testProps = {

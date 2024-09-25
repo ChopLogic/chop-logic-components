@@ -6,7 +6,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     class="sc-knesRu keCzej test-class"
   >
     <div
-      class="sc-dnaUSb kbfhyF"
+      class="sc-dnaUSb bFjBsU"
     >
       <label
         class="sc-gnpbhQ jropmu"
@@ -19,7 +19,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
         </span>
       </label>
       <span
-        class="sc-dkjaqt jOXfEg"
+        class="sc-dkjaqt lfyCkO"
       >
         <input
           aria-errormessage="test-input-id_error"
@@ -83,7 +83,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     class="sc-knesRu keCzej test-class"
   >
     <div
-      class="sc-dnaUSb kbfhyF"
+      class="sc-dnaUSb bFjBsU"
     >
       <label
         class="sc-gnpbhQ jropmu"
@@ -102,7 +102,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
         </abbr>
       </label>
       <span
-        class="sc-dkjaqt jOXfEg"
+        class="sc-dkjaqt lfyCkO"
       >
         <input
           aria-errormessage="test-input-id_error"

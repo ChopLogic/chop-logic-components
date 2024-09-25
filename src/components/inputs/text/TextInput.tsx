@@ -1,10 +1,10 @@
 import React from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
 
-import ChopLogicErrorMessage from 'components/misc/error-message/ErrorMessage';
+import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
+import InputInnerButton from 'components/inputs/_common/input-inner-button/InputInnerButton';
+import ChopLogicLabel from 'components/inputs/_common/label/Label';
 import { CLIcon } from 'components/misc/icon/Icon';
-import InputInnerButton from 'components/misc/input-inner-button/InputInnerButton';
-import ChopLogicLabel from 'components/misc/label/Label';
 
 import { useChopLogicTextInputController } from './helpers';
 import {

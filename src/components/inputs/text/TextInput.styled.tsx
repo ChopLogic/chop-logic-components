@@ -8,12 +8,11 @@ export const StyledTextInputContainer = styled.div`
 `;
 
 export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: ${UNITS.smallGap};
-  padding: ${UNITS.mediumGap};
+  padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
   box-shadow: ${SHADOWS.box};
@@ -70,7 +69,7 @@ export const StyledTextInput = styled.input`
 
 export const StyledFieldWrapper = styled.span`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   gap: ${UNITS.smallGap};
 `;

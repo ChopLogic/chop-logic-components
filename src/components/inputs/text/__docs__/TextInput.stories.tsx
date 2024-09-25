@@ -41,7 +41,7 @@ export const PasswordInput: Story = {
     type: 'password',
     required: true,
     disabled: false,
-    clearable: true,
+    clearable: false,
     errorMessage: 'Your password should contain at least 6 characters',
     validator: (input) => input.length > 6,
   },

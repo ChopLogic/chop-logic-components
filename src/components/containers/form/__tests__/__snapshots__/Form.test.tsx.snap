@@ -9,7 +9,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-eEPDDI glqkae"
     >
       <div
-        class="sc-gutikT jPDHqG"
+        class="sc-gutikT hzwoDv"
       >
         <label
           class="sc-elDIKY gnGMO"
@@ -22,7 +22,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </span>
         </label>
         <span
-          class="sc-fLVwEd iDoyET"
+          class="sc-fLVwEd duryWB"
         >
           <input
             aria-errormessage="first-name_error"
@@ -81,7 +81,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-eEPDDI glqkae"
     >
       <div
-        class="sc-gutikT jPDHqG"
+        class="sc-gutikT hzwoDv"
       >
         <label
           class="sc-elDIKY gnGMO"
@@ -94,7 +94,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </span>
         </label>
         <span
-          class="sc-fLVwEd iDoyET"
+          class="sc-fLVwEd duryWB"
         >
           <input
             aria-errormessage="last-name_error"

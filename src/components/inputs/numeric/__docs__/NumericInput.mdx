@@ -44,11 +44,13 @@ _Optional props_
 - **disabled** `boolean` - When disabled, the input cannot be interacted with. `false` by default.
 - **readOnly** `boolean` - When readonly, the input cannot be changed. `false` by default.
 - **required** `boolean` - A boolean indicating whether the input is required or not. Required input is marked with a red asterisk. `false` by default.
+- **clearable** `boolean` - A boolean indicating whether to display the input clear button. Defaults to `true`.
 - **validator** `(input: string) => boolean` - A function that checks whether the input value matches the given conditions. When invalid, the input becomes highlighted and displays an error message.
 - **errorMessage** - An optional string that displays when the input value is incorrect.
 - **onChange** `(event: React.ChangeEvent<HTMLInputElement>) => void` - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
 - **onFocus** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus is set on the input.
 - **onBlur** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus leaves the input.
+- **onClear** `() => void` - A function that is called when the input value is cleared using the Clear button.
 - **step** `number` - The number by which the input value is incremented/decremented when pressing keyboard keys. `1` by default.
 - **max** `number` - Maximum number in the input. `false` by default.
 - **min** `number` - Minimum number in the input.

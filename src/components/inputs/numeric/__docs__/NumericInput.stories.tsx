@@ -22,6 +22,7 @@ export const Default: Story = {
     required: false,
     disabled: false,
     readOnly: false,
+    clearable: false,
     errorMessage: 'Enter a number between 1 and 99',
     validator: (age) => !!age && age >= 1 && age < 100,
   },

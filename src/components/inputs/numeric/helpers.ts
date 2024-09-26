@@ -57,16 +57,22 @@ export function useChopLogicNumericInputController({
   name,
   defaultValue,
   onChange,
+  onClear,
+  onSpinButtonClick,
   min,
   max,
+  step,
   required,
   validator,
 }: {
   name: string;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onClear?: () => void;
+  onSpinButtonClick?: (value?: number) => void;
   min?: string | number;
   max?: string | number;
+  step: number;
   required: boolean;
   validator?: NumericValidationFunction;
 }) {
@@ -77,14 +83,32 @@ export function useChopLogicNumericInputController({
   const [value, setValue] = useState<number>(initialValue);
   const [valid, setValid] = useState<boolean>(true);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(event.target.value);
-    const valid = validateNumericInputValue({ value, required, validator, maxValue, minValue });
-
+  const updateValue = (value: number) => {
     setValue(value);
+    const valid = validateNumericInputValue({ value, required, validator, maxValue, minValue });
     setValid(valid);
     onChangeFormInput?.({ name, value, valid });
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(event.target.value);
+    updateValue(value);
     onChange?.(event);
+  };
+
+  const handleClear = () => {
+    updateValue(0);
+    onClear?.();
+  };
+
+  const increment = () => {
+    updateValue(value + step);
+    onSpinButtonClick?.(value + step);
+  };
+
+  const decrement = () => {
+    updateValue(value - step);
+    onSpinButtonClick?.(value - step);
   };
 
   const handleReset = useCallback(() => {
@@ -96,9 +120,12 @@ export function useChopLogicNumericInputController({
 
   return {
     handleChange,
+    handleClear,
     value,
     valid,
     minValue,
     maxValue,
+    increment,
+    decrement,
   };
 }

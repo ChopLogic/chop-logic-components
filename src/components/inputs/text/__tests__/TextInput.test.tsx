@@ -80,6 +80,14 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveValue('');
   });
 
+  it('should call onClear handler when Clear button is clicked', async () => {
+    const mockClear = vi.fn();
+    render(<TextInput {...testProps} onClear={mockClear} />);
+    await userEvent.type(screen.getByRole('textbox'), 't');
+    await userEvent.click(screen.getByRole('button'));
+    expect(mockClear).toHaveBeenCalledOnce();
+  });
+
   it('should not display the Clear button if clearable prop is false', () => {
     render(<TextInput {...testProps} clearable={false} />);
     expect(screen.queryByRole('button')).not.toBeInTheDocument();

@@ -39,6 +39,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   errorMessage,
   defaultValue,
   onChange,
+  onClear,
   validator,
   placeholder = 'Type here...',
   disabled = false,
@@ -53,6 +54,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
     defaultValue,
     name,
     onChange,
+    onClear,
     required,
     validator,
   });

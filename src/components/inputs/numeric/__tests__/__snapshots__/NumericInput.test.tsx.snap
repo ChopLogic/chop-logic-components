@@ -35,7 +35,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
           value="0"
         />
         <span
-          class="sc-jCbFiK gUYGTf"
+          class="sc-jCbFiK fEirZx"
         >
           <button
             aria-label="Increment value for Quantity"

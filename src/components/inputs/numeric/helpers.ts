@@ -57,7 +57,6 @@ export function useChopLogicNumericInputController({
   name,
   defaultValue,
   onChange,
-  onClear,
   onSpinButtonClick,
   min,
   max,
@@ -68,7 +67,6 @@ export function useChopLogicNumericInputController({
   name: string;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onClear?: () => void;
   onSpinButtonClick?: (value?: number) => void;
   min?: string | number;
   max?: string | number;
@@ -96,11 +94,6 @@ export function useChopLogicNumericInputController({
     onChange?.(event);
   };
 
-  const handleClear = () => {
-    updateValue(0);
-    onClear?.();
-  };
-
   const increment = () => {
     updateValue(value + step);
     onSpinButtonClick?.(value + step);
@@ -120,7 +113,6 @@ export function useChopLogicNumericInputController({
 
   return {
     handleChange,
-    handleClear,
     value,
     valid,
     minValue,

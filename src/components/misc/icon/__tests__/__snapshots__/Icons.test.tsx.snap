@@ -196,6 +196,22 @@ exports[`ChopLogicIcon > DeleteIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
+exports[`ChopLogicIcon > DownIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M1.553 6.776a.5.5 0 01.67-.223L8 9.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
 exports[`ChopLogicIcon > DownloadIcon should match the snapshot 1`] = `
 <DocumentFragment>
   <svg
@@ -397,6 +413,22 @@ exports[`ChopLogicIcon > ShowIcon should match the snapshot 1`] = `
     />
     <path
       d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`ChopLogicIcon > UpIcon should match the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M7.776 5.553a.5.5 0 01.448 0l6 3a.5.5 0 11-.448.894L8 6.56 2.224 9.447a.5.5 0 11-.448-.894l6-3z"
+      fill-rule="evenodd"
     />
   </svg>
 </DocumentFragment>

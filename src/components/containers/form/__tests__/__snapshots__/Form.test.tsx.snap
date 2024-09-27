@@ -182,7 +182,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             value="0"
           />
           <span
-            class="sc-epPVmt ebvVEK"
+            class="sc-epPVmt kpcdVk"
           >
             <button
               aria-label="Increment value for Age"

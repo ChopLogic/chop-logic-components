@@ -86,7 +86,16 @@ export const StyledFieldWrapper = styled.span`
 
 export const StyledButtonsWrapper = styled.span`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-width: 0;
+
+  button {
+    padding: 0;
+  }
+
+  svg {
+    height: 1.25rem;
+  }
 `;

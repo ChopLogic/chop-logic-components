@@ -3,7 +3,7 @@ import { useClickOutside } from 'hooks/use-click-outside';
 import { useElementIds } from 'hooks/use-element-ids';
 import { useKeyPress } from 'hooks/use-key-press';
 
-import ChopLogicLabel from 'components/misc/label/Label';
+import ChopLogicLabel from 'components/inputs/_common/label/Label';
 
 import { SelectValue } from '../select/Select';
 

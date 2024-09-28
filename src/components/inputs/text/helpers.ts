@@ -53,6 +53,7 @@ export function useChopLogicTextInputController({
   name,
   defaultValue,
   onChange,
+  onClear,
   required,
   validator,
 }: {
@@ -61,6 +62,7 @@ export function useChopLogicTextInputController({
   validator?: RegExpWithFlags | TextValidationFunction;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onClear?: () => void;
 }) {
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
   const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
@@ -82,6 +84,7 @@ export function useChopLogicTextInputController({
     setValue('');
     setValid(true);
     onChangeFormInput?.({ name, value: '', valid: true });
+    onClear?.();
   };
 
   const handleReset = useCallback(() => {

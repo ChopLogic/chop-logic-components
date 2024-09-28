@@ -14,6 +14,7 @@ export const StyledCheckboxWrapper = styled.div<{ $disabled: boolean }>`
 
   label {
     cursor: pointer;
+    gap: ${UNITS.mediumGap};
     font-size: 1rem !important;
     &:hover,
     &:active {

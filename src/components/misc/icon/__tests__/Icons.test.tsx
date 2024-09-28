@@ -12,6 +12,7 @@ import ClearIcon from '../elements/Clear';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
 import DeleteIcon from '../elements/Delete';
+import DownIcon from '../elements/Down';
 import DownloadIcon from '../elements/Download';
 import ErrorIcon from '../elements/Error';
 import ForwardIcon from '../elements/Forward';
@@ -23,6 +24,7 @@ import QuestionIcon from '../elements/Question';
 import RemoveIcon from '../elements/Remove';
 import SaveIcon from '../elements/Save';
 import ShowIcon from '../elements/Show';
+import UpIcon from '../elements/Up';
 import UploadIcon from '../elements/Upload';
 import WarningIcon from '../elements/Warning';
 
@@ -87,6 +89,11 @@ describe('ChopLogicIcon', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('DownIcon should match the snapshot', () => {
+    const { asFragment } = render(<DownIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('ErrorIcon should match the snapshot', () => {
     const { asFragment } = render(<ErrorIcon />);
     expect(asFragment()).toMatchSnapshot();
@@ -139,6 +146,11 @@ describe('ChopLogicIcon', () => {
 
   it('UploadIcon should match the snapshot', () => {
     const { asFragment } = render(<UploadIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('UpIcon should match the snapshot', () => {
+    const { asFragment } = render(<UpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 

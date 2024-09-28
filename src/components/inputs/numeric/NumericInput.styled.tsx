@@ -8,12 +8,11 @@ export const StyledNumericInputContainer = styled.div`
 `;
 
 export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: ${UNITS.mediumGap};
-  padding: ${UNITS.mediumGap};
+  gap: 0;
+  padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
   box-shadow: ${SHADOWS.box};
@@ -21,7 +20,6 @@ export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $inval
   border-top-right-radius: ${UNITS.blockBorderRadius};
   border: ${BORDERS.lightBlue};
   background-color: ${COLORS.background};
-  height: ${UNITS.inputWrapperHeight};
 
   &:has(input:focus) {
     outline: ${BORDERS.lightBlue};
@@ -59,6 +57,14 @@ export const StyledNumericInput = styled.input`
   background: transparent;
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+
+  &:placeholder-shown + span {
+    visibility: hidden;
+  }
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -68,5 +74,28 @@ export const StyledNumericInput = styled.input`
 
   &[type='number'] {
     -moz-appearance: textfield;
+  }
+`;
+
+export const StyledFieldWrapper = styled.span`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: ${UNITS.smallGap};
+`;
+
+export const StyledButtonsWrapper = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+
+  button {
+    padding: 0;
+  }
+
+  svg {
+    height: 1.25rem;
   }
 `;

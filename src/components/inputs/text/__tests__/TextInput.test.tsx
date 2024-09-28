@@ -80,6 +80,14 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveValue('');
   });
 
+  it('should call onClear handler when Clear button is clicked', async () => {
+    const mockClear = vi.fn();
+    render(<TextInput {...testProps} onClear={mockClear} />);
+    await userEvent.type(screen.getByRole('textbox'), 't');
+    await userEvent.click(screen.getByRole('button'));
+    expect(mockClear).toHaveBeenCalledOnce();
+  });
+
   it('should not display the Clear button if clearable prop is false', () => {
     render(<TextInput {...testProps} clearable={false} />);
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
@@ -119,5 +127,10 @@ describe('ChopLogicTextInput', () => {
     expect(input).toHaveAttribute('type', 'text');
     await userEvent.click(screen.getByLabelText('Toggle password visibility'));
     expect(input).toHaveAttribute('type', 'password');
+  });
+
+  it('should have the correct email type', () => {
+    render(<TextInput {...testProps} type='email' />);
+    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
   });
 });

@@ -1,15 +1,14 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import ChopLogicLabel from 'components/inputs/_common/label/Label';
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
-import ChopLogicLabel from 'components/misc/label/Label';
 
 describe('ChopLogicLabel', () => {
   const testProps = {
     label: 'Test label',
     required: true,
     inputId: 'test-input-id',
-    className: 'test-class-name',
   };
 
   it('should render correctly as required label', () => {

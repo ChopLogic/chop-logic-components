@@ -58,7 +58,12 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
           errorMessage='Only latin letters are allowed'
           validator={{ regexp: '^[A-Za-z ]+$' }}
         />
-        <ChopLogicNumericInput name='age' label='Age' />
+        <ChopLogicNumericInput
+          name='age'
+          label='Age'
+          validator={(age) => !!age && age >= 1 && age < 100}
+          errorMessage={'Enter a number between 1 and 99'}
+        />
         <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} />
         <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} />
         <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required />

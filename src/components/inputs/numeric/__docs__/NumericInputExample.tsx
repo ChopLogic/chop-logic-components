@@ -2,20 +2,7 @@ import React from 'react';
 
 import NumericInput, { ChopLogicNumericInputProps } from '../NumericInput';
 
-const Example: React.FC<ChopLogicNumericInputProps> = ({
-  id,
-  name,
-  label,
-  errorMessage,
-  placeholder = '0',
-  disabled = false,
-  required = false,
-  step = 1,
-  max = Number.MAX_SAFE_INTEGER,
-  min = Number.MIN_SAFE_INTEGER,
-  defaultValue,
-  validator,
-}) => {
+const Example: React.FC<ChopLogicNumericInputProps> = (props) => {
   return (
     <div
       style={{
@@ -26,21 +13,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = ({
         padding: '20px',
       }}
     >
-      <NumericInput
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        label={label}
-        required={required}
-        disabled={disabled}
-        errorMessage={errorMessage}
-        max={max}
-        min={min}
-        step={step}
-        defaultValue={defaultValue}
-        style={{ width: '180px' }}
-        validator={validator}
-      />
+      <NumericInput {...props} style={{ width: '240px' }} />
     </div>
   );
 };

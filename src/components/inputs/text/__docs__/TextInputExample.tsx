@@ -13,7 +13,7 @@ const Example: React.FC<ChopLogicTextInputProps> = (props) => {
         padding: '20px',
       }}
     >
-      <TextInput {...props} style={{ width: '180px' }} />
+      <TextInput {...props} style={{ width: '240px' }} />
     </div>
   );
 };

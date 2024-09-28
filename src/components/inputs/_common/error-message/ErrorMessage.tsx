@@ -6,19 +6,19 @@ type ChopLogicErrorMessageProps = {
   errorId: string;
   visible?: boolean;
   message?: string;
-  className?: string;
   testId?: string;
+  style?: React.CSSProperties;
 };
 
 const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({
   errorId,
-  className,
   testId,
   message = 'Invalid input',
   visible = false,
+  style,
 }) => {
   return (
-    <StyledErrorMessage id={errorId} $visible={visible} className={className} data-testid={testId}>
+    <StyledErrorMessage id={errorId} $visible={visible} data-testid={testId} style={style}>
       {message}
     </StyledErrorMessage>
   );

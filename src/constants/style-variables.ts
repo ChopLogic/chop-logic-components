@@ -21,7 +21,7 @@ export const UNITS = Object.freeze({
   minElementSize: '2.75rem',
   smallIconSize: '1.6rem',
   blockBorderRadius: '0.375rem',
-  inputWrapperHeight: '3rem',
+  inputWrapperHeight: '3.5rem',
 });
 
 export const SHADOWS = Object.freeze({

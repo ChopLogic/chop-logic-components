@@ -16,7 +16,6 @@ export const StyledSelectWrapper = styled.div<{ $disabled: boolean }>`
   border: ${BORDERS.lightBlue};
   max-width: 100%;
   background-color: ${COLORS.background};
-  height: ${UNITS.inputWrapperHeight};
 
   ${(props) =>
     props.$disabled &&
@@ -43,7 +42,11 @@ export const StyledSelectCombobox = styled.button`
 
     svg {
       color: ${COLORS.tertiary};
+      &:hover {
+        color: ${COLORS.secondary};
+      }
     }
+
 
     &:focus-visible {
       outline: ${BORDERS.focusOutline};
@@ -80,7 +83,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean }>`
   list-style: none;
   z-index: ${Z_INDEXES.dropdown};
   width: 100%;
-  top: 72px;
+  top: 84px;
   left: -1px;
   border: ${BORDERS.lightBlue};
   box-shadow: ${SHADOWS.box};

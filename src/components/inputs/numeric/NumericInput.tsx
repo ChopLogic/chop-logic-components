@@ -24,6 +24,7 @@ export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElem
   errorMessage?: string;
   validator?: NumericValidationFunction;
   onClear?: () => void;
+  hasSpinButtons?: boolean;
   onSpinButtonClick?: (value?: number) => void;
 };
 
@@ -32,12 +33,14 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   label,
   errorMessage,
   onChange,
+  onSpinButtonClick,
   validator,
   min,
   max,
   disabled = false,
   required = false,
   readOnly = false,
+  hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
   ...props
@@ -52,6 +55,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
     required,
     validator,
     step: +step,
+    onSpinButtonClick,
   });
 
   return (
@@ -78,10 +82,12 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
             onFocus={props?.onFocus}
             tabIndex={props?.tabIndex}
           />
-          <StyledButtonsWrapper>
-            <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={CLIcon.Up} />
-            <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={CLIcon.Down} />
-          </StyledButtonsWrapper>
+          {hasSpinButtons && (
+            <StyledButtonsWrapper>
+              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={CLIcon.Up} />
+              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={CLIcon.Down} />
+            </StyledButtonsWrapper>
+          )}
         </StyledFieldWrapper>
       </StyledNumericInputWrapper>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />

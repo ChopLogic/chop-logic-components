@@ -13,7 +13,7 @@ const Example: React.FC<ChopLogicNumericInputProps> = (props) => {
         padding: '20px',
       }}
     >
-      <NumericInput {...props} />
+      <NumericInput {...props} style={{ width: '240px' }} />
     </div>
   );
 };

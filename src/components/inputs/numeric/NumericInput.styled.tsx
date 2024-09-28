@@ -11,7 +11,7 @@ export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $inval
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: ${UNITS.smallGap};
+  gap: 0;
   padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
   font-family: ${FONTS.core};
   color: ${COLORS.primary};

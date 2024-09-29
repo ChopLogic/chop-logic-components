@@ -23,6 +23,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   onClickSubmit,
   columns = 1,
   hasReset = true,
+  ...rest
 }) => {
   const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useChopLogicFormController({
     initialValues,
@@ -32,7 +33,15 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   });
 
   return (
-    <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns}>
+    <StyledForm
+      onSubmit={handleSubmit}
+      onReset={handleReset}
+      $columns={columns}
+      style={rest.style}
+      className={rest.className}
+      id={rest.id}
+      tabIndex={rest.tabIndex}
+    >
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>

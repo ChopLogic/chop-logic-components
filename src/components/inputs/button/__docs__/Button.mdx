@@ -35,10 +35,9 @@ export default Example;
   - `secondary`: button in the form of clickable text
   - `danger`: red button to highlight important
   - `icon`: button without text, only icon
-- **text** - A string that represents the text content of the button (`Ok` by default).
+- **text** `string` - A string that represents the text content of the button (`Ok` by default).
 - **onClick** _`() => void`_ - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments.
-- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
-- **type** - A button type that can be `button`, `submit` or `reset` (`button` by default).
-- **icon** - An svg icon from ChopIcon set, which could be inserted before the button text.
-- **ButtonHTMLAttributes** - all standard HTML button attributes (**name**, **value**, **form**, etc.).
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+- **disabled** `boolean` - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **type** ` "submit" | "reset" | "button"` - A button type that can be `button`, `submit` or `reset` (`button` by default).
+- **icon** `CLIcon` - An svg icon from ChopIcon set, which could be inserted before the button text.
+- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).

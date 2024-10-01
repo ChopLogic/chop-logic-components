@@ -19,7 +19,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
         </span>
       </label>
       <span
-        class="sc-dkjaqt lfyCkO"
+        class="sc-dkjaqt ehvIGu"
       >
         <input
           aria-errormessage="test-input-id_error"
@@ -102,7 +102,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
         </abbr>
       </label>
       <span
-        class="sc-dkjaqt lfyCkO"
+        class="sc-dkjaqt ehvIGu"
       >
         <input
           aria-errormessage="test-input-id_error"

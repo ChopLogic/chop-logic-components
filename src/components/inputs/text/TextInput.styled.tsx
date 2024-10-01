@@ -72,6 +72,7 @@ export const StyledFieldWrapper = styled.span`
   align-items: center;
   width: 100%;
   gap: ${UNITS.smallGap};
+  height: ${UNITS.fieldWrapperHeight};
 `;
 
 export const StyledButtonsWrapper = styled.span`

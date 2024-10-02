@@ -1,7 +1,7 @@
 import { useMount } from 'hooks/use-mount';
 
+import ChopLogicPortal from 'components/containers/portal';
 import { CLIcon } from 'components/misc/icon/Icon';
-import ChopLogicPortal from 'components/misc/portal';
 
 import ChopLogicAlertHeader from './elements/Header';
 import { StyledAlertContent, StyledAlertWrapper } from './Alert.styled';

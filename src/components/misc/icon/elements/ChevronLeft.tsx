@@ -1,6 +1,6 @@
 import React from 'react';
 
-function IconLeft(props: React.SVGProps<SVGSVGElement>) {
+function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg fill='currentColor' viewBox='0 0 16 16' height='1em' width='1em' {...props}>
       <path
@@ -11,4 +11,4 @@ function IconLeft(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default IconLeft;
+export default ChevronLeftIcon;

@@ -9,6 +9,8 @@ import CheckboxCheckedIcon from '../elements/CheckboxChecked';
 import CheckboxUncheckedIcon from '../elements/CheckboxUnchecked';
 import CheckMarkIcon from '../elements/CheckMark';
 import ChevronDownIcon from '../elements/ChevronDown';
+import ChevronLeftIcon from '../elements/ChevronLeft';
+import ChevronRightIcon from '../elements/ChevronRight';
 import ChevronUpIcon from '../elements/ChevronUp';
 import ClearIcon from '../elements/Clear';
 import CopyIcon from '../elements/Copy';
@@ -151,6 +153,16 @@ describe('ChopLogicIcon', () => {
 
   it('ChevronUpIcon should match the snapshot', () => {
     const { asFragment } = render(<ChevronUpIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChevronLeftIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronLeftIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChevronRightIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronRightIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 

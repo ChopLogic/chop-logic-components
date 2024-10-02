@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { useMount } from 'hooks/use-mount';
 
-import ChopLogicPortal from 'components/misc/portal';
+import ChopLogicPortal from 'components/containers/portal';
 
 import ChopLogicModalLayout from './elements/Layout';
 import { StyledDialogBackground } from './Dialog.styled';

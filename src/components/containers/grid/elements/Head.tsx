@@ -1,4 +1,4 @@
-import SelectAllGridRowsCheckbox from './SelectAll';
+import SelectAllGridRowsCheckbox from './SelectAllRows';
 
 const ChopLogicGridHead = () => {
   return (

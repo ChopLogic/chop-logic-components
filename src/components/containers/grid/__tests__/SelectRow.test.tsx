@@ -2,22 +2,22 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import SelectAllGridRowsCheckbox from '../elements/SelectAll';
+import SelectGridRowCheckbox from '../elements/SelectRow';
 
-describe('SelectAllGridRowsCheckbox', () => {
+describe('SelectGridRowCheckbox', () => {
   const mockedSelect = vi.fn();
   const mockedDeselect = vi.fn();
-  const mockedGridId = 'grid-id';
+  const mockedRowId = 'grid-id';
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} />,
+      <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call select/deselect handlers', async () => {
-    render(<SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} />);
+    render(<SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} />);
 
     await userEvent.click(screen.getByRole('checkbox'));
     expect(mockedSelect).toHaveBeenCalledOnce();

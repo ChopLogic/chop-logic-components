@@ -5,7 +5,7 @@ import ChopLogicGrid from '../Grid';
 
 describe('ChopLogicGrid', () => {
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicGrid />);
+    const { asFragment } = render(<ChopLogicGrid columns={[]} data={[]} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

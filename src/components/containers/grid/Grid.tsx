@@ -1,7 +1,8 @@
 import ChopLogicGridBody from './elements/Body';
 import ChopLogicGridHead from './elements/Head';
+import { GridProps } from './types';
 
-const ChopLogicGrid = () => {
+const ChopLogicGrid: React.FC<GridProps> = () => {
   return (
     <table>
       <ChopLogicGridHead />

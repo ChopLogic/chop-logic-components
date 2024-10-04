@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicGridBody > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fQpRED eXIclA"
+  >
+    <input
+      aria-label="Select row"
+      class="sc-dsLQwm iEHRMh"
+      id="select_row_row1"
+      name="selectAll"
+      type="checkbox"
+    />
+    <label
+      class="sc-braxZu eZLZgi"
+      for="select_row_row1"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+          fill="currentColor"
+        />
+      </svg>
+    </label>
+  </div>
+  Value 1Value 2Value 3
+  <div
+    class="sc-fQpRED eXIclA"
+  >
+    <input
+      aria-label="Select row"
+      class="sc-dsLQwm iEHRMh"
+      id="select_row_row2"
+      name="selectAll"
+      type="checkbox"
+    />
+    <label
+      class="sc-braxZu eZLZgi"
+      for="select_row_row2"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+          fill="currentColor"
+        />
+      </svg>
+    </label>
+  </div>
+  Value 5Value 6Value 7
+  <div
+    class="sc-fQpRED eXIclA"
+  >
+    <input
+      aria-label="Select row"
+      class="sc-dsLQwm iEHRMh"
+      id="select_row_row3"
+      name="selectAll"
+      type="checkbox"
+    />
+    <label
+      class="sc-braxZu eZLZgi"
+      for="select_row_row3"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+          fill="currentColor"
+        />
+      </svg>
+    </label>
+  </div>
+  Value 9Value 10Value 11
+</DocumentFragment>
+`;

@@ -1,6 +1,7 @@
 export type GridProps = React.HTMLAttributes<HTMLElement> & {
   columns: GridColumn[];
   data: GridItem[];
+  id?: string;
   selectable?: boolean;
   renderDataItem?: (item: GridItem) => JSX.Element;
   passSelectedIds?: (ids: string[]) => void;
@@ -9,7 +10,7 @@ export type GridProps = React.HTMLAttributes<HTMLElement> & {
 export type GridColumn = {
   field?: string;
   title?: string;
-  headerComponent?: React.ReactElement;
+  component?: React.ReactElement;
 };
 
 export type GridItem = {

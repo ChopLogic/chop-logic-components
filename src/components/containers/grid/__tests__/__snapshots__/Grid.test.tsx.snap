@@ -4,40 +4,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <thead>
-      <tr>
-        <th>
-          Head
-        </th>
-        <th>
-          <div
-            class="sc-fQpRED eXIclA"
-          >
-            <input
-              aria-label="Select all rows"
-              class="sc-dsLQwm iEHRMh"
-              id="select_all_id"
-              name="selectAll"
-              type="checkbox"
-            />
-            <label
-              class="sc-braxZu eZLZgi"
-              for="select_all_id"
-            >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
-            </label>
-          </div>
-        </th>
-      </tr>
+      <tr />
     </thead>
     <tbody />
   </table>

@@ -1,11 +1,24 @@
+import { GridColumn } from '../types';
+
+import GridHeaderCell from './HeaderCell';
 import SelectAllGridRowsCheckbox from './SelectAllRows';
 
-const ChopLogicGridHead = () => {
+type ChopLogicGridHeadProps = {
+  columns: GridColumn[];
+  gridId: string;
+  selectable: boolean;
+  selectAll: () => void;
+  deselectAll: () => void;
+};
+
+const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({ columns, gridId, selectAll, deselectAll, selectable }) => {
   return (
     <thead>
       <tr>
-        <th>Head</th>
-        <SelectAllGridRowsCheckbox gridId='id' selectAll={() => console.log('select')} deselectAll={() => console.log('deselect')} />
+        {selectable && <SelectAllGridRowsCheckbox gridId={gridId} selectAll={selectAll} deselectAll={deselectAll} />}
+        {columns.map((column) => (
+          <GridHeaderCell key={`${column.title}_${gridId}`} title={column.title} component={column.component} />
+        ))}
       </tr>
     </thead>
   );

@@ -5,7 +5,7 @@ import GridRow, { GridRowProps } from '../elements/Row';
 
 describe('GridRow', () => {
   const testProps: GridRowProps = {
-    item: { id: 'item-1' },
+    rowId: 'item-1',
     selectRowById: vi.fn(),
     deselectRowById: vi.fn(),
     selectable: true,

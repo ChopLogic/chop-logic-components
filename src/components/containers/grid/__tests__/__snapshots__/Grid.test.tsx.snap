@@ -39,13 +39,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
         </th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>
-          Body
-        </td>
-      </tr>
-    </tbody>
+    <tbody />
   </table>
 </DocumentFragment>
 `;

@@ -1,7 +1,8 @@
 export type GridProps = React.HTMLAttributes<HTMLElement> & {
   columns: GridColumn[];
   data: GridItem[];
-  hasCheckboxColumn?: boolean;
+  selectable?: boolean;
+  renderDataItem?: (item: GridItem) => JSX.Element;
   passSelectedIds?: (ids: string[]) => void;
 };
 

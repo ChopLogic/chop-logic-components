@@ -6,10 +6,8 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
     class="sc-fQpRED eXIclA"
   >
     <input
-      aria-label="Select row"
       class="sc-dsLQwm iEHRMh"
       id="select_row_row1"
-      name="selectAll"
       type="checkbox"
     />
     <label
@@ -34,10 +32,8 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
     class="sc-fQpRED eXIclA"
   >
     <input
-      aria-label="Select row"
       class="sc-dsLQwm iEHRMh"
       id="select_row_row2"
-      name="selectAll"
       type="checkbox"
     />
     <label
@@ -62,10 +58,8 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
     class="sc-fQpRED eXIclA"
   >
     <input
-      aria-label="Select row"
       class="sc-dsLQwm iEHRMh"
       id="select_row_row3"
-      name="selectAll"
       type="checkbox"
     />
     <label

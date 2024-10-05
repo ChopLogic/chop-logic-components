@@ -6,10 +6,8 @@ exports[`GridRow > should match the snapshot 1`] = `
     class="sc-fQpRED eXIclA"
   >
     <input
-      aria-label="Select row"
       class="sc-dsLQwm iEHRMh"
       id="select_row_item-1"
-      name="selectAll"
       type="checkbox"
     />
     <label

@@ -17,6 +17,7 @@ describe('ChopLogicGridHead', () => {
     selectable: true,
     selectAll: vi.fn(),
     deselectAll: vi.fn(),
+    isAllSelected: false,
   };
 
   it('should match the snapshot', () => {

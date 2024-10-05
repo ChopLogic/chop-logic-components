@@ -15,7 +15,7 @@ const gridData: GridItem[] = [
   { id: 'row4', field1: 'Value 13', field2: 'Value 14', field3: 'Value 15', field4: 'Value 16' },
 ];
 
-const GridExample: React.FC = () => {
+const GridExample: React.FC = (props) => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const GridExample: React.FC = () => {
         paddingTop: '2rem',
       }}
     >
-      <ChopLogicGrid columns={gridColumns} data={gridData} />
+      <ChopLogicGrid columns={gridColumns} data={gridData} {...props} />
     </div>
   );
 };

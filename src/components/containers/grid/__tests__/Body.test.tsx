@@ -23,6 +23,7 @@ describe('ChopLogicGridBody', () => {
     selectRowById: vi.fn(),
     deselectRowById: vi.fn(),
     selectable: true,
+    selectedIds: [],
   };
 
   it('should match the snapshot', () => {

@@ -6,12 +6,20 @@ import GridRow from './Row';
 type ChopLogicGridBodyProps = {
   data: GridItem[];
   columns: GridColumn[];
+  selectedIds: string[];
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;
   selectable: boolean;
 };
 
-const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({ selectRowById, deselectRowById, selectable, data, columns }) => {
+const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
+  selectRowById,
+  deselectRowById,
+  selectedIds,
+  selectable,
+  data,
+  columns,
+}) => {
   return (
     <tbody>
       {data.map((item) => {
@@ -24,6 +32,7 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({ selectRowById, de
             deselectRowById={deselectRowById}
             selectable={selectable}
             values={values}
+            selectedIds={selectedIds}
           />
         );
       })}

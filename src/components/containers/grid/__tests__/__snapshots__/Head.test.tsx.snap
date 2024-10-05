@@ -6,10 +6,8 @@ exports[`ChopLogicGridHead > should match the snapshot 1`] = `
     class="sc-fQpRED eXIclA"
   >
     <input
-      aria-label="Select all rows"
       class="sc-dsLQwm iEHRMh"
       id="select_all_test-grid-id"
-      name="selectAll"
       type="checkbox"
     />
     <label

@@ -1,14 +1,15 @@
 import React from 'react';
 
-import ChopLogicCheckbox from 'components/inputs/checkbox/Checkbox';
+import GridCheckbox from './Checkbox';
 
 type SelectAllGridRowsCheckbox = {
   gridId: string;
+  isAllSelected: boolean;
   selectAll: () => void;
   deselectAll: () => void;
 };
 
-const SelectAllGridRowsCheckbox: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, selectAll, deselectAll }) => {
+const SelectAllGridRowsCheckbox: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllSelected, selectAll, deselectAll }) => {
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -20,7 +21,7 @@ const SelectAllGridRowsCheckbox: React.FC<SelectAllGridRowsCheckbox> = ({ gridId
 
   return (
     <th>
-      <ChopLogicCheckbox noLabel label='Select all rows' name='selectAll' onChange={handleSelectAll} id={`select_all_${gridId}`} />
+      <GridCheckbox label='Select all rows' onChange={handleSelectAll} id={`select_all_${gridId}`} checked={isAllSelected} />
     </th>
   );
 };

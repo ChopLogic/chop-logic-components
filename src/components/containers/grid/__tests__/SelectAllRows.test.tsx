@@ -11,16 +11,21 @@ describe('SelectAllGridRowsCheckbox', () => {
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} />,
+      <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call select/deselect handlers', async () => {
-    render(<SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} />);
+  it('should call select handlers', async () => {
+    render(<SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected={false} />);
 
     await userEvent.click(screen.getByRole('checkbox'));
     expect(mockedSelect).toHaveBeenCalledOnce();
+  });
+
+  it('should call deselect handlers', async () => {
+    render(<SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected={true} />);
+
     await userEvent.click(screen.getByRole('checkbox'));
     expect(mockedDeselect).toHaveBeenCalledOnce();
   });

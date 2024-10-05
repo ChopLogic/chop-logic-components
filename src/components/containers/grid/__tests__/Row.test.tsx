@@ -10,6 +10,7 @@ describe('GridRow', () => {
     deselectRowById: vi.fn(),
     selectable: true,
     values: ['Value 1', 'Value 2', <span key='value-3'>Value 3</span>],
+    selectedIds: ['value1', 'value2', 'value3'],
   };
 
   it('should match the snapshot', () => {

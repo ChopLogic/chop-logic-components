@@ -16,7 +16,7 @@ describe('SelectGridRowCheckbox', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call select handlers', async () => {
+  it('should call select handler', async () => {
     render(
       <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={false} />,
     );
@@ -25,7 +25,7 @@ describe('SelectGridRowCheckbox', () => {
     expect(mockedSelect).toHaveBeenCalledOnce();
   });
 
-  it('should call select/deselect handlers', async () => {
+  it('should call deselect handler', async () => {
     render(
       <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={true} />,
     );

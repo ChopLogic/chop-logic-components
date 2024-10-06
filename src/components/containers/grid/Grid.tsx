@@ -11,24 +11,18 @@ const ChopLogicGrid: React.FC<GridProps> = ({ columns, data, id, selectable = fa
   const allIds = data.map((item) => item.id);
 
   const handleSelectAll = () => {
-    console.log('select all');
-    console.log(data);
     setSelectedIds(allIds);
   };
 
   const handleDeselectAll = () => {
-    console.log('deselect all');
-    console.log('selectedIds', selectedIds);
     setSelectedIds([]);
   };
 
   const handleSelectRowById = (id: string) => {
-    console.log('select', id);
     setSelectedIds([...selectedIds, id]);
   };
 
   const handleDeselectRowById = (id: string) => {
-    console.log('deselect', id);
     setSelectedIds(selectedIds.filter((item) => item !== id));
   };
 
@@ -41,6 +35,7 @@ const ChopLogicGrid: React.FC<GridProps> = ({ columns, data, id, selectable = fa
         selectAll={handleSelectAll}
         deselectAll={handleDeselectAll}
         isAllSelected={allIds.length === selectedIds.length}
+        isAllCheckboxDisabled={data.some((item) => item?.disabled)}
       />
       <ChopLogicGridBody
         columns={columns}

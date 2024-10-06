@@ -10,9 +10,10 @@ export type GridRowProps = {
   deselectRowById: (id: string) => void;
   selectable: boolean;
   values: (string | JSX.Element)[];
+  disabled?: boolean;
 };
 
-const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds }) => {
+const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
   return (
     <tr>
       {selectable && (
@@ -21,6 +22,7 @@ const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById
           selectRowById={selectRowById}
           deselectRowById={deselectRowById}
           isRowSelected={selectedIds.includes(rowId)}
+          disabled={disabled}
         />
       )}
       {values.map((value, index) => (

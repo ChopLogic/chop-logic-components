@@ -15,6 +15,7 @@ export type GridColumn = {
 
 export type GridItem = {
   id: string;
+  disabled?: boolean;
   [key: string]: unknown;
 };
 

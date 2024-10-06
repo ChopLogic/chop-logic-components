@@ -28,6 +28,7 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
           <GridRow
             key={item.id}
             rowId={item.id}
+            disabled={item?.disabled}
             selectRowById={selectRowById}
             deselectRowById={deselectRowById}
             selectable={selectable}

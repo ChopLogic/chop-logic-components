@@ -1,13 +1,13 @@
-import { GridColumn, GridItem } from './types';
+import { ChopLogicGridColumn, ChopLogicGridItem } from './types';
 
 export function getGridRowValues({
   item,
   columns,
   renderDataItem,
 }: {
-  item: GridItem;
-  columns: GridColumn[];
-  renderDataItem?: (item: GridItem) => JSX.Element;
+  item: ChopLogicGridItem;
+  columns: ChopLogicGridColumn[];
+  renderDataItem?: (item: ChopLogicGridItem) => JSX.Element;
 }): (string | JSX.Element)[] {
   const values = [];
   for (const column of columns) {

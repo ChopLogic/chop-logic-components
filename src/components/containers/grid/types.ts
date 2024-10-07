@@ -1,19 +1,19 @@
-export type GridProps = React.HTMLAttributes<HTMLElement> & {
-  columns: GridColumn[];
-  data: GridItem[];
+export type ChopLogicGridProps = React.HTMLAttributes<HTMLElement> & {
+  columns: ChopLogicGridColumn[];
+  data: ChopLogicGridItem[];
   id?: string;
   selectable?: boolean;
-  renderDataItem?: (item: GridItem) => JSX.Element;
-  passSelectedIds?: (ids: string[]) => void;
+  renderDataItem?: (item: ChopLogicGridItem) => JSX.Element;
+  onSelect?: (ids: string[]) => void;
 };
 
-export type GridColumn = {
+export type ChopLogicGridColumn = {
   field?: string;
   title?: string;
   component?: React.ReactElement;
 };
 
-export type GridItem = {
+export type ChopLogicGridItem = {
   id: string;
   disabled?: boolean;
   [key: string]: unknown;
@@ -34,16 +34,16 @@ export type SelectRowCheckboxProps = {
 } & GridIdsProps;
 
 export type GridBodyProps = {
-  data: GridItem[];
-  columns: GridColumn[];
+  data: ChopLogicGridItem[];
+  columns: ChopLogicGridColumn[];
   hasCheckboxColumn: boolean;
   className?: string;
 } & GridIdsProps;
 
 export type GridHeadProps = {
-  columns: GridColumn[];
+  columns: ChopLogicGridColumn[];
   hasCheckboxColumn: boolean;
-  data: GridColumn[];
+  data: ChopLogicGridColumn[];
   className?: string;
   id?: string;
 } & GridIdsProps;

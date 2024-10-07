@@ -1,10 +1,10 @@
-import { GridColumn } from '../types';
+import { ChopLogicGridColumn } from '../types';
 
 import GridHeaderCell from './HeaderCell';
 import SelectAllGridRowsCheckbox from './SelectAllRows';
 
 type ChopLogicGridHeadProps = {
-  columns: GridColumn[];
+  columns: ChopLogicGridColumn[];
   gridId: string;
   selectable: boolean;
   isAllSelected: boolean;

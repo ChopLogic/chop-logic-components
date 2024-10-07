@@ -1,11 +1,11 @@
 import { getGridRowValues } from '../helpers';
-import { GridColumn, GridItem } from '../types';
+import { ChopLogicGridColumn, ChopLogicGridItem } from '../types';
 
 import GridRow from './Row';
 
 type ChopLogicGridBodyProps = {
-  data: GridItem[];
-  columns: GridColumn[];
+  data: ChopLogicGridItem[];
+  columns: ChopLogicGridColumn[];
   selectedIds: string[];
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;

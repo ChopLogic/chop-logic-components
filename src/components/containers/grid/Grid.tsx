@@ -3,27 +3,36 @@ import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicGridBody from './elements/Body';
 import ChopLogicGridHead from './elements/Head';
-import { GridProps } from './types';
+import { ChopLogicGridProps } from './types';
 
-const ChopLogicGrid: React.FC<GridProps> = ({ columns, data, id, selectable = false }) => {
+const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSelect, selectable = false }) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const allIds = data.map((item) => item.id);
+  const isAllSelected = allIds.length === selectedIds.length;
+  const isAllCheckboxDisabled = data.some((item) => item?.disabled);
+
+  const handleSelect = (ids: string[]) => {
+    setSelectedIds(ids);
+    onSelect?.(ids);
+  };
 
   const handleSelectAll = () => {
-    setSelectedIds(allIds);
+    handleSelect(allIds);
   };
 
   const handleDeselectAll = () => {
-    setSelectedIds([]);
+    handleSelect([]);
   };
 
   const handleSelectRowById = (id: string) => {
-    setSelectedIds([...selectedIds, id]);
+    const newIds = [...selectedIds, id];
+    handleSelect(newIds);
   };
 
   const handleDeselectRowById = (id: string) => {
-    setSelectedIds(selectedIds.filter((item) => item !== id));
+    const newIds = selectedIds.filter((item) => item !== id);
+    handleSelect(newIds);
   };
 
   return (
@@ -34,8 +43,8 @@ const ChopLogicGrid: React.FC<GridProps> = ({ columns, data, id, selectable = fa
         selectable={selectable}
         selectAll={handleSelectAll}
         deselectAll={handleDeselectAll}
-        isAllSelected={allIds.length === selectedIds.length}
-        isAllCheckboxDisabled={data.some((item) => item?.disabled)}
+        isAllSelected={isAllSelected}
+        isAllCheckboxDisabled={isAllCheckboxDisabled}
       />
       <ChopLogicGridBody
         columns={columns}

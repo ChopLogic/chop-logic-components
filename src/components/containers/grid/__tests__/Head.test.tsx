@@ -2,17 +2,17 @@ import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicGridHead from '../elements/Head';
-import { GridColumn } from '../types';
+import { ChopLogicGridColumn } from '../types';
 
 describe('ChopLogicGridHead', () => {
-  const gridColumns: GridColumn[] = [
+  const ChopLogicGridColumns: ChopLogicGridColumn[] = [
     { title: 'Col 1', field: 'field1' },
     { title: 'Col 2', field: 'field2' },
     { title: 'Col 3', field: 'field3' },
   ];
 
   const testProps = {
-    columns: gridColumns,
+    columns: ChopLogicGridColumns,
     gridId: 'test-grid-id',
     selectable: true,
     selectAll: vi.fn(),

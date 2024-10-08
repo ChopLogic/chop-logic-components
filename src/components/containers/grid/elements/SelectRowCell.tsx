@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { StyledGridCell } from '../Grid.styled';
+
 import GridCheckbox from './Checkbox';
 
 type SelectAllGridRowsCheckbox = {
@@ -10,7 +12,7 @@ type SelectAllGridRowsCheckbox = {
   disabled?: boolean;
 };
 
-const SelectGridRowCheckbox: React.FC<SelectAllGridRowsCheckbox> = ({ rowId, isRowSelected, selectRowById, deselectRowById, disabled }) => {
+const SelectGridRowCell: React.FC<SelectAllGridRowsCheckbox> = ({ rowId, isRowSelected, selectRowById, deselectRowById, disabled }) => {
   const handleSelectById = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -21,10 +23,10 @@ const SelectGridRowCheckbox: React.FC<SelectAllGridRowsCheckbox> = ({ rowId, isR
   };
 
   return (
-    <th>
+    <StyledGridCell>
       <GridCheckbox label='Select row' onChange={handleSelectById} id={`select_row_${rowId}`} checked={isRowSelected} disabled={disabled} />
-    </th>
+    </StyledGridCell>
   );
 };
 
-export default SelectGridRowCheckbox;
+export default SelectGridRowCell;

@@ -14,12 +14,24 @@ describe('GridRow', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<GridRow {...testProps} />);
+    const { asFragment } = render(
+      <table>
+        <tbody>
+          <GridRow {...testProps} />
+        </tbody>
+      </table>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render a checkbox if the row is not selectable', () => {
-    render(<GridRow {...testProps} selectable={false} />);
+    render(
+      <table>
+        <tbody>
+          <GridRow {...testProps} selectable={false} />
+        </tbody>
+      </table>,
+    );
     expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
   });
 });

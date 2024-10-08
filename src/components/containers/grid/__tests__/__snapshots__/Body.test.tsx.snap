@@ -3,15 +3,15 @@
 exports[`ChopLogicGridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fQpRED eXIclA"
+    class="sc-la-DxNn kmvwGE"
   >
     <input
-      class="sc-dsLQwm iEHRMh"
+      class="sc-iCZwEW gHJHRE"
       id="select_row_row1"
       type="checkbox"
     />
     <label
-      class="sc-braxZu eZLZgi"
+      class="sc-knesRu jUsMwQ"
       for="select_row_row1"
     >
       <svg
@@ -29,15 +29,15 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
   </div>
   Value 1Value 2Value 3
   <div
-    class="sc-fQpRED eXIclA"
+    class="sc-la-DxNn kmvwGE"
   >
     <input
-      class="sc-dsLQwm iEHRMh"
+      class="sc-iCZwEW gHJHRE"
       id="select_row_row2"
       type="checkbox"
     />
     <label
-      class="sc-braxZu eZLZgi"
+      class="sc-knesRu jUsMwQ"
       for="select_row_row2"
     >
       <svg
@@ -55,15 +55,15 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
   </div>
   Value 5Value 6Value 7
   <div
-    class="sc-fQpRED eXIclA"
+    class="sc-la-DxNn kmvwGE"
   >
     <input
-      class="sc-dsLQwm iEHRMh"
+      class="sc-iCZwEW gHJHRE"
       id="select_row_row3"
       type="checkbox"
     />
     <label
-      class="sc-braxZu eZLZgi"
+      class="sc-knesRu jUsMwQ"
       for="select_row_row3"
     >
       <svg

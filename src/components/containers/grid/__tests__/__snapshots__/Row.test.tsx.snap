@@ -2,34 +2,59 @@
 
 exports[`GridRow > should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-fQpRED eXIclA"
-  >
-    <input
-      class="sc-dsLQwm iEHRMh"
-      id="select_row_item-1"
-      type="checkbox"
-    />
-    <label
-      class="sc-braxZu eZLZgi"
-      for="select_row_item-1"
-    >
-      <svg
-        fill="currentColor"
-        height="1em"
-        viewBox="0 0 16 16"
-        width="1em"
+  <table>
+    <tbody>
+      <tr
+        class="sc-gnpbhQ kMugXQ"
       >
-        <path
-          d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-          fill="currentColor"
-        />
-      </svg>
-    </label>
-  </div>
-  Value 1Value 2
-  <span>
-    Value 3
-  </span>
+        <td
+          class="sc-iKTcqh jeioGd"
+        >
+          <div
+            class="sc-la-DxNn kmvwGE"
+          >
+            <input
+              class="sc-iCZwEW gHJHRE"
+              id="select_row_item-1"
+              type="checkbox"
+            />
+            <label
+              class="sc-knesRu jUsMwQ"
+              for="select_row_item-1"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+                  fill="currentColor"
+                />
+              </svg>
+            </label>
+          </div>
+        </td>
+        <td
+          class="sc-iKTcqh jeioGd"
+        >
+          Value 1
+        </td>
+        <td
+          class="sc-iKTcqh jeioGd"
+        >
+          Value 2
+        </td>
+        <td
+          class="sc-iKTcqh jeioGd"
+        >
+          <span>
+            Value 3
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

@@ -1,16 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicGrid > should match the snapshot 1`] = `
+exports[`SelectAllGridRowsCheckbox > should match the snapshot 1`] = `
 <DocumentFragment>
-  <table
-    class="sc-braxZu htQKeQ"
-  >
-    <thead
-      class="sc-gJhJTp cboyra"
-    >
-      <tr
-        class="sc-dsLQwm fgJVNj"
-      >
+  <table>
+    <thead>
+      <tr>
         <th
           class="sc-fQpRED bMuYtF"
         >
@@ -20,12 +14,12 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
             <input
               checked=""
               class="sc-iCZwEW gHJHRE"
-              id="select_all_:r0:"
+              id="select_all_grid-id"
               type="checkbox"
             />
             <label
               class="sc-knesRu jUsMwQ"
-              for="select_all_:r0:"
+              for="select_all_grid-id"
             >
               <svg
                 fill="currentColor"
@@ -43,9 +37,6 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
         </th>
       </tr>
     </thead>
-    <tbody
-      class="sc-elDIKY jigrUQ"
-    />
   </table>
 </DocumentFragment>
 `;

@@ -1,7 +1,8 @@
+import { StyledGridHeader, StyledGridHeaderRow } from '../Grid.styled';
 import { ChopLogicGridColumn } from '../types';
 
 import GridHeaderCell from './HeaderCell';
-import SelectAllGridRowsCheckbox from './SelectAllRows';
+import SelectAllRowsCell from './SelectAllRowsCell';
 
 type ChopLogicGridHeadProps = {
   columns: ChopLogicGridColumn[];
@@ -23,10 +24,10 @@ const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({
   isAllCheckboxDisabled = false,
 }) => {
   return (
-    <thead>
-      <tr>
+    <StyledGridHeader>
+      <StyledGridHeaderRow>
         {selectable && (
-          <SelectAllGridRowsCheckbox
+          <SelectAllRowsCell
             isAllSelected={isAllSelected}
             disabled={isAllCheckboxDisabled}
             gridId={gridId}
@@ -37,8 +38,8 @@ const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({
         {columns.map((column) => (
           <GridHeaderCell key={`${column.title}_${gridId}`} title={column.title} component={column.component} />
         ))}
-      </tr>
-    </thead>
+      </StyledGridHeaderRow>
+    </StyledGridHeader>
   );
 };
 

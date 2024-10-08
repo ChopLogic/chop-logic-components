@@ -1,5 +1,42 @@
-import { BORDERS, COLORS, SHADOWS, UNITS } from 'constants/style-variables';
+import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
+
+export const StyledGrid = styled.table`
+  border-collapse: collapse;
+`;
+
+export const StyledGridHeader = styled.thead`
+  font-family: ${FONTS.core};
+  color: ${COLORS.primary};
+  font-size: 1rem;
+`;
+
+export const StyledGridBody = styled.tbody`
+  font-family: ${FONTS.core};
+  color: ${COLORS.primary};
+`;
+
+export const StyledGridHeaderCell = styled.th`
+  padding: ${UNITS.smallGap};
+`;
+
+export const StyledGridHeaderRow = styled.tr`
+  border-bottom: ${BORDERS.darkBlue};
+`;
+
+export const StyledGridCell = styled.td`
+  padding: ${UNITS.smallGap};
+`;
+
+export const StyledGridRow = styled.tr<{ $selected: boolean }>`
+  border-bottom: ${BORDERS.lightBlue};
+
+  ${(props) =>
+    props.$selected &&
+    `
+      background-color: ${COLORS.highlight};
+    `}
+`;
 
 export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean }>`
   display: flex;

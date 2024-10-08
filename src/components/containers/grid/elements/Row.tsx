@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { StyledGridRow } from '../Grid.styled';
+
 import GridDataCell from './DataCell';
-import SelectGridRowCheckbox from './SelectRow';
+import SelectGridRowCell from './SelectRowCell';
 
 export type GridRowProps = {
   rowId: string;
@@ -14,21 +16,23 @@ export type GridRowProps = {
 };
 
 const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
+  const selected = selectedIds.includes(rowId);
+
   return (
-    <tr>
+    <StyledGridRow $selected={selected}>
       {selectable && (
-        <SelectGridRowCheckbox
+        <SelectGridRowCell
           rowId={rowId}
           selectRowById={selectRowById}
           deselectRowById={deselectRowById}
-          isRowSelected={selectedIds.includes(rowId)}
+          isRowSelected={selected}
           disabled={disabled}
         />
       )}
       {values.map((value, index) => (
         <GridDataCell key={`row_${index}`} value={value} />
       ))}
-    </tr>
+    </StyledGridRow>
   );
 };
 

@@ -1,3 +1,4 @@
+import { StyledGridBody } from '../Grid.styled';
 import { getGridRowValues } from '../helpers';
 import { ChopLogicGridColumn, ChopLogicGridItem } from '../types';
 
@@ -21,7 +22,7 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
   columns,
 }) => {
   return (
-    <tbody>
+    <StyledGridBody>
       {data.map((item) => {
         const values = getGridRowValues({ item, columns });
         return (
@@ -37,7 +38,7 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
           />
         );
       })}
-    </tbody>
+    </StyledGridBody>
   );
 };
 

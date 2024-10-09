@@ -7,17 +7,20 @@ const meta: Meta<typeof GridExample> = {
   component: GridExample,
   args: {
     selectable: true,
+    caption: 'Contact List',
     columns: [
-      { title: 'Col 1', field: 'field1' },
-      { title: 'Col 2', field: 'field2' },
-      { title: 'Col 3', field: 'field3' },
-      { title: 'Col 4', field: 'field4' },
+      { title: 'Company', field: 'company' },
+      { title: 'Contact', field: 'contact' },
+      { title: 'Country', field: 'country' },
+      { title: 'Phone', field: 'phone' },
     ],
     data: [
-      { id: 'row1', field1: 'Value 1', field2: 'Value 2', field3: 'Value 3', field4: 'Value 4' },
-      { id: 'row2', field1: 'Value 5', field2: 'Value 6', field3: 'Value 7', field4: 'Value 8' },
-      { id: 'row3', field1: 'Value 9', field2: 'Value 10', field3: 'Value 11', field4: 'Value 12' },
-      { id: 'row4', field1: 'Value 13', field2: 'Value 14', field3: 'Value 15', field4: 'Value 16' },
+      { id: 'row1', company: 'Alfreds Futterkiste', contact: 'Maria Anders', country: 'Germany', phone: '123-345-7890' },
+      { id: 'row2', company: 'Centro comercial Moctezuma', contact: 'Francisco Chang', country: 'Mexico', phone: '123-345-7890' },
+      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
+      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+      { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
+      { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
     ],
   },
 };
@@ -26,4 +29,43 @@ export default meta;
 
 type Story = StoryObj<typeof GridExample>;
 
-export const Default: Story = {};
+export const DefaultGrid: Story = {
+  args: {
+    selectable: false,
+    caption: 'Contact List',
+    columns: [
+      { title: 'Company', field: 'company' },
+      { title: 'Contact', field: 'contact' },
+      { title: 'Country', field: 'country' },
+      { title: 'Phone', field: 'phone' },
+    ],
+    data: [
+      { id: 'row1', company: 'Alfreds Futterkiste', contact: 'Maria Anders', country: 'Germany', phone: '123-345-7890' },
+      { id: 'row2', company: 'Centro comercial Moctezuma', contact: 'Francisco Chang', country: 'Mexico', phone: '123-345-7890' },
+      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
+      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+      { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
+      { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
+    ],
+  },
+};
+
+export const SelectableGrid: Story = {
+  args: {
+    selectable: true,
+    columns: [
+      { title: 'Company', field: 'company' },
+      { title: 'Contact', field: 'contact' },
+      { title: 'Country', field: 'country' },
+      { title: 'Phone', field: 'phone' },
+    ],
+    data: [
+      { id: 'row1', company: 'Alfreds Futterkiste', contact: 'Maria Anders', country: 'Germany', phone: '123-345-7890' },
+      { id: 'row2', company: 'Centro comercial Moctezuma', contact: 'Francisco Chang', country: 'Mexico', phone: '123-345-7890' },
+      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
+      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+      { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
+      { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
+    ],
+  },
+};

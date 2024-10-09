@@ -1,6 +1,7 @@
 export type ChopLogicGridProps = React.HTMLAttributes<HTMLElement> & {
   columns: ChopLogicGridColumn[];
   data: ChopLogicGridItem[];
+  caption?: string;
   id?: string;
   selectable?: boolean;
   renderDataItem?: (item: ChopLogicGridItem) => JSX.Element;

@@ -10,7 +10,7 @@ The `ChopLogicGrid` component.
 #### Example
 
 <Canvas>
-  <Story of={ChopLogicGridStories.Default} />
+  <Story of={ChopLogicGridStories.DefaultGrid} />
 </Canvas>
 
 ## Usage
@@ -29,3 +29,4 @@ export default ExampleComponent;
 - **data** `ChopLogicGridItem[]` - An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.
 - **columns** `ChopLogicGridColumn[]` - An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title.
 - **selectable** `boolean` - A value that indicates whether the grid has a column with checkboxes.
+- **caption** `string` - An optional title of the grid.

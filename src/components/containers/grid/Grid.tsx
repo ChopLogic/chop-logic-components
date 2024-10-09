@@ -3,10 +3,10 @@ import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicGridBody from './elements/Body';
 import ChopLogicGridHead from './elements/Head';
-import { StyledGrid } from './Grid.styled';
+import { StyledGrid, StyledGridCaption } from './Grid.styled';
 import { ChopLogicGridProps } from './types';
 
-const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSelect, selectable = false }) => {
+const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSelect, selectable = false, caption }) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const allIds = data.map((item) => item.id);
@@ -55,6 +55,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSele
         deselectRowById={handleDeselectRowById}
         selectedIds={selectedIds}
       />
+      {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
     </StyledGrid>
   );
 };

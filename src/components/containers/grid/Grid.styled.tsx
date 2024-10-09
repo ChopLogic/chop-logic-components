@@ -17,15 +17,28 @@ export const StyledGridBody = styled.tbody`
 `;
 
 export const StyledGridHeaderCell = styled.th`
-  padding: ${UNITS.smallGap};
+  padding: ${UNITS.mediumGap};
+  text-align: left;
 `;
 
 export const StyledGridHeaderRow = styled.tr`
-  border-bottom: ${BORDERS.darkBlue};
+  background-color: ${COLORS.secondary};
+  color: ${COLORS.background};
+
+  svg {
+    color: ${COLORS.background} !important;
+  }
 `;
 
 export const StyledGridCell = styled.td`
-  padding: ${UNITS.smallGap};
+  padding: ${UNITS.mediumGap};
+`;
+
+export const StyledGridCaption = styled.caption`
+  font-family: ${FONTS.core};
+  color: ${COLORS.primary};
+  padding: ${UNITS.mediumGap};
+  font-weight: bold;
 `;
 
 export const StyledGridRow = styled.tr<{ $selected: boolean }>`

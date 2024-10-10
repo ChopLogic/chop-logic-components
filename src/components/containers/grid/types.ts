@@ -19,32 +19,3 @@ export type ChopLogicGridItem = {
   disabled?: boolean;
   [key: string]: unknown;
 };
-
-export type GridIdsProps = {
-  selectedIds: string[];
-  setSelectedIds: (value: React.SetStateAction<string[]>) => void;
-};
-
-export type SelectAllCheckboxProps = {
-  allRowIds: string[];
-  tableId: string;
-} & GridIdsProps;
-
-export type SelectRowCheckboxProps = {
-  rowId: string;
-} & GridIdsProps;
-
-export type GridBodyProps = {
-  data: ChopLogicGridItem[];
-  columns: ChopLogicGridColumn[];
-  hasCheckboxColumn: boolean;
-  className?: string;
-} & GridIdsProps;
-
-export type GridHeadProps = {
-  columns: ChopLogicGridColumn[];
-  hasCheckboxColumn: boolean;
-  data: ChopLogicGridColumn[];
-  className?: string;
-  id?: string;
-} & GridIdsProps;

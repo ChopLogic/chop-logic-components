@@ -5,7 +5,7 @@ import * as ChopLogicGridStories from './Grid.stories';
 
 # ChopLogicGrid
 
-The `ChopLogicGrid` component.
+The `ChopLogicGrid` component is a styled grid component built on top of the default HTML `table` element.
 
 #### Example
 
@@ -19,14 +19,48 @@ The `ChopLogicGrid` component.
 import React from 'react';
 import ChopLogicGrid from 'chop-logic-components';
 
-const ExampleComponent = () => <ChopLogicGrid />;
+const data = [
+  { id: 'row1', company: 'Alfreds Futterkiste', contact: 'Maria Anders', country: 'Germany', phone: '123-345-7890' },
+  { id: 'row2', company: 'Centro comercial Moctezuma', contact: 'Francisco Chang', country: 'Mexico', phone: '123-345-7890' },
+  { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
+  { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+  { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
+  { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
+];
+
+const columns = [
+  { title: 'Company', field: 'company' },
+  { title: 'Contact', field: 'contact' },
+  { title: 'Country', field: 'country' },
+  { title: 'Phone', field: 'phone' },
+];
+
+const ExampleComponent = () => <ChopLogicGrid selectable data={data} columns={columns} />;
 
 export default ExampleComponent;
 ```
 
-### Props:
+### Props
 
 - **data** `ChopLogicGridItem[]` - An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.
 - **columns** `ChopLogicGridColumn[]` - An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title.
 - **selectable** `boolean` - A value that indicates whether the grid has a column with checkboxes.
 - **caption** `string` - An optional title of the grid.
+- **onSelect** `(ids: string[]) => void` - An optional callback that is called when one or more grid rows are selected or deselected.
+- **renderDataItem** `(item: ChopLogicGridItem) => JSX.Element` - An optional callback that takes a data item as a parameter and returns a JSX element. This callback is required for custom rendering of grid cells.
+
+### Types
+
+```
+type ChopLogicGridColumn = {
+  field?: string;
+  title?: string;
+  component?: React.ReactElement;
+};
+
+type ChopLogicGridItem = {
+  id: string;
+  disabled?: boolean;
+  [key: string]: unknown;
+};
+```

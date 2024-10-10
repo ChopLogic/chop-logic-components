@@ -11,14 +11,31 @@ describe('SelectGridRowCheckbox', () => {
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />,
+      <table>
+        <thead>
+          <tr>
+            <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
+          </tr>
+        </thead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call select handler', async () => {
     render(
-      <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={false} />,
+      <table>
+        <thead>
+          <tr>
+            <SelectGridRowCheckbox
+              selectRowById={mockedSelect}
+              deselectRowById={mockedDeselect}
+              rowId={mockedRowId}
+              isRowSelected={false}
+            />
+          </tr>
+        </thead>
+      </table>,
     );
 
     await userEvent.click(screen.getByRole('checkbox'));
@@ -27,7 +44,13 @@ describe('SelectGridRowCheckbox', () => {
 
   it('should call deselect handler', async () => {
     render(
-      <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={true} />,
+      <table>
+        <thead>
+          <tr>
+            <SelectGridRowCheckbox selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
+          </tr>
+        </thead>
+      </table>,
     );
 
     await userEvent.click(screen.getByRole('checkbox'));

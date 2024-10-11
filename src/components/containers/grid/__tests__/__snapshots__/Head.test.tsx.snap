@@ -3,15 +3,15 @@
 exports[`ChopLogicGridHead > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-iCZwEW cSmHnd"
+    class="sc-knesRu eVQQCM"
   >
     <input
-      class="sc-knesRu dhaTHN"
+      class="sc-dnaUSb cVcZeW"
       id="select_all_test-grid-id"
       type="checkbox"
     />
     <label
-      class="sc-dnaUSb iGIQrf"
+      class="sc-kkmypM gdLSUN"
       for="select_all_test-grid-id"
     >
       <svg

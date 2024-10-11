@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const StyledGrid = styled.table`
   border-collapse: collapse;
+  box-shadow: ${SHADOWS.box};
 `;
 
 export const StyledGridHeader = styled.thead`
@@ -48,6 +49,16 @@ export const StyledGridRow = styled.tr<{ $selected: boolean }>`
     props.$selected &&
     `
       background-color: ${COLORS.highlight};
+    `}
+`;
+
+export const StyledGridColumn = styled.col<{ $isFirst: boolean }>`
+  border-right: ${BORDERS.lightBlue};
+
+  ${(props) =>
+    props.$isFirst &&
+    `
+      border-left: ${BORDERS.lightBlue};
     `}
 `;
 

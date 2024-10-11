@@ -11,15 +11,15 @@ exports[`GridRow > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_item-1"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_item-1"
             >
               <svg

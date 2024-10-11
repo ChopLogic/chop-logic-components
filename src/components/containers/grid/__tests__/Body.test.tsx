@@ -27,7 +27,11 @@ describe('ChopLogicGridBody', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicGridBody {...testProps} />);
+    const { asFragment } = render(
+      <table>
+        <ChopLogicGridBody {...testProps} />
+      </table>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicGridBody from './elements/Body';
+import GridColumnGroup from './elements/ColumnGroup';
 import ChopLogicGridHead from './elements/Head';
 import { StyledGrid, StyledGridCaption } from './Grid.styled';
 import { ChopLogicGridProps } from './types';
@@ -38,6 +39,8 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSele
 
   return (
     <StyledGrid>
+      {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
+      <GridColumnGroup columns={columns} />
       <ChopLogicGridHead
         gridId={elementId}
         columns={columns}
@@ -55,7 +58,6 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSele
         deselectRowById={handleDeselectRowById}
         selectedIds={selectedIds}
       />
-      {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
     </StyledGrid>
   );
 };

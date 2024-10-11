@@ -3,8 +3,22 @@
 exports[`ChopLogicGrid > should match the snapshot 1`] = `
 <DocumentFragment>
   <table
-    class="sc-braxZu htQKeQ"
+    class="sc-braxZu hgBksX"
   >
+    <colgroup>
+      <col
+        class="sc-iCZwEW hZKiWH"
+      />
+      <col
+        class="sc-iCZwEW gywXzI"
+      />
+      <col
+        class="sc-iCZwEW gywXzI"
+      />
+      <col
+        class="sc-iCZwEW gywXzI"
+      />
+    </colgroup>
     <thead
       class="sc-gJhJTp cboyra"
     >
@@ -15,15 +29,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-fQpRED ezRTCh"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_all_:r0:"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_all_:r0:"
             >
               <svg
@@ -72,15 +86,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row1"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row1"
             >
               <svg
@@ -123,15 +137,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row2"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row2"
             >
               <svg
@@ -174,15 +188,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row3"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row3"
             >
               <svg
@@ -227,15 +241,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row4"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row4"
             >
               <svg
@@ -280,15 +294,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row5"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row5"
             >
               <svg
@@ -331,15 +345,15 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           class="sc-iKTcqh hQfLEQ"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_row_row6"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_row_row6"
             >
               <svg

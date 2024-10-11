@@ -9,16 +9,16 @@ exports[`SelectAllGridRowsCheckbox > should match the snapshot 1`] = `
           class="sc-fQpRED ezRTCh"
         >
           <div
-            class="sc-iCZwEW cSmHnd"
+            class="sc-knesRu eVQQCM"
           >
             <input
               checked=""
-              class="sc-knesRu dhaTHN"
+              class="sc-dnaUSb cVcZeW"
               id="select_all_grid-id"
               type="checkbox"
             />
             <label
-              class="sc-dnaUSb iGIQrf"
+              class="sc-kkmypM gdLSUN"
               for="select_all_grid-id"
             >
               <svg

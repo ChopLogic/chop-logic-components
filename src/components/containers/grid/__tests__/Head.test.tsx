@@ -21,7 +21,11 @@ describe('ChopLogicGridHead', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicGridHead {...testProps} />);
+    const { asFragment } = render(
+      <table>
+        <ChopLogicGridHead {...testProps} />
+      </table>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

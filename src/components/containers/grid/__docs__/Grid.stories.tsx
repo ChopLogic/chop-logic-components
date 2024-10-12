@@ -54,7 +54,7 @@ export const SelectableGrid: Story = {
   args: {
     selectable: true,
     columns: [
-      { title: 'Company', field: 'company' },
+      { title: 'Company', field: 'company', highlighted: true },
       { title: 'Contact', field: 'contact' },
       { title: 'Country', field: 'country' },
       { title: 'Phone', field: 'phone' },

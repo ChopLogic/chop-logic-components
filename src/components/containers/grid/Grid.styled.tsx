@@ -52,14 +52,11 @@ export const StyledGridRow = styled.tr<{ $selected: boolean }>`
     `}
 `;
 
-export const StyledGridColumn = styled.col<{ $isFirst: boolean }>`
+export const StyledGridColumn = styled.col<{ $isFirst: boolean; $highlighted: boolean }>`
   border-right: ${BORDERS.lightBlue};
 
-  ${(props) =>
-    props.$isFirst &&
-    `
-      border-left: ${BORDERS.lightBlue};
-    `}
+  ${(props) => props.$isFirst && `border-left: ${BORDERS.lightBlue};`}
+  ${(props) => props.$highlighted && `background-color: ${COLORS.highlight};`}
 `;
 
 export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean }>`

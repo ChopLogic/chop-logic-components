@@ -12,6 +12,8 @@ export type ChopLogicGridColumn = {
   field?: string;
   title?: string;
   component?: React.ReactElement;
+  highlighted?: boolean;
+  className?: string;
 };
 
 export type ChopLogicGridItem = {

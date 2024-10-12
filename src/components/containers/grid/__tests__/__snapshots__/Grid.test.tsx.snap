@@ -7,16 +7,19 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
   >
     <colgroup>
       <col
-        class="sc-iCZwEW hZKiWH"
+        class="sc-iCZwEW kIOhLQ"
       />
       <col
-        class="sc-iCZwEW gywXzI"
+        class="sc-iCZwEW jJieUb"
       />
       <col
-        class="sc-iCZwEW gywXzI"
+        class="sc-iCZwEW jJieUb"
       />
       <col
-        class="sc-iCZwEW gywXzI"
+        class="sc-iCZwEW jJieUb"
+      />
+      <col
+        class="sc-iCZwEW jJieUb"
       />
     </colgroup>
     <thead

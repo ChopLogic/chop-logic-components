@@ -40,7 +40,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSele
   return (
     <StyledGrid>
       {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
-      <GridColumnGroup columns={columns} />
+      <GridColumnGroup columns={columns} selectable={selectable} />
       <ChopLogicGridHead
         gridId={elementId}
         columns={columns}

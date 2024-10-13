@@ -41,8 +41,8 @@ describe('getGridRowValues', () => {
 
   it('should return rendered JSX elements when renderDataItem is provided for object fields', () => {
     const item: ChopLogicGridItem = {
-      id: '2',
-      details: { address: '123 Main St' },
+      id: 'test-id',
+      details: '123 Main St',
     };
 
     const columns: ChopLogicGridColumn[] = [
@@ -50,29 +50,12 @@ describe('getGridRowValues', () => {
       { field: 'details', title: 'Details' }, // object field
     ];
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const renderDataItem = (item: ChopLogicGridItem) => <div>{(item.details as any).address}</div>;
+    const renderDataItem = (item: ChopLogicGridItem, field: string) => <span>{(item[field] as string).toUpperCase()}</span>;
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
-    expect(result[0]).toBe('2');
-    expect((result[1] as JSX.Element).props.children).toBe('123 Main St'); // Check if JSX is rendered correctly
-  });
-
-  it('should return empty string when renderDataItem is not provided for object fields', () => {
-    const item: ChopLogicGridItem = {
-      id: '3',
-      details: { address: '456 Another St' },
-    };
-
-    const columns: ChopLogicGridColumn[] = [
-      { field: 'id', title: 'ID' },
-      { field: 'details', title: 'Details' }, // object field without renderDataItem
-    ];
-
-    const result = getGridRowValues({ item, columns });
-
-    expect(result).toEqual(['3', '']);
+    expect((result[0] as JSX.Element).props.children).toBe('TEST-ID');
+    expect((result[1] as JSX.Element).props.children).toBe('123 MAIN ST');
   });
 
   it('should handle columns without a field by returning empty string', () => {
@@ -82,7 +65,7 @@ describe('getGridRowValues', () => {
     };
 
     const columns: ChopLogicGridColumn[] = [
-      { title: 'No Field' }, // No field provided
+      { title: 'No Field', field: '' }, // No field provided
       { field: 'id', title: 'ID' },
       { field: 'name', title: 'Name' },
     ];

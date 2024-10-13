@@ -7,7 +7,7 @@ import ChopLogicGridHead from './elements/Head';
 import { StyledGrid, StyledGridCaption } from './Grid.styled';
 import { ChopLogicGridProps } from './types';
 
-const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSelect, selectable = false, caption }) => {
+const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSelect, renderDataItem, caption, selectable = false }) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const allIds = data.map((item) => item.id);
@@ -57,6 +57,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({ columns, data, id, onSele
         selectRowById={handleSelectRowById}
         deselectRowById={handleDeselectRowById}
         selectedIds={selectedIds}
+        renderDataItem={renderDataItem}
       />
     </StyledGrid>
   );

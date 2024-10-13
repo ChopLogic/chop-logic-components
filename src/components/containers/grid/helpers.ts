@@ -1,4 +1,4 @@
-import { ChopLogicGridColumn, ChopLogicGridItem } from './types';
+import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from './types';
 
 export function getGridRowValues({
   item,
@@ -7,20 +7,18 @@ export function getGridRowValues({
 }: {
   item: ChopLogicGridItem;
   columns: ChopLogicGridColumn[];
-  renderDataItem?: (item: ChopLogicGridItem) => JSX.Element;
+  renderDataItem?: RenderDataItemCallback;
 }): (string | JSX.Element)[] {
   const values = [];
   for (const column of columns) {
     let value;
 
-    if (!column?.field || item[column.field] === null || item[column.field] === undefined) {
-      value = '';
-    } else if (typeof item[column.field] === 'object' && !!renderDataItem) {
-      value = renderDataItem(item);
-    } else if (typeof item[column.field] === 'object' && !renderDataItem) {
-      value = '';
-    } else {
+    if (renderDataItem && item[column.field]) {
+      value = renderDataItem(item, column.field);
+    } else if (item[column.field]) {
       value = (item[column.field] as string).toString();
+    } else {
+      value = '';
     }
 
     values.push(value);

@@ -1,15 +1,15 @@
-export type ChopLogicGridProps = React.HTMLAttributes<HTMLElement> & {
+export type ChopLogicGridProps = {
   columns: ChopLogicGridColumn[];
   data: ChopLogicGridItem[];
   caption?: string;
   id?: string;
   selectable?: boolean;
-  renderDataItem?: (item: ChopLogicGridItem) => JSX.Element;
+  renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
 };
 
 export type ChopLogicGridColumn = {
-  field?: string;
+  field: string;
   title?: string;
   component?: React.ReactElement;
   highlighted?: boolean;
@@ -21,3 +21,5 @@ export type ChopLogicGridItem = {
   disabled?: boolean;
   [key: string]: unknown;
 };
+
+export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;

@@ -35,7 +35,7 @@ const columns = [
   { title: 'Phone', field: 'phone' },
 ];
 
-const ExampleComponent = () => <ChopLogicGrid selectable data={data} columns={columns} />;
+const ExampleComponent = () => <ChopLogicGrid selectable={false} data={data} columns={columns} />;
 
 export default ExampleComponent;
 ```
@@ -56,6 +56,8 @@ type ChopLogicGridColumn = {
   field?: string;
   title?: string;
   component?: React.ReactElement;
+  highlighted?: boolean;
+  className?: string;
 };
 
 type ChopLogicGridItem = {
@@ -63,4 +65,6 @@ type ChopLogicGridItem = {
   disabled?: boolean;
   [key: string]: unknown;
 };
+
+type RenderDataItemCallback = (item: ChopLogicGridItem, field?: string) => JSX.Element;
 ```

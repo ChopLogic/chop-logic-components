@@ -4,6 +4,9 @@ export type ChopLogicGridProps = {
   caption?: string;
   id?: string;
   selectable?: boolean;
+  tabIndex?: number;
+  className?: string;
+  style?: React.CSSProperties;
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
 };

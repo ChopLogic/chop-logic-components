@@ -3,7 +3,8 @@
 exports[`ChopLogicGrid > should match the snapshot 1`] = `
 <DocumentFragment>
   <table
-    class="sc-braxZu hgBksX"
+    class="sc-braxZu hgBksX test-class"
+    tabindex="-1"
   >
     <colgroup>
       <col
@@ -36,12 +37,12 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           >
             <input
               class="sc-dnaUSb cVcZeW"
-              id="select_all_:r0:"
+              id="select_all_test-grid-id"
               type="checkbox"
             />
             <label
               class="sc-kkmypM gdLSUN"
-              for="select_all_:r0:"
+              for="select_all_test-grid-id"
             >
               <svg
                 fill="currentColor"

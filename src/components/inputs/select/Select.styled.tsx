@@ -6,8 +6,8 @@ export const StyledSelectWrapper = styled.div<{ $disabled: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: ${UNITS.mediumGap};
-  padding: ${UNITS.mediumGap};
+  gap: ${UNITS.smallGap};
+  padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
   box-shadow: ${SHADOWS.box};
@@ -39,6 +39,7 @@ export const StyledSelectCombobox = styled.button`
     align-items: center;
     gap: ${UNITS.mediumGap};
     overflow: hidden;
+    height: ${UNITS.fieldWrapperHeight};
 
     svg {
       color: ${COLORS.tertiary};
@@ -83,7 +84,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean }>`
   list-style: none;
   z-index: ${Z_INDEXES.dropdown};
   width: 100%;
-  top: 84px;
+  top: 78px;
   left: -1px;
   border: ${BORDERS.lightBlue};
   box-shadow: ${SHADOWS.box};

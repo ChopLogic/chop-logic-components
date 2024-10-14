@@ -7,11 +7,14 @@ import CancelIcon from './elements/Cancel';
 import CheckboxCheckedIcon from './elements/CheckboxChecked';
 import CheckboxUncheckedIcon from './elements/CheckboxUnchecked';
 import CheckMarkIcon from './elements/CheckMark';
+import ChevronDownIcon from './elements/ChevronDown';
+import ChevronLeftIcon from './elements/ChevronLeft';
+import ChevronRightIcon from './elements/ChevronRight';
+import ChevronUpIcon from './elements/ChevronUp';
 import ClearIcon from './elements/Clear';
 import CopyIcon from './elements/Copy';
 import CutIcon from './elements/Cut';
 import DeleteIcon from './elements/Delete';
-import DownIcon from './elements/Down';
 import DownloadIcon from './elements/Download';
 import ErrorIcon from './elements/Error';
 import ForwardIcon from './elements/Forward';
@@ -23,7 +26,6 @@ import QuestionIcon from './elements/Question';
 import RemoveIcon from './elements/Remove';
 import SaveIcon from './elements/Save';
 import ShowIcon from './elements/Show';
-import UpIcon from './elements/Up';
 import UploadIcon from './elements/Upload';
 import WarningIcon from './elements/Warning';
 
@@ -35,11 +37,14 @@ export enum CLIcon {
   CheckboxChecked = 'checkbox-checked',
   CheckboxUnchecked = 'checkbox-unchecked',
   CheckMark = 'check-mark',
+  ChevronDown = 'chevron-down',
+  ChevronLeft = 'chevron-left',
+  ChevronRight = 'chevron-right',
+  ChevronUp = 'chevron-up',
   Clear = 'clear',
   Copy = 'copy',
   Cut = 'cut',
   Delete = 'delete',
-  Down = 'down',
   Download = 'download',
   Error = 'error',
   Forward = 'forward',
@@ -50,7 +55,6 @@ export enum CLIcon {
   Question = 'question',
   Save = 'save',
   Show = 'show',
-  Up = 'up',
   Upload = 'upload',
   Warning = 'warning',
   Remove = 'remove',
@@ -72,6 +76,14 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <CheckboxUncheckedIcon />;
     case CLIcon.CheckMark:
       return <CheckMarkIcon />;
+    case CLIcon.ChevronDown:
+      return <ChevronDownIcon />;
+    case CLIcon.ChevronUp:
+      return <ChevronUpIcon />;
+    case CLIcon.ChevronLeft:
+      return <ChevronLeftIcon />;
+    case CLIcon.ChevronRight:
+      return <ChevronRightIcon />;
     case CLIcon.Clear:
       return <ClearIcon />;
     case CLIcon.Copy:
@@ -80,8 +92,7 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <CutIcon />;
     case CLIcon.Delete:
       return <DeleteIcon />;
-    case CLIcon.Down:
-      return <DownIcon />;
+
     case CLIcon.Download:
       return <DownloadIcon />;
     case CLIcon.Error:
@@ -102,8 +113,7 @@ const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElemen
       return <SaveIcon />;
     case CLIcon.Show:
       return <ShowIcon />;
-    case CLIcon.Up:
-      return <UpIcon />;
+
     case CLIcon.Upload:
       return <UploadIcon />;
     case CLIcon.Warning:

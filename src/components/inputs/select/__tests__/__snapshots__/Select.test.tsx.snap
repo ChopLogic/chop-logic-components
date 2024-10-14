@@ -3,7 +3,7 @@
 exports[`ChopLogicSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-la-DxNn dpvYzY"
+    class="sc-la-DxNn hBtBBV"
   >
     <label
       class="sc-dsLQwm cmpKZQ"
@@ -20,7 +20,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-iCZwEW cmnnMw"
+      class="sc-iCZwEW gglrlo"
       id="language-select-id"
       name="language"
       role="combobox"
@@ -43,7 +43,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-kkmypM iwsEih"
+      class="sc-kkmypM gOvpwC"
       id="language-select-id_dropdown"
       role="listbox"
       tabindex="-1"

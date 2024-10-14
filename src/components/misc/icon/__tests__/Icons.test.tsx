@@ -8,11 +8,14 @@ import CancelIcon from '../elements/Cancel';
 import CheckboxCheckedIcon from '../elements/CheckboxChecked';
 import CheckboxUncheckedIcon from '../elements/CheckboxUnchecked';
 import CheckMarkIcon from '../elements/CheckMark';
+import ChevronDownIcon from '../elements/ChevronDown';
+import ChevronLeftIcon from '../elements/ChevronLeft';
+import ChevronRightIcon from '../elements/ChevronRight';
+import ChevronUpIcon from '../elements/ChevronUp';
 import ClearIcon from '../elements/Clear';
 import CopyIcon from '../elements/Copy';
 import CutIcon from '../elements/Cut';
 import DeleteIcon from '../elements/Delete';
-import DownIcon from '../elements/Down';
 import DownloadIcon from '../elements/Download';
 import ErrorIcon from '../elements/Error';
 import ForwardIcon from '../elements/Forward';
@@ -24,7 +27,6 @@ import QuestionIcon from '../elements/Question';
 import RemoveIcon from '../elements/Remove';
 import SaveIcon from '../elements/Save';
 import ShowIcon from '../elements/Show';
-import UpIcon from '../elements/Up';
 import UploadIcon from '../elements/Upload';
 import WarningIcon from '../elements/Warning';
 
@@ -89,11 +91,6 @@ describe('ChopLogicIcon', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('DownIcon should match the snapshot', () => {
-    const { asFragment } = render(<DownIcon />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('ErrorIcon should match the snapshot', () => {
     const { asFragment } = render(<ErrorIcon />);
     expect(asFragment()).toMatchSnapshot();
@@ -149,8 +146,23 @@ describe('ChopLogicIcon', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('UpIcon should match the snapshot', () => {
-    const { asFragment } = render(<UpIcon />);
+  it('ChevronDownIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronDownIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChevronUpIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronUpIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChevronLeftIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronLeftIcon />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ChevronRightIcon should match the snapshot', () => {
+    const { asFragment } = render(<ChevronRightIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 

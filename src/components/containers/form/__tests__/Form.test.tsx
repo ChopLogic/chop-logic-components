@@ -7,11 +7,16 @@ import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'co
 import ChopLogicForm from '../Form';
 
 describe('ChopLogicForm', () => {
-  const testInitialValues = { firstName: 'John', lastName: 'Doe', age: 33, accepted: true };
+  const testInitialValues = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 33,
+    accepted: true,
+  };
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <ChopLogicForm>
+      <ChopLogicForm id='form-id' className='form-class' style={{ width: '500px' }}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />

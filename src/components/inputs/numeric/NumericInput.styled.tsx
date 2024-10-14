@@ -11,7 +11,7 @@ export const StyledNumericInputWrapper = styled.div<{ $disabled: boolean; $inval
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0;
+  gap: ${UNITS.smallGap};
   padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
   font-family: ${FONTS.core};
   color: ${COLORS.primary};
@@ -82,20 +82,17 @@ export const StyledFieldWrapper = styled.span`
   align-items: center;
   width: 100%;
   gap: ${UNITS.smallGap};
+  height: ${UNITS.fieldWrapperHeight};
 `;
 
 export const StyledButtonsWrapper = styled.span`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   min-width: 0;
 
   button {
     padding: 0;
-  }
-
-  svg {
-    height: 1.25rem;
   }
 `;

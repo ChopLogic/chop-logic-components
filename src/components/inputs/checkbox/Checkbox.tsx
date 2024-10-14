@@ -11,7 +11,7 @@ import { useChopLogicCheckboxController } from './helpers';
 export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   label: string;
-  isLabelHidden?: boolean;
+  noLabel?: boolean;
   iconPosition?: 'left' | 'right';
 };
 
@@ -19,7 +19,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,
   label,
   disabled,
-  isLabelHidden,
+  noLabel,
   required = false,
   iconPosition = 'left',
   defaultChecked,
@@ -45,13 +45,13 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         required={required}
         checked={checked}
         onChange={handleChange}
-        aria-label={isLabelHidden ? label : undefined}
+        aria-label={noLabel ? label : undefined}
       />
       <ChopLogicLabel
         label={label}
         required={required}
         inputId={elementId}
-        isTextHidden={isLabelHidden}
+        isTextHidden={noLabel}
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}
       />

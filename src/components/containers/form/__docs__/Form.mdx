@@ -5,7 +5,7 @@ import * as ChopLogicFormStories from './Form.stories';
 
 # ChopLogicForm
 
-The `ChopLogicForm` component.
+The `ChopLogicForm` component is a wrapper for one or more inputs. It collects values of these inputs, validates them, and passes them to the handler function when the Submit button is clicked. The component works with both Chop Logic inputs and default HTML inputs.
 
 #### Example
 
@@ -37,3 +37,10 @@ export default ExampleComponent;
 ```
 
 ### Props:
+
+- **children** `React.ReactNode` - Inputs, buttons, and other elements that will be rendered inside the form.
+- **columns** `number` - Number of columns in the form (default is one column).
+- **initialValues** `ChopLogicFormData` - Object with default values ​​for form inputs.
+- **hasReset** `boolean` - Boolean value indicating whether the form has the Reset button (true by default).
+- **onClickSubmit** - `(data: ChopLogicFormData) => void` - Function that will be called when the Submit button is clicked. It will receive an object with the current input values ​​as a parameter.
+- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).

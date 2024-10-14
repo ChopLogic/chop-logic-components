@@ -10,7 +10,7 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
   required = true,
   onChange = (e) => console.log('Checkbox state:', e.target.checked),
   disabled = false,
-  isLabelHidden = false,
+  noLabel = false,
   defaultChecked,
 }) => {
   return (
@@ -28,7 +28,7 @@ const Example: React.FC<ChopLogicCheckboxProps> = ({
         required={required}
         onChange={onChange}
         disabled={disabled}
-        isLabelHidden={isLabelHidden}
+        noLabel={noLabel}
         iconPosition={iconPosition}
         defaultChecked={defaultChecked}
       />

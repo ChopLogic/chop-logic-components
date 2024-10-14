@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DownIcon(props: React.SVGProps<SVGSVGElement>) {
+function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg fill='currentColor' viewBox='0 0 16 16' height='1em' width='1em' {...props}>
       <path
@@ -11,4 +11,4 @@ function DownIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default DownIcon;
+export default ChevronDownIcon;

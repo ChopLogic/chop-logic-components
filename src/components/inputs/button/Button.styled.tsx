@@ -80,7 +80,7 @@ export const StyledButton = styled.button<{ $view: ChopLogicButtonView; $disable
   overflow: hidden;
 
   &:focus-visible {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: 2px;
   }
 

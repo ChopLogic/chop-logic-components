@@ -11,7 +11,7 @@ export const StyledInputInnerButton = styled.button`
   align-items: center;
 
   &:focus-visible {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: -2px;
   }
 

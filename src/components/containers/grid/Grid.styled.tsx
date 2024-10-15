@@ -43,7 +43,7 @@ export const StyledGridCaption = styled.caption`
 `;
 
 export const StyledGridRow = styled.tr<{ $selected: boolean }>`
-  border-bottom: ${BORDERS.lightBlue};
+  border-bottom: ${BORDERS.light};
 
   ${(props) =>
     props.$selected &&
@@ -53,9 +53,9 @@ export const StyledGridRow = styled.tr<{ $selected: boolean }>`
 `;
 
 export const StyledGridColumn = styled.col<{ $isFirst: boolean; $highlighted: boolean }>`
-  border-right: ${BORDERS.lightBlue};
+  border-right: ${BORDERS.light};
 
-  ${(props) => props.$isFirst && `border-left: ${BORDERS.lightBlue};`}
+  ${(props) => props.$isFirst && `border-left: ${BORDERS.light};`}
   ${(props) => props.$highlighted && `background-color: ${COLORS.highlight};`}
 `;
 
@@ -98,7 +98,7 @@ export const StyledGridCheckboxInput = styled.input`
   margin: 0;
 
   &:focus-visible + label {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: 2px;
   }
 `;

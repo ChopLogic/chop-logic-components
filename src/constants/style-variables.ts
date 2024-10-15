@@ -31,10 +31,10 @@ export const SHADOWS = Object.freeze({
 });
 
 export const BORDERS = Object.freeze({
-  lightBlue: '1px solid #5998c5',
-  darkBlue: '1px solid #266dd3',
+  light: '1px solid #5998c5',
+  heavy: '1px solid #266dd3',
   accent: '1px solid #e53d00',
-  focusOutline: '2px dashed #e53d00',
+  outline: '2px dashed #e53d00',
 });
 
 export const Z_INDEXES = Object.freeze({

@@ -19,7 +19,7 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   border-top-right-radius: ${UNITS.blockBorderRadius};
 
   &:focus-visible {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: -4px;
   }
 
@@ -40,9 +40,9 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   ${(props) =>
     props.$selected &&
     `   
-      border-top: ${BORDERS.lightBlue};
-      border-right: ${BORDERS.lightBlue};
-      border-left: ${BORDERS.lightBlue};
+      border-top: ${BORDERS.light};
+      border-right: ${BORDERS.light};
+      border-left: ${BORDERS.light};
       background-color: ${COLORS.background};
       top: 1px;
     `}
@@ -58,10 +58,10 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     props.$mode === 'vertical' &&
     props.$selected &&
     `
-      border-top: ${BORDERS.lightBlue};
+      border-top: ${BORDERS.light};
       border-right: none;
-      border-left: ${BORDERS.lightBlue};
-      border-bottom: ${BORDERS.lightBlue};
+      border-left: ${BORDERS.light};
+      border-bottom: ${BORDERS.light};
       top: 0px;
       left: 1px;
     `}
@@ -76,7 +76,7 @@ export const StyledTabContent = styled.div`
 `;
 
 export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`
-  border-bottom: ${BORDERS.lightBlue};
+  border-bottom: ${BORDERS.light};
   padding: 0 ${UNITS.mediumGap};
   display: flex;
   gap: ${UNITS.mediumGap};
@@ -86,7 +86,7 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`
     `
       flex-direction: column;
       border-bottom: none;
-      border-right: ${BORDERS.lightBlue};
+      border-right: ${BORDERS.light};
       padding: ${UNITS.mediumGap} 0;
     `}
 `;

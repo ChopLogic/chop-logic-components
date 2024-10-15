@@ -11,7 +11,6 @@ describe('ChopLogicPortal', () => {
   });
 
   afterEach(() => {
-    // Clear mocks after each test
     vi.restoreAllMocks();
   });
 

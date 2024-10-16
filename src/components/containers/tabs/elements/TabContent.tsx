@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { ChopLogicTabItem } from '../Tabs';
 import { StyledTabContent } from '../Tabs.styled';
+import { ChopLogicTabItem } from '../types';
 
-type ChopLogicTabContentProps = {
+const ChopLogicTabContent: React.FC<{
   tabs: ChopLogicTabItem[];
   selectedTabId: string;
-};
-
-const ChopLogicTabContent: React.FC<ChopLogicTabContentProps> = ({ tabs, selectedTabId }): React.ReactElement => {
+}> = ({ tabs, selectedTabId }): React.ReactElement => {
   const content = tabs.find((item) => item.id === selectedTabId)?.content;
   const contentId = `tabpanel_${selectedTabId}`;
 

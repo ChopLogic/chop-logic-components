@@ -5,7 +5,8 @@ import { CLIcon } from 'components/misc/icon/Icon';
 
 import { useChopLogicFormController } from './controller';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
-import { ChopLogicFormContext, ChopLogicFormData } from './FormContext';
+import { ChopLogicFormContext } from './FormContext';
+import { ChopLogicFormData } from './types';
 
 export type ChopLogicFormProps = PropsWithChildren &
   React.HTMLAttributes<HTMLFormElement> & {

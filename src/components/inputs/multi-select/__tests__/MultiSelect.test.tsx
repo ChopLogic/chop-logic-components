@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicForm from 'components/containers/form/Form';
-import { SelectValue } from 'components/inputs/select/Select';
+import { SelectValue } from 'components/inputs/select/types';
 
 import ChopLogicMultiSelect from '../MultiSelect';
 

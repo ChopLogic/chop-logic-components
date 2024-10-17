@@ -7,7 +7,7 @@ import { CLIcon } from 'components/misc/icon/Icon';
 
 import InputInnerButton from '../_common/input-inner-button/InputInnerButton';
 
-import { useChopLogicNumericInputController } from './helpers';
+import { useChopLogicNumericInputController } from './controller';
 import {
   StyledButtonsWrapper,
   StyledFieldWrapper,
@@ -15,18 +15,7 @@ import {
   StyledNumericInputContainer,
   StyledNumericInputWrapper,
 } from './NumericInput.styled';
-
-export type NumericValidationFunction = (input?: number) => boolean;
-
-export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
-  errorMessage?: string;
-  validator?: NumericValidationFunction;
-  onClear?: () => void;
-  hasSpinButtons?: boolean;
-  onSpinButtonClick?: (value?: number) => void;
-};
+import { ChopLogicNumericInputProps } from './types';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,

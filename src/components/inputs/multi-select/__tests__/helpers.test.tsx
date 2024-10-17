@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
 
 import { ChopLogicFormData } from 'components/containers/form/types';
-import { SelectValue } from 'components/inputs/select/Select';
+import { SelectValue } from 'components/inputs/select/types';
 
 import { getMultiSelectInitialValues } from '../helpers';
-import { MultiSelectValue } from '../MultiSelect';
+import { MultiSelectValue } from '../types';
 
 describe('getMultiSelectSelectValues', () => {
   const options: SelectValue[] = [

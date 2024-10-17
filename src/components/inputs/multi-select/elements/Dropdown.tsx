@@ -1,8 +1,8 @@
 import { KeyboardEvent } from 'react';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 
-import { MultiSelectDropdownProps } from '../MultiSelect';
 import { StyledMultiSelectDropdown } from '../MultiSelect.styled';
+import { MultiSelectDropdownProps } from '../types';
 
 import SelectOption from './Option';
 

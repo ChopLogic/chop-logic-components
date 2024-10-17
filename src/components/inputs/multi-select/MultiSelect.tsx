@@ -5,30 +5,11 @@ import { useKeyPress } from 'hooks/use-key-press';
 
 import ChopLogicLabel from 'components/inputs/_common/label/Label';
 
-import { SelectValue } from '../select/Select';
-
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
-import { useChopLogicMultiSelectController } from './helpers';
+import { useChopLogicMultiSelectController } from './controller';
 import { StyledMultiSelectWrapper } from './MultiSelect.styled';
-
-export type MultiSelectValue = SelectValue & { selected: boolean };
-
-export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  name: string;
-  label: string;
-  options: SelectValue[];
-  onChange?: (values?: SelectValue[]) => void;
-  placeholder?: string;
-};
-
-export type MultiSelectDropdownProps = {
-  options: MultiSelectValue[];
-  opened: boolean;
-  dropdownId: string;
-  onClose: () => void;
-  onSelect: (id: string) => void;
-};
+import { ChopLogicMultiSelectProps } from './types';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   options,

@@ -4,7 +4,8 @@ import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicForm from 'components/containers/form/Form';
 
-import ChopLogicSelect, { SelectValue } from '../Select';
+import ChopLogicSelect from '../Select';
+import { SelectValue } from '../types';
 
 describe('ChopLogicSelect', () => {
   const SELECT_LANGUAGES: SelectValue[] = [

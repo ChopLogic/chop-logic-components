@@ -3,8 +3,8 @@ import { KeyboardEvent } from 'react';
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 
-import { MultiSelectValue } from '../MultiSelect';
 import { StyledMultiSelectOption } from '../MultiSelect.styled';
+import { MultiSelectValue } from '../types';
 
 type SelectOptionProps = {
   value: MultiSelectValue;

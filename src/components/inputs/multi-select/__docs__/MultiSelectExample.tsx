@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ChopLogicMultiSelect, { ChopLogicMultiSelectProps } from '../MultiSelect';
+import ChopLogicMultiSelect from '../MultiSelect';
+import { ChopLogicMultiSelectProps } from '../types';
 
 const Example: React.FC<ChopLogicMultiSelectProps> = ({ id, name, label, options, placeholder, required, disabled, onChange }) => {
   return (

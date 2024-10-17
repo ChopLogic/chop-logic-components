@@ -7,11 +7,11 @@ import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUncheck
 
 import { StyledGridCheckboxInput, StyledGridCheckboxWrapper } from '../Grid.styled';
 
-export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
 };
 
-const GridCheckbox: React.FC<ChopLogicCheckboxProps> = ({
+const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
   name,
   label,
   disabled,

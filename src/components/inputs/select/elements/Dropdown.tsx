@@ -1,8 +1,8 @@
 import { KeyboardEvent } from 'react';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 
-import { SelectValue } from '../Select';
 import { StyledSelectDropdown } from '../Select.styled';
+import { SelectValue } from '../types';
 
 import SelectOption from './Option';
 

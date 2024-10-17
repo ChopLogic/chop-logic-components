@@ -4,7 +4,8 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { CLIcon } from 'components/misc/icon/Icon';
 
-import Button, { ChopLogicButtonView } from '../Button';
+import Button from '../Button';
+import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {
   const testProps = {

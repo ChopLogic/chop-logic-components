@@ -6,7 +6,7 @@ import InputInnerButton from 'components/inputs/_common/input-inner-button/Input
 import ChopLogicLabel from 'components/inputs/_common/label/Label';
 import { CLIcon } from 'components/misc/icon/Icon';
 
-import { useChopLogicTextInputController } from './helpers';
+import { useChopLogicTextInputController } from './controller';
 import {
   StyledButtonsWrapper,
   StyledFieldWrapper,
@@ -14,24 +14,7 @@ import {
   StyledTextInputContainer,
   StyledTextInputWrapper,
 } from './TextInput.styled';
-
-export type RegExpWithFlags = {
-  regexp: string;
-  flags?: string;
-};
-
-export type TextValidationFunction = (input: string) => boolean;
-
-export type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
-  valid?: boolean;
-  errorMessage?: string;
-  clearable?: boolean;
-  onClear?: () => void;
-  type?: 'text' | 'email' | 'password';
-  validator?: RegExpWithFlags | TextValidationFunction;
-};
+import { ChopLogicTextInputProps } from './types';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,

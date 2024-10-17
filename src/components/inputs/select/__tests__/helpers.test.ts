@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { getSelectInitialValue } from '../helpers';
-import { SelectValue } from '../Select';
+import { SelectValue } from '../types';
 
 describe('getSelectInitialValue', () => {
   const options: SelectValue[] = [

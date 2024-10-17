@@ -3,17 +3,9 @@ import React from 'react';
 import ChopLogicButton from 'components/inputs/button/Button';
 import { CLIcon } from 'components/misc/icon/Icon';
 
-import { ChopLogicAlertMode } from '../Alert';
 import { StyledAlertHeader } from '../Alert.styled';
-import { getAlertTitle } from '../helpers/get-alert-title';
-import { renderAlertIcon } from '../helpers/render-alert-icon';
-
-type ChopLogicAlertHeaderProps = {
-  onClose: () => void;
-  mode: ChopLogicAlertMode;
-  title?: string;
-  icon?: CLIcon;
-};
+import { getAlertTitle, renderAlertIcon } from '../helpers';
+import { ChopLogicAlertHeaderProps } from '../types';
 
 const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode, icon }) => {
   const alertTitle = getAlertTitle(mode, title);

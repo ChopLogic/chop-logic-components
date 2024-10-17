@@ -187,7 +187,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             class="sc-epPVmt hQJltw"
           >
             <button
-              aria-label="Increment value for Age"
+              aria-label="Decrement value for Age"
               class="sc-cBYhjr jvmHZb"
               type="button"
             >
@@ -204,7 +204,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-label="Decrement value for Age"
+              aria-label="Increment value for Age"
               class="sc-cBYhjr jvmHZb"
               type="button"
             >

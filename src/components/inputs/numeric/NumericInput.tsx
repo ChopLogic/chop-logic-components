@@ -73,8 +73,8 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           />
           {hasSpinButtons && (
             <StyledButtonsWrapper>
-              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={CLIcon.ChevronLeft} />
-              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={CLIcon.ChevronRight} />
+              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={CLIcon.ChevronLeft} />
+              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={CLIcon.ChevronRight} />
             </StyledButtonsWrapper>
           )}
         </StyledFieldWrapper>

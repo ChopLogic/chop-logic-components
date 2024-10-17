@@ -1,19 +1,12 @@
-import { PropsWithChildren } from 'react';
 import { useMount } from 'hooks/use-mount';
 
 import ChopLogicPortal from 'components/containers/portal';
 
 import ChopLogicModalLayout from './elements/Layout';
 import { StyledDialogBackground } from './Dialog.styled';
+import { ChopLogicDialogProps } from './types';
 
-export type ChopLogicModalProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLDivElement> & {
-    isOpened: boolean;
-    onClose: () => void;
-    title: string;
-  };
-
-const ChopLogicDialog: React.FC<ChopLogicModalProps> = ({ isOpened, onClose, title, children, ...rest }) => {
+const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
 

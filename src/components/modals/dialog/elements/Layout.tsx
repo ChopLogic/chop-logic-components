@@ -1,19 +1,13 @@
-import React, { PropsWithChildren, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useKeyPress } from 'hooks/use-key-press';
 import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
 
 import { StyledDialogContent, StyledDialogLayout } from '../Dialog.styled';
+import { DialogLayoutProps } from '../types';
 
 import ChopLogicModalLayoutHeader from './Header';
 
-type ModalLayoutProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLDivElement> & {
-    title: string;
-    onClose: () => void;
-    isOpened: boolean;
-  };
-
-const ChopLogicModalLayout: React.FC<ModalLayoutProps> = ({ title, onClose, isOpened, children, ...rest }): React.ReactElement => {
+const ChopLogicModalLayout: React.FC<DialogLayoutProps> = ({ title, onClose, isOpened, children, ...rest }): React.ReactElement => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useModalFocusTrap({ modalRef, isOpened });

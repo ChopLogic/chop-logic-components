@@ -5,12 +5,10 @@ import { CLIcon } from 'components/misc/icon/Icon';
 
 import { StyledDialogHeader } from '../Dialog.styled';
 
-type ChopLogicModalLayoutHeaderProps = {
+const ChopLogicModalLayoutHeader: React.FC<{
   title: string;
   onClose: () => void;
-};
-
-const ChopLogicModalLayoutHeader: React.FC<ChopLogicModalLayoutHeaderProps> = ({ title, onClose }): React.ReactElement => {
+}> = ({ title, onClose }): React.ReactElement => {
   return (
     <StyledDialogHeader>
       {title}

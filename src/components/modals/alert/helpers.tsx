@@ -5,7 +5,24 @@ import InfoIcon from 'components/misc/icon/elements/Info';
 import WarningIcon from 'components/misc/icon/elements/Warning';
 import ChopLogicIcon, { CLIcon } from 'components/misc/icon/Icon';
 
-import { ChopLogicAlertMode } from '../Alert';
+import { ChopLogicAlertMode } from './types';
+
+export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
+  if (title) return title;
+
+  switch (mode) {
+    case 'info':
+      return 'Info';
+    case 'warning':
+      return 'Warning';
+    case 'error':
+      return 'Error';
+    case 'success':
+      return 'Success';
+    default:
+      return '';
+  }
+}
 
 export function renderAlertIcon(mode: ChopLogicAlertMode, icon?: CLIcon): React.ReactElement | null {
   if (icon) {

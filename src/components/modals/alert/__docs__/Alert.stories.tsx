@@ -4,7 +4,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ChopLogicButton from 'components/inputs/button/Button';
 import { CLIcon } from 'components/misc/icon/Icon';
 
-import ChopLogicAlert, { ChopLogicAlertProps } from '../Alert';
+import ChopLogicAlert from '../Alert';
+import { ChopLogicAlertProps } from '../types';
 
 const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
   const [isOpened, setIsOpened] = useState(false);

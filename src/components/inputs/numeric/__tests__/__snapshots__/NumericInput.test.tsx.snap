@@ -38,7 +38,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
           class="sc-jCbFiK fJtuZR"
         >
           <button
-            aria-label="Increment value for Quantity"
+            aria-label="Decrement value for Quantity"
             class="sc-iCZwEW dTVEfm"
             type="button"
           >
@@ -55,7 +55,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Decrement value for Quantity"
+            aria-label="Increment value for Quantity"
             class="sc-iCZwEW dTVEfm"
             type="button"
           >

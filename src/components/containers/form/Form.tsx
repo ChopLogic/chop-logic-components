@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 
 import ChopLogicButton from 'components/inputs/button/Button';
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import { useChopLogicFormController } from './controller';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
@@ -46,8 +46,8 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={CLIcon.Clear} view='danger' />}
-          <ChopLogicButton type='submit' text='Submit' icon={CLIcon.Forward} extended={!hasReset} disabled={!valid} />
+          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view='danger' />}
+          <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
         </StyledFormButtonContainer>
       </ChopLogicFormContext.Provider>
     </StyledForm>

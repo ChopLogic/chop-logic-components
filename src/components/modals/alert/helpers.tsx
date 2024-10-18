@@ -3,7 +3,7 @@ import ErrorIcon from 'components/misc/icon/elements/Error';
 import HelpIcon from 'components/misc/icon/elements/Help';
 import InfoIcon from 'components/misc/icon/elements/Info';
 import WarningIcon from 'components/misc/icon/elements/Warning';
-import ChopLogicIcon, { CLIcon } from 'components/misc/icon/Icon';
+import ChopLogicIcon, { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import { ChopLogicAlertMode } from './types';
 
@@ -24,7 +24,7 @@ export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string 
   }
 }
 
-export function renderAlertIcon(mode: ChopLogicAlertMode, icon?: CLIcon): React.ReactElement | null {
+export function renderAlertIcon(mode: ChopLogicAlertMode, icon?: ChopLogicIconName): React.ReactElement | null {
   if (icon) {
     return <ChopLogicIcon name={icon} />;
   }

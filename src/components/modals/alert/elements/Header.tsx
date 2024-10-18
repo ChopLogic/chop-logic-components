@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ChopLogicButton from 'components/inputs/button/Button';
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import { StyledAlertHeader } from '../Alert.styled';
 import { getAlertTitle, renderAlertIcon } from '../helpers';
@@ -17,7 +17,7 @@ const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onCl
         {alertIcon}
         {alertTitle}
       </h3>
-      <ChopLogicButton icon={CLIcon.Cancel} view='icon' label='Close alert popup' onClick={onClose} />
+      <ChopLogicButton icon={ChopLogicIconName.Cancel} view='icon' label='Close alert popup' onClick={onClose} />
     </StyledAlertHeader>
   );
 };

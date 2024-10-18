@@ -1,4 +1,4 @@
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
 
@@ -8,12 +8,12 @@ export type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
   message: string;
   title?: string;
   mode?: ChopLogicAlertMode;
-  icon?: CLIcon;
+  icon?: ChopLogicIconName;
 };
 
 export type ChopLogicAlertHeaderProps = {
   onClose: () => void;
   mode: ChopLogicAlertMode;
   title?: string;
-  icon?: CLIcon;
+  icon?: ChopLogicIconName;
 };

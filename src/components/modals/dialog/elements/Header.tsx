@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ChopLogicButton } from 'components/index';
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import { StyledDialogHeader } from '../Dialog.styled';
 
@@ -12,7 +12,7 @@ const ChopLogicModalLayoutHeader: React.FC<{
   return (
     <StyledDialogHeader>
       {title}
-      <ChopLogicButton icon={CLIcon.Cancel} view='icon' label='Close modal window' onClick={onClose} />
+      <ChopLogicButton icon={ChopLogicIconName.Cancel} view='icon' label='Close modal window' onClick={onClose} />
     </StyledDialogHeader>
   );
 };

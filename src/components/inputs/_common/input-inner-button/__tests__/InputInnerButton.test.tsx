@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import InputInnerButton from '../InputInnerButton';
 
@@ -10,7 +10,7 @@ describe('InputInnerButton', () => {
   const testProps = {
     onClick: vi.fn(),
     label: 'Test input',
-    icon: CLIcon.Remove,
+    icon: ChopLogicIconName.Remove,
   };
 
   it('should match the snapshot', () => {

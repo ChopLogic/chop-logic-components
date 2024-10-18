@@ -3,7 +3,7 @@ import { useElementIds } from 'hooks/use-element-ids';
 
 import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import InputInnerButton from '../_common/input-inner-button/InputInnerButton';
 
@@ -73,8 +73,8 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           />
           {hasSpinButtons && (
             <StyledButtonsWrapper>
-              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={CLIcon.ChevronLeft} />
-              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={CLIcon.ChevronRight} />
+              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={ChopLogicIconName.ChevronLeft} />
+              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={ChopLogicIconName.ChevronRight} />
             </StyledButtonsWrapper>
           )}
         </StyledFieldWrapper>

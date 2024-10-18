@@ -14,14 +14,12 @@ Styled button component with different view modes and a customizable icon.
 
 ### Usage
 
-```ts
+```tsx
 import { ChopLogicButton, ChopLogicIconName } from 'chop-logic-components';
 import { createCopy } from 'utils/copy';
 
 const Example = () => {
-  return (
-    <ChopLogicButton text="Copy" onCick={createCopy} icon={ChopLogicIconName.Copy} />
-  );
+  return <ChopLogicButton text='Copy' onCick={createCopy} icon={ChopLogicIconName.Copy} />;
 };
 
 export default Example;

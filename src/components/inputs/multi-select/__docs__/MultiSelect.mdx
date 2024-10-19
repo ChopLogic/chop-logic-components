@@ -6,13 +6,13 @@ import * as MultiSelect from './MultiSelect.stories.tsx';
 
 # MultiSelect
 
-MultiSelect component with custom styling and behavior.
+A styled and accessible multiselect component that can be used both inside a form and as standalone controller.
 
-#### Example
+### Example
 
 <Canvas of={MultiSelect.Default} />
 
-## Usage
+### Usage
 
 ```tsx
 import { ChopLogicMultiSelect } from 'chop-logic-components';
@@ -35,16 +35,23 @@ const Example = () => {
 export default Example;
 ```
 
-#### Props
+### Props
+
+_Required props_
 
 - **name** `string` - A required string representing the name attribute of the MultiSelect component, used for form submissions.
 - **label** `string` - A string that represents the label for the MultiSelect component.
 - **options** `SelectValue[]` - An array of objects representing the options available in the MultiSelect dropdown. Each object should have `id`, `label`, and `selected` properties.
+
+_Optional props_
+
 - **placeholder** `string` - A string that represents the placeholder text when no option is selected. Default is 'Not selected'.
 - **required** `boolean` - A boolean indicating whether the MultiSelect component is required in a form. When required, a selection must be made before form submission.
 - **disabled** `boolean` - A boolean indicating whether the MultiSelect component should be disabled. When disabled, the component cannot be interacted with.
 - **onChange** `(values?: SelectValue[]) => void` - A function that is called when an option is selected. It can be used to handle the selection event.
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+- **HTMLAttributes** - some supported global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+### Types
 
 ```ts
 type SelectValue = {

@@ -15,7 +15,7 @@ describe('ChopLogicSelect', () => {
   ];
 
   const testProps = {
-    id: 'language-select-id',
+    id: 'select-id',
     name: 'language',
     label: 'Select your language',
     options: SELECT_LANGUAGES,

@@ -6,13 +6,13 @@ import * as Select from './Select.stories.tsx';
 
 # ChopLogicSelect
 
-Select component with custom styling and behavior.
+A styled and accessible multiselect component that can be used both inside a form and as standalone controller.
 
-#### Example
+### Example
 
 <Canvas of={Select.Default} />
 
-## Usage
+### Usage
 
 ```tsx
 import { ChopLogicSelect } from 'chop-logic-components';
@@ -25,14 +25,37 @@ const Example = () => {
 export default Example;
 ```
 
-#### Props
+### Props
 
-- **name** - A required string representing the name attribute of the Select component, used for form submissions.
-- **label** - A string that represents the label for the Select component.
-- **values** - An array of onjects (each object should conaint two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown.
-- **placeholder** - A string that represents the placeholder text when no option is selected.
-- **onSelectChange** - A function that is called when an option is selected. It can be used to handle the selection event.
-- **required** - A boolean indicating whether the Select component is required in a form. When required, a selection must be made before form submission.
-- **disabled** - A boolean indicating whether the Select should be disabled or not. When disabled, the Select cannot be clicked or interacted with.
-- **SelectHTMLAttributes** - all standard HTML select attributes (**value**, **form**, etc.). Note that not all of them are applicable to `ChopLogicSelect`, because the component does not use default `<select>` tag. For example, if you pass `multiple` attribute, it's not gonna work, use `ChopLogicMultiSelect` component instead.
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+_Required props_
+
+- **name** `string` - A required string representing the name attribute of the Select component, used for form submissions.
+- **label** `string` - A string that represents the label for the Select component.
+- **options** `SelectValue[]` - An array of objects (each object should conaint two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown.
+
+_Optional props_
+
+- **placeholder** `string` - A string that represents the placeholder text when no option is selected.
+- **onChange** `(value?: SelectValue) => void` - A function that is called when an option is selected. It can be used to handle the selection event.
+- **required** `boolean` - A boolean indicating whether the Select component is required in a form. When required, a selection must be made before form submission.
+- **disabled** `boolean` - A boolean indicating whether the Select should be disabled or not. When disabled, the Select cannot be clicked or interacted with.
+- **HTMLAttributes** - some supported global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+### Types
+
+```ts
+type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+  name: string;
+  label: string;
+  options: SelectValue[];
+  onChange?: (value?: SelectValue) => void;
+  placeholder?: string;
+};
+```
+
+```ts
+type SelectValue = {
+  id: string;
+  label: string;
+} & { [key in string]: unknown };
+```

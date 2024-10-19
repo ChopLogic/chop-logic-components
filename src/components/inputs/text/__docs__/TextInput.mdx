@@ -8,11 +8,11 @@ import * as TextInput from './TextInput.stories.tsx';
 
 Styled component for entering text, email or password. Supports validation with custom error message and all standard HTML input attributes.
 
-#### Example
+### Example
 
 <Canvas of={TextInput.DefaultTextInput} />
 
-## Usage
+### Usage
 
 ```tsx
 import { TextInput } from 'chop-logic-components';
@@ -32,7 +32,7 @@ const Example = () => {
 export default Example;
 ```
 
-#### Props
+### Props
 
 _Required props_
 
@@ -57,3 +57,28 @@ _Optional props_
 - **maxLength** `number` - Maximum number of characters in the input.
 - **autoComplete** `string` - The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete). Defaults to `"off"`.
 - **HTMLAttributes** - global HTML attributes: **className**, **title**, **style**, **tabIndex**, etc.
+
+### Types
+
+```ts
+type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  name: string;
+  label: string;
+  errorMessage?: string;
+  clearable?: boolean;
+  onClear?: () => void;
+  type?: 'text' | 'email' | 'password';
+  validator?: RegExpWithFlags | TextValidationFunction;
+};
+```
+
+```ts
+type RegExpWithFlags = {
+  regexp: string;
+  flags?: string;
+};
+```
+
+```ts
+type TextValidationFunction = (input: string) => boolean;
+```

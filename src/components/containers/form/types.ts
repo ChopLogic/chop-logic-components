@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 export type ChopLogicFormData = { [key: string]: unknown };
 
 export type ChopLogicFormValidationState = [string, boolean][];
@@ -11,3 +13,11 @@ export type ChopLogicFormContextProps = {
   initialValues?: ChopLogicFormData;
   resetSignal?: number;
 };
+
+export type ChopLogicFormProps = PropsWithChildren &
+  React.HTMLAttributes<HTMLFormElement> & {
+    columns?: number;
+    initialValues?: ChopLogicFormData;
+    hasReset?: boolean;
+    onClickSubmit?: (data: ChopLogicFormData) => void;
+  };

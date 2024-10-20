@@ -41,3 +41,26 @@ export default ExampleComponent;
 - **mode**
   - Type: `'vertical' | 'horizontal'`
   - Description: The orientation of the tabs. Defaults to `'horizontal'`.
+
+### Types
+
+```ts
+type ChopLogicTabsProps = React.HTMLAttributes<HTMLDivElement> & {
+  tabs: ChopLogicTabItem[];
+  defaultTabId?: string;
+  mode?: ChopLogicTabsMode;
+};
+```
+
+```ts
+type ChopLogicTabItem = {
+  content: React.ReactElement;
+  title: string;
+  id: string;
+  disabled?: boolean;
+};
+```
+
+```ts
+type ChopLogicTabsMode = 'vertical' | 'horizontal';
+```

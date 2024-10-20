@@ -5,7 +5,6 @@ import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicTabList from '../elements/TabList';
 
-// Mocking moveFocusOnElementById
 vi.mock('utils/move-focus-on-element-by-id', () => ({
   moveFocusOnElementById: vi.fn(),
 }));

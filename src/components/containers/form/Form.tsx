@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
 import ChopLogicButton from 'components/inputs/button/Button';
 import { ChopLogicIconName } from 'components/misc/icon/Icon';
@@ -6,15 +6,7 @@ import { ChopLogicIconName } from 'components/misc/icon/Icon';
 import { useChopLogicFormController } from './controller';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
 import { ChopLogicFormContext } from './FormContext';
-import { ChopLogicFormData } from './types';
-
-export type ChopLogicFormProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLFormElement> & {
-    columns?: number;
-    initialValues?: ChopLogicFormData;
-    hasReset?: boolean;
-    onClickSubmit?: (data: ChopLogicFormData) => void;
-  };
+import { ChopLogicFormProps } from './types';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   children,

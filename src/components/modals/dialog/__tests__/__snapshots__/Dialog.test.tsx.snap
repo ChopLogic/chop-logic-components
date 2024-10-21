@@ -11,7 +11,7 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
     <header
       class="sc-elDIKY cXiNCB"
     >
-      Test dialog
+      Test dialog title
       <button
         aria-label="Close modal window"
         class="sc-dsLQwm fTebhx"

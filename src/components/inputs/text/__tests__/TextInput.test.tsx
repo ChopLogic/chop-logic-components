@@ -42,7 +42,7 @@ describe('ChopLogicTextInput', () => {
 
   it('should be display an error message', () => {
     const testMessage = 'Test Error';
-    render(<TextInput {...testProps} valid={false} errorMessage={testMessage} />);
+    render(<TextInput {...testProps} errorMessage={testMessage} />);
     expect(screen.getByText(testMessage)).toBeInTheDocument();
   });
 

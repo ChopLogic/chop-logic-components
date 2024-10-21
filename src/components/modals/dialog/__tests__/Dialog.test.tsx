@@ -9,7 +9,7 @@ import ChopLogicModalLayout from '../elements/Layout';
 describe('ChopLogicDialog', () => {
   const testLayoutProps = {
     id: 'dialog-id',
-    title: 'Test dialog',
+    title: 'Test dialog title',
     className: 'dialog-class',
     onClose: vi.fn(),
   };

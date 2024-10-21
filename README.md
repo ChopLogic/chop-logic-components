@@ -1,3 +1,51 @@
 # Chop Logic Components
 
-A library of custom React components for use in the Chop Logic project.
+Welcome to **Chop Logic Components**, a comprehensive React components library packed with a variety of **styled components** and **custom hooks** that are easy to integrate into any React project.
+
+## About the Library
+
+Chop Logic is designed to speed up development by providing reusable, accessible, and highly customizable components. Whether you're building complex forms, creating dynamic layouts, or managing component logic with hooks, Chop Logic has the tools to make it easier.
+
+### Why Choose Chop Logic?
+
+Here's what makes Chop Logic an excellent addition to your React project:
+
+- **Styled Components:** All components are styled using a consistent, modern design language and can easily adapt to your project's look and feel. Each component offers a flexible API, making them simple to extend and customize.
+
+- **Custom Hooks:** Simplify your component logic by using the custom hooks provided. From managing form input to handling asynchronous data fetching, Chop Logic's hooks cover common scenarios that developers face daily.
+
+- **Built for Reusability:** Every component and hook is designed with reusability in mind, reducing repetitive code and enabling faster development cycles.
+
+- **Ease of Use:** Chop Logic follows best practices in API design, ensuring that components and hooks are easy to learn and work seamlessly with each other.
+
+- **Storybook Integration:** This library includes comprehensive Storybook documentation for each component and hook, allowing you to explore usage examples, try props in real-time, and see how each feature behaves in isolation.
+
+## Key Features
+
+### Components
+
+Chop Logic includes a wide range of styled components that are ready to use in your projects:
+
+- **Inputs:** Beautifully styled input controllers with customization options.
+- **Containers:** Easily customizable container elements like text grids, forms, and tabs.
+- **Modals:** Flexible modal windows and accessible tooltips, perfect for enhancing user interactions.
+- **More Components Coming Soon!**
+
+### Hooks
+
+In addition to UI components, Chop Logic offers a collection of custom hooks to help you manage complex logic:
+
+- **useModalFocusTrap:** A hook that traps focus within an open modal, ensuring accessibility compliance.
+- **useKeyPress:** Easily manage keyboard interactions and trigger actions based on keypress events.
+- **useContainerDimensions:** Get the dimensions of any HTML element to dynamically adjust your UI.
+- **More Hooks Coming Soon!**
+
+## Getting Started
+
+To get started with Chop Logic, install it via npm or yarn:
+
+```bash
+npm install chop-logic
+# or
+yarn add chop-logic
+```

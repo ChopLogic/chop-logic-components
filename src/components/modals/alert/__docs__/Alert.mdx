@@ -11,7 +11,7 @@ The `ChopLogicAlert` component displays an alert message with various modes such
   <Story of={Alert.Default} />
 </Canvas>
 
-## Usage
+### Usage
 
 ```tsx
 import React, { useState } from 'react';
@@ -34,20 +34,34 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Props
+### Props
 
-- **isOpened**
-  Type: boolean
-  Description: Determines if the alert is open.
-- **onClose**
-  Type: `() => void`
-  Description: Function that suppose to close the alert and handle additional logic.
-- **title**
-  Type: string
-  Description: The title of the alert.
-- **message**
-  Type: string
-  Description: The message content of the alert.
-- **mode**
-  Type: ChopLogicAlertMode
-  Description: The mode of the alert. Can be success, error, warning, or info.
+_Required props_
+
+- **isOpened** `boolean` - Determines if the alert is open.
+- **onClose** `() => void` - Function that suppose to close the alert and handle additional logic.
+- **title** `string` - The title of the alert.
+- **message** `string` - The message content of the alert.
+
+_Optional props_
+
+- **mode** `ChopLogicAlertMode` - The mode of the alert. Can be success, error, warning, or info.
+- **icon** `ChopLogicIconName` - Custom icon that appears in the Alert header.
+- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+### Types
+
+```ts
+type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
+```
+
+```ts
+type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
+  isOpened: boolean;
+  onClose: () => void;
+  message: string;
+  title?: string;
+  mode?: ChopLogicAlertMode;
+  icon?: ChopLogicIconName;
+};
+```

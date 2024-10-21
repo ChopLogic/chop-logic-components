@@ -1,44 +1,20 @@
-import { PropsWithChildren, useRef, useState } from 'react';
-import { useClickOutside } from 'hooks/use-click-outside';
-import { useElementIds } from 'hooks/use-element-ids';
-import { useKeyPress } from 'hooks/use-key-press';
-import { useTooltipPosition } from 'hooks/use-tooltip-position';
-
 import ChopLogicPortal from 'components/containers/portal';
 
+import { useChopLogicTooltipController } from './controller';
 import { StyledTooltip } from './Tooltip.styled';
-
-export type ChopLogicTooltipProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLElement> & {
-    tooltipContent: string | React.ReactElement;
-    containerTag?: 'span' | 'div' | 'p' | 'strong' | 'em';
-    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
-  };
+import { ChopLogicTooltipProps } from './types';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,
   tooltipContent,
   containerTag = 'span',
   visibleOn = 'hover',
+  id,
   ...rest
 }) => {
-  const [isOpened, setIsOpened] = useState(false);
-  const wrapperRef = useRef(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
-  const { elementId } = useElementIds(rest?.id);
   const ContainerComponent = containerTag;
-
-  const closeTooltip = () => setIsOpened(false);
-  const openTooltip = () => setIsOpened(true);
-  const toggleTooltip = () => setIsOpened(!isOpened);
-  const handleContextMenu = (e: React.MouseEvent) => {
-    e.preventDefault();
-    toggleTooltip();
-  };
-
-  useKeyPress({ keyCode: 'Escape', ref: tooltipRef, onKeyPress: closeTooltip });
-  useClickOutside({ ref: tooltipRef, onClickOutsideHandler: closeTooltip, dependentRef: wrapperRef });
+  const { openTooltip, closeTooltip, toggleTooltip, handleContextMenu, elementId, top, left, isOpened, wrapperRef, tooltipRef } =
+    useChopLogicTooltipController({ id });
 
   return (
     <ContainerComponent

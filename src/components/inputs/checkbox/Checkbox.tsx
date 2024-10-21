@@ -6,14 +6,8 @@ import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
 
 import { StyledCheckboxInput, StyledCheckboxWrapper } from './Checkbox.styled';
-import { useChopLogicCheckboxController } from './helpers';
-
-export type ChopLogicCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
-  noLabel?: boolean;
-  iconPosition?: 'left' | 'right';
-};
+import { useChopLogicCheckboxController } from './controller';
+import { ChopLogicCheckboxProps } from './types';
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,

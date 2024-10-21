@@ -12,7 +12,7 @@ The `Tooltip` component displays a tooltip with customizable content when the us
 
 <Canvas of={Tooltip.VisibleOnHover} />
 
-## Usage
+### Usage
 
 ```tsx
 import { ChopLogicTooltip } from 'chop-logic-components';
@@ -30,20 +30,28 @@ export default TooltipUsageExample;
 
 ### Props
 
-- **tooltipContent**
-  - Type: `string | React.ReactElement`
-  - Description: The content to be displayed inside the tooltip.
-- **id**
-  - Type: `string`
-  - Description: A unique string that identidies the tooltip container on the page
-- **containerTag**
-  - Type: `'span' | 'div' | 'p' | 'strong' | 'em'`
-  - Default: `'span'`
-  - Description: The HTML tag to be used for the container element.
-- **visibleOn**
-  - Type: `'hover' | 'click' | 'focus' | 'contextmenu'`
-  - Default: `'hover'`
-  - Description: The event that triggers the tooltip to be displayed.
-- children
-  - Type: `React.ReactNode`
-  - Description: The content inside the container element that triggers the tooltip.
+_Required props_
+
+- **tooltipContent** `string | React.ReactElement` - The content to be displayed inside the tooltip.
+
+_Optional props_
+
+- **containerTag** `TooltipContainerTag` - The HTML tag to be used for the container element. Default: `'span'`
+- **visibleOn** `'hover' | 'click' | 'focus' | 'contextmenu'` - The event that triggers the tooltip to be displayed. Default: `'hover'`
+- **children** `React.ReactNode` - The content inside the container element that triggers the tooltip.
+- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+### Types
+
+```ts
+type ChopLogicTooltipProps = PropsWithChildren &
+  React.HTMLAttributes<HTMLElement> & {
+    tooltipContent: string | React.ReactElement;
+    containerTag?: TooltipContainerTag;
+    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
+  };
+```
+
+```ts
+type TooltipContainerTag = 'span' | 'div' | 'p' | 'strong' | 'em';
+```

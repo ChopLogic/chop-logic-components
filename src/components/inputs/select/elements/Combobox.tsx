@@ -1,8 +1,8 @@
 import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
-import { SelectValue } from '../Select';
 import { StyledSelectCombobox, StyledSelectLabel, StyledSelectPlaceholder } from '../Select.styled';
+import { SelectValue } from '../types';
 
 type SelectComboboxProps = {
   opened: boolean;

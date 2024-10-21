@@ -29,7 +29,7 @@ import ShowIcon from './elements/Show';
 import UploadIcon from './elements/Upload';
 import WarningIcon from './elements/Warning';
 
-export enum CLIcon {
+export enum ChopLogicIconName {
   ArrowDown = 'arrow-down',
   ArrowUp = 'arrow-up',
   Back = 'back',
@@ -60,65 +60,65 @@ export enum CLIcon {
   Remove = 'remove',
 }
 
-const ChopLogicIcon: React.FC<{ name?: CLIcon }> = ({ name }): React.ReactElement | null => {
+const ChopLogicIcon: React.FC<{ name?: ChopLogicIconName }> = ({ name }): React.ReactElement | null => {
   switch (name) {
-    case CLIcon.ArrowDown:
+    case ChopLogicIconName.ArrowDown:
       return <ArrowDownIcon />;
-    case CLIcon.ArrowUp:
+    case ChopLogicIconName.ArrowUp:
       return <ArrowUpIcon />;
-    case CLIcon.Back:
+    case ChopLogicIconName.Back:
       return <BackIcon />;
-    case CLIcon.Cancel:
+    case ChopLogicIconName.Cancel:
       return <CancelIcon />;
-    case CLIcon.CheckboxChecked:
+    case ChopLogicIconName.CheckboxChecked:
       return <CheckboxCheckedIcon />;
-    case CLIcon.CheckboxUnchecked:
+    case ChopLogicIconName.CheckboxUnchecked:
       return <CheckboxUncheckedIcon />;
-    case CLIcon.CheckMark:
+    case ChopLogicIconName.CheckMark:
       return <CheckMarkIcon />;
-    case CLIcon.ChevronDown:
+    case ChopLogicIconName.ChevronDown:
       return <ChevronDownIcon />;
-    case CLIcon.ChevronUp:
+    case ChopLogicIconName.ChevronUp:
       return <ChevronUpIcon />;
-    case CLIcon.ChevronLeft:
+    case ChopLogicIconName.ChevronLeft:
       return <ChevronLeftIcon />;
-    case CLIcon.ChevronRight:
+    case ChopLogicIconName.ChevronRight:
       return <ChevronRightIcon />;
-    case CLIcon.Clear:
+    case ChopLogicIconName.Clear:
       return <ClearIcon />;
-    case CLIcon.Copy:
+    case ChopLogicIconName.Copy:
       return <CopyIcon />;
-    case CLIcon.Cut:
+    case ChopLogicIconName.Cut:
       return <CutIcon />;
-    case CLIcon.Delete:
+    case ChopLogicIconName.Delete:
       return <DeleteIcon />;
 
-    case CLIcon.Download:
+    case ChopLogicIconName.Download:
       return <DownloadIcon />;
-    case CLIcon.Error:
+    case ChopLogicIconName.Error:
       return <ErrorIcon />;
-    case CLIcon.Forward:
+    case ChopLogicIconName.Forward:
       return <ForwardIcon />;
-    case CLIcon.Help:
+    case ChopLogicIconName.Help:
       return <HelpIcon />;
-    case CLIcon.Hide:
+    case ChopLogicIconName.Hide:
       return <HideIcon />;
-    case CLIcon.Info:
+    case ChopLogicIconName.Info:
       return <InfoIcon />;
-    case CLIcon.Paste:
+    case ChopLogicIconName.Paste:
       return <PasteIcon />;
-    case CLIcon.Question:
+    case ChopLogicIconName.Question:
       return <QuestionIcon />;
-    case CLIcon.Save:
+    case ChopLogicIconName.Save:
       return <SaveIcon />;
-    case CLIcon.Show:
+    case ChopLogicIconName.Show:
       return <ShowIcon />;
 
-    case CLIcon.Upload:
+    case ChopLogicIconName.Upload:
       return <UploadIcon />;
-    case CLIcon.Warning:
+    case ChopLogicIconName.Warning:
       return <WarningIcon />;
-    case CLIcon.Remove:
+    case ChopLogicIconName.Remove:
       return <RemoveIcon />;
     default:
       return null;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CLIcon } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import ButtonExample from './ButtonExample';
 
@@ -10,7 +10,7 @@ const meta: Meta<typeof ButtonExample> = {
   args: {
     text: 'Button',
     type: 'button',
-    icon: CLIcon.Copy,
+    icon: ChopLogicIconName.Copy,
     view: 'primary',
     disabled: false,
   },
@@ -23,7 +23,7 @@ const meta: Meta<typeof ButtonExample> = {
     },
     icon: {
       control: 'select',
-      options: Object.values(CLIcon),
+      options: Object.values(ChopLogicIconName),
     },
     view: {
       control: 'select',
@@ -39,7 +39,7 @@ export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
     view: 'primary',
-    icon: CLIcon.Copy,
+    icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: false,
   },
@@ -49,7 +49,7 @@ export const SecondaryButton: Story = {
   args: {
     text: 'Learn more...',
     view: 'secondary',
-    icon: CLIcon.Forward,
+    icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
   },
@@ -59,7 +59,7 @@ export const DangerButton: Story = {
   args: {
     text: 'Delete',
     view: 'danger',
-    icon: CLIcon.Delete,
+    icon: ChopLogicIconName.Delete,
     type: 'button',
     disabled: false,
   },
@@ -69,7 +69,7 @@ export const IconButton: Story = {
   args: {
     view: 'icon',
     type: 'button',
-    icon: CLIcon.Cancel,
+    icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
     disabled: false,
   },
@@ -79,7 +79,7 @@ export const DisabledButton: Story = {
   args: {
     text: 'Copy',
     view: 'primary',
-    icon: CLIcon.Copy,
+    icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: true,
   },

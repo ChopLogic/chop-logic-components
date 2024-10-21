@@ -7,7 +7,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
   >
     <label
       class="sc-dsLQwm cmpKZQ"
-      for="language-select-id"
+      for="select-id"
     >
       <span
         class="sc-iKTcqh cyAOBd"
@@ -16,12 +16,12 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </span>
     </label>
     <button
-      aria-controls="language-select-id_dropdown"
+      aria-controls="select-id_dropdown"
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
       class="sc-iCZwEW gglrlo"
-      id="language-select-id"
+      id="select-id"
       name="language"
       role="combobox"
       type="button"
@@ -44,7 +44,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
     </button>
     <ul
       class="sc-kkmypM gOvpwC"
-      id="language-select-id_dropdown"
+      id="select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >

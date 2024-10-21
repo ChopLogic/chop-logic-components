@@ -14,15 +14,12 @@ Styled button component with different view modes and a customizable icon.
 
 ### Usage
 
-```ts
-import { ChopLogicButton, ChopIcon } from 'chop-logic-components';
+```tsx
+import { ChopLogicButton, ChopLogicIconName } from 'chop-logic-components';
 import { createCopy } from 'utils/copy';
-import { Icon } from 'chop-logic-components';
 
 const Example = () => {
-  return (
-    <ChopLogicButton text="Copy" onCick={createCopy} icon={Icon.Copy} />
-  );
+  return <ChopLogicButton text='Copy' onCick={createCopy} icon={ChopLogicIconName.Copy} />;
 };
 
 export default Example;
@@ -31,13 +28,30 @@ export default Example;
 ### Props
 
 - **view** - An appearance of the button:
-  - `primary`: default blue button
-  - `secondary`: button in the form of clickable text
-  - `danger`: red button to highlight important
-  - `icon`: button without text, only icon
-- **text** `string` - A string that represents the text content of the button (`Ok` by default).
-- **onClick** _`() => void`_ - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments.
+  - `primary`: a default button
+  - `secondary`: a button in the form of clickable text
+  - `danger`: a button to highlight an important action
+  - `icon`: a button without text, only icon
+- **text** `string` - A string that represents the text content of the button.
+- **onClick** `MouseEventHandler<HTMLButtonElement> | (() => void)` - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments.
 - **disabled** `boolean` - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
-- **type** `"submit" | "reset" | "button"` - A button type that can be `button`, `submit` or `reset` (`button` by default).
-- **icon** `CLIcon` - An svg icon from ChopIcon set, which could be inserted before the button text.
-- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+- **type** - A button type that can be `"button"`, `"submit"` or `"reset"` (`"button"` by default).
+- **icon** `ChopLogicIconName` - An svg icon from ChopLogicIcon set, which could be inserted before the button text.
+- **HTMLAttributes** - some supported global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+### Types
+
+```ts
+type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
+```
+
+```ts
+type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
+  view?: ChopLogicButtonView;
+  label?: string;
+  icon?: ChopLogicIconName;
+  text?: string;
+  extended?: boolean;
+};
+```

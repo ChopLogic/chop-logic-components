@@ -1,6 +1,7 @@
 import React from 'react';
 
-import TextInput, { ChopLogicTextInputProps } from '../TextInput';
+import TextInput from '../TextInput';
+import { ChopLogicTextInputProps } from '../types';
 
 const Example: React.FC<ChopLogicTextInputProps> = (props) => {
   return (

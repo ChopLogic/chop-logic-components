@@ -1,8 +1,8 @@
 import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 
-import { MultiSelectValue } from '../MultiSelect';
 import { StyledMultiSelectCombobox, StyledMultiSelectLabel, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
+import { MultiSelectValue } from '../types';
 
 type SelectComboboxProps = {
   opened: boolean;

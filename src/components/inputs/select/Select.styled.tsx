@@ -13,7 +13,7 @@ export const StyledSelectWrapper = styled.div<{ $disabled: boolean }>`
   box-shadow: ${SHADOWS.box};
   border-top-left-radius: ${UNITS.blockBorderRadius};
   border-top-right-radius: ${UNITS.blockBorderRadius};
-  border: ${BORDERS.lightBlue};
+  border: ${BORDERS.light};
   max-width: 100%;
   background-color: ${COLORS.background};
 
@@ -50,7 +50,7 @@ export const StyledSelectCombobox = styled.button`
 
 
     &:focus-visible {
-      outline: ${BORDERS.focusOutline};
+      outline: ${BORDERS.outline};
       outline-offset: 2px;
     }
   }
@@ -86,7 +86,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean }>`
   width: 100%;
   top: 78px;
   left: -1px;
-  border: ${BORDERS.lightBlue};
+  border: ${BORDERS.light};
   box-shadow: ${SHADOWS.box};
   overflow-y: auto;
   max-height: 180px;
@@ -113,7 +113,7 @@ export const StyledSelectOption = styled.li`
   }
 
   &:focus-visible {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: -2px;
   }
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from '../helpers';
-import { NumericValidationFunction } from '../NumericInput';
+import { NumericValidationFunction } from '../types';
 
 describe('getNumericInputInitialValue', () => {
   it('should return the value from initialValues if it exists', () => {

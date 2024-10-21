@@ -8,11 +8,11 @@ import * as NumericInput from './NumericInput.stories.tsx';
 
 Numeric input component with standard HTML attributes.
 
-#### Example
+### Example
 
 <Canvas of={NumericInput.Default} />
 
-## Usage
+### Usage
 
 ```tsx
 import { NumericInput } from 'chop-logic-components';
@@ -31,7 +31,7 @@ const Example = () => {
 export default Example;
 ```
 
-#### Props
+### Props
 
 _Required props_
 
@@ -56,3 +56,21 @@ _Optional props_
 - **min** `number` - Minimum number in the input.
 - **defaultValue** `number` - Initial number in the input. `0` by default.
 - **HTMLAttributes** - global HTML attributes: **className**, **title**, **style**, **tabIndex**, etc.
+
+### Types
+
+```ts
+type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  name: string;
+  label: string;
+  errorMessage?: string;
+  validator?: NumericValidationFunction;
+  onClear?: () => void;
+  hasSpinButtons?: boolean;
+  onSpinButtonClick?: (value?: number) => void;
+};
+```
+
+```ts
+type NumericValidationFunction = (input?: number) => boolean;
+```

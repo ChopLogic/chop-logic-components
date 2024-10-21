@@ -3,21 +3,7 @@ import React, { useState } from 'react';
 import ChopLogicTabContent from './elements/TabContent';
 import ChopLogicTabList from './elements/TabList';
 import { StyledTabsContainer } from './Tabs.styled';
-
-export type ChopLogicTabsProps = React.HTMLAttributes<HTMLDivElement> & {
-  tabs: ChopLogicTabItem[];
-  defaultTabId?: string;
-  mode?: ChopLogicTabsMode;
-};
-
-export type ChopLogicTabItem = {
-  content: React.ReactElement;
-  title: string;
-  id: string;
-  disabled?: boolean;
-};
-
-export type ChopLogicTabsMode = 'vertical' | 'horizontal';
+import { ChopLogicTabsProps } from './types';
 
 const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = 'horizontal' }) => {
   const tabIds = tabs.map((item) => item.id);

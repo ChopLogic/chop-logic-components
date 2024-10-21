@@ -8,11 +8,11 @@ import * as Dialog from './Dialog.stories.tsx';
 
 Dialog component with custom styling and behavior.
 
-#### Example
+### Example
 
 <Canvas of={Dialog.Default} />
 
-## Usage
+### Usage
 
 ```tsx
 import { ChopLogicDialog } from 'chop-logic-components';
@@ -40,9 +40,22 @@ export default Example;
 
 ### Props
 
-- **isOpened** - A boolean indicating whether the dialog is open.
-- **onClose** - A function that is called when the dialog is closed.
-- **title** - A string that represents the title of the dialog.
-- **children** - Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`.
-- **HTMLAttributes** - all global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-  ./DialogExample.tsx
+_Required props_
+
+- **isOpened** `boolean` - A boolean indicating whether the dialog is open.
+- **onClose** `() => void` - A function that is called when the dialog is closed.
+- **title** `string` - A string that represents the title of the dialog.
+
+_Optional props_
+
+- **children** `ReactElement` - Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`.
+- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
+
+```ts
+type ChopLogicDialogProps = PropsWithChildren &
+  React.HTMLAttributes<HTMLDivElement> & {
+    isOpened: boolean;
+    onClose: () => void;
+    title: string;
+  };
+```

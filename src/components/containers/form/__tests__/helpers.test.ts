@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '../FormContext';
 import { getInitialValidationState, isFormDataValid, updateValidationState } from '../helpers';
+import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '../types';
 
 describe('getInitialValidationState', () => {
   it('should return an empty array when no data is provided', () => {

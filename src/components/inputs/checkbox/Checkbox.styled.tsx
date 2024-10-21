@@ -40,7 +40,7 @@ export const StyledCheckboxInput = styled.input`
   margin: 0;
 
   &:focus-visible + label {
-    outline: ${BORDERS.focusOutline};
+    outline: ${BORDERS.outline};
     outline-offset: 2px;
   }
 `;

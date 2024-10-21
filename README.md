@@ -45,7 +45,7 @@ In addition to UI components, Chop Logic offers a collection of custom hooks to 
 To get started with Chop Logic, install it via npm or yarn:
 
 ```bash
-npm install chop-logic
+npm install chop-logic-components
 # or
-yarn add chop-logic
+yarn add chop-logic-components
 ```

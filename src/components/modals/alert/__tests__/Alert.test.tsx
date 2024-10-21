@@ -9,7 +9,7 @@ import { ChopLogicAlertProps } from '../types';
 const defaultProps: ChopLogicAlertProps = {
   isOpened: false,
   onClose: vi.fn(),
-  message: 'This is a test message',
+  message: 'This is a test message.',
   title: 'Test Title',
   mode: 'info',
 };
@@ -21,12 +21,12 @@ const renderAlert = (props: Partial<ChopLogicAlertProps> = {}) => {
 describe('ChopLogicAlert', () => {
   it('should render nothing when not opened', () => {
     renderAlert();
-    expect(screen.queryByText('This is a test message')).toBeNull();
+    expect(screen.queryByText(defaultProps.message)).toBeNull();
   });
 
   it('should render the alert when opened', () => {
     renderAlert({ isOpened: true });
-    expect(screen.getByText('This is a test message')).toBeInTheDocument();
+    expect(screen.getByText(defaultProps.message)).toBeInTheDocument();
     expect(screen.getByText('Test Title')).toBeInTheDocument();
   });
 

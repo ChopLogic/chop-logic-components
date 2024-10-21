@@ -22,7 +22,7 @@
     "test:ci": "vitest run",
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "build-storybook -o docs-build",
     "prepare": "npm run build && husky install"
   },
   "lint-staged": {

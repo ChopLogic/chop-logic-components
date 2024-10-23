@@ -1,0 +1,5 @@
+import{j as o}from"./jsx-runtime-CkxqCPlQ.js";import{C as l}from"./Tabs-xdIbAcDa.js";const d=[{id:"tab1",title:"Tab 1",content:o.jsx("div",{children:"Content for Tab 1"})},{id:"tab2",title:"Tab 2",content:o.jsx("div",{children:"Content for Tab 2"})},{id:"tab3",title:"Tab 3",content:o.jsx("div",{children:"Content for Tab 3"})}],b={title:"Containers/Tabs",component:l,args:{tabs:d,defaultTabId:"tab1"},argTypes:{tabs:{control:"object"},defaultTabId:{control:"text"},mode:{control:"select",options:["vertical","horizontal"]}}},t={},e={args:{mode:"vertical"}};var a,r,s;t.parameters={...t.parameters,docs:{...(a=t.parameters)==null?void 0:a.docs,source:{originalSource:"{}",...(s=(r=t.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};var n,c,i;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  args: {
+    mode: 'vertical'
+  }
+}`,...(i=(c=e.parameters)==null?void 0:c.docs)==null?void 0:i.source}}};const m=["Default","VerticalTabs"],T=Object.freeze(Object.defineProperty({__proto__:null,Default:t,VerticalTabs:e,__namedExportsOrder:m,default:b},Symbol.toStringTag,{value:"Module"}));export{T as C,t as D};

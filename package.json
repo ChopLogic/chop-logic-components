@@ -20,7 +20,6 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run",
-    "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky install"
@@ -42,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/SavouryGin/chop-logic-components/issues"
   },
-  "homepage": "https://github.com/SavouryGin/chop-logic-components#readme",
+  "homepage": "https://savourygin.github.io/chop-logic-components",
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.2",
     "@commitlint/cli": "^19.3.0",

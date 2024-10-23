@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicIcon > ArrowDownIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ArrowDownIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -15,7 +15,7 @@ exports[`ChopLogicIcon > ArrowDownIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ArrowUpIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ArrowUpIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -30,7 +30,7 @@ exports[`ChopLogicIcon > ArrowUpIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > BackIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > BackIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -50,7 +50,7 @@ exports[`ChopLogicIcon > BackIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CancelIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CancelIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -65,7 +65,7 @@ exports[`ChopLogicIcon > CancelIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CheckMarkIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CheckMarkIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -80,7 +80,7 @@ exports[`ChopLogicIcon > CheckMarkIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CheckboxCheckedIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CheckboxCheckedIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -96,7 +96,7 @@ exports[`ChopLogicIcon > CheckboxCheckedIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CheckboxUncheckedIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CheckboxUncheckedIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -112,7 +112,7 @@ exports[`ChopLogicIcon > CheckboxUncheckedIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ChevronDownIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ChevronDownIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -128,7 +128,7 @@ exports[`ChopLogicIcon > ChevronDownIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ChevronLeftIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ChevronLeftIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -144,7 +144,7 @@ exports[`ChopLogicIcon > ChevronLeftIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ChevronRightIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ChevronRightIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -160,7 +160,7 @@ exports[`ChopLogicIcon > ChevronRightIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ChevronUpIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ChevronUpIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -176,7 +176,7 @@ exports[`ChopLogicIcon > ChevronUpIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ClearIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ClearIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -194,7 +194,7 @@ exports[`ChopLogicIcon > ClearIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CopyIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CopyIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -216,7 +216,7 @@ exports[`ChopLogicIcon > CopyIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > CutIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > CutIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -245,7 +245,7 @@ exports[`ChopLogicIcon > CutIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > DeleteIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > DeleteIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -260,7 +260,7 @@ exports[`ChopLogicIcon > DeleteIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > DownloadIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > DownloadIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -275,7 +275,7 @@ exports[`ChopLogicIcon > DownloadIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ErrorIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ErrorIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -293,7 +293,7 @@ exports[`ChopLogicIcon > ErrorIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ForwardIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ForwardIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -313,7 +313,7 @@ exports[`ChopLogicIcon > ForwardIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > HelpIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > HelpIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -328,7 +328,7 @@ exports[`ChopLogicIcon > HelpIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > HideIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > HideIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -343,7 +343,7 @@ exports[`ChopLogicIcon > HideIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > InfoIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > InfoIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -361,7 +361,7 @@ exports[`ChopLogicIcon > InfoIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > PasteIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > PasteIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -376,7 +376,7 @@ exports[`ChopLogicIcon > PasteIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > QuestionIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > QuestionIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -406,7 +406,7 @@ exports[`ChopLogicIcon > QuestionIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > RemoveIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > RemoveIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -433,7 +433,7 @@ exports[`ChopLogicIcon > RemoveIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > SaveIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > SaveIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -448,7 +448,7 @@ exports[`ChopLogicIcon > SaveIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > ShowIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > ShowIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -466,7 +466,7 @@ exports[`ChopLogicIcon > ShowIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > UploadIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > UploadIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -484,7 +484,7 @@ exports[`ChopLogicIcon > UploadIcon should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicIcon > WarningIcon should match the snapshot 1`] = `
+exports[`ChopLogicIcon > WarningIcon 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"

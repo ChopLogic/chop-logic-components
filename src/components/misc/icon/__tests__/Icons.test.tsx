@@ -31,142 +31,142 @@ import UploadIcon from '../elements/Upload';
 import WarningIcon from '../elements/Warning';
 
 describe('ChopLogicIcon', () => {
-  it('BackIcon should match the snapshot', () => {
+  it('BackIcon', () => {
     const { asFragment } = render(<BackIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ArrowDownIcon should match the snapshot', () => {
+  it('ArrowDownIcon', () => {
     const { asFragment } = render(<ArrowDownIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ArrowUpIcon should match the snapshot', () => {
+  it('ArrowUpIcon', () => {
     const { asFragment } = render(<ArrowUpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CancelIcon should match the snapshot', () => {
+  it('CancelIcon', () => {
     const { asFragment } = render(<CancelIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CheckboxCheckedIcon should match the snapshot', () => {
+  it('CheckboxCheckedIcon', () => {
     const { asFragment } = render(<CheckboxCheckedIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CheckboxUncheckedIcon should match the snapshot', () => {
+  it('CheckboxUncheckedIcon', () => {
     const { asFragment } = render(<CheckboxUncheckedIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CheckMarkIcon should match the snapshot', () => {
+  it('CheckMarkIcon', () => {
     const { asFragment } = render(<CheckMarkIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ClearIcon should match the snapshot', () => {
+  it('ClearIcon', () => {
     const { asFragment } = render(<ClearIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CopyIcon should match the snapshot', () => {
+  it('CopyIcon', () => {
     const { asFragment } = render(<CopyIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('CutIcon should match the snapshot', () => {
+  it('CutIcon', () => {
     const { asFragment } = render(<CutIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('DeleteIcon should match the snapshot', () => {
+  it('DeleteIcon', () => {
     const { asFragment } = render(<DeleteIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('DownloadIcon should match the snapshot', () => {
+  it('DownloadIcon', () => {
     const { asFragment } = render(<DownloadIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ErrorIcon should match the snapshot', () => {
+  it('ErrorIcon', () => {
     const { asFragment } = render(<ErrorIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ForwardIcon should match the snapshot', () => {
+  it('ForwardIcon', () => {
     const { asFragment } = render(<ForwardIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('HelpIcon should match the snapshot', () => {
+  it('HelpIcon', () => {
     const { asFragment } = render(<HelpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('HideIcon should match the snapshot', () => {
+  it('HideIcon', () => {
     const { asFragment } = render(<HideIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('InfoIcon should match the snapshot', () => {
+  it('InfoIcon', () => {
     const { asFragment } = render(<InfoIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('PasteIcon should match the snapshot', () => {
+  it('PasteIcon', () => {
     const { asFragment } = render(<PasteIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('QuestionIcon should match the snapshot', () => {
+  it('QuestionIcon', () => {
     const { asFragment } = render(<QuestionIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('RemoveIcon should match the snapshot', () => {
+  it('RemoveIcon', () => {
     const { asFragment } = render(<RemoveIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('SaveIcon should match the snapshot', () => {
+  it('SaveIcon', () => {
     const { asFragment } = render(<SaveIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ShowIcon should match the snapshot', () => {
+  it('ShowIcon', () => {
     const { asFragment } = render(<ShowIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('UploadIcon should match the snapshot', () => {
+  it('UploadIcon', () => {
     const { asFragment } = render(<UploadIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ChevronDownIcon should match the snapshot', () => {
+  it('ChevronDownIcon', () => {
     const { asFragment } = render(<ChevronDownIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ChevronUpIcon should match the snapshot', () => {
+  it('ChevronUpIcon', () => {
     const { asFragment } = render(<ChevronUpIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ChevronLeftIcon should match the snapshot', () => {
+  it('ChevronLeftIcon', () => {
     const { asFragment } = render(<ChevronLeftIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ChevronRightIcon should match the snapshot', () => {
+  it('ChevronRightIcon', () => {
     const { asFragment } = render(<ChevronRightIcon />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('WarningIcon should match the snapshot', () => {
+  it('WarningIcon', () => {
     const { asFragment } = render(<WarningIcon />);
     expect(asFragment()).toMatchSnapshot();
   });

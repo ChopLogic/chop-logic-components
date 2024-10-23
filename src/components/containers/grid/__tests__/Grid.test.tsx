@@ -6,7 +6,7 @@ import ChopLogicGrid from '../Grid';
 
 describe('ChopLogicGrid', () => {
   const testProps = {
-    id: 'test-grid-id',
+    id: 'grid-id',
     columns: [
       { title: 'Company', field: 'company' },
       { title: 'Contact', field: 'contact' },

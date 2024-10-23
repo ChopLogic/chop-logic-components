@@ -37,12 +37,12 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           >
             <input
               class="sc-dnaUSb cVcZeW"
-              id="select_all_test-grid-id"
+              id="select_all_grid-id"
               type="checkbox"
             />
             <label
               class="sc-kkmypM gdLSUN"
-              for="select_all_test-grid-id"
+              for="select_all_grid-id"
             >
               <svg
                 fill="currentColor"

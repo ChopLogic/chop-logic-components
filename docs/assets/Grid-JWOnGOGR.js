@@ -1,8 +1,7 @@
-import{j as e}from"./jsx-runtime-CkxqCPlQ.js";import{useMDXComponents as r}from"./index-BrnU7xv7.js";import{ae as s,af as o,ag as l}from"./index---6MgSDT.js";import{C as c,D as a}from"./Grid.stories-DdXgET19.js";import"./index-DJO9vBfz.js";import"./iframe-WobaMXE5.js";import"../sb-preview/runtime.js";import"./index-URyNLXnw.js";import"./index-CvTBScqg.js";import"./index-DrFu-skq.js";import"./Grid-CMfk9Gvl.js";import"./styled-components.browser.esm-BAmCwVtG.js";import"./Label-C3WErDxN.js";import"./CheckboxUnchecked-BN-0aOOA.js";function i(t){const n={code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",h4:"h4",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(s,{of:c,title:"Grid"}),`
+import{j as e}from"./jsx-runtime-CkxqCPlQ.js";import{useMDXComponents as r}from"./index-BrnU7xv7.js";import{ae as o,af as s,ag as l}from"./index-BvbQ7fbP.js";import{C as c,D as a}from"./Grid.stories-DdXgET19.js";import"./index-DJO9vBfz.js";import"./iframe-ptQ9viUU.js";import"../sb-preview/runtime.js";import"./index-URyNLXnw.js";import"./index-CvTBScqg.js";import"./index-DrFu-skq.js";import"./Grid-CMfk9Gvl.js";import"./styled-components.browser.esm-BAmCwVtG.js";import"./Label-C3WErDxN.js";import"./CheckboxUnchecked-BN-0aOOA.js";function i(t){const n={code:"code",em:"em",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{of:c,title:"Grid"}),`
 `,e.jsx(n.h1,{id:"choplogicgrid",children:"ChopLogicGrid"}),`
 `,e.jsxs(n.p,{children:["The ",e.jsx(n.code,{children:"ChopLogicGrid"})," component is a styled grid component built on top of the default HTML ",e.jsx(n.code,{children:"table"})," element."]}),`
-`,e.jsx(n.h4,{id:"example",children:"Example"}),`
-`,e.jsx(o,{children:e.jsx(l,{of:a})}),`
+`,e.jsx(s,{children:e.jsx(l,{of:a})}),`
 `,e.jsx(n.h2,{id:"usage",children:"Usage"}),`
 `,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-tsx",children:`import React from 'react';
 import ChopLogicGrid from 'chop-logic-components';

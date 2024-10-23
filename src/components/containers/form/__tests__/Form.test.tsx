@@ -6,14 +6,14 @@ import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'co
 
 import ChopLogicForm from '../Form';
 
-describe('ChopLogicForm', () => {
-  const testInitialValues = {
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 33,
-    accepted: true,
-  };
+const testInitialValues = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 33,
+  accepted: true,
+};
 
+describe('ChopLogicForm', () => {
   it('should match the snapshot', () => {
     const { asFragment } = render(
       <ChopLogicForm id='form-id' className='form-class' style={{ width: '500px' }}>

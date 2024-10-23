@@ -31,8 +31,8 @@ export const SHADOWS = Object.freeze({
 });
 
 export const BORDERS = Object.freeze({
-  light: '1px solid #5998c5',
-  heavy: '1px solid #266dd3',
+  thin: '1px solid #5998c5',
+  thick: '1px solid #266dd3',
   accent: '1px solid #e53d00',
   outline: '2px dashed #e53d00',
 });

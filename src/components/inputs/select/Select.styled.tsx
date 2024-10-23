@@ -13,7 +13,7 @@ export const StyledSelectWrapper = styled.div<{ $disabled: boolean }>`
   box-shadow: ${SHADOWS.box};
   border-top-left-radius: ${UNITS.blockBorderRadius};
   border-top-right-radius: ${UNITS.blockBorderRadius};
-  border: ${BORDERS.light};
+  border: ${BORDERS.thin};
   max-width: 100%;
   background-color: ${COLORS.background};
 
@@ -86,7 +86,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean }>`
   width: 100%;
   top: 78px;
   left: -1px;
-  border: ${BORDERS.light};
+  border: ${BORDERS.thin};
   box-shadow: ${SHADOWS.box};
   overflow-y: auto;
   max-height: 180px;

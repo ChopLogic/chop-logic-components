@@ -4,24 +4,24 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="sc-elDIKY jigrUQ"
+      class="sc-egkSDF frXiSn"
     >
       <tr
-        class="sc-la-DxNn kXFzaW"
+        class="sc-kLhKbu jokEaU"
       >
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           <div
-            class="sc-knesRu eVQQCM"
+            class="sc-khLCKb ciFKLI"
           >
             <input
-              class="sc-dnaUSb cVcZeW"
+              class="sc-dstKZu bbfSNT"
               id="select_row_row1"
               type="checkbox"
             />
             <label
-              class="sc-kkmypM gdLSUN"
+              class="sc-keTIit eelhQH"
               for="select_row_row1"
             >
               <svg
@@ -39,37 +39,37 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 1
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 2
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 3
         </td>
       </tr>
       <tr
-        class="sc-la-DxNn kXFzaW"
+        class="sc-kLhKbu jokEaU"
       >
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           <div
-            class="sc-knesRu eVQQCM"
+            class="sc-khLCKb ciFKLI"
           >
             <input
-              class="sc-dnaUSb cVcZeW"
+              class="sc-dstKZu bbfSNT"
               id="select_row_row2"
               type="checkbox"
             />
             <label
-              class="sc-kkmypM gdLSUN"
+              class="sc-keTIit eelhQH"
               for="select_row_row2"
             >
               <svg
@@ -87,37 +87,37 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 5
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 6
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 7
         </td>
       </tr>
       <tr
-        class="sc-la-DxNn kXFzaW"
+        class="sc-kLhKbu jokEaU"
       >
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           <div
-            class="sc-knesRu eVQQCM"
+            class="sc-khLCKb ciFKLI"
           >
             <input
-              class="sc-dnaUSb cVcZeW"
+              class="sc-dstKZu bbfSNT"
               id="select_row_row3"
               type="checkbox"
             />
             <label
-              class="sc-kkmypM gdLSUN"
+              class="sc-keTIit eelhQH"
               for="select_row_row3"
             >
               <svg
@@ -135,17 +135,17 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 9
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 10
         </td>
         <td
-          class="sc-iKTcqh hQfLEQ"
+          class="sc-ivxoEo cMBTyn"
         >
           Value 11
         </td>

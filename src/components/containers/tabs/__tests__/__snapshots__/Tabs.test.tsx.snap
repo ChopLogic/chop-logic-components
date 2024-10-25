@@ -5,7 +5,7 @@ exports[`ChopLogicTabButton > should match the snapshot 1`] = `
   <button
     aria-controls="panel-id-1"
     aria-selected="true"
-    class="sc-braxZu qYJCb"
+    class="sc-blHHSb kJfJgr"
     id="id-1"
     role="tab"
   >
@@ -18,7 +18,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the first tab 1`] =
 <DocumentFragment>
   <div
     aria-labelledby="tab-1"
-    class="sc-gJhJTp TZTZm"
+    class="sc-gtLWhw bbRMRP"
     id="tabpanel_tab-1"
     role="tabpanel"
   >
@@ -31,7 +31,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 <DocumentFragment>
   <div
     aria-labelledby="tab-2"
-    class="sc-gJhJTp TZTZm"
+    class="sc-gtLWhw bbRMRP"
     id="tabpanel_tab-2"
     role="tabpanel"
   >
@@ -43,16 +43,16 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 exports[`ChopLogicTabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fQpRED gsDjrZ"
+    class="sc-fAUdSK kZITFq"
   >
     <div
-      class="sc-elDIKY MvQyF"
+      class="sc-egkSDF fOxyWq"
       role="tablist"
     >
       <button
         aria-controls="tabpanel_tab-1"
         aria-selected="true"
-        class="sc-braxZu hWCBOZ"
+        class="sc-blHHSb gFkJwZ"
         id="tab-1"
         role="tab"
       >
@@ -61,7 +61,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-2"
         aria-selected="false"
-        class="sc-braxZu hBKSkC"
+        class="sc-blHHSb kZEVnO"
         id="tab-2"
         role="tab"
       >
@@ -70,7 +70,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-3"
         aria-selected="false"
-        class="sc-braxZu hBKSkC"
+        class="sc-blHHSb kZEVnO"
         id="tab-3"
         role="tab"
       >
@@ -79,7 +79,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="sc-gJhJTp TZTZm"
+      class="sc-gtLWhw bbRMRP"
       id="tabpanel_tab-1"
       role="tabpanel"
     >

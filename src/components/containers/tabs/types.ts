@@ -1,4 +1,6 @@
-export type ChopLogicTabsProps = React.HTMLAttributes<HTMLDivElement> & {
+import { CommonComponentProps } from 'utils/types';
+
+export type ChopLogicTabsProps = CommonComponentProps & {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: ChopLogicTabsMode;

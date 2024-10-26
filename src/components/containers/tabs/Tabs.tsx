@@ -5,7 +5,7 @@ import ChopLogicTabList from './elements/TabList';
 import { StyledTabsContainer } from './Tabs.styled';
 import { ChopLogicTabsProps } from './types';
 
-const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = 'horizontal' }) => {
+const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = 'horizontal', ...rest }) => {
   const tabIds = tabs.map((item) => item.id);
   const tabPanelIds = tabIds.map((id) => `tabpanel_${id}`);
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
@@ -16,7 +16,7 @@ const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode 
   };
 
   return (
-    <StyledTabsContainer $mode={mode}>
+    <StyledTabsContainer $mode={mode} {...rest}>
       <ChopLogicTabList
         tabs={tabs}
         selectedTabId={selectedTabId}

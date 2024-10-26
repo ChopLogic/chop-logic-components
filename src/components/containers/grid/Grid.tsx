@@ -12,10 +12,8 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   onSelect,
   renderDataItem,
   caption,
-  className,
-  style,
-  tabIndex,
   selectable = false,
+  ...rest
 }) => {
   const {
     elementId,
@@ -29,7 +27,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   } = useChopLogicGridController({ id, data, onSelect });
 
   return (
-    <StyledGrid className={className} style={style} tabIndex={tabIndex}>
+    <StyledGrid {...rest}>
       {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
       <GridColumnGroup columns={columns} selectable={selectable} />
       <ChopLogicGridHead

@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { CommonComponentProps } from 'utils/types';
 
 export type ChopLogicFormData = { [key: string]: unknown };
 
@@ -15,9 +16,11 @@ export type ChopLogicFormContextProps = {
 };
 
 export type ChopLogicFormProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLFormElement> & {
+  CommonComponentProps & {
     columns?: number;
     initialValues?: ChopLogicFormData;
     hasReset?: boolean;
     onClickSubmit?: (data: ChopLogicFormData) => void;
+    onReset?: React.FormEventHandler<HTMLFormElement>;
+    onSubmit?: React.FormEventHandler<HTMLFormElement>;
   };

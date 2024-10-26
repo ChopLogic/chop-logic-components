@@ -26,15 +26,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   });
 
   return (
-    <StyledForm
-      onSubmit={handleSubmit}
-      onReset={handleReset}
-      $columns={columns}
-      style={rest.style}
-      className={rest.className}
-      id={rest.id}
-      tabIndex={rest.tabIndex}
-    >
+    <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns} {...rest}>
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <StyledFormButtonContainer $columns={columns}>

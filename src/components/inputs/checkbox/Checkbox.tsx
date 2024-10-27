@@ -18,19 +18,14 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   iconPosition = 'left',
   defaultChecked,
   onChange,
-  ...props
+  id,
+  ...rest
 }) => {
   const { handleChange, checked } = useChopLogicCheckboxController({ name, defaultChecked, onChange });
-  const { elementId } = useElementIds(props?.id);
+  const { elementId } = useElementIds(id);
 
   return (
-    <StyledCheckboxWrapper
-      $disabled={!!disabled}
-      className={props?.className}
-      tabIndex={props?.tabIndex}
-      style={props?.style}
-      title={props?.title}
-    >
+    <StyledCheckboxWrapper $disabled={!!disabled} {...rest}>
       <StyledCheckboxInput
         id={elementId}
         name={name}

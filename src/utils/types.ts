@@ -3,10 +3,12 @@ export type CommonComponentProps = {
   className?: string;
   style?: React.CSSProperties;
   tabIndex?: number;
+  title?: string;
 };
 
 export type CommonInputProps = CommonComponentProps & {
-  name?: string;
+  label: string;
+  name: string;
   disabled?: boolean;
   required?: boolean;
 };

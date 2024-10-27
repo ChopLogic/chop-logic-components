@@ -3,7 +3,7 @@
 exports[`ChopLogicMultiSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kLhKbu dqZbsD"
+    class="sc-kLhKbu dqZbsD test-class"
   >
     <label
       class="sc-dntaoT bUwvzV"

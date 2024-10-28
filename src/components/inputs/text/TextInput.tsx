@@ -22,8 +22,13 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   errorMessage,
   defaultValue,
   onChange,
+  onBlur,
+  onFocus,
   onClear,
   validator,
+  maxLength,
+  id,
+  tabIndex,
   placeholder = 'Type here...',
   disabled = false,
   required = false,
@@ -31,7 +36,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   readOnly = false,
   autoComplete = 'off',
   type = 'text',
-  ...props
+  ...rest
 }) => {
   const { value, valid, handleChange, handleClear, passwordShown, togglePassword } = useChopLogicTextInputController({
     defaultValue,
@@ -41,11 +46,11 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
     required,
     validator,
   });
-  const { elementId, errorId } = useElementIds(props?.id);
+  const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
 
   return (
-    <StyledTextInputContainer className={props?.className} style={props?.style}>
+    <StyledTextInputContainer {...rest}>
       <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
         <ChopLogicLabel label={label} required={required} inputId={elementId} />
         <StyledFieldWrapper>
@@ -63,10 +68,10 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
             aria-readonly={readOnly}
             value={value}
             onChange={handleChange}
-            maxLength={props?.maxLength}
-            onBlur={props?.onBlur}
-            onFocus={props?.onFocus}
-            tabIndex={props?.tabIndex}
+            maxLength={maxLength}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            tabIndex={tabIndex}
           />
           <StyledButtonsWrapper>
             {clearable && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} />}

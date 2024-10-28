@@ -4,6 +4,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
     class="sc-khLCKb ijJTpD"
+    style="width: 500px;"
   >
     <div
       class="sc-dstKZu jMOkrB"

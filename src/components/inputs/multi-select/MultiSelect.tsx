@@ -20,10 +20,11 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   disabled = false,
   onChange,
   defaultValue,
-  ...props
+  id,
+  ...rest
 }) => {
   const ref = useRef(null);
-  const { elementId, dropdownId } = useElementIds(props?.id);
+  const { elementId, dropdownId } = useElementIds(id);
   const { handleClose, handleSelect, handleToggle, opened, values } = useChopLogicMultiSelectController({
     name,
     options,
@@ -35,7 +36,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <StyledMultiSelectWrapper ref={ref} $disabled={disabled} className={props?.className} style={props?.style}>
+    <StyledMultiSelectWrapper ref={ref} $disabled={disabled} {...rest}>
       <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}

@@ -4,6 +4,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="sc-kLhKbu dqZbsD test-class"
+    style="width: 400px;"
   >
     <label
       class="sc-dntaoT bUwvzV"

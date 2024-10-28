@@ -4,6 +4,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
 <DocumentFragment>
   <table
     class="sc-blHHSb cUwLSH test-class"
+    style="width: 100px;"
     tabindex="-1"
   >
     <colgroup>

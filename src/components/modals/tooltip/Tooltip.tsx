@@ -26,14 +26,13 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
       onContextMenu={visibleOn === 'contextmenu' ? (e: React.MouseEvent) => handleContextMenu(e) : undefined}
       tabIndex={0}
-      {...rest}
       ref={wrapperRef}
       aria-describedby={elementId}
     >
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={elementId}>
+          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest}>
             {tooltipContent}
           </StyledTooltip>
         </ChopLogicPortal>

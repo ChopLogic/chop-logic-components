@@ -12,6 +12,8 @@ const defaultProps: ChopLogicAlertProps = {
   message: 'This is a test message.',
   title: 'Test Title',
   mode: 'info',
+  className: 'test-class',
+  id: 'test-id',
 };
 
 const renderAlert = (props: Partial<ChopLogicAlertProps> = {}) => {

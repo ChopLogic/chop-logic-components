@@ -14,8 +14,8 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({ isOpened, onClose, titl
 
   return (
     <ChopLogicPortal>
-      <StyledAlertWrapper $isClosing={isClosing} {...rest}>
-        <StyledAlertContent>
+      <StyledAlertWrapper $isClosing={isClosing}>
+        <StyledAlertContent {...rest}>
           <ChopLogicAlertHeader title={title} onClose={onClose} mode={mode} icon={icon} />
           <p>{message}</p>
         </StyledAlertContent>

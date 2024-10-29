@@ -36,40 +36,34 @@ export default ExampleComponent;
 
 ### Props
 
-- **children** `React.ReactNode` - Inputs, buttons, and other elements that will be rendered inside the form.
-- **columns** `number` - Number of columns in the form (default is one column).
-- **initialValues** `ChopLogicFormData` - Object with default values for form inputs.
-- **hasReset** `boolean` - Boolean value indicating whether the form has the Reset button (true by default).
-- **onClickSubmit** - `(data: ChopLogicFormData) => void` - Function that will be called when the Submit button is clicked. It will receive an object with the current input values ​​as a parameter.
-- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
+| Prop              | Type                                | Description                                                                                                                             | Default     | Required |
+| ----------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
+| **children**      | `ReactNode`                         | Inputs, buttons, and other elements that will be rendered inside the form.                                                              | `undefined` | No       |
+| **columns**       | `number`                            | Number of columns in the form.                                                                                                          | `1`         | No       |
+| **initialValues** | `ChopLogicFormData`                 | Object with default values for form inputs.                                                                                             | `undefined` | No       |
+| **hasReset**      | `boolean`                           | Indicator of whether the form has the Reset button                                                                                      | `true`      | No       |
+| **onClickSubmit** | `(data: ChopLogicFormData) => void` | Function that will be called when the Submit button is clicked. It will receive an object with the current input values as a parameter. | `undefined` | No       |
+| **id**            | `string`                            | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                          | `undefined` | No       |
+| **className**     | `string`                            | The class global attribute is a list of the classes of the element.                                                                     | `undefined` | No       |
+| **style**         | `CSSProperties`                     | The style global attribute contains CSS styling declarations to be applied to the element.                                              | `undefined` | No       |
+| **tabIndex**      | `number`                            | The tabindex global attribute allows developers to make HTML elements focusable.                                                        | `undefined` | No       |
+| **title**         | `string`                            | The title global attribute contains text representing advisory information related to the element it belongs to.                        | `undefined` | No       |
 
 ### Types
 
 ```ts
 type ChopLogicFormProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLFormElement> & {
+  CommonComponentProps & {
     columns?: number;
     initialValues?: ChopLogicFormData;
     hasReset?: boolean;
     onClickSubmit?: (data: ChopLogicFormData) => void;
+    onReset?: React.FormEventHandler<HTMLFormElement>;
+    onSubmit?: React.FormEventHandler<HTMLFormElement>;
   };
-```
 
-```ts
 type ChopLogicFormData = { [key: string]: unknown };
-```
 
-```ts
 type ChopLogicFormContextProps = {
   onChangeFormInput?: (params: ChopLogicFormInputParams) => void;
   initialValues?: ChopLogicFormData;

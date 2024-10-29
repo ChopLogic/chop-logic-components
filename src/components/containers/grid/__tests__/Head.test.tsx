@@ -5,14 +5,14 @@ import ChopLogicGridHead from '../elements/Head';
 import { ChopLogicGridColumn } from '../types';
 
 describe('ChopLogicGridHead', () => {
-  const ChopLogicGridColumns: ChopLogicGridColumn[] = [
+  const columns: ChopLogicGridColumn[] = [
     { title: 'Col 1', field: 'field1' },
     { title: 'Col 2', field: 'field2' },
     { title: 'Col 3', field: 'field3' },
   ];
 
   const testProps = {
-    columns: ChopLogicGridColumns,
+    columns,
     gridId: 'test-grid-id',
     selectable: true,
     selectAll: vi.fn(),

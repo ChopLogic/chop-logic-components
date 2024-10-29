@@ -18,54 +18,39 @@ import React from 'react';
 import ChopLogicGrid from 'chop-logic-components';
 import { DATA, COLUMS } from './constants';
 
-const ExampleComponent = () => <ChopLogicGrid selectable={false} data={DATA} columns={COLUMNS} />;
+const ExampleComponent = () => <ChopLogicGrid caption='Contact List' data={DATA} columns={COLUMNS} />;
 
 export default ExampleComponent;
 ```
 
 ### Props
 
-_Required props_
-
-- **data** `ChopLogicGridItem[]` - An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.
-- **columns** `ChopLogicGridColumn[]` - An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title.
-
-_Optional props_
-
-- **selectable** `boolean` - A value that indicates whether the grid has a column with checkboxes.
-- **caption** `string` - An optional title of the grid.
-- **onSelect** `(ids: string[]) => void` - An optional callback that is called when one or more grid rows are selected or deselected.
-- **renderDataItem** `RenderDataItemCallback` - An optional callback that takes a data item and a column field as parameters and returns a JSX element. This callback is required for custom rendering of grid cells.
-- **HTMLAttributes** - some global HTML attributes: **className**, **style**, **tabIndex**, etc.
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
+| Prop               | Type                      | Description                                                                                                                                                                                     | Default     | Required |
+| ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
+| **data**           | `ChopLogicGridItem[]`     | An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.                                                                                    | `[]`        | Yes      |
+| **columns**        | `ChopLogicGridColumn[]`   | An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title. | `[]`        | Yes      |
+| **selectable**     | `boolean`                 | A value that indicates whether the grid has a column with checkboxes.                                                                                                                           | `false`     | No       |
+| **caption**        | `string`                  | An optional title of the grid.                                                                                                                                                                  | `undefined` | No       |
+| **onSelect**       | `(ids: string[]) => void` | An optional callback that is called when one or more grid rows are selected or deselected.                                                                                                      | `undefined` | No       |
+| **renderDataItem** | `RenderDataItemCallback`  | An optional callback that takes a data item and a column field as parameters and returns a JSX element. This callback is required for custom rendering of grid cells.                           | `undefined` | No       |
+| **id**             | `string`                  | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                                                  | `undefined` | No       |
+| **className**      | `string`                  | The class global attribute is a list of the classes of the element.                                                                                                                             | `undefined` | No       |
+| **style**          | `CSSProperties`           | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                                      | `undefined` | No       |
+| **tabIndex**       | `number`                  | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                                | `undefined` | No       |
+| **title**          | `string`                  | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                                | `undefined` | No       |
 
 ### Types
 
 ```ts
-type ChopLogicGridProps = {
+type ChopLogicGridProps = CommonComponentProps & {
   columns: ChopLogicGridColumn[];
   data: ChopLogicGridItem[];
   caption?: string;
-  id?: string;
   selectable?: boolean;
-  tabIndex?: number;
-  className?: string;
-  style?: React.CSSProperties;
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
 };
-```
 
-```ts
 type ChopLogicGridColumn = {
   field: string;
   title?: string;
@@ -73,16 +58,12 @@ type ChopLogicGridColumn = {
   highlighted?: boolean;
   className?: string;
 };
-```
 
-```ts
 type ChopLogicGridItem = {
   id: string;
   disabled?: boolean;
   [key: string]: unknown;
 };
-```
 
-```ts
-export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;
+type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;
 ```

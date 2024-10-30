@@ -12,10 +12,8 @@ describe('moveFocusOnElementById', () => {
     // Mock getElementById to return the mock element
     vi.spyOn(document, 'getElementById').mockReturnValue(mockElement);
 
-    // Call the function
     moveFocusOnElementById(elementId);
 
-    // Assertions
     expect(mockElement.focus).toHaveBeenCalled();
   });
 

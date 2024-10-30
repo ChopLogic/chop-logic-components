@@ -19,11 +19,8 @@ describe('moveFocusOnElementById', () => {
 
   it('should not throw if element is not found', () => {
     const elementId = 'non-existent-element';
-
-    // Mock getElementById to return null
     vi.spyOn(document, 'getElementById').mockReturnValue(null);
 
-    // Call the function
     expect(() => moveFocusOnElementById(elementId)).not.toThrow();
   });
 });

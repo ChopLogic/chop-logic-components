@@ -1,13 +1,10 @@
-/// <reference types="react" />
-export type ChopLogicGridProps = {
+import { CommonComponentProps } from '../../../../../../../../../src/utils/types';
+
+export type ChopLogicGridProps = CommonComponentProps & {
     columns: ChopLogicGridColumn[];
     data: ChopLogicGridItem[];
     caption?: string;
-    id?: string;
     selectable?: boolean;
-    tabIndex?: number;
-    className?: string;
-    style?: React.CSSProperties;
     renderDataItem?: RenderDataItemCallback;
     onSelect?: (ids: string[]) => void;
 };

@@ -1,11 +1,11 @@
+import { CommonComponentProps } from '../../../../../../../../../src/utils/types';
 import { ChopLogicIconName } from '../../../../../../../../../src/components/misc/icon/Icon';
 
 export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
-export type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
+export type ChopLogicAlertProps = CommonComponentProps & {
     isOpened: boolean;
     onClose: () => void;
     message: string;
-    title?: string;
     mode?: ChopLogicAlertMode;
     icon?: ChopLogicIconName;
 };

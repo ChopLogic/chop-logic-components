@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare const useChopLogicTooltipController: ({ id }: {
     id?: string;
 }) => {

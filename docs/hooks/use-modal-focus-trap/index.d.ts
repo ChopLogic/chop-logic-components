@@ -1,4 +1,3 @@
-/// <reference types="react" />
 type ModalFocusTrapParams = {
     modalRef: React.RefObject<HTMLDivElement>;
     isOpened: boolean;

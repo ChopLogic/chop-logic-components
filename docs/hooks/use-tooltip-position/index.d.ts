@@ -1,4 +1,3 @@
-/// <reference types="react" />
 type useTooltipPositionParams = {
     wrapperRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
     tooltipRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;

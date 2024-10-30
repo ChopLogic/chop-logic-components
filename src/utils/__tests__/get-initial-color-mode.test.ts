@@ -17,7 +17,6 @@ describe('getInitialColorMode', () => {
   });
 
   it('should return "dark" if there is no persisted color mode and prefers-color-scheme is dark', () => {
-    // Mock localStorage to return null
     vi.spyOn(window.localStorage, 'getItem').mockReturnValue(null);
 
     // Mock matchMedia to return matches as true
@@ -31,7 +30,6 @@ describe('getInitialColorMode', () => {
   });
 
   it('should return "light" if there is no persisted color mode and prefers-color-scheme is light', () => {
-    // Mock localStorage to return null
     vi.spyOn(window.localStorage, 'getItem').mockReturnValue(null);
 
     // Mock matchMedia to return matches as false
@@ -45,7 +43,6 @@ describe('getInitialColorMode', () => {
   });
 
   it('should default to "light" if there is no persisted color mode and matchMedia is not supported', () => {
-    // Mock localStorage to return null
     vi.spyOn(window.localStorage, 'getItem').mockReturnValue(null);
 
     // Mock matchMedia to return undefined

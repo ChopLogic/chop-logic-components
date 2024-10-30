@@ -10,7 +10,7 @@ const defaultProps: ChopLogicAlertProps = {
   isOpened: false,
   onClose: vi.fn(),
   message: 'This is a test message.',
-  title: 'Test Title',
+  title: 'Test Alert Title',
   mode: 'info',
   className: 'test-class',
   id: 'test-id',
@@ -29,7 +29,7 @@ describe('ChopLogicAlert', () => {
   it('should render the alert when opened', () => {
     renderAlert({ isOpened: true });
     expect(screen.getByText(defaultProps.message)).toBeInTheDocument();
-    expect(screen.getByText('Test Title')).toBeInTheDocument();
+    expect(screen.getByText('Test Alert Title')).toBeInTheDocument();
   });
 
   it('should call onClose when the close button is clicked', async () => {

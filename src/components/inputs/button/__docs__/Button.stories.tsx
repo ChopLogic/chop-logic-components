@@ -13,6 +13,7 @@ const meta: Meta<typeof ButtonExample> = {
     icon: ChopLogicIconName.Copy,
     view: 'primary',
     disabled: false,
+    theme: 'light',
   },
   argTypes: {
     text: { control: 'text' },
@@ -29,6 +30,10 @@ const meta: Meta<typeof ButtonExample> = {
       control: 'select',
       options: ['primary', 'secondary', 'danger', 'icon'],
     },
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -42,6 +47,13 @@ export const PrimaryButton: Story = {
     icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -52,6 +64,13 @@ export const SecondaryButton: Story = {
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -62,6 +81,13 @@ export const DangerButton: Story = {
     icon: ChopLogicIconName.Delete,
     type: 'button',
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -72,6 +98,13 @@ export const IconButton: Story = {
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -82,5 +115,12 @@ export const DisabledButton: Story = {
     icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: true,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

@@ -20,8 +20,13 @@ export const LeftIconCheckbox: Story = {
     noLabel: false,
     defaultChecked: false,
     iconPosition: 'left',
+    theme: 'light',
   },
   argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
     iconPosition: {
       control: 'select',
       options: ['left', 'right'],
@@ -39,8 +44,13 @@ export const RightIconCheckbox: Story = {
     noLabel: false,
     defaultChecked: false,
     iconPosition: 'right',
+    theme: 'light',
   },
   argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
     iconPosition: {
       control: 'select',
       options: ['left', 'right'],
@@ -57,5 +67,12 @@ export const NoLabelCheckbox: Story = {
     disabled: false,
     noLabel: true,
     defaultChecked: true,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

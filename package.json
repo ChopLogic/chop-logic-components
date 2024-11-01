@@ -20,7 +20,7 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky install"
   },

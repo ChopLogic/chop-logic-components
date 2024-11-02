@@ -30,6 +30,13 @@ export const DefaultGrid: Story = {
       { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
       { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
     ],
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -51,5 +58,12 @@ export const SelectableGrid: Story = {
       { id: 'row5', company: 'Laughing Bacchus Winecellars', contact: 'Yoshi Tannamuri', country: 'Canada', phone: '123-345-7890' },
       { id: 'row6', company: 'Magazzini Alimentari Riuniti', contact: 'Giovanni Rovelli', country: 'Italy', phone: '123-345-7890' },
     ],
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

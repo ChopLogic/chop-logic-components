@@ -15,6 +15,7 @@ const meta: Meta<typeof ChopLogicTabs> = {
   args: {
     tabs,
     defaultTabId: 'tab1',
+    theme: 'light',
   },
   argTypes: {
     tabs: { control: 'object' },
@@ -22,6 +23,10 @@ const meta: Meta<typeof ChopLogicTabs> = {
     mode: {
       control: 'select',
       options: ['vertical', 'horizontal'],
+    },
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
     },
   },
 };

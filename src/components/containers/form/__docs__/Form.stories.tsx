@@ -14,6 +14,13 @@ const meta: Meta<typeof FormExample> = {
       age: 42,
     },
     onClickSubmit: (data) => console.log(data),
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 

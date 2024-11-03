@@ -7,9 +7,8 @@ describe('moveFocusOnElementById', () => {
     const elementId = 'test-element';
     const mockElement = document.createElement('div');
     mockElement.id = elementId;
-    mockElement.focus = vi.fn(); // Mock the focus function
+    mockElement.focus = vi.fn();
 
-    // Mock getElementById to return the mock element
     vi.spyOn(document, 'getElementById').mockReturnValue(mockElement);
 
     moveFocusOnElementById(elementId);

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare function useChopLogicCheckboxController({
   name,
   defaultChecked,

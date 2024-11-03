@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare const StyledSelectWrapper: import('styled-components/dist/types').IStyledComponentBase<
   'web',
   import('styled-components/dist/types').Substitute<

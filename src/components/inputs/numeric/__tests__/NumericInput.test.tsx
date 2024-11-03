@@ -11,7 +11,7 @@ describe('NumericInput', () => {
     id: 'numeric-input',
     name: 'quantity',
     label: 'Quantity',
-    style: { width: '500px' },
+    style: { width: '400px' },
   };
 
   it('should match the snapshot', () => {

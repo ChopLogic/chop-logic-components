@@ -1,10 +1,10 @@
-/// <reference types="react" />
-export type ChopLogicSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  name: string;
-  label: string;
+import { CommonInputProps } from '../../../../../../../../../src/utils/types';
+
+export type ChopLogicSelectProps = CommonInputProps & {
   options: SelectValue[];
   onChange?: (value?: SelectValue) => void;
   placeholder?: string;
+  defaultValue?: string | number | readonly string[];
 };
 export type SelectValue = {
   id: string;

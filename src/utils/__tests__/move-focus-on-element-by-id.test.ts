@@ -3,7 +3,6 @@ import { describe, expect, it, vi } from 'vitest';
 
 describe('moveFocusOnElementById', () => {
   it('should focus the element with the provided ID', () => {
-    // Create a mock element and mock focus function
     const elementId = 'test-element';
     const mockElement = document.createElement('div');
     mockElement.id = elementId;

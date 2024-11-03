@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-
 import { default as GridExample } from './GridExample';
 
 declare const meta: Meta<typeof GridExample>;

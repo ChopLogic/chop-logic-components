@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
-
 import { default as React } from '../../../../node_modules/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 declare const ExampleComponent: React.FC;
 declare const meta: Meta<typeof ExampleComponent>;

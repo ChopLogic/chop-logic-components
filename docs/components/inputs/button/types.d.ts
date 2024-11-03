@@ -1,14 +1,13 @@
-import { ChopLogicIconName } from '../../../../../../../../../src/components/misc/icon/Icon';
+import { MouseEventHandler } from '../../../../node_modules/react';
 import { CommonInputProps } from '../../../../../../../../../src/utils/types';
-import { MouseEventHandler } from '../../../../node_modules/react';
-import { MouseEventHandler } from '../../../../node_modules/react';
+import { ChopLogicIconName } from '../../../../../../../../../src/components/misc/icon/Icon';
 
 export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
 export type ChopLogicButtonProps = Partial<CommonInputProps> & {
-  onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
-  view?: ChopLogicButtonView;
-  icon?: ChopLogicIconName;
-  text?: string;
-  extended?: boolean;
-  type?: 'button' | 'reset' | 'submit';
+    onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
+    view?: ChopLogicButtonView;
+    icon?: ChopLogicIconName;
+    text?: string;
+    extended?: boolean;
+    type?: 'button' | 'reset' | 'submit';
 };

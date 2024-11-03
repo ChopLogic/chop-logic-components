@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-
 import { default as SelectExample } from './SelectExample';
 
 declare const meta: Meta<typeof SelectExample>;

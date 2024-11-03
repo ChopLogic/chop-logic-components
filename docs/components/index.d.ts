@@ -1,3 +1,6 @@
+export { default as ChopLogicForm } from './containers/form/Form';
+export { default as ChopLogicGrid } from './containers/grid/Grid';
+export { default as ChopLogicTabs } from './containers/tabs/Tabs';
 export { default as ChopLogicButton } from './inputs/button/Button';
 export { default as ChopLogicCheckbox } from './inputs/checkbox/Checkbox';
 export { default as ChopLogicMultiSelect } from './inputs/multi-select/MultiSelect';
@@ -7,6 +10,3 @@ export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 export { default as ChopLogicAlert } from './modals/alert/Alert';
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
-export { default as ChopLogicForm } from './containers/form/Form';
-export { default as ChopLogicGrid } from './containers/grid/Grid';
-export { default as ChopLogicTabs } from './containers/tabs/Tabs';

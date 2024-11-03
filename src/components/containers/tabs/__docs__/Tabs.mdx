@@ -32,35 +32,32 @@ export default ExampleComponent;
 
 ### Props
 
-- **tabs**
-  - Type: `ChopLogicTabItem[]`
-  - Description: An array of tab items, each containing an id, title, and the content to display.
-- **defaultTabId**
-  - Type: `string`
-  - Description: The id of the tab that should be active by default.
-- **mode**
-  - Type: `'vertical' | 'horizontal'`
-  - Description: The orientation of the tabs. Defaults to `'horizontal'`.
+| Prop             | Type                 | Description                                                                                                      | Default        | Required |
+| ---------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------- | -------- |
+| **tabs**         | `ChopLogicTabItem[]` | An array of tab items, each containing an id, title, and the content to display.                                 | `[]`           | Yes      |
+| **defaultTabId** | `string`             | The id of the tab that should be active by default.                                                              | `undefined`    | No       |
+| **mode**         | `ChopLogicTabsMode`  | The orientation of the tabs.                                                                                     | `'horizontal'` | No       |
+| **id**           | `string`             | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined`    | No       |
+| **className**    | `string`             | The class global attribute is a list of the classes of the element.                                              | `undefined`    | No       |
+| **style**        | `CSSProperties`      | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined`    | No       |
+| **tabIndex**     | `number`             | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined`    | No       |
+| **title**        | `string`             | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined`    | No       |
 
 ### Types
 
 ```ts
-type ChopLogicTabsProps = React.HTMLAttributes<HTMLDivElement> & {
+type ChopLogicTabsProps = CommonComponentProps & {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: ChopLogicTabsMode;
 };
-```
 
-```ts
 type ChopLogicTabItem = {
   content: React.ReactElement;
   title: string;
   id: string;
   disabled?: boolean;
 };
-```
 
-```ts
 type ChopLogicTabsMode = 'vertical' | 'horizontal';
 ```

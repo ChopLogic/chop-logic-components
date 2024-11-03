@@ -22,6 +22,7 @@ describe('ChopLogicGrid', () => {
       { id: 'row6', company: '', contact: 'Giovanni', country: 'Italy', phone: '123-345-7890' },
     ],
     className: 'test-class',
+    style: { width: 100 },
     tabIndex: -1,
   };
 

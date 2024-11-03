@@ -13,10 +13,13 @@ describe('ChopLogicTabs', () => {
     { id: 'tab-2', title: 'Tab 2', disabled: false, content: <>Tab 2 content</> },
     { id: 'tab-3', title: 'Tab 3', disabled: false, content: <>Tab 3 content</> },
   ];
+
   const testProps = {
     tabs,
     defaultTabId: 'tab-1',
     mode: 'horizontal' as ChopLogicTabsMode,
+    className: 'test-class',
+    id: 'tabs-id',
   };
 
   it('should match the snapshot', () => {

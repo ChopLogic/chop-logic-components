@@ -9,10 +9,10 @@ import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {
   const testProps = {
-    id: 'test-button-id',
+    id: 'button-id',
     text: 'Test button',
     icon: ChopLogicIconName.Copy,
-    className: 'test-button-class',
+    className: 'button-class',
     view: 'danger' as ChopLogicButtonView,
     disabled: false,
   };

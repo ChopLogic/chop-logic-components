@@ -1,7 +1,8 @@
 import { PropsWithChildren } from 'react';
+import { CommonComponentProps } from 'utils/types';
 
-export type ChopLogicDialogProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLDivElement> & {
+export type ChopLogicDialogProps = CommonComponentProps &
+  PropsWithChildren & {
     isOpened: boolean;
     onClose: () => void;
     title: string;

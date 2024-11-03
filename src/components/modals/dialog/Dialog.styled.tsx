@@ -56,7 +56,7 @@ export const StyledDialogHeader = styled.header`
   align-items: center;
   gap: ${UNITS.bigGap};
   padding: ${UNITS.bigGap};
-  border-bottom: ${BORDERS.light};
+  border-bottom: ${BORDERS.thin};
   color: ${COLORS.secondary};
 `;
 

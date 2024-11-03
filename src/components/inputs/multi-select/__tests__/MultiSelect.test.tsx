@@ -17,6 +17,8 @@ describe('ChopLogicMultiSelect', () => {
 
   const testProps = {
     id: 'multi-select-id',
+    className: 'test-class',
+    style: { width: '400px' },
     name: 'languages',
     label: 'Select your languages',
     options: MULTI_SELECT_VALUES,

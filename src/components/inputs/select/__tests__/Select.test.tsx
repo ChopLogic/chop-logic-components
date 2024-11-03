@@ -17,6 +17,8 @@ describe('ChopLogicSelect', () => {
   const testProps = {
     id: 'select-id',
     name: 'language',
+    className: 'test-class',
+    style: { width: '400px' },
     label: 'Select your language',
     options: SELECT_LANGUAGES,
     onChange: vi.fn(),

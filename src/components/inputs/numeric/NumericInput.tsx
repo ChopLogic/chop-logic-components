@@ -22,19 +22,23 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   label,
   errorMessage,
   onChange,
+  onBlur,
+  onFocus,
   onSpinButtonClick,
   validator,
   min,
   max,
+  id,
+  tabIndex,
   disabled = false,
   required = false,
   readOnly = false,
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
-  ...props
+  ...rest
 }) => {
-  const { elementId, errorId } = useElementIds(props?.id);
+  const { elementId, errorId } = useElementIds(id);
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -43,12 +47,12 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
     onChange,
     required,
     validator,
-    step: +step,
+    step,
     onSpinButtonClick,
   });
 
   return (
-    <StyledNumericInputContainer className={props?.className} style={props?.style}>
+    <StyledNumericInputContainer {...rest}>
       <StyledNumericInputWrapper $disabled={disabled} $invalid={!valid}>
         <ChopLogicLabel label={label} required={required} inputId={elementId} />
         <StyledFieldWrapper>
@@ -67,9 +71,9 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
             min={minValue}
             max={maxValue}
             step={step}
-            onBlur={props?.onBlur}
-            onFocus={props?.onFocus}
-            tabIndex={props?.tabIndex}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            tabIndex={tabIndex}
           />
           {hasSpinButtons && (
             <StyledButtonsWrapper>

@@ -16,14 +16,15 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   onChange,
   name,
   label,
+  defaultValue,
+  id,
   placeholder = 'Not selected',
   required = false,
   disabled = false,
-  defaultValue,
-  ...props
+  ...rest
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { elementId, dropdownId } = useElementIds(props?.id);
+  const { elementId, dropdownId } = useElementIds(id);
   const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useChopLogicSelectController({
     options,
     onChange,
@@ -35,7 +36,7 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <StyledSelectWrapper ref={ref} $disabled={disabled} style={props.style} className={props?.className}>
+    <StyledSelectWrapper ref={ref} $disabled={disabled} {...rest}>
       <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}

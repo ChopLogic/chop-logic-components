@@ -40,9 +40,9 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   ${(props) =>
     props.$selected &&
     `   
-      border-top: ${BORDERS.light};
-      border-right: ${BORDERS.light};
-      border-left: ${BORDERS.light};
+      border-top: ${BORDERS.thin};
+      border-right: ${BORDERS.thin};
+      border-left: ${BORDERS.thin};
       background-color: ${COLORS.background};
       top: 1px;
     `}
@@ -58,10 +58,10 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     props.$mode === 'vertical' &&
     props.$selected &&
     `
-      border-top: ${BORDERS.light};
+      border-top: ${BORDERS.thin};
       border-right: none;
-      border-left: ${BORDERS.light};
-      border-bottom: ${BORDERS.light};
+      border-left: ${BORDERS.thin};
+      border-bottom: ${BORDERS.thin};
       top: 0px;
       left: 1px;
     `}
@@ -76,7 +76,7 @@ export const StyledTabContent = styled.div`
 `;
 
 export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`
-  border-bottom: ${BORDERS.light};
+  border-bottom: ${BORDERS.thin};
   padding: 0 ${UNITS.mediumGap};
   display: flex;
   gap: ${UNITS.mediumGap};
@@ -86,7 +86,7 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`
     `
       flex-direction: column;
       border-bottom: none;
-      border-right: ${BORDERS.light};
+      border-right: ${BORDERS.thin};
       padding: ${UNITS.mediumGap} 0;
     `}
 `;

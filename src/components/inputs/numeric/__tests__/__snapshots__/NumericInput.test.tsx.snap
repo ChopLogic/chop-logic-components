@@ -3,28 +3,29 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-knesRu keCzej"
+    class="sc-khLCKb ijJTpD"
+    style="width: 400px;"
   >
     <div
-      class="sc-dnaUSb bFjBsU"
+      class="sc-dstKZu jMOkrB"
     >
       <label
-        class="sc-iKTcqh dCKerg"
+        class="sc-ivxoEo kSsjBP"
         for="numeric-input"
       >
         <span
-          class="sc-gnpbhQ eBqzwP"
+          class="sc-ghWlax kALywh"
         >
           Quantity
         </span>
       </label>
       <span
-        class="sc-dkjaqt ehvIGu"
+        class="sc-dpBQxM dOwdso"
       >
         <input
           aria-errormessage="numeric-input_error"
           aria-invalid="false"
-          class="sc-kkmypM fcxFcU"
+          class="sc-keTIit cWuVoy"
           id="numeric-input"
           max="9007199254740991"
           min="-9007199254740991"
@@ -35,11 +36,11 @@ exports[`NumericInput > should match the snapshot 1`] = `
           value="0"
         />
         <span
-          class="sc-jCbFiK fJtuZR"
+          class="sc-jwIPbr eJCYqD"
         >
           <button
             aria-label="Decrement value for Quantity"
-            class="sc-iCZwEW dTVEfm"
+            class="sc-ixGGxD eeLNXL"
             type="button"
           >
             <svg
@@ -56,7 +57,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Quantity"
-            class="sc-iCZwEW dTVEfm"
+            class="sc-ixGGxD eeLNXL"
             type="button"
           >
             <svg
@@ -75,7 +76,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
     </div>
     <span
-      class="sc-dsLQwm Oiwth"
+      class="sc-dntaoT eXgOpQ"
       id="numeric-input_error"
     >
       Invalid input

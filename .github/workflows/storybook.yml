@@ -1,4 +1,4 @@
-name: Storybook GitHub Pages Build and Deploy
+name: Publish to GitHub Pages
 on:
   push:
     paths: ['stories/**', 'src/components/**', 'src/__docs__/**', 'src/hooks/**'] # Trigger the action only when files change in the folders defined here

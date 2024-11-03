@@ -13,6 +13,7 @@ describe('ChopLogicTextInput', () => {
     label: 'Test Input',
     placeholder: 'Enter text here...',
     className: 'test-class',
+    style: { width: '600px' },
   };
 
   it('should render the input correctly', () => {

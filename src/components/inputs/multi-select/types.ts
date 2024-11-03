@@ -1,12 +1,13 @@
+import { CommonInputProps } from 'utils/types';
+
 import { SelectValue } from '../select/types';
 
 export type MultiSelectValue = SelectValue & { selected: boolean };
 
-export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  name: string;
-  label: string;
+export type ChopLogicMultiSelectProps = CommonInputProps & {
   options: SelectValue[];
   onChange?: (values?: SelectValue[]) => void;
+  defaultValue?: string | number | readonly string[];
   placeholder?: string;
 };
 

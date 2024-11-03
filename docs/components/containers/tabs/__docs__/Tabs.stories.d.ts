@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { default as ChopLogicTabs } from '../Tabs';
 
 declare const meta: Meta<typeof ChopLogicTabs>;

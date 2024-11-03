@@ -1,11 +1,18 @@
+import { CommonInputProps } from 'utils/types';
+
 export type NumericValidationFunction = (input?: number) => boolean;
 
-export type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
+export type ChopLogicNumericInputProps = CommonInputProps & {
   errorMessage?: string;
   validator?: NumericValidationFunction;
-  onClear?: () => void;
   hasSpinButtons?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  readOnly?: boolean;
+  defaultValue?: number;
   onSpinButtonClick?: (value?: number) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
 };

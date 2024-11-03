@@ -14,9 +14,15 @@ describe('ChopLogicForm', () => {
     accepted: true,
   };
 
+  const testProps = {
+    id: 'form-id',
+    className: 'form-class',
+    style: { width: '500px' },
+  };
+
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <ChopLogicForm id='form-id' className='form-class' style={{ width: '500px' }}>
+      <ChopLogicForm {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />
@@ -27,7 +33,7 @@ describe('ChopLogicForm', () => {
 
   it('should not render Reset button is hasReset props is false', () => {
     render(
-      <ChopLogicForm hasReset={false}>
+      <ChopLogicForm hasReset={false} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />
@@ -38,7 +44,7 @@ describe('ChopLogicForm', () => {
 
   it('should render initial values', () => {
     render(
-      <ChopLogicForm initialValues={testInitialValues}>
+      <ChopLogicForm initialValues={testInitialValues} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />
@@ -56,7 +62,7 @@ describe('ChopLogicForm', () => {
 
   it('should accept custom values', async () => {
     render(
-      <ChopLogicForm>
+      <ChopLogicForm {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />
@@ -81,7 +87,7 @@ describe('ChopLogicForm', () => {
 
   it('should reset entered values to initial values', async () => {
     render(
-      <ChopLogicForm initialValues={testInitialValues}>
+      <ChopLogicForm initialValues={testInitialValues} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
         <ChopLogicNumericInput name='age' id='age' label='Age' />

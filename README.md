@@ -4,9 +4,12 @@ Welcome to **Chop Logic Components**, a comprehensive React components library p
 
 ## About the Library
 
-Chop Logic is designed to speed up development by providing reusable, accessible, and highly customizable components. Whether you're building complex forms, creating dynamic layouts, or managing component logic with hooks, Chop Logic has the tools to make it easier.
+Chop Logic is designed to speed up development by providing reusable, accessible, and highly customizable components. Whether you're building complex forms, creating dynamic layouts, or managing component logic with hooks, Chop Logic Components has the tools to make it easier.
 
-All components are well documented using Storybook. Visit the [DEMO page](https://savourygin.github.io/chop-logic-components) and try them out.
+## Links
+
+- [Storybook Playground](https://savourygin.github.io/chop-logic-components)
+- [Npm](https://www.npmjs.com/package/chop-logic-components)
 
 ## Getting Started
 

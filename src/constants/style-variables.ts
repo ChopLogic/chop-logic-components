@@ -1,12 +1,12 @@
 export const COLORS = Object.freeze({
-  primary: 'hsl(0, 0%, 13%)', // black
-  background: 'hsl(0, 0%, 100%)', // white
-  highlight: 'hsl(65, 43%, 95%)', // ivory
-  shade: 'hsl(206, 19%, 93%)', // tint
-  secondary: 'hsl(215, 69%, 49%)', // celticBlue
-  tertiary: 'hsl(205, 48%, 56%)', // celestialBlue
-  accent: 'hsl(16, 100%, 45%)', // syracuseRed
-  transparentBackground: 'hsla(0, 0%, 0%, 0.3)', // gray transparent background
+  primary: 'hsl(0, 0%, 13%)',
+  background: 'hsl(0, 0%, 100%)',
+  highlight: 'hsl(65, 43%, 95%)',
+  shade: 'hsl(206, 19%, 93%)',
+  secondary: 'hsl(215, 69%, 49%)',
+  tertiary: 'hsl(205, 48%, 56%)',
+  accent: 'hsl(16, 100%, 45%)',
+  transparentBackground: 'hsla(0, 0%, 0%, 0.3)',
 });
 
 export const FONTS = Object.freeze({
@@ -31,8 +31,8 @@ export const SHADOWS = Object.freeze({
 });
 
 export const BORDERS = Object.freeze({
-  light: '1px solid #5998c5',
-  heavy: '1px solid #266dd3',
+  thin: '1px solid #5998c5',
+  thick: '1px solid #266dd3',
   accent: '1px solid #e53d00',
   outline: '2px dashed #e53d00',
 });

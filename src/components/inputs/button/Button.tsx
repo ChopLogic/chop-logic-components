@@ -14,7 +14,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   extended = false,
   type = 'button',
   view = 'primary',
-  ...props
+  ...rest
 }) => {
   return (
     <StyledButton
@@ -25,10 +25,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      id={props?.id}
-      className={props?.className}
-      style={props?.style}
-      tabIndex={props?.tabIndex}
+      {...rest}
     >
       <ChopLogicIcon name={icon} />
       {view !== 'icon' && <StyledButtonText>{text}</StyledButtonText>}

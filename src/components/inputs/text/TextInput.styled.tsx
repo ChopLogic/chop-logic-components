@@ -18,11 +18,11 @@ export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid:
   box-shadow: ${SHADOWS.box};
   border-top-left-radius: ${UNITS.blockBorderRadius};
   border-top-right-radius: ${UNITS.blockBorderRadius};
-  border: ${BORDERS.light};
+  border: ${BORDERS.thin};
   background-color: ${COLORS.background};
 
   &:has(input:focus) {
-    outline: ${BORDERS.light};
+    outline: ${BORDERS.thin};
     outline-offset: -3px;
   }
 

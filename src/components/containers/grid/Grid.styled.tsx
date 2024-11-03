@@ -43,7 +43,7 @@ export const StyledGridCaption = styled.caption`
 `;
 
 export const StyledGridRow = styled.tr<{ $selected: boolean }>`
-  border-bottom: ${BORDERS.light};
+  border-bottom: ${BORDERS.thin};
 
   ${(props) =>
     props.$selected &&
@@ -53,9 +53,9 @@ export const StyledGridRow = styled.tr<{ $selected: boolean }>`
 `;
 
 export const StyledGridColumn = styled.col<{ $isFirst: boolean; $highlighted: boolean }>`
-  border-right: ${BORDERS.light};
+  border-right: ${BORDERS.thin};
 
-  ${(props) => props.$isFirst && `border-left: ${BORDERS.light};`}
+  ${(props) => props.$isFirst && `border-left: ${BORDERS.thin};`}
   ${(props) => props.$highlighted && `background-color: ${COLORS.highlight};`}
 `;
 

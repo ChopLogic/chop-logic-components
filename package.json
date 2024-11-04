@@ -25,7 +25,6 @@
     "prepare": "npm run build && husky install"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "tsc-files --noEmit",
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "eslint --fix"

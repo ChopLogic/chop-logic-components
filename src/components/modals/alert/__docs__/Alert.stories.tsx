@@ -39,8 +39,13 @@ const meta: Meta<typeof ExampleComponent> = {
     message: 'This is an alert message.',
     mode: 'info',
     icon: ChopLogicIconName.Info,
+    theme: 'light',
   },
   argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
     isOpened: { control: 'boolean' },
     title: { control: 'text' },
     message: { control: 'text' },

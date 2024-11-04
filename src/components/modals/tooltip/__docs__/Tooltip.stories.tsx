@@ -16,6 +16,13 @@ export const VisibleOnHover: Story = {
     containerTag: 'span',
     visibleOn: 'hover',
     id: 'tooltip',
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -25,6 +32,13 @@ export const VisibleOnClick: Story = {
     containerTag: 'div',
     visibleOn: 'click',
     id: 'tooltip',
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -34,6 +48,13 @@ export const VisibleOnFocus: Story = {
     containerTag: 'div',
     visibleOn: 'focus',
     id: 'tooltip',
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };
 
@@ -43,5 +64,12 @@ export const VisibleOnContextMenu: Story = {
     containerTag: 'div',
     visibleOn: 'contextmenu',
     id: 'tooltip',
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

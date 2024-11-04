@@ -4,6 +4,7 @@ export type CommonComponentProps = {
   style?: React.CSSProperties;
   tabIndex?: number;
   title?: string;
+  theme?: 'dark' | 'light';
 };
 
 export type CommonInputProps = CommonComponentProps & {

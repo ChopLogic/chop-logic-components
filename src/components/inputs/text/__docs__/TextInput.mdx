@@ -34,62 +34,71 @@ export default Example;
 
 ### Props
 
-_Required props_
-
-- **name** `string` - A string that describes the input for internal use inside a form or another container. Use `camelCase` for the input name.
-- **label** `string` - A visible label that describes the input purpose. Any string is acceptable.
-
-_Optional props_
-
-- **type** `'text' | 'email' | 'password'` - Input type. Default is "text".
-- **id** `string` - Unique identifier of the input on the page. If not specified, the id will be generated automatically.
-- **placeholder** `string` - A placeholder text inside the input field.
-- **disabled** `boolean` - When disabled, the input cannot be interacted with. Defaults to `false`.
-- **readOnly** `boolean` - When readonly, the input cannot be changed. Defaults to `false`.
-- **required** `boolean` - A boolean indicating whether the input is required or not. Required input is marked with a red asterisk. Defaults to `false`.
-- **clearable** `boolean` - A boolean indicating whether to display the input clear button. Defaults to `true`.
-- **validator** `(input: string) => boolean | { regexp: string; flags?: string; }` - A function or object with a validation regular expression that checks whether the input value matches the given conditions. When invalid, the input becomes highlighted and displays an error message.
-- **errorMessage** - An optional string that displays when the input value is incorrect.
-- **onChange** `(event: React.ChangeEvent<HTMLInputElement>) => void` - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
-- **onFocus** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus is set on the input.
-- **onBlur** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus leaves the input.
-- **onClear** `() => void` - A function that is called when the input value is cleared using the Clear button.
-- **maxLength** `number` - Maximum number of characters in the input.
-- **autoComplete** `string` - The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete). Defaults to `"off"`.
-- **HTMLAttributes** - global HTML attributes: **className**, **title**, **style**, **tabIndex**, etc.
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
-| theme     | `"light" \| "dark"`   | The component's color theme.                                                                                     | `undefined` |
+| Prop             | Type                                          | Description                                                                                                                              | Default          | Required |
+| ---------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------- |
+| **name**         | `string`                                      | A string representing the name attribute of the component, used for form submissions.                                                    | `undefined`      | Yes      |
+| **label**        | `string`                                      | A string that represents the label for the component.                                                                                    | `undefined`      | Yes      |
+| **type**         | `'text'` or `'email'` or `'password'`         | The input type attribute.                                                                                                                | `'text'`         | No       |
+| **placeholder**  | `string`                                      | The placeholder property of the input interface represents a hint to the user of what can be entered in the control.                     | `'Type here...'` | No       |
+| **defaultValue** | `string`                                      | The string that will be supplied as the default value of the input.                                                                      | `undefined`      | No       |
+| **clearable**    | `boolean`                                     | A boolean indicating whether to display the input clear button.                                                                          | `false`          | No       |
+| **validator**    | `RegExpWithFlags` or `TextValidationFunction` | A function or regular expression that allows you to validate an input value and display an error message if validation fails.            | `undefined`      | No       |
+| **errorMessage** | `string`                                      | An optional string that displays when the input value is incorrect.                                                                      | `undefined`      | No       |
+| **onChange**     | `ChangeEventHandler`                          | A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input. | `undefined`      | No       |
+| **onFocus**      | `FocusEventHandler`                           | A function that is called when focus is set on the input.                                                                                | `undefined`      | No       |
+| **onBlur**       | `FocusEventHandler`                           | A function that is called when focus leaves the input.                                                                                   | `undefined`      | No       |
+| **onClear**      | `() => void`                                  | A function that is called when the clear input button is clicked.                                                                        | `undefined`      | No       |
+| **maxLength**    | `number`                                      | Maximum number of characters in the input.                                                                                               | `undefined`      | No       |
+| **autoComplete** | `string`                                      | The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                            | `"off"`          | No       |
+| **disabled**     | `boolean`                                     | When disabled, the input cannot be interacted with.                                                                                      | `false`          | No       |
+| **required**     | `boolean`                                     | When required, the input must be filled before form submission.                                                                          | `false`          | No       |
+| **readOnly**     | `boolean`                                     | When readonly, the input cannot be changed.                                                                                              | `false`          | No       |
+| **id**           | `string`                                      | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                           | `undefined`      | No       |
+| **className**    | `string`                                      | The class global attribute is a list of the classes of the element.                                                                      | `undefined`      | No       |
+| **style**        | `CSSProperties`                               | The style global attribute contains CSS styling declarations to be applied to the element.                                               | `undefined`      | No       |
+| **tabIndex**     | `number`                                      | The tabindex global attribute allows developers to make HTML elements focusable.                                                         | `undefined`      | No       |
+| **title**        | `string`                                      | The title global attribute contains text representing advisory information related to the element it belongs to.                         | `undefined`      | No       |
+| **theme**        | `'light'` or `'dark'`                         | The component's color theme.                                                                                                             | `undefined`      | No       |
 
 ### Types
 
 ```ts
-type ChopLogicTextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
+type ChopLogicTextInputProps = CommonInputProps & {
   errorMessage?: string;
   clearable?: boolean;
-  onClear?: () => void;
+  readOnly?: boolean;
   type?: 'text' | 'email' | 'password';
   validator?: RegExpWithFlags | TextValidationFunction;
+  maxLength?: number;
+  placeholder?: string;
+  defaultValue?: string;
+  onClear?: () => void;
+  autoComplete?: React.HTMLInputAutoCompleteAttribute;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
 };
-```
 
-```ts
 type RegExpWithFlags = {
   regexp: string;
   flags?: string;
 };
-```
 
-```ts
 type TextValidationFunction = (input: string) => boolean;
+
+type CommonInputProps = CommonComponentProps & {
+  label: string;
+  name: string;
+  disabled?: boolean;
+  required?: boolean;
+};
+
+type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
+};
 ```

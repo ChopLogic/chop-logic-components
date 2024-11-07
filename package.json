@@ -19,7 +19,7 @@
     "check-types": "tsc --pretty --noEmit",
     "build": "tsc && vite build",
     "test": "vitest",
-    "test:ci": "vitest run",
+    "test:ci": "vitest run --passWithNoTests",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky install"
@@ -27,9 +27,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
-      "eslint --fix"
-    ],
-    "**/**.{test,spec}.**": "npm run test:ci"
+      "eslint --fix",
+      "npm run test:ci"
+    ]
   },
   "keywords": [
     "React",

@@ -6,10 +6,10 @@ export { default as ChopLogicNumericInput } from './inputs/numeric/NumericInput'
 export { default as ChopLogicSelect } from './inputs/select/Select';
 export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 // Modals
+export { default as ChopLogicGrid } from './containers/grid/Grid';
 export { default as ChopLogicAlert } from './modals/alert/Alert';
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
 // Containers
 export { default as ChopLogicForm } from './containers/form/Form';
-export { default as ChopLogicGrid } from './containers/grid/Grid';
 export { default as ChopLogicTabs } from './containers/tabs/Tabs';

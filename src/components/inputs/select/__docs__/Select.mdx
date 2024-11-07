@@ -19,7 +19,7 @@ import { ChopLogicSelect } from 'chop-logic-components';
 import { LANGUAGES } from 'constants/languages';
 
 const Example = () => {
-  return <ChopLogicSelect id='example-select' name='laguage' options={LANGUAGES} label='Select your language' />;
+  return <ChopLogicSelect id='example-select' name='language' options={LANGUAGES} label='Select your language' />;
 };
 
 export default Example;
@@ -31,7 +31,7 @@ _Required props_
 
 - **name** `string` - A required string representing the name attribute of the Select component, used for form submissions.
 - **label** `string` - A string that represents the label for the Select component.
-- **options** `SelectValue[]` - An array of objects (each object should conaint two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown.
+- **options** `SelectValue[]` - An array of objects (each object should contain two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown.
 
 _Optional props_
 

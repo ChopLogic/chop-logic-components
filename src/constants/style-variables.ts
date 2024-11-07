@@ -51,7 +51,7 @@ export const GRADIENTS = Object.freeze({
 
 /* Breakpoints for common device groups */
 export const SCREEN_BREAKPOINTS = Object.freeze({
-  /* Extra small devices (phones, 600px and down) */
+  /* Very small devices (phones, 600px and down) */
   /* @media only screen and (max-width: 600px) {...} */
   phones: 'only screen and (max-width: 600px)',
   /* Small devices (portrait tablets and large phones, 600px and up) */

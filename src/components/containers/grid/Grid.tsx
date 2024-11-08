@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ChopLogicGridBody from './elements/Body';
 import GridColumnGroup from './elements/ColumnGroup';
 import ChopLogicGridHead from './elements/Head';

@@ -1,7 +1,9 @@
+import { CSSProperties } from 'react';
+
 export type CommonComponentProps = {
   id?: string;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   tabIndex?: number;
   title?: string;
   theme?: 'dark' | 'light';

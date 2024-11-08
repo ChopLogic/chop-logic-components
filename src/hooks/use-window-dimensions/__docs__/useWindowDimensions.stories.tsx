@@ -15,8 +15,8 @@ const ExampleComponent: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Hooks/useWindowDimensions',
   component: ExampleComponent,
+  title: 'Hooks/useWindowDimensions',
 };
 
 export default meta;

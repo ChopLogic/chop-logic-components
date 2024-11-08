@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from './types';
 
 export function getGridRowValues({
@@ -8,7 +10,7 @@ export function getGridRowValues({
   item: ChopLogicGridItem;
   columns: ChopLogicGridColumn[];
   renderDataItem?: RenderDataItemCallback;
-}): (string | JSX.Element)[] {
+}): (string | React.ReactElement)[] {
   const values = [];
   for (const column of columns) {
     let value;

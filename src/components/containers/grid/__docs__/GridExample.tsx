@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ChopLogicGrid from '../Grid';
 import { ChopLogicGridProps } from '../types';
 

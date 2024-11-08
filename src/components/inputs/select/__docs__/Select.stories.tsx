@@ -11,8 +11,8 @@ const SELECT_LANGUAGES: SelectValue[] = [
 ];
 
 const meta: Meta<typeof SelectExample> = {
-  title: 'Inputs/Select',
   component: SelectExample,
+  title: 'Inputs/Select',
 };
 
 export default meta;

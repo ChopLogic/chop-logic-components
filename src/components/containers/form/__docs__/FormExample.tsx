@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from 'components/index';
 import ChopLogicMultiSelect from 'components/inputs/multi-select/MultiSelect';

@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { CommonComponentProps } from 'utils/types';
 
 export type ChopLogicTabsProps = CommonComponentProps & {
@@ -7,7 +8,7 @@ export type ChopLogicTabsProps = CommonComponentProps & {
 };
 
 export type ChopLogicTabItem = {
-  content: React.ReactElement;
+  content: ReactElement;
   title: string;
   id: string;
   disabled?: boolean;

@@ -1,6 +1,4 @@
 import { addons } from '@storybook/manager-api';
-import theme from './ChopLogicTheme';
+import { chopLogicTheme } from './theme';
 
-addons.setConfig({
-  theme,
-});
+addons.setConfig({ theme: chopLogicTheme });

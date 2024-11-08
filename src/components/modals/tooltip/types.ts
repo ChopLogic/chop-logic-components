@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 import { CommonComponentProps } from 'utils/types';
 
 export type ChopLogicTooltipProps = PropsWithChildren &
   CommonComponentProps & {
-    tooltipContent: string | React.ReactElement;
+    tooltipContent: string | ReactElement;
     containerTag?: TooltipContainerTag;
     visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
   };

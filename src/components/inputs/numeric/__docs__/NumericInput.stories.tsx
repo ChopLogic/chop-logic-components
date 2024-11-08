@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import NumericInputExample from './NumericInputExample';
 
 const meta: Meta<typeof NumericInputExample> = {
-  title: 'Inputs/NumericInput',
   component: NumericInputExample,
+  title: 'Inputs/NumericInput',
 };
 
 export default meta;

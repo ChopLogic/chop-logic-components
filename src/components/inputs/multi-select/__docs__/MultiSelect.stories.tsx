@@ -12,8 +12,8 @@ const MULTI_SELECT_VALUES: MultiSelectValue[] = [
 ];
 
 const meta: Meta<typeof MultiSelectExample> = {
-  title: 'Inputs/MultiSelect',
   component: MultiSelectExample,
+  title: 'Inputs/MultiSelect',
 };
 
 export default meta;

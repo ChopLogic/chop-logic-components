@@ -1,3 +1,5 @@
+import React from 'react';
+
 import CheckMarkIcon from 'components/misc/icon/elements/CheckMark';
 import ErrorIcon from 'components/misc/icon/elements/Error';
 import HelpIcon from 'components/misc/icon/elements/Help';

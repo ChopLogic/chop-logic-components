@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import TooltipExample from './TooltipExample';
 
 const meta: Meta<typeof TooltipExample> = {
-  title: 'Modals/Tooltip',
   component: TooltipExample,
+  title: 'Modals/Tooltip',
 };
 
 export default meta;

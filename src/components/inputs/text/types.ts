@@ -1,3 +1,4 @@
+import { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
 import { CommonInputProps } from 'utils/types';
 
 export type RegExpWithFlags = {
@@ -16,9 +17,9 @@ export type ChopLogicTextInputProps = CommonInputProps & {
   maxLength?: number;
   placeholder?: string;
   defaultValue?: string;
-  autoComplete?: React.HTMLInputAutoCompleteAttribute;
+  autoComplete?: HTMLInputAutoCompleteAttribute;
   onClear?: () => void;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  onBlur?: React.FocusEventHandler<HTMLInputElement>;
-  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
 };

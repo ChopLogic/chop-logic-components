@@ -21,8 +21,8 @@ const ExampleComponent: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Hooks/useClickOutside',
   component: ExampleComponent,
+  title: 'Hooks/useClickOutside',
 };
 
 export default meta;

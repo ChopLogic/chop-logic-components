@@ -1,3 +1,4 @@
+import React from 'react';
 import { useMount } from 'hooks/use-mount';
 
 import ChopLogicPortal from 'components/containers/portal';

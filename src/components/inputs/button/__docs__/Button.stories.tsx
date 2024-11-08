@@ -5,16 +5,6 @@ import { ChopLogicIconName } from 'components/misc/icon/Icon';
 import ButtonExample from './ButtonExample';
 
 const meta: Meta<typeof ButtonExample> = {
-  title: 'Inputs/Button',
-  component: ButtonExample,
-  args: {
-    text: 'Button',
-    type: 'button',
-    icon: ChopLogicIconName.Copy,
-    view: 'primary',
-    disabled: false,
-    theme: 'light',
-  },
   argTypes: {
     text: { control: 'text' },
     disabled: { control: 'boolean' },
@@ -35,6 +25,16 @@ const meta: Meta<typeof ButtonExample> = {
       options: ['light', 'dark'],
     },
   },
+  args: {
+    text: 'Button',
+    type: 'button',
+    icon: ChopLogicIconName.Copy,
+    view: 'primary',
+    disabled: false,
+    theme: 'light',
+  },
+  component: ButtonExample,
+  title: 'Inputs/Button',
 };
 
 export default meta;

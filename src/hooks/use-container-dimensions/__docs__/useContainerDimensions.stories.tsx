@@ -15,8 +15,8 @@ const ExampleComponent: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Hooks/useContainerDimensions',
   component: ExampleComponent,
+  title: 'Hooks/useContainerDimensions',
 };
 
 export default meta;

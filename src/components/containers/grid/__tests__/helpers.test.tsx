@@ -1,3 +1,4 @@
+import React from 'react';
 import { describe, expect, it } from 'vitest';
 
 import { getGridRowValues } from '../helpers';
@@ -54,8 +55,8 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
-    expect((result[0] as JSX.Element).props.children).toBe('TEST-ID');
-    expect((result[1] as JSX.Element).props.children).toBe('123 MAIN ST');
+    expect((result[0] as React.ReactElement).props.children).toBe('TEST-ID');
+    expect((result[1] as React.ReactElement).props.children).toBe('123 MAIN ST');
   });
 
   it('should handle columns without a field by returning empty string', () => {

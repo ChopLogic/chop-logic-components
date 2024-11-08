@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ChopLogicPortal from 'components/containers/portal';
 
 import { useChopLogicTooltipController } from './controller';

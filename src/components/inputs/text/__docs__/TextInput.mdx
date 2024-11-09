@@ -1,5 +1,4 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './TextInputExample.tsx';
 import * as TextInput from './TextInput.stories.tsx';
 
 <Meta of={TextInput} title='TextInput' />
@@ -15,7 +14,7 @@ Styled component for entering text, email or password. Supports validation with 
 ### Usage
 
 ```tsx
-import { TextInput } from 'chop-logic-components';
+import { ChopLogicTextInput } from 'chop-logic-components';
 
 const Example = () => {
   return (
@@ -25,7 +24,7 @@ const Example = () => {
       errorMessage='Only latin letters are allowed'
       validator={{ regexp: '^[A-Za-z ]+$' }}
       required
-    />;
+    />
   );
 };
 
@@ -35,7 +34,7 @@ export default Example;
 ### Props
 
 | Prop             | Type                                          | Description                                                                                                                              | Default          | Required |
-| ---------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------- |
+|------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------|
 | **name**         | `string`                                      | A string representing the name attribute of the component, used for form submissions.                                                    | `undefined`      | Yes      |
 | **label**        | `string`                                      | A string that represents the label for the component.                                                                                    | `undefined`      | Yes      |
 | **type**         | `'text'` or `'email'` or `'password'`         | The input type attribute.                                                                                                                | `'text'`         | No       |

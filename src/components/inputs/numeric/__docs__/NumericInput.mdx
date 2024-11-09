@@ -1,5 +1,4 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './NumericInputExample.tsx';
 import * as NumericInput from './NumericInput.stories.tsx';
 
 <Meta of={NumericInput} title='NumericInput' />
@@ -15,7 +14,7 @@ Numeric input component with standard HTML attributes.
 ### Usage
 
 ```tsx
-import { NumericInput } from 'chop-logic-components';
+import { ChopLogicNumericInput } from 'chop-logic-components';
 
 const Example = () => {
   return (
@@ -24,7 +23,7 @@ const Example = () => {
       name='age'
       errorMessage='Enter a number between 1 and 99'
       validator={(age) => !!age && age >= 1 && age < 100}
-    />;
+    />
   );
 };
 
@@ -33,55 +32,64 @@ export default Example;
 
 ### Props
 
-_Required props_
-
-- **name** `string` - A string that describes the input for internal use inside a form or another container. Use `camelCase` for the input name.
-- **label** `string` - A visible label that describes the input purpose. Any string is acceptable.
-
-_Optional props_
-
-- **id** `string` - Unique identifier of the input on the page. If not specified, the id will be generated automatically.
-- **disabled** `boolean` - When disabled, the input cannot be interacted with. `false` by default.
-- **readOnly** `boolean` - When readonly, the input cannot be changed. `false` by default.
-- **required** `boolean` - A boolean indicating whether the input is required or not. Required input is marked with a red asterisk. `false` by default.
-- **hasSpinButtons** `boolean` - A boolean indicating whether to display the spin buttons. Defaults to `true`.
-- **validator** `(input: string) => boolean` - A function that checks whether the input value matches the given conditions. When invalid, the input becomes highlighted and displays an error message.
-- **errorMessage** `string` - An optional string that displays when the input value is incorrect.
-- **onChange** `(event: React.ChangeEvent<HTMLInputElement>) => void` - A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input.
-- **onFocus** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus is set on the input.
-- **onBlur** `(event: React.FocusEvent<HTMLInputElement>) => void` - A function that is called when focus leaves the input.
-- **onSpinButtonClick** `(value?: number) => void` - A function that is called when one of the spin buttons is clicked.
-- **step** `number` - The number by which the input value is incremented/decremented when pressing keyboard keys. `1` by default.
-- **max** `number` - Maximum number in the input. `false` by default.
-- **min** `number` - Minimum number in the input.
-- **defaultValue** `number` - Initial number in the input. `0` by default.
-- **HTMLAttributes** - global HTML attributes: **className**, **title**, **style**, **tabIndex**, etc.
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
-| theme     | `'light'` or `'dark'` | The component's color theme.                                                                                     | `undefined` |
+| Prop                  | Type                       | Description                                                                                                                              | Default     | Required |
+|-----------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
+| **name**              | `string`                   | A string representing the name attribute of the component, used for form submissions.                                                    | `undefined` | Yes      |
+| **label**             | `string`                   | A string that represents the label for the component.                                                                                    | `undefined` | Yes      |
+| **validator**         | `(value?: number) => void` | A function or regular expression that allows you to validate an input value and display an error message if validation fails.            | `undefined` | No       |
+| **errorMessage**      | `string`                   | An optional string that displays when the input value is incorrect.                                                                      | `undefined` | No       |
+| **onChange**          | `ChangeEventHandler`       | A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input. | `undefined` | No       |
+| **onFocus**           | `FocusEventHandler`        | A function that is called when focus is set on the input.                                                                                | `undefined` | No       |
+| **onBlur**            | `FocusEventHandler`        | A function that is called when focus leaves the input.                                                                                   | `undefined` | No       |
+| **onSpinButtonClick** | `(value?: number) => void` | A function that is called when one of the spin buttons is clicked.                                                                       | `undefined` | No       |
+| **step**              | `number`                   | The number by which the input value is incremented/decremented when pressing keyboard keys.                                              | `1`         | No       |
+| **max**               | `number`                   | Maximum number in the input.                                                                                                             | `undefined` | No       |
+| **min**               | `number`                   | Minimum number in the input.                                                                                                             | `undefined` | No       |
+| **defaultValue**      | `number`                   | Initial number in the input.                                                                                                             | `0`         | No       |
+| **hasSpinButtons**    | `boolean`                  | A boolean indicating whether to display the spin buttons.                                                                                | `true`      | No       |
+| **disabled**          | `boolean`                  | When disabled, the input cannot be interacted with.                                                                                      | `false`     | No       |
+| **required**          | `boolean`                  | When required, the input must be filled before form submission.                                                                          | `false`     | No       |
+| **readOnly**          | `boolean`                  | When readonly, the input cannot be changed.                                                                                              | `false`     | No       |
+| **id**                | `string`                   | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                           | `undefined` | No       |
+| **className**         | `string`                   | The class global attribute is a list of the classes of the element.                                                                      | `undefined` | No       |
+| **style**             | `CSSProperties`            | The style global attribute contains CSS styling declarations to be applied to the element.                                               | `undefined` | No       |
+| **tabIndex**          | `number`                   | The tabindex global attribute allows developers to make HTML elements focusable.                                                         | `undefined` | No       |
+| **title**             | `string`                   | The title global attribute contains text representing advisory information related to the element it belongs to.                         | `undefined` | No       |
+| **theme**             | `'light'` or `'dark'`      | The component's color theme.                                                                                                             | `undefined` | No       |
 
 ### Types
 
 ```ts
-type ChopLogicNumericInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  name: string;
-  label: string;
+type ChopLogicNumericInputProps = CommonInputProps & {
   errorMessage?: string;
   validator?: NumericValidationFunction;
-  onClear?: () => void;
   hasSpinButtons?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  readOnly?: boolean;
+  defaultValue?: number;
   onSpinButtonClick?: (value?: number) => void;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
 };
-```
 
-```ts
 type NumericValidationFunction = (input?: number) => boolean;
+
+type CommonInputProps = CommonComponentProps & {
+  label: string;
+  name: string;
+  disabled?: boolean;
+  required?: boolean;
+};
+
+type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
+};
 ```

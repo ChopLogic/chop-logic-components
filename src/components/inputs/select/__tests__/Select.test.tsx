@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { SelectValue } from 'utils/types.ts';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicForm from 'components/containers/form/Form';
 
 import ChopLogicSelect from '../Select';
-import { SelectValue } from '../types';
 
 describe('ChopLogicSelect', () => {
   const SELECT_LANGUAGES: SelectValue[] = [

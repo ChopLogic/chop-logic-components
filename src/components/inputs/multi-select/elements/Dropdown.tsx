@@ -1,3 +1,4 @@
+import React from 'react';
 import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
 
 import { StyledMultiSelectDropdown } from '../MultiSelect.styled';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
+import { SelectValue } from 'utils/types.ts';
 
 import { StyledSelectDropdown } from '../Select.styled';
-import { SelectValue } from '../types';
 
 import SelectOption from './Option';
 

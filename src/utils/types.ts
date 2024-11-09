@@ -15,3 +15,8 @@ export type CommonInputProps = CommonComponentProps & {
   disabled?: boolean;
   required?: boolean;
 };
+
+export type SelectValue = {
+  id: string;
+  label: string;
+} & { [key in string]: unknown };

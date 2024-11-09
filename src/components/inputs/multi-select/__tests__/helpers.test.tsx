@@ -1,7 +1,7 @@
+import { SelectValue } from 'utils/types.ts';
 import { describe, expect, it } from 'vitest';
 
 import { ChopLogicFormData } from 'components/containers/form/types';
-import { SelectValue } from 'components/inputs/select/types';
 
 import { getMultiSelectInitialValues } from '../helpers';
 import { MultiSelectValue } from '../types';

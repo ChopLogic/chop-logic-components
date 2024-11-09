@@ -24,4 +24,4 @@ export type ChopLogicGridItem = {
   [key: string]: unknown;
 };
 
-export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;
+export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => ReactElement;

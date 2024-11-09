@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { SelectValue } from '../types';
+import { SelectValue } from 'utils/types.ts';
 
 import SelectExample from './SelectExample';
 

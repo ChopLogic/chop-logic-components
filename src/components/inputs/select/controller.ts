@@ -1,10 +1,10 @@
 import { useCallback, useContext, useState } from 'react';
 import { useResetFormInput } from 'hooks/use-reset-form-input';
+import { SelectValue } from 'utils/types.ts';
 
 import { ChopLogicFormContext } from 'components/containers/form/FormContext';
 
 import { getSelectInitialValue } from './helpers';
-import { SelectValue } from './types';
 
 export function useChopLogicSelectController({
   name,

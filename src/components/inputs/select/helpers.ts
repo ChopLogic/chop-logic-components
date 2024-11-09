@@ -1,6 +1,6 @@
-import { ChopLogicFormData } from 'components/containers/form/types';
+import { SelectValue } from 'utils/types.ts';
 
-import { SelectValue } from './types';
+import { ChopLogicFormData } from 'components/containers/form/types';
 
 export function getSelectInitialValue({
   name,

@@ -62,7 +62,7 @@ export default Example;
 ### Types
 
 ```ts
-type ChopLogicTextInputProps = CommonInputProps & {
+export type ChopLogicTextInputProps = CommonInputProps & {
   errorMessage?: string;
   clearable?: boolean;
   readOnly?: boolean;
@@ -78,21 +78,21 @@ type ChopLogicTextInputProps = CommonInputProps & {
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
 };
 
-type RegExpWithFlags = {
+export type RegExpWithFlags = {
   regexp: string;
   flags?: string;
 };
 
-type TextValidationFunction = (input: string) => boolean;
+export type TextValidationFunction = (input: string) => boolean;
 
-type CommonInputProps = CommonComponentProps & {
+export type CommonInputProps = CommonComponentProps & {
   label: string;
   name: string;
   disabled?: boolean;
   required?: boolean;
 };
 
-type CommonComponentProps = {
+export type CommonComponentProps = {
   id?: string;
   className?: string;
   style?: React.CSSProperties;

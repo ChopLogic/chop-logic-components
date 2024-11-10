@@ -23,7 +23,7 @@ export const Default: Story = {
     label: 'Select your language',
     options: SELECT_LANGUAGES,
     name: 'language',
-    placeholder: 'Click to select',
+    placeholder: 'Select your language',
     onChange: (value) => console.log(value),
     required: false,
     disabled: false,

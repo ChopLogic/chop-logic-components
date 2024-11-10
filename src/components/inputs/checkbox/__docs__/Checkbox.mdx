@@ -36,10 +36,8 @@ export default Example;
 
 ### Props
 
-_Common props_
-
 | Prop               | Type                  | Description                                                                                                                                                | Default     | Required |
-| ------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
+|--------------------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
 | **name**           | `string`              | A string representing the name attribute of the component, used for form submissions.                                                                      | `undefined` | Yes      |
 | **label**          | `string`              | A string that represents the label for the component.                                                                                                      | `undefined` | Yes      |
 | **defaultChecked** | `boolean`             | A boolean indicating whether the checkbox is checked by default or not.                                                                                    | `false`     | No       |
@@ -58,17 +56,26 @@ _Common props_
 ### Types
 
 ```ts
-type ChopLogicCheckboxProps = CommonInputProps & {
+export type ChopLogicCheckboxProps = CommonInputProps & {
   noLabel?: boolean;
   iconPosition?: 'left' | 'right';
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   defaultChecked?: boolean;
 };
 
-type CommonInputProps = CommonComponentProps & {
+export type CommonInputProps = CommonComponentProps & {
   label: string;
   name: string;
   disabled?: boolean;
   required?: boolean;
+};
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
 };
 ```

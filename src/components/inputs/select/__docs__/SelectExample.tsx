@@ -3,7 +3,7 @@ import React from 'react';
 import ChopLogicSelect from '../Select';
 import { ChopLogicSelectProps } from '../types';
 
-const Example: React.FC<ChopLogicSelectProps> = ({ id, options, onChange, name, placeholder, label, required, disabled }) => {
+const Example: React.FC<ChopLogicSelectProps> = (props) => {
   return (
     <div
       style={{
@@ -15,17 +15,7 @@ const Example: React.FC<ChopLogicSelectProps> = ({ id, options, onChange, name, 
         padding: '20px',
       }}
     >
-      <ChopLogicSelect
-        id={id}
-        options={options}
-        onChange={onChange}
-        name={name}
-        placeholder={placeholder}
-        label={label}
-        required={required}
-        disabled={disabled}
-        style={{ width: '240px' }}
-      />
+      <ChopLogicSelect {...props} style={{ width: '240px' }} />
     </div>
   );
 };

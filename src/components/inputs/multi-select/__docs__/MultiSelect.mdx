@@ -1,5 +1,4 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './MultiSelectExample.tsx';
 import * as MultiSelect from './MultiSelect.stories.tsx';
 
 <Meta of={MultiSelect} title='MultiSelect' />
@@ -37,50 +36,51 @@ export default Example;
 
 ### Props
 
-_Required props_
-
-- **name** `string` - A required string representing the name attribute of the MultiSelect component, used for form submissions.
-- **label** `string` - A string that represents the label for the MultiSelect component.
-- **options** `SelectValue[]` - An array of objects representing the options available in the MultiSelect dropdown. Each object should have `id`, `label`, and `selected` properties.
-
-_Optional props_
-
-- **placeholder** `string` - A string that represents the placeholder text when no option is selected. Default is 'Not selected'.
-- **required** `boolean` - A boolean indicating whether the MultiSelect component is required in a form. When required, a selection must be made before form submission.
-- **disabled** `boolean` - A boolean indicating whether the MultiSelect component should be disabled. When disabled, the component cannot be interacted with.
-- **onChange** `(values?: SelectValue[]) => void` - A function that is called when an option is selected. It can be used to handle the selection event.
-- **HTMLAttributes** - some supported global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
-| theme     | `'light'` or `'dark'` | The component's color theme.                                                                                     | `undefined` |
+| Prop             | Type                                        | Description                                                                                                                                                        | Default          | Required |
+|------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------|
+| **name**         | `string`                                    | A string representing the name attribute of the component, used for form submissions.                                                                              | `undefined`      | Yes      |
+| **label**        | `string`                                    | A string that represents the label for the component.                                                                                                              | `undefined`      | Yes      |
+| **options**      | `SelectValue[]`                             | An array of objects (each object should contain two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown. | `[]`             | Yes      |
+| **onChange**     | `(values?: SelectValue[]) => void`          | A function that is called when an option is selected. It can be used to handle the selection event.                                                                | `undefined`      | No       |
+| **placeholder**  | `string`                                    | The placeholder property of the input interface represents a hint to the user of what can be entered in the control.                                               | `'Not selected'` | No       |
+| **defaultValue** | `string` or `number` or `readonly string[]` | The select option object or an id that will be supplied as the default value of the input.                                                                         | `undefined`      | No       |
+| **disabled**     | `boolean`                                   | When disabled, the input cannot be interacted with.                                                                                                                | `false`          | No       |
+| **required**     | `boolean`                                   | When required, the input must be filled before form submission.                                                                                                    | `false`          | No       |
+| **id**           | `string`                                    | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                     | `undefined`      | No       |
+| **className**    | `string`                                    | The class global attribute is a list of the classes of the element.                                                                                                | `undefined`      | No       |
+| **style**        | `CSSProperties`                             | The style global attribute contains CSS styling declarations to be applied to the element.                                                                         | `undefined`      | No       |
+| **tabIndex**     | `number`                                    | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                   | `undefined`      | No       |
+| **title**        | `string`                                    | The title global attribute contains text representing advisory information related to the element it belongs to.                                                   | `undefined`      | No       |
+| **theme**        | `'light'` or `'dark'`                       | The component's color theme.                                                                                                                                       | `undefined`      | No       |
 
 ### Types
 
 ```ts
-type SelectValue = {
+export type ChopLogicMultiSelectProps = CommonInputProps & {
+  options: SelectValue[];
+  onChange?: (values?: SelectValue[]) => void;
+  defaultValue?: string | number | readonly string[];
+  placeholder?: string;
+};
+
+export type SelectValue = {
   id: string;
   label: string;
 } & { [key in string]: unknown };
-```
 
-```ts
-type MultiSelectValue = SelectValue & { selected: boolean };
-```
-
-```ts
-export type ChopLogicMultiSelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  name: string;
+export type CommonInputProps = CommonComponentProps & {
   label: string;
-  options: SelectValue[];
-  onChange?: (values?: SelectValue[]) => void;
-  placeholder?: string;
+  name: string;
+  disabled?: boolean;
+  required?: boolean;
+};
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
 };
 ```

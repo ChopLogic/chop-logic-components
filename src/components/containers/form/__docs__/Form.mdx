@@ -15,7 +15,7 @@ The `ChopLogicForm` component is a wrapper for one or more inputs. It collects v
 
 ```tsx
 import React from 'react';
-import ChopLogicForm, ChopLogicTextInput, ChopLogicNumericInput from 'chop-logic-components';
+import {ChopLogicForm, ChopLogicTextInput, ChopLogicNumericInput} from 'chop-logic-components';
 
 const INITIAL_VALUES = {
   firstName: 'John',
@@ -37,7 +37,7 @@ export default ExampleComponent;
 ### Props
 
 | Prop              | Type                                | Description                                                                                                                             | Default     | Required |
-| ----------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
+|-------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
 | **children**      | `ReactNode`                         | Inputs, buttons, and other elements that will be rendered inside the form.                                                              | `undefined` | No       |
 | **columns**       | `number`                            | Number of columns in the form.                                                                                                          | `1`         | No       |
 | **initialValues** | `ChopLogicFormData`                 | Object with default values for form inputs.                                                                                             | `undefined` | No       |
@@ -53,7 +53,7 @@ export default ExampleComponent;
 ### Types
 
 ```ts
-type ChopLogicFormProps = PropsWithChildren &
+export type ChopLogicFormProps = React.PropsWithChildren &
   CommonComponentProps & {
     columns?: number;
     initialValues?: ChopLogicFormData;
@@ -63,11 +63,22 @@ type ChopLogicFormProps = PropsWithChildren &
     onSubmit?: React.FormEventHandler<HTMLFormElement>;
   };
 
-type ChopLogicFormData = { [key: string]: unknown };
+export type ChopLogicFormData = { [key: string]: unknown };
 
-type ChopLogicFormContextProps = {
+export type ChopLogicFormContextProps = {
   onChangeFormInput?: (params: ChopLogicFormInputParams) => void;
   initialValues?: ChopLogicFormData;
   resetSignal?: number;
+};
+
+export type ChopLogicFormInputParams = { name: string; value: unknown; valid?: boolean };
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
 };
 ```

@@ -12,6 +12,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   containerTag = 'span',
   visibleOn = 'hover',
   id,
+  style,
   ...rest
 }) => {
   const ContainerComponent = containerTag;
@@ -34,7 +35,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <StyledTooltip style={{ top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest}>
+          <StyledTooltip style={{ ...style, top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest}>
             {tooltipContent}
           </StyledTooltip>
         </ChopLogicPortal>

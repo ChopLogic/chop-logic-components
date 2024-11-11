@@ -15,9 +15,9 @@ The `ChopLogicAlert` component displays an alert message with various modes such
 
 ```tsx
 import React, { useState } from 'react';
-import ChopLogicAlert from 'chop-logic-components';
+import { ChopLogicAlert, ChopLogicButton } from 'chop-logic-components';
 
-const ExampleComponent = () => {
+export const ExampleComponent = () => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -28,7 +28,7 @@ const ExampleComponent = () => {
       <ChopLogicButton onClick={handleOpen}>
       <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title='Alert Title' message='This is an alert message.' mode='info' />;
     </>
-  );
+  )
 };
 
 export default ExampleComponent;
@@ -36,43 +36,39 @@ export default ExampleComponent;
 
 ### Props
 
-_Required props_
-
-- **isOpened** `boolean` - Determines if the alert is open.
-- **onClose** `() => void` - Function that suppose to close the alert and handle additional logic.
-- **title** `string` - The title of the alert.
-- **message** `string` - The message content of the alert.
-
-_Optional props_
-
-- **mode** `ChopLogicAlertMode` - The mode of the alert. Can be success, error, warning, or info.
-- **icon** `ChopLogicIconName` - Custom icon that appears in the Alert header.
-- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
-| theme     | `'light'` or `'dark'` | The component's color theme.                                                                                     | `undefined` |
+| Prop          | Type                  | Description                                                                                    | Default     | Required |
+|---------------|-----------------------|------------------------------------------------------------------------------------------------|-------------|----------|
+| **isOpened**  | `boolean`             | Determines if the alert is open.                                                               | `false`     | Yes      |
+| **onClose**   | `() => void`          | Function that suppose to close the alert and handle additional logic.                          | `undefined` | Yes      |
+| **message**   | `boolean`             | The message content of the alert.                                                              | `undefined` | Yes      |
+| **title**     | `string`              | The title of the alert.                                                                        | `undefined` | No       |
+| **mode**      | `ChopLogicAlertMode`  | The visual mode of the alert.                                                                  | `'info'`    | No       |
+| **icon**      | `ChopLogicIconName`   | Custom icon that appears in the Alert header.                                                  | `undefined` | No       |
+| **id**        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
+| **className** | `string`              | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
+| **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
+| **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |
+| **theme**     | `'light'` or `'dark'` | The component's color theme.                                                                   | `undefined` | No       |
 
 ### Types
 
 ```ts
-type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
-```
-
-```ts
-type ChopLogicAlertProps = React.HTMLAttributes<HTMLDivElement> & {
+export type ChopLogicAlertProps = CommonComponentProps & {
   isOpened: boolean;
   onClose: () => void;
   message: string;
-  title?: string;
   mode?: ChopLogicAlertMode;
   icon?: ChopLogicIconName;
+};
+
+export type ChopLogicAlertMode = 'success' | 'error' | 'warning' | 'info' | 'help';
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
 };
 ```

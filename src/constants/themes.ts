@@ -28,9 +28,9 @@ export interface ChopLogicTheme {
   insetShadow: string;
   // Borders
   thinBorder: string;
-  thick: string;
-  accent: string;
-  outline: string;
+  thickBorder: string;
+  accentBorder: string;
+  outlineBorder: string;
   // Z-indexes
   dropdownIndex: number;
   modalIndex: number;
@@ -39,50 +39,46 @@ export interface ChopLogicTheme {
 
 export const LIGHT_THEME: Partial<ChopLogicTheme> = {
   // Colors
-  primaryColor: 'hsl(0, 0%, 13%)',
-  secondaryColor: 'hsl(215, 69%, 49%)',
-  tertiaryColor: 'hsl(205, 48%, 56%)',
-  backgroundColor: 'hsl(0, 0%, 100%)',
-  highlightColor: 'hsl(65, 43%, 95%)',
-  shadeColor: 'hsl(206, 19%, 93%)',
-  accentColor: 'hsl(16, 100%, 45%)',
+  primaryColor: 'hsl(205, 100%, 9%)',
+  secondaryColor: 'hsl(202, 40%, 27%)',
+  tertiaryColor: 'hsl(217, 16%, 72%)',
+  backgroundColor: 'hsl(38, 100%, 91%)',
+  accentColor: 'hsl(356, 100%, 53%)',
   // Gradients
-  primaryGradient: 'linear-gradient(0deg, #222222, #266dd3)',
-  accentGradient: 'linear-gradient(0deg, #222222, #e53d00)',
-  tintGradient: 'linear-gradient(0deg, #e9edf0, #f6f7eb)',
+  primaryGradient: 'linear-gradient(0deg, #001C2E, #294D60)',
+  accentGradient: 'linear-gradient(0deg, #001C2E, #FF101F)',
+  tintGradient: 'linear-gradient(0deg, #ACB5C3, #FFEED1)',
   // Shadows
   boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px',
   textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders
-  thinBorder: '1px solid #5998c5',
-  thick: '1px solid #266dd3',
-  accent: '1px solid #e53d00',
-  outline: '2px dashed #e53d00',
+  thinBorder: '1px solid #ACB5C3FF',
+  thickBorder: '1px solid #294C60FF',
+  accentBorder: '1px solid #FF0F1FFF',
+  outlineBorder: '2px dashed #001B2EFF',
 };
 
 export const DARK_THEME: Partial<ChopLogicTheme> = {
   // Colors
-  primaryColor: 'hsl(0, 0%, 13%)',
-  secondaryColor: 'hsl(215, 69%, 49%)',
-  tertiaryColor: 'hsl(205, 48%, 56%)',
-  backgroundColor: 'hsl(0, 0%, 100%)',
-  highlightColor: 'hsl(65, 43%, 95%)',
-  shadeColor: 'hsl(206, 19%, 93%)',
-  accentColor: 'hsl(16, 100%, 45%)',
+  primaryColor: 'hsl(30, 36%, 90%)',
+  secondaryColor: 'hsl(45, 77%, 79%)',
+  tertiaryColor: 'hsl(184, 36%, 63%)',
+  backgroundColor: 'hsl(345, 6%, 13%)',
+  accentColor: 'hsl(9, 59%, 46%)',
   // Gradients
-  primaryGradient: 'linear-gradient(0deg, #222222, #266dd3)',
-  accentGradient: 'linear-gradient(0deg, #222222, #e53d00)',
+  primaryGradient: 'linear-gradient(0deg, #EFE6DCFF, #266dd3)',
+  accentGradient: 'linear-gradient(0deg, #EFE6DCFF, #BB4530FF)',
   tintGradient: 'linear-gradient(0deg, #e9edf0, #f6f7eb)',
   // Shadows
   boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px',
   textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders
-  thinBorder: '1px solid #5998c5',
-  thick: '1px solid #266dd3',
-  accent: '1px solid #e53d00',
-  outline: '2px dashed #e53d00',
+  thinBorder: '1px solid #7FBEC3FF',
+  thickBorder: '1px solid #F3DEA0FF',
+  accentBorder: '1px solid #BB4530FF',
+  outlineBorder: '2px dashed #EFE6DCFF',
 };
 
 export const COMMON_THEME_VALUES: Partial<ChopLogicTheme> = {

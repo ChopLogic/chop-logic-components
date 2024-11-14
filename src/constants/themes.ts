@@ -4,8 +4,6 @@ export interface ChopLogicTheme {
   secondaryColor: string;
   tertiaryColor: string;
   backgroundColor: string;
-  highlightColor: string;
-  shadeColor: string;
   accentColor: string;
   // Gradients
   primaryGradient: string;
@@ -18,26 +16,24 @@ export interface ChopLogicTheme {
   smallGap: string;
   mediumGap: string;
   bigGap: string;
-  minElementSize: string;
-  smallIconSize: string;
+  iconSize: string;
   blockBorderRadius: string;
-  fieldWrapperHeight: string;
   // Shadows
   boxShadow: string;
   textShadow: string;
   insetShadow: string;
   // Borders
-  thinBorder: string;
-  thickBorder: string;
+  regularBorder: string;
   accentBorder: string;
   outlineBorder: string;
   // Z-indexes
-  dropdownIndex: number;
-  modalIndex: number;
-  tooltipIndex: number;
+  baseIndex: string;
+  tooltipIndex: string;
+  dropdownIndex: string;
+  modalIndex: string;
 }
 
-export const LIGHT_THEME: Partial<ChopLogicTheme> = {
+export const LIGHT_THEME: ChopLogicTheme = {
   // Colors
   primaryColor: 'hsl(205, 100%, 9%)',
   secondaryColor: 'hsl(202, 40%, 27%)',
@@ -53,13 +49,26 @@ export const LIGHT_THEME: Partial<ChopLogicTheme> = {
   textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders
-  thinBorder: '1px solid #ACB5C3FF',
-  thickBorder: '1px solid #294C60FF',
+  regularBorder: '1px solid #ACB5C3FF',
   accentBorder: '1px solid #FF0F1FFF',
   outlineBorder: '2px dashed #001B2EFF',
+  // Fonts
+  coreFontFamily: 'Arial, Helvetica, sans-serif',
+  monospaceFontFamily: `'Courier New', Courier, monospace`,
+  // Units
+  smallGap: '0.25rem',
+  mediumGap: '0.6rem',
+  bigGap: '1rem',
+  iconSize: '1.6rem',
+  blockBorderRadius: '0.375rem',
+  // Z-indexes
+  baseIndex: '1',
+  tooltipIndex: '100',
+  dropdownIndex: '200',
+  modalIndex: '300',
 };
 
-export const DARK_THEME: Partial<ChopLogicTheme> = {
+export const DARK_THEME: ChopLogicTheme = {
   // Colors
   primaryColor: 'hsl(30, 36%, 90%)',
   secondaryColor: 'hsl(45, 77%, 79%)',
@@ -75,13 +84,9 @@ export const DARK_THEME: Partial<ChopLogicTheme> = {
   textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders
-  thinBorder: '1px solid #7FBEC3FF',
-  thickBorder: '1px solid #F3DEA0FF',
+  regularBorder: '1px solid #7FBEC3FF',
   accentBorder: '1px solid #BB4530FF',
   outlineBorder: '2px dashed #EFE6DCFF',
-};
-
-export const COMMON_THEME_VALUES: Partial<ChopLogicTheme> = {
   // Fonts
   coreFontFamily: 'Arial, Helvetica, sans-serif',
   monospaceFontFamily: `'Courier New', Courier, monospace`,
@@ -89,12 +94,11 @@ export const COMMON_THEME_VALUES: Partial<ChopLogicTheme> = {
   smallGap: '0.25rem',
   mediumGap: '0.6rem',
   bigGap: '1rem',
-  minElementSize: '2.75rem',
-  smallIconSize: '1.6rem',
+  iconSize: '1.6rem',
   blockBorderRadius: '0.375rem',
-  fieldWrapperHeight: '2.125rem',
   // Z-indexes
-  dropdownIndex: 1000,
-  modalIndex: 1000,
-  tooltipIndex: 1000,
+  baseIndex: '1',
+  tooltipIndex: '100',
+  dropdownIndex: '200',
+  modalIndex: '300',
 };

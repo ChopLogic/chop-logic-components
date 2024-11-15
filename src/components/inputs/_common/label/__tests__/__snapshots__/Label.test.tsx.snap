@@ -3,11 +3,11 @@
 exports[`ChopLogicLabel > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
-    class="sc-blHHSb HUOO"
+    class="sc-blHHSb jWAZXj"
     for="test-input-id"
   >
     <span
-      class="sc-gtLWhw fpJYkD"
+      class="chop-logic-label-text"
     >
       Test label
     </span>
@@ -18,16 +18,16 @@ exports[`ChopLogicLabel > should render correctly as not required label 1`] = `
 exports[`ChopLogicLabel > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
-    class="sc-blHHSb HUOO"
+    class="sc-blHHSb jWAZXj"
     for="test-input-id"
   >
     <span
-      class="sc-gtLWhw fpJYkD"
+      class="chop-logic-label-text"
     >
       Test label
     </span>
     <abbr
-      class="sc-egkSDF hYTRQv"
+      class="chop-logic-label-abbr"
       title="required"
     >
       *
@@ -39,7 +39,7 @@ exports[`ChopLogicLabel > should render correctly as required label 1`] = `
 exports[`ChopLogicLabel > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
-    class="sc-blHHSb HUOO"
+    class="sc-blHHSb jWAZXj"
     for="test-input-id"
   />
 </DocumentFragment>
@@ -48,7 +48,7 @@ exports[`ChopLogicLabel > should render correctly without text 1`] = `
 exports[`ChopLogicLabel > should render left icon 1`] = `
 <DocumentFragment>
   <label
-    class="sc-blHHSb HUOO"
+    class="sc-blHHSb jWAZXj"
     for="test-input-id"
   >
     <svg
@@ -63,7 +63,7 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
       />
     </svg>
     <span
-      class="sc-gtLWhw fpJYkD"
+      class="chop-logic-label-text"
     >
       Test label
     </span>
@@ -74,7 +74,7 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
 exports[`ChopLogicLabel > should render right icon 1`] = `
 <DocumentFragment>
   <label
-    class="sc-blHHSb HUOO"
+    class="sc-blHHSb jWAZXj"
     for="test-input-id"
   >
     <svg
@@ -89,7 +89,7 @@ exports[`ChopLogicLabel > should render right icon 1`] = `
       />
     </svg>
     <span
-      class="sc-gtLWhw fpJYkD"
+      class="chop-logic-label-text"
     >
       Test label
     </span>

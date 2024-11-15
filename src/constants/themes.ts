@@ -22,6 +22,9 @@ export const LIGHT_THEME: ChopLogicTheme = {
   // Fonts
   coreFontFamily: 'Arial, Helvetica, sans-serif',
   monospaceFontFamily: `'Courier New', Courier, monospace`,
+  baseFontSize: '1rem',
+  smallFontSize: '0.8rem',
+  headerFontSize: '2rem',
   // Units
   smallGap: '0.25rem',
   mediumGap: '0.6rem',
@@ -57,6 +60,9 @@ export const DARK_THEME: ChopLogicTheme = {
   // Fonts
   coreFontFamily: 'Arial, Helvetica, sans-serif',
   monospaceFontFamily: `'Courier New', Courier, monospace`,
+  baseFontSize: '1rem',
+  smallFontSize: '0.8rem',
+  headerFontSize: '2rem',
   // Units
   smallGap: '0.25rem',
   mediumGap: '0.6rem',

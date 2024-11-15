@@ -35,6 +35,9 @@ export interface ChopLogicTheme {
   // Fonts
   coreFontFamily: string;
   monospaceFontFamily: string;
+  baseFontSize: string;
+  smallFontSize: string;
+  headerFontSize: string;
   // Units
   smallGap: string;
   mediumGap: string;

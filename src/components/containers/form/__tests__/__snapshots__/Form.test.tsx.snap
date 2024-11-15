@@ -3,35 +3,35 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-dhCplO esbweT form-class"
+    class="sc-diYFot jWJIfe form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
-      class="sc-hJRrWL jotKFz"
+      class="sc-eUlrpB kLJvDD"
     >
       <div
-        class="sc-fwzISk csxac"
+        class="sc-geXuza evujjB"
       >
         <label
-          class="sc-egkSDF hlNUOV"
+          class="sc-egkSDF jxDOeU"
           for="first-name"
         >
           <span
-            class="sc-fAUdSK dARImm"
+            class="chop-logic-label-text"
           >
             First Name
           </span>
         </label>
         <span
-          class="sc-bMTdWJ evPGco"
+          class="sc-fwzISk fpMSio"
         >
           <input
             aria-errormessage="first-name_error"
             aria-invalid="false"
             aria-readonly="false"
             autocomplete="off"
-            class="sc-hbtGpV cAKBii"
+            class="sc-hJRrWL iScYUg"
             id="first-name"
             name="firstName"
             placeholder="Type here..."
@@ -39,11 +39,11 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             value=""
           />
           <span
-            class="sc-jhZTHU gFxcGw"
+            class="sc-hbtGpV iLRGbe"
           >
             <button
               aria-label="Clear input for First Name"
-              class="sc-cHqXqK iJtyKS"
+              class="sc-dpBQxM gtAqQo"
               type="button"
             >
               <svg
@@ -73,37 +73,37 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-keTIit dDEgqC"
         id="first-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-hJRrWL jotKFz"
+      class="sc-eUlrpB kLJvDD"
     >
       <div
-        class="sc-fwzISk csxac"
+        class="sc-geXuza evujjB"
       >
         <label
-          class="sc-egkSDF hlNUOV"
+          class="sc-egkSDF jxDOeU"
           for="last-name"
         >
           <span
-            class="sc-fAUdSK dARImm"
+            class="chop-logic-label-text"
           >
             Last Name
           </span>
         </label>
         <span
-          class="sc-bMTdWJ evPGco"
+          class="sc-fwzISk fpMSio"
         >
           <input
             aria-errormessage="last-name_error"
             aria-invalid="false"
             aria-readonly="false"
             autocomplete="off"
-            class="sc-hbtGpV cAKBii"
+            class="sc-hJRrWL iScYUg"
             id="last-name"
             name="lastName"
             placeholder="Type here..."
@@ -111,11 +111,11 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             value=""
           />
           <span
-            class="sc-jhZTHU gFxcGw"
+            class="sc-hbtGpV iLRGbe"
           >
             <button
               aria-label="Clear input for Last Name"
-              class="sc-cHqXqK iJtyKS"
+              class="sc-dpBQxM gtAqQo"
               type="button"
             >
               <svg
@@ -145,35 +145,35 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-keTIit dDEgqC"
         id="last-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-jtQUzJ hNYqiw"
+      class="sc-jwIPbr cAPZpm"
     >
       <div
-        class="sc-cEzcPc hcLvau"
+        class="sc-cHqXqK jEijHm"
       >
         <label
-          class="sc-egkSDF hlNUOV"
+          class="sc-egkSDF jRrqTg"
           for="age"
         >
           <span
-            class="sc-fAUdSK dARImm"
+            class="chop-logic-label-text"
           >
             Age
           </span>
         </label>
         <span
-          class="sc-eOzmre lofURc"
+          class="sc-cEzcPc goBCUG"
         >
           <input
             aria-errormessage="age_error"
             aria-invalid="false"
-            class="sc-ovuCP hVyxSr"
+            class="sc-jtQUzJ dwwDWu"
             id="age"
             max="9007199254740991"
             min="-9007199254740991"
@@ -184,11 +184,11 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             value="0"
           />
           <span
-            class="sc-eauhAA gqqtlK"
+            class="sc-ovuCP lmipvI"
           >
             <button
               aria-label="Decrement value for Age"
-              class="sc-cHqXqK iJtyKS"
+              class="sc-dpBQxM gtAqQo"
               type="button"
             >
               <svg
@@ -205,7 +205,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             </button>
             <button
               aria-label="Increment value for Age"
-              class="sc-cHqXqK iJtyKS"
+              class="sc-dpBQxM gtAqQo"
               type="button"
             >
               <svg
@@ -224,14 +224,14 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-keTIit dDEgqC"
         id="age_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-eMwmJz cdqpVb"
+      class="sc-kEfuZE cgqGVX"
     >
       <button
         class="sc-blHHSb hzmsJb"

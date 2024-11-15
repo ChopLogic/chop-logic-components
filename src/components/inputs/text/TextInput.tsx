@@ -1,5 +1,6 @@
 import React from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
+import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
 import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
 import InputInnerButton from 'components/inputs/_common/input-inner-button/InputInnerButton';
@@ -36,6 +37,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   readOnly = false,
   autoComplete = 'off',
   type = 'text',
+  theme,
   ...rest
 }) => {
   const { value, valid, handleChange, handleClear, passwordShown, togglePassword } = useChopLogicTextInputController({
@@ -48,11 +50,12 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
+  const themeValues = getChopLogicTheme(theme);
 
   return (
-    <StyledTextInputContainer {...rest}>
-      <StyledTextInputWrapper $disabled={disabled} $invalid={!valid}>
-        <ChopLogicLabel label={label} required={required} inputId={elementId} />
+    <StyledTextInputContainer {...rest} theme={themeValues}>
+      <StyledTextInputWrapper $disabled={disabled} $invalid={!valid} theme={themeValues}>
+        <ChopLogicLabel label={label} required={required} inputId={elementId} theme={themeValues} />
         <StyledFieldWrapper>
           <StyledTextInput
             id={elementId}

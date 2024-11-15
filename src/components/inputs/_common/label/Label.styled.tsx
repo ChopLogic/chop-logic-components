@@ -1,26 +1,23 @@
-import { COLORS, FONTS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
+import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledLabel = styled.label`
-  font-size: 0.8rem;
-  font-family: ${FONTS.core};
+export const StyledLabel = styled.label<{ theme: ChopLogicTheme }>`
   display: flex;
   align-items: center;
-  gap: ${UNITS.smallGap};
-  color: ${COLORS.primary};
-`;
+  font-size: ${({ theme }) => theme.smallFontSize};
+  font-family: ${({ theme }) => theme.coreFontFamily};
+  gap: ${({ theme }) => theme.smallGap};
+  color: ${({ theme }) => theme.primaryColor};
 
-export const StyledLabelText = styled.span`
-  text-wrap: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 2px 0;
-`;
+  .chop-logic-label-text {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-export const StyledRequiredSign = styled.abbr`
-  font-size: 0.8rem;
-  font-family: ${FONTS.core};
-  text-decoration: none;
-  color: ${COLORS.accent};
-  cursor: pointer;
+  .chop-logic-label-abbr {
+    text-decoration: none;
+    cursor: pointer;
+    color: ${(props) => props.theme.accentColor};
+  }
 `;

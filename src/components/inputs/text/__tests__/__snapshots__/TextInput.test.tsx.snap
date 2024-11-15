@@ -3,31 +3,31 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-khLCKb ijJTpD test-class"
+    class="sc-kLhKbu fFmvYM test-class"
     style="width: 600px;"
   >
     <div
-      class="sc-dstKZu jMOkrB"
+      class="sc-ixGGxD iKpgqM"
     >
       <label
-        class="sc-ghWlax gtHGEI"
+        class="sc-ghWlax chgbmR"
         for="test-input-id"
       >
         <span
-          class="sc-kLhKbu iCIkkz"
+          class="chop-logic-label-text"
         >
           Test Input
         </span>
       </label>
       <span
-        class="sc-dpBQxM dOwdso"
+        class="sc-dstKZu kTbPCt"
       >
         <input
           aria-errormessage="test-input-id_error"
           aria-invalid="false"
           aria-readonly="false"
           autocomplete="off"
-          class="sc-keTIit LAOyP"
+          class="sc-khLCKb dOKJys"
           id="test-input-id"
           name="test"
           placeholder="Enter text here..."
@@ -35,7 +35,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
           value=""
         />
         <span
-          class="sc-jwIPbr iFVKvp"
+          class="sc-keTIit kbZUEX"
         >
           <button
             aria-label="Clear input for Test Input"
@@ -81,37 +81,37 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-khLCKb ijJTpD test-class"
+    class="sc-kLhKbu fFmvYM test-class"
     style="width: 600px;"
   >
     <div
-      class="sc-dstKZu jMOkrB"
+      class="sc-ixGGxD iKpgqM"
     >
       <label
-        class="sc-ghWlax gtHGEI"
+        class="sc-ghWlax chgbmR"
         for="test-input-id"
       >
         <span
-          class="sc-kLhKbu iCIkkz"
+          class="chop-logic-label-text"
         >
           Test Input
         </span>
         <abbr
-          class="sc-ixGGxD iSbiBC"
+          class="chop-logic-label-abbr"
           title="required"
         >
           *
         </abbr>
       </label>
       <span
-        class="sc-dpBQxM dOwdso"
+        class="sc-dstKZu kTbPCt"
       >
         <input
           aria-errormessage="test-input-id_error"
           aria-invalid="false"
           aria-readonly="false"
           autocomplete="off"
-          class="sc-keTIit LAOyP"
+          class="sc-khLCKb dOKJys"
           id="test-input-id"
           name="test"
           placeholder="Enter text here..."
@@ -120,7 +120,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
           value=""
         />
         <span
-          class="sc-jwIPbr iFVKvp"
+          class="sc-keTIit kbZUEX"
         >
           <button
             aria-label="Clear input for Test Input"

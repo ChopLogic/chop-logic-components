@@ -1,28 +1,29 @@
-import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
+import { COLORS, FONTS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
+import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledTextInputContainer = styled.div`
+export const StyledTextInputContainer = styled.div<{ theme?: ChopLogicTheme }>`
   display: flex;
   flex-direction: column;
-  gap: ${UNITS.mediumGap};
+  gap: ${(props) => props.theme.mediumGap};
 `;
 
-export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
+export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean; theme?: ChopLogicTheme }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: ${UNITS.smallGap};
-  padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  box-shadow: ${SHADOWS.box};
-  border-top-left-radius: ${UNITS.blockBorderRadius};
-  border-top-right-radius: ${UNITS.blockBorderRadius};
-  border: ${BORDERS.thin};
-  background-color: ${COLORS.background};
+  gap: ${(props) => props.theme.smallGap};
+  padding: ${(props) => `${props.theme.mediumGap} ${props.theme.mediumGap} ${props.theme.smallGap} ${props.theme.mediumGap}`};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  border-top-left-radius: ${(props) => props.theme.blockBorderRadius};
+  border-top-right-radius: ${(props) => props.theme.blockBorderRadius};
+  border: ${(props) => props.theme.regularBorder};
+  background-color: ${(props) => props.theme.backgroundColor};
 
   &:has(input:focus) {
-    outline: ${BORDERS.thin};
+    outline: ${(props) => props.theme.outlineBorder};
     outline-offset: -3px;
   }
 
@@ -41,9 +42,9 @@ export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid:
   ${(props) =>
     props.$invalid &&
     `
-        border: ${BORDERS.accent};
+        border: ${props.theme.accentBorder};
         &:has(input:focus) {
-            outline: ${BORDERS.accent};
+            outline: ${props.theme.accentBorder};
             outline-offset: -3px;
         }
     `}

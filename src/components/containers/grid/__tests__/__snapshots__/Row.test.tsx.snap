@@ -19,7 +19,7 @@ exports[`GridRow > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-keTIit eelhQH"
+              class="sc-keTIit jTRlym"
               for="select_row_item-1"
             >
               <svg

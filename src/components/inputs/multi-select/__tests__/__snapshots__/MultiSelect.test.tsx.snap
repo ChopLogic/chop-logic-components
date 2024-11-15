@@ -3,15 +3,15 @@
 exports[`ChopLogicMultiSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kLhKbu dqZbsD test-class"
+    class="sc-ivxoEo iusUzq test-class"
     style="width: 400px;"
   >
     <label
-      class="sc-dntaoT bUwvzV"
+      class="sc-dntaoT dVBEZA"
       for="multi-select-id"
     >
       <span
-        class="sc-ivxoEo flruma"
+        class="chop-logic-label-text"
       >
         Select your languages
       </span>
@@ -21,7 +21,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-ixGGxD grYdcX"
+      class="sc-ghWlax gufTVn"
       id="multi-select-id"
       name="languages"
       role="combobox"
@@ -29,7 +29,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       value=""
     >
       <span
-        class="sc-khLCKb hnSMmL"
+        class="sc-kLhKbu hHfbVh"
       >
         Not selected
       </span>
@@ -45,14 +45,14 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-keTIit ecWzkk"
+      class="sc-khLCKb khMOjv"
       id="multi-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="sc-dpBQxM dwxKA-D"
+        class="sc-dstKZu dEDtWG"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -74,7 +74,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-dpBQxM dwxKA-D"
+        class="sc-dstKZu dEDtWG"
         id="583e8b60-0177-4e38-a423-4b1d5d0a2236"
         role="option"
         tabindex="0"
@@ -96,7 +96,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-dpBQxM dwxKA-D"
+        class="sc-dstKZu dEDtWG"
         id="b20bea7b-8172-4d12-b172-d5feac02d863"
         role="option"
         tabindex="0"
@@ -118,7 +118,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-dpBQxM dwxKA-D"
+        class="sc-dstKZu dEDtWG"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

@@ -1,37 +1,4 @@
-export interface ChopLogicTheme {
-  // Colors
-  primaryColor: string;
-  secondaryColor: string;
-  tertiaryColor: string;
-  backgroundColor: string;
-  accentColor: string;
-  // Gradients
-  primaryGradient: string;
-  accentGradient: string;
-  tintGradient: string;
-  // Fonts
-  coreFontFamily: string;
-  monospaceFontFamily: string;
-  // Units
-  smallGap: string;
-  mediumGap: string;
-  bigGap: string;
-  iconSize: string;
-  blockBorderRadius: string;
-  // Shadows
-  boxShadow: string;
-  textShadow: string;
-  insetShadow: string;
-  // Borders
-  regularBorder: string;
-  accentBorder: string;
-  outlineBorder: string;
-  // Z-indexes
-  baseIndex: string;
-  tooltipIndex: string;
-  dropdownIndex: string;
-  modalIndex: string;
-}
+import { ChopLogicTheme } from 'utils/types.ts';
 
 export const LIGHT_THEME: ChopLogicTheme = {
   // Colors

@@ -1,10 +1,10 @@
 export const COLORS = Object.freeze({
   primary: 'hsl(0, 0%, 13%)',
+  secondary: 'hsl(215, 69%, 49%)',
+  tertiary: 'hsl(205, 48%, 56%)',
   background: 'hsl(0, 0%, 100%)',
   highlight: 'hsl(65, 43%, 95%)',
   shade: 'hsl(206, 19%, 93%)',
-  secondary: 'hsl(215, 69%, 49%)',
-  tertiary: 'hsl(205, 48%, 56%)',
   accent: 'hsl(16, 100%, 45%)',
   transparentBackground: 'hsla(0, 0%, 0%, 0.3)',
 });
@@ -39,8 +39,8 @@ export const BORDERS = Object.freeze({
 
 export const Z_INDEXES = Object.freeze({
   dropdown: 1000,
-  modal: 2000,
-  tooltip: 3000,
+  modal: 1000,
+  tooltip: 1000,
 });
 
 export const GRADIENTS = Object.freeze({
@@ -51,7 +51,7 @@ export const GRADIENTS = Object.freeze({
 
 /* Breakpoints for common device groups */
 export const SCREEN_BREAKPOINTS = Object.freeze({
-  /* Extra small devices (phones, 600px and down) */
+  /* Very small devices (phones, 600px and down) */
   /* @media only screen and (max-width: 600px) {...} */
   phones: 'only screen and (max-width: 600px)',
   /* Small devices (portrait tablets and large phones, 600px and up) */

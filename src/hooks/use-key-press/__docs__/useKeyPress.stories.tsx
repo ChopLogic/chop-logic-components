@@ -19,8 +19,8 @@ const ExampleComponent: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Hooks/useKeyPress',
   component: ExampleComponent,
+  title: 'Hooks/useKeyPress',
 };
 
 export default meta;

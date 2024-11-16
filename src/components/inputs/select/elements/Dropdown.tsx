@@ -1,8 +1,9 @@
-import { KeyboardEvent } from 'react';
+import React from 'react';
+import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
+import { SelectValue } from 'utils/types.ts';
 
 import { StyledSelectDropdown } from '../Select.styled';
-import { SelectValue } from '../types';
 
 import SelectOption from './Option';
 
@@ -33,44 +34,14 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
     moveFocusOnElementById(comboboxId);
   };
 
-  const handleListKeyDown = (e: KeyboardEvent<HTMLUListElement>) => {
-    let focusedId: string = '';
-    options.forEach((value) => {
-      const element = document.getElementById(value.id);
-      if (element === document.activeElement) {
-        focusedId = value.id;
-      }
-    });
-
-    const currentFocusIndex = options.findIndex((value) => value.id === focusedId);
-
-    switch (e.key) {
-      case 'Escape':
-        e.preventDefault();
-        onClose();
-        break;
-      case 'ArrowUp': {
-        e.preventDefault();
-        const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : options.length - 1;
-        const previousValue = options[previousOptionIndex];
-        if (previousValue) moveFocusOnElementById(previousValue.id);
-        break;
-      }
-      case 'ArrowDown':
-      case 'Tab': {
-        e.preventDefault();
-        const nextOptionIndex = currentFocusIndex === options.length - 1 ? 0 : currentFocusIndex + 1;
-        const nextValue = options[nextOptionIndex];
-        if (nextValue) moveFocusOnElementById(nextValue.id);
-        break;
-      }
-      default:
-        break;
-    }
-  };
-
   return (
-    <StyledSelectDropdown role='listbox' id={dropdownId} tabIndex={-1} onKeyDown={handleListKeyDown} $opened={opened}>
+    <StyledSelectDropdown
+      role='listbox'
+      id={dropdownId}
+      tabIndex={-1}
+      onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
+      $opened={opened}
+    >
       {options.map((item) => (
         <SelectOption
           key={item.id}

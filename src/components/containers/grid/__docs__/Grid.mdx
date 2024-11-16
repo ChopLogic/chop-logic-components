@@ -16,7 +16,7 @@ The `ChopLogicGrid` component is a styled grid component built on top of the def
 ```tsx
 import React from 'react';
 import ChopLogicGrid from 'chop-logic-components';
-import { DATA, COLUMS } from './constants';
+import { DATA, COLUMNS } from './constants';
 
 const ExampleComponent = () => <ChopLogicGrid caption='Contact List' data={DATA} columns={COLUMNS} />;
 
@@ -38,6 +38,7 @@ export default ExampleComponent;
 | **style**          | `CSSProperties`           | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                                      | `undefined` | No       |
 | **tabIndex**       | `number`                  | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                                | `undefined` | No       |
 | **title**          | `string`                  | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                                | `undefined` | No       |
+| **theme**          | `'light'` or `'dark'`     | The component's color theme.                                                                                                                                                                    | `undefined` | No       |
 
 ### Types
 

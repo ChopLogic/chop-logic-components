@@ -1,4 +1,4 @@
-import { CommonInputProps } from 'utils/types';
+import { CommonInputProps, SelectValue } from 'utils/types';
 
 export type ChopLogicSelectProps = CommonInputProps & {
   options: SelectValue[];
@@ -6,11 +6,6 @@ export type ChopLogicSelectProps = CommonInputProps & {
   placeholder?: string;
   defaultValue?: string | number | readonly string[];
 };
-
-export type SelectValue = {
-  id: string;
-  label: string;
-} & { [key in string]: unknown };
 
 export type SelectOptionProps = {
   value: SelectValue;

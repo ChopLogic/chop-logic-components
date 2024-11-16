@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
 

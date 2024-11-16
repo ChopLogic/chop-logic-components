@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { StyledGridHeader, StyledGridHeaderRow } from '../Grid.styled';
 import { ChopLogicGridColumn } from '../types';
 

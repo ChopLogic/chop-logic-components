@@ -19,7 +19,7 @@ import { ChopLogicButton, ChopLogicIconName } from 'chop-logic-components';
 import { createCopy } from 'utils/copy';
 
 const Example = () => {
-  return <ChopLogicButton text='Copy' onCick={createCopy} icon={ChopLogicIconName.Copy} />;
+  return <ChopLogicButton text='Copy' onClick={createCopy} icon={ChopLogicIconName.Copy} />;
 };
 
 export default Example;
@@ -27,41 +27,48 @@ export default Example;
 
 ### Props
 
-- **view** - An appearance of the button:
-  - `primary`: a default button
-  - `secondary`: a button in the form of clickable text
-  - `danger`: a button to highlight an important action
-  - `icon`: a button without text, only icon
-- **text** `string` - A string that represents the text content of the button.
-- **onClick** `MouseEventHandler<HTMLButtonElement> | (() => void)` - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments.
-- **disabled** `boolean` - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
-- **type** - A button type that can be `"button"`, `"submit"` or `"reset"` (`"button"` by default).
-- **icon** `ChopLogicIconName` - An svg icon from ChopLogicIcon set, which could be inserted before the button text.
-- **HTMLAttributes** - some supported global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
+| Prop          | Type                                  | Description                                                                                                                                                                              | Default     | Required |
+|---------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
+| **text**      | `string`                              | A string that represents the text content of the button.                                                                                                                                 | `undefined` | No       |
+| **view**      | `ChopLogicButtonView`                 | An appearance of the button.                                                                                                                                                             | `undefined` | No       |
+| **onClick**   | ` MouseEventHandler`                  | A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element. It could also be a callback without arguments. | `undefined` | No       |
+| **disabled**  | `boolean`                             | A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.                                                       | `undefined` | No       |
+| **type**      | `'button'` or `'reset'` or `'submit'` | The default behavior of the button.                                                                                                                                                      | `'button'`  | No       |
+| **icon**      | `ChopLogicIconName`                   | An svg icon from ChopLogicIcon set, which could be inserted before the button text.                                                                                                      | `undefined` | No       |
+| **id**        | `string`                              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                                           | `undefined` | No       |
+| **className** | `string`                              | The class global attribute is a list of the classes of the element.                                                                                                                      | `undefined` | No       |
+| **style**     | `CSSProperties`                       | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                               | `undefined` | No       |
+| **tabIndex**  | `number`                              | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                         | `undefined` | No       |
+| **title**     | `string`                              | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                         | `undefined` | No       |
+| **theme**     | `'light'` or `'dark'`                 | The component's color theme.                                                                                                                                                             | `undefined` | No       |
 
 ### Types
 
 ```ts
-type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
-```
-
-```ts
-type ChopLogicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
+export type ChopLogicButtonProps = Partial<CommonInputProps> & {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   view?: ChopLogicButtonView;
-  label?: string;
   icon?: ChopLogicIconName;
   text?: string;
   extended?: boolean;
+  type?: 'button' | 'reset' | 'submit';
+};
+
+export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
+
+export type CommonInputProps = CommonComponentProps & {
+  label: string;
+  name: string;
+  disabled?: boolean;
+  required?: boolean;
+};
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
 };
 ```

@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { SelectValue } from 'utils/types.ts';
 
 import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from 'components/index';
 import ChopLogicMultiSelect from 'components/inputs/multi-select/MultiSelect';
-import { SelectValue } from 'components/inputs/select/types';
 
 import ChopLogicForm from '../Form';
 import { ChopLogicFormData, ChopLogicFormProps } from '../types';

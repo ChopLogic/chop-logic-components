@@ -3,8 +3,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import FormExample from './FormExample';
 
 const meta: Meta<typeof FormExample> = {
-  title: 'Containers/Form',
-  component: FormExample,
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
+  },
   args: {
     columns: 2,
     hasReset: true,
@@ -14,7 +18,10 @@ const meta: Meta<typeof FormExample> = {
       age: 42,
     },
     onClickSubmit: (data) => console.log(data),
+    theme: 'light',
   },
+  component: FormExample,
+  title: 'Containers/Form',
 };
 
 export default meta;

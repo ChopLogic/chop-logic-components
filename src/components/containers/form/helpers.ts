@@ -16,5 +16,5 @@ export function updateValidationState(state: ChopLogicFormValidationState, param
 }
 
 export function isFormDataValid(state: ChopLogicFormValidationState): boolean {
-  return state.every((item) => item[1] === true);
+  return state.every((item) => item[1]);
 }

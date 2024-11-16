@@ -12,8 +12,8 @@ const MULTI_SELECT_VALUES: MultiSelectValue[] = [
 ];
 
 const meta: Meta<typeof MultiSelectExample> = {
-  title: 'Inputs/MultiSelect',
   component: MultiSelectExample,
+  title: 'Inputs/MultiSelect',
 };
 
 export default meta;
@@ -29,5 +29,12 @@ export const Default: Story = {
     onChange: (values) => console.log(values),
     required: true,
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

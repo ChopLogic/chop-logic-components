@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { CommonComponentProps } from 'utils/types';
 
 export type ChopLogicGridProps = CommonComponentProps & {
@@ -12,7 +13,7 @@ export type ChopLogicGridProps = CommonComponentProps & {
 export type ChopLogicGridColumn = {
   field: string;
   title?: string;
-  component?: React.ReactElement;
+  component?: ReactElement;
   highlighted?: boolean;
   className?: string;
 };
@@ -23,4 +24,4 @@ export type ChopLogicGridItem = {
   [key: string]: unknown;
 };
 
-export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;
+export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => ReactElement;

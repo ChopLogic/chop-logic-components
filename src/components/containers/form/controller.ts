@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 import { getInitialValidationState, isFormDataValid, updateValidationState } from './helpers';
 import { ChopLogicFormData, ChopLogicFormInputParams } from './types';

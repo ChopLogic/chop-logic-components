@@ -13,5 +13,5 @@ export function getCheckboxInitialValue({
     return !!initialValues?.[name];
   }
 
-  return !!defaultChecked;
+  return Boolean(defaultChecked);
 }

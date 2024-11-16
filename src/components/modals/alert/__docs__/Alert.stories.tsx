@@ -31,16 +31,11 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Modals/Alert',
-  component: ExampleComponent,
-  args: {
-    isOpened: true,
-    title: 'Alert Title',
-    message: 'This is an alert message.',
-    mode: 'info',
-    icon: ChopLogicIconName.Info,
-  },
   argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
     isOpened: { control: 'boolean' },
     title: { control: 'text' },
     message: { control: 'text' },
@@ -53,6 +48,16 @@ const meta: Meta<typeof ExampleComponent> = {
       options: Object.values(ChopLogicIconName),
     },
   },
+  args: {
+    isOpened: true,
+    title: 'Alert Title',
+    message: 'This is an alert message.',
+    mode: 'info',
+    icon: ChopLogicIconName.Info,
+    theme: 'light',
+  },
+  component: ExampleComponent,
+  title: 'Modals/Alert',
 };
 
 export default meta;

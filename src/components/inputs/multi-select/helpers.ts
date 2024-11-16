@@ -1,6 +1,6 @@
-import { ChopLogicFormData } from 'components/containers/form/types';
+import { SelectValue } from 'utils/types.ts';
 
-import { SelectValue } from '../select/types';
+import { ChopLogicFormData } from 'components/containers/form/types';
 
 import { MultiSelectValue } from './types';
 

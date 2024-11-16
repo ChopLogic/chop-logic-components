@@ -24,8 +24,8 @@ const ExampleModal: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleModal> = {
-  title: 'Hooks/useModalFocusTrap',
   component: ExampleModal,
+  title: 'Hooks/useModalFocusTrap',
 };
 
 export default meta;

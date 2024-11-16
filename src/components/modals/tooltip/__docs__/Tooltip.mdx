@@ -1,5 +1,4 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './TooltipExample.tsx';
 import * as Tooltip from './Tooltip.stories.tsx';
 
 <Meta of={Tooltip} title='Tooltip' />
@@ -28,38 +27,36 @@ export default TooltipUsageExample;
 
 ### Props
 
-_Required props_
-
-- **tooltipContent** `string | React.ReactElement` - The content to be displayed inside the tooltip.
-
-_Optional props_
-
-- **containerTag** `TooltipContainerTag` - The HTML tag to be used for the container element. Default: `'span'`
-- **visibleOn** `'hover' | 'click' | 'focus' | 'contextmenu'` - The event that triggers the tooltip to be displayed. Default: `'hover'`
-- **children** `React.ReactNode` - The content inside the container element that triggers the tooltip.
-- **HTMLAttributes** - some global HTML attributes (**id**, **className**, **title**, **style**, etc.).
-
-_Common props_
-
-| Prop      | Type                  | Description                                                                                                      | Default     |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| id        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` |
-| className | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` |
-| style     | `React.CSSProperties` | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` |
-| tabIndex  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` |
-| title     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` |
+| Prop               | Type                                                   | Description                                                                                    | Default     | Required |
+|--------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------|----------|
+| **tooltipContent** | `string` or `ReactElement`                             | The content to be displayed inside the tooltip.                                                | `undefined` | Yes      |
+| **containerTag**   | `TooltipContainerTag`                                  | The HTML tag to be used for the container element.                                             | `'span'`    | No       |
+| **visibleOn**      | `'hover'` or `'click'` or `'focus'` or `'contextmenu'` | The event that triggers the tooltip to be displayed.                                           | `'hover'`   | No       |
+| **children**       | `ReactNode`                                            | The content inside the container element that triggers the tooltip.                            | `undefined` | No       |
+| **id**             | `string`                                               | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
+| **className**      | `string`                                               | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
+| **style**          | `CSSProperties`                                        | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
+| **tabIndex**       | `number`                                               | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |
+| **theme**          | `'light'` or `'dark'`                                  | The component's color theme.                                                                   | `undefined` | No       |
 
 ### Types
 
 ```ts
-type ChopLogicTooltipProps = PropsWithChildren &
-  React.HTMLAttributes<HTMLElement> & {
+export type ChopLogicTooltipProps = React.PropsWithChildren &
+  CommonComponentProps & {
     tooltipContent: string | React.ReactElement;
     containerTag?: TooltipContainerTag;
     visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
   };
-```
 
-```ts
-type TooltipContainerTag = 'span' | 'div' | 'p' | 'strong' | 'em';
+export type TooltipContainerTag = 'span' | 'div' | 'p' | 'strong' | 'em';
+
+export type CommonComponentProps = {
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  tabIndex?: number;
+  title?: string;
+  theme?: 'dark' | 'light';
+};
 ```

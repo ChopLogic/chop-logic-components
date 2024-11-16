@@ -1,9 +1,8 @@
 import { useCallback, useContext, useState } from 'react';
 import { useResetFormInput } from 'hooks/use-reset-form-input';
+import { SelectValue } from 'utils/types.ts';
 
 import { ChopLogicFormContext } from 'components/containers/form/FormContext';
-
-import { SelectValue } from '../select/types';
 
 import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './helpers';
 import { MultiSelectValue } from './types';

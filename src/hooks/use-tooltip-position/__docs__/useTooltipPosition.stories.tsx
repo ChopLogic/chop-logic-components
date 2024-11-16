@@ -27,8 +27,8 @@ const ExampleComponent: React.FC = () => {
 };
 
 const meta: Meta<typeof ExampleComponent> = {
-  title: 'Hooks/useTooltipPosition',
   component: ExampleComponent,
+  title: 'Hooks/useTooltipPosition',
 };
 
 export default meta;

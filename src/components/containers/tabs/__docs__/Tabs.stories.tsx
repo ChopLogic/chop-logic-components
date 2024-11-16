@@ -10,12 +10,6 @@ const tabs: ChopLogicTabItem[] = [
 ];
 
 const meta: Meta<typeof ChopLogicTabs> = {
-  title: 'Containers/Tabs',
-  component: ChopLogicTabs,
-  args: {
-    tabs,
-    defaultTabId: 'tab1',
-  },
   argTypes: {
     tabs: { control: 'object' },
     defaultTabId: { control: 'text' },
@@ -23,7 +17,18 @@ const meta: Meta<typeof ChopLogicTabs> = {
       control: 'select',
       options: ['vertical', 'horizontal'],
     },
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
+  args: {
+    tabs,
+    defaultTabId: 'tab1',
+    theme: 'light',
+  },
+  component: ChopLogicTabs,
+  title: 'Containers/Tabs',
 };
 
 export default meta;

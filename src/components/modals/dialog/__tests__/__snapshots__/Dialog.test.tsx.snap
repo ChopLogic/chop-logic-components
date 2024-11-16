@@ -4,7 +4,7 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
 <DocumentFragment>
   <div
     aria-modal="true"
-    class="sc-blHHSb hRDHpd dialog-class"
+    class="sc-blHHSb huBOKS dialog-class"
     id="dialog-id"
     role="dialog"
   >

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { SelectValue } from '../types';
+import { SelectValue } from 'utils/types.ts';
 
 import SelectExample from './SelectExample';
 
@@ -11,8 +10,8 @@ const SELECT_LANGUAGES: SelectValue[] = [
 ];
 
 const meta: Meta<typeof SelectExample> = {
-  title: 'Inputs/Select',
   component: SelectExample,
+  title: 'Inputs/Select',
 };
 
 export default meta;
@@ -24,9 +23,16 @@ export const Default: Story = {
     label: 'Select your language',
     options: SELECT_LANGUAGES,
     name: 'language',
-    placeholder: 'Click to select',
+    placeholder: 'Select your language',
     onChange: (value) => console.log(value),
     required: false,
     disabled: false,
+    theme: 'light',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark'],
+    },
   },
 };

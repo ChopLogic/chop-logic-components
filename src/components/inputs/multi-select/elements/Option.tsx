@@ -1,4 +1,4 @@
-import { KeyboardEvent } from 'react';
+import React, { KeyboardEvent } from 'react';
 
 import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
 import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';

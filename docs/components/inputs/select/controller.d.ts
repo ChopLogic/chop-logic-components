@@ -1,4 +1,4 @@
-import { SelectValue } from './types';
+import { SelectValue } from '../../../../../../../../../src/utils/types.ts';
 
 export declare function useChopLogicSelectController({ name, defaultValue, onChange, options, }: {
     name: string;

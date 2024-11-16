@@ -1,4 +1,4 @@
-import { FormEvent } from '../../../../node_modules/react';
+import { default as React, FormEvent } from '../../../../node_modules/react';
 import { ChopLogicFormData, ChopLogicFormInputParams } from './types';
 
 export declare function useChopLogicFormController({ initialValues, onReset, onSubmit, onClickSubmit, }: {

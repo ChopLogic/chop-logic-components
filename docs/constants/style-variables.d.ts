@@ -1,10 +1,10 @@
 export declare const COLORS: Readonly<{
     primary: "hsl(0, 0%, 13%)";
+    secondary: "hsl(215, 69%, 49%)";
+    tertiary: "hsl(205, 48%, 56%)";
     background: "hsl(0, 0%, 100%)";
     highlight: "hsl(65, 43%, 95%)";
     shade: "hsl(206, 19%, 93%)";
-    secondary: "hsl(215, 69%, 49%)";
-    tertiary: "hsl(205, 48%, 56%)";
     accent: "hsl(16, 100%, 45%)";
     transparentBackground: "hsla(0, 0%, 0%, 0.3)";
 }>;
@@ -34,8 +34,8 @@ export declare const BORDERS: Readonly<{
 }>;
 export declare const Z_INDEXES: Readonly<{
     dropdown: 1000;
-    modal: 2000;
-    tooltip: 3000;
+    modal: 1000;
+    tooltip: 1000;
 }>;
 export declare const GRADIENTS: Readonly<{
     primary: "linear-gradient(0deg, #222222, #266dd3)";

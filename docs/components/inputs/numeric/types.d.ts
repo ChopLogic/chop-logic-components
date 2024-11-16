@@ -1,3 +1,4 @@
+import { ChangeEventHandler, FocusEventHandler } from '../../../../node_modules/react';
 import { CommonInputProps } from '../../../../../../../../../src/utils/types';
 
 export type NumericValidationFunction = (input?: number) => boolean;
@@ -11,7 +12,7 @@ export type ChopLogicNumericInputProps = CommonInputProps & {
     readOnly?: boolean;
     defaultValue?: number;
     onSpinButtonClick?: (value?: number) => void;
-    onChange?: React.ChangeEventHandler<HTMLInputElement>;
-    onBlur?: React.FocusEventHandler<HTMLInputElement>;
-    onFocus?: React.FocusEventHandler<HTMLInputElement>;
+    onChange?: ChangeEventHandler<HTMLInputElement>;
+    onBlur?: FocusEventHandler<HTMLInputElement>;
+    onFocus?: FocusEventHandler<HTMLInputElement>;
 };

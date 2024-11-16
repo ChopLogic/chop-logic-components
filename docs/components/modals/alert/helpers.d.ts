@@ -1,3 +1,4 @@
+import { default as React } from '../../../../node_modules/react';
 import { ChopLogicIconName } from '../../../../../../../../../src/components/misc/icon/Icon';
 import { ChopLogicAlertMode } from './types';
 

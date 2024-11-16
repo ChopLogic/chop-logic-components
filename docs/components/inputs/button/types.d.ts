@@ -4,7 +4,7 @@ import { ChopLogicIconName } from '../../../../../../../../../src/components/mis
 
 export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
 export type ChopLogicButtonProps = Partial<CommonInputProps> & {
-    onClick?: MouseEventHandler<HTMLButtonElement> | (() => void);
+    onClick?: MouseEventHandler<HTMLButtonElement>;
     view?: ChopLogicButtonView;
     icon?: ChopLogicIconName;
     text?: string;

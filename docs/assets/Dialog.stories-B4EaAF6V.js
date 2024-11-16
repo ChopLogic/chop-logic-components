@@ -1,0 +1,14 @@
+import{j as e}from"./jsx-runtime-OAISXtky.js";import{r as c}from"./index-qVDZzPEr.js";import{C as o}from"./Button-BCnh0a_A.js";import"./Checkbox-Bk0Weu8K.js";import"./MultiSelect-DujgWx8B.js";import"./NumericInput-BEVC7n2h.js";import"./Select-7utpe4mn.js";import"./TextInput-Ca5Y2C6v.js";import"./Alert-CZjhL8nL.js";import{a as g}from"./Form-CKO4Zeoz.js";import"./Grid-27xncSyK.js";import"./Tabs-D8NZPdX-.js";const f=({onClose:a,title:d})=>{const[p,l]=c.useState(!1),m=()=>l(!0),i=()=>{l(!1),a&&a()},u=e.jsxs("div",{children:[e.jsx("p",{style:{marginBottom:"20px"},children:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, neque soluta ullam repudiandae facere dolore modi reiciendis doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora."}),e.jsxs("div",{style:{display:"flex",justifyContent:"space-between"},children:[e.jsx(o,{text:"Action",view:"primary"}),e.jsx(o,{text:"Close dialog",view:"secondary",onClick:i})]})]});return e.jsxs("div",{style:{display:"flex",justifyContent:"center",alignItems:"center",height:"100%",padding:"20px"},children:[e.jsx(o,{text:"Open dialog",onClick:m}),e.jsx(g,{isOpened:p,onClose:i,title:d,children:u})]})};try{DialogExample.displayName="DialogExample",DialogExample.__docgenInfo={description:"",displayName:"DialogExample",props:{id:{defaultValue:null,description:"",name:"id",required:!1,type:{name:"string"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}},tabIndex:{defaultValue:null,description:"",name:"tabIndex",required:!1,type:{name:"number"}},title:{defaultValue:null,description:"",name:"title",required:!1,type:{name:"string"}},theme:{defaultValue:null,description:"",name:"theme",required:!1,type:{name:"enum",value:[{value:'"dark"'},{value:'"light"'}]}},isOpened:{defaultValue:null,description:"",name:"isOpened",required:!0,type:{name:"boolean"}},onClose:{defaultValue:null,description:"",name:"onClose",required:!0,type:{name:"() => void"}}}}}catch{}const x={component:f,title:"Modals/Dialog"},t={args:{isOpened:!1,onClose:()=>console.log("Dialog closed"),title:"Example Dialog",theme:"light"},argTypes:{theme:{control:"radio",options:["light","dark"]}}};var n,r,s;t.parameters={...t.parameters,docs:{...(n=t.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  args: {
+    isOpened: false,
+    onClose: () => console.log('Dialog closed'),
+    title: 'Example Dialog',
+    theme: 'light'
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['light', 'dark']
+    }
+  }
+}`,...(s=(r=t.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const y=["Default"],k=Object.freeze(Object.defineProperty({__proto__:null,Default:t,__namedExportsOrder:y,default:x},Symbol.toStringTag,{value:"Module"}));export{k as D,t as a};

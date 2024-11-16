@@ -6,7 +6,7 @@ export type GridRowProps = {
     selectRowById: (id: string) => void;
     deselectRowById: (id: string) => void;
     selectable: boolean;
-    values: (string | JSX.Element)[];
+    values: (string | React.ReactElement)[];
     disabled?: boolean;
 };
 declare const GridRow: React.FC<GridRowProps>;

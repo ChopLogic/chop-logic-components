@@ -1,5 +1,4 @@
-import { CommonInputProps } from '../../../../../../../../../src/utils/types';
-import { SelectValue } from '../select/types';
+import { CommonInputProps, SelectValue } from '../../../../../../../../../src/utils/types';
 
 export type MultiSelectValue = SelectValue & {
     selected: boolean;

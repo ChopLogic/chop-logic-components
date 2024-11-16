@@ -1,4 +1,5 @@
-import { SelectValue } from '../types';
+import { default as React } from '../../../../../node_modules/react';
+import { SelectValue } from '../../../../../../../../../../src/utils/types.ts';
 
 type SelectComboboxProps = {
     opened: boolean;

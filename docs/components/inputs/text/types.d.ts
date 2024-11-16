@@ -1,3 +1,4 @@
+import { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from '../../../../node_modules/react';
 import { CommonInputProps } from '../../../../../../../../../src/utils/types';
 
 export type RegExpWithFlags = {
@@ -6,19 +7,17 @@ export type RegExpWithFlags = {
 };
 export type TextValidationFunction = (input: string) => boolean;
 export type ChopLogicTextInputProps = CommonInputProps & {
-    name: string;
-    label: string;
     errorMessage?: string;
     clearable?: boolean;
     readOnly?: boolean;
-    onClear?: () => void;
     type?: 'text' | 'email' | 'password';
     validator?: RegExpWithFlags | TextValidationFunction;
     maxLength?: number;
     placeholder?: string;
     defaultValue?: string;
-    autoComplete?: React.HTMLInputAutoCompleteAttribute;
-    onChange?: React.ChangeEventHandler<HTMLInputElement>;
-    onBlur?: React.FocusEventHandler<HTMLInputElement>;
-    onFocus?: React.FocusEventHandler<HTMLInputElement>;
+    autoComplete?: HTMLInputAutoCompleteAttribute;
+    onClear?: () => void;
+    onChange?: ChangeEventHandler<HTMLInputElement>;
+    onBlur?: FocusEventHandler<HTMLInputElement>;
+    onFocus?: FocusEventHandler<HTMLInputElement>;
 };

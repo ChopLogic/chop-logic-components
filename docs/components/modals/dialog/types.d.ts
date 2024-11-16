@@ -1,4 +1,4 @@
-import { PropsWithChildren } from '../../../../node_modules/react';
+import { HTMLAttributes, PropsWithChildren } from '../../../../node_modules/react';
 import { CommonComponentProps } from '../../../../../../../../../src/utils/types';
 
 export type ChopLogicDialogProps = CommonComponentProps & PropsWithChildren & {
@@ -6,7 +6,7 @@ export type ChopLogicDialogProps = CommonComponentProps & PropsWithChildren & {
     onClose: () => void;
     title: string;
 };
-export type DialogLayoutProps = PropsWithChildren & React.HTMLAttributes<HTMLDivElement> & {
+export type DialogLayoutProps = PropsWithChildren & HTMLAttributes<HTMLDivElement> & {
     title: string;
     onClose: () => void;
     isOpened: boolean;

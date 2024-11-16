@@ -1,3 +1,5 @@
+import { default as React } from '../../../node_modules/react';
+
 type useTooltipPositionParams = {
     wrapperRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
     tooltipRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;

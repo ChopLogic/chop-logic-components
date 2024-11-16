@@ -1,3 +1,5 @@
+import { default as React } from '../../../../node_modules/react';
+
 export declare const useChopLogicTooltipController: ({ id }: {
     id?: string;
 }) => {
@@ -9,6 +11,6 @@ export declare const useChopLogicTooltipController: ({ id }: {
     top: number;
     left: number;
     isOpened: boolean;
-    wrapperRef: import('../../../../node_modules/react').MutableRefObject<null>;
-    tooltipRef: import('../../../../node_modules/react').RefObject<HTMLDivElement>;
+    wrapperRef: React.MutableRefObject<null>;
+    tooltipRef: React.RefObject<HTMLDivElement>;
 };

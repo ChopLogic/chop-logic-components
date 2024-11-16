@@ -1,11 +1,10 @@
-import { PropsWithChildren } from '../../../../node_modules/react';
+import { FormEventHandler, PropsWithChildren } from '../../../../node_modules/react';
 import { CommonComponentProps } from '../../../../../../../../../src/utils/types';
 
 export type ChopLogicFormData = {
     [key: string]: unknown;
 };
 export type ChopLogicFormValidationState = [string, boolean][];
-export type ChopLogicFormInput = HTMLInputElement | HTMLSelectElement;
 export type ChopLogicFormInputParams = {
     name: string;
     value: unknown;
@@ -21,6 +20,6 @@ export type ChopLogicFormProps = PropsWithChildren & CommonComponentProps & {
     initialValues?: ChopLogicFormData;
     hasReset?: boolean;
     onClickSubmit?: (data: ChopLogicFormData) => void;
-    onReset?: React.FormEventHandler<HTMLFormElement>;
-    onSubmit?: React.FormEventHandler<HTMLFormElement>;
+    onReset?: FormEventHandler<HTMLFormElement>;
+    onSubmit?: FormEventHandler<HTMLFormElement>;
 };

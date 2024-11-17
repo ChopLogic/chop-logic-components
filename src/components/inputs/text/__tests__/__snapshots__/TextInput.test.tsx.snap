@@ -69,7 +69,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       </span>
     </div>
     <span
-      class="sc-dntaoT eXgOpQ"
+      class="sc-dntaoT jxIciW"
       id="test-input-id_error"
     >
       Invalid input
@@ -154,7 +154,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       </span>
     </div>
     <span
-      class="sc-dntaoT eXgOpQ"
+      class="sc-dntaoT jxIciW"
       id="test-input-id_error"
     >
       Invalid input

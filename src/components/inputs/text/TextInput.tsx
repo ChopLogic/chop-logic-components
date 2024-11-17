@@ -88,7 +88,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           </StyledButtonsWrapper>
         </StyledFieldWrapper>
       </StyledTextInputWrapper>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={themeValues} />
     </StyledTextInputContainer>
   );
 };

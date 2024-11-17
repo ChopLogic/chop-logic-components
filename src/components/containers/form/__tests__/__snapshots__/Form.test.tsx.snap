@@ -73,7 +73,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-keTIit dDEgqC"
+        class="sc-keTIit bDwAks"
         id="first-name_error"
       >
         Invalid input
@@ -145,7 +145,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-keTIit dDEgqC"
+        class="sc-keTIit bDwAks"
         id="last-name_error"
       >
         Invalid input
@@ -224,7 +224,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-keTIit dDEgqC"
+        class="sc-keTIit khrunG"
         id="age_error"
       >
         Invalid input

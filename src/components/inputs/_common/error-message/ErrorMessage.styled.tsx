@@ -1,9 +1,9 @@
-import { COLORS, FONTS } from 'constants/style-variables';
 import styled from 'styled-components';
+import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledErrorMessage = styled.span<{ $visible: boolean }>`
-  font-size: 0.8rem;
-  font-family: ${FONTS.core};
-  color: ${COLORS.accent};
-  display: ${(props) => (props.$visible ? 'block' : 'none')};
+export const StyledErrorMessage = styled.span<{ $visible: boolean; theme: ChopLogicTheme }>`
+  font-size: ${({ theme }) => theme.smallFontSize};
+  font-family: ${({ theme }) => theme.coreFontFamily};
+  color: ${({ theme }) => theme.accentColor};
+  display: ${($visible) => ($visible ? 'block' : 'none')};
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
+import { ThemeProvider } from 'styled-components';
 import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
 import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
@@ -8,13 +9,7 @@ import ChopLogicLabel from 'components/inputs/_common/label/Label';
 import { ChopLogicIconName } from 'components/misc/icon/Icon';
 
 import { useChopLogicTextInputController } from './controller';
-import {
-  StyledButtonsWrapper,
-  StyledFieldWrapper,
-  StyledTextInput,
-  StyledTextInputContainer,
-  StyledTextInputWrapper,
-} from './TextInput.styled';
+import { StyledTextInput } from './TextInput.styled';
 import { ChopLogicTextInputProps } from './types';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
@@ -53,11 +48,12 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   const themeValues = getChopLogicTheme(theme);
 
   return (
-    <StyledTextInputContainer {...rest} theme={themeValues}>
-      <StyledTextInputWrapper $disabled={disabled} $invalid={!valid} theme={themeValues}>
-        <ChopLogicLabel label={label} required={required} inputId={elementId} theme={themeValues} />
-        <StyledFieldWrapper>
-          <StyledTextInput
+    <ThemeProvider theme={themeValues}>
+      <StyledTextInput {...rest}>
+        {/*<StyledTextInputWrapper $disabled={disabled} $invalid={!valid} theme={themeValues}>*/}
+        <ChopLogicLabel label={label} required={required} inputId={elementId} />
+        <span className='chop-logic-text-input-wrapper'>
+          <input
             id={elementId}
             name={name}
             type={passwordShown ? 'text' : type}
@@ -76,7 +72,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
             onFocus={onFocus}
             tabIndex={tabIndex}
           />
-          <StyledButtonsWrapper>
+          <span>
             {clearable && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} />}
             {isPasswordButtonVisible && (
               <InputInnerButton
@@ -85,11 +81,12 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
                 icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
               />
             )}
-          </StyledButtonsWrapper>
-        </StyledFieldWrapper>
-      </StyledTextInputWrapper>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={themeValues} />
-    </StyledTextInputContainer>
+          </span>
+        </span>
+        {/*</StyledTextInputWrapper>*/}
+        <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+      </StyledTextInput>
+    </ThemeProvider>
   );
 };
 

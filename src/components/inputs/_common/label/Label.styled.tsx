@@ -1,21 +1,20 @@
 import styled from 'styled-components';
-import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledLabel = styled.label<{ theme: ChopLogicTheme }>`
+export const StyledLabel = styled.label`
   display: flex;
   align-items: center;
-  font-size: ${({ theme }) => theme.smallFontSize};
-  font-family: ${({ theme }) => theme.coreFontFamily};
-  gap: ${({ theme }) => theme.smallGap};
-  color: ${({ theme }) => theme.primaryColor};
+  font-size: ${(props) => props.theme.smallFontSize};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  gap: ${(props) => props.theme.smallGap};
+  color: ${(props) => props.theme.primaryColor};
 
-  .chop-logic-label-text {
+  & + span {
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .chop-logic-label-abbr {
+  & abbr {
     text-decoration: none;
     cursor: pointer;
     color: ${(props) => props.theme.accentColor};

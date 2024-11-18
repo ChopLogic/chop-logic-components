@@ -1,8 +1,8 @@
-import { COLORS, FONTS, UNITS } from 'constants/style-variables';
+import { UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledTextInputContainer = styled.div<{ theme?: ChopLogicTheme }>`
+export const StyledTextInput = styled.div<{ theme?: ChopLogicTheme }>`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.mediumGap};
@@ -50,23 +50,23 @@ export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid:
     `}
 `;
 
-export const StyledTextInput = styled.input`
-  outline: 0;
-  border: none;
-  font-size: 1rem;
-  padding: 0;
-  background: transparent;
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  flex-grow: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
-
-  &:placeholder-shown + span {
-    visibility: hidden;
-  }
-`;
+// export const StyledTextInput = styled.input`
+//   outline: 0;
+//   border: none;
+//   font-size: 1rem;
+//   padding: 0;
+//   background: transparent;
+//   font-family: ${FONTS.core};
+//   color: ${COLORS.primary};
+//   flex-grow: 1;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   min-width: 0;
+//
+//   &:placeholder-shown + span {
+//     visibility: hidden;
+//   }
+// `;
 
 export const StyledFieldWrapper = styled.span`
   display: flex;

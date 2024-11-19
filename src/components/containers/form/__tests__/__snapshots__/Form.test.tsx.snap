@@ -3,77 +3,70 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-diYFot jWJIfe form-class"
+    class="sc-kZrBCu bugyug form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
       class="sc-eUlrpB kLJvDD"
     >
-      <div
-        class="sc-geXuza evujjB"
+      <label
+        class="sc-egkSDF fBcGES"
+        for="first-name"
       >
-        <label
-          class="sc-egkSDF jxDOeU"
-          for="first-name"
-        >
-          <span
-            class="chop-logic-label-text"
-          >
-            First Name
-          </span>
-        </label>
         <span
-          class="sc-fwzISk fpMSio"
+          class="chop-logic-label-text"
         >
-          <input
-            aria-errormessage="first-name_error"
-            aria-invalid="false"
-            aria-readonly="false"
-            autocomplete="off"
-            class="sc-hJRrWL iScYUg"
-            id="first-name"
-            name="firstName"
-            placeholder="Type here..."
-            type="text"
-            value=""
-          />
-          <span
-            class="sc-hbtGpV iLRGbe"
-          >
-            <button
-              aria-label="Clear input for First Name"
-              class="sc-dpBQxM gtAqQo"
-              type="button"
-            >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-                <path
-                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-              </svg>
-            </button>
-          </span>
+          First Name
         </span>
-      </div>
+      </label>
       <span
-        class="sc-keTIit bDwAks"
+        class="chop-logic-text-input-wrapper"
+      >
+        <input
+          aria-errormessage="first-name_error"
+          aria-invalid="false"
+          aria-readonly="false"
+          autocomplete="off"
+          id="first-name"
+          name="firstName"
+          placeholder="Type here..."
+          type="text"
+          value=""
+        />
+        <span>
+          <button
+            aria-label="Clear input for First Name"
+            class="sc-dpBQxM kZuVa-D"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 512 512"
+              width="1em"
+            >
+              <path
+                d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+          </button>
+        </span>
+      </span>
+      <span
+        class="sc-keTIit kjSwRD"
         id="first-name_error"
       >
         Invalid input
@@ -82,70 +75,63 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
     <div
       class="sc-eUlrpB kLJvDD"
     >
-      <div
-        class="sc-geXuza evujjB"
+      <label
+        class="sc-egkSDF fBcGES"
+        for="last-name"
       >
-        <label
-          class="sc-egkSDF jxDOeU"
-          for="last-name"
-        >
-          <span
-            class="chop-logic-label-text"
-          >
-            Last Name
-          </span>
-        </label>
         <span
-          class="sc-fwzISk fpMSio"
+          class="chop-logic-label-text"
         >
-          <input
-            aria-errormessage="last-name_error"
-            aria-invalid="false"
-            aria-readonly="false"
-            autocomplete="off"
-            class="sc-hJRrWL iScYUg"
-            id="last-name"
-            name="lastName"
-            placeholder="Type here..."
-            type="text"
-            value=""
-          />
-          <span
-            class="sc-hbtGpV iLRGbe"
-          >
-            <button
-              aria-label="Clear input for Last Name"
-              class="sc-dpBQxM gtAqQo"
-              type="button"
-            >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-                <path
-                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-              </svg>
-            </button>
-          </span>
+          Last Name
         </span>
-      </div>
+      </label>
       <span
-        class="sc-keTIit bDwAks"
+        class="chop-logic-text-input-wrapper"
+      >
+        <input
+          aria-errormessage="last-name_error"
+          aria-invalid="false"
+          aria-readonly="false"
+          autocomplete="off"
+          id="last-name"
+          name="lastName"
+          placeholder="Type here..."
+          type="text"
+          value=""
+        />
+        <span>
+          <button
+            aria-label="Clear input for Last Name"
+            class="sc-dpBQxM kZuVa-D"
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 512 512"
+              width="1em"
+            >
+              <path
+                d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+          </button>
+        </span>
+      </span>
+      <span
+        class="sc-keTIit kjSwRD"
         id="last-name_error"
       >
         Invalid input
@@ -158,7 +144,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         class="sc-cHqXqK jEijHm"
       >
         <label
-          class="sc-egkSDF jRrqTg"
+          class="sc-egkSDF jqEHuW"
           for="age"
         >
           <span
@@ -188,7 +174,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           >
             <button
               aria-label="Decrement value for Age"
-              class="sc-dpBQxM gtAqQo"
+              class="sc-dpBQxM hSvWuz"
               type="button"
             >
               <svg
@@ -205,7 +191,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             </button>
             <button
               aria-label="Increment value for Age"
-              class="sc-dpBQxM gtAqQo"
+              class="sc-dpBQxM hSvWuz"
               type="button"
             >
               <svg
@@ -224,14 +210,14 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-keTIit khrunG"
+        class="sc-keTIit iwTAZl"
         id="age_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-kEfuZE cgqGVX"
+      class="sc-diYFot hZEsbI"
     >
       <button
         class="sc-blHHSb hzmsJb"

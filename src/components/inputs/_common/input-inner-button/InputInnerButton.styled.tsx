@@ -1,27 +1,26 @@
-import { BORDERS, COLORS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
 export const StyledInputInnerButton = styled.button`
-  background: ${COLORS.background};
+  background: transparent;
   border: none;
-  padding: ${UNITS.smallGap};
-  font-size: 1rem;
-  color: ${COLORS.tertiary};
   display: flex;
   align-items: center;
+  font-size: ${(props) => props.theme.baseFontSize};
+  padding: ${(props) => props.theme.smallGap};
+  color: ${(props) => props.theme.secondaryColor};
 
   &:focus-visible {
-    outline: ${BORDERS.outline};
+    outline: ${(props) => props.theme.outlineBorder};
     outline-offset: -2px;
   }
 
   &:hover {
-    color: ${COLORS.secondary};
+    color: ${(props) => props.theme.primaryColor};
   }
 
   svg {
     cursor: pointer;
-    height: ${UNITS.smallIconSize};
-    width: ${UNITS.smallIconSize};
+    height: ${(props) => props.theme.iconSize};
+    width: ${(props) => props.theme.iconSize};
   }
 `;

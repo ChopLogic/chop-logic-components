@@ -6,9 +6,7 @@ exports[`ChopLogicLabel > should render correctly as not required label 1`] = `
     class="sc-blHHSb exXbfd"
     for="test-input-id"
   >
-    <span
-      class="chop-logic-label-text"
-    >
+    <span>
       Test label
     </span>
   </label>
@@ -21,13 +19,10 @@ exports[`ChopLogicLabel > should render correctly as required label 1`] = `
     class="sc-blHHSb exXbfd"
     for="test-input-id"
   >
-    <span
-      class="chop-logic-label-text"
-    >
+    <span>
       Test label
     </span>
     <abbr
-      class="chop-logic-label-abbr"
       title="required"
     >
       *
@@ -62,9 +57,7 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
         fill="currentColor"
       />
     </svg>
-    <span
-      class="chop-logic-label-text"
-    >
+    <span>
       Test label
     </span>
   </label>
@@ -88,9 +81,7 @@ exports[`ChopLogicLabel > should render right icon 1`] = `
         fill="currentColor"
       />
     </svg>
-    <span
-      class="chop-logic-label-text"
-    >
+    <span>
       Test label
     </span>
   </label>

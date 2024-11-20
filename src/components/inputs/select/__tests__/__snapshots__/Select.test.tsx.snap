@@ -10,9 +10,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       class="sc-dntaoT gQgROC"
       for="select-id"
     >
-      <span
-        class="chop-logic-label-text"
-      >
+      <span>
         Select your language
       </span>
     </label>

@@ -11,7 +11,7 @@ export const StyledInputInnerButton = styled.button`
 
   &:focus-visible {
     outline: ${(props) => props.theme.outlineBorder};
-    outline-offset: -2px;
+    outline-offset: -1px;
   }
 
   &:hover {

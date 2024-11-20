@@ -18,7 +18,7 @@ export const LIGHT_THEME: ChopLogicTheme = {
   // Borders
   regularBorder: '1px solid #ACB5C3FF',
   accentBorder: '1px solid #FF0F1FFF',
-  outlineBorder: '2px dashed #001B2EFF',
+  outlineBorder: '1px solid #001B2EFF',
   // Fonts
   coreFontFamily: 'Arial, Helvetica, sans-serif',
   monospaceFontFamily: `'Courier New', Courier, monospace`,
@@ -56,7 +56,7 @@ export const DARK_THEME: ChopLogicTheme = {
   // Borders
   regularBorder: '1px solid #7FBEC3FF',
   accentBorder: '1px solid #BB4530FF',
-  outlineBorder: '2px dashed #EFE6DCFF',
+  outlineBorder: '1px solid #EFE6DCFF',
   // Fonts
   coreFontFamily: 'Arial, Helvetica, sans-serif',
   monospaceFontFamily: `'Courier New', Courier, monospace`,

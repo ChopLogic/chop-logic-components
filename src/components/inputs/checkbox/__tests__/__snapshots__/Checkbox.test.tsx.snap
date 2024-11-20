@@ -26,9 +26,7 @@ exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="chop-logic-label-text"
-      >
+      <span>
         Test label
       </span>
     </label>

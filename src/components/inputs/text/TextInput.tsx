@@ -50,9 +50,8 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   return (
     <ThemeProvider theme={themeValues}>
       <StyledTextInput {...rest}>
-        {/*<StyledTextInputWrapper $disabled={disabled} $invalid={!valid} theme={themeValues}>*/}
         <ChopLogicLabel label={label} required={required} inputId={elementId} />
-        <span className='chop-logic-text-input-wrapper'>
+        <div>
           <input
             id={elementId}
             name={name}
@@ -82,8 +81,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               />
             )}
           </span>
-        </span>
-        {/*</StyledTextInputWrapper>*/}
+        </div>
         <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
       </StyledTextInput>
     </ThemeProvider>

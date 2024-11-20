@@ -3,22 +3,18 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kLhKbu fFmvYM test-class"
+    class="sc-kLhKbu fMMrIx test-class"
     style="width: 600px;"
   >
     <label
       class="sc-ghWlax hgFAJv"
       for="test-input-id"
     >
-      <span
-        class="chop-logic-label-text"
-      >
+      <span>
         Test Input
       </span>
     </label>
-    <span
-      class="chop-logic-text-input-wrapper"
-    >
+    <div>
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
@@ -33,7 +29,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="sc-ivxoEo gIUvmD"
+          class="sc-ivxoEo dVXTRt"
           type="button"
         >
           <svg
@@ -60,7 +56,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
           </svg>
         </button>
       </span>
-    </span>
+    </div>
     <span
       class="sc-dntaoT gQLeGZ"
       id="test-input-id_error"
@@ -74,28 +70,23 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kLhKbu fFmvYM test-class"
+    class="sc-kLhKbu fMMrIx test-class"
     style="width: 600px;"
   >
     <label
       class="sc-ghWlax hgFAJv"
       for="test-input-id"
     >
-      <span
-        class="chop-logic-label-text"
-      >
+      <span>
         Test Input
       </span>
       <abbr
-        class="chop-logic-label-abbr"
         title="required"
       >
         *
       </abbr>
     </label>
-    <span
-      class="chop-logic-text-input-wrapper"
-    >
+    <div>
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
@@ -111,7 +102,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="sc-ivxoEo gIUvmD"
+          class="sc-ivxoEo dVXTRt"
           type="button"
         >
           <svg
@@ -138,7 +129,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
           </svg>
         </button>
       </span>
-    </span>
+    </div>
     <span
       class="sc-dntaoT gQLeGZ"
       id="test-input-id_error"

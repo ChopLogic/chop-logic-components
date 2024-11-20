@@ -27,12 +27,8 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
   return (
     <StyledLabel htmlFor={inputId} style={style}>
       {isLeftIconVisible && icon}
-      {!isTextHidden && <span className='chop-logic-label-text'>{label}</span>}
-      {required && (
-        <abbr className='chop-logic-label-abbr' title='required'>
-          *
-        </abbr>
-      )}
+      {!isTextHidden && <span>{label}</span>}
+      {required && <abbr title='required'>*</abbr>}
       {isRightIconVisible && icon}
     </StyledLabel>
   );

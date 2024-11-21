@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { ChopLogicTheme } from 'utils/types.ts';
 
-export const StyledTextInput = styled.div<{ theme?: ChopLogicTheme }>`
+export const StyledTextInput = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.mediumGap};
@@ -39,6 +38,10 @@ export const StyledTextInput = styled.div<{ theme?: ChopLogicTheme }>`
 
     &:placeholder-shown + span {
       display: none !important;
+    }
+
+    &[aria-invalid='true'] {
+      border: ${(props) => props.theme.accentBorder};
     }
   }
 `;

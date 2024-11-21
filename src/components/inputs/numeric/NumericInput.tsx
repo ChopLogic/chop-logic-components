@@ -1,5 +1,7 @@
 import React from 'react';
 import { useElementIds } from 'hooks/use-element-ids';
+import { ThemeProvider } from 'styled-components';
+import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
 import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
 import ChopLogicLabel from 'components/inputs/_common/label/Label';
@@ -8,13 +10,7 @@ import { ChopLogicIconName } from 'components/misc/icon/Icon';
 import InputInnerButton from '../_common/input-inner-button/InputInnerButton';
 
 import { useChopLogicNumericInputController } from './controller';
-import {
-  StyledButtonsWrapper,
-  StyledFieldWrapper,
-  StyledNumericInput,
-  StyledNumericInputContainer,
-  StyledNumericInputWrapper,
-} from './NumericInput.styled';
+import { StyledNumericInput } from './NumericInput.styled';
 import { ChopLogicNumericInputProps } from './types';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
@@ -36,9 +32,11 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
+  theme,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
+  const themeValues = getChopLogicTheme(theme);
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -52,11 +50,11 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   });
 
   return (
-    <StyledNumericInputContainer {...rest}>
-      <StyledNumericInputWrapper $disabled={disabled} $invalid={!valid}>
+    <ThemeProvider theme={themeValues}>
+      <StyledNumericInput {...rest}>
         <ChopLogicLabel label={label} required={required} inputId={elementId} />
-        <StyledFieldWrapper>
-          <StyledNumericInput
+        <div>
+          <input
             id={elementId}
             name={name}
             type='number'
@@ -76,15 +74,15 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
             tabIndex={tabIndex}
           />
           {hasSpinButtons && (
-            <StyledButtonsWrapper>
+            <span>
               <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={ChopLogicIconName.ChevronLeft} />
               <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={ChopLogicIconName.ChevronRight} />
-            </StyledButtonsWrapper>
+            </span>
           )}
-        </StyledFieldWrapper>
-      </StyledNumericInputWrapper>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
-    </StyledNumericInputContainer>
+        </div>
+        <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+      </StyledNumericInput>
+    </ThemeProvider>
   );
 };
 

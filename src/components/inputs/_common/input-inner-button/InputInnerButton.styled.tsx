@@ -16,6 +16,7 @@ export const StyledInputInnerButton = styled.button`
 
   &:hover {
     color: ${(props) => props.theme.primaryColor};
+    filter: drop-shadow(${(props) => props.theme.textShadow});
   }
 
   svg {

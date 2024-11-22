@@ -51,7 +51,7 @@ export const DARK_THEME: ChopLogicTheme = {
   tintGradient: 'linear-gradient(0deg, #e9edf0, #f6f7eb)',
   // Shadows
   boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px',
-  textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
+  textShadow: '2.4px 2.4px 3.2px rgba(127, 190, 195, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders
   regularBorder: '1px solid #7FBEC3FF',

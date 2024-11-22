@@ -3,7 +3,7 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kLhKbu hOSRWH"
+    class="sc-kLhKbu gkIsWC"
     style="width: 400px;"
   >
     <label
@@ -30,7 +30,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="sc-ghWlax a-ddUv"
+          class="sc-ghWlax dsZRTC"
           type="button"
         >
           <svg
@@ -47,7 +47,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="sc-ghWlax a-ddUv"
+          class="sc-ghWlax dsZRTC"
           type="button"
         >
           <svg

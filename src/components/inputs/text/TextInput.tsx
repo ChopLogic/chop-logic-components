@@ -72,12 +72,20 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
             tabIndex={tabIndex}
           />
           <span>
-            {clearable && <InputInnerButton onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} />}
+            {clearable && (
+              <InputInnerButton
+                onClick={handleClear}
+                label={`Clear input for ${label}`}
+                icon={ChopLogicIconName.Remove}
+                disabled={disabled}
+              />
+            )}
             {isPasswordButtonVisible && (
               <InputInnerButton
                 onClick={togglePassword}
                 label='Toggle password visibility'
                 icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
+                disabled={disabled}
               />
             )}
           </span>

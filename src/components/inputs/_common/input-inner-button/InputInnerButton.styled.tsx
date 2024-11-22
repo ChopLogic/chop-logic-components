@@ -24,4 +24,9 @@ export const StyledInputInnerButton = styled.button`
     height: ${(props) => props.theme.iconSize};
     width: ${(props) => props.theme.iconSize};
   }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 `;

@@ -44,6 +44,11 @@ export const StyledNumericInput = styled.div`
       border: ${(props) => props.theme.accentBorder};
     }
 
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

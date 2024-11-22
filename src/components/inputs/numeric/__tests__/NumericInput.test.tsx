@@ -118,6 +118,13 @@ describe('NumericInput', () => {
     expect(screen.getByRole('spinbutton')).toHaveValue(-10);
   });
 
+  it('should not allow custom spin buttons if the input is disabled', () => {
+    render(<NumericInput {...testProps} step={5} defaultValue={0} disabled />);
+
+    expect(screen.getByLabelText(`Decrement value for ${testProps.label}`)).toBeDisabled();
+    expect(screen.getByLabelText(`Increment value for ${testProps.label}`)).toBeDisabled();
+  });
+
   it('should call onSpinButtonClick', async () => {
     const mockedCallback = vi.fn();
     render(<NumericInput {...testProps} onSpinButtonClick={mockedCallback} />);

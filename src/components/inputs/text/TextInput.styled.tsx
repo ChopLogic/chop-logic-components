@@ -43,5 +43,10 @@ export const StyledTextInput = styled.div`
     &[aria-invalid='true'] {
       border: ${(props) => props.theme.accentBorder};
     }
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 `;

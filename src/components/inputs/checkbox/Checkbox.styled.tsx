@@ -20,6 +20,12 @@ export const StyledCheckbox = styled.div<{ $disabled: boolean }>`
       text-shadow: ${(props) => props.theme.textShadow};
     }
   }
+  ${(props) =>
+    props.$disabled &&
+    `
+      pointer-events: none;
+      opacity: 0.5;
+    `}
 
   & input {
     position: absolute;
@@ -35,11 +41,3 @@ export const StyledCheckbox = styled.div<{ $disabled: boolean }>`
     }
   }
 `;
-
-// ${(props) =>
-//   props.$disabled &&
-//   `
-//       pointer-events: none;
-//       filter: grayscale(80%);
-//       opacity: 0.6;
-//     `}

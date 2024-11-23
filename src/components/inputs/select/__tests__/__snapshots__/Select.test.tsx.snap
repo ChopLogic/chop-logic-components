@@ -3,11 +3,11 @@
 exports[`ChopLogicSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-ivxoEo iusUzq test-class"
+    class="sc-dntaoT gOjtck test-class"
     style="width: 400px;"
   >
     <label
-      class="sc-dntaoT gQgROC"
+      class="sc-fAUdSK gRlbaw"
       for="select-id"
     >
       <span>
@@ -19,14 +19,14 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-ghWlax kghmGd"
+      class="sc-ivxoEo gSmqDi"
       id="select-id"
       name="language"
       role="combobox"
       type="button"
     >
       <span
-        class="sc-kLhKbu hHfbVh"
+        class="sc-ghWlax bFsfTP"
       >
         Not selected
       </span>
@@ -42,14 +42,14 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-khLCKb khMOjv"
+      class="sc-ixGGxD kzZCXT"
       id="select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="sc-dstKZu dvlokH"
+        class="sc-khLCKb lhslOB"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -60,7 +60,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-dstKZu dvlokH"
+        class="sc-khLCKb lhslOB"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -71,7 +71,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-dstKZu dvlokH"
+        class="sc-khLCKb lhslOB"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

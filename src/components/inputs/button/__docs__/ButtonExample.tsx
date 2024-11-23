@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../Button';
 import { ChopLogicButtonProps } from '../types';
 
-const ExampleButton: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, view, type, icon }) => {
+const ExampleButton: React.FC<ChopLogicButtonProps> = (props) => {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ const ExampleButton: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text
         alignItems: 'center',
       }}
     >
-      <Button text={text} disabled={disabled} view={view} onClick={onClick} type={type} icon={icon} />
+      <Button {...props} />
     </div>
   );
 };

@@ -3,15 +3,15 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-hbtGpV bvvXQM form-class"
+    class="sc-fwzISk sRAIt form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
-      class="sc-eauhAA byAmwP"
+      class="sc-eOzmre gesSdw"
     >
       <label
-        class="sc-egkSDF fBcGES"
+        class="sc-gtLWhw bpUluR"
         for="first-name"
       >
         <span>
@@ -33,7 +33,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for First Name"
-            class="sc-keTIit gkhApN"
+            class="sc-dstKZu hTxERE"
             type="button"
           >
             <svg
@@ -62,17 +62,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-dstKZu cruslu"
+        class="sc-khLCKb OcokQ"
         id="first-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-eauhAA byAmwP"
+      class="sc-eOzmre gesSdw"
     >
       <label
-        class="sc-egkSDF fBcGES"
+        class="sc-gtLWhw bpUluR"
         for="last-name"
       >
         <span>
@@ -94,7 +94,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for Last Name"
-            class="sc-keTIit gkhApN"
+            class="sc-dstKZu hTxERE"
             type="button"
           >
             <svg
@@ -123,17 +123,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-dstKZu cruslu"
+        class="sc-khLCKb OcokQ"
         id="last-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-dpBQxM cSUdRr"
+      class="sc-keTIit bxzir"
     >
       <label
-        class="sc-egkSDF fBcGES"
+        class="sc-gtLWhw bpUluR"
         for="age"
       >
         <span>
@@ -156,7 +156,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Decrement value for Age"
-            class="sc-keTIit gkhApN"
+            class="sc-dstKZu hTxERE"
             type="button"
           >
             <svg
@@ -173,7 +173,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Age"
-            class="sc-keTIit gkhApN"
+            class="sc-dstKZu hTxERE"
             type="button"
           >
             <svg
@@ -191,60 +191,72 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-dstKZu cruslu"
+        class="sc-khLCKb OcokQ"
         id="age_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-bMTdWJ hErsoL"
+      class="sc-hbtGpV WZQaa"
     >
       <button
-        class="sc-blHHSb hzmsJb"
+        class="sc-blHHSb caIcna"
         type="reset"
       >
-        <svg
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 1024 1024"
-          width="1em"
-        >
-          <defs>
-            <style />
-          </defs>
-          <path
-            d="M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-.3 1.5-.4 3-.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-.1 4.4-.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390zm468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"
-          />
-        </svg>
         <span
-          class="sc-gtLWhw dhALSV"
+          class="chop-logic-button_shadow"
+        />
+        <span
+          class="chop-logic-button_edge"
+        />
+        <span
+          class="chop-logic-button_front"
         >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 1024 1024"
+            width="1em"
+          >
+            <defs>
+              <style />
+            </defs>
+            <path
+              d="M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-.3 1.5-.4 3-.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-.1 4.4-.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390zm468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"
+            />
+          </svg>
           Reset
         </span>
       </button>
       <button
-        class="sc-blHHSb jcQntp"
+        class="sc-blHHSb caIcna"
         type="submit"
       >
-        <svg
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 512 512"
-          width="1em"
-        >
-          <path
-            d="M184 112l144 144-144 144"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="48"
-          />
-        </svg>
         <span
-          class="sc-gtLWhw dhALSV"
+          class="chop-logic-button_shadow"
+        />
+        <span
+          class="chop-logic-button_edge"
+        />
+        <span
+          class="chop-logic-button_front"
         >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M184 112l144 144-144 144"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="48"
+            />
+          </svg>
           Submit
         </span>
       </button>

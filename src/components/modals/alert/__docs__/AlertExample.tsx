@@ -21,7 +21,7 @@ const Example = () => {
         padding: '20px',
       }}
     >
-      <ChopLogicButton onClick={handleOpen} view='danger' text='Open Alert' />
+      <ChopLogicButton onClick={handleOpen} text='Open Alert' />
       <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title='Alert Title' message='This is an alert message.' mode='info' />
     </div>
   );

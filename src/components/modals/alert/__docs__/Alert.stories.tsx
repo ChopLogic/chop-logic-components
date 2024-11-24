@@ -24,7 +24,7 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
         padding: '20px',
       }}
     >
-      <ChopLogicButton onClick={handleOpen} text='Open Alert' view='danger' />
+      <ChopLogicButton onClick={handleOpen} text='Open Alert' />
       <ChopLogicAlert {...props} isOpened={isOpened} onClose={handleClose} />
     </div>
   );

@@ -18,20 +18,22 @@ const meta: Meta<typeof ButtonExample> = {
     },
     view: {
       control: 'select',
-      options: ['primary', 'secondary', 'danger', 'icon'],
+      options: ['3D', 'flat', 'icon'],
     },
     theme: {
       control: 'radio',
       options: ['light', 'dark'],
     },
+    extended: { control: 'boolean' },
   },
   args: {
     text: 'Button',
     type: 'button',
     icon: ChopLogicIconName.Copy,
-    view: 'primary',
+    view: '3D',
     disabled: false,
     theme: 'light',
+    extended: false,
   },
   component: ButtonExample,
   title: 'Inputs/Button',
@@ -40,10 +42,10 @@ const meta: Meta<typeof ButtonExample> = {
 export default meta;
 type Story = StoryObj<typeof ButtonExample>;
 
-export const PrimaryButton: Story = {
+export const DefaultButton: Story = {
   args: {
     text: 'Copy',
-    view: 'primary',
+    view: '3D',
     icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: false,
@@ -57,28 +59,11 @@ export const PrimaryButton: Story = {
   },
 };
 
-export const SecondaryButton: Story = {
+export const FlatButton: Story = {
   args: {
     text: 'Learn more...',
-    view: 'secondary',
+    view: 'flat',
     icon: ChopLogicIconName.Forward,
-    type: 'button',
-    disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
-  },
-};
-
-export const DangerButton: Story = {
-  args: {
-    text: 'Delete',
-    view: 'danger',
-    icon: ChopLogicIconName.Delete,
     type: 'button',
     disabled: false,
     theme: 'light',
@@ -98,23 +83,6 @@ export const IconButton: Story = {
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
     disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
-  },
-};
-
-export const DisabledButton: Story = {
-  args: {
-    text: 'Copy',
-    view: 'primary',
-    icon: ChopLogicIconName.Copy,
-    type: 'button',
-    disabled: true,
     theme: 'light',
   },
   argTypes: {

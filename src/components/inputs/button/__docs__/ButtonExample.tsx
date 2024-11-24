@@ -10,6 +10,7 @@ const ExampleButton: React.FC<ChopLogicButtonProps> = (props) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: '20px',
       }}
     >
       <Button {...props} />

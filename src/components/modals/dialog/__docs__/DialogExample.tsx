@@ -21,8 +21,8 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
         doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <ChopLogicButton text='Action' view='primary' />
-        <ChopLogicButton text='Close dialog' view='secondary' onClick={handleClose} />
+        <ChopLogicButton text='Action' view='flat' />
+        <ChopLogicButton text='Close dialog' view='flat' onClick={handleClose} />
       </div>
     </div>
   );

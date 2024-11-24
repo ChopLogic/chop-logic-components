@@ -3,11 +3,11 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-ghWlax gPIwjo"
+    class="sc-ixGGxD htnIQ"
     style="width: 400px;"
   >
     <label
-      class="sc-dntaoT jFTvWO"
+      class="sc-ghWlax hgFAJv"
       for="numeric-input"
     >
       <span>
@@ -30,7 +30,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="sc-ivxoEo jQdRpd"
+          class="sc-kLhKbu iTFYNc"
           type="button"
         >
           <svg
@@ -47,7 +47,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="sc-ivxoEo jQdRpd"
+          class="sc-kLhKbu iTFYNc"
           type="button"
         >
           <svg
@@ -65,7 +65,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
     </div>
     <span
-      class="sc-fAUdSK PVeXf"
+      class="sc-ivxoEo fMxHZP"
       id="numeric-input_error"
     >
       Invalid input

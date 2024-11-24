@@ -4,7 +4,7 @@ import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
 import ChopLogicIcon from 'components/misc/icon/Icon';
 
-import { StyledButton } from './Button.styled';
+import { Styled3DButton, StyledFlatButton, StyledIconButton } from './Button.styled';
 import { ChopLogicButtonProps } from './types';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
@@ -15,33 +15,46 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   disabled = false,
   extended = false,
   type = 'button',
-  view = 'primary',
+  view = '3D',
   theme,
   ...rest
 }) => {
   const themeValues = getChopLogicTheme(theme);
 
-  return (
-    <ThemeProvider theme={themeValues}>
-      <StyledButton
-        $view={view}
-        $disabled={disabled}
-        $extended={extended}
-        aria-label={label}
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
-        {...rest}
-      >
-        <span className='chop-logic-button_shadow'></span>
-        <span className='chop-logic-button_edge'></span>
-        <span className='chop-logic-button_front'>
-          <ChopLogicIcon name={icon} />
-          {text}
-        </span>
-      </StyledButton>
-    </ThemeProvider>
-  );
+  switch (view) {
+    case '3D':
+      return (
+        <ThemeProvider theme={themeValues}>
+          <Styled3DButton $extended={extended} aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest}>
+            <span className='chop-logic-button_shadow'></span>
+            <span className='chop-logic-button_edge'></span>
+            <span className='chop-logic-button_front'>
+              <ChopLogicIcon name={icon} />
+              {text}
+            </span>
+          </Styled3DButton>
+        </ThemeProvider>
+      );
+    case 'flat':
+      return (
+        <ThemeProvider theme={themeValues}>
+          <StyledFlatButton $extended={extended} aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest}>
+            <ChopLogicIcon name={icon} />
+            {text}
+          </StyledFlatButton>
+        </ThemeProvider>
+      );
+    case 'icon':
+      return (
+        <ThemeProvider theme={themeValues}>
+          <StyledIconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest}>
+            <ChopLogicIcon name={icon} />
+          </StyledIconButton>
+        </ThemeProvider>
+      );
+    default:
+      return null;
+  }
 };
 
 export default ChopLogicButton;

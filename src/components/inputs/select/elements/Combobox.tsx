@@ -1,10 +1,9 @@
 import React from 'react';
 import { SelectValue } from 'utils/types.ts';
 
+import { StyledSelectCombobox } from 'components/inputs/_common/styled/Select.styled.tsx';
 import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
 import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
-
-import { StyledSelectCombobox, StyledSelectLabel, StyledSelectPlaceholder } from '../Select.styled';
 
 type SelectComboboxProps = {
   opened: boolean;
@@ -43,11 +42,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       disabled={disabled}
       aria-required={required}
     >
-      {selected?.label ? (
-        <StyledSelectLabel>{selected?.label}</StyledSelectLabel>
-      ) : (
-        <StyledSelectPlaceholder>{placeholder}</StyledSelectPlaceholder>
-      )}
+      {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </StyledSelectCombobox>
   );

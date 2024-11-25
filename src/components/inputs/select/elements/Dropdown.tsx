@@ -3,7 +3,7 @@ import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press
 import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import { SelectValue } from 'utils/types.ts';
 
-import { StyledSelectDropdown } from '../Select.styled';
+import { StyledSelectDropdown } from 'components/inputs/_common/styled/Select.styled.tsx';
 
 import SelectOption from './Option';
 

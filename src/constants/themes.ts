@@ -31,7 +31,7 @@ export const LIGHT_THEME: ChopLogicTheme = {
   smallGap: '0.25rem',
   mediumGap: '0.6rem',
   bigGap: '1rem',
-  iconSize: '1rem',
+  iconSize: '1.2rem',
   blockBorderRadius: '0.375rem',
   // Z-indexes
   baseIndex: '1',
@@ -52,7 +52,7 @@ export const DARK_THEME: ChopLogicTheme = {
   accentGradient: 'linear-gradient(to left, hsl(9, 59%, 16%) 0%, hsl(9, 59%, 36%) 8%, hsl(9, 59%, 36%) 92%, hsl(9, 59%, 16%) 100%)',
   tintGradient: 'linear-gradient(to left, hsl(184, 36%, 20%) 0%, hsl(184, 36%, 43%) 8%, hsl(184, 36%, 43%) 92%, hsl(184, 36%, 20%) 100%)',
   // Shadows
-  boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px',
+  boxShadow: 'rgba(239, 230, 220, 0.15) 2.4px 2.4px 3.2px',
   textShadow: '2.4px 2.4px 3.2px rgba(127, 190, 195, 0.3)',
   insetShadow: '-5px 5px 20px 5px rgba(0, 0, 0, 0.1) inset',
   // Borders

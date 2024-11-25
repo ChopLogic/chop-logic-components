@@ -6,8 +6,8 @@ export const StyledInputInnerButton = styled.button`
   display: flex;
   align-items: center;
   font-size: ${(props) => props.theme.baseFontSize};
-  padding: ${(props) => props.theme.smallGap};
   color: ${(props) => props.theme.secondaryColor};
+  padding: 0;
 
   &:focus-visible {
     outline: ${(props) => props.theme.outlineBorder};

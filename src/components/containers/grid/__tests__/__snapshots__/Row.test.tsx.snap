@@ -5,16 +5,16 @@ exports[`GridRow > should match the snapshot 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-kLhKbu jokEaU"
+        class="sc-kLhKbu iRFWoR"
       >
         <td
-          class="sc-ivxoEo cMBTyn"
+          class="sc-ivxoEo fXeDNc"
         >
           <div
-            class="sc-khLCKb ciFKLI"
+            class="sc-khLCKb jDOcko"
           >
             <input
-              class="sc-dstKZu bbfSNT"
+              class="sc-dstKZu hiKYBn"
               id="select_row_item-1"
               type="checkbox"
             />
@@ -37,17 +37,17 @@ exports[`GridRow > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-ivxoEo cMBTyn"
+          class="sc-ivxoEo fXeDNc"
         >
           Value 1
         </td>
         <td
-          class="sc-ivxoEo cMBTyn"
+          class="sc-ivxoEo fXeDNc"
         >
           Value 2
         </td>
         <td
-          class="sc-ivxoEo cMBTyn"
+          class="sc-ivxoEo fXeDNc"
         >
           <span>
             Value 3

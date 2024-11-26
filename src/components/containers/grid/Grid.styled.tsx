@@ -1,82 +1,80 @@
-import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
 export const StyledGrid = styled.table`
   border-collapse: collapse;
-  box-shadow: ${SHADOWS.box};
 `;
 
 export const StyledGridHeader = styled.thead`
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  font-size: 1rem;
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
+  font-size: ${(props) => props.theme.baseFontSize};
 `;
 
 export const StyledGridBody = styled.tbody`
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
 `;
 
 export const StyledGridHeaderCell = styled.th`
-  padding: ${UNITS.mediumGap};
+  padding: ${(props) => props.theme.mediumGap};
   text-align: left;
 `;
 
 export const StyledGridHeaderRow = styled.tr`
-  background-color: ${COLORS.secondary};
-  color: ${COLORS.background};
+  background-color: ${(props) => props.theme.secondaryColor};
+  color: ${(props) => props.theme.backgroundColor};
 
   svg {
-    color: ${COLORS.background} !important;
+    color: ${(props) => props.theme.backgroundColor} !important;
   }
 `;
 
 export const StyledGridCell = styled.td`
-  padding: ${UNITS.mediumGap};
+  padding: ${(props) => props.theme.mediumGap};
 `;
 
 export const StyledGridCaption = styled.caption`
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  padding: ${UNITS.mediumGap};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
+  padding: ${(props) => props.theme.mediumGap};
   font-weight: bold;
 `;
 
 export const StyledGridRow = styled.tr<{ $selected: boolean }>`
-  border-bottom: ${BORDERS.thin};
+  border-bottom: ${(props) => props.theme.regularBorder};
 
   ${(props) =>
     props.$selected &&
     `
-      background-color: ${COLORS.highlight};
+      background-color: ${props.theme.tertiaryColor};
     `}
 `;
 
 export const StyledGridColumn = styled.col<{ $isFirst: boolean; $highlighted: boolean }>`
-  border-right: ${BORDERS.thin};
+  border-right: ${(props) => props.theme.regularBorder};
 
-  ${(props) => props.$isFirst && `border-left: ${BORDERS.thin};`}
-  ${(props) => props.$highlighted && `background-color: ${COLORS.highlight};`}
+  ${(props) => props.$isFirst && `border-left: ${props.theme.regularBorder};`}
+  ${(props) => props.$highlighted && `background-color: ${props.theme.tertiaryColor};`}
 `;
 
 export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean }>`
   display: flex;
-  gap: ${UNITS.smallGap};
-  padding: ${UNITS.smallGap} 0;
+  gap: ${(props) => props.theme.smallGap};
+  padding: ${(props) => props.theme.smallGap} 0;
   position: relative;
   overflow: hidden;
 
   svg {
-    color: ${COLORS.secondary};
+    color: ${(props) => props.theme.secondaryColor};
   }
 
   label {
     cursor: pointer;
-    gap: ${UNITS.smallGap};
-    font-size: 1rem !important;
+    gap: ${(props) => props.theme.smallGap};
+    font-size: ${(props) => props.theme.baseFontSize} !important;
     &:hover,
     &:active {
-      text-shadow: ${SHADOWS.text};
+      text-shadow: ${(props) => props.theme.textShadow};
     }
   }
 
@@ -84,8 +82,7 @@ export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean }>`
     props.$disabled &&
     `
       pointer-events: none;
-      filter: grayscale(80%);
-      opacity: 0.6;
+      opacity: 0.5;
     `}
 `;
 
@@ -98,7 +95,7 @@ export const StyledGridCheckboxInput = styled.input`
   margin: 0;
 
   &:focus-visible + label {
-    outline: ${BORDERS.outline};
+    outline: ${(props) => props.theme.outlineBorder};
     outline-offset: 2px;
   }
 `;

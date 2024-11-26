@@ -14,7 +14,7 @@ const meta: Meta<typeof ChopLogicTabs> = {
     tabs: { control: 'object' },
     defaultTabId: { control: 'text' },
     mode: {
-      control: 'select',
+      control: 'radio',
       options: ['vertical', 'horizontal'],
     },
     theme: {

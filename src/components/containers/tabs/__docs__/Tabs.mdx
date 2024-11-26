@@ -17,12 +17,12 @@ Versatile tab component that allows you to switch between different pieces of co
 
 ```tsx
 import React from 'react';
-import ChopLogicTabs, { ChopLogicTabItem } from 'your-library/ChopLogicTabs';
+import ChopLogicTabs, { ChopLogicTabItem } from 'chop-logic-components';
 
 const tabs: ChopLogicTabItem[] = [
-  { id: 'tab1', title: 'Tab 1', tabContent: <div>Content for Tab 1</div> },
-  { id: 'tab2', title: 'Tab 2', tabContent: <div>Content for Tab 2</div> },
-  { id: 'tab3', title: 'Tab 3', tabContent: <div>Content for Tab 3</div> },
+  { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
+  { id: 'tab2', title: 'Tab 2', content: <div>Content for Tab 2</div> },
+  { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
 ];
 
 const ExampleComponent = () => <ChopLogicTabs tabs={tabs} defaultTabId='tab1' />;
@@ -33,7 +33,7 @@ export default ExampleComponent;
 ### Props
 
 | Prop             | Type                  | Description                                                                                                      | Default        | Required |
-| ---------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------- | -------- |
+|------------------|-----------------------|------------------------------------------------------------------------------------------------------------------|----------------|----------|
 | **tabs**         | `ChopLogicTabItem[]`  | An array of tab items, each containing an id, title, and the content to display.                                 | `[]`           | Yes      |
 | **defaultTabId** | `string`              | The id of the tab that should be active by default.                                                              | `undefined`    | No       |
 | **mode**         | `ChopLogicTabsMode`   | The orientation of the tabs.                                                                                     | `'horizontal'` | No       |
@@ -47,18 +47,18 @@ export default ExampleComponent;
 ### Types
 
 ```ts
-type ChopLogicTabsProps = CommonComponentProps & {
+export type ChopLogicTabsProps = CommonComponentProps & {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: ChopLogicTabsMode;
 };
 
-type ChopLogicTabItem = {
+export type ChopLogicTabItem = {
   content: React.ReactElement;
   title: string;
   id: string;
   disabled?: boolean;
 };
 
-type ChopLogicTabsMode = 'vertical' | 'horizontal';
+export type ChopLogicTabsMode = 'vertical' | 'horizontal';
 ```

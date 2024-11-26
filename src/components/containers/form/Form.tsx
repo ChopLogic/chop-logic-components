@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
 import ChopLogicButton from 'components/inputs/button/Button';
 import { ChopLogicIconName } from 'components/misc/icon/Icon';
@@ -16,6 +18,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   onClickSubmit,
   columns = 1,
   hasReset = true,
+  theme,
   ...rest
 }) => {
   const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useChopLogicFormController({
@@ -24,17 +27,20 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
     onSubmit,
     onClickSubmit,
   });
+  const themeValues = getChopLogicTheme(theme);
 
   return (
-    <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns} {...rest}>
-      <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
-        {children}
-        <StyledFormButtonContainer $columns={columns}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} />}
-          <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
-        </StyledFormButtonContainer>
-      </ChopLogicFormContext.Provider>
-    </StyledForm>
+    <ThemeProvider theme={themeValues}>
+      <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns} {...rest}>
+        <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
+          {children}
+          <StyledFormButtonContainer $columns={columns}>
+            {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view='flat' />}
+            <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
+          </StyledFormButtonContainer>
+        </ChopLogicFormContext.Provider>
+      </StyledForm>
+    </ThemeProvider>
   );
 };
 

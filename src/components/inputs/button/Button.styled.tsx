@@ -95,17 +95,20 @@ export const StyledFlatButton = styled.button<{ $extended: boolean }>`
   padding: ${(props) => `${props.theme.mediumGap} ${props.theme.bigGap}`};
   border-radius: ${(props) => props.theme.blockBorderRadius};
   font-size: ${(props) => props.theme.baseFontSize};
-  color: ${(props) => props.theme.backgroundColor};
-  background: ${(props) => props.theme.secondaryColor};
+  color: ${(props) => props.theme.secondaryColor};
+  background: transparent;
   width: ${(props) => (props.$extended ? '100%' : 'inherit')};
 
-  &:hover {
+  &:hover,
+  &:active {
     filter: brightness(110%);
+    color: ${(props) => props.theme.backgroundColor};
+    background: ${(props) => props.theme.secondaryColor};
+    transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
     outline: ${(props) => props.theme.outlineBorder};
-    outline-offset: 4px;
   }
 
   &[disabled] {
@@ -121,24 +124,29 @@ export const StyledIconButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: ${(props) => props.theme.mediumGap};
-  border-radius: 50%;
+  border-radius: ${(props) => props.theme.blockBorderRadius};
   font-size: ${(props) => props.theme.baseFontSize};
   color: ${(props) => props.theme.primaryColor};
   background: transparent;
 
   &:hover {
     filter: drop-shadow(${(props) => props.theme.textShadow});
-    color: ${(props) => props.theme.accentColor};
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.backgroundColor};
     transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
     outline: ${(props) => props.theme.outlineBorder};
-    border: ${(props) => props.theme.regularBorder};
   }
 
   &[disabled] {
     pointer-events: none;
     opacity: 0.5;
+  }
+
+  svg {
+    height: ${(props) => props.theme.iconSize};
+    width: ${(props) => props.theme.iconSize};
   }
 `;

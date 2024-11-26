@@ -39,7 +39,7 @@ export const StyledSelectCombobox = styled.button`
     width: ${(props) => props.theme.iconSize};
 
     &:hover {
-      color: ${(props) => props.theme.primaryColor};
+      color: ${(props) => props.theme.tertiaryColor};
       filter: drop-shadow(${(props) => props.theme.textShadow});
     }
   }
@@ -92,7 +92,7 @@ export const StyledSelectOption = styled.li`
 
   &:hover,
   &:active {
-    background-color: ${(props) => props.theme.tertiaryColor};
+    text-shadow: ${(props) => props.theme.textShadow};
   }
 
   &:focus-visible {

@@ -5,7 +5,7 @@ import { ChopLogicButton } from 'components/index';
 import ChopLogicDialog from '../Dialog';
 import { ChopLogicDialogProps } from '../types';
 
-const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
+const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title, theme }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -38,7 +38,7 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
       }}
     >
       <ChopLogicButton text='Open dialog' onClick={handleOpen} />
-      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
+      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title} theme={theme}>
         {modalContent}
       </ChopLogicDialog>
     </div>

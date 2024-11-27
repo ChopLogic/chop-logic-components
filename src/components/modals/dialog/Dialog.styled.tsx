@@ -1,19 +1,20 @@
 import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
-import { BORDERS, COLORS, FONTS, SCREEN_BREAKPOINTS, SHADOWS, UNITS, Z_INDEXES } from 'constants/style-variables';
+import { SCREEN_BREAKPOINTS } from 'constants/style-variables';
 import styled from 'styled-components';
 
 export const StyledDialogLayout = styled.div`
-  z-index: ${Z_INDEXES.modal};
-  background-color: ${COLORS.background};
-  box-shadow: ${SHADOWS.box};
-  font-family: ${FONTS.core};
+  z-index: ${(props) => props.theme.modalIndex};
+  background-color: ${(props) => props.theme.backgroundColor};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
   width: 100%;
   height: 90%;
   position: absolute;
   bottom: 0;
   left: 0;
-  border-top-left-radius: ${UNITS.blockBorderRadius};
-  border-top-right-radius: ${UNITS.blockBorderRadius};
+  border-top-left-radius: ${(props) => props.theme.blockBorderRadius};
+  border-top-right-radius: ${(props) => props.theme.blockBorderRadius};
   ${fadeInAnimation}
 
   @media ${SCREEN_BREAKPOINTS.landscapeTablets} {
@@ -23,11 +24,11 @@ export const StyledDialogLayout = styled.div`
     min-width: 40%;
     max-width: 90%;
     max-height: 90%;
-    border-bottom-left-radius: ${UNITS.blockBorderRadius};
-    border-bottom-right-radius: ${UNITS.blockBorderRadius};
+    border-bottom-left-radius: ${(props) => props.theme.blockBorderRadius};
+    border-bottom-right-radius: ${(props) => props.theme.blockBorderRadius};
 
     header {
-      font-size: 2rem;
+      font-size: ${(props) => props.theme.headerFontSize};
     }
   }
 `;
@@ -42,7 +43,7 @@ export const StyledDialogBackground = styled.div<{ $isClosing: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${COLORS.transparentBackground};
+  background-color: ${(props) => props.theme.transparentBackgroundColor};
   ${fadeInAnimation}
 
   ${(props) => props.$isClosing && fadeOutAnimation}
@@ -54,13 +55,13 @@ export const StyledDialogHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: ${UNITS.bigGap};
-  padding: ${UNITS.bigGap};
-  border-bottom: ${BORDERS.thin};
-  color: ${COLORS.secondary};
+  gap: ${(props) => props.theme.bigGap};
+  padding: ${(props) => props.theme.bigGap};
+  border-bottom: ${(props) => props.theme.regularBorder};
+  color: ${(props) => props.theme.secondaryColor};
 `;
 
 export const StyledDialogContent = styled.div`
-  padding: ${UNITS.bigGap};
-  font-size: 1rem;
+  padding: ${(props) => props.theme.bigGap};
+  font-size: ${(props) => props.theme.baseFontSize};
 `;

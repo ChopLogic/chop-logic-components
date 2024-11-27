@@ -28,6 +28,7 @@ export interface ChopLogicTheme {
   tertiaryColor: string;
   backgroundColor: string;
   accentColor: string;
+  transparentBackgroundColor: string;
   // Gradients
   primaryGradient: string;
   accentGradient: string;

@@ -26,7 +26,8 @@
       "components/*": ["./src/components/*"],
       "constants/*": ["./src/constants/*"],
       "hooks/*": ["./src/hooks/*"],
-      "utils/*": ["./src/utils/*"]
+      "utils/*": ["./src/utils/*"],
+      "css/*": ["./src/css/*"]
     },
 
     "types": ["node", "@testing-library/jest-dom"]

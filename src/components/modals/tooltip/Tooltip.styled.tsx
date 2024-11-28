@@ -1,4 +1,4 @@
-import { fadeInAnimation } from 'constants/animations';
+import { fadeInAnimation } from 'css/animations.ts';
 import styled from 'styled-components';
 
 export const StyledTooltip = styled.div`

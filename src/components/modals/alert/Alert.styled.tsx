@@ -1,4 +1,4 @@
-import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
+import { fadeInAnimation, fadeOutAnimation } from 'css/animations.ts';
 import styled from 'styled-components';
 
 export const StyledAlertHeader = styled.header`

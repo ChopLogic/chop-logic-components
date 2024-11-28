@@ -131,8 +131,7 @@ export const StyledIconButton = styled.button`
 
   &:hover {
     filter: drop-shadow(${(props) => props.theme.textShadow});
-    background-color: ${(props) => props.theme.secondaryColor};
-    color: ${(props) => props.theme.backgroundColor};
+    color: ${(props) => props.theme.secondaryColor};
     transition: all 0.3s ease 0s;
   }
 

@@ -1,5 +1,5 @@
 import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
-import { SCREEN_BREAKPOINTS } from 'constants/style-variables';
+import { SCREEN_BREAKPOINTS } from 'constants/screen-breakpoints.ts';
 import styled from 'styled-components';
 
 export const StyledDialogLayout = styled.div`

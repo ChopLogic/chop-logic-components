@@ -1,1 +1,0 @@
-const t={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},options:{storySort:{order:["Introduction","Inputs",["Button","TextInput","NumericInput","Checkbox","Select","MultiSelect","*"],"Containers","Modals","Hooks","*"]}}},tags:["autodocs"]};export{t as default};

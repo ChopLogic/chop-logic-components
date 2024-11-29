@@ -1,14 +1,14 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicButton from 'components/inputs/button/Button';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicFormContext } from '@/contexts';
+import { ChopLogicIconName } from '@/enums';
+import { ChopLogicFormProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicFormController } from './controller';
 import { StyledForm, StyledFormButtonContainer } from './Form.styled';
-import { ChopLogicFormContext } from './FormContext';
-import { ChopLogicFormProps } from './types';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   children,

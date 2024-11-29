@@ -1,6 +1,7 @@
-import { DARK_THEME, LIGHT_THEME } from 'css/themes.ts';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 import { describe, expect, it } from 'vitest';
+
+import { DARK_THEME, LIGHT_THEME } from '@/css';
+import { getChopLogicTheme } from '@/utils';
 
 describe('getChopLogicTheme', () => {
   it('should return the dark theme when "dark" is passed as the theme', () => {

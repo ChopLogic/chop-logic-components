@@ -1,4 +1,4 @@
-import { ChopLogicTheme } from 'utils/types.ts';
+import { ChopLogicTheme } from '@/types';
 
 export const LIGHT_THEME: ChopLogicTheme = {
   // Colors

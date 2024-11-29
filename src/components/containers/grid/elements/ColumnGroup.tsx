@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ChopLogicGridColumn } from '@/types';
+
 import { StyledGridColumn } from '../Grid.styled';
-import { ChopLogicGridColumn } from '../types';
 
 const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
   return (

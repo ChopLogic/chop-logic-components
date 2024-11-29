@@ -1,13 +1,13 @@
 import React from 'react';
-import { useMount } from 'hooks/use-mount';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicPortal from 'components/containers/portal';
+import { ChopLogicPortal } from '@/components';
+import { useMount } from '@/hooks';
+import { ChopLogicDialogProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import ChopLogicModalLayout from './elements/Layout';
 import { StyledDialogBackground } from './Dialog.styled';
-import { ChopLogicDialogProps } from './types';
 
 const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, theme, ...rest }) => {
   const isMounted = useMount(isOpened);

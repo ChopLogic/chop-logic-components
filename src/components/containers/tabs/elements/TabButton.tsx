@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ChopLogicTabsMode } from '@/types';
+
 import { StyledTabButton } from '../Tabs.styled';
-import { ChopLogicTabsMode } from '../types';
 
 type ChopLogicTabButtonProps = {
   title: string;

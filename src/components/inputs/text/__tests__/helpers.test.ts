@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
+import { RegExpWithFlags, TextValidationFunction } from '@/types';
+
 import { getTextInputInitialValue, validateTextInputValue } from '../helpers';
-import { RegExpWithFlags, TextValidationFunction } from '../types';
 
 describe('getTextInputInitialValue', () => {
   it('should return the value from initialValues if it exists', () => {

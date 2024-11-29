@@ -2,9 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from 'components/index';
-
-import ChopLogicForm from '../Form';
+import { ChopLogicCheckbox, ChopLogicForm, ChopLogicNumericInput, ChopLogicTextInput } from '@/components';
 
 describe('ChopLogicForm', () => {
   const testInitialValues = {

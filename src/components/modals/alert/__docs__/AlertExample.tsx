@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import ChopLogicButton from 'components/inputs/button/Button';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicAlertMode } from '@/enums';
 
 import ChopLogicAlert from '../Alert';
 
@@ -22,7 +23,13 @@ const Example = () => {
       }}
     >
       <ChopLogicButton onClick={handleOpen} text='Open Alert' />
-      <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title='Alert Title' message='This is an alert message.' mode='info' />
+      <ChopLogicAlert
+        isOpened={isOpened}
+        onClose={handleClose}
+        title='Alert Title'
+        message='This is an alert message.'
+        mode={ChopLogicAlertMode.Info}
+      />
     </div>
   );
 };

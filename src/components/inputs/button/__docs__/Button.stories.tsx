@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from '@/enums';
 
 import ButtonExample from './ButtonExample';
 

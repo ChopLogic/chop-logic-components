@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicPortal from 'components/containers/portal';
+import { ChopLogicPortal } from '@/components';
+import { ChopLogicTooltipProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicTooltipController } from './controller';
 import { StyledTooltip } from './Tooltip.styled';
-import { ChopLogicTooltipProps } from './types';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,

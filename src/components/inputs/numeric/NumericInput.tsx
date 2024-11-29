@@ -1,17 +1,14 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-ids';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
-import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
-
-import InputInnerButton from '../_common/input-inner-button/InputInnerButton';
+import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@/elements';
+import { ChopLogicIconName } from '@/enums';
+import { useElementIds } from '@/hooks';
+import { ChopLogicNumericInputProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicNumericInputController } from './controller';
 import { StyledNumericInput } from './NumericInput.styled';
-import { ChopLogicNumericInputProps } from './types';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -75,13 +72,13 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           />
           {hasSpinButtons && (
             <span>
-              <InputInnerButton
+              <ChopLogicInputInnerButton
                 onClick={decrement}
                 label={`Decrement value for ${label}`}
                 icon={ChopLogicIconName.ChevronLeft}
                 disabled={disabled}
               />
-              <InputInnerButton
+              <ChopLogicInputInnerButton
                 onClick={increment}
                 label={`Increment value for ${label}`}
                 icon={ChopLogicIconName.ChevronRight}

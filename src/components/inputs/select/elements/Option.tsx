@@ -1,9 +1,8 @@
 import React, { KeyboardEvent } from 'react';
 
-import { StyledSelectOption } from 'components/inputs/_common/styled/Select.styled.tsx';
-import CheckMarkIcon from 'components/misc/icon/elements/CheckMark';
-
-import { SelectOptionProps } from '../types';
+import { StyledSelectOption } from '@/elements/styled/Select.styled';
+import CheckMarkIcon from '@/icons/CheckMarkIcon.tsx';
+import { SelectOptionProps } from '@/types';
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect, onClear }) => {
   const { id, label } = value;

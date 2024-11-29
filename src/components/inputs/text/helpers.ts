@@ -1,6 +1,4 @@
-import { ChopLogicFormData } from 'components/containers/form/types';
-
-import { RegExpWithFlags, TextValidationFunction } from './types';
+import { ChopLogicFormData, RegExpWithFlags, TextValidationFunction } from '@/types';
 
 export function validateTextInputValue({
   value,

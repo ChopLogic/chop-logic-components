@@ -1,9 +1,8 @@
 import React from 'react';
-import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
 
-import { StyledSelectDropdown } from 'components/inputs/_common/styled/Select.styled.tsx';
-
-import { MultiSelectDropdownProps } from '../types';
+import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
+import { MultiSelectDropdownProps } from '@/types';
+import { handleDropdownListKeyPress } from '@/utils';
 
 import SelectOption from './Option';
 

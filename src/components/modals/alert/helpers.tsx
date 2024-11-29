@@ -1,13 +1,12 @@
 import React from 'react';
 
-import CheckMarkIcon from 'components/misc/icon/elements/CheckMark';
-import ErrorIcon from 'components/misc/icon/elements/Error';
-import HelpIcon from 'components/misc/icon/elements/Help';
-import InfoIcon from 'components/misc/icon/elements/Info';
-import WarningIcon from 'components/misc/icon/elements/Warning';
-import ChopLogicIcon, { ChopLogicIconName } from 'components/misc/icon/Icon';
-
-import { ChopLogicAlertMode } from './types';
+import { ChopLogicIcon } from '@/elements';
+import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
+import CheckMarkIcon from '@/icons/CheckMarkIcon';
+import ErrorIcon from '@/icons/ErrorIcon';
+import HelpIcon from '@/icons/HelpIcon';
+import InfoIcon from '@/icons/InfoIcon';
+import WarningIcon from '@/icons/WarningIcon';
 
 export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
   if (title) return title;

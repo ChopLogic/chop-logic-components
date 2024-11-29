@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { useKeyPress } from 'hooks/index';
+
+import { useKeyPress } from '@/hooks';
 
 const ExampleComponent: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);

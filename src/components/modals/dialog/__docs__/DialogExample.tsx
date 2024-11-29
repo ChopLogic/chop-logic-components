@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { ChopLogicButton } from 'components/index';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicDialogProps } from '@/types';
 
 import ChopLogicDialog from '../Dialog';
-import { ChopLogicDialogProps } from '../types';
 
 const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title, theme }) => {
   const [isOpened, setIsOpened] = useState(false);

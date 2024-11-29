@@ -1,15 +1,15 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-ids';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
-import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
+import { ChopLogicLabel } from '@/elements';
+import { useElementIds } from '@/hooks';
+import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
+import { ChopLogicCheckboxProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { StyledCheckbox } from './Checkbox.styled';
 import { useChopLogicCheckboxController } from './controller';
-import { ChopLogicCheckboxProps } from './types';
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,

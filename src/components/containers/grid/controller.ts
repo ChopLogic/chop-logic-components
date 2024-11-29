@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useElementIds } from 'hooks/use-element-ids';
 
-import { ChopLogicGridItem } from './types';
+import { useElementIds } from '@/hooks';
+import { ChopLogicGridItem } from '@/types';
 
 export const useChopLogicGridController = ({
   data,

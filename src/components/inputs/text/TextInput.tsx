@@ -1,16 +1,14 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-ids';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
-import InputInnerButton from 'components/inputs/_common/input-inner-button/InputInnerButton';
-import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@/elements';
+import { ChopLogicIconName } from '@/enums';
+import { useElementIds } from '@/hooks';
+import { ChopLogicTextInputProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicTextInputController } from './controller';
 import { StyledTextInput } from './TextInput.styled';
-import { ChopLogicTextInputProps } from './types';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -73,7 +71,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           />
           <span>
             {clearable && (
-              <InputInnerButton
+              <ChopLogicInputInnerButton
                 onClick={handleClear}
                 label={`Clear input for ${label}`}
                 icon={ChopLogicIconName.Remove}
@@ -81,7 +79,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               />
             )}
             {isPasswordButtonVisible && (
-              <InputInnerButton
+              <ChopLogicInputInnerButton
                 onClick={togglePassword}
                 label='Toggle password visibility'
                 icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}

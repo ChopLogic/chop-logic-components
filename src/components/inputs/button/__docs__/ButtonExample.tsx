@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ChopLogicButtonProps } from '@/types';
+
 import Button from '../Button';
-import { ChopLogicButtonProps } from '../types';
 
 const ExampleButton: React.FC<ChopLogicButtonProps> = (props) => {
   return (

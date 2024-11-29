@@ -1,11 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicIcon from 'components/misc/icon/Icon';
+import { ChopLogicIcon } from '@/elements';
+import { ChopLogicButtonProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { Styled3DButton, StyledFlatButton, StyledIconButton } from './Button.styled';
-import { ChopLogicButtonProps } from './types';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,

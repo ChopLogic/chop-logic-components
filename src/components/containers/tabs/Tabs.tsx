@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
+
+import { ChopLogicTabsProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import ChopLogicTabContent from './elements/TabContent';
 import ChopLogicTabList from './elements/TabList';
 import { StyledTabsContainer } from './Tabs.styled';
-import { ChopLogicTabsProps } from './types';
 
 const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = 'horizontal', theme, ...rest }) => {
   const tabIds = tabs.map((item) => item.id);

@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicIconName } from '@/enums';
+import { ChopLogicButtonView } from '@/types';
 
 import Button from '../Button';
-import { ChopLogicButtonView } from '../types';
 
 describe('ChopLogicButton', () => {
   const testProps = {

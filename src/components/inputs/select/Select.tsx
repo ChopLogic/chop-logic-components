@@ -1,17 +1,15 @@
 import React, { useRef } from 'react';
-import { useClickOutside } from 'hooks/use-click-outside';
-import { useElementIds } from 'hooks/use-element-ids';
-import { useKeyPress } from 'hooks/use-key-press';
 import { ThemeProvider } from 'styled-components';
-import { getChopLogicTheme } from 'utils/get-chop-logic-theme.ts';
 
-import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import { StyledSelect } from 'components/inputs/_common/styled/Select.styled.tsx';
+import { ChopLogicLabel } from '@/elements';
+import { StyledSelect } from '@/elements/styled/Select.styled';
+import { useClickOutside, useElementIds, useKeyPress } from '@/hooks';
+import { ChopLogicSelectProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import { useChopLogicSelectController } from './controller';
-import { ChopLogicSelectProps } from './types';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   options,

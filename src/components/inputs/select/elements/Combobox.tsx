@@ -1,9 +1,9 @@
 import React from 'react';
-import { SelectValue } from 'utils/types.ts';
 
-import { StyledSelectCombobox } from 'components/inputs/_common/styled/Select.styled.tsx';
-import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
-import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
+import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
+import ArrowDownIcon from '@/icons/ArrowDownIcon.tsx';
+import ArrowUpIcon from '@/icons/ArrowUpIcon.tsx';
+import { SelectValue } from '@/types';
 
 type SelectComboboxProps = {
   opened: boolean;

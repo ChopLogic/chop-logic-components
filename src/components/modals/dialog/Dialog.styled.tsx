@@ -1,6 +1,6 @@
-import { fadeInAnimation, fadeOutAnimation } from 'css/animations.ts';
-import { SCREEN_BREAKPOINTS } from 'css/screen-breakpoints.ts';
 import styled from 'styled-components';
+
+import { fadeInAnimation, fadeOutAnimation, SCREEN_BREAKPOINTS } from '@/css';
 
 export const StyledDialogLayout = styled.div`
   z-index: ${(props) => props.theme.modalIndex};

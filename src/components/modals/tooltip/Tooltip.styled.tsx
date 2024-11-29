@@ -1,5 +1,6 @@
-import { fadeInAnimation } from 'css/animations.ts';
 import styled from 'styled-components';
+
+import { fadeInAnimation } from '@/css';
 
 export const StyledTooltip = styled.div`
   position: absolute;

@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import { describe, expect, it, vi } from 'vitest';
+
+import { moveFocusOnElementById } from '@/utils';
 
 import ChopLogicTabList from '../elements/TabList';
 
-vi.mock('utils/move-focus-on-element-by-id', () => ({
+vi.mock('@/utils', () => ({
   moveFocusOnElementById: vi.fn(),
 }));
 

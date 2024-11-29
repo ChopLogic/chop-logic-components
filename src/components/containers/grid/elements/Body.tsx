@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@/types';
+
 import { StyledGridBody } from '../Grid.styled';
 import { getGridRowValues } from '../helpers';
-import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '../types';
 
 import GridRow from './Row';
 

@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 
+import * as path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
@@ -22,11 +23,16 @@ export default defineConfig({
   plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
   resolve: {
     alias: [
-      { find: 'components', replacement: '/src/components' },
-      { find: 'constants', replacement: '/src/constants' },
-      { find: 'hooks', replacement: '/src/hooks' },
-      { find: 'utils', replacement: '/src/utils' },
-      { find: 'css', replacement: '/src/css' },
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '@/components', replacement: path.resolve(__dirname, 'src/components') },
+      { find: '@/elements', replacement: path.resolve(__dirname, 'src/elements') },
+      { find: '@/hooks', replacement: path.resolve(__dirname, 'src/hooks') },
+      { find: '@/utils', replacement: path.resolve(__dirname, 'src/utils') },
+      { find: '@/css', replacement: path.resolve(__dirname, 'src/css') },
+      { find: '@/enums', replacement: path.resolve(__dirname, 'src/enums') },
+      { find: '@/types', replacement: path.resolve(__dirname, 'src/types') },
+      { find: '@/contexts', replacement: path.resolve(__dirname, 'src/contexts') },
+      { find: '@/icons', replacement: path.resolve(__dirname, 'src/icons') },
     ],
   },
   test: {

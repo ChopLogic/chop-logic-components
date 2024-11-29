@@ -1,5 +1,6 @@
-import { fadeInAnimation, fadeOutAnimation } from 'css/animations.ts';
 import styled from 'styled-components';
+
+import { fadeInAnimation, fadeOutAnimation } from '@/css';
 
 export const StyledAlertHeader = styled.header`
   display: flex;

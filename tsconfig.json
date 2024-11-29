@@ -21,13 +21,18 @@
     "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
     "declaration": true, // Generates declaration files for TypeScript.
 
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "components/*": ["./src/components/*"],
-      "constants/*": ["./src/constants/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "utils/*": ["./src/utils/*"],
-      "css/*": ["./src/css/*"]
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@elements/*": ["elements/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@css/*": ["css/*"],
+      "@enums/*": ["enums/*"],
+      "@types/*": ["types/*"],
+      "@contexts/*": ["contexts/*"],
+      "@icons/*": ["icons/*"]
     },
 
     "types": ["node", "@testing-library/jest-dom"]

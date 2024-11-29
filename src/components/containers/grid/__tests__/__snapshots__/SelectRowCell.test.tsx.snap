@@ -18,7 +18,7 @@ exports[`SelectGridRowCheckbox > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-keTIit fALlJA"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_grid-id"
             >
               <svg

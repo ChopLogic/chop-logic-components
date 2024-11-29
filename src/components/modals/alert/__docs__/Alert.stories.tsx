@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ChopLogicButton from 'components/inputs/button/Button';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
+import { ChopLogicAlertProps } from '@/types';
 
 import ChopLogicAlert from '../Alert';
-import { ChopLogicAlertProps } from '../types';
 
 const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -41,7 +41,7 @@ const meta: Meta<typeof ExampleComponent> = {
     message: { control: 'text' },
     mode: {
       control: 'select',
-      options: ['success', 'error', 'warning', 'info', 'help'],
+      options: Object.values(ChopLogicAlertMode),
     },
     icon: {
       control: 'select',
@@ -52,7 +52,7 @@ const meta: Meta<typeof ExampleComponent> = {
     isOpened: true,
     title: 'Alert Title',
     message: 'This is an alert message.',
-    mode: 'info',
+    mode: ChopLogicAlertMode.Info,
     icon: ChopLogicIconName.Info,
     theme: 'light',
   },

@@ -2,10 +2,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { ChopLogicTabsMode } from '@/types';
+
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
 import ChopLogicTabs from '../Tabs';
-import { ChopLogicTabsMode } from '../types';
 
 describe('ChopLogicTabs', () => {
   const tabs = [

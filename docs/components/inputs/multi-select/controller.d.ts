@@ -1,5 +1,4 @@
-import { SelectValue } from '../../../../../../../../../src/utils/types.ts';
-import { MultiSelectValue } from './types';
+import { MultiSelectValue, SelectValue } from '../../../types';
 
 export declare function useChopLogicMultiSelectController({ name, defaultValue, onChange, options, }: {
     name: string;

@@ -1,3 +1,3 @@
-import { ChopLogicTheme } from '../../../../../../../src/utils/types.ts';
+import { ChopLogicTheme } from '../types';
 
 export declare function getChopLogicTheme(theme?: 'dark' | 'light', customThemeValues?: Partial<ChopLogicTheme>): ChopLogicTheme;

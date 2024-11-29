@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { MultiSelectValue } from '../types';
+import { MultiSelectValue } from '../../../../types';
 
 type SelectOptionProps = {
     value: MultiSelectValue;

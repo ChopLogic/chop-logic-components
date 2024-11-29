@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabItem, ChopLogicTabsMode } from '../types';
+import { ChopLogicTabItem, ChopLogicTabsMode } from '../../../../types';
 
 type ChopLogicTabListProps = {
     tabs: ChopLogicTabItem[];

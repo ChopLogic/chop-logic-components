@@ -1,5 +1,5 @@
 import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
-import { RegExpWithFlags, TextValidationFunction } from './types';
+import { RegExpWithFlags, TextValidationFunction } from '../../../types';
 
 export declare function useChopLogicTextInputController({ name, defaultValue, onChange, onClear, required, validator, }: {
     name: string;

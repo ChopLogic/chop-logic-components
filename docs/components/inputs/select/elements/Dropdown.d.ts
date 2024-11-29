@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { SelectValue } from '../../../../../../../../../../src/utils/types.ts';
+import { SelectValue } from '../../../../types';
 
 type SelectDropdownProps = {
     options: SelectValue[];

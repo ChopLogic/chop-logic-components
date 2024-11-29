@@ -1,6 +1,4 @@
-import { SelectValue } from '../../../../../../../../../src/utils/types.ts';
-import { ChopLogicFormData } from '../../../../../../../../../src/components/containers/form/types';
-import { MultiSelectValue } from './types';
+import { ChopLogicFormData, MultiSelectValue, SelectValue } from '../../../types';
 
 export declare function getMultiSelectInitialValues({ name, options, initialValues, defaultValue, }: {
     name: string;

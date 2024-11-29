@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabsMode } from '../types';
+import { ChopLogicTabsMode } from '../../../../types';
 
 type ChopLogicTabButtonProps = {
     title: string;

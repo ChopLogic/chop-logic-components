@@ -1,6 +1,5 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import Example from './ButtonExample.tsx';
-import * as ButtonStories from './Button.stories.tsx';
+import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} title='Button' />
 
@@ -10,7 +9,7 @@ Styled button component with different view modes and a customizable icon.
 
 ### Default View
 
-<Canvas of={ButtonStories.PrimaryButton} />
+<Canvas of={ButtonStories.DefaultButton} />
 
 ### Usage
 
@@ -54,7 +53,7 @@ export type ChopLogicButtonProps = Partial<CommonInputProps> & {
   type?: 'button' | 'reset' | 'submit';
 };
 
-export type ChopLogicButtonView = 'primary' | 'secondary' | 'danger' | 'icon';
+export type ChopLogicButtonView = '3D' | 'flat' | 'icon';
 
 export type CommonInputProps = CommonComponentProps & {
   label: string;

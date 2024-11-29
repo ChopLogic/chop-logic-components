@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ChopLogicNumericInputProps } from '@/types';
+
 import NumericInput from '../NumericInput';
-import { ChopLogicNumericInputProps } from '../types';
 
 const Example: React.FC<ChopLogicNumericInputProps> = (props) => {
   return (

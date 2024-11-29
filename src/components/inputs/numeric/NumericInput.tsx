@@ -1,21 +1,14 @@
 import React from 'react';
-import { useElementIds } from 'hooks/use-element-ids';
+import { ThemeProvider } from 'styled-components';
 
-import ChopLogicErrorMessage from 'components/inputs/_common/error-message/ErrorMessage';
-import ChopLogicLabel from 'components/inputs/_common/label/Label';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
-
-import InputInnerButton from '../_common/input-inner-button/InputInnerButton';
+import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@/elements';
+import { ChopLogicIconName } from '@/enums';
+import { useElementIds } from '@/hooks';
+import { ChopLogicNumericInputProps } from '@/types';
+import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicNumericInputController } from './controller';
-import {
-  StyledButtonsWrapper,
-  StyledFieldWrapper,
-  StyledNumericInput,
-  StyledNumericInputContainer,
-  StyledNumericInputWrapper,
-} from './NumericInput.styled';
-import { ChopLogicNumericInputProps } from './types';
+import { StyledNumericInput } from './NumericInput.styled';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -36,9 +29,11 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
+  theme,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
+  const themeValues = getChopLogicTheme(theme);
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -52,11 +47,11 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   });
 
   return (
-    <StyledNumericInputContainer {...rest}>
-      <StyledNumericInputWrapper $disabled={disabled} $invalid={!valid}>
+    <ThemeProvider theme={themeValues}>
+      <StyledNumericInput {...rest}>
         <ChopLogicLabel label={label} required={required} inputId={elementId} />
-        <StyledFieldWrapper>
-          <StyledNumericInput
+        <div>
+          <input
             id={elementId}
             name={name}
             type='number'
@@ -76,15 +71,25 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
             tabIndex={tabIndex}
           />
           {hasSpinButtons && (
-            <StyledButtonsWrapper>
-              <InputInnerButton onClick={decrement} label={`Decrement value for ${label}`} icon={ChopLogicIconName.ChevronLeft} />
-              <InputInnerButton onClick={increment} label={`Increment value for ${label}`} icon={ChopLogicIconName.ChevronRight} />
-            </StyledButtonsWrapper>
+            <span>
+              <ChopLogicInputInnerButton
+                onClick={decrement}
+                label={`Decrement value for ${label}`}
+                icon={ChopLogicIconName.ChevronLeft}
+                disabled={disabled}
+              />
+              <ChopLogicInputInnerButton
+                onClick={increment}
+                label={`Increment value for ${label}`}
+                icon={ChopLogicIconName.ChevronRight}
+                disabled={disabled}
+              />
+            </span>
           )}
-        </StyledFieldWrapper>
-      </StyledNumericInputWrapper>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
-    </StyledNumericInputContainer>
+        </div>
+        <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+      </StyledNumericInput>
+    </ThemeProvider>
   );
 };
 

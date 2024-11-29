@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import { ChopLogicGridColumn } from '@/types';
+
 import GridColumnGroup from '../elements/ColumnGroup';
-import { ChopLogicGridColumn } from '../types';
 
 describe('ChopLogicGridBody', () => {
   const columns: ChopLogicGridColumn[] = [

@@ -2,16 +2,18 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { ChopLogicAlertMode } from '@/enums';
+import { ChopLogicAlertProps } from '@/types';
+
 import ChopLogicAlert from '../Alert';
 import ChopLogicAlertHeader from '../elements/Header';
-import { ChopLogicAlertProps } from '../types';
 
 const defaultProps: ChopLogicAlertProps = {
   isOpened: false,
   onClose: vi.fn(),
   message: 'This is a test message.',
   title: 'Test Alert Title',
-  mode: 'info',
+  mode: ChopLogicAlertMode.Help,
   className: 'test-class',
   id: 'test-id',
 };
@@ -49,11 +51,11 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should have different headers depending on the mode', () => {
-    const { asFragment: errorFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode='error' />);
-    const { asFragment: warningFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode='warning' />);
-    const { asFragment: helpFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode='help' />);
-    const { asFragment: infoFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode='info' />);
-    const { asFragment: successFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode='success' />);
+    const { asFragment: errorFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Error} />);
+    const { asFragment: warningFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Warning} />);
+    const { asFragment: helpFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Help} />);
+    const { asFragment: infoFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Info} />);
+    const { asFragment: successFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Success} />);
 
     expect(errorFragment()).toMatchSnapshot();
     expect(warningFragment()).toMatchSnapshot();

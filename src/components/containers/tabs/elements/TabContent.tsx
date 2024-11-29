@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { ChopLogicTabItem } from '@/types';
+
 import { StyledTabContent } from '../Tabs.styled';
-import { ChopLogicTabItem } from '../types';
 
 const ChopLogicTabContent: React.FC<{
   tabs: ChopLogicTabItem[];

@@ -3,30 +3,36 @@
 exports[`ChopLogicButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-blHHSb hzmsJb button-class"
+    class="sc-fAUdSK kEERVj button-class"
     id="button-id"
     type="button"
   >
-    <svg
-      fill="none"
-      height="1em"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      width="1em"
-    >
-      <path
-        d="M11 9 H20 A2 2 0 0 1 22 11 V20 A2 2 0 0 1 20 22 H11 A2 2 0 0 1 9 20 V11 A2 2 0 0 1 11 9 z"
-      />
-      <path
-        d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
-      />
-    </svg>
     <span
-      class="sc-gtLWhw dhALSV"
+      class="chop-logic-button_shadow"
+    />
+    <span
+      class="chop-logic-button_edge"
+    />
+    <span
+      class="chop-logic-button_front"
     >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M11 9 H20 A2 2 0 0 1 22 11 V20 A2 2 0 0 1 20 22 H11 A2 2 0 0 1 9 20 V11 A2 2 0 0 1 11 9 z"
+        />
+        <path
+          d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+        />
+      </svg>
       Test button
     </span>
   </button>

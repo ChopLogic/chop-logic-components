@@ -1,5 +1,6 @@
-import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id';
 import { describe, expect, it, vi } from 'vitest';
+
+import { moveFocusOnElementById } from '@/utils';
 
 describe('moveFocusOnElementById', () => {
   it('should focus the element with the provided ID', () => {

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from '@/contexts';
 
 export const useResetFormInput = (onReset: () => void) => {
   const { resetSignal } = useContext(ChopLogicFormContext);

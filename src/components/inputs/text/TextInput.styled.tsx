@@ -1,83 +1,59 @@
-import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-export const StyledTextInputContainer = styled.div`
+export const StyledTextInput = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${UNITS.mediumGap};
-`;
+  gap: ${(props) => props.theme.mediumGap};
 
-export const StyledTextInputWrapper = styled.div<{ $disabled: boolean; $invalid: boolean }>`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: ${UNITS.smallGap};
-  padding: ${UNITS.mediumGap} ${UNITS.mediumGap} ${UNITS.smallGap} ${UNITS.mediumGap};
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  box-shadow: ${SHADOWS.box};
-  border-top-left-radius: ${UNITS.blockBorderRadius};
-  border-top-right-radius: ${UNITS.blockBorderRadius};
-  border: ${BORDERS.thin};
-  background-color: ${COLORS.background};
+  & > div:nth-child(2) {
+    display: flex;
+    gap: ${(props) => props.theme.smallGap};
+    align-items: center;
+    border: ${(props) => props.theme.regularBorder};
+    border-radius: ${(props) => props.theme.blockBorderRadius};
+    padding: ${(props) => props.theme.mediumGap};
 
-  &:has(input:focus) {
-    outline: ${BORDERS.thin};
-    outline-offset: -3px;
-  }
+    &:has(input:focus) {
+      border: ${(props) => props.theme.outlineBorder};
+    }
 
-  ${(props) =>
-    props.$disabled &&
-    `
-      filter: grayscale(100%);
-      opacity: 0.8;
+    &:has(input[aria-invalid='true']) {
+      border: ${(props) => props.theme.accentBorder};
+    }
+
+    &:has(input[disabled]) {
       pointer-events: none;
+      opacity: 0.5;
+    }
 
-      input::placeholder {
-        color: transparent;
-      }
-    `}
-
-  ${(props) =>
-    props.$invalid &&
-    `
-        border: ${BORDERS.accent};
-        &:has(input:focus) {
-            outline: ${BORDERS.accent};
-            outline-offset: -3px;
-        }
-    `}
-`;
-
-export const StyledTextInput = styled.input`
-  outline: 0;
-  border: none;
-  font-size: 1rem;
-  padding: 0;
-  background: transparent;
-  font-family: ${FONTS.core};
-  color: ${COLORS.primary};
-  flex-grow: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
-
-  &:placeholder-shown + span {
-    visibility: hidden;
+    & > span:nth-child(2) {
+      display: flex;
+      gap: ${(props) => props.theme.smallGap};
+      align-items: center;
+      min-width: 0;
+    }
   }
-`;
 
-export const StyledFieldWrapper = styled.span`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: ${UNITS.smallGap};
-  height: ${UNITS.fieldWrapperHeight};
-`;
+  & input {
+    font-size: ${(props) => props.theme.baseFontSize};
+    padding: 0;
+    border: none;
+    font-family: ${(props) => props.theme.coreFontFamily};
+    color: ${(props) => props.theme.primaryColor};
+    display: inline-block;
+    background: transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex-grow: 1;
+    min-width: 0;
 
-export const StyledButtonsWrapper = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:placeholder-shown + span {
+      display: none !important;
+    }
+  }
 `;

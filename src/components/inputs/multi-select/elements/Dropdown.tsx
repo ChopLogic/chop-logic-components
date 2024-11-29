@@ -1,14 +1,14 @@
 import React from 'react';
-import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
 
-import { StyledMultiSelectDropdown } from '../MultiSelect.styled';
-import { MultiSelectDropdownProps } from '../types';
+import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
+import { MultiSelectDropdownProps } from '@/types';
+import { handleDropdownListKeyPress } from '@/utils';
 
 import SelectOption from './Option';
 
 const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId }) => {
   return (
-    <StyledMultiSelectDropdown
+    <StyledSelectDropdown
       $opened={opened}
       role='listbox'
       id={dropdownId}
@@ -18,7 +18,7 @@ const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, open
       {options.map((item) => (
         <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
-    </StyledMultiSelectDropdown>
+    </StyledSelectDropdown>
   );
 };
 

@@ -1,6 +1,8 @@
 import { KeyboardEvent } from 'react';
-import { moveFocusOnElementById } from 'utils/move-focus-on-element-by-id.ts';
-import { SelectValue } from 'utils/types.ts';
+
+import { SelectValue } from '@/types';
+
+import { moveFocusOnElementById } from './move-focus-on-element-by-id.ts';
 
 export function handleDropdownListKeyPress({
   e,

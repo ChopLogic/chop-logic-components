@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ChopLogicButton } from 'components/index';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicTooltipProps } from '@/types';
 
 import ChopLogicTooltip from '../Tooltip';
-import { ChopLogicTooltipProps } from '../types';
 
 const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
   return (

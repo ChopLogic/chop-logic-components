@@ -1,11 +1,11 @@
-import { FONTS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
 export const StyledForm = styled.form<{ $columns: number }>`
-  font-size: 1rem;
-  font-family: ${FONTS.core};
+  font-size: ${(props) => props.theme.baseFontSize};
+  font-family: ${(props) => props.theme.coreFontFamily};
   display: grid;
-  gap: ${UNITS.bigGap};
+  gap: ${(props) => props.theme.mediumGap};
+  align-items: end;
 
   ${({ $columns }) =>
     `
@@ -18,7 +18,7 @@ export const StyledFormButtonContainer = styled.div<{ $columns: number }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${UNITS.bigGap};
+  padding-top: ${(props) => props.theme.bigGap};
 
   ${({ $columns }) => `
     grid-column: 1 / ${$columns + 1};

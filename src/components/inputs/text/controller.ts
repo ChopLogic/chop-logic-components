@@ -1,10 +1,10 @@
 import React, { ChangeEventHandler, useCallback, useContext, useState } from 'react';
-import { useResetFormInput } from 'hooks/use-reset-form-input';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from '@/contexts';
+import { useResetFormInput } from '@/hooks';
+import { RegExpWithFlags, TextValidationFunction } from '@/types';
 
 import { getTextInputInitialValue, validateTextInputValue } from './helpers';
-import { RegExpWithFlags, TextValidationFunction } from './types';
 
 export function useChopLogicTextInputController({
   name,

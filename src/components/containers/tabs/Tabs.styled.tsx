@@ -1,31 +1,29 @@
-import { BORDERS, COLORS, FONTS, SHADOWS, UNITS } from 'constants/style-variables';
 import styled from 'styled-components';
 
-import { ChopLogicTabsMode } from './types';
+import { ChopLogicTabsMode } from '@/types';
 
 export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: boolean; $mode: ChopLogicTabsMode }>`
   background: transparent;
   position: relative;
   outline: none;
   border: none;
-  padding: ${UNITS.smallGap} ${UNITS.bigGap};
-  min-height: ${UNITS.minElementSize};
-  min-width: ${UNITS.minElementSize};
+  padding: ${(props) => props.theme.mediumGap};
   cursor: pointer;
-  font-size: 1rem;
-  font-family: ${FONTS.core};
+  font-size: ${(props) => props.theme.baseFontSize};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  color: ${(props) => props.theme.primaryColor};
   overflow: hidden;
-  border-top-left-radius: ${UNITS.blockBorderRadius};
-  border-top-right-radius: ${UNITS.blockBorderRadius};
+  border-top-left-radius: ${(props) => props.theme.blockBorderRadius};
+  border-top-right-radius: ${(props) => props.theme.blockBorderRadius};
 
   &:focus-visible {
-    outline: ${BORDERS.outline};
+    outline: ${(props) => props.theme.outlineBorder};
     outline-offset: -4px;
   }
 
   &:hover,
   &:active {
-    text-shadow: ${SHADOWS.text};
+    text-shadow: ${(props) => props.theme.textShadow};
     text-decoration: underline;
   }
 
@@ -40,17 +38,17 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   ${(props) =>
     props.$selected &&
     `   
-      border-top: ${BORDERS.thin};
-      border-right: ${BORDERS.thin};
-      border-left: ${BORDERS.thin};
-      background-color: ${COLORS.background};
+      border-top: ${props.theme.regularBorder};
+      border-right: ${props.theme.regularBorder};
+      border-left: ${props.theme.regularBorder};
+      background-color: ${props.theme.backgroundColor};
       top: 1px;
     `}
 
     ${(props) =>
     props.$mode === 'vertical' &&
     `
-      border-bottom-left-radius: ${UNITS.blockBorderRadius};
+      border-bottom-left-radius: ${props.theme.blockBorderRadius};
       border-top-right-radius: 0;
     `}
 
@@ -58,36 +56,37 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     props.$mode === 'vertical' &&
     props.$selected &&
     `
-      border-top: ${BORDERS.thin};
+      border-top: ${props.theme.regularBorder};
       border-right: none;
-      border-left: ${BORDERS.thin};
-      border-bottom: ${BORDERS.thin};
+      border-left: ${props.theme.regularBorder};
+      border-bottom: ${props.theme.regularBorder};
       top: 0px;
       left: 1px;
     `}
 `;
 
 export const StyledTabContent = styled.div`
-  background-color: ${COLORS.background};
-  font-size: 1rem;
-  font-family: ${FONTS.core};
-  padding: ${UNITS.bigGap};
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.primaryColor};
+  font-size: ${(props) => props.theme.baseFontSize};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  padding: ${(props) => props.theme.bigGap};
   flex-grow: 1;
 `;
 
 export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode }>`
-  border-bottom: ${BORDERS.thin};
-  padding: 0 ${UNITS.mediumGap};
+  border-bottom: ${(props) => props.theme.regularBorder};
+  padding: 0 ${(props) => props.theme.mediumGap};
   display: flex;
-  gap: ${UNITS.mediumGap};
+  gap: ${(props) => props.theme.mediumGap};
 
-  ${({ $mode }) =>
-    $mode === 'vertical' &&
+  ${(props) =>
+    props.$mode === 'vertical' &&
     `
       flex-direction: column;
       border-bottom: none;
-      border-right: ${BORDERS.thin};
-      padding: ${UNITS.mediumGap} 0;
+      border-right: ${props.theme.regularBorder};
+      padding: ${props.theme.mediumGap} 0;
     `}
 `;
 

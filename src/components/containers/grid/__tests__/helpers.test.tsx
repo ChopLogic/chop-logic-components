@@ -1,8 +1,9 @@
 import React from 'react';
 import { describe, expect, it } from 'vitest';
 
+import { ChopLogicGridColumn, ChopLogicGridItem } from '@/types';
+
 import { getGridRowValues } from '../helpers';
-import { ChopLogicGridColumn, ChopLogicGridItem } from '../types';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {

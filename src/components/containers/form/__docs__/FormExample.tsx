@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { SelectValue } from 'utils/types.ts';
 
-import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from 'components/index';
-import ChopLogicMultiSelect from 'components/inputs/multi-select/MultiSelect';
-
-import ChopLogicForm from '../Form';
-import { ChopLogicFormData, ChopLogicFormProps } from '../types';
+import {
+  ChopLogicCheckbox,
+  ChopLogicForm,
+  ChopLogicMultiSelect,
+  ChopLogicNumericInput,
+  ChopLogicSelect,
+  ChopLogicTextInput,
+} from '@/components';
+import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@/types';
 
 const SELECT_LANGUAGES: SelectValue[] = [
   { id: 'lang-1', label: 'English' },

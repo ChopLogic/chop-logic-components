@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { act, render } from '@testing-library/react';
-import { useMount } from 'hooks/use-mount';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+
+import { useMount } from '@/hooks';
 
 const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number }) => {
   const isMounted = useMount(isOpened, delay);

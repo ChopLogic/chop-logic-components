@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { handleDropdownListKeyPress } from 'utils/handle-dropdown-list-key-press.ts';
-import { SelectValue } from 'utils/types.ts';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+import { SelectValue } from '@/types';
+import { handleDropdownListKeyPress } from '@/utils';
 
 describe('handleDropdownListKeyPress', () => {
   let options: SelectValue[];

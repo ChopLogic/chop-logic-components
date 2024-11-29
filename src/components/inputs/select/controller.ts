@@ -1,8 +1,8 @@
 import { useCallback, useContext, useState } from 'react';
-import { useResetFormInput } from 'hooks/use-reset-form-input';
-import { SelectValue } from 'utils/types.ts';
 
-import { ChopLogicFormContext } from 'components/containers/form/FormContext';
+import { ChopLogicFormContext } from '@/contexts';
+import { useResetFormInput } from '@/hooks';
+import { SelectValue } from '@/types';
 
 import { getSelectInitialValue } from './helpers';
 

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { useKeyPress } from 'hooks/index';
+
+import { useKeyPress } from '@/hooks';
 
 const Example = () => {
   const ref = useRef(null);

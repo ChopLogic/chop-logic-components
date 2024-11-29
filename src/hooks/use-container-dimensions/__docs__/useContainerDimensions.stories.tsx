@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { useContainerDimensions } from 'hooks/index';
+
+import { useContainerDimensions } from '@/hooks';
 
 const ExampleComponent: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);

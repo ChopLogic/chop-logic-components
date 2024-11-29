@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { useClickOutside } from 'hooks/use-click-outside';
-import { useElementIds } from 'hooks/use-element-ids';
-import { useKeyPress } from 'hooks/use-key-press';
-import { useTooltipPosition } from 'hooks/use-tooltip-position';
+
+import { useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@/hooks';
 
 export const useChopLogicTooltipController = ({ id }: { id?: string }) => {
   const [isOpened, setIsOpened] = useState(false);

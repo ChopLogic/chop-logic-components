@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ChopLogicButton from 'components/inputs/button/Button';
-import { ChopLogicIconName } from 'components/misc/icon/Icon';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicIconName } from '@/enums';
+import { ChopLogicAlertHeaderProps } from '@/types';
 
 import { StyledAlertHeader } from '../Alert.styled';
 import { getAlertTitle, renderAlertIcon } from '../helpers';
-import { ChopLogicAlertHeaderProps } from '../types';
 
 const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode, icon }) => {
   const alertTitle = getAlertTitle(mode, title);

@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useClickOutside } from 'hooks/use-click-outside';
 import { describe, expect, it, vi } from 'vitest';
+
+import { useClickOutside } from '@/hooks';
 
 const TestComponent = ({ onClickOutsideHandler }: { onClickOutsideHandler: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);

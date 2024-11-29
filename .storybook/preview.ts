@@ -2,6 +2,13 @@ import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      values: [
+        { name: 'Dark', value: '#231F20FF' },
+        { name: 'Light', value: '#FFFFFFFF' },
+      ],
+      default: 'Light',
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

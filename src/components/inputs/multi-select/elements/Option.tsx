@@ -1,10 +1,9 @@
 import React, { KeyboardEvent } from 'react';
 
-import CheckboxCheckedIcon from 'components/misc/icon/elements/CheckboxChecked';
-import CheckboxUncheckedIcon from 'components/misc/icon/elements/CheckboxUnchecked';
-
-import { StyledMultiSelectOption } from '../MultiSelect.styled';
-import { MultiSelectValue } from '../types';
+import { StyledMultiSelectOption } from '@/elements/styled/Select.styled';
+import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
+import { MultiSelectValue } from '@/types';
 
 type SelectOptionProps = {
   value: MultiSelectValue;

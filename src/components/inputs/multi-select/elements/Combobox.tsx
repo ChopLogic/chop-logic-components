@@ -1,10 +1,9 @@
 import React from 'react';
 
-import ArrowDownIcon from 'components/misc/icon/elements/ArrowDown';
-import ArrowUpIcon from 'components/misc/icon/elements/ArrowUp';
-
-import { StyledMultiSelectCombobox, StyledMultiSelectLabel, StyledMultiSelectPlaceholder } from '../MultiSelect.styled';
-import { MultiSelectValue } from '../types';
+import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
+import ArrowDownIcon from '@/icons/ArrowDownIcon';
+import ArrowUpIcon from '@/icons/ArrowUpIcon';
+import { MultiSelectValue } from '@/types';
 
 type SelectComboboxProps = {
   opened: boolean;
@@ -31,16 +30,16 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
 }) => {
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
-  let selectedValues = <StyledMultiSelectPlaceholder>{placeholder}</StyledMultiSelectPlaceholder>;
+  let selectedValues = <span>{placeholder}</span>;
 
   if (selectedLabels && selectedLabels.length > 1) {
-    selectedValues = <StyledMultiSelectLabel>{`${selectedLabels.length} items selected`}</StyledMultiSelectLabel>;
+    selectedValues = <span>{`${selectedLabels.length} items selected`}</span>;
   } else if (selectedLabels && selectedLabels.length === 1) {
-    selectedValues = <StyledMultiSelectLabel>{selectedLabels[0]}</StyledMultiSelectLabel>;
+    selectedValues = <span>{selectedLabels[0]}</span>;
   }
 
   return (
-    <StyledMultiSelectCombobox
+    <StyledSelectCombobox
       type='button'
       name={name}
       value={selectedIds}
@@ -55,7 +54,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
     >
       {selectedValues}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
-    </StyledMultiSelectCombobox>
+    </StyledSelectCombobox>
   );
 };
 

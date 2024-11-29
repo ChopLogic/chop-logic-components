@@ -1,5 +1,6 @@
-import { SelectValue } from 'utils/types.ts';
 import { describe, expect, it } from 'vitest';
+
+import { SelectValue } from '@/types';
 
 import { getSelectInitialValue } from '../helpers';
 

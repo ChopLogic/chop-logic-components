@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { useContainerDimensions } from 'hooks/index';
+
+import { useContainerDimensions } from '@/hooks';
 
 const Example = () => {
   const ref = useRef(null);

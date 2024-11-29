@@ -3,238 +3,205 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-dhCplO esbweT form-class"
+    class="sc-iuUfFv eemiIi form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
-      class="sc-hJRrWL jotKFz"
+      class="sc-jwIPbr hLbIFY"
     >
-      <div
-        class="sc-fwzISk csxac"
+      <label
+        class="sc-egkSDF bFBYFm"
+        for="first-name"
       >
-        <label
-          class="sc-egkSDF hlNUOV"
-          for="first-name"
-        >
-          <span
-            class="sc-fAUdSK dARImm"
+        <span>
+          First Name
+        </span>
+      </label>
+      <div>
+        <input
+          aria-errormessage="first-name_error"
+          aria-invalid="false"
+          aria-readonly="false"
+          autocomplete="off"
+          id="first-name"
+          name="firstName"
+          placeholder="Type here..."
+          type="text"
+          value=""
+        />
+        <span>
+          <button
+            aria-label="Clear input for First Name"
+            class="sc-gtLWhw dzZxNu"
+            type="button"
           >
-            First Name
-          </span>
-        </label>
-        <span
-          class="sc-bMTdWJ evPGco"
-        >
-          <input
-            aria-errormessage="first-name_error"
-            aria-invalid="false"
-            aria-readonly="false"
-            autocomplete="off"
-            class="sc-hbtGpV cAKBii"
-            id="first-name"
-            name="firstName"
-            placeholder="Type here..."
-            type="text"
-            value=""
-          />
-          <span
-            class="sc-jhZTHU gFxcGw"
-          >
-            <button
-              aria-label="Clear input for First Name"
-              class="sc-cHqXqK iJtyKS"
-              type="button"
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-                <path
-                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-              </svg>
-            </button>
-          </span>
+              <path
+                d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+          </button>
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-blHHSb kuMYKl"
         id="first-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-hJRrWL jotKFz"
+      class="sc-jwIPbr hLbIFY"
     >
-      <div
-        class="sc-fwzISk csxac"
+      <label
+        class="sc-egkSDF bFBYFm"
+        for="last-name"
       >
-        <label
-          class="sc-egkSDF hlNUOV"
-          for="last-name"
-        >
-          <span
-            class="sc-fAUdSK dARImm"
+        <span>
+          Last Name
+        </span>
+      </label>
+      <div>
+        <input
+          aria-errormessage="last-name_error"
+          aria-invalid="false"
+          aria-readonly="false"
+          autocomplete="off"
+          id="last-name"
+          name="lastName"
+          placeholder="Type here..."
+          type="text"
+          value=""
+        />
+        <span>
+          <button
+            aria-label="Clear input for Last Name"
+            class="sc-gtLWhw dzZxNu"
+            type="button"
           >
-            Last Name
-          </span>
-        </label>
-        <span
-          class="sc-bMTdWJ evPGco"
-        >
-          <input
-            aria-errormessage="last-name_error"
-            aria-invalid="false"
-            aria-readonly="false"
-            autocomplete="off"
-            class="sc-hbtGpV cAKBii"
-            id="last-name"
-            name="lastName"
-            placeholder="Type here..."
-            type="text"
-            value=""
-          />
-          <span
-            class="sc-jhZTHU gFxcGw"
-          >
-            <button
-              aria-label="Clear input for Last Name"
-              class="sc-cHqXqK iJtyKS"
-              type="button"
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-                <path
-                  d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                />
-              </svg>
-            </button>
-          </span>
+              <path
+                d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+          </button>
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-blHHSb kuMYKl"
         id="last-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-jtQUzJ hNYqiw"
+      class="sc-dpBQxM LbNgb"
     >
-      <div
-        class="sc-cEzcPc hcLvau"
+      <label
+        class="sc-egkSDF bFBYFm"
+        for="age"
       >
-        <label
-          class="sc-egkSDF hlNUOV"
-          for="age"
-        >
-          <span
-            class="sc-fAUdSK dARImm"
+        <span>
+          Age
+        </span>
+      </label>
+      <div>
+        <input
+          aria-errormessage="age_error"
+          aria-invalid="false"
+          id="age"
+          max="9007199254740991"
+          min="-9007199254740991"
+          name="age"
+          placeholder="0"
+          step="1"
+          type="number"
+          value="0"
+        />
+        <span>
+          <button
+            aria-label="Decrement value for Age"
+            class="sc-gtLWhw dzZxNu"
+            type="button"
           >
-            Age
-          </span>
-        </label>
-        <span
-          class="sc-eOzmre lofURc"
-        >
-          <input
-            aria-errormessage="age_error"
-            aria-invalid="false"
-            class="sc-ovuCP hVyxSr"
-            id="age"
-            max="9007199254740991"
-            min="-9007199254740991"
-            name="age"
-            placeholder="0"
-            step="1"
-            type="number"
-            value="0"
-          />
-          <span
-            class="sc-eauhAA gqqtlK"
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Increment value for Age"
+            class="sc-gtLWhw dzZxNu"
+            type="button"
           >
-            <button
-              aria-label="Decrement value for Age"
-              class="sc-cHqXqK iJtyKS"
-              type="button"
+            <svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <button
-              aria-label="Increment value for Age"
-              class="sc-cHqXqK iJtyKS"
-              type="button"
-            >
-              <svg
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </span>
+              <path
+                d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
         </span>
       </div>
       <span
-        class="sc-jwIPbr fRcmRk"
+        class="sc-blHHSb kuMYKl"
         id="age_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-eMwmJz cdqpVb"
+      class="sc-dprtRQ HYbox"
     >
       <button
-        class="sc-blHHSb hzmsJb"
+        class="sc-dntaoT cNmWzi"
         type="reset"
       >
         <svg
@@ -250,34 +217,36 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             d="M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-.3 1.5-.4 3-.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-.1 4.4-.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390zm468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"
           />
         </svg>
-        <span
-          class="sc-gtLWhw dhALSV"
-        >
-          Reset
-        </span>
+        Reset
       </button>
       <button
-        class="sc-blHHSb jcQntp"
+        class="sc-fAUdSK kEERVj"
         type="submit"
       >
-        <svg
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 512 512"
-          width="1em"
-        >
-          <path
-            d="M184 112l144 144-144 144"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="48"
-          />
-        </svg>
         <span
-          class="sc-gtLWhw dhALSV"
+          class="chop-logic-button_shadow"
+        />
+        <span
+          class="chop-logic-button_edge"
+        />
+        <span
+          class="chop-logic-button_front"
         >
+          <svg
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M184 112l144 144-144 144"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="48"
+            />
+          </svg>
           Submit
         </span>
       </button>

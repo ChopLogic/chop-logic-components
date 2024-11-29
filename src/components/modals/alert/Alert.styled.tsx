@@ -1,6 +1,6 @@
-import { fadeInAnimation, fadeOutAnimation } from 'constants/animations';
-import { COLORS, FONTS, SHADOWS, UNITS, Z_INDEXES } from 'constants/style-variables';
 import styled from 'styled-components';
+
+import { fadeInAnimation, fadeOutAnimation } from '@/css';
 
 export const StyledAlertHeader = styled.header`
   display: flex;
@@ -9,23 +9,30 @@ export const StyledAlertHeader = styled.header`
 
   h3 {
     display: flex;
-    gap: ${UNITS.mediumGap};
+    gap: ${(props) => props.theme.mediumGap};
     align-items: center;
     margin: 0;
-    color: ${COLORS.secondary};
-    svg {
-      width: 2rem;
-      height: 2rem;
+    color: ${(props) => props.theme.secondaryColor};
+  }
+
+  button {
+    color: ${(props) => props.theme.primaryColor};
+    background: transparent;
+
+    &:hover {
+      filter: drop-shadow(${(props) => props.theme.textShadow});
+      background-color: ${(props) => props.theme.secondaryColor};
+      color: ${(props) => props.theme.backgroundColor};
     }
   }
 `;
 
 export const StyledAlertWrapper = styled.div<{ $isClosing: boolean }>`
   position: fixed;
-  bottom: ${UNITS.bigGap};
+  bottom: ${(props) => props.theme.bigGap};
   left: 50%;
   transform: translateX(-50%);
-  z-index: ${Z_INDEXES.modal};
+  z-index: ${(props) => props.theme.modalIndex};
   ${fadeInAnimation}
 
   ${(props) => props.$isClosing && fadeOutAnimation}
@@ -34,11 +41,13 @@ export const StyledAlertWrapper = styled.div<{ $isClosing: boolean }>`
 export const StyledAlertContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${UNITS.mediumGap};
-  box-shadow: ${SHADOWS.box};
-  font-family: ${FONTS.core};
-  width: 95vw;
-  padding: ${UNITS.mediumGap};
-  border-radius: ${UNITS.blockBorderRadius};
-  background: ${COLORS.highlight};
+  gap: ${(props) => props.theme.mediumGap};
+  font-family: ${(props) => props.theme.coreFontFamily};
+  background: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.primaryColor};
+  width: 90vw;
+  padding: ${(props) => props.theme.mediumGap};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  border: ${(props) => props.theme.regularBorder};
+  border-radius: ${(props) => props.theme.blockBorderRadius};
 `;

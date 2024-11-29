@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicForm from 'components/containers/form/Form';
+import { ChopLogicForm } from '@/components';
 
 import NumericInput from '../NumericInput';
 
@@ -116,6 +116,13 @@ describe('NumericInput', () => {
     await userEvent.click(screen.getByLabelText(`Decrement value for ${testProps.label}`));
 
     expect(screen.getByRole('spinbutton')).toHaveValue(-10);
+  });
+
+  it('should not allow custom spin buttons if the input is disabled', () => {
+    render(<NumericInput {...testProps} step={5} defaultValue={0} disabled />);
+
+    expect(screen.getByLabelText(`Decrement value for ${testProps.label}`)).toBeDisabled();
+    expect(screen.getByLabelText(`Increment value for ${testProps.label}`)).toBeDisabled();
   });
 
   it('should call onSpinButtonClick', async () => {

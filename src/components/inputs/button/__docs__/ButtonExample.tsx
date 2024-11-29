@@ -1,18 +1,20 @@
 import React from 'react';
 
-import Button from '../Button';
-import { ChopLogicButtonProps } from '../types';
+import { ChopLogicButtonProps } from '@/types';
 
-const ExampleButton: React.FC<ChopLogicButtonProps> = ({ disabled, onClick, text, view, type, icon }) => {
+import Button from '../Button';
+
+const ExampleButton: React.FC<ChopLogicButtonProps> = (props) => {
   return (
     <div
       style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: '20px',
       }}
     >
-      <Button text={text} disabled={disabled} view={view} onClick={onClick} type={type} icon={icon} />
+      <Button {...props} />
     </div>
   );
 };

@@ -1,6 +1,4 @@
-import { ChopLogicFormData } from 'components/containers/form/types';
-
-import { NumericValidationFunction } from './types';
+import { ChopLogicFormData, NumericValidationFunction } from '@/types';
 
 export function getNumericInputInitialValue({
   name,

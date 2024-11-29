@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import { ChopLogicButton } from 'components/index';
+import { ChopLogicButton } from '@/components';
+import { ChopLogicDialogProps } from '@/types';
 
 import ChopLogicDialog from '../Dialog';
-import { ChopLogicDialogProps } from '../types';
 
-const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
+const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title, theme }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -21,8 +21,8 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
         doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <ChopLogicButton text='Action' view='primary' />
-        <ChopLogicButton text='Close dialog' view='secondary' onClick={handleClose} />
+        <ChopLogicButton text='Action' view='flat' />
+        <ChopLogicButton text='Close dialog' view='flat' onClick={handleClose} />
       </div>
     </div>
   );
@@ -38,7 +38,7 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
       }}
     >
       <ChopLogicButton text='Open dialog' onClick={handleOpen} />
-      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
+      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title} theme={theme}>
         {modalContent}
       </ChopLogicDialog>
     </div>

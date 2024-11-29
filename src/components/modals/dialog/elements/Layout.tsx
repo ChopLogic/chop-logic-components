@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { useKeyPress } from 'hooks/use-key-press';
-import { useModalFocusTrap } from 'hooks/use-modal-focus-trap';
+
+import { useKeyPress, useModalFocusTrap } from '@/hooks';
+import { DialogLayoutProps } from '@/types';
 
 import { StyledDialogContent, StyledDialogLayout } from '../Dialog.styled';
-import { DialogLayoutProps } from '../types';
 
 import ChopLogicModalLayoutHeader from './Header';
 

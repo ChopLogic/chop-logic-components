@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form<{ $columns: number }>`
-  font-size: ${(props) => props.theme.baseFontSize};
-  font-family: ${(props) => props.theme.coreFontFamily};
+import { ChopLogicTheme } from '@/types';
+
+export const StyledForm = styled.form<{ $columns: number; $theme: ChopLogicTheme }>`
+  font-size: ${(props) => props.$theme.baseFontSize};
+  font-family: ${(props) => props.$theme.coreFontFamily};
   display: grid;
-  gap: ${(props) => props.theme.mediumGap};
+  gap: ${(props) => props.$theme.mediumGap};
   align-items: end;
 
   ${({ $columns }) =>
@@ -14,11 +16,11 @@ export const StyledForm = styled.form<{ $columns: number }>`
     `}
 `;
 
-export const StyledFormButtonContainer = styled.div<{ $columns: number }>`
+export const StyledFormButtonContainer = styled.div<{ $columns: number; $theme: ChopLogicTheme }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${(props) => props.theme.bigGap};
+  padding-top: ${(props) => props.$theme.bigGap};
 
   ${({ $columns }) => `
     grid-column: 1 / ${$columns + 1};

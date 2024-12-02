@@ -42,7 +42,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_all_grid-id"
             >
               <svg
@@ -99,7 +99,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row1"
             >
               <svg
@@ -150,7 +150,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row2"
             >
               <svg
@@ -201,7 +201,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row3"
             >
               <svg
@@ -254,7 +254,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row4"
             >
               <svg
@@ -307,7 +307,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row5"
             >
               <svg
@@ -358,7 +358,7 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr cWQEVW"
               for="select_row_row6"
             >
               <svg

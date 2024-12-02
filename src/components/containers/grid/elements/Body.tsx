@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@/types';
+import { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicTheme, RenderDataItemCallback } from '@/types';
 
 import { StyledGridBody } from '../Grid.styled';
 import { getGridRowValues } from '../helpers';
@@ -15,6 +15,7 @@ type ChopLogicGridBodyProps = {
   deselectRowById: (id: string) => void;
   renderDataItem?: RenderDataItemCallback;
   selectable: boolean;
+  theme: ChopLogicTheme;
 };
 
 const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
@@ -25,9 +26,10 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
   selectable,
   data,
   columns,
+  theme,
 }) => {
   return (
-    <StyledGridBody>
+    <StyledGridBody $theme={theme}>
       {data.map((item) => {
         const values = getGridRowValues({ item, columns, renderDataItem });
         return (
@@ -40,6 +42,7 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
             selectable={selectable}
             values={values}
             selectedIds={selectedIds}
+            theme={theme}
           />
         );
       })}

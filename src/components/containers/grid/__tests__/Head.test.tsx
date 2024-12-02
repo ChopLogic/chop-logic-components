@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
+import { LIGHT_THEME } from '@/css';
 import { ChopLogicGridColumn } from '@/types';
 
 import ChopLogicGridHead from '../elements/Head';
@@ -19,6 +20,7 @@ describe('ChopLogicGridHead', () => {
     selectAll: vi.fn(),
     deselectAll: vi.fn(),
     isAllSelected: false,
+    theme: LIGHT_THEME,
   };
 
   it('should match the snapshot', () => {

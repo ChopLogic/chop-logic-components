@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ChopLogicTheme } from '@/types';
+
 import { StyledGridCell } from '../Grid.styled';
 
 import GridCheckbox from './Checkbox';
@@ -10,9 +12,17 @@ type SelectAllGridRowsCheckbox = {
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;
   disabled?: boolean;
+  theme: ChopLogicTheme;
 };
 
-const SelectGridRowCell: React.FC<SelectAllGridRowsCheckbox> = ({ rowId, isRowSelected, selectRowById, deselectRowById, disabled }) => {
+const SelectGridRowCell: React.FC<SelectAllGridRowsCheckbox> = ({
+  rowId,
+  isRowSelected,
+  selectRowById,
+  deselectRowById,
+  disabled,
+  theme,
+}) => {
   const handleSelectById = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -23,8 +33,15 @@ const SelectGridRowCell: React.FC<SelectAllGridRowsCheckbox> = ({ rowId, isRowSe
   };
 
   return (
-    <StyledGridCell>
-      <GridCheckbox label='Select row' onChange={handleSelectById} id={`select_row_${rowId}`} checked={isRowSelected} disabled={disabled} />
+    <StyledGridCell $theme={theme}>
+      <GridCheckbox
+        theme={theme}
+        label='Select row'
+        onChange={handleSelectById}
+        id={`select_row_${rowId}`}
+        checked={isRowSelected}
+        disabled={disabled}
+      />
     </StyledGridCell>
   );
 };

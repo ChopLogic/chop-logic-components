@@ -4,11 +4,13 @@ import { ChopLogicLabel } from '@/elements';
 import { useElementIds } from '@/hooks';
 import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
+import { ChopLogicTheme } from '@/types';
 
 import { StyledGridCheckboxInput, StyledGridCheckboxWrapper } from '../Grid.styled';
 
 type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
+  theme: ChopLogicTheme;
 };
 
 const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
@@ -18,12 +20,13 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
   required = false,
   onChange,
   checked = false,
+  theme,
   ...props
 }) => {
   const { elementId } = useElementIds(props?.id);
 
   return (
-    <StyledGridCheckboxWrapper $disabled={!!disabled}>
+    <StyledGridCheckboxWrapper $disabled={!!disabled} $theme={theme}>
       <StyledGridCheckboxInput
         id={elementId}
         name={name}
@@ -32,6 +35,7 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
         required={required}
         checked={checked}
         onChange={onChange}
+        $theme={theme}
       />
       <ChopLogicLabel
         label={label}

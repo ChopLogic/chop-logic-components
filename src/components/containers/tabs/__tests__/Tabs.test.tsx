@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { LIGHT_THEME } from '@/css';
 import { ChopLogicTabsMode } from '@/types';
 
 import ChopLogicTabButton from '../elements/TabButton';
@@ -81,12 +82,12 @@ describe('ChopLogicTabButton', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicTabButton {...testProps} />);
+    const { asFragment } = render(<ChopLogicTabButton {...testProps} theme={LIGHT_THEME} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the aria attribute', () => {
-    render(<ChopLogicTabButton {...testProps} />);
+    render(<ChopLogicTabButton {...testProps} theme={LIGHT_THEME} />);
     expect(screen.getByRole('tab')).toBeInTheDocument();
   });
 });
@@ -99,17 +100,17 @@ describe('ChopLogicTabContent', () => {
   ];
 
   it('should match the snapshot for the first tab', () => {
-    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-1' />);
+    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-1' theme={LIGHT_THEME} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should match the snapshot for the second tab', () => {
-    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' />);
+    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' theme={LIGHT_THEME} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the aria attribute', () => {
-    render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' />);
+    render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' theme={LIGHT_THEME} />);
     expect(screen.getByRole('tabpanel')).toBeInTheDocument();
   });
 });

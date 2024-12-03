@@ -1,22 +1,13 @@
 import React, { KeyboardEvent } from 'react';
 
-import { ChopLogicTabItem, ChopLogicTabsMode } from '@/types';
+import { ChopLogicTabListProps } from '@/types';
 import { moveFocusOnElementById } from '@/utils';
 
 import { StyledTabList } from '../Tabs.styled';
 
 import ChopLogicTabButton from './TabButton';
 
-type ChopLogicTabListProps = {
-  tabs: ChopLogicTabItem[];
-  tabIds: string[];
-  onTabSelect: (id: string) => void;
-  selectedTabId: string;
-  tabPanelIds: string[];
-  mode: ChopLogicTabsMode;
-};
-
-const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds }) => {
+const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds, theme }) => {
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     const currentFocusedTabIndex = tabIds.findIndex((id) => id === selectedTabId);
 
@@ -55,7 +46,7 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
   };
 
   return (
-    <StyledTabList role='tablist' $mode={mode} onKeyDown={handleListKeyDown}>
+    <StyledTabList role='tablist' $mode={mode} onKeyDown={handleListKeyDown} $theme={theme}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <ChopLogicTabButton
@@ -67,6 +58,7 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
             isDisabled={disabled}
             tabPanelId={tabPanelIds[index]}
             mode={mode}
+            theme={theme}
           />
         );
       })}

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { DARK_THEME } from '@/css';
 import { moveFocusOnElementById } from '@/utils';
 
 import ChopLogicTabList from '../elements/TabList';
@@ -29,6 +30,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='horizontal'
+        theme={DARK_THEME}
       />,
     );
 
@@ -46,6 +48,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='vertical'
+        theme={DARK_THEME}
       />,
     );
 
@@ -66,6 +69,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='horizontal'
+        theme={DARK_THEME}
       />,
     );
 
@@ -86,6 +90,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='horizontal'
+        theme={DARK_THEME}
       />,
     );
 
@@ -104,6 +109,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='horizontal'
+        theme={DARK_THEME}
       />,
     );
 
@@ -124,6 +130,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode='horizontal'
+        theme={DARK_THEME}
       />,
     );
 
@@ -144,6 +151,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode='vertical'
+        theme={DARK_THEME}
       />,
     );
 
@@ -164,6 +172,7 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode='vertical'
+        theme={DARK_THEME}
       />,
     );
 

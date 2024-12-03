@@ -1,18 +1,19 @@
 import React from 'react';
 
-import { ChopLogicTabItem } from '@/types';
+import { ChopLogicTabItem, ChopLogicTheme } from '@/types';
 
 import { StyledTabContent } from '../Tabs.styled';
 
 const ChopLogicTabContent: React.FC<{
   tabs: ChopLogicTabItem[];
   selectedTabId: string;
-}> = ({ tabs, selectedTabId }): React.ReactElement => {
+  theme: ChopLogicTheme;
+}> = ({ tabs, selectedTabId, theme }): React.ReactElement => {
   const content = tabs.find((item) => item.id === selectedTabId)?.content;
   const contentId = `tabpanel_${selectedTabId}`;
 
   return (
-    <StyledTabContent role='tabpanel' aria-labelledby={selectedTabId} id={contentId}>
+    <StyledTabContent role='tabpanel' aria-labelledby={selectedTabId} id={contentId} $theme={theme}>
       {content}
     </StyledTabContent>
   );

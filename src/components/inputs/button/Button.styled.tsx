@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Styled3DButton = styled.button<{ $extended: boolean }>`
+import { ChopLogicTheme } from '@/types';
+
+export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLogicTheme }>`
   position: relative;
   border: none;
   background: transparent;
@@ -21,7 +23,7 @@ export const Styled3DButton = styled.button<{ $extended: boolean }>`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: ${(props) => props.theme.blockBorderRadius};
+    border-radius: ${(props) => props.$theme.blockBorderRadius};
     background: hsl(0deg 0% 0% / 0.25);
     will-change: transform;
     transform: translateY(2px);
@@ -34,21 +36,21 @@ export const Styled3DButton = styled.button<{ $extended: boolean }>`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: ${(props) => props.theme.blockBorderRadius};
-    background: ${(props) => props.theme.primaryGradient};
+    border-radius: ${(props) => props.$theme.blockBorderRadius};
+    background: ${(props) => props.$theme.primaryGradient};
   }
 
   .chop-logic-button_front {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: ${(props) => props.theme.smallGap};
+    gap: ${(props) => props.$theme.smallGap};
     position: relative;
-    padding: ${(props) => `${props.theme.mediumGap} ${props.theme.bigGap}`};
-    border-radius: ${(props) => props.theme.blockBorderRadius};
-    font-size: ${(props) => props.theme.baseFontSize};
-    color: ${(props) => props.theme.backgroundColor};
-    background: ${(props) => props.theme.secondaryColor};
+    padding: ${(props) => `${props.$theme.mediumGap} ${props.$theme.bigGap}`};
+    border-radius: ${(props) => props.$theme.blockBorderRadius};
+    font-size: ${(props) => props.$theme.baseFontSize};
+    color: ${(props) => props.$theme.backgroundColor};
+    background: ${(props) => props.$theme.secondaryColor};
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -80,35 +82,35 @@ export const Styled3DButton = styled.button<{ $extended: boolean }>`
 
   &:focus-visible {
     outline: revert;
-    outline: ${(props) => props.theme.outlineBorder};
+    outline: ${(props) => props.$theme.outlineBorder};
     outline-offset: 4px;
   }
 `;
 
-export const StyledFlatButton = styled.button<{ $extended: boolean }>`
+export const StyledFlatButton = styled.button<{ $extended: boolean; $theme: ChopLogicTheme }>`
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${(props) => props.theme.smallGap};
-  padding: ${(props) => `${props.theme.mediumGap} ${props.theme.bigGap}`};
-  border-radius: ${(props) => props.theme.blockBorderRadius};
-  font-size: ${(props) => props.theme.baseFontSize};
-  color: ${(props) => props.theme.secondaryColor};
+  gap: ${(props) => props.$theme.smallGap};
+  padding: ${(props) => `${props.$theme.mediumGap} ${props.$theme.bigGap}`};
+  border-radius: ${(props) => props.$theme.blockBorderRadius};
+  font-size: ${(props) => props.$theme.baseFontSize};
+  color: ${(props) => props.$theme.secondaryColor};
   background: transparent;
   width: ${(props) => (props.$extended ? '100%' : 'inherit')};
 
   &:hover,
   &:active {
     filter: brightness(110%);
-    color: ${(props) => props.theme.backgroundColor};
-    background: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.$theme.backgroundColor};
+    background: ${(props) => props.$theme.secondaryColor};
     transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
-    outline: ${(props) => props.theme.outlineBorder};
+    outline: ${(props) => props.$theme.outlineBorder};
   }
 
   &[disabled] {
@@ -117,26 +119,26 @@ export const StyledFlatButton = styled.button<{ $extended: boolean }>`
   }
 `;
 
-export const StyledIconButton = styled.button`
+export const StyledIconButton = styled.button<{ $theme: ChopLogicTheme }>`
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${(props) => props.theme.mediumGap};
-  border-radius: ${(props) => props.theme.blockBorderRadius};
-  font-size: ${(props) => props.theme.baseFontSize};
-  color: ${(props) => props.theme.primaryColor};
+  padding: ${(props) => props.$theme.mediumGap};
+  border-radius: ${(props) => props.$theme.blockBorderRadius};
+  font-size: ${(props) => props.$theme.baseFontSize};
+  color: ${(props) => props.$theme.primaryColor};
   background: transparent;
 
   &:hover {
-    filter: drop-shadow(${(props) => props.theme.textShadow});
-    color: ${(props) => props.theme.secondaryColor};
+    filter: drop-shadow(${(props) => props.$theme.textShadow});
+    color: ${(props) => props.$theme.secondaryColor};
     transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
-    outline: ${(props) => props.theme.outlineBorder};
+    outline: ${(props) => props.$theme.outlineBorder};
   }
 
   &[disabled] {
@@ -145,7 +147,7 @@ export const StyledIconButton = styled.button`
   }
 
   svg {
-    height: ${(props) => props.theme.iconSize};
-    width: ${(props) => props.theme.iconSize};
+    height: ${(props) => props.$theme.iconSize};
+    width: ${(props) => props.$theme.iconSize};
   }
 `;

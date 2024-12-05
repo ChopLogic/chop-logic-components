@@ -1,24 +1,26 @@
 import styled from 'styled-components';
 
-export const StyledTextInput = styled.div`
+import { ChopLogicTheme } from '@/types';
+
+export const StyledTextInput = styled.div<{ $theme: ChopLogicTheme }>`
   display: flex;
   flex-direction: column;
-  gap: ${(props) => props.theme.mediumGap};
+  gap: ${(props) => props.$theme.mediumGap};
 
   & > div:nth-child(2) {
     display: flex;
-    gap: ${(props) => props.theme.smallGap};
+    gap: ${(props) => props.$theme.smallGap};
     align-items: center;
-    border: ${(props) => props.theme.regularBorder};
-    border-radius: ${(props) => props.theme.blockBorderRadius};
-    padding: ${(props) => props.theme.mediumGap};
+    border: ${(props) => props.$theme.regularBorder};
+    border-radius: ${(props) => props.$theme.blockBorderRadius};
+    padding: ${(props) => props.$theme.mediumGap};
 
     &:has(input:focus) {
-      border: ${(props) => props.theme.outlineBorder};
+      border: ${(props) => props.$theme.outlineBorder};
     }
 
     &:has(input[aria-invalid='true']) {
-      border: ${(props) => props.theme.accentBorder};
+      border: ${(props) => props.$theme.accentBorder};
     }
 
     &:has(input[disabled]) {
@@ -28,18 +30,18 @@ export const StyledTextInput = styled.div`
 
     & > span:nth-child(2) {
       display: flex;
-      gap: ${(props) => props.theme.smallGap};
+      gap: ${(props) => props.$theme.smallGap};
       align-items: center;
       min-width: 0;
     }
   }
 
   & input {
-    font-size: ${(props) => props.theme.baseFontSize};
+    font-size: ${(props) => props.$theme.baseFontSize};
     padding: 0;
     border: none;
-    font-family: ${(props) => props.theme.coreFontFamily};
-    color: ${(props) => props.theme.primaryColor};
+    font-family: ${(props) => props.$theme.coreFontFamily};
+    color: ${(props) => props.$theme.primaryColor};
     display: inline-block;
     background: transparent;
     white-space: nowrap;

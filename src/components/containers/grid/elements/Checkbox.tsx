@@ -43,6 +43,7 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
         inputId={elementId}
         isTextHidden={true}
         iconPosition='left'
+        theme={theme}
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
       />
     </StyledGridCheckboxWrapper>

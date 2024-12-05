@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ChopLogicIcon } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
+import { ChopLogicTheme } from '@/types';
 
 import { StyledInputInnerButton } from './InputInnerButton.styled';
 
@@ -10,11 +11,12 @@ type ClearInputButtonProps = {
   label: string;
   icon: ChopLogicIconName;
   disabled?: boolean;
+  theme: ChopLogicTheme;
 };
 
-const InputInnerButton: React.FC<ClearInputButtonProps> = ({ onClick, label, icon, disabled }) => {
+const InputInnerButton: React.FC<ClearInputButtonProps> = ({ onClick, label, icon, disabled, theme }) => {
   return (
-    <StyledInputInnerButton onClick={onClick} aria-label={label} type='button' disabled={disabled}>
+    <StyledInputInnerButton onClick={onClick} aria-label={label} type='button' disabled={disabled} $theme={theme}>
       <ChopLogicIcon name={icon} />
     </StyledInputInnerButton>
   );

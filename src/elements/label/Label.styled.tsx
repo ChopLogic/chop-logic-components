@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledLabel = styled.label`
+import { ChopLogicTheme } from '@/types';
+
+export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
   display: flex;
   align-items: center;
-  font-size: ${(props) => props.theme.smallFontSize};
-  font-family: ${(props) => props.theme.coreFontFamily};
-  gap: ${(props) => props.theme.smallGap};
-  color: ${(props) => props.theme.primaryColor};
+  font-size: ${(props) => props.$theme.smallFontSize};
+  font-family: ${(props) => props.$theme.coreFontFamily};
+  gap: ${(props) => props.$theme.smallGap};
+  color: ${(props) => props.$theme.primaryColor};
 
   & + span {
     text-wrap: nowrap;
@@ -17,6 +19,6 @@ export const StyledLabel = styled.label`
   & abbr {
     text-decoration: none;
     cursor: pointer;
-    color: ${(props) => props.theme.accentColor};
+    color: ${(props) => props.$theme.accentColor};
   }
 `;

@@ -1,21 +1,10 @@
 import React from 'react';
 
 import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
-import { SelectValue } from '@/types';
+import { SelectDropdownProps } from '@/types';
 import { handleDropdownListKeyPress, moveFocusOnElementById } from '@/utils';
 
 import SelectOption from './Option';
-
-type SelectDropdownProps = {
-  options: SelectValue[];
-  opened: boolean;
-  dropdownId: string;
-  comboboxId: string;
-  onClose: () => void;
-  selected?: SelectValue;
-  onSelect: (id: string) => void;
-  onClear: () => void;
-};
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
   options,
@@ -26,6 +15,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
   comboboxId,
   selected,
   onClear,
+  theme,
 }) => {
   const handleOptionSelect = (id: string) => {
     onSelect(id);
@@ -40,6 +30,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
       tabIndex={-1}
       onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
       $opened={opened}
+      $theme={theme}
     >
       {options.map((item) => (
         <SelectOption
@@ -48,6 +39,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
           onSelect={() => handleOptionSelect(item.id)}
           onClear={onClear}
           isSelected={item.id === selected?.id}
+          theme={theme}
         />
       ))}
     </StyledSelectDropdown>

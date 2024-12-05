@@ -1,3 +1,5 @@
+import { ChopLogicTheme } from '@/types';
+
 import { CommonInputProps } from './_common';
 import { SelectValue } from './select';
 
@@ -16,4 +18,24 @@ export type MultiSelectDropdownProps = {
   dropdownId: string;
   onClose: () => void;
   onSelect: (id: string) => void;
+  theme: ChopLogicTheme;
+};
+
+export type MultiSelectComboboxProps = {
+  opened: boolean;
+  disabled: boolean;
+  required: boolean;
+  onClick: () => void;
+  comboboxId: string;
+  dropdownId: string;
+  values?: MultiSelectValue[];
+  placeholder?: string;
+  name: string;
+  theme: ChopLogicTheme;
+};
+
+export type MultiSelectOptionProps = {
+  value: MultiSelectValue;
+  onSelect: (id: string) => void;
+  theme: ChopLogicTheme;
 };

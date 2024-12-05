@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { DARK_THEME } from '@/css';
 import { ChopLogicIconName } from '@/enums';
 
 import InputInnerButton from '../InputInnerButton';
@@ -11,6 +12,7 @@ describe('InputInnerButton', () => {
     onClick: vi.fn(),
     label: 'Test input',
     icon: ChopLogicIconName.Remove,
+    theme: DARK_THEME,
   };
 
   it('should match the snapshot', () => {

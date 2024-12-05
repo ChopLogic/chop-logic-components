@@ -3,14 +3,9 @@ import React, { KeyboardEvent } from 'react';
 import { StyledMultiSelectOption } from '@/elements/styled/Select.styled';
 import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
-import { MultiSelectValue } from '@/types';
+import { MultiSelectOptionProps } from '@/types';
 
-type SelectOptionProps = {
-  value: MultiSelectValue;
-  onSelect: (id: string) => void;
-};
-
-const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
+const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect, theme }) => {
   const { id, label, selected } = value;
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
@@ -34,6 +29,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, onSelect }) => {
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
+      $theme={theme}
     >
       {selected ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
       <span>{label}</span>

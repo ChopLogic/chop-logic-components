@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import { DARK_THEME } from '@/css';
 import { ChopLogicIcon } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
 
@@ -11,6 +12,7 @@ describe('ChopLogicLabel', () => {
     label: 'Test label',
     required: true,
     inputId: 'test-input-id',
+    theme: DARK_THEME,
   };
 
   it('should render correctly as required label', () => {

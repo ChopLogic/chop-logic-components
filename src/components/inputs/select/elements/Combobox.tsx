@@ -3,19 +3,7 @@ import React from 'react';
 import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
 import ArrowDownIcon from '@/icons/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@/icons/ArrowUpIcon.tsx';
-import { SelectValue } from '@/types';
-
-type SelectComboboxProps = {
-  opened: boolean;
-  disabled: boolean;
-  required: boolean;
-  onClick: () => void;
-  comboboxId: string;
-  dropdownId: string;
-  selected?: SelectValue;
-  placeholder?: string;
-  name: string;
-};
+import { SelectComboboxProps } from '@/types';
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
   opened,
@@ -27,6 +15,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   placeholder,
   disabled,
   required,
+  theme,
 }) => {
   return (
     <StyledSelectCombobox
@@ -41,6 +30,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
+      $theme={theme}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}

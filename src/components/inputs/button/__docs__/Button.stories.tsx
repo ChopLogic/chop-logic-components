@@ -20,10 +20,6 @@ const meta: Meta<typeof ButtonExample> = {
       control: 'select',
       options: ['3D', 'flat', 'icon'],
     },
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
     extended: { control: 'boolean' },
   },
   args: {
@@ -32,7 +28,6 @@ const meta: Meta<typeof ButtonExample> = {
     icon: ChopLogicIconName.Copy,
     view: '3D',
     disabled: false,
-    theme: 'light',
     extended: false,
   },
   component: ButtonExample,
@@ -49,13 +44,6 @@ export const DefaultButton: Story = {
     icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };
 
@@ -66,13 +54,6 @@ export const FlatButton: Story = {
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };
 
@@ -83,12 +64,5 @@ export const IconButton: Story = {
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
     disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };

@@ -22,7 +22,6 @@ export const DefaultTextInput: Story = {
     clearable: true,
     errorMessage: 'Only latin letters are allowed',
     validator: { regexp: '^[A-Za-z ]+$' },
-    theme: 'light',
   },
   argTypes: {
     type: {
@@ -30,10 +29,6 @@ export const DefaultTextInput: Story = {
       options: ['text', 'email', 'password'],
     },
     validator: { control: 'object' },
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };
 
@@ -49,7 +44,6 @@ export const PasswordInput: Story = {
     clearable: false,
     errorMessage: 'Your password should contain at least 6 characters',
     validator: (input) => input.length > 6,
-    theme: 'light',
   },
   argTypes: {
     type: {
@@ -57,10 +51,6 @@ export const PasswordInput: Story = {
       options: ['text', 'email', 'password'],
     },
     validator: { control: 'object' },
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };
 
@@ -77,7 +67,6 @@ export const EmailInput: Story = {
     errorMessage: 'This is not a valid email',
     // eslint-disable-next-line no-useless-escape
     validator: { regexp: `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$` },
-    theme: 'light',
   },
   argTypes: {
     type: {
@@ -85,9 +74,5 @@ export const EmailInput: Story = {
       options: ['text', 'email', 'password'],
     },
     validator: { control: 'object' },
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };

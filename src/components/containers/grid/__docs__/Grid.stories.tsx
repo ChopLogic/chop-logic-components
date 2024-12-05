@@ -12,12 +12,6 @@ export default meta;
 type Story = StoryObj<typeof GridExample>;
 
 export const DefaultGrid: Story = {
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
-  },
   args: {
     selectable: false,
     renderDataItem: (item, field) => <em>{item[field ?? ''] as string}</em>,
@@ -60,17 +54,10 @@ export const DefaultGrid: Story = {
         phone: '123-345-7890',
       },
     ],
-    theme: 'light',
   },
 };
 
 export const SelectableGrid: Story = {
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
-  },
   args: {
     selectable: true,
     onSelect: (ids: string[]) => console.log(ids),
@@ -112,6 +99,5 @@ export const SelectableGrid: Story = {
         phone: '123-345-7890',
       },
     ],
-    theme: 'light',
   },
 };

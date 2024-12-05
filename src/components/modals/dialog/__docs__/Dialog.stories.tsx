@@ -15,12 +15,5 @@ export const Default: Story = {
     isOpened: false,
     onClose: () => console.log('Dialog closed'),
     title: 'Example Dialog',
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };

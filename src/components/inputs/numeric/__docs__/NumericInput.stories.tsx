@@ -25,12 +25,5 @@ export const Default: Story = {
     hasSpinButtons: true,
     errorMessage: 'Enter a number between 1 and 99',
     validator: (age) => !!age && age >= 1 && age < 100,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };

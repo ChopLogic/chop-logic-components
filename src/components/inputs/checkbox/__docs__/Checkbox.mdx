@@ -24,7 +24,6 @@ const Example = () => {
       label='Accept Terms and Conditions'
       iconPosition='left'
       required
-      onChange={(e) => console.log('Checkbox state:', e.target.checked)}
       disabled={false}
     />
   );
@@ -50,30 +49,3 @@ export default Example;
 | **style**          | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                                                                 | `undefined` | No       |
 | **tabIndex**       | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                                                           | `undefined` | No       |
 | **title**          | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to.                                           | `undefined` | No       |
-
-### Types
-
-```ts
-export type ChopLogicCheckboxProps = CommonInputProps & {
-  noLabel?: boolean;
-  iconPosition?: 'left' | 'right';
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  defaultChecked?: boolean;
-};
-
-export type CommonInputProps = CommonComponentProps & {
-  label: string;
-  name: string;
-  disabled?: boolean;
-  required?: boolean;
-};
-
-export type CommonComponentProps = {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  title?: string;
-  theme?: 'dark' | 'light';
-};
-```

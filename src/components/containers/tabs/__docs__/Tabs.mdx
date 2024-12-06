@@ -17,9 +17,9 @@ Versatile tab component that allows you to switch between different pieces of co
 
 ```tsx
 import React from 'react';
-import ChopLogicTabs, { ChopLogicTabItem } from 'chop-logic-components';
+import ChopLogicTabs from 'chop-logic-components';
 
-const tabs: ChopLogicTabItem[] = [
+const tabs = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
   { id: 'tab2', title: 'Tab 2', content: <div>Content for Tab 2</div> },
   { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
@@ -42,22 +42,3 @@ export default ExampleComponent;
 | **style**        | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined`    | No       |
 | **tabIndex**     | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined`    | No       |
 | **title**        | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined`    | No       |
-
-### Types
-
-```ts
-export type ChopLogicTabsProps = CommonComponentProps & {
-  tabs: ChopLogicTabItem[];
-  defaultTabId?: string;
-  mode?: ChopLogicTabsMode;
-};
-
-export type ChopLogicTabItem = {
-  content: React.ReactElement;
-  title: string;
-  id: string;
-  disabled?: boolean;
-};
-
-export type ChopLogicTabsMode = 'vertical' | 'horizontal';
-```

@@ -15,10 +15,9 @@ Styled button component with different view modes and a customizable icon.
 
 ```tsx
 import { ChopLogicButton, ChopLogicIconName } from 'chop-logic-components';
-import { createCopy } from 'utils/copy';
 
 const Example = () => {
-  return <ChopLogicButton text='Copy' onClick={createCopy} icon={ChopLogicIconName.Copy} />;
+  return <ChopLogicButton text='Copy' onClick={() => console.log('Copy')} icon={ChopLogicIconName.Copy} />;
 };
 
 export default Example;
@@ -39,34 +38,3 @@ export default Example;
 | **style**     | `CSSProperties`                       | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                               | `undefined` | No       |
 | **tabIndex**  | `number`                              | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                         | `undefined` | No       |
 | **title**     | `string`                              | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                         | `undefined` | No       |
-
-### Types
-
-```ts
-export type ChopLogicButtonProps = Partial<CommonInputProps> & {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  view?: ChopLogicButtonView;
-  icon?: ChopLogicIconName;
-  text?: string;
-  extended?: boolean;
-  type?: 'button' | 'reset' | 'submit';
-};
-
-export type ChopLogicButtonView = '3D' | 'flat' | 'icon';
-
-export type CommonInputProps = CommonComponentProps & {
-  label: string;
-  name: string;
-  disabled?: boolean;
-  required?: boolean;
-};
-
-export type CommonComponentProps = {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  title?: string;
-  theme?: 'dark' | 'light';
-};
-```

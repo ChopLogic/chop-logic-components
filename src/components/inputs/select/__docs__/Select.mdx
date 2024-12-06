@@ -41,35 +41,3 @@ export default Example;
 | **style**        | `CSSProperties`                             | The style global attribute contains CSS styling declarations to be applied to the element.                                                                         | `undefined`      | No       |
 | **tabIndex**     | `number`                                    | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                   | `undefined`      | No       |
 | **title**        | `string`                                    | The title global attribute contains text representing advisory information related to the element it belongs to.                                                   | `undefined`      | No       |
-
-### Types
-
-```ts
-export type ChopLogicSelectProps = CommonInputProps & {
-  options: SelectValue[];
-  onChange?: (value?: SelectValue) => void;
-  placeholder?: string;
-  defaultValue?: string | number | readonly string[];
-};
-
-export type SelectValue = {
-  id: string;
-  label: string;
-} & { [key in string]: unknown };
-
-export type CommonInputProps = CommonComponentProps & {
-  label: string;
-  name: string;
-  disabled?: boolean;
-  required?: boolean;
-};
-
-export type CommonComponentProps = {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  title?: string;
-  theme?: 'dark' | 'light';
-};
-```

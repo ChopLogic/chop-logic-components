@@ -16,7 +16,6 @@ Dialog component with custom styling and behavior.
 ```tsx
 import { ChopLogicDialog } from 'chop-logic-components';
 import { useState } from 'react';
-import { MyModalContent } from 'components';
 
 const Example = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -28,7 +27,7 @@ const Example = () => {
     <>
       <button onClick={handleOpen}>Open Dialog</button>
       <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Example Dialog'>
-        <MyModalContent />
+        <div>My Modal Content</div>
       </ChopLogicDialog>
     </>
   );
@@ -51,21 +50,3 @@ export default Example;
 | **className** | `string`              | The class global attribute is a list of the classes of the element.                                                                                                                     | `undefined` | No       |
 | **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                              | `undefined` | No       |
 | **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                        | `undefined` | No       |
-
-```ts
-export type ChopLogicDialogProps = CommonComponentProps &
-  React.PropsWithChildren & {
-    isOpened: boolean;
-    onClose: () => void;
-    title: string;
-  };
-
-export type CommonComponentProps = {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  title?: string;
-  theme?: 'dark' | 'light';
-};
-```

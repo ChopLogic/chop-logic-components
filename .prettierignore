@@ -1,4 +1,4 @@
 **/node_modules
 **/dist
-**/yarn.lock
+**/docs
 **/package-lock.json

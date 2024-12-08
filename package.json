@@ -32,10 +32,11 @@
     ]
   },
   "keywords": [
+    "Chop Logic",
     "React",
     "TypeScript",
     "Storybook",
-    "Chop Logic"
+    "Styled components"
   ],
   "author": "Dmitrii Suroviagin",
   "license": "ISC",

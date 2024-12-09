@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import { DARK_THEME } from '@/css';
+
 import ChopLogicErrorMessage from '../ErrorMessage';
 
 describe('ChopLogicErrorMessage', () => {
@@ -8,6 +10,7 @@ describe('ChopLogicErrorMessage', () => {
     errorId: 'test-error-id',
     visible: true,
     message: 'Incorrect input',
+    theme: DARK_THEME,
   };
 
   it('should match the snapshot', () => {

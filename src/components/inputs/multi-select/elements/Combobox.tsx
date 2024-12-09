@@ -3,21 +3,9 @@ import React from 'react';
 import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';
-import { MultiSelectValue } from '@/types';
+import { MultiSelectComboboxProps } from '@/types';
 
-type SelectComboboxProps = {
-  opened: boolean;
-  disabled: boolean;
-  required: boolean;
-  onClick: () => void;
-  comboboxId: string;
-  dropdownId: string;
-  values?: MultiSelectValue[];
-  placeholder?: string;
-  name: string;
-};
-
-const SelectCombobox: React.FC<SelectComboboxProps> = ({
+const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
   opened,
   onClick,
   comboboxId,
@@ -27,6 +15,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   disabled,
   required,
   values,
+  theme,
 }) => {
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
@@ -51,6 +40,7 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
+      $theme={theme}
     >
       {selectedValues}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}

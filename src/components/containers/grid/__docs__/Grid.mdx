@@ -26,7 +26,7 @@ export default ExampleComponent;
 ### Props
 
 | Prop               | Type                      | Description                                                                                                                                                                                     | Default     | Required |
-| ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
+|--------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
 | **data**           | `ChopLogicGridItem[]`     | An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.                                                                                    | `[]`        | Yes      |
 | **columns**        | `ChopLogicGridColumn[]`   | An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title. | `[]`        | Yes      |
 | **selectable**     | `boolean`                 | A value that indicates whether the grid has a column with checkboxes.                                                                                                                           | `false`     | No       |
@@ -38,33 +38,4 @@ export default ExampleComponent;
 | **style**          | `CSSProperties`           | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                                      | `undefined` | No       |
 | **tabIndex**       | `number`                  | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                                | `undefined` | No       |
 | **title**          | `string`                  | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                                | `undefined` | No       |
-| **theme**          | `'light'` or `'dark'`     | The component's color theme.                                                                                                                                                                    | `undefined` | No       |
 
-### Types
-
-```ts
-type ChopLogicGridProps = CommonComponentProps & {
-  columns: ChopLogicGridColumn[];
-  data: ChopLogicGridItem[];
-  caption?: string;
-  selectable?: boolean;
-  renderDataItem?: RenderDataItemCallback;
-  onSelect?: (ids: string[]) => void;
-};
-
-type ChopLogicGridColumn = {
-  field: string;
-  title?: string;
-  component?: React.ReactElement;
-  highlighted?: boolean;
-  className?: string;
-};
-
-type ChopLogicGridItem = {
-  id: string;
-  disabled?: boolean;
-  [key: string]: unknown;
-};
-
-type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => JSX.Element;
-```

@@ -17,15 +17,10 @@ const meta: Meta<typeof ChopLogicTabs> = {
       control: 'radio',
       options: ['vertical', 'horizontal'],
     },
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
   args: {
     tabs,
     defaultTabId: 'tab1',
-    theme: 'light',
   },
   component: ChopLogicTabs,
   title: 'Containers/Tabs',

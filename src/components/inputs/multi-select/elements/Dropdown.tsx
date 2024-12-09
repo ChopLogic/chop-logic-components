@@ -6,7 +6,7 @@ import { handleDropdownListKeyPress } from '@/utils';
 
 import SelectOption from './Option';
 
-const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId }) => {
+const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId, theme }) => {
   return (
     <StyledSelectDropdown
       $opened={opened}
@@ -14,9 +14,10 @@ const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, open
       id={dropdownId}
       tabIndex={-1}
       onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
+      $theme={theme}
     >
       {options.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
+        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} theme={theme} />
       ))}
     </StyledSelectDropdown>
   );

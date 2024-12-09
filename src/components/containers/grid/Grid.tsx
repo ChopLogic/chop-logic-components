@@ -1,8 +1,7 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 
+import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicGridProps } from '@/types';
-import { getChopLogicTheme } from '@/utils';
 
 import ChopLogicGridBody from './elements/Body';
 import GridColumnGroup from './elements/ColumnGroup';
@@ -18,7 +17,6 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   renderDataItem,
   caption,
   selectable = false,
-  theme,
   ...rest
 }) => {
   const {
@@ -31,33 +29,33 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
     handleSelectRowById,
     selectedIds,
   } = useChopLogicGridController({ id, data, onSelect });
-  const themeValues = getChopLogicTheme(theme);
+  const theme = useChopLogicTheme();
 
   return (
-    <ThemeProvider theme={themeValues}>
-      <StyledGrid {...rest}>
-        {caption && <StyledGridCaption>{caption}</StyledGridCaption>}
-        <GridColumnGroup columns={columns} selectable={selectable} />
-        <ChopLogicGridHead
-          gridId={elementId}
-          columns={columns}
-          selectable={selectable}
-          selectAll={handleSelectAll}
-          deselectAll={handleDeselectAll}
-          isAllSelected={isAllSelected}
-          isAllCheckboxDisabled={isAllCheckboxDisabled}
-        />
-        <ChopLogicGridBody
-          columns={columns}
-          data={data}
-          selectable={selectable}
-          selectRowById={handleSelectRowById}
-          deselectRowById={handleDeselectRowById}
-          selectedIds={selectedIds}
-          renderDataItem={renderDataItem}
-        />
-      </StyledGrid>
-    </ThemeProvider>
+    <StyledGrid {...rest}>
+      {caption && <StyledGridCaption $theme={theme}>{caption}</StyledGridCaption>}
+      <GridColumnGroup columns={columns} selectable={selectable} theme={theme} />
+      <ChopLogicGridHead
+        gridId={elementId}
+        columns={columns}
+        selectable={selectable}
+        selectAll={handleSelectAll}
+        deselectAll={handleDeselectAll}
+        isAllSelected={isAllSelected}
+        isAllCheckboxDisabled={isAllCheckboxDisabled}
+        theme={theme}
+      />
+      <ChopLogicGridBody
+        columns={columns}
+        data={data}
+        selectable={selectable}
+        selectRowById={handleSelectRowById}
+        deselectRowById={handleDeselectRowById}
+        selectedIds={selectedIds}
+        renderDataItem={renderDataItem}
+        theme={theme}
+      />
+    </StyledGrid>
   );
 };
 

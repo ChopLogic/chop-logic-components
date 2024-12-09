@@ -5,21 +5,21 @@ exports[`GridRow > should match the snapshot 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-kLhKbu iRFWoR"
+        class="sc-kLhKbu cvTEmM"
       >
         <td
-          class="sc-ivxoEo fXeDNc"
+          class="sc-ivxoEo iDeERW"
         >
           <div
-            class="sc-khLCKb jDOcko"
+            class="sc-khLCKb fwGfPv"
           >
             <input
-              class="sc-dstKZu hiKYBn"
+              class="sc-dstKZu hDCjgd"
               id="select_row_item-1"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr cWQEVW"
+              class="sc-jwIPbr kcJtcC"
               for="select_row_item-1"
             >
               <svg
@@ -37,17 +37,17 @@ exports[`GridRow > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-ivxoEo fXeDNc"
+          class="sc-ivxoEo iDeERW"
         >
           Value 1
         </td>
         <td
-          class="sc-ivxoEo fXeDNc"
+          class="sc-ivxoEo iDeERW"
         >
           Value 2
         </td>
         <td
-          class="sc-ivxoEo fXeDNc"
+          class="sc-ivxoEo iDeERW"
         >
           <span>
             Value 3

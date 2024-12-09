@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ChopLogicTheme } from '@/types';
+
 import { StyledErrorMessage } from './ErrorMessage.styled';
 
 type ChopLogicErrorMessageProps = {
@@ -8,6 +10,7 @@ type ChopLogicErrorMessageProps = {
   message?: string;
   testId?: string;
   style?: React.CSSProperties;
+  theme: ChopLogicTheme;
 };
 
 const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({
@@ -16,9 +19,10 @@ const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({
   message = 'Invalid input',
   visible = false,
   style,
+  theme,
 }) => {
   return (
-    <StyledErrorMessage id={errorId} $visible={visible} data-testid={testId} style={style}>
+    <StyledErrorMessage id={errorId} $visible={visible} data-testid={testId} style={style} $theme={theme}>
       {message}
     </StyledErrorMessage>
   );

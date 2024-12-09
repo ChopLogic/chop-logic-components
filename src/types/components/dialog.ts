@@ -1,5 +1,7 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
 
+import { ChopLogicTheme } from '@/types';
+
 import { CommonComponentProps } from './_common';
 
 export type ChopLogicDialogProps = CommonComponentProps &
@@ -14,4 +16,5 @@ export type DialogLayoutProps = PropsWithChildren &
     title: string;
     onClose: () => void;
     isOpened: boolean;
+    theme: ChopLogicTheme;
   };

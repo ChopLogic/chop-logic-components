@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import { LIGHT_THEME } from '@/css';
+
 import SelectAllGridRowsCheckbox from '../elements/SelectAllRowsCell';
 
 describe('SelectAllGridRowsCheckbox', () => {
@@ -14,7 +16,13 @@ describe('SelectAllGridRowsCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectAllGridRowsCheckbox
+              theme={LIGHT_THEME}
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected
+            />
           </tr>
         </thead>
       </table>,
@@ -27,7 +35,13 @@ describe('SelectAllGridRowsCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected={false} />
+            <SelectAllGridRowsCheckbox
+              theme={LIGHT_THEME}
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected={false}
+            />
           </tr>
         </thead>
       </table>,
@@ -42,7 +56,13 @@ describe('SelectAllGridRowsCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectAllGridRowsCheckbox
+              theme={LIGHT_THEME}
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected
+            />
           </tr>
         </thead>
       </table>,

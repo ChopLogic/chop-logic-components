@@ -48,37 +48,4 @@ export default ExampleComponent;
 | **style**         | `CSSProperties`                     | The style global attribute contains CSS styling declarations to be applied to the element.                                              | `undefined` | No       |
 | **tabIndex**      | `number`                            | The tabindex global attribute allows developers to make HTML elements focusable.                                                        | `undefined` | No       |
 | **title**         | `string`                            | The title global attribute contains text representing advisory information related to the element it belongs to.                        | `undefined` | No       |
-| **theme**         | `'light'` or `'dark'`               | The component's color theme.                                                                                                            | `undefined` | No       |
 
-### Types
-
-```ts
-export type ChopLogicFormProps = React.PropsWithChildren &
-  CommonComponentProps & {
-    columns?: number;
-    initialValues?: ChopLogicFormData;
-    hasReset?: boolean;
-    onClickSubmit?: (data: ChopLogicFormData) => void;
-    onReset?: React.FormEventHandler<HTMLFormElement>;
-    onSubmit?: React.FormEventHandler<HTMLFormElement>;
-  };
-
-export type ChopLogicFormData = { [key: string]: unknown };
-
-export type ChopLogicFormContextProps = {
-  onChangeFormInput?: (params: ChopLogicFormInputParams) => void;
-  initialValues?: ChopLogicFormData;
-  resetSignal?: number;
-};
-
-export type ChopLogicFormInputParams = { name: string; value: unknown; valid?: boolean };
-
-export type CommonComponentProps = {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  title?: string;
-  theme?: 'dark' | 'light';
-};
-```

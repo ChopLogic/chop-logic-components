@@ -1,11 +1,9 @@
 import React, { useRef } from 'react';
-import { ThemeProvider } from 'styled-components';
 
 import { ChopLogicLabel } from '@/elements';
 import { StyledSelect } from '@/elements/styled/Select.styled';
-import { useClickOutside, useElementIds, useKeyPress } from '@/hooks';
+import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@/hooks';
 import { ChopLogicMultiSelectProps } from '@/types';
-import { getChopLogicTheme } from '@/utils';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
@@ -21,12 +19,11 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   onChange,
   defaultValue,
   id,
-  theme,
   ...rest
 }) => {
   const ref = useRef(null);
   const { elementId, dropdownId } = useElementIds(id);
-  const themeValues = getChopLogicTheme(theme);
+  const theme = useChopLogicTheme();
   const { handleClose, handleSelect, handleToggle, opened, values } = useChopLogicMultiSelectController({
     name,
     options,
@@ -38,23 +35,29 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <ThemeProvider theme={themeValues}>
-      <StyledSelect ref={ref} {...rest}>
-        <ChopLogicLabel label={label} required={required} inputId={elementId} />
-        <SelectCombobox
-          name={name}
-          opened={opened}
-          comboboxId={elementId}
-          dropdownId={dropdownId}
-          onClick={handleToggle}
-          values={values}
-          placeholder={placeholder}
-          disabled={disabled}
-          required={required}
-        />
-        <SelectDropdown options={values} opened={opened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
-      </StyledSelect>
-    </ThemeProvider>
+    <StyledSelect ref={ref} $theme={theme} {...rest}>
+      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+      <SelectCombobox
+        name={name}
+        opened={opened}
+        comboboxId={elementId}
+        dropdownId={dropdownId}
+        onClick={handleToggle}
+        values={values}
+        placeholder={placeholder}
+        disabled={disabled}
+        required={required}
+        theme={theme}
+      />
+      <SelectDropdown
+        theme={theme}
+        options={values}
+        opened={opened}
+        onClose={handleClose}
+        dropdownId={dropdownId}
+        onSelect={handleSelect}
+      />
+    </StyledSelect>
   );
 };
 

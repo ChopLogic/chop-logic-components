@@ -7,12 +7,12 @@ import { ChopLogicAlertHeaderProps } from '@/types';
 import { StyledAlertHeader } from '../Alert.styled';
 import { getAlertTitle, renderAlertIcon } from '../helpers';
 
-const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode, icon }) => {
+const ChopLogicAlertHeader: React.FC<ChopLogicAlertHeaderProps> = ({ title, onClose, mode, icon, theme }) => {
   const alertTitle = getAlertTitle(mode, title);
   const alertIcon = renderAlertIcon(mode, icon);
 
   return (
-    <StyledAlertHeader>
+    <StyledAlertHeader $theme={theme}>
       <h3>
         {alertIcon}
         {alertTitle}

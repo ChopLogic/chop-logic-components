@@ -1,11 +1,9 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 
 import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
-import { useElementIds } from '@/hooks';
+import { useChopLogicTheme, useElementIds } from '@/hooks';
 import { ChopLogicNumericInputProps } from '@/types';
-import { getChopLogicTheme } from '@/utils';
 
 import { useChopLogicNumericInputController } from './controller';
 import { StyledNumericInput } from './NumericInput.styled';
@@ -29,11 +27,10 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
-  theme,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
-  const themeValues = getChopLogicTheme(theme);
+  const theme = useChopLogicTheme();
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -47,49 +44,49 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   });
 
   return (
-    <ThemeProvider theme={themeValues}>
-      <StyledNumericInput {...rest}>
-        <ChopLogicLabel label={label} required={required} inputId={elementId} />
-        <div>
-          <input
-            id={elementId}
-            name={name}
-            type='number'
-            disabled={disabled}
-            required={required}
-            readOnly={readOnly}
-            placeholder='0'
-            aria-invalid={!valid}
-            aria-errormessage={errorId}
-            value={value.toString()}
-            onChange={handleChange}
-            min={minValue}
-            max={maxValue}
-            step={step}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            tabIndex={tabIndex}
-          />
-          {hasSpinButtons && (
-            <span>
-              <ChopLogicInputInnerButton
-                onClick={decrement}
-                label={`Decrement value for ${label}`}
-                icon={ChopLogicIconName.ChevronLeft}
-                disabled={disabled}
-              />
-              <ChopLogicInputInnerButton
-                onClick={increment}
-                label={`Increment value for ${label}`}
-                icon={ChopLogicIconName.ChevronRight}
-                disabled={disabled}
-              />
-            </span>
-          )}
-        </div>
-        <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
-      </StyledNumericInput>
-    </ThemeProvider>
+    <StyledNumericInput $theme={theme} {...rest}>
+      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+      <div>
+        <input
+          id={elementId}
+          name={name}
+          type='number'
+          disabled={disabled}
+          required={required}
+          readOnly={readOnly}
+          placeholder='0'
+          aria-invalid={!valid}
+          aria-errormessage={errorId}
+          value={value.toString()}
+          onChange={handleChange}
+          min={minValue}
+          max={maxValue}
+          step={step}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          tabIndex={tabIndex}
+        />
+        {hasSpinButtons && (
+          <span>
+            <ChopLogicInputInnerButton
+              onClick={decrement}
+              label={`Decrement value for ${label}`}
+              icon={ChopLogicIconName.ChevronLeft}
+              disabled={disabled}
+              theme={theme}
+            />
+            <ChopLogicInputInnerButton
+              onClick={increment}
+              label={`Increment value for ${label}`}
+              icon={ChopLogicIconName.ChevronRight}
+              disabled={disabled}
+              theme={theme}
+            />
+          </span>
+        )}
+      </div>
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={theme} />
+    </StyledNumericInput>
   );
 };
 

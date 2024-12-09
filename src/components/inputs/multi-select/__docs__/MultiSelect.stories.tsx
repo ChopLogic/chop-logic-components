@@ -29,12 +29,5 @@ export const Default: Story = {
     onChange: (values) => console.log(values),
     required: true,
     disabled: false,
-    theme: 'light',
-  },
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: ['light', 'dark'],
-    },
   },
 };

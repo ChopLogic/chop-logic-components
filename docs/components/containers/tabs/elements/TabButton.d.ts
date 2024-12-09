@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabsMode } from '../../../../types';
+import { ChopLogicTabsMode, ChopLogicTheme } from '../../../../types';
 
 type ChopLogicTabButtonProps = {
     title: string;
@@ -9,6 +9,7 @@ type ChopLogicTabButtonProps = {
     isSelected: boolean;
     mode: ChopLogicTabsMode;
     isDisabled?: boolean;
+    theme: ChopLogicTheme;
 };
 declare const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps>;
 export default ChopLogicTabButton;

@@ -1,4 +1,5 @@
 import { default as React } from '../../../node_modules/react';
+import { ChopLogicTheme } from '../../types';
 
 type ChopLogicErrorMessageProps = {
     errorId: string;
@@ -6,6 +7,7 @@ type ChopLogicErrorMessageProps = {
     message?: string;
     testId?: string;
     style?: React.CSSProperties;
+    theme: ChopLogicTheme;
 };
 declare const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps>;
 export default ChopLogicErrorMessage;

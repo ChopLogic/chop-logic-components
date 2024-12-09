@@ -12,5 +12,4 @@ export type CommonComponentProps = {
     style?: CSSProperties;
     tabIndex?: number;
     title?: string;
-    theme?: 'dark' | 'light';
 };

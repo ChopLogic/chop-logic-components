@@ -1,9 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { MultiSelectValue } from '../../../../types';
+import { MultiSelectOptionProps } from '../../../../types';
 
-type SelectOptionProps = {
-    value: MultiSelectValue;
-    onSelect: (id: string) => void;
-};
-declare const SelectOption: React.FC<SelectOptionProps>;
+declare const SelectOption: React.FC<MultiSelectOptionProps>;
 export default SelectOption;

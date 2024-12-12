@@ -4,19 +4,19 @@ import { ChopLogicTheme } from '@/types';
 
 export const StyledCheckbox = styled.div<{ $disabled: boolean; $theme: ChopLogicTheme }>`
   display: flex;
-  gap: ${(props) => props.$theme.smallGap};
-  padding: ${(props) => props.$theme.smallGap} 0;
+  gap: ${(props) => props.$theme.gapMedium};
+  padding: ${(props) => props.$theme.gapMedium} 0;
   position: relative;
   overflow: hidden;
 
   & svg {
-    color: ${(props) => props.$theme.secondaryColor};
+    color: ${(props) => props.$theme.fontColorLight};
   }
 
   & label {
     cursor: pointer;
-    gap: ${(props) => props.$theme.smallGap};
-    font-size: ${(props) => props.$theme.baseFontSize} !important;
+    gap: ${(props) => props.$theme.gapMedium};
+    font-size: ${(props) => props.$theme.fontSizeBase} !important;
     &:hover,
     &:active {
       text-shadow: ${(props) => props.$theme.textShadow};
@@ -38,7 +38,7 @@ export const StyledCheckbox = styled.div<{ $disabled: boolean; $theme: ChopLogic
     margin: 0;
 
     &:focus-visible + label {
-      outline: ${(props) => props.$theme.outlineBorder};
+      outline: ${(props) => props.$theme.borderOutline};
       outline-offset: 2px;
     }
   }

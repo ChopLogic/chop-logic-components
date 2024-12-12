@@ -8,8 +8,8 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       values: [
-        { name: 'Dark', value: `${DARK_THEME.backgroundColor}` },
-        { name: 'Light', value: `${LIGHT_THEME.backgroundColor}` },
+        { name: 'Dark', value: `${DARK_THEME.backgroundColorBase}` },
+        { name: 'Light', value: `${LIGHT_THEME.backgroundColorBase}` },
       ],
       default: 'Light',
     },
@@ -40,11 +40,11 @@ const preview: Preview = {
 const withTheme: Decorator = (StoryFn, context) => {
   // Get the active theme value from the story parameter
   const { backgrounds } = context.globals;
-  const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColor;
-  const mode = backgroundColor === DARK_THEME.backgroundColor ? 'dark' : 'light';
+  const backgroundColorBase = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
+  const mode = backgroundColorBase === DARK_THEME.backgroundColorBase ? 'dark' : 'light';
   return (
     <ChopLogicThemeContext.Provider value={{ mode }}>
-      <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
+      <div style={{ ...STORY_WRAPPER_STYLES, backgroundColorBase }}>
         <StoryFn />
       </div>
     </ChopLogicThemeContext.Provider>

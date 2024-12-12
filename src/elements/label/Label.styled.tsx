@@ -5,10 +5,10 @@ import { ChopLogicTheme } from '@/types';
 export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
   display: flex;
   align-items: center;
-  font-size: ${(props) => props.$theme.smallFontSize};
-  font-family: ${(props) => props.$theme.coreFontFamily};
-  gap: ${(props) => props.$theme.smallGap};
-  color: ${(props) => props.$theme.primaryColor};
+  font-size: ${(props) => props.$theme.fontSizeSmall};
+  font-family: ${(props) => props.$theme.fontFamilyCore};
+  gap: ${(props) => props.$theme.gapMedium};
+  color: ${(props) => props.$theme.fontColorBase};
 
   & + span {
     text-wrap: nowrap;
@@ -19,6 +19,6 @@ export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
   & abbr {
     text-decoration: none;
     cursor: pointer;
-    color: ${(props) => props.$theme.accentColor};
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 `;

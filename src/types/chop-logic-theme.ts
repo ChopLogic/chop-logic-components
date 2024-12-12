@@ -1,25 +1,30 @@
 export interface ChopLogicTheme {
   // Colors
-  primaryColor: string;
-  secondaryColor: string;
-  tertiaryColor: string;
-  backgroundColor: string;
-  accentColor: string;
-  transparentBackgroundColor: string;
+  fontColorBase: string;
+  fontColorLight: string;
+  fontColorAccent: string;
+  backgroundColorBase: string;
+  backgroundColorLight: string;
+  backgroundColorAccent: string;
+  backgroundColorTransparent: string;
+  borderColorBase: string;
+  borderColorLight: string;
+  borderColorAccent: string;
   // Gradients
-  primaryGradient: string;
-  accentGradient: string;
-  tintGradient: string;
+  gradientShadow: string;
+  gradientAccent: string;
+  gradientTint: string;
   // Fonts
-  coreFontFamily: string;
-  monospaceFontFamily: string;
-  baseFontSize: string;
-  smallFontSize: string;
-  headerFontSize: string;
+  fontFamilyCore: string;
+  fontFamilyMonospace: string;
+  fontFamilyFancy: string;
+  fontSizeBase: string;
+  fontSizeSmall: string;
+  fontSizeHeader: string;
   // Units
-  smallGap: string;
-  mediumGap: string;
-  bigGap: string;
+  gapSmall: string;
+  gapMedium: string;
+  gapBig: string;
   iconSize: string;
   blockBorderRadius: string;
   // Shadows
@@ -27,12 +32,12 @@ export interface ChopLogicTheme {
   textShadow: string;
   insetShadow: string;
   // Borders
-  regularBorder: string;
-  accentBorder: string;
-  outlineBorder: string;
+  borderBase: string;
+  borderLight: string;
+  borderAccent: string;
+  borderOutline: string;
   // Z-indexes
-  baseIndex: string;
-  tooltipIndex: string;
-  dropdownIndex: string;
-  modalIndex: string;
+  zIndexBase: string;
+  zIndexPopup: string;
+  zIndexModal: string;
 }

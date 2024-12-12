@@ -7,17 +7,17 @@ export const StyledInputInnerButton = styled.button<{ $theme: ChopLogicTheme }>`
   border: none;
   display: flex;
   align-items: center;
-  font-size: ${(props) => props.$theme.baseFontSize};
-  color: ${(props) => props.$theme.secondaryColor};
+  font-size: ${(props) => props.$theme.fontSizeBase};
+  color: ${(props) => props.$theme.fontColorLight};
   padding: 0;
 
   &:focus-visible {
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
     outline-offset: -1px;
   }
 
   &:hover {
-    color: ${(props) => props.$theme.tertiaryColor};
+    color: ${(props) => props.$theme.fontColorAccent};
     filter: drop-shadow(${(props) => props.$theme.textShadow});
   }
 

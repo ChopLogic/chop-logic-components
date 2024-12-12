@@ -4,24 +4,24 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="sc-egkSDF clgjbj"
+      class="sc-egkSDF bMjNrO"
     >
       <tr
-        class="sc-kLhKbu cvTEmM"
+        class="sc-kLhKbu iBxuMi"
       >
         <td
           class="sc-ivxoEo iDeERW"
         >
           <div
-            class="sc-khLCKb fwGfPv"
+            class="sc-khLCKb MpOJy"
           >
             <input
-              class="sc-dstKZu hDCjgd"
+              class="sc-dstKZu dEAZgI"
               id="select_row_row1"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr eZRyTX"
               for="select_row_row1"
             >
               <svg
@@ -55,21 +55,21 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-kLhKbu cvTEmM"
+        class="sc-kLhKbu iBxuMi"
       >
         <td
           class="sc-ivxoEo iDeERW"
         >
           <div
-            class="sc-khLCKb fwGfPv"
+            class="sc-khLCKb MpOJy"
           >
             <input
-              class="sc-dstKZu hDCjgd"
+              class="sc-dstKZu dEAZgI"
               id="select_row_row2"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr eZRyTX"
               for="select_row_row2"
             >
               <svg
@@ -103,21 +103,21 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-kLhKbu cvTEmM"
+        class="sc-kLhKbu iBxuMi"
       >
         <td
           class="sc-ivxoEo iDeERW"
         >
           <div
-            class="sc-khLCKb fwGfPv"
+            class="sc-khLCKb MpOJy"
           >
             <input
-              class="sc-dstKZu hDCjgd"
+              class="sc-dstKZu dEAZgI"
               id="select_row_row3"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr kcJtcC"
+              class="sc-jwIPbr eZRyTX"
               for="select_row_row3"
             >
               <svg

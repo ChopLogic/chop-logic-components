@@ -23,7 +23,7 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-4', label: 'C#' },
 ];
 
-const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
+const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   const [data, setData] = useState<ChopLogicFormData>();
 
   const initialValues = {
@@ -45,6 +45,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns }) => {
     >
       <ChopLogicForm
         columns={columns}
+        hasReset={hasReset}
         initialValues={initialValues}
         onReset={() => setData(undefined)}
         onClickSubmit={(data) => setData(data)}

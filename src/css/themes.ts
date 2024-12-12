@@ -71,7 +71,7 @@ export const DARK_THEME: ChopLogicTheme = {
   mediumGap: '0.6rem',
   bigGap: '1rem',
   iconSize: '1rem',
-  blockBorderRadius: '0.375rem',
+  blockBorderRadius: '0.2rem',
   // Z-indexes
   baseIndex: '1',
   tooltipIndex: '100',

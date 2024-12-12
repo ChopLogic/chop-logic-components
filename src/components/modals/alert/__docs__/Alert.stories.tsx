@@ -32,7 +32,6 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
 
 const meta: Meta<typeof ExampleComponent> = {
   argTypes: {
-    isOpened: { control: 'boolean' },
     title: { control: 'text' },
     message: { control: 'text' },
     mode: {
@@ -45,7 +44,6 @@ const meta: Meta<typeof ExampleComponent> = {
     },
   },
   args: {
-    isOpened: true,
     title: 'Alert Title',
     message: 'This is an alert message.',
     mode: ChopLogicAlertMode.Info,

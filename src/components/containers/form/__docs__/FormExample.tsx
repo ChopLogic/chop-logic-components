@@ -33,16 +33,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-        paddingTop: '2rem',
-      }}
-    >
+    <div>
       <ChopLogicForm
         columns={columns}
         hasReset={hasReset}

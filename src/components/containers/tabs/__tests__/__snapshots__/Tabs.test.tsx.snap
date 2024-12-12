@@ -43,7 +43,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 exports[`ChopLogicTabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fAUdSK kZITFq test-class"
+    class="sc-fAUdSK juRevX test-class"
     id="tabs-id"
   >
     <div

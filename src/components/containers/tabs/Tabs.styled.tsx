@@ -90,9 +90,10 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: Chop
     `}
 `;
 
-export const StyledTabsContainer = styled.div<{ $mode: ChopLogicTabsMode }>`
+export const StyledTabs = styled.div<{ $mode: ChopLogicTabsMode }>`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   ${({ $mode }) =>
     $mode === 'vertical' &&

@@ -7,14 +7,7 @@ import ChopLogicTooltip from '../Tooltip';
 
 const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-      }}
-    >
+    <div>
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id}>
         {visibleOn === 'click' && <ChopLogicButton text='Click me' />}
         {visibleOn === 'hover' && <span>Hover over me</span>}

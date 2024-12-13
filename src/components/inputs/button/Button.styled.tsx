@@ -49,7 +49,7 @@ export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLo
     padding: ${(props) => `${props.$theme.gapMedium} ${props.$theme.gapBig}`};
     border-radius: ${(props) => props.$theme.blockBorderRadius};
     font-size: ${(props) => props.$theme.fontSizeBase};
-    color: ${(props) => props.$theme.fontColorBase};
+    color: #ffffff;
     background: ${(props) => props.$theme.backgroundColorAccent};
     will-change: transform;
     transform: translateY(-4px);
@@ -103,7 +103,6 @@ export const StyledFlatButton = styled.button<{ $extended: boolean; $theme: Chop
 
   &:hover,
   &:active {
-    filter: brightness(110%);
     background: ${(props) => props.$theme.backgroundColorLight};
     transition: all 0.3s ease 0s;
   }
@@ -132,7 +131,6 @@ export const StyledIconButton = styled.button<{ $theme: ChopLogicTheme }>`
 
   &:hover {
     background-color: ${(props) => props.$theme.backgroundColorLight};
-    filter: brightness(110%);
     transition: all 0.3s ease 0s;
   }
 

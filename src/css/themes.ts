@@ -2,15 +2,15 @@ import { ChopLogicTheme } from '@/types';
 
 export const LIGHT_THEME: ChopLogicTheme = {
   // Colors
-  fontColorBase: 'black',
-  fontColorLight: 'silver',
-  fontColorAccent: 'red',
-  backgroundColorBase: 'white',
-  backgroundColorLight: 'whitesmoke',
-  backgroundColorAccent: 'pink',
+  fontColorBase: '#3d3d3d',
+  fontColorLight: '#9e9e9e',
+  fontColorAccent: '#0073e5',
+  backgroundColorBase: '#ffffff',
+  backgroundColorLight: '#f2f2f2',
+  backgroundColorAccent: '#4096ec',
   backgroundColorTransparent: 'hsla(0, 0%, 0%, 0.3)',
   // Gradients
-  gradientShadow: 'linear-gradient(to left, hsl(209, 59%, 14%) 0%, hsl(209, 59%, 24%) 8%, hsl(209, 59%, 24%) 92%, hsl(209, 59%, 14%) 100%)',
+  gradientShadow: 'linear-gradient(to left, hsl(210, 73%, 30%) 0%, hsl(210, 73%, 50%) 8%, hsl(210, 73%, 50%) 92%, hsl(210, 73%, 30%) 100%)',
   // Fonts
   fontFamilyCore: 'Arial, Helvetica, sans-serif',
   fontFamilyMonospace: `'Courier New', Courier, monospace`,
@@ -27,10 +27,10 @@ export const LIGHT_THEME: ChopLogicTheme = {
   boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px',
   textShadow: '2.4px 2.4px 3.2px rgba(0, 0, 0, 0.3)',
   // Borders
-  borderBase: `1px solid black`,
-  borderLight: `1px solid black`,
-  borderAccent: `1px solid black`,
-  borderOutline: `1px solid black`,
+  borderBase: `1px solid #d5d5d5`,
+  borderLight: `1px solid #e2e2e2`,
+  borderAccent: `1px solid #0073e5`,
+  borderOutline: `1px solid #3d3d3d`,
   // Z-indexes
   zIndexBase: '1',
   zIndexPopup: '100',

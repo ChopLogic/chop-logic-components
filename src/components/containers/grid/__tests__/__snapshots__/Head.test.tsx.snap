@@ -4,24 +4,24 @@ exports[`ChopLogicGridHead > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <thead
-      class="sc-gtLWhw edFcpL"
+      class="sc-gtLWhw kloXTo"
     >
       <tr
-        class="sc-dntaoT bnYvhJ"
+        class="sc-dntaoT dUvZNW"
       >
         <th
           class="sc-fAUdSK ehtqCD"
         >
           <div
-            class="sc-khLCKb MpOJy"
+            class="sc-khLCKb eMPujO"
           >
             <input
-              class="sc-dstKZu dEAZgI"
+              class="sc-dstKZu bqDFEX"
               id="select_all_test-grid-id"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr iwFcjq"
+              class="sc-jwIPbr hRpQGZ"
               for="select_all_test-grid-id"
             >
               <svg

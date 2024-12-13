@@ -49,8 +49,8 @@ export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLo
     padding: ${(props) => `${props.$theme.gapMedium} ${props.$theme.gapBig}`};
     border-radius: ${(props) => props.$theme.blockBorderRadius};
     font-size: ${(props) => props.$theme.fontSizeBase};
-    color: ${(props) => props.$theme.backgroundColorBase};
-    background: ${(props) => props.$theme.fontColorBase};
+    color: ${(props) => props.$theme.fontColorBase};
+    background: ${(props) => props.$theme.backgroundColorAccent};
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -104,8 +104,7 @@ export const StyledFlatButton = styled.button<{ $extended: boolean; $theme: Chop
   &:hover,
   &:active {
     filter: brightness(110%);
-    color: ${(props) => props.$theme.backgroundColorBase};
-    background: ${(props) => props.$theme.fontColorBase};
+    background: ${(props) => props.$theme.backgroundColorLight};
     transition: all 0.3s ease 0s;
   }
 
@@ -132,8 +131,8 @@ export const StyledIconButton = styled.button<{ $theme: ChopLogicTheme }>`
   background: transparent;
 
   &:hover {
-    filter: drop-shadow(${(props) => props.$theme.textShadow});
-    color: ${(props) => props.$theme.fontColorAccent};
+    background-color: ${(props) => props.$theme.backgroundColorLight};
+    filter: brightness(110%);
     transition: all 0.3s ease 0s;
   }
 

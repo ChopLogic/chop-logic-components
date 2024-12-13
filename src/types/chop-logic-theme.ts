@@ -7,17 +7,11 @@ export interface ChopLogicTheme {
   backgroundColorLight: string;
   backgroundColorAccent: string;
   backgroundColorTransparent: string;
-  borderColorBase: string;
-  borderColorLight: string;
-  borderColorAccent: string;
   // Gradients
   gradientShadow: string;
-  gradientAccent: string;
-  gradientTint: string;
   // Fonts
   fontFamilyCore: string;
   fontFamilyMonospace: string;
-  fontFamilyFancy: string;
   fontSizeBase: string;
   fontSizeSmall: string;
   fontSizeHeader: string;
@@ -30,7 +24,6 @@ export interface ChopLogicTheme {
   // Shadows
   boxShadow: string;
   textShadow: string;
-  insetShadow: string;
   // Borders
   borderBase: string;
   borderLight: string;

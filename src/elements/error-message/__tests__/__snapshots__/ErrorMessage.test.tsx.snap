@@ -3,7 +3,7 @@
 exports[`ChopLogicErrorMessage > should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-blHHSb bpYEAH"
+    class="sc-blHHSb bdCuiM"
     id="test-error-id"
   >
     Incorrect input

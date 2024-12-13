@@ -7,7 +7,7 @@ export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
   align-items: center;
   font-size: ${(props) => props.$theme.fontSizeSmall};
   font-family: ${(props) => props.$theme.fontFamilyCore};
-  gap: ${(props) => props.$theme.gapMedium};
+  gap: ${(props) => props.$theme.gapSmall};
   color: ${(props) => props.$theme.fontColorBase};
 
   & + span {

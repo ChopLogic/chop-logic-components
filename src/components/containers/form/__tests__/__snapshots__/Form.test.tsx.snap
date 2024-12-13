@@ -8,10 +8,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
     style="width: 500px;"
   >
     <div
-      class="sc-jwIPbr lhjALS"
+      class="sc-jwIPbr hwHmXi"
     >
       <label
-        class="sc-egkSDF bfGtLL"
+        class="sc-egkSDF dHklYW"
         for="first-name"
       >
         <span>
@@ -69,10 +69,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-jwIPbr lhjALS"
+      class="sc-jwIPbr hwHmXi"
     >
       <label
-        class="sc-egkSDF bfGtLL"
+        class="sc-egkSDF dHklYW"
         for="last-name"
       >
         <span>
@@ -133,7 +133,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-dpBQxM hudfHs"
     >
       <label
-        class="sc-egkSDF bfGtLL"
+        class="sc-egkSDF dHklYW"
         for="age"
       >
         <span>
@@ -201,7 +201,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-dprtRQ eMKnfy"
     >
       <button
-        class="sc-dntaoT jvzjPp"
+        class="sc-dntaoT fHsMEJ"
         type="reset"
       >
         <svg
@@ -220,7 +220,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="sc-fAUdSK mIaZV"
+        class="sc-fAUdSK dqriLS"
         type="submit"
       >
         <span

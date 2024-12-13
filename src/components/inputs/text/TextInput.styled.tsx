@@ -11,9 +11,10 @@ export const StyledTextInput = styled.div<{ $theme: ChopLogicTheme }>`
     display: flex;
     gap: ${(props) => props.$theme.gapMedium};
     align-items: center;
-    border: ${(props) => props.$theme.borderBase};
+    border: ${(props) => props.$theme.borderLight};
     border-radius: ${(props) => props.$theme.blockBorderRadius};
     padding: ${(props) => props.$theme.gapMedium};
+    background-color: ${(props) => props.$theme.backgroundColorLight};
 
     &:has(input:focus) {
       border: ${(props) => props.$theme.borderOutline};

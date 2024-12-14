@@ -13,6 +13,6 @@ export declare const StyledTabList: import('styled-components/dist/types').IStyl
     $mode: ChopLogicTabsMode;
     $theme: ChopLogicTheme;
 }>> & string;
-export declare const StyledTabsContainer: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<import('../../../../node_modules/react').DetailedHTMLProps<import('../../../../node_modules/react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {
+export declare const StyledTabs: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<import('../../../../node_modules/react').DetailedHTMLProps<import('../../../../node_modules/react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {
     $mode: ChopLogicTabsMode;
 }>> & string;

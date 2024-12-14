@@ -18,7 +18,6 @@ export const StyledInputInnerButton = styled.button<{ $theme: ChopLogicTheme }>`
 
   &:hover {
     color: ${(props) => props.$theme.fontColorAccent};
-    filter: drop-shadow(${(props) => props.$theme.textShadow});
   }
 
   svg {

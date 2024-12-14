@@ -13,7 +13,6 @@ export const StyledSelect = styled.div<{ $theme: ChopLogicTheme }>`
 
 export const StyledSelectCombobox = styled.button<{ $theme: ChopLogicTheme }>`
   text-align: left;
-  background: transparent;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -22,6 +21,7 @@ export const StyledSelectCombobox = styled.button<{ $theme: ChopLogicTheme }>`
   padding: ${(props) => props.$theme.gapMedium};
   border: ${(props) => props.$theme.borderBase};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
+  background-color: ${(props) => props.$theme.backgroundColorLight};
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -42,7 +42,6 @@ export const StyledSelectCombobox = styled.button<{ $theme: ChopLogicTheme }>`
 
     &:hover {
       color: ${(props) => props.$theme.fontColorAccent};
-      filter: drop-shadow(${(props) => props.$theme.textShadow});
     }
   }
 
@@ -64,13 +63,13 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean; $theme: ChopLo
     visibility 0s,
     opacity 0.3s linear;
   position: absolute;
-  background: ${(props) => props.$theme.backgroundColorBase};
+  background: ${(props) => props.$theme.backgroundColorLight};
   margin: 0;
   padding: 0;
   list-style: none;
   z-index: ${(props) => props.$theme.zIndexPopup};
   width: 100%;
-  top: 70px;
+  top: 72px;
   left: -1px;
   border: ${(props) => props.$theme.borderBase};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
@@ -81,7 +80,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean; $theme: ChopLo
   ${(props) => props.$opened && `visibility: visible; opacity: 1;`}
 `;
 
-export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme }>`
+export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme; $selected: boolean }>`
   padding: ${(props) => props.$theme.gapMedium};
   cursor: pointer;
   display: flex;
@@ -94,7 +93,7 @@ export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme }>`
 
   &:hover,
   &:active {
-    text-shadow: ${(props) => props.$theme.textShadow};
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 
   &:focus-visible {
@@ -103,7 +102,7 @@ export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme }>`
   }
 
   svg {
-    color: ${(props) => props.$theme.backgroundColorLight};
+    color: ${(props) => (props.$selected ? props.$theme.fontColorAccent : props.$theme.fontColorLight)};
     width: ${(props) => props.$theme.iconSize};
     height: ${(props) => props.$theme.iconSize};
   }

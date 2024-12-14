@@ -5,16 +5,16 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
   <table>
     <colgroup>
       <col
-        class="sc-ixGGxD eLeyGw"
+        class="sc-ixGGxD hwvGSM"
       />
       <col
-        class="sc-ixGGxD kkyTkD"
+        class="sc-ixGGxD fPLzYd"
       />
       <col
-        class="sc-ixGGxD fFTWn column-class"
+        class="sc-ixGGxD kUgDBs column-class"
       />
       <col
-        class="sc-ixGGxD fFTWn"
+        class="sc-ixGGxD kUgDBs"
       />
     </colgroup>
   </table>

@@ -16,7 +16,7 @@ export type ChopLogicSelectProps = CommonInputProps & {
 
 export type SelectOptionProps = {
   value: SelectValue;
-  isSelected: boolean;
+  selected: boolean;
   onSelect: (id: string) => void;
   onClear: () => void;
   theme: ChopLogicTheme;

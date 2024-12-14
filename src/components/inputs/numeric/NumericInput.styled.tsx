@@ -14,6 +14,7 @@ export const StyledNumericInput = styled.div<{ $theme: ChopLogicTheme }>`
     border: ${(props) => props.$theme.borderBase};
     border-radius: ${(props) => props.$theme.blockBorderRadius};
     padding: ${(props) => props.$theme.gapMedium};
+    background-color: ${(props) => props.$theme.backgroundColorLight};
 
     &:has(input:focus) {
       border: ${(props) => props.$theme.borderOutline};
@@ -30,7 +31,6 @@ export const StyledNumericInput = styled.div<{ $theme: ChopLogicTheme }>`
 
     & > span:nth-child(2) {
       display: flex;
-      gap: 0;
       align-items: center;
     }
   }
@@ -47,6 +47,7 @@ export const StyledNumericInput = styled.div<{ $theme: ChopLogicTheme }>`
     text-overflow: ellipsis;
     overflow: hidden;
     flex-grow: 1;
+    min-width: 0;
 
     &:focus-visible {
       outline: none;

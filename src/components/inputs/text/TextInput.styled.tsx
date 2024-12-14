@@ -31,9 +31,8 @@ export const StyledTextInput = styled.div<{ $theme: ChopLogicTheme }>`
 
     & > span:nth-child(2) {
       display: flex;
-      gap: ${(props) => props.$theme.gapMedium};
+      gap: ${(props) => props.$theme.gapSmall};
       align-items: center;
-      min-width: 0;
     }
   }
 

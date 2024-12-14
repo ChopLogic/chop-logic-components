@@ -8,10 +8,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
     style="width: 500px;"
   >
     <div
-      class="sc-jwIPbr hTheNK"
+      class="sc-jwIPbr fWVtRi"
     >
       <label
-        class="sc-egkSDF gpbJFJ"
+        class="sc-egkSDF dZQHgs"
         for="first-name"
       >
         <span>
@@ -33,7 +33,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for First Name"
-            class="sc-gtLWhw jwZQhO"
+            class="sc-gtLWhw hwmlGN"
             type="button"
           >
             <svg
@@ -62,17 +62,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb jmSTeU"
+        class="sc-blHHSb iQODZd"
         id="first-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-jwIPbr hTheNK"
+      class="sc-jwIPbr fWVtRi"
     >
       <label
-        class="sc-egkSDF gpbJFJ"
+        class="sc-egkSDF dZQHgs"
         for="last-name"
       >
         <span>
@@ -94,7 +94,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for Last Name"
-            class="sc-gtLWhw jwZQhO"
+            class="sc-gtLWhw hwmlGN"
             type="button"
           >
             <svg
@@ -123,17 +123,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb jmSTeU"
+        class="sc-blHHSb iQODZd"
         id="last-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-dpBQxM jXDwnV"
+      class="sc-dpBQxM ksGBNf"
     >
       <label
-        class="sc-egkSDF gpbJFJ"
+        class="sc-egkSDF dZQHgs"
         for="age"
       >
         <span>
@@ -156,7 +156,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Decrement value for Age"
-            class="sc-gtLWhw jwZQhO"
+            class="sc-gtLWhw hwmlGN"
             type="button"
           >
             <svg
@@ -173,7 +173,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Age"
-            class="sc-gtLWhw jwZQhO"
+            class="sc-gtLWhw hwmlGN"
             type="button"
           >
             <svg
@@ -191,7 +191,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb jmSTeU"
+        class="sc-blHHSb iQODZd"
         id="age_error"
       >
         Invalid input
@@ -201,7 +201,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-dprtRQ eMKnfy"
     >
       <button
-        class="sc-dntaoT heDDVM"
+        class="sc-dntaoT cUJLyz"
         type="reset"
       >
         <svg
@@ -220,7 +220,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="sc-fAUdSK hKfyjc"
+        class="sc-fAUdSK iPQsSA"
         type="submit"
       >
         <span

@@ -5,7 +5,6 @@ export interface ChopLogicTheme {
   fontColorAccent: string;
   backgroundColorBase: string;
   backgroundColorLight: string;
-  backgroundColorAccent: string;
   backgroundColorTransparent: string;
   // Gradients
   gradientShadow: string;

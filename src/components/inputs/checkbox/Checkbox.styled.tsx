@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ChopLogicTheme } from '@/types';
 
-export const StyledCheckbox = styled.div<{ $disabled: boolean; $theme: ChopLogicTheme }>`
+export const StyledCheckbox = styled.div<{ $disabled: boolean; $checked: boolean; $theme: ChopLogicTheme }>`
   display: flex;
   gap: ${(props) => props.$theme.gapMedium};
   padding: ${(props) => props.$theme.gapMedium} 0;
@@ -10,7 +10,7 @@ export const StyledCheckbox = styled.div<{ $disabled: boolean; $theme: ChopLogic
   overflow: hidden;
 
   & svg {
-    color: ${(props) => props.$theme.fontColorLight};
+    color: ${(props) => (props.$checked ? props.$theme.fontColorAccent : props.$theme.fontColorLight)};
   }
 
   & label {
@@ -22,6 +22,7 @@ export const StyledCheckbox = styled.div<{ $disabled: boolean; $theme: ChopLogic
       text-shadow: ${(props) => props.$theme.textShadow};
     }
   }
+
   ${(props) =>
     props.$disabled &&
     `

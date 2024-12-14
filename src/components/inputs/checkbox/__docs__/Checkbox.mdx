@@ -1,4 +1,4 @@
-import { Canvas, Meta } from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 import * as CheckboxStories from './Checkbox.stories';
 
 <Meta of={CheckboxStories} title='Checkbox' />
@@ -6,10 +6,6 @@ import * as CheckboxStories from './Checkbox.stories';
 # ChopLogicCheckbox
 
 Styled checkbox component with an optional label and floating checkbox icon. Can be used as input for ChopLogicForm.
-
-### Default View
-
-<Canvas of={CheckboxStories.LeftIconCheckbox} />
 
 ### Usage
 
@@ -35,7 +31,7 @@ export default Example;
 ### Props
 
 | Prop               | Type                  | Description                                                                                                                                                | Default     | Required |
-|--------------------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------- |
 | **name**           | `string`              | A string representing the name attribute of the component, used for form submissions.                                                                      | `undefined` | Yes      |
 | **label**          | `string`              | A string that represents the label for the component.                                                                                                      | `undefined` | Yes      |
 | **defaultChecked** | `boolean`             | A boolean indicating whether the checkbox is checked by default or not.                                                                                    | `false`     | No       |

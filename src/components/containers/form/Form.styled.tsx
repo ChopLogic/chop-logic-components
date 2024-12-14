@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { ChopLogicTheme } from '@/types';
 
 export const StyledForm = styled.form<{ $columns: number; $theme: ChopLogicTheme }>`
-  font-size: ${(props) => props.$theme.baseFontSize};
-  font-family: ${(props) => props.$theme.coreFontFamily};
   display: grid;
-  gap: ${(props) => props.$theme.mediumGap};
   align-items: end;
+  gap: ${(props) => props.$theme.gapMedium};
+  font-size: ${(props) => props.$theme.fontSizeBase};
+  font-family: ${(props) => props.$theme.fontFamilyCore};
 
   ${({ $columns }) =>
     `
@@ -16,11 +16,11 @@ export const StyledForm = styled.form<{ $columns: number; $theme: ChopLogicTheme
     `}
 `;
 
-export const StyledFormButtonContainer = styled.div<{ $columns: number; $theme: ChopLogicTheme }>`
+export const StyledFormButtonsContainer = styled.div<{ $columns: number }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${(props) => props.$theme.bigGap};
+  padding-top: 1rem;
 
   ${({ $columns }) => `
     grid-column: 1 / ${$columns + 1};

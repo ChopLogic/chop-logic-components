@@ -21,6 +21,7 @@ const meta: Meta<typeof ChopLogicTabs> = {
   args: {
     tabs,
     defaultTabId: 'tab1',
+    mode: 'horizontal',
   },
   component: ChopLogicTabs,
   title: 'Containers/Tabs',

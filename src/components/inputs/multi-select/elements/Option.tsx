@@ -30,6 +30,7 @@ const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect, theme
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
       $theme={theme}
+      $selected={selected}
     >
       {selected ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
       <span>{label}</span>

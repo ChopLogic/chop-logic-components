@@ -5,7 +5,7 @@ import { ChopLogicTabsProps } from '@/types';
 
 import ChopLogicTabContent from './elements/TabContent';
 import ChopLogicTabList from './elements/TabList';
-import { StyledTabsContainer } from './Tabs.styled';
+import { StyledTabs } from './Tabs.styled';
 
 const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = 'horizontal', ...rest }) => {
   const tabIds = tabs.map((item) => item.id);
@@ -19,7 +19,7 @@ const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode 
   };
 
   return (
-    <StyledTabsContainer $mode={mode} {...rest}>
+    <StyledTabs $mode={mode} {...rest}>
       <ChopLogicTabList
         tabs={tabs}
         selectedTabId={selectedTabId}
@@ -30,7 +30,7 @@ const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode 
         theme={theme}
       />
       <ChopLogicTabContent tabs={tabs} selectedTabId={selectedTabId} theme={theme} />
-    </StyledTabsContainer>
+    </StyledTabs>
   );
 };
 

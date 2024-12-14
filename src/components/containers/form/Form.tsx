@@ -7,7 +7,7 @@ import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicFormProps } from '@/types';
 
 import { useChopLogicFormController } from './controller';
-import { StyledForm, StyledFormButtonContainer } from './Form.styled';
+import { StyledForm, StyledFormButtonsContainer } from './Form.styled';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   children,
@@ -31,10 +31,10 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
     <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns} $theme={theme} {...rest}>
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
-        <StyledFormButtonContainer $columns={columns} $theme={theme}>
+        <StyledFormButtonsContainer $columns={columns}>
           {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view='flat' />}
           <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
-        </StyledFormButtonContainer>
+        </StyledFormButtonsContainer>
       </ChopLogicFormContext.Provider>
     </StyledForm>
   );

@@ -4,11 +4,11 @@ import { StyledSelectOption } from '@/elements/styled/Select.styled';
 import CheckMarkIcon from '@/icons/CheckMarkIcon.tsx';
 import { SelectOptionProps } from '@/types';
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect, onClear, theme }) => {
+const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear, theme }) => {
   const { id, label } = value;
 
   const handleOptionSelect = (id: string) => {
-    if (isSelected) {
+    if (selected) {
       onClear();
     } else {
       onSelect(id);
@@ -32,14 +32,15 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, isSelected, onSelect
     <StyledSelectOption
       id={id}
       role='option'
-      aria-selected={isSelected}
+      aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => handleOptionSelect(id)}
       $theme={theme}
+      $selected={selected}
     >
       <span>{label}</span>
-      {isSelected && <CheckMarkIcon />}
+      {selected && <CheckMarkIcon />}
     </StyledSelectOption>
   );
 };

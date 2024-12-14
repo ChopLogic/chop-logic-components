@@ -28,16 +28,8 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
   );
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-        padding: '20px',
-      }}
-    >
-      <ChopLogicButton text='Open dialog' onClick={handleOpen} />
+    <div>
+      <ChopLogicButton text='Open dialog' onClick={handleOpen} view='flat' />
       <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
         {modalContent}
       </ChopLogicDialog>

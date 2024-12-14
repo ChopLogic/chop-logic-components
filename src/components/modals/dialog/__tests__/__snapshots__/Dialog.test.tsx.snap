@@ -4,17 +4,17 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
 <DocumentFragment>
   <div
     aria-modal="true"
-    class="sc-dEkLRj ymOGP dialog-class"
+    class="sc-dEkLRj cyGZsb dialog-class"
     id="dialog-id"
     role="dialog"
   >
     <header
-      class="sc-diYFot jpoWoq"
+      class="sc-diYFot hnEmcT"
     >
       Test dialog title
       <button
         aria-label="Close modal window"
-        class="sc-ivxoEo deWBSC"
+        class="sc-ivxoEo dIkLYl"
         type="button"
       >
         <svg
@@ -30,7 +30,7 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
       </button>
     </header>
     <div
-      class="sc-kEfuZE iNvkAv"
+      class="sc-kEfuZE ddtLKb"
     >
       <div>
         Dialog content

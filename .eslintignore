@@ -7,3 +7,4 @@
 **/jest.config.js
 **/__mocks__/*
 docs/*
+storybook-static/*

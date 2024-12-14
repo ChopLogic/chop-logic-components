@@ -21,37 +21,37 @@ describe('getChopLogicTheme', () => {
 
   it('should override default theme properties with custom values', () => {
     const customValues = {
-      primaryColor: '#ff0000',
-      secondaryColor: '#00ff00',
+      fontColorBase: '#ff0000',
+      fontColorAccent: '#00ff00',
     };
 
     const result = getChopLogicTheme('light', customValues);
 
-    expect(result.primaryColor).toBe('#ff0000');
-    expect(result.secondaryColor).toBe('#00ff00');
-    expect(result.backgroundColor).toBe(LIGHT_THEME.backgroundColor); // Unchanged property
+    expect(result.fontColorBase).toBe('#ff0000');
+    expect(result.fontColorAccent).toBe('#00ff00');
+    expect(result.backgroundColorBase).toBe(LIGHT_THEME.backgroundColorBase); // Unchanged property
   });
 
   it('should only override properties that exist in the theme', () => {
     const customValues = {
-      primaryColor: '#ff0000',
+      fontColorBase: '#ff0000',
       nonExistentProperty: 'some value',
     };
 
     const result = getChopLogicTheme('dark', customValues);
 
-    expect(result.primaryColor).toBe('#ff0000');
+    expect(result.fontColorBase).toBe('#ff0000');
     expect(result).not.toHaveProperty('nonExistentProperty'); // Property shouldn't exist
   });
 
   it('should convert overridden properties to strings', () => {
     const customValues = {
-      primaryColor: 12345, // Numeric value
+      fontColorBase: 12345, // Numeric value
     };
 
     const result = getChopLogicTheme('light', customValues as never);
 
-    expect(result.primaryColor).toBe('12345'); // Converted to string
+    expect(result.fontColorBase).toBe('12345'); // Converted to string
   });
 
   it('should work correctly when custom values are undefined', () => {

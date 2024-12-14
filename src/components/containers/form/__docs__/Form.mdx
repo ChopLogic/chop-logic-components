@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 import * as ChopLogicFormStories from './Form.stories';
 
 <Meta of={ChopLogicFormStories} title='Form' />
@@ -7,11 +7,7 @@ import * as ChopLogicFormStories from './Form.stories';
 
 The `ChopLogicForm` component is a wrapper for one or more inputs. It collects values of these inputs, validates them, and passes them to the handler function when the Submit button is clicked. The component works with both Chop Logic inputs and default HTML inputs.
 
-<Canvas>
-  <Story of={ChopLogicFormStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React from 'react';

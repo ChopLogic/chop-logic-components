@@ -26,7 +26,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   const theme = useChopLogicTheme();
 
   return (
-    <StyledCheckbox $disabled={!!disabled} $theme={theme} {...rest}>
+    <StyledCheckbox $disabled={!!disabled} $theme={theme} $checked={checked} {...rest}>
       <input
         id={elementId}
         name={name}

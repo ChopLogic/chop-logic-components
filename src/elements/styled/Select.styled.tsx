@@ -7,47 +7,46 @@ export const StyledSelect = styled.div<{ $theme: ChopLogicTheme }>`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: ${(props) => props.$theme.mediumGap};
+  gap: ${(props) => props.$theme.gapMedium};
   background: transparent;
 `;
 
 export const StyledSelectCombobox = styled.button<{ $theme: ChopLogicTheme }>`
   text-align: left;
-  background: transparent;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: ${(props) => props.$theme.mediumGap};
-  padding: ${(props) => props.$theme.mediumGap};
-  border: ${(props) => props.$theme.regularBorder};
+  gap: ${(props) => props.$theme.gapMedium};
+  padding: ${(props) => props.$theme.gapMedium};
+  border: ${(props) => props.$theme.borderBase};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
+  background-color: ${(props) => props.$theme.backgroundColorLight};
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 
   & > span:nth-child(1) {
-    font-size: ${(props) => props.$theme.baseFontSize};
-    color: ${(props) => props.$theme.primaryColor};
-    font-family: ${(props) => props.$theme.coreFontFamily};
+    font-size: ${(props) => props.$theme.fontSizeBase};
+    color: ${(props) => props.$theme.fontColorBase};
+    font-family: ${(props) => props.$theme.fontFamilyCore};
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   svg {
     cursor: pointer;
-    color: ${(props) => props.$theme.secondaryColor};
+    color: ${(props) => props.$theme.fontColorLight};
     height: ${(props) => props.$theme.iconSize};
     width: ${(props) => props.$theme.iconSize};
 
     &:hover {
-      color: ${(props) => props.$theme.tertiaryColor};
-      filter: drop-shadow(${(props) => props.$theme.textShadow});
+      color: ${(props) => props.$theme.fontColorAccent};
     }
   }
 
   &:focus-visible {
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
     outline-offset: 2px;
   }
 
@@ -64,15 +63,15 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean; $theme: ChopLo
     visibility 0s,
     opacity 0.3s linear;
   position: absolute;
-  background: ${(props) => props.$theme.backgroundColor};
+  background: ${(props) => props.$theme.backgroundColorLight};
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: ${(props) => props.$theme.dropdownIndex};
+  z-index: ${(props) => props.$theme.zIndexPopup};
   width: 100%;
-  top: 70px;
+  top: 72px;
   left: -1px;
-  border: ${(props) => props.$theme.regularBorder};
+  border: ${(props) => props.$theme.borderBase};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
   box-shadow: ${(props) => props.$theme.boxShadow};
   overflow-y: auto;
@@ -81,29 +80,29 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean; $theme: ChopLo
   ${(props) => props.$opened && `visibility: visible; opacity: 1;`}
 `;
 
-export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme }>`
-  padding: ${(props) => props.$theme.mediumGap};
+export const StyledSelectOption = styled.li<{ $theme: ChopLogicTheme; $selected: boolean }>`
+  padding: ${(props) => props.$theme.gapMedium};
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: ${(props) => props.$theme.mediumGap};
-  font-size: ${(props) => props.$theme.baseFontSize};
-  color: ${(props) => props.$theme.primaryColor};
-  font-family: ${(props) => props.$theme.coreFontFamily};
+  gap: ${(props) => props.$theme.gapMedium};
+  font-size: ${(props) => props.$theme.fontSizeBase};
+  color: ${(props) => props.$theme.fontColorBase};
+  font-family: ${(props) => props.$theme.fontFamilyCore};
 
   &:hover,
   &:active {
-    text-shadow: ${(props) => props.$theme.textShadow};
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 
   &:focus-visible {
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
     outline-offset: -4px;
   }
 
   svg {
-    color: ${(props) => props.$theme.secondaryColor};
+    color: ${(props) => (props.$selected ? props.$theme.fontColorAccent : props.$theme.fontColorLight)};
     width: ${(props) => props.$theme.iconSize};
     height: ${(props) => props.$theme.iconSize};
   }

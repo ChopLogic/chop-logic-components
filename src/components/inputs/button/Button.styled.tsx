@@ -37,20 +37,20 @@ export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLo
     width: 100%;
     height: 100%;
     border-radius: ${(props) => props.$theme.blockBorderRadius};
-    background: ${(props) => props.$theme.primaryGradient};
+    background: ${(props) => props.$theme.gradientShadow};
   }
 
   .chop-logic-button_front {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: ${(props) => props.$theme.smallGap};
+    gap: ${(props) => props.$theme.gapSmall};
     position: relative;
-    padding: ${(props) => `${props.$theme.mediumGap} ${props.$theme.bigGap}`};
+    padding: ${(props) => `${props.$theme.gapMedium} ${props.$theme.gapBig}`};
     border-radius: ${(props) => props.$theme.blockBorderRadius};
-    font-size: ${(props) => props.$theme.baseFontSize};
-    color: ${(props) => props.$theme.backgroundColor};
-    background: ${(props) => props.$theme.secondaryColor};
+    font-size: ${(props) => props.$theme.fontSizeBase};
+    color: #ffffff;
+    background: ${(props) => props.$theme.fontColorAccent};
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -82,7 +82,7 @@ export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLo
 
   &:focus-visible {
     outline: revert;
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
     outline-offset: 4px;
   }
 `;
@@ -93,24 +93,23 @@ export const StyledFlatButton = styled.button<{ $extended: boolean; $theme: Chop
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${(props) => props.$theme.smallGap};
-  padding: ${(props) => `${props.$theme.mediumGap} ${props.$theme.bigGap}`};
+  gap: ${(props) => props.$theme.gapSmall};
+  padding: ${(props) => `${props.$theme.gapMedium} ${props.$theme.gapBig}`};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
-  font-size: ${(props) => props.$theme.baseFontSize};
-  color: ${(props) => props.$theme.secondaryColor};
+  font-size: ${(props) => props.$theme.fontSizeBase};
+  color: ${(props) => props.$theme.fontColorBase};
   background: transparent;
   width: ${(props) => (props.$extended ? '100%' : 'inherit')};
 
   &:hover,
   &:active {
-    filter: brightness(110%);
-    color: ${(props) => props.$theme.backgroundColor};
-    background: ${(props) => props.$theme.secondaryColor};
+    background: ${(props) => props.$theme.backgroundColorLight};
     transition: all 0.3s ease 0s;
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 
   &:focus-visible {
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
   }
 
   &[disabled] {
@@ -125,20 +124,20 @@ export const StyledIconButton = styled.button<{ $theme: ChopLogicTheme }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${(props) => props.$theme.mediumGap};
+  padding: ${(props) => props.$theme.gapMedium};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
-  font-size: ${(props) => props.$theme.baseFontSize};
-  color: ${(props) => props.$theme.primaryColor};
+  font-size: ${(props) => props.$theme.fontSizeBase};
+  color: ${(props) => props.$theme.fontColorBase};
   background: transparent;
 
   &:hover {
-    filter: drop-shadow(${(props) => props.$theme.textShadow});
-    color: ${(props) => props.$theme.secondaryColor};
+    background-color: ${(props) => props.$theme.backgroundColorLight};
+    color: ${(props) => props.$theme.fontColorAccent};
     transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
-    outline: ${(props) => props.$theme.outlineBorder};
+    outline: ${(props) => props.$theme.borderOutline};
   }
 
   &[disabled] {

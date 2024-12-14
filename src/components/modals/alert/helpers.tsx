@@ -12,16 +12,18 @@ export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string 
   if (title) return title;
 
   switch (mode) {
-    case 'info':
-      return 'Info';
-    case 'warning':
-      return 'Warning';
-    case 'error':
-      return 'Error';
-    case 'success':
-      return 'Success';
+    case ChopLogicAlertMode.Info:
+      return 'For your information';
+    case ChopLogicAlertMode.Warning:
+      return 'Please pay attention';
+    case ChopLogicAlertMode.Error:
+      return 'Something went wrong';
+    case ChopLogicAlertMode.Success:
+      return 'Everything is okay';
+    case ChopLogicAlertMode.Help:
+      return 'Useful tip';
     default:
-      return '';
+      return 'Alert';
   }
 }
 
@@ -31,15 +33,15 @@ export function renderAlertIcon(mode: ChopLogicAlertMode, icon?: ChopLogicIconNa
   }
 
   switch (mode) {
-    case 'info':
+    case ChopLogicAlertMode.Info:
       return <InfoIcon />;
-    case 'warning':
+    case ChopLogicAlertMode.Warning:
       return <WarningIcon />;
-    case 'error':
+    case ChopLogicAlertMode.Error:
       return <ErrorIcon />;
-    case 'success':
+    case ChopLogicAlertMode.Success:
       return <CheckMarkIcon />;
-    case 'help':
+    case ChopLogicAlertMode.Help:
       return <HelpIcon />;
     default:
       return null;

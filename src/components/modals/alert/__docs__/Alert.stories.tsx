@@ -14,17 +14,8 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
   const handleClose = () => setIsOpened(false);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-        padding: '20px',
-      }}
-    >
-      <ChopLogicButton onClick={handleOpen} text='Open Alert' />
+    <div>
+      <ChopLogicButton onClick={handleOpen} text='Trigger Alert' />
       <ChopLogicAlert {...props} isOpened={isOpened} onClose={handleClose} />
     </div>
   );
@@ -32,7 +23,6 @@ const ExampleComponent: React.FC<ChopLogicAlertProps> = (props) => {
 
 const meta: Meta<typeof ExampleComponent> = {
   argTypes: {
-    isOpened: { control: 'boolean' },
     title: { control: 'text' },
     message: { control: 'text' },
     mode: {
@@ -45,11 +35,8 @@ const meta: Meta<typeof ExampleComponent> = {
     },
   },
   args: {
-    isOpened: true,
-    title: 'Alert Title',
-    message: 'This is an alert message.',
+    message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     mode: ChopLogicAlertMode.Info,
-    icon: ChopLogicIconName.Info,
   },
   component: ExampleComponent,
   title: 'Modals/Alert',

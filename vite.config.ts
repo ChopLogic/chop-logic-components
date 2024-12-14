@@ -4,7 +4,7 @@ import * as path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
-import { peerDependencies } from './package.json';
+import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
@@ -15,7 +15,7 @@ export default defineConfig({
       formats: ['cjs', 'es'], // Specifies the output formats (CommonJS and ES modules).
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)], // Defines external dependencies for Rollup bundling.
+      external: [...Object.keys(dependencies)], // Defines external dependencies for Rollup bundling.
     },
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.

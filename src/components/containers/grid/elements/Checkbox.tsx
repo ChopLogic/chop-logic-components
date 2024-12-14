@@ -26,7 +26,7 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
   const { elementId } = useElementIds(props?.id);
 
   return (
-    <StyledGridCheckboxWrapper $disabled={!!disabled} $theme={theme}>
+    <StyledGridCheckboxWrapper $disabled={!!disabled} $checked={checked} $theme={theme}>
       <StyledGridCheckboxInput
         id={elementId}
         name={name}

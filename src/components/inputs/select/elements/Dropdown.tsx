@@ -38,7 +38,7 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
           value={item}
           onSelect={() => handleOptionSelect(item.id)}
           onClear={onClear}
-          isSelected={item.id === selected?.id}
+          selected={item.id === selected?.id}
           theme={theme}
         />
       ))}

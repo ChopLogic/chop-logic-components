@@ -13,7 +13,7 @@ const Example: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
 
   return (
     <div>
-      <ChopLogicButton onClick={handleOpen} text='Open Alert' />
+      <ChopLogicButton onClick={handleOpen} text='Open Alert' view='flat' />
       <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title={title} message={message} mode={mode} />
     </div>
   );

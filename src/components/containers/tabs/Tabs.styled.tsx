@@ -24,7 +24,7 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   &:hover,
   &:active {
     text-shadow: ${(props) => props.$theme.textShadow};
-    text-decoration: underline;
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 
   ${(props) =>
@@ -38,9 +38,9 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
   ${(props) =>
     props.$selected &&
     `   
-      border-top: ${props.$theme.borderBase};
-      border-right: ${props.$theme.borderBase};
-      border-left: ${props.$theme.borderBase};
+      border-top: ${props.$theme.borderLight};
+      border-right: ${props.$theme.borderLight};
+      border-left: ${props.$theme.borderLight};
       background-color: ${props.$theme.backgroundColorBase};
       top: 1px;
     `}
@@ -56,10 +56,10 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     props.$mode === 'vertical' &&
     props.$selected &&
     `
-      border-top: ${props.$theme.borderBase};
+      border-top: ${props.$theme.borderLight};
       border-right: none;
-      border-left: ${props.$theme.borderBase};
-      border-bottom: ${props.$theme.borderBase};
+      border-left: ${props.$theme.borderLight};
+      border-bottom: ${props.$theme.borderLight};
       top: 0px;
       left: 1px;
     `}
@@ -75,7 +75,7 @@ export const StyledTabContent = styled.div<{ $theme: ChopLogicTheme }>`
 `;
 
 export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: ChopLogicTheme }>`
-  border-bottom: ${(props) => props.$theme.borderBase};
+  border-bottom: ${(props) => props.$theme.borderLight};
   padding: 0 ${(props) => props.$theme.gapMedium};
   display: flex;
   gap: ${(props) => props.$theme.gapMedium};
@@ -85,7 +85,7 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: Chop
     `
       flex-direction: column;
       border-bottom: none;
-      border-right: ${props.$theme.borderBase};
+      border-right: ${props.$theme.borderLight};
       padding: ${props.$theme.gapMedium} 0;
     `}
 `;

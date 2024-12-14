@@ -7,7 +7,7 @@ exports[`ChopLogicGridHead > should match the snapshot 1`] = `
       class="sc-gtLWhw iuzQzY"
     >
       <tr
-        class="sc-dntaoT iMHkVC"
+        class="sc-dntaoT buyzSc"
       >
         <th
           class="sc-fAUdSK ehtqCD"
@@ -21,7 +21,7 @@ exports[`ChopLogicGridHead > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr dNLYdA"
+              class="sc-jwIPbr comVEu"
               for="select_all_test-grid-id"
             >
               <svg

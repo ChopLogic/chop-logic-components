@@ -9,7 +9,7 @@ exports[`ChopLogicDialog > should render the layout correctly 1`] = `
     role="dialog"
   >
     <header
-      class="sc-diYFot ehdGkp"
+      class="sc-diYFot hnEmcT"
     >
       Test dialog title
       <button

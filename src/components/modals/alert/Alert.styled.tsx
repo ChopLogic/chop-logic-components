@@ -13,17 +13,10 @@ export const StyledAlertHeader = styled.header<{ $theme: ChopLogicTheme }>`
     gap: ${(props) => props.$theme.gapMedium};
     align-items: center;
     margin: 0;
-    color: ${(props) => props.$theme.fontColorLight};
-  }
-
-  button {
     color: ${(props) => props.$theme.fontColorBase};
-    background: transparent;
 
-    &:hover {
-      filter: drop-shadow(${(props) => props.$theme.textShadow});
-      background-color: ${(props) => props.$theme.fontColorBase};
-      color: ${(props) => props.$theme.backgroundColorBase};
+    svg {
+      color: ${(props) => props.$theme.fontColorAccent};
     }
   }
 `;
@@ -49,6 +42,6 @@ export const StyledAlertContent = styled.div<{ $theme: ChopLogicTheme }>`
   width: 90vw;
   padding: ${(props) => props.$theme.gapMedium};
   box-shadow: ${(props) => props.$theme.boxShadow};
-  border: ${(props) => props.$theme.borderBase};
+  border: ${(props) => props.$theme.borderLight};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
 `;

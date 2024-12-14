@@ -7,7 +7,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="sc-egkSDF dZQHgs"
+      class="sc-egkSDF byJdeq"
       for="test-input-id"
     >
       <span>
@@ -74,7 +74,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="sc-egkSDF dZQHgs"
+      class="sc-egkSDF byJdeq"
       for="test-input-id"
     >
       <span>

@@ -23,12 +23,10 @@ export const StyledGridHeaderCell = styled.th<{ $theme: ChopLogicTheme }>`
 `;
 
 export const StyledGridHeaderRow = styled.tr<{ $theme: ChopLogicTheme }>`
-  background-color: ${(props) => props.$theme.fontColorBase};
-  color: ${(props) => props.$theme.backgroundColorBase};
-
-  svg {
-    color: ${(props) => props.$theme.backgroundColorBase} !important;
-  }
+  font-weight: bold;
+  border-top: ${(props) => props.$theme.borderLight};
+  border-bottom: ${(props) => props.$theme.borderLight};
+  background-color: ${(props) => props.$theme.backgroundColorBase};
 `;
 
 export const StyledGridCell = styled.td<{ $theme: ChopLogicTheme }>`
@@ -59,7 +57,7 @@ export const StyledGridColumn = styled.col<{ $isFirst: boolean; $highlighted: bo
   ${(props) => props.$highlighted && `background-color: ${props.$theme.backgroundColorLight};`}
 `;
 
-export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean; $theme: ChopLogicTheme }>`
+export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean; $checked: boolean; $theme: ChopLogicTheme }>`
   display: flex;
   gap: ${(props) => props.$theme.gapSmall};
   padding: ${(props) => props.$theme.gapSmall} 0;
@@ -67,7 +65,7 @@ export const StyledGridCheckboxWrapper = styled.div<{ $disabled: boolean; $theme
   overflow: hidden;
 
   svg {
-    color: ${(props) => props.$theme.fontColorLight};
+    color: ${(props) => (props.$checked ? props.$theme.fontColorBase : props.$theme.fontColorLight)};
   }
 
   label {

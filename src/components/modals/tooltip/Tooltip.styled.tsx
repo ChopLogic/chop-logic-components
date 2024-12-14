@@ -9,7 +9,7 @@ export const StyledTooltip = styled.div<{ $theme: ChopLogicTheme }>`
   top: 0;
   z-index: ${(props) => props.$theme.zIndexPopup};
   background-color: ${(props) => props.$theme.backgroundColorBase};
-  border: ${(props) => props.$theme.borderBase};
+  border: ${(props) => props.$theme.borderLight};
   color: ${(props) => props.$theme.fontColorBase};
   padding: ${(props) => props.$theme.gapMedium};
   font-size: ${(props) => props.$theme.fontSizeSmall};

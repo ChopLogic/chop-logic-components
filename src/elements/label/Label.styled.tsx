@@ -10,6 +10,10 @@ export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
   gap: ${(props) => props.$theme.gapSmall};
   color: ${(props) => props.$theme.fontColorBase};
 
+  &:hover {
+    text-shadow: ${(props) => props.$theme.textShadow};
+  }
+
   & + span {
     text-wrap: nowrap;
     overflow: hidden;

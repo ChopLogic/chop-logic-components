@@ -59,7 +59,7 @@ export const StyledDialogHeader = styled.header<{ $theme: ChopLogicTheme }>`
   gap: ${(props) => props.$theme.gapBig};
   padding: ${(props) => props.$theme.gapBig};
   border-bottom: ${(props) => props.$theme.borderBase};
-  color: ${(props) => props.$theme.fontColorLight};
+  color: ${(props) => props.$theme.fontColorBase};
 `;
 
 export const StyledDialogContent = styled.div<{ $theme: ChopLogicTheme }>`

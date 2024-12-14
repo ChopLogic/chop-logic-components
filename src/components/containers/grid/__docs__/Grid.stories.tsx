@@ -14,7 +14,9 @@ type Story = StoryObj<typeof GridExample>;
 export const DefaultGrid: Story = {
   args: {
     selectable: false,
-    renderDataItem: (item, field) => <em>{item[field ?? ''] as string}</em>,
+    renderDataItem: (item, field) => {
+      return field === 'phone' ? <em>{item[field ?? ''] as string}</em> : <span>{item[field] as string}</span>;
+    },
     caption: 'Contact List',
     columns: [
       { title: 'Company', field: 'company' },
@@ -62,7 +64,7 @@ export const SelectableGrid: Story = {
     selectable: true,
     onSelect: (ids: string[]) => console.log(ids),
     columns: [
-      { title: 'Company', field: 'company', highlighted: true },
+      { title: 'Company', field: 'company' },
       { title: 'Contact', field: 'contact' },
       { title: 'Country', field: 'country' },
       { title: 'Phone', field: 'phone' },

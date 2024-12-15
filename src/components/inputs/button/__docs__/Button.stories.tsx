@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ChopLogicIconName } from '@/enums';
+import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
 import ButtonExample from './ButtonExample';
 
@@ -18,7 +18,7 @@ const meta: Meta<typeof ButtonExample> = {
     },
     view: {
       control: 'select',
-      options: ['3D', 'flat', 'icon'],
+      options: Object.values(ChopLogicButtonView),
     },
     extended: { control: 'boolean' },
   },
@@ -26,7 +26,7 @@ const meta: Meta<typeof ButtonExample> = {
     text: 'Button',
     type: 'button',
     icon: ChopLogicIconName.Copy,
-    view: '3D',
+    view: ChopLogicButtonView.Primary,
     disabled: false,
     extended: false,
   },
@@ -40,7 +40,7 @@ type Story = StoryObj<typeof ButtonExample>;
 export const DefaultButton: Story = {
   args: {
     text: 'Copy',
-    view: '3D',
+    view: ChopLogicButtonView.Primary,
     icon: ChopLogicIconName.Copy,
     type: 'button',
     disabled: false,
@@ -50,7 +50,7 @@ export const DefaultButton: Story = {
 export const FlatButton: Story = {
   args: {
     text: 'Learn more...',
-    view: 'flat',
+    view: ChopLogicButtonView.Flat,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
@@ -59,7 +59,7 @@ export const FlatButton: Story = {
 
 export const IconButton: Story = {
   args: {
-    view: 'icon',
+    view: ChopLogicButtonView.Icon,
     type: 'button',
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',

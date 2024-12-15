@@ -1,10 +1,8 @@
 import { MouseEventHandler } from 'react';
 
-import { ChopLogicIconName } from '@/enums';
+import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
 import { CommonInputProps } from './_common';
-
-export type ChopLogicButtonView = '3D' | 'flat' | 'icon';
 
 export type ChopLogicButtonProps = Partial<CommonInputProps> & {
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -13,4 +11,5 @@ export type ChopLogicButtonProps = Partial<CommonInputProps> & {
   text?: string;
   extended?: boolean;
   type?: 'button' | 'reset' | 'submit';
+  tooltip?: string;
 };

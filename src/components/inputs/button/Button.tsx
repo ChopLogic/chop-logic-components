@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ChopLogicIcon } from '@/elements';
+import { ChopLogicButtonView } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicButtonProps } from '@/types';
 
@@ -14,13 +15,13 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   disabled = false,
   extended = false,
   type = 'button',
-  view = '3D',
+  view = ChopLogicButtonView.Primary,
   ...rest
 }) => {
   const theme = useChopLogicTheme();
 
   switch (view) {
-    case '3D':
+    case ChopLogicButtonView.Primary:
       return (
         <Styled3DButton $extended={extended} aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
           <span className='chop-logic-button_shadow'></span>
@@ -31,7 +32,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
           </span>
         </Styled3DButton>
       );
-    case 'flat':
+    case ChopLogicButtonView.Flat:
       return (
         <StyledFlatButton
           $extended={extended}
@@ -46,7 +47,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
           {text}
         </StyledFlatButton>
       );
-    case 'icon':
+    case ChopLogicButtonView.Icon:
       return (
         <StyledIconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
           <ChopLogicIcon name={icon} />

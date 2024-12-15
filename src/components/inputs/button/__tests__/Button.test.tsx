@@ -2,8 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { ChopLogicIconName } from '@/enums';
-import { ChopLogicButtonView } from '@/types';
+import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
 import Button from '../Button';
 
@@ -13,7 +12,7 @@ describe('ChopLogicButton', () => {
     text: 'Test button',
     icon: ChopLogicIconName.Copy,
     className: 'button-class',
-    view: '3D' as ChopLogicButtonView,
+    view: ChopLogicButtonView.Primary,
     disabled: false,
   };
 
@@ -28,7 +27,7 @@ describe('ChopLogicButton', () => {
   });
 
   it('should not render the text if view is icon', () => {
-    render(<Button {...testProps} view='icon' />);
+    render(<Button {...testProps} view={ChopLogicButtonView.Icon} />);
     expect(screen.queryByRole(testProps.text)).not.toBeInTheDocument();
   });
 

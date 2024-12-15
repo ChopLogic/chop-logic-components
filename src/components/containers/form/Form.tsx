@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ChopLogicButton } from '@/components';
 import { ChopLogicFormContext } from '@/contexts';
-import { ChopLogicIconName } from '@/enums';
+import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicFormProps } from '@/types';
 
@@ -32,7 +32,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <StyledFormButtonsContainer $columns={columns}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view='flat' />}
+          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view={ChopLogicButtonView.Flat} />}
           <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
         </StyledFormButtonsContainer>
       </ChopLogicFormContext.Provider>

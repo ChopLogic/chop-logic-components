@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ChopLogicIcon } from '@/elements';
 import { ChopLogicButtonView } from '@/enums';
+import { withTooltip } from '@/hocs';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicButtonProps } from '@/types';
 
@@ -58,4 +59,4 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   }
 };
 
-export default ChopLogicButton;
+export default withTooltip(ChopLogicButton);

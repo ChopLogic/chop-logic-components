@@ -66,3 +66,14 @@ export const IconButton: Story = {
     disabled: false,
   },
 };
+
+export const WithTooltipButton: Story = {
+  args: {
+    text: 'Hover On Me',
+    view: ChopLogicButtonView.Flat,
+    icon: ChopLogicIconName.Forward,
+    type: 'button',
+    disabled: false,
+    tooltip: 'This button does nothing',
+  },
+};

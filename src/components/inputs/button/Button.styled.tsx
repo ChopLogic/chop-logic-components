@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ChopLogicTheme } from '@/types';
 
-export const Styled3DButton = styled.button<{ $extended: boolean; $theme: ChopLogicTheme }>`
+export const StyledPrimaryButton = styled.button<{ $extended: boolean; $theme: ChopLogicTheme }>`
   position: relative;
   border: none;
   background: transparent;

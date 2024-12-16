@@ -37,7 +37,7 @@ const meta: Meta<typeof ButtonExample> = {
 export default meta;
 type Story = StoryObj<typeof ButtonExample>;
 
-export const DefaultButton: Story = {
+export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
     view: ChopLogicButtonView.Primary,
@@ -63,17 +63,18 @@ export const IconButton: Story = {
     type: 'button',
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
+    tooltip: 'Cancel',
     disabled: false,
   },
 };
 
-export const WithTooltipButton: Story = {
+export const ButtonWithTooltip: Story = {
   args: {
     text: 'Hover On Me',
     view: ChopLogicButtonView.Flat,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
-    tooltip: 'This button does nothing',
+    tooltip: 'This button does nothing...',
   },
 };

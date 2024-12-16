@@ -6,7 +6,7 @@ import { withTooltip } from '@/hocs';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicButtonProps } from '@/types';
 
-import { Styled3DButton, StyledFlatButton, StyledIconButton } from './Button.styled';
+import { StyledFlatButton, StyledIconButton, StyledPrimaryButton } from './Button.styled';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,
@@ -24,14 +24,22 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   switch (view) {
     case ChopLogicButtonView.Primary:
       return (
-        <Styled3DButton $extended={extended} aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
+        <StyledPrimaryButton
+          $extended={extended}
+          aria-label={label}
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          $theme={theme}
+          {...rest}
+        >
           <span className='chop-logic-button_shadow'></span>
           <span className='chop-logic-button_edge'></span>
           <span className='chop-logic-button_front'>
             <ChopLogicIcon name={icon} />
             {text}
           </span>
-        </Styled3DButton>
+        </StyledPrimaryButton>
       );
     case ChopLogicButtonView.Flat:
       return (

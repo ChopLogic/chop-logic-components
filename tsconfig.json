@@ -32,7 +32,8 @@
       "@enums/*": ["enums/*"],
       "@types/*": ["types/*"],
       "@contexts/*": ["contexts/*"],
-      "@icons/*": ["icons/*"]
+      "@icons/*": ["icons/*"],
+      "@hocs/*": ["hocs/*"]
     },
 
     "types": ["node", "@testing-library/jest-dom"]

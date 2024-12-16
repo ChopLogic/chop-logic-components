@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { ChopLogicIcon } from '@/elements';
+import { ChopLogicButtonView } from '@/enums';
+import { withTooltip } from '@/hocs';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicButtonProps } from '@/types';
 
-import { Styled3DButton, StyledFlatButton, StyledIconButton } from './Button.styled';
+import { StyledFlatButton, StyledIconButton, StyledPrimaryButton } from './Button.styled';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,
@@ -14,24 +16,32 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   disabled = false,
   extended = false,
   type = 'button',
-  view = '3D',
+  view = ChopLogicButtonView.Primary,
   ...rest
 }) => {
   const theme = useChopLogicTheme();
 
   switch (view) {
-    case '3D':
+    case ChopLogicButtonView.Primary:
       return (
-        <Styled3DButton $extended={extended} aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
+        <StyledPrimaryButton
+          $extended={extended}
+          aria-label={label}
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          $theme={theme}
+          {...rest}
+        >
           <span className='chop-logic-button_shadow'></span>
           <span className='chop-logic-button_edge'></span>
           <span className='chop-logic-button_front'>
             <ChopLogicIcon name={icon} />
             {text}
           </span>
-        </Styled3DButton>
+        </StyledPrimaryButton>
       );
-    case 'flat':
+    case ChopLogicButtonView.Flat:
       return (
         <StyledFlatButton
           $extended={extended}
@@ -46,7 +56,7 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
           {text}
         </StyledFlatButton>
       );
-    case 'icon':
+    case ChopLogicButtonView.Icon:
       return (
         <StyledIconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
           <ChopLogicIcon name={icon} />
@@ -57,4 +67,4 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   }
 };
 
-export default ChopLogicButton;
+export default withTooltip(ChopLogicButton);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { ChopLogicButton } from '@/components';
+import { ChopLogicButtonView } from '@/enums';
 import { ChopLogicDialogProps } from '@/types';
 
 import ChopLogicDialog from '../Dialog';
@@ -21,15 +22,15 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
         doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <ChopLogicButton text='Action' view='flat' />
-        <ChopLogicButton text='Close dialog' view='flat' onClick={handleClose} />
+        <ChopLogicButton text='Action' view={ChopLogicButtonView.Flat} />
+        <ChopLogicButton text='Close dialog' view={ChopLogicButtonView.Flat} onClick={handleClose} />
       </div>
     </div>
   );
 
   return (
     <div>
-      <ChopLogicButton text='Open dialog' onClick={handleOpen} view='flat' />
+      <ChopLogicButton text='Open dialog' onClick={handleOpen} view={ChopLogicButtonView.Flat} />
       <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
         {modalContent}
       </ChopLogicDialog>

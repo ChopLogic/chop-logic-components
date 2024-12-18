@@ -22,7 +22,7 @@ const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({
   theme,
 }) => {
   return (
-    <StyledErrorMessage id={errorId} $visible={visible} data-testid={testId} style={style} $theme={theme}>
+    <StyledErrorMessage id={errorId} $visible={visible} data-testid={testId} style={style} $theme={theme} aria-hidden={!visible}>
       {message}
     </StyledErrorMessage>
   );

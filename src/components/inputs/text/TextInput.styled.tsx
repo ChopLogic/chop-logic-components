@@ -6,6 +6,7 @@ export const StyledTextInput = styled.div<{ $theme: ChopLogicTheme }>`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.$theme.gapMedium};
+  position: relative;
 
   & > div:nth-child(2) {
     display: flex;

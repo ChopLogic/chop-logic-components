@@ -134,4 +134,24 @@ describe('ChopLogicTextInput', () => {
     render(<TextInput {...testProps} type='email' />);
     expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
   });
+
+  it('should not show an error message by default', async () => {
+    render(<TextInput {...testProps} type='email' errorMessage='Incorrect email' />);
+    const errorMessage = await screen.findByText('Incorrect email');
+    expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('should show an error message if the input value is invalid', async () => {
+    render(<TextInput {...testProps} validator={{ regexp: '^[A-Za-z ]+$' }} errorMessage='Only latin letters are allowed' />);
+    await userEvent.type(screen.getByRole('textbox'), '123');
+    const errorMessage = await screen.findByText('Only latin letters are allowed');
+    expect(errorMessage).toHaveAttribute('aria-hidden', 'false');
+  });
+
+  it('should not show an error message if the input value is valid', async () => {
+    render(<TextInput {...testProps} validator={{ regexp: '^[A-Za-z ]+$' }} errorMessage='Only latin letters are allowed' />);
+    await userEvent.type(screen.getByRole('textbox'), 'asdfas');
+    const errorMessage = await screen.findByText('Only latin letters are allowed');
+    expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
+  });
 });

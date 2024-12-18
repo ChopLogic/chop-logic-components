@@ -11,7 +11,7 @@ exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
       type="checkbox"
     />
     <label
-      class="sc-egkSDF byJdeq"
+      class="sc-egkSDF kzQArE"
       for="test-checkbox-id"
     >
       <svg

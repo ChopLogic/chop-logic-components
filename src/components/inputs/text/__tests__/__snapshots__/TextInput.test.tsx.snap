@@ -7,7 +7,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="sc-egkSDF byJdeq"
+      class="sc-egkSDF kzQArE"
       for="test-input-id"
     >
       <span>
@@ -58,7 +58,8 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       </span>
     </div>
     <span
-      class="sc-blHHSb bivmwF"
+      aria-hidden="true"
+      class="sc-blHHSb eZElIT"
       id="test-input-id_error"
     >
       Invalid input
@@ -74,17 +75,17 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="sc-egkSDF byJdeq"
+      class="sc-egkSDF kzQArE"
       for="test-input-id"
     >
       <span>
         Test Input
+        <abbr
+          title="required"
+        >
+          *
+        </abbr>
       </span>
-      <abbr
-        title="required"
-      >
-        *
-      </abbr>
     </label>
     <div>
       <input
@@ -131,7 +132,8 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       </span>
     </div>
     <span
-      class="sc-blHHSb bivmwF"
+      aria-hidden="true"
+      class="sc-blHHSb eZElIT"
       id="test-input-id_error"
     >
       Invalid input

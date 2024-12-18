@@ -18,5 +18,6 @@ export const StyledTooltip = styled.div<{ $theme: ChopLogicTheme }>`
   box-shadow: ${(props) => props.$theme.boxShadow};
   pointer-events: none;
   white-space: nowrap;
+
   ${fadeInAnimation}
 `;

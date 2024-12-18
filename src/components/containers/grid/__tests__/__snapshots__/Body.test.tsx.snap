@@ -21,7 +21,7 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr comVEu"
+              class="sc-jwIPbr bNBecw"
               for="select_row_row1"
             >
               <svg
@@ -69,7 +69,7 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr comVEu"
+              class="sc-jwIPbr bNBecw"
               for="select_row_row2"
             >
               <svg
@@ -117,7 +117,7 @@ exports[`ChopLogicGridBody > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr comVEu"
+              class="sc-jwIPbr bNBecw"
               for="select_row_row3"
             >
               <svg

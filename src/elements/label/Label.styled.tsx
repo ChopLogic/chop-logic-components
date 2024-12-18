@@ -24,5 +24,6 @@ export const StyledLabel = styled.label<{ $theme: ChopLogicTheme }>`
     text-decoration: none;
     cursor: pointer;
     color: ${(props) => props.$theme.fontColorAccent};
+    margin-left: ${(props) => props.$theme.gapSmall};
   }
 `;

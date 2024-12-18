@@ -59,6 +59,7 @@ export function useChopLogicNumericInputController({
 
   const handleReset = useCallback(() => {
     setValue(initialValue);
+    setValid(true);
     onChangeFormInput?.({ name, value: initialValue, valid: true });
   }, [name]);
 

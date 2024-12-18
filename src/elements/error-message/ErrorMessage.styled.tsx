@@ -6,8 +6,9 @@ import { ChopLogicTheme } from '@/types';
 export const StyledErrorMessage = styled.span<{ $visible: boolean; $theme: ChopLogicTheme }>`
   display: ${({ $visible }) => ($visible ? 'block' : 'none')};
   position: absolute;
+  max-width: 100%;
   right: 0;
-  bottom: -40px;
+  top: 72px;
   opacity: 0.8;
   z-index: ${(props) => props.$theme.zIndexPopup};
   background-color: ${(props) => props.$theme.backgroundColorBase};
@@ -19,6 +20,6 @@ export const StyledErrorMessage = styled.span<{ $visible: boolean; $theme: ChopL
   border-radius: ${(props) => props.$theme.blockBorderRadius};
   box-shadow: ${(props) => props.$theme.boxShadow};
   pointer-events: none;
-  white-space: nowrap;
+
   ${fadeInAnimation}
 `;

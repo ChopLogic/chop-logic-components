@@ -11,7 +11,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-jwIPbr jzZeis"
     >
       <label
-        class="sc-egkSDF byJdeq"
+        class="sc-egkSDF kzQArE"
         for="first-name"
       >
         <span>
@@ -62,7 +62,8 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb bivmwF"
+        aria-hidden="true"
+        class="sc-blHHSb eZElIT"
         id="first-name_error"
       >
         Invalid input
@@ -72,7 +73,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="sc-jwIPbr jzZeis"
     >
       <label
-        class="sc-egkSDF byJdeq"
+        class="sc-egkSDF kzQArE"
         for="last-name"
       >
         <span>
@@ -123,17 +124,18 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb bivmwF"
+        aria-hidden="true"
+        class="sc-blHHSb eZElIT"
         id="last-name_error"
       >
         Invalid input
       </span>
     </div>
     <div
-      class="sc-dpBQxM ksGBNf"
+      class="sc-dpBQxM cMOEPZ"
     >
       <label
-        class="sc-egkSDF byJdeq"
+        class="sc-egkSDF kzQArE"
         for="age"
       >
         <span>
@@ -191,7 +193,8 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         </span>
       </div>
       <span
-        class="sc-blHHSb bivmwF"
+        aria-hidden="true"
+        class="sc-blHHSb eZElIT"
         id="age_error"
       >
         Invalid input

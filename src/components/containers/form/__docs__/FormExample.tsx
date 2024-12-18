@@ -23,6 +23,10 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-4', label: 'C#' },
 ];
 
+const inputStyles: React.CSSProperties = {
+  width: '300px',
+};
+
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   const [data, setData] = useState<ChopLogicFormData>();
 
@@ -46,22 +50,25 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
           label='First Name'
           errorMessage='Only latin letters are allowed'
           validator={{ regexp: '^[A-Za-z ]+$' }}
+          style={inputStyles}
         />
         <ChopLogicTextInput
           name='lastName'
           label='Last Name'
           errorMessage='Only latin letters are allowed'
           validator={{ regexp: '^[A-Za-z ]+$' }}
+          style={inputStyles}
         />
         <ChopLogicNumericInput
           name='age'
           label='Age'
           validator={(age) => !!age && age >= 1 && age < 100}
           errorMessage={'Enter a number between 1 and 99'}
+          style={inputStyles}
         />
-        <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} />
-        <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} />
-        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required />
+        <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} style={inputStyles} />
+        <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} style={inputStyles} />
+        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
       </ChopLogicForm>
       {data && (
         <table style={{ marginTop: '2rem', fontFamily: 'Arial', textAlign: 'left' }}>

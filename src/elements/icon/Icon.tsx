@@ -30,6 +30,41 @@ import ShowIcon from '@/icons/ShowIcon';
 import UploadIcon from '@/icons/UploadIcon';
 import WarningIcon from '@/icons/WarningIcon';
 
+type ChopLogicIconDictionary = {
+  [key in ChopLogicIconName]: React.ReactElement;
+};
+
+export const dictionary: ChopLogicIconDictionary = {
+  [ChopLogicIconName.ArrowDown]: <ArrowDownIcon />,
+  [ChopLogicIconName.ArrowUp]: <ArrowUpIcon />,
+  [ChopLogicIconName.Back]: <BackIcon />,
+  [ChopLogicIconName.Cancel]: <CancelIcon />,
+  [ChopLogicIconName.CheckboxChecked]: <CheckboxCheckedIcon />,
+  [ChopLogicIconName.CheckboxUnchecked]: <CheckboxUncheckedIcon />,
+  [ChopLogicIconName.CheckMark]: <CheckMarkIcon />,
+  [ChopLogicIconName.ChevronDown]: <ChevronDownIcon />,
+  [ChopLogicIconName.ChevronUp]: <ChevronUpIcon />,
+  [ChopLogicIconName.ChevronLeft]: <ChevronLeftIcon />,
+  [ChopLogicIconName.ChevronRight]: <ChevronRightIcon />,
+  [ChopLogicIconName.Clear]: <ClearIcon />,
+  [ChopLogicIconName.Copy]: <CopyIcon />,
+  [ChopLogicIconName.Cut]: <CutIcon />,
+  [ChopLogicIconName.Delete]: <DeleteIcon />,
+  [ChopLogicIconName.Download]: <DownloadIcon />,
+  [ChopLogicIconName.Error]: <ErrorIcon />,
+  [ChopLogicIconName.Forward]: <ForwardIcon />,
+  [ChopLogicIconName.Help]: <HelpIcon />,
+  [ChopLogicIconName.Hide]: <HideIcon />,
+  [ChopLogicIconName.Info]: <InfoIcon />,
+  [ChopLogicIconName.Paste]: <PasteIcon />,
+  [ChopLogicIconName.Question]: <QuestionIcon />,
+  [ChopLogicIconName.Save]: <SaveIcon />,
+  [ChopLogicIconName.Show]: <ShowIcon />,
+  [ChopLogicIconName.Upload]: <UploadIcon />,
+  [ChopLogicIconName.Warning]: <WarningIcon />,
+  [ChopLogicIconName.Remove]: <RemoveIcon />,
+};
+
 const ChopLogicIcon: React.FC<{ name?: ChopLogicIconName }> = ({ name }): React.ReactElement | null => {
   switch (name) {
     case ChopLogicIconName.ArrowDown:

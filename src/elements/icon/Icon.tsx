@@ -30,11 +30,9 @@ import ShowIcon from '@/icons/ShowIcon';
 import UploadIcon from '@/icons/UploadIcon';
 import WarningIcon from '@/icons/WarningIcon';
 
-type ChopLogicIconDictionary = {
+export const ChopLogicIconDictionary: {
   [key in ChopLogicIconName]: React.ReactElement;
-};
-
-export const dictionary: ChopLogicIconDictionary = {
+} = {
   [ChopLogicIconName.ArrowDown]: <ArrowDownIcon />,
   [ChopLogicIconName.ArrowUp]: <ArrowUpIcon />,
   [ChopLogicIconName.Back]: <BackIcon />,
@@ -66,66 +64,9 @@ export const dictionary: ChopLogicIconDictionary = {
 };
 
 const ChopLogicIcon: React.FC<{ name?: ChopLogicIconName }> = ({ name }): React.ReactElement | null => {
-  switch (name) {
-    case ChopLogicIconName.ArrowDown:
-      return <ArrowDownIcon />;
-    case ChopLogicIconName.ArrowUp:
-      return <ArrowUpIcon />;
-    case ChopLogicIconName.Back:
-      return <BackIcon />;
-    case ChopLogicIconName.Cancel:
-      return <CancelIcon />;
-    case ChopLogicIconName.CheckboxChecked:
-      return <CheckboxCheckedIcon />;
-    case ChopLogicIconName.CheckboxUnchecked:
-      return <CheckboxUncheckedIcon />;
-    case ChopLogicIconName.CheckMark:
-      return <CheckMarkIcon />;
-    case ChopLogicIconName.ChevronDown:
-      return <ChevronDownIcon />;
-    case ChopLogicIconName.ChevronUp:
-      return <ChevronUpIcon />;
-    case ChopLogicIconName.ChevronLeft:
-      return <ChevronLeftIcon />;
-    case ChopLogicIconName.ChevronRight:
-      return <ChevronRightIcon />;
-    case ChopLogicIconName.Clear:
-      return <ClearIcon />;
-    case ChopLogicIconName.Copy:
-      return <CopyIcon />;
-    case ChopLogicIconName.Cut:
-      return <CutIcon />;
-    case ChopLogicIconName.Delete:
-      return <DeleteIcon />;
-    case ChopLogicIconName.Download:
-      return <DownloadIcon />;
-    case ChopLogicIconName.Error:
-      return <ErrorIcon />;
-    case ChopLogicIconName.Forward:
-      return <ForwardIcon />;
-    case ChopLogicIconName.Help:
-      return <HelpIcon />;
-    case ChopLogicIconName.Hide:
-      return <HideIcon />;
-    case ChopLogicIconName.Info:
-      return <InfoIcon />;
-    case ChopLogicIconName.Paste:
-      return <PasteIcon />;
-    case ChopLogicIconName.Question:
-      return <QuestionIcon />;
-    case ChopLogicIconName.Save:
-      return <SaveIcon />;
-    case ChopLogicIconName.Show:
-      return <ShowIcon />;
-    case ChopLogicIconName.Upload:
-      return <UploadIcon />;
-    case ChopLogicIconName.Warning:
-      return <WarningIcon />;
-    case ChopLogicIconName.Remove:
-      return <RemoveIcon />;
-    default:
-      return null;
-  }
+  if (!name) return null;
+
+  return ChopLogicIconDictionary[name];
 };
 
 export default ChopLogicIcon;

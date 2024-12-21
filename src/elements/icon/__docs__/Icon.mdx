@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/blocks';
+import * as ChopLogicIconStories from './Icon.stories';
+
+<Meta of={ChopLogicIconStories} title='Icon' />
+
+# ChopLogicIcon
+
+The `ChopLogicIcon` component.
+
+### Usage
+
+```tsx
+import React from 'react';
+import ChopLogicIcon, { ChopLogicIconName } from 'chop-logic-components';
+
+const MyButton = () => (
+  <button>
+    <ChopLogicIcon name={ChopLogicIconName.Delete} />
+    <span>Delete</span>
+  </button>
+);
+
+export default MyButton;
+```
+
+### Props
+
+| Prop   | Type                | Description                                 | Default     | Required |
+|--------|---------------------|---------------------------------------------|-------------|----------|
+| `name` | `ChopLogicIconName` | React element to be rendered in the portal. | `undefined` | No       |

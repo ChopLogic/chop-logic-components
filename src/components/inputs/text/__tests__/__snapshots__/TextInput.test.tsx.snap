@@ -31,7 +31,14 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
           aria-label="Clear input for Test Input"
           class="sc-gtLWhw hwmlGN"
           type="button"
-        />
+        >
+          <span
+            aria-label="SVG Icon Fallback"
+            style="font-size: 1rem;"
+          >
+            ❌
+          </span>
+        </button>
       </span>
     </div>
     <span
@@ -82,7 +89,14 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
           aria-label="Clear input for Test Input"
           class="sc-gtLWhw hwmlGN"
           type="button"
-        />
+        >
+          <span
+            aria-label="SVG Icon Fallback"
+            style="font-size: 1rem;"
+          >
+            ❌
+          </span>
+        </button>
       </span>
     </div>
     <span

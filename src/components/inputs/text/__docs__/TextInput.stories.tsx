@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import TextInputExample from './TextInputExample';
+import TextInputExample from './TextInput.example.tsx';
 
 const meta: Meta<typeof TextInputExample> = {
   component: TextInputExample,

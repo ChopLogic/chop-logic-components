@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import FormExample from './FormExample';
+import FormExample from './Form.example.tsx';
 
 const meta: Meta<typeof FormExample> = {
   args: {

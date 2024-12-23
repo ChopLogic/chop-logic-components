@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import PortalExample from './PortalExample.tsx';
+import PortalExample from './Portal.example.tsx';
 
 const meta: Meta<typeof PortalExample> = {
   title: 'Containers/Portal',

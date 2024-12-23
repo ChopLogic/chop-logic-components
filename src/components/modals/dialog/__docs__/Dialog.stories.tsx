@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import DialogExample from './DialogExample';
+import DialogExample from './Dialog.example.tsx';
 
 const meta: Meta<typeof DialogExample> = {
   component: DialogExample,

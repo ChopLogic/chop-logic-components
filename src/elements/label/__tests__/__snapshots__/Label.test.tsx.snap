@@ -46,6 +46,12 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
     class="sc-egkSDF nXWIS"
     for="test-input-id"
   >
+    <span
+      aria-label="SVG Icon Fallback"
+      style="font-size: 1rem;"
+    >
+      ❌
+    </span>
     <span>
       Test label
     </span>
@@ -59,6 +65,12 @@ exports[`ChopLogicLabel > should render right icon 1`] = `
     class="sc-egkSDF nXWIS"
     for="test-input-id"
   >
+    <span
+      aria-label="SVG Icon Fallback"
+      style="font-size: 1rem;"
+    >
+      ❌
+    </span>
     <span>
       Test label
     </span>

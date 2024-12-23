@@ -32,12 +32,26 @@ exports[`NumericInput > should match the snapshot 1`] = `
           aria-label="Decrement value for Quantity"
           class="sc-gtLWhw hwmlGN"
           type="button"
-        />
+        >
+          <span
+            aria-label="SVG Icon Fallback"
+            style="font-size: 1rem;"
+          >
+            ❌
+          </span>
+        </button>
         <button
           aria-label="Increment value for Quantity"
           class="sc-gtLWhw hwmlGN"
           type="button"
-        />
+        >
+          <span
+            aria-label="SVG Icon Fallback"
+            style="font-size: 1rem;"
+          >
+            ❌
+          </span>
+        </button>
       </span>
     </div>
     <span

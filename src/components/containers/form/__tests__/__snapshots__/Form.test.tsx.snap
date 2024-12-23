@@ -35,7 +35,14 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             aria-label="Clear input for First Name"
             class="sc-gtLWhw hwmlGN"
             type="button"
-          />
+          >
+            <span
+              aria-label="SVG Icon Fallback"
+              style="font-size: 1rem;"
+            >
+              ❌
+            </span>
+          </button>
         </span>
       </div>
       <span
@@ -74,7 +81,14 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             aria-label="Clear input for Last Name"
             class="sc-gtLWhw hwmlGN"
             type="button"
-          />
+          >
+            <span
+              aria-label="SVG Icon Fallback"
+              style="font-size: 1rem;"
+            >
+              ❌
+            </span>
+          </button>
         </span>
       </div>
       <span
@@ -114,12 +128,26 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             aria-label="Decrement value for Age"
             class="sc-gtLWhw hwmlGN"
             type="button"
-          />
+          >
+            <span
+              aria-label="SVG Icon Fallback"
+              style="font-size: 1rem;"
+            >
+              ❌
+            </span>
+          </button>
           <button
             aria-label="Increment value for Age"
             class="sc-gtLWhw hwmlGN"
             type="button"
-          />
+          >
+            <span
+              aria-label="SVG Icon Fallback"
+              style="font-size: 1rem;"
+            >
+              ❌
+            </span>
+          </button>
         </span>
       </div>
       <span
@@ -137,6 +165,12 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         class="sc-dntaoT cUJLyz"
         type="reset"
       >
+        <span
+          aria-label="SVG Icon Fallback"
+          style="font-size: 1rem;"
+        >
+          ❌
+        </span>
         Reset
       </button>
       <button
@@ -152,6 +186,12 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span
           class="chop-logic-button_front"
         >
+          <span
+            aria-label="SVG Icon Fallback"
+            style="font-size: 1rem;"
+          >
+            ❌
+          </span>
           Submit
         </span>
       </button>

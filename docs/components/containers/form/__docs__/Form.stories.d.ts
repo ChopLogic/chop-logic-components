@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as FormExample } from './FormExample';
+import { default as FormExample } from './Form.example.tsx';
 
 declare const meta: Meta<typeof FormExample>;
 export default meta;

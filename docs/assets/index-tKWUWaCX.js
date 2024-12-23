@@ -1,1 +1,0 @@
-import{e as r,r as c}from"./index-qVDZzPEr.js";const p=r.createContext({}),m=r.createContext({mode:"light"});function t(o){const n=c.useId(),e=o??n,s=`${e}_error`,d=`${e}_dropdown`;return{elementId:e,errorId:s,dropdownId:d}}try{t.displayName="useElementIds",t.__docgenInfo={description:"",displayName:"useElementIds",props:{}}}catch{}export{m as C,p as a,t as u};

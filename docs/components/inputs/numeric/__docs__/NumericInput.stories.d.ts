@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as NumericInputExample } from './NumericInputExample';
+import { default as NumericInputExample } from './NumericInput.example.tsx';
 
 declare const meta: Meta<typeof NumericInputExample>;
 export default meta;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import NumericInputExample from './NumericInputExample';
+import NumericInputExample from './NumericInput.example.tsx';
 
 const meta: Meta<typeof NumericInputExample> = {
   component: NumericInputExample,

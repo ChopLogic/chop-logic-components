@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { SelectValue } from '@/types';
 
-import SelectExample from './SelectExample';
+import SelectExample from './Select.example.tsx';
 
 const SELECT_LANGUAGES: SelectValue[] = [
   { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },

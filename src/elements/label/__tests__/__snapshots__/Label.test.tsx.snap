@@ -46,21 +46,12 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
     class="sc-egkSDF nXWIS"
     for="test-input-id"
   >
-    <svg
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
+    <span
+      aria-label="SVG Icon Fallback"
+      style="font-size: 1rem;"
     >
-      <path
-        d="M328 112L184 256l144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
+      ❌
+    </span>
     <span>
       Test label
     </span>
@@ -74,21 +65,12 @@ exports[`ChopLogicLabel > should render right icon 1`] = `
     class="sc-egkSDF nXWIS"
     for="test-input-id"
   >
-    <svg
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
+    <span
+      aria-label="SVG Icon Fallback"
+      style="font-size: 1rem;"
     >
-      <path
-        d="M184 112l144 144-144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
+      ❌
+    </span>
     <span>
       Test label
     </span>

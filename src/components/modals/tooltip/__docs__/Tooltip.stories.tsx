@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import TooltipExample from './TooltipExample';
+import TooltipExample from './Tooltip.example.tsx';
 
 const meta: Meta<typeof TooltipExample> = {
   component: TooltipExample,

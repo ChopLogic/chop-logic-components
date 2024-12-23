@@ -5,6 +5,7 @@ export * from './components/checkbox.ts';
 export * from './components/dialog.ts';
 export * from './components/form.ts';
 export * from './components/grid.ts';
+export * from './components/icon.ts';
 export * from './components/multi-select.ts';
 export * from './components/numeric.ts';
 export * from './components/select.ts';

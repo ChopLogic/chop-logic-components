@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { MultiSelectValue } from '@/types';
 
-import MultiSelectExample from './MultiSelectExample';
+import MultiSelectExample from './MultiSelect.example.tsx';
 
 const MULTI_SELECT_VALUES: MultiSelectValue[] = [
   { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English', selected: false },

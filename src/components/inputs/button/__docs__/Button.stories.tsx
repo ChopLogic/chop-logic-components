@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
-import ButtonExample from './ButtonExample';
+import ButtonExample from './Button.example.tsx';
 
 const meta: Meta<typeof ButtonExample> = {
   argTypes: {

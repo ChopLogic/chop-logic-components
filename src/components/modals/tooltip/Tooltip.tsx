@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ChopLogicPortal } from '@/components';
+import { ChopLogicTooltipContainer } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
 import { ChopLogicTooltipProps } from '@/types';
 
@@ -10,7 +11,7 @@ import { StyledTooltip } from './Tooltip.styled';
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,
   tooltipContent,
-  containerTag = 'span',
+  containerTag = ChopLogicTooltipContainer.Span,
   visibleOn = 'hover',
   id,
   style,

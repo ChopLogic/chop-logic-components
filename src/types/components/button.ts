@@ -2,9 +2,9 @@ import { FocusEventHandler, MouseEventHandler } from 'react';
 
 import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
-import { CommonInputProps } from './_common';
+import { ChopLogicInputProps } from '../common.ts';
 
-export type ChopLogicButtonProps = Partial<CommonInputProps> & {
+export interface ChopLogicButtonProps extends Partial<ChopLogicInputProps> {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onFocus?: FocusEventHandler<HTMLButtonElement>;
   onBlur?: FocusEventHandler<HTMLButtonElement>;
@@ -14,4 +14,4 @@ export type ChopLogicButtonProps = Partial<CommonInputProps> & {
   extended?: boolean;
   type?: 'button' | 'reset' | 'submit';
   tooltip?: string;
-};
+}

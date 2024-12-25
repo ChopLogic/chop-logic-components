@@ -2,7 +2,7 @@ import { useCallback, useContext, useState } from 'react';
 
 import { ChopLogicFormContext } from '@/contexts';
 import { useResetFormInput } from '@/hooks';
-import { SelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/types';
 
 import { getSelectInitialValue } from './helpers';
 
@@ -14,13 +14,13 @@ export function useChopLogicSelectController({
 }: {
   name: string;
   defaultValue?: string | number | readonly string[];
-  onChange?: (value?: SelectValue) => void;
-  options: SelectValue[];
+  onChange?: (value?: ChopLogicSelectValue) => void;
+  options: ChopLogicSelectValue[];
 }) {
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
   const initialValue = getSelectInitialValue({ name, options, defaultValue, initialValues });
   const [opened, setOpened] = useState(false);
-  const [selected, setSelected] = useState<SelectValue | undefined>(initialValue);
+  const [selected, setSelected] = useState<ChopLogicSelectValue | undefined>(initialValue);
 
   const handleClose = () => setOpened(false);
 

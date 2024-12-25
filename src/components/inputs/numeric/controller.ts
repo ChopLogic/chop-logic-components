@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, useCallback, useContext, useState } from 're
 
 import { ChopLogicFormContext } from '@/contexts';
 import { useResetFormInput } from '@/hooks';
-import { NumericValidationFunction } from '@/types';
+import { ChopLogicNumericInputValidator } from '@/types';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from './helpers';
 
@@ -25,7 +25,7 @@ export function useChopLogicNumericInputController({
   max?: string | number;
   step: number;
   required: boolean;
-  validator?: NumericValidationFunction;
+  validator?: ChopLogicNumericInputValidator;
 }) {
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
   const initialValue = getNumericInputInitialValue({ initialValues, defaultValue, name });

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { RegExpWithFlags, TextValidationFunction } from '@/types';
+import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@/types';
 
 import { getTextInputInitialValue, validateTextInputValue } from '../helpers';
 
@@ -66,31 +66,31 @@ describe('validateTextInputValue', () => {
   });
 
   it('should return true when validator is a function and it returns true', () => {
-    const mockValidator: TextValidationFunction = (input: string) => input === 'valid';
+    const mockValidator: ChopLogicTextInputValidator = (input: string) => input === 'valid';
     const result = validateTextInputValue({ value: 'valid', required: true, validator: mockValidator });
     expect(result).toBe(true);
   });
 
   it('should return false when validator is a function and it returns false', () => {
-    const mockValidator: TextValidationFunction = (input: string) => input === 'valid';
+    const mockValidator: ChopLogicTextInputValidator = (input: string) => input === 'valid';
     const result = validateTextInputValue({ value: 'invalid', required: true, validator: mockValidator });
     expect(result).toBe(false);
   });
 
   it('should return true when validator is a regular expression and value matches', () => {
-    const regexpValidator: RegExpWithFlags = { regexp: '^\\d{3}$' }; // Should match exactly three digits
+    const regexpValidator: ChopLogicRegExpWithFlags = { regexp: '^\\d{3}$' }; // Should match exactly three digits
     const result = validateTextInputValue({ value: '123', required: true, validator: regexpValidator });
     expect(result).toBe(true);
   });
 
   it('should return false when validator is a regular expression and value does not match', () => {
-    const regexpValidator: RegExpWithFlags = { regexp: '^\\d{3}$' }; // Should match exactly three digits
+    const regexpValidator: ChopLogicRegExpWithFlags = { regexp: '^\\d{3}$' }; // Should match exactly three digits
     const result = validateTextInputValue({ value: '12', required: true, validator: regexpValidator });
     expect(result).toBe(false);
   });
 
   it('should return true when validator is a regular expression with flags and value matches', () => {
-    const regexpValidator: RegExpWithFlags = { regexp: '^abc$', flags: 'i' }; // Should match "abc" case-insensitive
+    const regexpValidator: ChopLogicRegExpWithFlags = { regexp: '^abc$', flags: 'i' }; // Should match "abc" case-insensitive
     const result = validateTextInputValue({ value: 'ABC', required: true, validator: regexpValidator });
     expect(result).toBe(true);
   });

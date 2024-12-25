@@ -1,30 +1,18 @@
 import { ReactElement } from 'react';
 
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTabsMode } from '@/enums';
 
-import { CommonComponentProps } from './_common';
+import { ChopLogicComponentProps } from '../common.ts';
 
-export type ChopLogicTabsProps = CommonComponentProps & {
+export interface ChopLogicTabsProps extends ChopLogicComponentProps {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: ChopLogicTabsMode;
-};
+}
 
-export type ChopLogicTabListProps = {
-  tabs: ChopLogicTabItem[];
-  tabIds: string[];
-  onTabSelect: (id: string) => void;
-  selectedTabId: string;
-  tabPanelIds: string[];
-  mode: ChopLogicTabsMode;
-  theme: ChopLogicTheme;
-};
-
-export type ChopLogicTabItem = {
+export interface ChopLogicTabItem {
   content: ReactElement;
   title: string;
   id: string;
   disabled?: boolean;
-};
-
-export type ChopLogicTabsMode = 'vertical' | 'horizontal';
+}

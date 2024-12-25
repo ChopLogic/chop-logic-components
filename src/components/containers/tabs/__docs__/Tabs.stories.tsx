@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ChopLogicTabs } from '@/components';
+import { ChopLogicTabsMode } from '@/enums';
 import { ChopLogicTabItem } from '@/types';
 
 const tabs: ChopLogicTabItem[] = [
@@ -15,13 +16,13 @@ const meta: Meta<typeof ChopLogicTabs> = {
     defaultTabId: { control: 'text' },
     mode: {
       control: 'radio',
-      options: ['vertical', 'horizontal'],
+      options: Object.values(ChopLogicTabsMode),
     },
   },
   args: {
     tabs,
     defaultTabId: 'tab1',
-    mode: 'horizontal',
+    mode: ChopLogicTabsMode.Horizontal,
   },
   component: ChopLogicTabs,
   title: 'Containers/Tabs',
@@ -34,6 +35,6 @@ export const Default: Story = {};
 
 export const VerticalTabs: Story = {
   args: {
-    mode: 'vertical',
+    mode: ChopLogicTabsMode.Vertical,
   },
 };

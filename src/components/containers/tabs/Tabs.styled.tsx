@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { ChopLogicTabsMode, ChopLogicTheme } from '@/types';
+import { ChopLogicTabsMode } from '@/enums';
+import { ChopLogicTheme } from '@/types';
 
 export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: boolean; $mode: ChopLogicTabsMode; $theme: ChopLogicTheme }>`
   background: transparent;
@@ -46,14 +47,14 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     `}
 
     ${(props) =>
-    props.$mode === 'vertical' &&
+    props.$mode === ChopLogicTabsMode.Vertical &&
     `
       border-bottom-left-radius: ${props.$theme.blockBorderRadius};
       border-top-right-radius: 0;
     `}
 
     ${(props) =>
-    props.$mode === 'vertical' &&
+    props.$mode === ChopLogicTabsMode.Vertical &&
     props.$selected &&
     `
       border-top: ${props.$theme.borderLight};
@@ -81,7 +82,7 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: Chop
   gap: ${(props) => props.$theme.gapMedium};
 
   ${(props) =>
-    props.$mode === 'vertical' &&
+    props.$mode === ChopLogicTabsMode.Vertical &&
     `
       flex-direction: column;
       border-bottom: none;
@@ -96,7 +97,7 @@ export const StyledTabs = styled.div<{ $mode: ChopLogicTabsMode }>`
   width: 100%;
 
   ${({ $mode }) =>
-    $mode === 'vertical' &&
+    $mode === ChopLogicTabsMode.Vertical &&
     `
       flex-direction: row;
     `}

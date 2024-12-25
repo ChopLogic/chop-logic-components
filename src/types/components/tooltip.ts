@@ -1,12 +1,11 @@
 import { PropsWithChildren, ReactElement } from 'react';
 
-import { CommonComponentProps } from './_common';
+import { ChopLogicTooltipContainer } from '@/enums';
 
-export type ChopLogicTooltipProps = PropsWithChildren &
-  CommonComponentProps & {
-    tooltipContent: string | ReactElement;
-    containerTag?: TooltipContainerTag;
-    visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
-  };
+import { ChopLogicComponentProps } from '../common.ts';
 
-export type TooltipContainerTag = 'span' | 'div' | 'p' | 'strong' | 'em';
+export interface ChopLogicTooltipProps extends PropsWithChildren, ChopLogicComponentProps {
+  tooltipContent: string | ReactElement;
+  containerTag?: ChopLogicTooltipContainer;
+  visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
+}

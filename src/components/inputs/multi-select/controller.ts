@@ -2,7 +2,7 @@ import { useCallback, useContext, useState } from 'react';
 
 import { ChopLogicFormContext } from '@/contexts';
 import { useResetFormInput } from '@/hooks';
-import { MultiSelectValue, SelectValue } from '@/types';
+import { ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@/types';
 
 import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './helpers';
 
@@ -14,13 +14,13 @@ export function useChopLogicMultiSelectController({
 }: {
   name: string;
   defaultValue?: string | number | readonly string[];
-  onChange?: (values?: SelectValue[]) => void;
-  options: SelectValue[];
+  onChange?: (values?: ChopLogicSelectValue[]) => void;
+  options: ChopLogicSelectValue[];
 }) {
   const [opened, setOpened] = useState(false);
   const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
   const initialOptions = getMultiSelectInitialValues({ name, options, initialValues, defaultValue });
-  const [values, setValues] = useState<MultiSelectValue[]>(initialOptions);
+  const [values, setValues] = useState<ChopLogicMultiSelectValue[]>(initialOptions);
 
   const handleClose = () => setOpened(false);
 

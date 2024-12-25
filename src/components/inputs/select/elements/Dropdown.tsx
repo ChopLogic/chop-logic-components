@@ -1,10 +1,22 @@
 import React from 'react';
 
 import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
-import { SelectDropdownProps } from '@/types';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@/types';
 import { handleDropdownListKeyPress, moveFocusOnElementById } from '@/utils';
 
 import SelectOption from './Option';
+
+type SelectDropdownProps = {
+  options: ChopLogicSelectValue[];
+  opened: boolean;
+  dropdownId: string;
+  comboboxId: string;
+  onClose: () => void;
+  selected?: ChopLogicSelectValue;
+  onSelect: (id: string) => void;
+  onClear: () => void;
+  theme: ChopLogicTheme;
+};
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
   options,

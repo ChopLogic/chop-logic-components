@@ -1,15 +1,15 @@
 import { ReactElement } from 'react';
 
-import { CommonComponentProps } from './_common';
+import { ChopLogicComponentProps } from '../common.ts';
 
-export type ChopLogicGridProps = CommonComponentProps & {
+export interface ChopLogicGridProps extends ChopLogicComponentProps {
   columns: ChopLogicGridColumn[];
   data: ChopLogicGridItem[];
   caption?: string;
   selectable?: boolean;
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
-};
+}
 
 export type ChopLogicGridColumn = {
   field: string;

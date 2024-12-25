@@ -1,20 +1,11 @@
 import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
-import { ChopLogicTheme } from '@/types';
 
-import { CommonComponentProps } from './_common';
+import { ChopLogicComponentProps } from '../common.ts';
 
-export type ChopLogicAlertProps = CommonComponentProps & {
+export interface ChopLogicAlertProps extends ChopLogicComponentProps {
   isOpened: boolean;
   onClose: () => void;
   message: string;
   mode?: ChopLogicAlertMode;
   icon?: ChopLogicIconName;
-};
-
-export type ChopLogicAlertHeaderProps = {
-  onClose: () => void;
-  theme: ChopLogicTheme;
-  mode: ChopLogicAlertMode;
-  title?: string;
-  icon?: ChopLogicIconName;
-};
+}

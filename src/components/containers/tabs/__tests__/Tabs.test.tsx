@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import { LIGHT_THEME } from '@/css';
-import { ChopLogicTabsMode } from '@/types';
+import { ChopLogicTabsMode } from '@/enums';
 
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
@@ -19,7 +19,7 @@ describe('ChopLogicTabs', () => {
   const testProps = {
     tabs,
     defaultTabId: 'tab-1',
-    mode: 'horizontal' as ChopLogicTabsMode,
+    mode: ChopLogicTabsMode.Horizontal,
     className: 'test-class',
     id: 'tabs-id',
   };
@@ -77,7 +77,7 @@ describe('ChopLogicTabButton', () => {
     onTabSelect: vi.fn(),
     tabPanelId: 'panel-id-1',
     isSelected: true,
-    mode: 'vertical' as ChopLogicTabsMode,
+    mode: ChopLogicTabsMode.Vertical,
     isDisabled: false,
   };
 

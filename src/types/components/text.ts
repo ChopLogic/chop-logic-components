@@ -1,20 +1,13 @@
 import { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
 
-import { CommonInputProps } from './_common';
+import { ChopLogicInputProps, ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '../common.ts';
 
-export type RegExpWithFlags = {
-  regexp: string;
-  flags?: string;
-};
-
-export type TextValidationFunction = (input: string) => boolean;
-
-export type ChopLogicTextInputProps = CommonInputProps & {
+export interface ChopLogicTextInputProps extends ChopLogicInputProps {
   errorMessage?: string;
   clearable?: boolean;
   readOnly?: boolean;
   type?: 'text' | 'email' | 'password';
-  validator?: RegExpWithFlags | TextValidationFunction;
+  validator?: ChopLogicRegExpWithFlags | ChopLogicTextInputValidator;
   maxLength?: number;
   placeholder?: string;
   defaultValue?: string;
@@ -23,4 +16,4 @@ export type ChopLogicTextInputProps = CommonInputProps & {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
-};
+}

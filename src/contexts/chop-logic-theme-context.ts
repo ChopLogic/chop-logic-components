@@ -1,13 +1,6 @@
 import React from 'react';
 
-import { ChopLogicTheme } from '@/models';
-
-type ChopLogicThemeContextProps = {
-  mode: 'light' | 'dark';
-  setMode?: (mode: 'light' | 'dark') => void;
-  customTheme?: Partial<ChopLogicTheme>;
-  setCustomTheme?: (customTheme: ChopLogicTheme) => void;
-};
+import { ChopLogicThemeContextProps } from '@/models';
 
 export const ChopLogicThemeContext = React.createContext<ChopLogicThemeContextProps>({
   mode: 'light',

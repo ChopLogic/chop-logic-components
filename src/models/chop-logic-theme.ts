@@ -33,3 +33,10 @@ export interface ChopLogicTheme {
   zIndexPopup: string;
   zIndexModal: string;
 }
+
+export interface ChopLogicThemeContextProps {
+  mode: 'light' | 'dark';
+  setMode?: (mode: 'light' | 'dark') => void;
+  customTheme?: Partial<ChopLogicTheme>;
+  setCustomTheme?: (customTheme: ChopLogicTheme) => void;
+}

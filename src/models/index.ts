@@ -1,4 +1,4 @@
-export type { ChopLogicTheme } from './chop-logic-theme.ts';
+export type { ChopLogicTheme, ChopLogicThemeContextProps } from './chop-logic-theme.ts';
 export type {
   ChopLogicComponentProps,
   ChopLogicInputProps,

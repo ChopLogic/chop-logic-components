@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, PropsWithChildren, useRef } from 'react';
 
 import { useKeyPress, useModalFocusTrap } from '@/hooks';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledDialogContent, StyledDialogLayout } from '../Dialog.styled';
 

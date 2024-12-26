@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 
 import { ChopLogicIconName } from '@/enums';
-import { ChopLogicIconProps } from '@/types';
+import { ChopLogicIconProps } from '@/models';
 
 const ArrowDownIcon = lazy(() => import('@/icons/ArrowDownIcon'));
 const ArrowUpIcon = lazy(() => import('@/icons/ArrowUpIcon'));

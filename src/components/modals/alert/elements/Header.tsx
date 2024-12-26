@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ChopLogicButton } from '@/components';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@/enums';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledAlertHeader } from '../Alert.styled';
 import { getAlertTitle, renderAlertIcon } from '../helpers';

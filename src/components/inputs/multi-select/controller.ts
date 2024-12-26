@@ -2,7 +2,7 @@ import { useCallback, useContext, useState } from 'react';
 
 import { ChopLogicFormContext } from '@/contexts';
 import { useResetFormInput } from '@/hooks';
-import { ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@/types';
+import { ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@/models';
 
 import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './helpers';
 

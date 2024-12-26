@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { fadeInAnimation } from '@/css';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 export const StyledTooltip = styled.div<{ $theme: ChopLogicTheme }>`
   position: absolute;

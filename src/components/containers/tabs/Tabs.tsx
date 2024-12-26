@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { ChopLogicTabsMode } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicTabsProps } from '@/types';
+import { ChopLogicTabsProps } from '@/models';
 
 import ChopLogicTabContent from './elements/TabContent';
 import ChopLogicTabList from './elements/TabList';

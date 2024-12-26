@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ChopLogicButton } from '@/components';
 import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
-import { ChopLogicAlertProps } from '@/types';
+import { ChopLogicAlertProps } from '@/models';
 
 import ChopLogicAlert from '../Alert';
 

@@ -30,7 +30,7 @@
       "@utils/*": ["utils/*"],
       "@css/*": ["css/*"],
       "@enums/*": ["enums/*"],
-      "@types/*": ["types/*"],
+      "@models/*": ["models/*"],
       "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
       "@hocs/*": ["hocs/*"]

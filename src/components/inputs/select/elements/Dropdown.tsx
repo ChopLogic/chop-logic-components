@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
-import { ChopLogicSelectValue, ChopLogicTheme } from '@/types';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@/models';
 import { handleDropdownListKeyPress, moveFocusOnElementById } from '@/utils';
 
 import SelectOption from './Option';

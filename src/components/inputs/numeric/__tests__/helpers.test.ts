@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicNumericInputValidator } from '@/types';
+import { ChopLogicNumericInputValidator } from '@/models';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from '../helpers';
 

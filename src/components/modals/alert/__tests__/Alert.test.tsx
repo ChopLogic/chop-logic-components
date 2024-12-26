@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { DARK_THEME } from '@/css';
 import { ChopLogicAlertMode } from '@/enums';
-import { ChopLogicAlertProps } from '@/types';
+import { ChopLogicAlertProps } from '@/models';
 
 import ChopLogicAlert from '../Alert';
 import ChopLogicAlertHeader from '../elements/Header';

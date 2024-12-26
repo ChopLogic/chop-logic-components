@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ChopLogicTabsMode } from '@/enums';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledTabButton } from '../Tabs.styled';
 

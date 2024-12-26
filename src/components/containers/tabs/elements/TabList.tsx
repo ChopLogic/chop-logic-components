@@ -1,7 +1,7 @@
 import React, { KeyboardEvent } from 'react';
 
 import { ChopLogicTabsMode } from '@/enums';
-import { ChopLogicTabItem, ChopLogicTheme } from '@/types';
+import { ChopLogicTabItem, ChopLogicTheme } from '@/models';
 import { moveFocusOnElementById } from '@/utils';
 
 import { StyledTabList } from '../Tabs.styled';

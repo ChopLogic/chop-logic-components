@@ -2,7 +2,7 @@ import React, { KeyboardEvent } from 'react';
 
 import { StyledSelectOption } from '@/elements/styled/Select.styled';
 import CheckMarkIcon from '@/icons/CheckMarkIcon.tsx';
-import { ChopLogicSelectValue, ChopLogicTheme } from '@/types';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@/models';
 
 type SelectOptionProps = {
   value: ChopLogicSelectValue;

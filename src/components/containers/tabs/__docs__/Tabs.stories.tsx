@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ChopLogicTabs } from '@/components';
 import { ChopLogicTabsMode } from '@/enums';
-import { ChopLogicTabItem } from '@/types';
+import { ChopLogicTabItem } from '@/models';
 
 const tabs: ChopLogicTabItem[] = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },

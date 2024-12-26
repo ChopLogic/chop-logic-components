@@ -3,7 +3,7 @@ import React, { KeyboardEvent } from 'react';
 import { StyledMultiSelectOption } from '@/elements/styled/Select.styled';
 import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/types';
+import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/models';
 
 type MultiSelectOptionProps = {
   value: ChopLogicMultiSelectValue;

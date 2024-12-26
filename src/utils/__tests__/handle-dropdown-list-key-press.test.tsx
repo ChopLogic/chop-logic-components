@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { ChopLogicSelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 import { handleDropdownListKeyPress } from '@/utils';
 
 describe('handleDropdownListKeyPress', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledErrorMessage } from './ErrorMessage.styled';
 

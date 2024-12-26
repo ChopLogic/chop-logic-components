@@ -3,7 +3,7 @@ import React from 'react';
 import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/types';
+import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/models';
 
 type MultiSelectComboboxProps = {
   opened: boolean;

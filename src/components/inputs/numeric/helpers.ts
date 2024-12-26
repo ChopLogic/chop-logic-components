@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicNumericInputValidator } from '@/types';
+import { ChopLogicFormData, ChopLogicNumericInputValidator } from '@/models';
 
 export function getNumericInputInitialValue({
   name,

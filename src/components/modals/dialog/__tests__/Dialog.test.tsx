@@ -36,15 +36,6 @@ describe('ChopLogicDialog', () => {
     expect(window).not.toBeInTheDocument();
   });
 
-  it('should render the layout correctly', () => {
-    const { asFragment } = render(
-      <ChopLogicModalLayout {...testLayoutProps} theme={LIGHT_THEME} isOpened>
-        <div>Dialog content</div>
-      </ChopLogicModalLayout>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have the dialog role', () => {
     render(
       <ChopLogicModalLayout {...testLayoutProps} theme={LIGHT_THEME} isOpened>

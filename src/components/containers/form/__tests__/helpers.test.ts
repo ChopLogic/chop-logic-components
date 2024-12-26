@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '@/types';
+import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '@/models';
 
 import { getInitialValidationState, isFormDataValid, updateValidationState } from '../helpers';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicNumericInputProps } from '@/types';
+import { ChopLogicNumericInputProps } from '@/models';
 
 import NumericInput from '../NumericInput';
 

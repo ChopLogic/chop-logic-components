@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { ChopLogicButton } from '@/components';
 import { ChopLogicButtonView } from '@/enums';
-import { ChopLogicDialogProps } from '@/types';
+import { ChopLogicDialogProps } from '@/models';
 
 import ChopLogicDialog from '../Dialog';
 

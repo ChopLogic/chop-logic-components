@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 export const StyledTextInput = styled.div<{ $theme: ChopLogicTheme }>`
   display: flex;

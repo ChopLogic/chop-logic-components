@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ChopLogicSelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 
 import SelectExample from './Select.example.tsx';
 

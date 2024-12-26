@@ -3,7 +3,7 @@ import React from 'react';
 import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
 import { useChopLogicTheme, useElementIds } from '@/hooks';
-import { ChopLogicTextInputProps } from '@/types';
+import { ChopLogicTextInputProps } from '@/models';
 
 import { useChopLogicTextInputController } from './controller';
 import { StyledTextInput } from './TextInput.styled';

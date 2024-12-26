@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ChopLogicIcon } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicIconProps, ChopLogicTheme } from '@/types';
+import { ChopLogicIconProps, ChopLogicTheme } from '@/models';
 
 const StyledIconsContainer = styled.div`
   display: grid;

@@ -1,6 +1,6 @@
 import { KeyboardEvent } from 'react';
 
-import { ChopLogicSelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 
 import { moveFocusOnElementById } from './move-focus-on-element-by-id.ts';
 

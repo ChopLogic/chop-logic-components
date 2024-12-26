@@ -1,3 +1,5 @@
+import { ChopLogicThemeMode } from '@/enums';
+
 export interface ChopLogicTheme {
   // Colors
   fontColorBase: string;
@@ -35,8 +37,8 @@ export interface ChopLogicTheme {
 }
 
 export interface ChopLogicThemeContextProps {
-  mode: 'light' | 'dark';
-  setMode?: (mode: 'light' | 'dark') => void;
+  mode: ChopLogicThemeMode;
+  setMode?: (mode: ChopLogicThemeMode) => void;
   customTheme?: Partial<ChopLogicTheme>;
   setCustomTheme?: (customTheme: ChopLogicTheme) => void;
 }

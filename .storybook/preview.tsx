@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
-import { ChopLogicThemeContext } from '../src';
+import { ChopLogicThemeContext, ChopLogicThemeMode } from '../src';
 import { DARK_THEME, LIGHT_THEME } from '../src/css';
 import { STORY_WRAPPER_STYLES } from '../src/css/story-wrapper-styles';
 
@@ -41,7 +41,7 @@ const withTheme: Decorator = (StoryFn, context) => {
   // Get the active theme value from the story parameter
   const { backgrounds } = context.globals;
   const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
-  const mode = backgroundColor === DARK_THEME.backgroundColorBase ? 'dark' : 'light';
+  const mode = backgroundColor === DARK_THEME.backgroundColorBase ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
   return (
     <ChopLogicThemeContext.Provider value={{ mode }}>
       <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>

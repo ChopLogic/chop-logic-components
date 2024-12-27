@@ -1,19 +1,9 @@
 import { useRef } from 'react';
-import styled from 'styled-components';
 
+import { ExampleDivContainer } from '@/elements/styled/ExampleDivContainer.styled';
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicTheme } from '@/models';
 
 import { useClickOutside } from '..';
-
-const StyledDiv = styled.div<{ $theme: ChopLogicTheme }>`
-  padding: ${(props) => props.$theme.gapBig};
-  cursor: pointer;
-  font-size: ${(props) => props.$theme.fontSizeBase};
-  font-family: ${(props) => props.$theme.fontFamilyCore};
-  color: ${(props) => props.$theme.fontColorBase};
-  border: ${(props) => props.$theme.borderLight};
-`;
 
 const UseClickOutsideExample = () => {
   const ref = useRef(null);
@@ -24,9 +14,9 @@ const UseClickOutsideExample = () => {
   });
 
   return (
-    <StyledDiv $theme={theme} ref={ref}>
+    <ExampleDivContainer $theme={theme} ref={ref}>
       Click outside this box to trigger the handler.
-    </StyledDiv>
+    </ExampleDivContainer>
   );
 };
 

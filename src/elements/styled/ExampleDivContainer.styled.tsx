@@ -9,4 +9,6 @@ export const ExampleDivContainer = styled.div<{ $theme: ChopLogicTheme }>`
   font-family: ${(props) => props.$theme.fontFamilyCore};
   color: ${(props) => props.$theme.fontColorBase};
   border: ${(props) => props.$theme.borderLight};
+  display: flex;
+  gap: ${(props) => props.$theme.gapMedium};
 `;

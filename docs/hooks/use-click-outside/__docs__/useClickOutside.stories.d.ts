@@ -1,8 +1,7 @@
-import { default as React } from '../../../../node_modules/react';
 import { Meta, StoryObj } from '@storybook/react';
+import { default as UseClickOutsideExample } from './useClickOutside.example.tsx';
 
-declare const ExampleComponent: React.FC;
-declare const meta: Meta<typeof ExampleComponent>;
+declare const meta: Meta<typeof UseClickOutsideExample>;
 export default meta;
-type Story = StoryObj<typeof ExampleComponent>;
+type Story = StoryObj<typeof UseClickOutsideExample>;
 export declare const Default: Story;

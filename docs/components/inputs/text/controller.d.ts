@@ -1,10 +1,10 @@
 import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
-import { RegExpWithFlags, TextValidationFunction } from '../../../types';
+import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '../../../models';
 
 export declare function useChopLogicTextInputController({ name, defaultValue, onChange, onClear, required, validator, }: {
     name: string;
     required: boolean;
-    validator?: RegExpWithFlags | TextValidationFunction;
+    validator?: ChopLogicRegExpWithFlags | ChopLogicTextInputValidator;
     defaultValue?: string | number | readonly string[];
     onChange?: ChangeEventHandler<HTMLInputElement>;
     onClear?: () => void;

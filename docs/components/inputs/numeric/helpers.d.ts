@@ -1,4 +1,4 @@
-import { ChopLogicFormData, NumericValidationFunction } from '../../../types';
+import { ChopLogicFormData, ChopLogicNumericInputValidator } from '../../../models';
 
 export declare function getNumericInputInitialValue({ name, initialValues, defaultValue, }: {
     name: string;
@@ -8,7 +8,7 @@ export declare function getNumericInputInitialValue({ name, initialValues, defau
 export declare function validateNumericInputValue({ value, required, validator, maxValue, minValue, }: {
     value?: number;
     required?: boolean;
-    validator?: NumericValidationFunction;
+    validator?: ChopLogicNumericInputValidator;
     maxValue?: number;
     minValue?: number;
 }): boolean;

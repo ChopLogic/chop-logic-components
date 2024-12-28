@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabsProps } from '../../../../types';
+import { ChopLogicTabsProps } from '../../../../models';
 
 declare const ExampleComponent: React.FC<ChopLogicTabsProps>;
 export default ExampleComponent;

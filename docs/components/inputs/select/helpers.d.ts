@@ -1,8 +1,8 @@
-import { ChopLogicFormData, SelectValue } from '../../../types';
+import { ChopLogicFormData, ChopLogicSelectValue } from '../../../models';
 
 export declare function getSelectInitialValue({ name, options, initialValues, defaultValue, }: {
     name: string;
-    options: SelectValue[];
+    options: ChopLogicSelectValue[];
     initialValues?: ChopLogicFormData;
     defaultValue?: string | number | readonly string[];
-}): SelectValue | undefined;
+}): ChopLogicSelectValue | undefined;

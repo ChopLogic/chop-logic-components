@@ -1,4 +1,4 @@
-import { ChopLogicGridItem } from '../../../types';
+import { ChopLogicGridItem } from '../../../models';
 
 export declare const useChopLogicGridController: ({ data, id, onSelect, }: {
     data: ChopLogicGridItem[];

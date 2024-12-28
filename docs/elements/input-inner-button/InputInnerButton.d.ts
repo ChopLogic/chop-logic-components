@@ -1,6 +1,6 @@
 import { default as React } from '../../../node_modules/react';
 import { ChopLogicIconName } from '../../enums';
-import { ChopLogicTheme } from '../../types';
+import { ChopLogicTheme } from '../../models';
 
 type ClearInputButtonProps = {
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

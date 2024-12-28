@@ -1,8 +1,7 @@
-import { default as React } from '../../../../node_modules/react';
 import { Meta, StoryObj } from '@storybook/react';
+import { default as UseWindowDimensionsExample } from './useWindowDimensions.example';
 
-declare const ExampleComponent: React.FC;
-declare const meta: Meta<typeof ExampleComponent>;
+declare const meta: Meta<typeof UseWindowDimensionsExample>;
 export default meta;
-type Story = StoryObj<typeof ExampleComponent>;
+type Story = StoryObj<typeof UseWindowDimensionsExample>;
 export declare const Default: Story;

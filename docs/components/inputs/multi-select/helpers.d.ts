@@ -1,10 +1,10 @@
-import { ChopLogicFormData, MultiSelectValue, SelectValue } from '../../../types';
+import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '../../../models';
 
 export declare function getMultiSelectInitialValues({ name, options, initialValues, defaultValue, }: {
     name: string;
-    options: SelectValue[];
+    options: ChopLogicSelectValue[];
     initialValues?: ChopLogicFormData;
     defaultValue?: string | number | readonly string[];
-}): MultiSelectValue[];
-export declare const getMultiSelectFormValues: (options: MultiSelectValue[]) => string[];
-export declare const getMultiSelectUpdatedValues: (options: MultiSelectValue[], id: string) => MultiSelectValue[];
+}): ChopLogicMultiSelectValue[];
+export declare const getMultiSelectFormValues: (options: ChopLogicMultiSelectValue[]) => string[];
+export declare const getMultiSelectUpdatedValues: (options: ChopLogicMultiSelectValue[], id: string) => ChopLogicMultiSelectValue[];

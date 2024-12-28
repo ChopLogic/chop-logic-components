@@ -1,12 +1,12 @@
-import { SelectValue } from '../../../types';
+import { ChopLogicSelectValue } from '../../../models';
 
 export declare function useChopLogicSelectController({ name, defaultValue, onChange, options, }: {
     name: string;
     defaultValue?: string | number | readonly string[];
-    onChange?: (value?: SelectValue) => void;
-    options: SelectValue[];
+    onChange?: (value?: ChopLogicSelectValue) => void;
+    options: ChopLogicSelectValue[];
 }): {
-    selected: SelectValue | undefined;
+    selected: ChopLogicSelectValue | undefined;
     opened: boolean;
     handleClear: () => void;
     handleClose: () => void;

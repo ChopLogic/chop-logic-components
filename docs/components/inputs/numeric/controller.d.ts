@@ -1,5 +1,5 @@
 import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
-import { NumericValidationFunction } from '../../../types';
+import { ChopLogicNumericInputValidator } from '../../../models';
 
 export declare function useChopLogicNumericInputController({ name, defaultValue, onChange, onSpinButtonClick, min, max, step, required, validator, }: {
     name: string;
@@ -10,7 +10,7 @@ export declare function useChopLogicNumericInputController({ name, defaultValue,
     max?: string | number;
     step: number;
     required: boolean;
-    validator?: NumericValidationFunction;
+    validator?: ChopLogicNumericInputValidator;
 }): {
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value: number;

@@ -1,5 +1,5 @@
 import { default as React, PropsWithChildren } from '../../../node_modules/react';
-import { ChopLogicTheme } from '../../types';
+import { ChopLogicTheme } from '../../models';
 
 type ChopLogicLabelProps = {
     label: string;

@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicTheme, RenderDataItemCallback } from '../../../../types';
+import { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicTheme, RenderDataItemCallback } from '../../../../models';
 
 type ChopLogicGridBodyProps = {
     data: ChopLogicGridItem[];

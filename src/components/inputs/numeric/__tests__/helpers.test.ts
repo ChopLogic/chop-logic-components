@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { NumericValidationFunction } from '@/types';
+import { ChopLogicNumericInputValidator } from '@/models';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from '../helpers';
 
@@ -66,13 +66,13 @@ describe('validateNumericInputValue', () => {
   });
 
   it('should return true when validator is a function and returns true', () => {
-    const mockValidator: NumericValidationFunction = (input?: number) => input === 10;
+    const mockValidator: ChopLogicNumericInputValidator = (input?: number) => input === 10;
     const result = validateNumericInputValue({ value: 10, validator: mockValidator });
     expect(result).toBe(true);
   });
 
   it('should return false when validator is a function and returns false', () => {
-    const mockValidator: NumericValidationFunction = (input?: number) => input === 10;
+    const mockValidator: ChopLogicNumericInputValidator = (input?: number) => input === 10;
     const result = validateNumericInputValue({ value: 5, validator: mockValidator });
     expect(result).toBe(false);
   });

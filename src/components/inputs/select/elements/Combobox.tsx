@@ -3,7 +3,20 @@ import React from 'react';
 import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
 import ArrowDownIcon from '@/icons/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@/icons/ArrowUpIcon.tsx';
-import { SelectComboboxProps } from '@/types';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@/models';
+
+type SelectComboboxProps = {
+  opened: boolean;
+  disabled: boolean;
+  required: boolean;
+  onClick: () => void;
+  comboboxId: string;
+  dropdownId: string;
+  selected?: ChopLogicSelectValue;
+  placeholder?: string;
+  name: string;
+  theme: ChopLogicTheme;
+};
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
   opened,

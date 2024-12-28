@@ -8,15 +8,15 @@ import {
   ChopLogicSelect,
   ChopLogicTextInput,
 } from '@/components';
-import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@/types';
+import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@/models';
 
-const SELECT_LANGUAGES: SelectValue[] = [
+const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
   { id: 'lang-1', label: 'English' },
   { id: 'lang-2', label: 'Russian' },
   { id: 'lang-3', label: 'German' },
 ];
 
-const MULTI_SELECT_VALUES: SelectValue[] = [
+const MULTI_SELECT_VALUES: ChopLogicSelectValue[] = [
   { id: 'pr-lang-1', label: 'JavaScript' },
   { id: 'pr-lang-2', label: 'Python' },
   { id: 'pr-lang-3', label: 'Java' },

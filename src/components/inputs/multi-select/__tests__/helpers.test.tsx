@@ -1,24 +1,24 @@
 import { describe, expect, it } from 'vitest';
 
-import { ChopLogicFormData, MultiSelectValue, SelectValue } from '@/types';
+import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@/models';
 
 import { getMultiSelectInitialValues } from '../helpers';
 
 describe('getMultiSelectSelectValues', () => {
-  const options: SelectValue[] = [
+  const options: ChopLogicSelectValue[] = [
     { id: '1', label: 'Option 1' },
     { id: '2', label: 'Option 2' },
     { id: '3', label: 'Option 3' },
   ];
 
-  it('should return MultiSelectValue[] with selected true for options in initialValues', () => {
+  it('should return ChopLogicMultiSelectValue[] with selected true for options in initialValues', () => {
     const initialValues: ChopLogicFormData = { mySelect: ['1', '3'] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
       initialValues,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: true },
       { id: '2', label: 'Option 2', selected: false },
       { id: '3', label: 'Option 3', selected: true },
@@ -26,14 +26,14 @@ describe('getMultiSelectSelectValues', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return MultiSelectValue[] with selected true for options in defaultValue if initialValues is absent', () => {
+  it('should return ChopLogicMultiSelectValue[] with selected true for options in defaultValue if initialValues is absent', () => {
     const defaultValue = ['2'];
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
       defaultValue,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: false },
       { id: '2', label: 'Option 2', selected: true },
       { id: '3', label: 'Option 3', selected: false },
@@ -41,14 +41,14 @@ describe('getMultiSelectSelectValues', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return MultiSelectValue[] with all selected false if neither initialValues nor defaultValue matches any options', () => {
+  it('should return ChopLogicMultiSelectValue[] with all selected false if neither initialValues nor defaultValue matches any options', () => {
     const initialValues: ChopLogicFormData = { mySelect: ['4', '5'] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
       initialValues,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: false },
       { id: '2', label: 'Option 2', selected: false },
       { id: '3', label: 'Option 3', selected: false },
@@ -65,7 +65,7 @@ describe('getMultiSelectSelectValues', () => {
       initialValues,
       defaultValue,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: true },
       { id: '2', label: 'Option 2', selected: false },
       { id: '3', label: 'Option 3', selected: false },
@@ -73,14 +73,14 @@ describe('getMultiSelectSelectValues', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should handle complex initialValues with SelectValue objects', () => {
+  it('should handle complex initialValues with ChopLogicSelectValue objects', () => {
     const initialValues: ChopLogicFormData = { mySelect: [{ id: '1' }, { id: '3' }] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
       initialValues,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: true },
       { id: '2', label: 'Option 2', selected: false },
       { id: '3', label: 'Option 3', selected: true },
@@ -88,12 +88,12 @@ describe('getMultiSelectSelectValues', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return MultiSelectValue[] with all selected false if no initialValues or defaultValue are provided', () => {
+  it('should return ChopLogicMultiSelectValue[] with all selected false if no initialValues or defaultValue are provided', () => {
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
     });
-    const expected: MultiSelectValue[] = [
+    const expected: ChopLogicMultiSelectValue[] = [
       { id: '1', label: 'Option 1', selected: false },
       { id: '2', label: 'Option 2', selected: false },
       { id: '3', label: 'Option 3', selected: false },

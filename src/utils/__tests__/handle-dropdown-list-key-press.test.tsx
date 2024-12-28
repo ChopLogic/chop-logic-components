@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { SelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 import { handleDropdownListKeyPress } from '@/utils';
 
 describe('handleDropdownListKeyPress', () => {
-  let options: SelectValue[];
+  let options: ChopLogicSelectValue[];
   let onClose: () => void;
 
   beforeEach(() => {

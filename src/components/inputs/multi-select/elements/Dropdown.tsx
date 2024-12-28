@@ -1,10 +1,19 @@
 import React from 'react';
 
 import { StyledSelectDropdown } from '@/elements/styled/Select.styled';
-import { MultiSelectDropdownProps } from '@/types';
+import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/models';
 import { handleDropdownListKeyPress } from '@/utils';
 
 import SelectOption from './Option';
+
+type MultiSelectDropdownProps = {
+  options: ChopLogicMultiSelectValue[];
+  opened: boolean;
+  dropdownId: string;
+  onClose: () => void;
+  onSelect: (id: string) => void;
+  theme: ChopLogicTheme;
+};
 
 const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId, theme }) => {
   return (

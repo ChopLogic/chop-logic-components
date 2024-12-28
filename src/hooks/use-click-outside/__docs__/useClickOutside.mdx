@@ -7,11 +7,7 @@ import * as UseClickOutsideStories from './useClickOutside.stories';
 
 The `useClickOutside` hook listens for click events outside a specified element and calls a handler function when such an event occurs.
 
-<Canvas>
-  <Story of={UseClickOutsideStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React, { useRef, useState } from 'react';
@@ -37,7 +33,7 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Params
+### Params
 
 - **ref**
   - Type: `React.RefObject<HTMLDivElement>`
@@ -45,6 +41,9 @@ export default ExampleComponent;
 - **onClickOutsideHandler**
   - Type: `() => void`
   - Description: The callback function to call when a click outside the referenced element is detected.
-- **dependentRef**
+- **dependentRef** (optional)
   - Type: `React.RefObject<HTMLDivElement>`
   - Description: An optional additional ref to another element that should not trigger the outside click handler.
+
+### Returns
+  - `void`

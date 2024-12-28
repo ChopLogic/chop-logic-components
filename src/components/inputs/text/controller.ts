@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, useCallback, useContext, useState } from 're
 
 import { ChopLogicFormContext } from '@/contexts';
 import { useResetFormInput } from '@/hooks';
-import { RegExpWithFlags, TextValidationFunction } from '@/types';
+import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@/models';
 
 import { getTextInputInitialValue, validateTextInputValue } from './helpers';
 
@@ -16,7 +16,7 @@ export function useChopLogicTextInputController({
 }: {
   name: string;
   required: boolean;
-  validator?: RegExpWithFlags | TextValidationFunction;
+  validator?: ChopLogicRegExpWithFlags | ChopLogicTextInputValidator;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onClear?: () => void;

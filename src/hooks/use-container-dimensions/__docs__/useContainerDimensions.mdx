@@ -7,11 +7,7 @@ import * as UseContainerDimensionsStories from './useContainerDimensions.stories
 
 The `useContainerDimensions` hook measures the dimensions (width and height) of a container element and returns these values as an object.
 
-<Canvas>
-  <Story of={UseContainerDimensionsStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React, { useRef } from 'react';
@@ -22,7 +18,7 @@ const ExampleComponent = () => {
   const { width, height } = useContainerDimensions({ ref, isVisible: true });
 
   return (
-    <div ref={ref} style={{ width: '200px', height: '150px', border: '1px solid black' }}>
+    <div ref={ref}>
       <p>Width: {width}px</p>
       <p>Height: {height}px</p>
     </div>
@@ -32,12 +28,17 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Params
+### Params
 
 - **ref**
   - Type: `React.RefObject<HTMLElement>`
   - Description: A ref to the element whose dimensions will be measured.
-- **isVisible**
-  - Type: boolean
-  - Optional: true
+- **isVisible** (optional)
+  - Type: `boolean`
   - Description: A flag to indicate whether the element is visible. If true, the dimensions will be measured.
+
+### Returns
+
+- **Dimensions**
+  - Type: `{ width: number; height: number }`
+  - Description: An object containing the current window width and height.

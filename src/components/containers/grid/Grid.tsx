@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicGridProps } from '@/types';
+import { ChopLogicGridProps } from '@/models';
 
 import ChopLogicGridBody from './elements/Body';
 import GridColumnGroup from './elements/ColumnGroup';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicButtonProps } from '@/types';
+import { ChopLogicButtonProps } from '@/models';
 
 import Button from '../Button';
 

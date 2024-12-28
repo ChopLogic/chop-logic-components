@@ -1,11 +1,19 @@
-import React, { useRef } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, useRef } from 'react';
 
 import { useKeyPress, useModalFocusTrap } from '@/hooks';
-import { DialogLayoutProps } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledDialogContent, StyledDialogLayout } from '../Dialog.styled';
 
 import ChopLogicModalLayoutHeader from './Header';
+
+type DialogLayoutProps = PropsWithChildren &
+  HTMLAttributes<HTMLDivElement> & {
+    title: string;
+    onClose: () => void;
+    isOpened: boolean;
+    theme: ChopLogicTheme;
+  };
 
 const ChopLogicModalLayout: React.FC<DialogLayoutProps> = ({ title, onClose, isOpened, children, theme, ...rest }): React.ReactElement => {
   const modalRef = useRef<HTMLDivElement>(null);

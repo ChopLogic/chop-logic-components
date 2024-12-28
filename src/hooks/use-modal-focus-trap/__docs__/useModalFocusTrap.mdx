@@ -7,11 +7,7 @@ import * as UseModalFocusTrapStories from './useModalFocusTrap.stories';
 
 The `useModalFocusTrap` hook ensures that focus is trapped within an open modal window, preventing the focus from moving outside of the modal.
 
-<Canvas>
-  <Story of={UseModalFocusTrapStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React, { useRef, useState } from 'react';
@@ -39,11 +35,15 @@ const ExampleModal = () => {
 export default ExampleModal;
 ```
 
-## Params
+### Params
 
 - **modalRef**
   - Type: `React.RefObject<HTMLDivElement>`
   - Description: A ref to the modal element that will be used to trap the focus within.
 - **isOpened**
-  - Type: boolean
+  - Type: `boolean`
   - Description: A boolean indicating whether the modal is opened or not.
+
+### Returns
+
+- `void`

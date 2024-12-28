@@ -7,11 +7,7 @@ import * as UseMountStories from './useMount.stories';
 
 The `useMount` hook manages the mounting state of a component with a delay.
 
-<Canvas>
-  <Story of={UseMountStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React, { useState } from 'react';
@@ -32,11 +28,17 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Params
+### Params
 
 - **isOpened**
-  Type: boolean
-  Description: A boolean indicating whether the component is opened or not.
-- **delay**
-  Type: number
-  Description: The delay in milliseconds before the component is unmounted. Default is 300.
+  - Type: `boolean`
+  - Description: A boolean indicating whether the component is opened or not.
+- **delay** (optional)
+  - Type: `number`
+  - Description: The delay in milliseconds before the component is unmounted. Default is 300.
+
+### Returns
+
+- **isMounted**
+  - Type: `boolean`
+  - Description: A boolean indicating whether the component is mounted or not.

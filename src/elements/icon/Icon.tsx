@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 
 import { ChopLogicIconName } from '@/enums';
-import { ChopLogicIconProps, ChopLogicLazyIcons } from '@/types';
+import { ChopLogicIconProps } from '@/models';
 
 const ArrowDownIcon = lazy(() => import('@/icons/ArrowDownIcon'));
 const ArrowUpIcon = lazy(() => import('@/icons/ArrowUpIcon'));
@@ -31,6 +31,10 @@ const SaveIcon = lazy(() => import('@/icons/SaveIcon'));
 const ShowIcon = lazy(() => import('@/icons/ShowIcon'));
 const UploadIcon = lazy(() => import('@/icons/UploadIcon'));
 const WarningIcon = lazy(() => import('@/icons/WarningIcon'));
+
+type LazyIcon = React.LazyExoticComponent<(props: React.SVGProps<SVGSVGElement>) => React.ReactElement>;
+
+type ChopLogicLazyIcons = { [key in ChopLogicIconName]: LazyIcon };
 
 const ChopLogicIconDictionary: ChopLogicLazyIcons = {
   [ChopLogicIconName.ArrowDown]: ArrowDownIcon,

@@ -4,7 +4,7 @@ import { ChopLogicLabel } from '@/elements';
 import { useElementIds } from '@/hooks';
 import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledGridCheckboxInput, StyledGridCheckboxWrapper } from '../Grid.styled';
 

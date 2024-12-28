@@ -1,11 +1,22 @@
 import React, { KeyboardEvent } from 'react';
 
-import { ChopLogicTabListProps } from '@/types';
+import { ChopLogicTabsMode } from '@/enums';
+import { ChopLogicTabItem, ChopLogicTheme } from '@/models';
 import { moveFocusOnElementById } from '@/utils';
 
 import { StyledTabList } from '../Tabs.styled';
 
 import ChopLogicTabButton from './TabButton';
+
+type ChopLogicTabListProps = {
+  tabs: ChopLogicTabItem[];
+  tabIds: string[];
+  onTabSelect: (id: string) => void;
+  selectedTabId: string;
+  tabPanelIds: string[];
+  mode: ChopLogicTabsMode;
+  theme: ChopLogicTheme;
+};
 
 const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds, theme }) => {
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -15,8 +26,8 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
       case 'ArrowLeft':
       case 'ArrowUp': {
         e.preventDefault();
-        if (e.key === 'ArrowUp' && mode === 'horizontal') break;
-        if (e.key === 'ArrowLeft' && mode === 'vertical') break;
+        if (e.key === 'ArrowUp' && mode === ChopLogicTabsMode.Horizontal) break;
+        if (e.key === 'ArrowLeft' && mode === ChopLogicTabsMode.Vertical) break;
 
         const previousTabIndex = currentFocusedTabIndex - 1 >= 0 ? currentFocusedTabIndex - 1 : tabIds.length - 1;
         const previousTabId = tabIds[previousTabIndex];
@@ -29,8 +40,8 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
       case 'ArrowRight':
       case 'ArrowDown': {
         e.preventDefault();
-        if (e.key === 'ArrowDown' && mode === 'horizontal') break;
-        if (e.key === 'ArrowRight' && mode === 'vertical') break;
+        if (e.key === 'ArrowDown' && mode === ChopLogicTabsMode.Horizontal) break;
+        if (e.key === 'ArrowRight' && mode === ChopLogicTabsMode.Vertical) break;
 
         const nextTabIndex = currentFocusedTabIndex === tabIds.length - 1 ? 0 : currentFocusedTabIndex + 1;
         const nextTabId = tabIds[nextTabIndex];

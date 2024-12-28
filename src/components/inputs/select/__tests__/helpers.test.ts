@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { SelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 
 import { getSelectInitialValue } from '../helpers';
 
 describe('getSelectInitialValue', () => {
-  const options: SelectValue[] = [
+  const options: ChopLogicSelectValue[] = [
     { id: '1', label: 'Option 1' },
     { id: '2', label: 'Option 2' },
     { id: '3', label: 'Option 3' },
@@ -61,7 +61,7 @@ describe('getSelectInitialValue', () => {
     expect(result).toBeUndefined();
   });
 
-  it('should handle complex initialValues with SelectValue objects', () => {
+  it('should handle complex initialValues with ChopLogicSelectValue objects', () => {
     const initialValues = { mySelect: { id: '2', label: 'Option 2' } };
     const result = getSelectInitialValue({
       name: 'mySelect',

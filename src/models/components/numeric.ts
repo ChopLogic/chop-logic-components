@@ -1,12 +1,10 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
-import { CommonInputProps } from './_common';
+import { ChopLogicInputProps, ChopLogicNumericInputValidator } from '../common.ts';
 
-export type NumericValidationFunction = (input?: number) => boolean;
-
-export type ChopLogicNumericInputProps = CommonInputProps & {
+export interface ChopLogicNumericInputProps extends ChopLogicInputProps {
   errorMessage?: string;
-  validator?: NumericValidationFunction;
+  validator?: ChopLogicNumericInputValidator;
   hasSpinButtons?: boolean;
   min?: number;
   max?: number;
@@ -17,4 +15,4 @@ export type ChopLogicNumericInputProps = CommonInputProps & {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
-};
+}

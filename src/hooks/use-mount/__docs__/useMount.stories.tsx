@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useMount } from '..';
+import UseMountExample from './useMount.example';
 
-const ExampleComponent: React.FC = () => {
-  const [isOpened, setIsOpened] = useState(false);
-  const isMounted = useMount(isOpened, 1000);
-
-  return (
-    <div>
-      <button onClick={() => setIsOpened(!isOpened)}>Toggle Component</button>
-      {isMounted && <div style={{ marginTop: '10px', border: '1px solid black', padding: '10px' }}>Component is mounted!</div>}
-    </div>
-  );
-};
-
-const meta: Meta<typeof ExampleComponent> = {
-  component: ExampleComponent,
+const meta: Meta<typeof UseMountExample> = {
+  component: UseMountExample,
   title: 'Hooks/useMount',
 };
 
 export default meta;
-type Story = StoryObj<typeof ExampleComponent>;
+type Story = StoryObj<typeof UseMountExample>;
 
 export const Default: Story = {};

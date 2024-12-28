@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ChopLogicTooltipContainer } from '@/enums';
+
 import TooltipExample from './Tooltip.example.tsx';
 
 const meta: Meta<typeof TooltipExample> = {
@@ -13,7 +15,7 @@ type Story = StoryObj<typeof TooltipExample>;
 export const VisibleOnHover: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: 'span',
+    containerTag: ChopLogicTooltipContainer.Span,
     visibleOn: 'hover',
     id: 'tooltip',
   },
@@ -22,7 +24,7 @@ export const VisibleOnHover: Story = {
 export const VisibleOnClick: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: 'div',
+    containerTag: ChopLogicTooltipContainer.Div,
     visibleOn: 'click',
     id: 'tooltip',
   },
@@ -31,7 +33,7 @@ export const VisibleOnClick: Story = {
 export const VisibleOnFocus: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: 'div',
+    containerTag: ChopLogicTooltipContainer.Div,
     visibleOn: 'focus',
     id: 'tooltip',
   },
@@ -40,7 +42,7 @@ export const VisibleOnFocus: Story = {
 export const VisibleOnContextMenu: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: 'div',
+    containerTag: ChopLogicTooltipContainer.Div,
     visibleOn: 'contextmenu',
     id: 'tooltip',
   },

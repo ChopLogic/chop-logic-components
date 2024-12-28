@@ -1,10 +1,10 @@
 import { ChangeEventHandler } from 'react';
 
-import { CommonInputProps } from './_common';
+import { ChopLogicInputProps } from '../common.ts';
 
-export type ChopLogicCheckboxProps = CommonInputProps & {
+export interface ChopLogicCheckboxProps extends ChopLogicInputProps {
   noLabel?: boolean;
   iconPosition?: 'left' | 'right';
   onChange?: ChangeEventHandler<HTMLInputElement>;
   defaultChecked?: boolean;
-};
+}

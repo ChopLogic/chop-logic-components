@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { LIGHT_THEME } from '@/css';
-import { ChopLogicGridColumn } from '@/types';
+import { ChopLogicGridColumn } from '@/models';
 
 import GridColumnGroup from '../elements/ColumnGroup';
 

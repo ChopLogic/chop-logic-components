@@ -4,7 +4,7 @@ import { ChopLogicIcon } from '@/elements';
 import { ChopLogicButtonView } from '@/enums';
 import { withTooltip } from '@/hocs';
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicButtonProps } from '@/types';
+import { ChopLogicButtonProps } from '@/models';
 
 import { StyledFlatButton, StyledIconButton, StyledPrimaryButton } from './Button.styled';
 

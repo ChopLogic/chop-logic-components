@@ -1,34 +1,13 @@
-import React, { useRef, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useModalFocusTrap } from '..';
+import UseModalFocusTrapExample from './useModalFocusTrap.example';
 
-const ExampleModal: React.FC = () => {
-  const modalRef = useRef<HTMLDivElement>(null);
-  const [isOpened, setIsOpened] = useState(false);
-
-  useModalFocusTrap({ modalRef, isOpened });
-
-  return (
-    <div>
-      <button onClick={() => setIsOpened(true)}>Open Modal</button>
-      {isOpened && (
-        <div ref={modalRef} tabIndex={-1} style={{ border: '1px solid black', padding: '20px', marginTop: '10px' }}>
-          <button onClick={() => setIsOpened(false)}>Close Modal</button>
-          <input type='text' placeholder='Focusable Input' />
-          <button>Another Button</button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-const meta: Meta<typeof ExampleModal> = {
-  component: ExampleModal,
+const meta: Meta<typeof UseModalFocusTrapExample> = {
+  component: UseModalFocusTrapExample,
   title: 'Hooks/useModalFocusTrap',
 };
 
 export default meta;
-type Story = StoryObj<typeof ExampleModal>;
+type Story = StoryObj<typeof UseModalFocusTrapExample>;
 
 export const Default: Story = {};

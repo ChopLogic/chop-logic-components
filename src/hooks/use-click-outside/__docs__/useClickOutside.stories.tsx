@@ -1,31 +1,13 @@
-import React, { useRef, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useClickOutside } from '..';
+import UseClickOutsideExample from './useClickOutside.example.tsx';
 
-const ExampleComponent: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef(null);
-
-  useClickOutside({
-    ref,
-    onClickOutsideHandler: () => setIsOpen(false),
-  });
-
-  return (
-    <div>
-      <button onClick={() => setIsOpen(true)}>Open</button>
-      {isOpen && <div ref={ref}>Click outside me to close</div>}
-    </div>
-  );
-};
-
-const meta: Meta<typeof ExampleComponent> = {
-  component: ExampleComponent,
+const meta: Meta<typeof UseClickOutsideExample> = {
+  component: UseClickOutsideExample,
   title: 'Hooks/useClickOutside',
 };
 
 export default meta;
-type Story = StoryObj<typeof ExampleComponent>;
+type Story = StoryObj<typeof UseClickOutsideExample>;
 
 export const Default: Story = {};

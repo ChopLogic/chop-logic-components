@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ChopLogicIcon } from '@/elements';
 import { ChopLogicIconName } from '@/enums';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 import { StyledInputInnerButton } from './InputInnerButton.styled';
 

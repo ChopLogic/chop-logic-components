@@ -2,7 +2,15 @@ import React, { KeyboardEvent } from 'react';
 
 import { StyledSelectOption } from '@/elements/styled/Select.styled';
 import CheckMarkIcon from '@/icons/CheckMarkIcon.tsx';
-import { SelectOptionProps } from '@/types';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@/models';
+
+type SelectOptionProps = {
+  value: ChopLogicSelectValue;
+  selected: boolean;
+  onSelect: (id: string) => void;
+  onClear: () => void;
+  theme: ChopLogicTheme;
+};
 
 const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear, theme }) => {
   const { id, label } = value;

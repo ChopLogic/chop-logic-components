@@ -4,7 +4,7 @@ import { ChopLogicButton } from '@/components';
 import { ChopLogicFormContext } from '@/contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicFormProps } from '@/types';
+import { ChopLogicFormProps } from '@/models';
 
 import { useChopLogicFormController } from './controller';
 import { StyledForm, StyledFormButtonsContainer } from './Form.styled';

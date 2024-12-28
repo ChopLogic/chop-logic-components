@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicMultiSelectProps } from '@/types';
+import { ChopLogicMultiSelectProps } from '@/models';
 
 import ChopLogicMultiSelect from '../MultiSelect';
 

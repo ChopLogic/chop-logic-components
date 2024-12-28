@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 export const StyledCheckbox = styled.div<{ $disabled: boolean; $checked: boolean; $theme: ChopLogicTheme }>`
   display: flex;

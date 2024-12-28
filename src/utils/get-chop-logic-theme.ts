@@ -1,5 +1,5 @@
 import { DARK_THEME, LIGHT_THEME } from '@/css';
-import { ChopLogicTheme } from '@/types';
+import { ChopLogicTheme } from '@/models';
 
 export function getChopLogicTheme(mode?: 'dark' | 'light', customTheme?: Partial<ChopLogicTheme>): ChopLogicTheme {
   const defaultTheme: ChopLogicTheme = mode === 'dark' ? DARK_THEME : LIGHT_THEME;

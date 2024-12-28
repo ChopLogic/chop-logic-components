@@ -1,25 +1,13 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { useWindowDimensions } from '..';
+import UseWindowDimensionsExample from './useWindowDimensions.example';
 
-const ExampleComponent: React.FC = () => {
-  const { width, height } = useWindowDimensions();
-
-  return (
-    <div>
-      <p>Window width: {width}px</p>
-      <p>Window height: {height}px</p>
-    </div>
-  );
-};
-
-const meta: Meta<typeof ExampleComponent> = {
-  component: ExampleComponent,
+const meta: Meta<typeof UseWindowDimensionsExample> = {
+  component: UseWindowDimensionsExample,
   title: 'Hooks/useWindowDimensions',
 };
 
 export default meta;
-type Story = StoryObj<typeof ExampleComponent>;
+type Story = StoryObj<typeof UseWindowDimensionsExample>;
 
 export const Default: Story = {};

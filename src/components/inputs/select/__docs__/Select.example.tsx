@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChopLogicSelectProps } from '@/types';
+import { ChopLogicSelectProps } from '@/models';
 
 import ChopLogicSelect from '../Select';
 

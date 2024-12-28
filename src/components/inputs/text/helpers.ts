@@ -1,4 +1,4 @@
-import { ChopLogicFormData, RegExpWithFlags, TextValidationFunction } from '@/types';
+import { ChopLogicFormData, ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@/models';
 
 export function validateTextInputValue({
   value,
@@ -7,7 +7,7 @@ export function validateTextInputValue({
 }: {
   value: string;
   required: boolean;
-  validator?: RegExpWithFlags | TextValidationFunction;
+  validator?: ChopLogicRegExpWithFlags | ChopLogicTextInputValidator;
 }): boolean {
   if (required && !validator && !value.length) {
     return false;

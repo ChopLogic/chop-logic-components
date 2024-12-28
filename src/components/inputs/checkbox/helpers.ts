@@ -1,4 +1,4 @@
-import { ChopLogicFormData } from '@/types';
+import { ChopLogicFormData } from '@/models';
 
 export function getCheckboxInitialValue({
   defaultChecked,

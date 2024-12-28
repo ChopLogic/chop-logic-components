@@ -3,12 +3,12 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import { ChopLogicForm } from '@/components';
-import { SelectValue } from '@/types';
+import { ChopLogicSelectValue } from '@/models';
 
 import ChopLogicSelect from '../Select';
 
 describe('ChopLogicSelect', () => {
-  const SELECT_LANGUAGES: SelectValue[] = [
+  const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
     { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
     { id: 'b4b08a09-e287-400b-ba65-afd6ae1f6fd7', label: 'Russian' },
     { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },

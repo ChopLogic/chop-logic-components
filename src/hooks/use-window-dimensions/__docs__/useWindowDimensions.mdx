@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Meta  } from '@storybook/blocks';
 import * as UseWindowDimensionsStories from './useWindowDimensions.stories';
 
 <Meta of={UseWindowDimensionsStories} title='Hooks/useWindowDimensions' />
@@ -7,23 +7,19 @@ import * as UseWindowDimensionsStories from './useWindowDimensions.stories';
 
 The `useWindowDimensions` hook tracks and provides the current window dimensions.
 
-<Canvas>
-  <Story of={UseWindowDimensionsStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React from 'react';
-import { useWindowDimensions } from 'your-library';
+import { useWindowDimensions } from 'chop-logic-components';
 
 const ExampleComponent = () => {
   const { width, height } = useWindowDimensions();
 
   return (
     <div>
-      <p>Window width: {width}px</p>
-      <p>Window height: {height}px</p>
+      <p>Window width: {width}px;</p>
+      <p>Window height: {height}px;</p>
     </div>
   );
 };
@@ -31,7 +27,11 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Returns
+### Params
+
+- none
+
+### Returns
 
 - **windowDimensions**
   - Type: `{ width: number; height: number }`

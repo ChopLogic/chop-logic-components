@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react';
 
+import { ExampleDivContainer } from '@/elements/styled/ExampleDivContainer.styled';
+import { useChopLogicTheme } from '@/hooks';
+
 import { useTooltipPosition } from '..';
 
-const Example = () => {
+const UseTooltipPositionExample = () => {
   const [isOpened, setIsOpened] = useState(false);
   const wrapperRef = useRef(null);
   const tooltipRef = useRef(null);
   const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
+  const theme = useChopLogicTheme();
 
   return (
     <div>
@@ -14,15 +18,12 @@ const Example = () => {
         Click me
       </button>
       {isOpened && (
-        <div
-          ref={tooltipRef}
-          style={{ position: 'absolute', top: `${top}px`, left: `${left}px`, border: '1px solid black', padding: '10px' }}
-        >
+        <ExampleDivContainer $theme={theme} ref={tooltipRef} style={{ position: 'absolute', top: `${top}px`, left: `${left}px` }}>
           Tooltip Content
-        </div>
+        </ExampleDivContainer>
       )}
     </div>
   );
 };
 
-export default Example;
+export default UseTooltipPositionExample;

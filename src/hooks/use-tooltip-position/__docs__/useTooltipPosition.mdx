@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 import * as UseTooltipPositionStories from './useTooltipPosition.stories';
 
 <Meta of={UseTooltipPositionStories} title='Hooks/useTooltipPosition' />
@@ -7,15 +7,11 @@ import * as UseTooltipPositionStories from './useTooltipPosition.stories';
 
 The `useTooltipPosition` hook calculates and manages the position of a tooltip relative to a reference element.
 
-<Canvas>
-  <Story of={UseTooltipPositionStories.Default} />
-</Canvas>
-
-## Usage
+### Usage
 
 ```tsx
 import React, { useRef, useState } from 'react';
-import { useTooltipPosition } from 'your-library';
+import { useTooltipPosition } from 'chop-logic-components';
 
 const ExampleComponent = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -43,7 +39,7 @@ const ExampleComponent = () => {
 export default ExampleComponent;
 ```
 
-## Params
+### Params
 
 - **wrapperRef**
   - Type: `React.RefObject<HTMLSpanElement | HTMLDivElement>`

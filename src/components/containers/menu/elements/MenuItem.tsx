@@ -4,24 +4,20 @@ import { ChopLogicMenuItem } from '@/models';
 
 type MenuItemProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
-  allItems: ChopLogicMenuItem[];
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, allItems }) => {
-  const dependentItems = allItems.filter((child) => child.parentId === item.id && child.level - item.level === 1);
-  const hasNoChildren = dependentItems.length === 0;
+const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
+  const hasNoChildren = !item?.nestedItems?.length;
 
   if (hasNoChildren) {
     return <li role='menuitem'>{item.label}</li>;
   }
 
   return (
-    <li role='menuitem'>
-      {item.label}
-      <ul role='menuitem'>
-        {dependentItems.map((child) => (
-          <MenuItem item={child} allItems={allItems} key={child.id} />
-        ))}
+    <li role='menuitem' aria-haspopup='true' aria-expanded='false'>
+      <span>{item.label}</span>
+      <ul role='menu' aria-label={item.label}>
+        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} />)}
       </ul>
     </li>
   );

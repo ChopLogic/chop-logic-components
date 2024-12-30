@@ -7,9 +7,8 @@ export interface ChopLogicMenuProps {
 
 export interface ChopLogicMenuItem {
   label: string;
-  level: number;
   id: string;
-  parentId: string | null;
+  nestedItems?: ChopLogicMenuItem[];
   icon?: ChopLogicIconName;
   link?: string;
   onClick?: () => void;

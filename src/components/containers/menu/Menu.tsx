@@ -8,7 +8,7 @@ const ChopLogicMenu: React.FC<ChopLogicMenuProps> = ({ items }) => {
   return (
     <ul role='menubar'>
       {items.map((item) => (
-        <MenuItem key={item.id} item={item} allItems={items} />
+        <MenuItem key={item.id} item={item} />
       ))}
     </ul>
   );

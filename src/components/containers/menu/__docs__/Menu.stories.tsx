@@ -8,69 +8,84 @@ import MenuExample from './Menu.example.tsx';
 const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-1',
-    parentId: null,
-    level: 0,
     label: 'Home',
   },
   {
     id: 'item-2',
-    parentId: null,
-    level: 0,
     label: 'About',
+    nestedItems: [
+      {
+        id: 'item-5',
+        label: 'Overview',
+      },
+      {
+        id: 'item-6',
+        label: 'Administrations',
+      },
+      {
+        id: 'item-7',
+        label: 'Facts',
+        nestedItems: [
+          {
+            id: 'item-9',
+            label: 'History',
+          },
+          {
+            id: 'item-10',
+            label: 'Statistics',
+            nestedItems: [
+              { id: 'item-18', label: '2023' },
+              { id: 'item-19', label: '2024' },
+              { id: 'item-20', label: '2025' },
+            ],
+          },
+          {
+            id: 'item-11',
+            label: 'Awards',
+          },
+        ],
+      },
+      {
+        id: 'item-8',
+        label: 'Campus Tours',
+      },
+    ],
   },
   {
     id: 'item-3',
-    parentId: null,
-    level: 0,
     label: 'Admissions',
+    nestedItems: [
+      {
+        id: 'item-12',
+        label: 'Apply',
+      },
+      {
+        id: 'item-13',
+        label: 'Sign Up',
+      },
+      {
+        id: 'item-14',
+        label: 'Visit',
+      },
+    ],
   },
   {
     id: 'item-4',
-    parentId: null,
-    level: 0,
     label: 'Academics',
-  },
-  {
-    id: 'item-5',
-    parentId: 'item-2',
-    level: 1,
-    label: 'Overview',
-  },
-  {
-    id: 'item-6',
-    parentId: 'item-2',
-    level: 1,
-    label: 'Administrations',
-  },
-  {
-    id: 'item-7',
-    parentId: 'item-2',
-    level: 1,
-    label: 'Facts',
-  },
-  {
-    id: 'item-8',
-    parentId: 'item-2',
-    level: 1,
-    label: 'Campus Tours',
-  },
-  {
-    id: 'item-9',
-    parentId: 'item-7',
-    level: 2,
-    label: 'History',
-  },
-  {
-    id: 'item-10',
-    parentId: 'item-7',
-    level: 2,
-    label: 'Statistics',
-  },
-  {
-    id: 'item-11',
-    parentId: 'item-7',
-    level: 2,
-    label: 'Awards',
+    nestedItems: [
+      {
+        id: 'item-15',
+        label: 'Programs',
+      },
+      {
+        id: 'item-16',
+        label: 'Courses',
+      },
+      {
+        id: 'item-17',
+        label: 'Transcripts',
+      },
+    ],
   },
 ];
 

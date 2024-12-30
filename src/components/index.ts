@@ -14,5 +14,6 @@ export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
 // Containers
 export { default as ChopLogicForm } from './containers/form/Form';
 export { default as ChopLogicGrid } from './containers/grid/Grid';
+export { default as ChopLogicMenu } from './containers/menu/Menu';
 export { default as ChopLogicPortal } from './containers/portal/Portal';
 export { default as ChopLogicTabs } from './containers/tabs/Tabs';

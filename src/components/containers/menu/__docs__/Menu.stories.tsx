@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ChopLogicOrientationMode } from '@/enums';
+import { ChopLogicIconName, ChopLogicOrientationMode } from '@/enums';
 import { ChopLogicMenuItem } from '@/models';
 
 import MenuExample from './Menu.example.tsx';
@@ -34,9 +34,15 @@ const ITEMS: ChopLogicMenuItem[] = [
             id: 'item-10',
             label: 'Statistics',
             nestedItems: [
-              { id: 'item-18', label: '2023' },
-              { id: 'item-19', label: '2024' },
-              { id: 'item-20', label: '2025' },
+              { id: 'item-18', label: '2023', icon: ChopLogicIconName.CheckMark, onHover: () => console.log('Hover item-18') },
+              { id: 'item-19', label: '2024', icon: ChopLogicIconName.CheckMark, onClick: () => console.log('Click item-18') },
+              {
+                id: 'item-20',
+                label: '2025',
+                icon: ChopLogicIconName.CheckMark,
+                onFocus: () => console.log('Focus item-18'),
+                link: 'https://github.com/',
+              },
             ],
           },
           {

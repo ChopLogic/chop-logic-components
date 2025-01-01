@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 import { ChopLogicTheme } from '@/models';
 
+export const StyledMenuBar = styled.ul<{ $theme: ChopLogicTheme }>`
+  list-style: none;
+  margin: 0;
+`;
+
 export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
   display: flex;
   justify-content: space-between;
@@ -18,4 +23,8 @@ export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
   &:hover {
     background-color: ${(props) => props.$theme.backgroundColorLight};
   }
+`;
+
+export const StyledSubMenuItem = styled(StyledMenuLeaf)`
+  color: red;
 `;

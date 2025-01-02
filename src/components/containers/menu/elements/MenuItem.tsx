@@ -2,10 +2,10 @@ import React, { PropsWithChildren, useState } from 'react';
 
 import { ChopLogicMenuItem, ChopLogicTheme } from '@/models';
 
-import { StyledMenuBar } from '../Meny.styled.ts';
+import { StyledSubMenuBar } from '../Meny.styled.ts';
 
 import MenuLeaf from './MenuLeaf';
-import SubMenuItem from './SubMenuItem';
+import SubMenu from './SubMenu.tsx';
 
 type MenuItemProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
@@ -13,10 +13,10 @@ type MenuItemProps = PropsWithChildren & {
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({ item, theme }) => {
-  const hasNoChildren = !item?.nestedItems?.length;
+  const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
 
-  if (hasNoChildren) {
+  if (isLeaf) {
     return <MenuLeaf item={item} theme={theme} />;
   }
 
@@ -25,11 +25,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, theme }) => {
   };
 
   return (
-    <SubMenuItem item={item} theme={theme} isSubMenuOpened={isSubMenuOpened} toggleSubMenu={toggleSubMenu}>
-      <StyledMenuBar role='menu' aria-label={item.label} $theme={theme}>
+    <SubMenu item={item} theme={theme} isSubMenuOpened={isSubMenuOpened} toggleSubMenu={toggleSubMenu}>
+      <StyledSubMenuBar role='menu' aria-label={item.label} $theme={theme}>
         {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} theme={theme} />)}
-      </StyledMenuBar>
-    </SubMenuItem>
+      </StyledSubMenuBar>
+    </SubMenu>
   );
 };
 

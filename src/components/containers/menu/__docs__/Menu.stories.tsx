@@ -9,10 +9,12 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-1',
     label: 'Home',
+    icon: ChopLogicIconName.Home,
   },
   {
     id: 'item-2',
     label: 'About',
+    icon: ChopLogicIconName.Info,
     nestedItems: [
       {
         id: 'item-5',

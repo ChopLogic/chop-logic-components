@@ -1,0 +1,42 @@
+import React, { PropsWithChildren } from 'react';
+
+import { ChopLogicIcon } from '@/elements';
+import { ChopLogicIconName } from '@/enums';
+import { ChopLogicMenuItem, ChopLogicTheme } from '@/models';
+
+import { StyledSubMenu, StyledSubMenuText } from '../Meny.styled.ts';
+
+type SubMenuProps = PropsWithChildren & {
+  item: ChopLogicMenuItem;
+  theme: ChopLogicTheme;
+  isSubMenuOpened: boolean;
+  toggleSubMenu: () => void;
+};
+
+const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleSubMenu, children }) => {
+  const { icon, link, label } = item;
+
+  const itemContent = link ? (
+    <a href={link} target='_blank' rel='noreferrer'>
+      <ChopLogicIcon name={icon} />
+      {label}
+    </a>
+  ) : (
+    <span>
+      <ChopLogicIcon name={icon} />
+      {label}
+    </span>
+  );
+
+  return (
+    <StyledSubMenu role='menuitem' aria-haspopup='true' aria-expanded={isSubMenuOpened} $theme={theme} $isOpened={isSubMenuOpened}>
+      <StyledSubMenuText $theme={theme} onClick={toggleSubMenu}>
+        {itemContent}
+        <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
+      </StyledSubMenuText>
+      {isSubMenuOpened && children}
+    </StyledSubMenu>
+  );
+};
+
+export default SubMenu;

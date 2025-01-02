@@ -19,6 +19,7 @@ export enum ChopLogicIconName {
   Forward = 'forward',
   Help = 'help',
   Hide = 'hide',
+  Home = 'home',
   Info = 'info',
   Paste = 'paste',
   Question = 'question',

@@ -23,6 +23,7 @@ const ErrorIcon = lazy(() => import('@/icons/ErrorIcon'));
 const ForwardIcon = lazy(() => import('@/icons/ForwardIcon'));
 const HelpIcon = lazy(() => import('@/icons/HelpIcon'));
 const HideIcon = lazy(() => import('@/icons/HideIcon'));
+const HomeIcon = lazy(() => import('@/icons/HomeIcon'));
 const InfoIcon = lazy(() => import('@/icons/InfoIcon'));
 const PasteIcon = lazy(() => import('@/icons/PasteIcon'));
 const QuestionIcon = lazy(() => import('@/icons/QuestionIcon'));
@@ -57,6 +58,7 @@ const ChopLogicIconDictionary: ChopLogicLazyIcons = {
   [ChopLogicIconName.Forward]: ForwardIcon,
   [ChopLogicIconName.Help]: HelpIcon,
   [ChopLogicIconName.Hide]: HideIcon,
+  [ChopLogicIconName.Home]: HomeIcon,
   [ChopLogicIconName.Info]: InfoIcon,
   [ChopLogicIconName.Paste]: PasteIcon,
   [ChopLogicIconName.Question]: QuestionIcon,

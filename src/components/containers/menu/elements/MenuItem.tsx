@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
-
-import { ChopLogicMenuItem, ChopLogicTheme } from '@/models';
+import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
 
 import { StyledSubMenuBar } from '../Meny.styled.ts';
 

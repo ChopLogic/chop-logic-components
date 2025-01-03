@@ -1,7 +1,7 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
-import { fadeInAnimation } from '@/css';
-import { ChopLogicTheme } from '@/models';
+import { fadeInAnimation } from '@css';
 
 export const StyledErrorMessage = styled.span<{ $visible: boolean; $theme: ChopLogicTheme }>`
   display: ${({ $visible }) => ($visible ? 'block' : 'none')};

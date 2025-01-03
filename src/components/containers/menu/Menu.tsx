@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicMenuProps } from '@/models';
+import { useChopLogicTheme } from '@hooks';
+import { ChopLogicMenuProps } from '@models';
 
 import MenuItem from './elements/MenuItem.tsx';
 import { StyledMenuBar } from './Meny.styled';

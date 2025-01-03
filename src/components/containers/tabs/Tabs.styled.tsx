@@ -1,7 +1,6 @@
+import { ChopLogicOrientationMode } from '@enums';
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
-
-import { ChopLogicOrientationMode } from '@/enums';
-import { ChopLogicTheme } from '@/models';
 
 export const StyledTabButton = styled.button<{
   $selected: boolean;

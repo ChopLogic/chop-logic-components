@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { ChopLogicButton } from '@/components';
-import { ChopLogicButtonView } from '@/enums';
-import { ChopLogicTooltipProps } from '@/models';
+import { ChopLogicButton } from '@components';
+import { ChopLogicButtonView } from '@enums';
+import { ChopLogicTooltipProps } from '@models';
 
 import ChopLogicTooltip from '../Tooltip';
 

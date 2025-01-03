@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
-
-import { ChopLogicIconDictionary } from '@/icons';
-import { ChopLogicIconProps } from '@/models';
+import { ChopLogicIconDictionary } from '@icons';
+import { ChopLogicIconProps } from '@models';
 
 const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, ...rest }) => {
   if (!name) return null;

@@ -1,4 +1,4 @@
-import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
+import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
 
 import { ChopLogicComponentProps } from '../common.ts';
 

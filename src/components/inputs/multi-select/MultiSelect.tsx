@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
-
-import { ChopLogicLabel } from '@/elements';
-import { StyledSelect } from '@/elements/styled/Select.styled';
-import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@/hooks';
-import { ChopLogicMultiSelectProps } from '@/models';
+import { ChopLogicLabel } from '@elements';
+import { StyledSelect } from '@elements/styled/Select.styled';
+import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@hooks';
+import { ChopLogicMultiSelectProps } from '@models';
 
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';

@@ -1,11 +1,11 @@
+import { ChopLogicIcon } from '@elements';
+import { ChopLogicIconName } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { DARK_THEME } from '@/css';
-import { ChopLogicIcon } from '@/elements';
-import { ChopLogicIconName } from '@/enums';
-
 import ChopLogicLabel from '../Label';
+
+import { DARK_THEME } from '@css';
 
 describe('ChopLogicLabel', () => {
   const testProps = {

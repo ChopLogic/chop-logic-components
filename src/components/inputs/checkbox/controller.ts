@@ -1,7 +1,6 @@
 import React, { useCallback, useContext, useState } from 'react';
-
-import { ChopLogicFormContext } from '@/contexts';
-import { useResetFormInput } from '@/hooks';
+import { ChopLogicFormContext } from '@contexts';
+import { useResetFormInput } from '@hooks';
 
 import { getCheckboxInitialValue } from './helpers';
 

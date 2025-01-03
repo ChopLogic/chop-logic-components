@@ -1,6 +1,5 @@
 import React, { lazy } from 'react';
-
-import { ChopLogicIconName } from '@/enums';
+import { ChopLogicIconName } from '@enums';
 
 const ArrowDownIcon = lazy(() => import('./svg/ArrowDownIcon.tsx'));
 const ArrowUpIcon = lazy(() => import('./svg/ArrowUpIcon.tsx'));

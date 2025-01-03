@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import {
   ChopLogicCheckbox,
   ChopLogicForm,
@@ -7,8 +6,8 @@ import {
   ChopLogicNumericInput,
   ChopLogicSelect,
   ChopLogicTextInput,
-} from '@/components';
-import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@/models';
+} from '@components';
+import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
 
 const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
   { id: 'lang-1', label: 'English' },

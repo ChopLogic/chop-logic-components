@@ -1,9 +1,8 @@
 import React from 'react';
-
-import { ChopLogicPortal } from '@/components';
-import { ChopLogicTooltipContainer } from '@/enums';
-import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicTooltipProps } from '@/models';
+import { ChopLogicPortal } from '@components';
+import { ChopLogicTooltipContainer } from '@enums';
+import { useChopLogicTheme } from '@hooks';
+import { ChopLogicTooltipProps } from '@models';
 
 import { useChopLogicTooltipController } from './controller';
 import { StyledTooltip } from './Tooltip.styled';

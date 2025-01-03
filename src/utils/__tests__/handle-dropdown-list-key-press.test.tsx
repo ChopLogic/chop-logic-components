@@ -1,9 +1,8 @@
 import React from 'react';
+import { ChopLogicSelectValue } from '@models';
 import { render } from '@testing-library/react';
+import { handleDropdownListKeyPress } from '@utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-
-import { ChopLogicSelectValue } from '@/models';
-import { handleDropdownListKeyPress } from '@/utils';
 
 describe('handleDropdownListKeyPress', () => {
   let options: ChopLogicSelectValue[];

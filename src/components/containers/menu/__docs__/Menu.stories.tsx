@@ -1,7 +1,6 @@
+import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { ChopLogicMenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicIconName, ChopLogicOrientationMode } from '@/enums';
-import { ChopLogicMenuItem } from '@/models';
 
 import MenuExample from './Menu.example.tsx';
 

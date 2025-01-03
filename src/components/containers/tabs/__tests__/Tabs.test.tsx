@@ -1,13 +1,13 @@
+import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-import { ChopLogicOrientationMode } from '@/enums';
-
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
 import ChopLogicTabs from '../Tabs';
+
+import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicTabs', () => {
   const tabs = [

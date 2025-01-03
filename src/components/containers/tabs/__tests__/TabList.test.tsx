@@ -1,14 +1,14 @@
+import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
-
-import { DARK_THEME } from '@/css';
-import { ChopLogicOrientationMode } from '@/enums';
-import { moveFocusOnElementById } from '@/utils';
 
 import ChopLogicTabList from '../elements/TabList';
 
-vi.mock('@/utils', () => ({
+import { DARK_THEME } from '@css';
+
+vi.mock('@utils', () => ({
   moveFocusOnElementById: vi.fn(),
 }));
 

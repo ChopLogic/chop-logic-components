@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { ChopLogicPortal } from '@/components';
+import { ChopLogicPortal } from '@components';
 
 const PortalExample: React.FC<React.PropsWithChildren> = (props) => (
   <ChopLogicPortal>

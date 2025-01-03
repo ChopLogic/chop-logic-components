@@ -1,7 +1,6 @@
 import React from 'react';
+import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { describe, expect, it } from 'vitest';
-
-import { ChopLogicGridColumn, ChopLogicGridItem } from '@/models';
 
 import { getGridRowValues } from '../helpers';
 

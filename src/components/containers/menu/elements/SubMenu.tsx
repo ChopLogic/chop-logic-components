@@ -1,8 +1,7 @@
 import React, { PropsWithChildren } from 'react';
-
-import { ChopLogicIcon } from '@/elements';
-import { ChopLogicIconName } from '@/enums';
-import { ChopLogicMenuItem, ChopLogicTheme } from '@/models';
+import { ChopLogicIcon } from '@elements';
+import { ChopLogicIconName } from '@enums';
+import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
 
 import { StyledSubMenu, StyledSubMenuText } from '../Meny.styled.ts';
 

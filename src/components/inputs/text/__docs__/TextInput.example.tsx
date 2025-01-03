@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { ChopLogicTextInputProps } from '@/models';
+import { ChopLogicTextInputProps } from '@models';
 
 import TextInput from '../TextInput';
 

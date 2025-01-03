@@ -1,6 +1,5 @@
+import { ChopLogicSelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
-
-import { ChopLogicSelectValue } from '@/models';
 
 import { getSelectInitialValue } from '../helpers';
 

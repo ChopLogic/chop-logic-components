@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import { ChopLogicOrientationMode } from '@/enums';
-import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicTabsProps } from '@/models';
+import { ChopLogicOrientationMode } from '@enums';
+import { useChopLogicTheme } from '@hooks';
+import { ChopLogicTabsProps } from '@models';
 
 import ChopLogicTabContent from './elements/TabContent';
 import ChopLogicTabList from './elements/TabList';

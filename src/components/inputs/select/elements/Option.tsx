@@ -1,8 +1,7 @@
 import React, { KeyboardEvent } from 'react';
-
-import { StyledSelectOption } from '@/elements/styled/Select.styled';
-import CheckMarkIcon from '@/icons/svg/CheckMarkIcon.tsx';
-import { ChopLogicSelectValue, ChopLogicTheme } from '@/models';
+import { StyledSelectOption } from '@elements/styled/Select.styled';
+import CheckMarkIcon from '@icons/svg/CheckMarkIcon.tsx';
+import { ChopLogicSelectValue, ChopLogicTheme } from '@models';
 
 type SelectOptionProps = {
   value: ChopLogicSelectValue;

@@ -1,6 +1,5 @@
+import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
-
-import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@/models';
 
 import { getMultiSelectInitialValues } from '../helpers';
 

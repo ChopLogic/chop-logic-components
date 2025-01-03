@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { ChopLogicTabItem, ChopLogicTheme } from '@/models';
+import { ChopLogicTabItem, ChopLogicTheme } from '@models';
 
 import { StyledTabContent } from '../Tabs.styled';
 

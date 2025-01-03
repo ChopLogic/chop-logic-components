@@ -1,9 +1,8 @@
 import React from 'react';
-
-import { StyledSelectCombobox } from '@/elements/styled/Select.styled';
-import ArrowDownIcon from '@/icons/svg/ArrowDownIcon.tsx';
-import ArrowUpIcon from '@/icons/svg/ArrowUpIcon.tsx';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@/models';
+import { StyledSelectCombobox } from '@elements/styled/Select.styled';
+import ArrowDownIcon from '@icons/svg/ArrowDownIcon.tsx';
+import ArrowUpIcon from '@icons/svg/ArrowUpIcon.tsx';
+import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';
 
 type MultiSelectComboboxProps = {
   opened: boolean;

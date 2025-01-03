@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { ChopLogicGridColumn, ChopLogicTheme } from '@/models';
+import { ChopLogicGridColumn, ChopLogicTheme } from '@models';
 
 import { StyledGridColumn } from '../Grid.styled';
 

@@ -1,7 +1,7 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
-import { fadeInAnimation, fadeOutAnimation, SCREEN_BREAKPOINTS } from '@/css';
-import { ChopLogicTheme } from '@/models';
+import { fadeInAnimation, fadeOutAnimation, SCREEN_BREAKPOINTS } from '@css';
 
 export const StyledDialogLayout = styled.div<{ $theme: ChopLogicTheme }>`
   z-index: ${(props) => props.$theme.zIndexModal};

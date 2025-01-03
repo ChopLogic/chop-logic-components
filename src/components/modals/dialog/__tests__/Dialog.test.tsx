@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-
 import ChopLogicDialog from '../Dialog';
 import ChopLogicModalLayoutHeader from '../elements/Header';
 import ChopLogicModalLayout from '../elements/Layout';
+
+import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicDialog', () => {
   const testLayoutProps = {

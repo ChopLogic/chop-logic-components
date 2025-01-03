@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '@/models';
+import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '@models';
 
 export function getInitialValidationState(data?: ChopLogicFormData): ChopLogicFormValidationState {
   if (!data) return [];

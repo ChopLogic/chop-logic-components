@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { ChopLogicButton } from '@components';
+import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
+import { ChopLogicAlertProps } from '@models';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicButton } from '@/components';
-import { ChopLogicAlertMode, ChopLogicIconName } from '@/enums';
-import { ChopLogicAlertProps } from '@/models';
 
 import ChopLogicAlert from '../Alert';
 

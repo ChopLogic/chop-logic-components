@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { ChopLogicIcon } from '@/elements';
-import { ChopLogicMenuItem, ChopLogicTheme } from '@/models';
+import { ChopLogicIcon } from '@elements';
+import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
 
 import { StyledMenuLeaf } from '../Meny.styled';
 

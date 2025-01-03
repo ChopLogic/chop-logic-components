@@ -1,8 +1,7 @@
+import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
-import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
 
 import Button from '../Button';
 

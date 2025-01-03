@@ -1,10 +1,9 @@
 import React from 'react';
-
-import { ChopLogicIcon } from '@/elements';
-import { ChopLogicButtonView } from '@/enums';
-import { withTooltip } from '@/hocs';
-import { useChopLogicTheme } from '@/hooks';
-import { ChopLogicButtonProps } from '@/models';
+import { ChopLogicIcon } from '@elements';
+import { ChopLogicButtonView } from '@enums';
+import { withTooltip } from '@hocs';
+import { useChopLogicTheme } from '@hooks';
+import { ChopLogicButtonProps } from '@models';
 
 import { StyledFlatButton, StyledIconButton, StyledPrimaryButton } from './Button.styled';
 

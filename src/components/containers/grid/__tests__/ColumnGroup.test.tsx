@@ -1,10 +1,10 @@
+import { ChopLogicGridColumn } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-import { ChopLogicGridColumn } from '@/models';
-
 import GridColumnGroup from '../elements/ColumnGroup';
+
+import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicGridBody', () => {
   const columns: ChopLogicGridColumn[] = [

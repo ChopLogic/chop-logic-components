@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
-
-import { ExampleDivContainer } from '@/elements/styled/ExampleDivContainer.styled';
-import { useChopLogicTheme } from '@/hooks';
+import { ExampleDivContainer } from '@elements/styled/ExampleDivContainer.styled';
+import { useChopLogicTheme } from '@hooks';
 
 import { useTooltipPosition } from '..';
 

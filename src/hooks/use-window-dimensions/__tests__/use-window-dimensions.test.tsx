@@ -1,7 +1,6 @@
+import { useWindowDimensions } from '@hooks';
 import { act, render } from '@testing-library/react';
 import { beforeAll, describe, expect, it } from 'vitest';
-
-import { useWindowDimensions } from '@/hooks';
 
 const TestComponent = () => {
   const dimensions = useWindowDimensions();

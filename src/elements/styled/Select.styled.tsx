@@ -1,6 +1,5 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
-
-import { ChopLogicTheme } from '@/models';
 
 export const StyledSelect = styled.div<{ $theme: ChopLogicTheme }>`
   position: relative;

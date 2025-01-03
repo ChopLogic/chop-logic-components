@@ -13,6 +13,8 @@ export const StyledMenuBar = styled.ul<{ $theme: ChopLogicTheme }>`
 
 export const StyledSubMenuBar = styled(StyledMenuBar)`
   padding-left: ${(props) => props.$theme.gapBig};
+  box-sizing: border-box;
+  border-left: ${(props) => props.$theme.borderLight};
 `;
 
 export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`

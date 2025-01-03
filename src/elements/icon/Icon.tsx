@@ -21,10 +21,12 @@ const DeleteIcon = lazy(() => import('@/icons/DeleteIcon'));
 const DownloadIcon = lazy(() => import('@/icons/DownloadIcon'));
 const ErrorIcon = lazy(() => import('@/icons/ErrorIcon'));
 const ForwardIcon = lazy(() => import('@/icons/ForwardIcon'));
+const GraduateIcon = lazy(() => import('@/icons/GraduateIcon'));
 const HelpIcon = lazy(() => import('@/icons/HelpIcon'));
 const HideIcon = lazy(() => import('@/icons/HideIcon'));
 const HomeIcon = lazy(() => import('@/icons/HomeIcon'));
 const InfoIcon = lazy(() => import('@/icons/InfoIcon'));
+const LoginIcon = lazy(() => import('@/icons/LoginIcon'));
 const PasteIcon = lazy(() => import('@/icons/PasteIcon'));
 const QuestionIcon = lazy(() => import('@/icons/QuestionIcon'));
 const RemoveIcon = lazy(() => import('@/icons/RemoveIcon'));
@@ -56,10 +58,12 @@ const ChopLogicIconDictionary: ChopLogicLazyIcons = {
   [ChopLogicIconName.Download]: DownloadIcon,
   [ChopLogicIconName.Error]: ErrorIcon,
   [ChopLogicIconName.Forward]: ForwardIcon,
+  [ChopLogicIconName.Graduate]: GraduateIcon,
   [ChopLogicIconName.Help]: HelpIcon,
   [ChopLogicIconName.Hide]: HideIcon,
   [ChopLogicIconName.Home]: HomeIcon,
   [ChopLogicIconName.Info]: InfoIcon,
+  [ChopLogicIconName.Login]: LoginIcon,
   [ChopLogicIconName.Paste]: PasteIcon,
   [ChopLogicIconName.Question]: QuestionIcon,
   [ChopLogicIconName.Save]: SaveIcon,
@@ -74,7 +78,7 @@ const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, ...rest }) => {
 
   const fallback = (
     <span style={{ fontSize: '1rem' }} aria-label='SVG Icon Fallback'>
-      &#10060;
+      &#11036;
     </span>
   );
   const Component = ChopLogicIconDictionary[name];

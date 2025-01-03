@@ -36,7 +36,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
             aria-label="SVG Icon Fallback"
             style="font-size: 1rem;"
           >
-            ❌
+            ⬜
           </span>
         </button>
       </span>
@@ -94,7 +94,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
             aria-label="SVG Icon Fallback"
             style="font-size: 1rem;"
           >
-            ❌
+            ⬜
           </span>
         </button>
       </span>

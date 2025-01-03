@@ -62,6 +62,7 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-3',
     label: 'Admissions',
+    icon: ChopLogicIconName.Login,
     nestedItems: [
       {
         id: 'item-12',
@@ -80,6 +81,7 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-4',
     label: 'Academics',
+    icon: ChopLogicIconName.Graduate,
     nestedItems: [
       {
         id: 'item-15',
@@ -100,9 +102,16 @@ const ITEMS: ChopLogicMenuItem[] = [
 const meta: Meta<typeof MenuExample> = {
   title: 'Containers/Menu',
   component: MenuExample,
+  argTypes: {
+    openedOn: {
+      control: 'radio',
+      options: ['click', 'hover'],
+    },
+  },
   args: {
     items: ITEMS,
     mode: ChopLogicOrientationMode.Horizontal,
+    openedOn: 'click',
   },
 };
 

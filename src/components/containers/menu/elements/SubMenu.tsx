@@ -29,8 +29,23 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleS
     </span>
   );
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>) => {
+    e.stopPropagation();
+    if (e.key === ' ') {
+      toggleSubMenu();
+    }
+  };
+
   return (
-    <StyledSubMenu role='menuitem' aria-haspopup='true' aria-expanded={isSubMenuOpened} $theme={theme} $isOpened={isSubMenuOpened}>
+    <StyledSubMenu
+      tabIndex={0}
+      role='menuitem'
+      aria-haspopup='true'
+      aria-expanded={isSubMenuOpened}
+      $theme={theme}
+      $isOpened={isSubMenuOpened}
+      onKeyDown={handleKeyDown}
+    >
       <StyledSubMenuText $theme={theme} onClick={toggleSubMenu} onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}>
         {itemContent}
         <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />

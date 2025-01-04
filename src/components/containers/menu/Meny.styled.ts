@@ -14,6 +14,8 @@ export const StyledSubMenuBar = styled(StyledMenuBar)`
   padding-left: ${(props) => props.$theme.gapBig};
   box-sizing: border-box;
   border-left: ${(props) => props.$theme.borderLight};
+  border-top: ${(props) => props.$theme.borderLight};
+  border-top-left-radius: ${(props) => props.$theme.blockBorderRadius};
 `;
 
 export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
@@ -32,6 +34,11 @@ export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
   &:hover {
     background-color: ${(props) => props.$theme.backgroundColorLight};
   }
+
+  &:focus-visible {
+    outline: ${(props) => props.$theme.borderOutline};
+    outline-offset: -4px;
+  }
 `;
 
 export const StyledSubMenu = styled.li<{ $theme: ChopLogicTheme; $isOpened: boolean }>`
@@ -41,6 +48,11 @@ export const StyledSubMenu = styled.li<{ $theme: ChopLogicTheme; $isOpened: bool
   flex-direction: column;
   gap: 0;
   padding: 0;
+
+  &:focus-visible {
+    outline: ${(props) => props.$theme.borderOutline};
+    outline-offset: -4px;
+  }
 `;
 
 export const StyledSubMenuText = styled.span<{ $theme: ChopLogicTheme }>`
@@ -66,5 +78,9 @@ export const StyledSubMenuText = styled.span<{ $theme: ChopLogicTheme }>`
 
   &:hover {
     background-color: ${(props) => props.$theme.backgroundColorLight};
+
+    svg:nth-child(2) {
+      color: ${(props) => props.$theme.fontColorAccent};
+    }
   }
 `;

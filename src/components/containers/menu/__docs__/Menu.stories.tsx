@@ -102,6 +102,10 @@ const meta: Meta<typeof MenuExample> = {
   title: 'Containers/Menu',
   component: MenuExample,
   argTypes: {
+    mode: {
+      control: 'radio',
+      options: Object.values(ChopLogicOrientationMode),
+    },
     openedOn: {
       control: 'radio',
       options: ['click', 'hover'],

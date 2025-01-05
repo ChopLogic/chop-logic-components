@@ -1,4 +1,4 @@
 export enum ChopLogicOrientationMode {
-  Vertical,
-  Horizontal,
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
 }

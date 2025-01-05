@@ -2,7 +2,7 @@ import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 
 export interface ChopLogicMenuProps {
   items: ChopLogicMenuItem[];
-  mode: ChopLogicOrientationMode;
+  mode?: ChopLogicOrientationMode;
   openedOn?: 'click' | 'hover';
 }
 

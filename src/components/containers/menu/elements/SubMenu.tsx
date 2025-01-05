@@ -1,6 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useRef } from 'react';
 import { ChopLogicIcon } from '@elements';
-import { ChopLogicIconName } from '@enums';
+import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
 
 import { StyledSubMenu, StyledSubMenuText } from '../Meny.styled.ts';
@@ -9,13 +10,27 @@ type SubMenuProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
   theme: ChopLogicTheme;
   isSubMenuOpened: boolean;
+  mode: ChopLogicOrientationMode;
   openedOn: 'click' | 'hover';
   toggleSubMenu: () => void;
   openSubMenu: () => void;
+  closeSubMenu: () => void;
 };
 
-const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleSubMenu, openSubMenu, openedOn, children }) => {
+const SubMenu: React.FC<SubMenuProps> = ({
+  item,
+  theme,
+  isSubMenuOpened,
+  toggleSubMenu,
+  openSubMenu,
+  closeSubMenu,
+  openedOn,
+  mode,
+  children,
+}) => {
   const { icon, link, label } = item;
+  const ref = useRef(null);
+  const dependentRef = useRef(null);
 
   const itemContent = link ? (
     <a href={link} target='_blank' rel='noreferrer'>
@@ -36,6 +51,13 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleS
     }
   };
 
+  const onClickOutsideHandler = () => {
+    if (mode === ChopLogicOrientationMode.Vertical) return;
+    closeSubMenu();
+  };
+
+  useClickOutside({ ref, dependentRef, onClickOutsideHandler });
+
   return (
     <StyledSubMenu
       tabIndex={0}
@@ -43,10 +65,16 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleS
       aria-haspopup='true'
       aria-expanded={isSubMenuOpened}
       $theme={theme}
-      $isOpened={isSubMenuOpened}
+      $mode={mode}
       onKeyDown={handleKeyDown}
+      ref={ref}
     >
-      <StyledSubMenuText $theme={theme} onClick={toggleSubMenu} onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}>
+      <StyledSubMenuText
+        ref={dependentRef}
+        $theme={theme}
+        onClick={toggleSubMenu}
+        onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}
+      >
         {itemContent}
         <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
       </StyledSubMenuText>

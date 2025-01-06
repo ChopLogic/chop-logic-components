@@ -109,7 +109,6 @@ const meta: Meta<typeof MenuExample> = {
   },
   args: {
     items: ITEMS,
-    mode: ChopLogicOrientationMode.Horizontal,
   },
 };
 
@@ -117,4 +116,14 @@ export default meta;
 
 type Story = StoryObj<typeof MenuExample>;
 
-export const Default: Story = {};
+export const VerticalMenu: Story = {
+  args: {
+    mode: ChopLogicOrientationMode.Vertical,
+  },
+};
+
+export const HorizontalMenu: Story = {
+  args: {
+    mode: ChopLogicOrientationMode.Horizontal,
+  },
+};

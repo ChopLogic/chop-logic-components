@@ -21,7 +21,6 @@ const meta: Meta<typeof ChopLogicTabs> = {
   args: {
     tabs,
     defaultTabId: 'tab1',
-    mode: ChopLogicOrientationMode.Horizontal,
   },
   component: ChopLogicTabs,
   title: 'Containers/Tabs',
@@ -30,7 +29,11 @@ const meta: Meta<typeof ChopLogicTabs> = {
 export default meta;
 type Story = StoryObj<typeof ChopLogicTabs>;
 
-export const Default: Story = {};
+export const HorizontalTabs: Story = {
+  args: {
+    mode: ChopLogicOrientationMode.Horizontal,
+  },
+};
 
 export const VerticalTabs: Story = {
   args: {

@@ -11,23 +11,11 @@ type SubMenuProps = PropsWithChildren & {
   theme: ChopLogicTheme;
   isSubMenuOpened: boolean;
   mode: ChopLogicOrientationMode;
-  openedOn: 'click' | 'hover';
   toggleSubMenu: () => void;
-  openSubMenu: () => void;
   closeSubMenu: () => void;
 };
 
-const SubMenu: React.FC<SubMenuProps> = ({
-  item,
-  theme,
-  isSubMenuOpened,
-  toggleSubMenu,
-  openSubMenu,
-  closeSubMenu,
-  openedOn,
-  mode,
-  children,
-}) => {
+const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
@@ -65,16 +53,10 @@ const SubMenu: React.FC<SubMenuProps> = ({
       aria-haspopup='true'
       aria-expanded={isSubMenuOpened}
       $theme={theme}
-      $mode={mode}
       onKeyDown={handleKeyDown}
       ref={ref}
     >
-      <StyledSubMenuText
-        ref={dependentRef}
-        $theme={theme}
-        onClick={toggleSubMenu}
-        onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}
-      >
+      <StyledSubMenuText ref={dependentRef} $theme={theme} onClick={toggleSubMenu}>
         {itemContent}
         <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
       </StyledSubMenuText>

@@ -57,7 +57,7 @@ export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
   }
 `;
 
-export const StyledSubMenu = styled.li<{ $theme: ChopLogicTheme; $mode: ChopLogicOrientationMode }>`
+export const StyledSubMenu = styled.li<{ $theme: ChopLogicTheme }>`
   display: flex;
   justify-content: flex-start;
   align-items: center;

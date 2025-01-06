@@ -106,15 +106,10 @@ const meta: Meta<typeof MenuExample> = {
       control: 'radio',
       options: Object.values(ChopLogicOrientationMode),
     },
-    openedOn: {
-      control: 'radio',
-      options: ['click', 'hover'],
-    },
   },
   args: {
     items: ITEMS,
     mode: ChopLogicOrientationMode.Horizontal,
-    openedOn: 'click',
   },
 };
 

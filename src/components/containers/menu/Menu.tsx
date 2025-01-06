@@ -6,13 +6,13 @@ import { ChopLogicMenuProps } from '@models';
 import MenuItem from './elements/MenuItem.tsx';
 import { StyledMenuBar } from './Meny.styled';
 
-const ChopLogicMenu: React.FC<ChopLogicMenuProps> = ({ items, openedOn = 'click', mode = ChopLogicOrientationMode.Vertical }) => {
+const ChopLogicMenu: React.FC<ChopLogicMenuProps> = ({ items, mode = ChopLogicOrientationMode.Vertical }) => {
   const theme = useChopLogicTheme();
 
   return (
     <StyledMenuBar role='menubar' $theme={theme} $mode={mode}>
       {items.map((item) => (
-        <MenuItem key={item.id} item={item} theme={theme} openedOn={openedOn} mode={mode} />
+        <MenuItem key={item.id} item={item} theme={theme} mode={mode} />
       ))}
     </StyledMenuBar>
   );

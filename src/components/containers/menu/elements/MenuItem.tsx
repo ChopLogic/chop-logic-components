@@ -11,10 +11,9 @@ type MenuItemProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
   theme: ChopLogicTheme;
   mode: ChopLogicOrientationMode;
-  openedOn: 'click' | 'hover';
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, theme, openedOn, mode }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ item, theme, mode }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
 
@@ -24,10 +23,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, theme, openedOn, mode }) => {
 
   const toggleSubMenu = () => {
     setIsSubMenuOpened(!isSubMenuOpened);
-  };
-
-  const openSubMenu = () => {
-    setIsSubMenuOpened(true);
   };
 
   const closeSubMenu = () => {
@@ -40,13 +35,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, theme, openedOn, mode }) => {
       theme={theme}
       isSubMenuOpened={isSubMenuOpened}
       toggleSubMenu={toggleSubMenu}
-      openSubMenu={openSubMenu}
       closeSubMenu={closeSubMenu}
-      openedOn={openedOn}
       mode={mode}
     >
       <StyledSubMenuBar role='menu' aria-label={item.label} $theme={theme} $mode={mode}>
-        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} theme={theme} openedOn={openedOn} mode={mode} />)}
+        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} theme={theme} mode={mode} />)}
       </StyledSubMenuBar>
     </SubMenu>
   );

@@ -56,7 +56,7 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleS
       onKeyDown={handleKeyDown}
       ref={ref}
     >
-      <StyledSubMenuText ref={dependentRef} $theme={theme} onClick={toggleSubMenu}>
+      <StyledSubMenuText ref={dependentRef} $theme={theme} onClick={toggleSubMenu} $mode={mode}>
         {itemContent}
         <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
       </StyledSubMenuText>

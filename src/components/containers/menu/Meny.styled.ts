@@ -2,11 +2,15 @@ import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
+import { fadeInAnimation } from '@css';
+
 export const StyledMenuBar = styled.ul<{ $theme: ChopLogicTheme; $mode: ChopLogicOrientationMode }>`
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-inline-start: 0;
   display: flex;
+  gap: ${(props) => props.$theme.gapSmall};
   flex-direction: ${(props) => (props.$mode === ChopLogicOrientationMode.Vertical ? 'column' : 'row')};
   justify-content: flex-start;
   width: 100%;
@@ -15,22 +19,26 @@ export const StyledMenuBar = styled.ul<{ $theme: ChopLogicTheme; $mode: ChopLogi
 export const StyledSubMenuBar = styled(StyledMenuBar)`
   flex-direction: column;
   padding-left: ${(props) => props.$theme.gapBig};
+  margin-left: ${(props) => props.$theme.gapBig};
+  margin-top: ${(props) => props.$theme.gapSmall};
   box-sizing: border-box;
   border-left: ${(props) => props.$theme.borderLight};
+  ${fadeInAnimation}
 
   ${({ $theme, $mode }) =>
     $mode === ChopLogicOrientationMode.Horizontal &&
     `
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    border-radius: ${$theme.blockBorderRadius};
-    border: ${$theme.borderLight};
-    box-shadow: ${$theme.boxShadow};
-    width: fit-content;
-    background-color: ${$theme.backgroundColorBase};
-    padding: ${$theme.gapMedium};
-    z-index: ${$theme.zIndexPopup};
+      position: absolute;
+      top: 100%;
+      left: 40%;
+      width: max-content;
+      border-radius: ${$theme.blockBorderRadius};
+      border: ${$theme.borderLight};
+      box-shadow: ${$theme.boxShadow};
+      background-color: ${$theme.backgroundColorBase};
+      padding: ${$theme.gapMedium};
+      margin: 0;
+      z-index: ${$theme.zIndexPopup};
   `}
 `;
 
@@ -48,12 +56,11 @@ export const StyledMenuLeaf = styled.li<{ $theme: ChopLogicTheme }>`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.$theme.backgroundColorLight};
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 
   &:focus-visible {
     outline: ${(props) => props.$theme.borderOutline};
-    outline-offset: -4px;
   }
 `;
 
@@ -65,14 +72,14 @@ export const StyledSubMenu = styled.li<{ $theme: ChopLogicTheme }>`
   gap: 0;
   padding: 0;
   position: relative;
+  border-radius: ${(props) => props.$theme.blockBorderRadius};
 
   &:focus-visible {
     outline: ${(props) => props.$theme.borderOutline};
-    outline-offset: -4px;
   }
 `;
 
-export const StyledSubMenuText = styled.span<{ $theme: ChopLogicTheme }>`
+export const StyledSubMenuText = styled.span<{ $theme: ChopLogicTheme; $mode: ChopLogicOrientationMode }>`
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -95,10 +102,6 @@ export const StyledSubMenuText = styled.span<{ $theme: ChopLogicTheme }>`
   }
 
   &:hover {
-    background-color: ${(props) => props.$theme.backgroundColorLight};
-
-    svg:nth-child(2) {
-      color: ${(props) => props.$theme.fontColorAccent};
-    }
+    color: ${(props) => props.$theme.fontColorAccent};
   }
 `;

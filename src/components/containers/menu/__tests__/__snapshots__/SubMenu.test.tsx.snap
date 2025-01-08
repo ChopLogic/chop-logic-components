@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SubMenu Component > should match the snapshot 1`] = `
+<DocumentFragment>
+  <li
+    aria-expanded="true"
+    aria-haspopup="true"
+    class="sc-ghWlax gRgehL"
+    role="menuitem"
+    tabindex="0"
+  >
+    <span
+      class="sc-kLhKbu elIGzD"
+    >
+      <span>
+        <span
+          aria-label="SVG Icon Fallback"
+          style="font-size: 1rem;"
+        >
+          ⬜
+        </span>
+        Item without Link
+      </span>
+      <span
+        aria-label="SVG Icon Fallback"
+        style="font-size: 1rem;"
+      >
+        ⬜
+      </span>
+    </span>
+    <div>
+      Submenu Content
+    </div>
+  </li>
+</DocumentFragment>
+`;

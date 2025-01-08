@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MenuLeaf > should match the snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="sc-ivxoEo lcleEw"
+    role="menuitem"
+    tabindex="0"
+  >
+    <span
+      aria-label="SVG Icon Fallback"
+      style="font-size: 1rem;"
+    >
+      ⬜
+    </span>
+    <span>
+      Home
+    </span>
+  </li>
+</DocumentFragment>
+`;

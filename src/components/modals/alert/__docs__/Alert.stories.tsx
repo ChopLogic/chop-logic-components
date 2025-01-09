@@ -44,4 +44,4 @@ const meta: Meta<typeof ExampleComponent> = {
 export default meta;
 type Story = StoryObj<typeof ExampleComponent>;
 
-export const Default: Story = {};
+export const Example: Story = {};

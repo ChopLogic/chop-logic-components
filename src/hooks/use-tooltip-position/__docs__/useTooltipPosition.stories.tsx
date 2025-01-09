@@ -10,4 +10,4 @@ const meta: Meta<typeof UseTooltipPositionExample> = {
 export default meta;
 type Story = StoryObj<typeof UseTooltipPositionExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

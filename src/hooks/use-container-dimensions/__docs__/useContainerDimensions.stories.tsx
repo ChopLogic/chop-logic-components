@@ -10,4 +10,4 @@ const meta: Meta<typeof UseContainerDimensionsExample> = {
 export default meta;
 type Story = StoryObj<typeof UseContainerDimensionsExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

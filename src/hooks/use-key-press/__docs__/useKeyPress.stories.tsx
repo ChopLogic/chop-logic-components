@@ -10,4 +10,4 @@ const meta: Meta<typeof UseKeyPressExample> = {
 export default meta;
 type Story = StoryObj<typeof UseKeyPressExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

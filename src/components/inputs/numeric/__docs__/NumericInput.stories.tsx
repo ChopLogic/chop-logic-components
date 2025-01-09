@@ -10,7 +10,7 @@ const meta: Meta<typeof NumericInputExample> = {
 export default meta;
 type Story = StoryObj<typeof NumericInputExample>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     name: 'age',
     label: 'Enter your age:',

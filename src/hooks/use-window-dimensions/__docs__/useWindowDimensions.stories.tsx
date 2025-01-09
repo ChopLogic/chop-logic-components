@@ -10,4 +10,4 @@ const meta: Meta<typeof UseWindowDimensionsExample> = {
 export default meta;
 type Story = StoryObj<typeof UseWindowDimensionsExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

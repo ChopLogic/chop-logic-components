@@ -18,4 +18,4 @@ export default meta;
 
 type Story = StoryObj<typeof IconExample>;
 
-export const Default: Story = {};
+export const IconGallery: Story = {};

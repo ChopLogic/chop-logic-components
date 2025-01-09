@@ -21,4 +21,4 @@ export default meta;
 
 type Story = StoryObj<typeof FormExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

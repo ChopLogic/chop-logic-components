@@ -18,7 +18,7 @@ const meta: Meta<typeof MultiSelectExample> = {
 export default meta;
 type Story = StoryObj<typeof MultiSelectExample>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     id: 'example-multiselect',
     name: 'languages',

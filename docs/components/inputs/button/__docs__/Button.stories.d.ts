@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '../../../../storybook/react';
 import { default as ButtonExample } from './Button.example.tsx';
 
 declare const meta: Meta<typeof ButtonExample>;

@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabsMode } from '../../../../enums';
+import { ChopLogicOrientationMode } from '../../../../enums';
 import { ChopLogicTabItem, ChopLogicTheme } from '../../../../models';
 
 type ChopLogicTabListProps = {
@@ -8,7 +8,7 @@ type ChopLogicTabListProps = {
     onTabSelect: (id: string) => void;
     selectedTabId: string;
     tabPanelIds: string[];
-    mode: ChopLogicTabsMode;
+    mode: ChopLogicOrientationMode;
     theme: ChopLogicTheme;
 };
 declare const ChopLogicTabList: React.FC<ChopLogicTabListProps>;

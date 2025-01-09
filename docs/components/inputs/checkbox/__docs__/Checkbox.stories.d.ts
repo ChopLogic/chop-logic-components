@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '../../../../storybook/react';
 import { default as CheckboxExample } from './Checkbox.example.tsx';
 
 declare const meta: Meta<typeof CheckboxExample>;

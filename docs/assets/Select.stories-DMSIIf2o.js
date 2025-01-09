@@ -1,0 +1,12 @@
+import{j as r}from"./jsx-runtime-OAISXtky.js";import{C as u}from"./Select-Ci-b9_qX.js";const i=a=>r.jsx(u,{...a,style:{width:"240px"}});try{Selectexample.displayName="Selectexample",Selectexample.__docgenInfo={description:"",displayName:"Selectexample",props:{options:{defaultValue:null,description:"",name:"options",required:!0,type:{name:"ChopLogicSelectValue[]"}},onChange:{defaultValue:null,description:"",name:"onChange",required:!1,type:{name:"((value?: ChopLogicSelectValue) => void)"}},placeholder:{defaultValue:null,description:"",name:"placeholder",required:!1,type:{name:"string"}},defaultValue:{defaultValue:null,description:"",name:"defaultValue",required:!1,type:{name:"string | number | readonly string[]"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"string"}},name:{defaultValue:null,description:"",name:"name",required:!0,type:{name:"string"}},disabled:{defaultValue:null,description:"",name:"disabled",required:!1,type:{name:"boolean"}},required:{defaultValue:null,description:"",name:"required",required:!1,type:{name:"boolean"}},id:{defaultValue:null,description:"",name:"id",required:!1,type:{name:"string"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}},tabIndex:{defaultValue:null,description:"",name:"tabIndex",required:!1,type:{name:"number"}},title:{defaultValue:null,description:"",name:"title",required:!1,type:{name:"string"}}}}}catch{}const s=[{id:"57b5a856-bc4b-4c2f-8295-9f44434fafc7",label:"English"},{id:"b4b08a09-e287-400b-ba65-afd6ae1f6fd7",label:"Russian"},{id:"641fc722-af5a-4426-8f8a-1566cc492b91",label:"German"}],o={component:i,title:"Inputs/Select"},e={args:{id:"example-select",label:"Select your language",options:s,name:"language",placeholder:"Select your language",onChange:a=>console.log(a),required:!1,disabled:!1}};var l,n,t;e.parameters={...e.parameters,docs:{...(l=e.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    id: 'example-select',
+    label: 'Select your language',
+    options: SELECT_LANGUAGES,
+    name: 'language',
+    placeholder: 'Select your language',
+    onChange: value => console.log(value),
+    required: false,
+    disabled: false
+  }
+}`,...(t=(n=e.parameters)==null?void 0:n.docs)==null?void 0:t.source}}};const d=["Example"],m=Object.freeze(Object.defineProperty({__proto__:null,Example:e,__namedExportsOrder:d,default:o},Symbol.toStringTag,{value:"Module"}));export{m as S};

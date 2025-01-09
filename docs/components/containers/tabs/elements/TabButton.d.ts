@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicTabsMode } from '../../../../enums';
+import { ChopLogicOrientationMode } from '../../../../enums';
 import { ChopLogicTheme } from '../../../../models';
 
 type ChopLogicTabButtonProps = {
@@ -8,7 +8,7 @@ type ChopLogicTabButtonProps = {
     onTabSelect: (id: string) => void;
     tabPanelId: string;
     isSelected: boolean;
-    mode: ChopLogicTabsMode;
+    mode: ChopLogicOrientationMode;
     isDisabled?: boolean;
     theme: ChopLogicTheme;
 };

@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-
 import GridRow, { GridRowProps } from '../elements/Row';
+
+import { LIGHT_THEME } from '@css';
 
 describe('GridRow', () => {
   const testProps: GridRowProps = {

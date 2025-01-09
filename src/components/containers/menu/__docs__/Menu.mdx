@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/blocks';
+import * as ChopLogicMenuStories from './Menu.stories';
+
+<Meta of={ChopLogicMenuStories} title='Form' />
+
+# ChopLogicMenu
+
+The component allows you to render a fully styled and accessible navigation menu in two modes - horizontal or vertical. Menu items can be described as a JavaScript array, and each item can contain nested items that will be rendered recursively. Nesting levels are not limited.
+
+### Usage
+
+```tsx
+import React from 'react';
+import { ChopLogicMenu, ChopLogicIconName, ChopLogicOrientationMode } from 'chop-logic-components';
+
+const MENU_ITEMS = [
+  {
+    id: 'item-1',
+    label: 'Home',
+    icon: ChopLogicIconName.Home,
+  },
+  {
+    id: 'item-2',
+    label: 'About',
+    icon: ChopLogicIconName.Info,
+    nestedItems: [
+      {
+        id: 'item-3',
+        label: 'Overview',
+      },
+      {
+        id: 'item-4',
+        label: 'Administrations',
+      },
+      {
+        id: 'item-5',
+        label: 'Campus Tours',
+      },
+    ],
+  }
+];
+
+const ExampleComponent = () => (
+  <ChopLogicMenu items={MENU_ITEMS} mode={ChopLogicOrientationMode.Horizontal} />
+);
+
+export default ExampleComponent;
+```
+
+### Props
+
+| Prop          | Type                       | Description                                                                                                                                               | Default      | Required |
+|---------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|----------|
+| **items**     | `ChopLogicMenuItem[]`      | An array of objects describing the menu items. Each item may contain nested items.                                                                        | `undefined`  | Yes      |
+| **mode**      | `ChopLogicOrientationMode` | Determines whether the menu will be displayed vertically or horizontally. When the bar menu is displayed horizontally, nested items are opened as popups. | `'vertical'` | No       |
+| **id**        | `string`                   | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                            | `undefined`  | No       |
+| **className** | `string`                   | The class global attribute is a list of the classes of the element.                                                                                       | `undefined`  | No       |
+| **style**     | `CSSProperties`            | The style global attribute contains CSS styling declarations to be applied to the element.                                                                | `undefined`  | No       |
+| **tabIndex**  | `number`                   | The tabindex global attribute allows developers to make HTML elements focusable.                                                                          | `undefined`  | No       |
+| **title**     | `string`                   | The title global attribute contains text representing advisory information related to the element it belongs to.                                          | `undefined`  | No       |
+
+### Types
+
+```tsx
+export interface ChopLogicMenuItem {
+  label: string;
+  id: string;
+  nestedItems?: ChopLogicMenuItem[];
+  icon?: ChopLogicIconName;
+  link?: string;
+  onClick?: () => void;
+  onHover?: () => void;
+  onFocus?: () => void;
+}
+```

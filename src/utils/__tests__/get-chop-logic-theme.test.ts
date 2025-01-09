@@ -1,7 +1,7 @@
+import { getChopLogicTheme } from '@utils';
 import { describe, expect, it } from 'vitest';
 
-import { DARK_THEME, LIGHT_THEME } from '@/css';
-import { getChopLogicTheme } from '@/utils';
+import { DARK_THEME, LIGHT_THEME } from '@css';
 
 describe('getChopLogicTheme', () => {
   it('should return the dark theme when "dark" is passed as the theme', () => {

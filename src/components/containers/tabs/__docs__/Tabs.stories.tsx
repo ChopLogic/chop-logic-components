@@ -1,8 +1,7 @@
+import { ChopLogicTabs } from '@components';
+import { ChopLogicOrientationMode } from '@enums';
+import { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicTabs } from '@/components';
-import { ChopLogicTabsMode } from '@/enums';
-import { ChopLogicTabItem } from '@/models';
 
 const tabs: ChopLogicTabItem[] = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
@@ -16,13 +15,12 @@ const meta: Meta<typeof ChopLogicTabs> = {
     defaultTabId: { control: 'text' },
     mode: {
       control: 'radio',
-      options: Object.values(ChopLogicTabsMode),
+      options: Object.values(ChopLogicOrientationMode),
     },
   },
   args: {
     tabs,
     defaultTabId: 'tab1',
-    mode: ChopLogicTabsMode.Horizontal,
   },
   component: ChopLogicTabs,
   title: 'Containers/Tabs',
@@ -31,10 +29,14 @@ const meta: Meta<typeof ChopLogicTabs> = {
 export default meta;
 type Story = StoryObj<typeof ChopLogicTabs>;
 
-export const Default: Story = {};
+export const HorizontalTabs: Story = {
+  args: {
+    mode: ChopLogicOrientationMode.Horizontal,
+  },
+};
 
 export const VerticalTabs: Story = {
   args: {
-    mode: ChopLogicTabsMode.Vertical,
+    mode: ChopLogicOrientationMode.Vertical,
   },
 };

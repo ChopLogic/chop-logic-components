@@ -1,6 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-
-import { ChopLogicTooltipContainer } from '@/enums';
+import { ChopLogicTooltipContainer } from '@enums';
 
 import { ChopLogicComponentProps } from '../common.ts';
 

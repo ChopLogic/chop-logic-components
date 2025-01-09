@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-
-import { ChopLogicTheme } from '@/models';
+import { ChopLogicTheme } from '@models';
 
 import { StyledLabel } from './Label.styled';
 

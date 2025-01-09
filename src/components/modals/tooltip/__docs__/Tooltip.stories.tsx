@@ -1,6 +1,5 @@
+import { ChopLogicTooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicTooltipContainer } from '@/enums';
 
 import TooltipExample from './Tooltip.example.tsx';
 

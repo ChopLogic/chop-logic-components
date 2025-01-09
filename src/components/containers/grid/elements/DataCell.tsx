@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { ChopLogicTheme } from '@/models';
+import { ChopLogicTheme } from '@models';
 
 import { StyledGridCell } from '../Grid.styled';
 

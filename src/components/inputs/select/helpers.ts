@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicSelectValue } from '@/models';
+import { ChopLogicFormData, ChopLogicSelectValue } from '@models';
 
 export function getSelectInitialValue({
   name,

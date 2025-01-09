@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { ChopLogicIcon } from '@/elements';
-import { ChopLogicIconName } from '@/enums';
-import { ChopLogicTheme } from '@/models';
+import { ChopLogicIcon } from '@elements';
+import { ChopLogicIconName } from '@enums';
+import { ChopLogicTheme } from '@models';
 
 import { StyledInputInnerButton } from './InputInnerButton.styled';
 

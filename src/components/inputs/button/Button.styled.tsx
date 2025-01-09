@@ -1,6 +1,5 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
-
-import { ChopLogicTheme } from '@/models';
 
 export const StyledPrimaryButton = styled.button<{ $extended: boolean; $theme: ChopLogicTheme }>`
   position: relative;

@@ -1,4 +1,4 @@
-import { ChopLogicThemeMode } from '@/enums';
+import { ChopLogicThemeMode } from '@enums';
 
 export interface ChopLogicTheme {
   // Colors

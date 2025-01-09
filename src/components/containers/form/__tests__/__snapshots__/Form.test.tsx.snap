@@ -40,7 +40,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
               aria-label="SVG Icon Fallback"
               style="font-size: 1rem;"
             >
-              ❌
+              ⬜
             </span>
           </button>
         </span>
@@ -86,7 +86,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
               aria-label="SVG Icon Fallback"
               style="font-size: 1rem;"
             >
-              ❌
+              ⬜
             </span>
           </button>
         </span>
@@ -133,7 +133,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
               aria-label="SVG Icon Fallback"
               style="font-size: 1rem;"
             >
-              ❌
+              ⬜
             </span>
           </button>
           <button
@@ -145,7 +145,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
               aria-label="SVG Icon Fallback"
               style="font-size: 1rem;"
             >
-              ❌
+              ⬜
             </span>
           </button>
         </span>
@@ -169,7 +169,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           aria-label="SVG Icon Fallback"
           style="font-size: 1rem;"
         >
-          ❌
+          ⬜
         </span>
         Reset
       </button>
@@ -190,7 +190,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
             aria-label="SVG Icon Fallback"
             style="font-size: 1rem;"
           >
-            ❌
+            ⬜
           </span>
           Submit
         </span>

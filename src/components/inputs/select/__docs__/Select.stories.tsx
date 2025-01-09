@@ -1,6 +1,5 @@
+import { ChopLogicSelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicSelectValue } from '@/models';
 
 import SelectExample from './Select.example.tsx';
 
@@ -18,7 +17,7 @@ const meta: Meta<typeof SelectExample> = {
 export default meta;
 type Story = StoryObj<typeof SelectExample>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     id: 'example-select',
     label: 'Select your language',

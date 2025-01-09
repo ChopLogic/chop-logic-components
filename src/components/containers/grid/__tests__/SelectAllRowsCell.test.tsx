@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-
 import SelectAllGridRowsCheckbox from '../elements/SelectAllRowsCell';
+
+import { LIGHT_THEME } from '@css';
 
 describe('SelectAllGridRowsCheckbox', () => {
   const mockedSelect = vi.fn();

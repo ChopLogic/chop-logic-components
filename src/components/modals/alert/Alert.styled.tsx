@@ -1,7 +1,7 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
-import { fadeInAnimation, fadeOutAnimation } from '@/css';
-import { ChopLogicTheme } from '@/models';
+import { fadeInAnimation, fadeOutAnimation } from '@css';
 
 export const StyledAlertHeader = styled.header<{ $theme: ChopLogicTheme }>`
   display: flex;

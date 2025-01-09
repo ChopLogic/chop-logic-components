@@ -37,7 +37,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
             aria-label="SVG Icon Fallback"
             style="font-size: 1rem;"
           >
-            ❌
+            ⬜
           </span>
         </button>
         <button
@@ -49,7 +49,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
             aria-label="SVG Icon Fallback"
             style="font-size: 1rem;"
           >
-            ❌
+            ⬜
           </span>
         </button>
       </span>

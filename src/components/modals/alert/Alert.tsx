@@ -1,9 +1,8 @@
 import React from 'react';
-
-import { ChopLogicPortal } from '@/components';
-import { ChopLogicAlertMode } from '@/enums';
-import { useChopLogicTheme, useMount } from '@/hooks';
-import { ChopLogicAlertProps } from '@/models';
+import { ChopLogicPortal } from '@components';
+import { ChopLogicAlertMode } from '@enums';
+import { useChopLogicTheme, useMount } from '@hooks';
+import { ChopLogicAlertProps } from '@models';
 
 import ChopLogicAlertHeader from './elements/Header';
 import { StyledAlertContent, StyledAlertWrapper } from './Alert.styled';

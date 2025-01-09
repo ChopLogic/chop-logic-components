@@ -3,7 +3,7 @@
 exports[`ChopLogicAlert > should have different headers depending on the mode 1`] = `
 <DocumentFragment>
   <header
-    class="sc-kZrBCu hFXQof"
+    class="sc-drVZOg kCeIXe"
   >
     <h3>
       <svg
@@ -44,7 +44,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
 exports[`ChopLogicAlert > should have different headers depending on the mode 2`] = `
 <DocumentFragment>
   <header
-    class="sc-kZrBCu hFXQof"
+    class="sc-drVZOg kCeIXe"
   >
     <h3>
       <svg
@@ -86,7 +86,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
 exports[`ChopLogicAlert > should have different headers depending on the mode 3`] = `
 <DocumentFragment>
   <header
-    class="sc-kZrBCu hFXQof"
+    class="sc-drVZOg kCeIXe"
   >
     <h3>
       <svg
@@ -124,7 +124,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
 exports[`ChopLogicAlert > should have different headers depending on the mode 4`] = `
 <DocumentFragment>
   <header
-    class="sc-kZrBCu hFXQof"
+    class="sc-drVZOg kCeIXe"
   >
     <h3>
       <svg
@@ -165,7 +165,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
 exports[`ChopLogicAlert > should have different headers depending on the mode 5`] = `
 <DocumentFragment>
   <header
-    class="sc-kZrBCu hFXQof"
+    class="sc-drVZOg kCeIXe"
   >
     <h3>
       <svg

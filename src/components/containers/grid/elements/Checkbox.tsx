@@ -1,10 +1,9 @@
 import React from 'react';
-
-import { ChopLogicLabel } from '@/elements';
-import { useElementIds } from '@/hooks';
-import CheckboxCheckedIcon from '@/icons/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@/icons/CheckboxUncheckedIcon.tsx';
-import { ChopLogicTheme } from '@/models';
+import { ChopLogicLabel } from '@elements';
+import { useElementIds } from '@hooks';
+import CheckboxCheckedIcon from '@icons/svg/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@icons/svg/CheckboxUncheckedIcon.tsx';
+import { ChopLogicTheme } from '@models';
 
 import { StyledGridCheckboxInput, StyledGridCheckboxWrapper } from '../Grid.styled';
 

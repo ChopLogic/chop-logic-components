@@ -1,6 +1,5 @@
+import { ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicIconName } from '@/enums';
 
 import IconExample from './Icon.example.tsx';
 
@@ -19,4 +18,4 @@ export default meta;
 
 type Story = StoryObj<typeof IconExample>;
 
-export const Default: Story = {};
+export const IconGallery: Story = {};

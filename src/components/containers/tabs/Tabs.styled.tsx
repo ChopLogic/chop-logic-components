@@ -1,9 +1,13 @@
+import { ChopLogicOrientationMode } from '@enums';
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
-import { ChopLogicTabsMode } from '@/enums';
-import { ChopLogicTheme } from '@/models';
-
-export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: boolean; $mode: ChopLogicTabsMode; $theme: ChopLogicTheme }>`
+export const StyledTabButton = styled.button<{
+  $selected: boolean;
+  $disabled: boolean;
+  $mode: ChopLogicOrientationMode;
+  $theme: ChopLogicTheme;
+}>`
   background: transparent;
   position: relative;
   outline: none;
@@ -47,14 +51,14 @@ export const StyledTabButton = styled.button<{ $selected: boolean; $disabled: bo
     `}
 
     ${(props) =>
-    props.$mode === ChopLogicTabsMode.Vertical &&
+    props.$mode === ChopLogicOrientationMode.Vertical &&
     `
       border-bottom-left-radius: ${props.$theme.blockBorderRadius};
       border-top-right-radius: 0;
     `}
 
     ${(props) =>
-    props.$mode === ChopLogicTabsMode.Vertical &&
+    props.$mode === ChopLogicOrientationMode.Vertical &&
     props.$selected &&
     `
       border-top: ${props.$theme.borderLight};
@@ -75,14 +79,14 @@ export const StyledTabContent = styled.div<{ $theme: ChopLogicTheme }>`
   flex-grow: 1;
 `;
 
-export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: ChopLogicTheme }>`
+export const StyledTabList = styled.div<{ $mode: ChopLogicOrientationMode; $theme: ChopLogicTheme }>`
   border-bottom: ${(props) => props.$theme.borderLight};
   padding: 0 ${(props) => props.$theme.gapMedium};
   display: flex;
   gap: ${(props) => props.$theme.gapMedium};
 
   ${(props) =>
-    props.$mode === ChopLogicTabsMode.Vertical &&
+    props.$mode === ChopLogicOrientationMode.Vertical &&
     `
       flex-direction: column;
       border-bottom: none;
@@ -91,13 +95,13 @@ export const StyledTabList = styled.div<{ $mode: ChopLogicTabsMode; $theme: Chop
     `}
 `;
 
-export const StyledTabs = styled.div<{ $mode: ChopLogicTabsMode }>`
+export const StyledTabs = styled.div<{ $mode: ChopLogicOrientationMode }>`
   display: flex;
   flex-direction: column;
   width: 100%;
 
   ${({ $mode }) =>
-    $mode === ChopLogicTabsMode.Vertical &&
+    $mode === ChopLogicOrientationMode.Vertical &&
     `
       flex-direction: row;
     `}

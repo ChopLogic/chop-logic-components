@@ -10,7 +10,7 @@ const meta: Meta<typeof DialogExample> = {
 export default meta;
 type Story = StoryObj<typeof DialogExample>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     isOpened: false,
     onClose: () => console.log('Dialog closed'),

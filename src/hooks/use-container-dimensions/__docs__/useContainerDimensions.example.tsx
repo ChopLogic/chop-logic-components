@@ -1,7 +1,6 @@
 import { useRef } from 'react';
-
-import { ExampleDivContainer } from '@/elements/styled/ExampleDivContainer.styled';
-import { useChopLogicTheme, useContainerDimensions } from '@/hooks';
+import { ExampleDivContainer } from '@elements/styled/ExampleDivContainer.styled';
+import { useChopLogicTheme, useContainerDimensions } from '@hooks';
 
 const UseContainerDimensionsExample = () => {
   const ref = useRef(null);

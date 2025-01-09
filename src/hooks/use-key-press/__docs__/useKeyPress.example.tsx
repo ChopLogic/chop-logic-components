@@ -1,7 +1,6 @@
 import { useRef } from 'react';
-
-import { ExampleDivContainer } from '@/elements/styled/ExampleDivContainer.styled';
-import { useChopLogicTheme, useKeyPress } from '@/hooks';
+import { ExampleDivContainer } from '@elements/styled/ExampleDivContainer.styled';
+import { useChopLogicTheme, useKeyPress } from '@hooks';
 
 const UseKeyPressExample = () => {
   const ref = useRef(null);

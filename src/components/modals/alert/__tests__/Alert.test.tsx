@@ -1,13 +1,13 @@
+import { ChopLogicAlertMode } from '@enums';
+import { ChopLogicAlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { DARK_THEME } from '@/css';
-import { ChopLogicAlertMode } from '@/enums';
-import { ChopLogicAlertProps } from '@/models';
-
 import ChopLogicAlert from '../Alert';
 import ChopLogicAlertHeader from '../elements/Header';
+
+import { DARK_THEME } from '@css';
 
 const defaultProps: ChopLogicAlertProps = {
   isOpened: false,

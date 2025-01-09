@@ -27,4 +27,4 @@ export default meta;
 
 type Story = StoryObj<typeof PortalExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

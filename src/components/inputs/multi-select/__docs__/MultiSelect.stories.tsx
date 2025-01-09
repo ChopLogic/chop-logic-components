@@ -1,6 +1,5 @@
+import { ChopLogicMultiSelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { ChopLogicMultiSelectValue } from '@/models';
 
 import MultiSelectExample from './MultiSelect.example.tsx';
 
@@ -19,7 +18,7 @@ const meta: Meta<typeof MultiSelectExample> = {
 export default meta;
 type Story = StoryObj<typeof MultiSelectExample>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     id: 'example-multiselect',
     name: 'languages',

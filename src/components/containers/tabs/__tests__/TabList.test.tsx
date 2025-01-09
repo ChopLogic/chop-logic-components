@@ -1,14 +1,14 @@
+import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
-
-import { DARK_THEME } from '@/css';
-import { ChopLogicTabsMode } from '@/enums';
-import { moveFocusOnElementById } from '@/utils';
 
 import ChopLogicTabList from '../elements/TabList';
 
-vi.mock('@/utils', () => ({
+import { DARK_THEME } from '@css';
+
+vi.mock('@utils', () => ({
   moveFocusOnElementById: vi.fn(),
 }));
 
@@ -30,7 +30,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Horizontal}
+        mode={ChopLogicOrientationMode.Horizontal}
         theme={DARK_THEME}
       />,
     );
@@ -48,7 +48,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Vertical}
+        mode={ChopLogicOrientationMode.Vertical}
         theme={DARK_THEME}
       />,
     );
@@ -69,7 +69,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Horizontal}
+        mode={ChopLogicOrientationMode.Horizontal}
         theme={DARK_THEME}
       />,
     );
@@ -90,7 +90,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Horizontal}
+        mode={ChopLogicOrientationMode.Horizontal}
         theme={DARK_THEME}
       />,
     );
@@ -109,7 +109,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Horizontal}
+        mode={ChopLogicOrientationMode.Horizontal}
         theme={DARK_THEME}
       />,
     );
@@ -130,7 +130,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Horizontal}
+        mode={ChopLogicOrientationMode.Horizontal}
         theme={DARK_THEME}
       />,
     );
@@ -151,7 +151,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Vertical}
+        mode={ChopLogicOrientationMode.Vertical}
         theme={DARK_THEME}
       />,
     );
@@ -172,7 +172,7 @@ describe('ChopLogicTabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicTabsMode.Vertical}
+        mode={ChopLogicOrientationMode.Vertical}
         theme={DARK_THEME}
       />,
     );

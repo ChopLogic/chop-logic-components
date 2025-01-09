@@ -1,6 +1,5 @@
+import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
-
-import { ChopLogicTheme } from '@/models';
 
 export const ExampleDivContainer = styled.div<{ $theme: ChopLogicTheme }>`
   padding: ${(props) => props.$theme.gapBig};

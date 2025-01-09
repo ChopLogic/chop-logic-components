@@ -10,4 +10,4 @@ const meta: Meta<typeof UseModalFocusTrapExample> = {
 export default meta;
 type Story = StoryObj<typeof UseModalFocusTrapExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

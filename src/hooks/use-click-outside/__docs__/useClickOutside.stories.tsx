@@ -10,4 +10,4 @@ const meta: Meta<typeof UseClickOutsideExample> = {
 export default meta;
 type Story = StoryObj<typeof UseClickOutsideExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

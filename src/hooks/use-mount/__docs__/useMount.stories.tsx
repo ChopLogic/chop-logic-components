@@ -10,4 +10,4 @@ const meta: Meta<typeof UseMountExample> = {
 export default meta;
 type Story = StoryObj<typeof UseMountExample>;
 
-export const Default: Story = {};
+export const Example: Story = {};

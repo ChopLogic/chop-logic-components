@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import { ChopLogicButton } from '@/components';
-import { ChopLogicButtonView } from '@/enums';
-import { ChopLogicAlertProps } from '@/models';
+import { ChopLogicButton } from '@components';
+import { ChopLogicButtonView } from '@enums';
+import { ChopLogicAlertProps } from '@models';
 
 import ChopLogicAlert from '../Alert';
 

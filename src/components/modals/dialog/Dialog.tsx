@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { ChopLogicPortal } from '@/components';
-import { useChopLogicTheme, useMount } from '@/hooks';
-import { ChopLogicDialogProps } from '@/models';
+import { ChopLogicPortal } from '@components';
+import { useChopLogicTheme, useMount } from '@hooks';
+import { ChopLogicDialogProps } from '@models';
 
 import ChopLogicModalLayout from './elements/Layout';
 import { StyledDialogBackground } from './Dialog.styled';

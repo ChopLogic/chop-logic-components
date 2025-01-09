@@ -1,13 +1,13 @@
+import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import { LIGHT_THEME } from '@/css';
-import { ChopLogicTabsMode } from '@/enums';
-
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
 import ChopLogicTabs from '../Tabs';
+
+import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicTabs', () => {
   const tabs = [
@@ -19,7 +19,7 @@ describe('ChopLogicTabs', () => {
   const testProps = {
     tabs,
     defaultTabId: 'tab-1',
-    mode: ChopLogicTabsMode.Horizontal,
+    mode: ChopLogicOrientationMode.Horizontal,
     className: 'test-class',
     id: 'tabs-id',
   };
@@ -77,7 +77,7 @@ describe('ChopLogicTabButton', () => {
     onTabSelect: vi.fn(),
     tabPanelId: 'panel-id-1',
     isSelected: true,
-    mode: ChopLogicTabsMode.Vertical,
+    mode: ChopLogicOrientationMode.Vertical,
     isDisabled: false,
   };
 

@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { DARK_THEME } from '@/css';
-
 import ChopLogicErrorMessage from '../ErrorMessage';
+
+import { DARK_THEME } from '@css';
 
 describe('ChopLogicErrorMessage', () => {
   const testProps = {

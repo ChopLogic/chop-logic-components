@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { ChopLogicButton } from '@/components';
-import { ChopLogicButtonView, ChopLogicIconName } from '@/enums';
-import { ChopLogicTheme } from '@/models';
+import { ChopLogicButton } from '@components';
+import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { ChopLogicTheme } from '@models';
 
 import { StyledDialogHeader } from '../Dialog.styled';
 

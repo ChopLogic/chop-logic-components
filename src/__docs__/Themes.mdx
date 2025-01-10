@@ -1,0 +1,44 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { DARK_THEME, LIGHT_THEME } from '@css';
+
+<Meta title="Themes" />
+
+## Light Theme
+
+<ColorPalette>
+  <ColorItem
+    title="Font Colors"
+    subtitle="Font colors on the page"
+    colors={{ fontColorBase: `${LIGHT_THEME.fontColorBase}`, fontColorLight: `${LIGHT_THEME.fontColorLight}`, fontColorAccent: `${LIGHT_THEME.fontColorAccent}` }}
+  />
+  <ColorItem
+    title="Background Colors"
+    subtitle="Background and container colors on the page"
+    colors={{ backgroundColorBase: `${LIGHT_THEME.backgroundColorBase}`, backgroundColorLight: `${LIGHT_THEME.backgroundColorLight}`, backgroundColorTransparent: `${LIGHT_THEME.backgroundColorTransparent}` }}
+  />
+  <ColorItem
+    title="Gradients"
+    subtitle="Gradient for creating shadows"
+    colors={{ gradientShadow: `${LIGHT_THEME.gradientShadow}` }}
+  />
+</ColorPalette>
+
+## Dark Theme
+
+<ColorPalette>
+  <ColorItem
+    title="Font"
+    subtitle="Font colors on the page"
+    colors={{ fontColorBase: `${DARK_THEME.fontColorBase}`, fontColorLight: `${DARK_THEME.fontColorLight}`, fontColorAccent: `${DARK_THEME.fontColorAccent}` }}
+  />
+  <ColorItem
+    title="Background"
+    subtitle="Background and container colors on the page"
+    colors={{ backgroundColorBase: `${DARK_THEME.backgroundColorBase}`, backgroundColorLight: `${DARK_THEME.backgroundColorLight}`, backgroundColorTransparent: `${DARK_THEME.backgroundColorTransparent}` }}
+  />
+  <ColorItem
+    title="Gradient"
+    subtitle="Gradient for creating shadows"
+    colors={{ gradientShadow: `${DARK_THEME.gradientShadow}` }}
+  />
+</ColorPalette>

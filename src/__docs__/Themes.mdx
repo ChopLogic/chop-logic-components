@@ -3,12 +3,12 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
 
 <Meta title="Themes" />
 
-## Light Theme
+## Light Theme Colors
 
 <ColorPalette>
   <ColorItem
     title="Font Colors"
-    subtitle="Font colors on the page"
+    subtitle="Colors for the main font, supporting font, and accent"
     colors={{ fontColorBase: `${LIGHT_THEME.fontColorBase}`, fontColorLight: `${LIGHT_THEME.fontColorLight}`, fontColorAccent: `${LIGHT_THEME.fontColorAccent}` }}
   />
   <ColorItem
@@ -23,22 +23,48 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
   />
 </ColorPalette>
 
-## Dark Theme
+## Dark Theme Colors
 
 <ColorPalette>
   <ColorItem
-    title="Font"
-    subtitle="Font colors on the page"
+    title="Font Colors"
+    subtitle="Colors for the main font, supporting font, and accent"
     colors={{ fontColorBase: `${DARK_THEME.fontColorBase}`, fontColorLight: `${DARK_THEME.fontColorLight}`, fontColorAccent: `${DARK_THEME.fontColorAccent}` }}
   />
   <ColorItem
-    title="Background"
+    title="Background Colors"
     subtitle="Background and container colors on the page"
     colors={{ backgroundColorBase: `${DARK_THEME.backgroundColorBase}`, backgroundColorLight: `${DARK_THEME.backgroundColorLight}`, backgroundColorTransparent: `${DARK_THEME.backgroundColorTransparent}` }}
   />
   <ColorItem
-    title="Gradient"
+    title="Gradients"
     subtitle="Gradient for creating shadows"
     colors={{ gradientShadow: `${DARK_THEME.gradientShadow}` }}
   />
 </ColorPalette>
+
+## Theme fonts
+
+#### fontFamilyCore:
+
+<div style={{fontFamily: LIGHT_THEME.fontFamilyCore}}>The quick brown fox jumps over the lazy dog</div>
+
+#### fontFamilyMonospace:
+
+<div style={{fontFamily: LIGHT_THEME.fontFamilyMonospace}}>The quick brown fox jumps over the lazy dog</div>
+
+## Theme Units
+
+| Property Name     | Value     |
+|-------------------|-----------|
+| fontSizeBase      | `1.2rem`  |
+| fontSizeSmall     | `0.8rem`  |
+| fontSizeHeader    | `2rem`    |
+| gapSmall          | `0.25rem` |
+| gapMedium         | `0.6rem`  |
+| gapBig            | `1rem`    |
+| iconSize          | `1.2rem`  |
+| blockBorderRadius | `0.25rem` |
+| zIndexBase        | `1`       |
+| zIndexPopup       | `100`     |
+| zIndexModal       | `200`     |

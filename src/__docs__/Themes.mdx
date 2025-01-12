@@ -3,7 +3,13 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
 
 <Meta title="Themes" />
 
-## Light Theme Colors
+**Chop Logic Components** library contains two default style themes: dark and light.
+They can be easily switched via `ChopLogicThemeContext`. You can also pass a custom theme to the context,
+which partially or completely replaces the values in the default theme according to `ChopLogicTheme` interface.
+
+## Colors
+
+### Light Colors
 
 <ColorPalette>
   <ColorItem
@@ -23,7 +29,7 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
   />
 </ColorPalette>
 
-## Dark Theme Colors
+### Dark Colors
 
 <ColorPalette>
   <ColorItem
@@ -43,17 +49,37 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
   />
 </ColorPalette>
 
-## Theme fonts
+## Borders
 
-#### fontFamilyCore:
+### Light Borders
+
+<div style={{display: 'flex', gap: '1rem', padding: '1rem', margin: '1rem'}}>
+  <div style={{border: LIGHT_THEME.borderBase, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderBase</div>
+  <div style={{border: LIGHT_THEME.borderLight, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderLight</div>
+  <div style={{border: LIGHT_THEME.borderAccent, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderAccent</div>
+  <div style={{border: LIGHT_THEME.borderOutline, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderOutline</div>
+</div>
+
+### Dark Borders
+
+<div style={{display: 'flex', gap: '1rem', padding: '1rem', margin: '1rem', backgroundColor: DARK_THEME.backgroundColorBase, width: 'fit-content', color: DARK_THEME.fontColorBase}}>
+  <div style={{border: DARK_THEME.borderBase, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderBase</div>
+  <div style={{border: DARK_THEME.borderLight, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderLight</div>
+  <div style={{border: DARK_THEME.borderAccent, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderAccent</div>
+  <div style={{border: DARK_THEME.borderOutline, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderOutline</div>
+</div>
+
+## Fonts
+
+### fontFamilyCore:
 
 <div style={{fontFamily: LIGHT_THEME.fontFamilyCore}}>The quick brown fox jumps over the lazy dog</div>
 
-#### fontFamilyMonospace:
+### fontFamilyMonospace:
 
 <div style={{fontFamily: LIGHT_THEME.fontFamilyMonospace}}>The quick brown fox jumps over the lazy dog</div>
 
-## Theme Units
+## Units
 
 | Property Name     | Value     |
 |-------------------|-----------|
@@ -68,3 +94,59 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
 | zIndexBase        | `1`       |
 | zIndexPopup       | `100`     |
 | zIndexModal       | `200`     |
+
+## Types
+
+```ts
+export interface ChopLogicThemeContextProps {
+  mode: ChopLogicThemeMode;
+  setMode?: (mode: ChopLogicThemeMode) => void;
+  customTheme?: Partial<ChopLogicTheme>;
+  setCustomTheme?: (customTheme: ChopLogicTheme) => void;
+}
+```
+
+```ts
+export interface ChopLogicTheme {
+  // Colors
+  fontColorBase: string;
+  fontColorLight: string;
+  fontColorAccent: string;
+  backgroundColorBase: string;
+  backgroundColorLight: string;
+  backgroundColorTransparent: string;
+  // Gradients
+  gradientShadow: string;
+  // Fonts
+  fontFamilyCore: string;
+  fontFamilyMonospace: string;
+  fontSizeBase: string;
+  fontSizeSmall: string;
+  fontSizeHeader: string;
+  // Units
+  gapSmall: string;
+  gapMedium: string;
+  gapBig: string;
+  iconSize: string;
+  blockBorderRadius: string;
+  // Shadows
+  boxShadow: string;
+  textShadow: string;
+  // Borders
+  borderBase: string;
+  borderLight: string;
+  borderAccent: string;
+  borderOutline: string;
+  // Z-indexes
+  zIndexBase: string;
+  zIndexPopup: string;
+  zIndexModal: string;
+}
+```
+
+```ts
+export enum ChopLogicThemeMode {
+  Light = 'light',
+  Dark = 'dark',
+}
+```

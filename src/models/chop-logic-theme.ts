@@ -40,5 +40,5 @@ export interface ChopLogicThemeContextProps {
   mode: ChopLogicThemeMode;
   setMode?: (mode: ChopLogicThemeMode) => void;
   customTheme?: Partial<ChopLogicTheme>;
-  setCustomTheme?: (customTheme: ChopLogicTheme) => void;
+  setCustomTheme?: (customTheme: Partial<ChopLogicTheme>) => void;
 }

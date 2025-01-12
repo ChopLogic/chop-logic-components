@@ -1,0 +1,173 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { DARK_THEME, LIGHT_THEME } from '@css';
+
+<Meta title="Themes" />
+
+# Chop Logic Themes
+
+**Chop Logic Components** library contains two default style themes: dark and light.
+They can be easily switched via `ChopLogicThemeContext`. You can also pass a custom theme to the context,
+which partially or completely replaces the values in the default theme according to `ChopLogicTheme` interface.
+
+```tsx
+import React from 'react';
+import { ChopLogicThemeContext, ChopLogicThemeMode, ChopLogicTheme } from 'chop-logic-components';
+import MainContent from '../main.tsx';
+
+const App = () => {
+  const [mode, setMode] = React.useState(ChopLogicThemeMode.Light);
+  const customTheme: Partial<ChopLogicTheme> = { fontSizeBase: '1.4rem', gapSmall: '0.4rem' };
+
+  return (
+    <ChopLogicThemeContext.Provider value={{ mode, setMode, customTheme }}>
+      <MainContent />
+    </ChopLogicThemeContext.Provider>
+  );
+};
+
+export default App;
+```
+
+## Colors
+
+### Light Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Font Colors"
+    subtitle="Colors for the main font, supporting font, and accent"
+    colors={{ fontColorBase: `${LIGHT_THEME.fontColorBase}`, fontColorLight: `${LIGHT_THEME.fontColorLight}`, fontColorAccent: `${LIGHT_THEME.fontColorAccent}` }}
+  />
+  <ColorItem
+    title="Background Colors"
+    subtitle="Background and container colors on the page"
+    colors={{ backgroundColorBase: `${LIGHT_THEME.backgroundColorBase}`, backgroundColorLight: `${LIGHT_THEME.backgroundColorLight}`, backgroundColorTransparent: `${LIGHT_THEME.backgroundColorTransparent}` }}
+  />
+  <ColorItem
+    title="Gradients"
+    subtitle="Gradient for creating shadows"
+    colors={{ gradientShadow: `${LIGHT_THEME.gradientShadow}` }}
+  />
+</ColorPalette>
+
+### Dark Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Font Colors"
+    subtitle="Colors for the main font, supporting font, and accent"
+    colors={{ fontColorBase: `${DARK_THEME.fontColorBase}`, fontColorLight: `${DARK_THEME.fontColorLight}`, fontColorAccent: `${DARK_THEME.fontColorAccent}` }}
+  />
+  <ColorItem
+    title="Background Colors"
+    subtitle="Background and container colors on the page"
+    colors={{ backgroundColorBase: `${DARK_THEME.backgroundColorBase}`, backgroundColorLight: `${DARK_THEME.backgroundColorLight}`, backgroundColorTransparent: `${DARK_THEME.backgroundColorTransparent}` }}
+  />
+  <ColorItem
+    title="Gradients"
+    subtitle="Gradient for creating shadows"
+    colors={{ gradientShadow: `${DARK_THEME.gradientShadow}` }}
+  />
+</ColorPalette>
+
+## Borders
+
+### Light Borders
+
+<div style={{display: 'flex', gap: '1rem', padding: '1rem', margin: '1rem'}}>
+  <div style={{border: LIGHT_THEME.borderBase, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderBase</div>
+  <div style={{border: LIGHT_THEME.borderLight, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderLight</div>
+  <div style={{border: LIGHT_THEME.borderAccent, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderAccent</div>
+  <div style={{border: LIGHT_THEME.borderOutline, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderOutline</div>
+</div>
+
+### Dark Borders
+
+<div style={{display: 'flex', gap: '1rem', padding: '1rem', margin: '1rem', backgroundColor: DARK_THEME.backgroundColorBase, width: 'fit-content', color: DARK_THEME.fontColorBase}}>
+  <div style={{border: DARK_THEME.borderBase, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderBase</div>
+  <div style={{border: DARK_THEME.borderLight, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderLight</div>
+  <div style={{border: DARK_THEME.borderAccent, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderAccent</div>
+  <div style={{border: DARK_THEME.borderOutline, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'}}>borderOutline</div>
+</div>
+
+## Fonts
+
+### fontFamilyCore:
+
+<div style={{fontFamily: LIGHT_THEME.fontFamilyCore}}>The quick brown fox jumps over the lazy dog</div>
+
+### fontFamilyMonospace:
+
+<div style={{fontFamily: LIGHT_THEME.fontFamilyMonospace}}>The quick brown fox jumps over the lazy dog</div>
+
+## Units
+
+| Property Name     | Value     |
+|-------------------|-----------|
+| fontSizeBase      | `1.2rem`  |
+| fontSizeSmall     | `0.8rem`  |
+| fontSizeHeader    | `2rem`    |
+| gapSmall          | `0.25rem` |
+| gapMedium         | `0.6rem`  |
+| gapBig            | `1rem`    |
+| iconSize          | `1.2rem`  |
+| blockBorderRadius | `0.25rem` |
+| zIndexBase        | `1`       |
+| zIndexPopup       | `100`     |
+| zIndexModal       | `200`     |
+
+## Types
+
+```ts
+export interface ChopLogicThemeContextProps {
+  mode: ChopLogicThemeMode;
+  setMode?: (mode: ChopLogicThemeMode) => void;
+  customTheme?: Partial<ChopLogicTheme>;
+  setCustomTheme?: (customTheme: ChopLogicTheme) => void;
+}
+```
+
+```ts
+export interface ChopLogicTheme {
+  // Colors
+  fontColorBase: string;
+  fontColorLight: string;
+  fontColorAccent: string;
+  backgroundColorBase: string;
+  backgroundColorLight: string;
+  backgroundColorTransparent: string;
+  // Gradients
+  gradientShadow: string;
+  // Fonts
+  fontFamilyCore: string;
+  fontFamilyMonospace: string;
+  fontSizeBase: string;
+  fontSizeSmall: string;
+  fontSizeHeader: string;
+  // Units
+  gapSmall: string;
+  gapMedium: string;
+  gapBig: string;
+  iconSize: string;
+  blockBorderRadius: string;
+  // Shadows
+  boxShadow: string;
+  textShadow: string;
+  // Borders
+  borderBase: string;
+  borderLight: string;
+  borderAccent: string;
+  borderOutline: string;
+  // Z-indexes
+  zIndexBase: string;
+  zIndexPopup: string;
+  zIndexModal: string;
+}
+```
+
+```ts
+export enum ChopLogicThemeMode {
+  Light = 'light',
+  Dark = 'dark',
+}
+```

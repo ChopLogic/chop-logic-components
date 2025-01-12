@@ -3,9 +3,30 @@ import { DARK_THEME, LIGHT_THEME } from '@css';
 
 <Meta title="Themes" />
 
+# Chop Logic Themes
+
 **Chop Logic Components** library contains two default style themes: dark and light.
 They can be easily switched via `ChopLogicThemeContext`. You can also pass a custom theme to the context,
 which partially or completely replaces the values in the default theme according to `ChopLogicTheme` interface.
+
+```tsx
+import React from 'react';
+import { ChopLogicThemeContext, ChopLogicThemeMode, ChopLogicTheme } from 'chop-logic-components';
+import MainContent from '../main.tsx';
+
+const App = () => {
+  const [mode, setMode] = React.useState(ChopLogicThemeMode.Light);
+  const customTheme: Partial<ChopLogicTheme> = { fontSizeBase: '1.4rem', gapSmall: '0.4rem' };
+
+  return (
+    <ChopLogicThemeContext.Provider value={{ mode, setMode, customTheme }}>
+      <MainContent />
+    </ChopLogicThemeContext.Provider>
+  );
+};
+
+export default App;
+```
 
 ## Colors
 

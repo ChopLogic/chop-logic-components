@@ -71,6 +71,14 @@ Runs the tests in continuous integration (CI) mode with Vitest, providing a stre
 npm run test:ci
 ```
 
+### `coverage`
+
+Runs unit tests using Vitest and generates a code coverage report using the v8 generator.
+
+```bash
+npm run coverage
+```
+
 ### `storybook`
 
 Starts a local instance of Storybook for developing UI components. The Storybook interface will be available at http://localhost:6006.

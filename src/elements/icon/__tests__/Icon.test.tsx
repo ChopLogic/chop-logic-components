@@ -14,7 +14,6 @@ describe('ChopLogicIcon Component', () => {
   it('renders the correct icon after it loads', async () => {
     render(<ChopLogicIcon name={ChopLogicIconName.Warning} testId='warning-icon' />);
     const warningIcon = await screen.findByTestId('warning-icon');
-    screen.debug();
     expect(warningIcon).toBeInTheDocument();
   });
 

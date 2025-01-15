@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { ChopLogicIconDictionary } from '@icons';
 import { ChopLogicIconProps } from '@models';
 
-const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, ...rest }) => {
+const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, testId, ...rest }) => {
   if (!name) return null;
 
   const fallback = (
@@ -14,7 +14,7 @@ const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, ...rest }) => {
 
   return (
     <Suspense fallback={fallback}>
-      <Component {...rest} />
+      <Component data-testid={testId} {...rest} />
     </Suspense>
   );
 };

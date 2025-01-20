@@ -3,6 +3,7 @@
 import * as path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { coverageConfigDefaults } from 'vitest/config';
 
 import { dependencies } from './package.json';
 
@@ -40,5 +41,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
+    coverage: {
+      exclude: ['**/docs/**', '**/__docs__/**', '**/models/**', '**.config.js', ...coverageConfigDefaults.exclude],
+    },
   },
 });

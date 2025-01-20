@@ -1,0 +1,63 @@
+name: Bump Version and Publish to NPM
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  versioning:
+    if: github.event.pull_request.merged == true && github.base_ref == 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full git history for versioning
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Determine version bump
+        run: |
+          PR_BRANCH="${{ github.head_ref }}"
+          if [[ "$PR_BRANCH" == feature/* ]]; then
+            npm version minor --no-git-tag-version
+          elif [[ "$PR_BRANCH" == fix/* ]]; then
+            npm version patch --no-git-tag-version
+          elif [[ "$PR_BRANCH" == release/* ]]; then
+            npm version major --no-git-tag-version
+          fi
+
+      - name: Commit version bump
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          git commit -m "chore: bump package version [ci skip]"
+          git push origin main
+
+  publish:
+    needs: versioning
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

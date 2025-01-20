@@ -24,7 +24,7 @@ jobs:
       - name: Determine version bump
         run: |
           PR_BRANCH="${{ github.head_ref }}"
-          if [[ "$PR_BRANCH" == feature/* ]]; then
+          if [[ "$PR_BRANCH" == feat/* ]]; then
             npm version minor --no-git-tag-version
           elif [[ "$PR_BRANCH" == fix/* ]]; then
             npm version patch --no-git-tag-version
@@ -47,6 +47,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full git history
+
+      - name: Pull latest changes
+        run: git pull origin main
 
       - name: Setup Node.js
         uses: actions/setup-node@v3

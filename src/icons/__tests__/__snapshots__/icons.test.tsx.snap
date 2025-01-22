@@ -55,9 +55,13 @@ exports[`Icons tests > CancelIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 470 1000"
     width="1em"
   >
+    <title>
+      Cancel
+    </title>
     <path
       d="M452 656c12 12 18 26.333 18 43s-6 31-18 43c-12 10.667-26.333 16-43 16s-31-5.333-43-16L234 590 102 742c-12 10.667-26.333 16-43 16s-31-5.333-43-16C5.333 730 0 715.667 0 699s5.333-31 16-43l138-156L16 342C5.333 330 0 315.667 0 299s5.333-31 16-43c12-10.667 26.333-16 43-16s31 5.333 43 16l132 152 132-152c12-10.667 26.333-16 43-16s31 5.333 43 16c12 12 18 26.333 18 43s-6 31-18 43L314 500l138 156"
     />
@@ -70,9 +74,13 @@ exports[`Icons tests > CheckMarkIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
+    <title>
+      Check Mark
+    </title>
     <path
       d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"
     />
@@ -280,9 +288,13 @@ exports[`Icons tests > ErrorIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
+    <title>
+      Error
+    </title>
     <path
       d="M11 7h2v7h-2zm0 8h2v2h-2z"
     />
@@ -333,9 +345,13 @@ exports[`Icons tests > HelpIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
+    <title>
+      Help
+    </title>
     <path
       d="M414.39 97.61A224 224 0 1097.61 414.39 224 224 0 10414.39 97.61zM192.13 260.18a64 64 0 1159.69 59.69 64.07 64.07 0 01-59.69-59.69zm240-66.64l-96.37 5.84a4.06 4.06 0 01-3.44-1.59 96 96 0 00-18.07-18.07 4.06 4.06 0 01-1.59-3.44l5.84-96.37a4 4 0 015.42-3.51A193 193 0 01435.6 188.12a4 4 0 01-3.51 5.42zM193.54 79.91l5.84 96.37a4.06 4.06 0 01-1.59 3.44 96 96 0 00-18.07 18.07 4.06 4.06 0 01-3.44 1.59l-96.37-5.84a4 4 0 01-3.51-5.42A193 193 0 01188.12 76.4a4 4 0 015.42 3.51zM79.91 318.46l96.37-5.84a4.06 4.06 0 013.44 1.59 96 96 0 0018.07 18.07 4.06 4.06 0 011.59 3.44l-5.84 96.37a4 4 0 01-5.42 3.51A193 193 0 0176.4 323.88a4 4 0 013.51-5.42zm238.55 113.63l-5.84-96.37a4.06 4.06 0 011.59-3.44 96 96 0 0018.07-18.07 4.06 4.06 0 013.44-1.59l96.37 5.84a4 4 0 013.51 5.42A193 193 0 01323.88 435.6a4 4 0 01-5.42-3.51z"
     />
@@ -378,9 +394,13 @@ exports[`Icons tests > InfoIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
+    <title>
+      Info
+    </title>
     <path
       d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
     />
@@ -534,9 +554,13 @@ exports[`Icons tests > WarningIcon matched the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
+    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
+    <title>
+      Warning
+    </title>
     <path
       d="M0 0h24v24H0z"
       fill="none"

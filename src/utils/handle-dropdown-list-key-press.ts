@@ -42,7 +42,5 @@ export function handleDropdownListKeyPress({
       if (nextValue) moveFocusOnElementById(nextValue.id);
       break;
     }
-    default:
-      break;
   }
 }

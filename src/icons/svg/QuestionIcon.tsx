@@ -2,7 +2,8 @@ import React from 'react';
 
 function QuestionIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' {...props}>
+    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...props}>
+      <title>Question</title>
       <path fill='none' stroke='currentColor' strokeMiterlimit={10} strokeWidth={32} d='M256 80a176 176 0 10176 176A176 176 0 00256 80z' />
       <path
         fill='none'

@@ -7,7 +7,7 @@ const TestComponent = () => {
   return <div>{`Width: ${dimensions.width}, Height: ${dimensions.height}`}</div>;
 };
 
-describe('useWindowDimensions tests:', () => {
+describe('useWindowDimensions', () => {
   beforeAll(() => {
     global.innerWidth = 1024;
     global.innerHeight = 768;

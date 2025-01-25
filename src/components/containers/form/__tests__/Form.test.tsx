@@ -1,7 +1,7 @@
 import { ChopLogicCheckbox, ChopLogicForm, ChopLogicNumericInput, ChopLogicTextInput } from '@components';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 describe('ChopLogicForm', () => {
   const testInitialValues = {
@@ -37,6 +37,19 @@ describe('ChopLogicForm', () => {
       </ChopLogicForm>,
     );
     expect(screen.queryByText('Reset')).not.toBeInTheDocument();
+  });
+
+  it('should call onSubmit handler', async () => {
+    const mockSubmit = vi.fn();
+    render(
+      <ChopLogicForm onClickSubmit={mockSubmit} {...testProps}>
+        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
+        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <ChopLogicNumericInput name='age' id='age' label='Age' />
+      </ChopLogicForm>,
+    );
+    await userEvent.click(screen.getByText('Submit'));
+    expect(mockSubmit).toHaveBeenCalledOnce();
   });
 
   it('should render initial values', () => {

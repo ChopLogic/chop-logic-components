@@ -7,7 +7,6 @@ export { default as ChopLogicSelect } from './inputs/select/Select';
 export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 
 // Modals
-export { default as ChopLogicAlert } from './modals/alert/Alert';
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
 
@@ -17,3 +16,4 @@ export { default as ChopLogicGrid } from './containers/grid/Grid';
 export { default as ChopLogicMenu } from './containers/menu/Menu';
 export { default as ChopLogicPortal } from './containers/portal/Portal';
 export { default as ChopLogicTabs } from './containers/tabs/Tabs';
+export { default as ChopLogicAlert } from './modals/alert/Alert';

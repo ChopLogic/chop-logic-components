@@ -10,14 +10,14 @@ import { LIGHT_THEME } from '@css';
 describe('MenuLeaf', () => {
   const testLabeledItem = {
     id: 'item-1',
-    label: 'Home',
+    label: 'Go Home',
     icon: ChopLogicIconName.Home,
     onClick: vi.fn(),
   };
 
   const testLinkItem = {
     id: 'item-1',
-    label: 'Home',
+    label: 'Go Home',
     icon: ChopLogicIconName.Home,
     link: 'https://example.com/',
   };

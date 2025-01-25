@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { ChopLogicButton } from '@components';
-import { ExampleDivContainer } from '@elements/styled/ExampleDivContainer.styled';
 import { ChopLogicButtonView } from '@enums';
 import { useChopLogicTheme } from '@hooks';
 
+import { ExampleDivContainer } from '../../../__docs__/styles/ExampleDivContainer.styled.tsx';
 import { useModalFocusTrap } from '..';
 
 const UseModalFocusTrapExample = () => {

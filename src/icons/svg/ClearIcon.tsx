@@ -2,7 +2,8 @@ import React from 'react';
 
 function ClearIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox='0 0 1024 1024' fill='currentColor' height='1em' width='1em' {...props}>
+    <svg viewBox='0 0 1024 1024' fill='currentColor' height='1em' width='1em' role='img' {...props}>
+      <title>Clear</title>
       <defs>
         <style />
       </defs>

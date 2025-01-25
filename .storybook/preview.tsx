@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
 import { ChopLogicThemeContext, ChopLogicThemeMode } from '../src';
 import { DARK_THEME, LIGHT_THEME } from '../src/css';
-import { STORY_WRAPPER_STYLES } from '../src/css/story-wrapper-styles';
+import { STORY_WRAPPER_STYLES } from '../src/__docs__/styles/story-wrapper-styles';
 
 const preview: Preview = {
   parameters: {

@@ -2,7 +2,8 @@ import React from 'react';
 
 function RemoveIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' {...props}>
+    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...props}>
+      <title>Remove</title>
       <path
         fill='none'
         stroke='currentColor'

@@ -19,7 +19,7 @@ describe('ChopLogicCheckbox', () => {
 
   it('should display the label', () => {
     render(<Checkbox {...testProps} />);
-    expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
+    expect(screen.getByText(testProps.label)).toBeInTheDocument();
   });
 
   it('should be enabled by default', () => {

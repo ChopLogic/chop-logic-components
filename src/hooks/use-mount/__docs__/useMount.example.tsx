@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { ExampleDivContainer } from '@elements/styled/ExampleDivContainer.styled';
 import { useChopLogicTheme } from '@hooks';
 
+import { ExampleDivContainer } from '../../../__docs__/styles/ExampleDivContainer.styled.tsx';
 import { useMount } from '..';
 
 const UseMountExample = () => {

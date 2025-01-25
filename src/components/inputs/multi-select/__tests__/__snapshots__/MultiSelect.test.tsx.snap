@@ -32,9 +32,13 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       <svg
         fill="currentColor"
         height="1em"
+        role="img"
         viewBox="0 0 24 24"
         width="1em"
       >
+        <title>
+          Arrow Down
+        </title>
         <path
           d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
         />
@@ -56,9 +60,13 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
         <svg
           fill="currentColor"
           height="1em"
+          role="img"
           viewBox="0 0 16 16"
           width="1em"
         >
+          <title>
+            Checkbox Unchecked
+          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -78,9 +86,13 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
         <svg
           fill="currentColor"
           height="1em"
+          role="img"
           viewBox="0 0 16 16"
           width="1em"
         >
+          <title>
+            Checkbox Unchecked
+          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -100,9 +112,13 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
         <svg
           fill="currentColor"
           height="1em"
+          role="img"
           viewBox="0 0 16 16"
           width="1em"
         >
+          <title>
+            Checkbox Unchecked
+          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -122,9 +138,13 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
         <svg
           fill="currentColor"
           height="1em"
+          role="img"
           viewBox="0 0 16 16"
           width="1em"
         >
+          <title>
+            Checkbox Unchecked
+          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"

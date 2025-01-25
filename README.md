@@ -1,6 +1,6 @@
 # Chop Logic Components
 
-[![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub Pages](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml)
 [![codecov](https://codecov.io/github/SavouryGin/chop-logic-components/graph/badge.svg?token=U5WF25WZTV)](https://codecov.io/github/SavouryGin/chop-logic-components)
 

@@ -40,7 +40,7 @@
     "Styled components"
   ],
   "author": "Dmitrii Suroviagin",
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/SavouryGin/chop-logic-components/issues"
   },

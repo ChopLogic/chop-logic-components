@@ -1,5 +1,9 @@
 # Chop Logic Components
 
+[![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE)
+[![GitHub Pages](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml)
+[![codecov](https://codecov.io/github/SavouryGin/chop-logic-components/graph/badge.svg?token=U5WF25WZTV)](https://codecov.io/github/SavouryGin/chop-logic-components)
+
 Welcome to **Chop Logic Components**, a comprehensive React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
 

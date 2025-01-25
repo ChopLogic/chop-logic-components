@@ -1,4 +1,4 @@
-name: Bump Version and Publish to NPM
+name: NPM
 
 on:
   pull_request:

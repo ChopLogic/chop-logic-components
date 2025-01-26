@@ -30,7 +30,8 @@ right to remove, edit, or reject comments, commits, code, or issues that do not 
 ## Reporting Issues
 
 If you experience or witness any behavior that violates this Code of Conduct, please report it by contacting the
-maintainers via [email@example.com]. All reports will be handled confidentially.
+maintainers via **[dmitrii.suroviagin@gmail.com](mailto:dmitrii.suroviagin@gmail.com)**. All reports will be handled
+confidentially.
 
 ## Enforcement
 

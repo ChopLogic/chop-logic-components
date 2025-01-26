@@ -8,4 +8,4 @@
 **/__mocks__/*
 docs/*
 storybook-static/*
-README.md
+**/*.md

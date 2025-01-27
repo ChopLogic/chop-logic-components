@@ -1,0 +1,67 @@
+name: Feature Request
+
+description: Suggest an idea for this project.
+
+title: "[Feature]: "
+
+labels: [ "Feature", "Components" ]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please fill out the information below to help us understand your request.
+
+  - type: input
+    id: feature_summary
+    attributes:
+      label: "Feature Summary"
+      description: "Provide a clear and concise summary of the feature you want to propose."
+      placeholder: "Example: Add support for dark mode."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: "Problem Statement"
+      description: "What problem does this feature solve?"
+      placeholder: "Users find it hard to use the app at night due to bright colors."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: "Proposed Solution"
+      description: "Describe how you think this feature should work."
+      placeholder: "Implement a toggle to switch between light and dark themes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives_considered
+    attributes:
+      label: "Alternatives Considered"
+      description: "Have you considered any alternative solutions or workarounds?"
+      placeholder: "Using third-party theme libraries, but they don't integrate well."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: "Additional Context"
+      description: "Provide any additional context, screenshots, or references related to your feature request."
+      placeholder: "Links to relevant issues, prior discussions, etc."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/SavouryGin/chop-logic-components/blob/main/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

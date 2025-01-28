@@ -28,7 +28,6 @@ export const StyledTabButton = styled.button<{
 
   &:hover,
   &:active {
-    text-shadow: ${(props) => props.$theme.textShadow};
     color: ${(props) => props.$theme.fontColorAccent};
   }
 

@@ -1,10 +1,8 @@
-# Pull Request Template
+# Proposed Changes
 
 ## Description
 
 Please include a summary of the changes and the related issue if applicable.
-
-**Related Issue:** Closes #ISSUE_NUMBER
 
 ## Checklist
 
@@ -23,14 +21,6 @@ Please mark the relevant options with an `x`.
 - [ ] New feature (non-breaking change that adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation update
-
-## How Has This Been Tested?
-
-Please describe the tests that you ran to verify your changes. Provide instructions so others can reproduce if
-necessary.
-
-- [ ] Test A
-- [ ] Test B
 
 ## Screenshots (if applicable)
 

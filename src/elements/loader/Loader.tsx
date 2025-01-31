@@ -11,20 +11,20 @@ import {
   StyledSquareLoader,
 } from './Loader.styled.tsx';
 
-const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view }) => {
+const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view, ...rest }) => {
   switch (view) {
     case ChopLogicLoaderView.Bubble:
-      return <StyledBubbleLoader></StyledBubbleLoader>;
+      return <StyledBubbleLoader {...rest}></StyledBubbleLoader>;
     case ChopLogicLoaderView.Circle:
-      return <StyledCircleLoader></StyledCircleLoader>;
+      return <StyledCircleLoader {...rest}></StyledCircleLoader>;
     case ChopLogicLoaderView.Brackets:
-      return <StyledBracketsLoader></StyledBracketsLoader>;
+      return <StyledBracketsLoader {...rest}></StyledBracketsLoader>;
     case ChopLogicLoaderView.Linear:
-      return <StyledLinearLoader></StyledLinearLoader>;
+      return <StyledLinearLoader {...rest}></StyledLinearLoader>;
     case ChopLogicLoaderView.Pulse:
-      return <StyledPulseLoader></StyledPulseLoader>;
+      return <StyledPulseLoader {...rest}></StyledPulseLoader>;
     case ChopLogicLoaderView.Square:
-      return <StyledSquareLoader></StyledSquareLoader>;
+      return <StyledSquareLoader {...rest}></StyledSquareLoader>;
     default:
       return null;
   }

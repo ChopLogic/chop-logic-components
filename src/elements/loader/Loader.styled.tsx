@@ -50,7 +50,7 @@ export const StyledBubbleLoader = styled.span`
   }
 `;
 
-export const StyleBracketsLoader = styled.span`
+export const StyledBracketsLoader = styled.span`
   color: #fff;
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;

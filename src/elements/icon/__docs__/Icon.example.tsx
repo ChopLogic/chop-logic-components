@@ -10,9 +10,9 @@ const IconExample: React.FC<ChopLogicIconProps> = () => {
   const theme = useChopLogicTheme();
 
   return (
-    <StyledGridContainer>
+    <StyledGridContainer $columns={6}>
       {iconNames.map((name) => (
-        <StyledGridTile key={name} $theme={theme}>
+        <StyledGridTile key={name} $theme={theme} $size='5rem'>
           <ChopLogicIcon name={name} />
           <span>{name}</span>
         </StyledGridTile>

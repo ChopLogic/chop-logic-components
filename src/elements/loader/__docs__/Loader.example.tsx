@@ -10,9 +10,9 @@ const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
   const theme = useChopLogicTheme();
 
   return (
-    <StyledGridContainer>
+    <StyledGridContainer $columns={3}>
       {loaders.map((view) => (
-        <StyledGridTile key={view} $theme={theme}>
+        <StyledGridTile key={view} $theme={theme} $size='8rem'>
           <ChopLogicLoader view={view} />
           <span>{view}</span>
         </StyledGridTile>

@@ -1,12 +1,12 @@
 import { ChopLogicTheme } from '@models';
 import styled from 'styled-components';
 
-export const StyledBubbleLoader = styled.span<{ $theme: ChopLogicTheme }>`
+export const StyledDotsLoader = styled.span<{ $theme: ChopLogicTheme }>`
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
   animation-fill-mode: both;
-  animation: bblFadInOut 1.8s infinite ease-in-out;
+  animation: dotsFadeOutAnimation 1.8s infinite ease-in-out;
   color: ${(props) => props.$theme.fontColorLight};
   font-size: 7px;
   position: relative;
@@ -20,7 +20,7 @@ export const StyledBubbleLoader = styled.span<{ $theme: ChopLogicTheme }>`
     width: 2.5em;
     height: 2.5em;
     animation-fill-mode: both;
-    animation: bblFadInOut 1.8s infinite ease-in-out;
+    animation: dotsFadeOutAnimation 1.8s infinite ease-in-out;
   }
 
   &:before,
@@ -39,7 +39,7 @@ export const StyledBubbleLoader = styled.span<{ $theme: ChopLogicTheme }>`
     left: 3.5em;
   }
 
-  @keyframes bblFadInOut {
+  @keyframes dotsFadeOutAnimation {
     0%,
     80%,
     100% {

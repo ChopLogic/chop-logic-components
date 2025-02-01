@@ -23,10 +23,10 @@ export const StyledPulseLoader = styled.span<{ $theme: ChopLogicTheme }>`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    animation: scaleUp 1s linear infinite;
+    animation: scaleUpAnimation 1s linear infinite;
   }
 
-  @keyframes scaleUp {
+  @keyframes scaleUpAnimation {
     0% {
       transform: translate(-50%, -50%) scale(0);
     }

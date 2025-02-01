@@ -19,10 +19,10 @@ export const StyledLinearLoader = styled.span<{ $theme: ChopLogicTheme }>`
     top: 0;
     left: 0;
     box-sizing: border-box;
-    animation: animloader 2s linear infinite;
+    animation: linearLoaderAnimation 2s linear infinite;
   }
 
-  @keyframes animloader {
+  @keyframes linearLoaderAnimation {
     0% {
       left: 0;
       transform: translateX(-100%);

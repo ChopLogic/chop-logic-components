@@ -11,16 +11,16 @@ export const StyledBracketsLoader = styled.span<{ $theme: ChopLogicTheme }>`
   &:before {
     content: '{';
     display: inline-block;
-    animation: pulse 0.4s alternate infinite ease-in-out;
+    animation: bracketsPulse 0.4s alternate infinite ease-in-out;
   }
 
   &:after {
     content: '}';
     display: inline-block;
-    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+    animation: bracketsPulse 0.4s 0.3s alternate infinite ease-in-out;
   }
 
-  @keyframes pulse {
+  @keyframes bracketsPulse {
     to {
       transform: scale(0.8);
       opacity: 0.5;

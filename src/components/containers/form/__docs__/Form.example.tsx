@@ -7,6 +7,8 @@ import {
   ChopLogicSelect,
   ChopLogicTextInput,
 } from '@components';
+import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
+import { useChopLogicTheme } from '@hooks';
 import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
 
 const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
@@ -28,6 +30,7 @@ const inputStyles: React.CSSProperties = {
 
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   const [data, setData] = useState<ChopLogicFormData>();
+  const theme = useChopLogicTheme();
 
   const initialValues = {
     firstName: 'John',
@@ -70,26 +73,28 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
         <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
       </ChopLogicForm>
       {data && (
-        <table style={{ marginTop: '2rem', fontFamily: 'Arial', textAlign: 'left' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Value</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(data).map((item) => {
-              return (
-                <tr key={item[0]}>
-                  <td>{item[0]}</td>
-                  <td>{item[1]?.toString()}</td>
-                  <td>{typeof item[1]}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <ExampleDivContainer $theme={theme} style={{ marginTop: '2rem' }}>
+          <table style={{ textAlign: 'left' }}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(data).map((item) => {
+                return (
+                  <tr key={item[0]}>
+                    <td>{item[0]}</td>
+                    <td>{item[1]?.toString()}</td>
+                    <td>{typeof item[1]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </ExampleDivContainer>
       )}
     </div>
   );

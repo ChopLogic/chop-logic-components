@@ -3,7 +3,7 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jwIPbr jzZeis test-class"
+    class="sc-jwIPbr iwkZHR test-class"
     style="width: 600px;"
   >
     <label
@@ -55,7 +55,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jwIPbr jzZeis test-class"
+    class="sc-jwIPbr iwkZHR test-class"
     style="width: 600px;"
   >
     <label

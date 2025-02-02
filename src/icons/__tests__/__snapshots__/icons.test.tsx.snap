@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Icons tests > ArrowDownIcon matched the snapshot 1`] = `
+exports[`Icon > ArrowDownIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -19,7 +19,7 @@ exports[`Icons tests > ArrowDownIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ArrowUpIcon matched the snapshot 1`] = `
+exports[`Icon > ArrowUpIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -38,7 +38,7 @@ exports[`Icons tests > ArrowUpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > BackIcon matched the snapshot 1`] = `
+exports[`Icon > BackIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -62,7 +62,7 @@ exports[`Icons tests > BackIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CancelIcon matched the snapshot 1`] = `
+exports[`Icon > CancelIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -81,7 +81,7 @@ exports[`Icons tests > CancelIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CheckMarkIcon matched the snapshot 1`] = `
+exports[`Icon > CheckMarkIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -100,7 +100,7 @@ exports[`Icons tests > CheckMarkIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CheckboxCheckedIcon matched the snapshot 1`] = `
+exports[`Icon > CheckboxCheckedIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -120,7 +120,7 @@ exports[`Icons tests > CheckboxCheckedIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CheckboxUncheckedIcon matched the snapshot 1`] = `
+exports[`Icon > CheckboxUncheckedIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -140,7 +140,7 @@ exports[`Icons tests > CheckboxUncheckedIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ChevronDownIcon matched the snapshot 1`] = `
+exports[`Icon > ChevronDownIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -160,7 +160,7 @@ exports[`Icons tests > ChevronDownIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ChevronLeftIcon matched the snapshot 1`] = `
+exports[`Icon > ChevronLeftIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -180,7 +180,7 @@ exports[`Icons tests > ChevronLeftIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ChevronRightIcon matched the snapshot 1`] = `
+exports[`Icon > ChevronRightIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -200,7 +200,7 @@ exports[`Icons tests > ChevronRightIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ChevronUpIcon matched the snapshot 1`] = `
+exports[`Icon > ChevronUpIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -220,7 +220,7 @@ exports[`Icons tests > ChevronUpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ClearIcon matched the snapshot 1`] = `
+exports[`Icon > ClearIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -242,7 +242,7 @@ exports[`Icons tests > ClearIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CopyIcon matched the snapshot 1`] = `
+exports[`Icon > CopyIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -268,7 +268,7 @@ exports[`Icons tests > CopyIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > CutIcon matched the snapshot 1`] = `
+exports[`Icon > CutIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -301,7 +301,7 @@ exports[`Icons tests > CutIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > DeleteIcon matched the snapshot 1`] = `
+exports[`Icon > DeleteIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -320,7 +320,7 @@ exports[`Icons tests > DeleteIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > DownloadIcon matched the snapshot 1`] = `
+exports[`Icon > DownloadIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -339,7 +339,7 @@ exports[`Icons tests > DownloadIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ErrorIcon matched the snapshot 1`] = `
+exports[`Icon > ErrorIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -361,7 +361,7 @@ exports[`Icons tests > ErrorIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ForwardIcon matched the snapshot 1`] = `
+exports[`Icon > ForwardIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -385,7 +385,7 @@ exports[`Icons tests > ForwardIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > GraduateIcon matched the snapshot 1`] = `
+exports[`Icon > GraduateIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -404,7 +404,7 @@ exports[`Icons tests > GraduateIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > HelpIcon matched the snapshot 1`] = `
+exports[`Icon > HelpIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -423,7 +423,7 @@ exports[`Icons tests > HelpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > HideIcon matched the snapshot 1`] = `
+exports[`Icon > HideIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -442,7 +442,7 @@ exports[`Icons tests > HideIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > HomeIcon matched the snapshot 1`] = `
+exports[`Icon > HomeIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -461,7 +461,7 @@ exports[`Icons tests > HomeIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > InfoIcon matched the snapshot 1`] = `
+exports[`Icon > InfoIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -483,7 +483,7 @@ exports[`Icons tests > InfoIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > LoginIcon matched the snapshot 1`] = `
+exports[`Icon > LoginIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -502,7 +502,7 @@ exports[`Icons tests > LoginIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > PasteIcon matched the snapshot 1`] = `
+exports[`Icon > PasteIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -521,7 +521,7 @@ exports[`Icons tests > PasteIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > QuestionIcon matched the snapshot 1`] = `
+exports[`Icon > QuestionIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -555,7 +555,7 @@ exports[`Icons tests > QuestionIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > RemoveIcon matched the snapshot 1`] = `
+exports[`Icon > RemoveIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -586,7 +586,7 @@ exports[`Icons tests > RemoveIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > SaveIcon matched the snapshot 1`] = `
+exports[`Icon > SaveIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -605,7 +605,7 @@ exports[`Icons tests > SaveIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > ShowIcon matched the snapshot 1`] = `
+exports[`Icon > ShowIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -627,7 +627,7 @@ exports[`Icons tests > ShowIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > UploadIcon matched the snapshot 1`] = `
+exports[`Icon > UploadIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -649,7 +649,7 @@ exports[`Icons tests > UploadIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icons tests > WarningIcon matched the snapshot 1`] = `
+exports[`Icon > WarningIcon matched the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"

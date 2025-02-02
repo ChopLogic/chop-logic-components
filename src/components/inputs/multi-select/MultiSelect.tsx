@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
+import { StyledSelect } from '@css/common/Select.styled';
 import { ChopLogicLabel } from '@elements';
-import { StyledSelect } from '@elements/styled/Select.styled';
 import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicMultiSelectProps } from '@models';
 

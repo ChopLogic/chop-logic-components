@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import ChopLogicIcon from '../Icon.tsx';
 
-describe('ChopLogicIcon Component', () => {
+describe('ChopLogicIcon', () => {
   it('renders fallback while loading the icon', async () => {
     render(<ChopLogicIcon name={ChopLogicIconName.Warning} />);
     const fallback = screen.getByLabelText('SVG Icon Fallback');

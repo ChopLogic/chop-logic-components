@@ -5,7 +5,7 @@ import * as Select from './Select.stories';
 
 # ChopLogicSelect
 
-A styled and accessible multiselect component that can be used both inside a form and as standalone controller.
+A styled and accessible select component that can be used both inside a form and as standalone controller.
 
 ### Usage
 
@@ -26,8 +26,8 @@ export default Example;
 |------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------|
 | **name**         | `string`                                    | A string representing the name attribute of the component, used for form submissions.                                                                              | `undefined`      | Yes      |
 | **label**        | `string`                                    | A string that represents the label for the component.                                                                                                              | `undefined`      | Yes      |
-| **options**      | `ChopLogicSelectValue[]`                             | An array of objects (each object should contain two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown. | `[]`             | Yes      |
-| **onChange**     | `(value?: ChopLogicSelectValue) => void`             | A function that is called when an option is selected. It can be used to handle the selection event.                                                                | `undefined`      | No       |
+| **options**      | `ChopLogicSelectValue[]`                    | An array of objects (each object should contain two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown. | `[]`             | Yes      |
+| **onChange**     | `(value?: ChopLogicSelectValue) => void`    | A function that is called when an option is selected. It can be used to handle the selection event.                                                                | `undefined`      | No       |
 | **placeholder**  | `string`                                    | The placeholder property of the input interface represents a hint to the user of what can be entered in the control.                                               | `'Not selected'` | No       |
 | **defaultValue** | `string` or `number` or `readonly string[]` | The select option object or an id that will be supplied as the default value of the input.                                                                         | `undefined`      | No       |
 | **disabled**     | `boolean`                                   | When disabled, the input cannot be interacted with.                                                                                                                | `false`          | No       |

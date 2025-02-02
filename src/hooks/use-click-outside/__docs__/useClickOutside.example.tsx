@@ -1,7 +1,7 @@
 import { useRef } from 'react';
+import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
 import { useChopLogicTheme } from '@hooks';
 
-import { ExampleDivContainer } from '../../../__docs__/styles/ExampleDivContainer.styled.tsx';
 import { useClickOutside } from '..';
 
 const UseClickOutsideExample = () => {

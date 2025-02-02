@@ -1,5 +1,5 @@
 import React, { KeyboardEvent } from 'react';
-import { StyledMultiSelectOption } from '@elements/styled/Select.styled';
+import { StyledMultiSelectOption } from '@css/common/Select.styled';
 import CheckboxCheckedIcon from '@icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@icons/svg/CheckboxUncheckedIcon.tsx';
 import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';

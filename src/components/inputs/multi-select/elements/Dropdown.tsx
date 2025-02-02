@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledSelectDropdown } from '@elements/styled/Select.styled';
+import { StyledSelectDropdown } from '@css/common/Select.styled';
 import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';
 import { handleDropdownListKeyPress } from '@utils';
 

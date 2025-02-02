@@ -20,7 +20,7 @@ export const StyledSelectCombobox = styled.button<{ $theme: ChopLogicTheme }>`
   padding: ${(props) => props.$theme.gapMedium};
   border: ${(props) => props.$theme.borderLight};
   border-radius: ${(props) => props.$theme.blockBorderRadius};
-  background-color: ${(props) => props.$theme.backgroundColorLight};
+  background-color: ${(props) => props.$theme.backgroundColorBase};
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -62,7 +62,7 @@ export const StyledSelectDropdown = styled.ul<{ $opened: boolean; $theme: ChopLo
     visibility 0s,
     opacity 0.3s linear;
   position: absolute;
-  background: ${(props) => props.$theme.backgroundColorLight};
+  background: ${(props) => props.$theme.backgroundColorBase};
   margin: 0;
   padding: 0;
   list-style: none;

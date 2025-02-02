@@ -19,7 +19,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-ixGGxD cFJmpN"
+      class="sc-ixGGxD hYrjk"
       id="select-id"
       name="language"
       role="combobox"
@@ -44,7 +44,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </svg>
     </button>
     <ul
-      class="sc-khLCKb eoshma"
+      class="sc-khLCKb fGWcoL"
       id="select-id_dropdown"
       role="listbox"
       tabindex="-1"

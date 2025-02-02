@@ -33,7 +33,7 @@ import ShowIcon from '../svg/ShowIcon.tsx';
 import UploadIcon from '../svg/UploadIcon.tsx';
 import WarningIcon from '../svg/WarningIcon.tsx';
 
-describe('Icons tests', () => {
+describe('Icon', () => {
   it('ArrowDownIcon matched the snapshot', () => {
     const { asFragment } = render(<ArrowDownIcon />);
     expect(asFragment()).toMatchSnapshot();

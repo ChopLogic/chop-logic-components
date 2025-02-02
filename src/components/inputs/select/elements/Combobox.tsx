@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledSelectCombobox } from '@elements/styled/Select.styled';
+import { StyledSelectCombobox } from '@css/common/Select.styled';
 import ArrowDownIcon from '@icons/svg/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@icons/svg/ArrowUpIcon.tsx';
 import { ChopLogicSelectValue, ChopLogicTheme } from '@models';

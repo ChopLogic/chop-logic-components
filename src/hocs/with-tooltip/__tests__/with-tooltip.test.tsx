@@ -1,7 +1,8 @@
 import React from 'react';
-import { withTooltip } from '@hocs';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
+import { withTooltip } from '../index.tsx';
 
 vi.mock('@components', () => ({
   ChopLogicTooltip: ({ children, tooltipContent }: { tooltipContent: string } & React.PropsWithChildren) => (

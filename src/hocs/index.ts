@@ -1,1 +1,1 @@
-export { withTooltip } from './with-tooltip.tsx';
+export { withTooltip } from './with-tooltip';

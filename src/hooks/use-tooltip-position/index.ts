@@ -4,20 +4,23 @@ import { useContainerDimensions } from '../use-container-dimensions';
 import { useWindowDimensions } from '../use-window-dimensions';
 
 type useTooltipPositionParams = {
-  wrapperRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
-  tooltipRef: React.RefObject<HTMLSpanElement | HTMLDivElement>;
+  wrapperRef: React.RefObject<HTMLElement | null>;
+  tooltipRef: React.RefObject<HTMLElement | null>;
   isOpened: boolean;
   spacing?: number;
 };
 
 export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing = 4 }: useTooltipPositionParams) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
-  const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({ ref: tooltipRef, isVisible: isOpened });
+  const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({
+    ref: tooltipRef,
+    isVisible: isOpened,
+  });
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
 
   useEffect(() => {
-    if (isOpened && wrapperRef.current) {
-      const rect = wrapperRef.current.getBoundingClientRect();
+    if (isOpened && wrapperRef?.current) {
+      const rect = wrapperRef?.current.getBoundingClientRect();
 
       let top = Math.round(rect.bottom + spacing);
       let left = Math.round(rect.left);

@@ -6,19 +6,19 @@ exports[`SelectGridRowCheckbox > should match the snapshot 1`] = `
     <thead>
       <tr>
         <td
-          class="sc-ivxoEo iDeERW"
+          class="sc-jqVXSH hKHWJl"
         >
           <div
-            class="sc-khLCKb ckqcOZ"
+            class="sc-jHbxoU etyJJN"
           >
             <input
               checked=""
-              class="sc-dstKZu fRQuvz"
+              class="sc-cGXZpB gYAsLf"
               id="select_row_grid-id"
               type="checkbox"
             />
             <label
-              class="sc-jwIPbr bNBecw"
+              class="sc-jMLmsk jZqaTp"
               for="select_row_grid-id"
             >
               <svg

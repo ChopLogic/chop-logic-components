@@ -7,7 +7,6 @@ type WithTooltipProps = {
 };
 
 export function withTooltip<P extends object>(Component: React.ComponentType<P>): React.FC<P & WithTooltipProps> {
-  // eslint-disable-next-line react/display-name
   return ({ tooltip, visibleOn, ...props }: WithTooltipProps) =>
     tooltip?.length ? (
       <ChopLogicTooltip tooltipContent={tooltip} visibleOn={visibleOn}>

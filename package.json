@@ -14,20 +14,21 @@
     "/dist"
   ],
   "scripts": {
+    "start": "storybook dev -p 6006 --no-open",
+    "build:storybook": "storybook build  -- -o storybook-static --quiet",
+    "prepare": "npm run build && husky install",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix --quiet",
-    "check-types": "tsc --pretty --noEmit",
+    "types": "tsc --pretty --noEmit",
     "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
-    "coverage": "vitest run --coverage",
-    "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build  -- -o storybook-static --quiet",
-    "prepare": "npm run build && husky install"
+    "coverage": "vitest run --coverage"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npm run lint:fix",
       "prettier --write",
       "npm run test:ci"
     ]

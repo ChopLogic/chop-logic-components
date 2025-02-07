@@ -31,6 +31,40 @@ yarn add chop-logic-components
 
 ## Scripts
 
+### `start`
+
+Starts a local instance of Storybook for developing UI components. The Storybook interface will be available
+at http://localhost:6006.
+
+```bash
+npm start
+```
+
+### `build`
+
+Compiles the TypeScript code into JavaScript using the TypeScript compiler (tsc) and then builds the project using Vite.
+
+```bash
+npm run build
+```
+
+### `build:storybook`
+
+Builds the static version of the Storybook for deployment, outputting the files to the storybook-static directory. The
+--quiet flag suppresses the build logs.
+
+```bash
+npm run build:storybook
+```
+
+### `prepare`
+
+Runs the build script and then installs Husky hooks for managing Git hooks in the project.
+
+```bash
+npm run prepare
+```
+
 ### `format`
 
 Runs [Prettier](https://prettier.io/) to automatically format TypeScript files (`.ts` and `.tsx`) in the project. This
@@ -42,11 +76,18 @@ npm run format
 
 ### `lint`
 
-Runs ESLint to analyze the TypeScript code for potential errors and enforce coding standards. It automatically fixes
-issues where possible and uses the .gitignore file to ignore certain paths.
+Runs ESLint to analyze the code for potential errors and enforce coding standards.
 
 ```bash
 npm run lint
+```
+
+### `lint:fix`
+
+Runs ESLint and automatically fixes issues where possible.
+
+```bash
+npm run lint:fix
 ```
 
 ### `check-types`
@@ -55,15 +96,7 @@ Runs the TypeScript compiler (tsc) to perform type checking without generating o
 that the code adheres to TypeScript's type safety.
 
 ```bash
-npm run check-types
-```
-
-### `build`
-
-Compiles the TypeScript code into JavaScript using the TypeScript compiler (tsc) and then builds the project using Vite.
-
-```bash
-npm run build
+npm run types
 ```
 
 ### `test`
@@ -89,30 +122,4 @@ Runs unit tests using Vitest and generates a code coverage report using the v8 g
 
 ```bash
 npm run coverage
-```
-
-### `storybook`
-
-Starts a local instance of Storybook for developing UI components. The Storybook interface will be available
-at http://localhost:6006.
-
-```bash
-npm run storybook
-```
-
-### `build-storybook`
-
-Builds the static version of the Storybook for deployment, outputting the files to the storybook-static directory. The
---quiet flag suppresses the build logs.
-
-```bash
-npm run build-storybook
-```
-
-### `prepare`
-
-Runs the build script and then installs Husky hooks for managing Git hooks in the project.
-
-```bash
-npm run prepare
 ```

@@ -1,6 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
 import { ChopLogicTheme } from '../../../../models';
-
 type SelectAllGridRowsCheckbox = {
     rowId: string;
     isRowSelected: boolean;

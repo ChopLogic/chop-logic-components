@@ -1,5 +1,4 @@
 import { ChopLogicTheme } from '../../../models';
-
 export declare const StyledGrid: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../../../../node_modules/react').DetailedHTMLProps<import('../../../../node_modules/react').TableHTMLAttributes<HTMLTableElement>, HTMLTableElement>, never>> & string;
 export declare const StyledGridHeader: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<import('../../../../node_modules/react').DetailedHTMLProps<import('../../../../node_modules/react').HTMLAttributes<HTMLTableSectionElement>, HTMLTableSectionElement>, {
     $theme: ChopLogicTheme;

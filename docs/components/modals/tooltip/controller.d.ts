@@ -1,5 +1,4 @@
 import { default as React } from '../../../../node_modules/react';
-
 export declare const useChopLogicTooltipController: ({ id }: {
     id?: string;
 }) => {
@@ -11,6 +10,6 @@ export declare const useChopLogicTooltipController: ({ id }: {
     top: number;
     left: number;
     isOpened: boolean;
-    wrapperRef: React.MutableRefObject<null>;
-    tooltipRef: React.RefObject<HTMLDivElement>;
+    wrapperRef: React.RefObject<null>;
+    tooltipRef: React.RefObject<HTMLDivElement | null>;
 };

@@ -1,7 +1,6 @@
 import { default as React } from '../../../../../node_modules/react';
 import { ChopLogicOrientationMode } from '../../../../enums';
 import { ChopLogicTheme } from '../../../../models';
-
 type ChopLogicTabButtonProps = {
     title: string;
     tabId: string;

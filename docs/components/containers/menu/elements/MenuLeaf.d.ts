@@ -1,6 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
 import { ChopLogicMenuItem, ChopLogicTheme } from '../../../../models';
-
 type MenuLeafProps = {
     item: ChopLogicMenuItem;
     theme: ChopLogicTheme;

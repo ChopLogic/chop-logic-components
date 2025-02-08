@@ -1,6 +1,5 @@
 import { ReactElement } from '../../../node_modules/react';
 import { ChopLogicComponentProps } from '../common.ts';
-
 export interface ChopLogicGridProps extends ChopLogicComponentProps {
     columns: ChopLogicGridColumn[];
     data: ChopLogicGridItem[];

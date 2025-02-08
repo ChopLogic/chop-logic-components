@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '../../../../storybook/react';
 import { default as TooltipExample } from './Tooltip.example.tsx';
-
 declare const meta: Meta<typeof TooltipExample>;
 export default meta;
 type Story = StoryObj<typeof TooltipExample>;

@@ -1,6 +1,5 @@
 import { default as React, PropsWithChildren } from '../../../node_modules/react';
 import { ChopLogicTheme } from '../../models';
-
 type ChopLogicLabelProps = {
     label: string;
     required: boolean;

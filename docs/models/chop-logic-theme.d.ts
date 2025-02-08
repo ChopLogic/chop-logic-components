@@ -1,5 +1,4 @@
 import { ChopLogicThemeMode } from '../enums';
-
 export interface ChopLogicTheme {
     fontColorBase: string;
     fontColorLight: string;

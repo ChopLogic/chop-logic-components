@@ -1,5 +1,4 @@
 import { ChopLogicMultiSelectValue, ChopLogicSelectValue } from '../../../models';
-
 export declare function useChopLogicMultiSelectController({ name, defaultValue, onChange, options, }: {
     name: string;
     defaultValue?: string | number | readonly string[];

@@ -1,6 +1,5 @@
 import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
 import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '../../../models';
-
 export declare function useChopLogicTextInputController({ name, defaultValue, onChange, onClear, required, validator, }: {
     name: string;
     required: boolean;

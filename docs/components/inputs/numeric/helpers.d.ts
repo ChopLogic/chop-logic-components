@@ -1,5 +1,4 @@
 import { ChopLogicFormData, ChopLogicNumericInputValidator } from '../../../models';
-
 export declare function getNumericInputInitialValue({ name, initialValues, defaultValue, }: {
     name: string;
     initialValues?: ChopLogicFormData;

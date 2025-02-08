@@ -1,5 +1,4 @@
 import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '../../../models';
-
 export declare function getMultiSelectInitialValues({ name, options, initialValues, defaultValue, }: {
     name: string;
     options: ChopLogicSelectValue[];

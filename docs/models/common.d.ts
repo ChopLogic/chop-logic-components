@@ -1,5 +1,4 @@
 import { CSSProperties } from '../../node_modules/react';
-
 export interface ChopLogicComponentProps {
     id?: string;
     className?: string;

@@ -1,5 +1,4 @@
 import { ChopLogicFormData, ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '../../../models';
-
 export declare function validateTextInputValue({ value, required, validator, }: {
     value: string;
     required: boolean;

@@ -1,6 +1,5 @@
 import { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from '../../../node_modules/react';
 import { ChopLogicInputProps, ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '../common.ts';
-
 export interface ChopLogicTextInputProps extends ChopLogicInputProps {
     errorMessage?: string;
     clearable?: boolean;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { describe, expect, it } from 'vitest';
 
@@ -55,8 +54,8 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
-    expect((result[0] as React.ReactElement).props.children).toBe('TEST-ID');
-    expect((result[1] as React.ReactElement).props.children).toBe('123 MAIN ST');
+    expect((result[0] as any).props.children).toBe('TEST-ID');
+    expect((result[1] as any).props.children).toBe('123 MAIN ST');
   });
 
   it('should handle columns without a field by returning empty string', () => {

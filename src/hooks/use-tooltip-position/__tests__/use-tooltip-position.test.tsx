@@ -63,7 +63,6 @@ describe('useTooltipPosition', () => {
   it('should adjust position when tooltip overflows bottom of viewport', () => {
     const { wrapperRef, tooltipRef } = createMockRefs();
 
-    // @ts-expect-error possibly null
     wrapperRef.current.getBoundingClientRect = () => ({
       top: 500, // Close to bottom of the window
       left: 300,
@@ -90,7 +89,6 @@ describe('useTooltipPosition', () => {
   it('should adjust position when tooltip overflows right of viewport', () => {
     const { wrapperRef, tooltipRef } = createMockRefs();
 
-    // @ts-expect-error possibly null
     wrapperRef.current.getBoundingClientRect = () => ({
       top: 100,
       left: 750, // Near the right edge of window

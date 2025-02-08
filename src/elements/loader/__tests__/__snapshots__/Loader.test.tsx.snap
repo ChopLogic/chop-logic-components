@@ -3,7 +3,7 @@
 exports[`ChopLogicLoader > Arrow should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-blHHSb gjKlqY loader-class"
+    class="sc-KXCwU fMuuEW loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -15,7 +15,7 @@ exports[`ChopLogicLoader > Arrow should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Brackets should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-gtLWhw bTGoms loader-class"
+    class="sc-gyycJP jPLMni loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -27,7 +27,7 @@ exports[`ChopLogicLoader > Brackets should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Circle should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-egkSDF kglycs loader-class"
+    class="sc-eaUbBy ehDglX loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -39,7 +39,7 @@ exports[`ChopLogicLoader > Circle should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Dots should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-fAUdSK exeCBJ loader-class"
+    class="sc-gaZyOd gSEhCy loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -51,7 +51,7 @@ exports[`ChopLogicLoader > Dots should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Filler should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-dntaoT vcBve loader-class"
+    class="sc-dDvxFM bEhvXA loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -63,7 +63,7 @@ exports[`ChopLogicLoader > Filler should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Linear should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-ivxoEo SkWzp loader-class"
+    class="sc-jqVXSH bKYydS loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -75,7 +75,7 @@ exports[`ChopLogicLoader > Linear should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Pulse should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-ghWlax hokueD loader-class"
+    class="sc-gTrWKq fNFvdF loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -87,7 +87,7 @@ exports[`ChopLogicLoader > Pulse should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Rotation should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-kLhKbu cMrDQT loader-class"
+    class="sc-kuACkN mmmqi loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"
@@ -99,7 +99,7 @@ exports[`ChopLogicLoader > Rotation should match the snapshot 1`] = `
 exports[`ChopLogicLoader > Square should match the snapshot 1`] = `
 <DocumentFragment>
   <span
-    class="sc-ixGGxD eoFoNx loader-class"
+    class="sc-hWWBcw diftfd loader-class"
     id="loader-id"
     style="color: red;"
     tabindex="0"

@@ -34,7 +34,7 @@ const preview: Preview = {
     },
   },
 
-  tags: ['autodocs'],
+  tags: ['autodocs', 'autodocs'],
 };
 
 const withTheme: Decorator = (StoryFn, context) => {

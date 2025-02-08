@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 type useKeyPressParams = {
   keyCode: string;
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   onKeyPress: () => void;
 };
 

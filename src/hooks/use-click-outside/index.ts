@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
 type UseClickOutsideParams = {
-  ref: React.RefObject<HTMLElement>;
+  ref: React.RefObject<HTMLElement | null>;
   onClickOutsideHandler: () => void;
-  dependentRef?: React.RefObject<HTMLElement>;
+  dependentRef?: React.RefObject<HTMLElement | null>;
 };
 
 export const useClickOutside = ({ ref, onClickOutsideHandler, dependentRef }: UseClickOutsideParams): void => {

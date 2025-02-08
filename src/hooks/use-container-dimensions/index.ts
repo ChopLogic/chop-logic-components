@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Dimensions } from '../use-window-dimensions';
 
 type useContainerDimensionsParams = {
-  ref: React.RefObject<HTMLElement>;
+  ref: React.RefObject<HTMLElement | null>;
   isVisible?: boolean;
 };
 
@@ -11,7 +11,7 @@ export const useContainerDimensions = ({ ref, isVisible }: useContainerDimension
   const [dimensions, setDimensions] = useState<Dimensions>({ width: 0, height: 0 });
 
   useEffect(() => {
-    if (ref.current && isVisible) {
+    if (ref?.current && isVisible) {
       setDimensions({
         width: ref.current.offsetWidth,
         height: ref.current.offsetHeight,

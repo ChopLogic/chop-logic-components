@@ -16,7 +16,7 @@
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "build:storybook": "storybook build  -- -o storybook-static --quiet",
-    "prepare": "npm run build && husky install",
+    "prepare": "npm run build && husky",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix --quiet",

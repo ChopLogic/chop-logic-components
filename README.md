@@ -6,22 +6,23 @@
 [![GitHub Pages](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml)
 [![codecov](https://codecov.io/github/SavouryGin/chop-logic-components/graph/badge.svg?token=U5WF25WZTV)](https://codecov.io/github/SavouryGin/chop-logic-components)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
 
-## About the Library
+## ✨ Features
 
 Chop Logic is designed to speed up development by providing reusable, accessible, and highly customizable components.
 Whether you're building complex forms, creating dynamic layouts, or managing component logic with hooks, Chop Logic
 Components has the tools to make it easier.
 
-## Links
+## 🔗 Links
 
 - [Storybook Playground](https://savourygin.github.io/chop-logic-components)
 - [NPM package](https://www.npmjs.com/package/chop-logic-components)
 
-## Getting Started
+## 📦 Installation
 
 To get started with Chop Logic, install it via npm or yarn:
 
@@ -31,7 +32,7 @@ npm install chop-logic-components
 yarn add chop-logic-components
 ```
 
-## Scripts
+## ⚙️ Available Scripts
 
 ### `start`
 
@@ -125,3 +126,18 @@ Runs unit tests using Vitest and generates a code coverage report using the v8 g
 ```bash
 npm run coverage
 ```
+
+## 🛠 Contributing
+
+Contributions are welcome! If you find a bug or have an idea for improvement, feel free to open an issue or submit a
+pull request. Please check the [Contribution guide](CONTRIBUTING.md) for additional info.
+
+1. Fork the repository.
+2. Clone your fork.
+3. Create a new feature branch.
+4. Implement and test your changes.
+5. Submit a pull request!
+
+---
+
+Let's build better logic tools together! 🚀

@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
 import { ChopLogicIconName } from '@enums';
+import { ChopLogicSVGElementProps } from '@models';
 
 const ArrowDownIcon = lazy(() => import('./svg/ArrowDownIcon.tsx'));
 const ArrowUpIcon = lazy(() => import('./svg/ArrowUpIcon.tsx'));
@@ -33,7 +34,7 @@ const ShowIcon = lazy(() => import('./svg/ShowIcon.tsx'));
 const UploadIcon = lazy(() => import('./svg/UploadIcon.tsx'));
 const WarningIcon = lazy(() => import('./svg/WarningIcon.tsx'));
 
-type LazyIcon = React.LazyExoticComponent<(props: React.SVGProps<SVGSVGElement>) => React.ReactElement>;
+type LazyIcon = React.LazyExoticComponent<({ title, ...rest }: ChopLogicSVGElementProps) => React.ReactElement>;
 
 type ChopLogicLazyIcons = { [key in ChopLogicIconName]: LazyIcon };
 

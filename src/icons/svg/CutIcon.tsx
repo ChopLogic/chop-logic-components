@@ -1,6 +1,6 @@
-import React from 'react';
+import { ChopLogicSVGElementProps } from '@models';
 
-function CutIcon(props: React.SVGProps<SVGSVGElement>) {
+function CutIcon({ title, ...rest }: ChopLogicSVGElementProps) {
   return (
     <svg
       fill='none'
@@ -12,9 +12,9 @@ function CutIcon(props: React.SVGProps<SVGSVGElement>) {
       height='1em'
       width='1em'
       role='img'
-      {...props}
+      {...rest}
     >
-      <title>Cut</title>
+      {title && <title>{title}</title>}
       <path stroke='none' d='M0 0h24v24H0z' />
       <path d='M10 17 A3 3 0 0 1 7 20 A3 3 0 0 1 4 17 A3 3 0 0 1 10 17 z' />
       <path d='M20 17 A3 3 0 0 1 17 20 A3 3 0 0 1 14 17 A3 3 0 0 1 20 17 z' />

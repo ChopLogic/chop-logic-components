@@ -20,7 +20,7 @@ export type {
   ChopLogicFormValidationState,
 } from './components/form.ts';
 export type { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicGridProps, RenderDataItemCallback } from './components/grid.ts';
-export type { ChopLogicIconProps } from './components/icon.ts';
+export type { ChopLogicIconProps, ChopLogicSVGElementProps } from './components/icon.ts';
 export type { ChopLogicLoaderProps } from './components/loader.ts';
 export type { ChopLogicMenuItem, ChopLogicMenuProps } from './components/menu.ts';
 export type { ChopLogicMultiSelectProps } from './components/multi-select.ts';

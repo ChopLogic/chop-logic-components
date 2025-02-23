@@ -1,9 +1,9 @@
-import React from 'react';
+import { ChopLogicSVGElementProps } from '@models';
 
-function RemoveIcon(props: React.SVGProps<SVGSVGElement>) {
+function RemoveIcon({ title, ...rest }: ChopLogicSVGElementProps) {
   return (
-    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...props}>
-      <title>Remove</title>
+    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
+      {title && <title>{title}</title>}
       <path
         fill='none'
         stroke='currentColor'

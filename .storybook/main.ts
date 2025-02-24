@@ -5,7 +5,7 @@ const config: StorybookConfig = {
 
   staticDirs: ['../public'], //👈 Configures the static asset folder in Storybook
 
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-mdx-gfm'],
 
   framework: {
     name: '@storybook/react-vite',

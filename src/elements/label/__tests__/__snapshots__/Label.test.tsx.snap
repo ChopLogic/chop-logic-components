@@ -46,12 +46,22 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
     class="sc-eaUbBy dNeDud"
     for="test-input-id"
   >
-    <span
-      aria-label="SVG Icon Fallback"
-      style="font-size: 1rem;"
+    <svg
+      fill="currentColor"
+      height="1em"
+      role="img"
+      viewBox="0 0 512 512"
+      width="1em"
     >
-      ⬜
-    </span>
+      <path
+        d="M328 112L184 256l144 144"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="48"
+      />
+    </svg>
     <span>
       Test label
     </span>
@@ -65,12 +75,22 @@ exports[`ChopLogicLabel > should render right icon 1`] = `
     class="sc-eaUbBy dNeDud"
     for="test-input-id"
   >
-    <span
-      aria-label="SVG Icon Fallback"
-      style="font-size: 1rem;"
+    <svg
+      fill="currentColor"
+      height="1em"
+      role="img"
+      viewBox="0 0 512 512"
+      width="1em"
     >
-      ⬜
-    </span>
+      <path
+        d="M184 112l144 144-144 144"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="48"
+      />
+    </svg>
     <span>
       Test label
     </span>

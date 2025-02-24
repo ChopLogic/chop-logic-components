@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Icon > ArrowDownIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 1`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -16,7 +16,7 @@ exports[`Icon > ArrowDownIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ArrowUpIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 2`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -32,7 +32,7 @@ exports[`Icon > ArrowUpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > BackIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 3`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -53,7 +53,7 @@ exports[`Icon > BackIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > CancelIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 4`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -69,23 +69,7 @@ exports[`Icon > CancelIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > CheckMarkIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 512 512"
-    width="1em"
-  >
-    <path
-      d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > CheckboxCheckedIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 5`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -102,7 +86,7 @@ exports[`Icon > CheckboxCheckedIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > CheckboxUncheckedIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 6`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -119,7 +103,23 @@ exports[`Icon > CheckboxUncheckedIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ChevronDownIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 7`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 512 512"
+    width="1em"
+  >
+    <path
+      d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 8`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -136,41 +136,7 @@ exports[`Icon > ChevronDownIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ChevronLeftIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 16 16"
-    width="1em"
-  >
-    <path
-      d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
-      fill-rule="evenodd"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > ChevronRightIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 16 16"
-    width="1em"
-  >
-    <path
-      d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
-      fill-rule="evenodd"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > ChevronUpIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 9`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -187,7 +153,41 @@ exports[`Icon > ChevronUpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ClearIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 10`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 11`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 12`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -206,7 +206,7 @@ exports[`Icon > ClearIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > CopyIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 13`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -228,7 +228,7 @@ exports[`Icon > CopyIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > CutIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 14`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -258,7 +258,7 @@ exports[`Icon > CutIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > DeleteIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 15`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -274,7 +274,7 @@ exports[`Icon > DeleteIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > DownloadIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 16`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -290,7 +290,7 @@ exports[`Icon > DownloadIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ErrorIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 17`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -309,7 +309,7 @@ exports[`Icon > ErrorIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > ForwardIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 18`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -330,7 +330,7 @@ exports[`Icon > ForwardIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > GraduateIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 19`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -346,7 +346,7 @@ exports[`Icon > GraduateIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > HelpIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 20`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -362,7 +362,7 @@ exports[`Icon > HelpIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > HideIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 21`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -378,7 +378,7 @@ exports[`Icon > HideIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > HomeIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 22`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -394,7 +394,7 @@ exports[`Icon > HomeIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > InfoIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 23`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -413,7 +413,7 @@ exports[`Icon > InfoIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > LoginIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 24`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -429,7 +429,7 @@ exports[`Icon > LoginIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > PasteIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 25`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -445,7 +445,7 @@ exports[`Icon > PasteIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > QuestionIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 26`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -476,7 +476,81 @@ exports[`Icon > QuestionIcon matched the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon > RemoveIcon matched the snapshot 1`] = `
+exports[`SVG Icons > should match the snapshot 27`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 1024 1024"
+    width="1em"
+  >
+    <path
+      d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 28`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M12 9a3.02 3.02 0 00-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"
+    />
+    <path
+      d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 29`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 16 16"
+    width="1em"
+  >
+    <path
+      d="M.5 9.9a.5.5 0 01.5.5v2.5a1 1 0 001 1h12a1 1 0 001-1v-2.5a.5.5 0 011 0v2.5a2 2 0 01-2 2H2a2 2 0 01-2-2v-2.5a.5.5 0 01.5-.5z"
+    />
+    <path
+      d="M7.646 1.146a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8.5 2.707V11.5a.5.5 0 01-1 0V2.707L5.354 4.854a.5.5 0 11-.708-.708l3-3z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 30`] = `
+<DocumentFragment>
+  <svg
+    fill="currentColor"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M4 20v-6a8 8 0 1116 0v6h1v2H3v-2h1zm2 0h12v-6a6 6 0 10-12 0v6zm5-18h2v3h-2V2zm8.778 2.808l1.414 1.414-2.12 2.121-1.415-1.414 2.121-2.121zM2.808 6.222l1.414-1.414 2.121 2.12L4.93 8.344 2.808 6.222zM7 14a5 5 0 015-5v2a3 3 0 00-3 3H7z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 31`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -499,80 +573,6 @@ exports[`Icon > RemoveIcon matched the snapshot 1`] = `
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="32"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > SaveIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 1024 1024"
-    width="1em"
-  >
-    <path
-      d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > ShowIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 24 24"
-    width="1em"
-  >
-    <path
-      d="M12 9a3.02 3.02 0 00-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"
-    />
-    <path
-      d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > UploadIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 16 16"
-    width="1em"
-  >
-    <path
-      d="M.5 9.9a.5.5 0 01.5.5v2.5a1 1 0 001 1h12a1 1 0 001-1v-2.5a.5.5 0 011 0v2.5a2 2 0 01-2 2H2a2 2 0 01-2-2v-2.5a.5.5 0 01.5-.5z"
-    />
-    <path
-      d="M7.646 1.146a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8.5 2.707V11.5a.5.5 0 01-1 0V2.707L5.354 4.854a.5.5 0 11-.708-.708l3-3z"
-    />
-  </svg>
-</DocumentFragment>
-`;
-
-exports[`Icon > WarningIcon matched the snapshot 1`] = `
-<DocumentFragment>
-  <svg
-    fill="currentColor"
-    height="1em"
-    role="img"
-    viewBox="0 0 24 24"
-    width="1em"
-  >
-    <path
-      d="M0 0h24v24H0z"
-      fill="none"
-    />
-    <path
-      d="M4 20v-6a8 8 0 1116 0v6h1v2H3v-2h1zm2 0h12v-6a6 6 0 10-12 0v6zm5-18h2v3h-2V2zm8.778 2.808l1.414 1.414-2.12 2.121-1.415-1.414 2.121-2.121zM2.808 6.222l1.414-1.414 2.121 2.12L4.93 8.344 2.808 6.222zM7 14a5 5 0 015-5v2a3 3 0 00-3 3H7z"
     />
   </svg>
 </DocumentFragment>

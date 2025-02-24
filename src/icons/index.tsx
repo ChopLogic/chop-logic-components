@@ -1,44 +1,41 @@
-import React, { lazy } from 'react';
-import { ChopLogicIconName } from '@enums';
+import ArrowDownIcon from './svg/ArrowDownIcon.tsx';
+import ArrowUpIcon from './svg/ArrowUpIcon.tsx';
+import BackIcon from './svg/BackIcon.tsx';
+import CancelIcon from './svg/CancelIcon.tsx';
+import CheckboxCheckedIcon from './svg/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from './svg/CheckboxUncheckedIcon.tsx';
+import CheckMarkIcon from './svg/CheckMarkIcon.tsx';
+import ChevronDownIcon from './svg/ChevronDownIcon.tsx';
+import ChevronLeftIcon from './svg/ChevronLeftIcon.tsx';
+import ChevronRightIcon from './svg/ChevronRightIcon.tsx';
+import ChevronUpIcon from './svg/ChevronUpIcon.tsx';
+import ClearIcon from './svg/ClearIcon.tsx';
+import CopyIcon from './svg/CopyIcon.tsx';
+import CutIcon from './svg/CutIcon.tsx';
+import DeleteIcon from './svg/DeleteIcon.tsx';
+import DownloadIcon from './svg/DownloadIcon.tsx';
+import ErrorIcon from './svg/ErrorIcon.tsx';
+import ForwardIcon from './svg/ForwardIcon.tsx';
+import GraduateIcon from './svg/GraduateIcon.tsx';
+import HelpIcon from './svg/HelpIcon.tsx';
+import HideIcon from './svg/HideIcon.tsx';
+import HomeIcon from './svg/HomeIcon.tsx';
+import InfoIcon from './svg/InfoIcon.tsx';
+import LoginIcon from './svg/LoginIcon.tsx';
+import PasteIcon from './svg/PasteIcon.tsx';
+import QuestionIcon from './svg/QuestionIcon.tsx';
+import RemoveIcon from './svg/RemoveIcon.tsx';
+import SaveIcon from './svg/SaveIcon.tsx';
+import ShowIcon from './svg/ShowIcon.tsx';
+import UploadIcon from './svg/UploadIcon.tsx';
+import WarningIcon from './svg/WarningIcon.tsx';
 import { ChopLogicSVGElementProps } from '@models';
+import { ReactElement } from 'react';
+import { ChopLogicIconName } from '@enums';
 
-const ArrowDownIcon = lazy(() => import('./svg/ArrowDownIcon.tsx'));
-const ArrowUpIcon = lazy(() => import('./svg/ArrowUpIcon.tsx'));
-const BackIcon = lazy(() => import('./svg/BackIcon.tsx'));
-const CancelIcon = lazy(() => import('./svg/CancelIcon.tsx'));
-const CheckboxCheckedIcon = lazy(() => import('./svg/CheckboxCheckedIcon.tsx'));
-const CheckboxUncheckedIcon = lazy(() => import('./svg/CheckboxUncheckedIcon.tsx'));
-const CheckMarkIcon = lazy(() => import('./svg/CheckMarkIcon.tsx'));
-const ChevronDownIcon = lazy(() => import('./svg/ChevronDownIcon.tsx'));
-const ChevronLeftIcon = lazy(() => import('./svg/ChevronLeftIcon.tsx'));
-const ChevronRightIcon = lazy(() => import('./svg/ChevronRightIcon.tsx'));
-const ChevronUpIcon = lazy(() => import('./svg/ChevronUpIcon.tsx'));
-const ClearIcon = lazy(() => import('./svg/ClearIcon.tsx'));
-const CopyIcon = lazy(() => import('./svg/CopyIcon.tsx'));
-const CutIcon = lazy(() => import('./svg/CutIcon.tsx'));
-const DeleteIcon = lazy(() => import('./svg/DeleteIcon.tsx'));
-const DownloadIcon = lazy(() => import('./svg/DownloadIcon.tsx'));
-const ErrorIcon = lazy(() => import('./svg/ErrorIcon.tsx'));
-const ForwardIcon = lazy(() => import('./svg/ForwardIcon.tsx'));
-const GraduateIcon = lazy(() => import('./svg/GraduateIcon.tsx'));
-const HelpIcon = lazy(() => import('./svg/HelpIcon.tsx'));
-const HideIcon = lazy(() => import('./svg/HideIcon.tsx'));
-const HomeIcon = lazy(() => import('./svg/HomeIcon.tsx'));
-const InfoIcon = lazy(() => import('./svg/InfoIcon.tsx'));
-const LoginIcon = lazy(() => import('./svg/LoginIcon.tsx'));
-const PasteIcon = lazy(() => import('./svg/PasteIcon.tsx'));
-const QuestionIcon = lazy(() => import('./svg/QuestionIcon.tsx'));
-const RemoveIcon = lazy(() => import('./svg/RemoveIcon.tsx'));
-const SaveIcon = lazy(() => import('./svg/SaveIcon.tsx'));
-const ShowIcon = lazy(() => import('./svg/ShowIcon.tsx'));
-const UploadIcon = lazy(() => import('./svg/UploadIcon.tsx'));
-const WarningIcon = lazy(() => import('./svg/WarningIcon.tsx'));
+type ChopLogicIcons = { [key in ChopLogicIconName]: ({ title, ...rest }: ChopLogicSVGElementProps) => ReactElement };
 
-type LazyIcon = React.LazyExoticComponent<({ title, ...rest }: ChopLogicSVGElementProps) => React.ReactElement>;
-
-type ChopLogicLazyIcons = { [key in ChopLogicIconName]: LazyIcon };
-
-export const ChopLogicIconDictionary: ChopLogicLazyIcons = {
+export const ChopLogicIconDictionary: ChopLogicIcons = {
   [ChopLogicIconName.ArrowDown]: ArrowDownIcon,
   [ChopLogicIconName.ArrowUp]: ArrowUpIcon,
   [ChopLogicIconName.Back]: BackIcon,

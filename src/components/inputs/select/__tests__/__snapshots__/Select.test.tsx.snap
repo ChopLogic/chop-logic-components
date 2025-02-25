@@ -3,11 +3,11 @@
 exports[`ChopLogicSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kuACkN fZlNhy test-class"
+    class="sc-kfeOyU hWZXKh test-class"
     style="width: 400px;"
   >
     <label
-      class="sc-eaUbBy bSxvxj"
+      class="sc-dVBluf iIcrSJ"
       for="select-id"
     >
       <span>
@@ -19,7 +19,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-hWWBcw gemFJU"
+      class="sc-hRDKVd giImhw"
       id="select-id"
       name="language"
       role="combobox"
@@ -35,23 +35,20 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
         viewBox="0 0 24 24"
         width="1em"
       >
-        <title>
-          Arrow Down
-        </title>
         <path
           d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
         />
       </svg>
     </button>
     <ul
-      class="sc-jHbxoU dbgByn"
+      class="sc-jBIHhB kHAHZX"
       id="select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="sc-cGXZpB bNHQas"
+        class="sc-cMqPwU cMlBhU"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -62,7 +59,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-cGXZpB bNHQas"
+        class="sc-cMqPwU cMlBhU"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -73,7 +70,7 @@ exports[`ChopLogicSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-cGXZpB bNHQas"
+        class="sc-cMqPwU cMlBhU"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

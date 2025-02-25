@@ -5,21 +5,21 @@ exports[`GridRow > should match the snapshot 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-kuACkN iwlCMf"
+        class="sc-kfeOyU ioFPQ"
       >
         <td
-          class="sc-jqVXSH hKHWJl"
+          class="sc-jbAkgO iDHcDE"
         >
           <div
-            class="sc-jHbxoU cSJGmb"
+            class="sc-jBIHhB cwNRf"
           >
             <input
-              class="sc-cGXZpB gYAsLf"
+              class="sc-cMqPwU iHEMNf"
               id="select_row_item-1"
               type="checkbox"
             />
             <label
-              class="sc-jMLmsk jZqaTp"
+              class="sc-jHswkR gjmaAl"
               for="select_row_item-1"
             >
               <svg
@@ -29,9 +29,6 @@ exports[`GridRow > should match the snapshot 1`] = `
                 viewBox="0 0 16 16"
                 width="1em"
               >
-                <title>
-                  Checkbox Unchecked
-                </title>
                 <path
                   d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
                   fill="currentColor"
@@ -41,17 +38,17 @@ exports[`GridRow > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="sc-jqVXSH hKHWJl"
+          class="sc-jbAkgO iDHcDE"
         >
           Value 1
         </td>
         <td
-          class="sc-jqVXSH hKHWJl"
+          class="sc-jbAkgO iDHcDE"
         >
           Value 2
         </td>
         <td
-          class="sc-jqVXSH hKHWJl"
+          class="sc-jbAkgO iDHcDE"
         >
           <span>
             Value 3

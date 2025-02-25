@@ -3,11 +3,11 @@
 exports[`ChopLogicMultiSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kuACkN fZlNhy test-class"
+    class="sc-kfeOyU hWZXKh test-class"
     style="width: 400px;"
   >
     <label
-      class="sc-eaUbBy bSxvxj"
+      class="sc-dVBluf iIcrSJ"
       for="multi-select-id"
     >
       <span>
@@ -19,7 +19,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="sc-hWWBcw gemFJU"
+      class="sc-hRDKVd giImhw"
       id="multi-select-id"
       name="languages"
       role="combobox"
@@ -36,23 +36,20 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
         viewBox="0 0 24 24"
         width="1em"
       >
-        <title>
-          Arrow Down
-        </title>
         <path
           d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
         />
       </svg>
     </button>
     <ul
-      class="sc-jHbxoU dbgByn"
+      class="sc-jBIHhB kHAHZX"
       id="multi-select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="sc-cGXZpB sc-jZCRgm bNHQas llwcXm"
+        class="sc-cMqPwU sc-jUkaYT cMlBhU iBMEmI"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -64,9 +61,6 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
           viewBox="0 0 16 16"
           width="1em"
         >
-          <title>
-            Checkbox Unchecked
-          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -78,7 +72,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-cGXZpB sc-jZCRgm bNHQas llwcXm"
+        class="sc-cMqPwU sc-jUkaYT cMlBhU iBMEmI"
         id="583e8b60-0177-4e38-a423-4b1d5d0a2236"
         role="option"
         tabindex="0"
@@ -90,9 +84,6 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
           viewBox="0 0 16 16"
           width="1em"
         >
-          <title>
-            Checkbox Unchecked
-          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -104,7 +95,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-cGXZpB sc-jZCRgm bNHQas llwcXm"
+        class="sc-cMqPwU sc-jUkaYT cMlBhU iBMEmI"
         id="b20bea7b-8172-4d12-b172-d5feac02d863"
         role="option"
         tabindex="0"
@@ -116,9 +107,6 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
           viewBox="0 0 16 16"
           width="1em"
         >
-          <title>
-            Checkbox Unchecked
-          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"
@@ -130,7 +118,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="sc-cGXZpB sc-jZCRgm bNHQas llwcXm"
+        class="sc-cMqPwU sc-jUkaYT cMlBhU iBMEmI"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"
@@ -142,9 +130,6 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
           viewBox="0 0 16 16"
           width="1em"
         >
-          <title>
-            Checkbox Unchecked
-          </title>
           <path
             d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
             fill="currentColor"

@@ -1,3 +1,3 @@
-import * as React from 'react';
-declare const GraduateIcon: (props: React.SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
+import { ChopLogicSVGElementProps } from '../../models';
+declare const GraduateIcon: ({ title, ...rest }: ChopLogicSVGElementProps) => import("react/jsx-runtime").JSX.Element;
 export default GraduateIcon;

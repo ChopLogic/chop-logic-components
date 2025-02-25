@@ -1,3 +1,3 @@
-import { default as React } from '../../../node_modules/react';
-declare function PasteIcon(props: React.SVGProps<SVGSVGElement>): import("react/jsx-runtime").JSX.Element;
+import { ChopLogicSVGElementProps } from '../../models';
+declare function PasteIcon({ title, ...rest }: ChopLogicSVGElementProps): import("react/jsx-runtime").JSX.Element;
 export default PasteIcon;

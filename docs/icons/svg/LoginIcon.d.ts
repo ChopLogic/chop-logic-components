@@ -1,4 +1,3 @@
-import * as React from 'react';
-
-declare const LoginIcon: ({ title, ...rest }: ChopLogicSVGElementProps) => import('react/jsx-runtime').JSX.Element;
+import { ChopLogicSVGElementProps } from '../../models';
+declare const LoginIcon: ({ title, ...rest }: ChopLogicSVGElementProps) => import("react/jsx-runtime").JSX.Element;
 export default LoginIcon;

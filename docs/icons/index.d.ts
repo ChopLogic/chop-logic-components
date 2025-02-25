@@ -1,9 +1,8 @@
-import { default as React } from '../../node_modules/react';
+import { ChopLogicSVGElementProps } from '../models';
+import { ReactElement } from '../../node_modules/react';
 import { ChopLogicIconName } from '../enums';
-
-type LazyIcon = React.LazyExoticComponent<({ title, ...rest }: ChopLogicSVGElementProps) => React.ReactElement>;
-type ChopLogicLazyIcons = {
-  [key in ChopLogicIconName]: LazyIcon;
+type ChopLogicIcons = {
+    [key in ChopLogicIconName]: ({ title, ...rest }: ChopLogicSVGElementProps) => ReactElement;
 };
-export declare const ChopLogicIconDictionary: ChopLogicLazyIcons;
+export declare const ChopLogicIconDictionary: ChopLogicIcons;
 export {};

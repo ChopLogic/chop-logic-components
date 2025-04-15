@@ -27,7 +27,7 @@
     "coverage": "vitest run --coverage"
   },
   "lint-staged": {
-    "*.ts": [
+    "src/*.ts": [
       "npm run types"
     ],
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [

@@ -35,6 +35,7 @@ export default defineConfig({
       { find: '@contexts', replacement: path.resolve(__dirname, 'src/contexts') },
       { find: '@icons', replacement: path.resolve(__dirname, 'src/icons') },
       { find: '@hocs', replacement: path.resolve(__dirname, 'src/hocs') },
+      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
     ],
   },
   test: {

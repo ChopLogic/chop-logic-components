@@ -1,26 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES5", // Specifies the JavaScript version to target when transpiling code.
-    "useDefineForClassFields": true, // Enables the use of 'define' for class fields.
-    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Specifies the libraries available for the code.
-    "module": "ESNext", // Defines the module system to use for code generation.
-    "skipLibCheck": true, // Skips type checking of declaration files.
-
-    /* Bundler mode */
-    "moduleResolution": "bundler", // Specifies how modules are resolved when bundling.
-    "allowImportingTsExtensions": true, // Allows importing TypeScript files with extensions.
-    "resolveJsonModule": true, // Enables importing JSON modules.
-    "isolatedModules": true, // Ensures each file is treated as a separate module.
-    "noEmit": true, // Prevents TypeScript from emitting output files.
-    "jsx": "react-jsx", // Configures JSX support for React.
-
-    /* Linting */
-    "strict": true, // Enables strict type checking.
-    "noUnusedLocals": true, // Flags unused local variables.
-    "noUnusedParameters": true, // Flags unused function parameters.
-    "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
-    "declaration": true, // Generates declaration files for TypeScript.
-
+    "target": "ES5",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
     "baseUrl": "./src",
     "paths": {
       "@*": ["*"],
@@ -35,8 +30,8 @@
       "@icons/*": ["icons/*"],
       "@hocs/*": ["hocs/*"]
     },
-
     "types": ["node", "@testing-library/jest-dom"]
   },
-  "include": ["src"] // Specifies the directory to include when searching for TypeScript files.
+  "include": ["src"],
+  "exclude": ["src/**/__tests__/*"]
 }

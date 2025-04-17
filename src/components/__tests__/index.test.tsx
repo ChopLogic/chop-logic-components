@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import * as Exports from '../index.ts';
+import * as Exports from '../../index.ts';
 
 describe('Index File Exports', () => {
   it('should export all expected modules without throwing', () => {

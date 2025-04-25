@@ -1,3 +1,7 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='Contributing' />
+
 # Contributing to Chop Logic Components
 
 Thank you for your interest in contributing to **Chop Logic**! We appreciate your help in improving and maintaining this
@@ -7,9 +11,9 @@ project. Before you get started, please read through the guidelines below to ens
 
 - [Code of Conduct](#code-of-conduct)
 - [How to Contribute](#how-to-contribute)
-  - [Reporting Issues](#reporting-issues)
-  - [Submitting Pull Requests](#submitting-pull-requests)
-  - [Feature Requests](#feature-requests)
+- [Reporting Issues](#reporting-issues)
+- [Submitting Pull Requests](#submitting-pull-requests)
+- [Feature Requests](#feature-requests)
 - [Development Workflow](#development-workflow)
 - [Commit Rules](#commit-rules)
 - [Branch Names](#branch-names)
@@ -37,32 +41,23 @@ our [GitHub issue tracker](https://github.com/SavouryGin/chop-logic-components/i
 ### Submitting Pull Requests
 
 1. **Fork the repository** and create a new branch:
-
-   ```sh
-   git checkout -b feat/your-feature-name
-   ```
-
+  ```sh
+  git checkout -b feat/your-feature-name
+  ```
 2. **Make your changes**, ensuring they align with our [coding guidelines](#coding-guidelines).
-
 3. **Run tests** locally before submitting:
-
-   ```sh
-   npm run test
-   ```
-
+  ```sh
+  npm run test
+  ```
 4. **Commit your changes** with a meaningful message
-   following [Conventional Commits](https://www.conventionalcommits.org/):
-
-   ```sh
-   git commit -m "feat: add new button variant"
-   ```
-
+following [Conventional Commits](https://www.conventionalcommits.org/):
+  ```sh
+  git commit -m "feat: add new button variant"
+  ```
 5. **Push your changes** to your forked repository:
-
-   ```sh
-   git push origin feat/your-feature-name
-   ```
-
+  ```sh
+  git push origin feat/your-feature-name
+  ```
 6. **Open a pull request (PR)** against the `main` branch and fill in the provided PR template.
 
 #### Pull Request Guidelines
@@ -83,24 +78,18 @@ We welcome feature requests! Please open an issue and describe:
 ## Development Workflow
 
 1. Clone the repository:
-
-   ```sh
-   git clone git@github.com:SavouryGin/chop-logic-components.git
-   cd chop-logic-components
-   ```
-
+  ```sh
+  git clone git@github.com:SavouryGin/chop-logic-components.git
+  cd chop-logic-components
+  ```
 2. Install dependencies:
-
-   ```sh
-   npm install
-   ```
-
+  ```sh
+  npm install
+  ```
 3. Start development server:
-
-   ```sh
-   npm start
-   ```
-
+  ```sh
+  npm start
+  ```
 4. Make changes and test using Storybook.
 
 ## Commit Rules
@@ -148,12 +137,16 @@ Please follow these guidelines to maintain code consistency:
 ## Testing
 
 We use **Vitest** and **React Testing Library** for testing. Ensure all tests pass before submitting changes:
-
 ```sh
 npm run test
 ```
 
 Write tests for new components and features to maintain quality and prevent regressions.
+
+To check the code coverage run:
+```sh
+npm run coverage
+```
 
 ## License
 

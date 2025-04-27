@@ -5,7 +5,7 @@ exports[`ChopLogicTabButton > should match the snapshot 1`] = `
   <button
     aria-controls="panel-id-1"
     aria-selected="true"
-    class="sc-FEMpB hrsTQd"
+    class="sc-Qotzb cfenZl"
     id="id-1"
     role="tab"
   >
@@ -18,7 +18,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the first tab 1`] =
 <DocumentFragment>
   <div
     aria-labelledby="tab-1"
-    class="sc-gjcoXW fHRAKP"
+    class="sc-fYsHOw iUzDjf"
     id="tabpanel_tab-1"
     role="tabpanel"
   >
@@ -31,7 +31,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 <DocumentFragment>
   <div
     aria-labelledby="tab-2"
-    class="sc-gjcoXW fHRAKP"
+    class="sc-fYsHOw iUzDjf"
     id="tabpanel_tab-2"
     role="tabpanel"
   >
@@ -43,17 +43,17 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 exports[`ChopLogicTabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fLDLck jfygft test-class"
+    class="sc-fWnslK dCPoWu test-class"
     id="tabs-id"
   >
     <div
-      class="sc-dVBluf eXdGob"
+      class="sc-dKREkF eniMer"
       role="tablist"
     >
       <button
         aria-controls="tabpanel_tab-1"
         aria-selected="true"
-        class="sc-FEMpB eASVYi"
+        class="sc-Qotzb iDfHTy"
         id="tab-1"
         role="tab"
       >
@@ -62,7 +62,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-2"
         aria-selected="false"
-        class="sc-FEMpB gGghmO"
+        class="sc-Qotzb hKDILa"
         id="tab-2"
         role="tab"
       >
@@ -71,7 +71,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-3"
         aria-selected="false"
-        class="sc-FEMpB gGghmO"
+        class="sc-Qotzb hKDILa"
         id="tab-3"
         role="tab"
       >
@@ -80,7 +80,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="sc-gjcoXW fHRAKP"
+      class="sc-fYsHOw iUzDjf"
       id="tabpanel_tab-1"
       role="tabpanel"
     >

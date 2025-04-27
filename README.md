@@ -95,7 +95,7 @@ npm run lint:fix
 
 ### `check-types`
 
-Runs the TypeScript compiler (tsc) to perform type checking without generating output files. This script helps ensure
+Run the TypeScript compiler (tsc) to perform type checking without generating output files. This script helps ensure
 that the code adheres to TypeScript's type safety.
 
 ```bash
@@ -104,7 +104,7 @@ npm run types
 
 ### `test`
 
-Runs unit tests using Vitest, a fast testing framework designed for Vite projects.
+Run unit tests using Vitest, a fast testing framework designed for Vite projects.
 
 ```bash
 npm run test
@@ -112,7 +112,7 @@ npm run test
 
 ### `test:ci`
 
-Runs the tests in continuous integration (CI) mode with Vitest, providing a streamlined output suitable for automated
+Run the tests in continuous integration (CI) mode with Vitest, providing a streamlined output suitable for automated
 environments.
 
 ```bash
@@ -121,7 +121,7 @@ npm run test:ci
 
 ### `coverage`
 
-Runs unit tests using Vitest and generates a code coverage report using the v8 generator.
+Run unit tests using Vitest and generates a code coverage report using the v8 generator.
 
 ```bash
 npm run coverage

@@ -12,25 +12,11 @@ body:
       value: |
         Thanks for taking the time to report a bug! Please fill out the information below to help us diagnose the issue.
 
-  - type: input
-    id: bug_description
-    attributes:
-      label: "Describe the bug"
-      description: "A clear and concise description of what the bug is."
-      placeholder: "Example: Button component does not respond to clicks."
-    validations:
-      required: true
-
   - type: textarea
     id: reproduction_steps
     attributes:
       label: "Steps to Reproduce"
       description: "Steps to reproduce the behavior."
-      placeholder:
-        "1. Go to '...'
-        2. Click on '...'
-        3. Scroll down to '...'
-        4. See error"
     validations:
       required: true
 
@@ -49,15 +35,6 @@ body:
       label: "Actual Behavior"
       description: "What actually happened instead."
       placeholder: "The button did nothing."
-    validations:
-      required: true
-
-  - type: input
-    id: environment
-    attributes:
-      label: "Environment"
-      description: "Please provide details about your setup."
-      placeholder: "OS: Windows 10, Browser: Chrome 112, Version: 1.2.3"
     validations:
       required: true
 

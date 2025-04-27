@@ -22,15 +22,6 @@ body:
       required: true
 
   - type: textarea
-    id: problem_statement
-    attributes:
-      label: "Problem Statement"
-      description: "What problem does this feature solve?"
-      placeholder: "Users find it hard to use the app at night due to bright colors."
-    validations:
-      required: true
-
-  - type: textarea
     id: proposed_solution
     attributes:
       label: "Proposed Solution"
@@ -38,15 +29,6 @@ body:
       placeholder: "Implement a toggle to switch between light and dark themes."
     validations:
       required: true
-
-  - type: textarea
-    id: alternatives_considered
-    attributes:
-      label: "Alternatives Considered"
-      description: "Have you considered any alternative solutions or workarounds?"
-      placeholder: "Using third-party theme libraries, but they don't integrate well."
-    validations:
-      required: false
 
   - type: textarea
     id: additional_context

@@ -5,12 +5,12 @@ exports[`SubMenu > should match the snapshot 1`] = `
   <li
     aria-expanded="true"
     aria-haspopup="true"
-    class="sc-gDpztx eSPsMf"
+    class="sc-iQQCXo fxBHuL"
     role="menuitem"
     tabindex="0"
   >
     <span
-      class="sc-kpOvIu hDTLRS"
+      class="sc-gDpztx kIfLVN"
     >
       <span>
         <svg

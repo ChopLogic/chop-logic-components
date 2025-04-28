@@ -1,0 +1,22 @@
+.errorMessage {
+  display: none;
+  position: absolute;
+  max-width: 100%;
+  right: 0;
+  top: 72px;
+  opacity: 0.8;
+  z-index: var(--cl-z-index-popup);
+  background-color: var(--cl-background-color-base);
+  border: var(--cl-border-accent);
+  color: var(--cl-font-color-accent);
+  padding: var(--cl-gap-medium);
+  font-size: var(--cl-font-size-small);
+  font-family: var(--cl-font-family-core);
+  border-radius: var(--cl-block-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  pointer-events: none;
+
+  &__visible {
+    display: block;
+  }
+}

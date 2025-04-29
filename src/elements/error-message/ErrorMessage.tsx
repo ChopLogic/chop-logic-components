@@ -2,7 +2,6 @@ import React from 'react';
 import { ChopLogicTheme } from '@models';
 import { getClassName } from '@utils/get-class-name.ts';
 import styles from './ErrorMessage.module.scss';
-import '@styles/themes/light.scss';
 
 type ChopLogicErrorMessageProps = {
   errorId: string;

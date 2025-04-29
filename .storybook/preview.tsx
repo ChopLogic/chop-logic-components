@@ -3,6 +3,9 @@ import { Decorator } from '@storybook/react';
 import { ChopLogicThemeContext, ChopLogicThemeMode } from '../src';
 import { DARK_THEME, LIGHT_THEME } from '../src/css';
 import { STORY_WRAPPER_STYLES } from '@css/__docs__/story-wrapper-styles';
+import { ThemeMode } from '../src/contexts/theme';
+import { CLThemeProvider } from '../src/contexts/theme-provider';
+import { useMemo } from 'react';
 
 const preview: Preview = {
   parameters: {
@@ -38,15 +41,20 @@ const preview: Preview = {
 };
 
 const withTheme: Decorator = (StoryFn, context) => {
-  // Get the active theme value from the story parameter
   const { backgrounds } = context.globals;
   const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
   const mode = backgroundColor === DARK_THEME.backgroundColorBase ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+  const inferredMode = useMemo(() => {
+    return backgroundColor === DARK_THEME.backgroundColorBase ? ThemeMode.Dark : ThemeMode.Light; // Or match your theme colors
+  }, [backgroundColor]);
+
   return (
     <ChopLogicThemeContext.Provider value={{ mode }}>
-      <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
-        <StoryFn />
-      </div>
+      <CLThemeProvider inferredMode={inferredMode}>
+        <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
+          <StoryFn />
+        </div>
+      </CLThemeProvider>
     </ChopLogicThemeContext.Provider>
   );
 };

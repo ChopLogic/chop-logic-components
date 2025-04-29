@@ -1,4 +1,4 @@
-:root {
+.cl-components-light-theme {
   // Colors
   --cl-font-color-base: hsl(0, 0%, 24%);
   --cl-font-color-light: hsl(0, 0%, 62%);
@@ -14,18 +14,6 @@
     hsl(340deg 100% 32%) 92%,
     hsl(340deg 100% 16%) 100%
   );
-  // Fonts
-  --cl-font-family-core: Arial, Helvetica, sans-serif;
-  --cl-font-family-monospace: 'Courier New', Courier, monospace;
-  --cl-font-size-base: 1.2rem;
-  --cl-font-size-small: 0.8rem;
-  --cl-font-size-header: 2rem;
-  // Units
-  --cl-gap-small: 0.25rem;
-  --cl-gap-medium: 0.6rem;
-  --cl-gap-big: 1rem;
-  --cl-icon-size: 1.2rem;
-  --cl-block-border-radius: 0.25rem;
   // Shadows
   --cl-box-shadow: hsla(0, 0%, 0%, 0.15) 2.4px 2.4px 3.2px;
   --cl-text-shadow: 2.4px 2.4px 3.2px hsla(0, 0%, 0%, 0.3);
@@ -34,8 +22,4 @@
   --cl-border-light: 1px solid hsl(0, 0%, 89%);
   --cl-border-accent: 1px solid hsl(345, 100%, 47%);
   --cl-border-outline: 1px solid hsl(0, 0%, 24%);
-  // Z-indexes
-  --cl-z-index-base: 1;
-  --cl-z-index-popup: 100;
-  --cl-z-index-modal: 200;
 }

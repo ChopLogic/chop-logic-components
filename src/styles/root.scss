@@ -1,0 +1,21 @@
+@use '/src/styles/themes/light.scss';
+@use '/src/styles/themes/dark.scss';
+
+:root {
+  // Fonts
+  --cl-font-family-core: Arial, Helvetica, sans-serif;
+  --cl-font-family-monospace: 'Courier New', Courier, monospace;
+  --cl-font-size-base: 1.2rem;
+  --cl-font-size-small: 0.8rem;
+  --cl-font-size-header: 2rem;
+  // Units
+  --cl-gap-small: 0.25rem;
+  --cl-gap-medium: 0.6rem;
+  --cl-gap-big: 1rem;
+  --cl-icon-size: 1.2rem;
+  --cl-block-border-radius: 0.25rem;
+  // Z-indexes
+  --cl-z-index-base: 1;
+  --cl-z-index-popup: 100;
+  --cl-z-index-modal: 200;
+}

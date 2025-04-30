@@ -84,7 +84,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
           </span>
         )}
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={theme} />
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledNumericInput>
   );
 };

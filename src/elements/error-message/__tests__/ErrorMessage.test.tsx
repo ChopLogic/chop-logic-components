@@ -3,14 +3,11 @@ import { describe, expect, it } from 'vitest';
 
 import ChopLogicErrorMessage from '../ErrorMessage';
 
-import { DARK_THEME } from '@css';
-
 describe('ChopLogicErrorMessage', () => {
   const testProps = {
     errorId: 'test-error-id',
     visible: true,
     message: 'Incorrect input',
-    theme: DARK_THEME,
   };
 
   it('should match the snapshot', () => {

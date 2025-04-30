@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChopLogicTheme } from '@models';
 import { getClassName } from '@utils/get-class-name.ts';
 import styles from './ErrorMessage.module.scss';
 
@@ -9,7 +8,6 @@ type ChopLogicErrorMessageProps = {
   message?: string;
   testId?: string;
   style?: React.CSSProperties;
-  theme: ChopLogicTheme;
 };
 
 const ChopLogicErrorMessage: React.FC<ChopLogicErrorMessageProps> = ({

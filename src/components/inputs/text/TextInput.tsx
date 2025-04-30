@@ -85,7 +85,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           )}
         </span>
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={theme} />
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
     </StyledTextInput>
   );
 };

@@ -1,7 +1,8 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { CLThemeContext, ThemeMode } from '@contexts/theme.ts';
+import '@styles/root.scss';
 
-export const CLThemeProvider: FC<{ children: ReactNode; inferredMode?: ThemeMode }> = ({ children, inferredMode }) => {
+export const CLThemeProvider: FC<{ children: ReactNode; storybookMode?: ThemeMode }> = ({ children, storybookMode }) => {
   const [mode, setMode] = useState(ThemeMode.Light);
 
   useEffect(() => {
@@ -13,11 +14,11 @@ export const CLThemeProvider: FC<{ children: ReactNode; inferredMode?: ThemeMode
   }, [mode]);
 
   useEffect(() => {
-    if (inferredMode && typeof inferredMode === 'string') {
+    if (storybookMode && typeof storybookMode === 'string') {
       document.body.classList.remove(ThemeMode.Light, ThemeMode.Dark);
-      document.body.classList.add(inferredMode);
+      document.body.classList.add(storybookMode);
     }
-  }, [inferredMode]);
+  }, [storybookMode]);
 
   return <CLThemeContext.Provider value={{ mode, setMode }}>{children}</CLThemeContext.Provider>;
 };

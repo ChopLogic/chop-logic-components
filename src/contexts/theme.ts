@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-import '@styles/root.scss';
 
 export enum ThemeMode {
   Light = 'cl-components-light-theme',

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { ChopLogicIconDictionary } from '@icons';
+import { ChopLogicIconDictionary } from '@assets/icons';
 import { ChopLogicIconName } from '@enums';
 
 describe('SVG Icons', () => {

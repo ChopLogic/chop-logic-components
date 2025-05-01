@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChopLogicIcon } from '@elements';
 import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
-import CheckMarkIcon from '@icons/svg/CheckMarkIcon.tsx';
-import ErrorIcon from '@icons/svg/ErrorIcon.tsx';
-import HelpIcon from '@icons/svg/HelpIcon.tsx';
-import InfoIcon from '@icons/svg/InfoIcon.tsx';
-import WarningIcon from '@icons/svg/WarningIcon.tsx';
+import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
+import ErrorIcon from '@assets/icons/svg/ErrorIcon.tsx';
+import HelpIcon from '@assets/icons/svg/HelpIcon.tsx';
+import InfoIcon from '@assets/icons/svg/InfoIcon.tsx';
+import WarningIcon from '@assets/icons/svg/WarningIcon.tsx';
 
 export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
   if (title) return title;

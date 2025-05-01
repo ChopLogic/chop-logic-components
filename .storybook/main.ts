@@ -1,11 +1,24 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import remarkGfm from 'remark-gfm';
 
 const config: StorybookConfig = {
   stories: ['../src/**/__docs__/*.stories.tsx', '../src/**/__docs__/*.mdx'],
 
   staticDirs: ['../public'], //👈 Configures the static asset folder in Storybook
 
-  addons: ['@storybook/addon-essentials', '@storybook/addon-mdx-gfm'],
+  addons: [
+    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
+  ],
 
   framework: {
     name: '@storybook/react-vite',

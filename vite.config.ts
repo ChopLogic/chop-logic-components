@@ -36,6 +36,7 @@ export default defineConfig({
       { find: '@icons', replacement: path.resolve(__dirname, 'src/icons') },
       { find: '@hocs', replacement: path.resolve(__dirname, 'src/hocs') },
       { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
+      { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
     ],
   },
   test: {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ChopLogicLabel } from '@elements';
 import { useChopLogicTheme, useElementIds } from '@hooks';
-import CheckboxCheckedIcon from '@icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@icons/svg/CheckboxUncheckedIcon.tsx';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
 import { ChopLogicCheckboxProps } from '@models';
 
 import { StyledCheckbox } from './Checkbox.styled';

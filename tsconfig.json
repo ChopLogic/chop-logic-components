@@ -29,7 +29,8 @@
       "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
       "@hocs/*": ["hocs/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

@@ -72,14 +72,12 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
               label={`Decrement value for ${label}`}
               icon={ChopLogicIconName.ChevronLeft}
               disabled={disabled}
-              theme={theme}
             />
             <ChopLogicInputInnerButton
               onClick={increment}
               label={`Increment value for ${label}`}
               icon={ChopLogicIconName.ChevronRight}
               disabled={disabled}
-              theme={theme}
             />
           </span>
         )}

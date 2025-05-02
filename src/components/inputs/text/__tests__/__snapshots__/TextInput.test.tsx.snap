@@ -3,11 +3,11 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-cUiCeM hqYTaB test-class"
+    class="sc-jJAtPt cgGheU test-class"
     style="width: 600px;"
   >
     <label
-      class="sc-fYsHOw eGcpPU"
+      class="sc-Qotzb DuTOm"
       for="test-input-id"
     >
       <span>
@@ -29,7 +29,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="sc-Qotzb jShaxQ"
+          class="_inputButton_0d9f4d"
           type="button"
         >
           <svg
@@ -72,11 +72,11 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-cUiCeM hqYTaB test-class"
+    class="sc-jJAtPt cgGheU test-class"
     style="width: 600px;"
   >
     <label
-      class="sc-fYsHOw eGcpPU"
+      class="sc-Qotzb DuTOm"
       for="test-input-id"
     >
       <span>
@@ -104,7 +104,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="sc-Qotzb jShaxQ"
+          class="_inputButton_0d9f4d"
           type="button"
         >
           <svg

@@ -1,0 +1,33 @@
+@use '/src/styles/animations';
+@use '/src/styles/mixins';
+
+.inputButton {
+  @include animations.fade-in();
+
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--cl-font-size-small);
+  color: var(--cl-font-color-light);
+  padding: 0;
+
+  &:focus-visible {
+    outline: var(--cl-border-outline);
+    outline-offset: -1px;
+  }
+
+  &:hover {
+    color: var(--cl-font-color-accent);
+  }
+
+  svg {
+    cursor: pointer;
+    height: var(--cl-icon-size);
+    width: var(--cl-icon-size);
+  }
+
+  &[disabled] {
+    @include mixins.disabled();
+  }
+}

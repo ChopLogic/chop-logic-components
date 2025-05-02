@@ -4,7 +4,7 @@ exports[`InputInnerButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-label="Test input"
-    class="sc-fYsHOw bAaMGk"
+    class="_inputButton_0d9f4d"
     type="button"
   >
     <svg

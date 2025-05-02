@@ -5,14 +5,11 @@ import { describe, expect, it, vi } from 'vitest';
 
 import InputInnerButton from '../InputInnerButton';
 
-import { DARK_THEME } from '@css';
-
 describe('InputInnerButton', () => {
   const testProps = {
     onClick: vi.fn(),
     label: 'Test input',
     icon: ChopLogicIconName.Remove,
-    theme: DARK_THEME,
   };
 
   it('should match the snapshot', () => {

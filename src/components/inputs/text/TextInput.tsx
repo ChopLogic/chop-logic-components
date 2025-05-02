@@ -71,7 +71,6 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               label={`Clear input for ${label}`}
               icon={ChopLogicIconName.Remove}
               disabled={disabled}
-              theme={theme}
             />
           )}
           {isPasswordButtonVisible && (
@@ -80,7 +79,6 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               label='Toggle password visibility'
               icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
               disabled={disabled}
-              theme={theme}
             />
           )}
         </span>

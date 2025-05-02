@@ -3,7 +3,7 @@
 exports[`ChopLogicAlert > should have different headers depending on the mode 1`] = `
 <DocumentFragment>
   <header
-    class="sc-dCVDEO dmxPxv"
+    class="sc-kiMgGE MlSbq"
   >
     <h3>
       <svg
@@ -24,7 +24,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="sc-fWnslK clQvYw"
+      class="sc-dKREkF eRBOCa"
       type="button"
     >
       <svg
@@ -46,7 +46,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
 exports[`ChopLogicAlert > should have different headers depending on the mode 2`] = `
 <DocumentFragment>
   <header
-    class="sc-dCVDEO dmxPxv"
+    class="sc-kiMgGE MlSbq"
   >
     <h3>
       <svg
@@ -68,7 +68,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="sc-fWnslK clQvYw"
+      class="sc-dKREkF eRBOCa"
       type="button"
     >
       <svg
@@ -90,7 +90,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
 exports[`ChopLogicAlert > should have different headers depending on the mode 3`] = `
 <DocumentFragment>
   <header
-    class="sc-dCVDEO dmxPxv"
+    class="sc-kiMgGE MlSbq"
   >
     <h3>
       <svg
@@ -108,7 +108,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="sc-fWnslK clQvYw"
+      class="sc-dKREkF eRBOCa"
       type="button"
     >
       <svg
@@ -130,7 +130,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
 exports[`ChopLogicAlert > should have different headers depending on the mode 4`] = `
 <DocumentFragment>
   <header
-    class="sc-dCVDEO dmxPxv"
+    class="sc-kiMgGE MlSbq"
   >
     <h3>
       <svg
@@ -151,7 +151,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="sc-fWnslK clQvYw"
+      class="sc-dKREkF eRBOCa"
       type="button"
     >
       <svg
@@ -173,7 +173,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
 exports[`ChopLogicAlert > should have different headers depending on the mode 5`] = `
 <DocumentFragment>
   <header
-    class="sc-dCVDEO dmxPxv"
+    class="sc-kiMgGE MlSbq"
   >
     <h3>
       <svg
@@ -191,7 +191,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 5`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="sc-fWnslK clQvYw"
+      class="sc-dKREkF eRBOCa"
       type="button"
     >
       <svg

@@ -43,7 +43,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
 
   return (
     <StyledTextInput $theme={theme} {...rest}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <div>
         <input
           id={elementId}

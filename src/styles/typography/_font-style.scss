@@ -14,7 +14,7 @@
 ///   @include font-style(monospace, small, 500);
 ///   @include font-style(core, header, bold, 1.2, 0.02em);
 ///
-@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1.5, $letter-spacing: normal) {
+@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1, $letter-spacing: normal) {
   $core-font: steppe.$cl-core-font, Arial, Helvetica, sans-serif;
   $monospace-font: dita.$cl-monospace-font, 'Courier New', Courier, monospace;
 

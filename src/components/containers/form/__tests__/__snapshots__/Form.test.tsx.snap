@@ -3,15 +3,15 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-lixPIL heUijl form-class"
+    class="sc-cZSric bedDr form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
-      class="sc-jJAtPt cgGheU"
+      class="sc-cXawGu kgZile"
     >
       <label
-        class="sc-Qotzb DuTOm"
+        class="_label_87260b"
         for="first-name"
       >
         <span>
@@ -71,10 +71,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-jJAtPt cgGheU"
+      class="sc-cXawGu kgZile"
     >
       <label
-        class="sc-Qotzb DuTOm"
+        class="_label_87260b"
         for="last-name"
       >
         <span>
@@ -134,10 +134,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-cXawGu cQOLiU"
+      class="sc-jMsorb UPFjM"
     >
       <label
-        class="sc-Qotzb DuTOm"
+        class="_label_87260b"
         for="age"
       >
         <span>
@@ -205,10 +205,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-etfXYe bNAklo"
+      class="sc-lixPIL tzNlf"
     >
       <button
-        class="sc-dKREkF jVbJgu"
+        class="sc-fYsHOw fzNFET"
         type="reset"
       >
         <svg
@@ -228,7 +228,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="sc-fYsHOw iVkUJG"
+        class="sc-Qotzb drzrKY"
         type="submit"
       >
         <span

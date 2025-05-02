@@ -35,7 +35,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <StyledSelect ref={ref} $theme={theme} {...rest}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}

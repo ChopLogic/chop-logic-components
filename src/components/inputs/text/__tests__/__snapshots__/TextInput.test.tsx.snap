@@ -3,11 +3,11 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jJAtPt cgGheU test-class"
+    class="sc-cXawGu kgZile test-class"
     style="width: 600px;"
   >
     <label
-      class="sc-Qotzb DuTOm"
+      class="_label_87260b"
       for="test-input-id"
     >
       <span>
@@ -72,11 +72,11 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jJAtPt cgGheU test-class"
+    class="sc-cXawGu kgZile test-class"
     style="width: 600px;"
   >
     <label
-      class="sc-Qotzb DuTOm"
+      class="_label_87260b"
       for="test-input-id"
     >
       <span>

@@ -43,7 +43,6 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         isTextHidden={noLabel}
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}
-        theme={theme}
       />
     </StyledCheckbox>
   );

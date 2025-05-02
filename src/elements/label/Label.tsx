@@ -1,13 +1,10 @@
 import React, { PropsWithChildren } from 'react';
-import { ChopLogicTheme } from '@models';
-
-import { StyledLabel } from './Label.styled';
+import styles from './Label.module.scss';
 
 type ChopLogicLabelProps = {
   label: string;
   required: boolean;
   inputId: string;
-  theme: ChopLogicTheme;
   isTextHidden?: boolean;
   icon?: React.ReactElement;
   iconPosition?: 'left' | 'right';
@@ -18,7 +15,6 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
   label,
   required,
   inputId,
-  theme,
   icon,
   iconPosition,
   isTextHidden = false,
@@ -28,7 +24,7 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
   const isRightIconVisible = !!icon && iconPosition === 'right';
 
   return (
-    <StyledLabel htmlFor={inputId} style={style} $theme={theme}>
+    <label className={styles.label} htmlFor={inputId} style={style}>
       {isLeftIconVisible && icon}
       {!isTextHidden && (
         <span>
@@ -37,7 +33,7 @@ const ChopLogicLabel: React.FC<PropsWithChildren<ChopLogicLabelProps>> = ({
         </span>
       )}
       {isRightIconVisible && icon}
-    </StyledLabel>
+    </label>
   );
 };
 

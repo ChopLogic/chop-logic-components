@@ -1,0 +1,27 @@
+@use '/src/styles/typography';
+
+.label {
+  @include typography.font-style(core, small);
+  display: flex;
+  align-items: center;
+  gap: var(--cl-gap-small);
+  color: var(--cl-font-color-base);
+
+  &:hover {
+    text-shadow: var(--cl-text-shadow);
+    cursor: pointer;
+  }
+
+  & + span {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & abbr {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--cl-font-color-accent);
+    margin-left: var(--cl-gap-small);
+  }
+}

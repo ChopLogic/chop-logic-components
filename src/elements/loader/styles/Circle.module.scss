@@ -1,26 +1,27 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledFillerLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   width: 48px;
   height: 48px;
-  border: ${(props) => `10px solid ${props.$theme.fontColorLight}`};
   border-radius: 50%;
   position: relative;
-  transform: rotate(45deg);
-  box-sizing: border-box;
+  animation: circleRotateAnimation 1s linear infinite;
 
   &::before {
     content: '';
-    position: absolute;
     box-sizing: border-box;
-    inset: -10px;
+    position: absolute;
+    inset: 0;
     border-radius: 50%;
-    border: ${(props) => `10px solid ${props.$theme.fontColorAccent}`};
-    animation: prixClipFix 2s infinite linear;
+    border: 5px solid var(--cl-font-color-light);
+    animation: circleClipAnimation 2s linear infinite;
   }
 
-  @keyframes prixClipFix {
+  @keyframes circleRotateAnimation {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes circleClipAnimation {
     0% {
       clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
     }
@@ -37,4 +38,4 @@ export const StyledFillerLoader = styled.span<{ $theme: ChopLogicTheme }>`
       clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
     }
   }
-`;
+}

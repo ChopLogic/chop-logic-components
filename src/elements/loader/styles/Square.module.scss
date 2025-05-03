@@ -1,12 +1,9 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledSquareLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   width: 48px;
   height: 48px;
   display: inline-block;
   position: relative;
-  background: ${(props) => props.$theme.fontColorLight};
+  background: var(--cl-font-color-light);
   box-sizing: border-box;
   animation: flipSquareAnimation 1s linear infinite;
 
@@ -21,4 +18,4 @@ export const StyledSquareLoader = styled.span<{ $theme: ChopLogicTheme }>`
       transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
     }
   }
-`;
+}

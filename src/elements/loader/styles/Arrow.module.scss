@@ -1,10 +1,7 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledArrowLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   width: 48px;
   height: 48px;
-  border: ${(props) => `3px solid ${props.$theme.fontColorLight}`};
+  border: 3px solid var(--cl-font-color-light);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
@@ -19,7 +16,7 @@ export const StyledArrowLoader = styled.span<{ $theme: ChopLogicTheme }>`
     left: 20px;
     top: 31px;
     border: 10px solid transparent;
-    border-right-color: ${(props) => props.$theme.fontColorLight};
+    border-right-color: var(--cl-font-color-light);
     transform: rotate(-40deg);
   }
 
@@ -31,4 +28,4 @@ export const StyledArrowLoader = styled.span<{ $theme: ChopLogicTheme }>`
       transform: rotate(360deg);
     }
   }
-`;
+}

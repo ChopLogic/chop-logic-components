@@ -1,13 +1,10 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledDotsLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
   animation-fill-mode: both;
   animation: dotsFadeOutAnimation 1.8s infinite ease-in-out;
-  color: ${(props) => props.$theme.fontColorLight};
+  color: var(--cl-font-color-light);
   font-size: 7px;
   position: relative;
   text-indent: -9999em;
@@ -49,4 +46,4 @@ export const StyledDotsLoader = styled.span<{ $theme: ChopLogicTheme }>`
       box-shadow: 0 2.5em 0 0;
     }
   }
-`;
+}

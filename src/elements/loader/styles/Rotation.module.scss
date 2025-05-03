@@ -1,14 +1,10 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledRotationLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   width: 64px;
   height: 64px;
   position: relative;
-  background-image: ${(
-    props,
-  ) => `linear-gradient(${props.$theme.fontColorLight} 16px, transparent 0), linear-gradient(${props.$theme.fontColorAccent} 16px, transparent 0),
-      linear-gradient(${props.$theme.fontColorAccent} 16px, transparent 0), linear-gradient(${props.$theme.fontColorLight} 16px, transparent 0)`};
+  background-image:
+    linear-gradient(var(--cl-font-color-light) 16px, transparent 0), linear-gradient(var(--cl-font-color-accent) 16px, transparent 0),
+    linear-gradient(var(--cl-font-color-accent) 16px, transparent 0), linear-gradient(var(--cl-font-color-light) 16px, transparent 0);
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position:
@@ -35,4 +31,4 @@ export const StyledRotationLoader = styled.span<{ $theme: ChopLogicTheme }>`
       transform: rotate(360deg);
     }
   }
-`;
+}

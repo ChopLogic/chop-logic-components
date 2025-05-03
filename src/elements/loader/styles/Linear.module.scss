@@ -1,12 +1,9 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledLinearLoader = styled.span<{ $theme: ChopLogicTheme }>`
+.loader {
   display: block;
   position: relative;
   height: 12px;
   width: 80%;
-  border: ${(props) => `1px solid ${props.$theme.fontColorLight}`};
+  border: 1px solid var(--cl-font-color-light);
   border-radius: 10px;
   overflow: hidden;
 
@@ -14,7 +11,7 @@ export const StyledLinearLoader = styled.span<{ $theme: ChopLogicTheme }>`
     content: '';
     width: 40%;
     height: 100%;
-    background: ${(props) => props.$theme.fontColorAccent};
+    background: var(--cl-font-color-accent);
     position: absolute;
     top: 0;
     left: 0;
@@ -32,4 +29,4 @@ export const StyledLinearLoader = styled.span<{ $theme: ChopLogicTheme }>`
       transform: translateX(0%);
     }
   }
-`;
+}

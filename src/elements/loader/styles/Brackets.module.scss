@@ -1,8 +1,5 @@
-import { ChopLogicTheme } from '@models';
-import styled from 'styled-components';
-
-export const StyledBracketsLoader = styled.span<{ $theme: ChopLogicTheme }>`
-  color: ${(props) => props.$theme.fontColorLight};
+.loader {
+  color: var(--cl-font-color-light);
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 78px;
@@ -26,4 +23,4 @@ export const StyledBracketsLoader = styled.span<{ $theme: ChopLogicTheme }>`
       opacity: 0.5;
     }
   }
-`;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChopLogicPortal } from '@components';
 import { ChopLogicAlertMode } from '@enums';
-import { useChopLogicTheme, useMount } from '@hooks';
+import { useMount } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
-
-import ChopLogicAlertHeader from './elements/Header';
-import { StyledAlertContent, StyledAlertWrapper } from './Alert.styled';
+import AlertHeader from './elements/AlertHeader.tsx';
+import styles from './Alert.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   isOpened,
@@ -18,18 +18,17 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
 }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
-  const theme = useChopLogicTheme();
 
   if (!isMounted) return null;
 
   return (
     <ChopLogicPortal>
-      <StyledAlertWrapper $isClosing={isClosing} $theme={theme}>
-        <StyledAlertContent {...rest} $theme={theme}>
-          <ChopLogicAlertHeader title={title} onClose={onClose} mode={mode} icon={icon} theme={theme} />
+      <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
+        <div {...rest} className={styles.content}>
+          <AlertHeader title={title} onClose={onClose} mode={mode} icon={icon} />
           <p>{message}</p>
-        </StyledAlertContent>
-      </StyledAlertWrapper>
+        </div>
+      </div>
     </ChopLogicPortal>
   );
 };

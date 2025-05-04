@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicAlert from '../Alert';
-import ChopLogicAlertHeader from '../elements/Header';
+import ChopLogicAlertHeader from '../elements/AlertHeader.tsx';
 
 import { DARK_THEME } from '@css';
 

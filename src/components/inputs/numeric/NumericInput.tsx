@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
 import { ChopLogicIconName } from '@enums';
-import { useChopLogicTheme, useElementIds } from '@hooks';
+import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
-
 import { useChopLogicNumericInputController } from './controller';
-import { StyledNumericInput } from './NumericInput.styled';
+import styles from './NumericInput.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -26,10 +26,10 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
+  className,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
-  const theme = useChopLogicTheme();
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -41,9 +41,10 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
     step,
     onSpinButtonClick,
   });
+  const inputClass = getClassName([styles.numeric, className]);
 
   return (
-    <StyledNumericInput $theme={theme} {...rest}>
+    <div {...rest} className={inputClass}>
       <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <div>
         <input
@@ -83,7 +84,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
         )}
       </div>
       <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
-    </StyledNumericInput>
+    </div>
   );
 };
 

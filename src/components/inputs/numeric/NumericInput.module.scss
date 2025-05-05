@@ -1,7 +1,7 @@
 @use '/src/styles/typography';
 @use '/src/styles/mixins';
 
-.text {
+.numeric {
   display: flex;
   flex-direction: column;
   gap: var(--cl-gap-medium);
@@ -30,7 +30,6 @@
 
     & > span:nth-child(2) {
       display: flex;
-      gap: var(--cl-gap-small);
       align-items: center;
     }
   }
@@ -52,8 +51,14 @@
       outline: none;
     }
 
-    &:placeholder-shown + span {
-      display: none !important;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type='number'] {
+      -moz-appearance: textfield;
     }
   }
 }

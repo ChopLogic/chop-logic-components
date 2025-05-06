@@ -1,0 +1,59 @@
+@use '/src/styles/typography';
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-gap-medium);
+  position: relative;
+
+  & > div:nth-child(2) {
+    display: flex;
+    gap: var(--cl-gap-medium);
+    align-items: center;
+    border: var(--cl-border-light);
+    border-radius: var(--cl-block-border-radius);
+    padding: var(--cl-gap-medium);
+    background-color: var(--cl-background-color-base);
+
+    &:has(input:focus) {
+      border: var(--cl-border-outline);
+    }
+
+    &:has(input[aria-invalid='true']) {
+      border: var(--cl-border-accent);
+    }
+
+    &:has(input[disabled]) {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    & > span:nth-child(2) {
+      display: flex;
+      gap: var(--cl-gap-small);
+      align-items: center;
+    }
+  }
+
+  & input {
+    @include typography.font-style(core, base);
+    color: var(--cl-font-color-base);
+    padding: 0;
+    border: none;
+    display: inline-block;
+    background: transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex-grow: 1;
+    min-width: 0;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:placeholder-shown + span {
+      display: none !important;
+    }
+  }
+}

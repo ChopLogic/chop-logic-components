@@ -1,12 +1,12 @@
 import React from 'react';
 import { ChopLogicLabel } from '@elements';
-import { useChopLogicTheme, useElementIds } from '@hooks';
+import { useElementIds } from '@hooks';
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
 import { ChopLogicCheckboxProps } from '@models';
-
-import { StyledCheckbox } from './Checkbox.styled';
 import { useChopLogicCheckboxController } from './controller';
+import styles from './Checkbox.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,
@@ -18,14 +18,22 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   defaultChecked,
   onChange,
   id,
+  className,
   ...rest
 }) => {
   const { handleChange, checked } = useChopLogicCheckboxController({ name, defaultChecked, onChange });
   const { elementId } = useElementIds(id);
-  const theme = useChopLogicTheme();
+  const checkboxClass = getClassName([
+    styles.checkbox,
+    className,
+    {
+      [styles.checkbox__disabled]: !!disabled,
+      [styles.checkbox__checked]: checked,
+    },
+  ]);
 
   return (
-    <StyledCheckbox $disabled={!!disabled} $theme={theme} $checked={checked} {...rest}>
+    <div {...rest} className={checkboxClass}>
       <input
         id={elementId}
         name={name}
@@ -44,7 +52,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
         iconPosition={iconPosition}
       />
-    </StyledCheckbox>
+    </div>
   );
 };
 

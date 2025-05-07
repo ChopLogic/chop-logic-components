@@ -1,0 +1,48 @@
+@use '/src/styles/mixins';
+
+.checkbox {
+  display: flex;
+  gap: var(--cl-gap-medium);
+  padding: var(--cl-gap-medium) 0;
+  position: relative;
+  overflow: hidden;
+
+  & svg {
+    color: var(--cl-font-color-light);
+  }
+
+  &__checked {
+    svg {
+      color: var(--cl-font-color-accent);
+    }
+  }
+
+  &__disabled {
+    @include mixins.disabled();
+  }
+
+  & label {
+    cursor: pointer;
+    gap: var(--cl-gap-medium);
+    font-size: var(--cl-font-size-base) !important;
+
+    &:hover,
+    &:active {
+      text-shadow: var(--cl-text-shadow);
+    }
+  }
+
+  & input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 4px;
+    left: 0;
+    margin: 0;
+
+    &:focus-visible + label {
+      outline: var(--cl-border-outline);
+      outline-offset: 2px;
+    }
+  }
+}

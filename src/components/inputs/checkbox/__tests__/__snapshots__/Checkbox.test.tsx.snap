@@ -3,7 +3,7 @@
 exports[`ChopLogicCheckbox > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-Qotzb cbxCPJ"
+    class="_checkbox_6f69e4"
   >
     <input
       id="test-checkbox-id"

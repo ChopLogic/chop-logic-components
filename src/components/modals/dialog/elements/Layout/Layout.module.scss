@@ -1,0 +1,33 @@
+@use '/src/styles/typography';
+
+.layout {
+  @include typography.font-style(core, base);
+
+  z-index: var(--cl-z-index-modal);
+  background-color: var(--cl-background-color-base);
+  box-shadow: var(--cl-box-shadow);
+  color: var(--cl-font-color-base);
+
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: var(--cl-block-border-radius);
+  border-top-right-radius: var(--cl-block-border-radius);
+
+  @media only screen and (min-width: 768px) {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    min-width: 40%;
+    max-width: 90%;
+    max-height: 90%;
+    border-bottom-left-radius: var(--cl-block-border-radius);
+    border-bottom-right-radius: var(--cl-block-border-radius);
+  }
+}
+
+.content {
+  padding: var(--cl-gap-big);
+}

@@ -3,18 +3,18 @@
 exports[`ChopLogicButton > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="sc-dZEakj bMwbA-d button-class"
+    class="_primary_7a2b07 button-class"
     id="button-id"
     type="button"
   >
     <span
-      class="chop-logic-button_shadow"
+      class="_primary_shadow_7a2b07"
     />
     <span
-      class="chop-logic-button_edge"
+      class="_primary_edge_7a2b07"
     />
     <span
-      class="chop-logic-button_front"
+      class="_primary_front_7a2b07"
     >
       <svg
         fill="none"

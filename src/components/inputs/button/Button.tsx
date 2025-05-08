@@ -2,10 +2,9 @@ import React from 'react';
 import { ChopLogicIcon } from '@elements';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicButtonProps } from '@models';
-
-import { StyledFlatButton, StyledIconButton, StyledPrimaryButton } from './Button.styled';
+import styles from './Button.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,
@@ -16,50 +15,37 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   extended = false,
   type = 'button',
   view = ChopLogicButtonView.Primary,
+  className,
   ...rest
 }) => {
-  const theme = useChopLogicTheme();
+  const primaryClassName = getClassName([styles.primary, className, { [styles.primary__extended]: extended }]);
+  const flatClassName = getClassName([styles.flat, className]);
+  const iconClassName = getClassName([styles.icon, icon]);
 
   switch (view) {
     case ChopLogicButtonView.Primary:
       return (
-        <StyledPrimaryButton
-          $extended={extended}
-          aria-label={label}
-          type={type}
-          onClick={onClick}
-          disabled={disabled}
-          $theme={theme}
-          {...rest}
-        >
-          <span className='chop-logic-button_shadow'></span>
-          <span className='chop-logic-button_edge'></span>
-          <span className='chop-logic-button_front'>
+        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={primaryClassName}>
+          <span className={styles.primary_shadow}></span>
+          <span className={styles.primary_edge}></span>
+          <span className={styles.primary_front}>
             <ChopLogicIcon name={icon} />
             {text}
           </span>
-        </StyledPrimaryButton>
+        </button>
       );
     case ChopLogicButtonView.Flat:
       return (
-        <StyledFlatButton
-          $extended={extended}
-          aria-label={label}
-          type={type}
-          onClick={onClick}
-          disabled={disabled}
-          $theme={theme}
-          {...rest}
-        >
+        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={flatClassName}>
           <ChopLogicIcon name={icon} />
           {text}
-        </StyledFlatButton>
+        </button>
       );
     case ChopLogicButtonView.Icon:
       return (
-        <StyledIconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} $theme={theme} {...rest}>
+        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={iconClassName}>
           <ChopLogicIcon name={icon} />
-        </StyledIconButton>
+        </button>
       );
     default:
       return null;

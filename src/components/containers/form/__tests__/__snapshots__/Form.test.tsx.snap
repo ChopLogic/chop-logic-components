@@ -3,12 +3,12 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-cZSric bedDr form-class"
+    class="sc-jMsorb fQzMRG form-class"
     id="form-id"
     style="width: 500px;"
   >
     <div
-      class="sc-cXawGu kgZile"
+      class="sc-kpOvIu ftnFVf"
     >
       <label
         class="_label_87260b"
@@ -71,7 +71,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-cXawGu kgZile"
+      class="sc-kpOvIu ftnFVf"
     >
       <label
         class="_label_87260b"
@@ -134,7 +134,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-jMsorb UPFjM"
+      class="sc-gDpztx ibCvue"
     >
       <label
         class="_label_87260b"
@@ -205,10 +205,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-lixPIL tzNlf"
+      class="sc-cXawGu jEAFeg"
     >
       <button
-        class="sc-fYsHOw fzNFET"
+        class="_flat_7a2b07"
         type="reset"
       >
         <svg
@@ -228,17 +228,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="sc-Qotzb drzrKY"
+        class="_primary_7a2b07"
         type="submit"
       >
         <span
-          class="chop-logic-button_shadow"
+          class="_primary_shadow_7a2b07"
         />
         <span
-          class="chop-logic-button_edge"
+          class="_primary_edge_7a2b07"
         />
         <span
-          class="chop-logic-button_front"
+          class="_primary_front_7a2b07"
         >
           <svg
             fill="currentColor"

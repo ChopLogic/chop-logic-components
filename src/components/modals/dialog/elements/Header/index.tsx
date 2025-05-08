@@ -1,20 +1,17 @@
 import React from 'react';
 import { ChopLogicButton } from '@components';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
-import { ChopLogicTheme } from '@models';
-
-import { StyledDialogHeader } from '../Dialog.styled';
+import styles from './Header.module.scss';
 
 const ChopLogicModalLayoutHeader: React.FC<{
   title: string;
   onClose: () => void;
-  theme: ChopLogicTheme;
-}> = ({ title, onClose, theme }): React.ReactElement => {
+}> = ({ title, onClose }): React.ReactElement => {
   return (
-    <StyledDialogHeader $theme={theme}>
+    <header className={styles.header}>
       {title}
       <ChopLogicButton icon={ChopLogicIconName.Cancel} view={ChopLogicButtonView.Icon} label='Close modal window' onClick={onClose} />
-    </StyledDialogHeader>
+    </header>
   );
 };
 

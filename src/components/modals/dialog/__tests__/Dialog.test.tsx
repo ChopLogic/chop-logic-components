@@ -6,8 +6,6 @@ import ChopLogicDialog from '../Dialog';
 import ChopLogicModalLayoutHeader from '../elements/Header';
 import ChopLogicModalLayout from '../elements/Layout';
 
-import { LIGHT_THEME } from '@css';
-
 describe('ChopLogicDialog', () => {
   const testLayoutProps = {
     id: 'dialog-id',
@@ -38,7 +36,7 @@ describe('ChopLogicDialog', () => {
 
   it('should have the dialog role', () => {
     render(
-      <ChopLogicModalLayout {...testLayoutProps} theme={LIGHT_THEME} isOpened>
+      <ChopLogicModalLayout {...testLayoutProps} isOpened>
         <div>Dialog content</div>
       </ChopLogicModalLayout>,
     );
@@ -46,13 +44,13 @@ describe('ChopLogicDialog', () => {
   });
 
   it('should display the dialog title and the close button', () => {
-    render(<ChopLogicModalLayoutHeader theme={LIGHT_THEME} title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
+    render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     expect(screen.getByText(testLayoutProps.title)).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   it('should call onClose handler', async () => {
-    render(<ChopLogicModalLayoutHeader theme={LIGHT_THEME} title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
+    render(<ChopLogicModalLayoutHeader title={testLayoutProps.title} onClose={testLayoutProps.onClose} />);
     await userEvent.click(screen.getByRole('button'));
     expect(testLayoutProps.onClose).toHaveBeenCalledOnce();
   });

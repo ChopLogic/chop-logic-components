@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyledSelectCombobox } from '@css/common/Select.styled';
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
-import { ChopLogicSelectValue, ChopLogicTheme } from '@models';
+import { ChopLogicSelectValue } from '@models';
+import styles from '../Select.module.scss';
 
 type SelectComboboxProps = {
   opened: boolean;
@@ -14,7 +14,6 @@ type SelectComboboxProps = {
   selected?: ChopLogicSelectValue;
   placeholder?: string;
   name: string;
-  theme: ChopLogicTheme;
 };
 
 const SelectCombobox: React.FC<SelectComboboxProps> = ({
@@ -27,10 +26,9 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
   placeholder,
   disabled,
   required,
-  theme,
 }) => {
   return (
-    <StyledSelectCombobox
+    <button
       type='button'
       name={name}
       value={selected?.id}
@@ -42,11 +40,11 @@ const SelectCombobox: React.FC<SelectComboboxProps> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
-      $theme={theme}
+      className={styles.combobox}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
-    </StyledSelectCombobox>
+    </button>
   );
 };
 

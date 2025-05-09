@@ -1,0 +1,118 @@
+@use '/src/styles/typography';
+@use '/src/styles/mixins';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--cl-gap-medium);
+  background: transparent;
+}
+
+.combobox {
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--cl-gap-medium);
+  padding: var(--cl-gap-medium);
+  border: var(--cl-border-light);
+  border-radius: var(--cl-block-border-radius);
+  background-color: var(--cl-background-color-base);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  & > span:nth-child(1) {
+    @include typography.font-style(core, base);
+    color: var(--cl-font-color-base);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  svg {
+    cursor: pointer;
+    color: var(--cl-font-color-light);
+    height: var(--cl-icon-size);
+    width: var(--cl-icon-size);
+
+    &:hover {
+      color: var(--cl-font-color-base);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--cl-border-outline);
+    outline-offset: 2px;
+  }
+
+  &[disabled] {
+    @include mixins.disabled();
+  }
+}
+
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.3s linear;
+  position: absolute;
+  background: var(--cl-background-color-base);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: var(--cl-z-index-popup);
+  width: 100%;
+  top: 72px;
+  left: -1px;
+  border: var(--cl-border-light);
+  border-radius: var(--cl-block-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  overflow-y: auto;
+  max-height: 180px;
+
+  &__opened {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.option {
+  padding: var(--cl-gap-medium);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--cl-gap-medium);
+  @include typography.font-style(core, base);
+  color: var(--cl-font-color-base);
+
+  &:hover,
+  &:active {
+    color: var(--cl-font-color-accent);
+  }
+
+  &:focus-visible {
+    outline: var(--cl-border-outline);
+    outline-offset: -4px;
+  }
+
+  svg {
+    color: var(--cl-font-color-light);
+    width: var(--cl-icon-size);
+    height: var(--cl-icon-size);
+  }
+
+  &__selected {
+    svg {
+      color: var(--cl-font-color-accent);
+    }
+  }
+
+  &__multi {
+    justify-content: flex-start;
+  }
+}

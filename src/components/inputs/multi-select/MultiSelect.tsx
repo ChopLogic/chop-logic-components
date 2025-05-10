@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { StyledSelect } from '@css/common/Select.styled';
 import { ChopLogicLabel } from '@elements';
-import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@hooks';
+import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicMultiSelectProps } from '@models';
-
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import { useChopLogicMultiSelectController } from './controller';
+import styles from '../select/Select.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   options,
@@ -18,23 +18,24 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   onChange,
   defaultValue,
   id,
+  className,
   ...rest
 }) => {
   const ref = useRef(null);
   const { elementId, dropdownId } = useElementIds(id);
-  const theme = useChopLogicTheme();
   const { handleClose, handleSelect, handleToggle, opened, values } = useChopLogicMultiSelectController({
     name,
     options,
     defaultValue,
     onChange,
   });
+  const multiSelectClass = getClassName([styles.wrapper, className]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <StyledSelect ref={ref} $theme={theme} {...rest}>
+    <div ref={ref} {...rest} className={multiSelectClass}>
       <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
@@ -46,17 +47,9 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
         placeholder={placeholder}
         disabled={disabled}
         required={required}
-        theme={theme}
       />
-      <SelectDropdown
-        theme={theme}
-        options={values}
-        opened={opened}
-        onClose={handleClose}
-        dropdownId={dropdownId}
-        onSelect={handleSelect}
-      />
-    </StyledSelect>
+      <SelectDropdown options={values} opened={opened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
+    </div>
   );
 };
 

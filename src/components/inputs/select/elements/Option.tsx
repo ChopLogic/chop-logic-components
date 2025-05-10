@@ -9,18 +9,11 @@ type SelectOptionProps = {
   selected: boolean;
   onSelect: (id: string) => void;
   onClear: () => void;
-  multi?: boolean;
 };
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear, multi }) => {
+const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear }) => {
   const { id, label } = value;
-  const optionClass = getClassName([
-    styles.option,
-    {
-      [styles.option__selected]: selected,
-      [styles.option__multi]: multi,
-    },
-  ]);
+  const optionClass = getClassName([styles.option, { [styles.option__selected]: selected }]);
 
   const handleOptionSelect = (id: string) => {
     if (selected) {

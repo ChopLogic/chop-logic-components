@@ -3,7 +3,7 @@
 exports[`ChopLogicForm > should match the snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-fYsHOw czMefN form-class"
+    class="_form_732390 form-class _columns-1_732390"
     id="form-id"
     style="width: 500px;"
   >
@@ -205,7 +205,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </span>
     </div>
     <div
-      class="sc-dKREkF hrwrSm"
+      class="_buttons_732390 _buttons-1_732390"
     >
       <button
         class="_flat_7a2b07"

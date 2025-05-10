@@ -1,0 +1,28 @@
+@use '/src/styles/typography';
+
+.form {
+  display: grid;
+  align-items: end;
+  gap: var(--cl-gap-medium);
+  @include typography.font-style(core, base);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--cl-gap-big);
+}
+
+/// Generates `.columns-X` and `.buttons-X` for grid layouts
+$max-columns: 6;
+@for $i from 1 through $max-columns {
+  .columns-#{$i} {
+    grid-template-columns: repeat(#{$i}, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .buttons-#{$i} {
+    grid-column: 1 / #{$i + 1};
+  }
+}

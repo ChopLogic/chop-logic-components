@@ -1,10 +1,7 @@
 import { ChopLogicGridColumn } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-
 import GridColumnGroup from '../elements/ColumnGroup';
-
-import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicGridBody', () => {
   const columns: ChopLogicGridColumn[] = [
@@ -16,7 +13,7 @@ describe('ChopLogicGridBody', () => {
   it('should match the snapshot', () => {
     const { asFragment } = render(
       <table>
-        <GridColumnGroup columns={columns} selectable theme={LIGHT_THEME} />
+        <GridColumnGroup columns={columns} selectable />
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();

@@ -1,14 +1,8 @@
 import React from 'react';
-import { ChopLogicTheme } from '@models';
+import styles from '../Grid.module.scss';
 
-import { StyledGridHeaderCell } from '../Grid.styled';
-
-const GridHeaderCell: React.FC<{ title?: string; component?: React.ReactElement; theme: ChopLogicTheme }> = ({
-  title,
-  component,
-  theme,
-}) => {
-  return <StyledGridHeaderCell $theme={theme}>{component ?? title ?? ''}</StyledGridHeaderCell>;
+const GridHeaderCell: React.FC<{ title?: string; component?: React.ReactElement }> = ({ title, component }) => {
+  return <th className={styles.header_cell}>{component ?? title ?? ''}</th>;
 };
 
 export default GridHeaderCell;

@@ -1,23 +1,23 @@
 import React from 'react';
-import { ChopLogicGridColumn, ChopLogicTheme } from '@models';
+import { ChopLogicGridColumn } from '@models';
+import styles from '../Grid.module.scss';
+import { getClassName } from '@utils';
 
-import { StyledGridColumn } from '../Grid.styled';
-
-const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean; theme: ChopLogicTheme }> = ({
-  columns,
-  selectable,
-  theme,
-}) => {
+const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
   return (
     <colgroup>
-      {selectable && <StyledGridColumn $isFirst={true} $highlighted={false} $theme={theme} />}
+      {selectable && <col className={getClassName([styles.grid_column, styles.grid_column__first])} />}
       {columns.map((column, index) => (
-        <StyledGridColumn
-          $isFirst={index === 0 && !selectable}
+        <col
           key={column?.title}
-          $highlighted={!!column?.highlighted}
-          className={column?.className}
-          $theme={theme}
+          className={getClassName([
+            styles.grid_column,
+            column?.className,
+            {
+              [styles.grid_column__first]: index === 0 && !selectable,
+              [styles.grid_column__highlighted]: !!column?.highlighted,
+            },
+          ])}
         />
       ))}
     </colgroup>

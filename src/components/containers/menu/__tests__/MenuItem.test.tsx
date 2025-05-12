@@ -3,10 +3,7 @@ import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import MenuItem from '../elements/MenuItem';
-
-import { DARK_THEME } from '@css';
 
 vi.mock('../elements/SubMenu', () => ({
   default: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
@@ -37,12 +34,12 @@ describe('MenuItem', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<MenuItem item={nestedItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    const { asFragment } = render(<MenuItem item={nestedItem} mode={ChopLogicOrientationMode.Horizontal} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders MenuLeaf for leaf nodes', () => {
-    render(<MenuItem item={leafItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={leafItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toBeInTheDocument();
@@ -50,14 +47,14 @@ describe('MenuItem', () => {
   });
 
   it('renders SubMenu for non-leaf nodes', () => {
-    render(<MenuItem item={nestedItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={nestedItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
   });
 
   it('toggles SubMenu state when toggleSubMenu is called', () => {
-    render(<MenuItem item={nestedItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={nestedItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     const toggleButton = screen.getByText(/toggle submenu/i);
     fireEvent.click(toggleButton);
@@ -67,14 +64,14 @@ describe('MenuItem', () => {
   });
 
   it('renders nested items recursively', () => {
-    render(<MenuItem item={nestedItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={nestedItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     expect(screen.getByText('Child Item 1')).toBeInTheDocument();
     expect(screen.getByText('Child Item 2')).toBeInTheDocument();
   });
 
   it('passes correct props to SubMenu', () => {
-    render(<MenuItem item={nestedItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={nestedItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
@@ -83,7 +80,7 @@ describe('MenuItem', () => {
   });
 
   it('passes correct props to MenuLeaf', () => {
-    render(<MenuItem item={leafItem} theme={DARK_THEME} mode={ChopLogicOrientationMode.Horizontal} />);
+    render(<MenuItem item={leafItem} mode={ChopLogicOrientationMode.Horizontal} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toHaveTextContent('Leaf Item');

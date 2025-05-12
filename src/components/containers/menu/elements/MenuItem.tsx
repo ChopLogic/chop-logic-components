@@ -1,24 +1,26 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
-import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
-
-import { StyledSubMenuBar } from '../Meny.styled.ts';
-
+import { ChopLogicMenuItem } from '@models';
+import styles from '../Menu.module.scss';
 import MenuLeaf from './MenuLeaf';
 import SubMenu from './SubMenu.tsx';
+import { getClassName } from '@utils';
 
 type MenuItemProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
-  theme: ChopLogicTheme;
   mode: ChopLogicOrientationMode;
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, theme, mode }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ item, mode }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
+  const subMenuBarClass = getClassName([
+    styles.subMenuBar,
+    { [styles.subMenuBar__horizontal]: mode === ChopLogicOrientationMode.Horizontal },
+  ]);
 
   if (isLeaf) {
-    return <MenuLeaf item={item} theme={theme} />;
+    return <MenuLeaf item={item} />;
   }
 
   const toggleSubMenu = () => {
@@ -30,17 +32,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, theme, mode }) => {
   };
 
   return (
-    <SubMenu
-      item={item}
-      theme={theme}
-      isSubMenuOpened={isSubMenuOpened}
-      toggleSubMenu={toggleSubMenu}
-      closeSubMenu={closeSubMenu}
-      mode={mode}
-    >
-      <StyledSubMenuBar role='menu' aria-label={item.label} $theme={theme} $mode={mode}>
-        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} theme={theme} mode={mode} />)}
-      </StyledSubMenuBar>
+    <SubMenu item={item} isSubMenuOpened={isSubMenuOpened} toggleSubMenu={toggleSubMenu} closeSubMenu={closeSubMenu} mode={mode}>
+      <ul className={subMenuBarClass} role='menu' aria-label={item.label}>
+        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} mode={mode} />)}
+      </ul>
     </SubMenu>
   );
 };

@@ -1,0 +1,112 @@
+@use '/src/styles/animations';
+@use '/src/styles/typography';
+
+@mixin barStyles() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--cl-gap-small);
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.menuBar {
+  @include barStyles();
+
+  &__vertical {
+    flex-direction: column;
+  }
+}
+
+.subMenuBar {
+  @include barStyles();
+  @include animations.fade-in();
+
+  flex-direction: column;
+  padding-left: var(--cl-gap-big);
+  margin-left: var(--cl-gap-big);
+  margin-top: var(--cl-gap-small);
+  box-sizing: border-box;
+  border-left: var(--cl-border-light);
+
+  &__horizontal {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    width: max-content;
+    border-radius: var(--cl-block-border-radius);
+    border: var(--cl-border-light);
+    box-shadow: var(--cl-box-shadow);
+    background-color: var(--cl-background-color-base);
+    padding: var(--cl-gap-medium);
+    margin: 0;
+    z-index: var(--cl-z-index-popup);
+  }
+}
+
+.menuLeaf {
+  @include typography.font-style(core, base);
+  color: var(--cl-font-color-base);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--cl-gap-medium);
+  background-color: var(--cl-background-color-base);
+  padding: var(--cl-gap-medium);
+  border-radius: var(--cl-block-border-radius);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--cl-font-color-accent);
+  }
+
+  &:focus-visible {
+    outline: var(--cl-border-outline);
+  }
+}
+
+.subMenu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  position: relative;
+  border-radius: var(--cl-block-border-radius);
+
+  &:focus-visible {
+    outline: var(--cl-border-outline);
+  }
+}
+
+.text {
+  @include typography.font-style(core, base);
+  color: var(--cl-font-color-base);
+
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  gap: var(--cl-gap-medium);
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-color: var(--cl-background-color-base);
+  padding: var(--cl-gap-medium);
+  border-radius: var(--cl-block-border-radius);
+  cursor: pointer;
+
+  span {
+    display: flex;
+    gap: var(--cl-gap-medium);
+    align-items: center;
+  }
+
+  &:hover {
+    color: var(--cl-font-color-accent);
+  }
+}

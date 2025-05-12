@@ -1,10 +1,7 @@
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import SubMenu from '../elements/SubMenu';
-
-import { LIGHT_THEME } from '@css';
 
 vi.mock('@hooks', () => ({
   useClickOutside: vi.fn(),
@@ -31,7 +28,6 @@ describe('SubMenu', () => {
     const { asFragment } = render(
       <SubMenu
         item={itemWithoutLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={true}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
@@ -47,7 +43,6 @@ describe('SubMenu', () => {
     render(
       <SubMenu
         item={itemWithLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
@@ -63,7 +58,6 @@ describe('SubMenu', () => {
     render(
       <SubMenu
         item={itemWithoutLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
@@ -79,7 +73,6 @@ describe('SubMenu', () => {
     render(
       <SubMenu
         item={itemWithoutLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
@@ -97,7 +90,6 @@ describe('SubMenu', () => {
     render(
       <SubMenu
         item={itemWithoutLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
@@ -115,7 +107,6 @@ describe('SubMenu', () => {
     render(
       <SubMenu
         item={itemWithoutLink}
-        theme={LIGHT_THEME}
         isSubMenuOpened={true}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}

@@ -5,7 +5,7 @@ exports[`ChopLogicTabButton > should match the snapshot 1`] = `
   <button
     aria-controls="panel-id-1"
     aria-selected="true"
-    class="sc-Qotzb cfenZl"
+    class="_tabButton_edb29d _tabButton__vertical_edb29d _tabButton__selected_edb29d"
     id="id-1"
     role="tab"
   >
@@ -18,7 +18,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the first tab 1`] =
 <DocumentFragment>
   <div
     aria-labelledby="tab-1"
-    class="sc-fYsHOw iUzDjf"
+    class="_tabContent_edb29d"
     id="tabpanel_tab-1"
     role="tabpanel"
   >
@@ -31,7 +31,7 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 <DocumentFragment>
   <div
     aria-labelledby="tab-2"
-    class="sc-fYsHOw iUzDjf"
+    class="_tabContent_edb29d"
     id="tabpanel_tab-2"
     role="tabpanel"
   >
@@ -43,17 +43,17 @@ exports[`ChopLogicTabContent > should match the snapshot for the second tab 1`] 
 exports[`ChopLogicTabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fWnslK dCPoWu test-class"
+    class="_tabs_edb29d test-class"
     id="tabs-id"
   >
     <div
-      class="sc-dKREkF eniMer"
+      class="_tabList_edb29d"
       role="tablist"
     >
       <button
         aria-controls="tabpanel_tab-1"
         aria-selected="true"
-        class="sc-Qotzb iDfHTy"
+        class="_tabButton_edb29d _tabButton__selected_edb29d"
         id="tab-1"
         role="tab"
       >
@@ -62,7 +62,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-2"
         aria-selected="false"
-        class="sc-Qotzb hKDILa"
+        class="_tabButton_edb29d"
         id="tab-2"
         role="tab"
       >
@@ -71,7 +71,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-3"
         aria-selected="false"
-        class="sc-Qotzb hKDILa"
+        class="_tabButton_edb29d"
         id="tab-3"
         role="tab"
       >
@@ -80,7 +80,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="sc-fYsHOw iUzDjf"
+      class="_tabContent_edb29d"
       id="tabpanel_tab-1"
       role="tabpanel"
     >

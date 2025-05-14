@@ -1,23 +1,22 @@
 import React from 'react';
-import { StyledGridContainer, StyledGridTile } from '@css/__docs__/ExampleGridContainer.styled.tsx';
 import { ChopLogicIcon } from '@elements';
 import { ChopLogicIconName } from '@enums';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicIconProps } from '@models';
+import styles from '@styles/storybook/Grid.module.scss';
+import { getClassName } from '@utils';
 
 const IconExample: React.FC<ChopLogicIconProps> = () => {
   const iconNames = Object.values(ChopLogicIconName);
-  const theme = useChopLogicTheme();
 
   return (
-    <StyledGridContainer $columns={6}>
+    <div className={getClassName([styles.grid, styles.grid__medium])}>
       {iconNames.map((name) => (
-        <StyledGridTile key={name} $theme={theme} $size='5rem'>
+        <div key={name} className={styles.tile}>
           <ChopLogicIcon name={name} />
           <span>{name}</span>
-        </StyledGridTile>
+        </div>
       ))}
-    </StyledGridContainer>
+    </div>
   );
 };
 

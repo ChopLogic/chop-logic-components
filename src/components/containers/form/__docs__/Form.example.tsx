@@ -7,9 +7,8 @@ import {
   ChopLogicSelect,
   ChopLogicTextInput,
 } from '@components';
-import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
+import styles from '@styles/storybook/Container.module.scss';
 
 const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
   { id: 'lang-1', label: 'English' },
@@ -30,7 +29,6 @@ const inputStyles: React.CSSProperties = {
 
 const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   const [data, setData] = useState<ChopLogicFormData>();
-  const theme = useChopLogicTheme();
 
   const initialValues = {
     firstName: 'John',
@@ -73,7 +71,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
         <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
       </ChopLogicForm>
       {data && (
-        <ExampleDivContainer $theme={theme} style={{ marginTop: '2rem' }}>
+        <div className={styles.container} style={{ marginTop: '2rem' }}>
           <table style={{ textAlign: 'left' }}>
             <thead>
               <tr>
@@ -94,7 +92,7 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
               })}
             </tbody>
           </table>
-        </ExampleDivContainer>
+        </div>
       )}
     </div>
   );

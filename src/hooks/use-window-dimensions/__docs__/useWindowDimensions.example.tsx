@@ -1,17 +1,14 @@
-import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
-import { useChopLogicTheme } from '@hooks';
-
+import styles from '@styles/storybook/Container.module.scss';
 import { useWindowDimensions } from '..';
 
 const UseWindowDimensionsExample = () => {
   const { width, height } = useWindowDimensions();
-  const theme = useChopLogicTheme();
 
   return (
-    <ExampleDivContainer $theme={theme}>
+    <div className={styles.container}>
       <p>Window width: {width}px;</p>
       <p>Window height: {height}px;</p>
-    </ExampleDivContainer>
+    </div>
   );
 };
 

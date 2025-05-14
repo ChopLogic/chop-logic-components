@@ -1,11 +1,10 @@
 import React from 'react';
 import { ChopLogicPortal } from '@components';
 import { ChopLogicTooltipContainer } from '@enums';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicTooltipProps } from '@models';
-
 import { useChopLogicTooltipController } from './controller';
-import { StyledTooltip } from './Tooltip.styled';
+import { getClassName } from '@utils';
+import styles from './Tooltip.module.scss';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,
@@ -14,12 +13,13 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   visibleOn = 'hover',
   id,
   style,
+  className,
   ...rest
 }) => {
   const ContainerComponent = containerTag;
-  const theme = useChopLogicTheme();
   const { openTooltip, closeTooltip, toggleTooltip, handleContextMenu, elementId, top, left, isOpened, wrapperRef, tooltipRef } =
     useChopLogicTooltipController({ id });
+  const tooltipClass = getClassName([styles.tooltip, className]);
 
   return (
     <ContainerComponent
@@ -37,9 +37,9 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       {children}
       {isOpened && (
         <ChopLogicPortal>
-          <StyledTooltip style={{ ...style, top, left }} ref={tooltipRef} role='tooltip' id={elementId} $theme={theme} {...rest}>
+          <div style={{ ...style, top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest} className={tooltipClass}>
             {tooltipContent}
-          </StyledTooltip>
+          </div>
         </ChopLogicPortal>
       )}
     </ContainerComponent>

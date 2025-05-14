@@ -1,4 +1,3 @@
-export { useChopLogicTheme } from './use-chop-logic-theme';
 export { useClickOutside } from './use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions';
 export { useElementIds } from './use-element-ids';

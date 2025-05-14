@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
-import { ChopLogicThemeContext, ChopLogicThemeMode } from '../src';
 import { DARK_THEME, LIGHT_THEME } from '../src/css';
 import { STORY_WRAPPER_STYLES } from '@css/__docs__/story-wrapper-styles';
 import { ThemeMode } from '../src/contexts/theme';
@@ -42,17 +41,14 @@ const preview: Preview = {
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
   const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
-  const mode = backgroundColor === DARK_THEME.backgroundColorBase ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
   const storybookMode = backgroundColor === DARK_THEME.backgroundColorBase ? ThemeMode.Dark : ThemeMode.Light;
 
   return (
-    <ChopLogicThemeContext.Provider value={{ mode }}>
-      <CLThemeProvider storybookMode={storybookMode}>
-        <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
-          <StoryFn />
-        </div>
-      </CLThemeProvider>
-    </ChopLogicThemeContext.Provider>
+    <CLThemeProvider storybookMode={storybookMode}>
+      <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
+        <StoryFn />
+      </div>
+    </CLThemeProvider>
   );
 };
 

@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
-import { useChopLogicTheme } from '@hooks';
-
+import styles from '@styles/storybook/Container.module.scss';
 import { useMount } from '..';
 
 const UseMountExample = () => {
   const [isOpened, setIsOpened] = useState(false);
   const isMounted = useMount(isOpened, 1000);
-  const theme = useChopLogicTheme();
 
   return (
     <div>
       <button onClick={() => setIsOpened(!isOpened)}>Toggle Component</button>
-      {isMounted && <ExampleDivContainer $theme={theme}>Component is mounted!</ExampleDivContainer>}
+      {isMounted && <div className={styles.container}>Component is mounted!</div>}
     </div>
   );
 };

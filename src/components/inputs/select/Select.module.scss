@@ -1,5 +1,6 @@
 @use '/src/styles/typography';
 @use '/src/styles/mixins';
+@use '/src/styles/variables';
 
 .wrapper {
   position: relative;
@@ -64,7 +65,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: var(--cl-z-index-popup);
+  z-index: variables.$popup;
   width: 100%;
   top: 72px;
   left: -1px;

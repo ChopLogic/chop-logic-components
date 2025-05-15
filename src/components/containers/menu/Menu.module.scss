@@ -1,5 +1,6 @@
 @use '/src/styles/animations';
 @use '/src/styles/typography';
+@use '/src/styles/variables';
 
 @mixin barStyles() {
   list-style: none;
@@ -43,7 +44,7 @@
     background-color: var(--cl-background-color-base);
     padding: var(--cl-gap-medium);
     margin: 0;
-    z-index: var(--cl-z-index-popup);
+    z-index: variables.$popup;
   }
 }
 

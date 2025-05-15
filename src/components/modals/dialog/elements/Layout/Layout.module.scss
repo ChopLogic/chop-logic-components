@@ -1,9 +1,10 @@
 @use '/src/styles/typography';
+@use '/src/styles/variables';
 
 .layout {
   @include typography.font-style(core, base);
 
-  z-index: var(--cl-z-index-modal);
+  z-index: variables.$modal;
   background-color: var(--cl-background-color-base);
   box-shadow: var(--cl-box-shadow);
   color: var(--cl-font-color-base);
@@ -16,7 +17,7 @@
   border-top-left-radius: var(--cl-block-border-radius);
   border-top-right-radius: var(--cl-block-border-radius);
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: variables.$tablets) {
     width: fit-content;
     height: fit-content;
     position: relative;

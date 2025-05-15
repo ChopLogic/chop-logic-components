@@ -1,5 +1,6 @@
 @use '/src/styles/animations';
 @use '/src/styles/typography';
+@use '/src/styles/variables';
 
 .errorMessage {
   @include animations.fade-in();
@@ -11,7 +12,7 @@
   right: 0;
   top: 76px;
   opacity: 0.8;
-  z-index: var(--cl-z-index-popup);
+  z-index: variables.$popup;
   background-color: var(--cl-background-color-base);
   border: var(--cl-border-accent);
   color: var(--cl-font-color-accent);

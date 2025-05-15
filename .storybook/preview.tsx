@@ -1,7 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
 import { DARK_THEME, LIGHT_THEME } from '../src/css';
-import { STORY_WRAPPER_STYLES } from '@css/__docs__/story-wrapper-styles';
 import { ThemeMode } from '../src/contexts/theme';
 import { CLThemeProvider } from '../src/contexts/theme-provider';
 
@@ -36,6 +35,14 @@ const preview: Preview = {
   },
 
   tags: ['autodocs'],
+};
+
+const STORY_WRAPPER_STYLES = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '1rem',
+  margin: '1rem 0',
 };
 
 const withTheme: Decorator = (StoryFn, context) => {

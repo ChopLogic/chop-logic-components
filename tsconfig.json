@@ -23,7 +23,6 @@
       "@elements/*": ["elements/*"],
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
-      "@css/*": ["css/*"],
       "@enums/*": ["enums/*"],
       "@models/*": ["models/*"],
       "@contexts/*": ["contexts/*"],

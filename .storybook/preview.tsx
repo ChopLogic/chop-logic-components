@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
-import { DARK_THEME, LIGHT_THEME } from '../src/css';
 import { ThemeMode } from '../src/contexts/theme';
 import { CLThemeProvider } from '../src/contexts/theme-provider';
 
@@ -8,8 +7,8 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       values: [
-        { name: 'Dark', value: `${DARK_THEME.backgroundColorBase}` },
-        { name: 'Light', value: `${LIGHT_THEME.backgroundColorBase}` },
+        { name: 'Dark', value: '#2B2B2BFF' },
+        { name: 'Light', value: '#FFFFFFFF' },
       ],
       default: 'Light',
     },
@@ -47,8 +46,8 @@ const STORY_WRAPPER_STYLES = {
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
-  const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
-  const storybookMode = backgroundColor === DARK_THEME.backgroundColorBase ? ThemeMode.Dark : ThemeMode.Light;
+  const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
+  const storybookMode = backgroundColor === '#2B2B2BFF' ? ThemeMode.Dark : ThemeMode.Light;
 
   return (
     <CLThemeProvider storybookMode={storybookMode}>

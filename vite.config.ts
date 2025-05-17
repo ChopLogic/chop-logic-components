@@ -1,10 +1,8 @@
 /// <reference types="vitest" />
-
 import * as path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { coverageConfigDefaults } from 'vitest/config';
-
 import { peerDependencies } from './package.json';
 
 export default defineConfig({
@@ -43,7 +41,14 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
     coverage: {
-      exclude: ['**/docs/**', '**/__docs__/**', '**/models/**', '**.config.js', ...coverageConfigDefaults.exclude],
+      exclude: [
+        '**/docs/**',
+        '**/__docs__/**',
+        '**/models/**',
+        '**.config.js',
+        '**/storybook-static/**',
+        ...coverageConfigDefaults.exclude,
+      ],
     },
   },
 });

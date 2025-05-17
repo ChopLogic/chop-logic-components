@@ -7,3 +7,4 @@ export { useMount } from './use-mount';
 export { useResetFormInput } from './use-reset-form-input';
 export { useTooltipPosition } from './use-tooltip-position';
 export { useWindowDimensions } from './use-window-dimensions';
+export { useChopLogicTheme } from './use-chop-logic-theme';

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '@styles/storybook/Container.module.scss';
 import { useMount } from '..';
+import { ChopLogicButton } from '@components';
 
 const UseMountExample = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -8,7 +9,7 @@ const UseMountExample = () => {
 
   return (
     <div>
-      <button onClick={() => setIsOpened(!isOpened)}>Toggle Component</button>
+      <ChopLogicButton text='Toggle component' onClick={() => setIsOpened(!isOpened)} />
       {isMounted && <div className={styles.container}>Component is mounted!</div>}
     </div>
   );

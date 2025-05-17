@@ -1,4 +1,4 @@
 export enum ChopLogicThemeMode {
-  Light = 'light',
-  Dark = 'dark',
+  Light = 'cl-components-light-theme',
+  Dark = 'cl-components-dark-theme',
 }

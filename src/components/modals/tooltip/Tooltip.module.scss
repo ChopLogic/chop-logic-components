@@ -6,15 +6,15 @@
   @include animations.fade-in();
   @include typography.font-style(core, small);
 
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
   position: absolute;
   left: 0;
   top: 0;
   z-index: variables.$popup;
-  background-color: var(--cl-background-color-base);
-  border: var(--cl-border-light);
-  padding: var(--cl-gap-medium);
-  border-radius: var(--cl-block-border-radius);
+  background-color: var(--cl-primary-background);
+  border: var(--cl-light-border);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
   white-space: nowrap;

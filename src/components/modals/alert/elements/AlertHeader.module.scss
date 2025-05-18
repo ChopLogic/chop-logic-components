@@ -8,12 +8,12 @@
   h3 {
     @include typography.font-style(core, header);
     display: flex;
-    gap: var(--cl-gap-medium);
+    gap: var(--cl-m-gap);
     align-items: center;
     margin: 0;
 
     svg {
-      color: var(--cl-font-color-accent);
+      color: var(--cl-accent-color);
     }
   }
 }

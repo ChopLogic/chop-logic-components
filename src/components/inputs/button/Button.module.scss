@@ -25,7 +25,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: var(--cl-block-border-radius);
+    border-radius: var(--cl-border-radius);
     background: hsl(0deg 0% 0% / 0.25);
     will-change: transform;
     transform: translateY(2px);
@@ -38,21 +38,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: var(--cl-block-border-radius);
-    background: var(--cl-gradient-shadow);
+    border-radius: var(--cl-border-radius);
+    background: var(--cl-accent-gradient);
   }
 
   &_front {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--cl-gap-small);
+    gap: var(--cl-s-gap);
     position: relative;
-    padding: var(--cl-gap-medium) var(--cl-gap-big);
-    border-radius: var(--cl-block-border-radius);
-    font-size: var(--cl-font-size-base);
+    padding: var(--cl-m-gap) var(--cl-l-gap);
+    border-radius: var(--cl-border-radius);
+    font-size: var(--cl-base-font-size);
     color: #ffffff;
-    background: var(--cl-font-color-accent);
+    background: var(--cl-accent-color);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -84,22 +84,22 @@
 
   &:focus-visible {
     outline: revert;
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
     outline-offset: 4px;
   }
 }
 
 .flat {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--cl-gap-small);
-  padding: var(--cl-gap-medium) var(--cl-gap-big);
-  border-radius: var(--cl-block-border-radius);
+  gap: var(--cl-s-gap);
+  padding: var(--cl-m-gap) var(--cl-l-gap);
+  border-radius: var(--cl-border-radius);
   background: transparent;
 
   &__extended {
@@ -108,13 +108,13 @@
 
   &:hover,
   &:active {
-    background: var(--cl-background-color-light);
+    background: var(--cl-highlight-background);
     transition: all 0.3s ease 0s;
-    color: var(--cl-font-color-accent);
+    color: var(--cl-accent-color);
   }
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
   }
 
   &[disabled] {
@@ -124,24 +124,24 @@
 
 .icon {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--cl-gap-medium);
-  border-radius: var(--cl-block-border-radius);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   background: transparent;
 
   &:hover {
-    background-color: var(--cl-background-color-light);
-    color: var(--cl-font-color-accent);
+    background-color: var(--cl-highlight-background);
+    color: var(--cl-accent-color);
     transition: all 0.3s ease 0s;
   }
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
   }
 
   &[disabled] {

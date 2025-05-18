@@ -2,12 +2,12 @@
 
 .container {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
-  padding: var(--cl-gap-big);
-  margin: var(--cl-gap-big);
-  border: var(--cl-border-light);
+  padding: var(--cl-l-gap);
+  margin: var(--cl-l-gap);
+  border: var(--cl-light-border);
   display: flex;
   flex-direction: column;
-  gap: var(--cl-gap-medium);
+  gap: var(--cl-m-gap);
 }

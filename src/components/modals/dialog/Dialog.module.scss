@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--cl-background-color-transparent);
+  background-color: var(--cl-shadow-background);
 
   &__closing {
     @include animations.fade-out();

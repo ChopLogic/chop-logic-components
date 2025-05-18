@@ -13,11 +13,11 @@
   top: 76px;
   opacity: 0.8;
   z-index: variables.$popup;
-  background-color: var(--cl-background-color-base);
-  border: var(--cl-border-accent);
-  color: var(--cl-font-color-accent);
-  padding: var(--cl-gap-medium);
-  border-radius: var(--cl-block-border-radius);
+  background-color: var(--cl-primary-background);
+  border: var(--cl-accent-border);
+  color: var(--cl-accent-color);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
 

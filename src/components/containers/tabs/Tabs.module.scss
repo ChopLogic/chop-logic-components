@@ -3,26 +3,26 @@
 
 .tabButton {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
   background: transparent;
   position: relative;
   outline: none;
   border: none;
-  padding: var(--cl-gap-medium);
+  padding: var(--cl-m-gap);
   cursor: pointer;
   overflow: hidden;
-  border-top-left-radius: var(--cl-block-border-radius);
-  border-top-right-radius: var(--cl-block-border-radius);
+  border-top-left-radius: var(--cl-border-radius);
+  border-top-right-radius: var(--cl-border-radius);
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
     outline-offset: -4px;
   }
 
   &:hover,
   &:active {
-    color: var(--cl-font-color-accent);
+    color: var(--cl-accent-color);
   }
 
   &__disabled {
@@ -30,22 +30,22 @@
   }
 
   &__selected {
-    border-top: var(--cl-border-light);
-    border-right: var(--cl-border-light);
-    border-left: var(--cl-border-light);
-    background-color: var(--cl-background-color-base);
+    border-top: var(--cl-light-border);
+    border-right: var(--cl-light-border);
+    border-left: var(--cl-light-border);
+    background-color: var(--cl-primary-background);
     top: 1px;
   }
 
   &__vertical {
-    border-bottom-left-radius: var(--cl-block-border-radius);
+    border-bottom-left-radius: var(--cl-border-radius);
     border-top-right-radius: 0;
 
     &.tabButton__selected {
-      border-top: var(--cl-border-light);
+      border-top: var(--cl-light-border);
       border-right: none;
-      border-left: var(--cl-border-light);
-      border-bottom: var(--cl-border-light);
+      border-left: var(--cl-light-border);
+      border-bottom: var(--cl-light-border);
       top: 0;
       left: 1px;
     }
@@ -54,24 +54,24 @@
 
 .tabContent {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
-  background-color: var(--cl-background-color-base);
-  padding: var(--cl-gap-big);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-l-gap);
   flex-grow: 1;
 }
 
 .tabList {
-  border-bottom: var(--cl-border-light);
-  padding: 0 var(--cl-gap-medium);
+  border-bottom: var(--cl-light-border);
+  padding: 0 var(--cl-m-gap);
   display: flex;
-  gap: var(--cl-gap-medium);
+  gap: var(--cl-m-gap);
 
   &__vertical {
     flex-direction: column;
     border-bottom: none;
-    border-right: var(--cl-border-light);
-    padding: var(--cl-gap-medium) 0;
+    border-right: var(--cl-light-border);
+    padding: var(--cl-m-gap) 0;
   }
 }
 

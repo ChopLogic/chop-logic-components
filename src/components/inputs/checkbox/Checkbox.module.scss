@@ -2,18 +2,18 @@
 
 .checkbox {
   display: flex;
-  gap: var(--cl-gap-medium);
-  padding: var(--cl-gap-medium) 0;
+  gap: var(--cl-m-gap);
+  padding: var(--cl-m-gap) 0;
   position: relative;
   overflow: hidden;
 
   & svg {
-    color: var(--cl-font-color-light);
+    color: var(--cl-tint-color);
   }
 
   &__checked {
     svg {
-      color: var(--cl-font-color-accent);
+      color: var(--cl-accent-color);
     }
   }
 
@@ -23,8 +23,8 @@
 
   & label {
     cursor: pointer;
-    gap: var(--cl-gap-medium);
-    font-size: var(--cl-font-size-base) !important;
+    gap: var(--cl-m-gap);
+    font-size: var(--cl-base-font-size) !important;
 
     &:hover,
     &:active {
@@ -41,7 +41,7 @@
     margin: 0;
 
     &:focus-visible + label {
-      outline: var(--cl-border-outline);
+      outline: var(--cl-outline-border);
       outline-offset: 2px;
     }
   }

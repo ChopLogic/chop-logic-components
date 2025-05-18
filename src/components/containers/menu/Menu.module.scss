@@ -8,7 +8,7 @@
   padding: 0;
   padding-inline-start: 0;
   display: flex;
-  gap: var(--cl-gap-small);
+  gap: var(--cl-s-gap);
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
@@ -27,22 +27,22 @@
   @include animations.fade-in();
 
   flex-direction: column;
-  padding-left: var(--cl-gap-big);
-  margin-left: var(--cl-gap-big);
-  margin-top: var(--cl-gap-small);
+  padding-left: var(--cl-l-gap);
+  margin-left: var(--cl-l-gap);
+  margin-top: var(--cl-s-gap);
   box-sizing: border-box;
-  border-left: var(--cl-border-light);
+  border-left: var(--cl-light-border);
 
   &__horizontal {
     position: absolute;
     top: 100%;
     left: 40%;
     width: max-content;
-    border-radius: var(--cl-block-border-radius);
-    border: var(--cl-border-light);
+    border-radius: var(--cl-border-radius);
+    border: var(--cl-light-border);
     box-shadow: var(--cl-box-shadow);
-    background-color: var(--cl-background-color-base);
-    padding: var(--cl-gap-medium);
+    background-color: var(--cl-primary-background);
+    padding: var(--cl-m-gap);
     margin: 0;
     z-index: variables.$popup;
   }
@@ -50,23 +50,23 @@
 
 .menuLeaf {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: var(--cl-gap-medium);
-  background-color: var(--cl-background-color-base);
-  padding: var(--cl-gap-medium);
-  border-radius: var(--cl-block-border-radius);
+  gap: var(--cl-m-gap);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   cursor: pointer;
 
   &:hover {
-    color: var(--cl-font-color-accent);
+    color: var(--cl-accent-color);
   }
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
   }
 }
 
@@ -78,36 +78,36 @@
   gap: 0;
   padding: 0;
   position: relative;
-  border-radius: var(--cl-block-border-radius);
+  border-radius: var(--cl-border-radius);
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
   }
 }
 
 .text {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
   position: relative;
   display: flex;
   box-sizing: border-box;
-  gap: var(--cl-gap-medium);
+  gap: var(--cl-m-gap);
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  background-color: var(--cl-background-color-base);
-  padding: var(--cl-gap-medium);
-  border-radius: var(--cl-block-border-radius);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   cursor: pointer;
 
   span {
     display: flex;
-    gap: var(--cl-gap-medium);
+    gap: var(--cl-m-gap);
     align-items: center;
   }
 
   &:hover {
-    color: var(--cl-font-color-accent);
+    color: var(--cl-accent-color);
   }
 }

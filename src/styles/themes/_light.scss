@@ -1,13 +1,13 @@
 .cl-components-light-theme {
   // Colors
-  --cl-font-color-base: hsl(0, 0%, 24%);
-  --cl-font-color-light: hsl(0, 0%, 62%);
-  --cl-font-color-accent: hsl(345, 100%, 47%);
-  --cl-background-color-base: hsl(0, 0%, 100%);
-  --cl-background-color-light: hsl(0, 0%, 95%);
-  --cl-background-color-transparent: hsla(0, 0%, 0%, 0.3);
+  --cl-primary-color: hsl(0, 0%, 24%);
+  --cl-tint-color: hsl(0, 0%, 62%);
+  --cl-accent-color: hsl(345, 100%, 47%);
+  --cl-primary-background: hsl(0, 0%, 100%);
+  --cl-highlight-background: hsl(0, 0%, 95%);
+  --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
   // Gradients
-  --cl-gradient-shadow: linear-gradient(
+  --cl-accent-gradient: linear-gradient(
     to left,
     hsl(340deg 100% 16%) 0%,
     hsl(340deg 100% 32%) 8%,
@@ -18,8 +18,8 @@
   --cl-box-shadow: hsla(0, 0%, 0%, 0.15) 2.4px 2.4px 3.2px;
   --cl-text-shadow: 2.4px 2.4px 3.2px hsla(0, 0%, 0%, 0.3);
   // Borders
-  --cl-border-base: 1px solid hsl(0, 0%, 84%);
-  --cl-border-light: 1px solid hsl(0, 0%, 89%);
-  --cl-border-accent: 1px solid hsl(345, 100%, 47%);
-  --cl-border-outline: 1px solid hsl(0, 0%, 24%);
+  --cl-primary-border: 1px solid hsl(0, 0%, 84%);
+  --cl-light-border: 1px solid hsl(0, 0%, 89%);
+  --cl-accent-border: 1px solid hsl(345, 100%, 47%);
+  --cl-outline-border: 1px solid hsl(0, 0%, 24%);
 }

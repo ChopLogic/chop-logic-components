@@ -5,7 +5,7 @@
 .wrapper {
   @include animations.fade-in();
   position: fixed;
-  bottom: var(--cl-gap-big);
+  bottom: var(--cl-l-gap);
   left: 50%;
   transform: translateX(-50%);
   z-index: variables.$popup;
@@ -17,15 +17,15 @@
 
 .content {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
   display: flex;
   flex-direction: column;
-  gap: var(--cl-gap-medium);
-  background: var(--cl-background-color-base);
+  gap: var(--cl-m-gap);
+  background: var(--cl-primary-background);
   width: 90vw;
-  padding: var(--cl-gap-medium);
+  padding: var(--cl-m-gap);
   box-shadow: var(--cl-box-shadow);
-  border: var(--cl-border-light);
-  border-radius: var(--cl-block-border-radius);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
 }

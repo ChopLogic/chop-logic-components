@@ -8,17 +8,17 @@
   border: none;
   display: flex;
   align-items: center;
-  font-size: var(--cl-font-size-small);
-  color: var(--cl-font-color-light);
+  font-size: var(--cl-small-font-size);
+  color: var(--cl-tint-color);
   padding: 0;
 
   &:focus-visible {
-    outline: var(--cl-border-outline);
+    outline: var(--cl-outline-border);
     outline-offset: -1px;
   }
 
   &:hover {
-    color: var(--cl-font-color-base);
+    color: var(--cl-primary-color);
   }
 
   svg {

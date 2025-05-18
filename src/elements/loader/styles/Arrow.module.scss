@@ -1,7 +1,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 3px solid var(--cl-font-color-light);
+  border: 3px solid var(--cl-tint-color);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
@@ -16,7 +16,7 @@
     left: 20px;
     top: 31px;
     border: 10px solid transparent;
-    border-right-color: var(--cl-font-color-light);
+    border-right-color: var(--cl-tint-color);
     transform: rotate(-40deg);
   }
 

@@ -6,73 +6,73 @@
 
   &_body {
     @include typography.font-style(core, base);
-    color: var(--cl-font-color-base);
+    color: var(--cl-primary-color);
   }
 
   &_cell {
-    padding: var(--cl-gap-medium);
+    padding: var(--cl-m-gap);
   }
 
   &_row {
-    border-bottom: var(--cl-border-light);
+    border-bottom: var(--cl-light-border);
 
     &__selected {
-      background-color: var(--cl-background-color-light);
+      background-color: var(--cl-highlight-background);
     }
   }
 
   &_column {
-    border-right: var(--cl-border-light);
+    border-right: var(--cl-light-border);
 
     &__first {
-      border-left: var(--cl-border-light);
+      border-left: var(--cl-light-border);
     }
 
     &__highlighted {
-      background-color: var(--cl-background-color-light);
+      background-color: var(--cl-highlight-background);
     }
   }
 
   &_caption {
     @include typography.font-style(core, base, bold);
-    color: var(--cl-font-color-base);
-    padding: var(--cl-gap-medium);
+    color: var(--cl-primary-color);
+    padding: var(--cl-m-gap);
   }
 }
 
 .header {
   @include typography.font-style(core, base);
-  color: var(--cl-font-color-base);
+  color: var(--cl-primary-color);
 
   &_cell {
-    padding: var(--cl-gap-medium);
+    padding: var(--cl-m-gap);
     text-align: left;
   }
 
   &_row {
     font-weight: bold;
-    border-top: var(--cl-border-light);
-    border-bottom: var(--cl-border-light);
-    background-color: var(--cl-background-color-base);
+    border-top: var(--cl-light-border);
+    border-bottom: var(--cl-light-border);
+    background-color: var(--cl-primary-background);
   }
 }
 
 .checkbox {
   display: flex;
-  gap: var(--cl-gap-small);
-  padding: var(--cl-gap-small) 0;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-s-gap) 0;
   position: relative;
   overflow: hidden;
 
   svg {
-    color: var(--cl-font-color-light);
+    color: var(--cl-tint-color);
     width: var(--cl-icon-size);
     height: var(--cl-icon-size);
   }
 
   &__checked {
     svg {
-      color: var(--cl-font-color-base);
+      color: var(--cl-primary-color);
     }
   }
 
@@ -82,8 +82,8 @@
 
   label {
     cursor: pointer;
-    gap: var(--cl-gap-small);
-    font-size: var(--cl-font-size-small) !important;
+    gap: var(--cl-s-gap);
+    font-size: var(--cl-small-font-size) !important;
 
     &:hover,
     &:active {
@@ -100,7 +100,7 @@
     margin: 0;
 
     &:focus-visible + label {
-      outline: var(--cl-border-outline);
+      outline: var(--cl-outline-border);
       outline-offset: 2px;
     }
   }

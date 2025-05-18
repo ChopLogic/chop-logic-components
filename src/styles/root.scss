@@ -3,19 +3,17 @@
 
 :root {
   // Fonts
-  --cl-font-family-core: typography.$cl-core-font, Arial, Helvetica, sans-serif;
-  --cl-font-family-monospace: typography.$cl-monospace-font, 'Courier New', Courier, monospace;
-  --cl-font-size-base: 1rem;
-  --cl-font-size-small: 0.8rem;
-  --cl-font-size-header: 2rem;
+  --cl-core-font: typography.$cl-core-font, Arial, Helvetica, sans-serif;
+  --cl-monospace-font: typography.$cl-monospace-font, 'Courier New', Courier, monospace;
   // Units
-  --cl-gap-small: 0.25rem;
-  --cl-gap-medium: 0.6rem;
-  --cl-gap-big: 1rem;
-  --cl-icon-size: 1.2rem;
-  --cl-block-border-radius: 0.25rem;
-  // Z-indexes
-  --cl-z-index-base: 1;
-  --cl-z-index-popup: 100;
-  --cl-z-index-modal: 200;
+  --cl-base-font-size: 1rem;
+  --cl-small-font-size: 0.8rem;
+  --cl-header-font-size: 2rem;
+  --cl-xs-gap: 2px;
+  --cl-s-gap: 4px;
+  --cl-m-gap: 8px;
+  --cl-l-gap: 16px;
+  --cl-xl-gap: 32px;
+  --cl-icon-size: 20px;
+  --cl-border-radius: 4px;
 }

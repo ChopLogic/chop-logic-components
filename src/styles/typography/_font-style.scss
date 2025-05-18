@@ -28,11 +28,11 @@
   -moz-osx-font-smoothing: grayscale;
 
   @if $size == base {
-    font-size: var(--cl-font-size-base);
+    font-size: var(--cl-base-font-size);
   } @else if $size == small {
-    font-size: var(--cl-font-size-small);
+    font-size: var(--cl-small-font-size);
   } @else if $size == header {
-    font-size: var(--cl-font-size-header);
+    font-size: var(--cl-header-font-size);
   } @else {
     @warn "Unknown font size `#{$size}`. Allowed values: base, small, header.";
   }

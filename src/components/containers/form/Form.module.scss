@@ -3,7 +3,7 @@
 .form {
   display: grid;
   align-items: end;
-  gap: var(--cl-gap-medium);
+  gap: var(--cl-m-gap);
   @include typography.font-style(core, base);
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--cl-gap-big);
+  padding-top: var(--cl-l-gap);
 }
 
 /// Generates `.columns-X` and `.buttons-X` for grid layouts

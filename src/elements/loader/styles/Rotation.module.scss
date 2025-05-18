@@ -3,8 +3,8 @@
   height: 64px;
   position: relative;
   background-image:
-    linear-gradient(var(--cl-font-color-light) 16px, transparent 0), linear-gradient(var(--cl-font-color-accent) 16px, transparent 0),
-    linear-gradient(var(--cl-font-color-accent) 16px, transparent 0), linear-gradient(var(--cl-font-color-light) 16px, transparent 0);
+    linear-gradient(var(--cl-tint-color) 16px, transparent 0), linear-gradient(var(--cl-accent-color) 16px, transparent 0),
+    linear-gradient(var(--cl-accent-color) 16px, transparent 0), linear-gradient(var(--cl-tint-color) 16px, transparent 0);
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position:

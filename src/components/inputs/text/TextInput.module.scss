@@ -4,24 +4,24 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--cl-gap-medium);
+  gap: var(--cl-m-gap);
   position: relative;
 
   & > div:nth-child(2) {
     display: flex;
-    gap: var(--cl-gap-medium);
+    gap: var(--cl-m-gap);
     align-items: center;
-    border: var(--cl-border-light);
-    border-radius: var(--cl-block-border-radius);
-    padding: var(--cl-gap-medium);
-    background-color: var(--cl-background-color-base);
+    border: var(--cl-light-border);
+    border-radius: var(--cl-border-radius);
+    padding: var(--cl-m-gap);
+    background-color: var(--cl-primary-background);
 
     &:has(input:focus) {
-      border: var(--cl-border-outline);
+      border: var(--cl-outline-border);
     }
 
     &:has(input[aria-invalid='true']) {
-      border: var(--cl-border-accent);
+      border: var(--cl-accent-border);
     }
 
     &:has(input[disabled]) {
@@ -30,14 +30,14 @@
 
     & > span:nth-child(2) {
       display: flex;
-      gap: var(--cl-gap-small);
+      gap: var(--cl-s-gap);
       align-items: center;
     }
   }
 
   & input {
     @include typography.font-style(core, base);
-    color: var(--cl-font-color-base);
+    color: var(--cl-primary-color);
     padding: 0;
     border: none;
     display: inline-block;

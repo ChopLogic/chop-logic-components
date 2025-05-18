@@ -6,8 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--cl-gap-big);
-  padding: var(--cl-gap-big);
-  border-bottom: var(--cl-border-base);
-  color: var(--cl-font-color-base);
+  gap: var(--cl-l-gap);
+  padding: var(--cl-l-gap);
+  border-bottom: var(--cl-primary-border);
+  color: var(--cl-primary-color);
 }

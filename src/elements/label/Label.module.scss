@@ -4,8 +4,8 @@
   @include typography.font-style(core, small);
   display: flex;
   align-items: center;
-  gap: var(--cl-gap-small);
-  color: var(--cl-font-color-base);
+  gap: var(--cl-s-gap);
+  color: var(--cl-primary-color);
 
   &:hover {
     text-shadow: var(--cl-text-shadow);
@@ -21,7 +21,7 @@
   & abbr {
     text-decoration: none;
     cursor: pointer;
-    color: var(--cl-font-color-accent);
-    margin-left: var(--cl-gap-small);
+    color: var(--cl-accent-color);
+    margin-left: var(--cl-s-gap);
   }
 }

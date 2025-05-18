@@ -1,7 +1,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 10px solid var(--cl-font-color-light);
+  border: 10px solid var(--cl-tint-color);
   border-radius: 50%;
   position: relative;
   transform: rotate(45deg);
@@ -13,7 +13,7 @@
     box-sizing: border-box;
     inset: -10px;
     border-radius: 50%;
-    border: 10px solid var(--cl-font-color-accent);
+    border: 10px solid var(--cl-accent-color);
     animation: prixClipFix 2s infinite linear;
   }
 

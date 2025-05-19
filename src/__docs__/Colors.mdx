@@ -1,0 +1,67 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+<Meta title="Theming/Colors" />
+
+# Chop Logic Theme Colors
+
+### Light Theme Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Foreground Colors"
+    subtitle="For text, icons, and borders"
+    colors={{
+      '--cl-primary-color': 'hsl(0, 0%, 24%)',
+      '--cl-tint-color': 'hsl(0, 0%, 62%)',
+      '--cl-accent-color': 'hsl(345, 100%, 47%)'
+    }}
+  />
+  <ColorItem
+    title="Background Colors"
+    subtitle="For blocks, panels, and inputs"
+    colors={{
+      '--cl-primary-background': 'hsl(0, 0%, 100%)',
+      '--cl-highlight-background': 'hsl(0, 0%, 95%)',
+      '--cl-shadow-background': 'hsla(0, 0%, 0%, 0.3)'
+    }}
+  />
+  <ColorItem
+    title="Gradients"
+    subtitle="For visual highlighting and shadowing"
+    colors={{
+      '--cl-accent-gradient': 'linear-gradient(to left, hsl(16, 86%, 26%) 0%, hsl(16, 86%, 30%) 8%, hsl(16, 86%, 30%) 92%, hsl(16, 86%, 26%) 100%)',
+      '--cl-shadow-gradient': 'linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 30%) 8%, hsl(0, 0%, 30%) 92%, hsl(0, 0%, 24%) 100%)'
+    }}
+  />
+</ColorPalette>
+
+### Dark Theme Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Foreground Colors"
+    subtitle="For text, icons, and borders"
+    colors={{
+      '--cl-primary-color': 'hsl(0, 0%, 100%)',
+      '--cl-tint-color': 'hsl(0, 0%, 92%)',
+      '--cl-accent-color': 'hsl(16, 82%, 52%)'
+    }}
+  />
+  <ColorItem
+    title="Background Colors"
+    subtitle="For blocks, panels, and inputs"
+    colors={{
+      '--cl-primary-background': 'hsl(0, 0%, 17%)',
+      '--cl-highlight-background': 'hsl(0, 0%, 24%)',
+      '--cl-shadow-background': 'hsla(0, 0%, 92%, 0.3)'
+    }}
+  />
+  <ColorItem
+    title="Gradients"
+    subtitle="For visual highlighting and shadowing"
+    colors={{
+      '--cl-accent-gradient': 'linear-gradient(to left, hsl(16, 86%, 26%) 0%, hsl(16, 86%, 30%) 8%, hsl(16, 86%, 30%) 92%, hsl(16, 86%, 26%) 100%)',
+      '--cl-shadow-gradient': 'linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 30%) 8%, hsl(0, 0%, 30%) 92%, hsl(0, 0%, 24%) 100%)'
+    }}
+  />
+</ColorPalette>

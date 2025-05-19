@@ -22,6 +22,9 @@ const preview: Preview = {
       storySort: {
         order: [
           'Introduction',
+          'Theming',
+          'Contributing',
+          'Changelog',
           'Inputs',
           ['Button', 'TextInput', 'NumericInput', 'Checkbox', 'Select', 'MultiSelect', '*'],
           'Containers',

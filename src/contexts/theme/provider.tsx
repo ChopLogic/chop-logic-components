@@ -3,7 +3,7 @@ import { ChopLogicThemeContext } from './context.ts';
 import { ChopLogicThemeMode } from '@enums';
 import '@styles/root.scss';
 
-export const ChopLogicThemeProvider: FC<{ children: ReactNode; storybookMode?: ChopLogicThemeMode }> = ({ children, storybookMode }) => {
+export const ChopLogicThemeProvider: FC<{ children: ReactNode; injectedMode?: ChopLogicThemeMode }> = ({ children, injectedMode }) => {
   const [mode, setMode] = useState(ChopLogicThemeMode.Light);
 
   useEffect(() => {
@@ -14,11 +14,11 @@ export const ChopLogicThemeProvider: FC<{ children: ReactNode; storybookMode?: C
   }, [mode]);
 
   useEffect(() => {
-    if (storybookMode && typeof storybookMode === 'string') {
+    if (injectedMode && typeof injectedMode === 'string') {
       document.body.classList.remove(ChopLogicThemeMode.Light, ChopLogicThemeMode.Dark);
-      document.body.classList.add(storybookMode);
+      document.body.classList.add(injectedMode);
     }
-  }, [storybookMode]);
+  }, [injectedMode]);
 
   return <ChopLogicThemeContext.Provider value={{ mode, setMode }}>{children}</ChopLogicThemeContext.Provider>;
 };

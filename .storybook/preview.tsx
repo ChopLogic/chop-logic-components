@@ -53,7 +53,7 @@ const withTheme: Decorator = (StoryFn, context) => {
   const storybookMode = backgroundColor === '#2B2B2BFF' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
 
   return (
-    <ChopLogicThemeProvider storybookMode={storybookMode}>
+    <ChopLogicThemeProvider injectedMode={storybookMode}>
       <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
         <StoryFn />
       </div>

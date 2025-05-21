@@ -1,10 +1,8 @@
 /// <reference types="vitest" />
-
 import * as path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { coverageConfigDefaults } from 'vitest/config';
-
 import { peerDependencies } from './package.json';
 
 export default defineConfig({
@@ -29,12 +27,13 @@ export default defineConfig({
       { find: '@elements', replacement: path.resolve(__dirname, 'src/elements') },
       { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
       { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
-      { find: '@css', replacement: path.resolve(__dirname, 'src/css') },
       { find: '@enums', replacement: path.resolve(__dirname, 'src/enums') },
       { find: '@models', replacement: path.resolve(__dirname, 'src/models') },
       { find: '@contexts', replacement: path.resolve(__dirname, 'src/contexts') },
       { find: '@icons', replacement: path.resolve(__dirname, 'src/icons') },
       { find: '@hocs', replacement: path.resolve(__dirname, 'src/hocs') },
+      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
+      { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
     ],
   },
   test: {
@@ -42,7 +41,14 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
     coverage: {
-      exclude: ['**/docs/**', '**/__docs__/**', '**/models/**', '**.config.js', ...coverageConfigDefaults.exclude],
+      exclude: [
+        '**/docs/**',
+        '**/__docs__/**',
+        '**/models/**',
+        '**.config.js',
+        '**/storybook-static/**',
+        ...coverageConfigDefaults.exclude,
+      ],
     },
   },
 });

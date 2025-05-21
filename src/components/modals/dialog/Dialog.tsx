@@ -1,15 +1,15 @@
 import React from 'react';
 import { ChopLogicPortal } from '@components';
-import { useChopLogicTheme, useMount } from '@hooks';
+import { useMount } from '@hooks';
 import { ChopLogicDialogProps } from '@models';
 
 import ChopLogicModalLayout from './elements/Layout';
-import { StyledDialogBackground } from './Dialog.styled';
+import styles from './Dialog.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, ...rest }) => {
   const isMounted = useMount(isOpened);
   const isClosing = isMounted && !isOpened;
-  const theme = useChopLogicTheme();
 
   if (!isMounted) {
     return null;
@@ -17,11 +17,11 @@ const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, ti
 
   return (
     <ChopLogicPortal>
-      <StyledDialogBackground $isClosing={isClosing} $theme={theme}>
-        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened} {...rest} theme={theme}>
+      <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
+        <ChopLogicModalLayout title={title} onClose={onClose} isOpened={isOpened} {...rest}>
           {children}
         </ChopLogicModalLayout>
-      </StyledDialogBackground>
+      </div>
     </ChopLogicPortal>
   );
 };

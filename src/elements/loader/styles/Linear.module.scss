@@ -1,0 +1,32 @@
+.loader {
+  display: block;
+  position: relative;
+  height: 12px;
+  width: 80%;
+  border: 1px solid var(--cl-tint-color);
+  border-radius: 10px;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 40%;
+    height: 100%;
+    background: var(--cl-accent-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    animation: linearLoaderAnimation 2s linear infinite;
+  }
+
+  @keyframes linearLoaderAnimation {
+    0% {
+      left: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      left: 100%;
+      transform: translateX(0%);
+    }
+  }
+}

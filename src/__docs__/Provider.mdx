@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Theming/Provider" />
+
+## Theme Provider
+
+The <code>ChopLogicThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
+
+It supports both dynamic switching via a hook and injected mode through the `injectedMode` prop.
+
+```tsx
+import { ChopLogicThemeProvider } from 'chop-logic-components';
+
+<ChopLogicThemeProvider>
+  <App />
+</ChopLogicThemeProvider>
+```
+
+```tsx
+import { ChopLogicThemeProvider, ChopLogicThemeMode } from 'chop-logic-components';
+import { Decorator } from '@storybook/react';
+
+const withTheme: Decorator = (StoryFn, context) => {
+  const { backgrounds } = context.globals;
+  const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
+  const storybookMode = backgroundColor === '#2B2B2BFF' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+
+  return (
+    <ChopLogicThemeProvider injectedMode={storybookMode}>
+      <div style={{ backgroundColor }}>
+        <StoryFn />
+      </div>
+    </ChopLogicThemeProvider>
+  );
+};
+
+export const decorators = [withTheme];
+````
+
+
+## Theme Hook
+
+The <code>useChopLogicTheme()</code> hook provides access to the theme context and allows to change the theme.
+
+```tsx
+import { useChopLogicTheme, ChopLogicThemeMode } from 'chop-logic-components';
+
+export const ThemeToggleButton = () => {
+  const { mode, setMode } = useChopLogicTheme();
+
+  const toggleTheme = () => {
+    setMode(mode === ChopLogicThemeMode.Dark ? ChopLogicThemeMode.Light : ChopLogicThemeMode.Dark);
+  }
+
+  return (
+    <button onClick={toggleTheme}>
+      Toggle to {mode === 'dark' ? 'Light' : 'Dark'} Mode
+    </button>
+  );
+};
+```

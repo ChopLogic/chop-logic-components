@@ -1,8 +1,5 @@
 import React from 'react';
-import { ChopLogicTheme } from '@models';
-
-import { StyledGridHeaderCell } from '../Grid.styled';
-
+import styles from '../Grid.module.scss';
 import GridCheckbox from './Checkbox';
 
 type SelectAllGridRowsCheckbox = {
@@ -11,10 +8,9 @@ type SelectAllGridRowsCheckbox = {
   selectAll: () => void;
   deselectAll: () => void;
   disabled?: boolean;
-  theme: ChopLogicTheme;
 };
 
-const SelectAllRowsCell: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllSelected, selectAll, deselectAll, disabled, theme }) => {
+const SelectAllRowsCell: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllSelected, selectAll, deselectAll, disabled }) => {
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -25,16 +21,15 @@ const SelectAllRowsCell: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllS
   };
 
   return (
-    <StyledGridHeaderCell $theme={theme}>
+    <th className={styles.header_cell}>
       <GridCheckbox
         label='Select all rows'
         onChange={handleSelectAll}
         id={`select_all_${gridId}`}
         checked={isAllSelected}
         disabled={disabled}
-        theme={theme}
       />
-    </StyledGridHeaderCell>
+    </th>
   );
 };
 

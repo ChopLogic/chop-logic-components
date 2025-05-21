@@ -1,43 +1,34 @@
 import React from 'react';
 import { ChopLogicLoaderView } from '@enums';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicLoaderProps } from '@models';
 
-import { StyledArrowLoader } from './views/Arrow.styled.tsx';
-import { StyledBracketsLoader } from './views/Brackets.styled.tsx';
-import { StyledCircleLoader } from './views/Circle.styled.tsx';
-import { StyledDotsLoader } from './views/Dots.styled.tsx';
-import { StyledFillerLoader } from './views/Filler.styled.tsx';
-import { StyledLinearLoader } from './views/Linear.styled.tsx';
-import { StyledPulseLoader } from './views/Pulse.styled.tsx';
-import { StyledRotationLoader } from './views/Rotation.styled.tsx';
-import { StyledSquareLoader } from './views/Square.styled.tsx';
+import Arrow from './styles/Arrow.module.scss';
+import Brackets from './styles/Brackets.module.scss';
+import Circle from './styles/Circle.module.scss';
+import Dots from './styles/Dots.module.scss';
+import Filler from './styles/Filler.module.scss';
+import Linear from './styles/Linear.module.scss';
+import Pulse from './styles/Pulse.module.scss';
+import Rotation from './styles/Rotation.module.scss';
+import Square from './styles/Square.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view, ...rest }) => {
-  const theme = useChopLogicTheme();
+  const className = getClassName([
+    {
+      [Arrow.loader]: view === ChopLogicLoaderView.Arrow,
+      [Brackets.loader]: view === ChopLogicLoaderView.Brackets,
+      [Circle.loader]: view === ChopLogicLoaderView.Circle,
+      [Dots.loader]: view === ChopLogicLoaderView.Dots,
+      [Filler.loader]: view === ChopLogicLoaderView.Filler,
+      [Pulse.loader]: view === ChopLogicLoaderView.Pulse,
+      [Linear.loader]: view === ChopLogicLoaderView.Linear,
+      [Rotation.loader]: view === ChopLogicLoaderView.Rotation,
+      [Square.loader]: view === ChopLogicLoaderView.Square,
+    },
+  ]);
 
-  switch (view) {
-    case ChopLogicLoaderView.Dots:
-      return <StyledDotsLoader $theme={theme} {...rest}></StyledDotsLoader>;
-    case ChopLogicLoaderView.Circle:
-      return <StyledCircleLoader $theme={theme} {...rest}></StyledCircleLoader>;
-    case ChopLogicLoaderView.Brackets:
-      return <StyledBracketsLoader $theme={theme} {...rest}></StyledBracketsLoader>;
-    case ChopLogicLoaderView.Linear:
-      return <StyledLinearLoader $theme={theme} {...rest}></StyledLinearLoader>;
-    case ChopLogicLoaderView.Pulse:
-      return <StyledPulseLoader $theme={theme} {...rest}></StyledPulseLoader>;
-    case ChopLogicLoaderView.Square:
-      return <StyledSquareLoader $theme={theme} {...rest}></StyledSquareLoader>;
-    case ChopLogicLoaderView.Arrow:
-      return <StyledArrowLoader $theme={theme} {...rest}></StyledArrowLoader>;
-    case ChopLogicLoaderView.Rotation:
-      return <StyledRotationLoader $theme={theme} {...rest}></StyledRotationLoader>;
-    case ChopLogicLoaderView.Filler:
-      return <StyledFillerLoader $theme={theme} {...rest}></StyledFillerLoader>;
-    default:
-      return null;
-  }
+  return <span className={className} {...rest}></span>;
 };
 
 export default ChopLogicLoader;

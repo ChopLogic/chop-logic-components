@@ -2,20 +2,18 @@ import React, { PropsWithChildren, useRef } from 'react';
 import { ChopLogicIcon } from '@elements';
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
-import { ChopLogicMenuItem, ChopLogicTheme } from '@models';
-
-import { StyledSubMenu, StyledSubMenuText } from '../Meny.styled.ts';
+import { ChopLogicMenuItem } from '@models';
+import styles from '../Menu.module.scss';
 
 type SubMenuProps = PropsWithChildren & {
   item: ChopLogicMenuItem;
-  theme: ChopLogicTheme;
   isSubMenuOpened: boolean;
   mode: ChopLogicOrientationMode;
   toggleSubMenu: () => void;
   closeSubMenu: () => void;
 };
 
-const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
+const SubMenu: React.FC<SubMenuProps> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
@@ -47,21 +45,21 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, theme, isSubMenuOpened, toggleS
   useClickOutside({ ref, dependentRef, onClickOutsideHandler });
 
   return (
-    <StyledSubMenu
+    <li
+      className={styles.subMenu}
       tabIndex={0}
       role='menuitem'
       aria-haspopup='true'
       aria-expanded={isSubMenuOpened}
-      $theme={theme}
       onKeyDown={handleKeyDown}
       ref={ref}
     >
-      <StyledSubMenuText ref={dependentRef} $theme={theme} onClick={toggleSubMenu} $mode={mode}>
+      <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu}>
         {itemContent}
         <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
-      </StyledSubMenuText>
+      </span>
       {isSubMenuOpened && children}
-    </StyledSubMenu>
+    </li>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
 import { ChopLogicIconName } from '@enums';
-import { useChopLogicTheme, useElementIds } from '@hooks';
+import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
-
 import { useChopLogicNumericInputController } from './controller';
-import { StyledNumericInput } from './NumericInput.styled';
+import styles from './NumericInput.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -26,10 +26,10 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   hasSpinButtons = true,
   defaultValue = 0,
   step = 1,
+  className,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
-  const theme = useChopLogicTheme();
   const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useChopLogicNumericInputController({
     name,
     defaultValue,
@@ -41,10 +41,11 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
     step,
     onSpinButtonClick,
   });
+  const inputClass = getClassName([styles.numeric, className]);
 
   return (
-    <StyledNumericInput $theme={theme} {...rest}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+    <div {...rest} className={inputClass}>
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <div>
         <input
           id={elementId}
@@ -72,20 +73,18 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
               label={`Decrement value for ${label}`}
               icon={ChopLogicIconName.ChevronLeft}
               disabled={disabled}
-              theme={theme}
             />
             <ChopLogicInputInnerButton
               onClick={increment}
               label={`Increment value for ${label}`}
               icon={ChopLogicIconName.ChevronRight}
               disabled={disabled}
-              theme={theme}
             />
           </span>
         )}
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={theme} />
-    </StyledNumericInput>
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+    </div>
   );
 };
 

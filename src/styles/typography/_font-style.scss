@@ -1,0 +1,39 @@
+@use 'steppe';
+@use 'dita';
+
+/// Applies consistent font styles based on ChopLogic theme tokens.
+///
+/// @param {string} $family - Font family: `core` or `monospace` (default: `core`)
+/// @param {string} $size - Font size: `base`, `small`, or `header` (default: `base`)
+/// @param {string | number} $weight - Font weight (default: `normal`)
+/// @param {number | string} $line-height - Line height (default: `1.5`)
+/// @param {number | string} $letter-spacing - Letter spacing (default: `normal`)
+///
+/// @example scss
+///   @include font-style(); // core, base, normal weight
+///   @include font-style(monospace, small, 500);
+///   @include font-style(core, header, bold, 1.2, 0.02em);
+///
+@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1, $letter-spacing: normal) {
+  $core-font: steppe.$cl-core-font, Arial, Helvetica, sans-serif;
+  $monospace-font: dita.$cl-monospace-font, 'Courier New', Courier, monospace;
+
+  font-family: if($family == monospace, $monospace-font, $core-font);
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+
+  // Better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $size == base {
+    font-size: var(--cl-base-font-size);
+  } @else if $size == small {
+    font-size: var(--cl-small-font-size);
+  } @else if $size == header {
+    font-size: var(--cl-header-font-size);
+  } @else {
+    @warn "Unknown font size `#{$size}`. Allowed values: base, small, header.";
+  }
+}

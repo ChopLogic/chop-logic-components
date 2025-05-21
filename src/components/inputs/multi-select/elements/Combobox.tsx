@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyledSelectCombobox } from '@css/common/Select.styled';
-import ArrowDownIcon from '@icons/svg/ArrowDownIcon.tsx';
-import ArrowUpIcon from '@icons/svg/ArrowUpIcon.tsx';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';
+import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
+import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
+import { ChopLogicMultiSelectValue } from '@models';
+import styles from '../../select/Select.module.scss';
 
 type MultiSelectComboboxProps = {
   opened: boolean;
@@ -14,7 +14,6 @@ type MultiSelectComboboxProps = {
   values?: ChopLogicMultiSelectValue[];
   placeholder?: string;
   name: string;
-  theme: ChopLogicTheme;
 };
 
 const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
@@ -27,7 +26,6 @@ const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
   disabled,
   required,
   values,
-  theme,
 }) => {
   const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
@@ -40,7 +38,7 @@ const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
   }
 
   return (
-    <StyledSelectCombobox
+    <button
       type='button'
       name={name}
       value={selectedIds}
@@ -52,11 +50,11 @@ const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
-      $theme={theme}
+      className={styles.combobox}
     >
       {selectedValues}
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
-    </StyledSelectCombobox>
+    </button>
   );
 };
 

@@ -1,23 +1,20 @@
 import React from 'react';
 import { ChopLogicIcon } from '@elements';
 import { ChopLogicIconName } from '@enums';
-import { ChopLogicTheme } from '@models';
-
-import { StyledInputInnerButton } from './InputInnerButton.styled';
+import styles from './InputInnerButton.module.scss';
 
 type ClearInputButtonProps = {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   label: string;
   icon: ChopLogicIconName;
   disabled?: boolean;
-  theme: ChopLogicTheme;
 };
 
-const InputInnerButton: React.FC<ClearInputButtonProps> = ({ onClick, label, icon, disabled, theme }) => {
+const InputInnerButton: React.FC<ClearInputButtonProps> = ({ onClick, label, icon, disabled }) => {
   return (
-    <StyledInputInnerButton onClick={onClick} aria-label={label} type='button' disabled={disabled} $theme={theme}>
+    <button className={styles.inputButton} onClick={onClick} aria-label={label} type='button' disabled={disabled}>
       <ChopLogicIcon name={icon} />
-    </StyledInputInnerButton>
+    </button>
   );
 };
 

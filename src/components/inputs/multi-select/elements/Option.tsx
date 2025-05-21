@@ -1,17 +1,18 @@
 import React, { KeyboardEvent } from 'react';
-import { StyledMultiSelectOption } from '@css/common/Select.styled';
-import CheckboxCheckedIcon from '@icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@icons/svg/CheckboxUncheckedIcon.tsx';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
+import { ChopLogicMultiSelectValue } from '@models';
+import { getClassName } from '@utils';
+import styles from '@components/inputs/select/Select.module.scss';
 
 type MultiSelectOptionProps = {
   value: ChopLogicMultiSelectValue;
   onSelect: (id: string) => void;
-  theme: ChopLogicTheme;
 };
 
-const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect, theme }) => {
+const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect }) => {
   const { id, label, selected } = value;
+  const optionClass = getClassName([styles.option, styles.option__multi, { [styles.option__selected]: selected }]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -27,19 +28,18 @@ const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect, theme
   };
 
   return (
-    <StyledMultiSelectOption
+    <li
       id={id}
       role='option'
       aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => onSelect(id)}
-      $theme={theme}
-      $selected={selected}
+      className={optionClass}
     >
       {selected ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
       <span>{label}</span>
-    </StyledMultiSelectOption>
+    </li>
   );
 };
 

@@ -1,0 +1,31 @@
+@use '/src/styles/animations';
+@use '/src/styles/typography';
+@use '/src/styles/variables';
+
+.wrapper {
+  @include animations.fade-in();
+  position: fixed;
+  bottom: var(--cl-l-gap);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: variables.$popup;
+
+  &__closing {
+    @include animations.fade-out();
+  }
+}
+
+.content {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+  background: var(--cl-primary-background);
+  width: 90vw;
+  padding: var(--cl-m-gap);
+  box-shadow: var(--cl-box-shadow);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+}

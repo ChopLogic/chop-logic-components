@@ -1,10 +1,7 @@
 import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import ChopLogicGridBody from '../elements/Body';
-
-import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicGridBody', () => {
   const columns: ChopLogicGridColumn[] = [
@@ -26,7 +23,6 @@ describe('ChopLogicGridBody', () => {
     deselectRowById: vi.fn(),
     selectable: true,
     selectedIds: [],
-    theme: LIGHT_THEME,
   };
 
   it('should match the snapshot', () => {

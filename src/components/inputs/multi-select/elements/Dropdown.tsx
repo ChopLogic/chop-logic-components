@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyledSelectDropdown } from '@css/common/Select.styled';
-import { ChopLogicMultiSelectValue, ChopLogicTheme } from '@models';
-import { handleDropdownListKeyPress } from '@utils';
-
+import { ChopLogicMultiSelectValue } from '@models';
+import { getClassName, handleDropdownListKeyPress } from '@utils';
+import styles from '../../select/Select.module.scss';
 import SelectOption from './Option';
 
 type MultiSelectDropdownProps = {
@@ -11,23 +10,23 @@ type MultiSelectDropdownProps = {
   dropdownId: string;
   onClose: () => void;
   onSelect: (id: string) => void;
-  theme: ChopLogicTheme;
 };
 
-const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId, theme }) => {
+const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId }) => {
+  const dropdownClass = getClassName([styles.dropdown, { [styles.dropdown__opened]: opened }]);
+
   return (
-    <StyledSelectDropdown
-      $opened={opened}
+    <ul
       role='listbox'
       id={dropdownId}
       tabIndex={-1}
       onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
-      $theme={theme}
+      className={dropdownClass}
     >
       {options.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} theme={theme} />
+        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
-    </StyledSelectDropdown>
+    </ul>
   );
 };
 

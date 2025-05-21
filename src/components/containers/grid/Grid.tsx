@@ -1,12 +1,11 @@
 import React from 'react';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicGridProps } from '@models';
-
 import ChopLogicGridBody from './elements/Body';
 import GridColumnGroup from './elements/ColumnGroup';
 import ChopLogicGridHead from './elements/Head';
 import { useChopLogicGridController } from './controller';
-import { StyledGrid, StyledGridCaption } from './Grid.styled';
+import styles from './Grid.module.scss';
+import { getClassName } from '@utils';
 
 const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   columns,
@@ -16,6 +15,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   renderDataItem,
   caption,
   selectable = false,
+  className,
   ...rest
 }) => {
   const {
@@ -28,12 +28,11 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
     handleSelectRowById,
     selectedIds,
   } = useChopLogicGridController({ id, data, onSelect });
-  const theme = useChopLogicTheme();
 
   return (
-    <StyledGrid {...rest}>
-      {caption && <StyledGridCaption $theme={theme}>{caption}</StyledGridCaption>}
-      <GridColumnGroup columns={columns} selectable={selectable} theme={theme} />
+    <table {...rest} className={getClassName([styles.grid, className])}>
+      {caption && <caption className={styles.grid_caption}>{caption}</caption>}
+      <GridColumnGroup columns={columns} selectable={selectable} />
       <ChopLogicGridHead
         gridId={elementId}
         columns={columns}
@@ -42,7 +41,6 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
         deselectAll={handleDeselectAll}
         isAllSelected={isAllSelected}
         isAllCheckboxDisabled={isAllCheckboxDisabled}
-        theme={theme}
       />
       <ChopLogicGridBody
         columns={columns}
@@ -52,9 +50,8 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
         deselectRowById={handleDeselectRowById}
         selectedIds={selectedIds}
         renderDataItem={renderDataItem}
-        theme={theme}
       />
-    </StyledGrid>
+    </table>
   );
 };
 

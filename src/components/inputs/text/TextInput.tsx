@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
 import { ChopLogicIconName } from '@enums';
-import { useChopLogicTheme, useElementIds } from '@hooks';
+import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
-
 import { useChopLogicTextInputController } from './controller';
-import { StyledTextInput } from './TextInput.styled';
+import { getClassName } from '@utils';
+import styles from './TextInput.module.scss';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -27,6 +27,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   readOnly = false,
   autoComplete = 'off',
   type = 'text',
+  className,
   ...rest
 }) => {
   const { value, valid, handleChange, handleClear, passwordShown, togglePassword } = useChopLogicTextInputController({
@@ -39,11 +40,11 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
-  const theme = useChopLogicTheme();
+  const inputClass = getClassName([styles.text, className]);
 
   return (
-    <StyledTextInput $theme={theme} {...rest}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+    <div {...rest} className={inputClass}>
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <div>
         <input
           id={elementId}
@@ -71,7 +72,6 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               label={`Clear input for ${label}`}
               icon={ChopLogicIconName.Remove}
               disabled={disabled}
-              theme={theme}
             />
           )}
           {isPasswordButtonVisible && (
@@ -80,13 +80,12 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
               label='Toggle password visibility'
               icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
               disabled={disabled}
-              theme={theme}
             />
           )}
         </span>
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} theme={theme} />
-    </StyledTextInput>
+      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+    </div>
   );
 };
 

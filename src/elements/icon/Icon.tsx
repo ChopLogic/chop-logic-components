@@ -1,6 +1,6 @@
 import React from 'react';
-import { ChopLogicIconDictionary } from '@icons';
 import { ChopLogicIconProps } from '@models';
+import { ChopLogicIconDictionary } from '@assets/icons';
 
 const ChopLogicIcon: React.FC<ChopLogicIconProps> = ({ name, testId, ...rest }) => {
   if (!name) return null;

@@ -1,0 +1,13 @@
+@use '/src/styles/typography';
+
+.container {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+
+  padding: var(--cl-l-gap);
+  margin: var(--cl-l-gap);
+  border: var(--cl-light-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+}

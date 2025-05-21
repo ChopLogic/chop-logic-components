@@ -1,15 +1,13 @@
 import React from 'react';
 import { ChopLogicLabel } from '@elements';
 import { useElementIds } from '@hooks';
-import CheckboxCheckedIcon from '@icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@icons/svg/CheckboxUncheckedIcon.tsx';
-import { ChopLogicTheme } from '@models';
-
-import { StyledGridCheckboxInput, StyledGridCheckboxWrapper } from '../Grid.styled';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
+import styles from '../Grid.module.scss';
+import { getClassName } from '@utils';
 
 type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  theme: ChopLogicTheme;
 };
 
 const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
@@ -19,14 +17,20 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
   required = false,
   onChange,
   checked = false,
-  theme,
   ...props
 }) => {
   const { elementId } = useElementIds(props?.id);
+  const checkboxClass = getClassName([
+    styles.checkbox,
+    {
+      [styles.checkbox__disabled]: !!disabled,
+      [styles.checkbox__checked]: checked,
+    },
+  ]);
 
   return (
-    <StyledGridCheckboxWrapper $disabled={!!disabled} $checked={checked} $theme={theme}>
-      <StyledGridCheckboxInput
+    <div className={checkboxClass}>
+      <input
         id={elementId}
         name={name}
         type='checkbox'
@@ -34,7 +38,7 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
         required={required}
         checked={checked}
         onChange={onChange}
-        $theme={theme}
+        className={styles.checkbox_input}
       />
       <ChopLogicLabel
         label={label}
@@ -42,10 +46,9 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
         inputId={elementId}
         isTextHidden={true}
         iconPosition='left'
-        theme={theme}
         icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
       />
-    </StyledGridCheckboxWrapper>
+    </div>
   );
 };
 

@@ -2,12 +2,9 @@ import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
 import ChopLogicTabButton from '../elements/TabButton';
 import ChopLogicTabContent from '../elements/TabContent';
 import ChopLogicTabs from '../Tabs';
-
-import { LIGHT_THEME } from '@css';
 
 describe('ChopLogicTabs', () => {
   const tabs = [
@@ -82,12 +79,12 @@ describe('ChopLogicTabButton', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicTabButton {...testProps} theme={LIGHT_THEME} />);
+    const { asFragment } = render(<ChopLogicTabButton {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the aria attribute', () => {
-    render(<ChopLogicTabButton {...testProps} theme={LIGHT_THEME} />);
+    render(<ChopLogicTabButton {...testProps} />);
     expect(screen.getByRole('tab')).toBeInTheDocument();
   });
 });
@@ -100,17 +97,17 @@ describe('ChopLogicTabContent', () => {
   ];
 
   it('should match the snapshot for the first tab', () => {
-    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-1' theme={LIGHT_THEME} />);
+    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-1' />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should match the snapshot for the second tab', () => {
-    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' theme={LIGHT_THEME} />);
+    const { asFragment } = render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have the aria attribute', () => {
-    render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' theme={LIGHT_THEME} />);
+    render(<ChopLogicTabContent tabs={tabs} selectedTabId='tab-2' />);
     expect(screen.getByRole('tabpanel')).toBeInTheDocument();
   });
 });

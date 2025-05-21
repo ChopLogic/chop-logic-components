@@ -1,8 +1,7 @@
 import React from 'react';
 import { ChopLogicOrientationMode } from '@enums';
-import { ChopLogicTheme } from '@models';
-
-import { StyledTabButton } from '../Tabs.styled';
+import { getClassName } from '@utils';
+import styles from '../Tabs.module.scss';
 
 type ChopLogicTabButtonProps = {
   title: string;
@@ -12,7 +11,6 @@ type ChopLogicTabButtonProps = {
   isSelected: boolean;
   mode: ChopLogicOrientationMode;
   isDisabled?: boolean;
-  theme: ChopLogicTheme;
 };
 
 const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
@@ -23,22 +21,27 @@ const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
   isDisabled = false,
   tabPanelId,
   mode,
-  theme,
 }) => {
+  const buttonClass = getClassName([
+    styles.tabButton,
+    {
+      [styles.tabButton__disabled]: isDisabled,
+      [styles.tabButton__vertical]: mode === ChopLogicOrientationMode.Vertical,
+      [styles.tabButton__selected]: isSelected,
+    },
+  ]);
+
   return (
-    <StyledTabButton
+    <button
       role='tab'
       id={tabId}
       onClick={() => onTabSelect(tabId)}
       aria-selected={isSelected}
       aria-controls={tabPanelId}
-      $selected={isSelected}
-      $disabled={isDisabled}
-      $mode={mode}
-      $theme={theme}
+      className={buttonClass}
     >
       {title}
-    </StyledTabButton>
+    </button>
   );
 };
 

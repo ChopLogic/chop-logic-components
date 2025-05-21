@@ -1,15 +1,14 @@
 import type { Preview } from '@storybook/react';
 import { Decorator } from '@storybook/react';
-import { ChopLogicThemeContext, ChopLogicThemeMode } from '../src';
-import { DARK_THEME, LIGHT_THEME } from '../src/css';
-import { STORY_WRAPPER_STYLES } from '@css/__docs__/story-wrapper-styles';
+import { ChopLogicThemeProvider } from '../src/contexts';
+import { ChopLogicThemeMode } from '../src/enums';
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
       values: [
-        { name: 'Dark', value: `${DARK_THEME.backgroundColorBase}` },
-        { name: 'Light', value: `${LIGHT_THEME.backgroundColorBase}` },
+        { name: 'Dark', value: '#2B2B2BFF' },
+        { name: 'Light', value: '#FFFFFFFF' },
       ],
       default: 'Light',
     },
@@ -23,6 +22,9 @@ const preview: Preview = {
       storySort: {
         order: [
           'Introduction',
+          'Theming',
+          'Contributing',
+          'Changelog',
           'Inputs',
           ['Button', 'TextInput', 'NumericInput', 'Checkbox', 'Select', 'MultiSelect', '*'],
           'Containers',
@@ -37,17 +39,25 @@ const preview: Preview = {
   tags: ['autodocs'],
 };
 
+const STORY_WRAPPER_STYLES = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '1rem',
+  margin: '1rem 0',
+};
+
 const withTheme: Decorator = (StoryFn, context) => {
-  // Get the active theme value from the story parameter
   const { backgrounds } = context.globals;
-  const backgroundColor = backgrounds?.value ?? LIGHT_THEME.backgroundColorBase;
-  const mode = backgroundColor === DARK_THEME.backgroundColorBase ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+  const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
+  const storybookMode = backgroundColor === '#2B2B2BFF' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+
   return (
-    <ChopLogicThemeContext.Provider value={{ mode }}>
+    <ChopLogicThemeProvider injectedMode={storybookMode}>
       <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
         <StoryFn />
       </div>
-    </ChopLogicThemeContext.Provider>
+    </ChopLogicThemeProvider>
   );
 };
 

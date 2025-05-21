@@ -1,10 +1,8 @@
 import React from 'react';
-import { ChopLogicTheme } from '@models';
-
-import { StyledGridRow } from '../Grid.styled';
-
+import styles from '../Grid.module.scss';
 import GridDataCell from './DataCell';
 import SelectGridRowCell from './SelectRowCell';
+import { getClassName } from '@utils';
 
 export type GridRowProps = {
   rowId: string;
@@ -14,14 +12,13 @@ export type GridRowProps = {
   selectable: boolean;
   values: (string | React.ReactElement)[];
   disabled?: boolean;
-  theme: ChopLogicTheme;
 };
 
-const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled, theme }) => {
+const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
   const selected = selectedIds.includes(rowId);
 
   return (
-    <StyledGridRow $selected={selected} $theme={theme}>
+    <tr className={getClassName([styles.grid_row, { [styles.grid_row__selected]: selected }])}>
       {selectable && (
         <SelectGridRowCell
           rowId={rowId}
@@ -29,13 +26,12 @@ const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById
           deselectRowById={deselectRowById}
           isRowSelected={selected}
           disabled={disabled}
-          theme={theme}
         />
       )}
       {values.map((value, index) => (
-        <GridDataCell key={`row_${index}`} value={value} theme={theme} />
+        <GridDataCell key={`row_${index}`} value={value} />
       ))}
-    </StyledGridRow>
+    </tr>
   );
 };
 

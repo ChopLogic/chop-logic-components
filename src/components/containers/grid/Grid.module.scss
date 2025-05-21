@@ -1,0 +1,107 @@
+@use '/src/styles/typography';
+@use '/src/styles/mixins';
+
+.grid {
+  border-collapse: collapse;
+
+  &_body {
+    @include typography.font-style(core, base);
+    color: var(--cl-primary-color);
+  }
+
+  &_cell {
+    padding: var(--cl-m-gap);
+  }
+
+  &_row {
+    border-bottom: var(--cl-light-border);
+
+    &__selected {
+      background-color: var(--cl-highlight-background);
+    }
+  }
+
+  &_column {
+    border-right: var(--cl-light-border);
+
+    &__first {
+      border-left: var(--cl-light-border);
+    }
+
+    &__highlighted {
+      background-color: var(--cl-highlight-background);
+    }
+  }
+
+  &_caption {
+    @include typography.font-style(core, base, bold);
+    color: var(--cl-primary-color);
+    padding: var(--cl-m-gap);
+  }
+}
+
+.header {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+
+  &_cell {
+    padding: var(--cl-m-gap);
+    text-align: left;
+  }
+
+  &_row {
+    font-weight: bold;
+    border-top: var(--cl-light-border);
+    border-bottom: var(--cl-light-border);
+    background-color: var(--cl-primary-background);
+  }
+}
+
+.checkbox {
+  display: flex;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-s-gap) 0;
+  position: relative;
+  overflow: hidden;
+
+  svg {
+    color: var(--cl-tint-color);
+    width: var(--cl-icon-size);
+    height: var(--cl-icon-size);
+  }
+
+  &__checked {
+    svg {
+      color: var(--cl-primary-color);
+    }
+  }
+
+  &__disabled {
+    @include mixins.disabled();
+  }
+
+  label {
+    cursor: pointer;
+    gap: var(--cl-s-gap);
+    font-size: var(--cl-small-font-size) !important;
+
+    &:hover,
+    &:active {
+      text-shadow: var(--cl-text-shadow);
+    }
+  }
+
+  &_input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 4px;
+    left: 0;
+    margin: 0;
+
+    &:focus-visible + label {
+      outline: var(--cl-outline-border);
+      outline-offset: 2px;
+    }
+  }
+}

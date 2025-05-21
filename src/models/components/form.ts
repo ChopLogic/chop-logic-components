@@ -12,12 +12,6 @@ export interface ChopLogicFormInputParams {
   valid?: boolean;
 }
 
-export interface ChopLogicFormContextProps {
-  onChangeFormInput?: (params: ChopLogicFormInputParams) => void;
-  initialValues?: ChopLogicFormData;
-  resetSignal?: number;
-}
-
 export interface ChopLogicFormProps extends PropsWithChildren, ChopLogicComponentProps {
   columns?: number;
   initialValues?: ChopLogicFormData;

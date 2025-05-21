@@ -1,0 +1,27 @@
+@use '/src/styles/animations';
+@use '/src/styles/typography';
+@use '/src/styles/variables';
+
+.errorMessage {
+  @include animations.fade-in();
+  @include typography.font-style(core, small);
+
+  display: none;
+  position: absolute;
+  max-width: 100%;
+  right: 0;
+  top: 76px;
+  opacity: 0.8;
+  z-index: variables.$popup;
+  background-color: var(--cl-primary-background);
+  border: var(--cl-accent-border);
+  color: var(--cl-accent-color);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  pointer-events: none;
+
+  &__visible {
+    display: block;
+  }
+}

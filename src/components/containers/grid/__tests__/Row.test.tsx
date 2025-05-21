@@ -1,9 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import GridRow, { GridRowProps } from '../elements/Row';
-
-import { LIGHT_THEME } from '@css';
 
 describe('GridRow', () => {
   const testProps: GridRowProps = {
@@ -13,7 +10,6 @@ describe('GridRow', () => {
     selectable: true,
     values: ['Value 1', 'Value 2', <span key='value-3'>Value 3</span>],
     selectedIds: ['value1', 'value2', 'value3'],
-    theme: LIGHT_THEME,
   };
 
   it('should match the snapshot', () => {

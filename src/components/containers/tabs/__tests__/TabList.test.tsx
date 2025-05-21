@@ -3,13 +3,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
-
 import ChopLogicTabList from '../elements/TabList';
-
-import { DARK_THEME } from '@css';
 
 vi.mock('@utils', () => ({
   moveFocusOnElementById: vi.fn(),
+  getClassName: vi.fn(),
 }));
 
 describe('ChopLogicTabList', () => {
@@ -31,7 +29,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Horizontal}
-        theme={DARK_THEME}
       />,
     );
 
@@ -49,7 +46,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Vertical}
-        theme={DARK_THEME}
       />,
     );
 
@@ -70,7 +66,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Horizontal}
-        theme={DARK_THEME}
       />,
     );
 
@@ -91,7 +86,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Horizontal}
-        theme={DARK_THEME}
       />,
     );
 
@@ -110,7 +104,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Horizontal}
-        theme={DARK_THEME}
       />,
     );
 
@@ -131,7 +124,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Horizontal}
-        theme={DARK_THEME}
       />,
     );
 
@@ -152,7 +144,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Vertical}
-        theme={DARK_THEME}
       />,
     );
 
@@ -173,7 +164,6 @@ describe('ChopLogicTabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode={ChopLogicOrientationMode.Vertical}
-        theme={DARK_THEME}
       />,
     );
 

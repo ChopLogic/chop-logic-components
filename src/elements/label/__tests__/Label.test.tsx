@@ -5,14 +5,11 @@ import { describe, expect, it } from 'vitest';
 
 import ChopLogicLabel from '../Label';
 
-import { DARK_THEME } from '@css';
-
 describe('ChopLogicLabel', () => {
   const testProps = {
     label: 'Test label',
     required: true,
     inputId: 'test-input-id',
-    theme: DARK_THEME,
   };
 
   it('should render correctly as required label', () => {

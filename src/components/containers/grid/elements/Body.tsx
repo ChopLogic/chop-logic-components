@@ -1,10 +1,8 @@
 import React from 'react';
-import { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicTheme, RenderDataItemCallback } from '@models';
-
-import { StyledGridBody } from '../Grid.styled';
+import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
 import { getGridRowValues } from '../helpers';
-
 import GridRow from './Row';
+import styles from '../Grid.module.scss';
 
 type ChopLogicGridBodyProps = {
   data: ChopLogicGridItem[];
@@ -14,7 +12,6 @@ type ChopLogicGridBodyProps = {
   deselectRowById: (id: string) => void;
   renderDataItem?: RenderDataItemCallback;
   selectable: boolean;
-  theme: ChopLogicTheme;
 };
 
 const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
@@ -25,10 +22,9 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
   selectable,
   data,
   columns,
-  theme,
 }) => {
   return (
-    <StyledGridBody $theme={theme}>
+    <tbody className={styles.grid_body}>
       {data.map((item) => {
         const values = getGridRowValues({ item, columns, renderDataItem });
         return (
@@ -41,11 +37,10 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
             selectable={selectable}
             values={values}
             selectedIds={selectedIds}
-            theme={theme}
           />
         );
       })}
-    </StyledGridBody>
+    </tbody>
   );
 };
 

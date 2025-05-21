@@ -1,10 +1,8 @@
 import React from 'react';
-import { ChopLogicTheme } from '@models';
+import styles from '../Grid.module.scss';
 
-import { StyledGridCell } from '../Grid.styled';
-
-const GridDataCell: React.FC<{ value: React.ReactElement | string; theme: ChopLogicTheme }> = ({ value, theme }) => {
-  return <StyledGridCell $theme={theme}>{value}</StyledGridCell>;
+const GridDataCell: React.FC<{ value: React.ReactElement | string }> = ({ value }) => {
+  return <td className={styles.grid_cell}>{value}</td>;
 };
 
 export default GridDataCell;

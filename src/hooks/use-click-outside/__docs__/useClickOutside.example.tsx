@@ -1,21 +1,19 @@
 import { useRef } from 'react';
-import { ExampleDivContainer } from '@css/__docs__/ExampleDivContainer.styled.tsx';
-import { useChopLogicTheme } from '@hooks';
+import styles from '@styles/storybook/Container.module.scss';
 
 import { useClickOutside } from '..';
 
 const UseClickOutsideExample = () => {
   const ref = useRef(null);
-  const theme = useChopLogicTheme();
   useClickOutside({
     ref,
     onClickOutsideHandler: () => alert('Clicked outside!'),
   });
 
   return (
-    <ExampleDivContainer $theme={theme} ref={ref}>
+    <div className={styles.container} ref={ref}>
       Click outside this box to trigger the handler.
-    </ExampleDivContainer>
+    </div>
   );
 };
 

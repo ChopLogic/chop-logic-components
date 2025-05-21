@@ -4,7 +4,7 @@ exports[`ChopLogicErrorMessage > should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     aria-hidden="false"
-    class="sc-Qotzb ZvXhN"
+    class="_errorMessage_0b90dc _errorMessage__visible_0b90dc"
     id="test-error-id"
   >
     Incorrect input

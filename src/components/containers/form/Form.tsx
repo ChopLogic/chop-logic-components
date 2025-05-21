@@ -2,11 +2,10 @@ import React from 'react';
 import { ChopLogicButton } from '@components';
 import { ChopLogicFormContext } from '@contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
-import { useChopLogicTheme } from '@hooks';
 import { ChopLogicFormProps } from '@models';
-
+import styles from './Form.module.scss';
 import { useChopLogicFormController } from './controller';
-import { StyledForm, StyledFormButtonsContainer } from './Form.styled';
+import { getClassName } from '@utils';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   children,
@@ -16,6 +15,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   onClickSubmit,
   columns = 1,
   hasReset = true,
+  className,
   ...rest
 }) => {
   const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useChopLogicFormController({
@@ -24,18 +24,19 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
     onSubmit,
     onClickSubmit,
   });
-  const theme = useChopLogicTheme();
+  const columnsNumber = columns <= 6 && columns >= 1 ? columns : 1;
+  const formClass = getClassName([styles.form, className]);
 
   return (
-    <StyledForm onSubmit={handleSubmit} onReset={handleReset} $columns={columns} $theme={theme} {...rest}>
+    <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={`${formClass} ${styles[`columns-${columnsNumber}`]}`}>
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
-        <StyledFormButtonsContainer $columns={columns}>
+        <div className={`${styles.buttons} ${styles[`buttons-${columnsNumber}`]}`}>
           {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view={ChopLogicButtonView.Flat} />}
           <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
-        </StyledFormButtonsContainer>
+        </div>
       </ChopLogicFormContext.Provider>
-    </StyledForm>
+    </form>
   );
 };
 

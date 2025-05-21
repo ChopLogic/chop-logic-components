@@ -23,15 +23,15 @@
       "@elements/*": ["elements/*"],
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
-      "@css/*": ["css/*"],
       "@enums/*": ["enums/*"],
       "@models/*": ["models/*"],
       "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
-      "@hocs/*": ["hocs/*"]
+      "@hocs/*": ["hocs/*"],
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },
-  "include": ["src"],
-  "exclude": ["src/**/__tests__/*"]
+  "include": ["src"]
 }

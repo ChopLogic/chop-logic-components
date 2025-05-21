@@ -3,11 +3,8 @@ import { ChopLogicAlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
 import ChopLogicAlert from '../Alert';
-import ChopLogicAlertHeader from '../elements/Header';
-
-import { DARK_THEME } from '@css';
+import ChopLogicAlertHeader from '../elements/AlertHeader.tsx';
 
 const defaultProps: ChopLogicAlertProps = {
   isOpened: false,
@@ -52,21 +49,11 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should have different headers depending on the mode', () => {
-    const { asFragment: errorFragment } = render(
-      <ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Error} theme={DARK_THEME} />,
-    );
-    const { asFragment: warningFragment } = render(
-      <ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Warning} theme={DARK_THEME} />,
-    );
-    const { asFragment: helpFragment } = render(
-      <ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Help} theme={DARK_THEME} />,
-    );
-    const { asFragment: infoFragment } = render(
-      <ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Info} theme={DARK_THEME} />,
-    );
-    const { asFragment: successFragment } = render(
-      <ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Success} theme={DARK_THEME} />,
-    );
+    const { asFragment: errorFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Error} />);
+    const { asFragment: warningFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Warning} />);
+    const { asFragment: helpFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Help} />);
+    const { asFragment: infoFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Info} />);
+    const { asFragment: successFragment } = render(<ChopLogicAlertHeader {...defaultProps} mode={ChopLogicAlertMode.Success} />);
 
     expect(errorFragment()).toMatchSnapshot();
     expect(warningFragment()).toMatchSnapshot();

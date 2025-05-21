@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { StyledSelect } from '@css/common/Select.styled';
 import { ChopLogicLabel } from '@elements';
-import { useChopLogicTheme, useClickOutside, useElementIds, useKeyPress } from '@hooks';
+import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicSelectProps } from '@models';
-
 import SelectCombobox from './elements/Combobox';
 import SelectDropdown from './elements/Dropdown';
 import { useChopLogicSelectController } from './controller';
+import { getClassName } from '@utils';
+import styles from './Select.module.scss';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   options,
@@ -18,10 +18,10 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   placeholder = 'Not selected',
   required = false,
   disabled = false,
+  className,
   ...rest
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const theme = useChopLogicTheme();
   const { elementId, dropdownId } = useElementIds(id);
   const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useChopLogicSelectController({
     options,
@@ -29,13 +29,14 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
     defaultValue,
     name,
   });
+  const selectClass = getClassName([styles.wrapper, className]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
   return (
-    <StyledSelect ref={ref} $theme={theme} {...rest}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} theme={theme} />
+    <div ref={ref} {...rest} className={selectClass}>
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}
@@ -46,7 +47,6 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         placeholder={placeholder}
         disabled={disabled}
         required={required}
-        theme={theme}
       />
       <SelectDropdown
         options={options}
@@ -57,9 +57,8 @@ const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
         comboboxId={elementId}
         onSelect={handleSelect}
         onClear={handleClear}
-        theme={theme}
       />
-    </StyledSelect>
+    </div>
   );
 };
 

@@ -1,18 +1,19 @@
 import React, { KeyboardEvent } from 'react';
-import { StyledSelectOption } from '@css/common/Select.styled';
-import CheckMarkIcon from '@icons/svg/CheckMarkIcon.tsx';
-import { ChopLogicSelectValue, ChopLogicTheme } from '@models';
+import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
+import { ChopLogicSelectValue } from '@models';
+import styles from '../Select.module.scss';
+import { getClassName } from '@utils';
 
 type SelectOptionProps = {
   value: ChopLogicSelectValue;
   selected: boolean;
   onSelect: (id: string) => void;
   onClear: () => void;
-  theme: ChopLogicTheme;
 };
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear, theme }) => {
+const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, onClear }) => {
   const { id, label } = value;
+  const optionClass = getClassName([styles.option, { [styles.option__selected]: selected }]);
 
   const handleOptionSelect = (id: string) => {
     if (selected) {
@@ -36,19 +37,18 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, selected, onSelect, 
   };
 
   return (
-    <StyledSelectOption
+    <li
       id={id}
       role='option'
       aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}
       onClick={() => handleOptionSelect(id)}
-      $theme={theme}
-      $selected={selected}
+      className={optionClass}
     >
       <span>{label}</span>
       {selected && <CheckMarkIcon />}
-    </StyledSelectOption>
+    </li>
   );
 };
 

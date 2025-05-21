@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicSelectValue, ChopLogicTheme } from '../../../../models';
+import { ChopLogicSelectValue } from '../../../../models';
 type SelectComboboxProps = {
     opened: boolean;
     disabled: boolean;
@@ -10,7 +10,6 @@ type SelectComboboxProps = {
     selected?: ChopLogicSelectValue;
     placeholder?: string;
     name: string;
-    theme: ChopLogicTheme;
 };
 declare const SelectCombobox: React.FC<SelectComboboxProps>;
 export default SelectCombobox;

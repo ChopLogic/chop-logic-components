@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicGridColumn, ChopLogicTheme } from '../../../../models';
+import { ChopLogicGridColumn } from '../../../../models';
 type ChopLogicGridHeadProps = {
     columns: ChopLogicGridColumn[];
     gridId: string;
@@ -8,7 +8,6 @@ type ChopLogicGridHeadProps = {
     isAllCheckboxDisabled?: boolean;
     selectAll: () => void;
     deselectAll: () => void;
-    theme: ChopLogicTheme;
 };
 declare const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps>;
 export default ChopLogicGridHead;

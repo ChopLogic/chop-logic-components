@@ -1,8 +1,6 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicMenuItem, ChopLogicTheme } from '../../../../models';
-type MenuLeafProps = {
+import { ChopLogicMenuItem } from '../../../../models';
+declare const MenuLeaf: ({ item }: {
     item: ChopLogicMenuItem;
-    theme: ChopLogicTheme;
-};
-declare const MenuLeaf: React.FC<MenuLeafProps>;
+}) => React.ReactElement;
 export default MenuLeaf;

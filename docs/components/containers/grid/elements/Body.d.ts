@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicTheme, RenderDataItemCallback } from '../../../../models';
+import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '../../../../models';
 type ChopLogicGridBodyProps = {
     data: ChopLogicGridItem[];
     columns: ChopLogicGridColumn[];
@@ -8,7 +8,6 @@ type ChopLogicGridBodyProps = {
     deselectRowById: (id: string) => void;
     renderDataItem?: RenderDataItemCallback;
     selectable: boolean;
-    theme: ChopLogicTheme;
 };
 declare const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps>;
 export default ChopLogicGridBody;

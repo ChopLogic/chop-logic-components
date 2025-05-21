@@ -1,5 +1,5 @@
 import { default as React } from '../../../../../node_modules/react';
-import { ChopLogicSelectValue, ChopLogicTheme } from '../../../../models';
+import { ChopLogicSelectValue } from '../../../../models';
 type SelectDropdownProps = {
     options: ChopLogicSelectValue[];
     opened: boolean;
@@ -9,7 +9,6 @@ type SelectDropdownProps = {
     selected?: ChopLogicSelectValue;
     onSelect: (id: string) => void;
     onClear: () => void;
-    theme: ChopLogicTheme;
 };
 declare const SelectDropdown: React.FC<SelectDropdownProps>;
 export default SelectDropdown;

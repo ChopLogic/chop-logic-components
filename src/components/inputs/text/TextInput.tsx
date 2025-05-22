@@ -1,11 +1,12 @@
 import React from 'react';
-import { ChopLogicErrorMessage, ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
+import { ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
 import { ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './controller';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
+import { ErrorMessage } from '@components/atoms';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -84,7 +85,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
           )}
         </span>
       </div>
-      <ChopLogicErrorMessage errorId={errorId} message={errorMessage} visible={!valid} />
+      <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
     </div>
   );
 };

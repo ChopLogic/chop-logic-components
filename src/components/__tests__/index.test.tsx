@@ -25,7 +25,6 @@ describe('Index File Exports', () => {
         'ChopLogicTabs',
         'ChopLogicAlert',
         'ChopLogicFormContext',
-        'ChopLogicErrorMessage',
         'ChopLogicIcon',
         'ChopLogicInputInnerButton',
         'ChopLogicLabel',
@@ -44,6 +43,7 @@ describe('Index File Exports', () => {
         'useResetFormInput',
         'useTooltipPosition',
         'useWindowDimensions',
+        'useChopLogicTheme',
       ]),
     );
   });

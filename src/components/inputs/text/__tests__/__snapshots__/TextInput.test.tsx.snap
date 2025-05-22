@@ -60,10 +60,10 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     </div>
     <span
       aria-hidden="true"
-      class="_errorMessage_0b90dc"
+      class="_errorMessage_244a1c _errorMessage_b8b49d"
       id="test-input-id_error"
     >
-      Invalid input
+      Error!
     </span>
   </div>
 </DocumentFragment>
@@ -135,10 +135,10 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     </div>
     <span
       aria-hidden="true"
-      class="_errorMessage_0b90dc"
+      class="_errorMessage_244a1c _errorMessage_b8b49d"
       id="test-input-id_error"
     >
-      Invalid input
+      Error!
     </span>
   </div>
 </DocumentFragment>

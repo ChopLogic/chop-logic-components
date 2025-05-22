@@ -64,10 +64,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_0b90dc"
+        class="_errorMessage_244a1c _errorMessage_b8b49d"
         id="first-name_error"
       >
-        Invalid input
+        Error!
       </span>
     </div>
     <div
@@ -127,10 +127,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_0b90dc"
+        class="_errorMessage_244a1c _errorMessage_b8b49d"
         id="last-name_error"
       >
-        Invalid input
+        Error!
       </span>
     </div>
     <div
@@ -198,10 +198,10 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_0b90dc"
+        class="_errorMessage_244a1c _errorMessage_a3b6d8"
         id="age_error"
       >
-        Invalid input
+        Error!
       </span>
     </div>
     <div

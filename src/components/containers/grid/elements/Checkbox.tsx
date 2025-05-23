@@ -1,10 +1,10 @@
 import React from 'react';
-import { ChopLogicLabel } from '@elements';
 import { useElementIds } from '@hooks';
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
 import styles from '../Grid.module.scss';
 import { getClassName } from '@utils';
+import { Label } from '@components/atoms';
 
 type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -40,7 +40,7 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
         onChange={onChange}
         className={styles.checkbox_input}
       />
-      <ChopLogicLabel
+      <Label
         label={label}
         required={required}
         inputId={elementId}

@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { ChopLogicLabel } from '@elements';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicMultiSelectProps } from '@models';
 import SelectCombobox from './elements/Combobox';
@@ -7,6 +6,7 @@ import SelectDropdown from './elements/Dropdown';
 import { useChopLogicMultiSelectController } from './controller';
 import styles from '../select/Select.module.scss';
 import { getClassName } from '@utils';
+import { Label } from '@components/atoms';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   options,
@@ -36,7 +36,7 @@ const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <div ref={ref} {...rest} className={multiSelectClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}

@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicLabel > should render correctly as not required label 1`] = `
+exports[`Label > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_87260b"
+    class="_label_79ce7d"
     for="test-input-id"
   >
     <span>
@@ -13,10 +13,10 @@ exports[`ChopLogicLabel > should render correctly as not required label 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLabel > should render correctly as required label 1`] = `
+exports[`Label > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_87260b"
+    class="_label_79ce7d"
     for="test-input-id"
   >
     <span>
@@ -31,19 +31,19 @@ exports[`ChopLogicLabel > should render correctly as required label 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLabel > should render correctly without text 1`] = `
+exports[`Label > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
-    class="_label_87260b"
+    class="_label_79ce7d"
     for="test-input-id"
   />
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLabel > should render left icon 1`] = `
+exports[`Label > should render left icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_87260b"
+    class="_label_79ce7d"
     for="test-input-id"
   >
     <svg
@@ -69,10 +69,10 @@ exports[`ChopLogicLabel > should render left icon 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLabel > should render right icon 1`] = `
+exports[`Label > should render right icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_87260b"
+    class="_label_79ce7d"
     for="test-input-id"
   >
     <svg

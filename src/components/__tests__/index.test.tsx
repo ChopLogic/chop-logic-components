@@ -27,7 +27,6 @@ describe('Index File Exports', () => {
         'ChopLogicFormContext',
         'ChopLogicIcon',
         'ChopLogicInputInnerButton',
-        'ChopLogicLabel',
         'ChopLogicAlertMode',
         'ChopLogicButtonView',
         'ChopLogicIconName',

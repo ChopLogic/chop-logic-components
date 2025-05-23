@@ -11,7 +11,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_text_b8b49d"
     >
       <label
-        class="_label_87260b"
+        class="_label_79ce7d"
         for="first-name"
       >
         <span>
@@ -74,7 +74,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_text_b8b49d"
     >
       <label
-        class="_label_87260b"
+        class="_label_79ce7d"
         for="last-name"
       >
         <span>
@@ -137,7 +137,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_numeric_a3b6d8"
     >
       <label
-        class="_label_87260b"
+        class="_label_79ce7d"
         for="age"
       >
         <span>

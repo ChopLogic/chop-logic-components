@@ -1,12 +1,12 @@
 import React from 'react';
-import { ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
+import { ChopLogicInputInnerButton } from '@elements';
 import { ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
 import { useChopLogicNumericInputController } from './controller';
 import styles from './NumericInput.module.scss';
 import { getClassName } from '@utils';
-import { ErrorMessage } from '@components/atoms';
+import { ErrorMessage, Label } from '@components/atoms';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -46,7 +46,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <div>
         <input
           id={elementId}

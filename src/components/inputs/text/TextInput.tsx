@@ -1,12 +1,12 @@
 import React from 'react';
-import { ChopLogicInputInnerButton, ChopLogicLabel } from '@elements';
+import { ChopLogicInputInnerButton } from '@elements';
 import { ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './controller';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
-import { ErrorMessage } from '@components/atoms';
+import { ErrorMessage, Label } from '@components/atoms';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -45,7 +45,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <div>
         <input
           id={elementId}

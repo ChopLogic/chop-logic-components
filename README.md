@@ -93,13 +93,13 @@ Runs ESLint and automatically fixes issues where possible.
 npm run lint:fix
 ```
 
-### `check-types`
+### `typecheck`
 
 Run the TypeScript compiler (tsc) to perform type checking without generating output files. This script helps ensure
 that the code adheres to TypeScript's type safety.
 
 ```bash
-npm run types
+npm run typecheck
 ```
 
 ### `test`

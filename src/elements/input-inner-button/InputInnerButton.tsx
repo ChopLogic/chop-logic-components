@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChopLogicIcon } from '@elements';
 import { ChopLogicIconName } from '@enums';
 import styles from './InputInnerButton.module.scss';
+import { ChopLogicIcon } from '@components/atoms';
 
 type ClearInputButtonProps = {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

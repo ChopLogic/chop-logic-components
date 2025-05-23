@@ -2,7 +2,7 @@ import { ChopLogicIconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicIcon from '../Icon.tsx';
+import ChopLogicIcon from './Icon.tsx';
 
 describe('ChopLogicIcon', () => {
   it('renders the correct icon after it loads', async () => {

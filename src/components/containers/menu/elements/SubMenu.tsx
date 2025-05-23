@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useRef } from 'react';
-import { ChopLogicIcon } from '@elements';
+import { ChopLogicIcon } from '@components/atoms';
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';

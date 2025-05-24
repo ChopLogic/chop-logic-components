@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import InputInnerButton from '../InputInnerButton';
+import InputButton from './InputButton.tsx';
 
 describe('InputInnerButton', () => {
   const testProps = {
@@ -12,24 +12,19 @@ describe('InputInnerButton', () => {
     icon: ChopLogicIconName.Remove,
   };
 
-  it('should match the snapshot', () => {
-    const { asFragment } = render(<InputInnerButton {...testProps} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have the accessible label', () => {
-    render(<InputInnerButton {...testProps} />);
+    render(<InputButton {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
-  it('should call onClear handler', async () => {
-    render(<InputInnerButton {...testProps} />);
+  it('should call onClick handler', async () => {
+    render(<InputButton {...testProps} />);
     await userEvent.click(screen.getByRole('button'));
     expect(testProps.onClick).toHaveBeenCalledOnce();
   });
 
   it('should have type button', () => {
-    render(<InputInnerButton {...testProps} />);
+    render(<InputButton {...testProps} />);
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
   });
 });

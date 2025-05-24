@@ -1,4 +1,4 @@
-import { ChopLogicInputProps, ChopLogicSelectValue } from '../common.ts';
+import { ChopLogicInputProps, ChopLogicSelectValue } from '../common';
 
 export interface ChopLogicSelectProps extends ChopLogicInputProps {
   options: ChopLogicSelectValue[];

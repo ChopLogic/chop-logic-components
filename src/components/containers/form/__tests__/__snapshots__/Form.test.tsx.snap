@@ -33,7 +33,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for First Name"
-            class="_inputButton_0d9f4d"
+            class="_inputButton_23c8d0"
             type="button"
           >
             <svg
@@ -96,7 +96,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for Last Name"
-            class="_inputButton_0d9f4d"
+            class="_inputButton_23c8d0"
             type="button"
           >
             <svg
@@ -160,7 +160,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Decrement value for Age"
-            class="_inputButton_0d9f4d"
+            class="_inputButton_23c8d0"
             type="button"
           >
             <svg
@@ -178,7 +178,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Age"
-            class="_inputButton_0d9f4d"
+            class="_inputButton_23c8d0"
             type="button"
           >
             <svg

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 
-import { ChopLogicComponentProps } from '../common.ts';
+import { ChopLogicComponentProps } from '../common';
 
 export interface ChopLogicTabsProps extends ChopLogicComponentProps {
   tabs: ChopLogicTabItem[];

@@ -1,6 +1,6 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
-import { ChopLogicInputProps, ChopLogicNumericInputValidator } from '../common.ts';
+import { ChopLogicInputProps, ChopLogicNumericInputValidator } from '../common';
 
 export interface ChopLogicNumericInputProps extends ChopLogicInputProps {
   errorMessage?: string;

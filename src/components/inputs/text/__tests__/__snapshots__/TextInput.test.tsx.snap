@@ -29,7 +29,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_inputButton_0d9f4d"
+          class="_inputButton_23c8d0"
           type="button"
         >
           <svg
@@ -104,7 +104,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_inputButton_0d9f4d"
+          class="_inputButton_23c8d0"
           type="button"
         >
           <svg

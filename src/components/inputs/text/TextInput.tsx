@@ -1,12 +1,11 @@
 import React from 'react';
-import { ChopLogicInputInnerButton } from '@elements';
 import { ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './controller';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
-import { ErrorMessage, Label } from '@components/atoms';
+import { ErrorMessage, InputButton, Label } from '@components/atoms';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -68,15 +67,10 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
         />
         <span>
           {clearable && (
-            <ChopLogicInputInnerButton
-              onClick={handleClear}
-              label={`Clear input for ${label}`}
-              icon={ChopLogicIconName.Remove}
-              disabled={disabled}
-            />
+            <InputButton onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} disabled={disabled} />
           )}
           {isPasswordButtonVisible && (
-            <ChopLogicInputInnerButton
+            <InputButton
               onClick={togglePassword}
               label='Toggle password visibility'
               icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}

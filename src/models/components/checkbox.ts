@@ -1,6 +1,6 @@
 import { ChangeEventHandler } from 'react';
 
-import { ChopLogicInputProps } from '../common.ts';
+import { ChopLogicInputProps } from '../common';
 
 export interface ChopLogicCheckboxProps extends ChopLogicInputProps {
   noLabel?: boolean;

@@ -1,6 +1,6 @@
 import { ChopLogicIconName } from '@enums';
 
-import { ChopLogicComponentProps } from '../common.ts';
+import { ChopLogicComponentProps } from '../common';
 import React from 'react';
 
 export interface ChopLogicIconProps extends ChopLogicComponentProps {

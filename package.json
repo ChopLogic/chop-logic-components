@@ -27,8 +27,8 @@
     "coverage": "vitest run --coverage"
   },
   "lint-staged": {
-    "src/*.ts": [
-      "npm run typecheck"
+    "*.(ts|tsx)": [
+      "bash -c 'npm run typecheck'"
     ],
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "npm run lint:fix",

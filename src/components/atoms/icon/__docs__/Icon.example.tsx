@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ChopLogicIconName } from '@enums';
 import { ChopLogicIconProps } from '@models';
 import styles from '@styles/storybook/Grid.module.scss';

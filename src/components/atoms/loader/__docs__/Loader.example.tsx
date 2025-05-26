@@ -1,8 +1,8 @@
 import React from 'react';
-import ChopLogicLoader from '@elements/loader/Loader.tsx';
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
 import styles from '@styles/storybook/Grid.module.scss';
+import { ChopLogicLoader } from '@components/atoms';
 
 const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
   const loaders = Object.values(ChopLogicLoaderView);

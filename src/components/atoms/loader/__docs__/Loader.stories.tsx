@@ -1,10 +1,9 @@
 import { ChopLogicLoaderView } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import LoaderExample from './Loader.example.tsx';
+import LoaderExample from './Loader.example';
 
 const meta: Meta<typeof LoaderExample> = {
-  title: 'Elements/Loader',
+  title: 'Atoms/Loader',
   component: LoaderExample,
   argTypes: {
     view: {

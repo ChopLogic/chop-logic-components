@@ -1,16 +1,15 @@
 import React from 'react';
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
-
-import Arrow from './styles/Arrow.module.scss';
-import Brackets from './styles/Brackets.module.scss';
-import Circle from './styles/Circle.module.scss';
-import Dots from './styles/Dots.module.scss';
-import Filler from './styles/Filler.module.scss';
-import Linear from './styles/Linear.module.scss';
-import Pulse from './styles/Pulse.module.scss';
-import Rotation from './styles/Rotation.module.scss';
-import Square from './styles/Square.module.scss';
+import Arrow from './views/Arrow.module.scss';
+import Brackets from './views/Brackets.module.scss';
+import Circle from './views/Circle.module.scss';
+import Dots from './views/Dots.module.scss';
+import Filler from './views/Filler.module.scss';
+import Linear from './views/Linear.module.scss';
+import Pulse from './views/Pulse.module.scss';
+import Rotation from './views/Rotation.module.scss';
+import Square from './views/Square.module.scss';
 import { getClassName } from '@utils';
 
 const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view, ...rest }) => {

@@ -1,4 +1,4 @@
-import ChopLogicLoader from '@elements/loader/Loader.tsx';
+import ChopLogicLoader from './Loader';
 import { ChopLogicLoaderView } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';

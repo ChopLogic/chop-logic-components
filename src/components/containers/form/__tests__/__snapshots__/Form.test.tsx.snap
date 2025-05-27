@@ -11,7 +11,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_text_b8b49d"
     >
       <label
-        class="_label_79ce7d"
+        class="_label_c20562"
         for="first-name"
       >
         <span>
@@ -33,7 +33,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for First Name"
-            class="_inputButton_23c8d0"
+            class="_inputButton_bfad8d"
             type="button"
           >
             <svg
@@ -64,7 +64,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_244a1c _errorMessage_b8b49d"
+        class="_errorMessage_2b3768 _errorMessage_b8b49d"
         id="first-name_error"
       >
         Error!
@@ -74,7 +74,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_text_b8b49d"
     >
       <label
-        class="_label_79ce7d"
+        class="_label_c20562"
         for="last-name"
       >
         <span>
@@ -96,7 +96,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for Last Name"
-            class="_inputButton_23c8d0"
+            class="_inputButton_bfad8d"
             type="button"
           >
             <svg
@@ -127,7 +127,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_244a1c _errorMessage_b8b49d"
+        class="_errorMessage_2b3768 _errorMessage_b8b49d"
         id="last-name_error"
       >
         Error!
@@ -137,7 +137,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_numeric_a3b6d8"
     >
       <label
-        class="_label_79ce7d"
+        class="_label_c20562"
         for="age"
       >
         <span>
@@ -160,7 +160,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Decrement value for Age"
-            class="_inputButton_23c8d0"
+            class="_inputButton_bfad8d"
             type="button"
           >
             <svg
@@ -178,7 +178,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Age"
-            class="_inputButton_23c8d0"
+            class="_inputButton_bfad8d"
             type="button"
           >
             <svg
@@ -198,7 +198,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       </div>
       <span
         aria-hidden="true"
-        class="_errorMessage_244a1c _errorMessage_a3b6d8"
+        class="_errorMessage_2b3768 _errorMessage_a3b6d8"
         id="age_error"
       >
         Error!
@@ -208,7 +208,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_buttons_732390 _buttons-1_732390"
     >
       <button
-        class="_flat_f48051"
+        class="_flat_c95db4"
         type="reset"
       >
         <svg
@@ -228,17 +228,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="_primary_f48051"
+        class="_primary_c95db4"
         type="submit"
       >
         <span
-          class="_primary_shadow_f48051"
+          class="_primary_shadow_c95db4"
         />
         <span
-          class="_primary_edge_f48051"
+          class="_primary_edge_c95db4"
         />
         <span
-          class="_primary_front_f48051"
+          class="_primary_front_c95db4"
         >
           <svg
             fill="currentColor"

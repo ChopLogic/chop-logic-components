@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChopLogicIcon } from '@components/atoms';
+import { ChopLogicIcon } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';

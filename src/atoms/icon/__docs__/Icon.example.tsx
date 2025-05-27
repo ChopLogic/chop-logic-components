@@ -3,7 +3,7 @@ import { ChopLogicIconName } from '@enums';
 import { ChopLogicIconProps } from '@models';
 import styles from '@styles/storybook/Grid.module.scss';
 import { getClassName } from '@utils';
-import ChopLogicIcon from '../Icon';
+import ChopLogicIcon from '../Icon.tsx';
 
 const IconExample: React.FC<ChopLogicIconProps> = () => {
   const iconNames = Object.values(ChopLogicIconName);

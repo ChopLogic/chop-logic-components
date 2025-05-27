@@ -6,7 +6,7 @@ import SelectDropdown from './elements/Dropdown';
 import { useChopLogicMultiSelectController } from './controller';
 import styles from '../select/Select.module.scss';
 import { getClassName } from '@utils';
-import { Label } from '@components/atoms';
+import { Label } from '@atoms';
 
 const ChopLogicMultiSelect: React.FC<ChopLogicMultiSelectProps> = ({
   options,

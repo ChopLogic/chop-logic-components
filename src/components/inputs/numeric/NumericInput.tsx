@@ -5,7 +5,7 @@ import { ChopLogicNumericInputProps } from '@models';
 import { useChopLogicNumericInputController } from './controller';
 import styles from './NumericInput.module.scss';
 import { getClassName } from '@utils';
-import { ErrorMessage, InputButton, Label } from '@components/atoms';
+import { ErrorMessage, InputButton, Label } from '@atoms';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,

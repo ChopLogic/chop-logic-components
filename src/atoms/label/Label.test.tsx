@@ -1,4 +1,4 @@
-import { ChopLogicIcon } from '@components/atoms';
+import { ChopLogicIcon } from '@atoms';
 import { ChopLogicIconName } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';

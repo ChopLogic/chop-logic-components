@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicIconName } from '@enums';
 import styles from './InputButton.module.scss';
-import { ChopLogicIcon } from '@components/atoms';
+import { ChopLogicIcon } from '@atoms';
 
 type InputButtonProps = {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

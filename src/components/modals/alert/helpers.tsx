@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChopLogicIcon } from '@components/atoms';
+import { ChopLogicIcon } from '@atoms';
 import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
 import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
 import ErrorIcon from '@assets/icons/svg/ErrorIcon.tsx';

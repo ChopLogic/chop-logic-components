@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChopLogicButton } from '@components/atoms';
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicFormContext } from '@contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { ChopLogicFormProps } from '@models';

@@ -4,7 +4,7 @@ import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
 import styles from '../Grid.module.scss';
 import { getClassName } from '@utils';
-import { Label } from '@components/atoms';
+import { Label } from '@atoms';
 
 type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ChopLogicButton } from '@components/atoms';
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { useModalFocusTrap } from '..';
 import styles from '@styles/storybook/Container.module.scss';

@@ -7,7 +7,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="_label_79ce7d"
+      class="_label_c20562"
       for="test-input-id"
     >
       <span>
@@ -29,7 +29,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_inputButton_23c8d0"
+          class="_inputButton_bfad8d"
           type="button"
         >
           <svg
@@ -60,7 +60,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
     </div>
     <span
       aria-hidden="true"
-      class="_errorMessage_244a1c _errorMessage_b8b49d"
+      class="_errorMessage_2b3768 _errorMessage_b8b49d"
       id="test-input-id_error"
     >
       Error!
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="_label_79ce7d"
+      class="_label_c20562"
       for="test-input-id"
     >
       <span>
@@ -104,7 +104,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_inputButton_23c8d0"
+          class="_inputButton_bfad8d"
           type="button"
         >
           <svg
@@ -135,7 +135,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
     </div>
     <span
       aria-hidden="true"
-      class="_errorMessage_244a1c _errorMessage_b8b49d"
+      class="_errorMessage_2b3768 _errorMessage_b8b49d"
       id="test-input-id_error"
     >
       Error!

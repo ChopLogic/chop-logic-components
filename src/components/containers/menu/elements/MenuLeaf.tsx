@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChopLogicIcon } from '@components/atoms';
+import { ChopLogicIcon } from '@atoms';
 import { ChopLogicMenuItem } from '@models';
 import styles from '../Menu.module.scss';
 

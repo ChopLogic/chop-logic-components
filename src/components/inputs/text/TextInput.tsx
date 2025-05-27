@@ -5,7 +5,7 @@ import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './controller';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
-import { ErrorMessage, InputButton, Label } from '@components/atoms';
+import { ErrorMessage, InputButton, Label } from '@atoms';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,

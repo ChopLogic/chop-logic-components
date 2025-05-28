@@ -7,7 +7,6 @@ const config: StorybookConfig = {
   staticDirs: ['../public'], //👈 Configures the static asset folder in Storybook
 
   addons: [
-    '@storybook/addon-essentials',
     {
       name: '@storybook/addon-docs',
       options: {

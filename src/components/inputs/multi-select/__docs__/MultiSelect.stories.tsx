@@ -1,5 +1,5 @@
 import { ChopLogicMultiSelectValue } from '@models';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import MultiSelectExample from './MultiSelect.example.tsx';
 

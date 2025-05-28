@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChopLogicButton } from '@components/atoms';
 import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
 import { ChopLogicAlertProps } from '@models';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import ChopLogicAlert from '../Alert';
 

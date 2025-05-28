@@ -9,7 +9,7 @@ import{j as o}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"
 </ChopLogicThemeProvider>
 `})}),`
 `,o.jsx(e.pre,{children:o.jsx(e.code,{className:"language-tsx",children:`import { ChopLogicThemeProvider, ChopLogicThemeMode } from 'chop-logic-components';
-import { Decorator } from '@storybook/react';
+import { Decorator } from '@storybook/react-vite';
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;

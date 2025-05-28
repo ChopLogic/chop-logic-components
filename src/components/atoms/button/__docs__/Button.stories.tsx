@@ -1,5 +1,5 @@
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import ButtonExample from './Button.example.tsx';
 

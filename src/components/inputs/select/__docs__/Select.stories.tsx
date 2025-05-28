@@ -1,5 +1,5 @@
 import { ChopLogicSelectValue } from '@models';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import SelectExample from './Select.example.tsx';
 

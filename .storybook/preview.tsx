@@ -1,5 +1,5 @@
-import type { Preview } from '@storybook/react';
-import { Decorator } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
+import { Decorator } from '@storybook/react-vite';
 import { ChopLogicThemeProvider } from '../src/contexts';
 import { ChopLogicThemeMode } from '../src/enums';
 

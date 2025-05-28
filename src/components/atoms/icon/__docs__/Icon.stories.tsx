@@ -1,5 +1,5 @@
 import { ChopLogicIconName } from '@enums';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import IconExample from './Icon.example.tsx';
 

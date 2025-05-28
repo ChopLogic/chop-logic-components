@@ -1,5 +1,5 @@
 import { ChopLogicLoaderView } from '@enums';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import LoaderExample from './Loader.example';
 
 const meta: Meta<typeof LoaderExample> = {

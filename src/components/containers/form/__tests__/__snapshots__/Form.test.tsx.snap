@@ -208,7 +208,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_buttons_732390 _buttons-1_732390"
     >
       <button
-        class="_flat_7a2b07"
+        class="_flat_f48051"
         type="reset"
       >
         <svg
@@ -228,17 +228,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="_primary_7a2b07"
+        class="_primary_f48051"
         type="submit"
       >
         <span
-          class="_primary_shadow_7a2b07"
+          class="_primary_shadow_f48051"
         />
         <span
-          class="_primary_edge_7a2b07"
+          class="_primary_edge_f48051"
         />
         <span
-          class="_primary_front_7a2b07"
+          class="_primary_front_f48051"
         >
           <svg
             fill="currentColor"

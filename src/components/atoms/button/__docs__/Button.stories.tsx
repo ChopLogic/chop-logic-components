@@ -30,7 +30,7 @@ const meta: Meta<typeof ButtonExample> = {
     extended: false,
   },
   component: ButtonExample,
-  title: 'Inputs/Button',
+  title: 'Atoms/Button',
 };
 
 export default meta;

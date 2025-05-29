@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChopLogicButton } from '@components';
+import { ChopLogicButton } from '@components/atoms';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicAlertProps } from '@models';
 

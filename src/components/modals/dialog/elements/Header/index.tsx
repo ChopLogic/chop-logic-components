@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChopLogicButton } from '@components';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import styles from './Header.module.scss';
+import { ChopLogicButton } from '@components/atoms';
 
 const ChopLogicModalLayoutHeader: React.FC<{
   title: string;

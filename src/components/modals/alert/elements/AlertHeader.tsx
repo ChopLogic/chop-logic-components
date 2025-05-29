@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChopLogicButton } from '@components';
+import { ChopLogicButton } from '@components/atoms';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import styles from './AlertHeader.module.scss';
 import { getAlertTitle, renderAlertIcon } from '../helpers';

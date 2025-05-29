@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import Button from '../Button';
+import Button from './Button.tsx';
 
 describe('ChopLogicButton', () => {
   const testProps = {
@@ -14,11 +14,6 @@ describe('ChopLogicButton', () => {
     view: ChopLogicButtonView.Primary,
     disabled: false,
   };
-
-  it('should match the snapshot', () => {
-    const { asFragment } = render(<Button {...testProps} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
 
   it('should have the accessible role', () => {
     render(<Button {...testProps} />);

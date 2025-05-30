@@ -3,7 +3,7 @@ import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 
-import ChopLogicTooltip from '../Tooltip';
+import ChopLogicTooltip from '../Tooltip.tsx';
 
 const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
   return (

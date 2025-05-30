@@ -5,7 +5,7 @@ import TooltipExample from './Tooltip.example.tsx';
 
 const meta: Meta<typeof TooltipExample> = {
   component: TooltipExample,
-  title: 'Modals/Tooltip',
+  title: 'Atoms/Tooltip',
 };
 
 export default meta;

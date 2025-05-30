@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { withTooltip } from '../index.tsx';
 
-vi.mock('@components', () => ({
+vi.mock('@atoms', () => ({
   ChopLogicTooltip: ({ children, tooltipContent }: { tooltipContent: string } & React.PropsWithChildren) => (
     <div data-testid='tooltip' data-tooltip={tooltipContent}>
       {children}

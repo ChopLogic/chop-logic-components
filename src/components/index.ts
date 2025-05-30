@@ -7,7 +7,6 @@ export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 
 // Modals
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
-export { default as ChopLogicTooltip } from './modals/tooltip/Tooltip';
 
 // Containers
 export { default as ChopLogicForm } from './containers/form/Form';

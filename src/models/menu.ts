@@ -1,6 +1,6 @@
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 
-import { ChopLogicComponentProps } from '../common';
+import { ChopLogicComponentProps } from './_common';
 
 export interface ChopLogicMenuProps extends ChopLogicComponentProps {
   items: ChopLogicMenuItem[];

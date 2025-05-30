@@ -5,7 +5,7 @@ import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './controller';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
-import { ErrorMessage, InputButton, Label } from '@atoms';
+import { ErrorMessage, InputButton, Label, Input } from '@atoms';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -45,26 +45,25 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   return (
     <div {...rest} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
-      <div>
-        <input
-          id={elementId}
-          name={name}
-          type={passwordShown ? 'text' : type}
-          disabled={disabled}
-          placeholder={placeholder}
-          required={required}
-          readOnly={readOnly}
-          autoComplete={autoComplete}
-          aria-invalid={!valid}
-          aria-errormessage={errorId}
-          aria-readonly={readOnly}
-          value={value}
-          onChange={handleChange}
-          maxLength={maxLength}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          tabIndex={tabIndex}
-        />
+      <Input
+        id={elementId}
+        name={name}
+        type={passwordShown ? 'text' : type}
+        disabled={disabled}
+        placeholder={placeholder}
+        required={required}
+        readOnly={readOnly}
+        autoComplete={autoComplete}
+        aria-invalid={!valid}
+        aria-errormessage={errorId}
+        aria-readonly={readOnly}
+        value={value}
+        onChange={handleChange}
+        maxLength={maxLength}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        tabIndex={tabIndex}
+      >
         <span>
           {clearable && (
             <InputButton onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} disabled={disabled} />
@@ -78,7 +77,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
             />
           )}
         </span>
-      </div>
+      </Input>
       <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
     </div>
   );

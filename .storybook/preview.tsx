@@ -20,18 +20,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Introduction',
-          'Theming',
-          'Contributing',
-          'Changelog',
-          'Inputs',
-          ['Button', 'TextInput', 'NumericInput', 'Checkbox', 'Select', 'MultiSelect', '*'],
-          'Containers',
-          'Modals',
-          'Hooks',
-          '*',
-        ],
+        order: ['Introduction', 'Theming', 'Contributing', 'Changelog', 'Atoms', 'Containers', 'Modals', 'Hooks', '*'],
       },
     },
   },

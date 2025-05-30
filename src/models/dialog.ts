@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import { ChopLogicComponentProps } from '../common';
+import { ChopLogicComponentProps } from './_common';
 
 export interface ChopLogicDialogProps extends ChopLogicComponentProps, PropsWithChildren {
   isOpened: boolean;

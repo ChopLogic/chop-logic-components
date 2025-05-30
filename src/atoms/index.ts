@@ -5,3 +5,4 @@ export { default as InputButton } from './input-button/InputButton';
 export { default as ChopLogicLoader } from './loader/Loader';
 export { default as ChopLogicButton } from './button/Button';
 export { default as ChopLogicTooltip } from './tooltip/Tooltip';
+export { default as Input } from './input/Input';

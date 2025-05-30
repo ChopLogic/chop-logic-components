@@ -5,7 +5,7 @@ import { ChopLogicNumericInputProps } from '@models';
 import { useChopLogicNumericInputController } from './controller';
 import styles from './NumericInput.module.scss';
 import { getClassName } from '@utils';
-import { ErrorMessage, InputButton, Label } from '@atoms';
+import { ErrorMessage, InputButton, Label, Input } from '@atoms';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -46,26 +46,25 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   return (
     <div {...rest} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
-      <div>
-        <input
-          id={elementId}
-          name={name}
-          type='number'
-          disabled={disabled}
-          required={required}
-          readOnly={readOnly}
-          placeholder='0'
-          aria-invalid={!valid}
-          aria-errormessage={errorId}
-          value={value.toString()}
-          onChange={handleChange}
-          min={minValue}
-          max={maxValue}
-          step={step}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          tabIndex={tabIndex}
-        />
+      <Input
+        id={elementId}
+        name={name}
+        type='number'
+        disabled={disabled}
+        required={required}
+        readOnly={readOnly}
+        placeholder='0'
+        aria-invalid={!valid}
+        aria-errormessage={errorId}
+        value={value.toString()}
+        onChange={handleChange}
+        min={minValue}
+        max={maxValue}
+        step={step}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        tabIndex={tabIndex}
+      >
         {hasSpinButtons && (
           <span>
             <InputButton
@@ -82,7 +81,7 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
             />
           </span>
         )}
-      </div>
+      </Input>
       <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
     </div>
   );

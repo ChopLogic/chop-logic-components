@@ -1,4 +1,4 @@
-import { ChopLogicInputProps, ChopLogicSelectValue } from '../common';
+import { ChopLogicInputProps, ChopLogicSelectValue } from './_common';
 
 export interface ChopLogicMultiSelectProps extends ChopLogicInputProps {
   options: ChopLogicSelectValue[];

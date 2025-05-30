@@ -18,12 +18,15 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           First Name
         </span>
       </label>
-      <div>
+      <div
+        class="_wrapper_097c9a"
+      >
         <input
           aria-errormessage="first-name_error"
           aria-invalid="false"
           aria-readonly="false"
           autocomplete="off"
+          class="_input_097c9a"
           id="first-name"
           name="firstName"
           placeholder="Type here..."
@@ -81,12 +84,15 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           Last Name
         </span>
       </label>
-      <div>
+      <div
+        class="_wrapper_097c9a"
+      >
         <input
           aria-errormessage="last-name_error"
           aria-invalid="false"
           aria-readonly="false"
           autocomplete="off"
+          class="_input_097c9a"
           id="last-name"
           name="lastName"
           placeholder="Type here..."
@@ -144,10 +150,13 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           Age
         </span>
       </label>
-      <div>
+      <div
+        class="_wrapper_097c9a"
+      >
         <input
           aria-errormessage="age_error"
           aria-invalid="false"
+          class="_input_097c9a"
           id="age"
           max="9007199254740991"
           min="-9007199254740991"

@@ -1,7 +1,7 @@
 @use '/src/styles/animations';
 @use '/src/styles/mixins';
 
-.inputButton {
+.button {
   @include animations.fade-in();
 
   background: transparent;

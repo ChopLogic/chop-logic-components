@@ -24,7 +24,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="_icon_c95db4 cancel"
+      class="_button_c3efa1"
       type="button"
     >
       <svg
@@ -68,7 +68,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="_icon_c95db4 cancel"
+      class="_button_c3efa1"
       type="button"
     >
       <svg
@@ -108,7 +108,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="_icon_c95db4 cancel"
+      class="_button_c3efa1"
       type="button"
     >
       <svg
@@ -151,7 +151,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="_icon_c95db4 cancel"
+      class="_button_c3efa1"
       type="button"
     >
       <svg
@@ -191,7 +191,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 5`
     </h3>
     <button
       aria-label="Close alert popup"
-      class="_icon_c95db4 cancel"
+      class="_button_c3efa1"
       type="button"
     >
       <svg

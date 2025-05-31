@@ -1,9 +1,9 @@
 import { FC, InputHTMLAttributes, PropsWithChildren } from 'react';
 import styles from './Input.module.scss';
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> & PropsWithChildren;
+type Props = InputHTMLAttributes<HTMLInputElement> & PropsWithChildren;
 
-const Input: FC<InputProps> = ({ children, ...rest }) => {
+const Input: FC<Props> = ({ children, ...rest }) => {
   return (
     <div className={styles.wrapper}>
       <input {...rest} className={styles.input} />

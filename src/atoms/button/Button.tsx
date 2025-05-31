@@ -5,6 +5,9 @@ import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
 import styles from './Button.module.scss';
 import { getClassName } from '@utils';
+import Button3D from '@atoms/button-3D/Button3D.tsx';
+import Button2D from '@atoms/button-2D/Button2D.tsx';
+import ButtonIcon from '@atoms/button-icon/ButtonIcon.tsx';
 
 const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   onClick,
@@ -18,34 +21,28 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   className,
   ...rest
 }) => {
-  const primaryClassName = getClassName([styles.primary, className, { [styles.primary__extended]: extended }]);
-  const flatClassName = getClassName([styles.flat, className]);
-  const iconClassName = getClassName([styles.icon, icon]);
+  const extendedClass = getClassName([className, { [styles.extended]: extended }]);
 
   switch (view) {
     case ChopLogicButtonView.Primary:
       return (
-        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={primaryClassName}>
-          <span className={styles.primary_shadow}></span>
-          <span className={styles.primary_edge}></span>
-          <span className={styles.primary_front}>
-            <ChopLogicIcon name={icon} />
-            {text}
-          </span>
-        </button>
+        <Button3D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+          <ChopLogicIcon name={icon} />
+          {text}
+        </Button3D>
       );
     case ChopLogicButtonView.Flat:
       return (
-        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={flatClassName}>
+        <Button2D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
-        </button>
+        </Button2D>
       );
     case ChopLogicButtonView.Icon:
       return (
-        <button aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={iconClassName}>
+        <ButtonIcon aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
           <ChopLogicIcon name={icon} />
-        </button>
+        </ButtonIcon>
       );
     default:
       return null;

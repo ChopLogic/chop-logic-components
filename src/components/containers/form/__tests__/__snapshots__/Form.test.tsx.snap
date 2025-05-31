@@ -36,7 +36,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for First Name"
-            class="_inputButton_bfad8d"
+            class="_button_f11b0b"
             type="button"
           >
             <svg
@@ -102,7 +102,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Clear input for Last Name"
-            class="_inputButton_bfad8d"
+            class="_button_f11b0b"
             type="button"
           >
             <svg
@@ -169,7 +169,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         <span>
           <button
             aria-label="Decrement value for Age"
-            class="_inputButton_bfad8d"
+            class="_button_f11b0b"
             type="button"
           >
             <svg
@@ -187,7 +187,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
           </button>
           <button
             aria-label="Increment value for Age"
-            class="_inputButton_bfad8d"
+            class="_button_f11b0b"
             type="button"
           >
             <svg
@@ -217,7 +217,7 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
       class="_buttons_732390 _buttons-1_732390"
     >
       <button
-        class="_flat_c95db4"
+        class="_button_bd4e6b"
         type="reset"
       >
         <svg
@@ -237,17 +237,17 @@ exports[`ChopLogicForm > should match the snapshot 1`] = `
         Reset
       </button>
       <button
-        class="_primary_c95db4"
+        class="_button_b2330e"
         type="submit"
       >
         <span
-          class="_primary_shadow_c95db4"
+          class="_button_shadow_b2330e"
         />
         <span
-          class="_primary_edge_c95db4"
+          class="_button_edge_b2330e"
         />
         <span
-          class="_primary_front_c95db4"
+          class="_button_front_b2330e"
         >
           <svg
             fill="currentColor"

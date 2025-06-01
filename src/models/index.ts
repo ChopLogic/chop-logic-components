@@ -6,6 +6,7 @@ export type {
   ChopLogicRegExpWithFlags,
   ChopLogicSelectValue,
   ChopLogicTextInputValidator,
+  Dimensions,
 } from './_common';
 export type { ChopLogicAlertProps } from './alert.ts';
 export type { ChopLogicButtonProps } from './button.ts';

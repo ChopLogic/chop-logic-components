@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicPortal } from '@components';
 import { ChopLogicAlertMode } from '@enums';
-import { useMount } from '@hooks';
+import { useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
 import AlertHeader from './elements/AlertHeader.tsx';
 import styles from './Alert.module.scss';
@@ -16,7 +16,7 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   icon,
   ...rest
 }) => {
-  const isMounted = useMount(isOpened);
+  const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
 
   if (!isMounted) return null;

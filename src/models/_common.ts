@@ -32,3 +32,5 @@ export type ChopLogicRegExpWithFlags = {
   regexp: string;
   flags?: string;
 };
+
+export type Dimensions = { width: number; height: number };

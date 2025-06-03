@@ -4,7 +4,7 @@ import { ChopLogicFormContext } from '@contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { ChopLogicFormProps } from '@models';
 import styles from './Form.module.scss';
-import { useChopLogicFormController } from './controller';
+import { useChopLogicFormController } from './Form.controller.ts';
 import { getClassName } from '@utils';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({

@@ -1,4 +1,4 @@
-import { ChopLogicForm } from '@components';
+import { ChopLogicForm } from '@organisms';
 import { ChopLogicSelectValue } from '@models';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';

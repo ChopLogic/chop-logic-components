@@ -9,7 +9,7 @@ import Button3D from '@atoms/button-3D/Button3D.tsx';
 import Button2D from '@atoms/button-2D/Button2D.tsx';
 import ButtonIcon from '@atoms/button-icon/ButtonIcon.tsx';
 
-const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
+const Button: React.FC<ChopLogicButtonProps> = ({
   onClick,
   text,
   icon,
@@ -49,4 +49,6 @@ const ChopLogicButton: React.FC<ChopLogicButtonProps> = ({
   }
 };
 
-export default withTooltip(ChopLogicButton);
+const ChopLogicButton = withTooltip(Button);
+
+export default ChopLogicButton;

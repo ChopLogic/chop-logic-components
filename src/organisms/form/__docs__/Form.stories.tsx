@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import FormExample from './Form.example.tsx';
+import { FormExample } from './Form.example.tsx';
 
 const meta: Meta<typeof FormExample> = {
   args: {
@@ -14,7 +14,7 @@ const meta: Meta<typeof FormExample> = {
     onClickSubmit: (data) => console.log(data),
   },
   component: FormExample,
-  title: 'Containers/Form',
+  title: 'Organisms/Form',
 };
 
 export default meta;

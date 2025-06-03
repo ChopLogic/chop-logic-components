@@ -9,7 +9,6 @@ export { default as ChopLogicTextInput } from './inputs/text/TextInput';
 export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 
 // Containers
-export { default as ChopLogicForm } from './containers/form/Form';
 export { default as ChopLogicGrid } from './containers/grid/Grid';
 export { default as ChopLogicMenu } from './containers/menu/Menu';
 export { default as ChopLogicPortal } from './containers/portal/Portal';

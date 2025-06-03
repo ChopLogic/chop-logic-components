@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
-import {
-  ChopLogicCheckbox,
-  ChopLogicForm,
-  ChopLogicMultiSelect,
-  ChopLogicNumericInput,
-  ChopLogicSelect,
-  ChopLogicTextInput,
-} from '@components';
+import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@components';
 import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
 import styles from '@styles/storybook/Container.module.scss';
+import { ChopLogicForm } from '@organisms';
 
 const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
   { id: 'lang-1', label: 'English' },
@@ -27,7 +21,7 @@ const inputStyles: React.CSSProperties = {
   width: '300px',
 };
 
-const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
+export const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
   const [data, setData] = useState<ChopLogicFormData>();
 
   const initialValues = {
@@ -97,5 +91,3 @@ const FormExample: React.FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
     </div>
   );
 };
-
-export default FormExample;

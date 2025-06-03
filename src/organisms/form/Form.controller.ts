@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import { ChopLogicFormData, ChopLogicFormInputParams } from '@models';
 
-import { getInitialValidationState, isFormDataValid, updateValidationState } from './helpers';
+import { getInitialValidationState, isFormDataValid, updateValidationState } from './Form.helpers.ts';
 
 export function useChopLogicFormController({
   initialValues,

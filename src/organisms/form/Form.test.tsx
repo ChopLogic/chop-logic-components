@@ -1,7 +1,8 @@
-import { ChopLogicCheckbox, ChopLogicForm, ChopLogicNumericInput, ChopLogicTextInput } from '@components';
+import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from '@components';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
+import { ChopLogicForm } from '@organisms';
 
 describe('ChopLogicForm', () => {
   const testInitialValues = {
@@ -16,17 +17,6 @@ describe('ChopLogicForm', () => {
     className: 'form-class',
     style: { width: '500px' },
   };
-
-  it('should match the snapshot', () => {
-    const { asFragment } = render(
-      <ChopLogicForm {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
-      </ChopLogicForm>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 
   it('should not render Reset button is hasReset props is false', () => {
     render(

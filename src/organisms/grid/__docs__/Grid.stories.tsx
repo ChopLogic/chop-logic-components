@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import GridExample from './Grid.example.tsx';
+import { GridExample } from './Grid.example';
 
 const meta: Meta<typeof GridExample> = {
   component: GridExample,
-  title: 'Containers/Grid',
+  title: 'Organisms/Grid',
 };
 
 export default meta;

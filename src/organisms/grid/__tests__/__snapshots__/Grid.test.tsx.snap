@@ -3,41 +3,41 @@
 exports[`ChopLogicGrid > should match the snapshot 1`] = `
 <DocumentFragment>
   <table
-    class="_grid_4a2c43 test-class"
+    class="_grid_384728 test-class"
     style="width: 100px;"
     tabindex="-1"
   >
     <colgroup>
       <col
-        class="_grid_column_4a2c43 _grid_column__first_4a2c43"
+        class="_grid_column_384728 _grid_column__first_384728"
       />
       <col
-        class="_grid_column_4a2c43"
+        class="_grid_column_384728"
       />
       <col
-        class="_grid_column_4a2c43"
+        class="_grid_column_384728"
       />
       <col
-        class="_grid_column_4a2c43"
+        class="_grid_column_384728"
       />
       <col
-        class="_grid_column_4a2c43"
+        class="_grid_column_384728"
       />
     </colgroup>
     <thead
-      class="_header_4a2c43"
+      class="_header_384728"
     >
       <tr
-        class="_header_row_4a2c43"
+        class="_header_row_384728"
       >
         <th
-          class="_header_cell_4a2c43"
+          class="_header_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_all_grid-id"
               type="checkbox"
             />
@@ -61,41 +61,41 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </th>
         <th
-          class="_header_cell_4a2c43"
+          class="_header_cell_384728"
         >
           Company
         </th>
         <th
-          class="_header_cell_4a2c43"
+          class="_header_cell_384728"
         >
           Contact
         </th>
         <th
-          class="_header_cell_4a2c43"
+          class="_header_cell_384728"
         >
           Country
         </th>
         <th
-          class="_header_cell_4a2c43"
+          class="_header_cell_384728"
         >
           Phone
         </th>
       </tr>
     </thead>
     <tbody
-      class="_grid_body_4a2c43"
+      class="_grid_body_384728"
     >
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row1"
               type="checkbox"
             />
@@ -119,35 +119,35 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         />
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Maria
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Germany
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>
       </tr>
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row2"
               type="checkbox"
             />
@@ -171,35 +171,35 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         />
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Francisco
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Mexico
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>
       </tr>
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row3"
               type="checkbox"
             />
@@ -223,37 +223,37 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Ernst Handel
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Roland Mendel
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Austria
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>
       </tr>
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row4"
               type="checkbox"
             />
@@ -277,37 +277,37 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Island Trading
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Helen Bennett
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           UK
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>
       </tr>
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row5"
               type="checkbox"
             />
@@ -331,35 +331,35 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Laughing Bacchus
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         />
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Canada
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>
       </tr>
       <tr
-        class="_grid_row_4a2c43"
+        class="_grid_row_384728"
       >
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
+              class="_checkbox_input_384728"
               id="select_row_row6"
               type="checkbox"
             />
@@ -383,20 +383,20 @@ exports[`ChopLogicGrid > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         />
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Giovanni
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           Italy
         </td>
         <td
-          class="_grid_cell_4a2c43"
+          class="_grid_cell_384728"
         >
           123-345-7890
         </td>

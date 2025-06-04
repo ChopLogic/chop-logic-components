@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChopLogicGridProps } from '@models';
-import ChopLogicGridBody from './elements/Body';
-import GridColumnGroup from './elements/ColumnGroup';
-import ChopLogicGridHead from './elements/Head';
-import { useChopLogicGridController } from './controller';
+import ChopLogicGridBody from './elements/Body.tsx';
+import GridColumnGroup from './elements/ColumnGroup.tsx';
+import ChopLogicGridHead from './elements/Head.tsx';
+import { useChopLogicGridController } from './Grid.controller.ts';
 import styles from './Grid.module.scss';
 import { getClassName } from '@utils';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../Grid.module.scss';
-import GridDataCell from './DataCell';
-import SelectGridRowCell from './SelectRowCell';
+import GridDataCell from './DataCell.tsx';
+import SelectGridRowCell from './SelectRowCell.tsx';
 import { getClassName } from '@utils';
 
 export type GridRowProps = {

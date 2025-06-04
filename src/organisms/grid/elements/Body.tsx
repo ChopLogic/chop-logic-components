@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
-import { getGridRowValues } from '../helpers';
-import GridRow from './Row';
+import { getGridRowValues } from '../Grid.helpers.ts';
+import GridRow from './Row.tsx';
 import styles from '../Grid.module.scss';
 
 type ChopLogicGridBodyProps = {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import GridRow, { GridRowProps } from '../elements/Row';
+import GridRow, { GridRowProps } from '../elements/Row.tsx';
 
 describe('GridRow', () => {
   const testProps: GridRowProps = {

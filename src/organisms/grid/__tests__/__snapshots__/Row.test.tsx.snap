@@ -1,28 +1,26 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicGridHead > should match the snapshot 1`] = `
+exports[`GridRow > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
-    <thead
-      class="_header_4a2c43"
-    >
+    <tbody>
       <tr
-        class="_header_row_4a2c43"
+        class="_grid_row_384728"
       >
-        <th
-          class="_header_cell_4a2c43"
+        <td
+          class="_grid_cell_384728"
         >
           <div
-            class="_checkbox_4a2c43"
+            class="_checkbox_384728"
           >
             <input
-              class="_checkbox_input_4a2c43"
-              id="select_all_test-grid-id"
+              class="_checkbox_input_384728"
+              id="select_row_item-1"
               type="checkbox"
             />
             <label
               class="_label_c20562"
-              for="select_all_test-grid-id"
+              for="select_row_item-1"
             >
               <svg
                 fill="currentColor"
@@ -38,24 +36,26 @@ exports[`ChopLogicGridHead > should match the snapshot 1`] = `
               </svg>
             </label>
           </div>
-        </th>
-        <th
-          class="_header_cell_4a2c43"
+        </td>
+        <td
+          class="_grid_cell_384728"
         >
-          Col 1
-        </th>
-        <th
-          class="_header_cell_4a2c43"
+          Value 1
+        </td>
+        <td
+          class="_grid_cell_384728"
         >
-          Col 2
-        </th>
-        <th
-          class="_header_cell_4a2c43"
+          Value 2
+        </td>
+        <td
+          class="_grid_cell_384728"
         >
-          Col 3
-        </th>
+          <span>
+            Value 3
+          </span>
+        </td>
       </tr>
-    </thead>
+    </tbody>
   </table>
 </DocumentFragment>
 `;

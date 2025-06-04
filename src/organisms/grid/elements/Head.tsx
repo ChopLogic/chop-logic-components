@@ -1,8 +1,8 @@
 import React from 'react';
 import { ChopLogicGridColumn } from '@models';
 import styles from '../Grid.module.scss';
-import GridHeaderCell from './HeaderCell';
-import SelectAllRowsCell from './SelectAllRowsCell';
+import GridHeaderCell from './HeaderCell.tsx';
+import SelectAllRowsCell from './SelectAllRowsCell.tsx';
 
 type ChopLogicGridHeadProps = {
   columns: ChopLogicGridColumn[];

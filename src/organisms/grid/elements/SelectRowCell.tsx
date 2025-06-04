@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../Grid.module.scss';
-import GridCheckbox from './Checkbox';
+import GridCheckbox from './Checkbox.tsx';
 
 type SelectAllGridRowsCheckbox = {
   rowId: string;

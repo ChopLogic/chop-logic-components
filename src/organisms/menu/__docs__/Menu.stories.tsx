@@ -2,7 +2,7 @@ import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import MenuExample from './Menu.example.tsx';
+import MenuExample from './Menu.example';
 
 const ITEMS: ChopLogicMenuItem[] = [
   {
@@ -35,8 +35,18 @@ const ITEMS: ChopLogicMenuItem[] = [
             id: 'item-10',
             label: 'Statistics',
             nestedItems: [
-              { id: 'item-18', label: '2023', icon: ChopLogicIconName.CheckMark, onHover: () => console.log('Hover item-18') },
-              { id: 'item-19', label: '2024', icon: ChopLogicIconName.CheckMark, onClick: () => console.log('Click item-18') },
+              {
+                id: 'item-18',
+                label: '2023',
+                icon: ChopLogicIconName.CheckMark,
+                onHover: () => console.log('Hover item-18'),
+              },
+              {
+                id: 'item-19',
+                label: '2024',
+                icon: ChopLogicIconName.CheckMark,
+                onClick: () => console.log('Click item-18'),
+              },
               {
                 id: 'item-20',
                 label: '2025',
@@ -99,7 +109,7 @@ const ITEMS: ChopLogicMenuItem[] = [
 ];
 
 const meta: Meta<typeof MenuExample> = {
-  title: 'Containers/Menu',
+  title: 'Organisms/Menu',
   component: MenuExample,
   argTypes: {
     mode: {

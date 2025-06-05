@@ -3,7 +3,7 @@ import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import styles from '../Menu.module.scss';
 import MenuLeaf from './MenuLeaf';
-import SubMenu from './SubMenu.tsx';
+import SubMenu from './SubMenu';
 import { getClassName } from '@utils';
 
 type MenuItemProps = PropsWithChildren & {

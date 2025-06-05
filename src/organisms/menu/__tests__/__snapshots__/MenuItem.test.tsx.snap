@@ -10,7 +10,7 @@ exports[`MenuItem > should match the snapshot 1`] = `
     </button>
     <ul
       aria-label="Nested Item"
-      class="_subMenuBar_3973ca _subMenuBar__horizontal_3973ca"
+      class="_subMenuBar_b8ce27 _subMenuBar__horizontal_b8ce27"
       role="menu"
     >
       <div

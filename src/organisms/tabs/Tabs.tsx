@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabsProps } from '@models';
-import ChopLogicTabContent from './elements/TabContent';
-import ChopLogicTabList from './elements/TabList';
+import ChopLogicTabContent from './elements/TabContent.tsx';
+import ChopLogicTabList from './elements/TabList.tsx';
 import { getClassName } from '@utils';
 import styles from './Tabs.module.scss';
 

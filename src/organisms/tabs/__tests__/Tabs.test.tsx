@@ -2,9 +2,9 @@ import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import ChopLogicTabButton from '../elements/TabButton';
-import ChopLogicTabContent from '../elements/TabContent';
-import ChopLogicTabs from '../Tabs';
+import ChopLogicTabButton from '../elements/TabButton.tsx';
+import ChopLogicTabContent from '../elements/TabContent.tsx';
+import ChopLogicTabs from '../Tabs.tsx';
 
 describe('ChopLogicTabs', () => {
   const tabs = [

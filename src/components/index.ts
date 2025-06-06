@@ -10,5 +10,4 @@ export { default as ChopLogicDialog } from './modals/dialog/Dialog';
 
 // Containers
 export { default as ChopLogicPortal } from './containers/portal/Portal';
-export { default as ChopLogicTabs } from './containers/tabs/Tabs';
 export { default as ChopLogicAlert } from './modals/alert/Alert';

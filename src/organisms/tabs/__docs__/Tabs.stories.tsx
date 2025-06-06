@@ -1,7 +1,7 @@
-import { ChopLogicTabs } from '@components';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { ChopLogicTabs } from '@organisms';
 
 const tabs: ChopLogicTabItem[] = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },

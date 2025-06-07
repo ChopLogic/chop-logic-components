@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, PropsWithChildren, useRef } from 'react';
 import { useKeyPress, useModalFocusTrap } from '@hooks';
 import styles from './Layout.module.scss';
-import ChopLogicModalLayoutHeader from '../Header';
+import ChopLogicModalLayoutHeader from './Header.tsx';
 
 type DialogLayoutProps = PropsWithChildren &
   HTMLAttributes<HTMLDivElement> & {

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import DialogExample from './Dialog.example.tsx';
+import DialogExample from './Dialog.example';
 
 const meta: Meta<typeof DialogExample> = {
   component: DialogExample,
-  title: 'Modals/Dialog',
+  title: 'Organisms/Dialog',
 };
 
 export default meta;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { ChopLogicPortal } from '@components';
 import { useIsMounted } from '@hooks';
 import { ChopLogicDialogProps } from '@models';
 
 import ChopLogicModalLayout from './elements/Layout';
 import styles from './Dialog.module.scss';
 import { getClassName } from '@utils';
+import { ChopLogicPortal } from '@atoms';
 
 const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, ...rest }) => {
   const isMounted = useIsMounted(isOpened);

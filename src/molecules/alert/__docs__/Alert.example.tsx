@@ -5,7 +5,7 @@ import { ChopLogicAlertProps } from '@models';
 
 import ChopLogicAlert from '../Alert';
 
-const Example: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
+export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -18,5 +18,3 @@ const Example: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
     </div>
   );
 };
-
-export default Example;

@@ -3,7 +3,7 @@ import { ChopLogicAlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import ChopLogicAlert from '../Alert';
+import ChopLogicAlert from '../Alert.tsx';
 import ChopLogicAlertHeader from '../elements/AlertHeader.tsx';
 
 const defaultProps: ChopLogicAlertProps = {

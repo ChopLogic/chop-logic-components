@@ -3,9 +3,9 @@ import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 
-import ChopLogicTooltip from '../Tooltip.tsx';
+import ChopLogicTooltip from '../Tooltip';
 
-const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
+export const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
   return (
     <div>
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id}>
@@ -17,5 +17,3 @@ const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, conta
     </div>
   );
 };
-
-export default TooltipExample;

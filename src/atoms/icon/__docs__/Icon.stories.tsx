@@ -1,7 +1,7 @@
 import { ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import IconExample from './Icon.example.tsx';
+import { IconExample } from './Icon.example';
 
 const meta: Meta<typeof IconExample> = {
   title: 'Atoms/Icon',

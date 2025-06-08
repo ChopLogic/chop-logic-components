@@ -1,11 +1,11 @@
 import React from 'react';
-import { ChopLogicPortal } from '@components';
 import { ChopLogicAlertMode } from '@enums';
 import { useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
 import AlertHeader from './elements/AlertHeader.tsx';
 import styles from './Alert.module.scss';
 import { getClassName } from '@utils';
+import { ChopLogicPortal } from '@atoms';
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   isOpened,

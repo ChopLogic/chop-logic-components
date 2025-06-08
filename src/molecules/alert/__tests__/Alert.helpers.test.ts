@@ -2,7 +2,7 @@ import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
 import { render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { getAlertTitle, renderAlertIcon } from '../helpers.tsx';
+import { getAlertTitle, renderAlertIcon } from '../Alert.helpers.tsx';
 
 describe('getAlertTitle', () => {
   it('should return provided title when given', () => {

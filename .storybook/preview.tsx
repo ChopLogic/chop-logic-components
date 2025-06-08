@@ -20,7 +20,19 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Introduction', 'Theming', 'Contributing', 'Changelog', 'Atoms', 'Containers', 'Modals', 'Hooks', '*'],
+        order: [
+          'Introduction',
+          'Theming',
+          'Contributing',
+          'Changelog',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Containers',
+          'Modals',
+          'Hooks',
+          '*',
+        ],
       },
     },
   },

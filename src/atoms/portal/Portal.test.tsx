@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import ChopLogicPortal from '../Portal';
+import ChopLogicPortal from './Portal.tsx';
 
 describe('ChopLogicPortal', () => {
   beforeEach(() => {

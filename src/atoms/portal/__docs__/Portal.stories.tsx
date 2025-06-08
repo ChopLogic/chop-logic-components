@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import PortalExample from './Portal.example.tsx';
+import { PortalExample } from './Portal.example.tsx';
 
 const meta: Meta<typeof PortalExample> = {
-  title: 'Containers/Portal',
+  title: 'Atoms/Portal',
   component: PortalExample,
   parameters: {
     docs: {

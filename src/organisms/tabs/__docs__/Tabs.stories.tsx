@@ -1,7 +1,7 @@
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ChopLogicTabs } from '@organisms';
+import { TabsExample } from './Tabs.example';
 
 const tabs: ChopLogicTabItem[] = [
   { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
@@ -9,7 +9,7 @@ const tabs: ChopLogicTabItem[] = [
   { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
 ];
 
-const meta: Meta<typeof ChopLogicTabs> = {
+const meta: Meta<typeof TabsExample> = {
   argTypes: {
     tabs: { control: 'object' },
     defaultTabId: { control: 'text' },
@@ -22,12 +22,12 @@ const meta: Meta<typeof ChopLogicTabs> = {
     tabs,
     defaultTabId: 'tab1',
   },
-  component: ChopLogicTabs,
-  title: 'Containers/Tabs',
+  component: TabsExample,
+  title: 'Organisms/Tabs',
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicTabs>;
+type Story = StoryObj<typeof TabsExample>;
 
 export const HorizontalTabs: Story = {
   args: {

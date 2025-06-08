@@ -1,7 +1,7 @@
 import { ChopLogicTooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import TooltipExample from './Tooltip.example.tsx';
+import { TooltipExample } from './Tooltip.example';
 
 const meta: Meta<typeof TooltipExample> = {
   component: TooltipExample,

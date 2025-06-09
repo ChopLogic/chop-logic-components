@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@components';
+import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@molecules';
 import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
 import styles from '@styles/storybook/Container.module.scss';
 import { ChopLogicForm } from '@organisms';

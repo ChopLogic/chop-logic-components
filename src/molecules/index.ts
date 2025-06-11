@@ -4,3 +4,4 @@ export { default as ChopLogicMultiSelect } from './inputs/multi-select/MultiSele
 export { default as ChopLogicNumericInput } from './inputs/numeric/NumericInput';
 export { default as ChopLogicSelect } from './inputs/select/Select';
 export { default as ChopLogicTextInput } from './inputs/text/TextInput';
+export { default as ChopLogicButton } from './inputs/button/Button';

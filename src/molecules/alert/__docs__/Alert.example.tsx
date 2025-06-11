@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicAlertProps } from '@models';
 
 import ChopLogicAlert from '../Alert';
+import { ChopLogicButton } from '@molecules';
 
 export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
   const [isOpened, setIsOpened] = useState(false);

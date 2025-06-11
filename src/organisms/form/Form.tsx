@@ -1,11 +1,11 @@
 import React from 'react';
-import { ChopLogicButton } from '@atoms';
 import { ChopLogicFormContext } from '@contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { ChopLogicFormProps } from '@models';
 import styles from './Form.module.scss';
 import { useChopLogicFormController } from './Form.controller.ts';
 import { getClassName } from '@utils';
+import { ChopLogicButton } from '@molecules';
 
 const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
   children,

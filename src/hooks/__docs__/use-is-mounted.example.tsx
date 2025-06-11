@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '@styles/storybook/Container.module.scss';
-import { ChopLogicButton } from '@atoms';
 import { useIsMounted } from '../use-is-mounted';
+import { ChopLogicButton } from '@molecules';
 
 export const UseIsMountedExample = () => {
   const [isOpened, setIsOpened] = useState(false);

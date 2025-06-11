@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChopLogicButton } from '@atoms';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import styles from './AlertHeader.module.scss';
 import { getAlertTitle, renderAlertIcon } from '../Alert.helpers.tsx';
+import { ChopLogicButton } from '@molecules';
 
 type AlertHeaderProps = {
   onClose: () => void;

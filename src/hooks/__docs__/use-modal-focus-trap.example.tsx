@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
 import { useModalFocusTrap } from '../use-modal-focus-trap';
+import { ChopLogicButton } from '@molecules';
 
 export const UseModalFocusTrapExample = () => {
   const modalRef = useRef<HTMLDivElement>(null);

@@ -4,7 +4,7 @@ import { CheckboxExample } from './Checkbox.example';
 
 const meta: Meta<typeof CheckboxExample> = {
   component: CheckboxExample,
-  title: 'Molecules/Inputs/Checkbox',
+  title: 'Molecules/Checkbox',
 };
 
 export default meta;

@@ -12,7 +12,7 @@ const MULTI_SELECT_VALUES: ChopLogicMultiSelectValue[] = [
 
 const meta: Meta<typeof MultiSelectExample> = {
   component: MultiSelectExample,
-  title: 'Molecules/Inputs/MultiSelect',
+  title: 'Molecules/MultiSelect',
 };
 
 export default meta;

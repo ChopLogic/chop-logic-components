@@ -30,7 +30,7 @@ const meta: Meta<typeof ChopLogicButtonExample> = {
     extended: false,
   },
   component: ChopLogicButtonExample,
-  title: 'Atoms/Button',
+  title: 'Molecules/Button',
 };
 
 export default meta;

@@ -4,7 +4,7 @@ import { TextInputExample } from './TextInput.example.tsx';
 
 const meta: Meta<typeof TextInputExample> = {
   component: TextInputExample,
-  title: 'Molecules/Inputs/TextInput',
+  title: 'Molecules/TextInput',
 };
 
 export default meta;

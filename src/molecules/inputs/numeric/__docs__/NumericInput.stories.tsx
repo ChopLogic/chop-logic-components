@@ -4,7 +4,7 @@ import { NumericInputExample } from './NumericInput.example';
 
 const meta: Meta<typeof NumericInputExample> = {
   component: NumericInputExample,
-  title: 'Molecules/Inputs/NumericInput',
+  title: 'Molecules/NumericInput',
 };
 
 export default meta;

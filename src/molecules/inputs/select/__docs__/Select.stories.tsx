@@ -11,7 +11,7 @@ const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
 
 const meta: Meta<typeof ChopLogicSelectExample> = {
   component: ChopLogicSelectExample,
-  title: 'Molecules/Inputs/Select',
+  title: 'Molecules/Select',
 };
 
 export default meta;

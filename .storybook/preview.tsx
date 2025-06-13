@@ -7,10 +7,12 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       values: [
-        { name: 'Dark', value: '#2B2B2BFF' },
-        { name: 'Light', value: '#FFFFFFFF' },
+        { name: 'dark', value: 'hsl(0, 0%, 17%)' },
+        { name: 'light', value: 'hsl(0, 0%, 100%)' },
       ],
-      default: 'Light',
+    },
+    initialGlobals: {
+      backgrounds: { value: 'light' },
     },
     controls: {
       matchers: {
@@ -50,12 +52,12 @@ const STORY_WRAPPER_STYLES = {
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
-  const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
-  const storybookMode = backgroundColor === '#2B2B2BFF' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+  const background = backgrounds?.value ?? 'light';
+  const storybookMode = background === 'dark' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
 
   return (
     <ChopLogicThemeProvider injectedMode={storybookMode}>
-      <div style={{ ...STORY_WRAPPER_STYLES, backgroundColor }}>
+      <div style={{ ...STORY_WRAPPER_STYLES }}>
         <StoryFn />
       </div>
     </ChopLogicThemeProvider>

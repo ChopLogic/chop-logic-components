@@ -1,1 +1,0 @@
-import{r as n}from"./index-MPVjHJeJ.js";function o(r){const t=n.useId(),e=r??t,d=`${e}_error`,s=`${e}_dropdown`;return{elementId:e,errorId:d,dropdownId:s}}try{o.displayName="useElementIds",o.__docgenInfo={description:"",displayName:"useElementIds",props:{}}}catch{}export{o as u};

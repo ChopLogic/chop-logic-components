@@ -1,0 +1,13 @@
+.numeric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+  position: relative;
+}
+
+.errorMessage {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  opacity: 0.8;
+}

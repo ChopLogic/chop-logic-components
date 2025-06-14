@@ -19,7 +19,6 @@
     "baseUrl": "./src",
     "paths": {
       "@*": ["*"],
-      "@components/*": ["components/*"],
       "@elements/*": ["elements/*"],
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
@@ -29,7 +28,10 @@
       "@icons/*": ["icons/*"],
       "@hocs/*": ["hocs/*"],
       "@styles/*": ["styles/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@atoms/*": ["atoms/*"],
+      "@molecules/*": ["molecules/*"],
+      "@organisms/*": ["organisms/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

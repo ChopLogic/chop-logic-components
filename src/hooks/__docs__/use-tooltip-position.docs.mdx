@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Stories from './use-tooltip-position.stories';
+
+<Meta of={Stories} title='Hooks/useTooltipPosition' />
+
+# useTooltipPosition
+
+The `useTooltipPosition` hook calculates and manages the position of a tooltip relative to a reference element.
+
+### Usage
+
+```tsx
+import React, { useRef, useState } from 'react';
+import { useTooltipPosition } from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const [isOpened, setIsOpened] = useState(false);
+  const wrapperRef = useRef<HTMLElement>(null);
+  const tooltipRef = useRef<HTMLElement>(null);
+  const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
+
+  return (
+    <div>
+      <button onClick={() => setIsOpened(!isOpened)} ref={wrapperRef}>
+        Click me
+      </button>
+      {isOpened && (
+        <div
+          ref={tooltipRef}
+          style={{ position: 'absolute', top: `${top}px`, left: `${left}px`, border: '1px solid black', padding: '10px' }}
+        >
+          Tooltip Content
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Params
+
+- **wrapperRef**
+- Type: `React.RefObject<HTMLSpanElement | HTMLDivElement>`
+- Description: A ref to the element that the tooltip is relative to.
+- **tooltipRef**
+- Type: `React.RefObject<HTMLSpanElement | HTMLDivElement>`
+- Description: A ref to the tooltip element.
+- **isOpened**
+- Type: `boolean`
+- Description: A boolean indicating whether the tooltip is opened or not.
+- **spacing** (optional)
+- Type: `number`
+- Description: The spacing between the tooltip and the reference element. Default is 4px.
+
+### Returns
+
+- **position**
+- Type: `{ top: number, left: number }`
+- Description: Container coordinates in the viewport.

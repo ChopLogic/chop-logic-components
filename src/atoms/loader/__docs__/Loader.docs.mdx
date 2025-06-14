@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Stories from './Loader.stories';
+
+<Meta of={Stories} title='Loader' />
+
+# ChopLogicLoader
+
+`ChopLogicLoader` component is a loading indicator that will show the user that some task is in progress and will block the interface element for a while.
+
+### Usage
+
+```tsx
+import React from 'react';
+import ChopLogicLoader, { ChopLogicLoaderView } from 'chop-logic-components';
+
+const MyLoader = () => (
+  <div>
+    <ChopLogicLoader view={ChopLogicLoaderView.Circle} />
+  </div>
+);
+
+export default MyLoader;
+```
+
+### Props
+
+| Prop          | Type                  | Description                                                                                                      | Default     | Required |
+|---------------|-----------------------|------------------------------------------------------------------------------------------------------------------|-------------|----------|
+| **view**      | `ChopLogicLoaderView` | Loader type.                                                                                                     | `undefined` | Yes      |
+| **id**        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` | No       |
+| **className** | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` | No       |
+| **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` | No       |
+| **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` | No       |
+| **title**     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` | No       |

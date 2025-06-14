@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Dialog from './Dialog.stories';
+
+<Meta of={Dialog} title='ChopLogicDialog' />
+
+# Dialog
+
+Dialog component with custom styling and behavior.
+
+### Usage
+
+```tsx
+import { ChopLogicDialog } from 'chop-logic-components';
+import { useState } from 'react';
+
+const Example = () => {
+  const [isOpened, setIsOpened] = useState(true);
+
+  const handleOpen = () => setIsOpened(true);
+  const handleClose = () => setIsOpened(false);
+
+  return (
+    <>
+      <button onClick={handleOpen}>Open Dialog</button>
+      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Example Dialog'>
+        <div>My Modal Content</div>
+      </ChopLogicDialog>
+    </>
+  );
+};
+
+export default Example;
+```
+
+### Props
+
+| Prop          | Type                  | Description                                                                                                                                                                             | Default     | Required |
+|---------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
+| **isOpened**  | `boolean`             | Determines if the dialog is open.                                                                                                                                                       | `false`     | Yes      |
+| **onClose**   | `() => void`          | A function that is called when the dialog is closed.                                                                                                                                    | `undefined` | Yes      |
+| **title**     | `string`              | A string that represents the title of the dialog.                                                                                                                                       | `undefined` | Yes      |
+| **children**  | `ReactElement`        | Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`. | `undefined` | No       |
+| **mode**      | `ChopLogicAlertMode`  | The visual mode of the alert.                                                                                                                                                           | `'info'`    | No       |
+| **icon**      | `ChopLogicIconName`   | Custom icon that appears in the Alert header.                                                                                                                                           | `undefined` | No       |
+| **id**        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                                          | `undefined` | No       |
+| **className** | `string`              | The class global attribute is a list of the classes of the element.                                                                                                                     | `undefined` | No       |
+| **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                              | `undefined` | No       |
+| **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                        | `undefined` | No       |

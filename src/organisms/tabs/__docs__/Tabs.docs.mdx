@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as ChopLogicTabsStories from './Tabs.stories';
+
+<Meta of={ChopLogicTabsStories} title='Tabs' />
+
+# ChopLogicTabs
+
+Versatile tab component that allows you to switch between different pieces of content by clicking on corresponding tabs.
+
+### Usage
+
+```tsx
+import React from 'react';
+import ChopLogicTabs from 'chop-logic-components';
+
+const tabs = [
+  { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
+  { id: 'tab2', title: 'Tab 2', content: <div>Content for Tab 2</div> },
+  { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
+];
+
+const ExampleComponent = () => <ChopLogicTabs tabs={tabs} defaultTabId='tab1' />;
+
+export default ExampleComponent;
+```
+
+### Props
+
+| Prop             | Type                       | Description                                                                                                      | Default        | Required |
+|------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|----------------|----------|
+| **tabs**         | `ChopLogicTabItem[]`       | An array of tab items, each containing an id, title, and the content to display.                                 | `[]`           | Yes      |
+| **defaultTabId** | `string`                   | The id of the tab that should be active by default.                                                              | `undefined`    | No       |
+| **mode**         | `ChopLogicOrientationMode` | The orientation of the tabs.                                                                                     | `'horizontal'` | No       |
+| **id**           | `string`                   | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined`    | No       |
+| **className**    | `string`                   | The class global attribute is a list of the classes of the element.                                              | `undefined`    | No       |
+| **style**        | `CSSProperties`            | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined`    | No       |
+| **tabIndex**     | `number`                   | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined`    | No       |
+| **title**        | `string`                   | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined`    | No       |

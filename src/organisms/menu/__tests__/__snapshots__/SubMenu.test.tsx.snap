@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SubMenu > should match the snapshot 1`] = `
+<DocumentFragment>
+  <li
+    aria-expanded="true"
+    aria-haspopup="true"
+    class="_subMenu_b8ce27"
+    role="menuitem"
+    tabindex="0"
+  >
+    <span
+      class="_text_b8ce27"
+    >
+      <span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
+          />
+        </svg>
+        Item without Link
+      </span>
+      <svg
+        fill="currentColor"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M3 19h18a1.002 1.002 0 00.823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 003 19zm9-12.243L19.092 17H4.908L12 6.757z"
+        />
+      </svg>
+    </span>
+    <div>
+      Submenu Content
+    </div>
+  </li>
+</DocumentFragment>
+`;

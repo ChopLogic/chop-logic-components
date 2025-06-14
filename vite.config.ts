@@ -23,7 +23,6 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },
-      { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
       { find: '@elements', replacement: path.resolve(__dirname, 'src/elements') },
       { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
       { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
@@ -34,6 +33,9 @@ export default defineConfig({
       { find: '@hocs', replacement: path.resolve(__dirname, 'src/hocs') },
       { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
       { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
+      { find: '@atoms', replacement: path.resolve(__dirname, 'src/atoms') },
+      { find: '@molecules', replacement: path.resolve(__dirname, 'src/molecules') },
+      { find: '@organisms', replacement: path.resolve(__dirname, 'src/organisms') },
     ],
   },
   test: {

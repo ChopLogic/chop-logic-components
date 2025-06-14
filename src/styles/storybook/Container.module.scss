@@ -3,6 +3,7 @@
 .container {
   @include typography.font-style(core, base);
   color: var(--cl-primary-color);
+  background-color: var(--cl-primary-background);
 
   padding: var(--cl-l-gap);
   margin: var(--cl-l-gap);

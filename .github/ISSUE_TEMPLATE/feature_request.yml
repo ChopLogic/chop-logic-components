@@ -12,19 +12,10 @@ body:
       value: |
         Thanks for suggesting a new feature! Please fill out the information below to help us understand your request.
 
-  - type: input
-    id: feature_summary
-    attributes:
-      label: "Feature Summary"
-      description: "Provide a clear and concise summary of the feature you want to propose."
-      placeholder: "Example: Add support for dark mode."
-    validations:
-      required: true
-
   - type: textarea
-    id: proposed_solution
+    id: description
     attributes:
-      label: "Proposed Solution"
+      label: "Description"
       description: "Describe how you think this feature should work."
       placeholder: "Implement a toggle to switch between light and dark themes."
     validations:

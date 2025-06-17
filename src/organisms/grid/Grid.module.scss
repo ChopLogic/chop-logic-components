@@ -34,14 +34,14 @@
   }
 
   &_caption {
-    @include typography.font-style(core, base, bold);
+    @include typography.font-style(core, base, light);
     color: var(--cl-primary-color);
     padding: var(--cl-m-gap);
   }
 }
 
 .header {
-  @include typography.font-style(core, base);
+  @include typography.font-style(core, base, bold);
   color: var(--cl-primary-color);
 
   &_cell {
@@ -50,7 +50,6 @@
   }
 
   &_row {
-    font-weight: bold;
     border-top: var(--cl-light-border);
     border-bottom: var(--cl-light-border);
     background-color: var(--cl-primary-background);

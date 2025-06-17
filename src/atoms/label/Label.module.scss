@@ -1,7 +1,7 @@
 @use '/src/styles/typography';
 
 .label {
-  @include typography.font-style(core, small);
+  @include typography.font-style(core, small, light);
   display: flex;
   align-items: center;
   gap: var(--cl-s-gap);

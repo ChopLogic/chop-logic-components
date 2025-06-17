@@ -4,9 +4,9 @@ import styles from './ButtonInner.module.scss';
 import { ChopLogicIcon } from '@atoms';
 
 type Props = {
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   label: string;
   icon: ChopLogicIconName;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 };
 

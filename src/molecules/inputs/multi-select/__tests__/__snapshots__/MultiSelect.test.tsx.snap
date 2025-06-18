@@ -7,7 +7,7 @@ exports[`ChopLogicMultiSelect > should render correctly 1`] = `
     style="width: 400px;"
   >
     <label
-      class="_label_c20562"
+      class="_label_e79f9d"
       for="multi-select-id"
     >
       <span>

@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import Button2D from './Button2D';
+import Button3D from './Button3D.tsx';
 
-describe('Button2D', () => {
+describe('Button3D', () => {
   const testProps = {
     id: 'button-id',
     className: 'button-class',
@@ -13,25 +13,25 @@ describe('Button2D', () => {
   };
 
   it('should have the accessible role', () => {
-    render(<Button2D {...testProps} />);
+    render(<Button3D {...testProps} />);
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   it('should have the passed className', () => {
-    render(<Button2D {...testProps} />);
+    render(<Button3D {...testProps} />);
     expect(screen.getByRole('button')).toHaveClass(testProps.className);
   });
 
   it('should call the callback function on click', async () => {
     const mockedCallback = vi.fn();
-    render(<Button2D {...testProps} onClick={mockedCallback} />);
+    render(<Button3D {...testProps} onClick={mockedCallback} />);
     await userEvent.click(screen.getByRole('button'));
     expect(mockedCallback).toHaveBeenCalledOnce();
   });
 
   it('should not call the callback function on click if the button is disabled', async () => {
     const mockedCallback = vi.fn();
-    render(<Button2D {...testProps} onClick={mockedCallback} disabled={true} />);
+    render(<Button3D {...testProps} onClick={mockedCallback} disabled={true} />);
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
     await userEvent.click(button, {
@@ -41,7 +41,7 @@ describe('Button2D', () => {
   });
 
   it('should have focus on Tab press', () => {
-    render(<Button2D {...testProps} />);
+    render(<Button3D {...testProps} />);
     const button = screen.getByRole('button');
     expect(button).not.toHaveFocus();
     button.focus();
@@ -49,7 +49,7 @@ describe('Button2D', () => {
 
   it('should call the callback function on Enter press', async () => {
     const mockedCallback = vi.fn();
-    render(<Button2D {...testProps} onClick={mockedCallback} />);
+    render(<Button3D {...testProps} onClick={mockedCallback} />);
     const button = screen.getByRole('button');
     button.focus();
     await userEvent.keyboard('{Enter}');

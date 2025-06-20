@@ -7,8 +7,8 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       values: [
-        { name: 'dark', value: 'hsl(0, 0%, 17%)' },
-        { name: 'light', value: 'hsl(0, 0%, 100%)' },
+        { name: 'dark', value: '#2E1F27' },
+        { name: 'light', value: '#FFFFFF' },
       ],
     },
     initialGlobals: {

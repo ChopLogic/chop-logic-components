@@ -11,9 +11,9 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
     title="Foreground Colors"
     subtitle="For text, icons, and borders"
     colors={{
-      '--cl-primary-color': 'hsl(0, 0%, 24%)',
-      '--cl-tint-color': 'hsl(0, 0%, 62%)',
-      '--cl-accent-color': 'hsl(345, 100%, 47%)'
+      '--cl-primary-color': 'hsl(195, 100%, 6%)',
+      '--cl-tint-color': 'hsl(345, 49%, 21%)',
+      '--cl-accent-color': 'hsl(356, 100%, 53%)'
     }}
   />
   <ColorItem
@@ -21,7 +21,7 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
     subtitle="For blocks, panels, and inputs"
     colors={{
       '--cl-primary-background': 'hsl(0, 0%, 100%)',
-      '--cl-highlight-background': 'hsl(0, 0%, 95%)',
+      '--cl-highlight-background': 'hsl(40, 100%, 58%)',
       '--cl-shadow-background': 'hsla(0, 0%, 0%, 0.3)'
     }}
   />
@@ -29,7 +29,13 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
     title="Gradients"
     subtitle="For visual highlighting and shadowing"
     colors={{
-      '--cl-accent-gradient': 'linear-gradient(to left, hsl(340deg 100% 16%) 0%, hsl(340deg 100% 32%) 8%, hsl(340deg 100% 32%) 92%, hsl(340deg 100% 16%) 100%)',
+      '--cl-accent-gradient': `linear-gradient(
+        to left,
+        hsl(356, 100%, 21%) 0%,
+        hsl(356, 100%, 32%) 8%,
+        hsl(356, 100%, 32%) 92%,
+        hsl(356, 100%, 21%) 100%
+      )`,
       '--cl-shadow-gradient': 'linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 32%) 8%, hsl(0, 0%, 32%) 92%, hsl(0, 0%, 24%) 100%)'
     }}
   />
@@ -42,26 +48,26 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
     title="Foreground Colors"
     subtitle="For text, icons, and borders"
     colors={{
-      '--cl-primary-color': 'hsl(0, 0%, 100%)',
-      '--cl-tint-color': 'hsl(0, 0%, 92%)',
-      '--cl-accent-color': 'hsl(16, 82%, 52%)'
+      '--cl-primary-color': 'hsl(57, 64%, 74%)',
+      '--cl-tint-color': 'hsl(43, 87%, 66%)',
+      '--cl-accent-color': 'hsl(23, 72%, 53%)'
     }}
   />
   <ColorItem
     title="Background Colors"
     subtitle="For blocks, panels, and inputs"
     colors={{
-      '--cl-primary-background': 'hsl(0, 0%, 17%)',
-      '--cl-highlight-background': 'hsl(0, 0%, 24%)',
-      '--cl-shadow-background': 'hsla(0, 0%, 92%, 0.3)'
+      '--cl-primary-background': 'hsl(328, 19%, 15%)',
+      '--cl-highlight-background': 'hsl(24, 55%, 34%)',
+      '--cl-shadow-background': 'hsla(24, 55%, 34%, 0.3)'
     }}
   />
   <ColorItem
     title="Gradients"
     subtitle="For visual highlighting and shadowing"
     colors={{
-      '--cl-accent-gradient': 'linear-gradient(to left, hsl(16, 86%, 26%) 0%, hsl(16, 86%, 30%) 8%, hsl(16, 86%, 30%) 92%, hsl(16, 86%, 26%) 100%)',
-      '--cl-shadow-gradient': 'linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 30%) 8%, hsl(0, 0%, 30%) 92%, hsl(0, 0%, 24%) 100%)'
+      '--cl-accent-gradient': 'linear-gradient(to left, hsl(23, 72%, 26%) 0%, hsl(23, 72%, 30%) 8%, hsl(23, 72%, 30%) 92%, hsl(23, 72%, 26%) 100%)',
+      '--cl-shadow-gradient': 'linear-gradient(to left, hsl(328, 19%, 24%) 0%, hsl(328, 19%, 30%) 8%, hsl(328, 19%, 30%) 92%, hsl(328, 19%, 24%) 100%)'
     }}
   />
 </ColorPalette>

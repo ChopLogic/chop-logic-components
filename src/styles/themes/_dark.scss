@@ -8,10 +8,16 @@
   --cl-shadow-background: hsla(24, 55%, 34%, 0.3);
   // Gradients
   --cl-accent-gradient: linear-gradient(to left, hsl(23, 72%, 26%) 0%, hsl(23, 72%, 30%) 8%, hsl(23, 72%, 30%) 92%, hsl(23, 72%, 26%) 100%);
-  --cl-shadow-gradient: linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 30%) 8%, hsl(0, 0%, 30%) 92%, hsl(0, 0%, 24%) 100%);
+  --cl-shadow-gradient: linear-gradient(
+    to left,
+    hsl(328, 19%, 24%) 0%,
+    hsl(328, 19%, 30%) 8%,
+    hsl(328, 19%, 30%) 92%,
+    hsl(328, 19%, 24%) 100%
+  );
   // Shadows
-  --cl-box-shadow: hsla(0, 0%, 92%, 0.15) 2.4px 2.4px 3.2px;
-  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(0, 0%, 92%, 0.3);
+  --cl-box-shadow: hsla(24, 55%, 34%, 0.15) 2.4px 2.4px 3.2px;
+  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(328, 19%, 15%, 0.3);
   // Borders
   --cl-primary-border: 1px solid hsla(57, 64%, 74%, 32%);
   --cl-light-border: 1px solid hsl(43, 87%, 66%, 32%);

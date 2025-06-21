@@ -2,7 +2,7 @@ import { useId } from 'react';
 import { renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 
-import { useElementIds } from '../use-element-ids';
+import { useElementIds } from '../use-element-ids.ts';
 
 // Mock the useId hook
 vi.mock('react', async () => {

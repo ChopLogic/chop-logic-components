@@ -1,6 +1,6 @@
 export { useClickOutside } from './use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions';
-export { useElementIds } from './use-element-ids';
+export { useElementIds } from './use-element-ids.ts';
 export { useKeyPress } from './use-key-press';
 export { useModalFocusTrap } from './use-modal-focus-trap';
 export { useIsMounted } from '@hooks/use-is-mounted';

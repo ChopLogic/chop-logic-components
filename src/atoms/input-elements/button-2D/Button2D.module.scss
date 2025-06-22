@@ -11,14 +11,14 @@
   justify-content: center;
   gap: var(--cl-s-gap);
   padding: var(--cl-m-gap) var(--cl-l-gap);
+  border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
   background: transparent;
 
   &:hover,
   &:active {
-    background: var(--cl-highlight-background);
-    transition: all 0.3s ease 0s;
-    color: var(--cl-accent-color);
+    border: var(--cl-outline-border);
+    color: var(--cl-tint-color);
   }
 
   &:focus-visible {

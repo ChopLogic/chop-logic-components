@@ -9,7 +9,7 @@ import{C,a as e}from"./Button-DNPweYWQ.js";import{C as t}from"./Icon-BBWlz8VR.js
 }`,...(c=(s=a.parameters)==null?void 0:s.docs)==null?void 0:c.source}}};var d,p,m;n.parameters={...n.parameters,docs:{...(d=n.parameters)==null?void 0:d.docs,source:{originalSource:`{
   args: {
     text: 'Learn more...',
-    view: ChopLogicButtonView.Flat,
+    view: ChopLogicButtonView.Secondary,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false
@@ -26,7 +26,7 @@ import{C,a as e}from"./Button-DNPweYWQ.js";import{C as t}from"./Icon-BBWlz8VR.js
 }`,...(y=(f=o.parameters)==null?void 0:f.docs)==null?void 0:y.source}}};var b,g,h;l.parameters={...l.parameters,docs:{...(b=l.parameters)==null?void 0:b.docs,source:{originalSource:`{
   args: {
     text: 'Hover On Me',
-    view: ChopLogicButtonView.Flat,
+    view: ChopLogicButtonView.Secondary,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,

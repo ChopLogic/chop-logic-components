@@ -13,7 +13,7 @@ export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, tit
 
   return (
     <div>
-      <ChopLogicButton onClick={handleOpen} text='Open Alert' view={ChopLogicButtonView.Flat} />
+      <ChopLogicButton onClick={handleOpen} text='Open Alert' view={ChopLogicButtonView.Secondary} />
       <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title={title} message={message} mode={mode} />
     </div>
   );

@@ -9,10 +9,10 @@ export const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent
   return (
     <div>
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id}>
-        {visibleOn === 'click' && <ChopLogicButton text='Click me' view={ChopLogicButtonView.Flat} />}
-        {visibleOn === 'hover' && <ChopLogicButton text='Hover on me' view={ChopLogicButtonView.Flat} />}
-        {visibleOn === 'focus' && <ChopLogicButton text='Focus on me' view={ChopLogicButtonView.Flat} />}
-        {visibleOn === 'contextmenu' && <ChopLogicButton text='Right click on me' view={ChopLogicButtonView.Flat} />}
+        {visibleOn === 'click' && <ChopLogicButton text='Click me' view={ChopLogicButtonView.Secondary} />}
+        {visibleOn === 'hover' && <ChopLogicButton text='Hover on me' view={ChopLogicButtonView.Secondary} />}
+        {visibleOn === 'focus' && <ChopLogicButton text='Focus on me' view={ChopLogicButtonView.Secondary} />}
+        {visibleOn === 'contextmenu' && <ChopLogicButton text='Right click on me' view={ChopLogicButtonView.Secondary} />}
       </ChopLogicTooltip>
     </div>
   );

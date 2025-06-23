@@ -12,7 +12,7 @@ export const UseModalFocusTrapExample = () => {
 
   return (
     <div style={{ padding: '1rem' }}>
-      <ChopLogicButton onClick={() => setIsOpened(true)} text='Open modal' view={ChopLogicButtonView.Flat} />
+      <ChopLogicButton onClick={() => setIsOpened(true)} text='Open modal' view={ChopLogicButtonView.Secondary} />
       {isOpened && (
         <div ref={modalRef} tabIndex={-1} className={styles.container}>
           <button onClick={() => setIsOpened(false)}>Close Modal</button>

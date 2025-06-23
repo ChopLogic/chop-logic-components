@@ -21,15 +21,15 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
         doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <ChopLogicButton text='Action' view={ChopLogicButtonView.Flat} />
-        <ChopLogicButton text='Close dialog' view={ChopLogicButtonView.Flat} onClick={handleClose} />
+        <ChopLogicButton text='Action' view={ChopLogicButtonView.Secondary} />
+        <ChopLogicButton text='Close dialog' view={ChopLogicButtonView.Secondary} onClick={handleClose} />
       </div>
     </div>
   );
 
   return (
     <div>
-      <ChopLogicButton text='Open dialog' onClick={handleOpen} view={ChopLogicButtonView.Flat} />
+      <ChopLogicButton text='Open dialog' onClick={handleOpen} view={ChopLogicButtonView.Secondary} />
       <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title={title}>
         {modalContent}
       </ChopLogicDialog>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button2D, Button3D, ButtonIcon, ChopLogicIcon } from '@atoms';
+import { Button2D, PrimaryButton, ButtonIcon, ChopLogicIcon } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
@@ -23,12 +23,12 @@ const Button: React.FC<ChopLogicButtonProps> = ({
   switch (view) {
     case ChopLogicButtonView.Primary:
       return (
-        <Button3D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+        <PrimaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
-        </Button3D>
+        </PrimaryButton>
       );
-    case ChopLogicButtonView.Flat:
+    case ChopLogicButtonView.Secondary:
       return (
         <Button2D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />

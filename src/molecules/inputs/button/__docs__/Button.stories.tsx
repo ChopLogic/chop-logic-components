@@ -35,7 +35,7 @@ const meta: Meta<typeof ChopLogicButtonExample> = {
 export default meta;
 type Story = StoryObj<typeof ChopLogicButtonExample>;
 
-export const Button3D: Story = {
+export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
     view: ChopLogicButtonView.Primary,
@@ -45,10 +45,10 @@ export const Button3D: Story = {
   },
 };
 
-export const Button2D: Story = {
+export const SecondaryButton: Story = {
   args: {
     text: 'Learn more...',
-    view: ChopLogicButtonView.Flat,
+    view: ChopLogicButtonView.Secondary,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
@@ -68,7 +68,7 @@ export const IconButton: Story = {
 export const ButtonWithTooltip: Story = {
   args: {
     text: 'Hover On Me',
-    view: ChopLogicButtonView.Flat,
+    view: ChopLogicButtonView.Secondary,
     type: 'button',
     disabled: false,
     tooltip: 'This button does nothing...',

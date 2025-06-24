@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicIconName } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
-import { SecondaryButton, PrimaryButton, ButtonIcon, ButtonInner, ChopLogicIcon, Input, Label } from '@atoms';
+import { SecondaryButton, PrimaryButton, IconButton, ButtonInner, ChopLogicIcon, Input, Label } from '@atoms';
 import ErrorMessage from '@atoms/input-elements/error-message/ErrorMessage';
 import styles from './InputElements.module.scss';
 
@@ -17,10 +17,10 @@ export const InputElementsExample: React.FC<ChopLogicLoaderProps> = () => {
         <span className={styles.label}>Secondary Button</span>
       </div>
       <div className={styles.element}>
-        <ButtonIcon>
+        <IconButton>
           <ChopLogicIcon name={ChopLogicIconName.Graduate} />
-        </ButtonIcon>
-        <span className={styles.label}>ButtonIcon</span>
+        </IconButton>
+        <span className={styles.label}>Icon Button</span>
       </div>
       <div className={styles.element}>
         <ButtonInner icon={ChopLogicIconName.Remove} label='ButtonInner' />

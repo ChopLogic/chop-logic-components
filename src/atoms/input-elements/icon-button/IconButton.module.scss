@@ -10,12 +10,16 @@
   justify-content: center;
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
-  border: var(--cl-light-border);
+  border: var(--cl-primary-border);
   background: transparent;
 
   &:hover {
-    border: var(--cl-outline-border);
+    border: var(--cl-light-border);
     color: var(--cl-tint-color);
+
+    svg {
+      filter: var(--cl-drop-shadow);
+    }
   }
 
   &:focus-visible {

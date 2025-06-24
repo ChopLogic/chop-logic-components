@@ -20,6 +20,10 @@
     border: var(--cl-light-border);
     color: var(--cl-tint-color);
     text-shadow: var(--cl-text-shadow);
+
+    svg {
+      filter: var(--cl-drop-shadow);
+    }
   }
 
   &:focus-visible {

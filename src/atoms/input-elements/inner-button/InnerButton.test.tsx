@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ButtonInner from './ButtonInner.tsx';
+import InnerButton from './InnerButton.tsx';
 
 describe('ButtonInner', () => {
   const testProps = {
@@ -13,18 +13,18 @@ describe('ButtonInner', () => {
   };
 
   it('should have the accessible label', () => {
-    render(<ButtonInner {...testProps} />);
+    render(<InnerButton {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
   it('should call onClick handler', async () => {
-    render(<ButtonInner {...testProps} />);
+    render(<InnerButton {...testProps} />);
     await userEvent.click(screen.getByRole('button'));
     expect(testProps.onClick).toHaveBeenCalledOnce();
   });
 
   it('should have type button', () => {
-    render(<ButtonInner {...testProps} />);
+    render(<InnerButton {...testProps} />);
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
   });
 });

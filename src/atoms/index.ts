@@ -4,7 +4,7 @@ export { default as Input } from './input-elements/input/Input';
 export { default as SecondaryButton } from '@atoms/input-elements/secondary-button/SecondaryButton';
 export { default as PrimaryButton } from '@atoms/input-elements/primary-button/PrimaryButton';
 export { default as IconButton } from '@atoms/input-elements/icon-button/IconButton';
-export { default as ButtonInner } from './input-elements/button-inner/ButtonInner';
+export { default as InnerButton } from '@atoms/input-elements/inner-button/InnerButton';
 
 export { default as ChopLogicIcon } from './icon/Icon';
 export { default as ChopLogicLoader } from './loader/Loader';

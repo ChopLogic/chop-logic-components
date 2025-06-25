@@ -5,7 +5,7 @@ import { ChopLogicNumericInputProps } from '@models';
 import { useChopLogicNumericInputController } from './NumericInput.controller.ts';
 import styles from './NumericInput.module.scss';
 import { getClassName } from '@utils';
-import { ErrorMessage, ButtonInner, Label, Input } from '@atoms';
+import { ErrorMessage, InnerButton, Label, Input } from '@atoms';
 
 const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
   name,
@@ -67,13 +67,13 @@ const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
       >
         {hasSpinButtons && (
           <span>
-            <ButtonInner
+            <InnerButton
               onClick={decrement}
               label={`Decrement value for ${label}`}
               icon={ChopLogicIconName.ChevronLeft}
               disabled={disabled}
             />
-            <ButtonInner
+            <InnerButton
               onClick={increment}
               label={`Increment value for ${label}`}
               icon={ChopLogicIconName.ChevronRight}

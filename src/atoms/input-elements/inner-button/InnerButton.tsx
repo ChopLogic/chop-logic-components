@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChopLogicIconName } from '@enums';
-import styles from './ButtonInner.module.scss';
+import styles from './InnerButton.module.scss';
 import { ChopLogicIcon } from '@atoms';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   disabled?: boolean;
 };
 
-const ButtonInner: React.FC<Props> = ({ onClick, label, icon, disabled }) => {
+const InnerButton: React.FC<Props> = ({ onClick, label, icon, disabled }) => {
   return (
     <button className={styles.button} onClick={onClick} aria-label={label} type='button' disabled={disabled}>
       <ChopLogicIcon name={icon} />
@@ -18,4 +18,4 @@ const ButtonInner: React.FC<Props> = ({ onClick, label, icon, disabled }) => {
   );
 };
 
-export default ButtonInner;
+export default InnerButton;

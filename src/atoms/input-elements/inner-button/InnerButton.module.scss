@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   font-size: var(--cl-small-font-size);
-  color: var(--cl-tint-color);
+  color: var(--cl-primary-color);
   padding: 0;
 
   &:focus-visible {
@@ -17,8 +17,13 @@
     outline-offset: -1px;
   }
 
-  &:hover {
-    color: var(--cl-primary-color);
+  &:hover,
+  &:active {
+    color: var(--cl-tint-color);
+
+    svg {
+      filter: var(--cl-drop-shadow);
+    }
   }
 
   svg {

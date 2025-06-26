@@ -1,10 +1,10 @@
 import React from 'react';
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
-import { getGridRowValues } from '../Grid.helpers.ts';
-import GridRow from './Row.tsx';
-import styles from '../Grid.module.scss';
+import { getGridRowValues } from '@organisms/grid/Grid.helpers.ts';
+import { GridRow } from './Row';
+import styles from '@organisms/grid/Grid.module.scss';
 
-type ChopLogicGridBodyProps = {
+type Props = {
   data: ChopLogicGridItem[];
   columns: ChopLogicGridColumn[];
   selectedIds: string[];
@@ -14,15 +14,7 @@ type ChopLogicGridBodyProps = {
   selectable: boolean;
 };
 
-const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
-  selectRowById,
-  deselectRowById,
-  renderDataItem,
-  selectedIds,
-  selectable,
-  data,
-  columns,
-}) => {
+export const GridBody: React.FC<Props> = ({ selectRowById, deselectRowById, renderDataItem, selectedIds, selectable, data, columns }) => {
   return (
     <tbody className={styles.grid_body}>
       {data.map((item) => {
@@ -43,5 +35,3 @@ const ChopLogicGridBody: React.FC<ChopLogicGridBodyProps> = ({
     </tbody>
   );
 };
-
-export default ChopLogicGridBody;

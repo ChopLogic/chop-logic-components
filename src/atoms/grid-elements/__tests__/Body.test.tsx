@@ -1,9 +1,9 @@
 import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import ChopLogicGridBody from '../elements/Body.tsx';
+import { GridBody } from '@atoms/grid-elements/Body';
 
-describe('ChopLogicGridBody', () => {
+describe('GridBody', () => {
   const columns: ChopLogicGridColumn[] = [
     { title: 'Col 1', field: 'field1' },
     { title: 'Col 2', field: 'field2' },
@@ -28,7 +28,7 @@ describe('ChopLogicGridBody', () => {
   it('should match the snapshot', () => {
     const { asFragment } = render(
       <table>
-        <ChopLogicGridBody {...testProps} />
+        <GridBody {...testProps} />
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();

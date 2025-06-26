@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import GridRow, { GridRowProps } from '../elements/Row.tsx';
+import { GridRow } from '@atoms/grid-elements/Row';
 
 describe('GridRow', () => {
-  const testProps: GridRowProps = {
+  const testProps = {
     rowId: 'item-1',
     selectRowById: vi.fn(),
     deselectRowById: vi.fn(),

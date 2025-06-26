@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../Grid.module.scss';
-import GridDataCell from './DataCell.tsx';
-import SelectGridRowCell from './SelectRowCell.tsx';
+import styles from '@organisms/grid/Grid.module.scss';
+import { GridDataCell } from './DataCell.tsx';
+import { SelectGridRowCell } from './SelectGridRowCell.tsx';
 import { getClassName } from '@utils';
 
-export type GridRowProps = {
+type Props = {
   rowId: string;
   selectedIds: string[];
   selectRowById: (id: string) => void;
@@ -14,7 +14,7 @@ export type GridRowProps = {
   disabled?: boolean;
 };
 
-const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
+export const GridRow: React.FC<Props> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
   const selected = selectedIds.includes(rowId);
 
   return (
@@ -34,5 +34,3 @@ const GridRow: React.FC<GridRowProps> = ({ rowId, selectRowById, deselectRowById
     </tr>
   );
 };
-
-export default GridRow;

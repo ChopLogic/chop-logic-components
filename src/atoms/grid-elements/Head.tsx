@@ -1,8 +1,8 @@
 import React from 'react';
 import { ChopLogicGridColumn } from '@models';
-import styles from '../Grid.module.scss';
-import GridHeaderCell from './HeaderCell.tsx';
-import SelectAllRowsCell from './SelectAllRowsCell.tsx';
+import styles from '@organisms/grid/Grid.module.scss';
+import { GridHeaderCell } from './HeaderCell';
+import { SelectAllGridRowsCell } from './SelectAllGridRowsCell.tsx';
 
 type ChopLogicGridHeadProps = {
   columns: ChopLogicGridColumn[];
@@ -14,7 +14,7 @@ type ChopLogicGridHeadProps = {
   deselectAll: () => void;
 };
 
-const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({
+export const GridHead: React.FC<ChopLogicGridHeadProps> = ({
   columns,
   gridId,
   selectAll,
@@ -27,7 +27,7 @@ const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({
     <thead className={styles.header}>
       <tr className={styles.header_row}>
         {selectable && (
-          <SelectAllRowsCell
+          <SelectAllGridRowsCell
             isAllSelected={isAllSelected}
             disabled={isAllCheckboxDisabled}
             gridId={gridId}
@@ -42,5 +42,3 @@ const ChopLogicGridHead: React.FC<ChopLogicGridHeadProps> = ({
     </thead>
   );
 };
-
-export default ChopLogicGridHead;

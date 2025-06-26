@@ -1,24 +1,16 @@
 import React from 'react';
 import { useElementIds } from '@hooks';
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
-import styles from '../Grid.module.scss';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
+import styles from '@organisms/grid/Grid.module.scss';
 import { getClassName } from '@utils';
 import { Label } from '@atoms';
 
-type ChopLogicGridCheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
 };
 
-const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
-  name,
-  label,
-  disabled,
-  required = false,
-  onChange,
-  checked = false,
-  ...props
-}) => {
+export const GridCheckbox: React.FC<Props> = ({ name, label, disabled, required = false, onChange, checked = false, ...props }) => {
   const { elementId } = useElementIds(props?.id);
   const checkboxClass = getClassName([
     styles.checkbox,
@@ -51,5 +43,3 @@ const GridCheckbox: React.FC<ChopLogicGridCheckboxProps> = ({
     </div>
   );
 };
-
-export default GridCheckbox;

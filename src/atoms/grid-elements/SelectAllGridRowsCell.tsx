@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../Grid.module.scss';
-import GridCheckbox from './Checkbox.tsx';
+import styles from '@organisms/grid/Grid.module.scss';
+import { GridCheckbox } from './Checkbox.tsx';
 
-type SelectAllGridRowsCheckbox = {
+type Props = {
   gridId: string;
   isAllSelected: boolean;
   selectAll: () => void;
@@ -10,7 +10,7 @@ type SelectAllGridRowsCheckbox = {
   disabled?: boolean;
 };
 
-const SelectAllRowsCell: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllSelected, selectAll, deselectAll, disabled }) => {
+export const SelectAllGridRowsCell: React.FC<Props> = ({ gridId, isAllSelected, selectAll, deselectAll, disabled }) => {
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -32,5 +32,3 @@ const SelectAllRowsCell: React.FC<SelectAllGridRowsCheckbox> = ({ gridId, isAllS
     </th>
   );
 };
-
-export default SelectAllRowsCell;

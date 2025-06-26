@@ -1,19 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import SelectAllGridRowsCheckbox from '../elements/SelectAllRowsCell.tsx';
+import { SelectGridRowCell } from '@atoms/grid-elements/SelectGridRowCell';
 
-describe('SelectAllGridRowsCheckbox', () => {
+describe('SelectGridRowCheckbox', () => {
   const mockedSelect = vi.fn();
   const mockedDeselect = vi.fn();
-  const mockedGridId = 'grid-id';
+  const mockedRowId = 'grid-id';
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
           </tr>
         </thead>
       </table>,
@@ -26,7 +26,7 @@ describe('SelectAllGridRowsCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected={false} />
+            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={false} />
           </tr>
         </thead>
       </table>,
@@ -41,7 +41,7 @@ describe('SelectAllGridRowsCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCheckbox selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
           </tr>
         </thead>
       </table>,

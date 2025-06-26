@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChopLogicGridColumn } from '@models';
-import styles from '../Grid.module.scss';
+import styles from '@organisms/grid/Grid.module.scss';
 import { getClassName } from '@utils';
 
-const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
+export const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
   return (
     <colgroup>
       {selectable && <col className={getClassName([styles.grid_column, styles.grid_column__first])} />}
@@ -23,5 +23,3 @@ const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: bo
     </colgroup>
   );
 };
-
-export default GridColumnGroup;

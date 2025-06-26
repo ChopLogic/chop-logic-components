@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import SecondaryButton from './SecondaryButton.tsx';
+import { SecondaryButton } from './SecondaryButton';
 
 describe('SecondaryButton', () => {
   const testProps = {

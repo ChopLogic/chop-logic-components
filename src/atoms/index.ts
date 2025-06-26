@@ -1,11 +1,11 @@
 // Internal export
-export { default as ErrorMessage } from './input-elements/error-message/ErrorMessage';
-export { default as Label } from './input-elements/label/Label';
-export { default as Input } from './input-elements/input/Input';
-export { default as SecondaryButton } from './input-elements/secondary-button/SecondaryButton';
-export { default as PrimaryButton } from './input-elements/primary-button/PrimaryButton';
-export { default as IconButton } from './input-elements/icon-button/IconButton';
-export { default as InnerButton } from './input-elements/inner-button/InnerButton';
+export { ErrorMessage } from './input-elements/error-message/ErrorMessage';
+export { Label } from './input-elements/label/Label';
+export { Input } from './input-elements/input/Input';
+export { SecondaryButton } from './input-elements/secondary-button/SecondaryButton';
+export { PrimaryButton } from './input-elements/primary-button/PrimaryButton';
+export { IconButton } from './input-elements/icon-button/IconButton';
+export { InnerButton } from './input-elements/inner-button/InnerButton';
 export { GridBody } from './grid-elements/Body';
 export { GridHead } from './grid-elements/Head';
 export { GridColumnGroup } from './grid-elements/GridColumnGroup.tsx';

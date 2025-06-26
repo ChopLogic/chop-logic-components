@@ -10,7 +10,7 @@ type LabelProps = {
   iconPosition?: 'left' | 'right';
 };
 
-const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, isTextHidden = false }) => {
+export const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, isTextHidden = false }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
 
@@ -27,5 +27,3 @@ const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, i
     </label>
   );
 };
-
-export default Label;

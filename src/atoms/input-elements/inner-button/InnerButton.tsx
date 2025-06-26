@@ -10,7 +10,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const InnerButton: React.FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
+export const InnerButton: React.FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
   return (
     <button
       className={getClassName([styles.button, className])}
@@ -24,5 +24,3 @@ const InnerButton: React.FC<Props> = ({ onClick, label, icon, disabled, classNam
     </button>
   );
 };
-
-export default InnerButton;

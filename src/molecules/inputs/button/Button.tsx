@@ -1,5 +1,5 @@
 import React from 'react';
-import { SecondaryButton, PrimaryButton, IconButton, ChopLogicIcon } from '@atoms';
+import { ChopLogicIcon, IconButton, InnerButton, PrimaryButton, SecondaryButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
@@ -41,6 +41,8 @@ const Button: React.FC<ChopLogicButtonProps> = ({
           <ChopLogicIcon name={icon} />
         </IconButton>
       );
+    case ChopLogicButtonView.Inner:
+      return <InnerButton label={label} icon={icon} onClick={onClick} disabled={disabled} {...rest} className={className}></InnerButton>;
     default:
       return null;
   }

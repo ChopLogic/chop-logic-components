@@ -6,9 +6,9 @@ export { SecondaryButton } from './input-elements/secondary-button/SecondaryButt
 export { PrimaryButton } from './input-elements/primary-button/PrimaryButton';
 export { IconButton } from './input-elements/icon-button/IconButton';
 export { InnerButton } from './input-elements/inner-button/InnerButton';
-export { GridBody } from './grid-elements/Body';
-export { GridHead } from './grid-elements/Head';
-export { GridColumnGroup } from './grid-elements/GridColumnGroup.tsx';
+export { GridBody } from '@atoms/grid-elements/grid-body/GridBody';
+export { GridHead } from '@atoms/grid-elements/grid-head/GridHead';
+export { GridColumnGroup } from '@atoms/grid-elements/grid-column-group/GridColumnGroup';
 
 // Global export
 export { default as ChopLogicIcon } from './icon/Icon';

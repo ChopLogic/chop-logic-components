@@ -22,8 +22,10 @@
   // Set font-weight
   @if $weight == bold {
     font-family: variables.$cl-core-font-bold;
+    font-weight: normal;
   } @else if $weight == light {
     font-family: variables.$cl-core-font-light;
+    font-weight: normal;
   } @else {
     font-weight: $weight;
   }

@@ -3,20 +3,14 @@
 .checkbox {
   display: flex;
   gap: var(--cl-s-gap);
-  padding: var(--cl-s-gap) 0;
+  padding: var(--cl-s-gap);
   position: relative;
   overflow: hidden;
 
   svg {
-    color: var(--cl-tint-color);
+    color: var(--cl-primary-color);
     width: var(--cl-icon-size);
     height: var(--cl-icon-size);
-  }
-
-  &__checked {
-    svg {
-      color: var(--cl-primary-color);
-    }
   }
 
   &__disabled {

@@ -1,5 +1,6 @@
 .row {
   border-bottom: var(--cl-light-border);
+  background-color: var(--cl-primary-background);
 
   &__selected {
     background-color: var(--cl-highlight-background);

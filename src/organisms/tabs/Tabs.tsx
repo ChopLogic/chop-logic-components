@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabsProps } from '@models';
-import ChopLogicTabContent from './elements/TabContent.tsx';
-import ChopLogicTabList from './elements/TabList.tsx';
 import { getClassName } from '@utils';
 import styles from './Tabs.module.scss';
+import { TabContent, TabList } from '@atoms';
 
 const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({
   tabs,
@@ -25,7 +24,7 @@ const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({
 
   return (
     <div {...rest} className={tabsClass}>
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         selectedTabId={selectedTabId}
         tabPanelIds={tabPanelIds}
@@ -33,7 +32,7 @@ const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({
         mode={mode}
         tabIds={tabIds}
       />
-      <ChopLogicTabContent tabs={tabs} selectedTabId={selectedTabId} />
+      <TabContent tabs={tabs} selectedTabId={selectedTabId} />
     </div>
   );
 };

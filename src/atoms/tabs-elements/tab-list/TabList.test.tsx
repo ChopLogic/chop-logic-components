@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
-import ChopLogicTabList from '../elements/TabList.tsx';
+import { TabList } from './TabList';
 
 vi.mock('@utils', () => ({
   moveFocusOnElementById: vi.fn(),
   getClassName: vi.fn(),
 }));
 
-describe('ChopLogicTabList', () => {
+describe('TabList', () => {
   const tabs = [
     { id: 'tab-1', title: 'Tab 1', disabled: false, content: <>Tab 1 content</> },
     { id: 'tab-2', title: 'Tab 2', disabled: false, content: <>Tab 2 content</> },
@@ -22,7 +22,7 @@ describe('ChopLogicTabList', () => {
 
   it('renders all tabs correctly', () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -39,7 +39,7 @@ describe('ChopLogicTabList', () => {
 
   it('does not move focus in vertical mode when ArrowLeft is pressed', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -59,7 +59,7 @@ describe('ChopLogicTabList', () => {
 
   it('does not move focus in horizontal mode when ArrowUp is pressed', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -79,7 +79,7 @@ describe('ChopLogicTabList', () => {
 
   it('handles tab selection when a tab is clicked', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -97,7 +97,7 @@ describe('ChopLogicTabList', () => {
 
   it('moves focus to the next tab when pressing ArrowRight in horizontal mode', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -117,7 +117,7 @@ describe('ChopLogicTabList', () => {
 
   it('moves focus to the previous tab when pressing ArrowLeft in horizontal mode', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -137,7 +137,7 @@ describe('ChopLogicTabList', () => {
 
   it('moves focus to the next tab when pressing ArrowDown in vertical mode', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}
@@ -157,7 +157,7 @@ describe('ChopLogicTabList', () => {
 
   it('moves focus to the previous tab when pressing ArrowUp in vertical mode', async () => {
     render(
-      <ChopLogicTabList
+      <TabList
         tabs={tabs}
         tabIds={tabIds}
         onTabSelect={onTabSelect}

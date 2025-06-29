@@ -2,8 +2,8 @@ import React, { KeyboardEvent } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
-import ChopLogicTabButton from './TabButton.tsx';
-import styles from '../Tabs.module.scss';
+import styles from './TabList.module.scss';
+import { TabButton } from '../tab-button/TabButton';
 
 type ChopLogicTabListProps = {
   tabs: ChopLogicTabItem[];
@@ -14,7 +14,7 @@ type ChopLogicTabListProps = {
   mode: ChopLogicOrientationMode;
 };
 
-const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds }) => {
+export const TabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === ChopLogicOrientationMode.Vertical }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -58,7 +58,7 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
     <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
-          <ChopLogicTabButton
+          <TabButton
             key={id}
             title={title}
             onTabSelect={onTabSelect}
@@ -73,5 +73,3 @@ const ChopLogicTabList: React.FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, 
     </div>
   );
 };
-
-export default ChopLogicTabList;

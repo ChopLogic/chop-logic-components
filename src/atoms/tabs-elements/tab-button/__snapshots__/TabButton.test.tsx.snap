@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TabButton > should match the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="panel-id-1"
+    aria-selected="true"
+    class="_tabButton_d229df _tabButton__vertical_d229df _tabButton__selected_d229df"
+    id="id-1"
+    role="tab"
+  >
+    Tab button
+  </button>
+</DocumentFragment>
+`;

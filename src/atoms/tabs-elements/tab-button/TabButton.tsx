@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { getClassName } from '@utils';
-import styles from '../Tabs.module.scss';
+import styles from './TabButton.module.scss';
 
-type ChopLogicTabButtonProps = {
+type Props = {
   title: string;
   tabId: string;
   onTabSelect: (id: string) => void;
@@ -13,15 +13,7 @@ type ChopLogicTabButtonProps = {
   isDisabled?: boolean;
 };
 
-const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
-  title,
-  onTabSelect,
-  tabId,
-  isSelected,
-  isDisabled = false,
-  tabPanelId,
-  mode,
-}) => {
+export const TabButton: React.FC<Props> = ({ title, onTabSelect, tabId, isSelected, isDisabled = false, tabPanelId, mode }) => {
   const buttonClass = getClassName([
     styles.tabButton,
     {
@@ -44,5 +36,3 @@ const ChopLogicTabButton: React.FC<ChopLogicTabButtonProps> = ({
     </button>
   );
 };
-
-export default ChopLogicTabButton;

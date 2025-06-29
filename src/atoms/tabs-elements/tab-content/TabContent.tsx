@@ -1,8 +1,8 @@
 import React from 'react';
 import { ChopLogicTabItem } from '@models';
-import styles from '../Tabs.module.scss';
+import styles from './TabContent.module.scss';
 
-const ChopLogicTabContent: React.FC<{
+export const TabContent: React.FC<{
   tabs: ChopLogicTabItem[];
   selectedTabId: string;
 }> = ({ tabs, selectedTabId }): React.ReactElement => {
@@ -15,5 +15,3 @@ const ChopLogicTabContent: React.FC<{
     </div>
   );
 };
-
-export default ChopLogicTabContent;

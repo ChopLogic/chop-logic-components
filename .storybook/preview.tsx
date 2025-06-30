@@ -6,10 +6,11 @@ import { ChopLogicThemeMode } from '../src/enums';
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      values: [
-        { name: 'dark', value: '#2E1F27' },
-        { name: 'light', value: '#FFFFFF' },
-      ],
+      options: {
+        // 👇 Default options
+        dark: { name: 'dark', value: '#2E1F27' },
+        light: { name: 'light', value: '#FFFFFF' },
+      },
     },
     initialGlobals: {
       backgrounds: { value: 'light' },

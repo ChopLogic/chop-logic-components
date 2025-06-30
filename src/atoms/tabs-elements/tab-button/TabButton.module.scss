@@ -30,9 +30,9 @@
   }
 
   &__selected {
-    border-top: var(--cl-light-border);
-    border-right: var(--cl-light-border);
-    border-left: var(--cl-light-border);
+    border-top: var(--cl-primary-border);
+    border-right: var(--cl-primary-border);
+    border-left: var(--cl-primary-border);
     background-color: var(--cl-primary-background);
     top: 1px;
   }
@@ -42,10 +42,10 @@
     border-top-right-radius: 0;
 
     &.tabButton__selected {
-      border-top: var(--cl-light-border);
+      border-top: var(--cl-primary-border);
       border-right: none;
-      border-left: var(--cl-light-border);
-      border-bottom: var(--cl-light-border);
+      border-left: var(--cl-primary-border);
+      border-bottom: var(--cl-primary-border);
       top: 0;
       left: 1px;
     }

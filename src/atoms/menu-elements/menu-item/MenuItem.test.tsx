@@ -3,10 +3,10 @@ import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import MenuItem from '../elements/MenuItem';
+import { MenuItem } from './MenuItem';
 
-vi.mock('../elements/SubMenu', () => ({
-  default: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
+vi.mock('../sub-menu/SubMenu', () => ({
+  SubMenu: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
     <div data-testid='submenu'>
       <button onClick={toggleSubMenu}>Toggle SubMenu</button>
       {children}
@@ -14,8 +14,8 @@ vi.mock('../elements/SubMenu', () => ({
   ),
 }));
 
-vi.mock('../elements/MenuLeaf', () => ({
-  default: ({ item }: { item: ChopLogicMenuItem }) => <div data-testid='menu-leaf'>{item.label}</div>,
+vi.mock('../menu-leaf/MenuLeaf', () => ({
+  MenuLeaf: ({ item }: { item: ChopLogicMenuItem }) => <div data-testid='menu-leaf'>{item.label}</div>,
 }));
 
 describe('MenuItem', () => {

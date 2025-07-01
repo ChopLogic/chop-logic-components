@@ -1,0 +1,23 @@
+@use '/src/styles/typography';
+
+.menuLeaf {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--cl-m-gap);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--cl-accent-color);
+  }
+
+  &:focus-visible {
+    outline: var(--cl-outline-border);
+  }
+}

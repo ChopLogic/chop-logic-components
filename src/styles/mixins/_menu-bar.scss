@@ -1,0 +1,11 @@
+@mixin menuBar() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--cl-s-gap);
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}

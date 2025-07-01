@@ -1,0 +1,29 @@
+@use '/src/styles/animations';
+@use '/src/styles/variables';
+@use '/src/styles/mixins';
+
+.subMenuBar {
+  @include mixins.menuBar();
+  @include animations.fade-in();
+
+  flex-direction: column;
+  padding-left: var(--cl-l-gap);
+  margin-left: var(--cl-l-gap);
+  margin-top: var(--cl-s-gap);
+  box-sizing: border-box;
+  border-left: var(--cl-light-border);
+
+  &__horizontal {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    width: max-content;
+    border-radius: var(--cl-border-radius);
+    border: var(--cl-light-border);
+    box-shadow: var(--cl-box-shadow);
+    background-color: var(--cl-primary-background);
+    padding: var(--cl-m-gap);
+    margin: 0;
+    z-index: variables.$popup;
+  }
+}

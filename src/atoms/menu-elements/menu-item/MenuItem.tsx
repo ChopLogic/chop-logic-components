@@ -1,17 +1,17 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
-import styles from '../Menu.module.scss';
-import MenuLeaf from './MenuLeaf';
-import SubMenu from './SubMenu';
+import styles from './MenuItem.module.scss';
+import { MenuLeaf } from '../menu-leaf/MenuLeaf';
+import { SubMenu } from '../sub-menu/SubMenu';
 import { getClassName } from '@utils';
 
-type MenuItemProps = PropsWithChildren & {
+type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;
   mode: ChopLogicOrientationMode;
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, mode }) => {
+export const MenuItem: React.FC<Props> = ({ item, mode }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
   const subMenuBarClass = getClassName([
@@ -39,5 +39,3 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, mode }) => {
     </SubMenu>
   );
 };
-
-export default MenuItem;

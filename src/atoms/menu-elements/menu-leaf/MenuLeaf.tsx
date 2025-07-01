@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChopLogicIcon } from '@atoms';
 import { ChopLogicMenuItem } from '@models';
-import styles from '../Menu.module.scss';
+import styles from './MenuLeaf.module.scss';
 
-const MenuLeaf = ({ item }: { item: ChopLogicMenuItem }): React.ReactElement => {
+export const MenuLeaf = ({ item }: { item: ChopLogicMenuItem }): React.ReactElement => {
   const { icon, link, label, onFocus, onClick, onHover } = item;
 
   const leafContent = link ? (
@@ -21,5 +21,3 @@ const MenuLeaf = ({ item }: { item: ChopLogicMenuItem }): React.ReactElement => 
     </li>
   );
 };
-
-export default MenuLeaf;

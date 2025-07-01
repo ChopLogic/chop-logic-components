@@ -1,0 +1,43 @@
+@use '/src/styles/typography';
+
+.subMenu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  position: relative;
+  border-radius: var(--cl-border-radius);
+
+  &:focus-visible {
+    outline: var(--cl-outline-border);
+  }
+}
+
+.text {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  gap: var(--cl-m-gap);
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+
+  span {
+    display: flex;
+    gap: var(--cl-m-gap);
+    align-items: center;
+  }
+
+  &:hover {
+    color: var(--cl-accent-color);
+  }
+}

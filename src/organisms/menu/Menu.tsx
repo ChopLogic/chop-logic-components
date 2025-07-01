@@ -1,9 +1,9 @@
 import React from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuProps } from '@models';
-import MenuItem from './elements/MenuItem.tsx';
 import styles from './Menu.module.scss';
 import { getClassName } from '@utils';
+import { MenuItem } from '@atoms';
 
 const ChopLogicMenu: React.FC<ChopLogicMenuProps> = ({ items, mode = ChopLogicOrientationMode.Vertical, className, ...rest }) => {
   const menuClass = getClassName([styles.menuBar, className, { [styles.menuBar__vertical]: mode === ChopLogicOrientationMode.Vertical }]);

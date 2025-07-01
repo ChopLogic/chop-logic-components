@@ -3,9 +3,9 @@ import { ChopLogicIcon } from '@atoms';
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';
-import styles from '../Menu.module.scss';
+import styles from './SubMenu.module.scss';
 
-type SubMenuProps = PropsWithChildren & {
+type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;
   isSubMenuOpened: boolean;
   mode: ChopLogicOrientationMode;
@@ -13,7 +13,7 @@ type SubMenuProps = PropsWithChildren & {
   closeSubMenu: () => void;
 };
 
-const SubMenu: React.FC<SubMenuProps> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
+export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
@@ -62,5 +62,3 @@ const SubMenu: React.FC<SubMenuProps> = ({ item, isSubMenuOpened, toggleSubMenu,
     </li>
   );
 };
-
-export default SubMenu;

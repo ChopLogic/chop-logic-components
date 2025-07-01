@@ -2,7 +2,7 @@ import { ChopLogicIconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import MenuLeaf from '../elements/MenuLeaf';
+import { MenuLeaf } from './MenuLeaf';
 
 describe('MenuLeaf', () => {
   const testLabeledItem = {

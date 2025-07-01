@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicMenu from '../Menu';
+import ChopLogicMenu from './Menu.tsx';
 
 describe('ChopLogicMenu Component', () => {
   const mockItems = [

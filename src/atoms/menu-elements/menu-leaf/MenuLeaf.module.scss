@@ -14,10 +14,18 @@
   cursor: pointer;
 
   &:hover {
-    color: var(--cl-accent-color);
+    text-shadow: var(--cl-text-shadow);
+
+    svg {
+      filter: var(--cl-drop-shadow);
+    }
   }
 
   &:focus-visible {
     outline: var(--cl-outline-border);
+  }
+
+  a {
+    color: var(--cl-tint-color);
   }
 }

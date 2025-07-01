@@ -11,7 +11,7 @@
   margin-left: var(--cl-l-gap);
   margin-top: var(--cl-s-gap);
   box-sizing: border-box;
-  border-left: var(--cl-light-border);
+  border-left: var(--cl-primary-border);
 
   &__horizontal {
     position: absolute;
@@ -19,7 +19,7 @@
     left: 40%;
     width: max-content;
     border-radius: var(--cl-border-radius);
-    border: var(--cl-light-border);
+    border: var(--cl-primary-border);
     box-shadow: var(--cl-box-shadow);
     background-color: var(--cl-primary-background);
     padding: var(--cl-m-gap);

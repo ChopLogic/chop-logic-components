@@ -14,6 +14,7 @@ exports[`SubMenu > should match the snapshot 1`] = `
     >
       <span>
         <svg
+          class="_icon_3b2ece"
           fill="currentColor"
           height="1em"
           role="img"
@@ -27,6 +28,7 @@ exports[`SubMenu > should match the snapshot 1`] = `
         Item without Link
       </span>
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"

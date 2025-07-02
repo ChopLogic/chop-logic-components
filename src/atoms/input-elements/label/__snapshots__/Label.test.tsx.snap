@@ -47,6 +47,7 @@ exports[`Label > should render left icon 1`] = `
     for="test-input-id"
   >
     <svg
+      class="_icon_3b2ece"
       fill="currentColor"
       height="1em"
       role="img"
@@ -76,6 +77,7 @@ exports[`Label > should render right icon 1`] = `
     for="test-input-id"
   >
     <svg
+      class="_icon_3b2ece"
       fill="currentColor"
       height="1em"
       role="img"

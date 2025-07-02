@@ -36,6 +36,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
           type="button"
         >
           <svg
+            class="_icon_3b2ece"
             fill="currentColor"
             height="1em"
             role="img"
@@ -114,6 +115,7 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
           type="button"
         >
           <svg
+            class="_icon_3b2ece"
             fill="currentColor"
             height="1em"
             role="img"

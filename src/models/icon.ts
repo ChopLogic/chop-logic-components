@@ -1,9 +1,9 @@
 import { ChopLogicIconName } from '@enums';
 
 import { ChopLogicComponentProps } from './_common';
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
-export interface ChopLogicIconProps extends ChopLogicComponentProps {
+export interface ChopLogicIconProps extends ChopLogicComponentProps, HTMLAttributes<SVGSVGElement> {
   name?: ChopLogicIconName;
   testId?: string;
   title?: string;

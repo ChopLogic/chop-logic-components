@@ -1,17 +1,29 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, IconGallery, IconItem, Controls } from '@storybook/addon-docs/blocks';
 import * as ChopLogicIconStories from './Icon.stories';
+import { ChopLogicIcon } from '@atoms';
+import { ChopLogicIconName } from '@enums';
 
 <Meta of={ChopLogicIconStories} title='Icon' />
 
 # ChopLogicIcon
 
-`ChopLogicIcon` allows you to render one of the icons from the list as an SVG element. Icons can be embedded into inputs, buttons, menu items and any other React components.
+The `ChopLogicIcon` component allows you to render one of the icons from the list as an SVG element. Icons can be inserted into inputs, buttons, menu items and any other React components.
 
-### Usage
+## Iconography
+
+<IconGallery>
+  {Object.entries(ChopLogicIconName).map(([key, value]) => (
+    <IconItem name={key}>
+      <ChopLogicIcon name={value} />
+    </IconItem>
+  ))}
+</IconGallery>
+
+## Usage
 
 ```tsx
 import React from 'react';
-import ChopLogicIcon, { ChopLogicIconName } from 'chop-logic-components';
+import { ChopLogicIcon, ChopLogicIconName } from 'chop-logic-components';
 
 const MyButton = () => (
   <button>
@@ -23,13 +35,16 @@ const MyButton = () => (
 export default MyButton;
 ```
 
-### Props
 
-| Prop          | Type                | Description                                                                                                      | Default     | Required |
-|---------------|---------------------|------------------------------------------------------------------------------------------------------------------|-------------|----------|
-| **name**      | `ChopLogicIconName` | The name of the icon that will be rendered.                                                                      | `undefined` | No       |
-| **id**        | `string`            | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` | No       |
-| **className** | `string`            | The class global attribute is a list of the classes of the element.                                              | `undefined` | No       |
-| **style**     | `CSSProperties`     | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` | No       |
-| **tabIndex**  | `number`            | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` | No       |
-| **title**     | `string`            | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` | No       |
+### When to Use
+
+- When you need to draw attention to UI elements
+- When you need to replace a long text description with a clear picture
+
+### Accessibility Notes
+
+When using icons, ensure they're purely decorative or provide additional context via ARIA attributes if they convey meaning.
+
+## Props
+
+<Controls />

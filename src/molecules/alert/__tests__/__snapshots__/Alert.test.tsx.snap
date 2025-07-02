@@ -28,6 +28,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 1`
       type="button"
     >
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"
@@ -72,6 +73,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 2`
       type="button"
     >
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"
@@ -112,6 +114,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 3`
       type="button"
     >
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"
@@ -155,6 +158,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 4`
       type="button"
     >
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"
@@ -195,6 +199,7 @@ exports[`ChopLogicAlert > should have different headers depending on the mode 5`
       type="button"
     >
       <svg
+        class="_icon_3b2ece"
         fill="currentColor"
         height="1em"
         role="img"

@@ -1,11 +1,18 @@
 import { ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import ChopLogicIcon from '../Icon';
 
-import { IconExample } from './Icon.example';
-
-const meta: Meta<typeof IconExample> = {
+const meta: Meta<typeof ChopLogicIcon> = {
   title: 'Atoms/Icon',
-  component: IconExample,
+  component: ChopLogicIcon,
+  args: {
+    name: ChopLogicIconName.Home,
+    title: 'Home icon',
+    id: 'icon-id',
+    className: 'icon-class',
+    style: { width: '36px', height: '36px' },
+    testId: 'icon-test-id',
+  },
   argTypes: {
     name: {
       control: 'select',
@@ -16,6 +23,6 @@ const meta: Meta<typeof IconExample> = {
 
 export default meta;
 
-type Story = StoryObj<typeof IconExample>;
+type Story = StoryObj<typeof ChopLogicIcon>;
 
-export const IconGallery: Story = {};
+export const Default: Story = {};

@@ -1,18 +1,10 @@
-import { FC, HTMLAttributes, ReactNode } from 'react';
+import { FC } from 'react';
 import styles from './Header.module.scss';
 import { getClassName } from '@utils';
-import { ChopLogicIconName } from '@enums';
 import { ChopLogicIcon } from '@atoms';
+import { ChopLogicHeaderProps } from '@models';
 
-type HeaderLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
-type HeaderProps = {
-  children: ReactNode;
-  as?: HeaderLevel;
-  icon?: ChopLogicIconName;
-} & HTMLAttributes<HTMLHeadingElement>;
-
-const Header: FC<HeaderProps> = ({ as = 'h1', icon, children, className, ...rest }) => {
+const Header: FC<ChopLogicHeaderProps> = ({ as = 'h1', icon, children, className, ...rest }) => {
   const HeaderTag = as;
   const headerClass = getClassName([
     className,

@@ -1,0 +1,41 @@
+@use '/src/styles/typography';
+
+.header {
+  @include typography.font-style(core, base, bold);
+  color: var(--cl-primary-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--cl-m-gap);
+
+  &__h1 {
+    padding: var(--cl-l-gap) 0;
+    font-size: var(--cl-header-font-size);
+  }
+
+  &__h2 {
+    padding: var(--cl-l-gap) 0;
+    font-size: 1.8rem;
+  }
+
+  &__h3 {
+    padding: var(--cl-l-gap) 0;
+    font-size: 1.6rem;
+  }
+
+  &__h4 {
+    padding: var(--cl-m-gap) 0;
+    font-size: 1.4rem;
+  }
+
+  &__h5 {
+    padding: var(--cl-m-gap) 0;
+    font-size: 1.2rem;
+  }
+
+  &__h6 {
+    padding: var(--cl-m-gap) 0;
+    font-size: var(--cl-base-font-size);
+  }
+}

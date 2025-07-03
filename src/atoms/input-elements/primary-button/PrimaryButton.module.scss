@@ -48,11 +48,15 @@
     padding: var(--cl-m-gap) var(--cl-l-gap);
     border-radius: var(--cl-border-radius);
     font-size: var(--cl-base-font-size);
-    color: #ffffff;
+    color: var(--cl-primary-background);
     background: var(--cl-accent-color);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+
+    svg {
+      color: var(--cl-primary-background);
+    }
   }
 
   &:hover {

@@ -30,7 +30,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       onFocus={visibleOn === 'focus' ? openTooltip : undefined}
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
       onContextMenu={visibleOn === 'contextmenu' ? (e: React.MouseEvent) => handleContextMenu(e) : undefined}
-      tabIndex={0}
+      tabIndex={-1}
       ref={wrapperRef}
       aria-describedby={elementId}
     >

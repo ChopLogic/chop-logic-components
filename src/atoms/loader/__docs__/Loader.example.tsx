@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
-import styles from '@styles/storybook/Grid.module.scss';
+import styles from './Loader.module.scss';
 import ChopLogicLoader from '../Loader.tsx';
 
 export const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {

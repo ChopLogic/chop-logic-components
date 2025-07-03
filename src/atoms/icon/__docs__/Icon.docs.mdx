@@ -13,7 +13,7 @@ The `ChopLogicIcon` component allows you to render one of the icons from the lis
 
 <IconGallery>
   {Object.entries(ChopLogicIconName).map(([key, value]) => (
-    <IconItem name={key}>
+    <IconItem name={key} key={key}>
       <ChopLogicIcon name={value} />
     </IconItem>
   ))}

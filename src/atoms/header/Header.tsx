@@ -22,7 +22,7 @@ const Header: FC<ChopLogicHeaderProps> = ({ as = 'h1', icon, children, className
   return (
     <HeaderTag className={headerClass} {...rest}>
       {icon && <ChopLogicIcon name={icon} />}
-      {children}
+      <span className={styles.header_text}>{children}</span>
     </HeaderTag>
   );
 };

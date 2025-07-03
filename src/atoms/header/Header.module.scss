@@ -1,17 +1,22 @@
 @use '/src/styles/typography';
 
 .header {
-  @include typography.font-style(core, base, bold);
-  color: var(--cl-primary-color);
   margin: 0;
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: var(--cl-m-gap);
+  @include typography.font-style(fancy, header);
+
+  &_text {
+    color: var(--cl-primary-color);
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+  }
 
   &__h1 {
     padding: var(--cl-l-gap) 0;
-    font-size: var(--cl-header-font-size);
   }
 
   &__h2 {
@@ -27,15 +32,30 @@
   &__h4 {
     padding: var(--cl-m-gap) 0;
     font-size: 1.4rem;
+    gap: var(--cl-s-gap);
+
+    .header_text {
+      padding-top: 4px;
+    }
   }
 
   &__h5 {
     padding: var(--cl-m-gap) 0;
     font-size: 1.2rem;
+    gap: var(--cl-s-gap);
+
+    .header_text {
+      padding-top: 2px;
+    }
   }
 
   &__h6 {
     padding: var(--cl-m-gap) 0;
     font-size: var(--cl-base-font-size);
+    gap: var(--cl-s-gap);
+
+    .header_text {
+      padding-top: 2px;
+    }
   }
 }

@@ -16,8 +16,16 @@
 @mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1, $letter-spacing: normal) {
   $core-font: variables.$cl-core-font;
   $monospace-font: variables.$cl-monospace-font;
+  $fancy-font: variables.$cl-fancy-font;
 
-  font-family: if($family == monospace, $monospace-font, $core-font);
+  // Set font-family
+  @if $family == monospace {
+    font-family: $monospace-font;
+  } @else if $family == fancy {
+    font-family: $fancy-font;
+  } @else {
+    font-family: $core-font;
+  }
 
   // Set font-weight
   @if $weight == bold {

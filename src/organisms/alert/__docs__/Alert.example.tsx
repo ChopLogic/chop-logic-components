@@ -5,7 +5,7 @@ import { ChopLogicAlertProps } from '@models';
 import ChopLogicAlert from '../Alert';
 import { ChopLogicButton } from '@molecules';
 
-export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, title }) => {
+export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, title, ...rest }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -14,7 +14,7 @@ export const AlertExample: React.FC<ChopLogicAlertProps> = ({ mode, message, tit
   return (
     <div>
       <ChopLogicButton onClick={handleOpen} text='Open Alert' view={ChopLogicButtonView.Secondary} />
-      <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title={title} message={message} mode={mode} />
+      <ChopLogicAlert title={title} message={message} mode={mode} {...rest} isOpened={isOpened} onClose={handleClose} />
     </div>
   );
 };

@@ -15,7 +15,7 @@ export const Default: Story = {
   args: {
     as: 'h1',
     children: 'Default h1 Header',
-    icon: ChopLogicIconName.Warning,
+    icon: ChopLogicIconName.Home,
     className: 'header-class',
     id: 'header-id',
   },

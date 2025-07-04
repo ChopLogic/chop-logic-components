@@ -20,7 +20,7 @@ const meta: Meta<typeof AlertExample> = {
     mode: ChopLogicAlertMode.Info,
   },
   component: AlertExample,
-  title: 'Molecules/Alert',
+  title: 'Organisms/Alert',
 };
 
 export default meta;

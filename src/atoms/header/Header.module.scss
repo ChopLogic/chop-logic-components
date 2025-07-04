@@ -17,16 +17,19 @@
 
   &__h1 {
     padding: var(--cl-l-gap) 0;
+    border-bottom: var(--cl-primary-border);
   }
 
   &__h2 {
     padding: var(--cl-l-gap) 0;
     font-size: 1.8rem;
+    border-bottom: var(--cl-primary-border);
   }
 
   &__h3 {
     padding: var(--cl-l-gap) 0;
     font-size: 1.6rem;
+    border-bottom: var(--cl-primary-border);
   }
 
   &__h4 {

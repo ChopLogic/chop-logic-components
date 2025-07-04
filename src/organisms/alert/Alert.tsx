@@ -1,11 +1,12 @@
 import React from 'react';
-import { ChopLogicAlertMode } from '@enums';
+import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
-import AlertHeader from './elements/AlertHeader.tsx';
 import styles from './Alert.module.scss';
 import { getClassName } from '@utils';
-import { ChopLogicPortal } from '@atoms';
+import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
+import { ChopLogicButton } from '@molecules';
+import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   isOpened,
@@ -21,11 +22,25 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
 
   if (!isMounted) return null;
 
+  const alertTitle = getAlertTitle(mode, title);
+  const alertTitleIcon = getAlertIcon(mode, icon);
+
   return (
     <ChopLogicPortal>
       <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
         <div {...rest} className={styles.content}>
-          <AlertHeader title={title} onClose={onClose} mode={mode} icon={icon} />
+          <ChopLogicButton
+            icon={ChopLogicIconName.Cancel}
+            view={ChopLogicButtonView.Icon}
+            label='Close alert popup'
+            onClick={onClose}
+            className={styles.content_button}
+          />
+          <header>
+            <ChopLogicHeader icon={alertTitleIcon} as='h3'>
+              {alertTitle}
+            </ChopLogicHeader>
+          </header>
           <p>{message}</p>
         </div>
       </div>

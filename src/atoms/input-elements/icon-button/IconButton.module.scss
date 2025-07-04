@@ -10,14 +10,14 @@
   justify-content: center;
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
-  border: var(--cl-primary-border);
   background: transparent;
+  width: fit-content;
 
   &:hover {
-    border: var(--cl-light-border);
-    color: var(--cl-tint-color);
+    background-color: var(--cl-highlight-background);
 
     svg {
+      color: var(--cl-tint-color);
       filter: var(--cl-drop-shadow);
     }
   }

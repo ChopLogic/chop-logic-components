@@ -1,11 +1,4 @@
-import React from 'react';
-import { ChopLogicIcon } from '@atoms';
 import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
-import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
-import ErrorIcon from '@assets/icons/svg/ErrorIcon.tsx';
-import HelpIcon from '@assets/icons/svg/HelpIcon.tsx';
-import InfoIcon from '@assets/icons/svg/InfoIcon.tsx';
-import WarningIcon from '@assets/icons/svg/WarningIcon.tsx';
 
 export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
   if (title) return title;
@@ -26,23 +19,23 @@ export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string 
   }
 }
 
-export function renderAlertIcon(mode: ChopLogicAlertMode, icon?: ChopLogicIconName): React.ReactElement | null {
+export function getAlertIcon(mode: ChopLogicAlertMode, icon?: ChopLogicIconName): ChopLogicIconName | undefined {
   if (icon) {
-    return <ChopLogicIcon name={icon} />;
+    return icon;
   }
 
   switch (mode) {
     case ChopLogicAlertMode.Info:
-      return <InfoIcon />;
+      return ChopLogicIconName.Info;
     case ChopLogicAlertMode.Warning:
-      return <WarningIcon />;
+      return ChopLogicIconName.Warning;
     case ChopLogicAlertMode.Error:
-      return <ErrorIcon />;
+      return ChopLogicIconName.Error;
     case ChopLogicAlertMode.Success:
-      return <CheckMarkIcon />;
+      return ChopLogicIconName.CheckboxChecked;
     case ChopLogicAlertMode.Help:
-      return <HelpIcon />;
+      return ChopLogicIconName.Help;
     default:
-      return null;
+      return;
   }
 }

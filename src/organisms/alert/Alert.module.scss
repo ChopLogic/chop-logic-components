@@ -23,9 +23,16 @@
   flex-direction: column;
   gap: var(--cl-m-gap);
   background: var(--cl-primary-background);
-  width: 90vw;
-  padding: var(--cl-m-gap);
+  width: 60vw;
+  padding: var(--cl-m-gap) var(--cl-l-gap);
   box-shadow: var(--cl-box-shadow);
   border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
+  position: relative;
+
+  &_button {
+    position: absolute;
+    right: var(--cl-m-gap);
+    top: var(--cl-m-gap);
+  }
 }

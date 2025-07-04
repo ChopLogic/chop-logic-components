@@ -19,9 +19,8 @@
 
   &:hover,
   &:active {
-    color: var(--cl-tint-color);
-
     svg {
+      color: var(--cl-tint-color);
       filter: var(--cl-drop-shadow);
     }
   }

@@ -50,7 +50,6 @@ describe('ChopLogicAlert', () => {
     renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Error });
 
     await waitFor(() => {
-      expect(screen.getByText('Something went wrong')).toBeInTheDocument();
       expect(screen.getByRole('heading')).toHaveTextContent('Something went wrong');
     });
   });

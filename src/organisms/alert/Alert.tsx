@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
-import { useIsMounted } from '@hooks';
+import { useAutoClose, useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
 import styles from './Alert.module.scss';
 import { getClassName } from '@utils';
@@ -15,10 +15,19 @@ const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   message,
   mode = ChopLogicAlertMode.Info,
   icon,
+  autoClose = false,
+  autoCloseDelay = 3000,
   ...rest
 }) => {
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
+
+  useAutoClose({
+    isOpened,
+    onClose,
+    autoClose,
+    autoCloseDelay,
+  });
 
   if (!isMounted) return null;
 

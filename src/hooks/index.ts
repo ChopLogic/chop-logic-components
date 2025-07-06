@@ -9,3 +9,4 @@ export { useTooltipPosition } from './use-tooltip-position';
 export { useWindowDimensions } from './use-window-dimensions';
 export { useChopLogicTheme } from './use-chop-logic-theme';
 export { useIsOverflow } from './use-is-overflow';
+export { useAutoClose } from './use-auto-close';

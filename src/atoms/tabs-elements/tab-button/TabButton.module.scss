@@ -22,7 +22,11 @@
 
   &:hover,
   &:active {
-    color: var(--cl-accent-color);
+    text-shadow: var(--cl-text-shadow);
+
+    svg {
+      filter: var(--cl-drop-shadow);
+    }
   }
 
   &__disabled {

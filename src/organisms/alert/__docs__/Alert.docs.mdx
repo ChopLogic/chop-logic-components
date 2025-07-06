@@ -22,9 +22,9 @@ export const ExampleComponent = () => {
   return (
     <>
       <ChopLogicButton onClick={handleOpen}>
-      <ChopLogicAlert isOpened={isOpened} onClose={handleClose} title='Alert Title' message='This is an alert message.' mode='info' />;
+      <ChopLogicAlert isOpened={isOpened} onClose={handleClose} autoClose title='Alert Title' message='This is an alert message.' mode='info' />;
     </>
-  )
+  );
 };
 
 export default ExampleComponent;
@@ -32,15 +32,17 @@ export default ExampleComponent;
 
 ### Props
 
-| Prop          | Type                  | Description                                                                                    | Default     | Required |
-|---------------|-----------------------|------------------------------------------------------------------------------------------------|-------------|----------|
-| **isOpened**  | `boolean`             | Determines if the alert is open.                                                               | `false`     | Yes      |
-| **onClose**   | `() => void`          | Function that suppose to close the alert and handle additional logic.                          | `undefined` | Yes      |
-| **message**   | `boolean`             | The message content of the alert.                                                              | `undefined` | Yes      |
-| **title**     | `string`              | The title of the alert.                                                                        | `undefined` | No       |
-| **mode**      | `ChopLogicAlertMode`  | The visual mode of the alert.                                                                  | `'info'`    | No       |
-| **icon**      | `ChopLogicIconName`   | Custom icon that appears in the Alert header.                                                  | `undefined` | No       |
-| **id**        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
-| **className** | `string`              | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
-| **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
-| **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |
+| Prop               | Type                 | Description                                                                                    | Default     | Required |
+|--------------------|----------------------|------------------------------------------------------------------------------------------------|-------------|----------|
+| **isOpened**       | `boolean`            | Determines if the alert is open.                                                               | `false`     | Yes      |
+| **onClose**        | `() => void`         | Function that suppose to close the alert and handle additional logic.                          | `undefined` | Yes      |
+| **autoClose**      | `boolean`            | Whether the alert should close automatically after a delay                                     | `false`     | No       |
+| **autoCloseDelay** | `number`             | Delay in milliseconds before auto-closing (only works when autoClose is true)                  | `3000`      | No       |
+| **message**        | `boolean`            | The message content of the alert.                                                              | `undefined` | Yes      |
+| **title**          | `string`             | The title of the alert.                                                                        | `undefined` | No       |
+| **mode**           | `ChopLogicAlertMode` | The visual mode of the alert.                                                                  | `'info'`    | No       |
+| **icon**           | `ChopLogicIconName`  | Custom icon that appears in the Alert header.                                                  | `undefined` | No       |
+| **id**             | `string`             | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
+| **className**      | `string`             | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
+| **style**          | `CSSProperties`      | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
+| **tabIndex**       | `number`             | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |

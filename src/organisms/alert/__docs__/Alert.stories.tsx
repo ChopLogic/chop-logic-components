@@ -18,6 +18,8 @@ const meta: Meta<typeof AlertExample> = {
   args: {
     message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     mode: ChopLogicAlertMode.Info,
+    autoClose: true,
+    autoCloseDelay: 3000,
   },
   component: AlertExample,
   title: 'Organisms/Alert',

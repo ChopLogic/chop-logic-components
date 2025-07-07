@@ -41,7 +41,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
-  const inputClass = getClassName([styles.text, className]);
+  const inputClass = getClassName([styles.wrapper, className]);
 
   return (
     <div {...rest} className={inputClass}>
@@ -85,8 +85,8 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
             />
           )}
         </span>
+        <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
       </Input>
-      <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
     </div>
   );
 };

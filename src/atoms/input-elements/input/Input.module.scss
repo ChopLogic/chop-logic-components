@@ -5,10 +5,11 @@
   display: flex;
   gap: var(--cl-m-gap);
   align-items: center;
-  border: var(--cl-light-border);
+  border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);
   padding: var(--cl-m-gap);
   background-color: var(--cl-primary-background);
+  position: relative;
 
   &:has(input:focus) {
     border: var(--cl-outline-border);
@@ -41,6 +42,7 @@
   overflow: hidden;
   flex-grow: 1;
   min-width: 0;
+  line-height: 1.5;
 
   &:focus-visible {
     outline: none;

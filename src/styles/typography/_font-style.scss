@@ -13,7 +13,7 @@
 ///   @include font-style(monospace, small, 500);
 ///   @include font-style(core, header, bold, 1.2, 0.02em);
 ///
-@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1, $letter-spacing: normal) {
+@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1.5, $letter-spacing: normal) {
   $core-font: variables.$cl-core-font;
   $monospace-font: variables.$cl-monospace-font;
   $fancy-font: variables.$cl-fancy-font;

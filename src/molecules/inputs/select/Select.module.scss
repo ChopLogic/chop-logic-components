@@ -19,7 +19,7 @@
   align-items: center;
   gap: var(--cl-m-gap);
   padding: var(--cl-m-gap);
-  border: var(--cl-light-border);
+  border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);
   background-color: var(--cl-primary-background);
   white-space: nowrap;
@@ -31,16 +31,18 @@
     color: var(--cl-primary-color);
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.5;
   }
 
   svg {
     cursor: pointer;
-    color: var(--cl-tint-color);
+    color: var(--cl-primary-color);
     height: var(--cl-icon-size);
     width: var(--cl-icon-size);
 
     &:hover {
-      color: var(--cl-primary-color);
+      color: var(--cl-tint-color);
+      filter: var(--cl-drop-shadow);
     }
   }
 
@@ -69,7 +71,7 @@
   width: 100%;
   top: 72px;
   left: -1px;
-  border: var(--cl-light-border);
+  border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   overflow-y: auto;

@@ -1,19 +1,19 @@
 // Internal exports
-export { ErrorMessage } from './input-elements/error-message/ErrorMessage';
-export { Label } from './input-elements/label/Label';
-export { Input } from './input-elements/input/Input';
-export { SecondaryButton } from './input-elements/secondary-button/SecondaryButton';
-export { PrimaryButton } from './input-elements/primary-button/PrimaryButton';
-export { IconButton } from './input-elements/icon-button/IconButton';
-export { InnerButton } from './input-elements/inner-button/InnerButton';
-export { GridBody } from './grid-elements/grid-body/GridBody';
-export { GridHead } from './grid-elements/grid-head/GridHead';
-export { GridColumnGroup } from './grid-elements/grid-column-group/GridColumnGroup';
-export { TabList } from './tabs-elements/tab-list/TabList';
-export { TabContent } from './tabs-elements/tab-content/TabContent';
-export { MenuItem } from './menu-elements/menu-item/MenuItem';
-export { SelectCombobox } from './input-elements/select/combobox/Combobox';
-export { SelectDropdown } from './input-elements/select/dropdown/Dropdown';
+export { ErrorMessage } from './input/error-message/ErrorMessage';
+export { Label } from './input/label/Label';
+export { Input } from './input/input/Input';
+export { SecondaryButton } from './input/secondary-button/SecondaryButton';
+export { PrimaryButton } from './input/primary-button/PrimaryButton';
+export { IconButton } from './input/icon-button/IconButton';
+export { InnerButton } from './input/inner-button/InnerButton';
+export { GridBody } from './grid/body/GridBody';
+export { GridHead } from './grid/head/GridHead';
+export { GridColumnGroup } from './grid/column-group/GridColumnGroup';
+export { TabList } from './tabs/list/TabList';
+export { TabContent } from './tabs/content/TabContent';
+export { MenuItem } from './menu/item/MenuItem';
+export { SelectCombobox } from './input/select/combobox/Combobox';
+export { SelectDropdown } from './input/select/dropdown/Dropdown';
 
 // Global exports
 export { default as ChopLogicIcon } from './icon/Icon';

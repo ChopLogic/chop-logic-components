@@ -3,7 +3,7 @@
 exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_text_bc2eeb test-class"
+    class="_wrapper_bc2eeb test-class"
     style="width: 600px;"
   >
     <label
@@ -61,14 +61,14 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
           </svg>
         </button>
       </span>
+      <span
+        aria-hidden="true"
+        class="_errorMessage_c2d52f _errorMessage_bc2eeb"
+        id="test-input-id_error"
+      >
+        Error!
+      </span>
     </div>
-    <span
-      aria-hidden="true"
-      class="_errorMessage_c2d52f _errorMessage_bc2eeb"
-      id="test-input-id_error"
-    >
-      Error!
-    </span>
   </div>
 </DocumentFragment>
 `;
@@ -76,7 +76,7 @@ exports[`ChopLogicTextInput > should render the input correctly 1`] = `
 exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_text_bc2eeb test-class"
+    class="_wrapper_bc2eeb test-class"
     style="width: 600px;"
   >
     <label
@@ -140,14 +140,14 @@ exports[`ChopLogicTextInput > should render the required input correctly 1`] = `
           </svg>
         </button>
       </span>
+      <span
+        aria-hidden="true"
+        class="_errorMessage_c2d52f _errorMessage_bc2eeb"
+        id="test-input-id_error"
+      >
+        Error!
+      </span>
     </div>
-    <span
-      aria-hidden="true"
-      class="_errorMessage_c2d52f _errorMessage_bc2eeb"
-      id="test-input-id_error"
-    >
-      Error!
-    </span>
   </div>
 </DocumentFragment>
 `;

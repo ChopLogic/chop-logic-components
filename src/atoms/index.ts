@@ -12,6 +12,8 @@ export { GridColumnGroup } from './grid-elements/grid-column-group/GridColumnGro
 export { TabList } from './tabs-elements/tab-list/TabList';
 export { TabContent } from './tabs-elements/tab-content/TabContent';
 export { MenuItem } from './menu-elements/menu-item/MenuItem';
+export { SelectCombobox } from './input-elements/select/combobox/Combobox';
+export { SelectDropdown } from './input-elements/select/dropdown/Dropdown';
 
 // Global exports
 export { default as ChopLogicIcon } from './icon/Icon';

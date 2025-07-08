@@ -1,0 +1,28 @@
+@use '/src/styles/variables';
+
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.3s linear;
+  position: absolute;
+  background: var(--cl-primary-background);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: variables.$popup;
+  width: 100%;
+  top: 72px;
+  left: -1px;
+  border: var(--cl-primary-border);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  overflow-y: auto;
+  max-height: 180px;
+
+  &__opened {
+    visibility: visible;
+    opacity: 1;
+  }
+}

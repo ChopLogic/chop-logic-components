@@ -1,10 +1,10 @@
 import React from 'react';
 import { ChopLogicMultiSelectValue } from '@models';
 import { getClassName, handleDropdownListKeyPress } from '@utils';
-import styles from '../../select/Select.module.scss';
-import SelectOption from './Option.tsx';
+import styles from '../select/dropdown/Dropdown.module.scss';
+import { MultiSelectOption } from './Option';
 
-type MultiSelectDropdownProps = {
+type Props = {
   options: ChopLogicMultiSelectValue[];
   opened: boolean;
   dropdownId: string;
@@ -12,7 +12,7 @@ type MultiSelectDropdownProps = {
   onSelect: (id: string) => void;
 };
 
-const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, opened, onClose, onSelect, dropdownId }) => {
+export const MultiSelectDropdown: React.FC<Props> = ({ options, opened, onClose, onSelect, dropdownId }) => {
   const dropdownClass = getClassName([styles.dropdown, { [styles.dropdown__opened]: opened }]);
 
   return (
@@ -24,10 +24,8 @@ const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({ options, open
       className={dropdownClass}
     >
       {options.map((item) => (
-        <SelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
+        <MultiSelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
     </ul>
   );
 };
-
-export default MultiSelectDropdown;

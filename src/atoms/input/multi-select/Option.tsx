@@ -1,16 +1,16 @@
 import React, { KeyboardEvent } from 'react';
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { ChopLogicMultiSelectValue } from '@models';
 import { getClassName } from '@utils';
-import styles from '@molecules/inputs/select/Select.module.scss';
+import styles from '../select/option/Option.module.scss';
 
-type MultiSelectOptionProps = {
+type Props = {
   value: ChopLogicMultiSelectValue;
   onSelect: (id: string) => void;
 };
 
-const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect }) => {
+export const MultiSelectOption: React.FC<Props> = ({ value, onSelect }) => {
   const { id, label, selected } = value;
   const optionClass = getClassName([styles.option, styles.option__multi, { [styles.option__selected]: selected }]);
 
@@ -42,5 +42,3 @@ const SelectOption: React.FC<MultiSelectOptionProps> = ({ value, onSelect }) => 
     </li>
   );
 };
-
-export default SelectOption;

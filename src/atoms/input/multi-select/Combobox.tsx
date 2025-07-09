@@ -2,9 +2,9 @@ import React from 'react';
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
 import { ChopLogicMultiSelectValue } from '@models';
-import styles from '../../select/Select.module.scss';
+import styles from '../select/combobox/Combobox.module.scss';
 
-type MultiSelectComboboxProps = {
+type Props = {
   opened: boolean;
   disabled: boolean;
   required: boolean;
@@ -16,7 +16,7 @@ type MultiSelectComboboxProps = {
   name: string;
 };
 
-const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
+export const MultiSelectCombobox: React.FC<Props> = ({
   opened,
   onClick,
   comboboxId,
@@ -31,10 +31,12 @@ const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
   let selectedValues = <span>{placeholder}</span>;
 
-  if (selectedLabels && selectedLabels.length > 1) {
-    selectedValues = <span>{`${selectedLabels.length} items selected`}</span>;
+  if (selectedLabels && selectedLabels.length === values?.length) {
+    selectedValues = <span>All items selected</span>;
   } else if (selectedLabels && selectedLabels.length === 1) {
     selectedValues = <span>{selectedLabels[0]}</span>;
+  } else if (selectedLabels && selectedLabels.length > 1) {
+    selectedValues = <span>{`${selectedLabels.length} items selected`}</span>;
   }
 
   return (
@@ -57,5 +59,3 @@ const SelectCombobox: React.FC<MultiSelectComboboxProps> = ({
     </button>
   );
 };
-
-export default SelectCombobox;

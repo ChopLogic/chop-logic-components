@@ -14,6 +14,8 @@ export { TabContent } from './tabs/content/TabContent';
 export { MenuItem } from './menu/item/MenuItem';
 export { SelectCombobox } from './input/select/combobox/Combobox';
 export { SelectDropdown } from './input/select/dropdown/Dropdown';
+export { MultiSelectCombobox } from './input/multi-select/Combobox';
+export { MultiSelectDropdown } from './input/multi-select/Dropdown';
 
 // Global exports
 export { default as ChopLogicIcon } from './icon/Icon';

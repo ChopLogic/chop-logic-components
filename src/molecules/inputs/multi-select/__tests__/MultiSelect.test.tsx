@@ -109,7 +109,7 @@ describe('ChopLogicMultiSelect', () => {
     expect(combobox).toHaveValue(`${MULTI_SELECT_VALUES[0].id},${MULTI_SELECT_VALUES[1].id},${MULTI_SELECT_VALUES[2].id}`);
   });
 
-  it('should display a correct placeholder', async () => {
+  it('should display a correct placeholder when some items selected', async () => {
     render(<ChopLogicMultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(screen.getByText(testProps.placeholder)).toBeInTheDocument();
@@ -122,6 +122,21 @@ describe('ChopLogicMultiSelect', () => {
     expect(screen.getByText('2 items selected')).toBeInTheDocument();
     await userEvent.click(optionThree);
     expect(screen.getByText('3 items selected')).toBeInTheDocument();
+  });
+
+  it('should display a correct placeholder when all items selected', async () => {
+    render(<ChopLogicMultiSelect {...testProps} />);
+    const combobox = screen.getByRole('combobox');
+    await userEvent.click(combobox);
+    const optionOne = screen.getByText(MULTI_SELECT_VALUES[0].label);
+    const optionTwo = screen.getByText(MULTI_SELECT_VALUES[1].label);
+    const optionThree = screen.getByText(MULTI_SELECT_VALUES[2].label);
+    const optionFour = screen.getByText(MULTI_SELECT_VALUES[3].label);
+    await userEvent.click(optionOne);
+    await userEvent.click(optionTwo);
+    await userEvent.click(optionThree);
+    await userEvent.click(optionFour);
+    expect(screen.getByText('All items selected')).toBeInTheDocument();
   });
 
   it('should move the focus correctly on Tab press', async () => {

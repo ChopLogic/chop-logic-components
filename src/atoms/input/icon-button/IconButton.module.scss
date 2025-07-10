@@ -1,7 +1,10 @@
 @use '/src/styles/typography';
+@use '/src/styles/mixins';
 
 .button {
   @include typography.font-style(core, base);
+  @include mixins.ripple();
+
   color: var(--cl-primary-color);
   border: none;
   cursor: pointer;
@@ -9,18 +12,9 @@
   align-items: center;
   justify-content: center;
   padding: var(--cl-m-gap);
-  border-radius: var(--cl-border-radius);
+  border-radius: 50%;
   background: transparent;
   width: fit-content;
-
-  &:hover {
-    background-color: var(--cl-highlight-background);
-
-    svg {
-      color: var(--cl-tint-color);
-      filter: var(--cl-drop-shadow);
-    }
-  }
 
   &:focus-visible {
     outline: var(--cl-outline-border);

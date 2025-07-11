@@ -10,6 +10,7 @@ vi.mock('@hooks', () => ({
 describe('SubMenu', () => {
   const mockToggleSubMenu = vi.fn();
   const mockCloseSubMenu = vi.fn();
+  const mockOpenSubMenu = vi.fn();
 
   const itemWithLink = {
     id: '1',
@@ -31,6 +32,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={true}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       >
         <div>Submenu Content</div>
@@ -46,6 +48,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       />,
     );
@@ -61,6 +64,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       />,
     );
@@ -76,6 +80,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       />,
     );
@@ -93,6 +98,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={false}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       />,
     );
@@ -110,6 +116,7 @@ describe('SubMenu', () => {
         isSubMenuOpened={true}
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
         mode={ChopLogicOrientationMode.Horizontal}
       >
         <div>Submenu Content</div>

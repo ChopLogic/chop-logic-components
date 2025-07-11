@@ -9,9 +9,10 @@ import { getClassName } from '@utils';
 type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;
   mode: ChopLogicOrientationMode;
+  openedOn?: 'hover' | 'click';
 };
 
-export const MenuItem: React.FC<Props> = ({ item, mode }) => {
+export const MenuItem: React.FC<Props> = ({ item, mode, openedOn }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
   const subMenuBarClass = getClassName([
@@ -31,10 +32,22 @@ export const MenuItem: React.FC<Props> = ({ item, mode }) => {
     setIsSubMenuOpened(false);
   };
 
+  const openSubMenu = () => {
+    setIsSubMenuOpened(true);
+  };
+
   return (
-    <SubMenu item={item} isSubMenuOpened={isSubMenuOpened} toggleSubMenu={toggleSubMenu} closeSubMenu={closeSubMenu} mode={mode}>
+    <SubMenu
+      item={item}
+      isSubMenuOpened={isSubMenuOpened}
+      toggleSubMenu={toggleSubMenu}
+      closeSubMenu={closeSubMenu}
+      openSubMenu={openSubMenu}
+      mode={mode}
+      openedOn={openedOn}
+    >
       <ul className={subMenuBarClass} role='menu' aria-label={item.label}>
-        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} mode={mode} />)}
+        {item?.nestedItems?.map((child) => <MenuItem item={child} key={child.id} mode={mode} openedOn={openedOn} />)}
       </ul>
     </SubMenu>
   );

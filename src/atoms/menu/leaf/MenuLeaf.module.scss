@@ -1,9 +1,11 @@
 @use '/src/styles/typography';
+@use '/src/styles/mixins';
 
 .menuLeaf {
   @include typography.font-style(core, base);
-  color: var(--cl-primary-color);
+  @include mixins.ripple();
 
+  color: var(--cl-primary-color);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -12,14 +14,6 @@
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   cursor: pointer;
-
-  &:hover {
-    text-shadow: var(--cl-text-shadow);
-
-    svg {
-      filter: var(--cl-drop-shadow);
-    }
-  }
 
   &:focus-visible {
     outline: var(--cl-outline-border);

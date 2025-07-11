@@ -11,9 +11,11 @@ type Props = PropsWithChildren & {
   mode: ChopLogicOrientationMode;
   toggleSubMenu: () => void;
   closeSubMenu: () => void;
+  openSubMenu: () => void;
+  openedOn?: 'hover' | 'click';
 };
 
-export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, mode, children }) => {
+export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, openSubMenu, openedOn, mode, children }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
@@ -52,6 +54,8 @@ export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu,
       aria-haspopup='true'
       aria-expanded={isSubMenuOpened}
       onKeyDown={handleKeyDown}
+      onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}
+      onMouseLeave={openedOn === 'hover' ? closeSubMenu : undefined}
       ref={ref}
     >
       <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu}>

@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 1rem;
+  grid-column-gap: 2rem;
   grid-row-gap: 2rem;
 
   &__medium {
@@ -21,11 +21,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  line-height: 1;
+  gap: var(--cl-l-gap);
   border-radius: var(--cl-border-radius);
   padding: var(--cl-m-gap);
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
 
   &:hover {
     cursor: pointer;

@@ -3,6 +3,8 @@
 
 .tabButton {
   @include typography.font-style(core, base);
+  @include mixins.ripple();
+
   color: var(--cl-primary-color);
 
   background: transparent;
@@ -18,15 +20,6 @@
   &:focus-visible {
     outline: var(--cl-outline-border);
     outline-offset: -4px;
-  }
-
-  &:hover,
-  &:active {
-    text-shadow: var(--cl-text-shadow);
-
-    svg {
-      filter: var(--cl-drop-shadow);
-    }
   }
 
   &__disabled {

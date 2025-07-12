@@ -1,6 +1,6 @@
 import ChopLogicLoader from './Loader.tsx';
 import { ChopLogicLoaderView } from '@enums';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 describe('ChopLogicLoader', () => {
@@ -11,6 +11,11 @@ describe('ChopLogicLoader', () => {
     tabIndex: 0,
     title: 'Test loader',
   };
+
+  it('should have the correct aria role', () => {
+    render(<ChopLogicLoader view={ChopLogicLoaderView.Arrow} {...testProps} />);
+    expect(screen.getByRole('status')).toBeInTheDocument();
+  });
 
   it('Arrow should match the snapshot', () => {
     const { asFragment } = render(<ChopLogicLoader view={ChopLogicLoaderView.Arrow} {...testProps} />);

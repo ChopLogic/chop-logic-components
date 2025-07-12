@@ -1,34 +1,42 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Stories from './Loader.stories';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as LoaderStories from './Loader.stories';
 
-<Meta of={Stories} title='Loader' />
+<Meta of={LoaderStories} title='ChopLogicLoader' />
 
 # ChopLogicLoader
 
-`ChopLogicLoader` component is a loading indicator that will show the user that some task is in progress and will block the interface element for a while.
+The `ChopLogicLoader` component provides a collection of animated loading indicators to show progress or pending states in your application. It offers multiple visual styles to match different contexts and use cases.
 
-### Usage
+## Usage
 
 ```tsx
-import React from 'react';
 import ChopLogicLoader, { ChopLogicLoaderView } from 'chop-logic-components';
 
-const MyLoader = () => (
+const PageLoader = () => (
   <div>
+    <h2>Content is loading...</h2>
     <ChopLogicLoader view={ChopLogicLoaderView.Circle} />
   </div>
 );
 
-export default MyLoader;
+export default PageLoader;
 ```
 
-### Props
+### When to Use
 
-| Prop          | Type                  | Description                                                                                                      | Default     | Required |
-|---------------|-----------------------|------------------------------------------------------------------------------------------------------------------|-------------|----------|
-| **view**      | `ChopLogicLoaderView` | Loader type.                                                                                                     | `undefined` | Yes      |
-| **id**        | `string`              | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined` | No       |
-| **className** | `string`              | The class global attribute is a list of the classes of the element.                                              | `undefined` | No       |
-| **style**     | `CSSProperties`       | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined` | No       |
-| **tabIndex**  | `number`              | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined` | No       |
-| **title**     | `string`              | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined` | No       |
+- When fetching data asynchronously
+- During file uploads or processing
+- To indicate background tasks are running
+-  When you need to show a waiting state without blocking UI
+- When you want consistent loading indicators across your application
+
+### Accessibility Notes
+
+1. __ARIA Attributes__: The component automatically includes role="status" and aria-live="polite" to announce loading states to screen readers.
+2. __Color Contrast__: Ensure your loader has sufficient contrast against its background.
+3. __Alternative Text__: For critical loading states, consider adding additional text explanation.
+4. __Motion Reduction__: Respect prefers-reduced-motion media query in your CSS animations.
+
+## Props
+
+<Controls />

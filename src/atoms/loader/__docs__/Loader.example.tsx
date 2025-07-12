@@ -2,7 +2,7 @@ import React from 'react';
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
 import styles from './Loader.module.scss';
-import ChopLogicLoader from '../Loader.tsx';
+import ChopLogicLoader from '../Loader';
 
 export const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
   const loaders = Object.values(ChopLogicLoaderView);

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useModalFocusTrap } from '../use-modal-focus-trap';
+import { useModalFocusTrap } from './use-modal-focus-trap.ts';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';

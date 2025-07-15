@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useClickOutside } from '../use-click-outside';
+import { useClickOutside } from './use-click-outside.ts';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';

@@ -2,7 +2,7 @@ import React from 'react';
 import { renderHook } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { useTooltipPosition } from '../use-tooltip-position';
+import { useTooltipPosition } from './use-tooltip-position.ts';
 
 // Mock dependencies
 vi.mock('../use-container-dimensions', () => ({

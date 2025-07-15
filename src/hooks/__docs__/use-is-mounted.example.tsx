@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '@styles/storybook/Container.module.scss';
-import { useIsMounted } from '../use-is-mounted';
+import { useIsMounted } from '../use-is-mounted/use-is-mounted.ts';
 import { ChopLogicButton } from '@molecules';
 
 export const UseIsMountedExample = () => {

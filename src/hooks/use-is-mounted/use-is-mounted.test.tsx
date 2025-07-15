@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useIsMounted } from '../use-is-mounted';
+import { useIsMounted } from './use-is-mounted.ts';
 import { act, render } from '@testing-library/react';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 

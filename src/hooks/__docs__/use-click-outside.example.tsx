@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import styles from '@styles/storybook/Container.module.scss';
-import { useClickOutside } from '../use-click-outside';
+import { useClickOutside } from '../use-click-outside/use-click-outside.ts';
 
 export const UseClickOutsideExample = () => {
   const ref = useRef(null);

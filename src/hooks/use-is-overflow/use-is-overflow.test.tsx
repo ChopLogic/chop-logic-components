@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { useRef } from 'react';
-import { useIsOverflow } from '../use-is-overflow';
+import { useIsOverflow } from './use-is-overflow.ts';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 function TestComponent({ dimension }: { dimension: 'width' | 'height' }) {

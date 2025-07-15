@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { ChopLogicButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
-import { useModalFocusTrap } from '../use-modal-focus-trap/use-modal-focus-trap.ts';
+import { useModalFocusTrap } from '../use-modal-focus-trap.ts';
 import { ChopLogicButton } from '@molecules';
 
 export const UseModalFocusTrapExample = () => {

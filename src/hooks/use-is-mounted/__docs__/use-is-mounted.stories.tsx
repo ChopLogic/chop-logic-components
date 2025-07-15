@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseIsMountedExample } from './use-is-mounted.example';
+import { UseIsMountedExample } from './use-is-mounted.example.tsx';
 
 const meta: Meta<typeof UseIsMountedExample> = {
   component: UseIsMountedExample,

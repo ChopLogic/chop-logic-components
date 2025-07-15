@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseTooltipPositionExample } from './use-tooltip-position.example';
+import { UseTooltipPositionExample } from './use-tooltip-position.example.tsx';
 
 const meta: Meta<typeof UseTooltipPositionExample> = {
   component: UseTooltipPositionExample,

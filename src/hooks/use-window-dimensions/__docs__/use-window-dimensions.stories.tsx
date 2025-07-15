@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseWindowDimensionsExample } from './use-window-dimensions.example';
+import { UseWindowDimensionsExample } from './use-window-dimensions.example.tsx';
 
 const meta: Meta<typeof UseWindowDimensionsExample> = {
   component: UseWindowDimensionsExample,

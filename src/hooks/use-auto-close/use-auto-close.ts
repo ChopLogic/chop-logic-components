@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 export const useAutoClose = ({
   isOpened,
   onClose,
-  autoClose,
+  autoClose = true,
   autoCloseDelay = 3000,
 }: {
   isOpened: boolean;

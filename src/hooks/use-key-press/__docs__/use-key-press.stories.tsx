@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseKeyPressExample } from './use-key-press.example';
+import { UseKeyPressExample } from './use-key-press.example.tsx';
 
 const meta: Meta<typeof UseKeyPressExample> = {
   component: UseKeyPressExample,

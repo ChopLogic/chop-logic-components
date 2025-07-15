@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseClickOutsideExample } from './use-click-outside.example';
+import { UseClickOutsideExample } from './use-click-outside.example.tsx';
 
 const meta: Meta<typeof UseClickOutsideExample> = {
   component: UseClickOutsideExample,

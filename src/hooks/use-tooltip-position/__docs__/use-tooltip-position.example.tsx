@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import styles from '@styles/storybook/Container.module.scss';
-import { useTooltipPosition } from '../use-tooltip-position/use-tooltip-position.ts';
+import { useTooltipPosition } from '../use-tooltip-position.ts';
 
 export const UseTooltipPositionExample = () => {
   const [isOpened, setIsOpened] = useState(false);

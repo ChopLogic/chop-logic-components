@@ -21,7 +21,7 @@ export const useIsOverflow = (ref: RefObject<HTMLElement | null>, dimension: 'wi
     if (current) {
       trigger();
     }
-  }, [ref]);
+  }, [ref, dimension]);
 
   return isOverflow;
 };

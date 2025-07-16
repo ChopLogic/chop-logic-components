@@ -14,14 +14,14 @@ Encapsulates timer logic for automatically closing UI components, helping to:
 - Properly handle cleanup to prevent memory leaks
 - Maintain TypeScript type safety
 
-## Parameter Details
+## Parameters
 
-| Parameter          | Type         | Default | Description                                                           |
-|--------------------|--------------|---------|-----------------------------------------------------------------------|
-| **isOpened**       | `boolean`    | -       | Controls whether the timer should be active (true) or cleared (false) |
-| **onClose**        | `() => void` | -       | Callback function to execute when the timer completes                 |
-| **autoClose**      | `boolean`    | `true`  | Whether auto-closing functionality should be enabled                  |
-| **autoCloseDelay** | `number`     | `3000`  | Delay in milliseconds before triggering `onClose`                     |
+| Parameter          | Type         | Description                                                           |
+|--------------------|--------------|-----------------------------------------------------------------------|
+| **isOpened**       | `boolean`    | Controls whether the timer should be active (true) or cleared (false) |
+| **onClose**        | `() => void` | Callback function to execute when the timer completes                 |
+| **autoClose**      | `boolean`    | Whether auto-closing functionality should be enabled                  |
+| **autoCloseDelay** | `number`     | Delay in milliseconds before triggering `onClose`                     |
 
 ## Return Value
 

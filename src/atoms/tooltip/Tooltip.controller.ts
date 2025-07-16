@@ -1,7 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@hooks';
+import { useAutoClose, useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@hooks';
 
-export const useChopLogicTooltipController = ({ id }: { id?: string }) => {
+type Params = {
+  autoClose: boolean;
+  autoCloseDelay: number;
+  id?: string;
+};
+
+export const useChopLogicTooltipController = ({ id, autoClose, autoCloseDelay }: Params) => {
   const [isOpened, setIsOpened] = useState(false);
   const wrapperRef = useRef(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -18,6 +24,12 @@ export const useChopLogicTooltipController = ({ id }: { id?: string }) => {
 
   useKeyPress({ keyCode: 'Escape', ref: tooltipRef, onKeyPress: closeTooltip });
   useClickOutside({ ref: tooltipRef, onClickOutsideHandler: closeTooltip, dependentRef: wrapperRef });
+  useAutoClose({
+    isOpened,
+    onClose: closeTooltip,
+    autoClose,
+    autoCloseDelay,
+  });
 
   return {
     elementId,

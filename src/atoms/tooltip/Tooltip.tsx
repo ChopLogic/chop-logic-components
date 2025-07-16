@@ -9,16 +9,18 @@ import { ChopLogicPortal } from '@atoms';
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,
   tooltipContent,
-  containerTag = ChopLogicTooltipContainer.Span,
-  visibleOn = 'hover',
   id,
   style,
   className,
+  containerTag = ChopLogicTooltipContainer.Span,
+  visibleOn = 'hover',
+  autoClose = false,
+  autoCloseDelay = 3000,
   ...rest
 }) => {
   const ContainerComponent = containerTag;
   const { openTooltip, closeTooltip, toggleTooltip, handleContextMenu, elementId, top, left, isOpened, wrapperRef, tooltipRef } =
-    useChopLogicTooltipController({ id });
+    useChopLogicTooltipController({ id, autoClose, autoCloseDelay });
   const tooltipClass = getClassName([styles.tooltip, className]);
 
   return (

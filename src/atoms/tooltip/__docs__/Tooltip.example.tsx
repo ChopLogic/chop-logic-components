@@ -5,10 +5,10 @@ import { ChopLogicButton } from '@molecules';
 
 import ChopLogicTooltip from '../Tooltip';
 
-export const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id }) => {
+export const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id, ...rest }) => {
   return (
     <div>
-      <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id}>
+      <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id} {...rest}>
         {visibleOn === 'click' && <ChopLogicButton text='Click me' view={ChopLogicButtonView.Secondary} />}
         {visibleOn === 'hover' && <ChopLogicButton text='Hover on me' view={ChopLogicButtonView.Secondary} />}
         {visibleOn === 'focus' && <ChopLogicButton text='Focus on me' view={ChopLogicButtonView.Secondary} />}

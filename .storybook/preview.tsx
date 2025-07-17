@@ -7,7 +7,6 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        // 👇 Default options
         dark: { name: 'dark', value: '#2E1F27' },
         light: { name: 'light', value: '#FFFFFF' },
       },
@@ -23,19 +22,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Introduction',
-          'Theming',
-          'Contributing',
-          'Changelog',
-          'Atoms',
-          'Molecules',
-          'Organisms',
-          'Containers',
-          'Modals',
-          'Hooks',
-          '*',
-        ],
+        order: ['Introduction', 'Theming', 'Contributing', 'Changelog', 'Atoms', 'Molecules', 'Organisms', 'Hooks', '*'],
       },
     },
   },

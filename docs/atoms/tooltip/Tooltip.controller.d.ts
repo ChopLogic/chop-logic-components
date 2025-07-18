@@ -1,7 +1,10 @@
 import { default as React } from '../../../node_modules/react';
-export declare const useChopLogicTooltipController: ({ id }: {
+type Params = {
+    autoClose: boolean;
+    autoCloseDelay: number;
     id?: string;
-}) => {
+};
+export declare const useChopLogicTooltipController: ({ id, autoClose, autoCloseDelay }: Params) => {
     elementId: string;
     openTooltip: () => void;
     closeTooltip: () => void;
@@ -13,3 +16,4 @@ export declare const useChopLogicTooltipController: ({ id }: {
     wrapperRef: React.RefObject<null>;
     tooltipRef: React.RefObject<HTMLDivElement | null>;
 };
+export {};

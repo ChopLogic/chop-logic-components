@@ -3,6 +3,7 @@ import { ChopLogicComponentProps } from './_common';
 export interface ChopLogicMenuProps extends ChopLogicComponentProps {
     items: ChopLogicMenuItem[];
     mode?: ChopLogicOrientationMode;
+    openedOn?: 'hover' | 'click';
 }
 export interface ChopLogicMenuItem {
     label: string;

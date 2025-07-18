@@ -32,7 +32,7 @@ const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
       <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <div className={`${styles.buttons} ${styles[`buttons-${columnsNumber}`]}`}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view={ChopLogicButtonView.Flat} />}
+          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view={ChopLogicButtonView.Secondary} />}
           <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
         </div>
       </ChopLogicFormContext.Provider>

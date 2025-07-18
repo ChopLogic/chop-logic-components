@@ -1,0 +1,40 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Story from './use-is-mounted.stories';
+
+<Meta of={Story} title='Hooks/useIsMounted' />
+
+# useIsMounted
+
+The `useIsMounted` hook manages the mounting state of a component with a delay.
+
+### Usage
+
+```tsx
+import React, { useState } from 'react';
+import { useIsMounted } from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const [isOpened, setIsOpened] = useState(false);
+  const isMounted = useIsMounted(isOpened, 1000);
+
+  return (
+    <div>
+      <button onClick={() => setIsOpened(!isOpened)}>Toggle Component</button>
+      {isMounted && <div>Component is mounted!</div>}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Params
+
+| Param        | Type      | Description                                                                  |
+|--------------|-----------|------------------------------------------------------------------------------|
+| **isOpened** | `boolean` | A boolean indicating whether the component is opened or not.                 |
+| **delay**    | `number`  | The delay in milliseconds before the component is unmounted. Default is 300. |
+
+### Returns
+
+**isMounted** `boolean`: A boolean indicating whether the component is mounted or not.

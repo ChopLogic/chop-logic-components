@@ -6,10 +6,10 @@ import { ChopLogicThemeMode } from '../src/enums';
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      values: [
-        { name: 'dark', value: 'hsl(0, 0%, 17%)' },
-        { name: 'light', value: 'hsl(0, 0%, 100%)' },
-      ],
+      options: {
+        dark: { name: 'dark', value: '#2E1F27' },
+        light: { name: 'light', value: '#FFFFFF' },
+      },
     },
     initialGlobals: {
       backgrounds: { value: 'light' },
@@ -22,19 +22,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Introduction',
-          'Theming',
-          'Contributing',
-          'Changelog',
-          'Atoms',
-          'Molecules',
-          'Organisms',
-          'Containers',
-          'Modals',
-          'Hooks',
-          '*',
-        ],
+        order: ['Introduction', 'Theming', 'Contributing', 'Changelog', 'Atoms', 'Molecules', 'Organisms', 'Hooks', '*'],
       },
     },
   },

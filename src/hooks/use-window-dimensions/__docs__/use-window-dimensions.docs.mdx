@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Stories from './use-window-dimensions.stories';
+
+<Meta of={Stories} title='Hooks/useWindowDimensions' />
+
+# useWindowDimensions
+
+The `useWindowDimensions` hook tracks and provides the current window dimensions.
+
+### Usage
+
+```tsx
+import React from 'react';
+import { useWindowDimensions } from 'chop-logic-components';
+
+const ExampleComponent = () => {
+  const { width, height } = useWindowDimensions();
+
+  return (
+    <div>
+      <p>Window width: {width}px;</p>
+      <p>Window height: {height}px;</p>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Params
+
+None.
+
+### Returns
+
+**windowDimensions** `{ width: number; height: number }`: An object containing the current window width and height.

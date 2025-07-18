@@ -1,0 +1,50 @@
+@use '/src/styles/typography';
+@use '/src/styles/mixins';
+
+.tabButton {
+  @include typography.font-style(core, base);
+  @include mixins.ripple();
+
+  color: var(--cl-primary-color);
+
+  background: transparent;
+  position: relative;
+  outline: none;
+  border: none;
+  padding: var(--cl-m-gap);
+  cursor: pointer;
+  overflow: hidden;
+  border-top-left-radius: var(--cl-border-radius);
+  border-top-right-radius: var(--cl-border-radius);
+
+  &:focus-visible {
+    outline: var(--cl-outline-border);
+    outline-offset: -4px;
+  }
+
+  &__disabled {
+    @include mixins.disabled();
+  }
+
+  &__selected {
+    border-top: var(--cl-primary-border);
+    border-right: var(--cl-primary-border);
+    border-left: var(--cl-primary-border);
+    background-color: var(--cl-primary-background);
+    top: 1px;
+  }
+
+  &__vertical {
+    border-bottom-left-radius: var(--cl-border-radius);
+    border-top-right-radius: 0;
+
+    &.tabButton__selected {
+      border-top: var(--cl-primary-border);
+      border-right: none;
+      border-left: var(--cl-primary-border);
+      border-bottom: var(--cl-primary-border);
+      top: 0;
+      left: 1px;
+    }
+  }
+}

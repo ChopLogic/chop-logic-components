@@ -1,26 +1,27 @@
 .cl-components-light-theme {
   // Colors
-  --cl-primary-color: hsl(0, 0%, 24%);
-  --cl-tint-color: hsl(0, 0%, 62%);
-  --cl-accent-color: hsl(345, 100%, 47%);
+  --cl-primary-color: hsl(195, 100%, 6%);
+  --cl-tint-color: hsl(345, 49%, 21%);
+  --cl-accent-color: hsl(356, 100%, 53%);
   --cl-primary-background: hsl(0, 0%, 100%);
-  --cl-highlight-background: hsl(0, 0%, 95%);
+  --cl-highlight-background: hsl(40, 100%, 58%);
   --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
   // Gradients
   --cl-accent-gradient: linear-gradient(
     to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
+    hsl(356, 100%, 21%) 0%,
+    hsl(356, 100%, 32%) 8%,
+    hsl(356, 100%, 32%) 92%,
+    hsl(356, 100%, 21%) 100%
   );
   --cl-shadow-gradient: linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 32%) 8%, hsl(0, 0%, 32%) 92%, hsl(0, 0%, 24%) 100%);
   // Shadows
-  --cl-box-shadow: hsla(0, 0%, 0%, 0.15) 2.4px 2.4px 3.2px;
-  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(0, 0%, 0%, 0.3);
+  --cl-box-shadow: hsla(195, 100%, 6%, 0.15) 2.4px 2.4px 3.2px;
+  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(195, 100%, 6%, 0.15));
+  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(345, 49%, 21%, 0.3);
   // Borders
-  --cl-primary-border: 1px solid hsl(0, 0%, 84%);
-  --cl-light-border: 1px solid hsl(0, 0%, 89%);
-  --cl-accent-border: 1px solid hsl(345, 100%, 47%);
-  --cl-outline-border: 1px solid hsl(0, 0%, 24%);
+  --cl-primary-border: 1px solid hsla(195, 100%, 6%, 32%);
+  --cl-light-border: 1px solid hsla(345, 49%, 21%, 32%);
+  --cl-accent-border: 1px solid hsl(356, 100%, 53%);
+  --cl-outline-border: 1px solid hsl(345, 49%, 21%);
 }

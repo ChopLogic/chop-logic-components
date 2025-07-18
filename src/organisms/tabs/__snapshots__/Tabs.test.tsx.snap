@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicTabs > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_tabs_19db3f test-class"
+    id="tabs-id"
+  >
+    <div
+      class="_tabList_13bdd2"
+      role="tablist"
+    >
+      <button
+        aria-controls="tabpanel_tab-1"
+        aria-selected="true"
+        class="_tabButton_b9f674 _tabButton__selected_b9f674"
+        id="tab-1"
+        role="tab"
+      >
+        Tab 1
+      </button>
+      <button
+        aria-controls="tabpanel_tab-2"
+        aria-selected="false"
+        class="_tabButton_b9f674"
+        id="tab-2"
+        role="tab"
+      >
+        Tab 2
+      </button>
+      <button
+        aria-controls="tabpanel_tab-3"
+        aria-selected="false"
+        class="_tabButton_b9f674"
+        id="tab-3"
+        role="tab"
+      >
+        Tab 3
+      </button>
+    </div>
+    <div
+      aria-labelledby="tab-1"
+      class="_tabContent_f91b3f"
+      id="tabpanel_tab-1"
+      role="tabpanel"
+    >
+      Tab 1 content
+    </div>
+  </div>
+</DocumentFragment>
+`;

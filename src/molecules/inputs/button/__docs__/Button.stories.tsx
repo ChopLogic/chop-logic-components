@@ -24,7 +24,6 @@ const meta: Meta<typeof ChopLogicButtonExample> = {
   args: {
     text: 'Button',
     type: 'button',
-    icon: ChopLogicIconName.Copy,
     view: ChopLogicButtonView.Primary,
     disabled: false,
     extended: false,
@@ -46,10 +45,10 @@ export const PrimaryButton: Story = {
   },
 };
 
-export const FlatButton: Story = {
+export const SecondaryButton: Story = {
   args: {
     text: 'Learn more...',
-    view: ChopLogicButtonView.Flat,
+    view: ChopLogicButtonView.Secondary,
     icon: ChopLogicIconName.Forward,
     type: 'button',
     disabled: false,
@@ -62,7 +61,6 @@ export const IconButton: Story = {
     type: 'button',
     icon: ChopLogicIconName.Cancel,
     label: 'Cancel',
-    tooltip: 'Cancel',
     disabled: false,
   },
 };
@@ -70,8 +68,7 @@ export const IconButton: Story = {
 export const ButtonWithTooltip: Story = {
   args: {
     text: 'Hover On Me',
-    view: ChopLogicButtonView.Flat,
-    icon: ChopLogicIconName.Forward,
+    view: ChopLogicButtonView.Secondary,
     type: 'button',
     disabled: false,
     tooltip: 'This button does nothing...',

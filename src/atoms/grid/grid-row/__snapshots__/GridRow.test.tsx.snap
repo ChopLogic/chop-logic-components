@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GridRow > should match the snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="_row_83b138"
+      >
+        <td
+          class="_cell_fe35f0"
+        >
+          <div
+            class="_checkbox_85cb9e"
+          >
+            <input
+              class="_checkbox_input_85cb9e"
+              id="select_row_item-1"
+              type="checkbox"
+            />
+            <label
+              class="_label_25e64c"
+              for="select_row_item-1"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+                  fill="currentColor"
+                />
+              </svg>
+            </label>
+          </div>
+        </td>
+        <td
+          class="_cell_4c921e"
+        >
+          Value 1
+        </td>
+        <td
+          class="_cell_4c921e"
+        >
+          Value 2
+        </td>
+        <td
+          class="_cell_4c921e"
+        >
+          <span>
+            Value 3
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

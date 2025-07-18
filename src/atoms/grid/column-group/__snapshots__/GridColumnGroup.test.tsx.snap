@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChopLogicGridBody > should match the snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <colgroup>
+      <col
+        class="_column_0fe2d7 _column__first_0fe2d7"
+      />
+      <col
+        class="_column_0fe2d7 _column__highlighted_0fe2d7"
+      />
+      <col
+        class="_column_0fe2d7 column-class"
+      />
+      <col
+        class="_column_0fe2d7"
+      />
+    </colgroup>
+  </table>
+</DocumentFragment>
+`;

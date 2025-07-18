@@ -12,7 +12,7 @@ import Rotation from './views/Rotation.module.scss';
 import Square from './views/Square.module.scss';
 import { getClassName } from '@utils';
 
-const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view, ...rest }) => {
+const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view = ChopLogicLoaderView.Circle, ...rest }) => {
   const className = getClassName([
     {
       [Arrow.loader]: view === ChopLogicLoaderView.Arrow,
@@ -27,7 +27,7 @@ const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view, ...rest }) => {
     },
   ]);
 
-  return <span className={className} {...rest}></span>;
+  return <span className={className} role='status' {...rest}></span>;
 };
 
 export default ChopLogicLoader;

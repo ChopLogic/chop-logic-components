@@ -1,11 +1,12 @@
 import React from 'react';
-import { ChopLogicIconName } from '@enums';
+import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { useChopLogicTextInputController } from './TextInput.controller.ts';
 import { getClassName } from '@utils';
 import styles from './TextInput.module.scss';
-import { ErrorMessage, ButtonInner, Label, Input } from '@atoms';
+import { ErrorMessage, Label, Input } from '@atoms';
+import { ChopLogicButton } from '@molecules';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,
@@ -40,7 +41,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
-  const inputClass = getClassName([styles.text, className]);
+  const inputClass = getClassName([styles.wrapper, className]);
 
   return (
     <div {...rest} className={inputClass}>
@@ -66,19 +67,26 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
       >
         <span>
           {clearable && (
-            <ButtonInner onClick={handleClear} label={`Clear input for ${label}`} icon={ChopLogicIconName.Remove} disabled={disabled} />
+            <ChopLogicButton
+              view={ChopLogicButtonView.Inner}
+              onClick={handleClear}
+              label={`Clear input for ${label}`}
+              icon={ChopLogicIconName.Remove}
+              disabled={disabled}
+            />
           )}
           {isPasswordButtonVisible && (
-            <ButtonInner
+            <ChopLogicButton
               onClick={togglePassword}
+              view={ChopLogicButtonView.Inner}
               label='Toggle password visibility'
               icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
               disabled={disabled}
             />
           )}
         </span>
+        <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
       </Input>
-      <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
     </div>
   );
 };

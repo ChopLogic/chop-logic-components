@@ -3,8 +3,8 @@
 
 :root {
   // Fonts
-  --cl-core-font: typography.$cl-core-font, Arial, Helvetica, sans-serif;
-  --cl-monospace-font: typography.$cl-monospace-font, 'Courier New', Courier, monospace;
+  --cl-core-font: typography.$cl-core-font;
+  --cl-monospace-font: typography.$cl-monospace-font;
   // Units
   --cl-base-font-size: 1rem;
   --cl-small-font-size: 0.8rem;

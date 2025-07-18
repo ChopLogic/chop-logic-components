@@ -3,6 +3,7 @@ import { ChopLogicMenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import MenuExample from './Menu.example';
+import ChopLogicMenu from '../Menu';
 
 const ITEMS: ChopLogicMenuItem[] = [
   {
@@ -108,17 +109,39 @@ const ITEMS: ChopLogicMenuItem[] = [
   },
 ];
 
-const meta: Meta<typeof MenuExample> = {
+const meta: Meta<typeof ChopLogicMenu> = {
   title: 'Organisms/Menu',
   component: MenuExample,
   argTypes: {
+    items: {
+      table: {
+        defaultValue: { summary: `[]` },
+        type: { summary: `ChopLogicMenuItem[]` },
+      },
+    },
     mode: {
       control: 'radio',
       options: Object.values(ChopLogicOrientationMode),
+      table: {
+        defaultValue: { summary: ChopLogicOrientationMode.Horizontal },
+        type: { summary: '"vertical" or "horizontal"' },
+      },
+    },
+    openedOn: {
+      control: 'radio',
+      options: ['hover', 'click'],
+      table: {
+        defaultValue: { summary: 'click' },
+        type: { summary: '"hover" or "click"' },
+      },
     },
   },
   args: {
     items: ITEMS,
+    mode: ChopLogicOrientationMode.Vertical,
+    openedOn: 'click',
+    id: 'menu',
+    className: 'menu-class',
   },
 };
 
@@ -129,11 +152,13 @@ type Story = StoryObj<typeof MenuExample>;
 export const VerticalMenu: Story = {
   args: {
     mode: ChopLogicOrientationMode.Vertical,
+    openedOn: 'click',
   },
 };
 
 export const HorizontalMenu: Story = {
   args: {
     mode: ChopLogicOrientationMode.Horizontal,
+    openedOn: 'hover',
   },
 };

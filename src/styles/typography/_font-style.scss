@@ -1,5 +1,4 @@
-@use 'steppe';
-@use 'dita';
+@use 'variables';
 
 /// Applies consistent font styles based on ChopLogic theme tokens.
 ///
@@ -14,19 +13,32 @@
 ///   @include font-style(monospace, small, 500);
 ///   @include font-style(core, header, bold, 1.2, 0.02em);
 ///
-@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1, $letter-spacing: normal) {
-  $core-font: steppe.$cl-core-font, Arial, Helvetica, sans-serif;
-  $monospace-font: dita.$cl-monospace-font, 'Courier New', Courier, monospace;
+@mixin font-style($family: core, $size: base, $weight: normal, $line-height: 1.5, $letter-spacing: normal) {
+  $core-font: variables.$cl-core-font;
+  $monospace-font: variables.$cl-monospace-font;
+  $fancy-font: variables.$cl-fancy-font;
 
-  font-family: if($family == monospace, $monospace-font, $core-font);
-  font-weight: $weight;
-  line-height: $line-height;
-  letter-spacing: $letter-spacing;
+  // Set font-family
+  @if $family == monospace {
+    font-family: $monospace-font;
+  } @else if $family == fancy {
+    font-family: $fancy-font;
+  } @else {
+    font-family: $core-font;
+  }
 
-  // Better font rendering
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // Set font-weight
+  @if $weight == bold {
+    font-family: variables.$cl-core-font-bold;
+    font-weight: normal;
+  } @else if $weight == light {
+    font-family: variables.$cl-core-font-light;
+    font-weight: normal;
+  } @else {
+    font-weight: $weight;
+  }
 
+  // Set font-size
   @if $size == base {
     font-size: var(--cl-base-font-size);
   } @else if $size == small {
@@ -36,4 +48,12 @@
   } @else {
     @warn "Unknown font size `#{$size}`. Allowed values: base, small, header.";
   }
+
+  // Spacing
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+
+  // Better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

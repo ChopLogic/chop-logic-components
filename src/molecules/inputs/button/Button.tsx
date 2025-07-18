@@ -1,13 +1,10 @@
 import React from 'react';
-import { ChopLogicIcon } from '@atoms';
+import { ChopLogicIcon, IconButton, InnerButton, PrimaryButton, SecondaryButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
 import styles from './Button.module.scss';
 import { getClassName } from '@utils';
-import Button3D from '@atoms/button-3D/Button3D.tsx';
-import Button2D from '@atoms/button-2D/Button2D.tsx';
-import ButtonIcon from '@atoms/button-icon/ButtonIcon.tsx';
 
 const Button: React.FC<ChopLogicButtonProps> = ({
   onClick,
@@ -26,24 +23,26 @@ const Button: React.FC<ChopLogicButtonProps> = ({
   switch (view) {
     case ChopLogicButtonView.Primary:
       return (
-        <Button3D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+        <PrimaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
-        </Button3D>
+        </PrimaryButton>
       );
-    case ChopLogicButtonView.Flat:
+    case ChopLogicButtonView.Secondary:
       return (
-        <Button2D aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+        <SecondaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
-        </Button2D>
+        </SecondaryButton>
       );
     case ChopLogicButtonView.Icon:
       return (
-        <ButtonIcon aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
+        <IconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
           <ChopLogicIcon name={icon} />
-        </ButtonIcon>
+        </IconButton>
       );
+    case ChopLogicButtonView.Inner:
+      return <InnerButton label={label} icon={icon} onClick={onClick} disabled={disabled} {...rest} className={className}></InnerButton>;
     default:
       return null;
   }

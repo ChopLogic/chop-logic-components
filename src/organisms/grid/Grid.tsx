@@ -1,11 +1,9 @@
 import React from 'react';
 import { ChopLogicGridProps } from '@models';
-import ChopLogicGridBody from './elements/Body.tsx';
-import GridColumnGroup from './elements/ColumnGroup.tsx';
-import ChopLogicGridHead from './elements/Head.tsx';
 import { useChopLogicGridController } from './Grid.controller.ts';
-import styles from './Grid.module.scss';
 import { getClassName } from '@utils';
+import { GridBody, GridColumnGroup, GridHead } from '@atoms';
+import styles from './Grid.module.scss';
 
 const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
   columns,
@@ -33,7 +31,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
     <table {...rest} className={getClassName([styles.grid, className])}>
       {caption && <caption className={styles.grid_caption}>{caption}</caption>}
       <GridColumnGroup columns={columns} selectable={selectable} />
-      <ChopLogicGridHead
+      <GridHead
         gridId={elementId}
         columns={columns}
         selectable={selectable}
@@ -42,7 +40,7 @@ const ChopLogicGrid: React.FC<ChopLogicGridProps> = ({
         isAllSelected={isAllSelected}
         isAllCheckboxDisabled={isAllCheckboxDisabled}
       />
-      <ChopLogicGridBody
+      <GridBody
         columns={columns}
         data={data}
         selectable={selectable}

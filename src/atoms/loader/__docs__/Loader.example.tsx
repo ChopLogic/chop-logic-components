@@ -1,10 +1,10 @@
 import React from 'react';
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
-import styles from '@styles/storybook/Grid.module.scss';
-import ChopLogicLoader from '../Loader.tsx';
+import styles from './Loader.module.scss';
+import ChopLogicLoader from '../Loader';
 
-const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
+export const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
   const loaders = Object.values(ChopLogicLoaderView);
 
   return (
@@ -18,5 +18,3 @@ const LoaderExample: React.FC<ChopLogicLoaderProps> = () => {
     </div>
   );
 };
-
-export default LoaderExample;

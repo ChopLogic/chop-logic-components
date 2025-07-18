@@ -1,13 +1,13 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Tooltip from './Tooltip.stories';
 
 <Meta of={Tooltip} title='Tooltip' />
 
 # ChopLogicTooltip
 
-The `Tooltip` component displays a tooltip with customizable content when the user hovers over, clicks, or focuses on the container element.
+The `ChopLogicTooltip` component provides contextual information when users interact with elements. It supports multiple trigger methods and positioning options, with accessible markup and flexible content.
 
-### Usage
+## Usage
 
 ```tsx
 import { ChopLogicTooltip } from 'chop-logic-components';
@@ -23,15 +23,33 @@ const TooltipUsageExample = () => {
 export default TooltipUsageExample;
 ```
 
-### Props
+### When to Use
 
-| Prop               | Type                                                   | Description                                                                                    | Default     | Required |
-|--------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------|----------|
-| **tooltipContent** | `string` or `ReactElement`                             | The content to be displayed inside the tooltip.                                                | `undefined` | Yes      |
-| **containerTag**   | `TooltipContainerTag`                                  | The HTML tag to be used for the container element.                                             | `'span'`    | No       |
-| **visibleOn**      | `'hover'` or `'click'` or `'focus'` or `'contextmenu'` | The event that triggers the tooltip to be displayed.                                           | `'hover'`   | No       |
-| **children**       | `ReactNode`                                            | The content inside the container element that triggers the tooltip.                            | `undefined` | No       |
-| **id**             | `string`                                               | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
-| **className**      | `string`                                               | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
-| **style**          | `CSSProperties`                                        | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
-| **tabIndex**       | `number`                                               | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |
+- To explain unfamiliar UI elements
+-  When you need to provide additional context
+- For showing truncated content on hover
+- To display helpful information without cluttering the interface
+-  When you need accessible tooltips that work with keyboard navigation
+
+### Accessibility Notes
+
+1. __ARIA Attributes__: Automatically manages aria-describedby and role="tooltip"
+2. __Keyboard Navigation__: Works with focus trigger for keyboard users
+3. __Focus Management__: Tooltip content remains accessible to screen readers
+4. __Dismissal__: Click-triggered tooltips should be dismissible via ESC key
+5. __Contrast__: Ensure sufficient color contrast for tooltip text/background
+
+### Best Practices
+
+- Keep tooltip text concise (1-2 sentences max)
+- Use for supplemental information only
+- Ensure tooltips don't obscure important content
+- Test positioning at different screen sizes
+- Prefer hover for most cases, click for complex content
+- Avoid nesting interactive elements in hover-triggered tooltips
+- Consider mobile touch interactions (hover may not work)
+- Match tooltip appearance to your design system
+
+## Props
+
+<Controls />

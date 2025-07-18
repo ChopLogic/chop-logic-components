@@ -5,4 +5,6 @@ export interface ChopLogicTooltipProps extends PropsWithChildren, ChopLogicCompo
     tooltipContent: string | ReactElement;
     containerTag?: ChopLogicTooltipContainer;
     visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
+    autoClose?: boolean;
+    autoCloseDelay?: number;
 }

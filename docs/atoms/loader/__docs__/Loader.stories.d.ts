@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '../../../storybook/react-vite';
-import { default as LoaderExample } from './Loader.example.tsx';
-declare const meta: Meta<typeof LoaderExample>;
+import { default as ChopLogicLoader } from '../Loader';
+declare const meta: Meta<typeof ChopLogicLoader>;
 export default meta;
-type Story = StoryObj<typeof LoaderExample>;
+type Story = StoryObj<typeof ChopLogicLoader>;
 export declare const LoaderGallery: Story;

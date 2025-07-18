@@ -1,1 +1,1 @@
-export { withTooltip } from './with-tooltip';
+export { withTooltip } from './with-tooltip/with-tooltip';

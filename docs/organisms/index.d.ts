@@ -3,3 +3,4 @@ export { default as ChopLogicGrid } from './grid/Grid';
 export { default as ChopLogicMenu } from './menu/Menu';
 export { default as ChopLogicTabs } from './tabs/Tabs';
 export { default as ChopLogicDialog } from './dialog/Dialog';
+export { default as ChopLogicAlert } from './alert/Alert';

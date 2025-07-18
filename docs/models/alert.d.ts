@@ -6,4 +6,6 @@ export interface ChopLogicAlertProps extends ChopLogicComponentProps {
     message: string;
     mode?: ChopLogicAlertMode;
     icon?: ChopLogicIconName;
+    autoClose?: boolean;
+    autoCloseDelay?: number;
 }

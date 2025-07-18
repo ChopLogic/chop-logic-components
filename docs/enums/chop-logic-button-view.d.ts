@@ -1,5 +1,6 @@
 export declare enum ChopLogicButtonView {
     Primary = "primary",
-    Flat = "flat",
-    Icon = "icon"
+    Secondary = "secondary",
+    Icon = "icon",
+    Inner = "inner"
 }

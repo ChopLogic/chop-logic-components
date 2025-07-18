@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '../../../storybook/react-vite';
-import { IconExample } from './Icon.example';
-declare const meta: Meta<typeof IconExample>;
+import { default as ChopLogicIcon } from '../Icon';
+declare const meta: Meta<typeof ChopLogicIcon>;
 export default meta;
-type Story = StoryObj<typeof IconExample>;
-export declare const IconGallery: Story;
+type Story = StoryObj<typeof ChopLogicIcon>;
+export declare const Default: Story;

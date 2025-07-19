@@ -1,5 +1,5 @@
-import { FocusEventHandler, MouseEventHandler } from 'react';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { FocusEventHandler, MouseEventHandler } from 'react';
 
 import { ChopLogicInputProps } from './_common';
 

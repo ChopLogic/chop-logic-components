@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicCheckboxProps } from '@models';
+import React from 'react';
 
 import ChopLogicCheckbox from '../Checkbox';
 

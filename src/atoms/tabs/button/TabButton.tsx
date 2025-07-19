@@ -1,6 +1,7 @@
-import React from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { getClassName } from '@utils';
+import React from 'react';
+
 import styles from './TabButton.module.scss';
 
 type Props = {

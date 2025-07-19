@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
 import { useAutoClose, useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@hooks';
+import React, { useRef, useState } from 'react';
 
 type Params = {
   autoClose: boolean;

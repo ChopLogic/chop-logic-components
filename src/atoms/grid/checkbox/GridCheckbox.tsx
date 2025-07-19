@@ -1,9 +1,10 @@
-import React from 'react';
-import { useElementIds } from '@hooks';
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
-import { getClassName } from '@utils';
 import { Label } from '@atoms';
+import { useElementIds } from '@hooks';
+import { getClassName } from '@utils';
+import React from 'react';
+
 import styles from './GridCheckbox.module.scss';
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {

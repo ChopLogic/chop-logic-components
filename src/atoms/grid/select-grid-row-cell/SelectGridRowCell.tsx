@@ -1,6 +1,7 @@
-import React from 'react';
-import styles from './SelectGridRowCell.module.scss';
 import { GridCheckbox } from '@atoms/grid/checkbox/GridCheckbox.tsx';
+import React from 'react';
+
+import styles from './SelectGridRowCell.module.scss';
 
 type Props = {
   rowId: string;

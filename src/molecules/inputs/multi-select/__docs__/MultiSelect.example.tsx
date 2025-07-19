@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicMultiSelectProps } from '@models';
+import React from 'react';
 
 import ChopLogicMultiSelect from '../MultiSelect.tsx';
 

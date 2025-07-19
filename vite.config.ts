@@ -1,8 +1,10 @@
 /// <reference types="vitest" />
 import * as path from 'node:path';
+
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { coverageConfigDefaults } from 'vitest/config';
+
 import { peerDependencies } from './package.json';
 
 export default defineConfig({

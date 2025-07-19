@@ -1,6 +1,7 @@
-import React from 'react';
 import { ChopLogicIcon } from '@atoms';
 import { ChopLogicMenuItem } from '@models';
+import React from 'react';
+
 import styles from './MenuLeaf.module.scss';
 
 export const MenuLeaf = ({ item }: { item: ChopLogicMenuItem }): React.ReactElement => {

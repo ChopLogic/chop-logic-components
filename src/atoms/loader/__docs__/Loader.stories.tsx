@@ -1,7 +1,8 @@
 import { ChopLogicLoaderView } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { LoaderExample } from './Loader.example';
+
 import ChopLogicLoader from '../Loader';
+import { LoaderExample } from './Loader.example';
 
 const meta: Meta<typeof ChopLogicLoader> = {
   title: 'Atoms/Loader',

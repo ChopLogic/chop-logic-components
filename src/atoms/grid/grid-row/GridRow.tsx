@@ -1,7 +1,8 @@
-import React from 'react';
 import { GridDataCell } from '@atoms/grid/data-cell/GridDataCell.tsx';
 import { SelectGridRowCell } from '@atoms/grid/select-grid-row-cell/SelectGridRowCell.tsx';
 import { getClassName } from '@utils';
+import React from 'react';
+
 import styles from './GridRow.module.scss';
 
 type Props = {

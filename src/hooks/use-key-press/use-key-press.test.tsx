@@ -1,8 +1,9 @@
-import { useRef } from 'react';
-import { useKeyPress } from './use-key-press.ts';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useRef } from 'react';
 import { describe, expect, it, vi } from 'vitest';
+
+import { useKeyPress } from './use-key-press.ts';
 
 const TestComponent = ({ keyCode, onKeyPress }: { keyCode: string; onKeyPress: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);

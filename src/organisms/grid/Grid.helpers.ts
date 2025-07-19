@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
+import React from 'react';
 
 export function getGridRowValues({
   item,

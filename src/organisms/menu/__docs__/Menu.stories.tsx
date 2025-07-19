@@ -2,8 +2,8 @@ import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import MenuExample from './Menu.example';
 import ChopLogicMenu from '../Menu';
+import MenuExample from './Menu.example';
 
 const ITEMS: ChopLogicMenuItem[] = [
   {

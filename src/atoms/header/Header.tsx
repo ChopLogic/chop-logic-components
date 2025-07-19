@@ -1,8 +1,9 @@
-import { FC } from 'react';
-import styles from './Header.module.scss';
-import { getClassName } from '@utils';
 import { ChopLogicIcon } from '@atoms';
 import { ChopLogicHeaderProps } from '@models';
+import { getClassName } from '@utils';
+import { FC } from 'react';
+
+import styles from './Header.module.scss';
 
 const Header: FC<ChopLogicHeaderProps> = ({ as = 'h1', icon, children, className, ...rest }) => {
   const HeaderTag = as;

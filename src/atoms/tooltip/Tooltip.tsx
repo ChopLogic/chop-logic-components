@@ -1,10 +1,11 @@
-import React from 'react';
+import { ChopLogicPortal } from '@atoms';
 import { ChopLogicTooltipContainer } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
-import { useChopLogicTooltipController } from './Tooltip.controller.ts';
 import { getClassName } from '@utils';
+import React from 'react';
+
+import { useChopLogicTooltipController } from './Tooltip.controller.ts';
 import styles from './Tooltip.module.scss';
-import { ChopLogicPortal } from '@atoms';
 
 const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
   children,

@@ -1,5 +1,6 @@
-import React from 'react';
 import { getClassName } from '@utils/get-class-name.ts';
+import React from 'react';
+
 import styles from './ErrorMessage.module.scss';
 
 type ErrorMessageProps = {

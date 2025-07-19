@@ -1,12 +1,13 @@
-import React from 'react';
+import { ErrorMessage, Input, Label } from '@atoms';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
-import { useChopLogicTextInputController } from './TextInput.controller.ts';
-import { getClassName } from '@utils';
-import styles from './TextInput.module.scss';
-import { ErrorMessage, Label, Input } from '@atoms';
 import { ChopLogicButton } from '@molecules';
+import { getClassName } from '@utils';
+import React from 'react';
+
+import { useChopLogicTextInputController } from './TextInput.controller.ts';
+import styles from './TextInput.module.scss';
 
 const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
   name,

@@ -1,8 +1,9 @@
-import React, { PropsWithChildren, useRef } from 'react';
 import { ChopLogicIcon } from '@atoms';
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';
+import React, { PropsWithChildren, useRef } from 'react';
+
 import styles from './SubMenu.module.scss';
 
 type Props = PropsWithChildren & {

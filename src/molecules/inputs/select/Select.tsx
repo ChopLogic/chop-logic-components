@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import { Label, SelectCombobox, SelectDropdown } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicSelectProps } from '@models';
-import { useChopLogicSelectController } from './Select.controller.ts';
 import { getClassName } from '@utils';
+import React, { useRef } from 'react';
+
+import { useChopLogicSelectController } from './Select.controller.ts';
 import styles from './Select.module.scss';
-import { Label, SelectCombobox, SelectDropdown } from '@atoms';
 
 const ChopLogicSelect: React.FC<ChopLogicSelectProps> = ({
   options,

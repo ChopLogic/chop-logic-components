@@ -1,6 +1,6 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from 'eslint-plugin-storybook';
-
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -19,11 +19,14 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       '@typescript-eslint/no-explicit-any': ['warn'],
+      'simple-import-sort/imports': 'error', // enforce import sort
+      'simple-import-sort/exports': 'error', // enforce export sort
     },
   },
   storybook.configs['flat/recommended'],

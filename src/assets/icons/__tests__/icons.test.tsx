@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
 import { ChopLogicIconDictionary } from '@assets/icons';
 import { ChopLogicIconName } from '@enums';
+import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 describe('SVG Icons', () => {
   it('should match the snapshot', () => {

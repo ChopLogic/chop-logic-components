@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@molecules';
 import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
-import styles from '@styles/storybook/Container.module.scss';
+import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
+import styles from '@styles/storybook/Container.module.scss';
+import React, { useState } from 'react';
 
 const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
   { id: 'lang-1', label: 'English' },

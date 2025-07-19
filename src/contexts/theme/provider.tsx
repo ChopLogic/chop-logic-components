@@ -1,7 +1,9 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
-import { ChopLogicThemeContext } from './context.ts';
-import { ChopLogicThemeMode } from '@enums';
 import '@styles/root.scss';
+
+import { ChopLogicThemeMode } from '@enums';
+import { FC, ReactNode, useEffect, useState } from 'react';
+
+import { ChopLogicThemeContext } from './context.ts';
 
 export const ChopLogicThemeProvider: FC<{ children: ReactNode; injectedMode?: ChopLogicThemeMode }> = ({ children, injectedMode }) => {
   const [mode, setMode] = useState(ChopLogicThemeMode.Light);

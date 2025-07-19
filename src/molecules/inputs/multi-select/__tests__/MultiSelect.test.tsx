@@ -1,10 +1,10 @@
 import { ChopLogicSelectValue } from '@models';
+import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
 import ChopLogicMultiSelect from '../MultiSelect.tsx';
-import { ChopLogicForm } from '@organisms';
 
 describe('ChopLogicMultiSelect', () => {
   const MULTI_SELECT_VALUES: ChopLogicSelectValue[] = [

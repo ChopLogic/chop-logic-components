@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import ChopLogicCheckbox from '../Checkbox';
 import { CheckboxExample } from './Checkbox.example';
 
-const meta: Meta<typeof CheckboxExample> = {
+const meta: Meta<typeof ChopLogicCheckbox> = {
   component: CheckboxExample,
   title: 'Molecules/Checkbox',
 };
 
 export default meta;
-type Story = StoryObj<typeof CheckboxExample>;
+type Story = StoryObj<typeof ChopLogicCheckbox>;
 
 export const LeftIconCheckbox: Story = {
   args: {

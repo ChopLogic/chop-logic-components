@@ -1,7 +1,8 @@
 import { ChopLogicMultiSelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { MultiSelectExample } from './MultiSelect.example.tsx';
+import ChopLogicMultiSelect from '../MultiSelect';
+import { MultiSelectExample } from './MultiSelect.example';
 
 const MULTI_SELECT_VALUES: ChopLogicMultiSelectValue[] = [
   { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English', selected: false },
@@ -10,13 +11,13 @@ const MULTI_SELECT_VALUES: ChopLogicMultiSelectValue[] = [
   { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German', selected: false },
 ];
 
-const meta: Meta<typeof MultiSelectExample> = {
+const meta: Meta<typeof ChopLogicMultiSelect> = {
   component: MultiSelectExample,
   title: 'Molecules/MultiSelect',
 };
 
 export default meta;
-type Story = StoryObj<typeof MultiSelectExample>;
+type Story = StoryObj<typeof ChopLogicMultiSelect>;
 
 export const Example: Story = {
   args: {

@@ -4,12 +4,12 @@ import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
 import ChopLogicButton from '@molecules/inputs/button/Button.tsx';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
 import { useChopLogicNumericInputController } from './NumericInput.controller.ts';
 import styles from './NumericInput.module.scss';
 
-const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps> = ({
+const ChopLogicNumericInput: FC<ChopLogicNumericInputProps> = ({
   name,
   label,
   errorMessage,

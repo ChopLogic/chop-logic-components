@@ -34,29 +34,20 @@ const PreferencesForm = () => {
 
 ### Accessibility Notes
 
-1. _Keyboard Navigation_:
+_Keyboard Navigation_:
+ - Tab to focus the control
+ - Arrow keys to navigate options
+ - Enter to select/deselect
+ - Escape to close dropdown
 
-  - Tab to focus the control
+_Screen Readers_:
+ - Proper ARIA attributes for selected state
+ - Announcement of options count
+ - Clear status messages
 
-  - Arrow keys to navigate options
-
-  - Enter to select/deselect
-
-  - Escape to close dropdown
-
-2. _Screen Readers_:
-
-  - Proper ARIA attributes for selected state
-
-  - Announcement of options count
-
-  - Clear status messages
-
-3. _Focus Management_:
-
- - Trap focus within dropdown when open
-
- - Return focus to trigger when closed
+_Focus Management_:
+- Trap focus within dropdown when open
+- Return focus to trigger when closed
 
 
 ## Props

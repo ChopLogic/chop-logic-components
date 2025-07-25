@@ -1,48 +1,61 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Alert from './Alert.stories';
 
 <Meta of={Alert} title='ChopLogicAlert' />
 
-# Alert
+# ChopLogicAlert
 
-The `ChopLogicAlert` component displays an alert message with various modes such as success, error, warning, and info.
+The `ChopLogicAlert` component provides a contextual feedback message with multiple severity levels and auto-dismiss functionality.
 
-### Usage
+## Usage
 
 ```tsx
-import React, { useState } from 'react';
-import { ChopLogicAlert, ChopLogicButton } from 'chop-logic-components';
+import ChopLogicAlert, { ChopLogicAlertMode } from 'chop-logic-components';
 
-export const ExampleComponent = () => {
-  const [isOpened, setIsOpened] = useState(false);
-
-  const handleOpen = () => setIsOpened(true);
-  const handleClose = () => setIsOpened(false);
+const NotificationSystem = () => {
+  const [alertOpen, setAlertOpen] = React.useState(true);
 
   return (
-    <>
-      <ChopLogicButton onClick={handleOpen}>
-      <ChopLogicAlert isOpened={isOpened} onClose={handleClose} autoClose title='Alert Title' message='This is an alert message.' mode='info' />;
-    </>
+    <ChopLogicAlert
+      isOpened={alertOpen}
+      onClose={() => setAlertOpen(false)}
+      mode={ChopLogicAlertMode.Success}
+      title="Action completed"
+      message="Your changes have been saved successfully."
+      autoClose
+    />
   );
 };
-
-export default ExampleComponent;
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop               | Type                 | Description                                                                                    | Default     | Required |
-|--------------------|----------------------|------------------------------------------------------------------------------------------------|-------------|----------|
-| **isOpened**       | `boolean`            | Determines if the alert is open.                                                               | `false`     | Yes      |
-| **onClose**        | `() => void`         | Function that suppose to close the alert and handle additional logic.                          | `undefined` | Yes      |
-| **autoClose**      | `boolean`            | Whether the alert should close automatically after a delay                                     | `false`     | No       |
-| **autoCloseDelay** | `number`             | Delay in milliseconds before auto-closing (only works when autoClose is true)                  | `3000`      | No       |
-| **message**        | `boolean`            | The message content of the alert.                                                              | `undefined` | Yes      |
-| **title**          | `string`             | The title of the alert.                                                                        | `undefined` | No       |
-| **mode**           | `ChopLogicAlertMode` | The visual mode of the alert.                                                                  | `'info'`    | No       |
-| **icon**           | `ChopLogicIconName`  | Custom icon that appears in the Alert header.                                                  | `undefined` | No       |
-| **id**             | `string`             | The id global attribute defines an identifier (ID) which must be unique in the whole document. | `undefined` | No       |
-| **className**      | `string`             | The class global attribute is a list of the classes of the element.                            | `undefined` | No       |
-| **style**          | `CSSProperties`      | The style global attribute contains CSS styling declarations to be applied to the element.     | `undefined` | No       |
-| **tabIndex**       | `number`             | The tabindex global attribute allows developers to make HTML elements focusable.               | `undefined` | No       |
+_Focus Management_:
+  - Focus returns to trigger element when closed
+  - Close button is keyboard accessible
+
+_Screen Readers:_
+  - Announces alert content when appears
+  - Announces severity level
+  - Provides clear close action
+
+_Color Contrast_:
+  - Ensure sufficient contrast for all modes
+  - Test in high contrast modes
+  - Provide alternative indicators for color-blind users
+
+### Best Practices
+
+_Content Guidelines_:
+  - Keep titles short (1-5 words)
+  - Limit messages to 1-2 sentences
+  - Use clear, actionable language
+
+_Timing_:
+  - Use auto-close for non-critical alerts
+  - Allow sufficient reading time (minimum 5s)
+  - Consider pause-on-hover for auto-closing alerts
+
+## Props
+
+<Controls />

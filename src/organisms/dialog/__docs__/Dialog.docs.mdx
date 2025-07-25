@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Dialog from './Dialog.stories';
 
 <Meta of={Dialog} title='ChopLogicDialog' />
@@ -10,38 +10,61 @@ The `ChopLogicDialog` allows you to render a pop-up window with any content. The
 ### Usage
 
 ```tsx
-import { ChopLogicDialog } from 'chop-logic-components';
-import { useState } from 'react';
+import ChopLogicDialog from 'chop-logic-components';
 
-const Example = () => {
-  const [isOpened, setIsOpened] = useState(true);
-
-  const handleOpen = () => setIsOpened(true);
-  const handleClose = () => setIsOpened(false);
-
+const ConfirmationDialog = ({ isOpen, onClose }) => {
   return (
-    <>
-      <button onClick={handleOpen}>Open Dialog</button>
-      <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Example Dialog'>
-        <div>My Dialog Content</div>
-      </ChopLogicDialog>
-    </>
+    <ChopLogicDialog
+      isOpened={isOpen}
+      onClose={onClose}
+      title="Confirm Action"
+    >
+      <p>Are you sure you want to perform this action?</p>
+      <div className="dialog-actions">
+        <button onClick={onClose}>Cancel</button>
+        <button onClick={handleConfirm}>Confirm</button>
+      </div>
+    </ChopLogicDialog>
   );
 };
-
-export default Example;
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop          | Type                | Description                                                                                                                                                                             | Default     | Required |
-|---------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
-| **isOpened**  | `boolean`           | Determines if the dialog is open.                                                                                                                                                       | `false`     | Yes      |
-| **onClose**   | `() => void`        | A function that is called when the dialog is closed.                                                                                                                                    | `undefined` | Yes      |
-| **title**     | `string`            | A string that represents the title of the dialog.                                                                                                                                       | `undefined` | Yes      |
-| **children**  | `ReactElement`      | Contents of the dialog window. Any React component enclosed between tags `<ChopLogicDialog>` and `</ChopLogicDialog>` will be rendered inside the dialog using `ReactDOM.createPortal`. | `undefined` | No       |
-| **icon**      | `ChopLogicIconName` | Custom icon that appears in the dialog header.                                                                                                                                          | `undefined` | No       |
-| **id**        | `string`            | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                                          | `undefined` | No       |
-| **className** | `string`            | The class global attribute is a list of the classes of the element.                                                                                                                     | `undefined` | No       |
-| **style**     | `CSSProperties`     | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                              | `undefined` | No       |
-| **tabIndex**  | `number`            | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                        | `undefined` | No       |
+_Focus Management_:
+  - Focus is trapped within the dialog when open
+  - Focus returns to the triggering element when closed
+  - Close button is keyboard accessible
+
+_Screen Readers_:
+  - Announces dialog title when opened
+  - Announces role="dialog" and aria-modal="true"
+  - Provides clear close action
+
+_Keyboard Navigation_:
+  - Escape key closes dialog
+  - Tab cycles through focusable elements
+  - Shift+Tab reverses focus order
+
+### Best Practices
+
+_Content Structure_:
+  - Keep titles concise
+  - Organize content logically
+  - Place primary actions on the right
+  - Include a visible close button
+
+_Behavior_:
+  - Close on overlay click (optional)
+  - Prevent body scroll when open
+  - Consider stacking order for multiple dialogs
+
+_Performance_:
+  - Load heavy content dynamically
+  - Consider virtualization for long content
+  - Memoize dialog contents when appropriate
+
+
+## Props
+
+<Controls />

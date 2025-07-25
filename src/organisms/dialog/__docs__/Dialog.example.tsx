@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 import ChopLogicDialog from '../Dialog';
 
-const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
+export const ChopLogicDialogExample: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -36,5 +36,3 @@ const Example: React.FC<ChopLogicDialogProps> = ({ onClose, title }) => {
     </div>
   );
 };
-
-export default Example;

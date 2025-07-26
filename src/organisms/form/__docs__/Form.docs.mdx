@@ -1,47 +1,69 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as ChopLogicFormStories from './Form.stories';
 
-<Meta of={ChopLogicFormStories} title='Form' />
+<Meta of={ChopLogicFormStories} title='ChopLogicForm' />
 
 # ChopLogicForm
 
-The `ChopLogicForm` component is a wrapper for one or more inputs. It collects values of these inputs, validates them, and passes them to the handler function when the Submit button is clicked. The component works with both Chop Logic inputs and default HTML inputs.
+The `ChopLogicForm` component provides a structured, accessible form container with built-in state management, validation, and responsive layout capabilities.
 
-### Usage
+## Usage
 
 ```tsx
-import React from 'react';
-import {ChopLogicForm, ChopLogicTextInput, ChopLogicNumericInput} from 'chop-logic-components';
+import { ChopLogicForm, ChopLogicTextInput } from 'chop-logic-components';
 
-const INITIAL_VALUES = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 42
-}
+const UserForm = () => {
+  const handleSubmit = (values) => {
+    console.log('Form submitted with:', values);
+  };
 
-const ExampleComponent = () => (
-  <ChopLogicForm initialValues={INITIAL_VALUES} columns={2}>
-    <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-    <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-    <ChopLogicNumericInput name='age' id='age' label='Age' />
-  </ChopLogicForm>
-);
-
-export default ExampleComponent;
+  return (
+    <ChopLogicForm
+      initialValues={{ firstName: '', lastName: '' }}
+      onSubmit={handleSubmit}
+      columns={2}
+    >
+      <ChopLogicTextInput name="firstName" label="First Name" />
+      <ChopLogicTextInput name="lastName" label="Last Name" />
+    </ChopLogicForm>
+  );
+};
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop              | Type                                | Description                                                                                                                             | Default     | Required |
-|-------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
-| **children**      | `ReactNode`                         | Inputs, buttons, and other elements that will be rendered inside the form.                                                              | `undefined` | No       |
-| **columns**       | `number`                            | Number of columns in the form (max 6 columns).                                                                                          | `1`         | No       |
-| **initialValues** | `ChopLogicFormData`                 | Object with default values for form inputs.                                                                                             | `undefined` | No       |
-| **hasReset**      | `boolean`                           | Indicator of whether the form has the Reset button                                                                                      | `true`      | No       |
-| **onClickSubmit** | `(data: ChopLogicFormData) => void` | Function that will be called when the Submit button is clicked. It will receive an object with the current input values as a parameter. | `undefined` | No       |
-| **id**            | `string`                            | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                          | `undefined` | No       |
-| **className**     | `string`                            | The class global attribute is a list of the classes of the element.                                                                     | `undefined` | No       |
-| **style**         | `CSSProperties`                     | The style global attribute contains CSS styling declarations to be applied to the element.                                              | `undefined` | No       |
-| **tabIndex**      | `number`                            | The tabindex global attribute allows developers to make HTML elements focusable.                                                        | `undefined` | No       |
-| **title**         | `string`                            | The title global attribute contains text representing advisory information related to the element it belongs to.                        | `undefined` | No       |
+_Form Structure_:
+- Proper form element semantics
+- Field labels associated with inputs
+- Logical tab order
 
+_Validation_:
+- Clear error messages
+- ARIA attributes for invalid fields
+- Focus management for errors
+
+_Keyboard Navigation_:
+- Tab through form fields
+- Enter to submit
+- Escape to reset (when enabled)
+
+### Best Practices
+
+_Layout_:
+- Use appropriate column counts for form complexity
+- Group related fields together
+- Maintain consistent spacing
+
+_Validation_:
+- Provide clear error messages
+- Validate on blur and submit
+- Consider real-time validation for complex forms
+
+_Performance_:
+- Memoize form components when possible
+- Consider dynamic loading for large forms
+- Optimize re-renders with controlled components
+
+## Props
+
+<Controls />

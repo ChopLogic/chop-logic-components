@@ -1,37 +1,75 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as ChopLogicGridStories from './Grid.stories';
 
 <Meta of={ChopLogicGridStories} title='ChopLogicGrid' />
 
 # ChopLogicGrid
 
-The `ChopLogicGrid` component is a styled grid component built on top of the default HTML `table` element.
+The `ChopLogicGrid` component provides a flexible, interactive data table with column definitions, selection capabilities, and customizable rendering.
 
 ### Usage
 
 ```tsx
-import React from 'react';
 import ChopLogicGrid from 'chop-logic-components';
-import { DATA, COLUMNS } from './constants';
 
-const ExampleComponent = () => <ChopLogicGrid caption='Contact List' data={DATA} columns={COLUMNS} />;
+const UserGrid = () => {
+  const columns = [
+    { field: 'name', title: 'Name' },
+    { field: 'email', title: 'Email' },
+    { field: 'role', title: 'Role' }
+  ];
 
-export default ExampleComponent;
+  const data = [
+    { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin' },
+    { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User' }
+  ];
+
+  return (
+    <ChopLogicGrid
+      columns={columns}
+      data={data}
+      caption="User Management"
+      selectable
+      onSelect={(ids) => console.log('Selected IDs:', ids)}
+    />
+  );
+};
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop               | Type                      | Description                                                                                                                                                                                     | Default     | Required |
-|--------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------|
-| **data**           | `ChopLogicGridItem[]`     | An array of items to be displayed in the grid. Each item is a JavaScript object with a mandatory `id` field.                                                                                    | `[]`        | Yes      |
-| **columns**        | `ChopLogicGridColumn[]`   | An array of objects that describes the grid columns. Each column must contain `field` property that points to the value in the data item, and `title` property that describes the column title. | `[]`        | Yes      |
-| **selectable**     | `boolean`                 | A value that indicates whether the grid has a column with checkboxes.                                                                                                                           | `false`     | No       |
-| **caption**        | `string`                  | An optional title of the grid.                                                                                                                                                                  | `undefined` | No       |
-| **onSelect**       | `(ids: string[]) => void` | An optional callback that is called when one or more grid rows are selected or deselected.                                                                                                      | `undefined` | No       |
-| **renderDataItem** | `RenderDataItemCallback`  | An optional callback that takes a data item and a column field as parameters and returns a JSX element. This callback is required for custom rendering of grid cells.                           | `undefined` | No       |
-| **id**             | `string`                  | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                                                  | `undefined` | No       |
-| **className**      | `string`                  | The class global attribute is a list of the classes of the element.                                                                                                                             | `undefined` | No       |
-| **style**          | `CSSProperties`           | The style global attribute contains CSS styling declarations to be applied to the element.                                                                                                      | `undefined` | No       |
-| **tabIndex**       | `number`                  | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                                                | `undefined` | No       |
-| **title**          | `string`                  | The title global attribute contains text representing advisory information related to the element it belongs to.                                                                                | `undefined` | No       |
+_Structure_:
+- Proper table semantics
+- Caption for context
+- Column headers associated with cells
 
+_Keyboard Navigation_:
+- Tab through interactive elements
+- Space to select rows
+- Shift+Arrow for multiple selection
+
+_Screen Readers_:
+- Announces row selection state
+- Reads column headers with cell values
+- Provides context for actions
+
+### Best Practices
+
+_Performance_:
+- Virtualize large datasets
+- Memoize custom renderers
+- Consider pagination for huge datasets
+
+_Column Design_:
+- Keep column count reasonable
+- Use descriptive headers
+- Highlight important columns
+
+_Selection_:
+- Provide clear visual feedback
+- Consider bulk actions for selected items
+- Disable non-applicable rows
+
+## Props
+
+<Controls />

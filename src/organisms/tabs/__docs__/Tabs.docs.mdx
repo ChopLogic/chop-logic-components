@@ -1,38 +1,75 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as ChopLogicTabsStories from './Tabs.stories';
 
 <Meta of={ChopLogicTabsStories} title='ChopLogicTabs' />
 
 # ChopLogicTabs
 
-Versatile tab component that allows you to switch between different pieces of content by clicking on corresponding tabs.
+The `ChopLogicTabs` component provides an accessible tabbed interface with support for both horizontal and vertical orientations, disabled states, and flexible content.
 
 ### Usage
 
 ```tsx
-import React from 'react';
-import ChopLogicTabs from 'chop-logic-components';
+import ChopLogicTabs, { ChopLogicOrientationMode } from 'chop-logic-components';
 
-const tabs = [
-  { id: 'tab1', title: 'Tab 1', content: <div>Content for Tab 1</div> },
-  { id: 'tab2', title: 'Tab 2', content: <div>Content for Tab 2</div> },
-  { id: 'tab3', title: 'Tab 3', content: <div>Content for Tab 3</div> },
-];
+const ProductTabs = () => {
+  const tabs = [
+    {
+      id: 'details',
+      title: 'Details',
+      content: <ProductDetails />
+    },
+    {
+      id: 'specs',
+      title: 'Specifications',
+      content: <ProductSpecs />
+    }
+  ];
 
-const ExampleComponent = () => <ChopLogicTabs tabs={tabs} defaultTabId='tab1' />;
-
-export default ExampleComponent;
+  return (
+    <ChopLogicTabs
+      tabs={tabs}
+      mode={ChopLogicOrientationMode.Horizontal}
+      defaultTabId="specs"
+    />
+  );
+};
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop             | Type                       | Description                                                                                                      | Default        | Required |
-|------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|----------------|----------|
-| **tabs**         | `ChopLogicTabItem[]`       | An array of tab items, each containing an id, title, and the content to display.                                 | `[]`           | Yes      |
-| **defaultTabId** | `string`                   | The id of the tab that should be active by default.                                                              | `undefined`    | No       |
-| **mode**         | `ChopLogicOrientationMode` | The orientation of the tabs.                                                                                     | `'horizontal'` | No       |
-| **id**           | `string`                   | The id global attribute defines an identifier (ID) which must be unique in the whole document.                   | `undefined`    | No       |
-| **className**    | `string`                   | The class global attribute is a list of the classes of the element.                                              | `undefined`    | No       |
-| **style**        | `CSSProperties`            | The style global attribute contains CSS styling declarations to be applied to the element.                       | `undefined`    | No       |
-| **tabIndex**     | `number`                   | The tabindex global attribute allows developers to make HTML elements focusable.                                 | `undefined`    | No       |
-| **title**        | `string`                   | The title global attribute contains text representing advisory information related to the element it belongs to. | `undefined`    | No       |
+_Keyboard Navigation_:
+- Tab to focus tab list
+- Arrow keys to navigate between tabs
+- Enter/Space to select focused tab
+
+_Screen Readers_:
+- Announces selected state
+- Describes tablist structure
+- Indicates disabled tabs
+
+_Focus Management_:
+- Focus remains on active tab
+- Proper focus indicators
+- Logical tab order
+
+### Best Practices
+
+_Organization_:
+- Keep tab titles concise (1-2 words)
+- Group related content together
+- Limit number of tabs (recommend max 5-7)
+
+_Content_:
+- Load heavy content dynamically
+- Consider lazy-loading hidden tabs
+- Maintain consistent tab heights
+
+_States_:
+- Clearly indicate active tab
+- Visually distinguish disabled tabs
+- Provide loading states for async content
+
+## Props
+
+<Controls />

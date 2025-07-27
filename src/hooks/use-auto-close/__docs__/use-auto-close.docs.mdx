@@ -6,27 +6,6 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 The `useAutoClose` hook provides automatic closure functionality for popups, modals, tooltips, and other temporary UI elements after a specified delay.
 
-## Purpose
-
-Encapsulates timer logic for automatically closing UI components, helping to:
-- Reduce boilerplate code in components
-- Ensure consistent behavior across all auto-closing elements
-- Properly handle cleanup to prevent memory leaks
-- Maintain TypeScript type safety
-
-## Parameters
-
-| Parameter          | Type         | Description                                                           |
-|--------------------|--------------|-----------------------------------------------------------------------|
-| **isOpened**       | `boolean`    | Controls whether the timer should be active (true) or cleared (false) |
-| **onClose**        | `() => void` | Callback function to execute when the timer completes                 |
-| **autoClose**      | `boolean`    | Whether auto-closing functionality should be enabled                  |
-| **autoCloseDelay** | `number`     | Delay in milliseconds before triggering `onClose`                     |
-
-## Return Value
-
-This hook does not return any value.
-
 ## Usage
 
 ```tsx
@@ -43,3 +22,16 @@ const MyPopup = ({ isOpen, onClose }) => {
   return isOpen ? <div className="popup">Content</div> : null;
 };
 ```
+
+## Parameters
+
+| Parameter          | Type         | Description                                                           |
+|--------------------|--------------|-----------------------------------------------------------------------|
+| **isOpened**       | `boolean`    | Controls whether the timer should be active (true) or cleared (false) |
+| **onClose**        | `() => void` | Callback function to execute when the timer completes                 |
+| **autoClose**      | `boolean`    | Whether auto-closing functionality should be enabled                  |
+| **autoCloseDelay** | `number`     | Delay in milliseconds before triggering `onClose`                     |
+
+## Return Value
+
+This hook does not return any value.

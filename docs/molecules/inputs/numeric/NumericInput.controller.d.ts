@@ -1,5 +1,5 @@
-import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
 import { ChopLogicNumericInputValidator } from '../../../models';
+import { default as React, ChangeEventHandler } from '../../../../node_modules/react';
 export declare function useChopLogicNumericInputController({ name, defaultValue, onChange, onSpinButtonClick, min, max, step, required, validator, }: {
     name: string;
     defaultValue?: string | number | readonly string[];

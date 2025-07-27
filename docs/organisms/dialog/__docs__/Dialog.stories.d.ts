@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '../../../storybook/react-vite';
-import { default as DialogExample } from './Dialog.example';
-declare const meta: Meta<typeof DialogExample>;
+import { default as ChopLogicDialog } from '../Dialog';
+declare const meta: Meta<typeof ChopLogicDialog>;
 export default meta;
-type Story = StoryObj<typeof DialogExample>;
+type Story = StoryObj<typeof ChopLogicDialog>;
 export declare const Example: Story;

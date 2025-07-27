@@ -1,5 +1,5 @@
-import { default as React } from '../../../node_modules/react';
 import { Dimensions } from '../../models';
+import { default as React } from '../../../node_modules/react';
 type useContainerDimensionsParams = {
     ref: React.RefObject<HTMLElement | null>;
     isVisible?: boolean;

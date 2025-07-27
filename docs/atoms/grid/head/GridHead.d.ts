@@ -1,5 +1,5 @@
-import { default as React } from '../../../../node_modules/react';
 import { ChopLogicGridColumn } from '../../../models';
+import { default as React } from '../../../../node_modules/react';
 type ChopLogicGridHeadProps = {
     columns: ChopLogicGridColumn[];
     gridId: string;

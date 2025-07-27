@@ -1,5 +1,5 @@
-import { default as React, ButtonHTMLAttributes } from '../../../../node_modules/react';
 import { ChopLogicIconName } from '../../../enums';
+import { default as React, ButtonHTMLAttributes } from '../../../../node_modules/react';
 type Props = {
     label?: string;
     icon?: ChopLogicIconName;

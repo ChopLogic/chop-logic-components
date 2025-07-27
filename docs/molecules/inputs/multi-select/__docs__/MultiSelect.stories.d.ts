@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '../../../../storybook/react-vite';
-import { MultiSelectExample } from './MultiSelect.example.tsx';
-declare const meta: Meta<typeof MultiSelectExample>;
+import { default as ChopLogicMultiSelect } from '../MultiSelect';
+declare const meta: Meta<typeof ChopLogicMultiSelect>;
 export default meta;
-type Story = StoryObj<typeof MultiSelectExample>;
+type Story = StoryObj<typeof ChopLogicMultiSelect>;
 export declare const Example: Story;

@@ -1,5 +1,5 @@
-import { FocusEventHandler, MouseEventHandler } from '../../node_modules/react';
 import { ChopLogicButtonView, ChopLogicIconName } from '../enums';
+import { FocusEventHandler, MouseEventHandler } from '../../node_modules/react';
 import { ChopLogicInputProps } from './_common';
 export interface ChopLogicButtonProps extends Partial<ChopLogicInputProps> {
     onClick?: MouseEventHandler<HTMLButtonElement>;

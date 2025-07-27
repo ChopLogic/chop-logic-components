@@ -1,5 +1,5 @@
-import { default as React } from '../../../../../node_modules/react';
 import { ChopLogicSelectValue } from '../../../../models';
+import { default as React } from '../../../../../node_modules/react';
 type Props = {
     options: ChopLogicSelectValue[];
     opened: boolean;

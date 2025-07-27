@@ -1,4 +1,4 @@
-import { default as React } from '../../../../node_modules/react';
 import { ChopLogicNumericInputProps } from '../../../models';
-declare const ChopLogicNumericInput: React.FC<ChopLogicNumericInputProps>;
+import { FC } from '../../../../node_modules/react';
+declare const ChopLogicNumericInput: FC<ChopLogicNumericInputProps>;
 export default ChopLogicNumericInput;

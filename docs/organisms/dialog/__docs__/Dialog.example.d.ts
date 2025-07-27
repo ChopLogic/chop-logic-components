@@ -1,4 +1,3 @@
-import { default as React } from '../../../../node_modules/react';
 import { ChopLogicDialogProps } from '../../../models';
-declare const Example: React.FC<ChopLogicDialogProps>;
-export default Example;
+import { default as React } from '../../../../node_modules/react';
+export declare const ChopLogicDialogExample: React.FC<ChopLogicDialogProps>;

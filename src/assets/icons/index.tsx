@@ -1,3 +1,7 @@
+import { ChopLogicIconName } from '@enums';
+import { ChopLogicSVGElementProps } from '@models';
+import { ReactElement } from 'react';
+
 import ArrowDownIcon from './svg/ArrowDownIcon';
 import ArrowUpIcon from './svg/ArrowUpIcon';
 import BackIcon from './svg/BackIcon';
@@ -29,9 +33,6 @@ import SaveIcon from './svg/SaveIcon';
 import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
-import { ChopLogicSVGElementProps } from '@models';
-import { ReactElement } from 'react';
-import { ChopLogicIconName } from '@enums';
 
 type ChopLogicIcons = { [key in ChopLogicIconName]: ({ title, ...rest }: ChopLogicSVGElementProps) => ReactElement };
 

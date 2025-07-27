@@ -1,49 +1,55 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as MultiSelect from './MultiSelect.stories';
 
 <Meta of={MultiSelect} title='ChopLogicMultiSelect' />
 
-# MultiSelect
+# ChopLogicMultiSelect
 
-A styled and accessible multiselect component that can be used both inside a form and as standalone controller.
 
-### Usage
+The `ChopLogicMultiSelect` component provides an accessible, customizable multi-selection dropdown with keyboard navigation, search filtering, and flexible options management.
+
+## Usage
 
 ```tsx
-import { ChopLogicMultiSelect } from 'chop-logic-components';
-import { LANGUAGES } from 'languages';
+import ChopLogicMultiSelect from 'chop-logic-components';
 
-const Example = () => {
+const PreferencesForm = () => {
+  const [selected, setSelected] = React.useState([]);
+  const options = [
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+    { value: 'angular', label: 'Angular' }
+  ];
+
   return (
     <ChopLogicMultiSelect
-      id='example-multiselect'
-      name='languages'
-      label='Select Languages'
-      options={LANGUAGES}
-      placeholder='Select languages'
-      required={true}
-      disabled={false}
+      name="frameworks"
+      label="Select preferred frameworks"
+      options={options}
+      onChange={(values) => setSelected(values)}
     />
   );
 };
-
-export default Example;
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop             | Type                                        | Description                                                                                                                                                        | Default          | Required |
-|------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------|
-| **name**         | `string`                                    | A string representing the name attribute of the component, used for form submissions.                                                                              | `undefined`      | Yes      |
-| **label**        | `string`                                    | A string that represents the label for the component.                                                                                                              | `undefined`      | Yes      |
-| **options**      | `ChopLogicSelectValue[]`                    | An array of objects (each object should contain two required fields - `id: string` and `label: string`) representing the options available in the Select dropdown. | `[]`             | Yes      |
-| **onChange**     | `(values?: ChopLogicSelectValue[]) => void` | A function that is called when an option is selected. It can be used to handle the selection event.                                                                | `undefined`      | No       |
-| **placeholder**  | `string`                                    | The placeholder property of the input interface represents a hint to the user of what can be entered in the control.                                               | `'Not selected'` | No       |
-| **defaultValue** | `string` or `number` or `readonly string[]` | The select option object or an id that will be supplied as the default value of the input.                                                                         | `undefined`      | No       |
-| **disabled**     | `boolean`                                   | When disabled, the input cannot be interacted with.                                                                                                                | `false`          | No       |
-| **required**     | `boolean`                                   | When required, the input must be filled before form submission.                                                                                                    | `false`          | No       |
-| **id**           | `string`                                    | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                                                     | `undefined`      | No       |
-| **className**    | `string`                                    | The class global attribute is a list of the classes of the element.                                                                                                | `undefined`      | No       |
-| **style**        | `CSSProperties`                             | The style global attribute contains CSS styling declarations to be applied to the element.                                                                         | `undefined`      | No       |
-| **tabIndex**     | `number`                                    | The tabindex global attribute allows developers to make HTML elements focusable.                                                                                   | `undefined`      | No       |
-| **title**        | `string`                                    | The title global attribute contains text representing advisory information related to the element it belongs to.                                                   | `undefined`      | No       |
+_Keyboard Navigation_:
+ - Tab to focus the control
+ - Arrow keys to navigate options
+ - Enter to select/deselect
+ - Escape to close dropdown
+
+_Screen Readers_:
+ - Proper ARIA attributes for selected state
+ - Announcement of options count
+ - Clear status messages
+
+_Focus Management_:
+- Trap focus within dropdown when open
+- Return focus to trigger when closed
+
+
+## Props
+
+<Controls />

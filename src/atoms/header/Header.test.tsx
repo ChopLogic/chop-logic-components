@@ -1,7 +1,8 @@
+import { ChopLogicIconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
 import Header from './Header';
-import { ChopLogicIconName } from '@enums';
 
 vi.mock('@atoms', () => ({
   ChopLogicIcon: () => <span data-testid='choplogic-icon'>Mock icon</span>,

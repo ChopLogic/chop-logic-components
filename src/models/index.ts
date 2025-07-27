@@ -8,13 +8,13 @@ export type {
   ChopLogicTextInputValidator,
   Dimensions,
 } from './_common';
-export type { ChopLogicHeaderProps } from './header';
 export type { ChopLogicAlertProps } from './alert';
 export type { ChopLogicButtonProps } from './button';
 export type { ChopLogicCheckboxProps } from './checkbox';
 export type { ChopLogicDialogProps } from './dialog';
 export type { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormProps, ChopLogicFormValidationState } from './form';
 export type { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicGridProps, RenderDataItemCallback } from './grid';
+export type { ChopLogicHeaderProps } from './header';
 export type { ChopLogicIconProps, ChopLogicSVGElementProps } from './icon';
 export type { ChopLogicLoaderProps } from './loader';
 export type { ChopLogicMenuItem, ChopLogicMenuProps } from './menu';

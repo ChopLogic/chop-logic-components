@@ -1,12 +1,13 @@
-import React from 'react';
-import { useElementIds } from '@hooks';
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
-import { ChopLogicCheckboxProps } from '@models';
-import { useChopLogicCheckboxController } from './Checkbox.controller.ts';
-import styles from './Checkbox.module.scss';
-import { getClassName } from '@utils';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { Label } from '@atoms';
+import { useElementIds } from '@hooks';
+import { ChopLogicCheckboxProps } from '@models';
+import { getClassName } from '@utils';
+import React from 'react';
+
+import { useChopLogicCheckboxController } from './Checkbox.controller';
+import styles from './Checkbox.module.scss';
 
 const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
   name,

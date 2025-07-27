@@ -1,7 +1,8 @@
-import React from 'react';
 import { ChopLogicGridColumn } from '@models';
-import styles from './GridColumnGroup.module.scss';
 import { getClassName } from '@utils';
+import React from 'react';
+
+import styles from './GridColumnGroup.module.scss';
 
 export const GridColumnGroup: React.FC<{ columns: ChopLogicGridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
   return (

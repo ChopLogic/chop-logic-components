@@ -1,5 +1,6 @@
 import { ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import ChopLogicIcon from '../Icon';
 
 const meta: Meta<typeof ChopLogicIcon> = {

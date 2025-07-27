@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { useRef } from 'react';
-import { useIsOverflow } from './use-is-overflow.ts';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+import { useIsOverflow } from './use-is-overflow.ts';
 
 function TestComponent({ dimension }: { dimension: 'width' | 'height' }) {
   const ref = useRef<HTMLDivElement | null>(null);

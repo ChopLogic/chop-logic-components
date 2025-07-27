@@ -1,5 +1,6 @@
-import React from 'react';
 import { ChopLogicTabItem } from '@models';
+import React from 'react';
+
 import styles from './TabContent.module.scss';
 
 export const TabContent: React.FC<{

@@ -5,21 +5,74 @@ import * as ChopLogicMenuStories from './Menu.stories';
 
 # ChopLogicMenu
 
-The component allows you to render a fully styled and accessible navigation menu in two modes - horizontal or vertical. Menu items can be described as a JavaScript array, and each item can contain nested items that will be rendered recursively. Nesting levels are not limited.
+
+The `ChopLogicMenu` component provides an accessible navigation menu with support for both vertical and horizontal orientations, nested items, and flexible interaction modes.
 
 ## Usage
 
 ```tsx
-import React from 'react';
-import { ChopLogicMenu, ChopLogicOrientationMode } from 'chop-logic-components';
-import { MENU_ITEMS } from 'constants';
+import ChopLogicMenu, { ChopLogicOrientationMode } from 'chop-logic-components';
 
-const ExampleComponent = () => (
-  <ChopLogicMenu items={MENU_ITEMS} mode={ChopLogicOrientationMode.Horizontal} openedOn='click' />
-);
+const AppMenu = () => {
+  const menuItems = [
+    {
+      id: 'home',
+      label: 'Home',
+      link: '/home',
+      icon: ChopLogicIconName.Home
+    },
+    {
+      id: 'products',
+      label: 'Products',
+      nestedItems: [
+        { id: 'product-1', label: 'Product 1', link: '/products/1' }
+      ]
+    }
+  ];
 
-export default ExampleComponent;
+  return (
+    <ChopLogicMenu
+      items={menuItems}
+      mode={ChopLogicOrientationMode.Horizontal}
+      openedOn="hover"
+    />
+  );
+};
 ```
+
+### Accessibility Notes
+
+_Keyboard Navigation_:
+- Tab to navigate through menu items
+- Enter/Space to activate items
+- Arrow keys to navigate nested menus
+- Escape to close submenus
+
+_Screen Readers_:
+- Announces menu structure
+- Indicates expanded/collapsed state
+- Describes nested relationships
+
+_Focus Management_:
+- Maintains focus within open submenus
+- Returns focus to parent item when closed
+- Visible focus indicators
+
+### Best Practices
+
+_Organization_:
+- Limit nesting depth (recommend max 2-3 levels)
+- Group related items together
+- Sort items logically
+
+_Interaction_:
+- Use hover activation for quick access
+- Use click activation for complex menus
+- Provide visual feedback for active items
+
+_Performance_:
+- Memoize menu items when possible
+- Consider dynamic loading for large menus
 
 ## Props
 

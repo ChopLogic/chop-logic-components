@@ -1,12 +1,13 @@
-import React from 'react';
+import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
-import styles from './Alert.module.scss';
-import { getClassName } from '@utils';
-import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
 import { ChopLogicButton } from '@molecules';
+import { getClassName } from '@utils';
+import React from 'react';
+
 import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
+import styles from './Alert.module.scss';
 
 const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
   isOpened,

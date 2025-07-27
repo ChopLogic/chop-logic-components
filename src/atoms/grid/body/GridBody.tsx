@@ -1,7 +1,8 @@
-import React from 'react';
+import { GridRow } from '@atoms/grid/grid-row/GridRow.tsx';
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
 import { getGridRowValues } from '@organisms/grid/Grid.helpers.ts';
-import { GridRow } from '@atoms/grid/grid-row/GridRow.tsx';
+import React from 'react';
+
 import styles from './GridBody.module.scss';
 
 type Props = {

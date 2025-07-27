@@ -1,9 +1,10 @@
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import ChopLogicButton from '../Button';
 import { ChopLogicButtonExample } from './Button.example';
 
-const meta: Meta<typeof ChopLogicButtonExample> = {
+const meta: Meta<typeof ChopLogicButton> = {
   argTypes: {
     text: { control: 'text' },
     disabled: { control: 'boolean' },
@@ -33,7 +34,7 @@ const meta: Meta<typeof ChopLogicButtonExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicButtonExample>;
+type Story = StoryObj<typeof ChopLogicButton>;
 
 export const PrimaryButton: Story = {
   args: {

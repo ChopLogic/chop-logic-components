@@ -1,7 +1,8 @@
-import React from 'react';
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
 import { ChopLogicMultiSelectValue } from '@models';
+import React from 'react';
+
 import styles from '../select/combobox/Combobox.module.scss';
 
 type Props = {

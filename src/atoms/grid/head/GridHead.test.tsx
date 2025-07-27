@@ -1,6 +1,7 @@
 import { ChopLogicGridColumn } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
 import { GridHead } from './GridHead';
 
 describe('GridHead', () => {

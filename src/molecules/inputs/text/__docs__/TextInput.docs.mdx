@@ -1,55 +1,67 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as TextInput from './TextInput.stories';
 
 <Meta of={TextInput} title='ChopLogicTextInput' />
 
 # ChopLogicTextInput
 
-Styled component for entering text, email or password. Supports validation with custom error message and all standard HTML input attributes.
+The `ChopLogicTextInput` component provides a flexible, accessible text input field with validation, clear button, and password visibility toggle.
 
-### Usage
+## Usage
 
 ```tsx
-import { ChopLogicTextInput } from 'chop-logic-components';
+import ChopLogicTextInput from 'chop-logic-components';
 
-const Example = () => {
+const LoginForm = () => {
+  const [email, setEmail] = React.useState('');
+
   return (
     <ChopLogicTextInput
-      label='Enter the formula:'
-      name='formula'
-      errorMessage='Only latin letters are allowed'
-      validator={{ regexp: '^[A-Za-z ]+$' }}
+      name="email"
+      label="Email address"
+      type="email"
+      placeholder="Enter your email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
       required
     />
   );
 };
-
-export default Example;
 ```
 
-### Props
+### Accessibility Notes
 
-| Prop             | Type                                                        | Description                                                                                                                              | Default          | Required |
-|------------------|-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------|
-| **name**         | `string`                                                    | A string representing the name attribute of the component, used for form submissions.                                                    | `undefined`      | Yes      |
-| **label**        | `string`                                                    | A string that represents the label for the component.                                                                                    | `undefined`      | Yes      |
-| **type**         | `'text'` or `'email'` or `'password'`                       | The input type attribute.                                                                                                                | `'text'`         | No       |
-| **placeholder**  | `string`                                                    | The placeholder property of the input interface represents a hint to the user of what can be entered in the control.                     | `'Type here...'` | No       |
-| **defaultValue** | `string`                                                    | The string that will be supplied as the default value of the input.                                                                      | `undefined`      | No       |
-| **clearable**    | `boolean`                                                   | A boolean indicating whether to display the input clear button.                                                                          | `false`          | No       |
-| **validator**    | `ChopLogicRegExpWithFlags` or `ChopLogicTextInputValidator` | A function or regular expression that allows you to validate an input value and display an error message if validation fails.            | `undefined`      | No       |
-| **errorMessage** | `string`                                                    | An optional string that displays when the input value is incorrect.                                                                      | `undefined`      | No       |
-| **onChange**     | `ChangeEventHandler`                                        | A function that is called when a user type something in the input. It receives a ChangeEventHandler for handling the event on the input. | `undefined`      | No       |
-| **onFocus**      | `FocusEventHandler`                                         | A function that is called when focus is set on the input.                                                                                | `undefined`      | No       |
-| **onBlur**       | `FocusEventHandler`                                         | A function that is called when focus leaves the input.                                                                                   | `undefined`      | No       |
-| **onClear**      | `() => void`                                                | A function that is called when the clear input button is clicked.                                                                        | `undefined`      | No       |
-| **maxLength**    | `number`                                                    | Maximum number of characters in the input.                                                                                               | `undefined`      | No       |
-| **autoComplete** | `string`                                                    | The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).                            | `"off"`          | No       |
-| **disabled**     | `boolean`                                                   | When disabled, the input cannot be interacted with.                                                                                      | `false`          | No       |
-| **required**     | `boolean`                                                   | When required, the input must be filled before form submission.                                                                          | `false`          | No       |
-| **readOnly**     | `boolean`                                                   | When readonly, the input cannot be changed.                                                                                              | `false`          | No       |
-| **id**           | `string`                                                    | The id global attribute defines an identifier (ID) which must be unique in the whole document.                                           | `undefined`      | No       |
-| **className**    | `string`                                                    | The class global attribute is a list of the classes of the element.                                                                      | `undefined`      | No       |
-| **style**        | `CSSProperties`                                             | The style global attribute contains CSS styling declarations to be applied to the element.                                               | `undefined`      | No       |
-| **tabIndex**     | `number`                                                    | The tabindex global attribute allows developers to make HTML elements focusable.                                                         | `undefined`      | No       |
-| **title**        | `string`                                                    | The title global attribute contains text representing advisory information related to the element it belongs to.                         | `undefined`      | No       |
+_Keyboard Navigation_:
+  - Tab to focus the input
+  - Clear button accessible via keyboard
+  - Password toggle accessible via keyboard
+
+_Screen Readers_:
+  - Announces label and required state
+  - Announces validation errors
+  - Describes clear button action
+
+_Focus Management_:
+  - Clear focus states for all interactive elements
+  - Maintains focus during interactions
+
+### Best Practices
+
+_Labeling_:
+  - Always provide a meaningful label
+  - Use placeholder text sparingly (not as a label replacement)
+  - Ensure proper label-input association
+
+_Validation_:
+  - Provide clear error messages
+  - Validate on blur as well as submit
+  - Consider real-time validation for long forms
+
+_Mobile Considerations_:
+  - Use appropriate input types for virtual keyboards
+  - Ensure touch targets are large enough
+  - Test with screen magnifiers
+
+## Props
+
+<Controls />

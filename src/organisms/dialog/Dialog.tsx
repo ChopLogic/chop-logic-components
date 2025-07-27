@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
-import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
-import { ChopLogicDialogProps } from '@models';
-
-import styles from './Dialog.module.scss';
-import { getClassName } from '@utils';
 import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
+import { ChopLogicDialogProps } from '@models';
 import { ChopLogicButton } from '@molecules';
+import { getClassName } from '@utils';
+import React, { useRef } from 'react';
+
+import styles from './Dialog.module.scss';
 
 const ChopLogicDialog: React.FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, icon, ...rest }) => {
   const isMounted = useIsMounted(isOpened);

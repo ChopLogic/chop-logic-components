@@ -1,9 +1,10 @@
-import React from 'react';
+import { MenuItem } from '@atoms';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuProps } from '@models';
-import styles from './Menu.module.scss';
 import { getClassName } from '@utils';
-import { MenuItem } from '@atoms';
+import React from 'react';
+
+import styles from './Menu.module.scss';
 
 const ChopLogicMenu: React.FC<ChopLogicMenuProps> = ({
   items = [],

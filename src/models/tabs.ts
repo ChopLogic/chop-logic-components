@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
+import { ReactElement } from 'react';
 
 import { ChopLogicComponentProps } from './_common';
 

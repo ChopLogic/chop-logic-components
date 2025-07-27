@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicTextInputProps } from '@models';
+import React from 'react';
 
 import TextInput from '../TextInput.tsx';
 

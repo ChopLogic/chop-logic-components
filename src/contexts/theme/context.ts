@@ -1,5 +1,5 @@
-import { createContext } from 'react';
 import { ChopLogicThemeMode } from '@enums';
+import { createContext } from 'react';
 
 export interface ChopLogicThemeContextProps {
   mode?: ChopLogicThemeMode;

@@ -1,7 +1,7 @@
-import React from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuProps } from '@models';
 import { ChopLogicMenu } from '@organisms';
+import React from 'react';
 
 const MenuExample: React.FC<ChopLogicMenuProps> = ({
   mode = ChopLogicOrientationMode.Vertical,

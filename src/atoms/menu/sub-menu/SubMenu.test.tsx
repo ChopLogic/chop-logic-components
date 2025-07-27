@@ -1,6 +1,7 @@
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
 import { SubMenu } from './SubMenu';
 
 vi.mock('@hooks', () => ({

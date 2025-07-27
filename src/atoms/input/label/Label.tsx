@@ -1,4 +1,5 @@
 import { FC, ReactElement } from 'react';
+
 import styles from './Label.module.scss';
 
 type LabelProps = {

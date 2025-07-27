@@ -1,5 +1,6 @@
 import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import { AlertExample } from './Alert.example';
 
 const meta: Meta<typeof AlertExample> = {

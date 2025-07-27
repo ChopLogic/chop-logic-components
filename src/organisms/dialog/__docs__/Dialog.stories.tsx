@@ -1,19 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import DialogExample from './Dialog.example';
+import ChopLogicDialog from '../Dialog';
+import { ChopLogicDialogExample } from './Dialog.example';
 
-const meta: Meta<typeof DialogExample> = {
-  component: DialogExample,
+const meta: Meta<typeof ChopLogicDialog> = {
+  component: ChopLogicDialogExample,
   title: 'Organisms/Dialog',
 };
 
 export default meta;
-type Story = StoryObj<typeof DialogExample>;
+type Story = StoryObj<typeof ChopLogicDialog>;
 
-export const Example: Story = {
-  args: {
-    isOpened: false,
-    onClose: () => console.log('Dialog closed'),
-    title: 'Example Dialog',
-  },
-};
+export const Example: Story = {};

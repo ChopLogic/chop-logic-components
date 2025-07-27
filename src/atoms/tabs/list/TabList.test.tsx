@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
+
 import { TabList } from './TabList';
 
 vi.mock('@utils', () => ({

@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import ChopLogicHeader from '../Header';
 import { ChopLogicIconName } from '@enums';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import ChopLogicHeader from '../Header';
 
 const meta: Meta<typeof ChopLogicHeader> = {
   title: 'Atoms/Header',

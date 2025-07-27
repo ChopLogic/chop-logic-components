@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { Dimensions } from '@models';
+import { useEffect, useState } from 'react';
 
 function getWindowDimensions(): Dimensions {
   const { innerWidth: width, innerHeight: height } = window;

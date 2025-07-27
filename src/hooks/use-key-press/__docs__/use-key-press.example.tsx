@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import { useKeyPress } from '@hooks';
 import styles from '@styles/storybook/Container.module.scss';
+import { useRef } from 'react';
 
 export const UseKeyPressExample = () => {
   const ref = useRef(null);

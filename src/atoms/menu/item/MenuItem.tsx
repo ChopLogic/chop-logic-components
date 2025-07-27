@@ -1,10 +1,11 @@
-import React, { PropsWithChildren, useState } from 'react';
+import { MenuLeaf } from '@atoms/menu/leaf/MenuLeaf';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
-import styles from './MenuItem.module.scss';
-import { MenuLeaf } from '@atoms/menu/leaf/MenuLeaf';
-import { SubMenu } from '../sub-menu/SubMenu';
 import { getClassName } from '@utils';
+import React, { PropsWithChildren, useState } from 'react';
+
+import { SubMenu } from '../sub-menu/SubMenu';
+import styles from './MenuItem.module.scss';
 
 type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;

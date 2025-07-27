@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicNumericInputProps } from '@models';
+import React from 'react';
 
 import NumericInput from '../NumericInput';
 

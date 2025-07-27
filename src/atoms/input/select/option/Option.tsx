@@ -1,8 +1,9 @@
-import React, { KeyboardEvent } from 'react';
 import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
 import { ChopLogicSelectValue } from '@models';
-import styles from './Option.module.scss';
 import { getClassName } from '@utils';
+import React, { KeyboardEvent } from 'react';
+
+import styles from './Option.module.scss';
 
 type Props = {
   value: ChopLogicSelectValue;

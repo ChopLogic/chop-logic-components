@@ -1,7 +1,7 @@
-import React, { ChangeEventHandler, useCallback, useContext, useState } from 'react';
 import { ChopLogicFormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicNumericInputValidator } from '@models';
+import React, { ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers.ts';
 

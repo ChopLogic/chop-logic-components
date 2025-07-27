@@ -1,8 +1,9 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import { ChopLogicIconName } from '@enums';
-import styles from './InnerButton.module.scss';
 import { ChopLogicIcon } from '@atoms';
+import { ChopLogicIconName } from '@enums';
 import { getClassName } from '@utils';
+import React, { ButtonHTMLAttributes } from 'react';
+
+import styles from './InnerButton.module.scss';
 
 type Props = {
   label?: string;

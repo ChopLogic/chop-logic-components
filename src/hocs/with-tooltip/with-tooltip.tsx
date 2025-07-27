@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicTooltip } from '@atoms';
+import React from 'react';
 
 type WithTooltipProps = {
   tooltip?: string;

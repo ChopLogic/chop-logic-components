@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import ChopLogicForm from '../Form.tsx';
 import { FormExample } from './Form.example.tsx';
 
-const meta: Meta<typeof FormExample> = {
+const meta: Meta<typeof ChopLogicForm> = {
   args: {
     columns: 2,
     hasReset: true,
@@ -19,6 +20,6 @@ const meta: Meta<typeof FormExample> = {
 
 export default meta;
 
-type Story = StoryObj<typeof FormExample>;
+type Story = StoryObj<typeof ChopLogicForm>;
 
 export const Example: Story = {};

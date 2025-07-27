@@ -1,6 +1,7 @@
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import { TabsExample } from './Tabs.example';
 
 const tabs: ChopLogicTabItem[] = [

@@ -1,8 +1,9 @@
-import React from 'react';
 import { ChopLogicSelectValue } from '@models';
 import { getClassName, handleDropdownListKeyPress, moveFocusOnElementById } from '@utils';
-import styles from './Dropdown.module.scss';
+import React from 'react';
+
 import { SelectOption } from '../option/Option';
+import styles from './Dropdown.module.scss';
 
 type Props = {
   options: ChopLogicSelectValue[];

@@ -1,8 +1,8 @@
 import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from '@molecules';
+import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { ChopLogicForm } from '@organisms';
 
 describe('ChopLogicForm', () => {
   const testInitialValues = {

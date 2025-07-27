@@ -1,8 +1,9 @@
-import { PropsWithChildren } from 'react';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
+
 import { MenuItem } from './MenuItem';
 
 vi.mock('../sub-menu/SubMenu', () => ({

@@ -1,6 +1,7 @@
-import React from 'react';
 import { ChopLogicMultiSelectValue } from '@models';
 import { getClassName, handleDropdownListKeyPress } from '@utils';
+import React from 'react';
+
 import styles from '../select/dropdown/Dropdown.module.scss';
 import { MultiSelectOption } from './Option';
 

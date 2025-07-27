@@ -1,6 +1,7 @@
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
-import styles from './SecondaryButton.module.scss';
 import { getClassName } from '@utils';
+import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+
+import styles from './SecondaryButton.module.scss';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren;
 

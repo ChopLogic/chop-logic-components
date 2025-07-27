@@ -1,7 +1,7 @@
-import React from 'react';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 import { ChopLogicButton } from '@molecules';
+import React from 'react';
 
 import ChopLogicTooltip from '../Tooltip';
 

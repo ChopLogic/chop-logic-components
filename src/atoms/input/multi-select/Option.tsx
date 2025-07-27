@@ -1,8 +1,9 @@
-import React, { KeyboardEvent } from 'react';
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { ChopLogicMultiSelectValue } from '@models';
 import { getClassName } from '@utils';
+import React, { KeyboardEvent } from 'react';
+
 import styles from '../select/option/Option.module.scss';
 
 type Props = {

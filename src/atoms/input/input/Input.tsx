@@ -1,4 +1,5 @@
 import { FC, InputHTMLAttributes, PropsWithChildren } from 'react';
+
 import styles from './Input.module.scss';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & PropsWithChildren;

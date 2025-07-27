@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChopLogicFormData, ChopLogicFormInputParams } from '@models';
+import React from 'react';
 
 export interface ChopLogicFormContextProps {
   onChangeFormInput?: (params: ChopLogicFormInputParams) => void;

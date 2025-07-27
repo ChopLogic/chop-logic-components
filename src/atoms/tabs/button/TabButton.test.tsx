@@ -1,6 +1,7 @@
-import { describe, expect, it, vi } from 'vitest';
 import { ChopLogicOrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
+
 import { TabButton } from './TabButton';
 
 describe('TabButton', () => {

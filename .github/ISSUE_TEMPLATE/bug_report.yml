@@ -2,9 +2,11 @@ name: Bug Report
 
 description: File a bug report.
 
-title: "[Bug]: "
+title: ""
 
-labels: [ "Bug", "Components" ]
+labels: [ "Components" ]
+
+projects: ["ChopLogic/1"]
 
 body:
   - type: markdown
@@ -55,3 +57,4 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
+

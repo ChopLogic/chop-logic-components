@@ -2,9 +2,11 @@ name: Feature Request
 
 description: Suggest an idea for this project.
 
-title: "[Feature]: "
+title: ""
 
-labels: [ "Feature", "Components" ]
+labels: [ "Components" ]
+
+projects: ["ChopLogic/1"]
 
 body:
   - type: markdown

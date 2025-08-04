@@ -2,9 +2,9 @@
 
 ![Chop Logic](public/logo.jpeg)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml)
-[![codecov](https://codecov.io/github/SavouryGin/chop-logic-components/graph/badge.svg?token=U5WF25WZTV)](https://codecov.io/github/SavouryGin/chop-logic-components)
+[![codecov](https://codecov.io/gh/ChopLogic/chop-logic-components/graph/badge.svg?token=0M1IKB16FN)](https://codecov.io/gh/ChopLogic/chop-logic-components)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 

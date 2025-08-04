@@ -157,7 +157,7 @@ Write tests for new components and features to maintain quality and prevent regr
 
 ## License
 
-By contributing to Chop Logic, you agree that your contributions will be licensed under the [LGPL-3.0](LICENSE) license.
+By contributing to Chop Logic, you agree that your contributions will be licensed under the [MIT](LICENSE) license.
 
 ---
 

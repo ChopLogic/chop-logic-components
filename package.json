@@ -2,7 +2,7 @@
   "name": "chop-logic-components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
+    "url": "git+https://github.com/ChopLogic/chop-logic-components.git"
   },
   "version": "2.5.0",
   "description": "React UI components library for Chop Logic project",
@@ -44,11 +44,11 @@
     "styled-components"
   ],
   "author": "Dmitrii Suroviagin",
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SavouryGin/chop-logic-components/issues"
+    "url": "https://github.com/ChopLogic/chop-logic-components/issues"
   },
-  "homepage": "https://savourygin.github.io/chop-logic-components",
+  "homepage": "https://choplogic.github.io/chop-logic-components",
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

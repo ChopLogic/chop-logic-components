@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function ForwardIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function ForwardIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

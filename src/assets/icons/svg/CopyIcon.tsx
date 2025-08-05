@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function CopyIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function CopyIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg
       fill='none'

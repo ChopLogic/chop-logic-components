@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function CutIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function CutIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg
       fill='none'

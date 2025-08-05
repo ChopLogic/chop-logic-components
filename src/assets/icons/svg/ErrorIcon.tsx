@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function ErrorIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function ErrorIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg viewBox='0 0 24 24' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

@@ -1,6 +1,6 @@
-@use '/src/styles/animations/index';
-@use '/src/styles/variables/index';
-@use '/src/styles/mixins/index';
+@use '/src/styles/animations';
+@use '/src/styles/variables';
+@use '/src/styles/mixins';
 
 .subMenuBar {
   @include mixins.menuBar();

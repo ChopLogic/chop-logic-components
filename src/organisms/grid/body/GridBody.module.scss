@@ -1,4 +1,4 @@
-@use '/src/styles/typography/index';
+@use '/src/styles/typography';
 
 .body {
   @include typography.font-style(core, base);

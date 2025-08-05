@@ -3,8 +3,10 @@
 ![Chop Logic](public/logo.jpeg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Pages](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/SavouryGin/chop-logic-components/actions/workflows/github-pages.yml)
+[![GitHub Pages](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml)
 [![codecov](https://codecov.io/gh/ChopLogic/chop-logic-components/graph/badge.svg?token=0M1IKB16FN)](https://codecov.io/gh/ChopLogic/chop-logic-components)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ChopLogic_chop-logic-components&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ChopLogic_chop-logic-components)
+[![NPM](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 

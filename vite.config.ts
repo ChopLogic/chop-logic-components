@@ -47,6 +47,7 @@ export default defineConfig({
     coverage: {
       exclude: [
         '**/docs/**',
+        'scripts/**',
         '**/__docs__/**',
         '**/models/**',
         '**.config.js',

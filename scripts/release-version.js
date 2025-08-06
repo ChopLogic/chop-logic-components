@@ -1,8 +1,7 @@
-#!/usr/bin/env node
-
-import execSync from 'child_process';
-import fs from 'fs';
+import { readFileSync } from 'fs';
+import { execSync } from 'node:child_process';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const bump = process.argv[2];
 
@@ -16,7 +15,8 @@ try {
   console.log(`🔧 Bumping version: ${bump}...`);
   execSync(`npm version ${bump} --no-git-tag-version`, { stdio: 'inherit' });
 
-  const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const pkg = JSON.parse(readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
   const newVersion = pkg.version;
   const tag = `v${newVersion}`;
 
@@ -24,8 +24,8 @@ try {
   execSync(`git add package.json package-lock.json`, { stdio: 'inherit' });
   execSync(`git commit -m "chore: release ${tag}"`, { stdio: 'inherit' });
 
-  console.log(`🏷️ Creating tag ${tag}...`);
-  execSync(`git tag ${tag}`, { stdio: 'inherit' });
+  console.log(`🏷️ Creating annotated tag ${tag}...`);
+  execSync(`git tag -a ${tag} -m "Release ${tag}"`, { stdio: 'inherit' });
 
   console.log(`🚀 Pushing to origin...`);
   execSync(`git push origin main --follow-tags`, { stdio: 'inherit' });

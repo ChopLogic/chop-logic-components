@@ -28,7 +28,7 @@ these general security practices:
 
 Security updates and patches will be announced via:
 
-- Our GitHub repository's [Security Advisories](https://github.com/SavouryGin/chop-logic-components/security)
+- Our GitHub repository's [Security Advisories](https://github.com/ChopLogic/chop-logic-components/security)
 
 We recommend all users subscribe to notifications to stay informed about important updates.
 

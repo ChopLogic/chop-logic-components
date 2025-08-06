@@ -1,57 +1,27 @@
-name: NPM
+name: npm publish
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  versioning:
-    if: github.event.pull_request.merged == true && github.base_ref == 'main'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Ensure full git history for versioning
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Determine version bump
-        run: |
-          PR_BRANCH="${{ github.head_ref }}"
-          if [[ "$PR_BRANCH" == feat/* ]]; then
-            npm version minor --no-git-tag-version
-          elif [[ "$PR_BRANCH" == fix/* ]]; then
-            npm version patch --no-git-tag-version
-          elif [[ "$PR_BRANCH" == release/* ]]; then
-            npm version major --no-git-tag-version
-          fi
-
-      - name: Commit version bump
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add package.json package-lock.json
-          git commit -m "chore: bump package version [ci skip]"
-          git push origin main
-
   publish:
-    needs: versioning
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Ensure full git history
 
-      - name: Pull latest changes
-        run: git pull origin main
+      - name: Ensure tag matches package.json version
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          PKG_VERSION=$(node -p "require('./package.json').version")
+
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "❌ Tag version (v$TAG_VERSION) does not match package.json version ($PKG_VERSION)"
+            exit 1
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -60,9 +30,18 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Publish to npm
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test:ci
+      
+      - name: Build
+        run: npm run build
+
+      - name: Publish
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

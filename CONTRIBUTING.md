@@ -26,7 +26,7 @@ Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming an
 ### Reporting Issues
 
 If you encounter a bug, performance issue, or have a suggestion for improvement, please open an issue in
-our [GitHub issue tracker](https://github.com/SavouryGin/chop-logic-components/issues) with the following details:
+our [GitHub issue tracker](https://github.com/ChopLogic/chop-logic-components/issues) with the following details:
 
 - A clear and descriptive title.
 - Steps to reproduce the issue.
@@ -129,11 +129,11 @@ Allowed commit types:
 
 ## Branch Names
 
-Our workflow automates npm versioning based on the branch name. Please use the following branch name conventions:
+Please use the following branch name conventions:
 
-- `feat/*` – Increments **minor** version (e.g., `feat/new-component` → `1.x.0`)
-- `fix/*` – Increments **patch** version (e.g., `fix/button-bug` → `1.0.x`)
-- `release/*` – Increments **major** version (e.g., `release/v2.0` → `2.0.0`)
+- `feat/*` – For features and updates
+- `fix/*` – For fixes and small tasks
+- `release/*` – For major releases
 
 ## Coding Guidelines
 

@@ -2,7 +2,7 @@
   "name": "chop-logic-components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SavouryGin/chop-logic-components.git"
+    "url": "git+https://github.com/ChopLogic/chop-logic-components.git"
   },
   "version": "2.5.0",
   "description": "React UI components library for Chop Logic project",
@@ -15,16 +15,17 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
+    "build": "tsc && vite build",
     "build:storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix --quiet",
     "typecheck": "tsc --pretty --noEmit",
-    "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release:version": "node scripts/release-version.js"
   },
   "lint-staged": {
     "*.(ts|tsx)": [
@@ -44,11 +45,11 @@
     "styled-components"
   ],
   "author": "Dmitrii Suroviagin",
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SavouryGin/chop-logic-components/issues"
+    "url": "https://github.com/ChopLogic/chop-logic-components/issues"
   },
-  "homepage": "https://savourygin.github.io/chop-logic-components",
+  "homepage": "https://choplogic.github.io/chop-logic-components",
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

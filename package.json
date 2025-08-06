@@ -24,7 +24,8 @@
     "typecheck": "tsc --pretty --noEmit",
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release:version": "node scripts/release-version.js"
   },
   "lint-staged": {
     "*.(ts|tsx)": [

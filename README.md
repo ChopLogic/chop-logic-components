@@ -34,100 +34,22 @@ npm install chop-logic-components
 yarn add chop-logic-components
 ```
 
-## ⚙️ Available Scripts
+## 📜 Available NPM Scripts
 
-### `start`
-
-Starts a local instance of Storybook for developing UI components. The Storybook interface will be available
-at http://localhost:6006.
-
-```bash
-npm start
-```
-
-### `build`
-
-Compiles the TypeScript code into JavaScript using the TypeScript compiler (tsc) and then builds the project using Vite.
-
-```bash
-npm run build
-```
-
-### `build:storybook`
-
-Builds the static version of the Storybook for deployment, outputting the files to the storybook-static directory. The
---quiet flag suppresses the build logs.
-
-```bash
-npm run build:storybook
-```
-
-### `prepare`
-
-Runs the build script and then installs Husky hooks for managing Git hooks in the project.
-
-```bash
-npm run prepare
-```
-
-### `format`
-
-Runs [Prettier](https://prettier.io/) to automatically format TypeScript files (`.ts` and `.tsx`) in the project. This
-script will write changes directly to the files.
-
-```bash
-npm run format
-```
-
-### `lint`
-
-Runs ESLint to analyze the code for potential errors and enforce coding standards.
-
-```bash
-npm run lint
-```
-
-### `lint:fix`
-
-Runs ESLint and automatically fixes issues where possible.
-
-```bash
-npm run lint:fix
-```
-
-### `typecheck`
-
-Run the TypeScript compiler (tsc) to perform type checking without generating output files. This script helps ensure
-that the code adheres to TypeScript's type safety.
-
-```bash
-npm run typecheck
-```
-
-### `test`
-
-Run unit tests using Vitest, a fast testing framework designed for Vite projects.
-
-```bash
-npm run test
-```
-
-### `test:ci`
-
-Run the tests in continuous integration (CI) mode with Vitest, providing a streamlined output suitable for automated
-environments.
-
-```bash
-npm run test:ci
-```
-
-### `coverage`
-
-Run unit tests using Vitest and generates a code coverage report using the v8 generator.
-
-```bash
-npm run coverage
-```
+| Script            | Description                                                                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start`           | Starts Storybook in development mode on port `6006` without opening a browser.                                                                        |
+| `build`           | Builds the TypeScript types and compiles the library using Vite.                                                                                      |
+| `build:storybook` | Builds a static version of Storybook into the `storybook-static` directory.                                                                           |
+| `prepare`         | Runs the production build and sets up Husky git hooks.                                                                                                |
+| `format`          | Formats all TypeScript files using Prettier with the TypeScript parser.                                                                               |
+| `lint`            | Runs ESLint on the project to report code style or quality issues.                                                                                    |
+| `lint:fix`        | Fixes auto-correctable ESLint issues and silences output.                                                                                             |
+| `typecheck`       | Performs a full type check without emitting output.                                                                                                   |
+| `test`            | Runs unit tests using Vitest in watch mode (interactive).                                                                                             |
+| `test:ci`         | Runs tests once in CI mode and allows empty test sets.                                                                                                |
+| `coverage`        | Runs tests and generates a coverage report using Vitest.                                                                                              |
+| `release:version` | Bumps the version (`patch`, `minor`, or `major`), commits the change, creates a Git tag, and pushes to `main`. Usage: `npm run release:version patch` |
 
 ## 🛠 Contributing
 

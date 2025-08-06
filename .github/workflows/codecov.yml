@@ -1,4 +1,4 @@
-name: Codecov
+name: codecov upload
 
 on:
   push

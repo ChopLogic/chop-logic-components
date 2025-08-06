@@ -15,13 +15,13 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
+    "build": "tsc && vite build",
     "build:storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix --quiet",
     "typecheck": "tsc --pretty --noEmit",
-    "build": "tsc && vite build",
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
     "coverage": "vitest run --coverage"

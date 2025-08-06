@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: pages deploy
 on:
   push:
     paths: [ 'stories/**', 'src/**' ] # Trigger the action only when files change in the folders defined here

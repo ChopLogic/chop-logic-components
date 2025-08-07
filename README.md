@@ -21,7 +21,7 @@ Components has the tools to make it easier.
 
 ## 🔗 Links
 
-- [Storybook Playground](https://savourygin.github.io/chop-logic-components)
+- [Storybook Playground](https://choplogic.github.io/chop-logic-components)
 - [NPM package](https://www.npmjs.com/package/chop-logic-components)
 
 ## 📦 Installation

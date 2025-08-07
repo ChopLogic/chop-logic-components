@@ -1,7 +1,7 @@
-import { readFileSync } from 'fs';
 import { execSync } from 'node:child_process';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const bump = process.argv[2];
 

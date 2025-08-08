@@ -1,6 +1,6 @@
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicDialogProps } from '@models';
-import { ChopLogicButton } from '@molecules';
 import { FC, useState } from 'react';
 
 import ChopLogicDialog from '../Dialog';

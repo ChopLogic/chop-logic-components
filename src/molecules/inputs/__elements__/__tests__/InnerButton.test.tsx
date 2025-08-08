@@ -1,9 +1,8 @@
+import { InnerButton } from '@atoms/button/inner-button/InnerButton.tsx';
 import { ChopLogicIconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
-import { InnerButton } from '../inner-button/InnerButton.tsx';
 
 describe('ButtonInner', () => {
   const testProps = {

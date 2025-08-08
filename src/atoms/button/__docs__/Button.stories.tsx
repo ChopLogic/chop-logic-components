@@ -1,8 +1,8 @@
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicButton from '../Button';
-import { ChopLogicButtonExample } from './Button.example';
+import ChopLogicButton from '../Button.tsx';
+import { ChopLogicButtonExample } from './Button.example.tsx';
 
 const meta: Meta<typeof ChopLogicButton> = {
   argTypes: {
@@ -30,7 +30,7 @@ const meta: Meta<typeof ChopLogicButton> = {
     extended: false,
   },
   component: ChopLogicButtonExample,
-  title: 'Molecules/Button',
+  title: 'Atoms/Button',
 };
 
 export default meta;

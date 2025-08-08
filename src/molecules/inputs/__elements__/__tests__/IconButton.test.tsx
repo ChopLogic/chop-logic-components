@@ -1,8 +1,7 @@
+import { IconButton } from '@atoms/button/icon-button/IconButton.tsx';
 import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
-import { IconButton } from '../icon-button/IconButton.tsx';
 
 describe('IconButton', () => {
   const testProps = {

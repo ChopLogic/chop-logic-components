@@ -1,8 +1,7 @@
+import { PrimaryButton } from '@atoms/button/primary-button/PrimaryButton.tsx';
 import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-
-import { PrimaryButton } from '../primary-button/PrimaryButton.tsx';
 
 describe('PrimaryButton', () => {
   const testProps = {

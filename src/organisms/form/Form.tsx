@@ -1,7 +1,7 @@
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicFormContext } from '@contexts';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { ChopLogicFormProps } from '@models';
-import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 

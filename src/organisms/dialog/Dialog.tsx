@@ -1,8 +1,8 @@
 import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
 import { ChopLogicDialogProps } from '@models';
-import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
 import { FC, useRef } from 'react';
 

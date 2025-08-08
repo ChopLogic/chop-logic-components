@@ -1,8 +1,8 @@
 import { ChopLogicLabel } from '@atoms';
+import ChopLogicButton from '@atoms/button/Button.tsx';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
-import ChopLogicButton from '@molecules/inputs/button/Button.tsx';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 

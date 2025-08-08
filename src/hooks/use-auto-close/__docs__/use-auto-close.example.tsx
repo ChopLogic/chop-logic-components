@@ -1,6 +1,6 @@
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { useAutoClose } from '@hooks';
-import { ChopLogicButton } from '@molecules';
 import { ChopLogicDialog } from '@organisms';
 import { FC, useState } from 'react';
 

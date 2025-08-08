@@ -1,8 +1,8 @@
 import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
-import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 

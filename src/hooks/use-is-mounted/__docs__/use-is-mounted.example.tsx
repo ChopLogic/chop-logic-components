@@ -1,5 +1,5 @@
+import { ChopLogicButton } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
-import { ChopLogicButton } from '@molecules';
 import styles from '@styles/storybook/Container.module.scss';
 import { useState } from 'react';
 

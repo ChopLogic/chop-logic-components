@@ -3,7 +3,6 @@ name: gh-pages deploy
 on:
   push:
     branches: [main]
-    paths: ['stories/**', 'src/**'] # Only trigger when relevant files change
 
 jobs:
   build-and-deploy:

@@ -1,1 +1,0 @@
-function s(e){return e.map(n=>{if(typeof n=="string")return n.trim();if(typeof n=="object"){const r=[];for(const t in n)n[t]&&r.push(t.trim());return r.join(" ")}}).filter(n=>!!n).join(" ")}export{s as g};

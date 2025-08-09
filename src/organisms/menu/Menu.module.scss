@@ -1,9 +1,0 @@
-@use '/src/styles/mixins';
-
-.menuBar {
-  @include mixins.menuBar();
-
-  &__vertical {
-    flex-direction: column;
-  }
-}

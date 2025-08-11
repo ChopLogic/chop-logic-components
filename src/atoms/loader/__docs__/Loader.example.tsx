@@ -1,4 +1,4 @@
-import { ChopLogicLoaderView } from '@enums';
+import { LoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
 import { FC } from 'react';
 
@@ -6,7 +6,7 @@ import ChopLogicLoader from '../Loader';
 import styles from './Loader.module.scss';
 
 export const LoaderExample: FC<ChopLogicLoaderProps> = () => {
-  const loaders = Object.values(ChopLogicLoaderView);
+  const loaders = Object.values(LoaderView);
 
   return (
     <div className={styles.grid}>

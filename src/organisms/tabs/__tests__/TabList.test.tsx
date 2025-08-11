@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { moveFocusOnElementById } from '@utils';
@@ -29,7 +29,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -46,7 +46,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Vertical}
+        mode={OrientationMode.Vertical}
       />,
     );
 
@@ -66,7 +66,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -86,7 +86,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -104,7 +104,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -124,7 +124,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -144,7 +144,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Vertical}
+        mode={OrientationMode.Vertical}
       />,
     );
 
@@ -164,7 +164,7 @@ describe('TabList', () => {
         onTabSelect={onTabSelect}
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
-        mode={ChopLogicOrientationMode.Vertical}
+        mode={OrientationMode.Vertical}
       />,
     );
 

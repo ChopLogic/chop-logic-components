@@ -1,5 +1,5 @@
 import { InnerButton } from '@atoms/button/inner-button/InnerButton.tsx';
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -8,7 +8,7 @@ describe('ButtonInner', () => {
   const testProps = {
     onClick: vi.fn(),
     label: 'Test input',
-    icon: ChopLogicIconName.Remove,
+    icon: IconName.Remove,
   };
 
   it('should have the accessible label', () => {

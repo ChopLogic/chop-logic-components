@@ -1,4 +1,4 @@
-export enum ChopLogicLoaderView {
+export enum LoaderView {
   Dots = 'dots',
   Brackets = 'brackets',
   Linear = 'linear',

@@ -1,7 +1,7 @@
 import { Meta, IconGallery, IconItem, Controls } from '@storybook/addon-docs/blocks';
 import * as ChopLogicIconStories from './Icon.stories';
 import { ChopLogicIcon } from '@atoms';
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 
 <Meta of={ChopLogicIconStories} title='Icon' />
 
@@ -12,7 +12,7 @@ The `ChopLogicIcon` component allows you to render one of the icons from the lis
 ## Iconography
 
 <IconGallery>
-  {Object.entries(ChopLogicIconName).map(([key, value]) => (
+  {Object.entries(IconName).map(([key, value]) => (
     <IconItem name={key} key={key}>
       <ChopLogicIcon name={value} />
     </IconItem>
@@ -22,11 +22,11 @@ The `ChopLogicIcon` component allows you to render one of the icons from the lis
 ## Usage
 
 ```tsx
-import { ChopLogicIcon, ChopLogicIconName } from 'chop-logic-components';
+import { ChopLogicIcon, IconName } from 'chop-logic-components';
 
 const MyButton = () => (
   <button>
-    <ChopLogicIcon name={ChopLogicIconName.Delete} />
+    <ChopLogicIcon name={IconName.Delete} />
     <span>Delete</span>
   </button>
 );

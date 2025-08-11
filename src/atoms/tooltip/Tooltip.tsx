@@ -1,5 +1,5 @@
 import { ChopLogicPortal } from '@atoms';
-import { ChopLogicTooltipContainer } from '@enums';
+import { TooltipContainer } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, MouseEvent } from 'react';
@@ -13,7 +13,7 @@ const ChopLogicTooltip: FC<ChopLogicTooltipProps> = ({
   id,
   style,
   className,
-  containerTag = ChopLogicTooltipContainer.Span,
+  containerTag = TooltipContainer.Span,
   visibleOn = 'hover',
   autoClose = false,
   autoCloseDelay = 3000,

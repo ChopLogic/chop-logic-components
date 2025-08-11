@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { ChopLogicMenuProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
@@ -6,14 +6,8 @@ import { FC } from 'react';
 import { MenuItem } from './item/MenuItem';
 import styles from './Menu.module.scss';
 
-const ChopLogicMenu: FC<ChopLogicMenuProps> = ({
-  items = [],
-  mode = ChopLogicOrientationMode.Vertical,
-  openedOn = 'click',
-  className,
-  ...rest
-}) => {
-  const menuClass = getClassName([styles.menuBar, className, { [styles.menuBar__vertical]: mode === ChopLogicOrientationMode.Vertical }]);
+const ChopLogicMenu: FC<ChopLogicMenuProps> = ({ items = [], mode = OrientationMode.Vertical, openedOn = 'click', className, ...rest }) => {
+  const menuClass = getClassName([styles.menuBar, className, { [styles.menuBar__vertical]: mode === OrientationMode.Vertical }]);
 
   return (
     <ul {...rest} role='menubar' className={menuClass}>

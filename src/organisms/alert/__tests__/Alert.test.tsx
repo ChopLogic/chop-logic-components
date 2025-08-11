@@ -1,4 +1,4 @@
-import { ChopLogicAlertMode } from '@enums';
+import { AlertMode } from '@enums';
 import { ChopLogicAlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -10,7 +10,7 @@ const defaultProps: ChopLogicAlertProps = {
   isOpened: false,
   onClose: vi.fn(),
   message: 'This is a test message.',
-  mode: ChopLogicAlertMode.Info,
+  mode: AlertMode.Info,
   className: 'test-class',
   id: 'test-id',
 };
@@ -48,7 +48,7 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should render error header', async () => {
-    renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Error });
+    renderAlert({ isOpened: true, mode: AlertMode.Error });
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Something went wrong');
@@ -56,7 +56,7 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should render warning header', async () => {
-    renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Warning });
+    renderAlert({ isOpened: true, mode: AlertMode.Warning });
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Please pay attention');
@@ -64,7 +64,7 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should render help header', async () => {
-    renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Help });
+    renderAlert({ isOpened: true, mode: AlertMode.Help });
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Useful tip');
@@ -72,7 +72,7 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should render info header', async () => {
-    renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Info });
+    renderAlert({ isOpened: true, mode: AlertMode.Info });
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('For your information');
@@ -80,7 +80,7 @@ describe('ChopLogicAlert', () => {
   });
 
   it('should render success header', async () => {
-    renderAlert({ isOpened: true, mode: ChopLogicAlertMode.Success });
+    renderAlert({ isOpened: true, mode: AlertMode.Success });
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Everything is okay');

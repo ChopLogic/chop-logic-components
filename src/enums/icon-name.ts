@@ -1,4 +1,4 @@
-export enum ChopLogicIconName {
+export enum IconName {
   ArrowDown = 'arrow-down',
   ArrowUp = 'arrow-up',
   Back = 'back',

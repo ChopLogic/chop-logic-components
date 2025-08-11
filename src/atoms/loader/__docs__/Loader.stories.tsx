@@ -1,4 +1,4 @@
-import { ChopLogicLoaderView } from '@enums';
+import { LoaderView } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import ChopLogicLoader from '../Loader';
@@ -10,10 +10,10 @@ const meta: Meta<typeof ChopLogicLoader> = {
   argTypes: {
     view: {
       control: 'select',
-      options: Object.values(ChopLogicLoaderView),
+      options: Object.values(LoaderView),
       table: {
-        defaultValue: { summary: ChopLogicLoaderView.Circle },
-        type: { summary: 'ChopLogicLoaderView' },
+        defaultValue: { summary: LoaderView.Circle },
+        type: { summary: 'LoaderView' },
       },
     },
   },

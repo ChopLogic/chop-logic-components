@@ -1,4 +1,4 @@
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { PropsWithChildren } from 'react';
 
 import { ChopLogicComponentProps } from './_common';
@@ -7,5 +7,5 @@ export interface ChopLogicDialogProps extends ChopLogicComponentProps, PropsWith
   isOpened: boolean;
   onClose: () => void;
   title: string;
-  icon?: ChopLogicIconName;
+  icon?: IconName;
 }

@@ -10,7 +10,7 @@ The `ChopLogicTabs` component provides an accessible tabbed interface with suppo
 ### Usage
 
 ```tsx
-import ChopLogicTabs, { ChopLogicOrientationMode } from 'chop-logic-components';
+import ChopLogicTabs, { OrientationMode } from 'chop-logic-components';
 
 const ProductTabs = () => {
   const tabs = [
@@ -29,7 +29,7 @@ const ProductTabs = () => {
   return (
     <ChopLogicTabs
       tabs={tabs}
-      mode={ChopLogicOrientationMode.Horizontal}
+      mode={OrientationMode.Horizontal}
       defaultTabId="specs"
     />
   );

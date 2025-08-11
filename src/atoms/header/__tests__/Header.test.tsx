@@ -1,4 +1,4 @@
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -34,7 +34,7 @@ describe('Header component', () => {
   });
 
   it('renders icon when provided', () => {
-    const testIcon = ChopLogicIconName.Delete;
+    const testIcon = IconName.Delete;
     render(<Header icon={testIcon}>With Icon</Header>);
 
     const icon = screen.getByTestId('choplogic-icon');
@@ -63,7 +63,7 @@ describe('Header component', () => {
 
   it('renders both icon and children correctly', () => {
     const testContent = 'Icon Header';
-    const testIcon = ChopLogicIconName.Info;
+    const testIcon = IconName.Info;
     render(<Header icon={testIcon}>{testContent}</Header>);
 
     const header = screen.getByRole('heading');

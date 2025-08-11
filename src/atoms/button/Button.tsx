@@ -1,5 +1,5 @@
 import { ChopLogicIcon } from '@atoms';
-import { ChopLogicButtonView } from '@enums';
+import { ButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
 import { getClassName } from '@utils';
@@ -19,34 +19,34 @@ const Button: FC<ChopLogicButtonProps> = ({
   disabled = false,
   extended = false,
   type = 'button',
-  view = ChopLogicButtonView.Primary,
+  view = ButtonView.Primary,
   className,
   ...rest
 }) => {
   const extendedClass = getClassName([className, { [styles.extended]: extended }]);
 
   switch (view) {
-    case ChopLogicButtonView.Primary:
+    case ButtonView.Primary:
       return (
         <PrimaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
         </PrimaryButton>
       );
-    case ChopLogicButtonView.Secondary:
+    case ButtonView.Secondary:
       return (
         <SecondaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
           <ChopLogicIcon name={icon} />
           {text}
         </SecondaryButton>
       );
-    case ChopLogicButtonView.Icon:
+    case ButtonView.Icon:
       return (
         <IconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
           <ChopLogicIcon name={icon} />
         </IconButton>
       );
-    case ChopLogicButtonView.Inner:
+    case ButtonView.Inner:
       return <InnerButton label={label} icon={icon} onClick={onClick} disabled={disabled} {...rest} className={className}></InnerButton>;
     default:
       return null;

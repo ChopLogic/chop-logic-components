@@ -11,7 +11,7 @@ The `ChopLogicLabel` component provides an accessible label for form inputs with
 
 ```tsx
 import ChopLogicLabel from 'chop-logic-components';
-import { ChopLogicIcon, ChopLogicIconName } from 'chop-logic-components';
+import { ChopLogicIcon, IconName } from 'chop-logic-components';
 
 const FormField = () => (
   <div>
@@ -19,7 +19,7 @@ const FormField = () => (
       label="Email"
       required={true}
       inputId="email-input"
-      icon={<ChopLogicIcon name={ChopLogicIconName.Mail} />}
+      icon={<ChopLogicIcon name={IconName.Mail} />}
       iconPosition="left"
     />
     <input id="email-input" type="email" />

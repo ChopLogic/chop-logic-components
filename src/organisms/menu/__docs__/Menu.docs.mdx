@@ -11,7 +11,7 @@ The `ChopLogicMenu` component provides an accessible navigation menu with suppor
 ## Usage
 
 ```tsx
-import ChopLogicMenu, { ChopLogicOrientationMode } from 'chop-logic-components';
+import ChopLogicMenu, { OrientationMode } from 'chop-logic-components';
 
 const AppMenu = () => {
   const menuItems = [
@@ -19,7 +19,7 @@ const AppMenu = () => {
       id: 'home',
       label: 'Home',
       link: '/home',
-      icon: ChopLogicIconName.Home
+      icon: IconName.Home
     },
     {
       id: 'products',
@@ -33,7 +33,7 @@ const AppMenu = () => {
   return (
     <ChopLogicMenu
       items={menuItems}
-      mode={ChopLogicOrientationMode.Horizontal}
+      mode={OrientationMode.Horizontal}
       openedOn="hover"
     />
   );

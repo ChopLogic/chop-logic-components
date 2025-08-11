@@ -1,5 +1,5 @@
 import { ChopLogicIcon } from '@atoms';
-import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';
 import { FC, KeyboardEvent, PropsWithChildren, useRef } from 'react';
@@ -9,7 +9,7 @@ import styles from './SubMenu.module.scss';
 type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;
   isSubMenuOpened: boolean;
-  mode: ChopLogicOrientationMode;
+  mode: OrientationMode;
   toggleSubMenu: () => void;
   closeSubMenu: () => void;
   openSubMenu: () => void;
@@ -41,7 +41,7 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
   };
 
   const onClickOutsideHandler = () => {
-    if (mode === ChopLogicOrientationMode.Vertical) return;
+    if (mode === OrientationMode.Vertical) return;
     closeSubMenu();
   };
 
@@ -61,7 +61,7 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
     >
       <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu}>
         {itemContent}
-        <ChopLogicIcon name={isSubMenuOpened ? ChopLogicIconName.ArrowUp : ChopLogicIconName.ArrowDown} />
+        <ChopLogicIcon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
       </span>
       {isSubMenuOpened && children}
     </li>

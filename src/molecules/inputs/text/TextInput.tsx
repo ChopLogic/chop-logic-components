@@ -1,6 +1,6 @@
 import { ChopLogicLabel } from '@atoms';
 import { ChopLogicButton } from '@atoms';
-import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { getClassName } from '@utils';
@@ -70,19 +70,19 @@ const ChopLogicTextInput: FC<ChopLogicTextInputProps> = ({
         <span>
           {clearable && (
             <ChopLogicButton
-              view={ChopLogicButtonView.Inner}
+              view={ButtonView.Inner}
               onClick={handleClear}
               label={`Clear input for ${label}`}
-              icon={ChopLogicIconName.Remove}
+              icon={IconName.Remove}
               disabled={disabled}
             />
           )}
           {isPasswordButtonVisible && (
             <ChopLogicButton
               onClick={togglePassword}
-              view={ChopLogicButtonView.Inner}
+              view={ButtonView.Inner}
               label='Toggle password visibility'
-              icon={passwordShown ? ChopLogicIconName.Hide : ChopLogicIconName.Show}
+              icon={passwordShown ? IconName.Hide : IconName.Show}
               disabled={disabled}
             />
           )}

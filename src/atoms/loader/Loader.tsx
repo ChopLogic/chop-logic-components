@@ -1,4 +1,4 @@
-import { ChopLogicLoaderView } from '@enums';
+import { LoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
@@ -13,18 +13,18 @@ import Pulse from './views/Pulse.module.scss';
 import Rotation from './views/Rotation.module.scss';
 import Square from './views/Square.module.scss';
 
-const ChopLogicLoader: FC<ChopLogicLoaderProps> = ({ view = ChopLogicLoaderView.Circle, ...rest }) => {
+const ChopLogicLoader: FC<ChopLogicLoaderProps> = ({ view = LoaderView.Circle, ...rest }) => {
   const className = getClassName([
     {
-      [Arrow.loader]: view === ChopLogicLoaderView.Arrow,
-      [Brackets.loader]: view === ChopLogicLoaderView.Brackets,
-      [Circle.loader]: view === ChopLogicLoaderView.Circle,
-      [Dots.loader]: view === ChopLogicLoaderView.Dots,
-      [Filler.loader]: view === ChopLogicLoaderView.Filler,
-      [Pulse.loader]: view === ChopLogicLoaderView.Pulse,
-      [Linear.loader]: view === ChopLogicLoaderView.Linear,
-      [Rotation.loader]: view === ChopLogicLoaderView.Rotation,
-      [Square.loader]: view === ChopLogicLoaderView.Square,
+      [Arrow.loader]: view === LoaderView.Arrow,
+      [Brackets.loader]: view === LoaderView.Brackets,
+      [Circle.loader]: view === LoaderView.Circle,
+      [Dots.loader]: view === LoaderView.Dots,
+      [Filler.loader]: view === LoaderView.Filler,
+      [Pulse.loader]: view === LoaderView.Pulse,
+      [Linear.loader]: view === LoaderView.Linear,
+      [Rotation.loader]: view === LoaderView.Rotation,
+      [Square.loader]: view === LoaderView.Square,
     },
   ]);
 

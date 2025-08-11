@@ -1,4 +1,4 @@
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { ChopLogicSVGElementProps } from '@models';
 import { ReactElement } from 'react';
 
@@ -34,38 +34,38 @@ import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
 
-type ChopLogicIcons = { [key in ChopLogicIconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement };
+type ChopLogicIcons = { [key in IconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement };
 
 export const ChopLogicIconDictionary: ChopLogicIcons = {
-  [ChopLogicIconName.ArrowDown]: ArrowDownIcon,
-  [ChopLogicIconName.ArrowUp]: ArrowUpIcon,
-  [ChopLogicIconName.Back]: BackIcon,
-  [ChopLogicIconName.Cancel]: CancelIcon,
-  [ChopLogicIconName.CheckboxChecked]: CheckboxCheckedIcon,
-  [ChopLogicIconName.CheckboxUnchecked]: CheckboxUncheckedIcon,
-  [ChopLogicIconName.CheckMark]: CheckMarkIcon,
-  [ChopLogicIconName.ChevronDown]: ChevronDownIcon,
-  [ChopLogicIconName.ChevronUp]: ChevronUpIcon,
-  [ChopLogicIconName.ChevronLeft]: ChevronLeftIcon,
-  [ChopLogicIconName.ChevronRight]: ChevronRightIcon,
-  [ChopLogicIconName.Clear]: ClearIcon,
-  [ChopLogicIconName.Copy]: CopyIcon,
-  [ChopLogicIconName.Cut]: CutIcon,
-  [ChopLogicIconName.Delete]: DeleteIcon,
-  [ChopLogicIconName.Download]: DownloadIcon,
-  [ChopLogicIconName.Error]: ErrorIcon,
-  [ChopLogicIconName.Forward]: ForwardIcon,
-  [ChopLogicIconName.Graduate]: GraduateIcon,
-  [ChopLogicIconName.Help]: HelpIcon,
-  [ChopLogicIconName.Hide]: HideIcon,
-  [ChopLogicIconName.Home]: HomeIcon,
-  [ChopLogicIconName.Info]: InfoIcon,
-  [ChopLogicIconName.Login]: LoginIcon,
-  [ChopLogicIconName.Paste]: PasteIcon,
-  [ChopLogicIconName.Question]: QuestionIcon,
-  [ChopLogicIconName.Save]: SaveIcon,
-  [ChopLogicIconName.Show]: ShowIcon,
-  [ChopLogicIconName.Upload]: UploadIcon,
-  [ChopLogicIconName.Warning]: WarningIcon,
-  [ChopLogicIconName.Remove]: RemoveIcon,
+  [IconName.ArrowDown]: ArrowDownIcon,
+  [IconName.ArrowUp]: ArrowUpIcon,
+  [IconName.Back]: BackIcon,
+  [IconName.Cancel]: CancelIcon,
+  [IconName.CheckboxChecked]: CheckboxCheckedIcon,
+  [IconName.CheckboxUnchecked]: CheckboxUncheckedIcon,
+  [IconName.CheckMark]: CheckMarkIcon,
+  [IconName.ChevronDown]: ChevronDownIcon,
+  [IconName.ChevronUp]: ChevronUpIcon,
+  [IconName.ChevronLeft]: ChevronLeftIcon,
+  [IconName.ChevronRight]: ChevronRightIcon,
+  [IconName.Clear]: ClearIcon,
+  [IconName.Copy]: CopyIcon,
+  [IconName.Cut]: CutIcon,
+  [IconName.Delete]: DeleteIcon,
+  [IconName.Download]: DownloadIcon,
+  [IconName.Error]: ErrorIcon,
+  [IconName.Forward]: ForwardIcon,
+  [IconName.Graduate]: GraduateIcon,
+  [IconName.Help]: HelpIcon,
+  [IconName.Hide]: HideIcon,
+  [IconName.Home]: HomeIcon,
+  [IconName.Info]: InfoIcon,
+  [IconName.Login]: LoginIcon,
+  [IconName.Paste]: PasteIcon,
+  [IconName.Question]: QuestionIcon,
+  [IconName.Save]: SaveIcon,
+  [IconName.Show]: ShowIcon,
+  [IconName.Upload]: UploadIcon,
+  [IconName.Warning]: WarningIcon,
+  [IconName.Remove]: RemoveIcon,
 };

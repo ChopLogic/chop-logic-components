@@ -1,4 +1,4 @@
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { MenuLeaf } from '@organisms/menu/leaf/MenuLeaf.tsx';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -8,14 +8,14 @@ describe('MenuLeaf', () => {
   const testLabeledItem = {
     id: 'item-1',
     label: 'Go Home',
-    icon: ChopLogicIconName.Home,
+    icon: IconName.Home,
     onClick: vi.fn(),
   };
 
   const testLinkItem = {
     id: 'item-1',
     label: 'Go Home',
-    icon: ChopLogicIconName.Home,
+    icon: IconName.Home,
     link: 'https://example.com/',
   };
 

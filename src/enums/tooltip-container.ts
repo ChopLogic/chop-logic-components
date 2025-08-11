@@ -1,4 +1,4 @@
-export enum ChopLogicTooltipContainer {
+export enum TooltipContainer {
   Span = 'span',
   Div = 'div',
   P = 'p',

@@ -1,5 +1,5 @@
 import { ChopLogicIcon } from '@atoms';
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
@@ -29,14 +29,14 @@ describe('Label', () => {
 
   it('should render left icon', () => {
     const { asFragment } = render(
-      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={ChopLogicIconName.Back} />} iconPosition='left' />,
+      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={IconName.Back} />} iconPosition='left' />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render right icon', () => {
     const { asFragment } = render(
-      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={ChopLogicIconName.Forward} />} iconPosition='left' />,
+      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={IconName.Forward} />} iconPosition='left' />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

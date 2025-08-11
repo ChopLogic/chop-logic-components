@@ -1,4 +1,4 @@
-import { ChopLogicThemeMode } from '@enums';
+import { ThemeMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
@@ -12,7 +12,7 @@ function TestConsumer() {
   return (
     <>
       <div data-testid='mode'>{mode}</div>
-      <button onClick={() => setMode(ChopLogicThemeMode.Dark)}>Switch</button>
+      <button onClick={() => setMode(ThemeMode.Dark)}>Switch</button>
     </>
   );
 }
@@ -29,8 +29,8 @@ describe('ChopLogicThemeProvider', () => {
       </ChopLogicThemeProvider>,
     );
 
-    expect(screen.getByTestId('mode').textContent).toBe(ChopLogicThemeMode.Light);
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(true);
+    expect(screen.getByTestId('mode').textContent).toBe(ThemeMode.Light);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(true);
   });
 
   it('switches theme when setMode is called', async () => {
@@ -40,42 +40,42 @@ describe('ChopLogicThemeProvider', () => {
       </ChopLogicThemeProvider>,
     );
 
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(true);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(true);
 
     await userEvent.click(screen.getByRole('button', { name: /switch/i }));
 
-    expect(screen.getByTestId('mode').textContent).toBe(ChopLogicThemeMode.Dark);
-    expect(document.body.classList.contains(ChopLogicThemeMode.Dark)).toBe(true);
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(false);
+    expect(screen.getByTestId('mode').textContent).toBe(ThemeMode.Dark);
+    expect(document.body.classList.contains(ThemeMode.Dark)).toBe(true);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(false);
   });
 
   it('applies injectedMode when provided', () => {
     render(
-      <ChopLogicThemeProvider injectedMode={ChopLogicThemeMode.Dark}>
+      <ChopLogicThemeProvider injectedMode={ThemeMode.Dark}>
         <TestConsumer />
       </ChopLogicThemeProvider>,
     );
 
-    expect(document.body.classList.contains(ChopLogicThemeMode.Dark)).toBe(true);
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(false);
+    expect(document.body.classList.contains(ThemeMode.Dark)).toBe(true);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(false);
   });
 
   it('updates body class when injectedMode changes', () => {
     const { rerender } = render(
-      <ChopLogicThemeProvider injectedMode={ChopLogicThemeMode.Light}>
+      <ChopLogicThemeProvider injectedMode={ThemeMode.Light}>
         <TestConsumer />
       </ChopLogicThemeProvider>,
     );
 
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(true);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(true);
 
     rerender(
-      <ChopLogicThemeProvider injectedMode={ChopLogicThemeMode.Dark}>
+      <ChopLogicThemeProvider injectedMode={ThemeMode.Dark}>
         <TestConsumer />
       </ChopLogicThemeProvider>,
     );
 
-    expect(document.body.classList.contains(ChopLogicThemeMode.Dark)).toBe(true);
-    expect(document.body.classList.contains(ChopLogicThemeMode.Light)).toBe(false);
+    expect(document.body.classList.contains(ThemeMode.Dark)).toBe(true);
+    expect(document.body.classList.contains(ThemeMode.Light)).toBe(false);
   });
 });

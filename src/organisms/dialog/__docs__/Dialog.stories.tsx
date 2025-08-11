@@ -1,4 +1,4 @@
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import ChopLogicDialog from '../Dialog';
@@ -16,6 +16,6 @@ export const Example: Story = {
   args: {
     isOpened: false,
     title: 'Please read this dialog',
-    icon: ChopLogicIconName.Help,
+    icon: IconName.Help,
   },
 };

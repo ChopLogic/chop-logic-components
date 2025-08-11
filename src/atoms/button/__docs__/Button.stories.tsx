@@ -1,4 +1,4 @@
-import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import ChopLogicButton from '../Button.tsx';
@@ -14,18 +14,18 @@ const meta: Meta<typeof ChopLogicButton> = {
     },
     icon: {
       control: 'select',
-      options: Object.values(ChopLogicIconName),
+      options: Object.values(IconName),
     },
     view: {
       control: 'select',
-      options: Object.values(ChopLogicButtonView),
+      options: Object.values(ButtonView),
     },
     extended: { control: 'boolean' },
   },
   args: {
     text: 'Button',
     type: 'button',
-    view: ChopLogicButtonView.Primary,
+    view: ButtonView.Primary,
     disabled: false,
     extended: false,
   },
@@ -39,8 +39,8 @@ type Story = StoryObj<typeof ChopLogicButton>;
 export const PrimaryButton: Story = {
   args: {
     text: 'Copy',
-    view: ChopLogicButtonView.Primary,
-    icon: ChopLogicIconName.Copy,
+    view: ButtonView.Primary,
+    icon: IconName.Copy,
     type: 'button',
     disabled: false,
   },
@@ -49,8 +49,8 @@ export const PrimaryButton: Story = {
 export const SecondaryButton: Story = {
   args: {
     text: 'Learn more...',
-    view: ChopLogicButtonView.Secondary,
-    icon: ChopLogicIconName.Forward,
+    view: ButtonView.Secondary,
+    icon: IconName.Forward,
     type: 'button',
     disabled: false,
   },
@@ -58,9 +58,9 @@ export const SecondaryButton: Story = {
 
 export const IconButton: Story = {
   args: {
-    view: ChopLogicButtonView.Icon,
+    view: ButtonView.Icon,
     type: 'button',
-    icon: ChopLogicIconName.Cancel,
+    icon: IconName.Cancel,
     label: 'Cancel',
     disabled: false,
   },
@@ -69,7 +69,7 @@ export const IconButton: Story = {
 export const ButtonWithTooltip: Story = {
   args: {
     text: 'Hover On Me',
-    view: ChopLogicButtonView.Secondary,
+    view: ButtonView.Secondary,
     type: 'button',
     disabled: false,
     tooltip: 'This button does nothing...',

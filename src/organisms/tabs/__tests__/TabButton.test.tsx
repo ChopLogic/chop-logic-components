@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -11,7 +11,7 @@ describe('TabButton', () => {
     onTabSelect: vi.fn(),
     tabPanelId: 'panel-id-1',
     isSelected: true,
-    mode: ChopLogicOrientationMode.Vertical,
+    mode: OrientationMode.Vertical,
     isDisabled: false,
   };
 

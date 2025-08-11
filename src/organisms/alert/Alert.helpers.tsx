@@ -1,40 +1,40 @@
-import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
+import { AlertMode, IconName } from '@enums';
 
-export function getAlertTitle(mode: ChopLogicAlertMode, title?: string): string {
+export function getAlertTitle(mode: AlertMode, title?: string): string {
   if (title) return title;
 
   switch (mode) {
-    case ChopLogicAlertMode.Info:
+    case AlertMode.Info:
       return 'For your information';
-    case ChopLogicAlertMode.Warning:
+    case AlertMode.Warning:
       return 'Please pay attention';
-    case ChopLogicAlertMode.Error:
+    case AlertMode.Error:
       return 'Something went wrong';
-    case ChopLogicAlertMode.Success:
+    case AlertMode.Success:
       return 'Everything is okay';
-    case ChopLogicAlertMode.Help:
+    case AlertMode.Help:
       return 'Useful tip';
     default:
       return 'Alert';
   }
 }
 
-export function getAlertIcon(mode: ChopLogicAlertMode, icon?: ChopLogicIconName): ChopLogicIconName | undefined {
+export function getAlertIcon(mode: AlertMode, icon?: IconName): IconName | undefined {
   if (icon) {
     return icon;
   }
 
   switch (mode) {
-    case ChopLogicAlertMode.Info:
-      return ChopLogicIconName.Info;
-    case ChopLogicAlertMode.Warning:
-      return ChopLogicIconName.Warning;
-    case ChopLogicAlertMode.Error:
-      return ChopLogicIconName.Error;
-    case ChopLogicAlertMode.Success:
-      return ChopLogicIconName.CheckboxChecked;
-    case ChopLogicAlertMode.Help:
-      return ChopLogicIconName.Help;
+    case AlertMode.Info:
+      return IconName.Info;
+    case AlertMode.Warning:
+      return IconName.Warning;
+    case AlertMode.Error:
+      return IconName.Error;
+    case AlertMode.Success:
+      return IconName.CheckboxChecked;
+    case AlertMode.Help:
+      return IconName.Help;
     default:
       return;
   }

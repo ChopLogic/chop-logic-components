@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import { getClassName } from '@utils';
 import { FC, PropsWithChildren, useState } from 'react';
@@ -9,17 +9,14 @@ import styles from './MenuItem.module.scss';
 
 type Props = PropsWithChildren & {
   item: ChopLogicMenuItem;
-  mode: ChopLogicOrientationMode;
+  mode: OrientationMode;
   openedOn?: 'hover' | 'click';
 };
 
 export const MenuItem: FC<Props> = ({ item, mode, openedOn }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
-  const subMenuBarClass = getClassName([
-    styles.subMenuBar,
-    { [styles.subMenuBar__horizontal]: mode === ChopLogicOrientationMode.Horizontal },
-  ]);
+  const subMenuBarClass = getClassName([styles.subMenuBar, { [styles.subMenuBar__horizontal]: mode === OrientationMode.Horizontal }]);
 
   if (isLeaf) {
     return <MenuLeaf item={item} />;

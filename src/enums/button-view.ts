@@ -1,4 +1,4 @@
-export enum ChopLogicButtonView {
+export enum ButtonView {
   Primary = 'primary',
   Secondary = 'secondary',
   Icon = 'icon',

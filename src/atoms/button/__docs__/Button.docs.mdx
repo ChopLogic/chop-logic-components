@@ -10,19 +10,19 @@ The `ChopLogicButton` component provides a flexible, accessible button with mult
 ## Usage
 
 ```tsx
-import ChopLogicButton, { ChopLogicButtonView, ChopLogicIconName } from 'chop-logic-components';
+import ChopLogicButton, { ButtonView, IconName } from 'chop-logic-components';
 
 const ExampleForm = () => (
   <form>
     <ChopLogicButton
-      view={ChopLogicButtonView.Primary}
+      view={ButtonView.Primary}
       text="Submit"
-      icon={ChopLogicIconName.Check}
+      icon={IconName.Check}
       onClick={() => console.log('Clicked!')}
     />
     <ChopLogicButton
-      view={ChopLogicButtonView.Icon}
-      icon={ChopLogicIconName.Settings}
+      view={ButtonView.Icon}
+      icon={IconName.Settings}
       label="Settings"
     />
   </form>

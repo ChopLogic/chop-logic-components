@@ -1,4 +1,4 @@
-import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { IconName, OrientationMode } from '@enums';
 import { ChopLogicMenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
@@ -9,12 +9,12 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-1',
     label: 'Home',
-    icon: ChopLogicIconName.Home,
+    icon: IconName.Home,
   },
   {
     id: 'item-2',
     label: 'About',
-    icon: ChopLogicIconName.Info,
+    icon: IconName.Info,
     nestedItems: [
       {
         id: 'item-5',
@@ -39,19 +39,19 @@ const ITEMS: ChopLogicMenuItem[] = [
               {
                 id: 'item-18',
                 label: '2023',
-                icon: ChopLogicIconName.CheckMark,
+                icon: IconName.CheckMark,
                 onHover: () => console.log('Hover item-18'),
               },
               {
                 id: 'item-19',
                 label: '2024',
-                icon: ChopLogicIconName.CheckMark,
+                icon: IconName.CheckMark,
                 onClick: () => console.log('Click item-18'),
               },
               {
                 id: 'item-20',
                 label: '2025',
-                icon: ChopLogicIconName.CheckMark,
+                icon: IconName.CheckMark,
                 onFocus: () => console.log('Focus item-18'),
                 link: 'https://github.com/',
               },
@@ -72,7 +72,7 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-3',
     label: 'Admissions',
-    icon: ChopLogicIconName.Login,
+    icon: IconName.Login,
     nestedItems: [
       {
         id: 'item-12',
@@ -91,7 +91,7 @@ const ITEMS: ChopLogicMenuItem[] = [
   {
     id: 'item-4',
     label: 'Academics',
-    icon: ChopLogicIconName.Graduate,
+    icon: IconName.Graduate,
     nestedItems: [
       {
         id: 'item-15',
@@ -121,9 +121,9 @@ const meta: Meta<typeof ChopLogicMenu> = {
     },
     mode: {
       control: 'radio',
-      options: Object.values(ChopLogicOrientationMode),
+      options: Object.values(OrientationMode),
       table: {
-        defaultValue: { summary: ChopLogicOrientationMode.Horizontal },
+        defaultValue: { summary: OrientationMode.Horizontal },
         type: { summary: '"vertical" or "horizontal"' },
       },
     },
@@ -138,7 +138,7 @@ const meta: Meta<typeof ChopLogicMenu> = {
   },
   args: {
     items: ITEMS,
-    mode: ChopLogicOrientationMode.Vertical,
+    mode: OrientationMode.Vertical,
     openedOn: 'click',
     id: 'menu',
     className: 'menu-class',
@@ -151,14 +151,14 @@ type Story = StoryObj<typeof MenuExample>;
 
 export const VerticalMenu: Story = {
   args: {
-    mode: ChopLogicOrientationMode.Vertical,
+    mode: OrientationMode.Vertical,
     openedOn: 'click',
   },
 };
 
 export const HorizontalMenu: Story = {
   args: {
-    mode: ChopLogicOrientationMode.Horizontal,
+    mode: OrientationMode.Horizontal,
     openedOn: 'hover',
   },
 };

@@ -1,5 +1,5 @@
 import { ChopLogicIcon, ChopLogicLabel } from '@atoms';
-import { ChopLogicIconName } from '@enums';
+import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta: Meta<typeof ChopLogicLabel> = {
@@ -25,7 +25,7 @@ const meta: Meta<typeof ChopLogicLabel> = {
     icon: {
       description: 'Optional icon element to display with the label',
       control: 'select',
-      options: Object.values(ChopLogicIconName),
+      options: Object.values(IconName),
     },
     iconPosition: {
       options: ['left', 'right'],
@@ -55,7 +55,7 @@ export const Primary: Story = {
 export const WithLeftIcon: Story = {
   args: {
     label: 'Login into the account',
-    icon: <ChopLogicIcon name={ChopLogicIconName.Login} />,
+    icon: <ChopLogicIcon name={IconName.Login} />,
     iconPosition: 'left',
   },
 };
@@ -63,7 +63,7 @@ export const WithLeftIcon: Story = {
 export const WithRightIcon: Story = {
   args: {
     label: 'Password',
-    icon: <ChopLogicIcon name={ChopLogicIconName.Hide} />,
+    icon: <ChopLogicIcon name={IconName.Hide} />,
     iconPosition: 'right',
     required: true,
   },
@@ -73,7 +73,7 @@ export const HiddenText: Story = {
   args: {
     label: 'Delete',
     isTextHidden: true,
-    icon: <ChopLogicIcon name={ChopLogicIconName.Delete} />,
+    icon: <ChopLogicIcon name={IconName.Delete} />,
     iconPosition: 'left',
   },
   parameters: {

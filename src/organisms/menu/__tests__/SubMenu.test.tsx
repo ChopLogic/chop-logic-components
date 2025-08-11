@@ -1,4 +1,4 @@
-import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { IconName, OrientationMode } from '@enums';
 import { SubMenu } from '@organisms/menu/sub-menu/SubMenu.tsx';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
@@ -16,13 +16,13 @@ describe('SubMenu', () => {
     id: '1',
     label: 'Item with Link',
     link: 'https://example.com',
-    icon: ChopLogicIconName.ArrowUp,
+    icon: IconName.ArrowUp,
   };
 
   const itemWithoutLink = {
     id: '2',
     label: 'Item without Link',
-    icon: ChopLogicIconName.ArrowDown,
+    icon: IconName.ArrowDown,
   };
 
   it('should match the snapshot', () => {
@@ -33,7 +33,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       >
         <div>Submenu Content</div>
       </SubMenu>,
@@ -49,7 +49,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -65,7 +65,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -81,7 +81,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -99,7 +99,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       />,
     );
 
@@ -117,7 +117,7 @@ describe('SubMenu', () => {
         toggleSubMenu={mockToggleSubMenu}
         closeSubMenu={mockCloseSubMenu}
         openSubMenu={mockOpenSubMenu}
-        mode={ChopLogicOrientationMode.Horizontal}
+        mode={OrientationMode.Horizontal}
       >
         <div>Submenu Content</div>
       </SubMenu>,

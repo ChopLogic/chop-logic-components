@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
@@ -15,7 +15,7 @@ describe('ChopLogicTabs', () => {
   const testProps = {
     tabs,
     defaultTabId: 'tab-1',
-    mode: ChopLogicOrientationMode.Horizontal,
+    mode: OrientationMode.Horizontal,
     className: 'test-class',
     id: 'tabs-id',
   };

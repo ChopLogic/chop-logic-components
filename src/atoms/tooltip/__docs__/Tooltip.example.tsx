@@ -1,5 +1,5 @@
 import { ChopLogicButton } from '@atoms';
-import { ChopLogicButtonView } from '@enums';
+import { ButtonView } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 import { FC } from 'react';
 
@@ -9,10 +9,10 @@ export const TooltipExample: FC<ChopLogicTooltipProps> = ({ tooltipContent, cont
   return (
     <div>
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id} {...rest}>
-        {visibleOn === 'click' && <ChopLogicButton text='Click me' view={ChopLogicButtonView.Secondary} />}
-        {visibleOn === 'hover' && <ChopLogicButton text='Hover on me' view={ChopLogicButtonView.Secondary} />}
-        {visibleOn === 'focus' && <ChopLogicButton text='Focus on me' view={ChopLogicButtonView.Secondary} />}
-        {visibleOn === 'contextmenu' && <ChopLogicButton text='Right click on me' view={ChopLogicButtonView.Secondary} />}
+        {visibleOn === 'click' && <ChopLogicButton text='Click me' view={ButtonView.Secondary} />}
+        {visibleOn === 'hover' && <ChopLogicButton text='Hover on me' view={ButtonView.Secondary} />}
+        {visibleOn === 'focus' && <ChopLogicButton text='Focus on me' view={ButtonView.Secondary} />}
+        {visibleOn === 'contextmenu' && <ChopLogicButton text='Right click on me' view={ButtonView.Secondary} />}
       </ChopLogicTooltip>
     </div>
   );

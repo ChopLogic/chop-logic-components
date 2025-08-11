@@ -1,7 +1,7 @@
 import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getGridRowValues } from '../Grid.helpers.ts';
+import { getGridRowValues } from './Grid.helpers.ts';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {

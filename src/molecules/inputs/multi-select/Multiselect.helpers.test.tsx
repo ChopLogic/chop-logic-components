@@ -1,7 +1,7 @@
 import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getMultiSelectInitialValues } from '../Multiselect.helpers.ts';
+import { getMultiSelectInitialValues } from './Multiselect.helpers.ts';
 
 describe('getMultiSelectSelectValues', () => {
   const options: ChopLogicSelectValue[] = [

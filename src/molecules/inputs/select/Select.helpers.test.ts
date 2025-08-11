@@ -1,7 +1,7 @@
 import { ChopLogicSelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getSelectInitialValue } from '../Select.helpers.ts';
+import { getSelectInitialValue } from './Select.helpers.ts';
 
 describe('getSelectInitialValue', () => {
   const options: ChopLogicSelectValue[] = [

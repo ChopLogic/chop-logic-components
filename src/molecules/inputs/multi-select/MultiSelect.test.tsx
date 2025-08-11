@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicMultiSelect from '../MultiSelect.tsx';
+import ChopLogicMultiSelect from './MultiSelect.tsx';
 
 describe('ChopLogicMultiSelect', () => {
   const MULTI_SELECT_VALUES: ChopLogicSelectValue[] = [

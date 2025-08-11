@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import Checkbox from '../Checkbox.tsx';
+import Checkbox from './Checkbox.tsx';
 
 describe('ChopLogicCheckbox', () => {
   const testProps = {

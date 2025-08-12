@@ -1,9 +1,9 @@
-import { Label, MultiSelectCombobox, MultiSelectDropdown } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicMultiSelectProps } from '@models';
 import { getClassName } from '@utils';
 import React, { useRef } from 'react';
 
+import { Label, MultiSelectCombobox, MultiSelectDropdown } from '../_elements';
 import styles from '../select/Select.module.scss';
 import { useChopLogicMultiSelectController } from './Multiselect.controller.ts';
 

@@ -2,17 +2,6 @@
 export { GridBody } from './grid/body/GridBody';
 export { GridColumnGroup } from './grid/column-group/GridColumnGroup';
 export { GridHead } from './grid/head/GridHead';
-export { ErrorMessage } from './input/error-message/ErrorMessage';
-export { IconButton } from './input/icon-button/IconButton';
-export { InnerButton } from './input/inner-button/InnerButton';
-export { Input } from './input/input/Input';
-export { Label } from './input/label/Label';
-export { MultiSelectCombobox } from './input/multi-select/Combobox';
-export { MultiSelectDropdown } from './input/multi-select/Dropdown';
-export { PrimaryButton } from './input/primary-button/PrimaryButton';
-export { SecondaryButton } from './input/secondary-button/SecondaryButton';
-export { SelectCombobox } from './input/select/combobox/Combobox';
-export { SelectDropdown } from './input/select/dropdown/Dropdown';
 export { MenuItem } from './menu/item/MenuItem';
 export { TabContent } from './tabs/content/TabContent';
 export { TabList } from './tabs/list/TabList';

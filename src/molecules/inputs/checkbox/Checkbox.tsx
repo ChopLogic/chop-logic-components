@@ -1,11 +1,11 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
-import { Label } from '@atoms';
 import { useElementIds } from '@hooks';
 import { ChopLogicCheckboxProps } from '@models';
 import { getClassName } from '@utils';
 import React from 'react';
 
+import { Label } from '../_elements';
 import { useChopLogicCheckboxController } from './Checkbox.controller';
 import styles from './Checkbox.module.scss';
 

@@ -21,7 +21,7 @@ exports[`GridHead > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="_label_25e64c"
+              class="_label_9096c8"
               for="select_all_test-grid-id"
             >
               <svg

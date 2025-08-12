@@ -1,7 +1,7 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
-import { Label } from '@atoms';
 import { useElementIds } from '@hooks';
+import { Label } from '@molecules/inputs/_elements';
 import { getClassName } from '@utils';
 import React from 'react';
 

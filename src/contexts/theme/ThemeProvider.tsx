@@ -3,9 +3,9 @@ import '@styles/root.scss';
 import { ThemeMode } from '@enums';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
-import { ChopLogicThemeContext } from './ThemeContext.ts';
+import { ThemeContext } from './ThemeContext.ts';
 
-export const ChopLogicThemeProvider: FC<{ children: ReactNode; injectedMode?: ThemeMode }> = ({ children, injectedMode }) => {
+export const ThemeProvider: FC<{ children: ReactNode; injectedMode?: ThemeMode }> = ({ children, injectedMode }) => {
   const [mode, setMode] = useState(ThemeMode.Light);
 
   useEffect(() => {
@@ -22,5 +22,5 @@ export const ChopLogicThemeProvider: FC<{ children: ReactNode; injectedMode?: Th
     }
   }, [injectedMode]);
 
-  return <ChopLogicThemeContext.Provider value={{ mode, setMode }}>{children}</ChopLogicThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ mode, setMode }}>{children}</ThemeContext.Provider>;
 };

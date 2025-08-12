@@ -1,4 +1,4 @@
-import { ChopLogicFormContext } from '@contexts';
+import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicNumericInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
@@ -26,7 +26,7 @@ export function useChopLogicNumericInputController({
   required: boolean;
   validator?: ChopLogicNumericInputValidator;
 }) {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getNumericInputInitialValue({ initialValues, defaultValue, name });
   const maxValue = max ? Number(max) : Number.MAX_SAFE_INTEGER;
   const minValue = min ? Number(min) : Number.MIN_SAFE_INTEGER;

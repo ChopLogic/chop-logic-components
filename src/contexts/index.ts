@@ -1,3 +1,3 @@
-export { ChopLogicFormContext } from './form/FormContext.tsx';
-export { ChopLogicThemeContext } from './theme/ThemeContext.ts';
-export { ChopLogicThemeProvider } from './theme/ThemeProvider.tsx';
+export { FormContext } from './form/FormContext.tsx';
+export { ThemeContext } from './theme/ThemeContext.ts';
+export { ThemeProvider } from './theme/ThemeProvider.tsx';

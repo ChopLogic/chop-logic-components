@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
 import { Decorator } from '@storybook/react-vite';
-import { ChopLogicThemeProvider } from '../src/contexts';
+import { ThemeProvider } from '../src/contexts';
 import { ThemeMode } from '../src/enums';
 
 const preview: Preview = {
@@ -44,11 +44,11 @@ const withTheme: Decorator = (StoryFn, context) => {
   const storybookMode = background === 'dark' ? ThemeMode.Dark : ThemeMode.Light;
 
   return (
-    <ChopLogicThemeProvider injectedMode={storybookMode}>
+    <ThemeProvider injectedMode={storybookMode}>
       <div style={{ ...STORY_WRAPPER_STYLES }}>
         <StoryFn />
       </div>
-    </ChopLogicThemeProvider>
+    </ThemeProvider>
   );
 };
 

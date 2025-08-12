@@ -1,5 +1,5 @@
 import { Button } from '@atoms';
-import { ChopLogicFormContext } from '@contexts';
+import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
 import { ChopLogicFormProps } from '@models';
 import { getClassName } from '@utils';
@@ -30,13 +30,13 @@ const ChopLogicForm: FC<ChopLogicFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={`${formClass} ${styles[`columns-${columnsNumber}`]}`}>
-      <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
+      <FormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <div className={`${styles.buttons} ${styles[`buttons-${columnsNumber}`]}`}>
           {hasReset && <Button type='reset' text='Reset' icon={IconName.Clear} view={ButtonView.Secondary} />}
           <Button type='submit' text='Submit' icon={IconName.Forward} extended={!hasReset} disabled={!valid} />
         </div>
-      </ChopLogicFormContext.Provider>
+      </FormContext.Provider>
     </form>
   );
 };

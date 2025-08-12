@@ -1,4 +1,4 @@
-import { ChopLogicFormContext } from '@contexts';
+import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicSelectValue } from '@models';
 import { useCallback, useContext, useState } from 'react';
@@ -16,7 +16,7 @@ export function useChopLogicSelectController({
   onChange?: (value?: ChopLogicSelectValue) => void;
   options: ChopLogicSelectValue[];
 }) {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getSelectInitialValue({ name, options, defaultValue, initialValues });
   const [opened, setOpened] = useState(false);
   const [selected, setSelected] = useState<ChopLogicSelectValue | undefined>(initialValue);

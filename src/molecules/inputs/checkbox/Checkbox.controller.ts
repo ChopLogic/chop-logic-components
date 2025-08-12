@@ -1,4 +1,4 @@
-import { ChopLogicFormContext } from '@contexts';
+import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
@@ -13,7 +13,7 @@ export function useChopLogicCheckboxController({
   defaultChecked?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getCheckboxInitialValue({ initialValues, name, defaultChecked });
   const [isChecked, setIsChecked] = useState<boolean>(initialValue);
 

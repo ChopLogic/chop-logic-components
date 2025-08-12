@@ -1,4 +1,4 @@
-import { ChopLogicFormContext } from '@contexts';
+import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
@@ -20,7 +20,7 @@ export function useChopLogicTextInputController({
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onClear?: () => void;
 }) {
-  const { onChangeFormInput, initialValues } = useContext(ChopLogicFormContext);
+  const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getTextInputInitialValue({ initialValues, defaultValue, name });
   const [value, setValue] = useState<string>(initialValue);
   const [valid, setValid] = useState<boolean>(true);

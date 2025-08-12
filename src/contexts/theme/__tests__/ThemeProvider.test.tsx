@@ -4,11 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { ChopLogicThemeContext } from '../ThemeContext.ts';
-import { ChopLogicThemeProvider } from '../ThemeProvider.tsx';
+import { ThemeContext } from '../ThemeContext.ts';
+import { ThemeProvider } from '../ThemeProvider.tsx';
 
 function TestConsumer() {
-  const { mode, setMode } = useContext(ChopLogicThemeContext);
+  const { mode, setMode } = useContext(ThemeContext);
   return (
     <>
       <div data-testid='mode'>{mode}</div>
@@ -17,16 +17,16 @@ function TestConsumer() {
   );
 }
 
-describe('ChopLogicThemeProvider', () => {
+describe('ThemeProvider', () => {
   beforeEach(() => {
     document.body.className = ''; // reset body classes before each test
   });
 
   it('applies default light theme on mount', () => {
     render(
-      <ChopLogicThemeProvider>
+      <ThemeProvider>
         <TestConsumer />
-      </ChopLogicThemeProvider>,
+      </ThemeProvider>,
     );
 
     expect(screen.getByTestId('mode').textContent).toBe(ThemeMode.Light);
@@ -35,9 +35,9 @@ describe('ChopLogicThemeProvider', () => {
 
   it('switches theme when setMode is called', async () => {
     render(
-      <ChopLogicThemeProvider>
+      <ThemeProvider>
         <TestConsumer />
-      </ChopLogicThemeProvider>,
+      </ThemeProvider>,
     );
 
     expect(document.body.classList.contains(ThemeMode.Light)).toBe(true);
@@ -51,9 +51,9 @@ describe('ChopLogicThemeProvider', () => {
 
   it('applies injectedMode when provided', () => {
     render(
-      <ChopLogicThemeProvider injectedMode={ThemeMode.Dark}>
+      <ThemeProvider injectedMode={ThemeMode.Dark}>
         <TestConsumer />
-      </ChopLogicThemeProvider>,
+      </ThemeProvider>,
     );
 
     expect(document.body.classList.contains(ThemeMode.Dark)).toBe(true);
@@ -62,17 +62,17 @@ describe('ChopLogicThemeProvider', () => {
 
   it('updates body class when injectedMode changes', () => {
     const { rerender } = render(
-      <ChopLogicThemeProvider injectedMode={ThemeMode.Light}>
+      <ThemeProvider injectedMode={ThemeMode.Light}>
         <TestConsumer />
-      </ChopLogicThemeProvider>,
+      </ThemeProvider>,
     );
 
     expect(document.body.classList.contains(ThemeMode.Light)).toBe(true);
 
     rerender(
-      <ChopLogicThemeProvider injectedMode={ThemeMode.Dark}>
+      <ThemeProvider injectedMode={ThemeMode.Dark}>
         <TestConsumer />
-      </ChopLogicThemeProvider>,
+      </ThemeProvider>,
     );
 
     expect(document.body.classList.contains(ThemeMode.Dark)).toBe(true);

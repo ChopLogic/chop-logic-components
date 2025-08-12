@@ -4,20 +4,20 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## Theme Provider
 
-The <code>ChopLogicThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
+The <code>ThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
 
 It supports both dynamic switching via a hook and injected mode through the `injectedMode` prop.
 
 ```tsx
-import { ChopLogicThemeProvider } from 'chop-logic-components';
+import { ThemeProvider } from 'chop-logic-components';
 
-<ChopLogicThemeProvider>
+<ThemeProvider>
   <App />
-</ChopLogicThemeProvider>
+</ThemeProvider>
 ```
 
 ```tsx
-import { ChopLogicThemeProvider, ThemeMode } from 'chop-logic-components';
+import { ThemeProvider, ThemeMode } from 'chop-logic-components';
 import { Decorator } from '@storybook/react';
 
 const withTheme: Decorator = (StoryFn, context) => {
@@ -26,11 +26,11 @@ const withTheme: Decorator = (StoryFn, context) => {
   const storybookMode = backgroundColor === '#2B2B2BFF' ? ThemeMode.Dark : ThemeMode.Light;
 
   return (
-    <ChopLogicThemeProvider injectedMode={storybookMode}>
+    <ThemeProvider injectedMode={storybookMode}>
       <div style={{ backgroundColor }}>
         <StoryFn />
       </div>
-    </ChopLogicThemeProvider>
+    </ThemeProvider>
   );
 };
 

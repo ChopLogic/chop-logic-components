@@ -1,9 +1,9 @@
-import { TabContent, TabList } from '@atoms';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabsProps } from '@models';
 import { getClassName } from '@utils';
 import React, { useState } from 'react';
 
+import { TabContent, TabList } from './__elements__';
 import styles from './Tabs.module.scss';
 
 const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({

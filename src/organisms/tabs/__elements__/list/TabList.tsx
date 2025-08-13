@@ -1,9 +1,9 @@
-import { TabButton } from '@atoms/tabs/button/TabButton';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
 import React, { KeyboardEvent } from 'react';
 
+import { TabButton } from '../button/TabButton';
 import styles from './TabList.module.scss';
 
 type ChopLogicTabListProps = {

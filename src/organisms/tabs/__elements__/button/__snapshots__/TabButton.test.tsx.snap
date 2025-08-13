@@ -5,7 +5,7 @@ exports[`TabButton > should match the snapshot 1`] = `
   <button
     aria-controls="panel-id-1"
     aria-selected="true"
-    class="_tabButton_b9f674 _tabButton__vertical_b9f674 _tabButton__selected_b9f674"
+    class="_tabButton_3d945f _tabButton__vertical_3d945f _tabButton__selected_3d945f"
     id="id-1"
     role="tab"
   >

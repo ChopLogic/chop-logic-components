@@ -1,6 +1,3 @@
-// Internal exports
-
-export { MenuItem } from './menu/item/MenuItem';
 export { TabContent } from './tabs/content/TabContent';
 export { TabList } from './tabs/list/TabList';
 

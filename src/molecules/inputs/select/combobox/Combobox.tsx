@@ -1,6 +1,6 @@
-import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
-import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
-import { ChopLogicSelectValue } from '@models';
+import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
+import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
+import { SelectValue } from '@models';
 import { FC } from 'react';
 
 import styles from './Combobox.module.scss';
@@ -12,7 +12,7 @@ type Props = {
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
-  selected?: ChopLogicSelectValue;
+  selected?: SelectValue;
   placeholder?: string;
   name: string;
 };

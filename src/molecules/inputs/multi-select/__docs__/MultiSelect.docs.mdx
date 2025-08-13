@@ -1,17 +1,17 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as MultiSelect from './MultiSelect.stories';
 
-<Meta of={MultiSelect} title='ChopLogicMultiSelect' />
+<Meta of={MultiSelect} title='MultiSelect' />
 
-# ChopLogicMultiSelect
+# MultiSelect
 
 
-The `ChopLogicMultiSelect` component provides an accessible, customizable multi-selection dropdown with keyboard navigation, search filtering, and flexible options management.
+The `MultiSelect` component provides an accessible, customizable multi-selection dropdown with keyboard navigation, search filtering, and flexible options management.
 
 ## Usage
 
 ```tsx
-import ChopLogicMultiSelect from 'chop-logic-components';
+import MultiSelect from 'chop-logic-components';
 
 const PreferencesForm = () => {
   const [selected, setSelected] = React.useState([]);
@@ -22,7 +22,7 @@ const PreferencesForm = () => {
   ];
 
   return (
-    <ChopLogicMultiSelect
+    <MultiSelect
       name="frameworks"
       label="Select preferred frameworks"
       options={options}

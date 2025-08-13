@@ -1,13 +1,13 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
-import { ChopLogicMultiSelectValue } from '@models';
+import { MultiSelectValue } from '@models';
 import { getClassName } from '@utils';
 import { FC, KeyboardEvent } from 'react';
 
 import styles from '../select/option/Option.module.scss';
 
 type Props = {
-  value: ChopLogicMultiSelectValue;
+  value: MultiSelectValue;
   onSelect: (id: string) => void;
 };
 

@@ -1,14 +1,15 @@
 import { Label } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
-import { ChopLogicMultiSelectProps } from '@models';
+import { MultiSelectProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useRef } from 'react';
 
-import { MultiSelectCombobox, MultiSelectDropdown } from '../__elements__/index.ts';
 import styles from '../select/Select.module.scss';
-import { useChopLogicMultiSelectController } from './Multiselect.controller.ts';
+import { MultiSelectCombobox } from './MultiSelect.Combobox';
+import { useMultiSelectController } from './MultiSelect.controller';
+import { MultiSelectDropdown } from './MultiSelect.Dropdown';
 
-const ChopLogicMultiSelect: FC<ChopLogicMultiSelectProps> = ({
+const MultiSelect: FC<MultiSelectProps> = ({
   options,
   name,
   label,
@@ -23,7 +24,7 @@ const ChopLogicMultiSelect: FC<ChopLogicMultiSelectProps> = ({
 }) => {
   const ref = useRef(null);
   const { elementId, dropdownId } = useElementIds(id);
-  const { handleClose, handleSelect, handleToggle, opened, values } = useChopLogicMultiSelectController({
+  const { handleClose, handleSelect, handleToggle, opened, values } = useMultiSelectController({
     name,
     options,
     defaultValue,
@@ -53,4 +54,4 @@ const ChopLogicMultiSelect: FC<ChopLogicMultiSelectProps> = ({
   );
 };
 
-export default ChopLogicMultiSelect;
+export default MultiSelect;

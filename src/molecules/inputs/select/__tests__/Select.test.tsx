@@ -1,13 +1,13 @@
-import { ChopLogicSelectValue } from '@models';
+import { SelectValue } from '@models';
 import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicSelect from '../Select.tsx';
+import Select from '../Select.tsx';
 
-describe('ChopLogicSelect', () => {
-  const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
+describe('Select', () => {
+  const SELECT_LANGUAGES: SelectValue[] = [
     { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
     { id: 'b4b08a09-e287-400b-ba65-afd6ae1f6fd7', label: 'Russian' },
     { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },
@@ -25,34 +25,34 @@ describe('ChopLogicSelect', () => {
   };
 
   it('should render correctly', () => {
-    const { asFragment } = render(<ChopLogicSelect {...testProps} />);
+    const { asFragment } = render(<Select {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should display the label', () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
   it('should have accessible roles', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     expect(screen.getByRole('combobox')).toBeInTheDocument();
     await userEvent.click(screen.getByRole('combobox'));
     expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
 
   it('could be disabled', () => {
-    render(<ChopLogicSelect {...testProps} disabled />);
+    render(<Select {...testProps} disabled />);
     expect(screen.getByRole('combobox')).toBeDisabled();
   });
 
   it('could be required', () => {
-    render(<ChopLogicSelect {...testProps} required />);
+    render(<Select {...testProps} required />);
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
   });
 
   it('should display all values as options', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(SELECT_LANGUAGES.length);
@@ -62,7 +62,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should call onSelectChange handler', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const option = screen.getByText(SELECT_LANGUAGES[0].label);
@@ -71,7 +71,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should allow the user to select an option', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
@@ -81,7 +81,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should allow the user to deselect the same option', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
@@ -93,7 +93,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should move the focus correctly on Tab press', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
 
@@ -108,7 +108,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should move focus to the next option by pressing ArrowDown button', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     options[0].focus();
@@ -117,7 +117,7 @@ describe('ChopLogicSelect', () => {
   });
 
   it('should move focus to the previous option by pressing ArrowUp button', async () => {
-    render(<ChopLogicSelect {...testProps} />);
+    render(<Select {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
     const options = screen.getAllByRole('option');
     options[1].focus();
@@ -128,7 +128,7 @@ describe('ChopLogicSelect', () => {
   it('should take an initial value from the form context', async () => {
     render(
       <ChopLogicForm initialValues={{ language: SELECT_LANGUAGES[2] }}>
-        <ChopLogicSelect {...testProps} />
+        <Select {...testProps} />
       </ChopLogicForm>,
     );
     const combobox = screen.getByRole('combobox');

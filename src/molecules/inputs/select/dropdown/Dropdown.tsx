@@ -1,4 +1,4 @@
-import { ChopLogicSelectValue } from '@models';
+import { SelectValue } from '@models';
 import { getClassName, handleDropdownListKeyPress, moveFocusOnElementById } from '@utils';
 import { FC } from 'react';
 
@@ -6,12 +6,12 @@ import { SelectOption } from '../option/Option';
 import styles from './Dropdown.module.scss';
 
 type Props = {
-  options: ChopLogicSelectValue[];
+  options: SelectValue[];
   opened: boolean;
   dropdownId: string;
   comboboxId: string;
   onClose: () => void;
-  selected?: ChopLogicSelectValue;
+  selected?: SelectValue;
   onSelect: (id: string) => void;
   onClear: () => void;
 };

@@ -1,12 +1,12 @@
-import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
-import { ChopLogicSelectValue } from '@models';
+import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon';
+import { SelectValue } from '@models';
 import { getClassName } from '@utils';
 import { FC, KeyboardEvent } from 'react';
 
 import styles from './Option.module.scss';
 
 type Props = {
-  value: ChopLogicSelectValue;
+  value: SelectValue;
   selected: boolean;
   onSelect: (id: string) => void;
   onClear: () => void;

@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicMultiSelectValue, ChopLogicSelectValue } from '@models';
+import { ChopLogicFormData, MultiSelectValue, SelectValue } from '@models';
 
 export function getMultiSelectInitialValues({
   name,
@@ -7,10 +7,10 @@ export function getMultiSelectInitialValues({
   defaultValue,
 }: {
   name: string;
-  options: ChopLogicSelectValue[];
+  options: SelectValue[];
   initialValues?: ChopLogicFormData;
   defaultValue?: string | number | readonly string[];
-}): ChopLogicMultiSelectValue[] {
+}): MultiSelectValue[] {
   return options.map((option) => {
     let selected = false;
 
@@ -29,11 +29,11 @@ export function getMultiSelectInitialValues({
   });
 }
 
-export const getMultiSelectFormValues = (options: ChopLogicMultiSelectValue[]): string[] => {
+export const getMultiSelectFormValues = (options: MultiSelectValue[]): string[] => {
   return options.filter((item) => item.selected).map((item) => item.id);
 };
 
-export const getMultiSelectUpdatedValues = (options: ChopLogicMultiSelectValue[], id: string): ChopLogicMultiSelectValue[] => {
+export const getMultiSelectUpdatedValues = (options: MultiSelectValue[], id: string): MultiSelectValue[] => {
   const targetItem = options.find((item) => item.id === id);
   return options.map((item) => {
     return item.id === id ? { ...item, selected: !targetItem?.selected } : item;

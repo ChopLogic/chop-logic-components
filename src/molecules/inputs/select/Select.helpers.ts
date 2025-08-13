@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicSelectValue } from '@models';
+import { ChopLogicFormData, SelectValue } from '@models';
 
 export function getSelectInitialValue({
   name,
@@ -7,14 +7,14 @@ export function getSelectInitialValue({
   defaultValue,
 }: {
   name: string;
-  options: ChopLogicSelectValue[];
+  options: SelectValue[];
   initialValues?: ChopLogicFormData;
   defaultValue?: string | number | readonly string[];
-}): ChopLogicSelectValue | undefined {
+}): SelectValue | undefined {
   let valueId: string;
 
   if (initialValues && initialValues[name]) {
-    valueId = ((initialValues[name] as ChopLogicSelectValue)?.id as string) ?? (initialValues[name] as string);
+    valueId = ((initialValues[name] as SelectValue)?.id as string) ?? (initialValues[name] as string);
   }
 
   if (!initialValues?.[name] && defaultValue && typeof defaultValue === 'string') {

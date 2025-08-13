@@ -1,8 +1,8 @@
-import { ChopLogicSelectProps } from '@models';
+import { SelectProps } from '@models';
 import { FC } from 'react';
 
-import ChopLogicSelect from '../Select.tsx';
+import Select from '../Select.tsx';
 
-export const ChopLogicSelectExample: FC<ChopLogicSelectProps> = (props) => {
-  return <ChopLogicSelect {...props} style={{ width: '240px' }} />;
+export const SelectExample: FC<SelectProps> = (props) => {
+  return <Select {...props} style={{ width: '240px' }} />;
 };

@@ -1,11 +1,11 @@
-import { ChopLogicSelectValue } from '@models';
+import { SelectValue } from '@models';
 import { render } from '@testing-library/react';
 import { handleDropdownListKeyPress } from '@utils';
 import React from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('handleDropdownListKeyPress', () => {
-  let options: ChopLogicSelectValue[];
+  let options: SelectValue[];
   let onClose: () => void;
 
   beforeEach(() => {

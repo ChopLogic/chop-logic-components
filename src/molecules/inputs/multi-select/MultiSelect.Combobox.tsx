@@ -1,6 +1,6 @@
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
-import { ChopLogicMultiSelectValue } from '@models';
+import { MultiSelectValue } from '@models';
 import { FC } from 'react';
 
 import styles from '../select/combobox/Combobox.module.scss';
@@ -12,7 +12,7 @@ type Props = {
   onClick: () => void;
   comboboxId: string;
   dropdownId: string;
-  values?: ChopLogicMultiSelectValue[];
+  values?: MultiSelectValue[];
   placeholder?: string;
   name: string;
 };

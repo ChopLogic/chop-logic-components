@@ -15,12 +15,12 @@ export interface ChopLogicInputProps extends ChopLogicComponentProps {
   required?: boolean;
 }
 
-export type ChopLogicSelectValue = {
+export type SelectValue = {
   id: string;
   label: string;
 } & { [key in string]: unknown };
 
-export type ChopLogicMultiSelectValue = ChopLogicSelectValue & {
+export type MultiSelectValue = SelectValue & {
   selected: boolean;
 };
 

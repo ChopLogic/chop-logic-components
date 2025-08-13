@@ -1,13 +1,13 @@
-import { ChopLogicSelectValue } from '@models';
+import { SelectValue } from '@models';
 import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicMultiSelect from '../MultiSelect.tsx';
+import MultiSelect from '../MultiSelect.tsx';
 
-describe('ChopLogicMultiSelect', () => {
-  const MULTI_SELECT_VALUES: ChopLogicSelectValue[] = [
+describe('MultiSelect', () => {
+  const MULTI_SELECT_VALUES: SelectValue[] = [
     { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
     { id: '583e8b60-0177-4e38-a423-4b1d5d0a2236', label: 'Spanish' },
     { id: 'b20bea7b-8172-4d12-b172-d5feac02d863', label: 'French' },
@@ -26,17 +26,17 @@ describe('ChopLogicMultiSelect', () => {
   };
 
   it('should render correctly', () => {
-    const { asFragment } = render(<ChopLogicMultiSelect {...testProps} />);
+    const { asFragment } = render(<MultiSelect {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should display the label', () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     expect(screen.getByLabelText(testProps.label)).toBeInTheDocument();
   });
 
   it('should have accessible roles', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
     expect(screen.getByRole('combobox')).toBeInTheDocument();
@@ -44,17 +44,17 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('could be disabled', () => {
-    render(<ChopLogicMultiSelect {...testProps} disabled />);
+    render(<MultiSelect {...testProps} disabled />);
     expect(screen.getByRole('combobox')).toBeDisabled();
   });
 
   it('could be required', () => {
-    render(<ChopLogicMultiSelect {...testProps} required />);
+    render(<MultiSelect {...testProps} required />);
     expect(screen.getByRole('combobox')).toHaveAttribute('aria-required', 'true');
   });
 
   it('should display all values as options', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
     const options = screen.getAllByRole('option');
@@ -65,7 +65,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should call onSelectChange handler', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const option = screen.getAllByRole('option')[0];
@@ -74,7 +74,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should allow the user to select an option', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
@@ -84,7 +84,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should allow the user to deselect an option', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
@@ -96,7 +96,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should allow the user to select several options', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue('');
     await userEvent.click(combobox);
@@ -110,7 +110,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should display a correct placeholder when some items selected', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     expect(screen.getByText(testProps.placeholder)).toBeInTheDocument();
     await userEvent.click(combobox);
@@ -125,7 +125,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should display a correct placeholder when all items selected', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
     const optionOne = screen.getByText(MULTI_SELECT_VALUES[0].label);
@@ -140,7 +140,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should move the focus correctly on Tab press', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
 
@@ -157,7 +157,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should move focus to the next option on pressing ArrowDown button', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
     const options = screen.getAllByRole('option');
@@ -167,7 +167,7 @@ describe('ChopLogicMultiSelect', () => {
   });
 
   it('should move focus to the previous option pressing ArrowUp button', async () => {
-    render(<ChopLogicMultiSelect {...testProps} />);
+    render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
     const options = screen.getAllByRole('option');
@@ -179,7 +179,7 @@ describe('ChopLogicMultiSelect', () => {
   it('should take an initial value from the form context', async () => {
     render(
       <ChopLogicForm initialValues={{ languages: [MULTI_SELECT_VALUES[2], MULTI_SELECT_VALUES[3]] }}>
-        <ChopLogicMultiSelect {...testProps} />
+        <MultiSelect {...testProps} />
       </ChopLogicForm>,
     );
     const combobox = screen.getByRole('combobox');

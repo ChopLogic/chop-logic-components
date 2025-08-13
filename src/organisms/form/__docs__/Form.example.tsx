@@ -1,16 +1,16 @@
-import { ChopLogicFormData, ChopLogicFormProps, ChopLogicSelectValue } from '@models';
-import { ChopLogicCheckbox, ChopLogicMultiSelect, ChopLogicNumericInput, ChopLogicSelect, ChopLogicTextInput } from '@molecules';
+import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@models';
+import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput, MultiSelect, Select } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
 import { CSSProperties, FC, useState } from 'react';
 
-const SELECT_LANGUAGES: ChopLogicSelectValue[] = [
+const SELECT_LANGUAGES: SelectValue[] = [
   { id: 'lang-1', label: 'English' },
   { id: 'lang-2', label: 'Russian' },
   { id: 'lang-3', label: 'German' },
 ];
 
-const MULTI_SELECT_VALUES: ChopLogicSelectValue[] = [
+const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-1', label: 'JavaScript' },
   { id: 'pr-lang-2', label: 'Python' },
   { id: 'pr-lang-3', label: 'Java' },
@@ -60,8 +60,8 @@ export const FormExample: FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
           errorMessage={'Enter a number between 1 and 99'}
           style={inputStyles}
         />
-        <ChopLogicSelect name='language' label='Language' options={SELECT_LANGUAGES} style={inputStyles} />
-        <ChopLogicMultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} style={inputStyles} />
+        <Select name='language' label='Language' options={SELECT_LANGUAGES} style={inputStyles} />
+        <MultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} style={inputStyles} />
         <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
       </ChopLogicForm>
       {data && (

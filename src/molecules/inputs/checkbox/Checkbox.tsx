@@ -5,7 +5,7 @@ import { ChopLogicCheckboxProps } from '@models';
 import { getClassName } from '@utils';
 import React from 'react';
 
-import { Label } from '../_elements';
+import { Label } from '../__elements__';
 import { useChopLogicCheckboxController } from './Checkbox.controller';
 import styles from './Checkbox.module.scss';
 

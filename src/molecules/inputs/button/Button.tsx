@@ -5,7 +5,7 @@ import { ChopLogicButtonProps } from '@models';
 import { getClassName } from '@utils';
 import React from 'react';
 
-import { IconButton, InnerButton, PrimaryButton, SecondaryButton } from '../_elements';
+import { IconButton, InnerButton, PrimaryButton, SecondaryButton } from '../__elements__';
 import styles from './Button.module.scss';
 
 const Button: React.FC<ChopLogicButtonProps> = ({

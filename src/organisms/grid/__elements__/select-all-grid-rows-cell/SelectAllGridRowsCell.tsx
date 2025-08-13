@@ -1,6 +1,6 @@
-import { GridCheckbox } from '@atoms/grid/checkbox/GridCheckbox';
 import React from 'react';
 
+import { GridCheckbox } from '../checkbox/GridCheckbox';
 import styles from './SelectAllGridRowsCell.module.scss';
 
 type Props = {

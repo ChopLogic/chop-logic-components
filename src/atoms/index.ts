@@ -1,7 +1,5 @@
 // Internal exports
-export { GridBody } from './grid/body/GridBody';
-export { GridColumnGroup } from './grid/column-group/GridColumnGroup';
-export { GridHead } from './grid/head/GridHead';
+
 export { MenuItem } from './menu/item/MenuItem';
 export { TabContent } from './tabs/content/TabContent';
 export { TabList } from './tabs/list/TabList';

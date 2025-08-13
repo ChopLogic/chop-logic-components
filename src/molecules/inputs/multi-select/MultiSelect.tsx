@@ -3,7 +3,7 @@ import { ChopLogicMultiSelectProps } from '@models';
 import { getClassName } from '@utils';
 import React, { useRef } from 'react';
 
-import { Label, MultiSelectCombobox, MultiSelectDropdown } from '../_elements';
+import { Label, MultiSelectCombobox, MultiSelectDropdown } from '../__elements__/index.ts';
 import styles from '../select/Select.module.scss';
 import { useChopLogicMultiSelectController } from './Multiselect.controller.ts';
 

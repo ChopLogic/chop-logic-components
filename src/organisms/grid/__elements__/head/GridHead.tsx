@@ -1,8 +1,8 @@
-import { GridHeaderCell } from '@atoms/grid/header-cell/HeaderCell.tsx';
-import { SelectAllGridRowsCell } from '@atoms/grid/select-all-grid-rows-cell/SelectAllGridRowsCell.tsx';
 import { ChopLogicGridColumn } from '@models';
 import React from 'react';
 
+import { GridHeaderCell } from '../header-cell/HeaderCell';
+import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell';
 import styles from './GridHead.module.scss';
 
 type ChopLogicGridHeadProps = {

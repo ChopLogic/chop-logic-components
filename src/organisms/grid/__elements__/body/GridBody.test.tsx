@@ -1,7 +1,8 @@
-import { GridBody } from '@atoms/grid/body/GridBody.tsx';
 import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
+import { GridBody } from './GridBody';
 
 describe('GridBody', () => {
   const columns: ChopLogicGridColumn[] = [

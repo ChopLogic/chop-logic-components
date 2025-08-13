@@ -3,7 +3,7 @@ import { ChopLogicSelectProps } from '@models';
 import { getClassName } from '@utils';
 import React, { useRef } from 'react';
 
-import { Label, SelectCombobox, SelectDropdown } from '../_elements';
+import { Label, SelectCombobox, SelectDropdown } from '../__elements__/index.ts';
 import { useChopLogicSelectController } from './Select.controller.ts';
 import styles from './Select.module.scss';
 

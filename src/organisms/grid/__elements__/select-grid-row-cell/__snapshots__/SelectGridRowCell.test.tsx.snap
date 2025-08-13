@@ -1,25 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SelectAllRowsCell > should match the snapshot 1`] = `
+exports[`SelectGridRowCheckbox > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <thead>
       <tr>
-        <th
-          class="_headerCell_b901e7"
+        <td
+          class="_cell_65a637"
         >
           <div
-            class="_checkbox_85cb9e _checkbox__checked_85cb9e"
+            class="_checkbox_3c5f2c _checkbox__checked_3c5f2c"
           >
             <input
               checked=""
-              class="_checkbox_input_85cb9e"
-              id="select_all_grid-id"
+              class="_checkbox_input_3c5f2c"
+              id="select_row_grid-id"
               type="checkbox"
             />
             <label
-              class="_label_9096c8"
-              for="select_all_grid-id"
+              class="_label_c19c7c"
+              for="select_row_grid-id"
             >
               <svg
                 fill="currentColor"
@@ -35,7 +35,7 @@ exports[`SelectAllRowsCell > should match the snapshot 1`] = `
               </svg>
             </label>
           </div>
-        </th>
+        </td>
       </tr>
     </thead>
   </table>

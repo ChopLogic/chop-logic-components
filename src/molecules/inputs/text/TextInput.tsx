@@ -5,7 +5,7 @@ import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
 import React from 'react';
 
-import { ErrorMessage, Input, Label } from '../_elements';
+import { ErrorMessage, Input, Label } from '../__elements__/index.ts';
 import { useChopLogicTextInputController } from './TextInput.controller.ts';
 import styles from './TextInput.module.scss';
 

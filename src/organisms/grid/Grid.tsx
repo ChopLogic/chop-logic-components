@@ -1,8 +1,8 @@
-import { GridBody, GridColumnGroup, GridHead } from '@atoms';
 import { ChopLogicGridProps } from '@models';
 import { getClassName } from '@utils';
 import React from 'react';
 
+import { GridBody, GridColumnGroup, GridHead } from './__elements__';
 import { useChopLogicGridController } from './Grid.controller.ts';
 import styles from './Grid.module.scss';
 

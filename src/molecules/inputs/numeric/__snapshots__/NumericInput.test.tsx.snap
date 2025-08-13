@@ -7,7 +7,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
     style="width: 400px;"
   >
     <label
-      class="_label_9096c8"
+      class="_label_c19c7c"
       for="numeric-input"
     >
       <span>
@@ -15,12 +15,12 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_5da8b5"
+      class="_wrapper_12eaeb"
     >
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="_input_5da8b5"
+        class="_input_12eaeb"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"
@@ -33,7 +33,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="_button_e29df0"
+          class="_button_2a8079"
           type="button"
         >
           <svg
@@ -52,7 +52,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="_button_e29df0"
+          class="_button_2a8079"
           type="button"
         >
           <svg
@@ -72,7 +72,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_4c7738 _errorMessage_8da6e4"
+        class="_errorMessage_eb4d84 _errorMessage_8da6e4"
         id="numeric-input_error"
       >
         Error!

@@ -1,5 +1,5 @@
 import { ChopLogicFormData, ChopLogicFormInputParams } from '@models';
-import React from 'react';
+import { createContext } from 'react';
 
 export interface ChopLogicFormContextProps {
   onChangeFormInput?: (params: ChopLogicFormInputParams) => void;
@@ -7,4 +7,4 @@ export interface ChopLogicFormContextProps {
   resetSignal?: number;
 }
 
-export const ChopLogicFormContext = React.createContext<ChopLogicFormContextProps>({});
+export const ChopLogicFormContext = createContext<ChopLogicFormContextProps>({});

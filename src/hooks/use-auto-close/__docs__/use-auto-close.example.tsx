@@ -2,9 +2,9 @@ import { ChopLogicButtonView } from '@enums';
 import { useAutoClose } from '@hooks';
 import { ChopLogicButton } from '@molecules';
 import { ChopLogicDialog } from '@organisms';
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 
-export const UseAutoCloseExample: React.FC = () => {
+export const UseAutoCloseExample: FC = () => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);

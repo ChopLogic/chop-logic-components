@@ -4,12 +4,12 @@ import { useAutoClose, useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
 import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
 import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
 import styles from './Alert.module.scss';
 
-const ChopLogicAlert: React.FC<ChopLogicAlertProps> = ({
+const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
   isOpened,
   onClose,
   title,

@@ -1,7 +1,7 @@
 import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon.tsx';
 import { ChopLogicSelectValue } from '@models';
 import { getClassName } from '@utils';
-import React, { KeyboardEvent } from 'react';
+import { FC, KeyboardEvent } from 'react';
 
 import styles from './Option.module.scss';
 
@@ -12,7 +12,7 @@ type Props = {
   onClear: () => void;
 };
 
-export const SelectOption: React.FC<Props> = ({ value, selected, onSelect, onClear }) => {
+export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) => {
   const { id, label } = value;
   const optionClass = getClassName([styles.option, { [styles.option__selected]: selected }]);
 

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { ReactElement, ReactPortal, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const ChopLogicPortal = ({ children }: { children: React.ReactElement }): React.ReactPortal => {
+const ChopLogicPortal = ({ children }: { children: ReactElement }): ReactPortal => {
   const [container] = useState(() => document.createElement('div'));
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC, ReactElement } from 'react';
 
 import { GridDataCell } from '../data-cell/GridDataCell';
 import { SelectGridRowCell } from '../select-grid-row-cell/SelectGridRowCell';
@@ -11,11 +11,11 @@ type Props = {
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;
   selectable: boolean;
-  values: (string | React.ReactElement)[];
+  values: (string | ReactElement)[];
   disabled?: boolean;
 };
 
-export const GridRow: React.FC<Props> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
+export const GridRow: FC<Props> = ({ rowId, selectRowById, deselectRowById, selectable, values, selectedIds, disabled }) => {
   const selected = selectedIds.includes(rowId);
 
   return (

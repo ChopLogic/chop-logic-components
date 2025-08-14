@@ -1,12 +1,12 @@
 import { ChopLogicTabItem } from '@models';
-import React from 'react';
+import { FC, ReactElement } from 'react';
 
 import styles from './TabContent.module.scss';
 
-export const TabContent: React.FC<{
+export const TabContent: FC<{
   tabs: ChopLogicTabItem[];
   selectedTabId: string;
-}> = ({ tabs, selectedTabId }): React.ReactElement => {
+}> = ({ tabs, selectedTabId }): ReactElement => {
   const content = tabs.find((item) => item.id === selectedTabId)?.content;
   const contentId = `tabpanel_${selectedTabId}`;
 

@@ -1,6 +1,6 @@
 import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
 import { getGridRowValues } from '@organisms/grid/Grid.helpers.ts';
-import React from 'react';
+import { FC } from 'react';
 
 import { GridRow } from '../grid-row/GridRow';
 import styles from './GridBody.module.scss';
@@ -15,7 +15,7 @@ type Props = {
   selectable: boolean;
 };
 
-export const GridBody: React.FC<Props> = ({ selectRowById, deselectRowById, renderDataItem, selectedIds, selectable, data, columns }) => {
+export const GridBody: FC<Props> = ({ selectRowById, deselectRowById, renderDataItem, selectedIds, selectable, data, columns }) => {
   return (
     <tbody className={styles.body}>
       {data.map((item) => {

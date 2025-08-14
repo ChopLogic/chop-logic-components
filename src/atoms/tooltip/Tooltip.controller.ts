@@ -1,5 +1,5 @@
 import { useAutoClose, useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@hooks';
-import React, { useRef, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 
 type Params = {
   autoClose: boolean;
@@ -17,7 +17,7 @@ export const useChopLogicTooltipController = ({ id, autoClose, autoCloseDelay }:
   const closeTooltip = () => setIsOpened(false);
   const openTooltip = () => setIsOpened(true);
   const toggleTooltip = () => setIsOpened(!isOpened);
-  const handleContextMenu = (e: React.MouseEvent) => {
+  const handleContextMenu = (e: MouseEvent) => {
     e.preventDefault();
     toggleTooltip();
   };

@@ -1,9 +1,9 @@
 import styles from '@styles/storybook/Container.module.scss';
-import React from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import ChopLogicPortal from '../Portal.tsx';
 
-export const PortalExample: React.FC<React.PropsWithChildren> = (props) => {
+export const PortalExample: FC<PropsWithChildren> = (props) => {
   return (
     <ChopLogicPortal>
       <div className={styles.container}>{props.children}</div>

@@ -2,7 +2,7 @@ import { ChopLogicIcon } from '@atoms';
 import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';
-import React, { PropsWithChildren, useRef } from 'react';
+import { FC, KeyboardEvent, PropsWithChildren, useRef } from 'react';
 
 import styles from './SubMenu.module.scss';
 
@@ -16,7 +16,7 @@ type Props = PropsWithChildren & {
   openedOn?: 'hover' | 'click';
 };
 
-export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, openSubMenu, openedOn, mode, children }) => {
+export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, openSubMenu, openedOn, mode, children }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
@@ -33,7 +33,7 @@ export const SubMenu: React.FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu,
     </span>
   );
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLLIElement>) => {
     e.stopPropagation();
     if (e.key === ' ') {
       toggleSubMenu();

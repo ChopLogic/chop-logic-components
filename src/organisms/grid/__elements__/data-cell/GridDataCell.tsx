@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC, ReactElement } from 'react';
 
 import styles from './GridDataCell.module.scss';
 
-export const GridDataCell: React.FC<{ value: React.ReactElement | string }> = ({ value }) => {
+export const GridDataCell: FC<{ value: ReactElement | string }> = ({ value }) => {
   return <td className={styles.cell}>{value}</td>;
 };

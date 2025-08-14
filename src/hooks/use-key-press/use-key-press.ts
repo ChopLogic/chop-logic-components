@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 
 type useKeyPressParams = {
   keyCode: string;
-  ref: React.RefObject<HTMLDivElement | null>;
+  ref: RefObject<HTMLDivElement | null>;
   onKeyPress: () => void;
 };
 

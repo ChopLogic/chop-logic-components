@@ -1,14 +1,9 @@
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicMenuProps } from '@models';
 import { ChopLogicMenu } from '@organisms';
-import React from 'react';
+import { FC } from 'react';
 
-const MenuExample: React.FC<ChopLogicMenuProps> = ({
-  mode = ChopLogicOrientationMode.Vertical,
-  openedOn = 'click',
-  items = [],
-  ...rest
-}) => {
+const MenuExample: FC<ChopLogicMenuProps> = ({ mode = ChopLogicOrientationMode.Vertical, openedOn = 'click', items = [], ...rest }) => {
   return (
     <div
       style={{

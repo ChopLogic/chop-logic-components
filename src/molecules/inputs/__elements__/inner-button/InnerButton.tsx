@@ -1,17 +1,17 @@
 import { ChopLogicIcon } from '@atoms';
 import { ChopLogicIconName } from '@enums';
 import { getClassName } from '@utils';
-import React, { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
 
 import styles from './InnerButton.module.scss';
 
 type Props = {
   label?: string;
   icon?: ChopLogicIconName;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const InnerButton: React.FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
+export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
   return (
     <button
       className={getClassName([styles.button, className])}

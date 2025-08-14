@@ -1,11 +1,11 @@
 import { ChopLogicButtonView } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 import { ChopLogicButton } from '@molecules';
-import React from 'react';
+import { FC } from 'react';
 
 import ChopLogicTooltip from '../Tooltip';
 
-export const TooltipExample: React.FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id, ...rest }) => {
+export const TooltipExample: FC<ChopLogicTooltipProps> = ({ tooltipContent, containerTag, visibleOn, id, ...rest }) => {
   return (
     <div>
       <ChopLogicTooltip tooltipContent={tooltipContent} containerTag={containerTag} visibleOn={visibleOn} id={id} {...rest}>

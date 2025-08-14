@@ -1,7 +1,7 @@
 import { ChopLogicFormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicNumericInputValidator } from '@models';
-import React, { ChangeEventHandler, useCallback, useContext, useState } from 'react';
+import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers.ts';
 
@@ -40,7 +40,7 @@ export function useChopLogicNumericInputController({
     onChangeFormInput?.({ name, value, valid });
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value);
     updateValue(value);
     onChange?.(event);

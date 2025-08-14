@@ -1,11 +1,11 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
+import { ChopLogicLabel } from '@atoms';
 import { useElementIds } from '@hooks';
 import { ChopLogicCheckboxProps } from '@models';
 import { getClassName } from '@utils';
 import React from 'react';
 
-import { Label } from '../__elements__';
 import { useChopLogicCheckboxController } from './Checkbox.controller';
 import styles from './Checkbox.module.scss';
 
@@ -45,7 +45,7 @@ const ChopLogicCheckbox: React.FC<ChopLogicCheckboxProps> = ({
         onChange={handleChange}
         aria-label={noLabel ? label : undefined}
       />
-      <Label
+      <ChopLogicLabel
         label={label}
         required={required}
         inputId={elementId}

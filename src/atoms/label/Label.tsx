@@ -11,7 +11,7 @@ type LabelProps = {
   iconPosition?: 'left' | 'right';
 };
 
-export const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, isTextHidden = false }) => {
+const ChopLogicLabel: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, isTextHidden = false }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
 
@@ -28,3 +28,5 @@ export const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosi
     </label>
   );
 };
+
+export default ChopLogicLabel;

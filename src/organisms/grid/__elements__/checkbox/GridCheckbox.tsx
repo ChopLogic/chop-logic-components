@@ -1,7 +1,7 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
+import { ChopLogicLabel } from '@atoms';
 import { useElementIds } from '@hooks';
-import { Label } from '@molecules/inputs/__elements__';
 import { getClassName } from '@utils';
 import React from 'react';
 
@@ -33,7 +33,7 @@ export const GridCheckbox: React.FC<Props> = ({ name, label, disabled, required 
         onChange={onChange}
         className={styles.checkbox_input}
       />
-      <Label
+      <ChopLogicLabel
         label={label}
         required={required}
         inputId={elementId}

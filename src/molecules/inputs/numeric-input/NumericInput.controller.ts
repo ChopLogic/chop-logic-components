@@ -1,11 +1,11 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import { ChopLogicNumericInputValidator } from '@models';
+import { NumericInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers.ts';
 
-export function useChopLogicNumericInputController({
+export function useNumericInputController({
   name,
   defaultValue,
   onChange,
@@ -24,7 +24,7 @@ export function useChopLogicNumericInputController({
   max?: string | number;
   step: number;
   required: boolean;
-  validator?: ChopLogicNumericInputValidator;
+  validator?: NumericInputValidator;
 }) {
   const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getNumericInputInitialValue({ initialValues, defaultValue, name });

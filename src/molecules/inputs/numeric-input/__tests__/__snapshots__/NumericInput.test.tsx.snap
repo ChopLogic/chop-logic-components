@@ -3,7 +3,7 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_numeric_8da6e4"
+    class="_numeric_ad237f"
     style="width: 400px;"
   >
     <label
@@ -72,7 +72,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_eb4d84 _errorMessage_8da6e4"
+        class="_errorMessage_eb4d84 _errorMessage_ad237f"
         id="numeric-input_error"
       >
         Error!

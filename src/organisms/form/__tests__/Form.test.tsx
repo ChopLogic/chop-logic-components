@@ -1,4 +1,4 @@
-import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput } from '@molecules';
+import { ChopLogicCheckbox, ChopLogicTextInput, NumericInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -23,7 +23,7 @@ describe('ChopLogicForm', () => {
       <ChopLogicForm hasReset={false} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <NumericInput name='age' id='age' label='Age' />
       </ChopLogicForm>,
     );
     expect(screen.queryByText('Reset')).not.toBeInTheDocument();
@@ -35,7 +35,7 @@ describe('ChopLogicForm', () => {
       <ChopLogicForm onClickSubmit={mockSubmit} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <NumericInput name='age' id='age' label='Age' />
       </ChopLogicForm>,
     );
     await userEvent.click(screen.getByText('Submit'));
@@ -47,7 +47,7 @@ describe('ChopLogicForm', () => {
       <ChopLogicForm initialValues={testInitialValues} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );
@@ -65,7 +65,7 @@ describe('ChopLogicForm', () => {
       <ChopLogicForm {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );
@@ -90,7 +90,7 @@ describe('ChopLogicForm', () => {
       <ChopLogicForm initialValues={testInitialValues} {...testProps}>
         <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
         <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
-        <ChopLogicNumericInput name='age' id='age' label='Age' />
+        <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );

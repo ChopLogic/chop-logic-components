@@ -1,22 +1,22 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Stories from './NumericInput.stories';
 
-<Meta of={Stories} title='ChopLogicNumericInput' />
+<Meta of={Stories} title='NumericInput' />
 
-# ChopLogicNumericInput
+# NumericInput
 
-The `ChopLogicNumericInput` component provides a controlled numeric input field with spin buttons, validation, and accessibility features.
+The `NumericInput` component provides a controlled numeric input field with spin buttons, validation, and accessibility features.
 
 ## Usage
 
 ```tsx
-import ChopLogicNumericInput from 'chop-logic-components';
+import NumericInput from 'chop-logic-components';
 
 const QuantitySelector = () => {
   const [quantity, setQuantity] = React.useState(1);
 
   return (
-    <ChopLogicNumericInput
+    <NumericInput
       name="quantity"
       label="Quantity"
       min={1}

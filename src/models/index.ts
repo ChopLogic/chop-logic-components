@@ -1,11 +1,11 @@
 export type {
   ChopLogicComponentProps,
   ChopLogicInputProps,
-  ChopLogicNumericInputValidator,
   ChopLogicRegExpWithFlags,
   ChopLogicTextInputValidator,
   Dimensions,
   MultiSelectValue,
+  NumericInputValidator,
   SelectValue,
 } from './_common';
 export type { ChopLogicAlertProps } from './alert';
@@ -20,7 +20,7 @@ export type { ChopLogicSVGElementProps, IconProps } from './icon';
 export type { LoaderProps } from './loader';
 export type { ChopLogicMenuItem, ChopLogicMenuProps } from './menu';
 export type { MultiSelectProps } from './multi-select';
-export type { ChopLogicNumericInputProps } from './numeric';
+export type { NumericInputProps } from './numeric';
 export type { SelectProps } from './select';
 export type { ChopLogicTabItem, ChopLogicTabsProps } from './tabs';
 export type { ChopLogicTextInputProps } from './text';

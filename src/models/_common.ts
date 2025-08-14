@@ -24,7 +24,7 @@ export type MultiSelectValue = SelectValue & {
   selected: boolean;
 };
 
-export type ChopLogicNumericInputValidator = (input?: number) => boolean;
+export type NumericInputValidator = (input?: number) => boolean;
 
 export type ChopLogicTextInputValidator = (input: string) => boolean;
 

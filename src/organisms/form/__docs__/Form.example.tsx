@@ -1,5 +1,5 @@
 import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@models';
-import { ChopLogicCheckbox, ChopLogicNumericInput, ChopLogicTextInput, MultiSelect, Select } from '@molecules';
+import { ChopLogicCheckbox, ChopLogicTextInput, MultiSelect, NumericInput, Select } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
 import { CSSProperties, FC, useState } from 'react';
@@ -53,7 +53,7 @@ export const FormExample: FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
           validator={{ regexp: '^[A-Za-z ]+$' }}
           style={inputStyles}
         />
-        <ChopLogicNumericInput
+        <NumericInput
           name='age'
           label='Age'
           validator={(age) => !!age && age >= 1 && age < 100}

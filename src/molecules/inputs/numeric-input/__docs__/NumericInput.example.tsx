@@ -1,8 +1,8 @@
-import { ChopLogicNumericInputProps } from '@models';
+import { NumericInputProps } from '@models';
 import { FC } from 'react';
 
 import NumericInput from '../NumericInput';
 
-export const NumericInputExample: FC<ChopLogicNumericInputProps> = (props) => {
+export const NumericInputExample: FC<NumericInputProps> = (props) => {
   return <NumericInput {...props} style={{ width: '240px' }} />;
 };

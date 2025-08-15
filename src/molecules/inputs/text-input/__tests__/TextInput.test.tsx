@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import TextInput from '../TextInput.tsx';
 
-describe('ChopLogicTextInput', () => {
+describe('TextInput', () => {
   const testProps = {
     id: 'test-input-id',
     name: 'test',

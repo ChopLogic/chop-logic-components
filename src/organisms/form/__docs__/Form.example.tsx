@@ -1,5 +1,5 @@
 import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@models';
-import { ChopLogicCheckbox, ChopLogicTextInput, MultiSelect, NumericInput, Select } from '@molecules';
+import { ChopLogicCheckbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
 import { CSSProperties, FC, useState } from 'react';
@@ -39,14 +39,14 @@ export const FormExample: FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
         onReset={() => setData(undefined)}
         onClickSubmit={(data) => setData(data)}
       >
-        <ChopLogicTextInput
+        <TextInput
           name='firstName'
           label='First Name'
           errorMessage='Only latin letters are allowed'
           validator={{ regexp: '^[A-Za-z ]+$' }}
           style={inputStyles}
         />
-        <ChopLogicTextInput
+        <TextInput
           name='lastName'
           label='Last Name'
           errorMessage='Only latin letters are allowed'

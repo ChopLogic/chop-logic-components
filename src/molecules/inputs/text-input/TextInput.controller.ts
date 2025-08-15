@@ -1,11 +1,11 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@models';
+import { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
 import { getTextInputInitialValue, validateTextInputValue } from './TextInput.helpers.ts';
 
-export function useChopLogicTextInputController({
+export function useTextInputController({
   name,
   defaultValue,
   onChange,
@@ -15,7 +15,7 @@ export function useChopLogicTextInputController({
 }: {
   name: string;
   required: boolean;
-  validator?: ChopLogicRegExpWithFlags | ChopLogicTextInputValidator;
+  validator?: ChopLogicRegExpWithFlags | TextInputValidator;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onClear?: () => void;

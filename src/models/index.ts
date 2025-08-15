@@ -2,11 +2,11 @@ export type {
   ChopLogicComponentProps,
   ChopLogicInputProps,
   ChopLogicRegExpWithFlags,
-  ChopLogicTextInputValidator,
   Dimensions,
   MultiSelectValue,
   NumericInputValidator,
   SelectValue,
+  TextInputValidator,
 } from './_common';
 export type { ChopLogicAlertProps } from './alert';
 export type { ButtonProps } from './button';
@@ -23,5 +23,5 @@ export type { MultiSelectProps } from './multi-select';
 export type { NumericInputProps } from './numeric';
 export type { SelectProps } from './select';
 export type { ChopLogicTabItem, ChopLogicTabsProps } from './tabs';
-export type { ChopLogicTextInputProps } from './text';
+export type { TextInputProps } from './text';
 export type { TooltipProps } from './tooltip';

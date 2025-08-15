@@ -10,7 +10,7 @@ The `ChopLogicForm` component provides a structured, accessible form container w
 ## Usage
 
 ```tsx
-import { ChopLogicForm, ChopLogicTextInput } from 'chop-logic-components';
+import { ChopLogicForm, TextInput } from 'chop-logic-components';
 
 const UserForm = () => {
   const handleSubmit = (values) => {
@@ -23,8 +23,8 @@ const UserForm = () => {
       onSubmit={handleSubmit}
       columns={2}
     >
-      <ChopLogicTextInput name="firstName" label="First Name" />
-      <ChopLogicTextInput name="lastName" label="Last Name" />
+      <TextInput name="firstName" label="First Name" />
+      <TextInput name="lastName" label="Last Name" />
     </ChopLogicForm>
   );
 };

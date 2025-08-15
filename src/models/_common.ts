@@ -26,7 +26,7 @@ export type MultiSelectValue = SelectValue & {
 
 export type NumericInputValidator = (input?: number) => boolean;
 
-export type ChopLogicTextInputValidator = (input: string) => boolean;
+export type TextInputValidator = (input: string) => boolean;
 
 export type ChopLogicRegExpWithFlags = {
   regexp: string;

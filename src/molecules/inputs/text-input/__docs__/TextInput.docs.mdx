@@ -1,22 +1,22 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as TextInput from './TextInput.stories';
 
-<Meta of={TextInput} title='ChopLogicTextInput' />
+<Meta of={TextInput} title='TextInput' />
 
-# ChopLogicTextInput
+# TextInput
 
-The `ChopLogicTextInput` component provides a flexible, accessible text input field with validation, clear button, and password visibility toggle.
+The `TextInput` component provides a flexible, accessible text input field with validation, clear button, and password visibility toggle.
 
 ## Usage
 
 ```tsx
-import ChopLogicTextInput from 'chop-logic-components';
+import TextInput from 'chop-logic-components';
 
 const LoginForm = () => {
   const [email, setEmail] = React.useState('');
 
   return (
-    <ChopLogicTextInput
+    <TextInput
       name="email"
       label="Email address"
       type="email"

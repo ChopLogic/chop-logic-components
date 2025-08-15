@@ -1,4 +1,4 @@
-import { ChopLogicCheckbox, ChopLogicTextInput, NumericInput } from '@molecules';
+import { ChopLogicCheckbox, NumericInput, TextInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -21,8 +21,8 @@ describe('ChopLogicForm', () => {
   it('should not render Reset button is hasReset props is false', () => {
     render(
       <ChopLogicForm hasReset={false} {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <TextInput name='firstName' id='first-name' label='First Name' />
+        <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
       </ChopLogicForm>,
     );
@@ -33,8 +33,8 @@ describe('ChopLogicForm', () => {
     const mockSubmit = vi.fn();
     render(
       <ChopLogicForm onClickSubmit={mockSubmit} {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <TextInput name='firstName' id='first-name' label='First Name' />
+        <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
       </ChopLogicForm>,
     );
@@ -45,8 +45,8 @@ describe('ChopLogicForm', () => {
   it('should render initial values', () => {
     render(
       <ChopLogicForm initialValues={testInitialValues} {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <TextInput name='firstName' id='first-name' label='First Name' />
+        <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
@@ -63,8 +63,8 @@ describe('ChopLogicForm', () => {
   it('should accept custom values', async () => {
     render(
       <ChopLogicForm {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <TextInput name='firstName' id='first-name' label='First Name' />
+        <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
@@ -88,8 +88,8 @@ describe('ChopLogicForm', () => {
   it('should reset entered values to initial values', async () => {
     render(
       <ChopLogicForm initialValues={testInitialValues} {...testProps}>
-        <ChopLogicTextInput name='firstName' id='first-name' label='First Name' />
-        <ChopLogicTextInput name='lastName' id='last-name' label='Last Name' />
+        <TextInput name='firstName' id='first-name' label='First Name' />
+        <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,

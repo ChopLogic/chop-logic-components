@@ -1,8 +1,8 @@
-import { ChopLogicTextInputProps } from '@models';
+import { TextInputProps } from '@models';
 import { FC } from 'react';
 
 import TextInput from '../TextInput.tsx';
 
-export const TextInputExample: FC<ChopLogicTextInputProps> = (props) => {
+export const TextInputExample: FC<TextInputProps> = (props) => {
   return <TextInput {...props} style={{ width: '240px' }} />;
 };

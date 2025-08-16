@@ -1,4 +1,4 @@
-import { Label } from '@atoms';
+import { ErrorMessage, Label } from '@atoms';
 import Button from '@atoms/button/Button.tsx';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
@@ -6,7 +6,7 @@ import { NumericInputProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { ErrorMessage, Input } from '../__elements__/index.ts';
+import { Input } from '../__elements__/index.ts';
 import { useNumericInputController } from './NumericInput.controller.ts';
 import styles from './NumericInput.module.scss';
 

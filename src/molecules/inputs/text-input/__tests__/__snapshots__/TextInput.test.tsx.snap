@@ -63,7 +63,7 @@ exports[`TextInput > should render the input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_eb4d84 _errorMessage_e06957"
+        class="_errorMessage_2b3768 _errorMessage_e06957"
         id="test-input-id_error"
       >
         Error!
@@ -142,7 +142,7 @@ exports[`TextInput > should render the required input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_eb4d84 _errorMessage_e06957"
+        class="_errorMessage_2b3768 _errorMessage_e06957"
         id="test-input-id_error"
       >
         Error!

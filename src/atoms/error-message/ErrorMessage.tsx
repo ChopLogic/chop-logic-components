@@ -11,7 +11,7 @@ type ErrorMessageProps = {
   className?: string;
 };
 
-export const ErrorMessage: FC<ErrorMessageProps> = ({ errorId, testId, message = 'Error!', visible = false, className }) => {
+const ErrorMessage: FC<ErrorMessageProps> = ({ errorId, testId, message = 'Error!', visible = false, className }) => {
   const errorClass = getClassName([styles.errorMessage, className, { [styles.errorMessage__visible]: visible }]);
 
   return (
@@ -20,3 +20,5 @@ export const ErrorMessage: FC<ErrorMessageProps> = ({ errorId, testId, message =
     </span>
   );
 };
+
+export default ErrorMessage;

@@ -72,7 +72,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_eb4d84 _errorMessage_ad237f"
+        class="_errorMessage_2b3768 _errorMessage_ad237f"
         id="numeric-input_error"
       >
         Error!

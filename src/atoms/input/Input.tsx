@@ -4,7 +4,7 @@ import styles from './Input.module.scss';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & PropsWithChildren;
 
-export const Input: FC<Props> = ({ children, ...rest }) => {
+const Input: FC<Props> = ({ children, ...rest }) => {
   return (
     <div className={styles.wrapper}>
       <input {...rest} className={styles.input} />
@@ -12,3 +12,5 @@ export const Input: FC<Props> = ({ children, ...rest }) => {
     </div>
   );
 };
+
+export default Input;

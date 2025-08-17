@@ -15,12 +15,12 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_12eaeb"
+      class="_wrapper_097c9a"
     >
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="_input_12eaeb"
+        class="_input_097c9a"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"

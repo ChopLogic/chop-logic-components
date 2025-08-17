@@ -1,4 +1,4 @@
-import { ErrorMessage, Label } from '@atoms';
+import { ErrorMessage, Input, Label } from '@atoms';
 import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
@@ -6,7 +6,6 @@ import { TextInputProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { Input } from '../__elements__/index.ts';
 import { useTextInputController } from './TextInput.controller.ts';
 import styles from './TextInput.module.scss';
 

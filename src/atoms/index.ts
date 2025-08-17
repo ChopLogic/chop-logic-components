@@ -3,6 +3,7 @@ export { default as EditableText } from './editable-text/EditableText';
 export { default as ErrorMessage } from './error-message/ErrorMessage';
 export { default as Header } from './header/Header';
 export { default as Icon } from './icon/Icon';
+export { default as Input } from './input/Input';
 export { default as Label } from './label/Label';
 export { default as Loader } from './loader/Loader';
 export { default as Portal } from './portal/Portal';

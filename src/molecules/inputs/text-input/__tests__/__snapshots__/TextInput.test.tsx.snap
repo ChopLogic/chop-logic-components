@@ -15,14 +15,14 @@ exports[`TextInput > should render the input correctly 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_12eaeb"
+      class="_wrapper_097c9a"
     >
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
         aria-readonly="false"
         autocomplete="off"
-        class="_input_12eaeb"
+        class="_input_097c9a"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -93,14 +93,14 @@ exports[`TextInput > should render the required input correctly 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_12eaeb"
+      class="_wrapper_097c9a"
     >
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
         aria-readonly="false"
         autocomplete="off"
-        class="_input_12eaeb"
+        class="_input_097c9a"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."

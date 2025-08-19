@@ -1,0 +1,45 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as ErrorMessageStories from './ErrorMessage.stories';
+
+<Meta of={ErrorMessageStories} title='ErrorMessage' />
+
+# ErrorMessage
+
+The `ErrorMessage` component allows users to add a clear error description to an editable input field.
+
+## Usage
+
+```tsx
+import ErrorMessage from 'chop-logic-components';
+
+const AgeInput = () => {
+  const [age, setAge] = React.useState(0);
+  const errorId = 'age-input-error';
+  const errorMessage = 'Enter a number between 1 and 99';
+  const isErrorMessageVisible = age < 1 || age > 99;
+
+  return (
+    <div>
+        <input
+            value={name}
+            onChange={setName}
+            aria-errormessage={errorId}
+        />
+        <ErrorMessage errorId={errorId} message={errorMessage} visible={isErrorMessageVisible} />
+    </div>
+  );
+};
+```
+
+### When to Use
+
+- When you need a styled error message for a validated user input.
+
+### Accessibility Notes
+
+- Don't forget to connect the error message with an input via errorId.
+- The text of the message should be short and clear.
+
+## Props
+
+<Controls />

@@ -4,7 +4,7 @@ import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } fr
 
 import { getCheckboxInitialValue } from './Checkbox.helpers.ts';
 
-export function useChopLogicCheckboxController({
+export function useCheckboxController({
   name,
   defaultChecked,
   onChange,

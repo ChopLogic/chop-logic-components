@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import Checkbox from '../Checkbox.tsx';
 
-describe('ChopLogicCheckbox', () => {
+describe('Checkbox', () => {
   const testProps = {
     id: 'test-checkbox-id',
     name: 'checkbox',

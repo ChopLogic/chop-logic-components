@@ -1,5 +1,5 @@
 import { ChopLogicFormData, ChopLogicFormProps, SelectValue } from '@models';
-import { ChopLogicCheckbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
+import { Checkbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
 import { CSSProperties, FC, useState } from 'react';
@@ -62,7 +62,7 @@ export const FormExample: FC<ChopLogicFormProps> = ({ columns, hasReset }) => {
         />
         <Select name='language' label='Language' options={SELECT_LANGUAGES} style={inputStyles} />
         <MultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} style={inputStyles} />
-        <ChopLogicCheckbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
+        <Checkbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
       </ChopLogicForm>
       {data && (
         <div className={styles.container} style={{ marginTop: '2rem' }}>

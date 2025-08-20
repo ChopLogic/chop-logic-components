@@ -10,7 +10,7 @@ export type {
 } from './_common';
 export type { ChopLogicAlertProps } from './alert';
 export type { ButtonProps } from './button';
-export type { ChopLogicCheckboxProps } from './checkbox';
+export type { CheckboxProps } from './checkbox';
 export type { ChopLogicDialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormProps, ChopLogicFormValidationState } from './form';

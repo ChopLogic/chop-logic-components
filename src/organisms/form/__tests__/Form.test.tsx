@@ -1,4 +1,4 @@
-import { ChopLogicCheckbox, NumericInput, TextInput } from '@molecules';
+import { Checkbox, NumericInput, TextInput } from '@molecules';
 import { ChopLogicForm } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -48,7 +48,7 @@ describe('ChopLogicForm', () => {
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
-        <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
+        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );
 
@@ -66,7 +66,7 @@ describe('ChopLogicForm', () => {
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
-        <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
+        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );
 
@@ -91,7 +91,7 @@ describe('ChopLogicForm', () => {
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
-        <ChopLogicCheckbox name='accepted' id='accepted' label='Is Accepted' />
+        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
       </ChopLogicForm>,
     );
 

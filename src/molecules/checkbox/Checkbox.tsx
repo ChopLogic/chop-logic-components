@@ -2,14 +2,14 @@ import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { Label } from '@atoms';
 import { useElementIds } from '@hooks';
-import { ChopLogicCheckboxProps } from '@models';
+import { CheckboxProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useChopLogicCheckboxController } from './Checkbox.controller';
+import { useCheckboxController } from './Checkbox.controller';
 import styles from './Checkbox.module.scss';
 
-const ChopLogicCheckbox: FC<ChopLogicCheckboxProps> = ({
+const Checkbox: FC<CheckboxProps> = ({
   name,
   label,
   disabled,
@@ -22,7 +22,7 @@ const ChopLogicCheckbox: FC<ChopLogicCheckboxProps> = ({
   className,
   ...rest
 }) => {
-  const { handleChange, checked } = useChopLogicCheckboxController({ name, defaultChecked, onChange });
+  const { handleChange, checked } = useCheckboxController({ name, defaultChecked, onChange });
   const { elementId } = useElementIds(id);
   const checkboxClass = getClassName([
     styles.checkbox,
@@ -57,4 +57,4 @@ const ChopLogicCheckbox: FC<ChopLogicCheckboxProps> = ({
   );
 };
 
-export default ChopLogicCheckbox;
+export default Checkbox;

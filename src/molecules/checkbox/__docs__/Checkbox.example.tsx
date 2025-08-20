@@ -1,8 +1,8 @@
-import { ChopLogicCheckboxProps } from '@models';
+import { CheckboxProps } from '@models';
 import { FC } from 'react';
 
-import ChopLogicCheckbox from '../Checkbox';
+import Checkbox from '../Checkbox';
 
-export const CheckboxExample: FC<ChopLogicCheckboxProps> = (props) => {
-  return <ChopLogicCheckbox {...props} />;
+export const CheckboxExample: FC<CheckboxProps> = (props) => {
+  return <Checkbox {...props} />;
 };

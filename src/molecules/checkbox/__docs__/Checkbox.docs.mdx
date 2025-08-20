@@ -1,23 +1,23 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as CheckboxStories from './Checkbox.stories';
 
-<Meta of={CheckboxStories} title='ChopLogicCheckbox' />
+<Meta of={CheckboxStories} title='Checkbox' />
 
-# ChopLogicCheckbox
+# Checkbox
 
-The `ChopLogicCheckbox` component provides a customizable, accessible checkbox input with label support, validation states, and flexible icon positioning.
+The `Checkbox` component provides a customizable, accessible checkbox input with label support, validation states, and flexible icon positioning.
 
 ## Usage
 
 ```tsx
-import ChopLogicCheckbox from 'chop-logic-components';
+import Checkbox from 'chop-logic-components';
 
 const PreferencesForm = () => {
   const [newsletter, setNewsletter] = React.useState(false);
 
   return (
     <form>
-      <ChopLogicCheckbox
+      <Checkbox
         name="newsletter"
         label="Subscribe to newsletter"
         checked={newsletter}

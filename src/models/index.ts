@@ -8,7 +8,7 @@ export type {
   SelectValue,
   TextInputValidator,
 } from './_common';
-export type { ChopLogicAlertProps } from './alert';
+export type { AlertProps } from './alert';
 export type { ButtonProps } from './button';
 export type { CheckboxProps } from './checkbox';
 export type { ChopLogicDialogProps } from './dialog';

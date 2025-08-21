@@ -1,12 +1,12 @@
 import { AlertMode } from '@enums';
-import { ChopLogicAlertProps } from '@models';
+import { AlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicAlert from '../Alert.tsx';
+import Alert from '../Alert.tsx';
 
-const defaultProps: ChopLogicAlertProps = {
+const defaultProps: AlertProps = {
   isOpened: false,
   onClose: vi.fn(),
   message: 'This is a test message.',
@@ -15,11 +15,11 @@ const defaultProps: ChopLogicAlertProps = {
   id: 'test-id',
 };
 
-const renderAlert = (props: Partial<ChopLogicAlertProps> = {}) => {
-  return render(<ChopLogicAlert {...defaultProps} {...props} />);
+const renderAlert = (props: Partial<AlertProps> = {}) => {
+  return render(<Alert {...defaultProps} {...props} />);
 };
 
-describe('ChopLogicAlert', () => {
+describe('Alert', () => {
   it('should render nothing when not opened', () => {
     renderAlert();
     expect(screen.queryByText(defaultProps.message)).toBeNull();
@@ -41,7 +41,7 @@ describe('ChopLogicAlert', () => {
 
   it('should unmount the alert when it is closed', async () => {
     const { rerender } = renderAlert({ isOpened: true });
-    rerender(<ChopLogicAlert {...defaultProps} isOpened={false} />);
+    rerender(<Alert {...defaultProps} isOpened={false} />);
     await waitFor(() => {
       expect(screen.queryByText('This is a test message')).not.toBeInTheDocument();
     });

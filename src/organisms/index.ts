@@ -1,4 +1,4 @@
-export { default as ChopLogicAlert } from './alert/Alert';
+export { default as Alert } from './alert/Alert';
 export { default as ChopLogicDialog } from './dialog/Dialog';
 export { default as ChopLogicForm } from './form/Form';
 export { default as ChopLogicGrid } from './grid/Grid';

@@ -2,14 +2,14 @@ import { Header, Portal } from '@atoms';
 import { Button } from '@atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
-import { ChopLogicAlertProps } from '@models';
+import { AlertProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
 import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
 import styles from './Alert.module.scss';
 
-const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
+const Alert: FC<AlertProps> = ({
   isOpened,
   onClose,
   title,
@@ -58,4 +58,4 @@ const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
   );
 };
 
-export default ChopLogicAlert;
+export default Alert;

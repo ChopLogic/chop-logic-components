@@ -1,11 +1,11 @@
 import { Button } from '@atoms';
 import { ButtonView } from '@enums';
-import { ChopLogicAlertProps } from '@models';
+import { AlertProps } from '@models';
 import { FC, useState } from 'react';
 
-import ChopLogicAlert from '../Alert';
+import Alert from '../Alert';
 
-export const AlertExample: FC<ChopLogicAlertProps> = ({ mode, message, title, ...rest }) => {
+export const AlertExample: FC<AlertProps> = ({ mode, message, title, ...rest }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -14,7 +14,7 @@ export const AlertExample: FC<ChopLogicAlertProps> = ({ mode, message, title, ..
   return (
     <div>
       <Button onClick={handleOpen} text='Open Alert' view={ButtonView.Secondary} />
-      <ChopLogicAlert title={title} message={message} mode={mode} {...rest} isOpened={isOpened} onClose={handleClose} />
+      <Alert title={title} message={message} mode={mode} {...rest} isOpened={isOpened} onClose={handleClose} />
     </div>
   );
 };

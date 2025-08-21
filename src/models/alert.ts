@@ -2,7 +2,7 @@ import { AlertMode, IconName } from '@enums';
 
 import { ChopLogicComponentProps } from './_common';
 
-export interface ChopLogicAlertProps extends ChopLogicComponentProps {
+export interface AlertProps extends ChopLogicComponentProps {
   isOpened: boolean;
   onClose: () => void;
   message: string;

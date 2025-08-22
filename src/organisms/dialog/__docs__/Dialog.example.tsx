@@ -1,11 +1,11 @@
 import { Button } from '@atoms';
 import { ButtonView } from '@enums';
-import { ChopLogicDialogProps } from '@models';
+import { DialogProps } from '@models';
 import { FC, useState } from 'react';
 
-import ChopLogicDialog from '../Dialog';
+import Dialog from '../Dialog';
 
-export const ChopLogicDialogExample: FC<ChopLogicDialogProps> = ({ onClose, title, ...rest }) => {
+export const DialogExample: FC<DialogProps> = ({ onClose, title, ...rest }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -30,9 +30,9 @@ export const ChopLogicDialogExample: FC<ChopLogicDialogProps> = ({ onClose, titl
   return (
     <div>
       <Button text='Open dialog' onClick={handleOpen} view={ButtonView.Secondary} />
-      <ChopLogicDialog {...rest} isOpened={isOpened} onClose={handleClose} title={title}>
+      <Dialog {...rest} isOpened={isOpened} onClose={handleClose} title={title}>
         {modalContent}
-      </ChopLogicDialog>
+      </Dialog>
     </div>
   );
 };

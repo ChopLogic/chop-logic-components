@@ -11,7 +11,7 @@ export type {
 export type { AlertProps } from './alert';
 export type { ButtonProps } from './button';
 export type { CheckboxProps } from './checkbox';
-export type { ChopLogicDialogProps } from './dialog';
+export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormProps, ChopLogicFormValidationState } from './form';
 export type { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicGridProps, RenderDataItemCallback } from './grid';

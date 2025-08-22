@@ -1,16 +1,16 @@
 import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicDialog from '../Dialog';
-import { ChopLogicDialogExample } from './Dialog.example';
+import Dialog from '../Dialog';
+import { DialogExample } from './Dialog.example';
 
-const meta: Meta<typeof ChopLogicDialog> = {
-  component: ChopLogicDialogExample,
+const meta: Meta<typeof Dialog> = {
+  component: DialogExample,
   title: 'Organisms/Dialog',
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicDialog>;
+type Story = StoryObj<typeof Dialog>;
 
 export const Example: Story = {
   args: {

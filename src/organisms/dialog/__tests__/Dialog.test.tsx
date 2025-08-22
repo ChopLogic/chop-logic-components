@@ -2,9 +2,9 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicDialog from '../Dialog.tsx';
+import Dialog from '../Dialog.tsx';
 
-describe('ChopLogicDialog', () => {
+describe('Dialog', () => {
   const testProps = {
     id: 'dialog-id',
     title: 'Test dialog title',
@@ -14,9 +14,9 @@ describe('ChopLogicDialog', () => {
 
   it('should render the dialog correctly after a delay', async () => {
     render(
-      <ChopLogicDialog {...testProps} isOpened>
+      <Dialog {...testProps} isOpened>
         <div>Dialog content</div>
-      </ChopLogicDialog>,
+      </Dialog>,
     );
     const window = await screen.findByRole('dialog');
     expect(window).toBeInTheDocument();
@@ -24,9 +24,9 @@ describe('ChopLogicDialog', () => {
 
   it('should render the dialog if isOpened is false', () => {
     render(
-      <ChopLogicDialog {...testProps} isOpened={false}>
+      <Dialog {...testProps} isOpened={false}>
         <div>Dialog content</div>
-      </ChopLogicDialog>,
+      </Dialog>,
     );
     const window = screen.queryByRole('dialog');
     expect(window).not.toBeInTheDocument();
@@ -34,9 +34,9 @@ describe('ChopLogicDialog', () => {
 
   it('should render the dialog title', async () => {
     render(
-      <ChopLogicDialog {...testProps} isOpened={true}>
+      <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
-      </ChopLogicDialog>,
+      </Dialog>,
     );
 
     await waitFor(() => {
@@ -46,9 +46,9 @@ describe('ChopLogicDialog', () => {
 
   it('should display the close button', async () => {
     render(
-      <ChopLogicDialog {...testProps} isOpened={true}>
+      <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
-      </ChopLogicDialog>,
+      </Dialog>,
     );
 
     await waitFor(() => {
@@ -58,9 +58,9 @@ describe('ChopLogicDialog', () => {
 
   it('should call onClose handler', async () => {
     render(
-      <ChopLogicDialog {...testProps} isOpened={true}>
+      <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
-      </ChopLogicDialog>,
+      </Dialog>,
     );
 
     await userEvent.click(screen.getByRole('button'));

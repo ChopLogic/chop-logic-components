@@ -2,13 +2,13 @@ import { Header, Portal } from '@atoms';
 import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
-import { ChopLogicDialogProps } from '@models';
+import { DialogProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useRef } from 'react';
 
 import styles from './Dialog.module.scss';
 
-const ChopLogicDialog: FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, children, icon, ...rest }) => {
+const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...rest }) => {
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
 
@@ -44,4 +44,4 @@ const ChopLogicDialog: FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, c
   );
 };
 
-export default ChopLogicDialog;
+export default Dialog;

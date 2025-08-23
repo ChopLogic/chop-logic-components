@@ -18,7 +18,7 @@ import { useIsOverflow } from 'chop-logic-components';
 
 const OverflowComponent = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isWidthOverflow = useIsOverflow(containerRef, 'width');
+  const isWidthOverflow = useIsOverflow({ref: containerRef, dimension: 'width'});
 
   return (
     <div ref={containerRef} className={isWidthOverflow ? 'has-overflow' : ''}>
@@ -34,6 +34,7 @@ const OverflowComponent = () => {
 |---------------|--------------------------|-----------------------------------------------------------------------------|
 | **ref**       | `RefObject<HTMLElement>` | React ref object pointing to the element to monitor                         |
 | **dimension** | `'width' \| 'height'`    | Which dimension to check for overflow                                       |
+| **isMounted** | `boolean`    | Optional flag to trigger the hook on mount the parent component                                       |
 
 ## Returns
 

@@ -4,7 +4,7 @@ import { CSSProperties, FC, useRef } from 'react';
 import { useIsOverflow } from '../use-is-overflow.ts';
 
 const containerStyles: CSSProperties = {
-  width: '250px',
+  width: '400px',
   overflow: 'hidden',
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
@@ -14,7 +14,7 @@ const containerStyles: CSSProperties = {
 
 export const UseIsOverflowExample: FC<{ text: string }> = ({ text }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isWidthOverflow = useIsOverflow(containerRef, 'width');
+  const isWidthOverflow = useIsOverflow({ ref: containerRef, dimension: 'width', isMounted: true });
 
   return (
     <div className={styles.container}>

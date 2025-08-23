@@ -1,4 +1,4 @@
-import { ChopLogicFormData, MultiSelectValue, SelectValue } from '@models';
+import { FormValues, MultiSelectValue, SelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
 
 import { getMultiSelectInitialValues } from '../MultiSelect.helpers.ts';
@@ -11,7 +11,7 @@ describe('getMultiSelectSelectValues', () => {
   ];
 
   it('should return MultiSelectValue[] with selected true for options in initialValues', () => {
-    const initialValues: ChopLogicFormData = { mySelect: ['1', '3'] };
+    const initialValues: FormValues = { mySelect: ['1', '3'] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
@@ -41,7 +41,7 @@ describe('getMultiSelectSelectValues', () => {
   });
 
   it('should return MultiSelectValue[] with all selected false if neither initialValues nor defaultValue matches any options', () => {
-    const initialValues: ChopLogicFormData = { mySelect: ['4', '5'] };
+    const initialValues: FormValues = { mySelect: ['4', '5'] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,
@@ -56,7 +56,7 @@ describe('getMultiSelectSelectValues', () => {
   });
 
   it('should prioritize initialValues over defaultValue', () => {
-    const initialValues: ChopLogicFormData = { mySelect: ['1'] };
+    const initialValues: FormValues = { mySelect: ['1'] };
     const defaultValue = ['2'];
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
@@ -73,7 +73,7 @@ describe('getMultiSelectSelectValues', () => {
   });
 
   it('should handle complex initialValues with SelectValue objects', () => {
-    const initialValues: ChopLogicFormData = { mySelect: [{ id: '1' }, { id: '3' }] };
+    const initialValues: FormValues = { mySelect: [{ id: '1' }, { id: '3' }] };
     const result = getMultiSelectInitialValues({
       name: 'mySelect',
       options,

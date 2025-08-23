@@ -13,7 +13,7 @@ export const AlertExample: FC<AlertProps> = ({ mode, message, title, ...rest }) 
 
   return (
     <div>
-      <Button onClick={handleOpen} text='Open Alert' view={ButtonView.Secondary} />
+      <Button onClick={handleOpen} text='Trigger Alert' view={ButtonView.Secondary} />
       <Alert title={title} message={message} mode={mode} {...rest} isOpened={isOpened} onClose={handleClose} />
     </div>
   );

@@ -13,7 +13,7 @@ export type { ButtonProps } from './button';
 export type { CheckboxProps } from './checkbox';
 export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
-export type { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormProps, ChopLogicFormValidationState } from './form';
+export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';
 export type { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicGridProps, RenderDataItemCallback } from './grid';
 export type { HeaderProps } from './header';
 export type { ChopLogicSVGElementProps, IconProps } from './icon';

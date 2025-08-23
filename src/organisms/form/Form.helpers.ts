@@ -1,12 +1,12 @@
-import { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormValidationState } from '@models';
+import { FormInputParams, FormValidationState, FormValues } from '@models';
 
-export function getInitialValidationState(data?: ChopLogicFormData): ChopLogicFormValidationState {
+export function getInitialValidationState(data?: FormValues): FormValidationState {
   if (!data) return [];
 
   return Object.keys(data).map((key) => [key, true]);
 }
 
-export function updateValidationState(state: ChopLogicFormValidationState, params: ChopLogicFormInputParams): ChopLogicFormValidationState {
+export function updateValidationState(state: FormValidationState, params: FormInputParams): FormValidationState {
   if (params?.valid === undefined) return state;
 
   return state.map((item) => {
@@ -15,6 +15,6 @@ export function updateValidationState(state: ChopLogicFormValidationState, param
   });
 }
 
-export function isFormDataValid(state: ChopLogicFormValidationState): boolean {
+export function isFormDataValid(state: FormValidationState): boolean {
   return state.every((item) => item[1]);
 }

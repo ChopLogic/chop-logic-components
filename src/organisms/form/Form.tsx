@@ -1,14 +1,14 @@
 import { Button } from '@atoms';
 import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
-import { ChopLogicFormProps } from '@models';
+import { FormProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useChopLogicFormController } from './Form.controller.ts';
+import { useFormController } from './Form.controller.ts';
 import styles from './Form.module.scss';
 
-const ChopLogicForm: FC<ChopLogicFormProps> = ({
+const Form: FC<FormProps> = ({
   children,
   initialValues,
   onReset,
@@ -19,7 +19,7 @@ const ChopLogicForm: FC<ChopLogicFormProps> = ({
   className,
   ...rest
 }) => {
-  const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useChopLogicFormController({
+  const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useFormController({
     initialValues,
     onReset,
     onSubmit,
@@ -41,4 +41,4 @@ const ChopLogicForm: FC<ChopLogicFormProps> = ({
   );
 };
 
-export default ChopLogicForm;
+export default Form;

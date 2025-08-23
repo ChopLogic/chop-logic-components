@@ -2,21 +2,21 @@ import { FormEventHandler, PropsWithChildren } from 'react';
 
 import { ChopLogicComponentProps } from './_common';
 
-export type ChopLogicFormData = { [key: string]: unknown };
+export type FormValues = { [key: string]: unknown };
 
-export type ChopLogicFormValidationState = [string, boolean][];
+export type FormValidationState = [string, boolean][];
 
-export interface ChopLogicFormInputParams {
+export interface FormInputParams {
   name: string;
   value: unknown;
   valid?: boolean;
 }
 
-export interface ChopLogicFormProps extends PropsWithChildren, ChopLogicComponentProps {
+export interface FormProps extends PropsWithChildren, ChopLogicComponentProps {
   columns?: number;
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   hasReset?: boolean;
-  onClickSubmit?: (data: ChopLogicFormData) => void;
+  onClickSubmit?: (data: FormValues) => void;
   onReset?: FormEventHandler<HTMLFormElement>;
   onSubmit?: FormEventHandler<HTMLFormElement>;
 }

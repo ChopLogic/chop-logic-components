@@ -1,10 +1,10 @@
 import { Checkbox, NumericInput, TextInput } from '@molecules';
-import { ChopLogicForm } from '@organisms';
+import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-describe('ChopLogicForm', () => {
+describe('Form', () => {
   const testInitialValues = {
     firstName: 'John',
     lastName: 'Doe',
@@ -20,11 +20,11 @@ describe('ChopLogicForm', () => {
 
   it('should not render Reset button is hasReset props is false', () => {
     render(
-      <ChopLogicForm hasReset={false} {...testProps}>
+      <Form hasReset={false} {...testProps}>
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
-      </ChopLogicForm>,
+      </Form>,
     );
     expect(screen.queryByText('Reset')).not.toBeInTheDocument();
   });
@@ -32,11 +32,11 @@ describe('ChopLogicForm', () => {
   it('should call onSubmit handler', async () => {
     const mockSubmit = vi.fn();
     render(
-      <ChopLogicForm onClickSubmit={mockSubmit} {...testProps}>
+      <Form onClickSubmit={mockSubmit} {...testProps}>
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
-      </ChopLogicForm>,
+      </Form>,
     );
     await userEvent.click(screen.getByText('Submit'));
     expect(mockSubmit).toHaveBeenCalledOnce();
@@ -44,12 +44,12 @@ describe('ChopLogicForm', () => {
 
   it('should render initial values', () => {
     render(
-      <ChopLogicForm initialValues={testInitialValues} {...testProps}>
+      <Form initialValues={testInitialValues} {...testProps}>
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <Checkbox name='accepted' id='accepted' label='Is Accepted' />
-      </ChopLogicForm>,
+      </Form>,
     );
 
     const textInputs = screen.getAllByRole('textbox');
@@ -62,12 +62,12 @@ describe('ChopLogicForm', () => {
 
   it('should accept custom values', async () => {
     render(
-      <ChopLogicForm {...testProps}>
+      <Form {...testProps}>
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <Checkbox name='accepted' id='accepted' label='Is Accepted' />
-      </ChopLogicForm>,
+      </Form>,
     );
 
     const textInputs = screen.getAllByRole('textbox');
@@ -87,12 +87,12 @@ describe('ChopLogicForm', () => {
 
   it('should reset entered values to initial values', async () => {
     render(
-      <ChopLogicForm initialValues={testInitialValues} {...testProps}>
+      <Form initialValues={testInitialValues} {...testProps}>
         <TextInput name='firstName' id='first-name' label='First Name' />
         <TextInput name='lastName' id='last-name' label='Last Name' />
         <NumericInput name='age' id='age' label='Age' />
         <Checkbox name='accepted' id='accepted' label='Is Accepted' />
-      </ChopLogicForm>,
+      </Form>,
     );
 
     const textInputs = screen.getAllByRole('textbox');

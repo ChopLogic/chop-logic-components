@@ -1,4 +1,4 @@
-import { ChopLogicForm } from '@organisms';
+import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -66,18 +66,18 @@ describe('Checkbox', () => {
 
   it('should take an initial value from the form context', async () => {
     render(
-      <ChopLogicForm initialValues={{ checkbox: true }}>
+      <Form initialValues={{ checkbox: true }}>
         <Checkbox {...testProps} />
-      </ChopLogicForm>,
+      </Form>,
     );
     expect(screen.getByRole('checkbox')).toBeChecked();
   });
 
   it('should ignore the defaultChecked prop is initial values is provided from the form context', async () => {
     render(
-      <ChopLogicForm initialValues={{ checkbox: false }}>
+      <Form initialValues={{ checkbox: false }}>
         <Checkbox {...testProps} defaultChecked />
-      </ChopLogicForm>,
+      </Form>,
     );
     expect(screen.getByRole('checkbox')).not.toBeChecked();
   });

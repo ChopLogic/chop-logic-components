@@ -1,4 +1,4 @@
-import { ChopLogicFormData } from '@models';
+import { FormValues } from '@models';
 
 export function getCheckboxInitialValue({
   defaultChecked,
@@ -6,7 +6,7 @@ export function getCheckboxInitialValue({
   name,
 }: {
   defaultChecked?: boolean;
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   name: string;
 }): boolean {
   if (initialValues && initialValues?.[name] !== undefined) {

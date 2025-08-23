@@ -1,4 +1,4 @@
-import { ChopLogicFormData, NumericInputValidator } from '@models';
+import { FormValues, NumericInputValidator } from '@models';
 
 export function getNumericInputInitialValue({
   name,
@@ -6,7 +6,7 @@ export function getNumericInputInitialValue({
   defaultValue,
 }: {
   name: string;
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   defaultValue?: string | number | readonly string[];
 }): number {
   if (initialValues && initialValues[name]) {

@@ -1,4 +1,4 @@
-import { ChopLogicFormData, MultiSelectValue, SelectValue } from '@models';
+import { FormValues, MultiSelectValue, SelectValue } from '@models';
 
 export function getMultiSelectInitialValues({
   name,
@@ -8,7 +8,7 @@ export function getMultiSelectInitialValues({
 }: {
   name: string;
   options: SelectValue[];
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   defaultValue?: string | number | readonly string[];
 }): MultiSelectValue[] {
   return options.map((option) => {

@@ -1,5 +1,5 @@
 import { SelectValue } from '@models';
-import { ChopLogicForm } from '@organisms';
+import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -178,9 +178,9 @@ describe('MultiSelect', () => {
 
   it('should take an initial value from the form context', async () => {
     render(
-      <ChopLogicForm initialValues={{ languages: [MULTI_SELECT_VALUES[2], MULTI_SELECT_VALUES[3]] }}>
+      <Form initialValues={{ languages: [MULTI_SELECT_VALUES[2], MULTI_SELECT_VALUES[3]] }}>
         <MultiSelect {...testProps} />
-      </ChopLogicForm>,
+      </Form>,
     );
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue(`${MULTI_SELECT_VALUES[2].id},${MULTI_SELECT_VALUES[3].id}`);

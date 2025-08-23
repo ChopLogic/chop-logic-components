@@ -1,4 +1,4 @@
-import { ChopLogicFormData, ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
+import { ChopLogicRegExpWithFlags, FormValues, TextInputValidator } from '@models';
 
 export function validateTextInputValue({
   value,
@@ -30,7 +30,7 @@ export function getTextInputInitialValue({
   defaultValue,
 }: {
   name: string;
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   defaultValue?: string | number | readonly string[];
 }): string {
   if (initialValues && initialValues?.[name]) {

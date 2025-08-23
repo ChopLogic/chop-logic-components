@@ -1,4 +1,4 @@
-import { ChopLogicForm } from '@organisms';
+import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -106,9 +106,9 @@ describe('TextInput', () => {
 
   it('should take an initial value from the form context', async () => {
     render(
-      <ChopLogicForm initialValues={{ test: 'testValue' }}>
+      <Form initialValues={{ test: 'testValue' }}>
         <TextInput {...testProps} />
-      </ChopLogicForm>,
+      </Form>,
     );
     const input = screen.getByRole('textbox');
     expect(input).toHaveValue('testValue');

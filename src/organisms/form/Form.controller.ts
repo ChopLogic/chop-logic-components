@@ -1,24 +1,24 @@
-import { ChopLogicFormData, ChopLogicFormInputParams } from '@models';
+import { FormInputParams, FormValues } from '@models';
 import { FormEvent, FormEventHandler, useState } from 'react';
 
 import { getInitialValidationState, isFormDataValid, updateValidationState } from './Form.helpers.ts';
 
-export function useChopLogicFormController({
+export function useFormController({
   initialValues,
   onReset,
   onSubmit,
   onClickSubmit,
 }: {
-  initialValues?: ChopLogicFormData;
+  initialValues?: FormValues;
   onReset?: FormEventHandler<HTMLFormElement>;
   onSubmit?: FormEventHandler<HTMLFormElement>;
-  onClickSubmit?: (data: ChopLogicFormData) => void;
+  onClickSubmit?: (data: FormValues) => void;
 }) {
   const [formData, setFormData] = useState(initialValues);
   const [validationState, setValidationState] = useState(getInitialValidationState(initialValues));
   const [resetSignal, setResetSignal] = useState(0);
 
-  const handleInputChange = (params: ChopLogicFormInputParams) => {
+  const handleInputChange = (params: FormInputParams) => {
     const newData = { ...formData, [params.name]: params.value };
     setFormData(newData);
     setValidationState(updateValidationState(validationState, params));

@@ -1,5 +1,5 @@
 import { SelectValue } from '@models';
-import { ChopLogicForm } from '@organisms';
+import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -127,9 +127,9 @@ describe('Select', () => {
 
   it('should take an initial value from the form context', async () => {
     render(
-      <ChopLogicForm initialValues={{ language: SELECT_LANGUAGES[2] }}>
+      <Form initialValues={{ language: SELECT_LANGUAGES[2] }}>
         <Select {...testProps} />
-      </ChopLogicForm>,
+      </Form>,
     );
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue(SELECT_LANGUAGES[2].id);

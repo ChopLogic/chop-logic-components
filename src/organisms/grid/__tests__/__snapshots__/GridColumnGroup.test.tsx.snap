@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicGridBody > should match the snapshot 1`] = `
+exports[`GridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <colgroup>

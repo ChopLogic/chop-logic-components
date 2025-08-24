@@ -1,10 +1,10 @@
-import { ChopLogicGridColumn } from '@models';
+import { GridColumn } from '@models';
 import { GridColumnGroup } from '@organisms/grid/column-group/GridColumnGroup.tsx';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-describe('ChopLogicGridBody', () => {
-  const columns: ChopLogicGridColumn[] = [
+describe('GridBody', () => {
+  const columns: GridColumn[] = [
     { title: 'Col 1', field: 'field1', highlighted: true },
     { title: 'Col 2', field: 'field2', className: 'column-class' },
     { title: 'Col 3', field: 'field3' },

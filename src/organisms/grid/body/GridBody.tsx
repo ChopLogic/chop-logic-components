@@ -1,4 +1,4 @@
-import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
+import { GridColumn, GridItem, RenderDataItemCallback } from '@models';
 import { getGridRowValues } from '@organisms/grid/Grid.helpers.ts';
 import { FC } from 'react';
 
@@ -6,8 +6,8 @@ import { GridRow } from '../grid-row/GridRow.tsx';
 import styles from './GridBody.module.scss';
 
 type Props = {
-  data: ChopLogicGridItem[];
-  columns: ChopLogicGridColumn[];
+  data: GridItem[];
+  columns: GridColumn[];
   selectedIds: string[];
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;

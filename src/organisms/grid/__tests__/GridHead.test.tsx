@@ -1,10 +1,10 @@
-import { ChopLogicGridColumn } from '@models';
+import { GridColumn } from '@models';
 import { GridHead } from '@organisms/grid/head/GridHead.tsx';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 describe('GridHead', () => {
-  const columns: ChopLogicGridColumn[] = [
+  const columns: GridColumn[] = [
     { title: 'Col 1', field: 'field1' },
     { title: 'Col 2', field: 'field2' },
     { title: 'Col 3', field: 'field3' },

@@ -1,12 +1,12 @@
-import { ChopLogicGridColumn } from '@models';
+import { GridColumn } from '@models';
 import { FC } from 'react';
 
 import { GridHeaderCell } from '../header-cell/HeaderCell.tsx';
 import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell.tsx';
 import styles from './GridHead.module.scss';
 
-type ChopLogicGridHeadProps = {
-  columns: ChopLogicGridColumn[];
+type GridHeadProps = {
+  columns: GridColumn[];
   gridId: string;
   selectable: boolean;
   isAllSelected: boolean;
@@ -15,7 +15,7 @@ type ChopLogicGridHeadProps = {
   deselectAll: () => void;
 };
 
-export const GridHead: FC<ChopLogicGridHeadProps> = ({
+export const GridHead: FC<GridHeadProps> = ({
   columns,
   gridId,
   selectAll,

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicGrid from '../Grid';
+import Grid from '../Grid';
 import { GridExample } from './Grid.example';
 
-const meta: Meta<typeof ChopLogicGrid> = {
+const meta: Meta<typeof Grid> = {
   component: GridExample,
   title: 'Organisms/Grid',
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ChopLogicGrid>;
+type Story = StoryObj<typeof Grid>;
 
 export const DefaultGrid: Story = {
   args: {

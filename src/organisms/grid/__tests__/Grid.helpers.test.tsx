@@ -1,4 +1,4 @@
-import { ChopLogicGridColumn, ChopLogicGridItem } from '@models';
+import { GridColumn, GridItem } from '@models';
 import { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
@@ -6,13 +6,13 @@ import { getGridRowValues } from '../Grid.helpers.ts';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {
-    const item: ChopLogicGridItem = {
+    const item: GridItem = {
       id: '1',
       name: 'John',
       age: 30,
     };
 
-    const columns: ChopLogicGridColumn[] = [
+    const columns: GridColumn[] = [
       { field: 'id', title: 'ID' },
       { field: 'name', title: 'Name' },
       { field: 'age', title: 'Age' },
@@ -24,12 +24,12 @@ describe('getGridRowValues', () => {
   });
 
   it('should return empty strings when fields are missing or null in item', () => {
-    const item: ChopLogicGridItem = {
+    const item: GridItem = {
       id: '1',
       name: null, // null value should be returned as empty string
     };
 
-    const columns: ChopLogicGridColumn[] = [
+    const columns: GridColumn[] = [
       { field: 'id', title: 'ID' },
       { field: 'name', title: 'Name' }, // null value
       { field: 'age', title: 'Age' }, // missing field
@@ -41,17 +41,17 @@ describe('getGridRowValues', () => {
   });
 
   it('should return rendered JSX elements when renderDataItem is provided for object fields', () => {
-    const item: ChopLogicGridItem = {
+    const item: GridItem = {
       id: 'test-id',
       details: '123 Main St',
     };
 
-    const columns: ChopLogicGridColumn[] = [
+    const columns: GridColumn[] = [
       { field: 'id', title: 'ID' },
       { field: 'details', title: 'Details' }, // object field
     ];
 
-    const renderDataItem = (item: ChopLogicGridItem, field: string) => <span>{(item[field] as string).toUpperCase()}</span>;
+    const renderDataItem = (item: GridItem, field: string) => <span>{(item[field] as string).toUpperCase()}</span>;
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
@@ -60,12 +60,12 @@ describe('getGridRowValues', () => {
   });
 
   it('should handle columns without a field by returning empty string', () => {
-    const item: ChopLogicGridItem = {
+    const item: GridItem = {
       id: '4',
       name: 'Alice',
     };
 
-    const columns: ChopLogicGridColumn[] = [
+    const columns: GridColumn[] = [
       { title: 'No Field', field: '' }, // No field provided
       { field: 'id', title: 'ID' },
       { field: 'name', title: 'Name' },

@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicGrid from '../Grid.tsx';
+import Grid from '../Grid.tsx';
 
-describe('ChopLogicGrid', () => {
+describe('Grid', () => {
   const testProps = {
     id: 'grid-id',
     columns: [
@@ -27,23 +27,23 @@ describe('ChopLogicGrid', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicGrid {...testProps} selectable />);
+    const { asFragment } = render(<Grid {...testProps} selectable />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render the checkbox column if the grid is not selectable', () => {
-    render(<ChopLogicGrid {...testProps} selectable={false} />);
+    render(<Grid {...testProps} selectable={false} />);
     expect(screen.queryAllByRole('checkbox')).toHaveLength(0);
   });
 
   it('should render an optional caption', () => {
-    render(<ChopLogicGrid {...testProps} selectable={false} caption='Test Caption' />);
+    render(<Grid {...testProps} selectable={false} caption='Test Caption' />);
     expect(screen.getByText('Test Caption')).toBeInTheDocument();
   });
 
   it('should call onSelect() handler when a checkbox is clicked', async () => {
     const mockSelect = vi.fn();
-    render(<ChopLogicGrid {...testProps} selectable caption='Test Caption' onSelect={mockSelect} />);
+    render(<Grid {...testProps} selectable caption='Test Caption' onSelect={mockSelect} />);
     const firstCheckbox = screen.getAllByRole('checkbox')[0];
     const secondCheckbox = screen.getAllByRole('checkbox')[1];
     await userEvent.click(firstCheckbox);

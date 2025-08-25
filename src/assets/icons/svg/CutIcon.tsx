@@ -11,7 +11,6 @@ function CutIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
       viewBox='0 0 24 24'
       height='1em'
       width='1em'
-      role='img'
       {...rest}
     >
       {title && <title>{title}</title>}

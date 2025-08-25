@@ -11,7 +11,6 @@ exports[`MenuLeaf > should match the snapshot 1`] = `
       class="_icon_3b2ece"
       fill="currentColor"
       height="1em"
-      role="img"
       viewBox="0 0 1024 1024"
       width="1em"
     >

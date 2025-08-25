@@ -25,7 +25,6 @@ exports[`GridRow > should match the snapshot 1`] = `
               <svg
                 fill="currentColor"
                 height="1em"
-                role="img"
                 viewBox="0 0 16 16"
                 width="1em"
               >

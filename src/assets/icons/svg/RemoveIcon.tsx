@@ -2,7 +2,7 @@ import { ChopLogicSVGElementProps } from '@models';
 
 function RemoveIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
+    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' {...rest}>
       {title && <title>{title}</title>}
       <path
         fill='none'

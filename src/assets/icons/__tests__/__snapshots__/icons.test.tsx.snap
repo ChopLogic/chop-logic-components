@@ -5,7 +5,6 @@ exports[`SVG Icons > should match the snapshot 1`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -21,7 +20,6 @@ exports[`SVG Icons > should match the snapshot 2`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -37,7 +35,6 @@ exports[`SVG Icons > should match the snapshot 3`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
@@ -58,7 +55,6 @@ exports[`SVG Icons > should match the snapshot 4`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 470 1000"
     width="1em"
   >
@@ -74,7 +70,6 @@ exports[`SVG Icons > should match the snapshot 5`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -91,7 +86,6 @@ exports[`SVG Icons > should match the snapshot 6`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -108,7 +102,6 @@ exports[`SVG Icons > should match the snapshot 7`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
@@ -124,7 +117,6 @@ exports[`SVG Icons > should match the snapshot 8`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -141,7 +133,6 @@ exports[`SVG Icons > should match the snapshot 9`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -158,7 +149,6 @@ exports[`SVG Icons > should match the snapshot 10`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -175,7 +165,6 @@ exports[`SVG Icons > should match the snapshot 11`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -192,7 +181,6 @@ exports[`SVG Icons > should match the snapshot 12`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -233,7 +221,6 @@ exports[`SVG Icons > should match the snapshot 14`] = `
   <svg
     fill="none"
     height="1em"
-    role="img"
     stroke="currentColor"
     stroke-linecap="round"
     stroke-linejoin="round"
@@ -263,7 +250,6 @@ exports[`SVG Icons > should match the snapshot 15`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -279,7 +265,6 @@ exports[`SVG Icons > should match the snapshot 16`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -295,7 +280,6 @@ exports[`SVG Icons > should match the snapshot 17`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -314,7 +298,6 @@ exports[`SVG Icons > should match the snapshot 18`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
@@ -335,7 +318,6 @@ exports[`SVG Icons > should match the snapshot 19`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 448 512"
     width="1em"
   >
@@ -351,7 +333,6 @@ exports[`SVG Icons > should match the snapshot 20`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
@@ -367,7 +348,6 @@ exports[`SVG Icons > should match the snapshot 21`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -383,7 +363,6 @@ exports[`SVG Icons > should match the snapshot 22`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -399,7 +378,6 @@ exports[`SVG Icons > should match the snapshot 23`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -418,7 +396,6 @@ exports[`SVG Icons > should match the snapshot 24`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -434,7 +411,6 @@ exports[`SVG Icons > should match the snapshot 25`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -450,7 +426,6 @@ exports[`SVG Icons > should match the snapshot 26`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >
@@ -481,7 +456,6 @@ exports[`SVG Icons > should match the snapshot 27`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 1024 1024"
     width="1em"
   >
@@ -497,7 +471,6 @@ exports[`SVG Icons > should match the snapshot 28`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -516,7 +489,6 @@ exports[`SVG Icons > should match the snapshot 29`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 16 16"
     width="1em"
   >
@@ -535,7 +507,6 @@ exports[`SVG Icons > should match the snapshot 30`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -555,7 +526,6 @@ exports[`SVG Icons > should match the snapshot 31`] = `
   <svg
     fill="currentColor"
     height="1em"
-    role="img"
     viewBox="0 0 512 512"
     width="1em"
   >

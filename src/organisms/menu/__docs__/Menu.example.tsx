@@ -1,9 +1,9 @@
 import { OrientationMode } from '@enums';
-import { ChopLogicMenuProps } from '@models';
-import { ChopLogicMenu } from '@organisms';
+import { MenuProps } from '@models';
+import { Menu } from '@organisms';
 import { FC } from 'react';
 
-const MenuExample: FC<ChopLogicMenuProps> = ({ mode = OrientationMode.Vertical, openedOn = 'click', items = [], ...rest }) => {
+const MenuExample: FC<MenuProps> = ({ mode = OrientationMode.Vertical, openedOn = 'click', items = [], ...rest }) => {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const MenuExample: FC<ChopLogicMenuProps> = ({ mode = OrientationMode.Vertical, 
         justifyContent: 'center',
       }}
     >
-      <ChopLogicMenu items={items} mode={mode} openedOn={openedOn} {...rest} />
+      <Menu items={items} mode={mode} openedOn={openedOn} {...rest} />
     </div>
   );
 };

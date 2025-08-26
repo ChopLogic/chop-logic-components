@@ -18,7 +18,7 @@ export type { GridColumn, GridItem, GridProps, RenderDataItemCallback } from './
 export type { HeaderProps } from './header';
 export type { ChopLogicSVGElementProps, IconProps } from './icon';
 export type { LoaderProps } from './loader';
-export type { ChopLogicMenuItem, ChopLogicMenuProps } from './menu';
+export type { MenuItem, MenuProps } from './menu';
 export type { MultiSelectProps } from './multi-select';
 export type { NumericInputProps } from './numeric';
 export type { SelectProps } from './select';

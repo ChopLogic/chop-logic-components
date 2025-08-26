@@ -1,13 +1,13 @@
 import { Icon } from '@atoms';
 import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
-import { ChopLogicMenuItem } from '@models';
+import { MenuItem } from '@models';
 import { FC, KeyboardEvent, PropsWithChildren, useRef } from 'react';
 
 import styles from './SubMenu.module.scss';
 
 type Props = PropsWithChildren & {
-  item: ChopLogicMenuItem;
+  item: MenuItem;
   isSubMenuOpened: boolean;
   mode: OrientationMode;
   toggleSubMenu: () => void;

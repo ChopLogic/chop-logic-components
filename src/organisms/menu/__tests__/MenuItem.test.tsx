@@ -1,9 +1,10 @@
 import { OrientationMode } from '@enums';
-import { ChopLogicMenuItem } from '@models';
-import { MenuItem } from '@organisms/menu/item/MenuItem.tsx';
+import { MenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
+
+import { MenuListItem } from '../item/MenuListItem';
 
 vi.mock('../sub-menu/SubMenu', () => ({
   SubMenu: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
@@ -15,10 +16,10 @@ vi.mock('../sub-menu/SubMenu', () => ({
 }));
 
 vi.mock('../leaf/MenuLeaf', () => ({
-  MenuLeaf: ({ item }: { item: ChopLogicMenuItem }) => <div data-testid='menu-leaf'>{item.label}</div>,
+  MenuLeaf: ({ item }: { item: MenuItem }) => <div data-testid='menu-leaf'>{item.label}</div>,
 }));
 
-describe('MenuItem', () => {
+describe('MenuListItem', () => {
   const leafItem = {
     id: '1',
     label: 'Leaf Item',
@@ -34,12 +35,12 @@ describe('MenuItem', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<MenuItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    const { asFragment } = render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders MenuLeaf for leaf nodes', () => {
-    render(<MenuItem item={leafItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toBeInTheDocument();
@@ -47,14 +48,14 @@ describe('MenuItem', () => {
   });
 
   it('renders SubMenu for non-leaf nodes', () => {
-    render(<MenuItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
   });
 
   it('toggles SubMenu state when toggleSubMenu is called', () => {
-    render(<MenuItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
 
     const toggleButton = screen.getByText(/toggle submenu/i);
     fireEvent.click(toggleButton);
@@ -64,14 +65,14 @@ describe('MenuItem', () => {
   });
 
   it('renders nested items recursively', () => {
-    render(<MenuItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
 
     expect(screen.getByText('Child Item 1')).toBeInTheDocument();
     expect(screen.getByText('Child Item 2')).toBeInTheDocument();
   });
 
   it('passes correct props to SubMenu', () => {
-    render(<MenuItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
@@ -80,7 +81,7 @@ describe('MenuItem', () => {
   });
 
   it('passes correct props to MenuLeaf', () => {
-    render(<MenuItem item={leafItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toHaveTextContent('Leaf Item');

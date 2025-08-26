@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`MenuItem > should match the snapshot 1`] = `
+exports[`MenuListItem > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
     data-testid="submenu"
@@ -10,7 +10,7 @@ exports[`MenuItem > should match the snapshot 1`] = `
     </button>
     <ul
       aria-label="Nested Item"
-      class="_subMenuBar_48a968 _subMenuBar__horizontal_48a968"
+      class="_subMenuBar_844f10 _subMenuBar__horizontal_844f10"
       role="menu"
     >
       <div

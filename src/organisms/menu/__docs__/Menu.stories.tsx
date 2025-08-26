@@ -1,11 +1,11 @@
 import { IconName, OrientationMode } from '@enums';
-import { ChopLogicMenuItem } from '@models';
+import { MenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicMenu from '../Menu';
+import Menu from '../Menu';
 import MenuExample from './Menu.example';
 
-const ITEMS: ChopLogicMenuItem[] = [
+const ITEMS: MenuItem[] = [
   {
     id: 'item-1',
     label: 'Home',
@@ -109,14 +109,14 @@ const ITEMS: ChopLogicMenuItem[] = [
   },
 ];
 
-const meta: Meta<typeof ChopLogicMenu> = {
+const meta: Meta<typeof Menu> = {
   title: 'Organisms/Menu',
   component: MenuExample,
   argTypes: {
     items: {
       table: {
         defaultValue: { summary: `[]` },
-        type: { summary: `ChopLogicMenuItem[]` },
+        type: { summary: `MenuItem[]` },
       },
     },
     mode: {

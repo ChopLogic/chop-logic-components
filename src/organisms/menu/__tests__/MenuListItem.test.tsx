@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { MenuListItem } from '../item/MenuListItem';
+import { MenuListItem } from '../list-item/MenuListItem';
 
 vi.mock('../sub-menu/SubMenu', () => ({
   SubMenu: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (

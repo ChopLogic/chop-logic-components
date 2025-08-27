@@ -3,7 +3,7 @@ import { MenuProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { MenuListItem } from './item/MenuListItem';
+import { MenuListItem } from './list-item/MenuListItem';
 import styles from './Menu.module.scss';
 
 const Menu: FC<MenuProps> = ({ items = [], mode = OrientationMode.Vertical, openedOn = 'click', className, ...rest }) => {

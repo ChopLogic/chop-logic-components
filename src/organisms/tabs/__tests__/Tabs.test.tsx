@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicTabs from '../Tabs.tsx';
+import Tabs from '../Tabs.tsx';
 
-describe('ChopLogicTabs', () => {
+describe('Tabs', () => {
   const tabs = [
     { id: 'tab-1', title: 'Tab 1', disabled: false, content: <>Tab 1 content</> },
     { id: 'tab-2', title: 'Tab 2', disabled: false, content: <>Tab 2 content</> },
@@ -21,12 +21,12 @@ describe('ChopLogicTabs', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicTabs {...testProps} />);
+    const { asFragment } = render(<Tabs {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render another tab content when user clicks on tabs', async () => {
-    render(<ChopLogicTabs {...testProps} />);
+    render(<Tabs {...testProps} />);
     expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
 
     await userEvent.click(screen.getByText('Tab 2'));
@@ -43,7 +43,7 @@ describe('ChopLogicTabs', () => {
   });
 
   it('should render another tab content when user switches tabs via keyboard', async () => {
-    render(<ChopLogicTabs {...testProps} />);
+    render(<Tabs {...testProps} />);
     expect(screen.getByText('Tab 1 content')).toBeInTheDocument();
 
     const firstTab = screen.getByText('Tab 1');

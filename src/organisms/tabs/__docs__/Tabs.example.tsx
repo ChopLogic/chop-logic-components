@@ -1,5 +1,5 @@
-import { ChopLogicTabsProps } from '@models';
-import { ChopLogicTabs } from '@organisms';
+import { TabsProps } from '@models';
+import { Tabs } from '@organisms';
 import { FC } from 'react';
 
-export const TabsExample: FC<ChopLogicTabsProps> = (props) => <ChopLogicTabs {...props} />;
+export const TabsExample: FC<TabsProps> = (props) => <Tabs {...props} />;

@@ -22,6 +22,6 @@ export type { MenuItem, MenuProps } from './menu';
 export type { MultiSelectProps } from './multi-select';
 export type { NumericInputProps } from './numeric';
 export type { SelectProps } from './select';
-export type { ChopLogicTabItem, ChopLogicTabsProps } from './tabs';
+export type { ChopLogicTabItem, TabsProps } from './tabs';
 export type { TextInputProps } from './text';
 export type { TooltipProps } from './tooltip';

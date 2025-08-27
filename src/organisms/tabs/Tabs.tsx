@@ -1,12 +1,12 @@
 import { OrientationMode } from '@enums';
-import { ChopLogicTabsProps } from '@models';
+import { TabsProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useState } from 'react';
 
 import { TabContent, TabList } from './__elements__';
 import styles from './Tabs.module.scss';
 
-const ChopLogicTabs: FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = OrientationMode.Horizontal, className, ...rest }) => {
+const Tabs: FC<TabsProps> = ({ tabs, defaultTabId, mode = OrientationMode.Horizontal, className, ...rest }) => {
   const tabIds = tabs.map((item) => item.id);
   const tabPanelIds = tabIds.map((id) => `tabpanel_${id}`);
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
@@ -32,4 +32,4 @@ const ChopLogicTabs: FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = Orie
   );
 };
 
-export default ChopLogicTabs;
+export default Tabs;

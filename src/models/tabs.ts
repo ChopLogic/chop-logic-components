@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 import { ChopLogicComponentProps } from './_common';
 
-export interface ChopLogicTabsProps extends ChopLogicComponentProps {
+export interface TabsProps extends ChopLogicComponentProps {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: OrientationMode;

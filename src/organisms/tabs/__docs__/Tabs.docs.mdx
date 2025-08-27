@@ -1,16 +1,16 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as ChopLogicTabsStories from './Tabs.stories';
+import * as TabsStories from './Tabs.stories';
 
-<Meta of={ChopLogicTabsStories} title='ChopLogicTabs' />
+<Meta of={TabsStories} title='Tabs' />
 
-# ChopLogicTabs
+# Tabs
 
-The `ChopLogicTabs` component provides an accessible tabbed interface with support for both horizontal and vertical orientations, disabled states, and flexible content.
+The `Tabs` component provides an accessible tabbed interface with support for both horizontal and vertical orientations, disabled states, and flexible content.
 
 ### Usage
 
 ```tsx
-import ChopLogicTabs, { OrientationMode } from 'chop-logic-components';
+import Tabs, { OrientationMode } from 'chop-logic-components';
 
 const ProductTabs = () => {
   const tabs = [
@@ -27,7 +27,7 @@ const ProductTabs = () => {
   ];
 
   return (
-    <ChopLogicTabs
+    <Tabs
       tabs={tabs}
       mode={OrientationMode.Horizontal}
       defaultTabId="specs"

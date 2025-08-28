@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseAutoCloseExample } from './use-auto-close.example.tsx';
+import { UseAutoCloseExample } from './use-auto-close.example';
 
 const meta: Meta<typeof UseAutoCloseExample> = {
   component: UseAutoCloseExample,

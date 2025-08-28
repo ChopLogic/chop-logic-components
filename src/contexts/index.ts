@@ -1,3 +1,3 @@
-export { FormContext } from './form/FormContext.tsx';
-export { ThemeContext } from './theme/ThemeContext.ts';
-export { ThemeProvider } from './theme/ThemeProvider.tsx';
+export { FormContext } from './form/FormContext';
+export { ThemeContext } from './theme/ThemeContext';
+export { ThemeProvider } from './theme/ThemeProvider';

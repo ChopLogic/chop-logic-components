@@ -1,7 +1,7 @@
 import { FormInputParams, FormValidationState, FormValues } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getInitialValidationState, isFormDataValid, updateValidationState } from '../Form.helpers.ts';
+import { getInitialValidationState, isFormDataValid, updateValidationState } from '../Form.helpers';
 
 describe('getInitialValidationState', () => {
   it('should return an empty array when no data is provided', () => {

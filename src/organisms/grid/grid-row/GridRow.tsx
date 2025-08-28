@@ -1,8 +1,8 @@
 import { getClassName } from '@utils';
 import { FC, ReactElement } from 'react';
 
-import { GridDataCell } from '../data-cell/GridDataCell.tsx';
-import { SelectGridRowCell } from '../select-grid-row-cell/SelectGridRowCell.tsx';
+import { GridDataCell } from '../data-cell/GridDataCell';
+import { SelectGridRowCell } from '../select-grid-row-cell/SelectGridRowCell';
 import styles from './GridRow.module.scss';
 
 type Props = {

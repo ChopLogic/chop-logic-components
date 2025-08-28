@@ -1,5 +1,5 @@
-import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon.tsx';
-import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon.tsx';
+import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
+import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
 import { MultiSelectValue } from '@models';
 import { FC } from 'react';
 

@@ -1,7 +1,7 @@
 import { NumericInputValidator } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getNumericInputInitialValue, validateNumericInputValue } from '../NumericInput.helpers.ts';
+import { getNumericInputInitialValue, validateNumericInputValue } from '../NumericInput.helpers';
 
 describe('getNumericInputInitialValue', () => {
   it('should return the value from initialValues if it exists', () => {

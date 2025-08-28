@@ -3,7 +3,7 @@ import '@styles/root.scss';
 import { ThemeMode } from '@enums';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
-import { ThemeContext } from './ThemeContext.ts';
+import { ThemeContext } from './ThemeContext';
 
 export const ThemeProvider: FC<{ children: ReactNode; injectedMode?: ThemeMode }> = ({ children, injectedMode }) => {
   const [mode, setMode] = useState(ThemeMode.Light);

@@ -1,4 +1,4 @@
-import { IconButton } from '@atoms/button/icon-button/IconButton.tsx';
+import { IconButton } from '@atoms/button/icon-button/IconButton';
 import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';

@@ -4,9 +4,9 @@ import { SelectProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useRef } from 'react';
 
-import { SelectCombobox } from './combobox/Combobox.tsx';
-import { SelectDropdown } from './dropdown/Dropdown.tsx';
-import { useSelectController } from './Select.controller.ts';
+import { SelectCombobox } from './combobox/Combobox';
+import { SelectDropdown } from './dropdown/Dropdown';
+import { useSelectController } from './Select.controller';
 import styles from './Select.module.scss';
 
 const Select: FC<SelectProps> = ({

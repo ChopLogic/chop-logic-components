@@ -3,7 +3,7 @@ import { useResetFormInput } from '@hooks';
 import { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
-import { getTextInputInitialValue, validateTextInputValue } from './TextInput.helpers.ts';
+import { getTextInputInitialValue, validateTextInputValue } from './TextInput.helpers';
 
 export function useTextInputController({
   name,

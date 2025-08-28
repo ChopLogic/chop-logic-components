@@ -1,6 +1,6 @@
 import styles from '@styles/storybook/Container.module.scss';
 
-import { useWindowDimensions } from '../use-window-dimensions.ts';
+import { useWindowDimensions } from '../use-window-dimensions';
 
 export const UseWindowDimensionsExample = () => {
   const { width, height } = useWindowDimensions();

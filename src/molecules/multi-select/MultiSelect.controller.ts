@@ -3,7 +3,7 @@ import { useResetFormInput } from '@hooks';
 import { MultiSelectValue, SelectValue } from '@models';
 import { useCallback, useContext, useState } from 'react';
 
-import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './MultiSelect.helpers.ts';
+import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './MultiSelect.helpers';
 
 export function useMultiSelectController({
   name,

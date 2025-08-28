@@ -1,5 +1,5 @@
 import { GridColumn, GridItem } from '@models';
-import { GridBody } from '@organisms/grid/body/GridBody.tsx';
+import { GridBody } from '@organisms/grid/body/GridBody';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 

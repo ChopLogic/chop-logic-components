@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { withTooltip } from '../with-tooltip.tsx';
+import { withTooltip } from '../with-tooltip';
 
 vi.mock('@atoms', () => ({
   Tooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseContainerDimensionsExample } from './use-container-dimensions.example.tsx';
+import { UseContainerDimensionsExample } from './use-container-dimensions.example';
 
 const meta: Meta<typeof UseContainerDimensionsExample> = {
   component: UseContainerDimensionsExample,

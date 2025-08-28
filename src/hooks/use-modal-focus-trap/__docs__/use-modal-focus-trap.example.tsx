@@ -3,7 +3,7 @@ import { ButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
 import { useRef, useState } from 'react';
 
-import { useModalFocusTrap } from '../use-modal-focus-trap.ts';
+import { useModalFocusTrap } from '../use-modal-focus-trap';
 
 export const UseModalFocusTrapExample = () => {
   const modalRef = useRef<HTMLDivElement>(null);

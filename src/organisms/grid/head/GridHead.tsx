@@ -1,8 +1,8 @@
 import { GridColumn } from '@models';
 import { FC } from 'react';
 
-import { GridHeaderCell } from '../header-cell/HeaderCell.tsx';
-import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell.tsx';
+import { GridHeaderCell } from '../header-cell/HeaderCell';
+import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell';
 import styles from './GridHead.module.scss';
 
 type GridHeadProps = {

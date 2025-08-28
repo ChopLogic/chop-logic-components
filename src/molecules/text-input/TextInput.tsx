@@ -6,7 +6,7 @@ import { TextInputProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useTextInputController } from './TextInput.controller.ts';
+import { useTextInputController } from './TextInput.controller';
 import styles from './TextInput.module.scss';
 
 const TextInput: FC<TextInputProps> = ({

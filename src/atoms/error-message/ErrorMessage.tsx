@@ -1,4 +1,4 @@
-import { getClassName } from '@utils/get-class-name.ts';
+import { getClassName } from '@utils/get-class-name';
 import { FC } from 'react';
 
 import styles from './ErrorMessage.module.scss';

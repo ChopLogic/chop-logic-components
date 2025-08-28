@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import Tabs from '../Tabs.tsx';
+import Tabs from '../Tabs';
 
 describe('Tabs', () => {
   const tabs = [

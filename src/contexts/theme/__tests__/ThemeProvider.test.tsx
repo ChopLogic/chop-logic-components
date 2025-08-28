@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { ThemeContext } from '../ThemeContext.ts';
-import { ThemeProvider } from '../ThemeProvider.tsx';
+import { ThemeContext } from '../ThemeContext';
+import { ThemeProvider } from '../ThemeProvider';
 
 function TestConsumer() {
   const { mode, setMode } = useContext(ThemeContext);

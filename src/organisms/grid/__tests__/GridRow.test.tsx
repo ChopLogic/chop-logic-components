@@ -1,4 +1,4 @@
-import { GridRow } from '@organisms/grid/grid-row/GridRow.tsx';
+import { GridRow } from '@organisms/grid/grid-row/GridRow';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 

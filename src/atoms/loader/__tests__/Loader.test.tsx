@@ -2,7 +2,7 @@ import { LoaderView } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import Loader from '../Loader.tsx';
+import Loader from '../Loader';
 
 describe('Loader', () => {
   const testProps = {

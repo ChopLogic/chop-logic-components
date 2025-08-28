@@ -3,7 +3,7 @@ import { useResetFormInput } from '@hooks';
 import { NumericInputValidator } from '@models';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
-import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers.ts';
+import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers';
 
 export function useNumericInputController({
   name,

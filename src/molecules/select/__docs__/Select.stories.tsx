@@ -1,7 +1,7 @@
 import { SelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { SelectExample } from './Select.example.tsx';
+import { SelectExample } from './Select.example';
 
 const SELECT_LANGUAGES: SelectValue[] = [
   { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },

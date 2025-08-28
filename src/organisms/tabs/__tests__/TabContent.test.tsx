@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { TabContent } from '../__elements__/content/TabContent.tsx';
+import { TabContent } from '../__elements__/content/TabContent';
 
 describe('TabContent', () => {
   const tabs = [

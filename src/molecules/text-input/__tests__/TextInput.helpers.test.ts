@@ -1,7 +1,7 @@
 import { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getTextInputInitialValue, validateTextInputValue } from '../TextInput.helpers.ts';
+import { getTextInputInitialValue, validateTextInputValue } from '../TextInput.helpers';
 
 describe('getTextInputInitialValue', () => {
   it('should return the value from initialValues if it exists', () => {

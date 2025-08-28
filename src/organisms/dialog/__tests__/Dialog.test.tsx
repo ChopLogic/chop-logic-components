@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import Dialog from '../Dialog.tsx';
+import Dialog from '../Dialog';
 
 describe('Dialog', () => {
   const testProps = {

@@ -3,7 +3,7 @@ import { ButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
 import { useState } from 'react';
 
-import { useIsMounted } from '../use-is-mounted.ts';
+import { useIsMounted } from '../use-is-mounted';
 
 export const UseIsMountedExample = () => {
   const [isOpened, setIsOpened] = useState(false);

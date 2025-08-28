@@ -1,12 +1,12 @@
 import { ErrorMessage, Input, Label } from '@atoms';
-import Button from '@atoms/button/Button.tsx';
+import Button from '@atoms/button/Button';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { NumericInputProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useNumericInputController } from './NumericInput.controller.ts';
+import { useNumericInputController } from './NumericInput.controller';
 import styles from './NumericInput.module.scss';
 
 const NumericInput: FC<NumericInputProps> = ({

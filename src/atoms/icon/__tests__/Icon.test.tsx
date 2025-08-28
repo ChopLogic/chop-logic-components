@@ -2,7 +2,7 @@ import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import Icon from '../Icon.tsx';
+import Icon from '../Icon';
 
 describe('Icon', () => {
   it('renders the correct icon after it loads', async () => {

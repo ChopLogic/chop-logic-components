@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { useRef } from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { useModalFocusTrap } from '../use-modal-focus-trap.ts';
+import { useModalFocusTrap } from '../use-modal-focus-trap';
 
 const TestModal = ({ isOpened }: { isOpened: boolean }) => {
   const modalRef = useRef<HTMLDivElement>(null);

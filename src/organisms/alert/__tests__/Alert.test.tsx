@@ -4,7 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import Alert from '../Alert.tsx';
+import Alert from '../Alert';
 
 const defaultProps: AlertProps = {
   isOpened: false,

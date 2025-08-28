@@ -1,7 +1,7 @@
 import styles from '@styles/storybook/Container.module.scss';
 import { CSSProperties, FC, useRef } from 'react';
 
-import { useIsOverflow } from '../use-is-overflow.ts';
+import { useIsOverflow } from '../use-is-overflow';
 
 const containerStyles: CSSProperties = {
   width: '400px',

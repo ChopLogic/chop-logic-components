@@ -1,5 +1,5 @@
 import { IconName, OrientationMode } from '@enums';
-import { SubMenu } from '@organisms/menu/sub-menu/SubMenu.tsx';
+import { SubMenu } from '@organisms/menu/sub-menu/SubMenu';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 

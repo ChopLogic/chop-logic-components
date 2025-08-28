@@ -2,7 +2,7 @@ import { GridColumn, GridItem } from '@models';
 import { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { getGridRowValues } from '../Grid.helpers.ts';
+import { getGridRowValues } from '../Grid.helpers';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {

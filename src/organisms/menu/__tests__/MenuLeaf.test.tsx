@@ -1,5 +1,5 @@
 import { IconName } from '@enums';
-import { MenuLeaf } from '@organisms/menu/leaf/MenuLeaf.tsx';
+import { MenuLeaf } from '@organisms/menu/leaf/MenuLeaf';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';

@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from 'react';
 
-import { useContainerDimensions } from '../use-container-dimensions/use-container-dimensions.ts';
-import { useWindowDimensions } from '../use-window-dimensions/use-window-dimensions.ts';
+import { useContainerDimensions } from '../use-container-dimensions/use-container-dimensions';
+import { useWindowDimensions } from '../use-window-dimensions/use-window-dimensions';
 
 type useTooltipPositionParams = {
   wrapperRef: RefObject<HTMLElement | null>;

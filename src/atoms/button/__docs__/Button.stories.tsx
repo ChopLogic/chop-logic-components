@@ -1,8 +1,8 @@
 import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Button from '../Button.tsx';
-import { ButtonExample } from './Button.example.tsx';
+import Button from '../Button';
+import { ButtonExample } from './Button.example';
 
 const meta: Meta<typeof Button> = {
   argTypes: {

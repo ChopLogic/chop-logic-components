@@ -1,4 +1,4 @@
-import { SelectAllGridRowsCell } from '@organisms/grid/select-all-grid-rows-cell/SelectAllGridRowsCell.tsx';
+import { SelectAllGridRowsCell } from '@organisms/grid/select-all-grid-rows-cell/SelectAllGridRowsCell';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';

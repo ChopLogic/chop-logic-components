@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { useRef } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { useClickOutside } from '../use-click-outside.ts';
+import { useClickOutside } from '../use-click-outside';
 
 const TestComponent = ({ onClickOutsideHandler }: { onClickOutsideHandler: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);

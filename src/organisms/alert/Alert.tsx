@@ -6,7 +6,7 @@ import { AlertProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
+import { getAlertIcon, getAlertTitle } from './Alert.helpers';
 import styles from './Alert.module.scss';
 
 const Alert: FC<AlertProps> = ({

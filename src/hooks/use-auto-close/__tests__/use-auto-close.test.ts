@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useAutoClose } from '../use-auto-close.ts';
+import { useAutoClose } from '../use-auto-close';
 
 vi.useFakeTimers();
 

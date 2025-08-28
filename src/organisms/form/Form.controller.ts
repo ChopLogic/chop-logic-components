@@ -1,7 +1,7 @@
 import { FormInputParams, FormValues } from '@models';
 import { FormEvent, FormEventHandler, useState } from 'react';
 
-import { getInitialValidationState, isFormDataValid, updateValidationState } from './Form.helpers.ts';
+import { getInitialValidationState, isFormDataValid, updateValidationState } from './Form.helpers';
 
 export function useFormController({
   initialValues,

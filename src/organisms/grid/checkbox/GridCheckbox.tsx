@@ -1,5 +1,5 @@
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon.tsx';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon.tsx';
+import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
+import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { Label } from '@atoms';
 import { useElementIds } from '@hooks';
 import { getClassName } from '@utils';

@@ -2,7 +2,7 @@ import { OrientationMode } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { TabButton } from '../__elements__/button/TabButton.tsx';
+import { TabButton } from '../__elements__/button/TabButton';
 
 describe('TabButton', () => {
   const testProps = {

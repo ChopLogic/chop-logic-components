@@ -4,7 +4,7 @@ import { TooltipProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, MouseEvent } from 'react';
 
-import { useTooltipController } from './Tooltip.controller.ts';
+import { useTooltipController } from './Tooltip.controller';
 import styles from './Tooltip.module.scss';
 
 const Tooltip: FC<TooltipProps> = ({

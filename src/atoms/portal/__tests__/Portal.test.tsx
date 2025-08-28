@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import Portal from '../Portal.tsx';
+import Portal from '../Portal';
 
 describe('Portal', () => {
   beforeEach(() => {

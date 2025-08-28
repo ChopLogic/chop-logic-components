@@ -1,7 +1,7 @@
 import { FormValues, MultiSelectValue, SelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getMultiSelectInitialValues } from '../MultiSelect.helpers.ts';
+import { getMultiSelectInitialValues } from '../MultiSelect.helpers';
 
 describe('getMultiSelectSelectValues', () => {
   const options: SelectValue[] = [

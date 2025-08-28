@@ -1,5 +1,5 @@
 import { GridColumn } from '@models';
-import { GridColumnGroup } from '@organisms/grid/column-group/GridColumnGroup.tsx';
+import { GridColumnGroup } from '@organisms/grid/column-group/GridColumnGroup';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 

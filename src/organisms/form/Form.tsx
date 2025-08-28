@@ -5,7 +5,7 @@ import { FormProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useFormController } from './Form.controller.ts';
+import { useFormController } from './Form.controller';
 import styles from './Form.module.scss';
 
 const Form: FC<FormProps> = ({

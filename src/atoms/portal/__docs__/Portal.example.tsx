@@ -1,7 +1,7 @@
 import styles from '@styles/storybook/Container.module.scss';
 import { FC, PropsWithChildren } from 'react';
 
-import Portal from '../Portal.tsx';
+import Portal from '../Portal';
 
 export const PortalExample: FC<PropsWithChildren> = (props) => {
   return (

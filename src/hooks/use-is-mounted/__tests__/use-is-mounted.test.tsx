@@ -2,7 +2,7 @@ import { act, render } from '@testing-library/react';
 import { useEffect } from 'react';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
-import { useIsMounted } from '../use-is-mounted.ts';
+import { useIsMounted } from '../use-is-mounted';
 
 const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number }) => {
   const isMounted = useIsMounted(isOpened, delay);

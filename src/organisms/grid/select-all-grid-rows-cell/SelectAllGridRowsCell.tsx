@@ -1,6 +1,6 @@
 import { ChangeEvent, FC } from 'react';
 
-import { GridCheckbox } from '../checkbox/GridCheckbox.tsx';
+import { GridCheckbox } from '../checkbox/GridCheckbox';
 import styles from './SelectAllGridRowsCell.module.scss';
 
 type Props = {

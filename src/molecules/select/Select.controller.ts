@@ -3,7 +3,7 @@ import { useResetFormInput } from '@hooks';
 import { SelectValue } from '@models';
 import { useCallback, useContext, useState } from 'react';
 
-import { getSelectInitialValue } from './Select.helpers.ts';
+import { getSelectInitialValue } from './Select.helpers';
 
 export function useSelectController({
   name,

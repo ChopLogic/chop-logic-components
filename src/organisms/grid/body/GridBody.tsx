@@ -1,8 +1,8 @@
 import { GridColumn, GridItem, RenderDataItemCallback } from '@models';
-import { getGridRowValues } from '@organisms/grid/Grid.helpers.ts';
+import { getGridRowValues } from '@organisms/grid/Grid.helpers';
 import { FC } from 'react';
 
-import { GridRow } from '../grid-row/GridRow.tsx';
+import { GridRow } from '../grid-row/GridRow';
 import styles from './GridBody.module.scss';
 
 type Props = {

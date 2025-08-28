@@ -2,7 +2,7 @@ import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
-import { getCheckboxInitialValue } from './Checkbox.helpers.ts';
+import { getCheckboxInitialValue } from './Checkbox.helpers';
 
 export function useCheckboxController({
   name,

@@ -1,3 +1,4 @@
+export { default as ChopLogicEditableText } from './editable-text/EditableText';
 export { default as ChopLogicHeader } from './header/Header';
 export { default as ChopLogicIcon } from './icon/Icon';
 export { default as ChopLogicLabel } from './label/Label';

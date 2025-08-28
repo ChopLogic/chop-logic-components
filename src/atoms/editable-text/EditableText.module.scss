@@ -1,0 +1,11 @@
+.editableText {
+  &__editMode {
+    display: inline-block;
+  }
+  &__readOnly {
+    display: inline-block;
+  }
+  &__empty {
+    display: inline-block;
+  }
+}

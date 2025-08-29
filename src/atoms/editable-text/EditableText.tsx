@@ -1,9 +1,10 @@
+import { ChopLogicComponentProps } from '@models';
 import { getClassName } from '@utils';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import styles from './EditableText.module.scss';
 
-export interface EditableTextProps {
+export interface EditableTextProps extends ChopLogicComponentProps {
   /** The current value of the text */
   value: string;
   /** If true, automatically selects all text when entering edit mode */
@@ -20,8 +21,6 @@ export interface EditableTextProps {
   placeholder?: string;
   /** If true, the text is read-only and cannot be edited */
   readOnly?: boolean;
-  /** Additional class name for styling */
-  className?: string;
 }
 
 const ChopLogicEditableText: React.FC<EditableTextProps> = ({

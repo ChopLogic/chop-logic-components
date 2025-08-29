@@ -8,13 +8,13 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": true, // Prevents TypeScript from emitting files
+    "declaration": false, // Let vite-plugin-dts handle declarations
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
     "baseUrl": "./src",
     "paths": {
       "@*": ["*"],

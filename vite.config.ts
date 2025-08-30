@@ -17,11 +17,28 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [...Object.keys(peerDependencies)],
+      output: {
+        exports: 'named', // Enable tree shaking
+        compact: true, // Minify output
+        preserveModules: false, // Preserve module structure for better tree shaking (Set to false for single bundle)
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
     sourcemap: true,
     emptyOutDir: true,
+    minify: 'esbuild', // Minify the output
+    target: 'es2015', // Enable better tree shaking
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      exclude: ['**/__tests__/**', '**/__docs__/**', '**/stories/**', '**/*.test.*', '**/*.spec.*'],
+      insertTypesEntry: true,
+      rollupTypes: true, // Bundles all declarations into one file
+    }),
+  ],
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },

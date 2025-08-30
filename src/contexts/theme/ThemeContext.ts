@@ -1,10 +1,6 @@
 import { ThemeMode } from '@enums';
+import { ThemeContextProps } from '@models';
 import { createContext } from 'react';
-
-export interface ThemeContextProps {
-  mode?: ThemeMode;
-  setMode: (mode: ThemeMode) => void;
-}
 
 export const ThemeContext = createContext<ThemeContextProps>({
   mode: ThemeMode.Light,

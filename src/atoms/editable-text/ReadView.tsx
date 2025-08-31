@@ -17,7 +17,7 @@ export const ReadView: FC<ReadViewProps> = ({ value, placeholder, onClick, class
   };
 
   return (
-    <span onClick={onClick} className={className} role='button' tabIndex={0} onKeyDown={handleKeyDown} {...rest}>
+    <span onClick={onClick} className={className} role='button' tabIndex={0} onKeyDown={handleKeyDown} aria-label='Editable text' {...rest}>
       {value || placeholder}
     </span>
   );

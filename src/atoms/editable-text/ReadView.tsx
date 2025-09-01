@@ -1,6 +1,7 @@
+import { ChopLogicComponentProps } from '@models';
 import { FC } from 'react';
 
-interface ReadViewProps {
+interface ReadViewProps extends ChopLogicComponentProps {
   value: string;
   placeholder: string;
   onClick: (event: React.MouseEvent) => void;

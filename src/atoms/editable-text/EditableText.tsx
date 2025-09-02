@@ -5,9 +5,9 @@ import { FC, useCallback, useRef } from 'react';
 import styles from './EditableText.module.scss';
 import { EditView } from './EditView';
 import { ReadView } from './ReadView';
-import { useEditModeState } from './useEditModeState.hook';
-import { useInputFocus } from './useInputFocus.hook';
-import { useValueState } from './useValueState.hook';
+import { useEditModeState } from './useEditModeState';
+import { useInputFocus } from './useInputFocus';
+import { useValueState } from './useValueState';
 
 const ChopLogicEditableText: FC<EditableTextProps> = ({
   value,

@@ -4,6 +4,10 @@
   display: flex;
   gap: var(--cl-m-gap);
 
+  &:focus {
+    outline: var(--cl-outline-border);
+  }
+
   &__vertical {
     flex-direction: column;
     border-bottom: none;

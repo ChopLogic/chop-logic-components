@@ -10,11 +10,11 @@ const Menu: FC<MenuProps> = ({ items = [], mode = OrientationMode.Vertical, open
   const menuClass = getClassName([styles.menuBar, className, { [styles.menuBar__vertical]: mode === OrientationMode.Vertical }]);
 
   return (
-    <ul {...rest} role='menubar' className={menuClass}>
+    <menu {...rest} className={menuClass}>
       {items.map((item) => (
         <MenuListItem key={item.id} item={item} mode={mode} openedOn={openedOn} />
       ))}
-    </ul>
+    </menu>
   );
 };
 

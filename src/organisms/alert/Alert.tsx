@@ -1,5 +1,4 @@
-import { Header, Portal } from '@atoms';
-import { Button } from '@atoms';
+import { Button, Header, Portal } from '@atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
 import { AlertProps } from '@models';

@@ -9,6 +9,7 @@ exports[`Tabs > should match the snapshot 1`] = `
     <div
       class="_tabList_3c2693"
       role="tablist"
+      tabindex="0"
     >
       <button
         aria-controls="tabpanel_tab-1"

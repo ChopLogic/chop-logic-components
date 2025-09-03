@@ -56,7 +56,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selected
   };
 
   return (
-    <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>
+    <div role='tablist' onKeyDown={handleListKeyDown} tabIndex={0} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton

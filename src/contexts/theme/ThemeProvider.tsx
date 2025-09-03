@@ -1,7 +1,7 @@
 import '@styles/root.scss';
 
 import { ThemeMode } from '@enums';
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { ThemeContext } from './ThemeContext';
 
@@ -22,5 +22,7 @@ export const ThemeProvider: FC<{ children: ReactNode; injectedMode?: ThemeMode }
     }
   }, [injectedMode]);
 
-  return <ThemeContext.Provider value={{ mode, setMode }}>{children}</ThemeContext.Provider>;
+  const providerValue = useMemo(() => ({ mode, setMode }), [mode]);
+
+  return <ThemeContext.Provider value={providerValue}>{children}</ThemeContext.Provider>;
 };

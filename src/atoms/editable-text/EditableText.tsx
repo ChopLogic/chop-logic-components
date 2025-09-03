@@ -1,84 +1,44 @@
-import { ChopLogicComponentProps } from '@models';
+import { EditableTextProps } from '@models';
 import { getClassName } from '@utils';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useRef } from 'react';
 
 import styles from './EditableText.module.scss';
+import { EditView } from './EditView';
+import { ReadView } from './ReadView';
+import { useEditModeState } from './useEditModeState.hook';
+import { useInputFocus } from './useInputFocus.hook';
+import { useValueState } from './useValueState.hook';
 
-export interface EditableTextProps extends ChopLogicComponentProps {
-  /** The current value of the text */
-  value: string;
-  /** If true, automatically selects all text when entering edit mode */
-  autoSelectTextOnEditMode?: boolean;
-  /** Controls whether the component is in edit mode */
-  isEditMode?: boolean;
-  /** If true, enables editing multiple lines of text */
-  multiline?: boolean;
-  /** Callback fired when the value changes */
-  onChange?: (value: string) => void;
-  /** Callback fired when the component is clicked */
-  onClick?: (event: React.MouseEvent) => void;
-  /** Placeholder text displayed when the value is empty */
-  placeholder?: string;
-  /** If true, the text is read-only and cannot be edited */
-  readOnly?: boolean;
-}
-
-const ChopLogicEditableText: React.FC<EditableTextProps> = ({
+const ChopLogicEditableText: FC<EditableTextProps> = ({
   value,
-  autoSelectTextOnEditMode = false,
   isEditMode: controlledEditMode,
-  multiline = false,
   onChange,
   onClick,
+  className,
+  autoSelectTextOnEditMode = false,
+  multiline = false,
   placeholder = 'Click to edit...',
   readOnly = false,
-  className,
   ...rest
 }) => {
-  const [isEditMode, setIsEditMode] = useState(false);
-  const [internalValue, setInternalValue] = useState(value);
-  const [isControlled] = useState(controlledEditMode !== undefined);
-  const editMode = isControlled ? controlledEditMode : isEditMode;
   const inputRef = useRef<HTMLTextAreaElement | HTMLInputElement>(null);
+  const { editMode, enterEditMode, exitEditMode } = useEditModeState(controlledEditMode, readOnly);
+  const { internalValue, updateValue, commitValue, resetValue } = useValueState(value, onChange);
 
-  // Sync internal value with prop value
-  useEffect(() => {
-    setInternalValue(value);
-  }, [value]);
-
-  // Focus and select text when entering edit mode
-  useEffect(() => {
-    if (editMode && inputRef.current && !readOnly) {
-      inputRef.current.focus();
-      if (autoSelectTextOnEditMode) {
-        inputRef.current.select();
-      }
-    }
-  }, [editMode, autoSelectTextOnEditMode, readOnly]);
+  useInputFocus(inputRef, editMode, autoSelectTextOnEditMode, readOnly);
 
   const handleClick = useCallback(
     (event: React.MouseEvent) => {
       onClick?.(event);
-      if (!isControlled && !readOnly) {
-        setIsEditMode(true);
-      }
+      enterEditMode();
     },
-    [onClick, isControlled, readOnly],
+    [onClick, enterEditMode],
   );
 
   const handleBlur = useCallback(() => {
-    if (!isControlled) {
-      setIsEditMode(false);
-    }
-    // Only trigger onChange if value actually changed
-    if (internalValue !== value) {
-      onChange?.(internalValue);
-    }
-  }, [isControlled, internalValue, value, onChange]);
-
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setInternalValue(event.target.value);
-  }, []);
+    exitEditMode();
+    commitValue();
+  }, [exitEditMode, commitValue]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent) => {
@@ -87,16 +47,13 @@ const ChopLogicEditableText: React.FC<EditableTextProps> = ({
         handleBlur();
       }
       if (event.key === 'Escape') {
-        setInternalValue(value);
-        if (!isControlled) {
-          setIsEditMode(false);
-        }
+        resetValue();
+        exitEditMode();
       }
     },
-    [multiline, handleBlur, value, isControlled],
+    [multiline, handleBlur, resetValue, exitEditMode],
   );
 
-  const InputComponent = multiline ? 'textarea' : 'input';
   const containerClass = getClassName([
     styles.editableText,
     className,
@@ -109,37 +66,21 @@ const ChopLogicEditableText: React.FC<EditableTextProps> = ({
 
   if (editMode && !readOnly) {
     return (
-      <InputComponent
-        ref={inputRef as any}
+      <EditView
+        multiline={multiline}
         value={internalValue}
-        onChange={handleChange}
+        placeholder={placeholder}
+        onChange={updateValue}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
-        placeholder={placeholder}
         className={containerClass}
-        rows={multiline ? 3 : undefined}
+        inputRef={inputRef}
         {...rest}
       />
     );
   }
 
-  return (
-    <span
-      onClick={handleClick}
-      className={containerClass}
-      role='button'
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleClick(e as any);
-        }
-      }}
-      {...rest}
-    >
-      {internalValue || placeholder}
-    </span>
-  );
+  return <ReadView value={internalValue} placeholder={placeholder} onClick={handleClick} className={containerClass} {...rest} />;
 };
 
 export default ChopLogicEditableText;

@@ -35,18 +35,18 @@ const withTheme: Decorator = (StoryFn, context) => {
 };
 
 export const decorators = [withTheme];
-````
+```
 
 
 ## Theme Hook
 
-The <code>useChopLogicTheme()</code> hook provides access to the theme context and allows to change the theme.
+The <code>useTheme()</code> hook provides access to the theme context and allows to change the theme.
 
 ```tsx
-import { useChopLogicTheme, ThemeMode } from 'chop-logic-components';
+import { useTheme, ThemeMode } from 'chop-logic-components';
 
 export const ThemeToggleButton = () => {
-  const { mode, setMode } = useChopLogicTheme();
+  const { mode, setMode } = useTheme();
 
   const toggleTheme = () => {
     setMode(mode === ThemeMode.Dark ? ThemeMode.Light : ThemeMode.Dark);

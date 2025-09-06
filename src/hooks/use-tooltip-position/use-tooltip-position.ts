@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 import { useContainerDimensions } from '../use-container-dimensions/use-container-dimensions.ts';
 import { useWindowDimensions } from '../use-window-dimensions/use-window-dimensions.ts';
 
 type useTooltipPositionParams = {
-  wrapperRef: React.RefObject<HTMLElement | null>;
-  tooltipRef: React.RefObject<HTMLElement | null>;
+  wrapperRef: RefObject<HTMLElement | null>;
+  tooltipRef: RefObject<HTMLElement | null>;
   isOpened: boolean;
   spacing?: number;
 };

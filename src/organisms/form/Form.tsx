@@ -3,12 +3,12 @@ import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { ChopLogicFormProps } from '@models';
 import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
 import { useChopLogicFormController } from './Form.controller.ts';
 import styles from './Form.module.scss';
 
-const ChopLogicForm: React.FC<ChopLogicFormProps> = ({
+const ChopLogicForm: FC<ChopLogicFormProps> = ({
   children,
   initialValues,
   onReset,

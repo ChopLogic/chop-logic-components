@@ -1,18 +1,12 @@
-import { TabContent, TabList } from '@atoms';
 import { ChopLogicOrientationMode } from '@enums';
 import { ChopLogicTabsProps } from '@models';
 import { getClassName } from '@utils';
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 
+import { TabContent, TabList } from './__elements__';
 import styles from './Tabs.module.scss';
 
-const ChopLogicTabs: React.FC<ChopLogicTabsProps> = ({
-  tabs,
-  defaultTabId,
-  mode = ChopLogicOrientationMode.Horizontal,
-  className,
-  ...rest
-}) => {
+const ChopLogicTabs: FC<ChopLogicTabsProps> = ({ tabs, defaultTabId, mode = ChopLogicOrientationMode.Horizontal, className, ...rest }) => {
   const tabIds = tabs.map((item) => item.id);
   const tabPanelIds = tabIds.map((id) => `tabpanel_${id}`);
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];

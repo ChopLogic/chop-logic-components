@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function CheckboxCheckedIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function CheckboxCheckedIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg viewBox='0 0 16 16' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

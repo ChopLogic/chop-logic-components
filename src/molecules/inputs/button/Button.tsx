@@ -1,13 +1,14 @@
-import { ChopLogicIcon, IconButton, InnerButton, PrimaryButton, SecondaryButton } from '@atoms';
+import { ChopLogicIcon } from '@atoms';
 import { ChopLogicButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ChopLogicButtonProps } from '@models';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
+import { IconButton, InnerButton, PrimaryButton, SecondaryButton } from '../__elements__';
 import styles from './Button.module.scss';
 
-const Button: React.FC<ChopLogicButtonProps> = ({
+const Button: FC<ChopLogicButtonProps> = ({
   onClick,
   text,
   icon,

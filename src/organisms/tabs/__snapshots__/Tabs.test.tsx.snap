@@ -7,13 +7,13 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
     id="tabs-id"
   >
     <div
-      class="_tabList_13bdd2"
+      class="_tabList_3c2693"
       role="tablist"
     >
       <button
         aria-controls="tabpanel_tab-1"
         aria-selected="true"
-        class="_tabButton_b9f674 _tabButton__selected_b9f674"
+        class="_tabButton_3d945f _tabButton__selected_3d945f"
         id="tab-1"
         role="tab"
       >
@@ -22,7 +22,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-2"
         aria-selected="false"
-        class="_tabButton_b9f674"
+        class="_tabButton_3d945f"
         id="tab-2"
         role="tab"
       >
@@ -31,7 +31,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
       <button
         aria-controls="tabpanel_tab-3"
         aria-selected="false"
-        class="_tabButton_b9f674"
+        class="_tabButton_3d945f"
         id="tab-3"
         role="tab"
       >
@@ -40,7 +40,7 @@ exports[`ChopLogicTabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="_tabContent_f91b3f"
+      class="_tabContent_a69405"
       id="tabpanel_tab-1"
       role="tabpanel"
     >

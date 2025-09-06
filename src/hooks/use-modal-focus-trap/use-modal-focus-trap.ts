@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 
 type ModalFocusTrapParams = {
-  modalRef: React.RefObject<HTMLDivElement | null>;
+  modalRef: RefObject<HTMLDivElement | null>;
   isOpened: boolean;
 };
 

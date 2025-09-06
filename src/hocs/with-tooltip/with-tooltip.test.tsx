@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react';
+import { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { withTooltip } from './with-tooltip';
 
 vi.mock('@atoms', () => ({
-  ChopLogicTooltip: ({ children, tooltipContent }: { tooltipContent: string } & React.PropsWithChildren) => (
+  ChopLogicTooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (
     <div data-testid='tooltip' data-tooltip={tooltipContent}>
       {children}
     </div>

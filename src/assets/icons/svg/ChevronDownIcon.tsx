@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function ChevronDownIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function ChevronDownIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg fill='currentColor' viewBox='0 0 16 16' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

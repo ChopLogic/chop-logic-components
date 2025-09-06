@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import React from 'react';
+import { RefObject } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { useTooltipPosition } from './use-tooltip-position.ts';
@@ -31,7 +31,7 @@ describe('useTooltipPosition', () => {
           height: 50,
         }),
       },
-    } as React.RefObject<HTMLDivElement>;
+    } as RefObject<HTMLDivElement>;
 
     const tooltipRef = {
       current: {
@@ -40,7 +40,7 @@ describe('useTooltipPosition', () => {
           height: 50,
         }),
       },
-    } as React.RefObject<HTMLDivElement>;
+    } as RefObject<HTMLDivElement>;
 
     return { wrapperRef, tooltipRef };
   };

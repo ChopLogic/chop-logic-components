@@ -1,65 +1,98 @@
-import { render, screen } from '@testing-library/react';
-import { useRef } from 'react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { renderHook } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useIsOverflow } from './use-is-overflow.ts';
+import { useIsOverflow } from './use-is-overflow';
 
-function TestComponent({ dimension }: { dimension: 'width' | 'height' }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const isOverflow = useIsOverflow(ref, dimension);
+const mockElement = (scroll: number, client: number) => ({
+  scrollWidth: scroll,
+  scrollHeight: scroll,
+  clientWidth: client,
+  clientHeight: client,
+  addEventListener: vi.fn(),
+  removeEventListener: vi.fn(),
+});
 
-  return (
-    <>
-      <div data-testid='box' ref={ref}>
-        Content
-      </div>
-      <div data-testid='overflow'>{isOverflow ? 'true' : 'false'}</div>
-    </>
-  );
-}
-
-describe('useIsOverflow', () => {
+describe('useIsOverflow hook', () => {
   beforeEach(() => {
+    window.addEventListener = vi.fn();
+    window.removeEventListener = vi.fn();
+  });
+
+  afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('returns true when scrollWidth > clientWidth (width overflow)', () => {
-    vi.spyOn(HTMLElement.prototype, 'scrollWidth', 'get').mockReturnValue(200);
-    vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(100);
+  it('should return false when element is not overflowed (width)', () => {
+    const mockRef = {
+      current: mockElement(100, 100) as unknown as HTMLElement,
+    };
 
-    render(<TestComponent dimension='width' />);
-    expect(screen.getByTestId('overflow').textContent).toBe('true');
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+
+    expect(result.current).toBe(false);
   });
 
-  it('returns false when scrollWidth <= clientWidth (no width overflow)', () => {
-    vi.spyOn(HTMLElement.prototype, 'scrollWidth', 'get').mockReturnValue(100);
-    vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(100);
+  it('should return true when element is overflowed (width)', () => {
+    const mockRef = {
+      current: mockElement(150, 100) as unknown as HTMLElement,
+    };
 
-    render(<TestComponent dimension='width' />);
-    expect(screen.getByTestId('overflow').textContent).toBe('false');
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+
+    expect(result.current).toBe(true);
   });
 
-  it('returns true when scrollHeight > clientHeight (height overflow)', () => {
-    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(300);
-    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(150);
+  it('should return false when element is not overflowed (height)', () => {
+    const mockRef = {
+      current: mockElement(100, 100) as unknown as HTMLElement,
+    };
 
-    render(<TestComponent dimension='height' />);
-    expect(screen.getByTestId('overflow').textContent).toBe('true');
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }));
+
+    expect(result.current).toBe(false);
   });
 
-  it('returns false when scrollHeight <= clientHeight (no height overflow)', () => {
-    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(150);
-    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(150);
+  it('should return true when element is overflowed (height)', () => {
+    const mockRef = {
+      current: mockElement(150, 100) as unknown as HTMLElement,
+    };
 
-    render(<TestComponent dimension='height' />);
-    expect(screen.getByTestId('overflow').textContent).toBe('false');
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }));
+
+    expect(result.current).toBe(true);
   });
 
-  it('returns false if ref is not set (e.g. null)', () => {
-    const { rerender } = render(<TestComponent dimension='width' />);
-    rerender(<TestComponent dimension='width' />);
-    // ref is always set in this test, but we don't trigger the effect unless `ref.current` exists
-    // so this test is here mostly for completeness
-    expect(screen.getByTestId('overflow').textContent).toMatch(/(true|false)/);
+  it('should not check overflow when isMounted is false', () => {
+    const mockRef = {
+      current: mockElement(150, 100) as unknown as HTMLElement,
+    };
+
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: false }));
+
+    expect(result.current).toBe(false);
+  });
+
+  it('should handle null ref.current', () => {
+    const mockRef = {
+      current: null,
+    };
+
+    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+
+    expect(result.current).toBe(false);
+  });
+
+  it('should add and remove resize event listener', () => {
+    const mockRef = {
+      current: mockElement(100, 100) as unknown as HTMLElement,
+    };
+
+    const { unmount } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+
+    expect(window.addEventListener).toHaveBeenCalledWith('resize', expect.any(Function));
+
+    unmount();
+
+    expect(window.removeEventListener).toHaveBeenCalledWith('resize', expect.any(Function));
   });
 });

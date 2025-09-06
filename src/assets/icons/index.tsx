@@ -34,7 +34,7 @@ import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
 
-type ChopLogicIcons = { [key in ChopLogicIconName]: ({ title, ...rest }: ChopLogicSVGElementProps) => ReactElement };
+type ChopLogicIcons = { [key in ChopLogicIconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement };
 
 export const ChopLogicIconDictionary: ChopLogicIcons = {
   [ChopLogicIconName.ArrowDown]: ArrowDownIcon,

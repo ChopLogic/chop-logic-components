@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function CancelIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function CancelIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg viewBox='0 0 470 1000' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

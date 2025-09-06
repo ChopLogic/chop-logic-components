@@ -1,0 +1,83 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NumericInput > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_numeric_8da6e4"
+    style="width: 400px;"
+  >
+    <label
+      class="_label_c20562"
+      for="numeric-input"
+    >
+      <span>
+        Quantity
+      </span>
+    </label>
+    <div
+      class="_wrapper_12eaeb"
+    >
+      <input
+        aria-errormessage="numeric-input_error"
+        aria-invalid="false"
+        class="_input_12eaeb"
+        id="numeric-input"
+        max="9007199254740991"
+        min="-9007199254740991"
+        name="quantity"
+        placeholder="0"
+        step="1"
+        type="number"
+        value="0"
+      />
+      <span>
+        <button
+          aria-label="Decrement value for Quantity"
+          class="_button_2a8079"
+          type="button"
+        >
+          <svg
+            class="_icon_3b2ece"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Increment value for Quantity"
+          class="_button_2a8079"
+          type="button"
+        >
+          <svg
+            class="_icon_3b2ece"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </span>
+      <span
+        aria-hidden="true"
+        class="_errorMessage_eb4d84 _errorMessage_8da6e4"
+        id="numeric-input_error"
+      >
+        Error!
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

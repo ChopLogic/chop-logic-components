@@ -1,7 +1,7 @@
 import { ChopLogicLoaderView } from '@enums';
 import { ChopLogicLoaderProps } from '@models';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
 import Arrow from './views/Arrow.module.scss';
 import Brackets from './views/Brackets.module.scss';
@@ -13,7 +13,7 @@ import Pulse from './views/Pulse.module.scss';
 import Rotation from './views/Rotation.module.scss';
 import Square from './views/Square.module.scss';
 
-const ChopLogicLoader: React.FC<ChopLogicLoaderProps> = ({ view = ChopLogicLoaderView.Circle, ...rest }) => {
+const ChopLogicLoader: FC<ChopLogicLoaderProps> = ({ view = ChopLogicLoaderView.Circle, ...rest }) => {
   const className = getClassName([
     {
       [Arrow.loader]: view === ChopLogicLoaderView.Arrow,

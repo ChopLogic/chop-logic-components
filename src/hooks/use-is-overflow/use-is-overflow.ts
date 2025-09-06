@@ -1,27 +1,41 @@
 import { RefObject, useEffect, useState } from 'react';
 
-export const useIsOverflow = (ref: RefObject<HTMLElement | null>, dimension: 'width' | 'height') => {
+export const useIsOverflow = ({
+  ref,
+  dimension,
+  isMounted,
+}: {
+  ref: RefObject<HTMLElement | null>;
+  dimension: 'width' | 'height';
+  isMounted?: boolean;
+}) => {
   const [isOverflow, setIsOverflow] = useState(false);
 
   useEffect(() => {
-    const { current } = ref;
+    const checkIsOverflow = () => {
+      const { current } = ref;
 
-    const trigger = () => {
-      if (dimension === 'width') {
-        const { scrollWidth = 0, clientWidth = 0 } = current as HTMLElement;
-        setIsOverflow(scrollWidth > clientWidth);
-      }
+      if (current) {
+        if (dimension === 'width') {
+          const { scrollWidth = 0, clientWidth = 0 } = current as HTMLElement;
+          setIsOverflow(scrollWidth > clientWidth);
+        }
 
-      if (dimension === 'height') {
-        const { scrollHeight = 0, clientHeight = 0 } = current as HTMLElement;
-        setIsOverflow(scrollHeight > clientHeight);
+        if (dimension === 'height') {
+          const { scrollHeight = 0, clientHeight = 0 } = current as HTMLElement;
+          setIsOverflow(scrollHeight > clientHeight);
+        }
       }
     };
 
-    if (current) {
-      trigger();
+    if (isMounted) {
+      checkIsOverflow();
     }
-  }, [ref, dimension]);
+
+    window.addEventListener('resize', checkIsOverflow);
+
+    return () => window.removeEventListener('resize', checkIsOverflow);
+  }, [ref, dimension, isMounted]);
 
   return isOverflow;
 };

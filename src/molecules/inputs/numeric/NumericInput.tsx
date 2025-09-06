@@ -1,4 +1,4 @@
-import { ErrorMessage, Input, Label } from '@atoms';
+import { ChopLogicLabel } from '@atoms';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
@@ -6,6 +6,7 @@ import ChopLogicButton from '@molecules/inputs/button/Button.tsx';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
+import { ErrorMessage, Input } from '../__elements__/index.ts';
 import { useChopLogicNumericInputController } from './NumericInput.controller.ts';
 import styles from './NumericInput.module.scss';
 
@@ -47,7 +48,7 @@ const ChopLogicNumericInput: FC<ChopLogicNumericInputProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <Label label={label} required={required} inputId={elementId} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
         name={name}

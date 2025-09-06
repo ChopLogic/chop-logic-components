@@ -1,15 +1,16 @@
-import { ErrorMessage, Input, Label } from '@atoms';
+import { ChopLogicLabel } from '@atoms';
 import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicTextInputProps } from '@models';
 import { ChopLogicButton } from '@molecules';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC } from 'react';
 
+import { ErrorMessage, Input } from '../__elements__/index.ts';
 import { useChopLogicTextInputController } from './TextInput.controller.ts';
 import styles from './TextInput.module.scss';
 
-const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
+const ChopLogicTextInput: FC<ChopLogicTextInputProps> = ({
   name,
   label,
   errorMessage,
@@ -46,7 +47,7 @@ const ChopLogicTextInput: React.FC<ChopLogicTextInputProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <Label label={label} required={required} inputId={elementId} />
+      <ChopLogicLabel label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
         name={name}

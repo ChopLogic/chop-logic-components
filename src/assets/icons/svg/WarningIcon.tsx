@@ -1,6 +1,6 @@
 import { ChopLogicSVGElementProps } from '@models';
 
-function WarningIcon({ title, ...rest }: ChopLogicSVGElementProps) {
+function WarningIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg viewBox='0 0 24 24' fill='currentColor' height='1em' width='1em' role='img' {...rest}>
       {title && <title>{title}</title>}

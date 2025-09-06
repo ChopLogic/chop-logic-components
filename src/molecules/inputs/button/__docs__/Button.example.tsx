@@ -1,8 +1,8 @@
 import { ChopLogicButtonProps } from '@models';
-import React from 'react';
+import { FC } from 'react';
 
 import Button from '../Button';
 
-export const ChopLogicButtonExample: React.FC<ChopLogicButtonProps> = (props) => {
+export const ChopLogicButtonExample: FC<ChopLogicButtonProps> = (props) => {
   return <Button {...props} />;
 };

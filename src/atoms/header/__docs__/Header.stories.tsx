@@ -15,7 +15,7 @@ type Story = StoryObj<typeof ChopLogicHeader>;
 export const Default: Story = {
   args: {
     as: 'h1',
-    children: 'Default h1 Header',
+    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
     icon: ChopLogicIconName.Home,
     className: 'header-class',
     id: 'header-id',

@@ -2,12 +2,12 @@ import { ChopLogicPortal } from '@atoms';
 import { ChopLogicTooltipContainer } from '@enums';
 import { ChopLogicTooltipProps } from '@models';
 import { getClassName } from '@utils';
-import React from 'react';
+import { FC, MouseEvent } from 'react';
 
 import { useChopLogicTooltipController } from './Tooltip.controller.ts';
 import styles from './Tooltip.module.scss';
 
-const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
+const ChopLogicTooltip: FC<ChopLogicTooltipProps> = ({
   children,
   tooltipContent,
   id,
@@ -32,7 +32,7 @@ const ChopLogicTooltip: React.FC<ChopLogicTooltipProps> = ({
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
       onFocus={visibleOn === 'focus' ? openTooltip : undefined}
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
-      onContextMenu={visibleOn === 'contextmenu' ? (e: React.MouseEvent) => handleContextMenu(e) : undefined}
+      onContextMenu={visibleOn === 'contextmenu' ? (e: MouseEvent) => handleContextMenu(e) : undefined}
       tabIndex={-1}
       ref={wrapperRef}
       aria-describedby={elementId}

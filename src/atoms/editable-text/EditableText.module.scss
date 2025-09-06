@@ -1,0 +1,36 @@
+@use '/src/styles/typography';
+
+.editableText {
+  @include typography.font-style(core, base);
+  color: var(--cl-primary-color);
+  border-radius: var(--cl-border-radius);
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    outline: var(--cl-outline-border);
+    outline-offset: var(--cl-xs-gap);
+  }
+
+  &__editMode {
+    border: none;
+    outline: var(--cl-outline-border);
+    outline-offset: var(--cl-xs-gap);
+    field-sizing: content;
+    min-width: var(--cl-l-gap);
+  }
+
+  &__readOnly {
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__empty {
+    min-width: var(--cl-l-gap);
+    min-height: 24px;
+    outline: var(--cl-outline-border);
+    outline-offset: var(--cl-xs-gap);
+  }
+}

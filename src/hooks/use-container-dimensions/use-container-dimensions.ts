@@ -1,8 +1,8 @@
 import { Dimensions } from '@models';
-import React, { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 type useContainerDimensionsParams = {
-  ref: React.RefObject<HTMLElement | null>;
+  ref: RefObject<HTMLElement | null>;
   isVisible?: boolean;
 };
 

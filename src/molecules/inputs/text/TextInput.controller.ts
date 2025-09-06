@@ -1,7 +1,7 @@
 import { ChopLogicFormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { ChopLogicRegExpWithFlags, ChopLogicTextInputValidator } from '@models';
-import React, { ChangeEventHandler, useCallback, useContext, useState } from 'react';
+import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
 
 import { getTextInputInitialValue, validateTextInputValue } from './TextInput.helpers.ts';
 
@@ -26,7 +26,7 @@ export function useChopLogicTextInputController({
   const [valid, setValid] = useState<boolean>(true);
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const valid = validateTextInputValue({ value, required, validator });
 

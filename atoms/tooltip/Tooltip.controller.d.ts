@@ -1,4 +1,4 @@
-import { default as React } from '../../../node_modules/react';
+import { MouseEvent } from '../../../node_modules/react';
 type Params = {
     autoClose: boolean;
     autoCloseDelay: number;
@@ -9,11 +9,11 @@ export declare const useChopLogicTooltipController: ({ id, autoClose, autoCloseD
     openTooltip: () => void;
     closeTooltip: () => void;
     toggleTooltip: () => void;
-    handleContextMenu: (e: React.MouseEvent) => void;
+    handleContextMenu: (e: MouseEvent) => void;
     top: number;
     left: number;
     isOpened: boolean;
-    wrapperRef: React.RefObject<null>;
-    tooltipRef: React.RefObject<HTMLDivElement | null>;
+    wrapperRef: import('../../../node_modules/react').RefObject<null>;
+    tooltipRef: import('../../../node_modules/react').RefObject<HTMLDivElement | null>;
 };
 export {};

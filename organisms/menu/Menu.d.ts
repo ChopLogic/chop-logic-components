@@ -1,4 +1,4 @@
 import { ChopLogicMenuProps } from '../../models';
-import { default as React } from '../../../node_modules/react';
-declare const ChopLogicMenu: React.FC<ChopLogicMenuProps>;
+import { FC } from '../../../node_modules/react';
+declare const ChopLogicMenu: FC<ChopLogicMenuProps>;
 export default ChopLogicMenu;

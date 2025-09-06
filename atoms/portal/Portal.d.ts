@@ -1,5 +1,5 @@
-import { default as React } from '../../../node_modules/react';
+import { ReactElement, ReactPortal } from '../../../node_modules/react';
 declare const ChopLogicPortal: ({ children }: {
-    children: React.ReactElement;
-}) => React.ReactPortal;
+    children: ReactElement;
+}) => ReactPortal;
 export default ChopLogicPortal;

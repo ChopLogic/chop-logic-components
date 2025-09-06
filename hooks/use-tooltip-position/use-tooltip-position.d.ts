@@ -1,7 +1,7 @@
-import { default as React } from '../../../node_modules/react';
+import { RefObject } from '../../../node_modules/react';
 type useTooltipPositionParams = {
-    wrapperRef: React.RefObject<HTMLElement | null>;
-    tooltipRef: React.RefObject<HTMLElement | null>;
+    wrapperRef: RefObject<HTMLElement | null>;
+    tooltipRef: RefObject<HTMLElement | null>;
     isOpened: boolean;
     spacing?: number;
 };

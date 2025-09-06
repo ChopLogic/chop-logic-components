@@ -1,4 +1,4 @@
 import { ChopLogicTabsProps } from '../../models';
-import { default as React } from '../../../node_modules/react';
-declare const ChopLogicTabs: React.FC<ChopLogicTabsProps>;
+import { FC } from '../../../node_modules/react';
+declare const ChopLogicTabs: FC<ChopLogicTabsProps>;
 export default ChopLogicTabs;

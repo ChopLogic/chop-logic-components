@@ -1,6 +1,6 @@
 import { ChopLogicButtonProps } from '../../../models';
-import { default as React } from '../../../../node_modules/react';
-declare const ChopLogicButton: React.FC<ChopLogicButtonProps & {
+import { FC } from '../../../../node_modules/react';
+declare const ChopLogicButton: FC<ChopLogicButtonProps & {
     tooltip?: string;
     visibleOn?: "hover" | "click" | "focus" | "contextmenu";
 }>;

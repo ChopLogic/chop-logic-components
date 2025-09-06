@@ -1,4 +1,4 @@
 import { ChopLogicIconProps } from '../../models';
-import { default as React } from '../../../node_modules/react';
-declare const ChopLogicIcon: React.FC<ChopLogicIconProps>;
+import { FC } from '../../../node_modules/react';
+declare const ChopLogicIcon: FC<ChopLogicIconProps>;
 export default ChopLogicIcon;

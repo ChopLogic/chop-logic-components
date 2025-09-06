@@ -3,6 +3,7 @@ export type { ChopLogicAlertProps } from './alert';
 export type { ChopLogicButtonProps } from './button';
 export type { ChopLogicCheckboxProps } from './checkbox';
 export type { ChopLogicDialogProps } from './dialog';
+export type { EditableTextProps } from './editable-text';
 export type { ChopLogicFormData, ChopLogicFormInputParams, ChopLogicFormProps, ChopLogicFormValidationState } from './form';
 export type { ChopLogicGridColumn, ChopLogicGridItem, ChopLogicGridProps, RenderDataItemCallback } from './grid';
 export type { ChopLogicHeaderProps } from './header';

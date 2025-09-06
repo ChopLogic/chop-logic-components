@@ -9,7 +9,7 @@ interface EditViewProps extends ChopLogicComponentProps {
   onBlur: () => void;
   onKeyDown: (event: React.KeyboardEvent) => void;
   className: string;
-  inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
+  inputRef: RefObject<any>;
 }
 
 export const EditView: FC<EditViewProps> = ({
@@ -34,7 +34,7 @@ export const EditView: FC<EditViewProps> = ({
 
   return (
     <InputComponent
-      ref={inputRef as any}
+      ref={inputRef}
       value={value}
       onChange={handleChange}
       onBlur={onBlur}

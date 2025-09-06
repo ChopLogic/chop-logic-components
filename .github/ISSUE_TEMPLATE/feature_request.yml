@@ -1,11 +1,7 @@
 name: Feature Request
-
 description: Suggest an idea for this project.
-
-title: ""
-
+title: "[Feature]: "
 labels: [ "Components" ]
-
 projects: ["ChopLogic/1"]
 
 body:

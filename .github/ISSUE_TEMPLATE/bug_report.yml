@@ -1,51 +1,46 @@
 name: Bug Report
-
 description: File a bug report.
-
-title: ""
-
-labels: [ "Components" ]
-
+title: "[Bug]: "
+labels: ["Components"]
 projects: ["ChopLogic/1"]
 
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to report a bug! Please fill out the information below to help us diagnose the issue.
+      value: Please fill out the information below to help us diagnose the issue.
 
   - type: textarea
     id: reproduction_steps
     attributes:
-      label: "Steps to Reproduce"
-      description: "Steps to reproduce the behavior."
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
     validations:
       required: true
 
   - type: textarea
     id: expected_behavior
     attributes:
-      label: "Expected Behavior"
-      description: "What you expected to happen."
-      placeholder: "The button should trigger the action."
+      label: Expected Behavior
+      description: What you expected to happen.
+      placeholder: The button should trigger the action.
     validations:
       required: true
 
   - type: textarea
     id: actual_behavior
     attributes:
-      label: "Actual Behavior"
-      description: "What actually happened instead."
-      placeholder: "The button did nothing."
+      label: Actual Behavior
+      description: What actually happened instead.
+      placeholder: The button did nothing.
     validations:
       required: true
 
   - type: textarea
     id: additional_info
     attributes:
-      label: "Additional Context"
-      description: "Add any other context about the problem here."
-      placeholder: "Screenshots, logs, or any additional details."
+      label: Additional Context
+      description: Add any other context about the problem here.
+      placeholder: Screenshots, logs, or any additional details.
     validations:
       required: false
 

@@ -1,0 +1,44 @@
+@use '/src/styles/mixins/index';
+
+.checkbox {
+  display: flex;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-s-gap);
+  position: relative;
+  overflow: hidden;
+
+  svg {
+    color: var(--cl-primary-color);
+    width: var(--cl-icon-size);
+    height: var(--cl-icon-size);
+  }
+
+  &__disabled {
+    @include mixins.disabled();
+  }
+
+  label {
+    cursor: pointer;
+    gap: var(--cl-s-gap);
+    font-size: var(--cl-small-font-size) !important;
+
+    &:hover,
+    &:active {
+      text-shadow: var(--cl-text-shadow);
+    }
+  }
+
+  &_input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 4px;
+    left: 0;
+    margin: 0;
+
+    &:focus-visible + label {
+      outline: var(--cl-outline-border);
+      outline-offset: 2px;
+    }
+  }
+}

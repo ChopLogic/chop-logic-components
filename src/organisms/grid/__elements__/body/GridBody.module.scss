@@ -1,6 +1,0 @@
-@use '/src/styles/typography';
-
-.body {
-  @include typography.font-style(core, base);
-  color: var(--cl-primary-color);
-}

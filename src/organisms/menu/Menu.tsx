@@ -3,7 +3,7 @@ import { ChopLogicMenuProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { MenuItem } from './__elements__';
+import { MenuItem } from './item/MenuItem';
 import styles from './Menu.module.scss';
 
 const ChopLogicMenu: FC<ChopLogicMenuProps> = ({

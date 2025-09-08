@@ -1,5 +1,5 @@
 import { ChopLogicLabel } from '@atoms';
-import ChopLogicButton from '@atoms/button/Button.tsx';
+import Button from '@atoms/button/Button.tsx';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { ChopLogicNumericInputProps } from '@models';
@@ -70,14 +70,14 @@ const ChopLogicNumericInput: FC<ChopLogicNumericInputProps> = ({
       >
         {hasSpinButtons && (
           <span>
-            <ChopLogicButton
+            <Button
               onClick={decrement}
               view={ButtonView.Inner}
               label={`Decrement value for ${label}`}
               icon={IconName.ChevronLeft}
               disabled={disabled}
             />
-            <ChopLogicButton
+            <Button
               onClick={increment}
               view={ButtonView.Inner}
               label={`Increment value for ${label}`}

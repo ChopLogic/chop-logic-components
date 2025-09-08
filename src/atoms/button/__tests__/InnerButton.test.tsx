@@ -1,10 +1,11 @@
-import { InnerButton } from '@atoms/button/inner-button/InnerButton.tsx';
 import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-describe('ButtonInner', () => {
+import { InnerButton } from '../inner-button/InnerButton';
+
+describe('InnerButton', () => {
   const testProps = {
     onClick: vi.fn(),
     label: 'Test input',

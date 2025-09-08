@@ -3,7 +3,7 @@ import { FocusEventHandler, MouseEventHandler } from 'react';
 
 import { ChopLogicInputProps } from './_common';
 
-export interface ChopLogicButtonProps extends Partial<ChopLogicInputProps> {
+export interface ButtonProps extends Partial<ChopLogicInputProps> {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onFocus?: FocusEventHandler<HTMLButtonElement>;
   onBlur?: FocusEventHandler<HTMLButtonElement>;

@@ -3,24 +3,24 @@ import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} title='Button' />
 
-# ChopLogicButton
+# Button
 
-The `ChopLogicButton` component provides a flexible, accessible button with multiple visual styles and configurations. It supports text, icons, tooltips, and various interaction states.
+The `Button` component provides a flexible, accessible button with multiple visual styles and configurations. It supports text, icons, tooltips, and various interaction states.
 
 ## Usage
 
 ```tsx
-import ChopLogicButton, { ButtonView, IconName } from 'chop-logic-components';
+import Button, { ButtonView, IconName } from 'chop-logic-components';
 
 const ExampleForm = () => (
   <form>
-    <ChopLogicButton
+    <Button
       view={ButtonView.Primary}
       text="Submit"
       icon={IconName.Check}
       onClick={() => console.log('Clicked!')}
     />
-    <ChopLogicButton
+    <Button
       view={ButtonView.Icon}
       icon={IconName.Settings}
       label="Settings"

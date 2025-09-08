@@ -1,4 +1,4 @@
-import { ChopLogicButton } from '@atoms';
+import { Button } from '@atoms';
 import { ButtonView } from '@enums';
 import { ChopLogicAlertProps } from '@models';
 import { FC, useState } from 'react';
@@ -13,7 +13,7 @@ export const AlertExample: FC<ChopLogicAlertProps> = ({ mode, message, title, ..
 
   return (
     <div>
-      <ChopLogicButton onClick={handleOpen} text='Open Alert' view={ButtonView.Secondary} />
+      <Button onClick={handleOpen} text='Open Alert' view={ButtonView.Secondary} />
       <ChopLogicAlert title={title} message={message} mode={mode} {...rest} isOpened={isOpened} onClose={handleClose} />
     </div>
   );

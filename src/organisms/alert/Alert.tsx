@@ -1,5 +1,5 @@
 import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
-import { ChopLogicButton } from '@atoms';
+import { Button } from '@atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
 import { ChopLogicAlertProps } from '@models';
@@ -39,7 +39,7 @@ const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
     <ChopLogicPortal>
       <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
         <div {...rest} className={styles.content}>
-          <ChopLogicButton
+          <Button
             icon={IconName.Cancel}
             view={ButtonView.Icon}
             label='Close alert popup'

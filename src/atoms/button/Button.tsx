@@ -1,17 +1,17 @@
 import { ChopLogicIcon } from '@atoms';
 import { ButtonView } from '@enums';
 import { withTooltip } from '@hocs';
-import { ChopLogicButtonProps } from '@models';
+import { ButtonProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
 import styles from './Button.module.scss';
-import { IconButton } from './icon-button/IconButton.tsx';
-import { InnerButton } from './inner-button/InnerButton.tsx';
-import { PrimaryButton } from './primary-button/PrimaryButton.tsx';
-import { SecondaryButton } from './secondary-button/SecondaryButton.tsx';
+import { IconButton } from './icon-button/IconButton';
+import { InnerButton } from './inner-button/InnerButton';
+import { PrimaryButton } from './primary-button/PrimaryButton';
+import { SecondaryButton } from './secondary-button/SecondaryButton';
 
-const Button: FC<ChopLogicButtonProps> = ({
+const ButtonSelector: FC<ButtonProps> = ({
   onClick,
   text,
   icon,
@@ -53,6 +53,6 @@ const Button: FC<ChopLogicButtonProps> = ({
   }
 };
 
-const ChopLogicButton = withTooltip(Button);
+const Button = withTooltip(ButtonSelector);
 
-export default ChopLogicButton;
+export default Button;

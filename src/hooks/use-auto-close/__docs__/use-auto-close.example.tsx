@@ -1,4 +1,4 @@
-import { ChopLogicButton } from '@atoms';
+import { Button } from '@atoms';
 import { ButtonView } from '@enums';
 import { useAutoClose } from '@hooks';
 import { ChopLogicDialog } from '@organisms';
@@ -26,7 +26,7 @@ export const UseAutoCloseExample: FC = () => {
 
   return (
     <div>
-      <ChopLogicButton text='Open dialog' onClick={handleOpen} view={ButtonView.Secondary} />
+      <Button text='Open dialog' onClick={handleOpen} view={ButtonView.Secondary} />
       <ChopLogicDialog isOpened={isOpened} onClose={handleClose} title='Autoclosing Dialog'>
         {modalContent}
       </ChopLogicDialog>

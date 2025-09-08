@@ -1,5 +1,5 @@
 import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
-import { ChopLogicButton } from '@atoms';
+import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
 import { ChopLogicDialogProps } from '@models';
@@ -25,7 +25,7 @@ const ChopLogicDialog: FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, c
     <ChopLogicPortal>
       <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
         <div ref={modalRef} role='dialog' aria-modal='true' {...rest} className={styles.layout}>
-          <ChopLogicButton
+          <Button
             icon={IconName.Cancel}
             view={ButtonView.Icon}
             label='Close modal window'

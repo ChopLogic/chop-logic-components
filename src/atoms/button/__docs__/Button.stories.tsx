@@ -1,10 +1,10 @@
 import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicButton from '../Button.tsx';
-import { ChopLogicButtonExample } from './Button.example.tsx';
+import Button from '../Button.tsx';
+import { ButtonExample } from './Button.example.tsx';
 
-const meta: Meta<typeof ChopLogicButton> = {
+const meta: Meta<typeof Button> = {
   argTypes: {
     text: { control: 'text' },
     disabled: { control: 'boolean' },
@@ -29,49 +29,50 @@ const meta: Meta<typeof ChopLogicButton> = {
     disabled: false,
     extended: false,
   },
-  component: ChopLogicButtonExample,
+  component: ButtonExample,
   title: 'Atoms/Button',
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicButton>;
+type Story = StoryObj<typeof Button>;
 
-export const PrimaryButton: Story = {
+export const Primary: Story = {
   args: {
     text: 'Copy',
     view: ButtonView.Primary,
     icon: IconName.Copy,
-    type: 'button',
-    disabled: false,
   },
 };
 
-export const SecondaryButton: Story = {
+export const Secondary: Story = {
   args: {
     text: 'Learn more...',
     view: ButtonView.Secondary,
     icon: IconName.Forward,
-    type: 'button',
-    disabled: false,
   },
 };
 
-export const IconButton: Story = {
+export const Icon: Story = {
   args: {
     view: ButtonView.Icon,
-    type: 'button',
     icon: IconName.Cancel,
     label: 'Cancel',
-    disabled: false,
   },
 };
 
-export const ButtonWithTooltip: Story = {
+export const WithTooltip: Story = {
   args: {
     text: 'Hover On Me',
     view: ButtonView.Secondary,
-    type: 'button',
-    disabled: false,
     tooltip: 'This button does nothing...',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    text: 'Disabled',
+    view: ButtonView.Primary,
+    icon: IconName.Clear,
+    disabled: true,
   },
 };

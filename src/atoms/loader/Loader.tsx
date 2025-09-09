@@ -1,5 +1,5 @@
 import { LoaderView } from '@enums';
-import { ChopLogicLoaderProps } from '@models';
+import { LoaderProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
@@ -13,7 +13,7 @@ import Pulse from './views/Pulse.module.scss';
 import Rotation from './views/Rotation.module.scss';
 import Square from './views/Square.module.scss';
 
-const ChopLogicLoader: FC<ChopLogicLoaderProps> = ({ view = LoaderView.Circle, ...rest }) => {
+const Loader: FC<LoaderProps> = ({ view = LoaderView.Circle, ...rest }) => {
   const className = getClassName([
     {
       [Arrow.loader]: view === LoaderView.Arrow,
@@ -31,4 +31,4 @@ const ChopLogicLoader: FC<ChopLogicLoaderProps> = ({ view = LoaderView.Circle, .
   return <span className={className} role='status' {...rest}></span>;
 };
 
-export default ChopLogicLoader;
+export default Loader;

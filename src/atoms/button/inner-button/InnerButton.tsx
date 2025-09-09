@@ -1,4 +1,4 @@
-import { ChopLogicIcon } from '@atoms';
+import { Icon } from '@atoms';
 import { IconName } from '@enums';
 import { getClassName } from '@utils';
 import { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
@@ -21,7 +21,7 @@ export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, classNa
       disabled={disabled}
       {...rest}
     >
-      <ChopLogicIcon name={icon} />
+      <Icon name={icon} />
     </button>
   );
 };

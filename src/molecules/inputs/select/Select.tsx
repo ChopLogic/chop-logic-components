@@ -1,4 +1,4 @@
-import { ChopLogicLabel } from '@atoms';
+import { Label } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicSelectProps } from '@models';
 import { getClassName } from '@utils';
@@ -36,7 +36,7 @@ const ChopLogicSelect: FC<ChopLogicSelectProps> = ({
 
   return (
     <div ref={ref} {...rest} className={selectClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <SelectCombobox
         name={name}
         opened={opened}

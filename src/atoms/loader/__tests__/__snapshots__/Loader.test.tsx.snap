@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ChopLogicLoader > Arrow should match the snapshot 1`] = `
+exports[`Loader > Arrow should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -13,7 +13,7 @@ exports[`ChopLogicLoader > Arrow should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Brackets should match the snapshot 1`] = `
+exports[`Loader > Brackets should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -26,7 +26,7 @@ exports[`ChopLogicLoader > Brackets should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Circle should match the snapshot 1`] = `
+exports[`Loader > Circle should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -39,7 +39,7 @@ exports[`ChopLogicLoader > Circle should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Dots should match the snapshot 1`] = `
+exports[`Loader > Dots should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -52,7 +52,7 @@ exports[`ChopLogicLoader > Dots should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Filler should match the snapshot 1`] = `
+exports[`Loader > Filler should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -65,7 +65,7 @@ exports[`ChopLogicLoader > Filler should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Linear should match the snapshot 1`] = `
+exports[`Loader > Linear should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -78,7 +78,7 @@ exports[`ChopLogicLoader > Linear should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Pulse should match the snapshot 1`] = `
+exports[`Loader > Pulse should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -91,7 +91,7 @@ exports[`ChopLogicLoader > Pulse should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Rotation should match the snapshot 1`] = `
+exports[`Loader > Rotation should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"
@@ -104,7 +104,7 @@ exports[`ChopLogicLoader > Rotation should match the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ChopLogicLoader > Square should match the snapshot 1`] = `
+exports[`Loader > Square should match the snapshot 1`] = `
 <DocumentFragment>
   <span
     class="loader-class"

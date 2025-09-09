@@ -3,23 +3,23 @@ import * as LabelStories from './Label.stories';
 
 <Meta of={LabelStories} title='Atoms/Label' />
 
-# ChopLogicLabel
+# Label
 
-The `ChopLogicLabel` component provides an accessible label for form inputs with optional icons and required field indicators.
+The `Label` component provides an accessible label for form inputs with optional icons and required field indicators.
 
 ## Usage
 
 ```tsx
-import ChopLogicLabel from 'chop-logic-components';
-import { ChopLogicIcon, IconName } from 'chop-logic-components';
+import Label from 'chop-logic-components';
+import { Icon, IconName } from 'chop-logic-components';
 
 const FormField = () => (
   <div>
-    <ChopLogicLabel
+    <Label
       label="Email"
       required={true}
       inputId="email-input"
-      icon={<ChopLogicIcon name={IconName.Mail} />}
+      icon={<Icon name={IconName.Mail} />}
       iconPosition="left"
     />
     <input id="email-input" type="email" />

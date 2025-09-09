@@ -1,4 +1,4 @@
-import { ChopLogicIcon } from '@atoms';
+import { Icon } from '@atoms';
 import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import { ChopLogicMenuItem } from '@models';
@@ -23,12 +23,12 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
 
   const itemContent = link ? (
     <a href={link} target='_blank' rel='noreferrer'>
-      <ChopLogicIcon name={icon} />
+      <Icon name={icon} />
       {label}
     </a>
   ) : (
     <span>
-      <ChopLogicIcon name={icon} />
+      <Icon name={icon} />
       {label}
     </span>
   );
@@ -61,7 +61,7 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
     >
       <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu}>
         {itemContent}
-        <ChopLogicIcon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
+        <Icon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
       </span>
       {isSubMenuOpened && children}
     </li>

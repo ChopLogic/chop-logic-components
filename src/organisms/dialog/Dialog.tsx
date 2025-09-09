@@ -1,4 +1,4 @@
-import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
+import { Header, Portal } from '@atoms';
 import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
@@ -22,7 +22,7 @@ const ChopLogicDialog: FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, c
   }
 
   return (
-    <ChopLogicPortal>
+    <Portal>
       <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
         <div ref={modalRef} role='dialog' aria-modal='true' {...rest} className={styles.layout}>
           <Button
@@ -33,14 +33,14 @@ const ChopLogicDialog: FC<ChopLogicDialogProps> = ({ isOpened, onClose, title, c
             className={styles.layout_button}
           />
           <header>
-            <ChopLogicHeader as='h3' icon={icon}>
+            <Header as='h3' icon={icon}>
               {title}
-            </ChopLogicHeader>
+            </Header>
           </header>
           <div>{children}</div>
         </div>
       </div>
-    </ChopLogicPortal>
+    </Portal>
   );
 };
 

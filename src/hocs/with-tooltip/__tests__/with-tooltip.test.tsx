@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { withTooltip } from '../with-tooltip.tsx';
 
 vi.mock('@atoms', () => ({
-  ChopLogicTooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (
+  Tooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (
     <div data-testid='tooltip' data-tooltip={tooltipContent}>
       {children}
     </div>
@@ -16,7 +16,7 @@ vi.mock('@atoms', () => ({
 const MockComponent = ({ label }: { label: string }) => <button>{label}</button>;
 
 describe('withTooltip HOC', () => {
-  it('renders the wrapped component without ChopLogicTooltip if no tooltip is provided', () => {
+  it('renders the wrapped component without Tooltip if no tooltip is provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
     render(<WrappedComponent label='Click me' />);
@@ -24,16 +24,16 @@ describe('withTooltip HOC', () => {
     // Assert that the MockComponent is rendered
     expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
 
-    // Assert that ChopLogicTooltip is not rendered
+    // Assert that Tooltip is not rendered
     expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument();
   });
 
-  it('wraps the component with ChopLogicTooltip when a tooltip is provided', () => {
+  it('wraps the component with Tooltip when a tooltip is provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
     render(<WrappedComponent label='Click me' tooltip='Tooltip text' />);
 
-    // Assert that ChopLogicTooltip is rendered with the correct content
+    // Assert that Tooltip is rendered with the correct content
     const tooltip = screen.getByTestId('tooltip');
     expect(tooltip).toBeInTheDocument();
     expect(tooltip).toHaveAttribute('data-tooltip', 'Tooltip text');
@@ -51,12 +51,12 @@ describe('withTooltip HOC', () => {
     expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
   });
 
-  it('passes the visibleOn prop to ChopLogicTooltip when provided', () => {
+  it('passes the visibleOn prop to Tooltip when provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
     render(<WrappedComponent label='Click me' tooltip='Tooltip text' visibleOn='hover' />);
 
-    // Assert that ChopLogicTooltip is rendered with the correct "visibleOn" prop
+    // Assert that Tooltip is rendered with the correct "visibleOn" prop
     const tooltip = screen.getByTestId('tooltip');
     expect(tooltip).toBeInTheDocument();
   });

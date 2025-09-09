@@ -1,4 +1,4 @@
-import { ChopLogicLabel } from '@atoms';
+import { Label } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
 import { ChopLogicMultiSelectProps } from '@models';
 import { getClassName } from '@utils';
@@ -36,7 +36,7 @@ const ChopLogicMultiSelect: FC<ChopLogicMultiSelectProps> = ({
 
   return (
     <div ref={ref} {...rest} className={multiSelectClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <MultiSelectCombobox
         name={name}
         opened={opened}

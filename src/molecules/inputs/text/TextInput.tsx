@@ -1,4 +1,4 @@
-import { ChopLogicLabel } from '@atoms';
+import { Label } from '@atoms';
 import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
@@ -47,7 +47,7 @@ const ChopLogicTextInput: FC<ChopLogicTextInputProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <ChopLogicLabel label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
         name={name}

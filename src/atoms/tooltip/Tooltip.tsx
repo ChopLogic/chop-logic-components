@@ -1,13 +1,13 @@
-import { ChopLogicPortal } from '@atoms';
+import { Portal } from '@atoms';
 import { TooltipContainer } from '@enums';
-import { ChopLogicTooltipProps } from '@models';
+import { TooltipProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, MouseEvent } from 'react';
 
-import { useChopLogicTooltipController } from './Tooltip.controller.ts';
+import { useTooltipController } from './Tooltip.controller.ts';
 import styles from './Tooltip.module.scss';
 
-const ChopLogicTooltip: FC<ChopLogicTooltipProps> = ({
+const Tooltip: FC<TooltipProps> = ({
   children,
   tooltipContent,
   id,
@@ -21,7 +21,7 @@ const ChopLogicTooltip: FC<ChopLogicTooltipProps> = ({
 }) => {
   const ContainerComponent = containerTag;
   const { openTooltip, closeTooltip, toggleTooltip, handleContextMenu, elementId, top, left, isOpened, wrapperRef, tooltipRef } =
-    useChopLogicTooltipController({ id, autoClose, autoCloseDelay });
+    useTooltipController({ id, autoClose, autoCloseDelay });
   const tooltipClass = getClassName([styles.tooltip, className]);
 
   return (
@@ -39,14 +39,14 @@ const ChopLogicTooltip: FC<ChopLogicTooltipProps> = ({
     >
       {children}
       {isOpened && (
-        <ChopLogicPortal>
+        <Portal>
           <div style={{ ...style, top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest} className={tooltipClass}>
             {tooltipContent}
           </div>
-        </ChopLogicPortal>
+        </Portal>
       )}
     </ContainerComponent>
   );
 };
 
-export default ChopLogicTooltip;
+export default Tooltip;

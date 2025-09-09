@@ -1,7 +1,7 @@
 import { ReactElement, ReactPortal, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const ChopLogicPortal = ({ children }: { children: ReactElement }): ReactPortal => {
+const Portal = ({ children }: { children: ReactElement }): ReactPortal => {
   const [container] = useState(() => document.createElement('div'));
 
   useEffect(() => {
@@ -17,4 +17,4 @@ const ChopLogicPortal = ({ children }: { children: ReactElement }): ReactPortal 
   return ReactDOM.createPortal(children, container);
 };
 
-export default ChopLogicPortal;
+export default Portal;

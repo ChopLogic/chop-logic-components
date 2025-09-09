@@ -1,16 +1,16 @@
-import { ChopLogicTooltip } from '@atoms';
+import { Tooltip } from '@atoms';
 import { TooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TooltipExample } from './Tooltip.example';
 
-const meta: Meta<typeof ChopLogicTooltip> = {
+const meta: Meta<typeof Tooltip> = {
   component: TooltipExample,
   title: 'Atoms/Tooltip',
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicTooltip>;
+type Story = StoryObj<typeof Tooltip>;
 
 export const VisibleOnHover: Story = {
   args: {

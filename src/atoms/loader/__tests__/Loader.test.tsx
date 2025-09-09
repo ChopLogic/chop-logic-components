@@ -2,9 +2,9 @@ import { LoaderView } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicLoader from '../Loader.tsx';
+import Loader from '../Loader.tsx';
 
-describe('ChopLogicLoader', () => {
+describe('Loader', () => {
   const testProps = {
     id: 'loader-id',
     className: 'loader-class',
@@ -14,52 +14,52 @@ describe('ChopLogicLoader', () => {
   };
 
   it('should have the correct aria role', () => {
-    render(<ChopLogicLoader view={LoaderView.Arrow} {...testProps} />);
+    render(<Loader view={LoaderView.Arrow} {...testProps} />);
     expect(screen.getByRole('status')).toBeInTheDocument();
   });
 
   it('Arrow should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Arrow} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Arrow} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Dots should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Dots} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Dots} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Circle should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Circle} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Circle} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Brackets should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Brackets} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Brackets} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Linear should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Linear} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Linear} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Pulse should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Pulse} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Pulse} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Square should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Square} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Square} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Rotation should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Rotation} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Rotation} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Filler should match the snapshot', () => {
-    const { asFragment } = render(<ChopLogicLoader view={LoaderView.Filler} {...testProps} />);
+    const { asFragment } = render(<Loader view={LoaderView.Filler} {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

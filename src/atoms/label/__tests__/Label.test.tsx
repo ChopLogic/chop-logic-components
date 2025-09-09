@@ -1,9 +1,9 @@
-import { ChopLogicIcon } from '@atoms';
+import { Icon } from '@atoms';
 import { IconName } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import ChopLogicLabel from '../Label.tsx';
+import Label from '../Label.tsx';
 
 describe('Label', () => {
   const testProps = {
@@ -13,31 +13,27 @@ describe('Label', () => {
   };
 
   it('should render correctly as required label', () => {
-    const { asFragment } = render(<ChopLogicLabel {...testProps} />);
+    const { asFragment } = render(<Label {...testProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly as not required label', () => {
-    const { asFragment } = render(<ChopLogicLabel {...testProps} required={false} />);
+    const { asFragment } = render(<Label {...testProps} required={false} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly without text', () => {
-    const { asFragment } = render(<ChopLogicLabel {...testProps} required={false} isTextHidden />);
+    const { asFragment } = render(<Label {...testProps} required={false} isTextHidden />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render left icon', () => {
-    const { asFragment } = render(
-      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={IconName.Back} />} iconPosition='left' />,
-    );
+    const { asFragment } = render(<Label {...testProps} required={false} icon={<Icon name={IconName.Back} />} iconPosition='left' />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render right icon', () => {
-    const { asFragment } = render(
-      <ChopLogicLabel {...testProps} required={false} icon={<ChopLogicIcon name={IconName.Forward} />} iconPosition='left' />,
-    );
+    const { asFragment } = render(<Label {...testProps} required={false} icon={<Icon name={IconName.Forward} />} iconPosition='left' />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

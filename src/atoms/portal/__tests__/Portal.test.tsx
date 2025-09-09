@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import ChopLogicPortal from '../Portal.tsx';
+import Portal from '../Portal.tsx';
 
-describe('ChopLogicPortal', () => {
+describe('Portal', () => {
   beforeEach(() => {
     // Mock document.body.appendChild and removeChild to track DOM manipulations
     vi.spyOn(document.body, 'appendChild');
@@ -19,9 +19,9 @@ describe('ChopLogicPortal', () => {
 
     // Render the component with some children
     render(
-      <ChopLogicPortal>
+      <Portal>
         <div>{childText}</div>
-      </ChopLogicPortal>,
+      </Portal>,
     );
 
     // Verify the child element exists in the document
@@ -35,9 +35,9 @@ describe('ChopLogicPortal', () => {
     const childText = 'Goodbye from the portal';
 
     const { unmount } = render(
-      <ChopLogicPortal>
+      <Portal>
         <div>{childText}</div>
-      </ChopLogicPortal>,
+      </Portal>,
     );
 
     // Trigger unmount

@@ -1,4 +1,4 @@
-export { ChopLogicIcon, ChopLogicLoader, ChopLogicPortal, ChopLogicTooltip } from './atoms';
+export { Icon, Loader, Portal, Tooltip } from './atoms';
 export * from './contexts';
 export * from './enums';
 export * from './hooks';

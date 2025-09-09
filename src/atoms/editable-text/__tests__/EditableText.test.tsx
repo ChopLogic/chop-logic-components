@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import ChopLogicEditableText from '../EditableText';
+import EditableText from '../EditableText';
 
-describe('ChopLogicEditableText', () => {
+describe('EditableText', () => {
   const defaultProps = {
     value: 'Initial Value',
     onChange: vi.fn(),
@@ -12,20 +12,20 @@ describe('ChopLogicEditableText', () => {
   };
 
   it('renders ReadView by default', () => {
-    const { asFragment } = render(<ChopLogicEditableText {...defaultProps} />);
+    const { asFragment } = render(<EditableText {...defaultProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('has correct aria attributes', () => {
-    render(<ChopLogicEditableText {...defaultProps} />);
+    render(<EditableText {...defaultProps} />);
 
     expect(screen.getByRole('button')).toBeInTheDocument();
     expect(screen.getByLabelText('Editable text')).toBeInTheDocument();
   });
 
   it('renders an input when the text is clicked', async () => {
-    render(<ChopLogicEditableText {...defaultProps} />);
+    render(<EditableText {...defaultProps} />);
 
     await userEvent.click(screen.getByText(defaultProps.value));
 
@@ -33,7 +33,7 @@ describe('ChopLogicEditableText', () => {
   });
 
   it('allows to change the text by typing in a new value', async () => {
-    render(<ChopLogicEditableText {...defaultProps} />);
+    render(<EditableText {...defaultProps} />);
     expect(screen.getByText(defaultProps.value)).toBeInTheDocument();
 
     await userEvent.click(screen.getByText(defaultProps.value));

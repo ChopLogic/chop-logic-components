@@ -1,4 +1,4 @@
-import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
+import { Header, Portal } from '@atoms';
 import { Button } from '@atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
@@ -36,7 +36,7 @@ const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
   const alertTitleIcon = getAlertIcon(mode, icon);
 
   return (
-    <ChopLogicPortal>
+    <Portal>
       <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
         <div {...rest} className={styles.content}>
           <Button
@@ -47,14 +47,14 @@ const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
             className={styles.content_button}
           />
           <header>
-            <ChopLogicHeader icon={alertTitleIcon} as='h3'>
+            <Header icon={alertTitleIcon} as='h3'>
               {alertTitle}
-            </ChopLogicHeader>
+            </Header>
           </header>
           <p>{message}</p>
         </div>
       </div>
-    </ChopLogicPortal>
+    </Portal>
   );
 };
 

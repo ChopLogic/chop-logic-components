@@ -1,4 +1,4 @@
-import { ChopLogicIcon } from '@atoms';
+import { Icon } from '@atoms';
 import { ChopLogicMenuItem } from '@models';
 import { ReactElement } from 'react';
 
@@ -17,7 +17,7 @@ export const MenuLeaf = ({ item }: { item: ChopLogicMenuItem }): ReactElement =>
 
   return (
     <li className={styles.menuLeaf} tabIndex={0} role='menuitem' onFocus={onFocus} onClick={onClick} onMouseOver={onHover}>
-      <ChopLogicIcon name={icon} />
+      <Icon name={icon} />
       {leafContent}
     </li>
   );

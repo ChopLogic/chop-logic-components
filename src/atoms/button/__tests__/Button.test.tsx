@@ -6,7 +6,7 @@ import Button from '../Button';
 
 // Mock sub-components and dependencies
 vi.mock('@atoms', () => ({
-  ChopLogicIcon: vi.fn(({ name }) => <span data-testid={`icon-${name}`}>Icon</span>),
+  Icon: vi.fn(({ name }) => <span data-testid={`icon-${name}`}>Icon</span>),
 }));
 
 vi.mock('@hocs', () => ({

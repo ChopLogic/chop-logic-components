@@ -9,7 +9,7 @@ import { useEditModeState } from './useEditModeState';
 import { useInputFocus } from './useInputFocus';
 import { useValueState } from './useValueState';
 
-const ChopLogicEditableText: FC<EditableTextProps> = ({
+const EditableText: FC<EditableTextProps> = ({
   value,
   isEditMode: controlledEditMode,
   onChange,
@@ -83,4 +83,4 @@ const ChopLogicEditableText: FC<EditableTextProps> = ({
   return <ReadView value={internalValue} placeholder={placeholder} onClick={handleClick} className={containerClass} {...rest} />;
 };
 
-export default ChopLogicEditableText;
+export default EditableText;

@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 import Header from '../Header';
 
 vi.mock('@atoms', () => ({
-  ChopLogicIcon: () => <span data-testid='choplogic-icon'>Mock icon</span>,
+  Icon: () => <span data-testid='choplogic-icon'>Mock icon</span>,
 }));
 
 describe('Header component', () => {

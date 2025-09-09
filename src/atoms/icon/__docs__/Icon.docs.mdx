@@ -1,20 +1,20 @@
 import { Meta, IconGallery, IconItem, Controls } from '@storybook/addon-docs/blocks';
-import * as ChopLogicIconStories from './Icon.stories';
-import { ChopLogicIcon } from '@atoms';
+import * as IconStories from './Icon.stories';
+import { Icon } from '@atoms';
 import { IconName } from '@enums';
 
-<Meta of={ChopLogicIconStories} title='Icon' />
+<Meta of={IconStories} title='Icon' />
 
-# ChopLogicIcon
+# Icon
 
-The `ChopLogicIcon` component allows you to render one of the icons from the list as an SVG element. Icons can be inserted into inputs, buttons, menu items and any other React components.
+The `Icon` component allows you to render one of the icons from the list as an SVG element. Icons can be inserted into inputs, buttons, menu items and any other React components.
 
 ## Iconography
 
 <IconGallery>
   {Object.entries(IconName).map(([key, value]) => (
     <IconItem name={key} key={key}>
-      <ChopLogicIcon name={value} />
+      <Icon name={value} />
     </IconItem>
   ))}
 </IconGallery>
@@ -22,11 +22,11 @@ The `ChopLogicIcon` component allows you to render one of the icons from the lis
 ## Usage
 
 ```tsx
-import { ChopLogicIcon, IconName } from 'chop-logic-components';
+import { Icon, IconName } from 'chop-logic-components';
 
 const MyButton = () => (
   <button>
-    <ChopLogicIcon name={IconName.Delete} />
+    <Icon name={IconName.Delete} />
     <span>Delete</span>
   </button>
 );

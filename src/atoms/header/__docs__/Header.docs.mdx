@@ -3,22 +3,22 @@ import * as HeaderStories from './Header.stories';
 
 <Meta of={HeaderStories} title='Header' />
 
-# ChopLogicHeader
+# Header
 
-The `ChopLogicHeader` component provides a flexible heading element that can render as any HTML heading level (h1-h6) and optionally include an icon. It's designed to maintain consistent styling across all heading levels while providing semantic HTML structure.
+The `Header` component provides a flexible heading element that can render as any HTML heading level (h1-h6) and optionally include an icon. It's designed to maintain consistent styling across all heading levels while providing semantic HTML structure.
 
 ## Usage
 
 ```tsx
-import { ChopLogicHeader, IconName } from 'chop-logic-components';
+import { Header, IconName } from 'chop-logic-components';
 
 const PageHeader = () => (
   <div>
-    <ChopLogicHeader as="h1" icon={IconName.Home}>Welcome</ChopLogicHeader>
-    <ChopLogicHeader as="h2">Section Title</ChopLogicHeader>
-    <ChopLogicHeader as="h3" className="special-header" id="subsection">
+    <Header as="h1" icon={IconName.Home}>Welcome</Header>
+    <Header as="h2">Section Title</Header>
+    <Header as="h3" className="special-header" id="subsection">
       With Custom Class
-    </ChopLogicHeader>
+    </Header>
   </div>
 );
 
@@ -36,7 +36,7 @@ export default PageHeader;
 
 1. __Heading Hierarchy__: Maintain a logical heading structure (h1 followed by h2, etc.) for proper document outline.
 2. __Icon Decoration__: When using icons, ensure they're purely decorative or provide additional context via ARIA attributes if they convey meaning.
-3. __Landmark Roles__: Consider wrapping standalone headers in `<ChopLogicHeader>` elements when appropriate.
+3. __Landmark Roles__: Consider wrapping standalone headers in `<Header>` elements when appropriate.
 
 ### Best Practices
 

@@ -1,4 +1,4 @@
-import { ChopLogicIcon } from '@atoms';
+import { Icon } from '@atoms';
 import { ButtonView } from '@enums';
 import { withTooltip } from '@hocs';
 import { ButtonProps } from '@models';
@@ -29,21 +29,21 @@ const ButtonSelector: FC<ButtonProps> = ({
     case ButtonView.Primary:
       return (
         <PrimaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
-          <ChopLogicIcon name={icon} />
+          <Icon name={icon} />
           {text}
         </PrimaryButton>
       );
     case ButtonView.Secondary:
       return (
         <SecondaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
-          <ChopLogicIcon name={icon} />
+          <Icon name={icon} />
           {text}
         </SecondaryButton>
       );
     case ButtonView.Icon:
       return (
         <IconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
-          <ChopLogicIcon name={icon} />
+          <Icon name={icon} />
         </IconButton>
       );
     case ButtonView.Inner:

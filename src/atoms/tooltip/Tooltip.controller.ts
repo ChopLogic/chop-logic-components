@@ -7,7 +7,7 @@ type Params = {
   id?: string;
 };
 
-export const useChopLogicTooltipController = ({ id, autoClose, autoCloseDelay }: Params) => {
+export const useTooltipController = ({ id, autoClose, autoCloseDelay }: Params) => {
   const [isOpened, setIsOpened] = useState(false);
   const wrapperRef = useRef(null);
   const tooltipRef = useRef<HTMLDivElement>(null);

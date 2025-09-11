@@ -1,4 +1,4 @@
-import { ChopLogicThemeContext } from '@contexts';
+import { ThemeContext } from '@contexts';
 import { useContext } from 'react';
 
-export const useChopLogicTheme = () => useContext(ChopLogicThemeContext);
+export const useChopLogicTheme = () => useContext(ThemeContext);

@@ -1,16 +1,16 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as ChopLogicFormStories from './Form.stories';
+import * as FormStories from './Form.stories';
 
-<Meta of={ChopLogicFormStories} title='ChopLogicForm' />
+<Meta of={FormStories} title='Form' />
 
-# ChopLogicForm
+# Form
 
-The `ChopLogicForm` component provides a structured, accessible form container with built-in state management, validation, and responsive layout capabilities.
+The `Form` component provides a structured, accessible form container with built-in state management, validation, and responsive layout capabilities.
 
 ## Usage
 
 ```tsx
-import { ChopLogicForm, ChopLogicTextInput } from 'chop-logic-components';
+import { Form, TextInput } from 'chop-logic-components';
 
 const UserForm = () => {
   const handleSubmit = (values) => {
@@ -18,14 +18,14 @@ const UserForm = () => {
   };
 
   return (
-    <ChopLogicForm
+    <Form
       initialValues={{ firstName: '', lastName: '' }}
       onSubmit={handleSubmit}
       columns={2}
     >
-      <ChopLogicTextInput name="firstName" label="First Name" />
-      <ChopLogicTextInput name="lastName" label="Last Name" />
-    </ChopLogicForm>
+      <TextInput name="firstName" label="First Name" />
+      <TextInput name="lastName" label="Last Name" />
+    </Form>
   );
 };
 ```

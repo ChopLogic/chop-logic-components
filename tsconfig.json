@@ -6,16 +6,15 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": true, // Prevents TypeScript from emitting files
+    "declaration": false, // Let vite-plugin-dts handle declarations
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
     "baseUrl": "./src",
     "paths": {
       "@*": ["*"],
@@ -35,5 +34,6 @@
     },
     "types": ["node", "@testing-library/jest-dom"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/__docs__/**", "**/stories/**", "dist", "node_modules"]
 }

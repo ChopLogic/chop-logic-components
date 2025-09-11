@@ -1,22 +1,22 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import * as ChopLogicPortalStories from './Portal.stories';
+import * as PortalStories from './Portal.stories';
 
-<Meta of={ChopLogicPortalStories} title='Portal' />
+<Meta of={PortalStories} title='Portal' />
 
-# ChopLogicPortal
+# Portal
 
-The `ChopLogicPortal` component is a helper container for rendering modals, tooltips, popups and other elements on top of the main page. The portal is created dynamically by appending a new `div` to the `document.body`.
+The `Portal` component is a helper container for rendering modals, tooltips, popups and other elements on top of the main page. The portal is created dynamically by appending a new `div` to the `document.body`.
 The component cleans up by removing the `div` from the DOM when it is unmounted.
 
 ### Usage
 
 ```tsx
-import ChopLogicPortal from 'chop-logic-components';
+import Portal from 'chop-logic-components';
 
 const MyModalComponent = () => (
-  <ChopLogicPortal>
+  <Portal>
     <div>Hello from portal!</div>
-  </ChopLogicPortal>
+  </Portal>
 );
 
 export default MyModalComponent;

@@ -1,7 +1,7 @@
-import { ChopLogicGridProps } from '@models';
-import { ChopLogicGrid } from '@organisms';
+import { GridProps } from '@models';
+import { Grid } from '@organisms';
 import { FC } from 'react';
 
-export const GridExample: FC<ChopLogicGridProps> = (props) => {
-  return <ChopLogicGrid {...props} />;
+export const GridExample: FC<GridProps> = (props) => {
+  return <Grid {...props} />;
 };

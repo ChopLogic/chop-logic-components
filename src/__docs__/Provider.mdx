@@ -4,33 +4,33 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## Theme Provider
 
-The <code>ChopLogicThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
+The <code>ThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
 
 It supports both dynamic switching via a hook and injected mode through the `injectedMode` prop.
 
 ```tsx
-import { ChopLogicThemeProvider } from 'chop-logic-components';
+import { ThemeProvider } from 'chop-logic-components';
 
-<ChopLogicThemeProvider>
+<ThemeProvider>
   <App />
-</ChopLogicThemeProvider>
+</ThemeProvider>
 ```
 
 ```tsx
-import { ChopLogicThemeProvider, ChopLogicThemeMode } from 'chop-logic-components';
+import { ThemeProvider, ThemeMode } from 'chop-logic-components';
 import { Decorator } from '@storybook/react';
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
   const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
-  const storybookMode = backgroundColor === '#2B2B2BFF' ? ChopLogicThemeMode.Dark : ChopLogicThemeMode.Light;
+  const storybookMode = backgroundColor === '#2B2B2BFF' ? ThemeMode.Dark : ThemeMode.Light;
 
   return (
-    <ChopLogicThemeProvider injectedMode={storybookMode}>
+    <ThemeProvider injectedMode={storybookMode}>
       <div style={{ backgroundColor }}>
         <StoryFn />
       </div>
-    </ChopLogicThemeProvider>
+    </ThemeProvider>
   );
 };
 
@@ -43,13 +43,13 @@ export const decorators = [withTheme];
 The <code>useChopLogicTheme()</code> hook provides access to the theme context and allows to change the theme.
 
 ```tsx
-import { useChopLogicTheme, ChopLogicThemeMode } from 'chop-logic-components';
+import { useChopLogicTheme, ThemeMode } from 'chop-logic-components';
 
 export const ThemeToggleButton = () => {
   const { mode, setMode } = useChopLogicTheme();
 
   const toggleTheme = () => {
-    setMode(mode === ChopLogicThemeMode.Dark ? ChopLogicThemeMode.Light : ChopLogicThemeMode.Dark);
+    setMode(mode === ThemeMode.Dark ? ThemeMode.Light : ThemeMode.Dark);
   }
 
   return (

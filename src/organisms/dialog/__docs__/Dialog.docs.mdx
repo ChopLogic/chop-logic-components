@@ -1,20 +1,20 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Dialog from './Dialog.stories';
 
-<Meta of={Dialog} title='ChopLogicDialog' />
+<Meta of={Dialog} title='Dialog' />
 
-# ChopLogicDialog
+# Dialog
 
-The `ChopLogicDialog` allows you to render a pop-up window with any content. The dialog appearance trigger can be a button or any event on the page. If there are several dialogs, they will appear on top of each other in the order they are called. When adding a dialog, you must think through the conditions for opening and closing it, so props `isOpened` and `onClose` are mandatory.
+The `Dialog` allows you to render a pop-up window with any content. The dialog appearance trigger can be a button or any event on the page. If there are several dialogs, they will appear on top of each other in the order they are called. When adding a dialog, you must think through the conditions for opening and closing it, so props `isOpened` and `onClose` are mandatory.
 
 ### Usage
 
 ```tsx
-import ChopLogicDialog from 'chop-logic-components';
+import Dialog from 'chop-logic-components';
 
 const ConfirmationDialog = ({ isOpen, onClose }) => {
   return (
-    <ChopLogicDialog
+    <Dialog
       isOpened={isOpen}
       onClose={onClose}
       title="Confirm Action"
@@ -24,7 +24,7 @@ const ConfirmationDialog = ({ isOpen, onClose }) => {
         <button onClick={onClose}>Cancel</button>
         <button onClick={handleConfirm}>Confirm</button>
       </div>
-    </ChopLogicDialog>
+    </Dialog>
   );
 };
 ```

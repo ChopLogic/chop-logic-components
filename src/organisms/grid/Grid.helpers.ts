@@ -1,4 +1,4 @@
-import { ChopLogicGridColumn, ChopLogicGridItem, RenderDataItemCallback } from '@models';
+import { GridColumn, GridItem, RenderDataItemCallback } from '@models';
 import { ReactElement } from 'react';
 
 export function getGridRowValues({
@@ -6,8 +6,8 @@ export function getGridRowValues({
   columns,
   renderDataItem,
 }: {
-  item: ChopLogicGridItem;
-  columns: ChopLogicGridColumn[];
+  item: GridItem;
+  columns: GridColumn[];
   renderDataItem?: RenderDataItemCallback;
 }): (string | ReactElement)[] {
   const values = [];

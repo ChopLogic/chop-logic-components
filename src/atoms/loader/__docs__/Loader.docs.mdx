@@ -1,21 +1,21 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as LoaderStories from './Loader.stories';
 
-<Meta of={LoaderStories} title='ChopLogicLoader' />
+<Meta of={LoaderStories} title='Loader' />
 
-# ChopLogicLoader
+# Loader
 
-The `ChopLogicLoader` component provides a collection of animated loading indicators to show progress or pending states in your application. It offers multiple visual styles to match different contexts and use cases.
+The `Loader` component provides a collection of animated loading indicators to show progress or pending states in your application. It offers multiple visual styles to match different contexts and use cases.
 
 ## Usage
 
 ```tsx
-import ChopLogicLoader, { ChopLogicLoaderView } from 'chop-logic-components';
+import Loader, { LoaderView } from 'chop-logic-components';
 
 const PageLoader = () => (
   <div>
     <h2>Content is loading...</h2>
-    <ChopLogicLoader view={ChopLogicLoaderView.Circle} />
+    <Loader view={LoaderView.Circle} />
   </div>
 );
 

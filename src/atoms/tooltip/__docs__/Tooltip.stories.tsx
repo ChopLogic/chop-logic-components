@@ -1,21 +1,21 @@
-import { ChopLogicTooltip } from '@atoms';
-import { ChopLogicTooltipContainer } from '@enums';
+import { Tooltip } from '@atoms';
+import { TooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TooltipExample } from './Tooltip.example';
 
-const meta: Meta<typeof ChopLogicTooltip> = {
+const meta: Meta<typeof Tooltip> = {
   component: TooltipExample,
   title: 'Atoms/Tooltip',
 };
 
 export default meta;
-type Story = StoryObj<typeof ChopLogicTooltip>;
+type Story = StoryObj<typeof Tooltip>;
 
 export const VisibleOnHover: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: ChopLogicTooltipContainer.Span,
+    containerTag: TooltipContainer.Span,
     visibleOn: 'hover',
     id: 'tooltip-id',
     autoClose: false,
@@ -25,7 +25,7 @@ export const VisibleOnHover: Story = {
     containerTag: {
       table: {
         defaultValue: { summary: 'span' },
-        type: { summary: 'ChopLogicTooltipContainer' },
+        type: { summary: 'TooltipContainer' },
       },
     },
     visibleOn: {
@@ -52,7 +52,7 @@ export const VisibleOnHover: Story = {
 export const VisibleOnClick: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: ChopLogicTooltipContainer.Div,
+    containerTag: TooltipContainer.Div,
     visibleOn: 'click',
     id: 'tooltip-id',
     autoClose: true,
@@ -63,7 +63,7 @@ export const VisibleOnClick: Story = {
 export const VisibleOnFocus: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: ChopLogicTooltipContainer.Div,
+    containerTag: TooltipContainer.Div,
     visibleOn: 'focus',
     id: 'tooltip-id',
     autoClose: true,
@@ -74,7 +74,7 @@ export const VisibleOnFocus: Story = {
 export const VisibleOnContextMenu: Story = {
   args: {
     tooltipContent: 'This is a tooltip',
-    containerTag: ChopLogicTooltipContainer.Div,
+    containerTag: TooltipContainer.Div,
     visibleOn: 'contextmenu',
     id: 'tooltip-id',
     autoClose: true,

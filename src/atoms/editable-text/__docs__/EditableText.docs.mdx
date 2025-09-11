@@ -3,14 +3,14 @@ import * as EditableTextStories from './EditableText.stories';
 
 <Meta of={EditableTextStories} title='EditableText' />
 
-# ChopLogicEditableText
+# EditableText
 
 The `EditableText` component allows users to seamlessly edit inline content by clicking on it. It transitions from a read-only view to an editable input field.
 
 ## Usage
 
 ```tsx
-import ChopLogicEditableText from 'chop-logic-components';
+import EditableText from 'chop-logic-components';
 
 const UserProfile = () => {
   const [name, setName] = React.useState('John Doe');
@@ -18,7 +18,7 @@ const UserProfile = () => {
   return (
     <div>
       <h2>
-        <ChopLogicEditableText
+        <EditableText
           value={name}
           onChange={setName}
           placeholder="Enter your name"

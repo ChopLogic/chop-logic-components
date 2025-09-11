@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
@@ -16,7 +16,7 @@ const meta: Meta<typeof TabsExample> = {
     defaultTabId: { control: 'text' },
     mode: {
       control: 'radio',
-      options: Object.values(ChopLogicOrientationMode),
+      options: Object.values(OrientationMode),
     },
   },
   args: {
@@ -32,12 +32,12 @@ type Story = StoryObj<typeof TabsExample>;
 
 export const HorizontalTabs: Story = {
   args: {
-    mode: ChopLogicOrientationMode.Horizontal,
+    mode: OrientationMode.Horizontal,
   },
 };
 
 export const VerticalTabs: Story = {
   args: {
-    mode: ChopLogicOrientationMode.Vertical,
+    mode: OrientationMode.Vertical,
   },
 };

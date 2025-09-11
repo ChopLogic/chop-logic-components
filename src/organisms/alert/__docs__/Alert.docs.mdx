@@ -1,25 +1,25 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Alert from './Alert.stories';
 
-<Meta of={Alert} title='ChopLogicAlert' />
+<Meta of={Alert} title='Alert' />
 
-# ChopLogicAlert
+# Alert
 
-The `ChopLogicDialog` component provides an accessible modal dialog with focus management, keyboard navigation, and flexible content structure.
+The `Alert` component provides a customizable popup for warnings and messages with auto-close function after timeout.
 
 ## Usage
 
 ```tsx
-import ChopLogicAlert, { ChopLogicAlertMode } from 'chop-logic-components';
+import Alert, { AlertMode } from 'chop-logic-components';
 
 const NotificationSystem = () => {
   const [alertOpen, setAlertOpen] = React.useState(true);
 
   return (
-    <ChopLogicAlert
+    <Alert
       isOpened={alertOpen}
       onClose={() => setAlertOpen(false)}
-      mode={ChopLogicAlertMode.Success}
+      mode={AlertMode.Success}
       title="Action completed"
       message="Your changes have been saved successfully."
       autoClose

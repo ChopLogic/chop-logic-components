@@ -1,9 +1,9 @@
-import { ChopLogicButtonView } from '@enums';
-import { ChopLogicButton } from '@molecules';
+import { Button } from '@atoms';
+import { ButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
 import { useState } from 'react';
 
-import { useIsMounted } from '../use-is-mounted.ts';
+import { useIsMounted } from '../use-is-mounted';
 
 export const UseIsMountedExample = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -11,7 +11,7 @@ export const UseIsMountedExample = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <ChopLogicButton text='Toggle component' onClick={() => setIsOpened(!isOpened)} view={ChopLogicButtonView.Secondary} />
+      <Button text='Toggle component' onClick={() => setIsOpened(!isOpened)} view={ButtonView.Secondary} />
       {isMounted && (
         <div className={styles.container}>
           New component is mounted! After the second click on the Toggle button it will be unmounted in 1 second.

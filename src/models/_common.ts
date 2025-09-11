@@ -15,18 +15,18 @@ export interface ChopLogicInputProps extends ChopLogicComponentProps {
   required?: boolean;
 }
 
-export type ChopLogicSelectValue = {
+export type SelectValue = {
   id: string;
   label: string;
 } & { [key in string]: unknown };
 
-export type ChopLogicMultiSelectValue = ChopLogicSelectValue & {
+export type MultiSelectValue = SelectValue & {
   selected: boolean;
 };
 
-export type ChopLogicNumericInputValidator = (input?: number) => boolean;
+export type NumericInputValidator = (input?: number) => boolean;
 
-export type ChopLogicTextInputValidator = (input: string) => boolean;
+export type TextInputValidator = (input: string) => boolean;
 
 export type ChopLogicRegExpWithFlags = {
   regexp: string;

@@ -1,4 +1,4 @@
-import { ChopLogicAlertMode, ChopLogicIconName } from '@enums';
+import { AlertMode, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { AlertExample } from './Alert.example';
@@ -9,16 +9,16 @@ const meta: Meta<typeof AlertExample> = {
     message: { control: 'text' },
     mode: {
       control: 'select',
-      options: Object.values(ChopLogicAlertMode),
+      options: Object.values(AlertMode),
     },
     icon: {
       control: 'select',
-      options: Object.values(ChopLogicIconName),
+      options: Object.values(IconName),
     },
   },
   args: {
     message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    mode: ChopLogicAlertMode.Info,
+    mode: AlertMode.Info,
     autoClose: true,
     autoCloseDelay: 3000,
   },

@@ -1,11 +1,11 @@
-import { ChopLogicIcon } from '@atoms';
-import { ChopLogicHeaderProps } from '@models';
+import { Icon } from '@atoms';
+import { HeaderProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
 import styles from './Header.module.scss';
 
-const Header: FC<ChopLogicHeaderProps> = ({ as = 'h1', icon, children, className, ...rest }) => {
+const Header: FC<HeaderProps> = ({ as = 'h1', icon, children, className, ...rest }) => {
   const HeaderTag = as;
   const headerClass = getClassName([
     className,
@@ -22,7 +22,7 @@ const Header: FC<ChopLogicHeaderProps> = ({ as = 'h1', icon, children, className
 
   return (
     <HeaderTag className={headerClass} {...rest}>
-      {icon && <ChopLogicIcon name={icon} />}
+      {icon && <Icon name={icon} />}
       <span className={styles.header_text}>{children}</span>
     </HeaderTag>
   );

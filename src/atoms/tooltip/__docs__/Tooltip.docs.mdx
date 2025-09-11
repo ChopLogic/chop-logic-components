@@ -3,20 +3,20 @@ import * as Tooltip from './Tooltip.stories';
 
 <Meta of={Tooltip} title='Tooltip' />
 
-# ChopLogicTooltip
+# Tooltip
 
-The `ChopLogicTooltip` component provides contextual information when users interact with elements. It supports multiple trigger methods and positioning options, with accessible markup and flexible content.
+The `Tooltip` component provides contextual information when users interact with elements. It supports multiple trigger methods and positioning options, with accessible markup and flexible content.
 
 ## Usage
 
 ```tsx
-import { ChopLogicTooltip } from 'chop-logic-components';
+import { Tooltip } from 'chop-logic-components';
 
 const TooltipUsageExample = () => {
   return (
-    <ChopLogicTooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover' id='tooltip'>
+    <Tooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover' id='tooltip'>
       <span>Hover over me</span>
-    </ChopLogicTooltip>
+    </Tooltip>
   );
 };
 

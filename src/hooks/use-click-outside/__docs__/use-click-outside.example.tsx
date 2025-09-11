@@ -1,7 +1,7 @@
 import styles from '@styles/storybook/Container.module.scss';
 import { useRef } from 'react';
 
-import { useClickOutside } from '../use-click-outside.ts';
+import { useClickOutside } from '../use-click-outside';
 
 export const UseClickOutsideExample = () => {
   const ref = useRef(null);

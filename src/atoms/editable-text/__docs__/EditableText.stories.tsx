@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import ChopLogicEditableText from '../EditableText';
+import EditableText from '../EditableText';
 
-const meta: Meta<typeof ChopLogicEditableText> = {
+const meta: Meta<typeof EditableText> = {
   title: 'Atoms/EditableText',
-  component: ChopLogicEditableText,
+  component: EditableText,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ChopLogicEditableText>;
+type Story = StoryObj<typeof EditableText>;
 
 export const Default: Story = {
   args: {
-    value: 'Text to edit',
+    value: 'Click on the text to edit',
     id: 'editable-text',
     autoSelectTextOnEditMode: false,
     multiline: false,

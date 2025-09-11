@@ -1,8 +1,8 @@
-import { ChopLogicInputProps, ChopLogicSelectValue } from './_common';
+import { ChopLogicInputProps, SelectValue } from './_common';
 
-export interface ChopLogicSelectProps extends ChopLogicInputProps {
-  options: ChopLogicSelectValue[];
-  onChange?: (value?: ChopLogicSelectValue) => void;
+export interface SelectProps extends ChopLogicInputProps {
+  options: SelectValue[];
+  onChange?: (value?: SelectValue) => void;
   placeholder?: string;
   defaultValue?: string | number | readonly string[];
 }

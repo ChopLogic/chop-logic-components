@@ -1,0 +1,49 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} title='Checkbox' />
+
+# Checkbox
+
+The `Checkbox` component provides a customizable, accessible checkbox input with label support, validation states, and flexible icon positioning.
+
+## Usage
+
+```tsx
+import Checkbox from 'chop-logic-components';
+
+const PreferencesForm = () => {
+  const [newsletter, setNewsletter] = React.useState(false);
+
+  return (
+    <form>
+      <Checkbox
+        name="newsletter"
+        label="Subscribe to newsletter"
+        checked={newsletter}
+        onChange={(e) => setNewsletter(e.target.checked)}
+      />
+    </form>
+  );
+};
+```
+
+### Accessibility Notes
+
+1. Always provide a meaningful label prop (even when using noLabel)
+2. Use required prop for form validation requirements
+3. Ensure proper color contrast for all states
+4.  Test keyboard navigation (Space to toggle)
+5. Pair groups of checkboxes with `<fieldset>` and `<legend>`
+
+### Best Practices
+
+- Label Clarity: Use clear, concise labels that describe the action
+- Grouping: Use consistent icon positioning within groups
+- Default States: Set sensible defaults for defaultChecked
+- Spacing: Maintain consistent spacing between checkboxes
+- Feedback: Provide immediate visual feedback on state changes
+
+## Props
+
+<Controls />

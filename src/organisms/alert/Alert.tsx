@@ -1,20 +1,20 @@
-import { ChopLogicHeader, ChopLogicPortal } from '@atoms';
-import { ChopLogicAlertMode, ChopLogicButtonView, ChopLogicIconName } from '@enums';
+import { Header, Portal } from '@atoms';
+import { Button } from '@atoms';
+import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
-import { ChopLogicAlertProps } from '@models';
-import { ChopLogicButton } from '@molecules';
+import { AlertProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { getAlertIcon, getAlertTitle } from './Alert.helpers.tsx';
+import { getAlertIcon, getAlertTitle } from './Alert.helpers';
 import styles from './Alert.module.scss';
 
-const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
+const Alert: FC<AlertProps> = ({
   isOpened,
   onClose,
   title,
   message,
-  mode = ChopLogicAlertMode.Info,
+  mode = AlertMode.Info,
   icon,
   autoClose = false,
   autoCloseDelay = 3000,
@@ -36,26 +36,26 @@ const ChopLogicAlert: FC<ChopLogicAlertProps> = ({
   const alertTitleIcon = getAlertIcon(mode, icon);
 
   return (
-    <ChopLogicPortal>
+    <Portal>
       <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
         <div {...rest} className={styles.content}>
-          <ChopLogicButton
-            icon={ChopLogicIconName.Cancel}
-            view={ChopLogicButtonView.Icon}
+          <Button
+            icon={IconName.Cancel}
+            view={ButtonView.Icon}
             label='Close alert popup'
             onClick={onClose}
             className={styles.content_button}
           />
           <header>
-            <ChopLogicHeader icon={alertTitleIcon} as='h3'>
+            <Header icon={alertTitleIcon} as='h3'>
               {alertTitle}
-            </ChopLogicHeader>
+            </Header>
           </header>
           <p>{message}</p>
         </div>
       </div>
-    </ChopLogicPortal>
+    </Portal>
   );
 };
 
-export default ChopLogicAlert;
+export default Alert;

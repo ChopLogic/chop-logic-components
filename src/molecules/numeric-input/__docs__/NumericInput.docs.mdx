@@ -1,0 +1,66 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './NumericInput.stories';
+
+<Meta of={Stories} title='NumericInput' />
+
+# NumericInput
+
+The `NumericInput` component provides a controlled numeric input field with spin buttons, validation, and accessibility features.
+
+## Usage
+
+```tsx
+import NumericInput from 'chop-logic-components';
+
+const QuantitySelector = () => {
+  const [quantity, setQuantity] = React.useState(1);
+
+  return (
+    <NumericInput
+      name="quantity"
+      label="Quantity"
+      min={1}
+      max={10}
+      step={1}
+      defaultValue={1}
+      onChange={(value) => setQuantity(value)}
+    />
+  );
+};
+```
+### Accessibility Notes
+
+_Keyboard Navigation_:
+  - Tab to focus the input
+  - Arrow keys to increment/decrement
+  - Home/End to min/max values
+
+_Screen Readers_:
+  - Announces value changes
+  - Announces validation errors
+  - Describes spin button actions
+
+_Focus Management_:
+  - Maintains focus during spin button interactions
+  - Proper focus states for all interactive elements
+
+### Best Practices
+
+_Validation_:
+  - Always provide errorMessage when using validation
+  - Combine built-in min/max with custom validation when needed
+  - Display validation errors clearly
+
+_Value Ranges_:
+  - Set sensible defaults for min/max
+  - Consider the expected range of values
+  - Adjust step size appropriately for the context
+
+_Mobile Considerations_:
+  - Ensure touch targets are large enough
+  - Consider virtual keyboard input modes
+  - Test with screen magnifiers
+
+## Props
+
+<Controls />

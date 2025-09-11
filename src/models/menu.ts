@@ -1,18 +1,18 @@
-import { ChopLogicIconName, ChopLogicOrientationMode } from '@enums';
+import { IconName, OrientationMode } from '@enums';
 
 import { ChopLogicComponentProps } from './_common';
 
-export interface ChopLogicMenuProps extends ChopLogicComponentProps {
-  items: ChopLogicMenuItem[];
-  mode?: ChopLogicOrientationMode;
+export interface MenuProps extends ChopLogicComponentProps {
+  items: MenuItem[];
+  mode?: OrientationMode;
   openedOn?: 'hover' | 'click';
 }
 
-export interface ChopLogicMenuItem {
+export interface MenuItem {
   label: string;
   id: string;
-  nestedItems?: ChopLogicMenuItem[];
-  icon?: ChopLogicIconName;
+  nestedItems?: MenuItem[];
+  icon?: IconName;
   link?: string;
   onClick?: () => void;
   onHover?: () => void;

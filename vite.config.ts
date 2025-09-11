@@ -10,18 +10,35 @@ import { peerDependencies } from './package.json';
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/index.ts', // Specifies the entry point for building the library.
-      name: 'chop-logic-components', // Sets the name of the generated library.
-      fileName: (format) => `index.${format}.js`, // Generates the output file name based on the format.
-      formats: ['cjs', 'es'], // Specifies the output formats (CommonJS and ES modules).
+      entry: './src/index.ts',
+      name: 'chop-logic-components',
+      fileName: (format) => `index.${format}.js`,
+      formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)], // Defines external dependencies for Rollup bundling.
+      external: [...Object.keys(peerDependencies)],
+      output: {
+        exports: 'named', // Enable tree shaking
+        compact: true, // Minify output
+        preserveModules: false, // Preserve module structure for better tree shaking (Set to false for single bundle)
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
-    sourcemap: true, // Generates source maps for debugging.
-    emptyOutDir: true, // Clears the output directory before building.
+    sourcemap: true,
+    emptyOutDir: true,
+    minify: 'esbuild', // Minify the output
+    target: 'es2015', // Enable better tree shaking
   },
-  plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  plugins: [
+    dts({
+      exclude: ['**/__tests__/**', '**/__docs__/**', '**/stories/**', '**/*.test.*', '**/*.spec.*'],
+      insertTypesEntry: true,
+      rollupTypes: true, // Bundles all declarations into one file
+    }),
+  ],
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },

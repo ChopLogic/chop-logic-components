@@ -2,16 +2,16 @@ import { ReactElement } from 'react';
 
 import { ChopLogicComponentProps } from './_common';
 
-export interface ChopLogicGridProps extends ChopLogicComponentProps {
-  columns: ChopLogicGridColumn[];
-  data: ChopLogicGridItem[];
+export interface GridProps extends ChopLogicComponentProps {
+  columns: GridColumn[];
+  data: GridItem[];
   caption?: string;
   selectable?: boolean;
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
 }
 
-export type ChopLogicGridColumn = {
+export type GridColumn = {
   field: string;
   title?: string;
   component?: ReactElement;
@@ -19,10 +19,10 @@ export type ChopLogicGridColumn = {
   className?: string;
 };
 
-export type ChopLogicGridItem = {
+export type GridItem = {
   id: string;
   disabled?: boolean;
   [key: string]: unknown;
 };
 
-export type RenderDataItemCallback = (item: ChopLogicGridItem, field: string) => ReactElement;
+export type RenderDataItemCallback = (item: GridItem, field: string) => ReactElement;

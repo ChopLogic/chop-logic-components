@@ -1,7 +1,7 @@
-import { ChopLogicSelectValue } from '@models';
+import { SelectValue } from '@models';
 import { KeyboardEvent } from 'react';
 
-import { moveFocusOnElementById } from './move-focus-on-element-by-id.ts';
+import { moveFocusOnElementById } from './move-focus-on-element-by-id';
 
 export function handleDropdownListKeyPress({
   e,
@@ -9,7 +9,7 @@ export function handleDropdownListKeyPress({
   onClose,
 }: {
   e: KeyboardEvent<HTMLUListElement>;
-  options: ChopLogicSelectValue[];
+  options: SelectValue[];
   onClose: () => void;
 }) {
   let focusedId: string = '';

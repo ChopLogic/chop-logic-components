@@ -1,17 +1,17 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as ChopLogicMenuStories from './Menu.stories';
+import * as MenuStories from './Menu.stories';
 
-<Meta of={ChopLogicMenuStories} title='ChopLogicMenu' />
+<Meta of={MenuStories} title='Menu' />
 
-# ChopLogicMenu
+# Menu
 
 
-The `ChopLogicMenu` component provides an accessible navigation menu with support for both vertical and horizontal orientations, nested items, and flexible interaction modes.
+The `Menu` component provides an accessible navigation menu with support for both vertical and horizontal orientations, nested items, and flexible interaction modes.
 
 ## Usage
 
 ```tsx
-import ChopLogicMenu, { ChopLogicOrientationMode } from 'chop-logic-components';
+import Menu, { OrientationMode } from 'chop-logic-components';
 
 const AppMenu = () => {
   const menuItems = [
@@ -19,7 +19,7 @@ const AppMenu = () => {
       id: 'home',
       label: 'Home',
       link: '/home',
-      icon: ChopLogicIconName.Home
+      icon: IconName.Home
     },
     {
       id: 'products',
@@ -31,9 +31,9 @@ const AppMenu = () => {
   ];
 
   return (
-    <ChopLogicMenu
+    <Menu
       items={menuItems}
-      mode={ChopLogicOrientationMode.Horizontal}
+      mode={OrientationMode.Horizontal}
       openedOn="hover"
     />
   );

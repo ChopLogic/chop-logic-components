@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { UseModalFocusTrapExample } from './use-modal-focus-trap.example.tsx';
+import { UseModalFocusTrapExample } from './use-modal-focus-trap.example';
 
 const meta: Meta<typeof UseModalFocusTrapExample> = {
   component: UseModalFocusTrapExample,

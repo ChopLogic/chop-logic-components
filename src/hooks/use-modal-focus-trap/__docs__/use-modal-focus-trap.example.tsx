@@ -1,9 +1,9 @@
-import { ChopLogicButtonView } from '@enums';
-import { ChopLogicButton } from '@molecules';
+import { Button } from '@atoms';
+import { ButtonView } from '@enums';
 import styles from '@styles/storybook/Container.module.scss';
 import { useRef, useState } from 'react';
 
-import { useModalFocusTrap } from '../use-modal-focus-trap.ts';
+import { useModalFocusTrap } from '../use-modal-focus-trap';
 
 export const UseModalFocusTrapExample = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ export const UseModalFocusTrapExample = () => {
 
   return (
     <div style={{ padding: '1rem' }}>
-      <ChopLogicButton onClick={() => setIsOpened(true)} text='Open modal' view={ChopLogicButtonView.Secondary} />
+      <Button onClick={() => setIsOpened(true)} text='Open modal' view={ButtonView.Secondary} />
       {isOpened && (
         <div ref={modalRef} tabIndex={-1} className={styles.container}>
           <button onClick={() => setIsOpened(false)}>Close Modal</button>

@@ -1,16 +1,8 @@
 import { useElementIds } from '@hooks';
-import { ChopLogicGridItem } from '@models';
+import { GridItem } from '@models';
 import { useState } from 'react';
 
-export const useChopLogicGridController = ({
-  data,
-  id,
-  onSelect,
-}: {
-  data: ChopLogicGridItem[];
-  id?: string;
-  onSelect?: (ids: string[]) => void;
-}) => {
+export const useGridController = ({ data, id, onSelect }: { data: GridItem[]; id?: string; onSelect?: (ids: string[]) => void }) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const allIds = data.map((item) => item.id);

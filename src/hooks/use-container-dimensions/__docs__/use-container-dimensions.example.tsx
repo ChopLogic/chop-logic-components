@@ -1,7 +1,7 @@
 import styles from '@styles/storybook/Container.module.scss';
 import { useRef } from 'react';
 
-import { useContainerDimensions } from '../use-container-dimensions.ts';
+import { useContainerDimensions } from '../use-container-dimensions';
 
 export const UseContainerDimensionsExample = () => {
   const ref = useRef(null);

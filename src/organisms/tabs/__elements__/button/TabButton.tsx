@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
@@ -10,7 +10,7 @@ type Props = {
   onTabSelect: (id: string) => void;
   tabPanelId: string;
   isSelected: boolean;
-  mode: ChopLogicOrientationMode;
+  mode: OrientationMode;
   isDisabled?: boolean;
 };
 
@@ -19,7 +19,7 @@ export const TabButton: FC<Props> = ({ title, onTabSelect, tabId, isSelected, is
     styles.tabButton,
     {
       [styles.tabButton__disabled]: isDisabled,
-      [styles.tabButton__vertical]: mode === ChopLogicOrientationMode.Vertical,
+      [styles.tabButton__vertical]: mode === OrientationMode.Vertical,
       [styles.tabButton__selected]: isSelected,
     },
   ]);

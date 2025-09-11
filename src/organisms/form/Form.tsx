@@ -1,14 +1,14 @@
-import { ChopLogicFormContext } from '@contexts';
-import { ChopLogicButtonView, ChopLogicIconName } from '@enums';
-import { ChopLogicFormProps } from '@models';
-import { ChopLogicButton } from '@molecules';
+import { Button } from '@atoms';
+import { FormContext } from '@contexts';
+import { ButtonView, IconName } from '@enums';
+import { FormProps } from '@models';
 import { getClassName } from '@utils';
 import { FC } from 'react';
 
-import { useChopLogicFormController } from './Form.controller.ts';
+import { useFormController } from './Form.controller';
 import styles from './Form.module.scss';
 
-const ChopLogicForm: FC<ChopLogicFormProps> = ({
+const Form: FC<FormProps> = ({
   children,
   initialValues,
   onReset,
@@ -19,7 +19,7 @@ const ChopLogicForm: FC<ChopLogicFormProps> = ({
   className,
   ...rest
 }) => {
-  const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useChopLogicFormController({
+  const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useFormController({
     initialValues,
     onReset,
     onSubmit,
@@ -30,15 +30,15 @@ const ChopLogicForm: FC<ChopLogicFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={`${formClass} ${styles[`columns-${columnsNumber}`]}`}>
-      <ChopLogicFormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
+      <FormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
         {children}
         <div className={`${styles.buttons} ${styles[`buttons-${columnsNumber}`]}`}>
-          {hasReset && <ChopLogicButton type='reset' text='Reset' icon={ChopLogicIconName.Clear} view={ChopLogicButtonView.Secondary} />}
-          <ChopLogicButton type='submit' text='Submit' icon={ChopLogicIconName.Forward} extended={!hasReset} disabled={!valid} />
+          {hasReset && <Button type='reset' text='Reset' icon={IconName.Clear} view={ButtonView.Secondary} />}
+          <Button type='submit' text='Submit' icon={IconName.Forward} extended={!hasReset} disabled={!valid} />
         </div>
-      </ChopLogicFormContext.Provider>
+      </FormContext.Provider>
     </form>
   );
 };
 
-export default ChopLogicForm;
+export default Form;

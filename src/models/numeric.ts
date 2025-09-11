@@ -1,10 +1,10 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
-import { ChopLogicInputProps, ChopLogicNumericInputValidator } from './_common';
+import { ChopLogicInputProps, NumericInputValidator } from './_common';
 
-export interface ChopLogicNumericInputProps extends ChopLogicInputProps {
+export interface NumericInputProps extends ChopLogicInputProps {
   errorMessage?: string;
-  validator?: ChopLogicNumericInputValidator;
+  validator?: NumericInputValidator;
   hasSpinButtons?: boolean;
   min?: number;
   max?: number;

@@ -1,0 +1,153 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TextInput > should render the input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_48ab26 test-class"
+    style="width: 600px;"
+  >
+    <label
+      class="_label_c20562"
+      for="test-input-id"
+    >
+      <span>
+        Test Input
+      </span>
+    </label>
+    <div
+      class="_wrapper_097c9a"
+    >
+      <input
+        aria-errormessage="test-input-id_error"
+        aria-invalid="false"
+        aria-readonly="false"
+        autocomplete="off"
+        class="_input_097c9a"
+        id="test-input-id"
+        name="test"
+        placeholder="Enter text here..."
+        type="text"
+        value=""
+      />
+      <span>
+        <button
+          aria-label="Clear input for Test Input"
+          class="_button_8ab38b"
+          type="button"
+        >
+          <svg
+            class="_icon_3b2ece"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+            <path
+              d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+      </span>
+      <span
+        aria-hidden="true"
+        class="_errorMessage_2b3768 _errorMessage_48ab26"
+        id="test-input-id_error"
+      >
+        Error!
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput > should render the required input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_48ab26 test-class"
+    style="width: 600px;"
+  >
+    <label
+      class="_label_c20562"
+      for="test-input-id"
+    >
+      <span>
+        Test Input
+        <abbr
+          title="required"
+        >
+          *
+        </abbr>
+      </span>
+    </label>
+    <div
+      class="_wrapper_097c9a"
+    >
+      <input
+        aria-errormessage="test-input-id_error"
+        aria-invalid="false"
+        aria-readonly="false"
+        autocomplete="off"
+        class="_input_097c9a"
+        id="test-input-id"
+        name="test"
+        placeholder="Enter text here..."
+        required=""
+        type="text"
+        value=""
+      />
+      <span>
+        <button
+          aria-label="Clear input for Test Input"
+          class="_button_8ab38b"
+          type="button"
+        >
+          <svg
+            class="_icon_3b2ece"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+            <path
+              d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+        </button>
+      </span>
+      <span
+        aria-hidden="true"
+        class="_errorMessage_2b3768 _errorMessage_48ab26"
+        id="test-input-id_error"
+      >
+        Error!
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

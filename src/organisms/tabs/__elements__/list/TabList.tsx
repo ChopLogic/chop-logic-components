@@ -1,4 +1,4 @@
-import { ChopLogicOrientationMode } from '@enums';
+import { OrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
 import { FC, KeyboardEvent } from 'react';
@@ -12,11 +12,11 @@ type ChopLogicTabListProps = {
   onTabSelect: (id: string) => void;
   selectedTabId: string;
   tabPanelIds: string[];
-  mode: ChopLogicOrientationMode;
+  mode: OrientationMode;
 };
 
 export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds }) => {
-  const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === ChopLogicOrientationMode.Vertical }]);
+  const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     const currentFocusedTabIndex = tabIds.findIndex((id) => id === selectedTabId);
@@ -25,8 +25,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selected
       case 'ArrowLeft':
       case 'ArrowUp': {
         e.preventDefault();
-        if (e.key === 'ArrowUp' && mode === ChopLogicOrientationMode.Horizontal) break;
-        if (e.key === 'ArrowLeft' && mode === ChopLogicOrientationMode.Vertical) break;
+        if (e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) break;
+        if (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical) break;
 
         const previousTabIndex = currentFocusedTabIndex - 1 >= 0 ? currentFocusedTabIndex - 1 : tabIds.length - 1;
         const previousTabId = tabIds[previousTabIndex];
@@ -39,8 +39,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selected
       case 'ArrowRight':
       case 'ArrowDown': {
         e.preventDefault();
-        if (e.key === 'ArrowDown' && mode === ChopLogicOrientationMode.Horizontal) break;
-        if (e.key === 'ArrowRight' && mode === ChopLogicOrientationMode.Vertical) break;
+        if (e.key === 'ArrowDown' && mode === OrientationMode.Horizontal) break;
+        if (e.key === 'ArrowRight' && mode === OrientationMode.Vertical) break;
 
         const nextTabIndex = currentFocusedTabIndex === tabIds.length - 1 ? 0 : currentFocusedTabIndex + 1;
         const nextTabId = tabIds[nextTabIndex];

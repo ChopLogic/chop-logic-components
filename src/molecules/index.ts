@@ -1,3 +1,4 @@
+export { default as Alert } from './alert/Alert';
 export { default as Checkbox } from './checkbox/Checkbox';
 export { default as MultiSelect } from './multi-select/MultiSelect';
 export { default as NumericInput } from './numeric-input/NumericInput';

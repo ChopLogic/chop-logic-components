@@ -13,9 +13,10 @@ type ChopLogicTabListProps = {
   selectedTabId: string;
   tabPanelIds: string[];
   mode: OrientationMode;
+  stretched?: boolean;
 };
 
-export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds }) => {
+export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds, stretched }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -68,6 +69,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selected
             isDisabled={disabled}
             tabPanelId={tabPanelIds[index]}
             mode={mode}
+            stretched={stretched}
           />
         );
       })}

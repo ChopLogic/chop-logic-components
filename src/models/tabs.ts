@@ -7,6 +7,7 @@ export interface TabsProps extends ChopLogicComponentProps {
   tabs: ChopLogicTabItem[];
   defaultTabId?: string;
   mode?: OrientationMode;
+  stretched?: boolean;
 }
 
 export interface ChopLogicTabItem {

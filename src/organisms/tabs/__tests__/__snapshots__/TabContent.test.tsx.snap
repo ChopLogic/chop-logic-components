@@ -4,7 +4,7 @@ exports[`TabContent > should match the snapshot for the first tab 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="tab-1"
-    class="_tabContent_a69405"
+    class="_tabContent_7c3dbf"
     id="tabpanel_tab-1"
     role="tabpanel"
   >
@@ -17,7 +17,7 @@ exports[`TabContent > should match the snapshot for the second tab 1`] = `
 <DocumentFragment>
   <div
     aria-labelledby="tab-2"
-    class="_tabContent_a69405"
+    class="_tabContent_7c3dbf"
     id="tabpanel_tab-2"
     role="tabpanel"
   >

@@ -22,6 +22,7 @@ const meta: Meta<typeof TabsExample> = {
   args: {
     tabs,
     defaultTabId: 'tab1',
+    stretched: false,
   },
   component: TabsExample,
   title: 'Organisms/Tabs',
@@ -39,5 +40,12 @@ export const HorizontalTabs: Story = {
 export const VerticalTabs: Story = {
   args: {
     mode: OrientationMode.Vertical,
+  },
+};
+
+export const StretchedTabs: Story = {
+  args: {
+    mode: OrientationMode.Horizontal,
+    stretched: true,
   },
 };

@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { moveFocusOnElementById } from '@utils';
 import { describe, expect, it, vi } from 'vitest';
 
-import { TabList } from '../__elements__/list/TabList';
+import { TabList } from '../list/TabList';
 
 vi.mock('@utils', () => ({
   moveFocusOnElementById: vi.fn(),

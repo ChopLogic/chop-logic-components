@@ -12,15 +12,26 @@ type Props = {
   isSelected: boolean;
   mode: OrientationMode;
   isDisabled?: boolean;
+  stretched?: boolean;
 };
 
-export const TabButton: FC<Props> = ({ title, onTabSelect, tabId, isSelected, isDisabled = false, tabPanelId, mode }) => {
+export const TabButton: FC<Props> = ({
+  title,
+  onTabSelect,
+  tabId,
+  isSelected,
+  isDisabled = false,
+  stretched = false,
+  tabPanelId,
+  mode,
+}) => {
   const buttonClass = getClassName([
     styles.tabButton,
     {
       [styles.tabButton__disabled]: isDisabled,
       [styles.tabButton__vertical]: mode === OrientationMode.Vertical,
       [styles.tabButton__selected]: isSelected,
+      [styles.tabButton__stretched]: stretched,
     },
   ]);
 

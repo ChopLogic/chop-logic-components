@@ -18,6 +18,7 @@ describe('Tabs', () => {
     mode: OrientationMode.Horizontal,
     className: 'test-class',
     id: 'tabs-id',
+    stretched: true,
   };
 
   it('should match the snapshot', () => {

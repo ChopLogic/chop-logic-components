@@ -18,6 +18,7 @@ import CopyIcon from './svg/CopyIcon';
 import CutIcon from './svg/CutIcon';
 import DeleteIcon from './svg/DeleteIcon';
 import DownloadIcon from './svg/DownloadIcon';
+import EditIcon from './svg/EditIcon';
 import ErrorIcon from './svg/ErrorIcon';
 import ForwardIcon from './svg/ForwardIcon';
 import GraduateIcon from './svg/GraduateIcon';
@@ -53,6 +54,7 @@ export const IconDictionary: Icons = {
   [IconName.Cut]: CutIcon,
   [IconName.Delete]: DeleteIcon,
   [IconName.Download]: DownloadIcon,
+  [IconName.Edit]: EditIcon,
   [IconName.Error]: ErrorIcon,
   [IconName.Forward]: ForwardIcon,
   [IconName.Graduate]: GraduateIcon,

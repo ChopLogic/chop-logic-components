@@ -15,6 +15,7 @@ export enum IconName {
   Cut = 'cut',
   Delete = 'delete',
   Download = 'download',
+  Edit = 'edit',
   Error = 'error',
   Forward = 'forward',
   Graduate = 'graduate',

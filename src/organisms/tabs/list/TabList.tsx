@@ -10,13 +10,25 @@ type ChopLogicTabListProps = {
   tabs: ChopLogicTabItem[];
   tabIds: string[];
   onTabSelect: (id: string) => void;
+  onTabTitleChange?: (tabId: string, newTitle: string) => void;
   selectedTabId: string;
   tabPanelIds: string[];
   mode: OrientationMode;
   stretched?: boolean;
+  editable?: boolean;
 };
 
-export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selectedTabId, tabPanelIds, mode, tabIds, stretched }) => {
+export const TabList: FC<ChopLogicTabListProps> = ({
+  tabs,
+  onTabSelect,
+  onTabTitleChange,
+  selectedTabId,
+  tabPanelIds,
+  mode,
+  tabIds,
+  stretched,
+  editable = false,
+}) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -57,19 +69,21 @@ export const TabList: FC<ChopLogicTabListProps> = ({ tabs, onTabSelect, selected
   };
 
   return (
-    <div role='tablist' onKeyDown={handleListKeyDown} tabIndex={0} className={listClass}>
+    <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton
             key={id}
             title={title}
             onTabSelect={onTabSelect}
+            onTabTitleChange={onTabTitleChange ? (newTitle) => onTabTitleChange(id, newTitle) : undefined}
             tabId={id}
             isSelected={id === selectedTabId}
             isDisabled={disabled}
             tabPanelId={tabPanelIds[index]}
             mode={mode}
             stretched={stretched}
+            editable={editable}
           />
         );
       })}

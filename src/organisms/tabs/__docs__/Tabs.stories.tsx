@@ -31,21 +31,29 @@ const meta: Meta<typeof TabsExample> = {
 export default meta;
 type Story = StoryObj<typeof TabsExample>;
 
-export const HorizontalTabs: Story = {
+export const Horizontal: Story = {
   args: {
     mode: OrientationMode.Horizontal,
   },
 };
 
-export const VerticalTabs: Story = {
+export const Vertical: Story = {
   args: {
     mode: OrientationMode.Vertical,
   },
 };
 
-export const StretchedTabs: Story = {
+export const Stretched: Story = {
   args: {
     mode: OrientationMode.Horizontal,
     stretched: true,
+  },
+};
+
+export const Editable: Story = {
+  args: {
+    editable: true,
+    stretched: true,
+    onTabTitleChange: (tabId: string, newTitle: string) => console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
   },
 };

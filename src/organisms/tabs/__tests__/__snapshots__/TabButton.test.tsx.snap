@@ -2,14 +2,18 @@
 
 exports[`TabButton > should match the snapshot 1`] = `
 <DocumentFragment>
-  <button
-    aria-controls="panel-id-1"
-    aria-selected="true"
-    class="_tabButton_54926d _tabButton__vertical_54926d _tabButton__selected_54926d"
-    id="id-1"
-    role="tab"
+  <span
+    class="_tab_wrapper_54926d _tab_wrapper__vertical_54926d _tab_wrapper__selected_54926d"
   >
-    Tab button
-  </button>
+    <button
+      aria-controls="panel-id-1"
+      aria-selected="true"
+      class="_tab_54926d"
+      id="id-1"
+      role="tab"
+    >
+      Tab button
+    </button>
+  </span>
 </DocumentFragment>
 `;

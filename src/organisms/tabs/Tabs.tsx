@@ -7,7 +7,16 @@ import { TabContent } from './content/TabContent';
 import { TabList } from './list/TabList';
 import styles from './Tabs.module.scss';
 
-const Tabs: FC<TabsProps> = ({ tabs, defaultTabId, mode = OrientationMode.Horizontal, className, stretched, ...rest }) => {
+const Tabs: FC<TabsProps> = ({
+  tabs,
+  defaultTabId,
+  mode = OrientationMode.Horizontal,
+  className,
+  stretched,
+  editable = false,
+  onTabTitleChange,
+  ...rest
+}) => {
   const tabIds = tabs.map((item) => item.id);
   const tabPanelIds = tabIds.map((id) => `tabpanel_${id}`);
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
@@ -18,6 +27,10 @@ const Tabs: FC<TabsProps> = ({ tabs, defaultTabId, mode = OrientationMode.Horizo
     setSelectedTabId(id);
   };
 
+  const handleTabTitleChange = (tabId: string, newTitle: string) => {
+    onTabTitleChange?.(tabId, newTitle);
+  };
+
   return (
     <div {...rest} className={tabsClass}>
       <TabList
@@ -25,9 +38,11 @@ const Tabs: FC<TabsProps> = ({ tabs, defaultTabId, mode = OrientationMode.Horizo
         selectedTabId={selectedTabId}
         tabPanelIds={tabPanelIds}
         onTabSelect={handleTabSelect}
+        onTabTitleChange={handleTabTitleChange}
         mode={mode}
         tabIds={tabIds}
         stretched={stretched}
+        editable={editable}
       />
       <TabContent tabs={tabs} selectedTabId={selectedTabId} />
     </div>

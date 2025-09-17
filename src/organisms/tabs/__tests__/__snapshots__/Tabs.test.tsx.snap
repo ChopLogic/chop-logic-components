@@ -9,35 +9,46 @@ exports[`Tabs > should match the snapshot 1`] = `
     <div
       class="_tabList_7b8ac2"
       role="tablist"
-      tabindex="0"
     >
-      <button
-        aria-controls="tabpanel_tab-1"
-        aria-selected="true"
-        class="_tabButton_54926d _tabButton__selected_54926d _tabButton__stretched_54926d"
-        id="tab-1"
-        role="tab"
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__selected_54926d _tab_wrapper__stretched_54926d"
       >
-        Tab 1
-      </button>
-      <button
-        aria-controls="tabpanel_tab-2"
-        aria-selected="false"
-        class="_tabButton_54926d _tabButton__stretched_54926d"
-        id="tab-2"
-        role="tab"
+        <button
+          aria-controls="tabpanel_tab-1"
+          aria-selected="true"
+          class="_tab_54926d"
+          id="tab-1"
+          role="tab"
+        >
+          Tab 1
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d"
       >
-        Tab 2
-      </button>
-      <button
-        aria-controls="tabpanel_tab-3"
-        aria-selected="false"
-        class="_tabButton_54926d _tabButton__stretched_54926d"
-        id="tab-3"
-        role="tab"
+        <button
+          aria-controls="tabpanel_tab-2"
+          aria-selected="false"
+          class="_tab_54926d"
+          id="tab-2"
+          role="tab"
+        >
+          Tab 2
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d"
       >
-        Tab 3
-      </button>
+        <button
+          aria-controls="tabpanel_tab-3"
+          aria-selected="false"
+          class="_tab_54926d"
+          id="tab-3"
+          role="tab"
+        >
+          Tab 3
+        </button>
+      </span>
     </div>
     <div
       aria-labelledby="tab-1"

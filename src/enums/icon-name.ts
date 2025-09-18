@@ -25,6 +25,7 @@ export enum IconName {
   Info = 'info',
   Login = 'login',
   Paste = 'paste',
+  PlusCircle = 'plus-circle',
   Question = 'question',
   Save = 'save',
   Show = 'show',

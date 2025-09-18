@@ -57,3 +57,12 @@ export const Editable: Story = {
     onTabTitleChange: (tabId: string, newTitle: string) => console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
   },
 };
+
+export const Extendable: Story = {
+  args: {
+    editable: true,
+    stretched: true,
+    extendable: true,
+    onTabTitleChange: (tabId: string, newTitle: string) => console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
+  },
+};

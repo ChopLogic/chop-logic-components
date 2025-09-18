@@ -43,6 +43,7 @@ export const TabButton: FC<Props> = ({
       [styles.tab_wrapper__selected]: isSelected,
       [styles.tab_wrapper__stretched]: stretched,
       [styles.tab_wrapper__editable]: editable,
+      [styles.tab_wrapper__inactive]: !isSelected,
     },
   ]);
 

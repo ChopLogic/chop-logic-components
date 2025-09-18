@@ -24,7 +24,7 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d"
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
       >
         <button
           aria-controls="tabpanel_tab-2"
@@ -37,7 +37,7 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d"
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
       >
         <button
           aria-controls="tabpanel_tab-3"

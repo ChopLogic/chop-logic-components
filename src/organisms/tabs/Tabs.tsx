@@ -15,6 +15,7 @@ const Tabs: FC<TabsProps> = ({
   stretched,
   editable = false,
   onTabTitleChange,
+  extendable = false,
   ...rest
 }) => {
   const tabIds = tabs.map((item) => item.id);
@@ -43,6 +44,7 @@ const Tabs: FC<TabsProps> = ({
         tabIds={tabIds}
         stretched={stretched}
         editable={editable}
+        extendable={extendable}
       />
       <TabContent tabs={tabs} selectedTabId={selectedTabId} />
     </div>

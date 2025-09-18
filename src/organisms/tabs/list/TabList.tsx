@@ -1,4 +1,5 @@
-import { OrientationMode } from '@enums';
+import { Button } from '@atoms';
+import { ButtonView, IconName, OrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
 import { FC, KeyboardEvent } from 'react';
@@ -16,6 +17,7 @@ type ChopLogicTabListProps = {
   mode: OrientationMode;
   stretched?: boolean;
   editable?: boolean;
+  extendable?: boolean;
 };
 
 export const TabList: FC<ChopLogicTabListProps> = ({
@@ -28,6 +30,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   tabIds,
   stretched,
   editable = false,
+  extendable = false,
 }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
@@ -87,6 +90,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({
           />
         );
       })}
+      {extendable && <Button label='Add a tab' view={ButtonView.Icon} icon={IconName.PlusCircle} />}
     </div>
   );
 };

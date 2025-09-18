@@ -10,6 +10,7 @@ export interface TabsProps extends ChopLogicComponentProps {
   stretched?: boolean;
   editable?: boolean;
   onTabTitleChange?: (tabId: string, newTitle: string) => void;
+  extendable?: boolean;
 }
 
 export interface ChopLogicTabItem {

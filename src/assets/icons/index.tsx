@@ -28,6 +28,7 @@ import HomeIcon from './svg/HomeIcon';
 import InfoIcon from './svg/InfoIcon';
 import LoginIcon from './svg/LoginIcon';
 import PasteIcon from './svg/PasteIcon';
+import PlusCircleIcon from './svg/PlusCircle';
 import QuestionIcon from './svg/QuestionIcon';
 import RemoveIcon from './svg/RemoveIcon';
 import SaveIcon from './svg/SaveIcon';
@@ -64,6 +65,7 @@ export const IconDictionary: Icons = {
   [IconName.Info]: InfoIcon,
   [IconName.Login]: LoginIcon,
   [IconName.Paste]: PasteIcon,
+  [IconName.PlusCircle]: PlusCircleIcon,
   [IconName.Question]: QuestionIcon,
   [IconName.Save]: SaveIcon,
   [IconName.Show]: ShowIcon,

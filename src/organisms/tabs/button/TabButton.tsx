@@ -3,6 +3,7 @@ import { ButtonView, IconName, OrientationMode } from '@enums';
 import { getClassName } from '@utils';
 import { FC, useEffect, useRef, useState } from 'react';
 
+import { TabEditInput } from '../edit-input/TabEditInput';
 import styles from './TabButton.module.scss';
 
 type Props = {
@@ -106,35 +107,16 @@ export const TabButton: FC<Props> = ({
   return (
     <span className={wrapperClass}>
       {isEditMode ? (
-        <div className={styles.tab_editContainer}>
-          <input
-            ref={inputRef}
-            id={tabId + '-input'}
-            type='text'
-            value={editValue}
-            onChange={handleInputChange}
-            onBlur={handleInputBlur}
-            onKeyDown={handleInputKeyDown}
-            className={styles.editInput}
-            maxLength={50}
-          />
-          <span>
-            <Button
-              view={ButtonView.Icon}
-              icon={IconName.CheckMark}
-              onClick={saveTitleChange}
-              label='Save tab title'
-              className={styles.saveButton}
-            />
-            <Button
-              view={ButtonView.Icon}
-              icon={IconName.Cancel}
-              onClick={cancelEdit}
-              label='Cancel tab title edit'
-              className={styles.cancelButton}
-            />
-          </span>
-        </div>
+        <TabEditInput
+          tabId={tabId}
+          editValue={editValue}
+          isEditMode={isEditMode}
+          onInputChange={handleInputChange}
+          onInputBlur={handleInputBlur}
+          onInputKeyDown={handleInputKeyDown}
+          onSave={saveTitleChange}
+          onCancel={cancelEdit}
+        />
       ) : (
         <>
           <button

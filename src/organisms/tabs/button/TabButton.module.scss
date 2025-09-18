@@ -69,35 +69,6 @@
     }
   }
 
-  &_editContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--cl-s-gap);
-    width: 100%;
-    padding: 0 var(--cl-s-gap);
-
-    input {
-      flex: 1;
-      @include typography.font-style(core, base, normal, 1);
-      padding-block: 0;
-      padding-inline: 0;
-      padding: var(--cl-s-gap);
-      border: var(--cl-light-border);
-      border-radius: var(--cl-border-radius);
-
-      &:focus-visible,
-      &:focus {
-        outline: none;
-      }
-    }
-
-    span {
-      display: flex;
-      align-items: center;
-    }
-  }
-
   &_editButton {
     margin-right: var(--cl-s-gap);
   }

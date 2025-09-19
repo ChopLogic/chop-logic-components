@@ -18,6 +18,8 @@ type ChopLogicTabListProps = {
   stretched?: boolean;
   editable?: boolean;
   extendable?: boolean;
+  onTabAdd?: () => void;
+  extendedTabLabel?: string;
 };
 
 export const TabList: FC<ChopLogicTabListProps> = ({
@@ -31,6 +33,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   stretched,
   editable = false,
   extendable = false,
+  onTabAdd,
+  extendedTabLabel = 'New Tab',
 }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
@@ -71,6 +75,10 @@ export const TabList: FC<ChopLogicTabListProps> = ({
     }
   };
 
+  const handleAddButtonClick = () => {
+    onTabAdd?.();
+  };
+
   return (
     <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
@@ -90,7 +98,15 @@ export const TabList: FC<ChopLogicTabListProps> = ({
           />
         );
       })}
-      {extendable && <Button label='Add a tab' view={ButtonView.Icon} icon={IconName.PlusCircle} />}
+      {extendable && (
+        <Button
+          label={extendedTabLabel}
+          view={ButtonView.Icon}
+          icon={IconName.PlusCircle}
+          onClick={handleAddButtonClick}
+          className={styles.addButton}
+        />
+      )}
     </div>
   );
 };

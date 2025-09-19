@@ -16,6 +16,9 @@ const Tabs: FC<TabsProps> = ({
   editable = false,
   onTabTitleChange,
   extendable = false,
+  onTabAdd,
+  extendedTabLabel = 'New Tab',
+  extendedTabContent,
   ...rest
 }) => {
   const tabIds = tabs.map((item) => item.id);
@@ -32,6 +35,10 @@ const Tabs: FC<TabsProps> = ({
     onTabTitleChange?.(tabId, newTitle);
   };
 
+  const handleTabAdd = () => {
+    onTabAdd?.();
+  };
+
   return (
     <div {...rest} className={tabsClass}>
       <TabList
@@ -45,8 +52,10 @@ const Tabs: FC<TabsProps> = ({
         stretched={stretched}
         editable={editable}
         extendable={extendable}
+        onTabAdd={handleTabAdd}
+        extendedTabLabel={extendedTabLabel}
       />
-      <TabContent tabs={tabs} selectedTabId={selectedTabId} />
+      <TabContent tabs={tabs} selectedTabId={selectedTabId} extendedTabContent={extendedTabContent} extendable={extendable} />
     </div>
   );
 };

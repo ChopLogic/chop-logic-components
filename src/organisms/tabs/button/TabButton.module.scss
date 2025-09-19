@@ -15,6 +15,9 @@
   overflow: hidden;
   flex: 1;
   border-radius: var(--cl-border-radius);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   &:focus-visible {
     outline: var(--cl-outline-border);

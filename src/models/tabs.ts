@@ -11,6 +11,9 @@ export interface TabsProps extends ChopLogicComponentProps {
   editable?: boolean;
   onTabTitleChange?: (tabId: string, newTitle: string) => void;
   extendable?: boolean;
+  onTabAdd?: () => void;
+  extendedTabLabel?: string;
+  extendedTabContent?: ReactElement;
 }
 
 export interface ChopLogicTabItem {

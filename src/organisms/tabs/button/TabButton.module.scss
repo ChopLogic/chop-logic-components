@@ -29,28 +29,19 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--cl-l-gap);
-    border-top-left-radius: var(--cl-border-radius);
-    border-top-right-radius: var(--cl-border-radius);
-    border-top: var(--cl-primary-border);
-    border-right: var(--cl-primary-border);
-    border-left: var(--cl-primary-border);
+    border-radius: var(--cl-border-radius);
+    border: var(--cl-light-border);
     background-color: var(--cl-primary-background);
 
     &__selected {
-      top: 1px;
+      top: var(--cl-xs-gap);
+      box-shadow: var(--cl-box-shadow);
     }
 
     &__vertical {
-      border-bottom-left-radius: var(--cl-border-radius);
-      border-top-right-radius: 0;
-      border-top: var(--cl-primary-border);
-      border-right: none;
-      border-left: var(--cl-primary-border);
-      border-bottom: var(--cl-primary-border);
-
       &.tab_wrapper__selected {
         top: 0;
-        left: 1px;
+        left: var(--cl-xs-gap);
       }
     }
 

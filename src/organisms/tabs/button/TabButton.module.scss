@@ -3,7 +3,6 @@
 
 .tab {
   @include typography.font-style(core, base);
-  @include mixins.ripple();
 
   color: var(--cl-primary-color);
 

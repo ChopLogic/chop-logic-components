@@ -2,7 +2,7 @@ import { Button } from '@atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
 import { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
-import { FC, KeyboardEvent } from 'react';
+import { FC, KeyboardEvent, useEffect, useRef } from 'react';
 
 import { TabButton } from '../button/TabButton';
 import styles from './TabList.module.scss';
@@ -37,6 +37,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   extendedTabLabel = 'New Tab',
 }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
+  const initialTabsCount = useRef(tabs.length);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     const currentFocusedTabIndex = tabIds.findIndex((id) => id === selectedTabId);
@@ -78,6 +79,13 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   const handleAddButtonClick = () => {
     onTabAdd?.();
   };
+
+  useEffect(() => {
+    // Auto-select newly added tab
+    if (tabs.length > initialTabsCount.current) {
+      onTabSelect(tabs[tabs.length - 1].id);
+    }
+  }, [tabs.length]);
 
   return (
     <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>

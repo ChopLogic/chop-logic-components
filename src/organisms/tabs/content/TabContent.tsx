@@ -11,10 +11,7 @@ export const TabContent: FC<{
 }> = ({ tabs, selectedTabId, extendable, extendedTabContent }): ReactElement => {
   const content = tabs.find((item) => item.id === selectedTabId)?.content;
   const contentId = `tabpanel_${selectedTabId}`;
-
-  // If extendable is true and we're on the "new tab" (which would be handled by parent),
-  // show the extended content
-  const isExtendedTab = extendable && selectedTabId === 'new-tab';
+  const isExtendedTab = extendable && !content;
 
   return (
     <div role='tabpanel' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>

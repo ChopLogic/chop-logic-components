@@ -13,9 +13,20 @@ type Props = {
   onInputKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onSave: () => void;
   onCancel: () => void;
+  cancelButtonId: string;
 };
 
-export const TabEditInput: FC<Props> = ({ tabId, isEditMode, editValue, onInputChange, onInputBlur, onInputKeyDown, onSave, onCancel }) => {
+export const TabEditInput: FC<Props> = ({
+  tabId,
+  isEditMode,
+  editValue,
+  onInputChange,
+  onInputBlur,
+  onInputKeyDown,
+  onSave,
+  onCancel,
+  cancelButtonId,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Focus input when entering edit mode
@@ -41,7 +52,7 @@ export const TabEditInput: FC<Props> = ({ tabId, isEditMode, editValue, onInputC
       />
       <span className={styles.editContainer_buttons}>
         <Button view={ButtonView.Icon} icon={IconName.CheckMark} onClick={onSave} label='Save tab title' />
-        <Button view={ButtonView.Icon} icon={IconName.Cancel} onClick={onCancel} label='Cancel tab title change' />
+        <Button view={ButtonView.Icon} icon={IconName.Cancel} onClick={onCancel} label='Cancel tab title change' id={cancelButtonId} />
       </span>
     </div>
   );

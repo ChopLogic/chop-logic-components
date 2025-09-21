@@ -24,7 +24,6 @@ export const TabsExample: React.FC<TabsProps> = (props) => {
     setTabs((prevTabs) => [...prevTabs, newTab]);
     setTabCounter((prev) => prev + 1);
 
-    // Call the original callback if provided
     props.onTabAdd?.();
   };
 

@@ -1,7 +1,7 @@
 import { Button } from '@atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
 import { getClassName } from '@utils';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useId, useRef, useState } from 'react';
 
 import { TabEditInput } from '../edit-input/TabEditInput';
 import styles from './TabButton.module.scss';
@@ -34,6 +34,7 @@ export const TabButton: FC<Props> = ({
   const [isEditMode, setIsEditMode] = useState(false);
   const [editValue, setEditValue] = useState(title);
   const inputRef = useRef<HTMLInputElement>(null);
+  const cancelButtonId = useId();
 
   const isEditToggleVisible = editable && !isDisabled && isSelected;
   const wrapperClass = getClassName([
@@ -75,8 +76,15 @@ export const TabButton: FC<Props> = ({
     setEditValue(e.target.value);
   };
 
-  const handleInputBlur = () => {
-    saveTitleChange();
+  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    // Check if the blur was caused by clicking on a cancel button
+    const relatedTarget = e.relatedTarget as HTMLElement;
+    const isBlurCausedByButton = relatedTarget?.id === cancelButtonId;
+
+    // Only call onInputBlur if the blur wasn't caused by a button click
+    if (!isBlurCausedByButton) {
+      saveTitleChange();
+    }
   };
 
   const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -116,6 +124,7 @@ export const TabButton: FC<Props> = ({
           onInputKeyDown={handleInputKeyDown}
           onSave={saveTitleChange}
           onCancel={cancelEdit}
+          cancelButtonId={cancelButtonId}
         />
       ) : (
         <>

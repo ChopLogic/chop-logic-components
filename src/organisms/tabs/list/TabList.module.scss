@@ -20,4 +20,8 @@
     overflow-x: hidden;
     overflow-y: auto;
   }
+
+  &_addButton {
+    align-self: flex-end;
+  }
 }

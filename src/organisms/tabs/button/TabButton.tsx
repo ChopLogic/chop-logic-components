@@ -17,17 +17,21 @@ type Props = {
   stretched?: boolean;
   editable?: boolean;
   onTabTitleChange?: (newTitle: string) => void;
+  onTabDelete?: (id: string) => void;
+  extendable?: boolean;
 };
 
 export const TabButton: FC<Props> = ({
   title,
   onTabSelect,
   onTabTitleChange,
+  onTabDelete,
   tabId,
   isSelected,
   isDisabled = false,
   stretched = false,
   editable = false,
+  extendable = false,
   tabPanelId,
   mode,
 }) => {
@@ -35,8 +39,10 @@ export const TabButton: FC<Props> = ({
   const [editValue, setEditValue] = useState(title);
   const inputRef = useRef<HTMLInputElement>(null);
   const cancelButtonId = useId();
-
   const isEditToggleVisible = editable && !isDisabled && isSelected;
+  const isDeleteButtonVisible = extendable && !isDisabled && !!onTabDelete && isSelected;
+  const hasAdditionalButtons = isEditToggleVisible || isDeleteButtonVisible;
+
   const wrapperClass = getClassName([
     styles.tab_wrapper,
     {
@@ -139,14 +145,13 @@ export const TabButton: FC<Props> = ({
           >
             {editValue}
           </button>
-          {isEditToggleVisible && (
-            <Button
-              view={ButtonView.Icon}
-              icon={IconName.Edit}
-              onClick={toggleEditMode}
-              label='Edit tab title'
-              className={styles.tab_editButton}
-            />
+          {hasAdditionalButtons && (
+            <span className={styles.tab_buttons}>
+              {isEditToggleVisible && (
+                <Button view={ButtonView.Icon} icon={IconName.Edit} onClick={toggleEditMode} label='Edit tab title' />
+              )}
+              {isDeleteButtonVisible && <Button view={ButtonView.Icon} icon={IconName.Delete} onClick={() => onTabDelete?.(tabId)} />}
+            </span>
           )}
         </>
       )}

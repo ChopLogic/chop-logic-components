@@ -62,7 +62,10 @@
     }
   }
 
-  &_editButton {
+  &_buttons {
     margin-right: var(--cl-s-gap);
+    display: flex;
+    align-items: center;
+    gap: 0;
   }
 }

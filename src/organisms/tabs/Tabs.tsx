@@ -10,15 +10,17 @@ import styles from './Tabs.module.scss';
 const Tabs: FC<TabsProps> = ({
   tabs: initialTabs,
   defaultTabId,
-  mode = OrientationMode.Horizontal,
   className,
-  stretched,
+  mode = OrientationMode.Horizontal,
+  stretched = false,
   editable = false,
-  onTabTitleChange,
   extendable = false,
-  onTabAdd,
   extendedTabLabel = 'New Tab',
   extendedTabContent,
+  onTabTitleChange,
+  onTabAdd,
+  onTabSelect,
+  onTabDelete,
   ...rest
 }) => {
   const [tabs, setTabs] = useState<ChopLogicTabItem[]>(initialTabs);
@@ -32,6 +34,7 @@ const Tabs: FC<TabsProps> = ({
 
   const handleTabSelect = (id: string) => {
     setSelectedTabId(id);
+    onTabSelect?.(id);
   };
 
   const handleTabTitleChange = (tabId: string, newTitle: string) => {
@@ -55,6 +58,19 @@ const Tabs: FC<TabsProps> = ({
     onTabAdd?.();
   };
 
+  const handleTabDelete = (tabId: string) => {
+    setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== tabId));
+
+    if (selectedTabId === tabId) {
+      const tabIndex = tabIds.indexOf(tabId);
+      const newSelectedTabId = tabIndex > 0 ? tabIds[tabIndex - 1] : tabIds.length > 1 ? tabIds[1] : undefined;
+      if (newSelectedTabId) {
+        handleTabSelect(newSelectedTabId);
+      }
+    }
+    onTabDelete?.(tabId);
+  };
+
   return (
     <div {...rest} className={tabsClass}>
       <TabList
@@ -71,6 +87,7 @@ const Tabs: FC<TabsProps> = ({
         onTabAdd={handleTabAdd}
         extendedTabLabel={extendedTabLabel}
         initialTabsCount={initialTabsCount}
+        onTabDelete={handleTabDelete}
       />
       <TabContent tabs={tabs} selectedTabId={selectedTabId} extendedTabContent={extendedTabContent} extendable={extendable} />
     </div>

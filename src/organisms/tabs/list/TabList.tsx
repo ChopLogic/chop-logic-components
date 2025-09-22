@@ -11,16 +11,17 @@ type ChopLogicTabListProps = {
   tabs: ChopLogicTabItem[];
   tabIds: string[];
   onTabSelect: (id: string) => void;
-  onTabTitleChange?: (tabId: string, newTitle: string) => void;
+  initialTabsCount: number;
   selectedTabId: string;
   tabPanelIds: string[];
   mode: OrientationMode;
+  onTabTitleChange?: (tabId: string, newTitle: string) => void;
   stretched?: boolean;
   editable?: boolean;
   extendable?: boolean;
   onTabAdd?: () => void;
+  onTabDelete?: (id: string) => void;
   extendedTabLabel?: string;
-  initialTabsCount: number;
 };
 
 export const TabList: FC<ChopLogicTabListProps> = ({
@@ -35,6 +36,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   editable = false,
   extendable = false,
   onTabAdd,
+  onTabDelete,
   extendedTabLabel = 'New Tab',
   initialTabsCount,
 }) => {
@@ -77,10 +79,6 @@ export const TabList: FC<ChopLogicTabListProps> = ({
     }
   };
 
-  const handleAddButtonClick = () => {
-    onTabAdd?.();
-  };
-
   useEffect(() => {
     // Auto-select newly added tab
     if (tabs.length > initialTabsCount) {
@@ -104,6 +102,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({
             mode={mode}
             stretched={stretched}
             editable={editable}
+            extendable={extendable}
+            onTabDelete={onTabDelete}
           />
         );
       })}
@@ -112,8 +112,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({
           label={extendedTabLabel}
           view={ButtonView.Icon}
           icon={IconName.PlusCircle}
-          onClick={handleAddButtonClick}
-          className={styles.addButton}
+          onClick={onTabAdd}
+          className={styles.tabList_addButton}
         />
       )}
     </div>

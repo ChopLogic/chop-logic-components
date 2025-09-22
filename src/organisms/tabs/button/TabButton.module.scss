@@ -5,8 +5,7 @@
   @include typography.font-style(core, base);
 
   color: var(--cl-primary-color);
-
-  background: var(--cl-primary-background);
+  background: transparent;
   outline: none;
   border: none;
   padding: var(--cl-m-gap);
@@ -36,6 +35,7 @@
     &__selected {
       top: var(--cl-xs-gap);
       box-shadow: var(--cl-box-shadow);
+      border: var(--cl-primary-border);
     }
 
     &__vertical {

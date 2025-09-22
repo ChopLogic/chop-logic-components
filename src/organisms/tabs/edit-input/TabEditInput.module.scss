@@ -16,6 +16,7 @@
     padding: var(--cl-s-gap);
     border: var(--cl-light-border);
     border-radius: var(--cl-border-radius);
+    background: transparent;
 
     &:focus-visible,
     &:focus {

@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import { TabsProps } from '@models';
+import { ChopLogicTabItem, TabsProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useState } from 'react';
 
@@ -8,7 +8,7 @@ import { TabList } from './list/TabList';
 import styles from './Tabs.module.scss';
 
 const Tabs: FC<TabsProps> = ({
-  tabs,
+  tabs: initialTabs,
   defaultTabId,
   mode = OrientationMode.Horizontal,
   className,
@@ -21,6 +21,9 @@ const Tabs: FC<TabsProps> = ({
   extendedTabContent,
   ...rest
 }) => {
+  const [tabs, setTabs] = useState<ChopLogicTabItem[]>(initialTabs);
+  const initialTabsCount = initialTabs.length;
+  const [tabCounter, setTabCounter] = useState(initialTabsCount + 1);
   const tabIds = tabs.map((item) => item.id);
   const tabPanelIds = tabIds.map((id) => `tabpanel_${id}`);
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
@@ -32,10 +35,23 @@ const Tabs: FC<TabsProps> = ({
   };
 
   const handleTabTitleChange = (tabId: string, newTitle: string) => {
+    setTabs((prevTabs) => prevTabs.map((tab) => (tab.id === tabId ? { ...tab, title: newTitle } : tab)));
     onTabTitleChange?.(tabId, newTitle);
   };
 
   const handleTabAdd = () => {
+    const newTabId = `added-tab-${tabCounter}`;
+    const newTabTitle = extendedTabLabel || `Tab ${tabCounter}`;
+
+    const newTab: ChopLogicTabItem = {
+      id: newTabId,
+      title: newTabTitle,
+      content: extendedTabContent || <div></div>,
+    };
+
+    setTabs((prevTabs) => [...prevTabs, newTab]);
+    setTabCounter((prev) => prev + 1);
+
     onTabAdd?.();
   };
 
@@ -54,6 +70,7 @@ const Tabs: FC<TabsProps> = ({
         extendable={extendable}
         onTabAdd={handleTabAdd}
         extendedTabLabel={extendedTabLabel}
+        initialTabsCount={initialTabsCount}
       />
       <TabContent tabs={tabs} selectedTabId={selectedTabId} extendedTabContent={extendedTabContent} extendable={extendable} />
     </div>

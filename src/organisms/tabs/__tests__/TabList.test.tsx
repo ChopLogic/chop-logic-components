@@ -30,6 +30,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Horizontal}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -47,6 +48,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Vertical}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -67,6 +69,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Horizontal}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -87,6 +90,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Horizontal}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -105,6 +109,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Horizontal}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -125,6 +130,7 @@ describe('TabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Horizontal}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -145,6 +151,7 @@ describe('TabList', () => {
         selectedTabId='tab-1'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Vertical}
+        initialTabsCount={tabs.length}
       />,
     );
 
@@ -165,6 +172,7 @@ describe('TabList', () => {
         selectedTabId='tab-3'
         tabPanelIds={tabPanelIds}
         mode={OrientationMode.Vertical}
+        initialTabsCount={tabs.length}
       />,
     );
 

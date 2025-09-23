@@ -85,7 +85,6 @@ const Tabs: FC<TabsProps> = ({
         editable={editable}
         extendable={extendable}
         onTabAdd={handleTabAdd}
-        extendedTabLabel={extendedTabLabel}
         initialTabsCount={initialTabsCount}
         onTabDelete={handleTabDelete}
       />

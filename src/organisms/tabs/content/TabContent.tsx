@@ -14,7 +14,7 @@ export const TabContent: FC<{
   const isExtendedTab = extendable && !content;
 
   return (
-    <div role='tabpanel' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>
+    <div role='tabpanel' data-testid='tab-content' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>
       {isExtendedTab ? extendedTabContent : content}
     </div>
   );

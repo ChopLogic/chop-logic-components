@@ -7,7 +7,7 @@ import { FC, KeyboardEvent, useEffect } from 'react';
 import { TabButton } from '../button/TabButton';
 import styles from './TabList.module.scss';
 
-type ChopLogicTabListProps = {
+type Props = {
   tabs: ChopLogicTabItem[];
   tabIds: string[];
   onTabSelect: (id: string) => void;
@@ -21,10 +21,9 @@ type ChopLogicTabListProps = {
   extendable?: boolean;
   onTabAdd?: () => void;
   onTabDelete?: (id: string) => void;
-  extendedTabLabel?: string;
 };
 
-export const TabList: FC<ChopLogicTabListProps> = ({
+export const TabList: FC<Props> = ({
   tabs,
   onTabSelect,
   onTabTitleChange,
@@ -37,7 +36,6 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   extendable = false,
   onTabAdd,
   onTabDelete,
-  extendedTabLabel = 'New Tab',
   initialTabsCount,
 }) => {
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
@@ -87,7 +85,7 @@ export const TabList: FC<ChopLogicTabListProps> = ({
   }, [tabs.length]);
 
   return (
-    <div role='tablist' onKeyDown={handleListKeyDown} className={listClass}>
+    <div role='tablist' data-testid='tab-list' onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton
@@ -109,7 +107,8 @@ export const TabList: FC<ChopLogicTabListProps> = ({
       })}
       {extendable && (
         <Button
-          label={extendedTabLabel}
+          label='Add Tab'
+          tooltip='Add Tab'
           view={ButtonView.Icon}
           icon={IconName.PlusCircle}
           onClick={onTabAdd}

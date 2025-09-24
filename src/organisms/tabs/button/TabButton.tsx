@@ -148,20 +148,14 @@ export const TabButton: FC<Props> = ({
           {hasAdditionalButtons && (
             <span className={styles.tab_buttons}>
               {isEditToggleVisible && (
-                <Button
-                  view={ButtonView.Icon}
-                  icon={IconName.Edit}
-                  onClick={toggleEditMode}
-                  label='Edit tab title'
-                  tooltip='Edit tab title'
-                />
+                <Button view={ButtonView.Icon} icon={IconName.Edit} onClick={toggleEditMode} label='Edit tab' tooltip='Edit tab' />
               )}
               {isDeleteButtonVisible && (
                 <Button
                   view={ButtonView.Icon}
                   icon={IconName.Delete}
                   onClick={() => onTabDelete?.(tabId)}
-                  label={`Delete tab "${title}"`}
+                  label='Delete tab'
                   tooltip='Delete tab'
                 />
               )}

@@ -104,7 +104,7 @@ describe('TabButton', () => {
     render(<TabButton {...defaultProps} editable={true} />);
 
     expect(screen.getByTestId('button-edit')).toBeInTheDocument();
-    expect(screen.getByLabelText('Edit tab title')).toBeInTheDocument();
+    expect(screen.getByLabelText('Edit tab')).toBeInTheDocument();
   });
 
   it('does not show edit button when not selected', () => {
@@ -233,7 +233,7 @@ describe('TabButton', () => {
     render(<TabButton {...defaultProps} extendable={true} onTabDelete={onTabDelete} />);
 
     expect(screen.getByTestId('button-delete')).toBeInTheDocument();
-    expect(screen.getByLabelText('Delete tab "Test Tab"')).toBeInTheDocument();
+    expect(screen.getByLabelText('Delete tab')).toBeInTheDocument();
   });
 
   it('calls onTabDelete when delete button is clicked', () => {

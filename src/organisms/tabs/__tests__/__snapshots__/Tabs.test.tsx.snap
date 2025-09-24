@@ -58,7 +58,7 @@ exports[`Tabs > should match the snapshot 1`] = `
       id="tabpanel_tab-1"
       role="tabpanel"
     >
-      Tab 1 content
+      Content 1
     </div>
   </div>
 </DocumentFragment>

@@ -5,7 +5,16 @@ import * as TabsStories from './Tabs.stories';
 
 # Tabs
 
-The `Tabs` component provides an accessible tabbed interface with support for both horizontal and vertical orientations, disabled states, and flexible content.
+The `Tabs` component provides an accessible tabbed interface with support for both horizontal and vertical orientations, disabled states, editable titles, and dynamic tab management.
+
+### Features
+
+- **Multiple Orientations**: Horizontal and vertical tab layouts
+- **Editable Titles**: In-place editing of tab names
+- **Dynamic Tabs**: Add and remove tabs dynamically
+- **Accessible**: Full keyboard navigation and screen reader support
+- **Flexible Content**: Support for any React content in tab panels
+- **Customizable**: Stretched mode, disabled states, and custom styling
 
 ### Usage
 
@@ -17,38 +26,38 @@ const ProductTabs = () => {
     {
       id: 'details',
       title: 'Details',
-      content: <ProductDetails />
+      content: <ProductDetails />,
     },
     {
       id: 'specs',
       title: 'Specifications',
-      content: <ProductSpecs />
-    }
+      content: <ProductSpecs />,
+    },
   ];
 
-  return (
-    <Tabs
-      tabs={tabs}
-      mode={OrientationMode.Horizontal}
-      defaultTabId="specs"
-    />
-  );
+  return <Tabs tabs={tabs} mode={OrientationMode.Horizontal} defaultTabId='specs' />;
 };
 ```
 
 ### Accessibility Notes
 
 _Keyboard Navigation_:
+
 - Tab to focus tab list
 - Arrow keys to navigate between tabs
 - Enter/Space to select focused tab
+- Escape to cancel editing mode
+- In edit mode: Enter to save, Escape to cancel
 
 _Screen Readers_:
+
 - Announces selected state
 - Describes tablist structure
 - Indicates disabled tabs
+- Provides context for dynamic tab operations
 
 _Focus Management_:
+
 - Focus remains on active tab
 - Proper focus indicators
 - Logical tab order
@@ -56,19 +65,29 @@ _Focus Management_:
 ### Best Practices
 
 _Organization_:
+
 - Keep tab titles concise (1-2 words)
 - Group related content together
 - Limit number of tabs (recommend max 5-7)
 
 _Content_:
+
 - Load heavy content dynamically
 - Consider lazy-loading hidden tabs
 - Maintain consistent tab heights
 
 _States_:
+
 - Clearly indicate active tab
 - Visually distinguish disabled tabs
 - Provide loading states for async content
+
+_Dynamic Tab Management_:
+
+- Provide meaningful default names for new tabs
+- Consider implementing tab reordering if needed
+- Validate tab titles to prevent empty or duplicate names
+- Provide undo functionality for accidental tab deletion
 
 ## Props
 

@@ -8,6 +8,7 @@
 
   &:focus {
     outline: var(--cl-outline-border);
+    outline-offset: 4px;
   }
 
   &__vertical {

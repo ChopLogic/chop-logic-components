@@ -10,6 +10,7 @@ exports[`Tabs > should match the snapshot 1`] = `
       class="_tabList_7b8ac2"
       data-testid="tab-list"
       role="tablist"
+      tabindex="0"
     >
       <span
         class="_tab_wrapper_54926d _tab_wrapper__selected_54926d _tab_wrapper__stretched_54926d"

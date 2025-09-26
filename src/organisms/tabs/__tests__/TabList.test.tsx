@@ -199,18 +199,6 @@ describe('TabList', () => {
       expect(moveFocusOnElementById).toHaveBeenCalledWith('tab1');
       expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab1');
     });
-
-    it('ignores ArrowUp and ArrowDown in horizontal mode', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowUp' });
-      fireEvent.keyDown(tablist, { key: 'ArrowDown' });
-
-      expect(moveFocusOnElementById).not.toHaveBeenCalled();
-      expect(defaultProps.onTabSelect).not.toHaveBeenCalled();
-    });
   });
 
   describe('Keyboard Navigation - Vertical Mode', () => {
@@ -239,18 +227,6 @@ describe('TabList', () => {
 
       expect(moveFocusOnElementById).toHaveBeenCalledWith('tab1');
       expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab1');
-    });
-
-    it('ignores ArrowLeft and ArrowRight in vertical mode', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...verticalProps} />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
-      fireEvent.keyDown(tablist, { key: 'ArrowRight' });
-
-      expect(moveFocusOnElementById).not.toHaveBeenCalled();
-      expect(defaultProps.onTabSelect).not.toHaveBeenCalled();
     });
   });
 

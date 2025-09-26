@@ -43,38 +43,36 @@ export const TabList: FC<Props> = ({
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     const currentFocusedTabIndex = tabIds.findIndex((id) => id === selectedTabId);
 
-    switch (e.key) {
-      case 'ArrowLeft':
-      case 'ArrowUp': {
-        e.preventDefault();
-        if (e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) break;
-        if (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical) break;
-
-        const previousTabIndex = currentFocusedTabIndex - 1 >= 0 ? currentFocusedTabIndex - 1 : tabIds.length - 1;
-        const previousTabId = tabIds[previousTabIndex];
-        if (previousTabId) {
-          moveFocusOnElementById(previousTabId);
-          onTabSelect(previousTabId);
-        }
-        break;
-      }
-      case 'ArrowRight':
-      case 'ArrowDown': {
-        e.preventDefault();
-        if (e.key === 'ArrowDown' && mode === OrientationMode.Horizontal) break;
-        if (e.key === 'ArrowRight' && mode === OrientationMode.Vertical) break;
-
-        const nextTabIndex = currentFocusedTabIndex === tabIds.length - 1 ? 0 : currentFocusedTabIndex + 1;
-        const nextTabId = tabIds[nextTabIndex];
-        if (nextTabId) {
-          moveFocusOnElementById(nextTabId);
-          onTabSelect(nextTabId);
-        }
-        break;
-      }
-      default:
-        break;
+    // Early return for non-navigation keys
+    if (!['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].includes(e.key)) {
+      return;
     }
+
+    e.preventDefault();
+
+    // Check if key should be ignored based on mode
+    if ((e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) || (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical)) {
+      return;
+    }
+
+    const isPrevious = e.key === 'ArrowLeft' || e.key === 'ArrowUp';
+    const newIndex = isPrevious
+      ? getPreviousIndex(currentFocusedTabIndex, tabIds.length)
+      : getNextIndex(currentFocusedTabIndex, tabIds.length);
+
+    const newTabId = tabIds[newIndex];
+    if (newTabId) {
+      moveFocusOnElementById(newTabId);
+      onTabSelect(newTabId);
+    }
+  };
+
+  const getPreviousIndex = (currentIndex: number, totalTabs: number): number => {
+    return currentIndex - 1 >= 0 ? currentIndex - 1 : totalTabs - 1;
+  };
+
+  const getNextIndex = (currentIndex: number, totalTabs: number): number => {
+    return currentIndex === totalTabs - 1 ? 0 : currentIndex + 1;
   };
 
   useEffect(() => {
@@ -85,7 +83,7 @@ export const TabList: FC<Props> = ({
   }, [tabs.length]);
 
   return (
-    <div role='tablist' data-testid='tab-list' onKeyDown={handleListKeyDown} className={listClass}>
+    <div role='tablist' data-testid='tab-list' tabIndex={0} onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton

@@ -63,11 +63,24 @@ const Tabs: FC<TabsProps> = ({
 
     if (selectedTabId === tabId) {
       const tabIndex = tabIds.indexOf(tabId);
-      const newSelectedTabId = tabIndex > 0 ? tabIds[tabIndex - 1] : tabIds.length > 1 ? tabIds[1] : undefined;
+      let newSelectedTabId: string | undefined;
+
+      if (tabIndex > 0) {
+        // Select the previous tab if available
+        newSelectedTabId = tabIds[tabIndex - 1];
+      } else if (tabIds.length > 1) {
+        // If deleting the first tab, select the second tab if available
+        newSelectedTabId = tabIds[1];
+      } else {
+        // No tabs left to select
+        newSelectedTabId = undefined;
+      }
+
       if (newSelectedTabId) {
         handleTabSelect(newSelectedTabId);
       }
     }
+
     onTabDelete?.(tabId);
   };
 

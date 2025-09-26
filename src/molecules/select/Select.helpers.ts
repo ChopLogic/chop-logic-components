@@ -13,8 +13,9 @@ export function getSelectInitialValue({
 }): SelectValue | undefined {
   let valueId: string;
 
-  if (initialValues && initialValues[name]) {
-    valueId = ((initialValues[name] as SelectValue)?.id as string) ?? (initialValues[name] as string);
+  if (initialValues && Object.prototype.hasOwnProperty.call(initialValues, name)) {
+    const value = initialValues[name];
+    valueId = ((value as FormValues)?.id as string) ?? (value as string);
   }
 
   if (!initialValues?.[name] && defaultValue && typeof defaultValue === 'string') {

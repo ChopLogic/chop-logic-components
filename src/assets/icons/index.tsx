@@ -18,6 +18,7 @@ import CopyIcon from './svg/CopyIcon';
 import CutIcon from './svg/CutIcon';
 import DeleteIcon from './svg/DeleteIcon';
 import DownloadIcon from './svg/DownloadIcon';
+import EditIcon from './svg/EditIcon';
 import ErrorIcon from './svg/ErrorIcon';
 import ForwardIcon from './svg/ForwardIcon';
 import GraduateIcon from './svg/GraduateIcon';
@@ -27,6 +28,7 @@ import HomeIcon from './svg/HomeIcon';
 import InfoIcon from './svg/InfoIcon';
 import LoginIcon from './svg/LoginIcon';
 import PasteIcon from './svg/PasteIcon';
+import PlusCircleIcon from './svg/PlusCircle';
 import QuestionIcon from './svg/QuestionIcon';
 import RemoveIcon from './svg/RemoveIcon';
 import SaveIcon from './svg/SaveIcon';
@@ -53,6 +55,7 @@ export const IconDictionary: Icons = {
   [IconName.Cut]: CutIcon,
   [IconName.Delete]: DeleteIcon,
   [IconName.Download]: DownloadIcon,
+  [IconName.Edit]: EditIcon,
   [IconName.Error]: ErrorIcon,
   [IconName.Forward]: ForwardIcon,
   [IconName.Graduate]: GraduateIcon,
@@ -62,6 +65,7 @@ export const IconDictionary: Icons = {
   [IconName.Info]: InfoIcon,
   [IconName.Login]: LoginIcon,
   [IconName.Paste]: PasteIcon,
+  [IconName.PlusCircle]: PlusCircleIcon,
   [IconName.Question]: QuestionIcon,
   [IconName.Save]: SaveIcon,
   [IconName.Show]: ShowIcon,

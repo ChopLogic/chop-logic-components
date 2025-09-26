@@ -6,13 +6,16 @@ import styles from './TabContent.module.scss';
 export const TabContent: FC<{
   tabs: ChopLogicTabItem[];
   selectedTabId: string;
-}> = ({ tabs, selectedTabId }): ReactElement => {
+  extendable?: boolean;
+  extendedTabContent?: ReactElement;
+}> = ({ tabs, selectedTabId, extendable, extendedTabContent }): ReactElement => {
   const content = tabs.find((item) => item.id === selectedTabId)?.content;
   const contentId = `tabpanel_${selectedTabId}`;
+  const isExtendedTab = extendable && !content;
 
   return (
-    <div role='tabpanel' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>
-      {content}
+    <div role='tabpanel' data-testid='tab-content' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>
+      {isExtendedTab ? extendedTabContent : content}
     </div>
   );
 };

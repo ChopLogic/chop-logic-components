@@ -33,7 +33,7 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
     </span>
   );
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLLIElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
     e.stopPropagation();
     if (e.key === ' ') {
       toggleSubMenu();
@@ -59,7 +59,7 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
       onMouseLeave={openedOn === 'hover' ? closeSubMenu : undefined}
       ref={ref}
     >
-      <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu}>
+      <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu} onKeyDown={handleKeyDown}>
         {itemContent}
         <Icon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
       </span>

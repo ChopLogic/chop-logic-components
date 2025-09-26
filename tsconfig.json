@@ -35,5 +35,5 @@
     "types": ["node", "@testing-library/jest-dom"]
   },
   "include": ["src"],
-  "exclude": ["**/__docs__/**", "**/stories/**", "dist", "node_modules"]
+  "exclude": ["dist", "node_modules"]
 }

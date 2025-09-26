@@ -23,7 +23,7 @@ const meta: Meta<typeof AlertExample> = {
     autoCloseDelay: 3000,
   },
   component: AlertExample,
-  title: 'Organisms/Alert',
+  title: 'Molecules/Alert',
 };
 
 export default meta;

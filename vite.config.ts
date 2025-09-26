@@ -3,6 +3,7 @@ import * as path from 'node:path';
 
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { coverageConfigDefaults } from 'vitest/config';
 
 import { peerDependencies } from './package.json';
@@ -31,6 +32,8 @@ export default defineConfig({
     emptyOutDir: true,
     minify: 'esbuild', // Minify the output
     target: 'es2015', // Enable better tree shaking
+    cssCodeSplit: true, // Enable CSS code splitting
+    cssMinify: true, // Minify CSS
   },
   plugins: [
     dts({
@@ -38,6 +41,7 @@ export default defineConfig({
       insertTypesEntry: true,
       rollupTypes: true, // Bundles all declarations into one file
     }),
+    libInjectCss(),
   ],
   resolve: {
     alias: [

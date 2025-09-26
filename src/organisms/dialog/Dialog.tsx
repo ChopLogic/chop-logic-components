@@ -1,5 +1,4 @@
-import { Header, Portal } from '@atoms';
-import { Button } from '@atoms';
+import { Button, Header, Portal } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
 import { DialogProps } from '@models';

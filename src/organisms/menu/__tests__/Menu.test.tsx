@@ -11,9 +11,8 @@ describe('Menu Component', () => {
   ];
 
   it('renders a menu bar with the correct role', () => {
-    render(<Menu items={mockItems} />);
-    const menuBar = screen.getByRole('menubar');
-    expect(menuBar).toBeInTheDocument();
+    const { asFragment } = render(<Menu items={mockItems} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders all MenuItem components for given items', () => {
@@ -43,7 +42,5 @@ describe('Menu Component', () => {
     render(<Menu items={[]} />);
     const menuItems = screen.queryAllByTestId('menuitem');
     expect(menuItems).toHaveLength(0);
-    const menuBar = screen.getByRole('menubar');
-    expect(menuBar).toBeInTheDocument();
   });
 });

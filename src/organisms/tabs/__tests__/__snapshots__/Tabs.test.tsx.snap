@@ -7,44 +7,59 @@ exports[`Tabs > should match the snapshot 1`] = `
     id="tabs-id"
   >
     <div
-      class="_tabList_3c2693"
+      class="_tabList_7b8ac2"
+      data-testid="tab-list"
       role="tablist"
+      tabindex="0"
     >
-      <button
-        aria-controls="tabpanel_tab-1"
-        aria-selected="true"
-        class="_tabButton_3d945f _tabButton__selected_3d945f"
-        id="tab-1"
-        role="tab"
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__selected_54926d _tab_wrapper__stretched_54926d"
       >
-        Tab 1
-      </button>
-      <button
-        aria-controls="tabpanel_tab-2"
-        aria-selected="false"
-        class="_tabButton_3d945f"
-        id="tab-2"
-        role="tab"
+        <button
+          aria-controls="tabpanel_tab-1"
+          aria-selected="true"
+          class="_tab_54926d"
+          id="tab-1"
+          role="tab"
+        >
+          Tab 1
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
       >
-        Tab 2
-      </button>
-      <button
-        aria-controls="tabpanel_tab-3"
-        aria-selected="false"
-        class="_tabButton_3d945f"
-        id="tab-3"
-        role="tab"
+        <button
+          aria-controls="tabpanel_tab-2"
+          aria-selected="false"
+          class="_tab_54926d"
+          id="tab-2"
+          role="tab"
+        >
+          Tab 2
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
       >
-        Tab 3
-      </button>
+        <button
+          aria-controls="tabpanel_tab-3"
+          aria-selected="false"
+          class="_tab_54926d"
+          id="tab-3"
+          role="tab"
+        >
+          Tab 3
+        </button>
+      </span>
     </div>
     <div
       aria-labelledby="tab-1"
-      class="_tabContent_a69405"
+      class="_tabContent_7c3dbf"
+      data-testid="tab-content"
       id="tabpanel_tab-1"
       role="tabpanel"
     >
-      Tab 1 content
+      Content 1
     </div>
   </div>
 </DocumentFragment>

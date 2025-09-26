@@ -1,5 +1,4 @@
 export { useAutoClose } from './use-auto-close/use-auto-close';
-export { useChopLogicTheme } from './use-chop-logic-theme/use-chop-logic-theme';
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
 export { useElementIds } from './use-element-ids/use-element-ids';
@@ -8,5 +7,6 @@ export { useIsOverflow } from './use-is-overflow/use-is-overflow';
 export { useKeyPress } from './use-key-press/use-key-press';
 export { useModalFocusTrap } from './use-modal-focus-trap/use-modal-focus-trap';
 export { useResetFormInput } from './use-reset-form-input/use-reset-form-input';
+export { useTheme } from './use-theme/use-chop-logic-theme';
 export { useTooltipPosition } from './use-tooltip-position/use-tooltip-position';
 export { useWindowDimensions } from './use-window-dimensions/use-window-dimensions';

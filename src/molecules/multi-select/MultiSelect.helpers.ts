@@ -14,9 +14,8 @@ export function getMultiSelectInitialValues({
   return options.map((option) => {
     let selected = false;
 
-    if (initialValues && initialValues?.[name] && Array.isArray(initialValues[name])) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const selectedId = (initialValues[name] as Array<any>).find((item) => item === option.id || item?.id === option.id);
+    if (initialValues?.[name] && Array.isArray(initialValues[name])) {
+      const selectedId = initialValues[name].find((item) => item === option.id || item?.id === option.id);
       if (selectedId) selected = true;
     }
 

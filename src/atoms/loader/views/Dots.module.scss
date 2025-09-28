@@ -13,18 +13,14 @@
 
   &:before,
   &:after {
+    content: '';
+    position: absolute;
+    top: 0;
     border-radius: 50%;
     width: 2.5em;
     height: 2.5em;
     animation: dotsFadeOutAnimation 1.8s infinite ease-in-out;
     animation-fill-mode: both;
-  }
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
   }
 
   &:before {

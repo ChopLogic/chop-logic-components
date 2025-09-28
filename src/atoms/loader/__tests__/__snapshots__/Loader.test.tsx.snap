@@ -5,7 +5,6 @@ exports[`Loader > Arrow should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -18,7 +17,6 @@ exports[`Loader > Brackets should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -31,7 +29,6 @@ exports[`Loader > Circle should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -44,7 +41,6 @@ exports[`Loader > Dots should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -57,7 +53,6 @@ exports[`Loader > Filler should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -70,7 +65,6 @@ exports[`Loader > Linear should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -83,7 +77,6 @@ exports[`Loader > Pulse should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -96,7 +89,6 @@ exports[`Loader > Rotation should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"
@@ -109,7 +101,6 @@ exports[`Loader > Square should match the snapshot 1`] = `
   <span
     class="loader-class"
     id="loader-id"
-    role="status"
     style="color: red;"
     tabindex="0"
     title="Test loader"

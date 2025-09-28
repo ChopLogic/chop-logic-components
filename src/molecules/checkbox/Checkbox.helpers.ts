@@ -9,7 +9,7 @@ export function getCheckboxInitialValue({
   initialValues?: FormValues;
   name: string;
 }): boolean {
-  if (initialValues && initialValues?.[name] !== undefined) {
+  if (initialValues?.[name] !== undefined) {
     return !!initialValues?.[name];
   }
 

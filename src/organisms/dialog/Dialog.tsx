@@ -11,7 +11,7 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef(null);
 
   useModalFocusTrap({ modalRef, isOpened });
   useKeyPress({ keyCode: 'Escape', ref: modalRef, onKeyPress: onClose });

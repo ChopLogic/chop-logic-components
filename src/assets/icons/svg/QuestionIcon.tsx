@@ -2,7 +2,7 @@ import { ChopLogicSVGElementProps } from '@models';
 
 function QuestionIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' {...rest}>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='currentColor' height='1em' width='1em' {...rest}>
       {title && <title>{title}</title>}
       <path fill='none' stroke='currentColor' strokeMiterlimit={10} strokeWidth={32} d='M256 80a176 176 0 10176 176A176 176 0 00256 80z' />
       <path

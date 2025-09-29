@@ -28,6 +28,7 @@ export enum IconName {
   PlusCircle = 'plus-circle',
   Question = 'question',
   Save = 'save',
+  Search = 'search',
   Show = 'show',
   Upload = 'upload',
   Warning = 'warning',

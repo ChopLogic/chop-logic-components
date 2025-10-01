@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Search from '../Search';
+import { SearchExample } from './Search.example';
 
-const meta: Meta<typeof Search> = {
+const meta: Meta<typeof SearchExample> = {
   args: {
     label: 'Search',
     placeholder: 'Type to search...',
@@ -18,11 +18,21 @@ const meta: Meta<typeof Search> = {
     onSearch: (value) => console.log('Search:', value),
     onClear: () => console.log('Clear'),
   },
-  component: Search,
+  component: SearchExample,
   title: 'Molecules/Search',
 };
 
 export default meta;
-type Story = StoryObj<typeof Search>;
+type Story = StoryObj<typeof SearchExample>;
 
-export const Example: Story = {};
+export const Manual: Story = {
+  args: {
+    searchMode: 'manual',
+  },
+};
+
+export const Automatic: Story = {
+  args: {
+    searchMode: 'automatic',
+  },
+};

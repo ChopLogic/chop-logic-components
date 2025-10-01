@@ -9,6 +9,7 @@ export interface SearchProps extends ChopLogicInputProps {
   autoComplete?: HTMLInputAutoCompleteAttribute;
   clearable?: boolean;
   spellCheck?: boolean;
+  searchMode?: 'automatic' | 'manual';
   onSearch?: (searchTerm: string) => void;
   onClear?: () => void;
   onChange?: ChangeEventHandler<HTMLInputElement>;

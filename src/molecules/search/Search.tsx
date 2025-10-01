@@ -1,4 +1,4 @@
-import { Button, Input, Label } from '@atoms';
+import { Button, Icon, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { useDebounce } from '@hooks/use-debounce/use-debounce';
@@ -19,29 +19,32 @@ const Search: FC<SearchProps> = ({
   id,
   tabIndex,
   className,
+  searchMode = 'automatic',
   name = 'q',
   placeholder = 'Type to search...',
   disabled = false,
   clearable = true,
   spellCheck = false,
   autoComplete = 'off',
-  debounceDelay = 300,
+  debounceDelay = 500,
   ...rest
 }) => {
   const { elementId } = useElementIds(id);
   const inputClass = getClassName([styles.wrapper, className]);
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const isSearchButtonVisible = searchMode === 'manual';
+  const isClearButtonVisible = clearable && searchValue.length > 0;
 
   // Debounce the search value
   const debouncedSearchValue = useDebounce(searchValue, debounceDelay);
 
   // Handle search when debounced value changes
   useEffect(() => {
-    if (onSearch && debouncedSearchValue !== undefined) {
-      onSearch(debouncedSearchValue);
+    if (debouncedSearchValue.length > 0 && searchMode === 'automatic') {
+      onSearch?.(debouncedSearchValue);
     }
-  }, [debouncedSearchValue, onSearch]);
+  }, [debouncedSearchValue]);
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -57,10 +60,7 @@ const Search: FC<SearchProps> = ({
   }, [onClear]);
 
   const handleSearchClick = useCallback(() => {
-    // Trigger immediate search when search button is clicked
-    if (onSearch) {
-      onSearch(searchValue);
-    }
+    onSearch?.(searchValue);
   }, [onSearch, searchValue]);
 
   const handleKeyDown = useCallback(
@@ -82,7 +82,13 @@ const Search: FC<SearchProps> = ({
 
   return (
     <div {...rest} className={inputClass}>
-      <Label label={label} required={false} inputId={elementId} />
+      <Label
+        label={label}
+        required={false}
+        inputId={elementId}
+        icon={!isSearchButtonVisible ? <Icon name={IconName.Search} /> : undefined}
+        iconPosition={!isSearchButtonVisible ? 'left' : undefined}
+      />
       <Input
         ref={inputRef}
         id={elementId}
@@ -102,7 +108,7 @@ const Search: FC<SearchProps> = ({
         tabIndex={tabIndex}
       >
         <span>
-          {clearable && searchValue && (
+          {isClearButtonVisible && (
             <Button
               view={ButtonView.Inner}
               onClick={handleClear}
@@ -111,7 +117,9 @@ const Search: FC<SearchProps> = ({
               disabled={disabled}
             />
           )}
-          <Button view={ButtonView.Inner} onClick={handleSearchClick} label='Perform search' icon={IconName.Search} disabled={disabled} />
+          {isSearchButtonVisible && (
+            <Button view={ButtonView.Inner} onClick={handleSearchClick} label='Perform search' icon={IconName.Search} disabled={disabled} />
+          )}
         </span>
       </Input>
     </div>

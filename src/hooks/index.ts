@@ -1,6 +1,7 @@
 export { useAutoClose } from './use-auto-close/use-auto-close';
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
+export { useDebounce } from './use-debounce/use-debounce';
 export { useElementIds } from './use-element-ids/use-element-ids';
 export { useIsMounted } from './use-is-mounted/use-is-mounted';
 export { useIsOverflow } from './use-is-overflow/use-is-overflow';

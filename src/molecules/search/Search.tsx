@@ -1,7 +1,7 @@
 import { Button, Icon, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import { useDebounce } from '@hooks/use-debounce/use-debounce';
+import { useDebounce } from '@hooks';
 import { SearchProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
@@ -41,7 +41,7 @@ const Search: FC<SearchProps> = ({
 
   // Handle search when debounced value changes
   useEffect(() => {
-    if (debouncedSearchValue.length > 0 && searchMode === 'automatic') {
+    if (debouncedSearchValue.trim().length > 0 && searchMode === 'automatic') {
       onSearch?.(debouncedSearchValue);
     }
   }, [debouncedSearchValue]);

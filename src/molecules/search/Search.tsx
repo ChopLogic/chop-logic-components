@@ -14,11 +14,11 @@ const Search: FC<SearchProps> = ({
   onBlur,
   onFocus,
   onClear,
-  maxLength,
-  minLength,
   id,
   tabIndex,
   className,
+  maxLength = 50,
+  minLength = 1,
   searchMode = 'automatic',
   name = 'q',
   placeholder = 'Type to search...',
@@ -35,13 +35,14 @@ const Search: FC<SearchProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const isSearchButtonVisible = searchMode === 'manual';
   const isClearButtonVisible = clearable && searchValue.length > 0;
+  const isSearchValueValid = searchValue.length >= minLength && searchValue.trim().length > 0 && searchValue.length <= maxLength;
 
   // Debounce the search value
   const debouncedSearchValue = useDebounce(searchValue, debounceDelay);
 
   // Handle search when debounced value changes
   useEffect(() => {
-    if (debouncedSearchValue.trim().length > 0 && searchMode === 'automatic') {
+    if (debouncedSearchValue.trim().length > 0 && searchMode === 'automatic' && isSearchValueValid) {
       onSearch?.(debouncedSearchValue);
     }
   }, [debouncedSearchValue]);
@@ -109,16 +110,16 @@ const Search: FC<SearchProps> = ({
       >
         <span>
           {isClearButtonVisible && (
-            <Button
-              view={ButtonView.Inner}
-              onClick={handleClear}
-              label={`Clear search input for ${label}`}
-              icon={IconName.Remove}
-              disabled={disabled}
-            />
+            <Button view={ButtonView.Inner} onClick={handleClear} label={`Clear search input for ${label}`} icon={IconName.Remove} />
           )}
           {isSearchButtonVisible && (
-            <Button view={ButtonView.Inner} onClick={handleSearchClick} label='Perform search' icon={IconName.Search} disabled={disabled} />
+            <Button
+              view={ButtonView.Inner}
+              onClick={handleSearchClick}
+              label='Perform search'
+              icon={IconName.Search}
+              disabled={disabled || !isSearchValueValid}
+            />
           )}
         </span>
       </Input>

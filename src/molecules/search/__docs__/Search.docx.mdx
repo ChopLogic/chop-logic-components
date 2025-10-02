@@ -1,0 +1,49 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as SearchStories from './Search.stories';
+
+<Meta of={SearchStories} title='Molecules/Search' />
+
+# Search
+
+The `Search` component provides a versatile search input with debounce functionality, multiple search modes, and comprehensive accessibility features.
+
+## Usage
+
+```tsx
+import Search from 'chop-logic-components';
+
+const ProductSearch = () => {
+  const handleSearch = (searchTerm: string) => {
+    console.log('Searching for:', searchTerm);
+    // Perform API call or filter logic here
+  };
+
+  const handleClear = () => {
+    console.log('Search cleared');
+    // Reset search results here
+  };
+
+  return (
+    <Search
+      label='Search products'
+      onSearch={handleSearch}
+      onClear={handleClear}
+      placeholder='Search by name or category...'
+      debounceDelay={300}
+    />
+  );
+};
+```
+
+### Features
+
+- _Debounced Search_: Automatic mode delays search until user stops typing
+- _Multiple Triggers_: Search via typing, Enter key, or search button
+- _Clear Functionality_: One-click input clearing with focus management
+- _Accessibility_: Full keyboard navigation and ARIA support
+- _Validation_: Support for min/max length and required fields
+- _Browser Integration_: Autocomplete and spell check options
+
+## Props
+
+<Controls />

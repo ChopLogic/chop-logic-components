@@ -19,7 +19,7 @@ export const SearchExample: FC<SearchProps> = ({ onSearch, ...rest }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <Search {...rest} onSearch={handleSearch} onClear={handleClear} style={{ width: '240px' }} />
+      <Search {...rest} onSearch={handleSearch} onClear={handleClear} style={{ width: '360px' }} />
       {searchTerms.length > 0 && (
         <div className={styles.container} style={{ margin: 0 }}>
           <Header as='h5'>You searched for: </Header>

@@ -33,7 +33,7 @@ export function getTextInputInitialValue({
   initialValues?: FormValues;
   defaultValue?: string | number | readonly string[];
 }): string {
-  if (initialValues && initialValues?.[name]) {
+  if (initialValues?.[name]) {
     return (initialValues[name] as string).toString();
   }
 

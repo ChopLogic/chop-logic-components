@@ -28,7 +28,7 @@ const Loader: FC<LoaderProps> = ({ view = LoaderView.Circle, ...rest }) => {
     },
   ]);
 
-  return <span className={className} role='status' {...rest}></span>;
+  return <span className={className} {...rest}></span>;
 };
 
 export default Loader;

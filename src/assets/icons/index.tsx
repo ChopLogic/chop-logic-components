@@ -32,6 +32,7 @@ import PlusCircleIcon from './svg/PlusCircle';
 import QuestionIcon from './svg/QuestionIcon';
 import RemoveIcon from './svg/RemoveIcon';
 import SaveIcon from './svg/SaveIcon';
+import SearchIcon from './svg/SearchIcon';
 import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
@@ -68,6 +69,7 @@ export const IconDictionary: Icons = {
   [IconName.PlusCircle]: PlusCircleIcon,
   [IconName.Question]: QuestionIcon,
   [IconName.Save]: SaveIcon,
+  [IconName.Search]: SearchIcon,
   [IconName.Show]: ShowIcon,
   [IconName.Upload]: UploadIcon,
   [IconName.Warning]: WarningIcon,

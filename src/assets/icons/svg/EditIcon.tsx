@@ -2,7 +2,7 @@ import { ChopLogicSVGElementProps } from '@models';
 
 function EditIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg viewBox='0 0 24 24' width='1em' height='1em' {...rest}>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='1em' height='1em' {...rest}>
       {title && <title>{title}</title>}
       <path
         fill='none'

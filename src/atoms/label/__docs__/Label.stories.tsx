@@ -1,4 +1,4 @@
-import { Icon, Label } from '@atoms';
+import { Label } from '@atoms';
 import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
@@ -55,7 +55,7 @@ export const Primary: Story = {
 export const WithLeftIcon: Story = {
   args: {
     label: 'Login into the account',
-    icon: <Icon name={IconName.Login} />,
+    icon: IconName.Login,
     iconPosition: 'left',
   },
 };
@@ -63,7 +63,7 @@ export const WithLeftIcon: Story = {
 export const WithRightIcon: Story = {
   args: {
     label: 'Password',
-    icon: <Icon name={IconName.Hide} />,
+    icon: IconName.Hide,
     iconPosition: 'right',
     required: true,
   },
@@ -73,7 +73,7 @@ export const HiddenText: Story = {
   args: {
     label: 'Delete',
     isTextHidden: true,
-    icon: <Icon name={IconName.Delete} />,
+    icon: IconName.Delete,
     iconPosition: 'left',
   },
   parameters: {

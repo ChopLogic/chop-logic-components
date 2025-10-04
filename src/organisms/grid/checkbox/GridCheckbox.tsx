@@ -1,6 +1,5 @@
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { Label } from '@atoms';
+import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { getClassName } from '@utils';
 import { FC, InputHTMLAttributes } from 'react';
@@ -39,7 +38,7 @@ export const GridCheckbox: FC<Props> = ({ name, label, disabled, required = fals
         inputId={elementId}
         isTextHidden={true}
         iconPosition='left'
-        icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
+        icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
       />
     </div>
   );

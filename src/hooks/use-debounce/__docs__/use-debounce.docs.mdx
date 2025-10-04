@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Story from './use-debounce.stories';
+
+<Meta of={Story} title='Hooks/useDebounce' />
+
+# useDebounce
+
+A React hook that delays updating a value until after a specified delay has passed without new changes. This is particularly useful for search inputs, API calls, and other scenarios where you want to reduce unnecessary updates.
+
+## Features
+
+- **Generic Type Support**: Works with any value type (strings, numbers, objects, arrays)
+- **Configurable Delay**: Customizable debounce timing
+- **Automatic Cleanup**: Proper cleanup of timeouts on unmount
+- **Simple API**: Easy to use with minimal configuration
+
+## Usage
+
+```tsx
+import { useDebounce } from 'chop-logic-components';
+
+const SearchComponent = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  // This effect will run only when debouncedSearchTerm changes
+  // (300ms after the user stops typing)
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      performSearch(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder='Search...' />;
+};
+```
+
+## Parameters
+
+| Parameter | Type       | Description           |
+| --------- | ---------- | --------------------- |
+| **value** | \`T\`      | The value to debounce |
+| **delay** | \`number\` | Delay in milliseconds |
+
+## Return Value
+
+Returns the debounced value of type \`T\`.
+
+## Common Use Cases
+
+- **Search Inputs**: Reduce API calls while typing
+- **Form Validation**: Delay validation until user stops typing
+- **Resize Events**: Throttle expensive resize calculations
+- **Auto-save**: Save form data after user stops editing

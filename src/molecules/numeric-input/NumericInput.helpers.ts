@@ -9,7 +9,7 @@ export function getNumericInputInitialValue({
   initialValues?: FormValues;
   defaultValue?: string | number | readonly string[];
 }): number {
-  if (initialValues && initialValues[name]) {
+  if (initialValues?.[name]) {
     return Number(initialValues[name]);
   }
 

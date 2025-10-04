@@ -3,6 +3,7 @@ import { ChopLogicSVGElementProps } from '@models';
 function CutIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
     <svg
+      xmlns='http://www.w3.org/2000/svg'
       fill='none'
       stroke='currentColor'
       strokeLinecap='round'

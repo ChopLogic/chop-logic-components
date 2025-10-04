@@ -2,7 +2,7 @@ import { ChopLogicSVGElementProps } from '@models';
 
 function ChevronLeftIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg fill='currentColor' viewBox='0 0 16 16' height='1em' width='1em' {...rest}>
+    <svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16' height='1em' width='1em' {...rest}>
       {title && <title>{title}</title>}
       <path
         fillRule='evenodd'

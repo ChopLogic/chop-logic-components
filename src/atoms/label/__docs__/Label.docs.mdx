@@ -10,43 +10,26 @@ The `Label` component provides an accessible label for form inputs with optional
 ## Usage
 
 ```tsx
-import Label from 'chop-logic-components';
-import { Icon, IconName } from 'chop-logic-components';
+import { Label, IconName } from 'chop-logic-components';
 
 const FormField = () => (
   <div>
-    <Label
-      label="Email"
-      required={true}
-      inputId="email-input"
-      icon={<Icon name={IconName.Mail} />}
-      iconPosition="left"
-    />
-    <input id="email-input" type="email" />
+    <Label label='Email' required={true} inputId='email-input' icon={IconName.Mail} iconPosition='left' />
+    <input id='email-input' type='email' />
   </div>
 );
 ```
 
 ### Accessibility Notes
 
-1. _Association_:
-        - Always associate labels with form controls using htmlFor/inputId
-        - Ensure inputId matches the ID of the associated control
-2. _Required Fields_:
-        - Use required prop to indicate mandatory fields
-        - The asterisk (*) is wrapped in `<abbr>` with `title="required"`
-3. _Screen Readers_:
-        - Hidden text (when isTextHidden=true) remains accessible
-        - Icons should have appropriate alt text or be decorative
+1. _Association_: - Always associate labels with form controls using htmlFor/inputId - Ensure inputId matches the ID of the associated control
+2. _Required Fields_: - Use required prop to indicate mandatory fields - The asterisk (\*) is wrapped in `<abbr>` with `title="required"`
+3. _Screen Readers_: - Hidden text (when isTextHidden=true) remains accessible - Icons should have appropriate alt text or be decorative
 
 ### Best Practices
 
-1. _Consistency_:
-        - Maintain consistent icon positioning throughout your application
-        - Standardize required field indicators
-2. _Placement_:
-        - Position labels close to their associated controls
-        - Consider vertical alignment for complex forms
+1. _Consistency_: - Maintain consistent icon positioning throughout your application - Standardize required field indicators
+2. _Placement_: - Position labels close to their associated controls - Consider vertical alignment for complex forms
 
 ## Props
 

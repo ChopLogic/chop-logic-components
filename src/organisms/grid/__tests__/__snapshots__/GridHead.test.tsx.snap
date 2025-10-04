@@ -25,6 +25,7 @@ exports[`GridHead > should match the snapshot 1`] = `
               for="select_all_test-grid-id"
             >
               <svg
+                class="_icon_3b2ece"
                 fill="currentColor"
                 height="1em"
                 viewBox="0 0 16 16"

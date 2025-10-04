@@ -1,4 +1,4 @@
-import { Button, Icon, Input, Label } from '@atoms';
+import { Button, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { useDebounce } from '@hooks';
@@ -87,7 +87,7 @@ const Search: FC<SearchProps> = ({
         label={label}
         required={false}
         inputId={elementId}
-        icon={!isSearchButtonVisible ? <Icon name={IconName.Search} /> : undefined}
+        icon={!isSearchButtonVisible ? IconName.Search : undefined}
         iconPosition={!isSearchButtonVisible ? 'left' : undefined}
       />
       <Input

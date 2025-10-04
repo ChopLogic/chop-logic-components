@@ -1,6 +1,5 @@
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
 import { Label } from '@atoms';
+import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { CheckboxProps } from '@models';
 import { getClassName } from '@utils';
@@ -50,7 +49,7 @@ const Checkbox: FC<CheckboxProps> = ({
         required={required}
         inputId={elementId}
         isTextHidden={noLabel}
-        icon={checked ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
+        icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
         iconPosition={iconPosition}
       />
     </div>

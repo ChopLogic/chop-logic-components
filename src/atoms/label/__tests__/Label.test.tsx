@@ -1,4 +1,3 @@
-import { Icon } from '@atoms';
 import { IconName } from '@enums';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
@@ -28,12 +27,12 @@ describe('Label', () => {
   });
 
   it('should render left icon', () => {
-    const { asFragment } = render(<Label {...testProps} required={false} icon={<Icon name={IconName.Back} />} iconPosition='left' />);
+    const { asFragment } = render(<Label {...testProps} required={false} icon={IconName.Back} iconPosition='left' />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render right icon', () => {
-    const { asFragment } = render(<Label {...testProps} required={false} icon={<Icon name={IconName.Forward} />} iconPosition='left' />);
+    const { asFragment } = render(<Label {...testProps} required={false} icon={IconName.Forward} iconPosition='left' />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

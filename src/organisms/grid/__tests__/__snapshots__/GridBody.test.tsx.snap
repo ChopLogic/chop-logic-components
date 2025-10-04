@@ -25,6 +25,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row1"
             >
               <svg
+                class="_icon_3b2ece"
                 fill="currentColor"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -74,6 +75,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row2"
             >
               <svg
+                class="_icon_3b2ece"
                 fill="currentColor"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -123,6 +125,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row3"
             >
               <svg
+                class="_icon_3b2ece"
                 fill="currentColor"
                 height="1em"
                 viewBox="0 0 16 16"

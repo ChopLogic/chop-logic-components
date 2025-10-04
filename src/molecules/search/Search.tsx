@@ -36,11 +36,8 @@ const Search: FC<SearchProps> = ({
   const isSearchButtonVisible = searchMode === 'manual';
   const isClearButtonVisible = clearable && searchValue.length > 0;
   const isSearchValueValid = searchValue.length >= minLength && searchValue.trim().length > 0 && searchValue.length <= maxLength;
-
-  // Debounce the search value
   const debouncedSearchValue = useDebounce(searchValue, debounceDelay);
 
-  // Handle search when debounced value changes
   useEffect(() => {
     if (debouncedSearchValue.trim().length > 0 && searchMode === 'automatic' && isSearchValueValid) {
       onSearch?.(debouncedSearchValue);

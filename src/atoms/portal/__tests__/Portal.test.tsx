@@ -5,9 +5,8 @@ import Portal from '../Portal';
 
 describe('Portal', () => {
   beforeEach(() => {
-    // Mock document.body.appendChild and removeChild to track DOM manipulations
+    // Mock document.body.appendChild to track DOM manipulations
     vi.spyOn(document.body, 'appendChild');
-    vi.spyOn(document.body, 'removeChild');
   });
 
   afterEach(() => {
@@ -32,18 +31,19 @@ describe('Portal', () => {
   });
 
   it('should remove the portal container from the body on unmount', () => {
-    const childText = 'Goodbye from the portal';
+    const childText = <div data-testid='test-container'>Test text</div>;
 
     const { unmount } = render(
       <Portal>
         <div>{childText}</div>
       </Portal>,
     );
+    expect(screen.getByTestId('test-container')).toBeInTheDocument();
 
     // Trigger unmount
     unmount();
 
     // Check if the container was removed from the document body
-    expect(document.body.removeChild).toHaveBeenCalled();
+    expect(screen.queryByTestId('test-container')).not.toBeInTheDocument();
   });
 });

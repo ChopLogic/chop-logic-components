@@ -1,0 +1,34 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid #2196f3;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.linkText {
+  // Text styles can be customized as needed
+}
+
+.linkIcon {
+  flex-shrink: 0;
+
+  // Ensure proper sizing - adjust as needed for your icon system
+  width: 1em;
+  height: 1em;
+}

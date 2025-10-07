@@ -1,0 +1,35 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as LinkStories from './Link.stories';
+
+<Meta of={LinkStories} title='Atoms/Link' />
+
+# Link
+
+The `Link` component provides an accessible, flexible link implementation with icon support and automatic external link handling.
+
+## Usage
+
+```tsx
+import Link, { IconName } from 'chop-logic-components';
+
+const Navigation = () => (
+  <nav>
+    <Link href='/home'>Home</Link>
+    <Link href='https://external-site.com' icon={IconName.External} external>
+      External Site
+    </Link>
+  </nav>
+);
+```
+
+## Features
+
+- _Automatic External Link Detection_: Automatically detects external URLs and applies security attributes
+- _Icon Support_: Optional icons with configurable positioning
+- _Accessibility_: Proper ARIA labels for external links and screen reader support
+- _Security_: Automatic noopener and noreferrer for external links
+- _Flexible_: Supports all standard anchor element attributes
+
+## Props
+
+<Controls />

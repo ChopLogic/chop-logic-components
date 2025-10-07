@@ -6,7 +6,6 @@ import Link from '../Link';
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
-  tags: ['autodocs'],
   argTypes: {
     href: {
       control: 'text',
@@ -82,7 +81,7 @@ export const EmailLink: Story = {
   args: {
     children: 'Contact Us',
     href: 'mailto:hello@example.com',
-    icon: IconName.Cancel,
+    icon: IconName.Email,
   },
 };
 
@@ -90,6 +89,6 @@ export const PhoneLink: Story = {
   args: {
     children: 'Call Us',
     href: 'tel:+1234567890',
-    icon: IconName.Cancel,
+    icon: IconName.Phone,
   },
 };

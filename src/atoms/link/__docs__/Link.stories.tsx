@@ -28,6 +28,12 @@ const meta: Meta<typeof Link> = {
     external: {
       control: 'boolean',
       description: 'Whether the link points to an external site',
+      defaultValue: false,
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the link is disabled',
+      defaultValue: false,
     },
     className: {
       control: 'text',
@@ -38,6 +44,7 @@ const meta: Meta<typeof Link> = {
     href: '#',
     children: 'Example Link',
     external: false,
+    disabled: false,
   },
 };
 
@@ -90,5 +97,14 @@ export const PhoneLink: Story = {
     children: 'Call Us',
     href: 'tel:+1234567890',
     icon: IconName.Phone,
+  },
+};
+
+export const DisabledLink: Story = {
+  args: {
+    children: 'Disabled Link',
+    disabled: true,
+    href: '#',
+    icon: IconName.Cancel,
   },
 };

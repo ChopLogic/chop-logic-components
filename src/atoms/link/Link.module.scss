@@ -1,34 +1,38 @@
+@use '/src/styles/typography';
+@use '/src/styles/mixins';
+
 .link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: inherit;
+  gap: var(--cl-s-gap);
   text-decoration: none;
+  color: var(--cl-tint-color);
   transition: all 0.2s ease;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
   &:focus {
-    outline: 2px solid #2196f3;
+    outline: var(--cl-outline-border);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: var(--cl-border-radius);
   }
 
   &:focus:not(:focus-visible) {
     outline: none;
   }
-}
 
-.linkText {
-  // Text styles can be customized as needed
-}
+  &:hover {
+    text-shadow: var(--cl-text-shadow);
+    text-decoration: underline;
+  }
 
-.linkIcon {
-  flex-shrink: 0;
+  &__disabled {
+    @include mixins.disabled();
+  }
 
-  // Ensure proper sizing - adjust as needed for your icon system
-  width: 1em;
-  height: 1em;
+  &_text {
+    @include typography.font-style(core, base);
+  }
+
+  &_icon {
+    color: var(--cl-tint-color);
+  }
 }

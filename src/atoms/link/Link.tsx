@@ -13,13 +13,11 @@ const Link: FC<LinkProps> = ({
   external = false,
   disabled = false,
   className,
-  rel,
   target,
   ...rest
 }) => {
   const linkClass = getClassName([styles.link, className, { [styles.link__disabled]: disabled }]);
   const isExternal = external || href.startsWith('http') || href.startsWith('//');
-  const linkRel = isExternal ? [rel, 'noopener', 'noreferrer'].filter(Boolean).join(' ') : rel;
   const linkTarget = isExternal ? target || '_blank' : target;
   const iconElement = icon ? <Icon name={icon} className={styles.link_icon} aria-hidden='true' /> : null;
   const isLeftIcon = icon && iconPosition === 'left';
@@ -29,7 +27,6 @@ const Link: FC<LinkProps> = ({
     <a
       href={href}
       className={linkClass}
-      rel={linkRel}
       target={linkTarget}
       {...(isExternal && {
         'aria-label': typeof children === 'string' ? `${children} (opens in new window)` : 'Opens in new window',

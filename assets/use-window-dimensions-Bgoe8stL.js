@@ -1,0 +1,1 @@
+import{r as t}from"./iframe-CvRPWbsI.js";function s(){const{innerWidth:e,innerHeight:n}=globalThis;return{width:e,height:n}}function r(){const[e,n]=t.useState(s());return t.useEffect(()=>{function i(){n(s())}return window.addEventListener("resize",i),()=>window.removeEventListener("resize",i)},[]),e}export{r as u};

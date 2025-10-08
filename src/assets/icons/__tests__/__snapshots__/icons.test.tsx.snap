@@ -314,6 +314,22 @@ exports[`SVG Icons > should match the snapshot 17`] = `
 exports[`SVG Icons > should match the snapshot 18`] = `
 <DocumentFragment>
   <svg
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m16.484 11.976l6.151-5.344v10.627zm-7.926.905l2.16 1.875c.339.288.781.462 1.264.462h.017h-.001h.014c.484 0 .926-.175 1.269-.465l-.003.002l2.16-1.875l6.566 5.639H1.995zM1.986 5.365h20.03l-9.621 8.356a.6.6 0 0 1-.38.132h-.014h.001h-.014a.6.6 0 0 1-.381-.133l.001.001zm-.621 1.266l6.15 5.344l-6.15 5.28zm21.6-2.441c-.24-.12-.522-.19-.821-.19H1.859a1.9 1.9 0 0 0-.835.197l.011-.005A1.86 1.86 0 0 0 0 5.855v12.172a1.86 1.86 0 0 0 1.858 1.858h20.283a1.86 1.86 0 0 0 1.858-1.858V5.855c0-.727-.419-1.357-1.029-1.66l-.011-.005z"
+      fill="currentColor"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 19`] = `
+<DocumentFragment>
+  <svg
     fill="currentColor"
     height="1em"
     viewBox="0 0 24 24"
@@ -330,7 +346,7 @@ exports[`SVG Icons > should match the snapshot 18`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 19`] = `
+exports[`SVG Icons > should match the snapshot 20`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -351,7 +367,7 @@ exports[`SVG Icons > should match the snapshot 19`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 20`] = `
+exports[`SVG Icons > should match the snapshot 21`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -367,7 +383,7 @@ exports[`SVG Icons > should match the snapshot 20`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 21`] = `
+exports[`SVG Icons > should match the snapshot 22`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -383,7 +399,7 @@ exports[`SVG Icons > should match the snapshot 21`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 22`] = `
+exports[`SVG Icons > should match the snapshot 23`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -399,7 +415,7 @@ exports[`SVG Icons > should match the snapshot 22`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 23`] = `
+exports[`SVG Icons > should match the snapshot 24`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -415,7 +431,7 @@ exports[`SVG Icons > should match the snapshot 23`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 24`] = `
+exports[`SVG Icons > should match the snapshot 25`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -434,7 +450,7 @@ exports[`SVG Icons > should match the snapshot 24`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 25`] = `
+exports[`SVG Icons > should match the snapshot 26`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -450,7 +466,7 @@ exports[`SVG Icons > should match the snapshot 25`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 26`] = `
+exports[`SVG Icons > should match the snapshot 27`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -466,7 +482,27 @@ exports[`SVG Icons > should match the snapshot 26`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 27`] = `
+exports[`SVG Icons > should match the snapshot 28`] = `
+<DocumentFragment>
+  <svg
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.735 20.191a15 15 0 0 1-.92-.447a19 19 0 0 1-4.1-3.12A18 18 0 0 1 3.88 11.42a11.3 11.3 0 0 1-1.022-3.325a5.93 5.93 0 0 1 .37-3.465c.289-.47.637-.9 1.035-1.279a1.8 1.8 0 0 1 1.278-.601c.505.076.962.34 1.278.742c.69.767 1.43 1.457 2.159 2.186c.287.246.466.595.498.972c-.012.317-.134.62-.345.857c-.242.307-.536.588-.817.882a1.54 1.54 0 0 0-.46 1.279a3.7 3.7 0 0 0 .881 1.457c.486.665.971 1.28 1.52 1.931a13.6 13.6 0 0 0 3.463 2.865a1.28 1.28 0 0 0 1.278.153a4 4 0 0 0 1.137-.946c.275-.335.669-.55 1.099-.601c.383.02.744.184 1.01.46c.344.294.638.64.958.959c.319.32.575.55.843.844q.482.425.907.908c.22.284.324.64.294.997a2.1 2.1 0 0 1-.703 1.087a4.78 4.78 0 0 1-3.756 1.458a10.7 10.7 0 0 1-4.05-1.049Z"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-miterlimit="10"
+      stroke-width="1.5"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 29`] = `
 <DocumentFragment>
   <svg
     height="1em"
@@ -486,7 +522,7 @@ exports[`SVG Icons > should match the snapshot 27`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 28`] = `
+exports[`SVG Icons > should match the snapshot 30`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -517,7 +553,7 @@ exports[`SVG Icons > should match the snapshot 28`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 29`] = `
+exports[`SVG Icons > should match the snapshot 31`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -533,7 +569,7 @@ exports[`SVG Icons > should match the snapshot 29`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 30`] = `
+exports[`SVG Icons > should match the snapshot 32`] = `
 <DocumentFragment>
   <svg
     height="1em"
@@ -553,7 +589,7 @@ exports[`SVG Icons > should match the snapshot 30`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 31`] = `
+exports[`SVG Icons > should match the snapshot 33`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -572,7 +608,7 @@ exports[`SVG Icons > should match the snapshot 31`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 32`] = `
+exports[`SVG Icons > should match the snapshot 34`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -591,7 +627,7 @@ exports[`SVG Icons > should match the snapshot 32`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 33`] = `
+exports[`SVG Icons > should match the snapshot 35`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"
@@ -611,7 +647,7 @@ exports[`SVG Icons > should match the snapshot 33`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 34`] = `
+exports[`SVG Icons > should match the snapshot 36`] = `
 <DocumentFragment>
   <svg
     fill="currentColor"

@@ -2,7 +2,7 @@ import { Dimensions } from '@models';
 import { useEffect, useState } from 'react';
 
 function getWindowDimensions(): Dimensions {
-  const { innerWidth: width, innerHeight: height } = window;
+  const { innerWidth: width, innerHeight: height } = globalThis;
 
   return { width, height };
 }

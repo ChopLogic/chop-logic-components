@@ -1,7 +1,6 @@
 import { Button, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
-import { useElementIds } from '@hooks';
-import { useDebounce } from '@hooks';
+import { useDebounce, useElementIds } from '@hooks';
 import { SearchProps } from '@models';
 import { getClassName } from '@utils';
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
@@ -34,6 +33,7 @@ const Search: FC<SearchProps> = ({
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const isSearchButtonVisible = searchMode === 'manual';
+  const isLabelIconVisible = !isSearchButtonVisible;
   const isClearButtonVisible = clearable && searchValue.length > 0;
   const isSearchValueValid = searchValue.length >= minLength && searchValue.trim().length > 0 && searchValue.length <= maxLength;
   const debouncedSearchValue = useDebounce(searchValue, debounceDelay);
@@ -84,8 +84,8 @@ const Search: FC<SearchProps> = ({
         label={label}
         required={false}
         inputId={elementId}
-        icon={!isSearchButtonVisible ? IconName.Search : undefined}
-        iconPosition={!isSearchButtonVisible ? 'left' : undefined}
+        icon={isLabelIconVisible ? IconName.Search : undefined}
+        iconPosition={isLabelIconVisible ? 'left' : undefined}
       />
       <Input
         ref={inputRef}

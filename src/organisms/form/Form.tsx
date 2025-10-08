@@ -3,7 +3,7 @@ import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
 import { FormProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
 import { useFormController } from './Form.controller';
 import styles from './Form.module.scss';
@@ -26,11 +26,17 @@ const Form: FC<FormProps> = ({
     onClickSubmit,
   });
   const columnsNumber = columns <= 6 && columns >= 1 ? columns : 1;
-  const formClass = getClassName([styles.form, className]);
+  const baseClass = getClassName([styles.form, className]);
+  const columnsClass = styles[`columns-${columnsNumber}`];
+  const formClass = `${baseClass} ${columnsClass}`;
+  const contextValue = useMemo(
+    () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal }),
+    [handleInputChange, initialValues, resetSignal],
+  );
 
   return (
-    <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={`${formClass} ${styles[`columns-${columnsNumber}`]}`}>
-      <FormContext.Provider value={{ onChangeFormInput: handleInputChange, initialValues, resetSignal }}>
+    <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={formClass}>
+      <FormContext.Provider value={contextValue}>
         {children}
         <div className={`${styles.buttons} ${styles[`buttons-${columnsNumber}`]}`}>
           {hasReset && <Button type='reset' text='Reset' icon={IconName.Clear} view={ButtonView.Secondary} />}

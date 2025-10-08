@@ -36,6 +36,7 @@ const STORY_WRAPPER_STYLES = {
   alignItems: 'center',
   padding: '1rem',
   margin: '1rem 0',
+  fontFamily: 'Helvetica, Arial, sans-serif',
 };
 
 const withTheme: Decorator = (StoryFn, context) => {

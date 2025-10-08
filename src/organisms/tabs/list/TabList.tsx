@@ -41,7 +41,7 @@ export const TabList: FC<Props> = ({
   const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    const currentFocusedTabIndex = tabIds.findIndex((id) => id === selectedTabId);
+    const currentFocusedTabIndex = tabIds.indexOf(selectedTabId);
 
     // Early return for non-navigation keys
     if (!['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].includes(e.key)) {
@@ -78,7 +78,7 @@ export const TabList: FC<Props> = ({
   useEffect(() => {
     // Auto-select newly added tab
     if (tabs.length > initialTabsCount) {
-      onTabSelect(tabs[tabs.length - 1].id);
+      onTabSelect(tabs.at(-1)!.id);
     }
   }, [tabs.length]);
 

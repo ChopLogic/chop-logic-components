@@ -10,7 +10,7 @@ const Portal = ({ children }: { children: ReactElement }): ReactPortal => {
 
     // Remove the portal on unmount
     return () => {
-      document.body.removeChild(container);
+      container.remove();
     };
   }, [container]);
 

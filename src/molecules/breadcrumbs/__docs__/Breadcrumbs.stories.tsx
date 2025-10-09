@@ -36,9 +36,9 @@ const meta: Meta<typeof Breadcrumbs> = {
   args: {
     items: [
       { label: 'Home', icon: IconName.Home, link: '/' },
-      { label: 'Products', icon: IconName.Copy, link: '/products' },
-      { label: 'Electronics', icon: IconName.Cut, link: '/products/electronics' },
-      { label: 'Smartphones', icon: IconName.Phone },
+      { label: 'Documents', icon: IconName.Documents, link: '/documents' },
+      { label: 'Projects', icon: IconName.Projects, link: '/documents/projects' },
+      { label: 'Report' },
     ],
   },
 };
@@ -46,16 +46,7 @@ const meta: Meta<typeof Breadcrumbs> = {
 export default meta;
 type Story = StoryObj<typeof Breadcrumbs>;
 
-export const Default: Story = {
-  args: {
-    items: [
-      { label: 'Home', link: '/' },
-      { label: 'Documents', link: '/documents' },
-      { label: 'Projects', link: '/documents/projects' },
-      { label: 'Q4 Report' },
-    ],
-  },
-};
+export const Default: Story = {};
 
 export const WithIcons: Story = {
   args: {

@@ -17,7 +17,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
 
   return (
     <li className={styles.menuLeaf} tabIndex={0} role='menuitem' onFocus={onFocus} onClick={onClick} onMouseOver={onHover}>
-      <Icon name={icon} />
+      <Icon name={icon} hidden />
       {leafContent}
     </li>
   );

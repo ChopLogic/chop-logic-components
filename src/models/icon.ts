@@ -7,6 +7,7 @@ export interface IconProps extends ChopLogicComponentProps, HTMLAttributes<SVGSV
   name?: IconName;
   testId?: string;
   title?: string;
+  hidden?: boolean;
 }
 
 export interface ChopLogicSVGElementProps extends SVGProps<SVGSVGElement> {

@@ -17,6 +17,7 @@ import ClearIcon from './svg/ClearIcon';
 import CopyIcon from './svg/CopyIcon';
 import CutIcon from './svg/CutIcon';
 import DeleteIcon from './svg/DeleteIcon';
+import DocumentsIcon from './svg/Documents';
 import DownloadIcon from './svg/DownloadIcon';
 import EditIcon from './svg/EditIcon';
 import EmailIcon from './svg/Email';
@@ -31,10 +32,12 @@ import LoginIcon from './svg/LoginIcon';
 import PasteIcon from './svg/PasteIcon';
 import PhoneIcon from './svg/Phone';
 import PlusCircleIcon from './svg/PlusCircle';
+import ProjectsIcon from './svg/Projects';
 import QuestionIcon from './svg/QuestionIcon';
 import RemoveIcon from './svg/RemoveIcon';
 import SaveIcon from './svg/SaveIcon';
-import SearchIcon from './svg/SearchIcon';
+import SearchIcon from './svg/Search';
+import SettingsIcon from './svg/Settings';
 import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
@@ -57,6 +60,7 @@ export const IconDictionary: Icons = {
   [IconName.Copy]: CopyIcon,
   [IconName.Cut]: CutIcon,
   [IconName.Delete]: DeleteIcon,
+  [IconName.Documents]: DocumentsIcon,
   [IconName.Download]: DownloadIcon,
   [IconName.Edit]: EditIcon,
   [IconName.Email]: EmailIcon,
@@ -71,9 +75,11 @@ export const IconDictionary: Icons = {
   [IconName.Paste]: PasteIcon,
   [IconName.Phone]: PhoneIcon,
   [IconName.PlusCircle]: PlusCircleIcon,
+  [IconName.Projects]: ProjectsIcon,
   [IconName.Question]: QuestionIcon,
   [IconName.Save]: SaveIcon,
   [IconName.Search]: SearchIcon,
+  [IconName.Settings]: SettingsIcon,
   [IconName.Show]: ShowIcon,
   [IconName.Upload]: UploadIcon,
   [IconName.Warning]: WarningIcon,

@@ -28,11 +28,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ items, className, id, style, tabInd
                   </Link>
                 ) : (
                   <span className={styles.breadcrumbsCurrent} aria-current={isLastItem ? 'page' : undefined}>
-                    {item.icon && (
-                      <span className={styles.breadcrumbsIcon} aria-hidden='true'>
-                        <Icon name={item.icon} />
-                      </span>
-                    )}
+                    {item.icon && <Icon name={item.icon} hidden />}
                     {item.label}
                   </span>
                 )}

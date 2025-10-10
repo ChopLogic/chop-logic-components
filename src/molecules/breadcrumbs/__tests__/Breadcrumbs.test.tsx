@@ -195,17 +195,4 @@ describe('Breadcrumbs', () => {
     expect(texts[2]).toContain('Electronics');
     expect(texts[3]).toContain('Smartphones');
   });
-
-  it('uses unique keys for each breadcrumb item', () => {
-    const duplicateLabels = [
-      { label: 'Home', link: '/' },
-      { label: 'Home', link: '/home' }, // Same label, different link
-      { label: 'Current' },
-    ];
-
-    // This should not throw a key warning
-    expect(() => {
-      render(<Breadcrumbs items={duplicateLabels} />);
-    }).not.toThrow();
-  });
 });

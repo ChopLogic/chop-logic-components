@@ -2,12 +2,12 @@ import { IconName } from '@enums';
 
 import { ChopLogicComponentProps } from './_common';
 
-interface BreadcrumbItem {
+export interface Breadcrumb {
   label: string;
   icon?: IconName;
   link?: string;
 }
 
 export interface BreadcrumbsProps extends ChopLogicComponentProps {
-  items: BreadcrumbItem[];
+  items: Breadcrumb[];
 }

@@ -9,7 +9,7 @@ export type {
   TextInputValidator,
 } from './_common';
 export type { AlertProps } from './alert';
-export type { BreadcrumbsProps } from './breadcrumbs';
+export type { Breadcrumb, BreadcrumbsProps } from './breadcrumbs';
 export type { ButtonProps } from './button';
 export type { CheckboxProps } from './checkbox';
 export type { FormContextProps, ThemeContextProps } from './contexts';

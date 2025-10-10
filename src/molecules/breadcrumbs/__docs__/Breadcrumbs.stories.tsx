@@ -48,36 +48,13 @@ type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Default: Story = {};
 
-export const WithIcons: Story = {
-  args: {
-    items: [
-      { label: 'Home', icon: IconName.Home, link: '/' },
-      { label: 'Settings', icon: IconName.Paste, link: '/settings' },
-      { label: 'Account', icon: IconName.Login, link: '/settings/account' },
-      { label: 'Privacy', icon: IconName.Show },
-    ],
-  },
-};
-
-export const SingleItem: Story = {
-  args: {
-    items: [{ label: 'Dashboard', icon: IconName.Home }],
-  },
-};
-
-export const TwoItems: Story = {
-  args: {
-    items: [{ label: 'Home', link: '/' }, { label: 'Current Page' }],
-  },
-};
-
-export const LongLabels: Story = {
+export const WithoutIcons: Story = {
   args: {
     items: [
       { label: 'Home', link: '/' },
-      { label: 'Very Long Category Name That Might Wrap', link: '/category' },
-      { label: 'Another Extremely Long Product Name That Could Break Layout', link: '/category/product' },
-      { label: 'Current Page With Also Very Long Descriptive Title' },
+      { label: 'Settings', link: '/settings' },
+      { label: 'Account', link: '/settings/account' },
+      { label: 'Privacy' },
     ],
   },
 };

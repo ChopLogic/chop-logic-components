@@ -20,7 +20,20 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns });
 
-    expect(result).toEqual(['1', 'John', '30']);
+    expect(result).toEqual([
+      {
+        field: 'id',
+        value: '1',
+      },
+      {
+        field: 'name',
+        value: 'John',
+      },
+      {
+        field: 'age',
+        value: '30',
+      },
+    ]);
   });
 
   it('should return empty strings when fields are missing or null in item', () => {
@@ -37,7 +50,20 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns });
 
-    expect(result).toEqual(['1', '', '']);
+    expect(result).toEqual([
+      {
+        field: 'id',
+        value: '1',
+      },
+      {
+        field: 'name',
+        value: '',
+      },
+      {
+        field: 'age',
+        value: '',
+      },
+    ]);
   });
 
   it('should return rendered JSX elements when renderDataItem is provided for object fields', () => {
@@ -55,8 +81,8 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
-    expect((result[0] as ReactElement<HTMLTableRowElement>).props.children).toBe('TEST-ID');
-    expect((result[1] as ReactElement<HTMLTableRowElement>).props.children).toBe('123 MAIN ST');
+    expect((result[0].value as ReactElement<HTMLTableRowElement>).props.children).toBe('TEST-ID');
+    expect((result[1].value as ReactElement<HTMLTableRowElement>).props.children).toBe('123 MAIN ST');
   });
 
   it('should handle columns without a field by returning empty string', () => {
@@ -73,6 +99,19 @@ describe('getGridRowValues', () => {
 
     const result = getGridRowValues({ item, columns });
 
-    expect(result).toEqual(['', '4', 'Alice']);
+    expect(result).toEqual([
+      {
+        field: '',
+        value: '',
+      },
+      {
+        field: 'id',
+        value: '4',
+      },
+      {
+        field: 'name',
+        value: 'Alice',
+      },
+    ]);
   });
 });

@@ -8,7 +8,11 @@ describe('GridRow', () => {
     selectRowById: vi.fn(),
     deselectRowById: vi.fn(),
     selectable: true,
-    values: ['Value 1', 'Value 2', <span key='value-3'>Value 3</span>],
+    values: [
+      { value: 'Value 1', field: 'col1' },
+      { value: 'Value 2', field: 'col1' },
+      { value: <span key='value-3'>Value 3</span>, field: 'col1' },
+    ],
     selectedIds: ['value1', 'value2', 'value3'],
   };
 

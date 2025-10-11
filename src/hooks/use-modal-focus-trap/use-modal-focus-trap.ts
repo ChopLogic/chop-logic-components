@@ -10,9 +10,11 @@ export const useModalFocusTrap = ({ modalRef, isOpened }: ModalFocusTrapParams) 
     const modalElement = modalRef.current;
     if (!isOpened || !modalElement) return;
 
-    const focusableElements = modalElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const focusableElements = Array.from(
+      modalElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),
+    );
     const firstElement = focusableElements[0] as HTMLElement;
-    const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+    const lastElement = focusableElements.at(-1) as HTMLElement;
 
     const handleTabKeyPress = (event: KeyboardEvent) => {
       if (event.key === 'Tab') {

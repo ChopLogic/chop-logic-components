@@ -13,12 +13,13 @@ export function handleDropdownListKeyPress({
   onClose: () => void;
 }) {
   let focusedId: string = '';
-  options.forEach((value) => {
-    const element = document.getElementById(value.id);
+
+  for (const option of options) {
+    const element = document.getElementById(option.id);
     if (element === document.activeElement) {
-      focusedId = value.id;
+      focusedId = option.id;
     }
-  });
+  }
 
   const currentFocusIndex = options.findIndex((value) => value.id === focusedId);
 

@@ -26,3 +26,8 @@ export type GridItem = {
 };
 
 export type RenderDataItemCallback = (item: GridItem, field: string) => ReactElement;
+
+export type GridRowValue = {
+  field: string;
+  value: string | ReactElement;
+};

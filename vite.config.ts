@@ -17,7 +17,7 @@ export default defineConfig({
       formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: Object.keys(peerDependencies),
       output: {
         exports: 'named', // Enable tree shaking
         compact: true, // Minify output

@@ -16,7 +16,7 @@ export type { FormContextProps, ThemeContextProps } from './contexts';
 export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';
-export type { GridColumn, GridItem, GridProps, RenderDataItemCallback } from './grid';
+export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
 export type { HeaderProps } from './header';
 export type { ChopLogicSVGElementProps, IconProps } from './icon';
 export type { LinkProps } from './link';

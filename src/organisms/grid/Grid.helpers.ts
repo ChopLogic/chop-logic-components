@@ -1,5 +1,4 @@
-import { GridColumn, GridItem, RenderDataItemCallback } from '@models';
-import { ReactElement } from 'react';
+import { GridColumn, GridItem, GridRowValue, RenderDataItemCallback } from '@models';
 
 export function getGridRowValues({
   item,
@@ -9,8 +8,8 @@ export function getGridRowValues({
   item: GridItem;
   columns: GridColumn[];
   renderDataItem?: RenderDataItemCallback;
-}): (string | ReactElement)[] {
-  const values = [];
+}): GridRowValue[] {
+  const result: GridRowValue[] = [];
   for (const column of columns) {
     let value;
 
@@ -22,8 +21,8 @@ export function getGridRowValues({
       value = '';
     }
 
-    values.push(value);
+    result.push({ field: column.field, value });
   }
 
-  return values;
+  return result;
 }

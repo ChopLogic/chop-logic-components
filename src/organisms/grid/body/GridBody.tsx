@@ -19,7 +19,7 @@ export const GridBody: FC<Props> = ({ selectRowById, deselectRowById, renderData
   return (
     <tbody className={styles.body}>
       {data.map((item) => {
-        const values = getGridRowValues({ item, columns, renderDataItem });
+        const gridRowValues = getGridRowValues({ item, columns, renderDataItem });
         return (
           <GridRow
             key={item.id}
@@ -28,7 +28,7 @@ export const GridBody: FC<Props> = ({ selectRowById, deselectRowById, renderData
             selectRowById={selectRowById}
             deselectRowById={deselectRowById}
             selectable={selectable}
-            values={values}
+            values={gridRowValues}
             selectedIds={selectedIds}
           />
         );

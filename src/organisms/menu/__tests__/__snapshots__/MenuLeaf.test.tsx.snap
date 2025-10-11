@@ -8,6 +8,7 @@ exports[`MenuLeaf > should match the snapshot 1`] = `
     tabindex="0"
   >
     <svg
+      aria-hidden="true"
       class="_icon_3b2ece"
       fill="currentColor"
       height="1em"

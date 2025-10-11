@@ -13,7 +13,7 @@ export function getSelectInitialValue({
 }): SelectValue | undefined {
   let valueId: string;
 
-  if (initialValues && Object.prototype.hasOwnProperty.call(initialValues, name)) {
+  if (initialValues && Object.hasOwn(initialValues, name)) {
     const value = initialValues[name];
     valueId = ((value as FormValues)?.id as string) ?? (value as string);
   }

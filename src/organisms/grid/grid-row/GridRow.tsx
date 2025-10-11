@@ -1,5 +1,6 @@
+import { GridRowValue } from '@models';
 import { getClassName } from '@utils';
-import { FC, ReactElement } from 'react';
+import { FC } from 'react';
 
 import { GridDataCell } from '../data-cell/GridDataCell';
 import { SelectGridRowCell } from '../select-grid-row-cell/SelectGridRowCell';
@@ -11,7 +12,7 @@ type Props = {
   selectRowById: (id: string) => void;
   deselectRowById: (id: string) => void;
   selectable: boolean;
-  values: (string | ReactElement)[];
+  values: GridRowValue[];
   disabled?: boolean;
 };
 
@@ -29,9 +30,10 @@ export const GridRow: FC<Props> = ({ rowId, selectRowById, deselectRowById, sele
           disabled={disabled}
         />
       )}
-      {values.map((value, index) => (
-        <GridDataCell key={`row_${index}`} value={value} />
-      ))}
+      {values.map((rowValue) => {
+        const valueKey = `cell-${rowId}-${rowValue.field}`;
+        return <GridDataCell key={valueKey} value={rowValue.value} />;
+      })}
     </tr>
   );
 };

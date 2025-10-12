@@ -26,6 +26,7 @@ export type { MultiSelectProps } from './multi-select';
 export type { NumericInputProps } from './numeric';
 export type { SearchProps } from './search';
 export type { SelectProps } from './select';
+export type { SwitchProps } from './switch';
 export type { ChopLogicTabItem, TabsProps } from './tabs';
 export type { TextInputProps } from './text';
 export type { TooltipProps } from './tooltip';

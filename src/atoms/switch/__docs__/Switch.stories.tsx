@@ -1,17 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useState } from 'react';
 
-import Switch from '../Switch';
+import { SwitchExample } from './Switch.example';
 
-const SwitchWithState = (args: any) => {
-  const [checked, setChecked] = useState(args.checked);
-  return <Switch {...args} checked={checked} onChange={setChecked} />;
-};
-
-const meta: Meta<typeof Switch> = {
+const meta: Meta<typeof SwitchExample> = {
   title: 'Atoms/Switch',
-  component: Switch,
-  tags: ['autodocs'],
+  component: SwitchExample,
   argTypes: {
     checked: {
       control: 'boolean',
@@ -51,44 +44,14 @@ const meta: Meta<typeof Switch> = {
     checked: false,
     disabled: false,
   },
-  parameters: {
-    docs: {
-      description: {
-        component: `
-# Switch Component
-
-An accessible switch component that follows WAI-ARIA switch pattern.
-
-**Keyboard Interaction:**
-- **Space**: Toggles the switch
-- **Enter**: Toggles the switch
-
-**Accessibility Features:**
-- Role "switch" with proper aria-checked states
-- Screen reader announcements for state changes
-- Focus management and visible focus indicators
-- Support for high contrast and reduced motion preferences
-        `,
-      },
-    },
-  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<typeof SwitchExample>;
 
 export const Default: Story = {
-  render: SwitchWithState,
-  args: {
-    label: 'Wi-Fi',
-  },
-};
-
-export const Checked: Story = {
-  render: SwitchWithState,
   args: {
     label: 'Dark mode',
-    checked: true,
   },
 };
 
@@ -108,7 +71,6 @@ export const DisabledChecked: Story = {
 };
 
 export const WithFormAttributes: Story = {
-  render: SwitchWithState,
   args: {
     label: 'Email notifications',
     name: 'notifications',
@@ -118,7 +80,6 @@ export const WithFormAttributes: Story = {
 };
 
 export const LongLabel: Story = {
-  render: SwitchWithState,
   args: {
     label: 'Enable automatic software updates and security patches',
   },

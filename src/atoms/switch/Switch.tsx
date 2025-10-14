@@ -4,7 +4,7 @@ import { FC, KeyboardEvent, useCallback } from 'react';
 
 import styles from './Switch.module.scss';
 
-const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, className, id, name, value = 'on' }) => {
+const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, className, id, name, value = 'on', hasIndicator }) => {
   const switchClass = getClassName([
     styles.switch,
     className,
@@ -24,7 +24,6 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
     (event: KeyboardEvent<HTMLDivElement>) => {
       if (disabled) return;
 
-      // Space bar or Enter key toggles the switch
       if (event.key === ' ' || event.key === 'Enter') {
         event.preventDefault();
         onChange(!checked);
@@ -44,32 +43,24 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
       onKeyDown={handleKeyDown}
       id={id}
     >
-      {/* Hidden input for form submission */}
       <input
         type='checkbox'
         name={name}
         value={value}
         checked={checked}
-        onChange={() => {}} // Handled by the div
         disabled={disabled}
-        className={styles.switchInput}
+        className={styles.switch_input}
         aria-hidden='true'
+        readOnly
       />
-
-      {/* Visual label */}
-      <span className={styles.switchLabel}>{label}</span>
-
-      {/* Switch track and thumb */}
-      <span className={styles.switchTrack}>
-        <span className={styles.switchThumb} />
-      </span>
-
-      {/* Visual state indicators (hidden from screen readers) */}
-      <span className={styles.switchOn} aria-hidden='true'>
-        On
-      </span>
-      <span className={styles.switchOff} aria-hidden='true'>
-        Off
+      <span className={styles.switch_label}>{label}</span>
+      {hasIndicator && (
+        <span className={styles.switch_indicator} aria-hidden='true'>
+          {checked ? 'On' : 'Off'}
+        </span>
+      )}
+      <span className={styles.switch_track}>
+        <span className={styles.switch_thumb} />
       </span>
     </div>
   );

@@ -4,4 +4,5 @@ export interface SwitchProps extends ChopLogicInputProps {
   checked: boolean;
   onChange: (checked: boolean) => void;
   value?: string;
+  hasIndicator?: boolean;
 }

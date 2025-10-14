@@ -62,25 +62,10 @@ export const Disabled: Story = {
   },
 };
 
-export const DisabledChecked: Story = {
+export const WithIndicator: Story = {
   args: {
     label: 'Bluetooth',
     checked: true,
-    disabled: true,
-  },
-};
-
-export const WithFormAttributes: Story = {
-  args: {
-    label: 'Email notifications',
-    name: 'notifications',
-    value: 'email-on',
-    id: 'email-switch',
-  },
-};
-
-export const LongLabel: Story = {
-  args: {
-    label: 'Enable automatic software updates and security patches',
+    hasIndicator: true,
   },
 };

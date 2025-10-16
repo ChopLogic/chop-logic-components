@@ -1,0 +1,38 @@
+name: SonarCloud Analysis
+
+on:
+  push:
+    branches:
+      - main
+      - feat/**
+
+jobs:
+  sonarcloud:
+    name: SonarCloud Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run SonarCloud analysis
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.organization=chop-logic
+            -Dsonar.projectKey=ChopLogic_chop-logic-components
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.test.inclusions="**/*.test.tsx,**/*.test.ts"
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info

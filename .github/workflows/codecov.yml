@@ -28,7 +28,9 @@ jobs:
           slug: ChopLogic/chop-logic-components
 
       - name: Upload coverage reports to SonarCloud
-        uses: sonarsource/sonarcloud-github-action@v2
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: .
           args: >

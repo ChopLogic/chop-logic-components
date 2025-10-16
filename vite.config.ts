@@ -75,6 +75,7 @@ export default defineConfig({
         '**/storybook-static/**',
         ...coverageConfigDefaults.exclude,
       ],
+      reporter: ['text', 'lcov', 'clover'],
     },
   },
 });

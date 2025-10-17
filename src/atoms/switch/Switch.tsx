@@ -22,14 +22,12 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent<HTMLDivElement>) => {
-      if (disabled) return;
-
       if (event.key === ' ' || event.key === 'Enter') {
         event.preventDefault();
         onChange(!checked);
       }
     },
-    [checked, disabled, onChange],
+    [checked, onChange],
   );
 
   return (

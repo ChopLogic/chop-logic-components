@@ -10,8 +10,8 @@ describe('GridRow', () => {
     selectable: true,
     values: [
       { value: 'Value 1', field: 'col1' },
-      { value: 'Value 2', field: 'col1' },
-      { value: <span key='value-3'>Value 3</span>, field: 'col1' },
+      { value: 'Value 2', field: 'col2' },
+      { value: <span key='value-3'>Value 3</span>, field: 'col3' },
     ],
     selectedIds: ['value1', 'value2', 'value3'],
   };

@@ -44,4 +44,29 @@ describe('EditableText', () => {
     expect(screen.queryByText(defaultProps.value)).not.toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
   });
+
+  it('handles Enter key press to commit value', async () => {
+    render(<EditableText {...defaultProps} multiline={false} />);
+
+    await userEvent.click(screen.getByText(defaultProps.value));
+    const input = screen.getByRole('textbox');
+
+    await userEvent.type(input, '{Enter}');
+
+    expect(defaultProps.onChange).toHaveBeenCalled();
+    expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+  });
+
+  it('handles Escape key press to reset value', async () => {
+    render(<EditableText {...defaultProps} />);
+
+    await userEvent.click(screen.getByText(defaultProps.value));
+    const input = screen.getByRole('textbox');
+
+    await userEvent.type(input, 'New Value');
+    await userEvent.type(input, '{Escape}');
+
+    expect(screen.getByText(defaultProps.value)).toBeInTheDocument();
+    expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+  });
 });

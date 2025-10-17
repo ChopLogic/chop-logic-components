@@ -1,7 +1,7 @@
 import { FormValues, MultiSelectValue, SelectValue } from '@models';
 import { describe, expect, it } from 'vitest';
 
-import { getMultiSelectInitialValues } from '../MultiSelect.helpers';
+import { getMultiSelectFormValues, getMultiSelectInitialValues } from '../MultiSelect.helpers';
 
 describe('getMultiSelectSelectValues', () => {
   const options: SelectValue[] = [
@@ -98,5 +98,38 @@ describe('getMultiSelectSelectValues', () => {
       { id: '3', label: 'Option 3', selected: false },
     ];
     expect(result).toEqual(expected);
+  });
+});
+
+describe('getMultiSelectFormValues', () => {
+  it('returns an array of selected item ids', () => {
+    const options = [
+      { id: '1', selected: true },
+      { id: '2', selected: false },
+      { id: '3', selected: true },
+    ] as MultiSelectValue[];
+
+    const result = getMultiSelectFormValues(options);
+
+    expect(result).toEqual(['1', '3']);
+  });
+
+  it('returns an empty array when no items are selected', () => {
+    const options = [
+      { id: '1', selected: false },
+      { id: '2', selected: false },
+    ] as MultiSelectValue[];
+
+    const result = getMultiSelectFormValues(options);
+
+    expect(result).toEqual([]);
+  });
+
+  it('returns an empty array when options are empty', () => {
+    const options = [] as MultiSelectValue[];
+
+    const result = getMultiSelectFormValues(options);
+
+    expect(result).toEqual([]);
   });
 });

@@ -80,10 +80,11 @@ describe('useTooltipPosition', () => {
         wrapperRef,
         tooltipRef,
         isOpened: true,
+        spacing: 8,
       }),
     );
 
-    expect(result.current).toEqual({ top: 554, left: 300 });
+    expect(result.current).toEqual({ top: 558, left: 300 });
   });
 
   it('should adjust position when tooltip overflows right of viewport', () => {

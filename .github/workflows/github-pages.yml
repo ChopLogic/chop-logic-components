@@ -10,22 +10,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build Storybook
         run: npm run build:storybook
-        
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
-          destination_dir: ./  # Optional, removes the need for TARGET_FOLDER
-          keep_files: false    # Equivalent to CLEAN: true
+          destination_dir: ./ # Optional, removes the need for TARGET_FOLDER
+          keep_files: false # Equivalent to CLEAN: true

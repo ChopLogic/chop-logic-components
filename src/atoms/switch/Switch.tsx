@@ -50,7 +50,6 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
         checked={checked}
         disabled={disabled}
         className={styles.switch_input}
-        aria-hidden='true'
         readOnly
         data-testid='switch-input'
       />

@@ -30,8 +30,7 @@ describe('Switch', () => {
   it('toggles the switch when clicked', async () => {
     render(<Switch {...defaultProps} />);
 
-    const switchElement = screen.getByRole('switch');
-    await userEvent.click(switchElement);
+    await userEvent.click(screen.getByRole('switch'));
 
     expect(defaultProps.onChange).toHaveBeenCalledWith(true);
   });
@@ -39,8 +38,7 @@ describe('Switch', () => {
   it('does not toggle the switch when disabled', async () => {
     render(<Switch {...defaultProps} disabled={true} />);
 
-    const switchElement = screen.getByRole('switch');
-    await userEvent.click(switchElement);
+    await userEvent.click(screen.getByRole('switch'));
 
     expect(defaultProps.onChange).not.toHaveBeenCalled();
   });
@@ -48,8 +46,7 @@ describe('Switch', () => {
   it('toggles the switch using keyboard', async () => {
     render(<Switch {...defaultProps} />);
 
-    const switchElement = screen.getByRole('switch');
-    await userEvent.type(switchElement, '{space}');
+    await userEvent.type(screen.getByRole('switch'), '{space}');
 
     expect(defaultProps.onChange).toHaveBeenCalledWith(true);
   });
@@ -66,5 +63,31 @@ describe('Switch', () => {
 
     const indicator = screen.queryByText('On');
     expect(indicator).not.toBeInTheDocument();
+  });
+
+  it('handles keyboard events for toggling', async () => {
+    render(<Switch {...defaultProps} />);
+
+    // Simulate pressing the space key
+    await userEvent.tab();
+    await userEvent.keyboard('{ }');
+    expect(defaultProps.onChange).toHaveBeenCalledWith(true);
+
+    // Reset mock and simulate pressing the Enter key
+    vi.clearAllMocks();
+    await userEvent.keyboard('{Enter}');
+    expect(defaultProps.onChange).toHaveBeenCalledWith(true);
+  });
+
+  it('does not handle keyboard events when disabled', async () => {
+    render(<Switch {...defaultProps} disabled={true} />);
+
+    // Simulate pressing the space key
+    await userEvent.keyboard('{space}');
+    expect(defaultProps.onChange).not.toHaveBeenCalled();
+
+    // Simulate pressing the Enter key
+    await userEvent.keyboard('{Enter}');
+    expect(defaultProps.onChange).not.toHaveBeenCalled();
   });
 });

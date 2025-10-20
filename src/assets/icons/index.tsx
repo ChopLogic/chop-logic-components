@@ -13,6 +13,7 @@ import ChevronDownIcon from './svg/ChevronDownIcon';
 import ChevronLeftIcon from './svg/ChevronLeftIcon';
 import ChevronRightIcon from './svg/ChevronRightIcon';
 import ChevronUpIcon from './svg/ChevronUpIcon';
+import ChopLogicIcon from './svg/ChopLogic';
 import ClearIcon from './svg/ClearIcon';
 import CopyIcon from './svg/CopyIcon';
 import CutIcon from './svg/CutIcon';
@@ -56,6 +57,7 @@ export const IconDictionary: Icons = {
   [IconName.ChevronUp]: ChevronUpIcon,
   [IconName.ChevronLeft]: ChevronLeftIcon,
   [IconName.ChevronRight]: ChevronRightIcon,
+  [IconName.ChopLogic]: ChopLogicIcon,
   [IconName.Clear]: ClearIcon,
   [IconName.Copy]: CopyIcon,
   [IconName.Cut]: CutIcon,

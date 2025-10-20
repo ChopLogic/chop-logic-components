@@ -3,8 +3,7 @@ import { ThemeVars } from 'storybook/theming';
 
 export const chopLogicTheme: ThemeVars = create({
   base: 'light',
-  brandImage: './logo.png',
   brandTarget: '_self',
-  brandTitle: 'Chop Logic',
-  brandUrl: 'https://savourygin.github.io/chop-logic-components',
+  brandTitle: `<img src="/logo.png" width="207px" height="107px"/>`,
+  brandUrl: 'https://github.com/ChopLogic',
 });

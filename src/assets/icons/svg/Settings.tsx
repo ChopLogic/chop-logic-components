@@ -2,7 +2,14 @@ import type { ChopLogicSVGElementProps } from '@models';
 
 function SettingsIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="1em" height="1em" {...rest}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 14"
+      width="1em"
+      height="1em"
+      aria-hidden="true"
+      {...rest}
+    >
       {title && <title>{title}</title>}
       <path
         fill="none"

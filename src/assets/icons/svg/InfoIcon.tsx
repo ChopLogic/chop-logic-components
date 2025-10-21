@@ -8,6 +8,7 @@ function InfoIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
       fill="currentColor"
       height="1em"
       width="1em"
+      aria-hidden="true"
       {...rest}
     >
       {title && <title>{title}</title>}

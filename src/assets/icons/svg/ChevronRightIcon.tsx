@@ -8,6 +8,7 @@ function ChevronRightIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>
       viewBox="0 0 16 16"
       height="1em"
       width="1em"
+      aria-hidden="true"
       {...rest}
     >
       {title && <title>{title}</title>}

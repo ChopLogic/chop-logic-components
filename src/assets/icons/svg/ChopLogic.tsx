@@ -9,6 +9,7 @@ function ChopLogicIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
       height="1em"
       width="1em"
       fill="currentColor"
+      aria-hidden="true"
       {...rest}
     >
       {title && <title>{title}</title>}

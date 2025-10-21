@@ -7,6 +7,7 @@ const HomeIcon = ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => (
     height="1em"
     fill="currentColor"
     viewBox="0 0 1024 1024"
+    aria-hidden="true"
     {...rest}
   >
     {title && <title>{title}</title>}

@@ -7,6 +7,7 @@ const GraduateIcon = ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) =>
     height="1em"
     fill="currentColor"
     viewBox="0 0 448 512"
+    aria-hidden="true"
     {...rest}
   >
     {title && <title>{title}</title>}

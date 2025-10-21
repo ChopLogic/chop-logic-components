@@ -8,6 +8,7 @@ function CheckboxUncheckedIcon({ title, ...rest }: Readonly<ChopLogicSVGElementP
       fill="currentColor"
       height="1em"
       width="1em"
+      aria-hidden="true"
       {...rest}
     >
       {title && <title>{title}</title>}

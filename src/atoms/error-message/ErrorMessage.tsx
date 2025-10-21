@@ -1,5 +1,5 @@
 import { getClassName } from '@utils/get-class-name';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './ErrorMessage.module.scss';
 
@@ -11,8 +11,18 @@ type ErrorMessageProps = {
   className?: string;
 };
 
-const ErrorMessage: FC<ErrorMessageProps> = ({ errorId, testId, message = 'Error!', visible = false, className }) => {
-  const errorClass = getClassName([styles.errorMessage, className, { [styles.errorMessage__visible]: visible }]);
+const ErrorMessage: FC<ErrorMessageProps> = ({
+  errorId,
+  testId,
+  message = 'Error!',
+  visible = false,
+  className,
+}) => {
+  const errorClass = getClassName([
+    styles.errorMessage,
+    className,
+    { [styles.errorMessage__visible]: visible },
+  ]);
 
   return (
     <span id={errorId} className={errorClass} data-testid={testId} aria-hidden={!visible}>

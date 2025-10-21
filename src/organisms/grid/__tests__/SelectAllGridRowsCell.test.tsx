@@ -13,7 +13,12 @@ describe('SelectAllRowsCell', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCell selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectAllGridRowsCell
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected
+            />
           </tr>
         </thead>
       </table>,
@@ -26,7 +31,12 @@ describe('SelectAllRowsCell', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCell selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected={false} />
+            <SelectAllGridRowsCell
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected={false}
+            />
           </tr>
         </thead>
       </table>,
@@ -41,7 +51,12 @@ describe('SelectAllRowsCell', () => {
       <table>
         <thead>
           <tr>
-            <SelectAllGridRowsCell selectAll={mockedSelect} deselectAll={mockedDeselect} gridId={mockedGridId} isAllSelected />
+            <SelectAllGridRowsCell
+              selectAll={mockedSelect}
+              deselectAll={mockedDeselect}
+              gridId={mockedGridId}
+              isAllSelected
+            />
           </tr>
         </thead>
       </table>,

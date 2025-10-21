@@ -1,7 +1,7 @@
 import { Icon } from '@atoms';
-import { LinkProps } from '@models';
+import type { LinkProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './Link.module.scss';
 
@@ -19,7 +19,9 @@ const Link: FC<LinkProps> = ({
   const linkClass = getClassName([styles.link, className, { [styles.link__disabled]: disabled }]);
   const isExternal = external || href.startsWith('http') || href.startsWith('//');
   const linkTarget = isExternal ? target || '_blank' : target;
-  const iconElement = icon ? <Icon name={icon} className={styles.link_icon} aria-hidden='true' /> : null;
+  const iconElement = icon ? (
+    <Icon name={icon} className={styles.link_icon} aria-hidden="true" />
+  ) : null;
   const isLeftIcon = icon && iconPosition === 'left';
   const isRightIcon = icon && iconPosition === 'right';
 
@@ -29,7 +31,10 @@ const Link: FC<LinkProps> = ({
       className={linkClass}
       target={linkTarget}
       {...(isExternal && {
-        'aria-label': typeof children === 'string' ? `${children} (opens in new window)` : 'Opens in new window',
+        'aria-label':
+          typeof children === 'string'
+            ? `${children} (opens in new window)`
+            : 'Opens in new window',
       })}
       aria-disabled={disabled}
       {...rest}

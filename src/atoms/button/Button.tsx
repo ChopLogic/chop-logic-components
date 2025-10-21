@@ -1,9 +1,9 @@
 import { Icon } from '@atoms';
 import { ButtonView } from '@enums';
 import { withTooltip } from '@hocs';
-import { ButtonProps } from '@models';
+import type { ButtonProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './Button.module.scss';
 import { IconButton } from './icon-button/IconButton';
@@ -28,26 +28,56 @@ const ButtonSelector: FC<ButtonProps> = ({
   switch (view) {
     case ButtonView.Primary:
       return (
-        <PrimaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+        <PrimaryButton
+          aria-label={label}
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          className={extendedClass}
+          {...rest}
+        >
           <Icon name={icon} />
           {text}
         </PrimaryButton>
       );
     case ButtonView.Secondary:
       return (
-        <SecondaryButton aria-label={label} type={type} onClick={onClick} disabled={disabled} className={extendedClass} {...rest}>
+        <SecondaryButton
+          aria-label={label}
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          className={extendedClass}
+          {...rest}
+        >
           <Icon name={icon} />
           {text}
         </SecondaryButton>
       );
     case ButtonView.Icon:
       return (
-        <IconButton aria-label={label} type={type} onClick={onClick} disabled={disabled} {...rest} className={className}>
+        <IconButton
+          aria-label={label}
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          {...rest}
+          className={className}
+        >
           <Icon name={icon} />
         </IconButton>
       );
     case ButtonView.Inner:
-      return <InnerButton label={label} icon={icon} onClick={onClick} disabled={disabled} {...rest} className={className}></InnerButton>;
+      return (
+        <InnerButton
+          label={label}
+          icon={icon}
+          onClick={onClick}
+          disabled={disabled}
+          {...rest}
+          className={className}
+        ></InnerButton>
+      );
     default:
       return null;
   }

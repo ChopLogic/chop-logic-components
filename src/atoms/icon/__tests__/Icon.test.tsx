@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 describe('Icon', () => {
   it('renders the correct icon after it loads', async () => {
-    render(<Icon name={IconName.Warning} testId='warning-icon' />);
+    render(<Icon name={IconName.Warning} testId="warning-icon" />);
     const warningIcon = await screen.findByTestId('warning-icon');
     expect(warningIcon).toBeInTheDocument();
   });

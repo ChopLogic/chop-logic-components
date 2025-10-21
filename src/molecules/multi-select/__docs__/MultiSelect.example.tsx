@@ -1,5 +1,5 @@
-import { MultiSelectProps } from '@models';
-import { FC } from 'react';
+import type { MultiSelectProps } from '@models';
+import type { FC } from 'react';
 
 import MultiSelect from '../MultiSelect';
 

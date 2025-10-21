@@ -1,10 +1,20 @@
-import { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@models';
 
 function CheckboxUncheckedIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor' height='1em' width='1em' {...rest}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...rest}
+    >
       {title && <title>{title}</title>}
-      <path fill='currentColor' d='M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z' />
+      <path
+        fill="currentColor"
+        d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
+      />
     </svg>
   );
 }

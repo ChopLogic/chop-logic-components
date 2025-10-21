@@ -2,7 +2,7 @@ import { Label } from '@atoms';
 import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { getClassName } from '@utils';
-import { FC, InputHTMLAttributes } from 'react';
+import type { FC, InputHTMLAttributes } from 'react';
 
 import styles from './GridCheckbox.module.scss';
 
@@ -10,7 +10,15 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
 };
 
-export const GridCheckbox: FC<Props> = ({ name, label, disabled, required = false, onChange, checked = false, ...props }) => {
+export const GridCheckbox: FC<Props> = ({
+  name,
+  label,
+  disabled,
+  required = false,
+  onChange,
+  checked = false,
+  ...props
+}) => {
   const { elementId } = useElementIds(props?.id);
   const checkboxClass = getClassName([
     styles.checkbox,
@@ -25,7 +33,7 @@ export const GridCheckbox: FC<Props> = ({ name, label, disabled, required = fals
       <input
         id={elementId}
         name={name}
-        type='checkbox'
+        type="checkbox"
         disabled={disabled}
         required={required}
         checked={checked}
@@ -37,7 +45,7 @@ export const GridCheckbox: FC<Props> = ({ name, label, disabled, required = fals
         required={required}
         inputId={elementId}
         isTextHidden={true}
-        iconPosition='left'
+        iconPosition="left"
         icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
       />
     </div>

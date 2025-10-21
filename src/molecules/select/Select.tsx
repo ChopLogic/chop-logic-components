@@ -1,8 +1,8 @@
 import { Label } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
-import { SelectProps } from '@models';
+import type { SelectProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useRef } from 'react';
+import { type FC, useRef } from 'react';
 
 import { SelectCombobox } from './combobox/Combobox';
 import { SelectDropdown } from './dropdown/Dropdown';
@@ -24,12 +24,13 @@ const Select: FC<SelectProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { elementId, dropdownId } = useElementIds(id);
-  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } = useSelectController({
-    options,
-    onChange,
-    defaultValue,
-    name,
-  });
+  const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } =
+    useSelectController({
+      options,
+      onChange,
+      defaultValue,
+      name,
+    });
   const selectClass = getClassName([styles.wrapper, className]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });

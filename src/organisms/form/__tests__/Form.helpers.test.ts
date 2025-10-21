@@ -1,4 +1,4 @@
-import { FormInputParams, FormValidationState, FormValues } from '@models';
+import type { FormInputParams, FormValidationState, FormValues } from '@models';
 import { describe, expect, it } from 'vitest';
 
 import { getInitialValidationState, isFormDataValid, updateValidationState } from '../Form.helpers';

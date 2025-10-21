@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import { ButtonProps } from '@models';
+import type { ButtonProps } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -35,19 +35,19 @@ vi.mock('../edit-input/TabEditInput', () => ({
     onCancel: () => void;
     cancelButtonId: string;
   }) => (
-    <div data-testid='tab-edit-input'>
+    <div data-testid="tab-edit-input">
       <input
-        data-testid='edit-input'
+        data-testid="edit-input"
         value={editValue}
         onChange={onInputChange}
         onBlur={onInputBlur}
         onKeyDown={onInputKeyDown}
         aria-labelledby={cancelButtonId}
       />
-      <button data-testid='save-button' onClick={onSave}>
+      <button data-testid="save-button" onClick={onSave}>
         Save
       </button>
-      <button data-testid='cancel-button' onClick={onCancel} id={cancelButtonId}>
+      <button data-testid="cancel-button" onClick={onCancel} id={cancelButtonId}>
         Cancel
       </button>
     </div>
@@ -248,7 +248,14 @@ describe('TabButton', () => {
 
   it('does not show delete button when not selected', () => {
     const onTabDelete = vi.fn();
-    render(<TabButton {...defaultProps} extendable={true} onTabDelete={onTabDelete} isSelected={false} />);
+    render(
+      <TabButton
+        {...defaultProps}
+        extendable={true}
+        onTabDelete={onTabDelete}
+        isSelected={false}
+      />,
+    );
 
     expect(screen.queryByTestId('button-delete')).not.toBeInTheDocument();
   });
@@ -264,7 +271,7 @@ describe('TabButton', () => {
 
     expect(screen.getByRole('tab')).toHaveTextContent('Test Tab');
 
-    rerender(<TabButton {...defaultProps} title='Updated Title' />);
+    rerender(<TabButton {...defaultProps} title="Updated Title" />);
 
     expect(screen.getByRole('tab')).toHaveTextContent('Updated Title');
   });

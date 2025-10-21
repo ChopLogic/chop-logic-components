@@ -1,10 +1,20 @@
-import { SwitchProps } from '@models';
+import type { SwitchProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, KeyboardEvent, useCallback } from 'react';
+import { type FC, type KeyboardEvent, useCallback } from 'react';
 
 import styles from './Switch.module.scss';
 
-const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, className, id, name, value = 'on', hasIndicator }) => {
+const Switch: FC<SwitchProps> = ({
+  checked,
+  onChange,
+  label,
+  disabled = false,
+  className,
+  id,
+  name,
+  value = 'on',
+  hasIndicator,
+}) => {
   const switchClass = getClassName([
     styles.switch,
     className,
@@ -32,7 +42,7 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
 
   return (
     <div
-      role='switch'
+      role="switch"
       aria-checked={checked}
       aria-label={label}
       tabIndex={disabled ? -1 : 0}
@@ -42,18 +52,18 @@ const Switch: FC<SwitchProps> = ({ checked, onChange, label, disabled = false, c
       id={id}
     >
       <input
-        type='checkbox'
+        type="checkbox"
         name={name}
         value={value}
         checked={checked}
         disabled={disabled}
         className={styles.switch_input}
         readOnly
-        data-testid='switch-input'
+        data-testid="switch-input"
       />
       <span className={styles.switch_label}>{label}</span>
       {hasIndicator && (
-        <span className={styles.switch_indicator} aria-hidden='true'>
+        <span className={styles.switch_indicator} aria-hidden="true">
           {checked ? 'On' : 'Off'}
         </span>
       )}

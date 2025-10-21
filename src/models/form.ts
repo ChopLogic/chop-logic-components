@@ -1,6 +1,6 @@
-import { FormEventHandler, PropsWithChildren } from 'react';
+import type { FormEventHandler, PropsWithChildren } from 'react';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export type FormValues = { [key: string]: unknown };
 

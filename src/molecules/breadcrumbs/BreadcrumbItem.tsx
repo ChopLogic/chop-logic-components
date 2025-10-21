@@ -1,7 +1,7 @@
 import { Icon, Link } from '@atoms';
 import { IconName } from '@enums';
-import { Breadcrumb } from '@models';
-import { FC } from 'react';
+import type { Breadcrumb } from '@models';
+import type { FC } from 'react';
 
 import styles from './Breadcrumbs.module.scss';
 
@@ -15,7 +15,7 @@ const BreadcrumbItem: FC<{
     <>
       <li className={styles.breadcrumbs_item}>
         {isLink ? (
-          <Link href={item.link!} icon={item.icon} iconPosition='left'>
+          <Link href={item.link!} icon={item.icon} iconPosition="left">
             {item.label}
           </Link>
         ) : (

@@ -1,5 +1,5 @@
-import { ChopLogicComponentProps } from '@models';
-import { FC, RefObject, useCallback } from 'react';
+import type { ChopLogicComponentProps } from '@models';
+import { type FC, type RefObject, useCallback } from 'react';
 
 interface EditViewProps extends ChopLogicComponentProps {
   multiline: boolean;

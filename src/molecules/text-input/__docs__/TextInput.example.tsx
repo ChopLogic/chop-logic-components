@@ -1,5 +1,5 @@
-import { TextInputProps } from '@models';
-import { FC } from 'react';
+import type { TextInputProps } from '@models';
+import type { FC } from 'react';
 
 import TextInput from '../TextInput';
 

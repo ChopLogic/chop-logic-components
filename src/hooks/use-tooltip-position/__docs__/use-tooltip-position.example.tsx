@@ -15,7 +15,11 @@ export const UseTooltipPositionExample = () => {
         Click me
       </button>
       {isOpened && (
-        <div className={styles.container} ref={tooltipRef} style={{ position: 'absolute', top: `${top}px`, left: `${left}px` }}>
+        <div
+          className={styles.container}
+          ref={tooltipRef}
+          style={{ position: 'absolute', top: `${top}px`, left: `${left}px` }}
+        >
           Tooltip Content
         </div>
       )}

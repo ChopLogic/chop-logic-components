@@ -1,5 +1,5 @@
-import { SelectProps } from '@models';
-import { FC } from 'react';
+import type { SelectProps } from '@models';
+import type { FC } from 'react';
 
 import Select from '../Select';
 

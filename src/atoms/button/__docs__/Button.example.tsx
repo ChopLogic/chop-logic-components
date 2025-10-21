@@ -1,5 +1,5 @@
-import { ButtonProps } from '@models';
-import { FC } from 'react';
+import type { ButtonProps } from '@models';
+import type { FC } from 'react';
 
 import Button from '../Button';
 

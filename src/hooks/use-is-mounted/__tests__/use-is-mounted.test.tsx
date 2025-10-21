@@ -10,7 +10,7 @@ const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number 
     return;
   }, [isMounted]);
 
-  return <div data-testid='test-element'>{isMounted ? 'Mounted' : 'Not Mounted'}</div>;
+  return <div data-testid="test-element">{isMounted ? 'Mounted' : 'Not Mounted'}</div>;
 };
 
 describe('useMount test:', () => {

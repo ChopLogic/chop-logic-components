@@ -1,8 +1,8 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
-import { MultiSelectValue } from '@models';
+import type { MultiSelectValue } from '@models';
 import { getClassName } from '@utils';
-import { FC, KeyboardEvent } from 'react';
+import type { FC, KeyboardEvent } from 'react';
 
 import styles from '../select/option/Option.module.scss';
 
@@ -13,7 +13,11 @@ type Props = {
 
 export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
   const { id, label, selected } = value;
-  const optionClass = getClassName([styles.option, styles.option__multi, { [styles.option__selected]: selected }]);
+  const optionClass = getClassName([
+    styles.option,
+    styles.option__multi,
+    { [styles.option__selected]: selected },
+  ]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {
     switch (e.key) {
@@ -31,7 +35,7 @@ export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
   return (
     <li
       id={id}
-      role='option'
+      role="option"
       aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}

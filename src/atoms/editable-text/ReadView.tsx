@@ -1,5 +1,5 @@
-import { ChopLogicComponentProps } from '@models';
-import { FC } from 'react';
+import type { ChopLogicComponentProps } from '@models';
+import type { FC } from 'react';
 
 interface ReadViewProps extends ChopLogicComponentProps {
   value: string;
@@ -8,7 +8,13 @@ interface ReadViewProps extends ChopLogicComponentProps {
   className: string;
 }
 
-export const ReadView: FC<ReadViewProps> = ({ value, placeholder, onClick, className, ...rest }) => {
+export const ReadView: FC<ReadViewProps> = ({
+  value,
+  placeholder,
+  onClick,
+  className,
+  ...rest
+}) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -17,7 +23,15 @@ export const ReadView: FC<ReadViewProps> = ({ value, placeholder, onClick, class
   };
 
   return (
-    <span onClick={onClick} className={className} role='button' tabIndex={0} onKeyDown={handleKeyDown} aria-label='Editable text' {...rest}>
+    <span
+      onClick={onClick}
+      className={className}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      aria-label="Editable text"
+      {...rest}
+    >
       {value || placeholder}
     </span>
   );

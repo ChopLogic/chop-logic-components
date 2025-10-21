@@ -16,7 +16,7 @@ describe('ErrorMessage', () => {
   });
 
   it('should display the default message', () => {
-    render(<ErrorMessage errorId='test-error' />);
+    render(<ErrorMessage errorId="test-error" />);
     expect(screen.getByText('Error!')).toBeInTheDocument();
   });
 

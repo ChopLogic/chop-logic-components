@@ -1,7 +1,7 @@
 import { Icon } from '@atoms';
-import { IconName } from '@enums';
+import type { IconName } from '@enums';
 import { getClassName } from '@utils';
-import { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
+import type { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
 
 import styles from './InnerButton.module.scss';
 
@@ -17,7 +17,7 @@ export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, classNa
       className={getClassName([styles.button, className])}
       onClick={onClick}
       aria-label={label}
-      type='button'
+      type="button"
       disabled={disabled}
       {...rest}
     >

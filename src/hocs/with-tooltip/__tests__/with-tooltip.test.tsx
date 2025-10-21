@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { withTooltip } from '../with-tooltip';
 
 vi.mock('@atoms', () => ({
   Tooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (
-    <div data-testid='tooltip' data-tooltip={tooltipContent}>
+    <div data-testid="tooltip" data-tooltip={tooltipContent}>
       {children}
     </div>
   ),
@@ -19,7 +19,7 @@ describe('withTooltip HOC', () => {
   it('renders the wrapped component without Tooltip if no tooltip is provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
-    render(<WrappedComponent label='Click me' />);
+    render(<WrappedComponent label="Click me" />);
 
     // Assert that the MockComponent is rendered
     expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe('withTooltip HOC', () => {
   it('wraps the component with Tooltip when a tooltip is provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
-    render(<WrappedComponent label='Click me' tooltip='Tooltip text' />);
+    render(<WrappedComponent label="Click me" tooltip="Tooltip text" />);
 
     // Assert that Tooltip is rendered with the correct content
     const tooltip = screen.getByTestId('tooltip');
@@ -45,7 +45,7 @@ describe('withTooltip HOC', () => {
   it('passes down props correctly to the wrapped component', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
-    render(<WrappedComponent label='Click me' tooltip='Tooltip text' />);
+    render(<WrappedComponent label="Click me" tooltip="Tooltip text" />);
 
     // Assert that the MockComponent received and rendered the "label" prop
     expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
@@ -54,7 +54,7 @@ describe('withTooltip HOC', () => {
   it('passes the visibleOn prop to Tooltip when provided', () => {
     const WrappedComponent = withTooltip(MockComponent);
 
-    render(<WrappedComponent label='Click me' tooltip='Tooltip text' visibleOn='hover' />);
+    render(<WrappedComponent label="Click me" tooltip="Tooltip text" visibleOn="hover" />);
 
     // Assert that Tooltip is rendered with the correct "visibleOn" prop
     const tooltip = screen.getByTestId('tooltip');

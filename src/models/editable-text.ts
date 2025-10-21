@@ -1,6 +1,6 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export interface EditableTextProps extends ChopLogicComponentProps {
   value: string;

@@ -76,9 +76,12 @@ describe('useEditModeState', () => {
   });
 
   it('should handle controlled mode changes', () => {
-    const { result, rerender } = renderHook(({ controlledEditMode }) => useEditModeState(controlledEditMode), {
-      initialProps: { controlledEditMode: false },
-    });
+    const { result, rerender } = renderHook(
+      ({ controlledEditMode }) => useEditModeState(controlledEditMode),
+      {
+        initialProps: { controlledEditMode: false },
+      },
+    );
 
     expect(result.current.editMode).toBe(false);
 

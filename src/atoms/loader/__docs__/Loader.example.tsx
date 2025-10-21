@@ -1,6 +1,6 @@
 import { LoaderView } from '@enums';
-import { LoaderProps } from '@models';
-import { FC } from 'react';
+import type { LoaderProps } from '@models';
+import type { FC } from 'react';
 
 import Loader from '../Loader';
 import styles from './Loader.module.scss';

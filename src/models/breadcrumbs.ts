@@ -1,6 +1,6 @@
-import { IconName } from '@enums';
+import type { IconName } from '@enums';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export interface Breadcrumb {
   label: string;

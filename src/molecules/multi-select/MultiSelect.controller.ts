@@ -1,9 +1,13 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import { MultiSelectValue, SelectValue } from '@models';
+import type { MultiSelectValue, SelectValue } from '@models';
 import { useCallback, useContext, useState } from 'react';
 
-import { getMultiSelectFormValues, getMultiSelectInitialValues, getMultiSelectUpdatedValues } from './MultiSelect.helpers';
+import {
+  getMultiSelectFormValues,
+  getMultiSelectInitialValues,
+  getMultiSelectUpdatedValues,
+} from './MultiSelect.helpers';
 
 export function useMultiSelectController({
   name,
@@ -18,7 +22,12 @@ export function useMultiSelectController({
 }) {
   const [opened, setOpened] = useState(false);
   const { onChangeFormInput, initialValues } = useContext(FormContext);
-  const initialOptions = getMultiSelectInitialValues({ name, options, initialValues, defaultValue });
+  const initialOptions = getMultiSelectInitialValues({
+    name,
+    options,
+    initialValues,
+    defaultValue,
+  });
   const [values, setValues] = useState<MultiSelectValue[]>(initialOptions);
 
   const handleClose = () => setOpened(false);

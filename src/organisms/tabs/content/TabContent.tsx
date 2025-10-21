@@ -1,5 +1,5 @@
-import { ChopLogicTabItem } from '@models';
-import { FC, ReactElement } from 'react';
+import type { ChopLogicTabItem } from '@models';
+import type { FC, ReactElement } from 'react';
 
 import styles from './TabContent.module.scss';
 
@@ -14,7 +14,13 @@ export const TabContent: FC<{
   const isExtendedTab = extendable && !content;
 
   return (
-    <div role='tabpanel' data-testid='tab-content' aria-labelledby={selectedTabId} id={contentId} className={styles.tabContent}>
+    <div
+      role="tabpanel"
+      data-testid="tab-content"
+      aria-labelledby={selectedTabId}
+      id={contentId}
+      className={styles.tabContent}
+    >
       {isExtendedTab ? extendedTabContent : content}
     </div>
   );

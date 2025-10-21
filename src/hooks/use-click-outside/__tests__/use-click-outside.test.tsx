@@ -13,13 +13,13 @@ const TestComponent = ({ onClickOutsideHandler }: { onClickOutsideHandler: () =>
 
   return (
     <div>
-      <div ref={ref} data-testid='inside-element'>
+      <div ref={ref} data-testid="inside-element">
         Inside Element
       </div>
-      <div ref={dependentRef} data-testid='dependent-element'>
+      <div ref={dependentRef} data-testid="dependent-element">
         Dependent Element
       </div>
-      <div data-testid='outside-element'>Outside Element</div>
+      <div data-testid="outside-element">Outside Element</div>
     </div>
   );
 };

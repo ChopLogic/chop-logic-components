@@ -1,4 +1,4 @@
-import { FormValues, MultiSelectValue, SelectValue } from '@models';
+import type { FormValues, MultiSelectValue, SelectValue } from '@models';
 
 export function getMultiSelectInitialValues({
   name,
@@ -15,7 +15,9 @@ export function getMultiSelectInitialValues({
     let selected = false;
 
     if (initialValues?.[name] && Array.isArray(initialValues[name])) {
-      const selectedId = initialValues[name].find((item) => item === option.id || item?.id === option.id);
+      const selectedId = initialValues[name].find(
+        (item) => item === option.id || item?.id === option.id,
+      );
       if (selectedId) selected = true;
     }
 
@@ -32,7 +34,10 @@ export const getMultiSelectFormValues = (options: MultiSelectValue[]): string[] 
   return options.filter((item) => item.selected).map((item) => item.id);
 };
 
-export const getMultiSelectUpdatedValues = (options: MultiSelectValue[], id: string): MultiSelectValue[] => {
+export const getMultiSelectUpdatedValues = (
+  options: MultiSelectValue[],
+  id: string,
+): MultiSelectValue[] => {
   const targetItem = options.find((item) => item.id === id);
   return options.map((item) => {
     return item.id === id ? { ...item, selected: !targetItem?.selected } : item;

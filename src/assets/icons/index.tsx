@@ -1,6 +1,6 @@
 import { IconName } from '@enums';
-import { ChopLogicSVGElementProps } from '@models';
-import { ReactElement } from 'react';
+import type { ChopLogicSVGElementProps } from '@models';
+import type { ReactElement } from 'react';
 
 import ArrowDownIcon from './svg/ArrowDownIcon';
 import ArrowUpIcon from './svg/ArrowUpIcon';
@@ -43,7 +43,9 @@ import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
 
-type Icons = { [key in IconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement };
+type Icons = {
+  [key in IconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement;
+};
 
 export const IconDictionary: Icons = {
   [IconName.ArrowDown]: ArrowDownIcon,

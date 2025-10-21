@@ -1,7 +1,7 @@
 import { LoaderView } from '@enums';
-import { LoaderProps } from '@models';
+import type { LoaderProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import Arrow from './views/Arrow.module.scss';
 import Brackets from './views/Brackets.module.scss';

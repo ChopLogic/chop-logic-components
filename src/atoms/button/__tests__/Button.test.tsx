@@ -15,7 +15,7 @@ vi.mock('@hocs', () => ({
 
 vi.mock('../primary-button/PrimaryButton', () => ({
   PrimaryButton: vi.fn(({ children, ...props }) => (
-    <button data-testid='primary-button' {...props}>
+    <button data-testid="primary-button" {...props}>
       {children}
     </button>
   )),
@@ -23,7 +23,7 @@ vi.mock('../primary-button/PrimaryButton', () => ({
 
 vi.mock('../secondary-button/SecondaryButton', () => ({
   SecondaryButton: vi.fn(({ children, ...props }) => (
-    <button data-testid='secondary-button' {...props}>
+    <button data-testid="secondary-button" {...props}>
       {children}
     </button>
   )),
@@ -31,14 +31,14 @@ vi.mock('../secondary-button/SecondaryButton', () => ({
 
 vi.mock('../icon-button/IconButton', () => ({
   IconButton: vi.fn(({ children, ...props }) => (
-    <button data-testid='icon-button' {...props}>
+    <button data-testid="icon-button" {...props}>
       {children}
     </button>
   )),
 }));
 
 vi.mock('../inner-button/InnerButton', () => ({
-  InnerButton: vi.fn((props) => <button data-testid='inner-button' {...props} />),
+  InnerButton: vi.fn((props) => <button data-testid="inner-button" {...props} />),
 }));
 
 describe('Button', () => {
@@ -101,7 +101,7 @@ describe('Button', () => {
   });
 
   it('passes type attribute to the button', () => {
-    render(<Button {...defaultProps} type='submit' />);
+    render(<Button {...defaultProps} type="submit" />);
 
     const button = screen.getByTestId('primary-button');
     expect(button).toHaveAttribute('type', 'submit');
@@ -121,7 +121,7 @@ describe('Button', () => {
   });
 
   it('passes additional props to the button', () => {
-    render(<Button {...defaultProps} id='test-button' title='Test Button' />);
+    render(<Button {...defaultProps} id="test-button" title="Test Button" />);
 
     const button = screen.getByTestId('primary-button');
     expect(button).toHaveAttribute('id', 'test-button');
@@ -137,19 +137,19 @@ describe('Button', () => {
   });
 
   it('handles different button types', () => {
-    const { rerender } = render(<Button {...defaultProps} type='button' />);
+    const { rerender } = render(<Button {...defaultProps} type="button" />);
     expect(screen.getByTestId('primary-button')).toHaveAttribute('type', 'button');
 
-    rerender(<Button {...defaultProps} type='reset' />);
+    rerender(<Button {...defaultProps} type="reset" />);
     expect(screen.getByTestId('primary-button')).toHaveAttribute('type', 'reset');
 
-    rerender(<Button {...defaultProps} type='submit' />);
+    rerender(<Button {...defaultProps} type="submit" />);
     expect(screen.getByTestId('primary-button')).toHaveAttribute('type', 'submit');
   });
 
   it('returns null for unknown view type', () => {
     // @ts-expect-error Testing unknown view type
-    render(<Button {...defaultProps} view='unknown' />);
+    render(<Button {...defaultProps} view="unknown" />);
 
     expect(screen.queryByTestId('primary-button')).not.toBeInTheDocument();
     expect(screen.queryByTestId('secondary-button')).not.toBeInTheDocument();

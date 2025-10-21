@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import type { ChangeEvent, FC } from 'react';
 
 import { GridCheckbox } from '../checkbox/GridCheckbox';
 import styles from './SelectGridRowCell.module.scss';
@@ -11,7 +11,13 @@ type Props = {
   disabled?: boolean;
 };
 
-export const SelectGridRowCell: FC<Props> = ({ rowId, isRowSelected, selectRowById, deselectRowById, disabled }) => {
+export const SelectGridRowCell: FC<Props> = ({
+  rowId,
+  isRowSelected,
+  selectRowById,
+  deselectRowById,
+  disabled,
+}) => {
   const handleSelectById = (e: ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     if (checked) {
@@ -23,7 +29,13 @@ export const SelectGridRowCell: FC<Props> = ({ rowId, isRowSelected, selectRowBy
 
   return (
     <td className={styles.cell}>
-      <GridCheckbox label='Select row' onChange={handleSelectById} id={`select_row_${rowId}`} checked={isRowSelected} disabled={disabled} />
+      <GridCheckbox
+        label="Select row"
+        onChange={handleSelectById}
+        id={`select_row_${rowId}`}
+        checked={isRowSelected}
+        disabled={disabled}
+      />
     </td>
   );
 };

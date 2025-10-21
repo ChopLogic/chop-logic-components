@@ -1,10 +1,13 @@
-import { GridColumn } from '@models';
+import type { GridColumn } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './GridColumnGroup.module.scss';
 
-export const GridColumnGroup: FC<{ columns: GridColumn[]; selectable: boolean }> = ({ columns, selectable }) => {
+export const GridColumnGroup: FC<{ columns: GridColumn[]; selectable: boolean }> = ({
+  columns,
+  selectable,
+}) => {
   return (
     <colgroup>
       {selectable && <col className={getClassName([styles.column, styles.column__first])} />}

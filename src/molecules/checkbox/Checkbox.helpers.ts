@@ -1,4 +1,4 @@
-import { FormValues } from '@models';
+import type { FormValues } from '@models';
 
 export function getCheckboxInitialValue({
   defaultChecked,

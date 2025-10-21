@@ -1,4 +1,4 @@
-import { ReactElement, ReactPortal, useEffect, useState } from 'react';
+import { type ReactElement, type ReactPortal, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 const Portal = ({ children }: { children: ReactElement }): ReactPortal => {

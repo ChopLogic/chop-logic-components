@@ -1,6 +1,6 @@
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import { getClassName, handleDropdownListKeyPress, moveFocusOnElementById } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { SelectOption } from '../option/Option';
 import styles from './Dropdown.module.scss';
@@ -16,7 +16,16 @@ type Props = {
   onClear: () => void;
 };
 
-export const SelectDropdown: FC<Props> = ({ options, opened, onClose, onSelect, dropdownId, comboboxId, selected, onClear }) => {
+export const SelectDropdown: FC<Props> = ({
+  options,
+  opened,
+  onClose,
+  onSelect,
+  dropdownId,
+  comboboxId,
+  selected,
+  onClear,
+}) => {
   const handleOptionSelect = (id: string) => {
     onSelect(id);
     onClose();
@@ -26,7 +35,7 @@ export const SelectDropdown: FC<Props> = ({ options, opened, onClose, onSelect, 
 
   return (
     <ul
-      role='listbox'
+      role="listbox"
       id={dropdownId}
       tabIndex={-1}
       onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}

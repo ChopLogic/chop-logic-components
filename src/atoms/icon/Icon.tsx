@@ -1,7 +1,7 @@
 import { IconDictionary } from '@assets/icons';
-import { IconProps } from '@models';
+import type { IconProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './Icon.module.scss';
 

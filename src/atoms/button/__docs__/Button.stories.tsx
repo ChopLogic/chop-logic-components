@@ -1,7 +1,7 @@
 import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Button from '../Button';
+import type Button from '../Button';
 import { ButtonExample } from './Button.example';
 
 const meta: Meta<typeof Button> = {

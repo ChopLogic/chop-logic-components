@@ -1,6 +1,6 @@
-import { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
+import type { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
 
-import { ChopLogicInputProps } from './_common';
+import type { ChopLogicInputProps } from './_common';
 
 export interface SearchProps extends ChopLogicInputProps {
   maxLength?: number;

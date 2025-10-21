@@ -43,9 +43,12 @@ describe('useContainerDimensions', () => {
       current: mockElement(300, 150) as unknown as HTMLElement,
     };
 
-    const { result, rerender } = renderHook(({ isVisible }) => useContainerDimensions({ ref, isVisible }), {
-      initialProps: { isVisible: false },
-    });
+    const { result, rerender } = renderHook(
+      ({ isVisible }) => useContainerDimensions({ ref, isVisible }),
+      {
+        initialProps: { isVisible: false },
+      },
+    );
 
     expect(result.current).toEqual({ width: 0, height: 0 });
 
@@ -82,9 +85,12 @@ describe('useContainerDimensions', () => {
       current: mockElement(200, 100) as unknown as HTMLElement,
     };
 
-    const { result, rerender } = renderHook(({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }), {
-      initialProps: { ref: ref1, isVisible: false },
-    });
+    const { result, rerender } = renderHook(
+      ({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }),
+      {
+        initialProps: { ref: ref1, isVisible: false },
+      },
+    );
 
     expect(result.current).toEqual({ width: 0, height: 0 });
 
@@ -101,9 +107,12 @@ describe('useContainerDimensions', () => {
       current: mockElement(200, 100) as unknown as HTMLElement,
     };
 
-    const { result, rerender } = renderHook(({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }), {
-      initialProps: { ref: ref1, isVisible: true },
-    });
+    const { result, rerender } = renderHook(
+      ({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }),
+      {
+        initialProps: { ref: ref1, isVisible: true },
+      },
+    );
 
     expect(result.current).toEqual({ width: 100, height: 50 });
 
@@ -130,9 +139,12 @@ describe('useContainerDimensions', () => {
       current: mockElement(100, 50) as unknown as HTMLElement,
     };
 
-    const { result, rerender } = renderHook(({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }), {
-      initialProps: { ref, isVisible: true },
-    });
+    const { result, rerender } = renderHook(
+      ({ ref, isVisible }) => useContainerDimensions({ ref, isVisible }),
+      {
+        initialProps: { ref, isVisible: true },
+      },
+    );
 
     expect(result.current).toEqual({ width: 100, height: 50 });
 

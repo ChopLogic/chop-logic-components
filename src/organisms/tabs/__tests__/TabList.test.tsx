@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import { ButtonProps, ChopLogicTabItem } from '@models';
+import type { ButtonProps, ChopLogicTabItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -7,7 +7,13 @@ import { TabList } from '../list/TabList';
 
 vi.mock('@atoms', () => ({
   Button: ({ label, onClick, tooltip, icon, className }: ButtonProps) => (
-    <button data-testid='add-tab-button' onClick={onClick} aria-label={label} title={tooltip} className={className}>
+    <button
+      data-testid="add-tab-button"
+      onClick={onClick}
+      aria-label={label}
+      title={tooltip}
+      className={className}
+    >
       {icon} {label}
     </button>
   ),
@@ -169,7 +175,7 @@ describe('TabList', () => {
 
     it('navigates to previous tab with ArrowLeft', async () => {
       const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId='tab2' />);
+      render(<TabList {...defaultProps} selectedTabId="tab2" />);
 
       const tablist = screen.getByRole('tablist');
       fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
@@ -180,7 +186,7 @@ describe('TabList', () => {
 
     it('wraps to last tab when ArrowLeft on first tab', async () => {
       const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId='tab1' />);
+      render(<TabList {...defaultProps} selectedTabId="tab1" />);
 
       const tablist = screen.getByRole('tablist');
       fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
@@ -191,7 +197,7 @@ describe('TabList', () => {
 
     it('wraps to first tab when ArrowRight on last tab', async () => {
       const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId='tab3' />);
+      render(<TabList {...defaultProps} selectedTabId="tab3" />);
 
       const tablist = screen.getByRole('tablist');
       fireEvent.keyDown(tablist, { key: 'ArrowRight' });
@@ -220,7 +226,7 @@ describe('TabList', () => {
 
     it('navigates to previous tab with ArrowUp', async () => {
       const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...verticalProps} selectedTabId='tab2' />);
+      render(<TabList {...verticalProps} selectedTabId="tab2" />);
 
       const tablist = screen.getByRole('tablist');
       fireEvent.keyDown(tablist, { key: 'ArrowUp' });
@@ -248,22 +254,33 @@ describe('TabList', () => {
 
   it('auto-selects newly added tab', () => {
     const onTabSelect = vi.fn();
-    const { rerender } = render(<TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />);
+    const { rerender } = render(
+      <TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
+    );
 
     // Add a new tab
-    const newTabs = [...mockTabs, { id: 'tab4', title: 'Fourth Tab', content: <div>Content 4</div> }];
-    rerender(<TabList {...defaultProps} tabs={newTabs} initialTabsCount={3} onTabSelect={onTabSelect} />);
+    const newTabs = [
+      ...mockTabs,
+      { id: 'tab4', title: 'Fourth Tab', content: <div>Content 4</div> },
+    ];
+    rerender(
+      <TabList {...defaultProps} tabs={newTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
+    );
 
     expect(onTabSelect).toHaveBeenCalledWith('tab4');
   });
 
   it('does not auto-select when tabs count decreases', () => {
     const onTabSelect = vi.fn();
-    const { rerender } = render(<TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />);
+    const { rerender } = render(
+      <TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
+    );
 
     // Remove a tab
     const fewerTabs = mockTabs.slice(0, 2);
-    rerender(<TabList {...defaultProps} tabs={fewerTabs} initialTabsCount={3} onTabSelect={onTabSelect} />);
+    rerender(
+      <TabList {...defaultProps} tabs={fewerTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
+    );
 
     expect(onTabSelect).not.toHaveBeenCalled();
   });

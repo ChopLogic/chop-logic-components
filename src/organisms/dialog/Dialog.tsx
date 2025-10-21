@@ -1,9 +1,9 @@
 import { Button, Header, Portal } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
-import { DialogProps } from '@models';
+import type { DialogProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useRef } from 'react';
+import { type FC, useRef } from 'react';
 
 import styles from './Dialog.module.scss';
 
@@ -23,16 +23,16 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
   return (
     <Portal>
       <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
-        <div ref={modalRef} role='dialog' aria-modal='true' {...rest} className={styles.layout}>
+        <div ref={modalRef} role="dialog" aria-modal="true" {...rest} className={styles.layout}>
           <Button
             icon={IconName.Cancel}
             view={ButtonView.Icon}
-            label='Close modal window'
+            label="Close modal window"
             onClick={onClose}
             className={styles.layout_button}
           />
           <header>
-            <Header as='h3' icon={icon}>
+            <Header as="h3" icon={icon}>
               {title}
             </Header>
           </header>

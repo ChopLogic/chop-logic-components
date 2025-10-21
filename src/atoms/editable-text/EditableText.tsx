@@ -1,6 +1,6 @@
-import { EditableTextProps } from '@models';
+import type { EditableTextProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useCallback, useRef } from 'react';
+import { type FC, useCallback, useRef } from 'react';
 
 import styles from './EditableText.module.scss';
 import { EditView } from './EditView';
@@ -80,7 +80,15 @@ const EditableText: FC<EditableTextProps> = ({
     );
   }
 
-  return <ReadView value={internalValue} placeholder={placeholder} onClick={handleClick} className={containerClass} {...rest} />;
+  return (
+    <ReadView
+      value={internalValue}
+      placeholder={placeholder}
+      onClick={handleClick}
+      className={containerClass}
+      {...rest}
+    />
+  );
 };
 
 export default EditableText;

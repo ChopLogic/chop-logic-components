@@ -1,8 +1,8 @@
 import { IconName, OrientationMode } from '@enums';
-import { MenuItem } from '@models';
+import type { MenuItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Menu from '../Menu';
+import type Menu from '../Menu';
 import MenuExample from './Menu.example';
 
 const ITEMS: MenuItem[] = [

@@ -27,7 +27,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(100, 100) as unknown as HTMLElement,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }),
+    );
 
     expect(result.current).toBe(false);
   });
@@ -37,7 +39,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(150, 100) as unknown as HTMLElement,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }),
+    );
 
     expect(result.current).toBe(true);
   });
@@ -47,7 +51,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(100, 100) as unknown as HTMLElement,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }),
+    );
 
     expect(result.current).toBe(false);
   });
@@ -57,7 +63,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(150, 100) as unknown as HTMLElement,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'height', isMounted: true }),
+    );
 
     expect(result.current).toBe(true);
   });
@@ -67,7 +75,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(150, 100) as unknown as HTMLElement,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: false }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: false }),
+    );
 
     expect(result.current).toBe(false);
   });
@@ -77,7 +87,9 @@ describe('useIsOverflow hook', () => {
       current: null,
     };
 
-    const { result } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+    const { result } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }),
+    );
 
     expect(result.current).toBe(false);
   });
@@ -87,7 +99,9 @@ describe('useIsOverflow hook', () => {
       current: mockElement(100, 100) as unknown as HTMLElement,
     };
 
-    const { unmount } = renderHook(() => useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }));
+    const { unmount } = renderHook(() =>
+      useIsOverflow({ ref: mockRef, dimension: 'width', isMounted: true }),
+    );
 
     expect(window.addEventListener).toHaveBeenCalledWith('resize', expect.any(Function));
 

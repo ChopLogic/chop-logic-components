@@ -2,9 +2,9 @@ import { ErrorMessage, Input, Label } from '@atoms';
 import Button from '@atoms/button/Button';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import { NumericInputProps } from '@models';
+import type { NumericInputProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { useNumericInputController } from './NumericInput.controller';
 import styles from './NumericInput.module.scss';
@@ -32,17 +32,18 @@ const NumericInput: FC<NumericInputProps> = ({
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
-  const { value, valid, handleChange, increment, decrement, minValue, maxValue } = useNumericInputController({
-    name,
-    defaultValue,
-    min,
-    max,
-    onChange,
-    required,
-    validator,
-    step,
-    onSpinButtonClick,
-  });
+  const { value, valid, handleChange, increment, decrement, minValue, maxValue } =
+    useNumericInputController({
+      name,
+      defaultValue,
+      min,
+      max,
+      onChange,
+      required,
+      validator,
+      step,
+      onSpinButtonClick,
+    });
   const inputClass = getClassName([styles.numeric, className]);
 
   return (
@@ -51,11 +52,11 @@ const NumericInput: FC<NumericInputProps> = ({
       <Input
         id={elementId}
         name={name}
-        type='number'
+        type="number"
         disabled={disabled}
         required={required}
         readOnly={readOnly}
-        placeholder='0'
+        placeholder="0"
         aria-invalid={!valid}
         aria-errormessage={errorId}
         value={value.toString()}
@@ -85,7 +86,12 @@ const NumericInput: FC<NumericInputProps> = ({
             />
           </span>
         )}
-        <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
+        <ErrorMessage
+          errorId={errorId}
+          message={errorMessage}
+          visible={!valid}
+          className={styles.errorMessage}
+        />
       </Input>
     </div>
   );

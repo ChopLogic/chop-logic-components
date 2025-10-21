@@ -1,8 +1,8 @@
 import { Icon } from '@atoms';
 import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
-import { MenuItem } from '@models';
-import { FC, KeyboardEvent, PropsWithChildren, useRef } from 'react';
+import type { MenuItem } from '@models';
+import { type FC, type KeyboardEvent, type PropsWithChildren, useRef } from 'react';
 
 import styles from './SubMenu.module.scss';
 
@@ -16,13 +16,22 @@ type Props = PropsWithChildren & {
   openedOn?: 'hover' | 'click';
 };
 
-export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, closeSubMenu, openSubMenu, openedOn, mode, children }) => {
+export const SubMenu: FC<Props> = ({
+  item,
+  isSubMenuOpened,
+  toggleSubMenu,
+  closeSubMenu,
+  openSubMenu,
+  openedOn,
+  mode,
+  children,
+}) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
 
   const itemContent = link ? (
-    <a href={link} target='_blank' rel='noreferrer'>
+    <a href={link} target="_blank" rel="noreferrer">
       <Icon name={icon} />
       {label}
     </a>
@@ -51,15 +60,20 @@ export const SubMenu: FC<Props> = ({ item, isSubMenuOpened, toggleSubMenu, close
     <li
       className={styles.subMenu}
       tabIndex={0}
-      role='menuitem'
-      aria-haspopup='true'
+      role="menuitem"
+      aria-haspopup="true"
       aria-expanded={isSubMenuOpened}
       onKeyDown={handleKeyDown}
       onMouseEnter={openedOn === 'hover' ? openSubMenu : undefined}
       onMouseLeave={openedOn === 'hover' ? closeSubMenu : undefined}
       ref={ref}
     >
-      <span className={styles.text} ref={dependentRef} onClick={toggleSubMenu} onKeyDown={handleKeyDown}>
+      <span
+        className={styles.text}
+        ref={dependentRef}
+        onClick={toggleSubMenu}
+        onKeyDown={handleKeyDown}
+      >
         {itemContent}
         <Icon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
       </span>

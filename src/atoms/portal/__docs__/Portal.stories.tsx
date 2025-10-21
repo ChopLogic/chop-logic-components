@@ -8,7 +8,8 @@ const meta: Meta<typeof PortalExample> = {
   parameters: {
     docs: {
       description: {
-        component: 'A portal component that renders its children into a newly created div appended to the body.',
+        component:
+          'A portal component that renders its children into a newly created div appended to the body.',
       },
     },
   },

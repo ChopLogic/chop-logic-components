@@ -1,9 +1,9 @@
 import { Button, ErrorMessage, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import { TextInputProps } from '@models';
+import type { TextInputProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { useTextInputController } from './TextInput.controller';
 import styles from './TextInput.module.scss';
@@ -31,14 +31,15 @@ const TextInput: FC<TextInputProps> = ({
   className,
   ...rest
 }) => {
-  const { value, valid, handleChange, handleClear, passwordShown, togglePassword } = useTextInputController({
-    defaultValue,
-    name,
-    onChange,
-    onClear,
-    required,
-    validator,
-  });
+  const { value, valid, handleChange, handleClear, passwordShown, togglePassword } =
+    useTextInputController({
+      defaultValue,
+      name,
+      onChange,
+      onClear,
+      required,
+      validator,
+    });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
   const inputClass = getClassName([styles.wrapper, className]);
@@ -79,13 +80,18 @@ const TextInput: FC<TextInputProps> = ({
             <Button
               onClick={togglePassword}
               view={ButtonView.Inner}
-              label='Toggle password visibility'
+              label="Toggle password visibility"
               icon={passwordShown ? IconName.Hide : IconName.Show}
               disabled={disabled}
             />
           )}
         </span>
-        <ErrorMessage errorId={errorId} message={errorMessage} visible={!valid} className={styles.errorMessage} />
+        <ErrorMessage
+          errorId={errorId}
+          message={errorMessage}
+          visible={!valid}
+          className={styles.errorMessage}
+        />
       </Input>
     </div>
   );

@@ -1,9 +1,9 @@
 import { Label } from '@atoms';
 import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import { CheckboxProps } from '@models';
+import type { CheckboxProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { useCheckboxController } from './Checkbox.controller';
 import styles from './Checkbox.module.scss';
@@ -37,7 +37,7 @@ const Checkbox: FC<CheckboxProps> = ({
       <input
         id={elementId}
         name={name}
-        type='checkbox'
+        type="checkbox"
         disabled={disabled}
         required={required}
         checked={checked}

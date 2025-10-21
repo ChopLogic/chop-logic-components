@@ -56,7 +56,7 @@ describe('NumericInput', () => {
   });
 
   it('displays error message', () => {
-    render(<NumericInput {...testProps} errorMessage='Invalid input' />);
+    render(<NumericInput {...testProps} errorMessage="Invalid input" />);
 
     expect(screen.getByText(/Invalid input/i)).toBeInTheDocument();
   });
@@ -145,13 +145,19 @@ describe('NumericInput', () => {
   });
 
   it('should not show an error message by default', async () => {
-    render(<NumericInput {...testProps} errorMessage='Incorrect value' />);
+    render(<NumericInput {...testProps} errorMessage="Incorrect value" />);
     const errorMessage = await screen.findByText('Incorrect value');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('should show an error message if the input value is invalid', async () => {
-    render(<NumericInput {...testProps} validator={(age) => !!age && age >= 1 && age < 100} errorMessage='Incorrect value' />);
+    render(
+      <NumericInput
+        {...testProps}
+        validator={(age) => !!age && age >= 1 && age < 100}
+        errorMessage="Incorrect value"
+      />,
+    );
     const input = screen.getByRole('spinbutton');
     fireEvent.change(input, { target: { value: '123' } });
     const errorMessage = await screen.findByText('Incorrect value');
@@ -159,7 +165,13 @@ describe('NumericInput', () => {
   });
 
   it('should not show an error message if the input value is valid', async () => {
-    render(<NumericInput {...testProps} validator={(age) => !!age && age >= 1 && age < 100} errorMessage='Incorrect value' />);
+    render(
+      <NumericInput
+        {...testProps}
+        validator={(age) => !!age && age >= 1 && age < 100}
+        errorMessage="Incorrect value"
+      />,
+    );
     const input = screen.getByRole('spinbutton');
     fireEvent.change(input, { target: { value: '4' } });
     const errorMessage = await screen.findByText('Incorrect value');

@@ -1,7 +1,7 @@
 import { Icon } from '@atoms';
-import { HeaderProps } from '@models';
+import type { HeaderProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './Header.module.scss';
 

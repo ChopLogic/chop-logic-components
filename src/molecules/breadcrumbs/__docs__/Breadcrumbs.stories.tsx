@@ -60,7 +60,12 @@ export const WithoutIcons: Story = {
 
 export const WithoutLinks: Story = {
   args: {
-    items: [{ label: 'Home' }, { label: 'Products' }, { label: 'Electronics' }, { label: 'Smartphones' }],
+    items: [
+      { label: 'Home' },
+      { label: 'Products' },
+      { label: 'Electronics' },
+      { label: 'Smartphones' },
+    ],
   },
   parameters: {
     docs: {

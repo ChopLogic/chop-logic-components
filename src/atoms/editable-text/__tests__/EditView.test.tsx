@@ -30,13 +30,13 @@ describe('EditableText > EditView', () => {
   });
 
   it('displays the correct value', () => {
-    render(<EditView {...defaultProps} value='Custom Value' />);
+    render(<EditView {...defaultProps} value="Custom Value" />);
 
     expect(screen.getByDisplayValue('Custom Value')).toBeInTheDocument();
   });
 
   it('shows placeholder text', () => {
-    render(<EditView {...defaultProps} value='' />);
+    render(<EditView {...defaultProps} value="" />);
 
     const input = screen.getByPlaceholderText('Type something...');
     expect(input).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe('EditableText > EditView', () => {
   });
 
   it('passes through additional props', () => {
-    render(<EditView {...defaultProps} data-testid='edit-view' id='custom-input' />);
+    render(<EditView {...defaultProps} data-testid="edit-view" id="custom-input" />);
 
     const input = screen.getByTestId('edit-view');
     expect(input).toHaveAttribute('id', 'custom-input');
@@ -102,7 +102,7 @@ describe('EditableText > EditView', () => {
   });
 
   it('handles empty string value', () => {
-    render(<EditView {...defaultProps} value='' />);
+    render(<EditView {...defaultProps} value="" />);
 
     const input = screen.getByPlaceholderText('Type something...');
     expect(input).toHaveValue('');

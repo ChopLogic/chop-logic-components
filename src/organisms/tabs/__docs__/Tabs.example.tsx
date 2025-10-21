@@ -1,4 +1,4 @@
-import { TabsProps } from '@models';
+import type { TabsProps } from '@models';
 import { Tabs } from '@organisms';
 
 export const TabsExample: React.FC<TabsProps> = (props) => {
@@ -10,5 +10,11 @@ export const TabsExample: React.FC<TabsProps> = (props) => {
     props.onTabAdd?.();
   };
 
-  return <Tabs {...props} onTabTitleChange={handleTabTitleChange} onTabAdd={props.extendable ? handleTabAdd : undefined} />;
+  return (
+    <Tabs
+      {...props}
+      onTabTitleChange={handleTabTitleChange}
+      onTabAdd={props.extendable ? handleTabAdd : undefined}
+    />
+  );
 };

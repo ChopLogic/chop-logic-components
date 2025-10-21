@@ -73,9 +73,12 @@ describe('useInputFocus', () => {
 
   it('should re-focus when edit mode changes', () => {
     const mockRef = createMockRef();
-    const { rerender } = renderHook(({ editMode }) => useInputFocus(mockRef, editMode, false, false), {
-      initialProps: { editMode: false },
-    });
+    const { rerender } = renderHook(
+      ({ editMode }) => useInputFocus(mockRef, editMode, false, false),
+      {
+        initialProps: { editMode: false },
+      },
+    );
 
     expect(mockFocus).not.toHaveBeenCalled();
 
@@ -91,9 +94,12 @@ describe('useInputFocus', () => {
 
   it('should re-focus when autoSelect changes', () => {
     const mockRef = createMockRef();
-    const { rerender } = renderHook(({ autoSelect }) => useInputFocus(mockRef, true, autoSelect, false), {
-      initialProps: { autoSelect: false },
-    });
+    const { rerender } = renderHook(
+      ({ autoSelect }) => useInputFocus(mockRef, true, autoSelect, false),
+      {
+        initialProps: { autoSelect: false },
+      },
+    );
 
     expect(mockFocus).toHaveBeenCalledTimes(1);
     expect(mockSelect).not.toHaveBeenCalled();

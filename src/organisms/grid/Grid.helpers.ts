@@ -1,4 +1,4 @@
-import { GridColumn, GridItem, GridRowValue, RenderDataItemCallback } from '@models';
+import type { GridColumn, GridItem, GridRowValue, RenderDataItemCallback } from '@models';
 
 export function getGridRowValues({
   item,

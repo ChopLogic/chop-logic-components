@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import { type RefObject, useEffect, useState } from 'react';
 
 import { useContainerDimensions } from '../use-container-dimensions/use-container-dimensions';
 import { useWindowDimensions } from '../use-window-dimensions/use-window-dimensions';
@@ -10,7 +10,12 @@ type useTooltipPositionParams = {
   spacing?: number;
 };
 
-export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing = 4 }: useTooltipPositionParams) => {
+export const useTooltipPosition = ({
+  wrapperRef,
+  tooltipRef,
+  isOpened,
+  spacing = 4,
+}: useTooltipPositionParams) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({
     ref: tooltipRef,

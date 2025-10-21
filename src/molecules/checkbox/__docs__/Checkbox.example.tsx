@@ -1,5 +1,5 @@
-import { CheckboxProps } from '@models';
-import { FC } from 'react';
+import type { CheckboxProps } from '@models';
+import type { FC } from 'react';
 
 import Checkbox from '../Checkbox';
 

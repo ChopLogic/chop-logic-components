@@ -1,7 +1,7 @@
 import { Header } from '@atoms';
-import { SearchProps } from '@models';
+import type { SearchProps } from '@models';
 import styles from '@styles/storybook/Container.module.scss';
-import { FC, useState } from 'react';
+import { type FC, useState } from 'react';
 
 import Search from '../Search';
 
@@ -22,7 +22,7 @@ export const SearchExample: FC<SearchProps> = ({ onSearch, ...rest }) => {
       <Search {...rest} onSearch={handleSearch} onClear={handleClear} style={{ width: '360px' }} />
       {searchTerms.length > 0 && (
         <div className={styles.container} style={{ margin: 0 }}>
-          <Header as='h5'>You searched for: </Header>
+          <Header as="h5">You searched for: </Header>
           {searchTerms.map((term, index) => (
             <div key={index}>{term}</div>
           ))}

@@ -1,5 +1,5 @@
-import { IconName } from '@enums';
-import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
+import type { IconName } from '@enums';
+import type { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 
 export interface LinkProps extends PropsWithChildren, AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;

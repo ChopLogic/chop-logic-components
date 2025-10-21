@@ -21,9 +21,9 @@ describe('Form', () => {
   it('should not render Reset button is hasReset props is false', () => {
     render(
       <Form hasReset={false} {...testProps}>
-        <TextInput name='firstName' id='first-name' label='First Name' />
-        <TextInput name='lastName' id='last-name' label='Last Name' />
-        <NumericInput name='age' id='age' label='Age' />
+        <TextInput name="firstName" id="first-name" label="First Name" />
+        <TextInput name="lastName" id="last-name" label="Last Name" />
+        <NumericInput name="age" id="age" label="Age" />
       </Form>,
     );
     expect(screen.queryByText('Reset')).not.toBeInTheDocument();
@@ -33,9 +33,9 @@ describe('Form', () => {
     const mockSubmit = vi.fn();
     render(
       <Form onClickSubmit={mockSubmit} {...testProps}>
-        <TextInput name='firstName' id='first-name' label='First Name' />
-        <TextInput name='lastName' id='last-name' label='Last Name' />
-        <NumericInput name='age' id='age' label='Age' />
+        <TextInput name="firstName" id="first-name" label="First Name" />
+        <TextInput name="lastName" id="last-name" label="Last Name" />
+        <NumericInput name="age" id="age" label="Age" />
       </Form>,
     );
     await userEvent.click(screen.getByText('Submit'));
@@ -45,10 +45,10 @@ describe('Form', () => {
   it('should render initial values', () => {
     render(
       <Form initialValues={testInitialValues} {...testProps}>
-        <TextInput name='firstName' id='first-name' label='First Name' />
-        <TextInput name='lastName' id='last-name' label='Last Name' />
-        <NumericInput name='age' id='age' label='Age' />
-        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
+        <TextInput name="firstName" id="first-name" label="First Name" />
+        <TextInput name="lastName" id="last-name" label="Last Name" />
+        <NumericInput name="age" id="age" label="Age" />
+        <Checkbox name="accepted" id="accepted" label="Is Accepted" />
       </Form>,
     );
 
@@ -63,10 +63,10 @@ describe('Form', () => {
   it('should accept custom values', async () => {
     render(
       <Form {...testProps}>
-        <TextInput name='firstName' id='first-name' label='First Name' />
-        <TextInput name='lastName' id='last-name' label='Last Name' />
-        <NumericInput name='age' id='age' label='Age' />
-        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
+        <TextInput name="firstName" id="first-name" label="First Name" />
+        <TextInput name="lastName" id="last-name" label="Last Name" />
+        <NumericInput name="age" id="age" label="Age" />
+        <Checkbox name="accepted" id="accepted" label="Is Accepted" />
       </Form>,
     );
 
@@ -88,10 +88,10 @@ describe('Form', () => {
   it('should reset entered values to initial values', async () => {
     render(
       <Form initialValues={testInitialValues} {...testProps}>
-        <TextInput name='firstName' id='first-name' label='First Name' />
-        <TextInput name='lastName' id='last-name' label='Last Name' />
-        <NumericInput name='age' id='age' label='Age' />
-        <Checkbox name='accepted' id='accepted' label='Is Accepted' />
+        <TextInput name="firstName" id="first-name" label="First Name" />
+        <TextInput name="lastName" id="last-name" label="Last Name" />
+        <NumericInput name="age" id="age" label="Age" />
+        <Checkbox name="accepted" id="accepted" label="Is Accepted" />
       </Form>,
     );
 

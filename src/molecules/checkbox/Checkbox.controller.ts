@@ -1,6 +1,12 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
+import {
+  type ChangeEvent,
+  type ChangeEventHandler,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 
 import { getCheckboxInitialValue } from './Checkbox.helpers';
 

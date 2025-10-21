@@ -4,14 +4,22 @@ export const useIsMounted = (isOpened: boolean, delay: number = 300): boolean =>
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    if (isOpened && !isMounted) {
+    let timeoutId: NodeJS.Timeout;
+
+    if (isOpened) {
       setIsMounted(true);
-    } else if (!isOpened && isMounted) {
-      setTimeout(() => {
+    } else {
+      timeoutId = setTimeout(() => {
         setIsMounted(false);
       }, delay);
     }
-  }, [isOpened]);
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isOpened, delay]);
 
   return isMounted;
 };

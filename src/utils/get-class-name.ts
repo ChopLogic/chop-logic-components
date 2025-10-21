@@ -22,6 +22,7 @@ export function getClassName(input: ClassNameInput[]): string {
 
         return trueKeys.join(' ');
       }
+      return '';
     })
     .filter((item) => !!item);
 

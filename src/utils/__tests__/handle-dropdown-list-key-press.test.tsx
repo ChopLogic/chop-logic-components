@@ -21,8 +21,10 @@ describe('handleDropdownListKeyPress', () => {
     render(
       <ul>
         {options.map((option) => (
-          <li key={option.id} id={option.id} tabIndex={0}>
-            {option.label}
+          <li key={option.id}>
+            <button type="button" id={option.id}>
+              {option.label}
+            </button>
           </li>
         ))}
       </ul>,

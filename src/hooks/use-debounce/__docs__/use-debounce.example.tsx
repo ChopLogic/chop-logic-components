@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 import { useDebounce } from '../use-debounce';
 
@@ -7,14 +7,17 @@ export const InteractiveDebounceDemo = ({ delay: initialDelay }: { value: any; d
   const [inputValue, setInputValue] = useState('');
   const [delay, setDelay] = useState(initialDelay);
   const debouncedValue = useDebounce(inputValue, delay);
+  const typeInputId = useId();
+  const debounceInputId = useId();
 
   return (
     <div style={{ padding: '1rem' }}>
       <div style={{ marginBottom: '1rem' }}>
-        <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label htmlFor={typeInputId} style={{ display: 'block', marginBottom: '0.5rem' }}>
           <strong>Type here (watch the debounced value):</strong>
         </label>
         <input
+          id={typeInputId}
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -30,10 +33,11 @@ export const InteractiveDebounceDemo = ({ delay: initialDelay }: { value: any; d
       </div>
 
       <div style={{ marginBottom: '1rem' }}>
-        <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+        <label htmlFor={debounceInputId} style={{ display: 'block', marginBottom: '0.5rem' }}>
           <strong>Debounce Delay (ms):</strong>
         </label>
         <input
+          id={debounceInputId}
           type="range"
           min="0"
           max="2000"
@@ -53,8 +57,20 @@ export const InteractiveDebounceDemo = ({ delay: initialDelay }: { value: any; d
           marginBottom: '1rem',
         }}
       >
-        <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '4px' }}>
-          <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '0.5rem' }}>
+        <div
+          style={{
+            padding: '1rem',
+            border: '1px solid #e0e0e0',
+            borderRadius: '4px',
+          }}
+        >
+          <div
+            style={{
+              fontSize: '0.875rem',
+              color: '#666',
+              marginBottom: '0.5rem',
+            }}
+          >
             Instant Value
           </div>
           <div style={{ fontWeight: 'bold', minHeight: '1.5rem' }}>{inputValue || '(empty)'}</div>
@@ -67,10 +83,22 @@ export const InteractiveDebounceDemo = ({ delay: initialDelay }: { value: any; d
             background: '#f3f9ff',
           }}
         >
-          <div style={{ fontSize: '0.875rem', color: '#2196f3', marginBottom: '0.5rem' }}>
+          <div
+            style={{
+              fontSize: '0.875rem',
+              color: '#2196f3',
+              marginBottom: '0.5rem',
+            }}
+          >
             Debounced Value
           </div>
-          <div style={{ fontWeight: 'bold', minHeight: '1.5rem', color: '#2196f3' }}>
+          <div
+            style={{
+              fontWeight: 'bold',
+              minHeight: '1.5rem',
+              color: '#2196f3',
+            }}
+          >
             {debouncedValue || '(empty)'}
           </div>
         </div>

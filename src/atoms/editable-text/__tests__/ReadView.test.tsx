@@ -101,10 +101,12 @@ describe('EditableText > ReadView', () => {
   });
 
   it('passes through additional props', () => {
-    render(<ReadView {...defaultProps} data-testid="read-view" id="custom-id" />);
+    const dataTestId = 'read-view';
+    const viewId = 'custom-id';
+    render(<ReadView {...defaultProps} data-testid={dataTestId} id={viewId} />);
 
-    const span = screen.getByTestId('read-view');
-    expect(span).toHaveAttribute('id', 'custom-id');
+    const span = screen.getByTestId(dataTestId);
+    expect(span).toHaveAttribute('id', viewId);
   });
 
   it('handles empty string value', () => {

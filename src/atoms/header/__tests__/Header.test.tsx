@@ -53,8 +53,9 @@ describe('Header component', () => {
 
   it('passes additional HTML attributes to the heading element', () => {
     const testId = 'header-test-id';
+    const headerId = 'main-header';
     render(
-      <Header data-testid={testId} id="main-header">
+      <Header data-testid={testId} id={headerId}>
         Test
       </Header>,
     );

@@ -13,7 +13,7 @@ vi.mock('@atoms', () => ({
 }));
 
 // Mocked Component
-const MockComponent = ({ label }: { label: string }) => <button>{label}</button>;
+const MockComponent = ({ label }: { label: string }) => <button type="button">{label}</button>;
 
 describe('withTooltip HOC', () => {
   it('renders the wrapped component without Tooltip if no tooltip is provided', () => {

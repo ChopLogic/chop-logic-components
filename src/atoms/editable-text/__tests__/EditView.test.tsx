@@ -81,7 +81,9 @@ describe('EditableText > EditView', () => {
   });
 
   it('passes through additional props', () => {
-    render(<EditView {...defaultProps} data-testid="edit-view" id="custom-input" />);
+    const testId = 'edit-view';
+    const viewId = 'custom-input';
+    render(<EditView {...defaultProps} data-testid={testId} id={viewId} />);
 
     const input = screen.getByTestId('edit-view');
     expect(input).toHaveAttribute('id', 'custom-input');

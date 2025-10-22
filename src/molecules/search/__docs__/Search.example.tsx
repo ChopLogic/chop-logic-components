@@ -23,8 +23,8 @@ export const SearchExample: FC<SearchProps> = ({ onSearch, ...rest }) => {
       {searchTerms.length > 0 && (
         <div className={styles.container} style={{ margin: 0 }}>
           <Header as="h5">You searched for: </Header>
-          {searchTerms.map((term, index) => (
-            <div key={index}>{term}</div>
+          {searchTerms.map((term) => (
+            <div key={term}>{term}</div>
           ))}
         </div>
       )}

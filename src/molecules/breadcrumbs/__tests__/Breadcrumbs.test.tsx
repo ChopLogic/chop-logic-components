@@ -1,7 +1,7 @@
 import { IconName } from '@enums';
+import type { Breadcrumb } from '@models';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import Breadcrumbs from '../Breadcrumbs';
 
 vi.mock('@atoms', () => ({
@@ -41,8 +41,7 @@ describe('Breadcrumbs', () => {
   });
 
   it('renders null when items is undefined', () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { container } = render(<Breadcrumbs items={undefined as any} />);
+    const { container } = render(<Breadcrumbs items={undefined as unknown as Breadcrumb[]} />);
     expect(container.firstChild).toBeNull();
   });
 
@@ -152,17 +151,18 @@ describe('Breadcrumbs', () => {
   });
 
   it('passes through additional HTML attributes', () => {
+    const breadcrumbId = 'main-breadcrumbs';
     const { container } = render(
       <Breadcrumbs
         items={mockItems}
-        id="main-breadcrumbs"
+        id={breadcrumbId}
         title="Navigation breadcrumbs"
         tabIndex={0}
       />,
     );
 
     const nav = container.querySelector('nav');
-    expect(nav).toHaveAttribute('id', 'main-breadcrumbs');
+    expect(nav).toHaveAttribute('id', breadcrumbId);
     expect(nav).toHaveAttribute('title', 'Navigation breadcrumbs');
     expect(nav).toHaveAttribute('tabindex', '0');
   });

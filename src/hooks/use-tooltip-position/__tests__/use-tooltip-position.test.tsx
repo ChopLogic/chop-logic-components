@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import type { RefObject } from 'react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useTooltipPosition } from '../use-tooltip-position';
 
@@ -12,12 +12,31 @@ vi.mock('../use-container-dimensions', () => ({
   })),
 }));
 
-vi.mock('../use-window-dimensions', () => ({
-  useWindowDimensions: vi.fn(() => ({
-    width: 800,
-    height: 600,
-  })),
-}));
+const mockObserve = vi.fn();
+const mockDisconnect = vi.fn();
+const mockUnobserve = vi.fn();
+
+beforeEach(() => {
+  // Reset window dimensions for each test
+  window.innerWidth = 800;
+  window.innerHeight = 600;
+
+  // Reset ResizeObserver mocks
+  mockObserve.mockClear();
+  mockDisconnect.mockClear();
+  mockUnobserve.mockClear();
+
+  // Update ResizeObserver mock implementation
+  vi.stubGlobal(
+    'ResizeObserver',
+    vi.fn().mockImplementation((callback) => ({
+      observe: mockObserve,
+      disconnect: mockDisconnect,
+      unobserve: mockUnobserve,
+      callback,
+    })),
+  );
+});
 
 describe('useTooltipPosition', () => {
   const createMockRefs = () => {
@@ -148,5 +167,51 @@ describe('useTooltipPosition', () => {
     );
 
     expect(result.current).toEqual({ top: 0, left: 0 });
+    expect(mockObserve).not.toHaveBeenCalled();
+  });
+
+  it('should set up and clean up ResizeObserver when opened', () => {
+    const { wrapperRef, tooltipRef } = createMockRefs();
+
+    const { unmount } = renderHook(() =>
+      useTooltipPosition({
+        wrapperRef,
+        tooltipRef,
+        isOpened: true,
+      }),
+    );
+
+    expect(mockObserve).toHaveBeenCalledWith(document.documentElement);
+    expect(mockObserve).toHaveBeenCalledTimes(2);
+
+    unmount();
+
+    expect(mockDisconnect).toHaveBeenCalledTimes(2);
+  });
+
+  it('should recalculate position when window is resized', () => {
+    const { wrapperRef, tooltipRef } = createMockRefs();
+
+    const { result } = renderHook(() =>
+      useTooltipPosition({
+        wrapperRef,
+        tooltipRef,
+        isOpened: true,
+        spacing: 8,
+      }),
+    );
+
+    expect(result.current).toEqual({ top: 158, left: 100 });
+
+    // Get the stored callback from the ResizeObserver constructor
+    const resizeCallback = vi.mocked(window.ResizeObserver).mock
+      .calls[0][0] as ResizeObserverCallback;
+
+    // Simulate resize event
+    window.innerWidth = 400; // Smaller window width
+    const entry = { contentRect: { width: 400, height: 600 } } as ResizeObserverEntry;
+    resizeCallback([entry], {} as ResizeObserver);
+
+    expect(result.current).toEqual({ top: 158, left: 100 });
   });
 });

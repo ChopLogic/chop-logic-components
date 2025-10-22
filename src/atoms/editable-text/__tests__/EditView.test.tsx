@@ -125,11 +125,11 @@ describe('EditableText > EditView', () => {
     const { rerender } = render(<EditView {...defaultProps} onChange={onChange1} />);
 
     const input = screen.getByDisplayValue('Test Value');
-    const firstHandler = (input as any).onchange;
+    const firstHandler = input.onchange;
 
     rerender(<EditView {...defaultProps} onChange={onChange2} />);
 
-    expect((input as any).onchange).toBe(firstHandler);
+    expect(input.onchange).toBe(firstHandler);
   });
 
   it('forwards ref to input element', () => {

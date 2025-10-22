@@ -22,7 +22,7 @@ describe('Header component', () => {
     'renders as %s when specified',
     (level) => {
       render(<Header as={level}>{level} Header</Header>);
-      const header = screen.getByRole('heading', { level: parseInt(level[1]) });
+      const header = screen.getByRole('heading', { level: parseInt(level[1], 10) });
       expect(header).toBeInTheDocument();
       expect(header.tagName.toLowerCase()).toBe(level);
     },

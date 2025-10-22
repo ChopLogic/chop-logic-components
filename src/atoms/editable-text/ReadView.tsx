@@ -18,7 +18,7 @@ export const ReadView: FC<ReadViewProps> = ({
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      onClick(e as any);
+      onClick(e as unknown as React.MouseEvent);
     }
   };
 

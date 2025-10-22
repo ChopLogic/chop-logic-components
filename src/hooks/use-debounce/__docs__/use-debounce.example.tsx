@@ -2,8 +2,12 @@ import { useId, useState } from 'react';
 
 import { useDebounce } from '../use-debounce';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const InteractiveDebounceDemo = ({ delay: initialDelay }: { value: any; delay: number }) => {
+export const InteractiveDebounceDemo = ({
+  delay: initialDelay,
+}: {
+  value: unknown;
+  delay: number;
+}) => {
   const [inputValue, setInputValue] = useState('');
   const [delay, setDelay] = useState(initialDelay);
   const debouncedValue = useDebounce(inputValue, delay);

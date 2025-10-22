@@ -41,7 +41,7 @@ export const TabEditInput: FC<Props> = ({
     <div className={styles.editContainer}>
       <input
         ref={inputRef}
-        id={tabId + '-input'}
+        id={`${tabId}-input`}
         type="text"
         value={editValue}
         onChange={onInputChange}

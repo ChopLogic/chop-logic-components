@@ -12,7 +12,9 @@ function TestConsumer() {
   return (
     <>
       <div data-testid="mode">{mode}</div>
-      <button onClick={() => setMode(ThemeMode.Dark)}>Switch</button>
+      <button type="button" onClick={() => setMode(ThemeMode.Dark)}>
+        Switch
+      </button>
     </>
   );
 }

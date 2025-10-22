@@ -149,9 +149,9 @@ describe('useContainerDimensions', () => {
     expect(result.current).toEqual({ width: 100, height: 50 });
 
     // Set ref to null
-    const nullRef = { current: null };
+    const nullRef = { current: null as unknown as HTMLElement };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    rerender({ ref: nullRef as any, isVisible: true });
+    rerender({ ref: nullRef, isVisible: true });
 
     // Should maintain previous dimensions
     expect(result.current).toEqual({ width: 100, height: 50 });

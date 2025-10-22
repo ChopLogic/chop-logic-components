@@ -121,10 +121,11 @@ describe('Button', () => {
   });
 
   it('passes additional props to the button', () => {
-    render(<Button {...defaultProps} id="test-button" title="Test Button" />);
+    const buttonId = 'test-button';
+    render(<Button {...defaultProps} id={buttonId} title="Test Button" />);
 
     const button = screen.getByTestId('primary-button');
-    expect(button).toHaveAttribute('id', 'test-button');
+    expect(button).toHaveAttribute('id', buttonId);
     expect(button).toHaveAttribute('title', 'Test Button');
   });
 

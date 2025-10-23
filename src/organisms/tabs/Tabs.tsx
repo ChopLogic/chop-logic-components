@@ -62,6 +62,8 @@ const Tabs: FC<TabsProps> = ({
     setTabCounter((prev) => prev + 1);
 
     onTabAdd?.();
+
+    handleTabSelect(newTabId);
   };
 
   const handleTabDelete = (tabId: string) => {
@@ -104,7 +106,6 @@ const Tabs: FC<TabsProps> = ({
         editable={editable}
         extendable={extendable}
         onTabAdd={handleTabAdd}
-        initialTabsCount={initialTabsCount}
         onTabDelete={handleTabDelete}
       />
       <TabContent

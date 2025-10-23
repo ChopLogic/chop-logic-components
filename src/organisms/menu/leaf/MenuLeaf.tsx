@@ -15,6 +15,13 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
     <span>{label}</span>
   );
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    e.stopPropagation();
+    if (e.key === ' ') {
+      onClick?.();
+    }
+  };
+
   return (
     <li
       className={styles.menuLeaf}
@@ -22,6 +29,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
       role="menuitem"
       onFocus={onFocus}
       onClick={onClick}
+      onKeyDown={handleKeyDown}
       onMouseOver={onHover}
     >
       <Icon name={icon} hidden />

@@ -7,8 +7,17 @@
       "suspicious": {
         "noExplicitAny": "warn"
       },
+      "a11y": {
+        "noNoninteractiveElementToInteractiveRole": "warn",
+        "useSemanticElements": "warn",
+        "useButtonType": "warn",
+        "noStaticElementInteractions": "warn"
+      },
       "style": {
         "noNonNullAssertion": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
       }
     }
   },

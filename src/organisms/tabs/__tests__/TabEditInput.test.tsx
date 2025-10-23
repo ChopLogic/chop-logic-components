@@ -7,7 +7,13 @@ import { TabEditInput } from '../edit-input/TabEditInput';
 // Mock the Button component
 vi.mock('@atoms', () => ({
   Button: ({ icon, onClick, label, id }: ButtonProps) => (
-    <button data-testid={`button-${icon}`} onClick={onClick} aria-label={label} id={id}>
+    <button
+      type="button"
+      data-testid={`button-${icon}`}
+      onClick={onClick}
+      aria-label={label}
+      id={id}
+    >
       {icon} Button
     </button>
   ),

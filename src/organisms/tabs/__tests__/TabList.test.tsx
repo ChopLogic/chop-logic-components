@@ -50,6 +50,7 @@ vi.mock('../button/TabButton', () => ({
     <button
       data-testid={`tab-button-${tabId}`}
       onClick={() => onTabSelect(tabId)}
+      role="tab"
       aria-selected={isSelected}
       aria-disabled={isDisabled}
       data-selected={isSelected}
@@ -252,35 +253,15 @@ describe('TabList', () => {
     expect(screen.queryByTestId(/tab-button-/)).not.toBeInTheDocument();
   });
 
-  it('auto-selects newly added tab', () => {
-    const onTabSelect = vi.fn();
-    const { rerender } = render(
-      <TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
-    );
-
-    // Add a new tab
-    const newTabs = [
-      ...mockTabs,
-      { id: 'tab4', title: 'Fourth Tab', content: <div>Content 4</div> },
-    ];
-    rerender(
-      <TabList {...defaultProps} tabs={newTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
-    );
-
-    expect(onTabSelect).toHaveBeenCalledWith('tab4');
-  });
-
   it('does not auto-select when tabs count decreases', () => {
     const onTabSelect = vi.fn();
     const { rerender } = render(
-      <TabList {...defaultProps} tabs={mockTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
+      <TabList {...defaultProps} tabs={mockTabs} onTabSelect={onTabSelect} />,
     );
 
     // Remove a tab
     const fewerTabs = mockTabs.slice(0, 2);
-    rerender(
-      <TabList {...defaultProps} tabs={fewerTabs} initialTabsCount={3} onTabSelect={onTabSelect} />,
-    );
+    rerender(<TabList {...defaultProps} tabs={fewerTabs} onTabSelect={onTabSelect} />);
 
     expect(onTabSelect).not.toHaveBeenCalled();
   });

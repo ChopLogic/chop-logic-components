@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import type { RefObject } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -189,7 +189,7 @@ describe('useTooltipPosition', () => {
     expect(mockDisconnect).toHaveBeenCalledTimes(2);
   });
 
-  it('should recalculate position when window is resized', () => {
+  it('should recalculate position when window is resized', async () => {
     const { wrapperRef, tooltipRef } = createMockRefs();
 
     const { result } = renderHook(() =>
@@ -210,8 +210,13 @@ describe('useTooltipPosition', () => {
     // Simulate resize event
     window.innerWidth = 400; // Smaller window width
     const entry = { contentRect: { width: 400, height: 600 } } as ResizeObserverEntry;
-    resizeCallback([entry], {} as ResizeObserver);
 
-    expect(result.current).toEqual({ top: 158, left: 100 });
+    act(() => {
+      resizeCallback([entry], {} as ResizeObserver);
+    });
+
+    await waitFor(() => {
+      expect(result.current).toEqual({ top: 158, left: 100 });
+    });
   });
 });

@@ -17,7 +17,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
     e.stopPropagation();
-    if (e.key === ' ') {
+    if (e.key === 'Enter') {
       onClick?.();
     }
   };

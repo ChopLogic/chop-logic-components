@@ -21,20 +21,20 @@ class ResizeObserverMock {
   disconnect = vi.fn();
 }
 
-Object.defineProperty(window, 'ResizeObserver', {
+Object.defineProperty(globalThis, 'ResizeObserver', {
   writable: true,
   configurable: true,
   value: ResizeObserverMock,
 });
 
 // Set default window dimensions
-Object.defineProperty(window, 'innerWidth', {
+Object.defineProperty(globalThis, 'innerWidth', {
   writable: true,
   configurable: true,
   value: 1024,
 });
 
-Object.defineProperty(window, 'innerHeight', {
+Object.defineProperty(globalThis, 'innerHeight', {
   writable: true,
   configurable: true,
   value: 768,

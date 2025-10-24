@@ -1,0 +1,1 @@
+import{r as t}from"./iframe-CNQVeOyN.js";import{R as a}from"./index-DekENkd-.js";const o=({children:r})=>{const[e]=t.useState(()=>document.createElement("div"));return t.useEffect(()=>(document.body.appendChild(e),()=>{e.remove()}),[e]),a.createPortal(r,e)};try{o.displayName="Portal",o.__docgenInfo={description:"",displayName:"Portal",props:{}}}catch(r){}export{o as P};

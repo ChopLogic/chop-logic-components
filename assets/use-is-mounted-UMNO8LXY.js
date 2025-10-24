@@ -1,0 +1,1 @@
+import{r as o}from"./iframe-CNQVeOyN.js";const a=(e,s=300)=>{const[r,u]=o.useState(!1);return o.useEffect(()=>{let t;return e?u(!0):t=setTimeout(()=>{u(!1)},s),()=>{t&&clearTimeout(t)}},[e,s]),r};export{a as u};

@@ -36,6 +36,7 @@
     ],
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "biome format --write",
+      "biome check --diagnostic-level error",
       "npm run test:ci"
     ]
   },

@@ -115,12 +115,12 @@ describe('TextInput', () => {
   });
 
   it('should display the password toggle when input type is password', () => {
-    render(<TextInput {...testProps} type='password' />);
+    render(<TextInput {...testProps} type="password" />);
     expect(screen.getByLabelText('Toggle password visibility')).toBeInTheDocument();
   });
 
   it('should toggle password visibility', async () => {
-    render(<TextInput {...testProps} type='password' />);
+    render(<TextInput {...testProps} type="password" />);
     const input = screen.getByPlaceholderText(testProps.placeholder);
     expect(input).toHaveAttribute('type', 'password');
     await userEvent.click(screen.getByLabelText('Toggle password visibility'));
@@ -130,25 +130,37 @@ describe('TextInput', () => {
   });
 
   it('should have the correct email type', () => {
-    render(<TextInput {...testProps} type='email' />);
+    render(<TextInput {...testProps} type="email" />);
     expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
   });
 
   it('should not show an error message by default', async () => {
-    render(<TextInput {...testProps} type='email' errorMessage='Incorrect email' />);
+    render(<TextInput {...testProps} type="email" errorMessage="Incorrect email" />);
     const errorMessage = await screen.findByText('Incorrect email');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('should show an error message if the input value is invalid', async () => {
-    render(<TextInput {...testProps} validator={{ regexp: '^[A-Za-z ]+$' }} errorMessage='Only latin letters are allowed' />);
+    render(
+      <TextInput
+        {...testProps}
+        validator={{ regexp: '^[A-Za-z ]+$' }}
+        errorMessage="Only latin letters are allowed"
+      />,
+    );
     await userEvent.type(screen.getByRole('textbox'), '123');
     const errorMessage = await screen.findByText('Only latin letters are allowed');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'false');
   });
 
   it('should not show an error message if the input value is valid', async () => {
-    render(<TextInput {...testProps} validator={{ regexp: '^[A-Za-z ]+$' }} errorMessage='Only latin letters are allowed' />);
+    render(
+      <TextInput
+        {...testProps}
+        validator={{ regexp: '^[A-Za-z ]+$' }}
+        errorMessage="Only latin letters are allowed"
+      />,
+    );
     await userEvent.type(screen.getByRole('textbox'), 'asdfas');
     const errorMessage = await screen.findByText('Only latin letters are allowed');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'true');

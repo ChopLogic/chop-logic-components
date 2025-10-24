@@ -1,4 +1,4 @@
-import { Tooltip } from '@atoms';
+import type { Tooltip } from '@atoms';
 import { TooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 

@@ -1,9 +1,14 @@
 import { OrientationMode } from '@enums';
-import { MenuProps } from '@models';
+import type { MenuProps } from '@models';
 import { Menu } from '@organisms';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-const MenuExample: FC<MenuProps> = ({ mode = OrientationMode.Vertical, openedOn = 'click', items = [], ...rest }) => {
+const MenuExample: FC<MenuProps> = ({
+  mode = OrientationMode.Vertical,
+  openedOn = 'click',
+  items = [],
+  ...rest
+}) => {
   return (
     <div
       style={{

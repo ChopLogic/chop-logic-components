@@ -1,6 +1,6 @@
-import { AlertMode, IconName } from '@enums';
+import type { AlertMode, IconName } from '@enums';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export interface AlertProps extends ChopLogicComponentProps {
   isOpened: boolean;

@@ -1,8 +1,8 @@
-import { FormProps, FormValues, SelectValue } from '@models';
+import type { FormProps, FormValues, SelectValue } from '@models';
 import { Checkbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
 import { Form } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
-import { CSSProperties, FC, useState } from 'react';
+import { type CSSProperties, type FC, useState } from 'react';
 
 const SELECT_LANGUAGES: SelectValue[] = [
   { id: 'lang-1', label: 'English' },
@@ -40,29 +40,39 @@ export const FormExample: FC<FormProps> = ({ columns, hasReset }) => {
         onClickSubmit={(data) => setData(data)}
       >
         <TextInput
-          name='firstName'
-          label='First Name'
-          errorMessage='Only latin letters are allowed'
+          name="firstName"
+          label="First Name"
+          errorMessage="Only latin letters are allowed"
           validator={{ regexp: '^[A-Za-z ]+$' }}
           style={inputStyles}
         />
         <TextInput
-          name='lastName'
-          label='Last Name'
-          errorMessage='Only latin letters are allowed'
+          name="lastName"
+          label="Last Name"
+          errorMessage="Only latin letters are allowed"
           validator={{ regexp: '^[A-Za-z ]+$' }}
           style={inputStyles}
         />
         <NumericInput
-          name='age'
-          label='Age'
+          name="age"
+          label="Age"
           validator={(age) => !!age && age >= 1 && age < 100}
           errorMessage={'Enter a number between 1 and 99'}
           style={inputStyles}
         />
-        <Select name='language' label='Language' options={SELECT_LANGUAGES} style={inputStyles} />
-        <MultiSelect name='programmingLanguages' label='Programming Languages' options={MULTI_SELECT_VALUES} style={inputStyles} />
-        <Checkbox name='isTermsAccepted' label='Accept Terms and Conditions' required style={inputStyles} />
+        <Select name="language" label="Language" options={SELECT_LANGUAGES} style={inputStyles} />
+        <MultiSelect
+          name="programmingLanguages"
+          label="Programming Languages"
+          options={MULTI_SELECT_VALUES}
+          style={inputStyles}
+        />
+        <Checkbox
+          name="isTermsAccepted"
+          label="Accept Terms and Conditions"
+          required
+          style={inputStyles}
+        />
       </Form>
       {data && (
         <div className={styles.container} style={{ marginTop: '2rem' }}>

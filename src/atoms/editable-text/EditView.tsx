@@ -1,5 +1,5 @@
-import { ChopLogicComponentProps } from '@models';
-import { FC, RefObject, useCallback } from 'react';
+import type { ChopLogicComponentProps } from '@models';
+import { type FC, type RefObject, useCallback } from 'react';
 
 interface EditViewProps extends ChopLogicComponentProps {
   multiline: boolean;
@@ -9,7 +9,7 @@ interface EditViewProps extends ChopLogicComponentProps {
   onBlur: () => void;
   onKeyDown: (event: React.KeyboardEvent) => void;
   className: string;
-  inputRef: RefObject<any>;
+  inputRef: RefObject<HTMLTextAreaElement | HTMLInputElement | null>;
 }
 
 export const EditView: FC<EditViewProps> = ({
@@ -34,7 +34,7 @@ export const EditView: FC<EditViewProps> = ({
 
   return (
     <InputComponent
-      ref={inputRef}
+      ref={inputRef as unknown as RefObject<HTMLTextAreaElement & HTMLInputElement>}
       value={value}
       onChange={handleChange}
       onBlur={onBlur}

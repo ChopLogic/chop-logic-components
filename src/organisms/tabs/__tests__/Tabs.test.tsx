@@ -177,7 +177,7 @@ describe('Tabs', () => {
     });
 
     it('should use extendedTabLabel for new tab title', async () => {
-      render(<Tabs {...testProps} extendable={true} extendedTabLabel='Custom Tab Name' />);
+      render(<Tabs {...testProps} extendable={true} extendedTabLabel="Custom Tab Name" />);
 
       const addButton = screen.getByLabelText('Add Tab');
       await userEvent.click(addButton);

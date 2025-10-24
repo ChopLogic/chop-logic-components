@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { useId } from 'react';
-import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
+import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 
 import { useElementIds } from '../use-element-ids';
 

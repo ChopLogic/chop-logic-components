@@ -1,5 +1,5 @@
 import styles from '@styles/storybook/Container.module.scss';
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import Portal from '../Portal';
 

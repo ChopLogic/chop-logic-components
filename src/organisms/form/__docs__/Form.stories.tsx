@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Form from '../Form';
+import type Form from '../Form';
 import { FormExample } from './Form.example';
 
 const meta: Meta<typeof Form> = {

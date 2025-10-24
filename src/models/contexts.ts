@@ -1,6 +1,6 @@
-import { ThemeMode } from '@enums';
+import type { ThemeMode } from '@enums';
 
-import { FormInputParams, FormValues } from './form';
+import type { FormInputParams, FormValues } from './form';
 
 export interface ThemeContextProps {
   mode?: ThemeMode;

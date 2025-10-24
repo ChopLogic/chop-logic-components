@@ -1,8 +1,16 @@
 import { useElementIds } from '@hooks';
-import { GridItem } from '@models';
+import type { GridItem } from '@models';
 import { useState } from 'react';
 
-export const useGridController = ({ data, id, onSelect }: { data: GridItem[]; id?: string; onSelect?: (ids: string[]) => void }) => {
+export const useGridController = ({
+  data,
+  id,
+  onSelect,
+}: {
+  data: GridItem[];
+  id?: string;
+  onSelect?: (ids: string[]) => void;
+}) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const allIds = data.map((item) => item.id);

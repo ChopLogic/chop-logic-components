@@ -1,5 +1,5 @@
-import { NumericInputProps } from '@models';
-import { FC } from 'react';
+import type { NumericInputProps } from '@models';
+import type { FC } from 'react';
 
 import NumericInput from '../NumericInput';
 

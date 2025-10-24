@@ -1,6 +1,6 @@
-import { GridProps } from '@models';
+import type { GridProps } from '@models';
 import { Grid } from '@organisms';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const GridExample: FC<GridProps> = (props) => {
   return <Grid {...props} />;

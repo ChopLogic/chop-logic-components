@@ -1,8 +1,8 @@
 import { Portal } from '@atoms';
 import { TooltipContainer } from '@enums';
-import { TooltipProps } from '@models';
+import type { TooltipProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, MouseEvent } from 'react';
+import type { FC, MouseEvent } from 'react';
 
 import { useTooltipController } from './Tooltip.controller';
 import styles from './Tooltip.module.scss';
@@ -20,8 +20,18 @@ const Tooltip: FC<TooltipProps> = ({
   ...rest
 }) => {
   const ContainerComponent = containerTag;
-  const { openTooltip, closeTooltip, toggleTooltip, handleContextMenu, elementId, top, left, isOpened, wrapperRef, tooltipRef } =
-    useTooltipController({ id, autoClose, autoCloseDelay });
+  const {
+    openTooltip,
+    closeTooltip,
+    toggleTooltip,
+    handleContextMenu,
+    elementId,
+    top,
+    left,
+    isOpened,
+    wrapperRef,
+    tooltipRef,
+  } = useTooltipController({ id, autoClose, autoCloseDelay });
   const tooltipClass = getClassName([styles.tooltip, className]);
 
   return (
@@ -32,7 +42,9 @@ const Tooltip: FC<TooltipProps> = ({
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
       onFocus={visibleOn === 'focus' ? openTooltip : undefined}
       onBlur={visibleOn === 'focus' ? closeTooltip : undefined}
-      onContextMenu={visibleOn === 'contextmenu' ? (e: MouseEvent) => handleContextMenu(e) : undefined}
+      onContextMenu={
+        visibleOn === 'contextmenu' ? (e: MouseEvent) => handleContextMenu(e) : undefined
+      }
       tabIndex={-1}
       ref={wrapperRef}
       aria-describedby={elementId}
@@ -40,7 +52,14 @@ const Tooltip: FC<TooltipProps> = ({
       {children}
       {isOpened && (
         <Portal>
-          <div style={{ ...style, top, left }} ref={tooltipRef} role='tooltip' id={elementId} {...rest} className={tooltipClass}>
+          <div
+            style={{ ...style, top, left }}
+            ref={tooltipRef}
+            role="tooltip"
+            id={elementId}
+            {...rest}
+            className={tooltipClass}
+          >
             {tooltipContent}
           </div>
         </Portal>

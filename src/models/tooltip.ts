@@ -1,7 +1,7 @@
-import { TooltipContainer } from '@enums';
-import { PropsWithChildren, ReactElement } from 'react';
+import type { TooltipContainer } from '@enums';
+import type { PropsWithChildren, ReactElement } from 'react';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export interface TooltipProps extends PropsWithChildren, ChopLogicComponentProps {
   tooltipContent: string | ReactElement;

@@ -11,9 +11,9 @@ const TestModal = ({ isOpened }: { isOpened: boolean }) => {
 
   return (
     <div ref={modalRef}>
-      <button>Button 1</button>
-      <button>Button 2</button>
-      <button>Button 3</button>
+      <button type="button">Button 1</button>
+      <button type="button">Button 2</button>
+      <button type="button">Button 3</button>
     </div>
   );
 };

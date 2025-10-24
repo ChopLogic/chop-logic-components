@@ -1,4 +1,4 @@
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';

@@ -13,11 +13,13 @@ export const UseModalFocusTrapExample = () => {
 
   return (
     <div style={{ padding: '1rem' }}>
-      <Button onClick={() => setIsOpened(true)} text='Open modal' view={ButtonView.Secondary} />
+      <Button onClick={() => setIsOpened(true)} text="Open modal" view={ButtonView.Secondary} />
       {isOpened && (
         <div ref={modalRef} tabIndex={-1} className={styles.container}>
-          <button onClick={() => setIsOpened(false)}>Close Modal</button>
-          <input type='text' placeholder='Focusable Input' />
+          <button type="button" onClick={() => setIsOpened(false)}>
+            Close Modal
+          </button>
+          <input type="text" placeholder="Focusable Input" />
         </div>
       )}
     </div>

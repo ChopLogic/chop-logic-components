@@ -1,5 +1,11 @@
-import { useAutoClose, useClickOutside, useElementIds, useKeyPress, useTooltipPosition } from '@hooks';
-import { MouseEvent, useRef, useState } from 'react';
+import {
+  useAutoClose,
+  useClickOutside,
+  useElementIds,
+  useKeyPress,
+  useTooltipPosition,
+} from '@hooks';
+import { type MouseEvent, useRef, useState } from 'react';
 
 type Params = {
   autoClose: boolean;
@@ -23,7 +29,11 @@ export const useTooltipController = ({ id, autoClose, autoCloseDelay }: Params) 
   };
 
   useKeyPress({ keyCode: 'Escape', ref: tooltipRef, onKeyPress: closeTooltip });
-  useClickOutside({ ref: tooltipRef, onClickOutsideHandler: closeTooltip, dependentRef: wrapperRef });
+  useClickOutside({
+    ref: tooltipRef,
+    onClickOutsideHandler: closeTooltip,
+    dependentRef: wrapperRef,
+  });
   useAutoClose({
     isOpened,
     onClose: closeTooltip,

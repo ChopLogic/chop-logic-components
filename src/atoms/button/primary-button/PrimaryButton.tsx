@@ -1,5 +1,5 @@
 import { getClassName } from '@utils';
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
 import styles from './PrimaryButton.module.scss';
 

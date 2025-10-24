@@ -1,9 +1,9 @@
 import { Button } from '@atoms';
 import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
-import { FormProps } from '@models';
+import type { FormProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { useFormController } from './Form.controller';
 import styles from './Form.module.scss';
@@ -41,8 +41,16 @@ const Form: FC<FormProps> = ({
       <FormContext.Provider value={contextValue}>
         {children}
         <div className={buttonsClass}>
-          {hasReset && <Button type='reset' text='Reset' icon={IconName.Clear} view={ButtonView.Secondary} />}
-          <Button type='submit' text='Submit' icon={IconName.Forward} extended={!hasReset} disabled={!valid} />
+          {hasReset && (
+            <Button type="reset" text="Reset" icon={IconName.Clear} view={ButtonView.Secondary} />
+          )}
+          <Button
+            type="submit"
+            text="Submit"
+            icon={IconName.Forward}
+            extended={!hasReset}
+            disabled={!valid}
+          />
         </div>
       </FormContext.Provider>
     </form>

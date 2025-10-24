@@ -1,7 +1,7 @@
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import { render } from '@testing-library/react';
 import { handleDropdownListKeyPress } from '@utils';
-import React from 'react';
+import type React from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('handleDropdownListKeyPress', () => {
@@ -21,8 +21,10 @@ describe('handleDropdownListKeyPress', () => {
     render(
       <ul>
         {options.map((option) => (
-          <li key={option.id} id={option.id} tabIndex={0}>
-            {option.label}
+          <li key={option.id}>
+            <button type="button" id={option.id}>
+              {option.label}
+            </button>
           </li>
         ))}
       </ul>,

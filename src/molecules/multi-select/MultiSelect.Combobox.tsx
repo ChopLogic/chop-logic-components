@@ -1,7 +1,7 @@
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
-import { MultiSelectValue } from '@models';
-import { FC } from 'react';
+import type { MultiSelectValue } from '@models';
+import type { FC } from 'react';
 
 import styles from '../select/combobox/Combobox.module.scss';
 
@@ -42,11 +42,11 @@ export const MultiSelectCombobox: FC<Props> = ({
 
   return (
     <button
-      type='button'
+      type="button"
       name={name}
       value={selectedIds}
-      role='combobox'
-      aria-haspopup='listbox'
+      role="combobox"
+      aria-haspopup="listbox"
       aria-expanded={opened}
       aria-controls={dropdownId}
       id={comboboxId}

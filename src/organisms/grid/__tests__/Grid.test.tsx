@@ -16,9 +16,27 @@ describe('Grid', () => {
     data: [
       { id: 'row1', company: '', contact: 'Maria', country: 'Germany', phone: '123-345-7890' },
       { id: 'row2', company: '', contact: 'Francisco', country: 'Mexico', phone: '123-345-7890' },
-      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
-      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
-      { id: 'row5', company: 'Laughing Bacchus', contact: '', country: 'Canada', phone: '123-345-7890' },
+      {
+        id: 'row3',
+        company: 'Ernst Handel',
+        contact: 'Roland Mendel',
+        country: 'Austria',
+        phone: '123-345-7890',
+      },
+      {
+        id: 'row4',
+        company: 'Island Trading',
+        contact: 'Helen Bennett',
+        country: 'UK',
+        phone: '123-345-7890',
+      },
+      {
+        id: 'row5',
+        company: 'Laughing Bacchus',
+        contact: '',
+        country: 'Canada',
+        phone: '123-345-7890',
+      },
       { id: 'row6', company: '', contact: 'Giovanni', country: 'Italy', phone: '123-345-7890' },
     ],
     className: 'test-class',
@@ -37,13 +55,13 @@ describe('Grid', () => {
   });
 
   it('should render an optional caption', () => {
-    render(<Grid {...testProps} selectable={false} caption='Test Caption' />);
+    render(<Grid {...testProps} selectable={false} caption="Test Caption" />);
     expect(screen.getByText('Test Caption')).toBeInTheDocument();
   });
 
   it('should call onSelect() handler when a checkbox is clicked', async () => {
     const mockSelect = vi.fn();
-    render(<Grid {...testProps} selectable caption='Test Caption' onSelect={mockSelect} />);
+    render(<Grid {...testProps} selectable caption="Test Caption" onSelect={mockSelect} />);
     const firstCheckbox = screen.getAllByRole('checkbox')[0];
     const secondCheckbox = screen.getAllByRole('checkbox')[1];
     await userEvent.click(firstCheckbox);

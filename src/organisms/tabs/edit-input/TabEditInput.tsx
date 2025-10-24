@@ -1,6 +1,6 @@
 import { Button } from '@atoms';
 import { ButtonView, IconName } from '@enums';
-import { FC, useEffect, useRef } from 'react';
+import { type FC, useEffect, useRef } from 'react';
 
 import styles from './TabEditInput.module.scss';
 
@@ -41,8 +41,8 @@ export const TabEditInput: FC<Props> = ({
     <div className={styles.editContainer}>
       <input
         ref={inputRef}
-        id={tabId + '-input'}
-        type='text'
+        id={`${tabId}-input`}
+        type="text"
         value={editValue}
         onChange={onInputChange}
         onBlur={onInputBlur}
@@ -51,8 +51,19 @@ export const TabEditInput: FC<Props> = ({
         maxLength={50}
       />
       <span className={styles.editContainer_buttons}>
-        <Button view={ButtonView.Icon} icon={IconName.CheckMark} onClick={onSave} label='Save tab title' />
-        <Button view={ButtonView.Icon} icon={IconName.Cancel} onClick={onCancel} label='Cancel tab title change' id={cancelButtonId} />
+        <Button
+          view={ButtonView.Icon}
+          icon={IconName.CheckMark}
+          onClick={onSave}
+          label="Save tab title"
+        />
+        <Button
+          view={ButtonView.Icon}
+          icon={IconName.Cancel}
+          onClick={onCancel}
+          label="Cancel tab title change"
+          id={cancelButtonId}
+        />
       </span>
     </div>
   );

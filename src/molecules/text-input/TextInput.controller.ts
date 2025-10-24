@@ -1,7 +1,13 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
-import { ChangeEvent, ChangeEventHandler, useCallback, useContext, useState } from 'react';
+import type { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
+import {
+  type ChangeEvent,
+  type ChangeEventHandler,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 
 import { getTextInputInitialValue, validateTextInputValue } from './TextInput.helpers';
 

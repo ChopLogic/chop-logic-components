@@ -11,7 +11,9 @@ describe('useValueState', () => {
   });
 
   it('should sync internal value when prop value changes', () => {
-    const { result, rerender } = renderHook(({ value }) => useValueState(value), { initialProps: { value: 'initial' } });
+    const { result, rerender } = renderHook(({ value }) => useValueState(value), {
+      initialProps: { value: 'initial' },
+    });
 
     expect(result.current.internalValue).toBe('initial');
 

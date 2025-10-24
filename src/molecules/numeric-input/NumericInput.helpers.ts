@@ -1,4 +1,4 @@
-import { FormValues, NumericInputValidator } from '@models';
+import type { FormValues, NumericInputValidator } from '@models';
 
 export function getNumericInputInitialValue({
   name,

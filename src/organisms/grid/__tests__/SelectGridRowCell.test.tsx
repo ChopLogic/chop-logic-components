@@ -13,7 +13,12 @@ describe('SelectGridRowCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
+            <SelectGridRowCell
+              selectRowById={mockedSelect}
+              deselectRowById={mockedDeselect}
+              rowId={mockedRowId}
+              isRowSelected
+            />
           </tr>
         </thead>
       </table>,
@@ -26,7 +31,12 @@ describe('SelectGridRowCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected={false} />
+            <SelectGridRowCell
+              selectRowById={mockedSelect}
+              deselectRowById={mockedDeselect}
+              rowId={mockedRowId}
+              isRowSelected={false}
+            />
           </tr>
         </thead>
       </table>,
@@ -41,7 +51,12 @@ describe('SelectGridRowCheckbox', () => {
       <table>
         <thead>
           <tr>
-            <SelectGridRowCell selectRowById={mockedSelect} deselectRowById={mockedDeselect} rowId={mockedRowId} isRowSelected />
+            <SelectGridRowCell
+              selectRowById={mockedSelect}
+              deselectRowById={mockedDeselect}
+              rowId={mockedRowId}
+              isRowSelected
+            />
           </tr>
         </thead>
       </table>,

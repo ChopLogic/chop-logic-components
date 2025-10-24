@@ -1,5 +1,5 @@
-import { GridColumn, GridItem } from '@models';
-import { ReactElement } from 'react';
+import type { GridColumn, GridItem } from '@models';
+import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
 import { getGridRowValues } from '../Grid.helpers';
@@ -77,12 +77,16 @@ describe('getGridRowValues', () => {
       { field: 'details', title: 'Details' }, // object field
     ];
 
-    const renderDataItem = (item: GridItem, field: string) => <span>{(item[field] as string).toUpperCase()}</span>;
+    const renderDataItem = (item: GridItem, field: string) => (
+      <span>{(item[field] as string).toUpperCase()}</span>
+    );
 
     const result = getGridRowValues({ item, columns, renderDataItem });
 
     expect((result[0].value as ReactElement<HTMLTableRowElement>).props.children).toBe('TEST-ID');
-    expect((result[1].value as ReactElement<HTMLTableRowElement>).props.children).toBe('123 MAIN ST');
+    expect((result[1].value as ReactElement<HTMLTableRowElement>).props.children).toBe(
+      '123 MAIN ST',
+    );
   });
 
   it('should handle columns without a field by returning empty string', () => {

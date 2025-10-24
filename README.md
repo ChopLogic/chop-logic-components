@@ -9,6 +9,7 @@
 [![NPM](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+[![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
 
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
@@ -42,9 +43,11 @@ yarn add chop-logic-components
 | `build`           | Builds the TypeScript types and compiles the library using Vite.                                                                                      |
 | `build:storybook` | Builds a static version of Storybook into the `storybook-static` directory.                                                                           |
 | `prepare`         | Runs the production build and sets up Husky git hooks.                                                                                                |
-| `format`          | Formats all TypeScript files using Prettier with the TypeScript parser.                                                                               |
-| `lint`            | Runs ESLint on the project to report code style or quality issues.                                                                                    |
-| `lint:fix`        | Fixes auto-correctable ESLint issues and silences output.                                                                                             |
+| `format`          | Formats all supported files using Biome formatter.                                                                                                    |
+| `lint`            | Runs Biome linter to check for code style and quality issues.                                                                                         |
+| `lint:errors`     | Shows only error-level diagnostics from Biome (limited to 100 issues).                                                                                |
+| `lint:warnings`   | Shows only warning-level diagnostics from Biome (limited to 100 issues).                                                                              |
+| `lint:fix`        | Automatically fixes Biome issues where possible.                                                                                                      |
 | `typecheck`       | Performs a full type check without emitting output.                                                                                                   |
 | `test`            | Runs unit tests using Vitest in watch mode (interactive).                                                                                             |
 | `test:ci`         | Runs tests once in CI mode and allows empty test sets.                                                                                                |

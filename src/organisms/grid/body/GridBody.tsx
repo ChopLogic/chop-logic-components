@@ -1,6 +1,6 @@
-import { GridColumn, GridItem, RenderDataItemCallback } from '@models';
+import type { GridColumn, GridItem, RenderDataItemCallback } from '@models';
 import { getGridRowValues } from '@organisms/grid/Grid.helpers';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { GridRow } from '../grid-row/GridRow';
 import styles from './GridBody.module.scss';
@@ -15,7 +15,15 @@ type Props = {
   selectable: boolean;
 };
 
-export const GridBody: FC<Props> = ({ selectRowById, deselectRowById, renderDataItem, selectedIds, selectable, data, columns }) => {
+export const GridBody: FC<Props> = ({
+  selectRowById,
+  deselectRowById,
+  renderDataItem,
+  selectedIds,
+  selectable,
+  data,
+  columns,
+}) => {
   return (
     <tbody className={styles.body}>
       {data.map((item) => {

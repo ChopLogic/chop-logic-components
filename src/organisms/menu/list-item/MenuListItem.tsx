@@ -1,7 +1,7 @@
 import { OrientationMode } from '@enums';
-import { MenuItem } from '@models';
+import type { MenuItem } from '@models';
 import { getClassName } from '@utils';
-import { FC, PropsWithChildren, useState } from 'react';
+import { type FC, type PropsWithChildren, useState } from 'react';
 
 import { MenuLeaf } from '../leaf/MenuLeaf';
 import { SubMenu } from '../sub-menu/SubMenu';
@@ -16,7 +16,10 @@ type Props = PropsWithChildren & {
 export const MenuListItem: FC<Props> = ({ item, mode, openedOn }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
-  const subMenuBarClass = getClassName([styles.subMenuBar, { [styles.subMenuBar__horizontal]: mode === OrientationMode.Horizontal }]);
+  const subMenuBarClass = getClassName([
+    styles.subMenuBar,
+    { [styles.subMenuBar__horizontal]: mode === OrientationMode.Horizontal },
+  ]);
 
   if (isLeaf) {
     return <MenuLeaf item={item} />;
@@ -44,8 +47,10 @@ export const MenuListItem: FC<Props> = ({ item, mode, openedOn }) => {
       mode={mode}
       openedOn={openedOn}
     >
-      <ul className={subMenuBarClass} role='menu' aria-label={item.label}>
-        {item?.nestedItems?.map((child) => <MenuListItem item={child} key={child.id} mode={mode} openedOn={openedOn} />)}
+      <ul className={subMenuBarClass} role="menu" aria-label={item.label}>
+        {item?.nestedItems?.map((child) => (
+          <MenuListItem item={child} key={child.id} mode={mode} openedOn={openedOn} />
+        ))}
       </ul>
     </SubMenu>
   );

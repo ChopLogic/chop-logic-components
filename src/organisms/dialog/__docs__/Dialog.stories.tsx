@@ -1,7 +1,7 @@
 import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Dialog from '../Dialog';
+import type Dialog from '../Dialog';
 import { DialogExample } from './Dialog.example';
 
 const meta: Meta<typeof Dialog> = {

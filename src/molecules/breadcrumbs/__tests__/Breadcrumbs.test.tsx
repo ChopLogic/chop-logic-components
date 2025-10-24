@@ -1,17 +1,22 @@
 import { IconName } from '@enums';
+import type { Breadcrumb } from '@models';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-
 import Breadcrumbs from '../Breadcrumbs';
 
 vi.mock('@atoms', () => ({
   Link: vi.fn(({ href, children, icon, iconPosition }) => (
-    <a data-testid='breadcrumb-link' href={href} data-icon={icon} data-icon-position={iconPosition}>
+    <a data-testid="breadcrumb-link" href={href} data-icon={icon} data-icon-position={iconPosition}>
       {children}
     </a>
   )),
   Icon: vi.fn(({ name, hidden }) => (
-    <span data-testid='breadcrumb-icon' data-icon-name={name} data-hidden={hidden} aria-hidden={hidden}>
+    <span
+      data-testid="breadcrumb-icon"
+      data-icon-name={name}
+      data-hidden={hidden}
+      aria-hidden={hidden}
+    >
       {name} icon
     </span>
   )),
@@ -36,8 +41,7 @@ describe('Breadcrumbs', () => {
   });
 
   it('renders null when items is undefined', () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { container } = render(<Breadcrumbs items={undefined as any} />);
+    const { container } = render(<Breadcrumbs items={undefined as unknown as Breadcrumb[]} />);
     expect(container.firstChild).toBeNull();
   });
 
@@ -124,7 +128,11 @@ describe('Breadcrumbs', () => {
   });
 
   it('handles items without icons', () => {
-    const itemsWithoutIcons = [{ label: 'Home', link: '/' }, { label: 'About', link: '/about' }, { label: 'Contact' }];
+    const itemsWithoutIcons = [
+      { label: 'Home', link: '/' },
+      { label: 'About', link: '/about' },
+      { label: 'Contact' },
+    ];
 
     render(<Breadcrumbs items={itemsWithoutIcons} />);
 
@@ -136,17 +144,25 @@ describe('Breadcrumbs', () => {
   });
 
   it('applies custom className', () => {
-    const { container } = render(<Breadcrumbs items={mockItems} className='custom-breadcrumbs' />);
+    const { container } = render(<Breadcrumbs items={mockItems} className="custom-breadcrumbs" />);
 
     const nav = container.querySelector('nav');
     expect(nav).toHaveClass('custom-breadcrumbs');
   });
 
   it('passes through additional HTML attributes', () => {
-    const { container } = render(<Breadcrumbs items={mockItems} id='main-breadcrumbs' title='Navigation breadcrumbs' tabIndex={0} />);
+    const breadcrumbId = 'main-breadcrumbs';
+    const { container } = render(
+      <Breadcrumbs
+        items={mockItems}
+        id={breadcrumbId}
+        title="Navigation breadcrumbs"
+        tabIndex={0}
+      />,
+    );
 
     const nav = container.querySelector('nav');
-    expect(nav).toHaveAttribute('id', 'main-breadcrumbs');
+    expect(nav).toHaveAttribute('id', breadcrumbId);
     expect(nav).toHaveAttribute('title', 'Navigation breadcrumbs');
     expect(nav).toHaveAttribute('tabindex', '0');
   });

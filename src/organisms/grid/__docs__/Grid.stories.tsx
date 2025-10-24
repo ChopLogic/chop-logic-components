@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Grid from '../Grid';
+import type Grid from '../Grid';
 import { GridExample } from './Grid.example';
 
 const meta: Meta<typeof Grid> = {
@@ -16,7 +16,11 @@ export const DefaultGrid: Story = {
   args: {
     selectable: false,
     renderDataItem: (item, field) => {
-      return field === 'phone' ? <em>{item[field ?? ''] as string}</em> : <span>{item[field] as string}</span>;
+      return field === 'phone' ? (
+        <em>{item[field ?? ''] as string}</em>
+      ) : (
+        <span>{item[field] as string}</span>
+      );
     },
     caption: 'Contact List',
     columns: [
@@ -40,8 +44,20 @@ export const DefaultGrid: Story = {
         country: 'Mexico',
         phone: '123-345-7890',
       },
-      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
-      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+      {
+        id: 'row3',
+        company: 'Ernst Handel',
+        contact: 'Roland Mendel',
+        country: 'Austria',
+        phone: '123-345-7890',
+      },
+      {
+        id: 'row4',
+        company: 'Island Trading',
+        contact: 'Helen Bennett',
+        country: 'UK',
+        phone: '123-345-7890',
+      },
       {
         id: 'row5',
         company: 'Laughing Bacchus Winecellars',
@@ -85,8 +101,20 @@ export const SelectableGrid: Story = {
         country: 'Mexico',
         phone: '123-345-7890',
       },
-      { id: 'row3', company: 'Ernst Handel', contact: 'Roland Mendel', country: 'Austria', phone: '123-345-7890' },
-      { id: 'row4', company: 'Island Trading', contact: 'Helen Bennett', country: 'UK', phone: '123-345-7890' },
+      {
+        id: 'row3',
+        company: 'Ernst Handel',
+        contact: 'Roland Mendel',
+        country: 'Austria',
+        phone: '123-345-7890',
+      },
+      {
+        id: 'row4',
+        company: 'Island Trading',
+        contact: 'Helen Bennett',
+        country: 'UK',
+        phone: '123-345-7890',
+      },
       {
         id: 'row5',
         company: 'Laughing Bacchus Winecellars',

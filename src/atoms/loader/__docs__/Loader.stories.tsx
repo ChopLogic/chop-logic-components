@@ -1,7 +1,7 @@
 import { LoaderView } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import Loader from '../Loader';
+import type Loader from '../Loader';
 import { LoaderExample } from './Loader.example';
 
 const meta: Meta<typeof Loader> = {

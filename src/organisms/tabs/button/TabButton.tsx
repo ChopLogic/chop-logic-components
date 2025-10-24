@@ -1,7 +1,7 @@
 import { Button } from '@atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
 import { getClassName } from '@utils';
-import { FC, useEffect, useId, useRef, useState } from 'react';
+import { type FC, useEffect, useId, useRef, useState } from 'react';
 
 import { TabEditInput } from '../edit-input/TabEditInput';
 import styles from './TabButton.module.scss';
@@ -135,7 +135,7 @@ export const TabButton: FC<Props> = ({
       ) : (
         <>
           <button
-            role='tab'
+            role="tab"
             id={tabId}
             onClick={handleTabClick}
             aria-selected={isSelected}
@@ -148,15 +148,21 @@ export const TabButton: FC<Props> = ({
           {hasAdditionalButtons && (
             <span className={styles.tab_buttons}>
               {isEditToggleVisible && (
-                <Button view={ButtonView.Icon} icon={IconName.Edit} onClick={toggleEditMode} label='Edit tab' tooltip='Edit tab' />
+                <Button
+                  view={ButtonView.Icon}
+                  icon={IconName.Edit}
+                  onClick={toggleEditMode}
+                  label="Edit tab"
+                  tooltip="Edit tab"
+                />
               )}
               {isDeleteButtonVisible && (
                 <Button
                   view={ButtonView.Icon}
                   icon={IconName.Delete}
                   onClick={() => onTabDelete?.(tabId)}
-                  label='Delete tab'
-                  tooltip='Delete tab'
+                  label="Delete tab"
+                  tooltip="Delete tab"
                 />
               )}
             </span>

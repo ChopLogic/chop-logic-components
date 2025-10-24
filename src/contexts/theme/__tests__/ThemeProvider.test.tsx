@@ -11,8 +11,10 @@ function TestConsumer() {
   const { mode, setMode } = useContext(ThemeContext);
   return (
     <>
-      <div data-testid='mode'>{mode}</div>
-      <button onClick={() => setMode(ThemeMode.Dark)}>Switch</button>
+      <div data-testid="mode">{mode}</div>
+      <button type="button" onClick={() => setMode(ThemeMode.Dark)}>
+        Switch
+      </button>
     </>
   );
 }

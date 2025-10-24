@@ -1,4 +1,4 @@
-import { GridColumn } from '@models';
+import type { GridColumn } from '@models';
 import { GridHead } from '@organisms/grid/head/GridHead';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';

@@ -1,4 +1,4 @@
-import { TooltipProps } from '@models';
+import type { TooltipProps } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
@@ -7,10 +7,12 @@ import Tooltip from '../Tooltip';
 
 const tooltipContent = 'Tooltip content';
 
+const tooltipId = 'test-tooltip-id';
+
 const renderTooltip = (props: Partial<TooltipProps> = {}) => {
   return render(
-    <Tooltip id='test-tooltip-id' tooltipContent={tooltipContent} {...props}>
-      <button>Hover or Click me</button>
+    <Tooltip id={tooltipId} tooltipContent={tooltipContent} {...props}>
+      <button type="button">Hover or Click me</button>
     </Tooltip>,
   );
 };

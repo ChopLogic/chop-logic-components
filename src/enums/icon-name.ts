@@ -10,6 +10,7 @@ export enum IconName {
   ChevronLeft = 'chevron-left',
   ChevronRight = 'chevron-right',
   ChevronUp = 'chevron-up',
+  ChopLogic = 'chop-logic',
   Clear = 'clear',
   Copy = 'copy',
   Cut = 'cut',

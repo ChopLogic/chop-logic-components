@@ -1,8 +1,8 @@
 import { Label } from '@atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
-import { MultiSelectProps } from '@models';
+import type { MultiSelectProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useRef } from 'react';
+import { type FC, useRef } from 'react';
 
 import styles from '../select/Select.module.scss';
 import { MultiSelectCombobox } from './MultiSelect.Combobox';
@@ -49,7 +49,13 @@ const MultiSelect: FC<MultiSelectProps> = ({
         disabled={disabled}
         required={required}
       />
-      <MultiSelectDropdown options={values} opened={opened} onClose={handleClose} dropdownId={dropdownId} onSelect={handleSelect} />
+      <MultiSelectDropdown
+        options={values}
+        opened={opened}
+        onClose={handleClose}
+        dropdownId={dropdownId}
+        onSelect={handleSelect}
+      />
     </div>
   );
 };

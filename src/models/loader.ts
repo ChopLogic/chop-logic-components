@@ -1,7 +1,7 @@
-import { LoaderView } from '@enums';
-import { HTMLAttributes } from 'react';
+import type { LoaderView } from '@enums';
+import type { HTMLAttributes } from 'react';
 
-import { ChopLogicComponentProps } from './_common';
+import type { ChopLogicComponentProps } from './_common';
 
 export interface LoaderProps extends ChopLogicComponentProps, HTMLAttributes<HTMLSpanElement> {
   view?: LoaderView;

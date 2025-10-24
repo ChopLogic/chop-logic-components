@@ -1,7 +1,6 @@
-import { RefObject, useEffect, useState } from 'react';
+import { type RefObject, useEffect, useState } from 'react';
 
 import { useContainerDimensions } from '../use-container-dimensions/use-container-dimensions';
-import { useWindowDimensions } from '../use-window-dimensions/use-window-dimensions';
 
 type useTooltipPositionParams = {
   wrapperRef: RefObject<HTMLElement | null>;
@@ -10,17 +9,26 @@ type useTooltipPositionParams = {
   spacing?: number;
 };
 
-export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing = 4 }: useTooltipPositionParams) => {
+export const useTooltipPosition = ({
+  wrapperRef,
+  tooltipRef,
+  isOpened,
+  spacing = 4,
+}: useTooltipPositionParams) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const { width: tooltipWidth, height: tooltipHeight } = useContainerDimensions({
     ref: tooltipRef,
     isVisible: isOpened,
   });
-  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
 
   useEffect(() => {
-    if (isOpened && wrapperRef?.current) {
-      const rect = wrapperRef?.current.getBoundingClientRect();
+    if (!isOpened || !wrapperRef?.current) {
+      return;
+    }
+
+    const updatePosition = () => {
+      const rect = wrapperRef.current?.getBoundingClientRect();
+      if (!rect) return;
 
       let top = Math.round(rect.bottom + spacing);
       let left = Math.round(rect.left);
@@ -37,8 +45,19 @@ export const useTooltipPosition = ({ wrapperRef, tooltipRef, isOpened, spacing =
       }
 
       setPosition({ top, left });
-    }
-  }, [isOpened, wrapperRef, tooltipHeight, tooltipWidth, spacing, windowWidth, windowHeight]);
+    };
+
+    // Initial position calculation
+    updatePosition();
+
+    // Set up resize observer for window changes
+    const resizeObserver = new ResizeObserver(updatePosition);
+    resizeObserver.observe(document.documentElement);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [isOpened, wrapperRef, tooltipHeight, tooltipWidth, spacing]);
 
   return position;
 };

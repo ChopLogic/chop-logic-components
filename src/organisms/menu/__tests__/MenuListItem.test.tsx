@@ -1,14 +1,14 @@
 import { OrientationMode } from '@enums';
-import { MenuItem } from '@models';
+import type { MenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { MenuListItem } from '../list-item/MenuListItem';
 
 vi.mock('../sub-menu/SubMenu', () => ({
   SubMenu: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
-    <div data-testid='submenu'>
+    <div data-testid="submenu">
       <button onClick={toggleSubMenu}>Toggle SubMenu</button>
       {children}
     </div>
@@ -16,7 +16,7 @@ vi.mock('../sub-menu/SubMenu', () => ({
 }));
 
 vi.mock('../leaf/MenuLeaf', () => ({
-  MenuLeaf: ({ item }: { item: MenuItem }) => <div data-testid='menu-leaf'>{item.label}</div>,
+  MenuLeaf: ({ item }: { item: MenuItem }) => <div data-testid="menu-leaf">{item.label}</div>,
 }));
 
 describe('MenuListItem', () => {
@@ -35,7 +35,9 @@ describe('MenuListItem', () => {
   };
 
   it('should match the snapshot', () => {
-    const { asFragment } = render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    const { asFragment } = render(
+      <MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 

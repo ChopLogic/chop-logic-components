@@ -1,4 +1,4 @@
-import { ChopLogicRegExpWithFlags, FormValues, TextInputValidator } from '@models';
+import type { ChopLogicRegExpWithFlags, FormValues, TextInputValidator } from '@models';
 
 export function validateTextInputValue({
   value,

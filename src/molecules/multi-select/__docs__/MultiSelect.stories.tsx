@@ -1,7 +1,7 @@
-import { MultiSelectValue } from '@models';
+import type { MultiSelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import MultiSelect from '../MultiSelect';
+import type MultiSelect from '../MultiSelect';
 import { MultiSelectExample } from './MultiSelect.example';
 
 const MULTI_SELECT_VALUES: MultiSelectValue[] = [

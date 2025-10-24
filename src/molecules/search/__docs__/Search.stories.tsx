@@ -49,7 +49,8 @@ const meta: Meta<typeof SearchExample> = {
     },
     debounceDelay: {
       control: 'number',
-      description: 'Delay in milliseconds before triggering automatic search after user stops typing',
+      description:
+        'Delay in milliseconds before triggering automatic search after user stops typing',
       table: {
         type: { summary: 'number' },
         defaultValue: { summary: '500' },
@@ -141,7 +142,8 @@ const meta: Meta<typeof SearchExample> = {
     // Event handlers
     onSearch: {
       action: 'searched',
-      description: 'Callback fired when search is performed (after debounce delay or manual trigger)',
+      description:
+        'Callback fired when search is performed (after debounce delay or manual trigger)',
       table: {
         type: { summary: '(searchTerm: string) => void' },
         category: 'Events',

@@ -2,7 +2,7 @@ import { Button } from '@atoms';
 import { ButtonView } from '@enums';
 import { useAutoClose } from '@hooks';
 import { Dialog } from '@organisms';
-import { FC, useState } from 'react';
+import { type FC, useState } from 'react';
 
 export const UseAutoCloseExample: FC = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -26,8 +26,8 @@ export const UseAutoCloseExample: FC = () => {
 
   return (
     <div>
-      <Button text='Open dialog' onClick={handleOpen} view={ButtonView.Secondary} />
-      <Dialog isOpened={isOpened} onClose={handleClose} title='Autoclosing Dialog'>
+      <Button text="Open dialog" onClick={handleOpen} view={ButtonView.Secondary} />
+      <Dialog isOpened={isOpened} onClose={handleClose} title="Autoclosing Dialog">
         {modalContent}
       </Dialog>
     </div>

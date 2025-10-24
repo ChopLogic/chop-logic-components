@@ -1,5 +1,5 @@
-import { FormInputParams, FormValues } from '@models';
-import { FormEvent, FormEventHandler, useState } from 'react';
+import type { FormInputParams, FormValues } from '@models';
+import { type FormEvent, type FormEventHandler, useState } from 'react';
 
 import { getInitialValidationState, isFormDataValid, updateValidationState } from './Form.helpers';
 

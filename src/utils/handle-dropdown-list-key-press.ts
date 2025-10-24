@@ -1,5 +1,5 @@
-import { SelectValue } from '@models';
-import { KeyboardEvent } from 'react';
+import type { SelectValue } from '@models';
+import type { KeyboardEvent } from 'react';
 
 import { moveFocusOnElementById } from './move-focus-on-element-by-id';
 
@@ -30,7 +30,8 @@ export function handleDropdownListKeyPress({
       break;
     case 'ArrowUp': {
       e.preventDefault();
-      const previousOptionIndex = currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : options.length - 1;
+      const previousOptionIndex =
+        currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : options.length - 1;
       const previousValue = options[previousOptionIndex];
       if (previousValue) moveFocusOnElementById(previousValue.id);
       break;

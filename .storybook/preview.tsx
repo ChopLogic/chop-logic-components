@@ -1,5 +1,4 @@
-import type { Preview } from '@storybook/react-vite';
-import { Decorator } from '@storybook/react-vite';
+import type { Decorator, Preview } from '@storybook/react-vite';
 import { ThemeProvider } from '../src/contexts';
 import { ThemeMode } from '../src/enums';
 
@@ -22,7 +21,17 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Introduction', 'Theming', 'Contributing', 'Changelog', 'Atoms', 'Molecules', 'Organisms', 'Hooks', '*'],
+        order: [
+          'Introduction',
+          'Theming',
+          'Contributing',
+          'Changelog',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Hooks',
+          '*',
+        ],
       },
     },
   },

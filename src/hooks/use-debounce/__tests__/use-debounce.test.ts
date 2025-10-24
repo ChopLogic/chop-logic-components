@@ -84,7 +84,9 @@ describe('useDebounce', () => {
   });
 
   it('handles number values', () => {
-    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), { initialProps: { value: 0, delay: 100 } });
+    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), {
+      initialProps: { value: 0, delay: 100 },
+    });
 
     rerender({ value: 42, delay: 100 });
 

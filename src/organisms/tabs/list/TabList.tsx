@@ -1,8 +1,8 @@
 import { Button } from '@atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
-import { ChopLogicTabItem } from '@models';
+import type { ChopLogicTabItem } from '@models';
 import { getClassName, moveFocusOnElementById } from '@utils';
-import { FC, KeyboardEvent, useEffect } from 'react';
+import type { FC, KeyboardEvent } from 'react';
 
 import { TabButton } from '../button/TabButton';
 import styles from './TabList.module.scss';
@@ -11,7 +11,6 @@ type Props = {
   tabs: ChopLogicTabItem[];
   tabIds: string[];
   onTabSelect: (id: string) => void;
-  initialTabsCount: number;
   selectedTabId: string;
   tabPanelIds: string[];
   mode: OrientationMode;
@@ -36,9 +35,11 @@ export const TabList: FC<Props> = ({
   extendable = false,
   onTabAdd,
   onTabDelete,
-  initialTabsCount,
 }) => {
-  const listClass = getClassName([styles.tabList, { [styles.tabList__vertical]: mode === OrientationMode.Vertical }]);
+  const listClass = getClassName([
+    styles.tabList,
+    { [styles.tabList__vertical]: mode === OrientationMode.Vertical },
+  ]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     const currentFocusedTabIndex = tabIds.indexOf(selectedTabId);
@@ -51,7 +52,10 @@ export const TabList: FC<Props> = ({
     e.preventDefault();
 
     // Check if key should be ignored based on mode
-    if ((e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) || (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical)) {
+    if (
+      (e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) ||
+      (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical)
+    ) {
       return;
     }
 
@@ -75,22 +79,17 @@ export const TabList: FC<Props> = ({
     return currentIndex === totalTabs - 1 ? 0 : currentIndex + 1;
   };
 
-  useEffect(() => {
-    // Auto-select newly added tab
-    if (tabs.length > initialTabsCount) {
-      onTabSelect(tabs.at(-1)!.id);
-    }
-  }, [tabs.length]);
-
   return (
-    <div role='tablist' data-testid='tab-list' tabIndex={0} onKeyDown={handleListKeyDown} className={listClass}>
+    <div role="tablist" data-testid="tab-list" onKeyDown={handleListKeyDown} className={listClass}>
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton
             key={id}
             title={title}
             onTabSelect={onTabSelect}
-            onTabTitleChange={onTabTitleChange ? (newTitle) => onTabTitleChange(id, newTitle) : undefined}
+            onTabTitleChange={
+              onTabTitleChange ? (newTitle) => onTabTitleChange(id, newTitle) : undefined
+            }
             tabId={id}
             isSelected={id === selectedTabId}
             isDisabled={disabled}
@@ -105,8 +104,8 @@ export const TabList: FC<Props> = ({
       })}
       {extendable && (
         <Button
-          label='Add Tab'
-          tooltip='Add Tab'
+          label="Add Tab"
+          tooltip="Add Tab"
           view={ButtonView.Icon}
           icon={IconName.PlusCircle}
           onClick={onTabAdd}

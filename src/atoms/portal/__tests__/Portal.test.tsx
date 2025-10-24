@@ -31,7 +31,7 @@ describe('Portal', () => {
   });
 
   it('should remove the portal container from the body on unmount', () => {
-    const childText = <div data-testid='test-container'>Test text</div>;
+    const childText = <div data-testid="test-container">Test text</div>;
 
     const { unmount } = render(
       <Portal>

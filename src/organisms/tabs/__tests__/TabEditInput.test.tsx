@@ -1,4 +1,4 @@
-import { ButtonProps } from '@models';
+import type { ButtonProps } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -7,7 +7,13 @@ import { TabEditInput } from '../edit-input/TabEditInput';
 // Mock the Button component
 vi.mock('@atoms', () => ({
   Button: ({ icon, onClick, label, id }: ButtonProps) => (
-    <button data-testid={`button-${icon}`} onClick={onClick} aria-label={label} id={id}>
+    <button
+      type="button"
+      data-testid={`button-${icon}`}
+      onClick={onClick}
+      aria-label={label}
+      id={id}
+    >
       {icon} Button
     </button>
   ),
@@ -129,17 +135,17 @@ describe('TabEditInput', () => {
   });
 
   it('handles different edit values', () => {
-    const { rerender } = render(<TabEditInput {...defaultProps} editValue='Initial Value' />);
+    const { rerender } = render(<TabEditInput {...defaultProps} editValue="Initial Value" />);
 
     expect(screen.getByDisplayValue('Initial Value')).toBeInTheDocument();
 
-    rerender(<TabEditInput {...defaultProps} editValue='Updated Value' />);
+    rerender(<TabEditInput {...defaultProps} editValue="Updated Value" />);
 
     expect(screen.getByDisplayValue('Updated Value')).toBeInTheDocument();
   });
 
   it('handles empty edit value', () => {
-    render(<TabEditInput {...defaultProps} editValue='' />);
+    render(<TabEditInput {...defaultProps} editValue="" />);
 
     const input = screen.getByDisplayValue('');
     expect(input).toBeInTheDocument();
@@ -160,7 +166,9 @@ describe('TabEditInput', () => {
       const input = screen.getByDisplayValue('Test Tab');
       fireEvent.keyDown(input, { key: 'Enter' });
 
-      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(expect.objectContaining({ key: 'Enter' }));
+      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(
+        expect.objectContaining({ key: 'Enter' }),
+      );
     });
 
     it('handles Escape key', () => {
@@ -169,7 +177,9 @@ describe('TabEditInput', () => {
       const input = screen.getByDisplayValue('Test Tab');
       fireEvent.keyDown(input, { key: 'Escape' });
 
-      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(expect.objectContaining({ key: 'Escape' }));
+      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(
+        expect.objectContaining({ key: 'Escape' }),
+      );
     });
 
     it('handles Arrow keys', () => {
@@ -178,7 +188,9 @@ describe('TabEditInput', () => {
       const input = screen.getByDisplayValue('Test Tab');
       fireEvent.keyDown(input, { key: 'ArrowLeft' });
 
-      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(expect.objectContaining({ key: 'ArrowLeft' }));
+      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(
+        expect.objectContaining({ key: 'ArrowLeft' }),
+      );
     });
 
     it('handles character input', () => {
@@ -187,7 +199,9 @@ describe('TabEditInput', () => {
       const input = screen.getByDisplayValue('Test Tab');
       fireEvent.keyDown(input, { key: 'A' });
 
-      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(expect.objectContaining({ key: 'A' }));
+      expect(defaultProps.onInputKeyDown).toHaveBeenCalledWith(
+        expect.objectContaining({ key: 'A' }),
+      );
     });
   });
 
@@ -213,7 +227,7 @@ describe('TabEditInput', () => {
     expect(input).toBeInTheDocument();
 
     // Re-render with different value
-    rerender(<TabEditInput {...defaultProps} editValue='New Value' />);
+    rerender(<TabEditInput {...defaultProps} editValue="New Value" />);
 
     expect(screen.getByDisplayValue('New Value')).toBeInTheDocument();
   });

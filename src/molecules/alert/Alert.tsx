@@ -1,9 +1,9 @@
 import { Button, Header, Portal } from '@atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
-import { AlertProps } from '@models';
+import type { AlertProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { getAlertIcon, getAlertTitle } from './Alert.helpers';
 import styles from './Alert.module.scss';
@@ -41,12 +41,12 @@ const Alert: FC<AlertProps> = ({
           <Button
             icon={IconName.Cancel}
             view={ButtonView.Icon}
-            label='Close alert popup'
+            label="Close alert popup"
             onClick={onClose}
             className={styles.content_button}
           />
           <header>
-            <Header icon={alertTitleIcon} as='h3'>
+            <Header icon={alertTitleIcon} as="h3">
               {alertTitle}
             </Header>
           </header>

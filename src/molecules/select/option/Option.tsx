@@ -1,7 +1,7 @@
 import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon';
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import { getClassName } from '@utils';
-import { FC, KeyboardEvent } from 'react';
+import type { FC, KeyboardEvent } from 'react';
 
 import styles from './Option.module.scss';
 
@@ -40,7 +40,7 @@ export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) 
   return (
     <li
       id={id}
-      role='option'
+      role="option"
       aria-selected={selected}
       tabIndex={0}
       onKeyDown={handleKeyDown(id)}

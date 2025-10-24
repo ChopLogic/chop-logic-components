@@ -6,14 +6,14 @@ export const UseKeyPressExample = () => {
   const ref = useRef(null);
 
   const handleKeyPress = () => {
-    alert('Enter Key pressed!');
+    alert('Space Key pressed!');
   };
 
-  useKeyPress({ ref, keyCode: 'Enter', onKeyPress: handleKeyPress });
+  useKeyPress({ ref, keyCode: 'Space', onKeyPress: handleKeyPress });
 
   return (
-    <div ref={ref} tabIndex={0} className={styles.container}>
-      Press Enter key
+    <div className={styles.container}>
+      <input type="text" ref={ref} placeholder="Focus and Press Space key" />
     </div>
   );
 };

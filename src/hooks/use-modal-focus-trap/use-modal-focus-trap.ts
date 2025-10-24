@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from 'react';
+import { type RefObject, useEffect } from 'react';
 
 type ModalFocusTrapParams = {
   modalRef: RefObject<HTMLElement | null>;
@@ -11,7 +11,9 @@ export const useModalFocusTrap = ({ modalRef, isOpened }: ModalFocusTrapParams) 
     if (!isOpened || !modalElement) return;
 
     const focusableElements = Array.from(
-      modalElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),
+      modalElement.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      ),
     );
     const firstElement = focusableElements[0] as HTMLElement;
     const lastElement = focusableElements.at(-1) as HTMLElement;

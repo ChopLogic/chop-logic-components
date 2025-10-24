@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import { ChopLogicTabItem } from '@models';
+import type { ChopLogicTabItem } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TabsExample } from './Tabs.example';
@@ -20,17 +20,17 @@ const initialTabs: ChopLogicTabItem[] = [
   {
     id: 'tab1',
     title: 'Tab 1',
-    content: <TabContent title='Tab 1 Content' />,
+    content: <TabContent title="Tab 1 Content" />,
   },
   {
     id: 'tab2',
     title: 'Tab 2',
-    content: <TabContent title='Tab 2 Content' />,
+    content: <TabContent title="Tab 2 Content" />,
   },
   {
     id: 'tab3',
     title: 'Tab 3',
-    content: <TabContent title='Tab 3 Content' />,
+    content: <TabContent title="Tab 3 Content" />,
   },
 ];
 
@@ -242,12 +242,14 @@ export const Editable: Story = {
   args: {
     editable: true,
     stretched: true,
-    onTabTitleChange: (tabId: string, newTitle: string) => console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
+    onTabTitleChange: (tabId: string, newTitle: string) =>
+      console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
   },
   parameters: {
     docs: {
       description: {
-        story: 'Tabs with editable titles. Click the edit icon on the selected tab to modify its title.',
+        story:
+          'Tabs with editable titles. Click the edit icon on the selected tab to modify its title.',
       },
     },
   },
@@ -258,11 +260,14 @@ export const Extendable: Story = {
     editable: true,
     stretched: true,
     extendable: true,
-    onTabTitleChange: (tabId: string, newTitle: string) => console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
+    onTabTitleChange: (tabId: string, newTitle: string) =>
+      console.log(`Tab ID: ${tabId}, New Title: ${newTitle}`),
     onTabAdd: () => console.log('New tab added!'),
     onTabDelete: (id: string) => console.log(`Tab deleted: ${id}`),
     extendedTabLabel: 'New Tab',
-    extendedTabContent: <TabContent title='New Tab Content' content='This is the content of the newly added tab.' />,
+    extendedTabContent: (
+      <TabContent title="New Tab Content" content="This is the content of the newly added tab." />
+    ),
   },
   parameters: {
     docs: {
@@ -280,18 +285,18 @@ export const Disabled: Story = {
       {
         id: 'active-tab',
         title: 'Active Tab',
-        content: <TabContent title='Active Tab Content' />,
+        content: <TabContent title="Active Tab Content" />,
       },
       {
         id: 'disabled-tab',
         title: 'Disabled Tab',
         disabled: true,
-        content: <TabContent title='Disabled Tab Content' />,
+        content: <TabContent title="Disabled Tab Content" />,
       },
       {
         id: 'another-active',
         title: 'Another Active',
-        content: <TabContent title='Another Active Tab Content' />,
+        content: <TabContent title="Another Active Tab Content" />,
       },
     ],
   },

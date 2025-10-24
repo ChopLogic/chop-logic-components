@@ -1,4 +1,4 @@
-import { FormInputParams, FormValidationState, FormValues } from '@models';
+import type { FormInputParams, FormValidationState, FormValues } from '@models';
 
 export function getInitialValidationState(data?: FormValues): FormValidationState {
   if (!data) return [];
@@ -6,7 +6,10 @@ export function getInitialValidationState(data?: FormValues): FormValidationStat
   return Object.keys(data).map((key) => [key, true]);
 }
 
-export function updateValidationState(state: FormValidationState, params: FormInputParams): FormValidationState {
+export function updateValidationState(
+  state: FormValidationState,
+  params: FormInputParams,
+): FormValidationState {
   if (params?.valid === undefined) return state;
 
   return state.map((item) => {

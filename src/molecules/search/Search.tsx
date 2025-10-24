@@ -1,9 +1,9 @@
 import { Button, Input, Label } from '@atoms';
 import { ButtonView, IconName } from '@enums';
 import { useDebounce, useElementIds } from '@hooks';
-import { SearchProps } from '@models';
+import type { SearchProps } from '@models';
 import { getClassName } from '@utils';
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import styles from './Search.module.scss';
 
@@ -35,11 +35,18 @@ const Search: FC<SearchProps> = ({
   const isSearchButtonVisible = searchMode === 'manual';
   const isLabelIconVisible = !isSearchButtonVisible;
   const isClearButtonVisible = clearable && searchValue.length > 0;
-  const isSearchValueValid = searchValue.length >= minLength && searchValue.trim().length > 0 && searchValue.length <= maxLength;
+  const isSearchValueValid =
+    searchValue.length >= minLength &&
+    searchValue.trim().length > 0 &&
+    searchValue.length <= maxLength;
   const debouncedSearchValue = useDebounce(searchValue, debounceDelay);
 
   useEffect(() => {
-    if (debouncedSearchValue.trim().length > 0 && searchMode === 'automatic' && isSearchValueValid) {
+    if (
+      debouncedSearchValue.trim().length > 0 &&
+      searchMode === 'automatic' &&
+      isSearchValueValid
+    ) {
       onSearch?.(debouncedSearchValue);
     }
   }, [debouncedSearchValue]);
@@ -91,7 +98,7 @@ const Search: FC<SearchProps> = ({
         ref={inputRef}
         id={elementId}
         name={name}
-        type='search'
+        type="search"
         value={searchValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
@@ -107,13 +114,18 @@ const Search: FC<SearchProps> = ({
       >
         <span>
           {isClearButtonVisible && (
-            <Button view={ButtonView.Inner} onClick={handleClear} label={`Clear search input for ${label}`} icon={IconName.Remove} />
+            <Button
+              view={ButtonView.Inner}
+              onClick={handleClear}
+              label={`Clear search input for ${label}`}
+              icon={IconName.Remove}
+            />
           )}
           {isSearchButtonVisible && (
             <Button
               view={ButtonView.Inner}
               onClick={handleSearchClick}
-              label='Perform search'
+              label="Perform search"
               icon={IconName.Search}
               disabled={disabled || !isSearchValueValid}
             />

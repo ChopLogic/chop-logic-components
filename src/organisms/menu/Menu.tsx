@@ -1,13 +1,23 @@
 import { OrientationMode } from '@enums';
-import { MenuProps } from '@models';
+import type { MenuProps } from '@models';
 import { getClassName } from '@utils';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { MenuListItem } from './list-item/MenuListItem';
 import styles from './Menu.module.scss';
 
-const Menu: FC<MenuProps> = ({ items = [], mode = OrientationMode.Vertical, openedOn = 'click', className, ...rest }) => {
-  const menuClass = getClassName([styles.menuBar, className, { [styles.menuBar__vertical]: mode === OrientationMode.Vertical }]);
+const Menu: FC<MenuProps> = ({
+  items = [],
+  mode = OrientationMode.Vertical,
+  openedOn = 'click',
+  className,
+  ...rest
+}) => {
+  const menuClass = getClassName([
+    styles.menuBar,
+    className,
+    { [styles.menuBar__vertical]: mode === OrientationMode.Vertical },
+  ]);
 
   return (
     <menu {...rest} className={menuClass}>

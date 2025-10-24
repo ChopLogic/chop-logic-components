@@ -35,7 +35,9 @@ describe('getClassName', () => {
   it('works with a mixed input', () => {
     expect(getClassName([{ test1: true }, 'test2', undefined])).toBe('test1 test2');
     expect(getClassName(['test1', { test2: false }, 'test3', undefined])).toBe('test1 test3');
-    expect(getClassName(['test1', { test2: false, test3: true }, null, 'test4'])).toBe('test1 test3 test4');
+    expect(getClassName(['test1', { test2: false, test3: true }, null, 'test4'])).toBe(
+      'test1 test3 test4',
+    );
   });
 
   it('trims the input strings', () => {

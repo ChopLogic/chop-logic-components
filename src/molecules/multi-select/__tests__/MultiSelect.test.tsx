@@ -1,4 +1,4 @@
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import { Form } from '@organisms';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -106,7 +106,9 @@ describe('MultiSelect', () => {
     await userEvent.click(optionOne);
     await userEvent.click(optionTwo);
     await userEvent.click(optionThree);
-    expect(combobox).toHaveValue(`${MULTI_SELECT_VALUES[0].id},${MULTI_SELECT_VALUES[1].id},${MULTI_SELECT_VALUES[2].id}`);
+    expect(combobox).toHaveValue(
+      `${MULTI_SELECT_VALUES[0].id},${MULTI_SELECT_VALUES[1].id},${MULTI_SELECT_VALUES[2].id}`,
+    );
   });
 
   it('should display a correct placeholder when some items selected', async () => {

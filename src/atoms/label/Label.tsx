@@ -1,6 +1,6 @@
 import { Icon } from '@atoms';
-import { IconName } from '@enums';
-import { FC } from 'react';
+import type { IconName } from '@enums';
+import type { FC } from 'react';
 
 import styles from './Label.module.scss';
 
@@ -13,7 +13,14 @@ type LabelProps = {
   iconPosition?: 'left' | 'right';
 };
 
-const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, isTextHidden = false }) => {
+const Label: FC<LabelProps> = ({
+  label,
+  required,
+  inputId,
+  icon,
+  iconPosition,
+  isTextHidden = false,
+}) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
 
@@ -23,7 +30,7 @@ const Label: FC<LabelProps> = ({ label, required, inputId, icon, iconPosition, i
       {!isTextHidden && (
         <span>
           {label}
-          {required && <abbr title='required'>*</abbr>}
+          {required && <abbr title="required">*</abbr>}
         </span>
       )}
       {isRightIconVisible && <Icon name={icon} />}

@@ -1,6 +1,6 @@
 import { IconName } from '@enums';
-import { ChopLogicSVGElementProps } from '@models';
-import { ReactElement } from 'react';
+import type { ChopLogicSVGElementProps } from '@models';
+import type { ReactElement } from 'react';
 
 import ArrowDownIcon from './svg/ArrowDownIcon';
 import ArrowUpIcon from './svg/ArrowUpIcon';
@@ -13,6 +13,7 @@ import ChevronDownIcon from './svg/ChevronDownIcon';
 import ChevronLeftIcon from './svg/ChevronLeftIcon';
 import ChevronRightIcon from './svg/ChevronRightIcon';
 import ChevronUpIcon from './svg/ChevronUpIcon';
+import ChopLogicIcon from './svg/ChopLogic';
 import ClearIcon from './svg/ClearIcon';
 import CopyIcon from './svg/CopyIcon';
 import CutIcon from './svg/CutIcon';
@@ -42,7 +43,9 @@ import ShowIcon from './svg/ShowIcon';
 import UploadIcon from './svg/UploadIcon';
 import WarningIcon from './svg/WarningIcon';
 
-type Icons = { [key in IconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement };
+type Icons = {
+  [key in IconName]: ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => ReactElement;
+};
 
 export const IconDictionary: Icons = {
   [IconName.ArrowDown]: ArrowDownIcon,
@@ -56,6 +59,7 @@ export const IconDictionary: Icons = {
   [IconName.ChevronUp]: ChevronUpIcon,
   [IconName.ChevronLeft]: ChevronLeftIcon,
   [IconName.ChevronRight]: ChevronRightIcon,
+  [IconName.ChopLogic]: ChopLogicIcon,
   [IconName.Clear]: ClearIcon,
   [IconName.Copy]: CopyIcon,
   [IconName.Cut]: CutIcon,

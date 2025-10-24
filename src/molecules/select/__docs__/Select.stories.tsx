@@ -1,4 +1,4 @@
-import { SelectValue } from '@models';
+import type { SelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { SelectExample } from './Select.example';

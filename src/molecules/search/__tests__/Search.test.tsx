@@ -11,18 +11,22 @@ vi.mock('@hooks', () => ({
 
 vi.mock('@atoms', () => ({
   Button: vi.fn(({ onClick, label, disabled, icon, children }) => (
-    <button data-testid={label.includes('Clear') ? 'clear-button' : 'search-button'} onClick={onClick} disabled={disabled}>
+    <button
+      data-testid={label.includes('Clear') ? 'clear-button' : 'search-button'}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children || icon || label}
     </button>
   )),
   Input: vi.fn(({ children, ...props }) => (
-    <div data-testid='input-wrapper'>
-      <input data-testid='search-input' {...props} />
+    <div data-testid="input-wrapper">
+      <input data-testid="search-input" {...props} />
       {children}
     </div>
   )),
   Label: vi.fn(({ label, inputId }) => (
-    <label data-testid='search-label' htmlFor={inputId}>
+    <label data-testid="search-label" htmlFor={inputId}>
       {label}
     </label>
   )),
@@ -120,20 +124,20 @@ describe('Search', () => {
   });
 
   it('shows search button in manual mode', () => {
-    render(<Search {...defaultProps} searchMode='manual' />);
+    render(<Search {...defaultProps} searchMode="manual" />);
 
     expect(screen.getByTestId('search-button')).toBeInTheDocument();
   });
 
   it('hides search button in automatic mode', () => {
-    render(<Search {...defaultProps} searchMode='automatic' />);
+    render(<Search {...defaultProps} searchMode="automatic" />);
 
     expect(screen.queryByTestId('search-button')).not.toBeInTheDocument();
   });
 
   it('calls onSearch when search button is clicked in manual mode', async () => {
     const user = userEvent.setup();
-    render(<Search {...defaultProps} searchMode='manual' />);
+    render(<Search {...defaultProps} searchMode="manual" />);
 
     const input = screen.getByTestId('search-input');
     await user.type(input, 'manual search');
@@ -180,13 +184,15 @@ describe('Search', () => {
   });
 
   it('applies custom placeholder', () => {
-    render(<Search {...defaultProps} placeholder='Custom placeholder' />);
+    render(<Search {...defaultProps} placeholder="Custom placeholder" />);
 
     expect(screen.getByTestId('search-input')).toHaveAttribute('placeholder', 'Custom placeholder');
   });
 
   it('passes through additional input attributes', () => {
-    render(<Search {...defaultProps} maxLength={50} minLength={2} autoComplete='on' spellCheck={true} />);
+    render(
+      <Search {...defaultProps} maxLength={50} minLength={2} autoComplete="on" spellCheck={true} />,
+    );
 
     const input = screen.getByTestId('search-input');
     expect(input).toHaveAttribute('maxLength', '50');
@@ -211,7 +217,7 @@ describe('Search', () => {
   });
 
   it('does not show icon in label for manual mode', () => {
-    render(<Search {...defaultProps} searchMode='manual' />);
+    render(<Search {...defaultProps} searchMode="manual" />);
 
     // The icon should not be present in manual mode
     expect(screen.queryByTestId('icon-search')).not.toBeInTheDocument();

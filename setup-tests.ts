@@ -1,10 +1,41 @@
+import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
 import * as matchers from '@testing-library/jest-dom/matchers';
-import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
-import { expect } from 'vitest';
+import { expect, vi } from 'vitest';
 
 declare module 'vitest' {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  interface Assertion<T = any> extends jest.Matchers<void, T>, TestingLibraryMatchers<T, void> {}
+  interface Assertion<T> extends jest.Matchers<void, T>, TestingLibraryMatchers<T, void> {}
 }
 
 expect.extend(matchers);
+
+// Mock ResizeObserver globally
+class ResizeObserverMock {
+  constructor(callback: ResizeObserverCallback) {
+    // Store the callback if needed
+    this.callback = callback;
+  }
+
+  callback: ResizeObserverCallback;
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+Object.defineProperty(globalThis, 'ResizeObserver', {
+  writable: true,
+  configurable: true,
+  value: ResizeObserverMock,
+});
+
+// Set default window dimensions
+Object.defineProperty(globalThis, 'innerWidth', {
+  writable: true,
+  configurable: true,
+  value: 1024,
+});
+
+Object.defineProperty(globalThis, 'innerHeight', {
+  writable: true,
+  configurable: true,
+  value: 768,
+});

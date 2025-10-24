@@ -1,5 +1,5 @@
-import { GridColumn } from '@models';
-import { FC } from 'react';
+import type { GridColumn } from '@models';
+import type { FC } from 'react';
 
 import { GridHeaderCell } from '../header-cell/HeaderCell';
 import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell';
@@ -37,7 +37,11 @@ export const GridHead: FC<GridHeadProps> = ({
           />
         )}
         {columns.map((column) => (
-          <GridHeaderCell key={`${column.title}_${gridId}`} title={column.title} component={column.component} />
+          <GridHeaderCell
+            key={`${column.title}_${gridId}`}
+            title={column.title}
+            component={column.component}
+          />
         ))}
       </tr>
     </thead>

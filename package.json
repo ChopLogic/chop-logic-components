@@ -34,7 +34,7 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "*.{js,jsx,ts,tsx,json,css,md}": [
       "biome format --write",
       "biome check --diagnostic-level error",
       "npm run test:ci"

@@ -1,0 +1,101 @@
+@use "./breakpoints" as *;
+
+// Mobile first approach - Min-width breakpoints
+@mixin sm-up {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin xxl-up {
+  @media screen and (min-width: $xxl) {
+    @content;
+  }
+}
+
+// Desktop first approach - Max-width breakpoints
+@mixin sm-down {
+  @media screen and (max-width: #{$sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media screen and (max-width: #{$md - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media screen and (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl-down {
+  @media screen and (max-width: #{$xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin xxl-down {
+  @media screen and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+// Range mixins - For targeting specific ranges
+@mixin sm-only {
+  @media screen and (min-width: $sm) and (max-width: #{$md - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media screen and (min-width: $md) and (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media screen and (min-width: $lg) and (max-width: #{$xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl-only {
+  @media screen and (min-width: $xl) and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+// Custom breakpoint mixin
+@mixin custom-breakpoint($min, $max: null) {
+  @if $max {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  }
+}

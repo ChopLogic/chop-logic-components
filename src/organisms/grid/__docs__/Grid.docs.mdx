@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as GridStories from './Grid.stories';
 
-<Meta of={GridStories} title='Grid' />
+<Meta of={GridStories} title="Grid" />
 
 # Grid
 
@@ -16,12 +16,12 @@ const UserGrid = () => {
   const columns = [
     { field: 'name', title: 'Name' },
     { field: 'email', title: 'Email' },
-    { field: 'role', title: 'Role' }
+    { field: 'role', title: 'Role' },
   ];
 
   const data = [
     { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-    { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User' }
+    { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
   ];
 
   return (
@@ -39,16 +39,19 @@ const UserGrid = () => {
 ### Accessibility Notes
 
 _Structure_:
+
 - Proper table semantics
 - Caption for context
 - Column headers associated with cells
 
 _Keyboard Navigation_:
+
 - Tab through interactive elements
 - Space to select rows
 - Shift+Arrow for multiple selection
 
 _Screen Readers_:
+
 - Announces row selection state
 - Reads column headers with cell values
 - Provides context for actions
@@ -56,16 +59,19 @@ _Screen Readers_:
 ### Best Practices
 
 _Performance_:
+
 - Virtualize large datasets
 - Memoize custom renderers
 - Consider pagination for huge datasets
 
 _Column Design_:
+
 - Keep column count reasonable
 - Use descriptive headers
 - Highlight important columns
 
 _Selection_:
+
 - Provide clear visual feedback
 - Consider bulk actions for selected items
 - Disable non-applicable rows

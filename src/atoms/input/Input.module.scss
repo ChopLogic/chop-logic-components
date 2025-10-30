@@ -1,5 +1,5 @@
-@use '/src/styles/typography';
-@use '/src/styles/mixins';
+@use "/src/styles/typography";
+@use "/src/styles/mixins";
 
 .wrapper {
   display: flex;
@@ -15,7 +15,7 @@
     border: var(--cl-outline-border);
   }
 
-  &:has(input[aria-invalid='true']) {
+  &:has(input[aria-invalid="true"]) {
     border: var(--cl-accent-border);
   }
 
@@ -58,7 +58,7 @@
     margin: 0;
   }
 
-  &[type='number'] {
+  &[type="number"] {
     -moz-appearance: textfield;
   }
 }

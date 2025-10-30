@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as LabelStories from './Label.stories';
 
-<Meta of={LabelStories} title='Atoms/Label' />
+<Meta of={LabelStories} title="Atoms/Label" />
 
 # Label
 
@@ -14,8 +14,14 @@ import { Label, IconName } from 'chop-logic-components';
 
 const FormField = () => (
   <div>
-    <Label label='Email' required={true} inputId='email-input' icon={IconName.Mail} iconPosition='left' />
-    <input id='email-input' type='email' />
+    <Label
+      label="Email"
+      required={true}
+      inputId="email-input"
+      icon={IconName.Mail}
+      iconPosition="left"
+    />
+    <input id="email-input" type="email" />
   </div>
 );
 ```

@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as TextInput from './TextInput.stories';
 
-<Meta of={TextInput} title='TextInput' />
+<Meta of={TextInput} title="TextInput" />
 
 # TextInput
 
@@ -32,35 +32,41 @@ const LoginForm = () => {
 ### Accessibility Notes
 
 _Keyboard Navigation_:
-  - Tab to focus the input
-  - Clear button accessible via keyboard
-  - Password toggle accessible via keyboard
+
+- Tab to focus the input
+- Clear button accessible via keyboard
+- Password toggle accessible via keyboard
 
 _Screen Readers_:
-  - Announces label and required state
-  - Announces validation errors
-  - Describes clear button action
+
+- Announces label and required state
+- Announces validation errors
+- Describes clear button action
 
 _Focus Management_:
-  - Clear focus states for all interactive elements
-  - Maintains focus during interactions
+
+- Clear focus states for all interactive elements
+- Maintains focus during interactions
 
 ### Best Practices
 
 _Labeling_:
-  - Always provide a meaningful label
-  - Use placeholder text sparingly (not as a label replacement)
-  - Ensure proper label-input association
+
+- Always provide a meaningful label
+- Use placeholder text sparingly (not as a label replacement)
+- Ensure proper label-input association
 
 _Validation_:
-  - Provide clear error messages
-  - Validate on blur as well as submit
-  - Consider real-time validation for long forms
+
+- Provide clear error messages
+- Validate on blur as well as submit
+- Consider real-time validation for long forms
 
 _Mobile Considerations_:
-  - Use appropriate input types for virtual keyboards
-  - Ensure touch targets are large enough
-  - Test with screen magnifiers
+
+- Use appropriate input types for virtual keyboards
+- Ensure touch targets are large enough
+- Test with screen magnifiers
 
 ## Props
 

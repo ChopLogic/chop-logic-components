@@ -1,5 +1,5 @@
-@use '/src/styles/typography';
-@use '/src/styles/mixins';
+@use "/src/styles/typography";
+@use "/src/styles/mixins";
 
 .button {
   @include typography.font-style(core, base);

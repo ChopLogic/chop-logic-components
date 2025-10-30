@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as ErrorMessageStories from './ErrorMessage.stories';
 
-<Meta of={ErrorMessageStories} title='ErrorMessage' />
+<Meta of={ErrorMessageStories} title="ErrorMessage" />
 
 # ErrorMessage
 
@@ -20,12 +20,8 @@ const AgeInput = () => {
 
   return (
     <div>
-        <input
-            value={name}
-            onChange={setName}
-            aria-errormessage={errorId}
-        />
-        <ErrorMessage errorId={errorId} message={errorMessage} visible={isErrorMessageVisible} />
+      <input value={name} onChange={setName} aria-errormessage={errorId} />
+      <ErrorMessage errorId={errorId} message={errorMessage} visible={isErrorMessageVisible} />
     </div>
   );
 };

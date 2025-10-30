@@ -10,7 +10,7 @@
   animation: arrowRotation 1s linear infinite;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     box-sizing: border-box;
     left: 20px;

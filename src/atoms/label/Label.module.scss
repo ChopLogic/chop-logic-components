@@ -1,4 +1,4 @@
-@use '/src/styles/typography';
+@use "/src/styles/typography";
 
 .label {
   @include typography.font-style(core, small, light);

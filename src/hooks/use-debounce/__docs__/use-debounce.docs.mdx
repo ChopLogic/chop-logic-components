@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import * as Story from './use-debounce.stories';
 
-<Meta of={Story} title='Hooks/useDebounce' />
+<Meta of={Story} title="Hooks/useDebounce" />
 
 # useDebounce
 
@@ -31,7 +31,13 @@ const SearchComponent = () => {
     }
   }, [debouncedSearchTerm]);
 
-  return <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder='Search...' />;
+  return (
+    <input
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      placeholder="Search..."
+    />
+  );
 };
 ```
 

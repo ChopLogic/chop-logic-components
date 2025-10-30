@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import * as Stories from './use-modal-focus-trap.stories';
 
-<Meta of={Stories} title='Hooks/useModalFocusTrap' />
+<Meta of={Stories} title="Hooks/useModalFocusTrap" />
 
 # useModalFocusTrap
 
@@ -25,7 +25,7 @@ const ExampleModal = () => {
       {isOpened && (
         <div ref={modalRef} tabIndex={-1}>
           <button onClick={() => setIsOpened(false)}>Close Modal</button>
-          <input type='text' placeholder='Focusable Input' />
+          <input type="text" placeholder="Focusable Input" />
         </div>
       )}
     </div>
@@ -38,10 +38,9 @@ export default ExampleModal;
 ### Params
 
 | Param        | Type                           | Description                                                            |
-|--------------|--------------------------------|------------------------------------------------------------------------|
+| ------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | **modalRef** | `React.RefObject<HTMLElement>` | A ref to the modal element that will be used to trap the focus within. |
 | **isOpened** | `boolean`                      | A boolean indicating whether the modal is opened or not.               |
-
 
 ### Returns
 

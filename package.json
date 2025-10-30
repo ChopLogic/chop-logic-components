@@ -19,8 +19,12 @@
     "build": "tsc && vite build",
     "build:storybook": "storybook build  -- -o storybook-static --quiet",
     "prepare": "npm run build && husky",
-    "format": "biome format --write",
-    "lint": "biome check",
+    "format": "npm run format:biome && npm run format:prettier",
+    "format:biome": "biome format --write",
+    "format:prettier": "prettier --write \"**/*.{scss,mdx}\"",
+    "lint": "npm run lint:biome && npm run lint:prettier",
+    "lint:biome": "biome check",
+    "lint:prettier": "prettier --check \"**/*.{scss,mdx}\"",
     "lint:errors": "biome check --diagnostic-level error --max-diagnostics 100",
     "lint:warnings": "biome check --diagnostic-level warn --max-diagnostics 100",
     "lint:fix": "biome check --write",
@@ -34,10 +38,13 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*.{js,jsx,ts,tsx,json,css,md}": [
+    "*.{js,jsx,ts,tsx,json,md}": [
       "biome format --write",
       "biome check --diagnostic-level error",
       "npm run test:ci"
+    ],
+    "*.{scss,mdx}": [
+      "prettier --write"
     ]
   },
   "keywords": [
@@ -69,6 +76,7 @@
     "husky": "^9.1.7",
     "husky-init": "^8.0.0",
     "jsdom": "^26.0.0",
+    "prettier": "^3.6.2",
     "remark-gfm": "^4.0.1",
     "sass": "^1.87.0",
     "storybook": "^10.0.0",

@@ -8,7 +8,13 @@
   --cl-highlight-background: hsl(24, 55%, 34%);
   --cl-shadow-background: hsla(24, 55%, 34%, 0.3);
   // Gradients
-  --cl-accent-gradient: linear-gradient(to left, hsl(23, 72%, 26%) 0%, hsl(23, 72%, 30%) 8%, hsl(23, 72%, 30%) 92%, hsl(23, 72%, 26%) 100%);
+  --cl-accent-gradient: linear-gradient(
+    to left,
+    hsl(23, 72%, 26%) 0%,
+    hsl(23, 72%, 30%) 8%,
+    hsl(23, 72%, 30%) 92%,
+    hsl(23, 72%, 26%) 100%
+  );
   --cl-shadow-gradient: linear-gradient(
     to left,
     hsl(328, 19%, 24%) 0%,

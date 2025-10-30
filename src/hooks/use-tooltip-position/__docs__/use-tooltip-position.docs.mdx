@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import * as Stories from './use-tooltip-position.stories';
 
-<Meta of={Stories} title='Hooks/useTooltipPosition' />
+<Meta of={Stories} title="Hooks/useTooltipPosition" />
 
 # useTooltipPosition
 
@@ -27,7 +27,13 @@ const ExampleComponent = () => {
       {isOpened && (
         <div
           ref={tooltipRef}
-          style={{ position: 'absolute', top: `${top}px`, left: `${left}px`, border: '1px solid black', padding: '10px' }}
+          style={{
+            position: 'absolute',
+            top: `${top}px`,
+            left: `${left}px`,
+            border: '1px solid black',
+            padding: '10px',
+          }}
         >
           Tooltip Content
         </div>
@@ -42,7 +48,7 @@ export default ExampleComponent;
 ### Params
 
 | Param          | Type                           | Description                                                                |
-|----------------|--------------------------------|----------------------------------------------------------------------------|
+| -------------- | ------------------------------ | -------------------------------------------------------------------------- |
 | **wrapperRef** | `React.RefObject<HTMLElement>` | A ref to the element that the tooltip is relative to.                      |
 | **tooltipRef** | `React.RefObject<HTMLElement>` | A ref to the tooltip element.                                              |
 | **isOpened**   | `boolean`                      | A boolean indicating whether the tooltip is opened or not.                 |

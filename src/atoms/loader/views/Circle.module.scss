@@ -6,7 +6,7 @@
   animation: circleRotateAnimation 1s linear infinite;
 
   &::before {
-    content: '';
+    content: "";
     box-sizing: border-box;
     position: absolute;
     inset: 0;

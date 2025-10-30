@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as FormStories from './Form.stories';
 
-<Meta of={FormStories} title='Form' />
+<Meta of={FormStories} title="Form" />
 
 # Form
 
@@ -18,11 +18,7 @@ const UserForm = () => {
   };
 
   return (
-    <Form
-      initialValues={{ firstName: '', lastName: '' }}
-      onSubmit={handleSubmit}
-      columns={2}
-    >
+    <Form initialValues={{ firstName: '', lastName: '' }} onSubmit={handleSubmit} columns={2}>
       <TextInput name="firstName" label="First Name" />
       <TextInput name="lastName" label="Last Name" />
     </Form>
@@ -33,16 +29,19 @@ const UserForm = () => {
 ### Accessibility Notes
 
 _Form Structure_:
+
 - Proper form element semantics
 - Field labels associated with inputs
 - Logical tab order
 
 _Validation_:
+
 - Clear error messages
 - ARIA attributes for invalid fields
 - Focus management for errors
 
 _Keyboard Navigation_:
+
 - Tab through form fields
 - Enter to submit
 - Escape to reset (when enabled)
@@ -50,16 +49,19 @@ _Keyboard Navigation_:
 ### Best Practices
 
 _Layout_:
+
 - Use appropriate column counts for form complexity
 - Group related fields together
 - Maintain consistent spacing
 
 _Validation_:
+
 - Provide clear error messages
 - Validate on blur and submit
 - Consider real-time validation for complex forms
 
 _Performance_:
+
 - Memoize form components when possible
 - Consider dynamic loading for large forms
 - Optimize re-renders with controlled components

@@ -5,7 +5,8 @@
   transition: background 0.3s;
 
   &:hover {
-    background: var(--cl-primary-background) radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center/15000%;
+    background: var(--cl-primary-background)
+      radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center/15000%;
     color: var(--cl-tint-color);
     text-shadow: var(--cl-text-shadow);
 

@@ -1,10 +1,10 @@
 @use "/src/styles/typography";
 
 .editableText {
-  @include typography.font-style(core, base);
   color: var(--cl-primary-color);
   border-radius: var(--cl-border-radius);
   display: inline-block;
+  @include typography.core-font(base);
 
   &:hover,
   &:focus {

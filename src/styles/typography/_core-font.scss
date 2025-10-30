@@ -1,0 +1,57 @@
+@use "sizes";
+@use "../breakpoints" as *;
+@use "sass:map";
+@use "variables";
+
+/// Applies core font styles with responsive sizes based on breakpoints.
+///
+/// @param {string} $size - Font size variant: `base`, `small`, `h1`, `h2`, `h3`, `h4`
+/// @param {string | number} $weight - Font weight (default: `normal`)
+/// @param {number | string} $line-height - Line height (default: `1.5`)
+/// @param {number | string} $letter-spacing - Letter spacing (default: `normal`)
+///
+/// @example scss
+///   @include core-font(base);                    // Base size, normal weight
+///   @include core-font(h1, 700);                 // H1 size, bold weight
+///   @include core-font(small, 500, 1.2, 0.02em); // Small size, medium weight, custom line-height and spacing
+///
+@mixin core-font($size: base, $weight: normal, $line-height: 1.5, $letter-spacing: normal) {
+  $sizes: sizes.$core;
+
+  @if not map.has-key($sizes, $size) {
+    @error "Unknown size `#{$size}`. Available sizes: #{map.keys($sizes)}.";
+  }
+
+  $size-map: map.get($sizes, $size);
+  font-family: variables.$cl-core-font;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+
+  // Better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Mobile first approach - default size
+  font-size: map.get($size-map, mobile);
+
+  // Set font-weight
+  @if $weight == bold {
+    font-weight: 700;
+  } @else if $weight == medium {
+    font-weight: 500;
+  } @else if $weight == light {
+    font-weight: 300;
+  } @else {
+    font-weight: $weight;
+  }
+
+  // Tablet size
+  @include md-up {
+    font-size: map.get($size-map, tablet);
+  }
+
+  // Desktop size
+  @include lg-up {
+    font-size: map.get($size-map, desktop);
+  }
+}

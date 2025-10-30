@@ -1,0 +1,51 @@
+// Responsive font sizes for core font
+$core: (
+  base: (
+    mobile: 1rem,
+    // 16px
+    tablet: 1.125rem,
+    // 18px
+    desktop: 1.25rem,
+    // 20px
+  ),
+  small: (
+    mobile: 0.875rem,
+    // 14px
+    tablet: 1rem,
+    // 16px
+    desktop: 1.125rem,
+    // 18px
+  ),
+  h1: (
+    mobile: 2rem,
+    // 32px
+    tablet: 2.5rem,
+    // 40px
+    desktop: 3rem,
+    // 48px
+  ),
+  h2: (
+    mobile: 1.75rem,
+    // 28px
+    tablet: 2rem,
+    // 32px
+    desktop: 2.5rem,
+    // 40px
+  ),
+  h3: (
+    mobile: 1.5rem,
+    // 24px
+    tablet: 1.75rem,
+    // 28px
+    desktop: 2rem,
+    // 32px
+  ),
+  h4: (
+    mobile: 1.25rem,
+    // 20px
+    tablet: 1.5rem,
+    // 24px
+    desktop: 1.75rem,
+    // 28px
+  ),
+);

@@ -21,11 +21,7 @@
 }
 
 .text {
-  @include typography.font-style(core, base);
-  @include mixins.ripple();
-
   color: var(--cl-primary-color);
-
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -37,6 +33,8 @@
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   cursor: pointer;
+  @include mixins.ripple();
+  @include typography.core-font(base);
 
   span {
     display: flex;

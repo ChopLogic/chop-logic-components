@@ -1,11 +1,11 @@
 @use "/src/styles/typography";
 
 .tabContent {
-  @include typography.font-style(core, base);
   color: var(--cl-primary-color);
-
   border-top: var(--cl-primary-border);
   background-color: var(--cl-primary-background);
   padding: var(--cl-l-gap);
   flex-grow: 1;
+
+  @include typography.core-font(base);
 }

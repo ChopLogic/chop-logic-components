@@ -4,7 +4,7 @@
   display: grid;
   align-items: end;
   gap: var(--cl-m-gap);
-  @include typography.font-style(core, base);
+  @include typography.core-font(base);
 }
 
 .buttons {

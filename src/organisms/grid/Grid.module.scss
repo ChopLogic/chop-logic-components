@@ -4,8 +4,8 @@
   border-collapse: collapse;
 
   &_caption {
-    @include typography.font-style(core, base, light);
     color: var(--cl-primary-color);
     padding: var(--cl-m-gap);
+    @include typography.core-font(base, 400);
   }
 }

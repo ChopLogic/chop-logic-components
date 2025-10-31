@@ -1,8 +1,8 @@
 @use "/src/styles/typography";
 
 .head {
-  @include typography.font-style(core, base, bold);
   color: var(--cl-primary-color);
+  @include typography.core-font(base, 700);
 
   &_row {
     border-top: var(--cl-light-border);

@@ -23,20 +23,18 @@
 }
 
 .layout {
-  @include typography.font-style(core, base);
-
   z-index: variables.$modal;
   background-color: var(--cl-primary-background);
   box-shadow: var(--cl-box-shadow);
   color: var(--cl-primary-color);
   padding: var(--cl-m-gap) var(--cl-l-gap);
-
   height: 90%;
   position: absolute;
   bottom: 0;
   left: 0;
   border-top-left-radius: var(--cl-border-radius);
   border-top-right-radius: var(--cl-border-radius);
+  @include typography.core-font(base);
 
   &_button {
     position: absolute;

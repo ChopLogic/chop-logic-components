@@ -11,28 +11,28 @@
 
   &__h1 {
     border-bottom: var(--cl-primary-border);
-    @include typography.core-font(h1);
+    @include typography.core-font(h1, 700);
   }
 
   &__h2 {
     border-bottom: var(--cl-primary-border);
-    @include typography.core-font(h2);
+    @include typography.core-font(h2, 700);
   }
 
   &__h3 {
     border-bottom: var(--cl-primary-border);
-    @include typography.core-font(h3);
+    @include typography.core-font(h3, 700);
   }
 
   &__h4 {
-    @include typography.core-font(h4);
+    @include typography.core-font(h4, 700);
   }
 
   &__h5 {
-    @include typography.core-font(h5);
+    @include typography.core-font(h5, 700);
   }
 
   &__h6 {
-    @include typography.core-font(h6);
+    @include typography.core-font(h6, 700);
   }
 }

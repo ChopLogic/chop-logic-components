@@ -16,9 +16,7 @@
 }
 
 .content {
-  @include typography.font-style(core, base);
   color: var(--cl-primary-color);
-
   display: flex;
   flex-direction: column;
   gap: var(--cl-m-gap);
@@ -29,6 +27,7 @@
   border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
   position: relative;
+  @include typography.core-font(base);
 
   &_button {
     position: absolute;

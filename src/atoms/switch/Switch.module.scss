@@ -26,8 +26,8 @@
   }
 
   &_label {
-    @include typography.font-style(core, base);
     color: var(--cl-primary-color);
+    @include typography.core-font(base);
   }
 
   &_track {
@@ -62,12 +62,12 @@
   }
 
   &_indicator {
-    @include typography.font-style(core, small);
     color: var(--cl-accent-color);
     text-transform: uppercase;
     display: inline-block;
     width: var(--cl-thumb-size);
     text-align: center;
+    @include typography.core-font(small);
   }
 
   &__disabled {

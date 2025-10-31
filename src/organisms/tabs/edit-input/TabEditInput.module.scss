@@ -10,13 +10,13 @@
 
   &_input {
     flex: 1;
-    @include typography.font-style(core, base, normal, 1);
     padding-block: 0;
     padding-inline: 0;
     padding: var(--cl-s-gap);
     border: var(--cl-light-border);
     border-radius: var(--cl-border-radius);
     background: transparent;
+    @include typography.core-font(base);
 
     &:focus-visible,
     &:focus {

@@ -17,11 +17,10 @@
   overflow: hidden;
 
   & > span:nth-child(1) {
-    @include typography.font-style(core, base);
     color: var(--cl-primary-color);
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.5;
+    @include typography.core-font(base);
   }
 
   svg {

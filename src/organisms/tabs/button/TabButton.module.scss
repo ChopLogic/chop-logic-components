@@ -2,8 +2,6 @@
 @use "/src/styles/mixins";
 
 .tab {
-  @include typography.font-style(core, base);
-
   color: var(--cl-primary-color);
   background: transparent;
   outline: none;
@@ -15,6 +13,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  @include typography.core-font(base);
 
   &:focus-visible {
     outline: var(--cl-outline-border);

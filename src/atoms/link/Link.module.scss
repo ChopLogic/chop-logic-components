@@ -29,7 +29,7 @@
   }
 
   &_text {
-    @include typography.font-style(core, base);
+    @include typography.core-font(base);
   }
 
   &_icon {

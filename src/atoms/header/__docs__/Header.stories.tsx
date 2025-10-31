@@ -16,7 +16,7 @@ export const Default: Story = {
   args: {
     as: 'h1',
     children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    icon: IconName.Home,
+    icon: IconName.Documents,
     className: 'header-class',
     id: 'header-id',
   },

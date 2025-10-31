@@ -39,7 +39,6 @@
   }
 
   &_front {
-    @include typography.font-style(core, base);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +52,7 @@
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+    @include typography.core-font(base);
 
     svg {
       color: var(--cl-primary-background);

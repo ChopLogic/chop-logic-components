@@ -2,9 +2,6 @@
 @use "/src/styles/mixins";
 
 .button {
-  @include typography.font-style(core, base);
-  @include mixins.ripple();
-
   color: var(--cl-primary-color);
   border: none;
   cursor: pointer;
@@ -29,4 +26,7 @@
     height: var(--cl-icon-size);
     width: var(--cl-icon-size);
   }
+
+  @include mixins.ripple();
+  @include typography.core-font(base);
 }

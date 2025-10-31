@@ -2,50 +2,37 @@
 
 .header {
   margin: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: var(--cl-m-gap);
-  @include typography.font-style(fancy, header);
+  color: var(--cl-primary-color);
 
-  &_text {
-    color: var(--cl-primary-color);
-    display: flex;
-    align-items: center;
+  &_icon {
+    vertical-align: middle;
+    display: inline-block;
   }
 
   &__h1 {
-    padding: var(--cl-m-gap) 0;
     border-bottom: var(--cl-primary-border);
+    @include typography.core-font(h1);
   }
 
   &__h2 {
-    padding: var(--cl-m-gap) 0;
-    font-size: 1.8rem;
     border-bottom: var(--cl-primary-border);
+    @include typography.core-font(h2);
   }
 
   &__h3 {
-    padding: var(--cl-m-gap) 0;
-    font-size: 1.6rem;
     border-bottom: var(--cl-primary-border);
+    @include typography.core-font(h3);
   }
 
   &__h4 {
-    padding: var(--cl-m-gap) 0;
-    font-size: 1.4rem;
-    gap: var(--cl-s-gap);
+    @include typography.core-font(h4);
   }
 
   &__h5 {
-    padding: var(--cl-m-gap) 0;
-    font-size: 1.2rem;
-    gap: var(--cl-s-gap);
+    @include typography.core-font(h5);
   }
 
   &__h6 {
-    padding: var(--cl-m-gap) 0;
-    font-size: var(--cl-base-font-size);
-    gap: var(--cl-s-gap);
+    @include typography.core-font(h6);
   }
 }

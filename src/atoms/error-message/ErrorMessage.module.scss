@@ -3,9 +3,6 @@
 @use "/src/styles/variables";
 
 .errorMessage {
-  @include animations.fade-in();
-  @include typography.font-style(core, small);
-
   display: none;
   max-width: 100%;
   z-index: variables.$popup;
@@ -16,6 +13,8 @@
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
+  @include animations.fade-in();
+  @include typography.core-font(small);
 
   &__visible {
     display: block;

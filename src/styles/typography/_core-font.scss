@@ -5,7 +5,7 @@
 
 /// Applies core font styles with responsive sizes based on breakpoints.
 ///
-/// @param {string} $size - Font size variant: `base`, `small`, `h1`, `h2`, `h3`, `h4`
+/// @param {string} $size - Font size variant: `base`, `small`, `h1` - `h6`
 /// @param {string | number} $weight - Font weight (default: `normal`)
 /// @param {number | string} $line-height - Line height (default: `1.5`)
 /// @param {number | string} $letter-spacing - Letter spacing (default: `normal`)

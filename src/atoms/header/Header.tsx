@@ -22,8 +22,7 @@ const Header: FC<HeaderProps> = ({ as = 'h1', icon, children, className, ...rest
 
   return (
     <HeaderTag className={headerClass} {...rest}>
-      {icon && <Icon name={icon} />}
-      <span className={styles.header_text}>{children}</span>
+      {icon && <Icon name={icon} className={styles.header_icon} />} {children}
     </HeaderTag>
   );
 };

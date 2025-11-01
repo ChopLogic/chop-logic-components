@@ -23,9 +23,14 @@
   }
 
   $size-map: map.get($sizes, $size);
-  font-family: variables.$cl-core-font;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
+
+  @if $size == h1 or $size == h2 or $size == h3 or $size == h4 or $size == h5 or $size == h6 {
+    font-family: variables.$cl-fancy-font;
+  } @else {
+    font-family: variables.$cl-core-font;
+  }
 
   // Better font rendering
   -webkit-font-smoothing: antialiased;

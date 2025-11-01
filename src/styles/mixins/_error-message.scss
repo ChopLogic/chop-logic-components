@@ -1,0 +1,16 @@
+@use "../breakpoints" as *;
+
+@mixin error-message() {
+  position: absolute;
+  right: 0;
+  opacity: 0.8;
+  top: 44px;
+
+  @include md-up {
+    top: 48px;
+  }
+
+  @include lg-up {
+    top: 52px;
+  }
+}

@@ -1,8 +1,8 @@
 import type { MultiSelectProps } from '@models';
+import styles from '@styles/storybook/ResponsiveWrapper.module.scss';
 import type { FC } from 'react';
-
 import MultiSelect from '../MultiSelect';
 
 export const MultiSelectExample: FC<MultiSelectProps> = (props) => {
-  return <MultiSelect {...props} style={{ width: '240px' }} />;
+  return <MultiSelect {...props} className={styles.responsiveWrapper} />;
 };

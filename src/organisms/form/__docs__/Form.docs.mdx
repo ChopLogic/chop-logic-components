@@ -18,7 +18,7 @@ const UserForm = () => {
   };
 
   return (
-    <Form initialValues={{ firstName: '', lastName: '' }} onSubmit={handleSubmit} columns={2}>
+    <Form initialValues={{ firstName: '', lastName: '' }} onSubmit={handleSubmit}>
       <TextInput name="firstName" label="First Name" />
       <TextInput name="lastName" label="Last Name" />
     </Form>

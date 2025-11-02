@@ -1,10 +1,26 @@
-@use "/src/styles/typography";
+@use "/src/styles/breakpoints";
 
 .form {
   display: grid;
   align-items: end;
   gap: var(--cl-m-gap);
-  @include typography.core-font(base);
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+
+  @include breakpoints.md-up {
+    // Default to 2 columns on medium and up
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints.lg-up {
+    // Default to 2 columns on medium and up
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoints.xl-up {
+    // Default to 2 columns on medium and up
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .buttons {
@@ -12,17 +28,5 @@
   align-items: center;
   justify-content: space-between;
   padding-top: var(--cl-l-gap);
-}
-
-/// Generates `.columns-X` and `.buttons-X` for grid layouts
-$max-columns: 6;
-@for $i from 1 through $max-columns {
-  .columns-#{$i} {
-    grid-template-columns: repeat(#{$i}, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .buttons-#{$i} {
-    grid-column: 1 / #{$i + 1};
-  }
+  grid-column: 1 / -1;
 }

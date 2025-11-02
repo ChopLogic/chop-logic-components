@@ -13,7 +13,6 @@ export interface FormInputParams {
 }
 
 export interface FormProps extends PropsWithChildren, ChopLogicComponentProps {
-  columns?: number;
   initialValues?: FormValues;
   hasReset?: boolean;
   onClickSubmit?: (data: FormValues) => void;

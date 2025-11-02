@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Tooltip from './Tooltip.stories';
 
-<Meta of={Tooltip} title='Tooltip' />
+<Meta of={Tooltip} title="Tooltip" />
 
 # Tooltip
 
@@ -14,7 +14,7 @@ import { Tooltip } from 'chop-logic-components';
 
 const TooltipUsageExample = () => {
   return (
-    <Tooltip tooltipContent='This is a tooltip' containerTag='span' visibleOn='hover' id='tooltip'>
+    <Tooltip tooltipContent="This is a tooltip" containerTag="span" visibleOn="hover" id="tooltip">
       <span>Hover over me</span>
     </Tooltip>
   );
@@ -26,18 +26,18 @@ export default TooltipUsageExample;
 ### When to Use
 
 - To explain unfamiliar UI elements
--  When you need to provide additional context
+- When you need to provide additional context
 - For showing truncated content on hover
 - To display helpful information without cluttering the interface
--  When you need accessible tooltips that work with keyboard navigation
+- When you need accessible tooltips that work with keyboard navigation
 
 ### Accessibility Notes
 
-1. __ARIA Attributes__: Automatically manages aria-describedby and role="tooltip"
-2. __Keyboard Navigation__: Works with focus trigger for keyboard users
-3. __Focus Management__: Tooltip content remains accessible to screen readers
-4. __Dismissal__: Click-triggered tooltips should be dismissible via ESC key
-5. __Contrast__: Ensure sufficient color contrast for tooltip text/background
+1. **ARIA Attributes**: Automatically manages aria-describedby and role="tooltip"
+2. **Keyboard Navigation**: Works with focus trigger for keyboard users
+3. **Focus Management**: Tooltip content remains accessible to screen readers
+4. **Dismissal**: Click-triggered tooltips should be dismissible via ESC key
+5. **Contrast**: Ensure sufficient color contrast for tooltip text/background
 
 ### Best Practices
 

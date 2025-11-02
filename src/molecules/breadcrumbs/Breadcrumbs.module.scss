@@ -1,4 +1,4 @@
-@use '/src/styles/typography';
+@use "/src/styles/typography";
 
 .breadcrumbs {
   &_list {
@@ -20,8 +20,8 @@
     display: inline-flex;
     align-items: center;
     gap: var(--cl-s-gap);
-    @include typography.font-style(core, base);
     color: var(--cl-tint-color);
+    @include typography.core-font(base);
 
     svg {
       color: var(--cl-tint-color);

@@ -1,11 +1,8 @@
-@use '/src/styles/animations';
-@use '/src/styles/typography';
-@use '/src/styles/variables';
+@use "/src/styles/animations";
+@use "/src/styles/typography";
+@use "/src/styles/variables";
 
 .tooltip {
-  @include animations.fade-in();
-  @include typography.font-style(core, small);
-
   color: var(--cl-primary-color);
   position: absolute;
   left: 0;
@@ -18,4 +15,7 @@
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
   white-space: nowrap;
+
+  @include animations.fade-in();
+  @include typography.core-font(small);
 }

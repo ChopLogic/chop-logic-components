@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as HeaderStories from './Header.stories';
 
-<Meta of={HeaderStories} title='Header' />
+<Meta of={HeaderStories} title="Header" />
 
 # Header
 
@@ -14,7 +14,9 @@ import { Header, IconName } from 'chop-logic-components';
 
 const PageHeader = () => (
   <div>
-    <Header as="h1" icon={IconName.Home}>Welcome</Header>
+    <Header as="h1" icon={IconName.Home}>
+      Welcome
+    </Header>
     <Header as="h2">Section Title</Header>
     <Header as="h3" className="special-header" id="subsection">
       With Custom Class
@@ -34,9 +36,9 @@ export default PageHeader;
 
 ### Accessibility Notes
 
-1. __Heading Hierarchy__: Maintain a logical heading structure (h1 followed by h2, etc.) for proper document outline.
-2. __Icon Decoration__: When using icons, ensure they're purely decorative or provide additional context via ARIA attributes if they convey meaning.
-3. __Landmark Roles__: Consider wrapping standalone headers in `<Header>` elements when appropriate.
+1. **Heading Hierarchy**: Maintain a logical heading structure (h1 followed by h2, etc.) for proper document outline.
+2. **Icon Decoration**: When using icons, ensure they're purely decorative or provide additional context via ARIA attributes if they convey meaning.
+3. **Landmark Roles**: Consider wrapping standalone headers in `<Header>` elements when appropriate.
 
 ### Best Practices
 
@@ -49,5 +51,3 @@ export default PageHeader;
 ## Props
 
 <Controls />
-
-

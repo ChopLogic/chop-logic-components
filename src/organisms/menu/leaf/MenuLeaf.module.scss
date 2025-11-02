@@ -1,10 +1,7 @@
-@use '/src/styles/typography';
-@use '/src/styles/mixins';
+@use "/src/styles/typography";
+@use "/src/styles/mixins";
 
 .menuLeaf {
-  @include typography.font-style(core, base);
-  @include mixins.ripple();
-
   color: var(--cl-primary-color);
   display: flex;
   justify-content: flex-start;
@@ -14,6 +11,8 @@
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   cursor: pointer;
+  @include mixins.ripple();
+  @include typography.core-font(base);
 
   &:focus-visible {
     outline: var(--cl-outline-border);

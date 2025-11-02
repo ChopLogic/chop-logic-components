@@ -1,12 +1,12 @@
+@use "/src/styles/mixins";
+
 .numeric {
   display: flex;
   flex-direction: column;
   gap: var(--cl-m-gap);
+  width: 100%;
 }
 
 .errorMessage {
-  position: absolute;
-  top: 46px;
-  right: 0;
-  opacity: 0.8;
+  @include mixins.error-message();
 }

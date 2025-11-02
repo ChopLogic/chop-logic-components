@@ -1,0 +1,12 @@
+# Ignore everything by default
+*.*
+
+# Only format these file types with Prettier
+!*.scss
+!*.mdx
+
+# Common directories to ignore
+node_modules/
+dist/
+coverage/
+storybook-static/

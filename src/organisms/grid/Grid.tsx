@@ -31,28 +31,30 @@ const Grid: FC<GridProps> = ({
   } = useGridController({ id, data, onSelect });
 
   return (
-    <table {...rest} className={getClassName([styles.grid, className])}>
-      {caption && <caption className={styles.grid_caption}>{caption}</caption>}
-      <GridColumnGroup columns={columns} selectable={selectable} />
-      <GridHead
-        gridId={elementId}
-        columns={columns}
-        selectable={selectable}
-        selectAll={handleSelectAll}
-        deselectAll={handleDeselectAll}
-        isAllSelected={isAllSelected}
-        isAllCheckboxDisabled={isAllCheckboxDisabled}
-      />
-      <GridBody
-        columns={columns}
-        data={data}
-        selectable={selectable}
-        selectRowById={handleSelectRowById}
-        deselectRowById={handleDeselectRowById}
-        selectedIds={selectedIds}
-        renderDataItem={renderDataItem}
-      />
-    </table>
+    <div className={styles.grid_wrapper}>
+      <table {...rest} className={getClassName([styles.grid, className])}>
+        {caption && <caption className={styles.grid_caption}>{caption}</caption>}
+        <GridColumnGroup columns={columns} selectable={selectable} />
+        <GridHead
+          gridId={elementId}
+          columns={columns}
+          selectable={selectable}
+          selectAll={handleSelectAll}
+          deselectAll={handleDeselectAll}
+          isAllSelected={isAllSelected}
+          isAllCheckboxDisabled={isAllCheckboxDisabled}
+        />
+        <GridBody
+          columns={columns}
+          data={data}
+          selectable={selectable}
+          selectRowById={handleSelectRowById}
+          deselectRowById={handleDeselectRowById}
+          selectedIds={selectedIds}
+          renderDataItem={renderDataItem}
+        />
+      </table>
+    </div>
   );
 };
 

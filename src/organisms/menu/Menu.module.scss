@@ -1,4 +1,4 @@
-@use '/src/styles/mixins';
+@use "/src/styles/mixins";
 
 .menuBar {
   @include mixins.menuBar();

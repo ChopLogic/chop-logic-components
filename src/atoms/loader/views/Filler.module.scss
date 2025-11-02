@@ -8,7 +8,7 @@
   box-sizing: border-box;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     box-sizing: border-box;
     inset: -10px;

@@ -13,7 +13,7 @@ import { ThemeProvider } from 'chop-logic-components';
 
 <ThemeProvider>
   <App />
-</ThemeProvider>
+</ThemeProvider>;
 ```
 
 ```tsx
@@ -37,7 +37,6 @@ const withTheme: Decorator = (StoryFn, context) => {
 export const decorators = [withTheme];
 ```
 
-
 ## Theme Hook
 
 The <code>useTheme()</code> hook provides access to the theme context and allows to change the theme.
@@ -50,12 +49,8 @@ export const ThemeToggleButton = () => {
 
   const toggleTheme = () => {
     setMode(mode === ThemeMode.Dark ? ThemeMode.Light : ThemeMode.Dark);
-  }
+  };
 
-  return (
-    <button onClick={toggleTheme}>
-      Toggle to {mode === 'dark' ? 'Light' : 'Dark'} Mode
-    </button>
-  );
+  return <button onClick={toggleTheme}>Toggle to {mode === 'dark' ? 'Light' : 'Dark'} Mode</button>;
 };
 ```

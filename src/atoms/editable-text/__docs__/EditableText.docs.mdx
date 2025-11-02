@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as EditableTextStories from './EditableText.stories';
 
-<Meta of={EditableTextStories} title='EditableText' />
+<Meta of={EditableTextStories} title="EditableText" />
 
 # EditableText
 
@@ -18,11 +18,7 @@ const UserProfile = () => {
   return (
     <div>
       <h2>
-        <EditableText
-          value={name}
-          onChange={setName}
-          placeholder="Enter your name"
-        />
+        <EditableText value={name} onChange={setName} placeholder="Enter your name" />
       </h2>
     </div>
   );
@@ -37,23 +33,20 @@ const UserProfile = () => {
 ### Accessibility Notes
 
 1. _Keyboard Support_
-
-    - Enter/Space to enter edit mode
-    - Enter to save (single-line)
-    - Escape to cancel edits
-    - Tab to move focus
+   - Enter/Space to enter edit mode
+   - Enter to save (single-line)
+   - Escape to cancel edits
+   - Tab to move focus
 
 2. _Screen Readers_
-
-    - Announces edit mode changes
-    - Reads placeholder text
-    - Indicates required fields
+   - Announces edit mode changes
+   - Reads placeholder text
+   - Indicates required fields
 
 3. _Focus Management_
-
-    - Auto-focuses when entering edit mode
-    - Maintains proper focus order
-    - Visible focus indicators
+   - Auto-focuses when entering edit mode
+   - Maintains proper focus order
+   - Visible focus indicators
 
 ### Best Practices
 
@@ -65,5 +58,3 @@ const UserProfile = () => {
 ## Props
 
 <Controls />
-
-

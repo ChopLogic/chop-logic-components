@@ -15,7 +15,13 @@
     hsl(356, 100%, 32%) 92%,
     hsl(356, 100%, 21%) 100%
   );
-  --cl-shadow-gradient: linear-gradient(to left, hsl(0, 0%, 24%) 0%, hsl(0, 0%, 32%) 8%, hsl(0, 0%, 32%) 92%, hsl(0, 0%, 24%) 100%);
+  --cl-shadow-gradient: linear-gradient(
+    to left,
+    hsl(0, 0%, 24%) 0%,
+    hsl(0, 0%, 32%) 8%,
+    hsl(0, 0%, 32%) 92%,
+    hsl(0, 0%, 24%) 100%
+  );
   // Shadows
   --cl-box-shadow: hsla(195, 100%, 6%, 0.15) 2.4px 2.4px 3.2px;
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(195, 100%, 6%, 0.15));

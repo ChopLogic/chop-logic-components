@@ -14,7 +14,6 @@ const Form: FC<FormProps> = ({
   onReset,
   onSubmit,
   onClickSubmit,
-  columns = 1,
   hasReset = true,
   className,
   ...rest
@@ -25,12 +24,7 @@ const Form: FC<FormProps> = ({
     onSubmit,
     onClickSubmit,
   });
-  const columnsNumber = columns <= 6 && columns >= 1 ? columns : 1;
-  const baseClass = getClassName([styles.form, className]);
-  const columnsClass = styles[`columns-${columnsNumber}`];
-  const formClass = `${baseClass} ${columnsClass}`;
-  const buttonColumnsClass = styles[`buttons-${columnsNumber}`];
-  const buttonsClass = `${styles.buttons} ${buttonColumnsClass}`;
+  const formClass = getClassName([styles.form, className]);
   const contextValue = useMemo(
     () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal }),
     [handleInputChange, initialValues, resetSignal],
@@ -40,7 +34,7 @@ const Form: FC<FormProps> = ({
     <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={formClass}>
       <FormContext.Provider value={contextValue}>
         {children}
-        <div className={buttonsClass}>
+        <div className={styles.form_buttons}>
           {hasReset && (
             <Button type="reset" text="Reset" icon={IconName.Clear} view={ButtonView.Secondary} />
           )}

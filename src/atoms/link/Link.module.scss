@@ -1,5 +1,5 @@
-@use '/src/styles/typography';
-@use '/src/styles/mixins';
+@use "/src/styles/typography";
+@use "/src/styles/mixins";
 
 .link {
   display: inline-flex;
@@ -29,7 +29,7 @@
   }
 
   &_text {
-    @include typography.font-style(core, base);
+    @include typography.core-font(base);
   }
 
   &_icon {

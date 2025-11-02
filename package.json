@@ -17,10 +17,14 @@
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "build": "tsc && vite build",
-    "build:storybook": "storybook build  -- -o storybook-static --quiet",
+    "build:storybook": "storybook build",
     "prepare": "npm run build && husky",
-    "format": "biome format --write",
-    "lint": "biome check",
+    "format": "npm run format:biome && npm run format:prettier",
+    "format:biome": "biome format --write",
+    "format:prettier": "prettier --write \"**/*.{scss,mdx}\"",
+    "lint": "npm run lint:biome && npm run lint:prettier",
+    "lint:biome": "biome check",
+    "lint:prettier": "prettier --check \"**/*.{scss,mdx}\"",
     "lint:errors": "biome check --diagnostic-level error --max-diagnostics 100",
     "lint:warnings": "biome check --diagnostic-level warn --max-diagnostics 100",
     "lint:fix": "biome check --write",
@@ -34,10 +38,13 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "*.{js,jsx,ts,tsx,json,md}": [
       "biome format --write",
       "biome check --diagnostic-level error",
       "npm run test:ci"
+    ],
+    "*.{scss,mdx}": [
+      "prettier --write"
     ]
   },
   "keywords": [
@@ -57,8 +64,8 @@
     "@biomejs/biome": "^2.2.6",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
-    "@storybook/addon-docs": "^9.1.13",
-    "@storybook/react-vite": "^9.1.13",
+    "@storybook/addon-docs": "^10.0.0",
+    "@storybook/react-vite": "^10.0.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@types/node": "^22.13.0",
@@ -69,9 +76,10 @@
     "husky": "^9.1.7",
     "husky-init": "^8.0.0",
     "jsdom": "^26.0.0",
+    "prettier": "^3.6.2",
     "remark-gfm": "^4.0.1",
     "sass": "^1.87.0",
-    "storybook": "^9.1.13",
+    "storybook": "^10.0.0",
     "typescript": "^5.7.3",
     "vite": "^6.0.11",
     "vite-plugin-dts": "^4.5.0",

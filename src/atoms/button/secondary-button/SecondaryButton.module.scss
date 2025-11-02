@@ -1,10 +1,7 @@
-@use '/src/styles/typography';
-@use '/src/styles/mixins';
+@use "/src/styles/typography";
+@use "/src/styles/mixins";
 
 .button {
-  @include typography.font-style(core, base);
-  @include mixins.ripple();
-
   color: var(--cl-primary-color);
   cursor: pointer;
   display: flex;
@@ -15,6 +12,8 @@
   border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);
   background: transparent;
+  @include mixins.ripple();
+  @include typography.core-font(base);
 
   &:focus-visible {
     outline: var(--cl-outline-border);

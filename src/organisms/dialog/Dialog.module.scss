@@ -1,6 +1,7 @@
-@use '/src/styles/animations';
-@use '/src/styles/typography';
-@use '/src/styles/variables';
+@use "/src/styles/animations";
+@use "/src/styles/typography";
+@use "/src/styles/breakpoints";
+@use "/src/styles/variables";
 
 .dialog {
   @include animations.fade-in();
@@ -22,20 +23,18 @@
 }
 
 .layout {
-  @include typography.font-style(core, base);
-
   z-index: variables.$modal;
   background-color: var(--cl-primary-background);
   box-shadow: var(--cl-box-shadow);
   color: var(--cl-primary-color);
   padding: var(--cl-m-gap) var(--cl-l-gap);
-
   height: 90%;
   position: absolute;
   bottom: 0;
   left: 0;
   border-top-left-radius: var(--cl-border-radius);
   border-top-right-radius: var(--cl-border-radius);
+  @include typography.core-font(base);
 
   &_button {
     position: absolute;
@@ -43,7 +42,7 @@
     top: var(--cl-m-gap);
   }
 
-  @media only screen and (min-width: variables.$tablets) {
+  @include breakpoints.md-up {
     width: fit-content;
     height: fit-content;
     position: relative;

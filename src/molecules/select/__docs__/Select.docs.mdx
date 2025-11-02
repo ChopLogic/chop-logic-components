@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as Select from './Select.stories';
 
-<Meta of={Select} title='Select' />
+<Meta of={Select} title="Select" />
 
 # Select
 
@@ -17,7 +17,7 @@ const CountrySelector = () => {
   const countries = [
     { value: 'us', label: 'United States' },
     { value: 'ca', label: 'Canada' },
-    { value: 'mx', label: 'Mexico' }
+    { value: 'mx', label: 'Mexico' },
   ];
 
   return (
@@ -34,37 +34,43 @@ const CountrySelector = () => {
 ### Accessibility Notes
 
 _Keyboard Navigation_:
-  - Tab to focus the control
-  - Arrow keys to navigate options
-  - Enter to select
-  - Escape to close dropdown
+
+- Tab to focus the control
+- Arrow keys to navigate options
+- Enter to select
+- Escape to close dropdown
 
 _Screen Readers_:
-  - Announces selected option
-  - Announces when dropdown opens/closes
-  - Describes available options
+
+- Announces selected option
+- Announces when dropdown opens/closes
+- Describes available options
 
 _Focus Management_:
-  - Trap focus within dropdown when open
-  - Return focus to trigger when closed
-  - Maintain focus state during interactions
+
+- Trap focus within dropdown when open
+- Return focus to trigger when closed
+- Maintain focus state during interactions
 
 ### Best Practices
 
 _Option Organization_:
-  - Sort options logically (alphabetically, numerically, etc.)
-  - Group related options when appropriate
-  - Limit to ~50 options (consider search for more)
+
+- Sort options logically (alphabetically, numerically, etc.)
+- Group related options when appropriate
+- Limit to ~50 options (consider search for more)
 
 _Selection Clarity_:
-  - Use clear, descriptive labels
-  - Consider icons for visual reinforcement
-  - Show selected value prominently
+
+- Use clear, descriptive labels
+- Consider icons for visual reinforcement
+- Show selected value prominently
 
 _Performance_:
-  - Virtualize long option lists
-  - Memoize options when possible
-  - Avoid complex components in dropdown items
+
+- Virtualize long option lists
+- Memoize options when possible
+- Avoid complex components in dropdown items
 
 ## Props
 

@@ -1,5 +1,5 @@
-@use '/src/styles/animations';
-@use '/src/styles/mixins';
+@use "/src/styles/animations";
+@use "/src/styles/mixins";
 
 .button {
   @include animations.fade-in();

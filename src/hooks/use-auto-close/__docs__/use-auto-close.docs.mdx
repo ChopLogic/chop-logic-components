@@ -16,7 +16,7 @@ const MyPopup = ({ isOpen, onClose }) => {
     isOpened: isOpen,
     onClose,
     autoClose: true,
-    autoCloseDelay: 5000 // 5 seconds
+    autoCloseDelay: 5000, // 5 seconds
   });
 
   return isOpen ? <div className="popup">Content</div> : null;
@@ -26,7 +26,7 @@ const MyPopup = ({ isOpen, onClose }) => {
 ## Parameters
 
 | Parameter          | Type         | Description                                                           |
-|--------------------|--------------|-----------------------------------------------------------------------|
+| ------------------ | ------------ | --------------------------------------------------------------------- |
 | **isOpened**       | `boolean`    | Controls whether the timer should be active (true) or cleared (false) |
 | **onClose**        | `() => void` | Callback function to execute when the timer completes                 |
 | **autoClose**      | `boolean`    | Whether auto-closing functionality should be enabled                  |

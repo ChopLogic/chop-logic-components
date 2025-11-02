@@ -5,7 +5,6 @@ import { FormExample } from './Form.example';
 
 const meta: Meta<typeof Form> = {
   args: {
-    columns: 2,
     hasReset: true,
     initialValues: {
       firstName: 'John',

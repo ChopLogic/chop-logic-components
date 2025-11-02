@@ -10,6 +10,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
+[![Code Style: Prettier](https://img.shields.io/badge/Code_Style-Prettier-ff69b4.svg?style=flat)](https://prettier.io)
 
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
@@ -43,8 +44,12 @@ yarn add chop-logic-components
 | `build`           | Builds the TypeScript types and compiles the library using Vite.                                                                                      |
 | `build:storybook` | Builds a static version of Storybook into the `storybook-static` directory.                                                                           |
 | `prepare`         | Runs the production build and sets up Husky git hooks.                                                                                                |
-| `format`          | Formats all supported files using Biome formatter.                                                                                                    |
-| `lint`            | Runs Biome linter to check for code style and quality issues.                                                                                         |
+| `format`          | Formats all files using both Biome (for JS/TS) and Prettier (for SCSS/MDX).                                                                          |
+| `format:biome`    | Formats JS, TS, JSON, and MD files using Biome.                                                                                                      |
+| `format:prettier` | Formats SCSS and MDX files using Prettier.                                                                                                           |
+| `lint`            | Runs both Biome and Prettier linters to check code style and quality.                                                                                 |
+| `lint:biome`      | Runs Biome linter on JS/TS files.                                                                                                                    |
+| `lint:prettier`   | Checks formatting of SCSS and MDX files using Prettier.                                                                                              |
 | `lint:errors`     | Shows only error-level diagnostics from Biome (limited to 100 issues).                                                                                |
 | `lint:warnings`   | Shows only warning-level diagnostics from Biome (limited to 100 issues).                                                                              |
 | `lint:fix`        | Automatically fixes Biome issues where possible.                                                                                                      |

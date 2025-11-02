@@ -1,4 +1,4 @@
-@use '/src/styles/typography';
+@use "/src/styles/typography";
 
 .grid {
   display: grid;
@@ -14,9 +14,7 @@
 }
 
 .tile {
-  @include typography.font-style(core, small);
   color: var(--cl-primary-color);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,6 +25,7 @@
   padding: var(--cl-m-gap);
   width: 8rem;
   height: 8rem;
+  @include typography.core-font(base);
 
   &:hover {
     cursor: pointer;

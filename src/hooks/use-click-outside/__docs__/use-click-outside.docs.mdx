@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import * as Story from './use-click-outside.stories';
 
-<Meta of={Story} title='Hooks/useClickOutside' />
+<Meta of={Story} title="Hooks/useClickOutside" />
 
 # useClickOutside
 
@@ -36,10 +36,11 @@ export default ExampleComponent;
 ### Parameters
 
 | Param                     | Type                           | Description                                                                                        |
-|---------------------------|--------------------------------|----------------------------------------------------------------------------------------------------|
+| ------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------- |
 | **ref**                   | `React.RefObject<HTMLElement>` | A ref to the element that will be used to check if the click event is within the element's bounds. |
 | **onClickOutsideHandler** | `() => void`                   | The callback function to call when a click outside the referenced element is detected.             |
 | **dependentRef**          | `React.RefObject<HTMLElement>` | An optional additional ref to another element that should not trigger the outside click handler.   |
 
 ### Returns
+
 `void`

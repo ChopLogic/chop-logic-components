@@ -1,7 +1,7 @@
 import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as ButtonStories from './Button.stories';
 
-<Meta of={ButtonStories} title='Button' />
+<Meta of={ButtonStories} title="Button" />
 
 # Button
 
@@ -20,11 +20,7 @@ const ExampleForm = () => (
       icon={IconName.Check}
       onClick={() => console.log('Clicked!')}
     />
-    <Button
-      view={ButtonView.Icon}
-      icon={IconName.Settings}
-      label="Settings"
-    />
+    <Button view={ButtonView.Icon} icon={IconName.Settings} label="Settings" />
   </form>
 );
 ```
@@ -42,7 +38,7 @@ const ExampleForm = () => (
 - Always provide labels for icon-only buttons
 - Use primary buttons sparingly for the most important actions
 - Combine icons with text when space allows
--  Consider button hierarchy in forms and dialogs
+- Consider button hierarchy in forms and dialogs
 - Test keyboard navigation for all interactive elements
 - Use appropriate button types (submit/reset/button) in forms
 - Respect disabled states without removing interactive elements

@@ -1,11 +1,11 @@
-@use '/src/styles/typography';
+@use "/src/styles/typography";
 
 .label {
-  @include typography.font-style(core, small, light);
   display: flex;
   align-items: center;
   gap: var(--cl-s-gap);
   color: var(--cl-primary-color);
+  @include typography.core-font(small);
 
   &:hover {
     text-shadow: var(--cl-text-shadow);

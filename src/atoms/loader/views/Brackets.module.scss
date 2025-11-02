@@ -6,13 +6,13 @@
   opacity: 0.8;
 
   &:before {
-    content: '{';
+    content: "{";
     display: inline-block;
     animation: bracketsPulse 0.4s alternate infinite ease-in-out;
   }
 
   &:after {
-    content: '}';
+    content: "}";
     display: inline-block;
     animation: bracketsPulse 0.4s 0.3s alternate infinite ease-in-out;
   }

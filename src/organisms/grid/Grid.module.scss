@@ -8,4 +8,8 @@
     padding: var(--cl-m-gap);
     @include typography.core-font(base, 400);
   }
+
+  &_wrapper {
+    overflow-x: auto;
+  }
 }

@@ -34,7 +34,7 @@ const Form: FC<FormProps> = ({
     <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={formClass}>
       <FormContext.Provider value={contextValue}>
         {children}
-        <div className={styles.buttons}>
+        <div className={styles.form_buttons}>
           {hasReset && (
             <Button type="reset" text="Reset" icon={IconName.Clear} view={ButtonView.Secondary} />
           )}

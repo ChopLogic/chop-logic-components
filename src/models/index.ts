@@ -19,6 +19,7 @@ export type { FormInputParams, FormProps, FormValidationState, FormValues } from
 export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
 export type { HeaderProps } from './header';
 export type { ChopLogicSVGElementProps, IconProps } from './icon';
+export type { ImageProps, ImageSource } from './image';
 export type { LinkProps } from './link';
 export type { LoaderProps } from './loader';
 export type { MenuItem, MenuProps } from './menu';

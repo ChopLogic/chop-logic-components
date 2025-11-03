@@ -1,0 +1,179 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import Image from '../Image';
+
+const meta: Meta<typeof Image> = {
+  title: 'Atoms/Image',
+  component: Image,
+  tags: ['autodocs'],
+  argTypes: {
+    src: {
+      control: 'text',
+      description: 'The main image source URL',
+    },
+    alt: {
+      control: 'text',
+      description: 'Alternative text description for accessibility',
+    },
+    caption: {
+      control: 'text',
+      description: 'Optional caption displayed below the image',
+    },
+    width: {
+      control: 'text',
+      description: 'Width of the image (pixels or percentage)',
+    },
+    height: {
+      control: 'text',
+      description: 'Height of the image (pixels or percentage)',
+    },
+    aspectRatio: {
+      control: 'text',
+      description: 'Aspect ratio (e.g., "16/9", "4/3", "1")',
+    },
+    loading: {
+      control: 'select',
+      options: ['lazy', 'eager'],
+      description: 'Loading behavior',
+    },
+    decoding: {
+      control: 'select',
+      options: ['sync', 'async', 'auto'],
+      description: 'Decoding behavior',
+    },
+    decorative: {
+      control: 'boolean',
+      description: 'Whether the image is decorative (hides alt text from screen readers)',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom styling',
+    },
+  },
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Example image description',
+    loading: 'lazy',
+    decoding: 'async',
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+# Image Component
+
+A responsive and accessible image component with support for multiple sources, captions, and modern loading techniques.
+
+## Features
+
+- **Responsive Images**: Support for srcset and sizes attributes
+- **Accessibility**: Proper alt text and ARIA support
+- **Performance**: Lazy loading and modern decoding options
+- **Flexible Sizing**: Aspect ratio control and responsive dimensions
+- **Caption Support**: Optional captions with semantic markup
+        `,
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Image>;
+
+export const Default: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'A beautiful landscape with mountains and lake',
+  },
+};
+
+export const WithCaption: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'City skyline at sunset',
+    caption: 'Downtown city skyline during golden hour',
+  },
+};
+
+export const FixedDimensions: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Portrait image',
+    width: 300,
+    height: 200,
+  },
+};
+
+export const WithAspectRatio: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Widescreen image',
+    aspectRatio: '16/9',
+    width: '100%',
+  },
+};
+
+export const ResponsiveWithSources: Story = {
+  args: {
+    src: 'https://picsum.photos/800/600',
+    alt: 'Responsive image example',
+    sources: [
+      {
+        src: 'https://picsum.photos/400/300',
+        descriptor: '400w',
+        media: '(max-width: 480px)',
+      },
+      {
+        src: 'https://picsum.photos/800/600',
+        descriptor: '800w',
+        media: '(max-width: 1024px)',
+      },
+      {
+        src: 'https://picsum.photos/1200/900',
+        descriptor: '1200w',
+      },
+    ],
+    sizes: '(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px',
+    width: '100%',
+  },
+};
+
+export const DifferentFormats: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Image with multiple format support',
+    sources: [
+      {
+        src: 'image.webp',
+        type: 'image/webp',
+      },
+      {
+        src: 'image.avif',
+        type: 'image/avif',
+      },
+    ],
+  },
+};
+
+export const Decorative: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Decorative background pattern',
+    decorative: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Decorative image with empty alt text for screen readers',
+      },
+    },
+  },
+};
+
+export const EagerLoading: Story = {
+  args: {
+    src: 'https://picsum.photos/400/300',
+    alt: 'Important above-the-fold image',
+    loading: 'eager',
+    decoding: 'sync',
+  },
+};

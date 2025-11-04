@@ -1,9 +1,10 @@
+import { withFigureCaption } from '@hocs';
 import type { ImageProps } from '@models';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 import styles from './Image.module.scss';
 
-const Image: FC<ImageProps> = ({
+const ImageContainer: FC<ImageProps> = ({
   src,
   alt,
   sources = [],
@@ -19,8 +20,6 @@ const Image: FC<ImageProps> = ({
   ...rest
 }) => {
   const imageClass = getClassName([styles.image, className]);
-  const figureClass = getClassName([styles.figure, { [styles.figure__withCaption]: caption }]);
-
   const hasResponsiveSources = sources.length > 0;
   const finalAlt = decorative ? '' : alt;
 
@@ -75,16 +74,9 @@ const Image: FC<ImageProps> = ({
     </>
   );
 
-  if (caption) {
-    return (
-      <figure className={figureClass}>
-        {imageElement}
-        <figcaption className={styles.caption}>{caption}</figcaption>
-      </figure>
-    );
-  }
-
   return imageElement;
 };
+
+const Image = withFigureCaption(ImageContainer);
 
 export default Image;

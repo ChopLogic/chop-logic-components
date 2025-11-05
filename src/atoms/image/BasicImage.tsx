@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import styles from './Image.module.scss';
 
 type Props = {
   src: string;
@@ -28,6 +29,7 @@ export const BasicImage: FC<Props> = ({
       loading={loading}
       decoding={decoding}
       sizes={sizes}
+      className={styles.img}
     />
   );
 };

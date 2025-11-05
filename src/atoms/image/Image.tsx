@@ -17,13 +17,11 @@ const ImageContainer: FC<ImageProps> = ({
   const hasResponsiveSources = sources.length > 0;
   const finalAlt = decorative ? '' : alt;
 
-  return (
+  return hasResponsiveSources ? (
+    <ResponsivePicture alt={finalAlt} sources={sources} {...rest} />
+  ) : (
     <div className={wrapperClass}>
-      {hasResponsiveSources ? (
-        <ResponsivePicture alt={finalAlt} sources={sources} {...rest} />
-      ) : (
-        <BasicImage alt={finalAlt} {...rest} />
-      )}
+      <BasicImage alt={finalAlt} {...rest} />
     </div>
   );
 };

@@ -98,8 +98,8 @@ export const FixedDimensions: Story = {
   args: {
     src: 'https://picsum.photos/400/300',
     alt: 'Portrait image',
-    width: 300,
-    height: 200,
+    width: '400px',
+    height: '300px',
   },
 };
 
@@ -133,47 +133,6 @@ export const ResponsiveWithSources: Story = {
       },
     ],
     sizes: '(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px',
-    width: '100%',
-  },
-};
-
-export const DifferentFormats: Story = {
-  args: {
-    src: 'https://picsum.photos/400/300',
-    alt: 'Image with multiple format support',
-    sources: [
-      {
-        src: 'image.webp',
-        type: 'image/webp',
-      },
-      {
-        src: 'image.avif',
-        type: 'image/avif',
-      },
-    ],
-  },
-};
-
-export const Decorative: Story = {
-  args: {
-    src: 'https://picsum.photos/400/300',
-    alt: 'Decorative background pattern',
-    decorative: true,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Decorative image with empty alt text for screen readers',
-      },
-    },
-  },
-};
-
-export const EagerLoading: Story = {
-  args: {
-    src: 'https://picsum.photos/400/300',
-    alt: 'Important above-the-fold image',
-    loading: 'eager',
-    decoding: 'sync',
+    caption: 'An example of a responsive image with multiple sources',
   },
 };

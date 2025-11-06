@@ -4,7 +4,6 @@ import Image from '../Image';
 const meta: Meta<typeof Image> = {
   title: 'Atoms/Image',
   component: Image,
-  tags: ['autodocs'],
   argTypes: {
     src: {
       control: 'text',
@@ -54,25 +53,6 @@ const meta: Meta<typeof Image> = {
     alt: 'Example image description',
     loading: 'lazy',
     decoding: 'async',
-  },
-  parameters: {
-    docs: {
-      description: {
-        component: `
-# Image Component
-
-A responsive and accessible image component with support for multiple sources, captions, and modern loading techniques.
-
-## Features
-
-- **Responsive Images**: Support for srcset and sizes attributes
-- **Accessibility**: Proper alt text and ARIA support
-- **Performance**: Lazy loading and modern decoding options
-- **Flexible Sizing**: Aspect ratio control and responsive dimensions
-- **Caption Support**: Optional captions with semantic markup
-        `,
-      },
-    },
   },
 };
 

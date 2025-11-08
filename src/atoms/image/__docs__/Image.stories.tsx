@@ -47,6 +47,10 @@ const meta: Meta<typeof Image> = {
       control: 'text',
       description: 'Additional CSS class for custom styling',
     },
+    onError: {
+      control: 'object',
+      description: 'An optional callback function triggered on image load error',
+    },
   },
   args: {
     src: 'https://picsum.photos/400/300',
@@ -71,15 +75,6 @@ export const WithCaption: Story = {
     src: 'https://picsum.photos/400/300',
     alt: 'City skyline at sunset',
     caption: 'Downtown city skyline during golden hour',
-  },
-};
-
-export const FixedDimensions: Story = {
-  args: {
-    src: 'https://picsum.photos/400/300',
-    alt: 'Portrait image',
-    width: '400px',
-    height: '300px',
   },
 };
 
@@ -114,5 +109,13 @@ export const ResponsiveWithSources: Story = {
     ],
     sizes: '(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px',
     caption: 'An example of a responsive image with multiple sources',
+  },
+};
+
+export const WithErrorHandling: Story = {
+  args: {
+    src: 'https://picsum.photos/error',
+    alt: 'Image with error handling',
+    onError: () => console.log('Image failed to load, displaying fallback.'),
   },
 };

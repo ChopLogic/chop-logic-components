@@ -12,6 +12,7 @@ type Props = {
   height?: number | string;
   loading?: 'lazy' | 'eager';
   decoding?: 'sync' | 'async' | 'auto';
+  onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 };
 
 export const ResponsivePicture: FC<Props> = ({ sources = [], ...rest }) => {

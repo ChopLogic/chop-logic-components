@@ -28,6 +28,7 @@ import GraduateIcon from './svg/GraduateIcon';
 import HelpIcon from './svg/HelpIcon';
 import HideIcon from './svg/HideIcon';
 import HomeIcon from './svg/HomeIcon';
+import ImageIcon from './svg/ImageIcon';
 import InfoIcon from './svg/InfoIcon';
 import LoginIcon from './svg/LoginIcon';
 import PasteIcon from './svg/PasteIcon';
@@ -74,6 +75,7 @@ export const IconDictionary: Icons = {
   [IconName.Help]: HelpIcon,
   [IconName.Hide]: HideIcon,
   [IconName.Home]: HomeIcon,
+  [IconName.Image]: ImageIcon,
   [IconName.Info]: InfoIcon,
   [IconName.Login]: LoginIcon,
   [IconName.Paste]: PasteIcon,

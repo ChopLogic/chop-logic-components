@@ -9,6 +9,7 @@ type Props = {
   height?: number | string;
   loading?: 'lazy' | 'eager';
   decoding?: 'sync' | 'async' | 'auto';
+  onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 };
 
 export const BasicImage: FC<Props> = ({
@@ -19,6 +20,7 @@ export const BasicImage: FC<Props> = ({
   sizes,
   loading = 'lazy',
   decoding = 'async',
+  onError,
 }) => {
   return (
     <img
@@ -30,6 +32,7 @@ export const BasicImage: FC<Props> = ({
       decoding={decoding}
       sizes={sizes}
       className={styles.img}
+      onError={onError}
     />
   );
 };

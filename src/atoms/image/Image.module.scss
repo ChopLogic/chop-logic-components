@@ -1,3 +1,5 @@
+@use "/src/styles/typography";
+
 .image {
   object-fit: cover;
   border-radius: var(--cl-border-radius);
@@ -13,4 +15,23 @@
   display: block;
   object-fit: cover;
   border-radius: var(--cl-border-radius);
+}
+
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &_icon {
+    width: 148px;
+    height: 148px;
+  }
+
+  &_text {
+    text-align: center;
+    padding-top: var(--cl-s-gap);
+    color: var(--cl-primary-color);
+    @include typography.core-font(small);
+  }
 }

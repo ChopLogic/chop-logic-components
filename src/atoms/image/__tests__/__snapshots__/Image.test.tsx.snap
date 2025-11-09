@@ -84,3 +84,30 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
   </picture>
 </DocumentFragment>
 `;
+
+exports[`Image snapshot tests > ResponsivePicture should match snapshot with empty descriptors 1`] = `
+<DocumentFragment>
+  <picture
+    class="_picture_00ea5d"
+  >
+    <source
+      media="(max-width: 480px)"
+      srcset="https://picsum.photos/400/300"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcset="https://picsum.photos/800/600"
+    />
+    <source
+      srcset="https://picsum.photos/1200/900"
+    />
+    <img
+      alt="Snapshot image"
+      class="_img_00ea5d"
+      decoding="async"
+      loading="lazy"
+      src="snapshot.jpg"
+    />
+  </picture>
+</DocumentFragment>
+`;

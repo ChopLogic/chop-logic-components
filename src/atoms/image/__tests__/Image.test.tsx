@@ -27,7 +27,14 @@ describe('Image', () => {
     render(<Image {...defaultProps} />);
 
     expect(screen.getByRole('img')).toBeInTheDocument();
+    expect(screen.getByAltText(defaultProps.alt)).toBeInTheDocument();
     expect(screen.queryByTestId('fallback-icon')).not.toBeInTheDocument();
+  });
+
+  it('should not have alt text if image is decorative', () => {
+    render(<Image {...defaultProps} decorative={true} />);
+
+    expect(screen.queryByAltText(defaultProps.alt)).not.toBeInTheDocument();
   });
 
   it('shows fallback when basic image fails to load', () => {
@@ -114,6 +121,27 @@ describe('Image snapshot tests', () => {
       {
         src: 'https://picsum.photos/1200/900',
         descriptor: '1200w',
+      },
+    ];
+
+    const { asFragment } = render(
+      <ResponsivePicture src="snapshot.jpg" alt="Snapshot image" sources={mockedSources} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('ResponsivePicture should match snapshot with empty descriptors', () => {
+    const mockedSources = [
+      {
+        src: 'https://picsum.photos/400/300',
+        media: '(max-width: 480px)',
+      },
+      {
+        src: 'https://picsum.photos/800/600',
+        media: '(max-width: 1024px)',
+      },
+      {
+        src: 'https://picsum.photos/1200/900',
       },
     ];
 

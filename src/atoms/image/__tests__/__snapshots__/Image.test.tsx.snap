@@ -1,0 +1,86 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Image snapshot tests > BasicImage should match snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt="Snapshot image"
+    class="_img_00ea5d"
+    decoding="async"
+    loading="lazy"
+    src="snapshot.jpg"
+  />
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > FallbackImage should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_fallback_00ea5d"
+  >
+    <svg
+      aria-hidden="true"
+      class="_fallback_icon_00ea5d"
+      data-testid="fallback-icon"
+    >
+      image icon
+    </svg>
+    <span
+      class="_fallback_text_00ea5d"
+    >
+      Image not available
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
+<DocumentFragment>
+  <figure
+    class="_figure_737e9d"
+  >
+    <div
+      class="_image_00ea5d"
+    >
+      <img
+        alt="Snapshot image"
+        class="_img_00ea5d"
+        decoding="async"
+        loading="lazy"
+        src="snapshot.jpg"
+      />
+    </div>
+    <figcaption
+      class="_figure_caption_737e9d"
+    >
+      Snapshot Image
+    </figcaption>
+  </figure>
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
+<DocumentFragment>
+  <picture
+    class="_picture_00ea5d"
+  >
+    <source
+      media="(max-width: 480px)"
+      srcset="https://picsum.photos/400/300 400w"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcset="https://picsum.photos/800/600 800w"
+    />
+    <source
+      srcset="https://picsum.photos/1200/900 1200w"
+    />
+    <img
+      alt="Snapshot image"
+      class="_img_00ea5d"
+      decoding="async"
+      loading="lazy"
+      src="snapshot.jpg"
+    />
+  </picture>
+</DocumentFragment>
+`;

@@ -1,0 +1,13 @@
+@use "/src/styles/typography";
+
+.figure {
+  margin: 0;
+  display: block;
+
+  &_caption {
+    text-align: center;
+    padding-top: var(--cl-s-gap);
+    color: var(--cl-primary-color);
+    @include typography.core-font(small);
+  }
+}

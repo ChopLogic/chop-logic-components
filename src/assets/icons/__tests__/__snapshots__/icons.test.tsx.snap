@@ -521,17 +521,18 @@ exports[`SVG Icons > should match the snapshot 27`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
-    fill="currentColor"
     height="1em"
-    viewBox="0 0 1024 1024"
+    viewBox="0 0 24 24"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+      d="M18.435 3.06H5.565a2.5 2.5 0 0 0-2.5 2.5v12.88a2.507 2.507 0 0 0 2.5 2.5h12.87a2.507 2.507 0 0 0 2.5-2.5V5.56a2.5 2.5 0 0 0-2.5-2.5m-14.37 2.5a1.5 1.5 0 0 1 1.5-1.5h12.87a1.5 1.5 0 0 1 1.5 1.5v8.66l-3.88-3.88a1.51 1.51 0 0 0-2.12 0l-4.56 4.57a.513.513 0 0 1-.71 0l-.56-.56a1.52 1.52 0 0 0-2.12 0l-1.92 1.92Zm15.87 12.88a1.5 1.5 0 0 1-1.5 1.5H5.565a1.5 1.5 0 0 1-1.5-1.5v-.75L6.7 15.06a.5.5 0 0 1 .35-.14a.52.52 0 0 1 .36.14l.55.56a1.51 1.51 0 0 0 2.12 0l4.57-4.57a.5.5 0 0 1 .71 0l4.58 4.58Z"
+      fill="currentColor"
     />
     <path
-      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+      d="M8.062 10.565a2.5 2.5 0 1 1 2.5-2.5a2.5 2.5 0 0 1-2.5 2.5m0-4a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5"
+      fill="currentColor"
     />
   </svg>
 </DocumentFragment>
@@ -548,13 +549,33 @@ exports[`SVG Icons > should match the snapshot 28`] = `
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M521.7 82c-152.5-.4-286.7 78.5-363.4 197.7-3.4 5.3.4 12.3 6.7 12.3h70.3c4.8 0 9.3-2.1 12.3-5.8 7-8.5 14.5-16.7 22.4-24.5 32.6-32.5 70.5-58.1 112.7-75.9 43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 32.6 32.5 58.1 70.4 76 112.5C865.7 417.8 875 464.1 875 512c0 47.9-9.4 94.2-27.8 137.8-17.8 42.1-43.4 80-76 112.5s-70.5 58.1-112.7 75.9A352.8 352.8 0 0 1 520.6 866c-47.9 0-94.3-9.4-137.9-27.8A353.84 353.84 0 0 1 270 762.3c-7.9-7.9-15.3-16.1-22.4-24.5-3-3.7-7.6-5.8-12.3-5.8H165c-6.3 0-10.2 7-6.7 12.3C234.9 863.2 368.5 942 520.6 942c236.2 0 428-190.1 430.4-425.6C953.4 277.1 761.3 82.6 521.7 82zM395.02 624v-76h-314c-4.4 0-8-3.6-8-8v-56c0-4.4 3.6-8 8-8h314v-76c0-6.7 7.8-10.5 13-6.3l141.9 112a8 8 0 0 1 0 12.6l-141.9 112c-5.2 4.1-13 .4-13-6.3z"
+      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+    />
+    <path
+      d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
     />
   </svg>
 </DocumentFragment>
 `;
 
 exports[`SVG Icons > should match the snapshot 29`] = `
+<DocumentFragment>
+  <svg
+    aria-hidden="true"
+    fill="currentColor"
+    height="1em"
+    viewBox="0 0 1024 1024"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M521.7 82c-152.5-.4-286.7 78.5-363.4 197.7-3.4 5.3.4 12.3 6.7 12.3h70.3c4.8 0 9.3-2.1 12.3-5.8 7-8.5 14.5-16.7 22.4-24.5 32.6-32.5 70.5-58.1 112.7-75.9 43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 32.6 32.5 58.1 70.4 76 112.5C865.7 417.8 875 464.1 875 512c0 47.9-9.4 94.2-27.8 137.8-17.8 42.1-43.4 80-76 112.5s-70.5 58.1-112.7 75.9A352.8 352.8 0 0 1 520.6 866c-47.9 0-94.3-9.4-137.9-27.8A353.84 353.84 0 0 1 270 762.3c-7.9-7.9-15.3-16.1-22.4-24.5-3-3.7-7.6-5.8-12.3-5.8H165c-6.3 0-10.2 7-6.7 12.3C234.9 863.2 368.5 942 520.6 942c236.2 0 428-190.1 430.4-425.6C953.4 277.1 761.3 82.6 521.7 82zM395.02 624v-76h-314c-4.4 0-8-3.6-8-8v-56c0-4.4 3.6-8 8-8h314v-76c0-6.7 7.8-10.5 13-6.3l141.9 112a8 8 0 0 1 0 12.6l-141.9 112c-5.2 4.1-13 .4-13-6.3z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SVG Icons > should match the snapshot 30`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -571,7 +592,7 @@ exports[`SVG Icons > should match the snapshot 29`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 30`] = `
+exports[`SVG Icons > should match the snapshot 31`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -592,7 +613,7 @@ exports[`SVG Icons > should match the snapshot 30`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 31`] = `
+exports[`SVG Icons > should match the snapshot 32`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -613,7 +634,7 @@ exports[`SVG Icons > should match the snapshot 31`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 32`] = `
+exports[`SVG Icons > should match the snapshot 33`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -635,7 +656,7 @@ exports[`SVG Icons > should match the snapshot 32`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 33`] = `
+exports[`SVG Icons > should match the snapshot 34`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -667,7 +688,7 @@ exports[`SVG Icons > should match the snapshot 33`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 34`] = `
+exports[`SVG Icons > should match the snapshot 35`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -684,7 +705,7 @@ exports[`SVG Icons > should match the snapshot 34`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 35`] = `
+exports[`SVG Icons > should match the snapshot 36`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -705,7 +726,7 @@ exports[`SVG Icons > should match the snapshot 35`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 36`] = `
+exports[`SVG Icons > should match the snapshot 37`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -725,7 +746,7 @@ exports[`SVG Icons > should match the snapshot 36`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 37`] = `
+exports[`SVG Icons > should match the snapshot 38`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -745,7 +766,7 @@ exports[`SVG Icons > should match the snapshot 37`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 38`] = `
+exports[`SVG Icons > should match the snapshot 39`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -765,7 +786,7 @@ exports[`SVG Icons > should match the snapshot 38`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 39`] = `
+exports[`SVG Icons > should match the snapshot 40`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"
@@ -786,7 +807,7 @@ exports[`SVG Icons > should match the snapshot 39`] = `
 </DocumentFragment>
 `;
 
-exports[`SVG Icons > should match the snapshot 40`] = `
+exports[`SVG Icons > should match the snapshot 41`] = `
 <DocumentFragment>
   <svg
     aria-hidden="true"

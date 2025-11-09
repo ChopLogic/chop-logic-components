@@ -25,6 +25,7 @@ export enum IconName {
   Help = 'help',
   Hide = 'hide',
   Home = 'home',
+  Image = 'image',
   Info = 'info',
   Login = 'login',
   Paste = 'paste',

@@ -4,6 +4,9 @@ import { create } from 'storybook/theming/create';
 export const chopLogicTheme: ThemeVars = create({
   base: 'light',
   brandTarget: '_self',
-  brandTitle: `<img src="/logo.png" width="207px" height="107px"/>`,
+  brandTitle: 'ChopLogic Components',
+  brandImage: '/logo.png',
   brandUrl: 'https://github.com/ChopLogic',
+
+  fontBase: 'Arial, Helvetica, sans-serif',
 });

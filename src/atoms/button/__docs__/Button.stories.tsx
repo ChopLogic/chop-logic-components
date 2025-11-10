@@ -44,15 +44,6 @@ export const Primary: Story = {
   },
 };
 
-export const PrimaryExtended: Story = {
-  args: {
-    text: 'Copy',
-    view: ButtonView.Primary,
-    icon: IconName.Copy,
-    extended: true,
-  },
-};
-
 export const Secondary: Story = {
   args: {
     text: 'Learn more...',

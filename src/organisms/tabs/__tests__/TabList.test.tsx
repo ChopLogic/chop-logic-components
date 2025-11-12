@@ -8,6 +8,7 @@ import { TabList } from '../list/TabList';
 vi.mock('@atoms', () => ({
   Button: ({ label, onClick, tooltip, icon, className }: ButtonProps) => (
     <button
+      type="button"
       data-testid="add-tab-button"
       onClick={onClick}
       aria-label={label}

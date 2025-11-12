@@ -15,6 +15,7 @@ vi.mock('@atoms', () => ({
       data-testid={label.includes('Clear') ? 'clear-button' : 'search-button'}
       onClick={onClick}
       disabled={disabled}
+      type="button"
     >
       {children || icon || label}
     </button>

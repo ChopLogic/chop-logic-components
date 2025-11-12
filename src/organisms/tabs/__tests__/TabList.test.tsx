@@ -52,6 +52,7 @@ vi.mock('../button/TabButton', () => ({
       data-testid={`tab-button-${tabId}`}
       onClick={() => onTabSelect(tabId)}
       role="tab"
+      type="button"
       aria-selected={isSelected}
       aria-disabled={isDisabled}
       data-selected={isSelected}

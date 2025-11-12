@@ -15,7 +15,7 @@ const BreadcrumbItem: FC<{
     <>
       <li className={styles.breadcrumbs_item}>
         {isLink ? (
-          <Link href={item.link!} icon={item.icon} iconPosition="left">
+          <Link href={item?.link ?? ''} icon={item.icon} iconPosition="left">
             {item.label}
           </Link>
         ) : (

@@ -1,7 +1,8 @@
 import type { SwitchProps } from '@models';
 import { getClassName } from '@utils';
-import { type FC, type KeyboardEvent, useCallback } from 'react';
+import type { FC } from 'react';
 
+import { useSwitchController } from './Switch.controller';
 import styles from './Switch.module.scss';
 
 const Switch: FC<SwitchProps> = ({
@@ -15,35 +16,35 @@ const Switch: FC<SwitchProps> = ({
   value = 'on',
   hasIndicator,
 }) => {
+  const {
+    checked: controlledChecked,
+    handleChange,
+    handleKeyDown,
+  } = useSwitchController({
+    name: name || 'switch',
+    defaultChecked: checked,
+    onChange,
+  });
+
   const switchClass = getClassName([
     styles.switch,
     className,
     {
-      [styles.switch__checked]: checked,
+      [styles.switch__checked]: controlledChecked,
       [styles.switch__disabled]: disabled,
     },
   ]);
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     if (!disabled) {
-      onChange(!checked);
+      handleChange(!controlledChecked);
     }
-  }, [checked, disabled, onChange]);
-
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === ' ' || event.key === 'Enter') {
-        event.preventDefault();
-        onChange(!checked);
-      }
-    },
-    [checked, onChange],
-  );
+  };
 
   return (
     <div
       role="switch"
-      aria-checked={checked}
+      aria-checked={controlledChecked}
       aria-label={label}
       tabIndex={disabled ? -1 : 0}
       className={switchClass}
@@ -55,7 +56,7 @@ const Switch: FC<SwitchProps> = ({
         type="checkbox"
         name={name}
         value={value}
-        checked={checked}
+        checked={controlledChecked}
         disabled={disabled}
         className={styles.switch_input}
         readOnly
@@ -64,7 +65,7 @@ const Switch: FC<SwitchProps> = ({
       <span className={styles.switch_label}>{label}</span>
       {hasIndicator && (
         <span className={styles.switch_indicator} aria-hidden="true">
-          {checked ? 'On' : 'Off'}
+          {controlledChecked ? 'On' : 'Off'}
         </span>
       )}
       <span className={styles.switch_track}>

@@ -4,9 +4,11 @@
 .checkbox {
   display: flex;
   gap: var(--cl-m-gap);
-  padding: var(--cl-m-gap) 0;
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
   position: relative;
   overflow: hidden;
+  @include mixins.ripple();
 
   & svg {
     color: var(--cl-primary-color);
@@ -29,7 +31,7 @@
 
     &:hover,
     &:active {
-      text-shadow: var(--cl-text-shadow);
+      text-shadow: none;
     }
   }
 

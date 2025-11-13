@@ -1,3 +1,4 @@
+import { Switch } from '@atoms';
 import type { FormProps, FormValues, SelectValue } from '@models';
 import { Checkbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
 import { Form } from '@organisms';
@@ -24,6 +25,7 @@ export const FormExample: FC<FormProps> = (props) => {
     firstName: 'John',
     lastName: 'Doe',
     age: 42,
+    isSubscribed: true,
   };
 
   return (
@@ -46,6 +48,16 @@ export const FormExample: FC<FormProps> = (props) => {
           errorMessage="Only latin letters are allowed"
           validator={{ regexp: '^[A-Za-z ]+$' }}
         />
+        <TextInput
+          placeholder="Enter your email"
+          label="Email"
+          name="email"
+          type="email"
+          required
+          clearable
+          errorMessage="This is not a valid email"
+          validator={{ regexp: `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$` }}
+        />
         <NumericInput
           name="age"
           label="Age"
@@ -59,6 +71,8 @@ export const FormExample: FC<FormProps> = (props) => {
           options={MULTI_SELECT_VALUES}
         />
         <Checkbox name="isTermsAccepted" label="Accept Terms and Conditions" required />
+        <Switch name="isSubscribed" label="Subscribe to Newsletter" />
+        <Switch name="isAgreedToCollectAnalytics" label="Send Analytics" />
       </Form>
       {data && (
         <div className={styles.container} style={{ marginTop: '2rem' }}>

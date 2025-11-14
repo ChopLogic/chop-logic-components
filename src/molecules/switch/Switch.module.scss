@@ -3,6 +3,7 @@
 
 .switch {
   display: inline-flex;
+  justify-content: space-between;
   align-items: center;
   gap: var(--cl-l-gap);
   padding: var(--cl-m-gap);

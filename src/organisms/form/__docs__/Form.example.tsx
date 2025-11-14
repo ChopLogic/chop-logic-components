@@ -1,6 +1,5 @@
-import { Switch } from '@atoms';
 import type { FormProps, FormValues, SelectValue } from '@models';
-import { Checkbox, MultiSelect, NumericInput, Select, TextInput } from '@molecules';
+import { Checkbox, MultiSelect, NumericInput, Select, Switch, TextInput } from '@molecules';
 import { Form } from '@organisms';
 import styles from '@styles/storybook/Container.module.scss';
 import { type FC, useState } from 'react';

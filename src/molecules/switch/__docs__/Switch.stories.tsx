@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SwitchExample } from './Switch.example';
 
 const meta: Meta<typeof SwitchExample> = {
-  title: 'Atoms/Switch',
+  title: 'Molecules/Switch',
   component: SwitchExample,
   argTypes: {
     checked: {

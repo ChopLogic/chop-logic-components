@@ -8,7 +8,13 @@ import { TabButton } from '../button/TabButton';
 // Mock the Button component
 vi.mock('@atoms', () => ({
   Button: ({ icon, onClick, label, tooltip }: ButtonProps) => (
-    <button data-testid={`button-${icon}`} onClick={onClick} aria-label={label} title={tooltip}>
+    <button
+      data-testid={`button-${icon}`}
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      title={tooltip}
+    >
       {icon} Button
     </button>
   ),
@@ -44,10 +50,10 @@ vi.mock('../edit-input/TabEditInput', () => ({
         onKeyDown={onInputKeyDown}
         aria-labelledby={cancelButtonId}
       />
-      <button data-testid="save-button" onClick={onSave}>
+      <button data-testid="save-button" type="button" onClick={onSave}>
         Save
       </button>
-      <button data-testid="cancel-button" onClick={onCancel} id={cancelButtonId}>
+      <button data-testid="cancel-button" type="button" onClick={onCancel} id={cancelButtonId}>
         Cancel
       </button>
     </div>

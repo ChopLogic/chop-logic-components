@@ -5,6 +5,7 @@ import {
   type ChangeEventHandler,
   useCallback,
   useContext,
+  useRef,
   useState,
 } from 'react';
 
@@ -22,6 +23,12 @@ export function useCheckboxController({
   const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getCheckboxInitialValue({ initialValues, name, defaultChecked });
   const [isChecked, setIsChecked] = useState<boolean>(initialValue);
+  const onChangeFormInputRef = useRef(onChangeFormInput);
+  const initialValueRef = useRef(initialValue);
+
+  // Update refs when values change
+  onChangeFormInputRef.current = onChangeFormInput;
+  initialValueRef.current = initialValue;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
@@ -31,8 +38,8 @@ export function useCheckboxController({
   };
 
   const handleReset = useCallback(() => {
-    setIsChecked(initialValue);
-    onChangeFormInput?.({ name, value: initialValue });
+    setIsChecked(initialValueRef.current);
+    onChangeFormInputRef.current?.({ name, value: initialValueRef.current });
   }, [name]);
 
   useResetFormInput(handleReset);

@@ -5,7 +5,9 @@ exports[`MenuListItem > should match the snapshot 1`] = `
   <div
     data-testid="submenu"
   >
-    <button>
+    <button
+      type="button"
+    >
       Toggle SubMenu
     </button>
     <ul

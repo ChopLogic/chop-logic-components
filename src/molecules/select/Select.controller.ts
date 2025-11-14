@@ -1,7 +1,7 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import type { SelectValue } from '@models';
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useContext, useRef, useState } from 'react';
 
 import { getSelectInitialValue } from './Select.helpers';
 
@@ -20,6 +20,12 @@ export function useSelectController({
   const initialValue = getSelectInitialValue({ name, options, defaultValue, initialValues });
   const [opened, setOpened] = useState(false);
   const [selected, setSelected] = useState<SelectValue | undefined>(initialValue);
+  const onChangeFormInputRef = useRef(onChangeFormInput);
+  const initialValueRef = useRef(initialValue);
+
+  // Update refs when values change
+  onChangeFormInputRef.current = onChangeFormInput;
+  initialValueRef.current = initialValue;
 
   const handleClose = () => setOpened(false);
 
@@ -39,8 +45,8 @@ export function useSelectController({
 
   const handleReset = useCallback(() => {
     setOpened(false);
-    setSelected(initialValue);
-    onChangeFormInput?.({ name, value: initialValue?.id });
+    setSelected(initialValueRef.current);
+    onChangeFormInputRef.current?.({ name, value: initialValueRef.current?.id });
   }, [name]);
 
   useResetFormInput(handleReset);

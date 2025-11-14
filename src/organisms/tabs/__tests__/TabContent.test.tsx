@@ -1,7 +1,7 @@
 import type { ChopLogicTabItem } from '@models';
 import { render, screen } from '@testing-library/react';
+import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
-
 import { TabContent } from '../content/TabContent';
 
 const mockTabs: ChopLogicTabItem[] = [
@@ -135,7 +135,7 @@ describe('TabContent', () => {
           <div data-testid="complex-content">
             <h1>Title</h1>
             <p>Paragraph</p>
-            <button>Click me</button>
+            <button type="button">Click me</button>
           </div>
         ),
       },
@@ -192,7 +192,7 @@ describe('TabContent', () => {
     it('uses extended content when tab content is null', () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const tabsWithNullContent: ChopLogicTabItem[] = [
-        { id: 'tab1', title: 'Tab 1', content: null as any },
+        { id: 'tab1', title: 'Tab 1', content: null as unknown as ReactElement },
       ];
 
       const extendedContent = <div data-testid="extended-content">Default Content</div>;
@@ -212,7 +212,7 @@ describe('TabContent', () => {
     it('uses extended content when tab content is undefined', () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const tabsWithUndefinedContent: ChopLogicTabItem[] = [
-        { id: 'tab1', title: 'Tab 1', content: undefined as any },
+        { id: 'tab1', title: 'Tab 1', content: undefined as unknown as ReactElement },
       ];
 
       const extendedContent = <div data-testid="extended-content">Default Content</div>;

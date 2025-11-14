@@ -9,7 +9,9 @@ import { MenuListItem } from '../list-item/MenuListItem';
 vi.mock('../sub-menu/SubMenu', () => ({
   SubMenu: ({ children, toggleSubMenu }: PropsWithChildren & { toggleSubMenu: () => void }) => (
     <div data-testid="submenu">
-      <button onClick={toggleSubMenu}>Toggle SubMenu</button>
+      <button onClick={toggleSubMenu} type="button">
+        Toggle SubMenu
+      </button>
       {children}
     </div>
   ),

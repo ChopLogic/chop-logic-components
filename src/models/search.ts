@@ -1,4 +1,4 @@
-import type { ChangeEventHandler, FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
+import type { FocusEventHandler, HTMLInputAutoCompleteAttribute } from 'react';
 
 import type { ChopLogicInputProps } from './_common';
 
@@ -12,7 +12,6 @@ export interface SearchProps extends ChopLogicInputProps {
   searchMode?: 'automatic' | 'manual';
   onSearch?: (searchTerm: string) => void;
   onClear?: () => void;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   debounceDelay?: number;

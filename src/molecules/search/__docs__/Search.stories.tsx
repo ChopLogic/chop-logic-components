@@ -157,14 +157,6 @@ const meta: Meta<typeof SearchExample> = {
         category: 'Events',
       },
     },
-    onChange: {
-      action: 'changed',
-      description: 'Callback fired when the search input value changes',
-      table: {
-        type: { summary: 'ChangeEventHandler<HTMLInputElement>' },
-        category: 'Events',
-      },
-    },
     onFocus: {
       action: 'focused',
       description: 'Callback fired when the search input receives focus',
@@ -236,8 +228,7 @@ const meta: Meta<typeof SearchExample> = {
     placeholder: 'Type to search...',
 
     // Behavior props
-    searchMode: 'automatic',
-    debounceDelay: 500,
+    searchMode: 'manual',
     clearable: true,
 
     // Validation props
@@ -255,20 +246,6 @@ const meta: Meta<typeof SearchExample> = {
 export default meta;
 type Story = StoryObj<typeof SearchExample>;
 
-export const Default: Story = {
-  args: {
-    label: 'Search Products',
-    placeholder: 'Search by name, category, or description...',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Default search component in automatic mode with debounce.',
-      },
-    },
-  },
-};
-
 export const ManualMode: Story = {
   args: {
     searchMode: 'manual',
@@ -284,10 +261,11 @@ export const ManualMode: Story = {
   },
 };
 
-export const CustomDebounce: Story = {
+export const DebouncedSearch: Story = {
   args: {
-    label: 'Fast Search',
-    placeholder: 'Search with short delay...',
+    label: 'Debounced Search',
+    searchMode: 'automatic',
+    placeholder: 'Automatic search with a delay...',
     debounceDelay: 500,
   },
   parameters: {

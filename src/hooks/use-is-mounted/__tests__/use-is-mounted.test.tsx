@@ -8,7 +8,7 @@ const TestComponent = ({ isOpened, delay }: { isOpened: boolean; delay?: number 
   const isMounted = useIsMounted(isOpened, delay);
   useEffect(() => {
     return;
-  }, [isMounted]);
+  }, []);
 
   return <div data-testid="test-element">{isMounted ? 'Mounted' : 'Not Mounted'}</div>;
 };

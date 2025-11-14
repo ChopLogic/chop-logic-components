@@ -6,6 +6,7 @@ import {
   type ChangeEventHandler,
   useCallback,
   useContext,
+  useRef,
   useState,
 } from 'react';
 
@@ -38,6 +39,12 @@ export function useNumericInputController({
   const minValue = min ? Number(min) : Number.MIN_SAFE_INTEGER;
   const [value, setValue] = useState<number>(initialValue);
   const [valid, setValid] = useState<boolean>(true);
+  const onChangeFormInputRef = useRef(onChangeFormInput);
+  const initialValueRef = useRef(initialValue);
+
+  // Update refs when values change
+  onChangeFormInputRef.current = onChangeFormInput;
+  initialValueRef.current = initialValue;
 
   const updateValue = (value: number) => {
     setValue(value);
@@ -63,9 +70,9 @@ export function useNumericInputController({
   };
 
   const handleReset = useCallback(() => {
-    setValue(initialValue);
+    setValue(initialValueRef.current);
     setValid(true);
-    onChangeFormInput?.({ name, value: initialValue, valid: true });
+    onChangeFormInputRef.current?.({ name, value: initialValueRef.current, valid: true });
   }, [name]);
 
   useResetFormInput(handleReset);

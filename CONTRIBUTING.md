@@ -1,6 +1,6 @@
 # Contributing to Chop Logic Components
 
-Thank you for your interest in contributing to **Chop Logic**! We appreciate your help in improving and maintaining this
+Thank you for your interest in contributing to **Chop Logic Components**! We appreciate your help in improving and maintaining this
 project. Before you get started, please read through the guidelines below to ensure a smooth contribution process.
 
 ## Table of Contents
@@ -133,17 +133,17 @@ Please use the following branch name conventions:
 
 - `feat/*` – For features and updates
 - `fix/*` – For fixes and small tasks
-- `release/*` – For major releases
 
 ## Coding Guidelines
 
 Please follow these guidelines to maintain code consistency:
 
-- Follow the project's existing coding style (ESLint and Prettier).
+- Follow the project's existing coding style (Prettier for SCSS and MD(X) files and Biome.js for everything else).
 - Write clear and concise documentation.
 - Prefer functional components and hooks.
 - Use TypeScript for type safety.
 - Keep components reusable and accessible.
+- For AI assisted coding use `copilot-instructions.md` in `.github` folder.
 
 ## Testing
 

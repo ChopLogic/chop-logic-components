@@ -6,6 +6,7 @@ import {
   type ChangeEventHandler,
   useCallback,
   useContext,
+  useRef,
   useState,
 } from 'react';
 
@@ -31,6 +32,12 @@ export function useTextInputController({
   const [value, setValue] = useState<string>(initialValue);
   const [valid, setValid] = useState<boolean>(true);
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
+  const onChangeFormInputRef = useRef(onChangeFormInput);
+  const initialValueRef = useRef(initialValue);
+
+  // Update refs when values change
+  onChangeFormInputRef.current = onChangeFormInput;
+  initialValueRef.current = initialValue;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -50,9 +57,9 @@ export function useTextInputController({
   };
 
   const handleReset = useCallback(() => {
-    setValue(initialValue);
+    setValue(initialValueRef.current);
     setValid(true);
-    onChangeFormInput?.({ name, value: initialValue, valid: true });
+    onChangeFormInputRef.current?.({ name, value: initialValueRef.current, valid: true });
   }, [name]);
 
   const togglePassword = () => {

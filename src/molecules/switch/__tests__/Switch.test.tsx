@@ -65,18 +65,26 @@ describe('Switch', () => {
     expect(indicator).not.toBeInTheDocument();
   });
 
-  it('handles keyboard events for toggling', async () => {
+  it('handles Space key for toggling', async () => {
     render(<Switch {...defaultProps} />);
 
-    // Simulate pressing the space key
     await userEvent.tab();
     await userEvent.keyboard('{ }');
     expect(defaultProps.onChange).toHaveBeenCalledWith(true);
 
-    // Reset mock and simulate pressing the Enter key
-    vi.clearAllMocks();
+    await userEvent.keyboard('{ }');
+    expect(defaultProps.onChange).toHaveBeenCalledWith(false);
+  });
+
+  it('handles Enter key for toggling', async () => {
+    render(<Switch {...defaultProps} />);
+
+    await userEvent.tab();
     await userEvent.keyboard('{Enter}');
     expect(defaultProps.onChange).toHaveBeenCalledWith(true);
+
+    await userEvent.keyboard('{Enter}');
+    expect(defaultProps.onChange).toHaveBeenCalledWith(false);
   });
 
   it('does not handle keyboard events when disabled', async () => {

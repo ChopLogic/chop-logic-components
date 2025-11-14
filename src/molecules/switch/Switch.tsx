@@ -21,7 +21,7 @@ const Switch: FC<SwitchProps> = ({
     handleChange,
     handleKeyDown,
   } = useSwitchController({
-    name: name || 'switch',
+    name,
     defaultChecked: checked,
     onChange,
   });

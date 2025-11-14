@@ -6,7 +6,7 @@ export interface SwitchProps {
   value?: string;
   hasIndicator?: boolean;
   label: string;
-  name?: string;
+  name: string;
   disabled?: boolean;
   id?: string;
   className?: string;

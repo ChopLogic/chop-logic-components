@@ -25,35 +25,14 @@ const UserProfile = () => {
 };
 ```
 
-### When to Use
+## Best Practices
 
-- Smooth transition between read and edit modes
-- Ideal for titles, names, and short descriptions
-
-### Accessibility Notes
-
-1. _Keyboard Support_
-   - Enter/Space to enter edit mode
-   - Enter to save (single-line)
-   - Escape to cancel edits
-   - Tab to move focus
-
-2. _Screen Readers_
-   - Announces edit mode changes
-   - Reads placeholder text
-   - Indicates required fields
-
-3. _Focus Management_
-   - Auto-focuses when entering edit mode
-   - Maintains proper focus order
-   - Visible focus indicators
-
-### Best Practices
-
-    - Add validation in onChange handler
-    - Provide visual feedback for invalid input
-    - Memoize onChange handlers
-    - Consider debouncing for frequent updates
+1. Accessibility: Always provide a meaningful id and placeholder for better screen reader support
+2. User Experience: Use autoSelectTextOnEditMode for fields where users are likely to replace the entire content
+3. Multi-line Content: Enable multiline for longer text content like descriptions or comments
+4. State Management: Handle the onChange callback to update your application state when text changes
+5. Edit Mode Control: Use the isEditMode prop to programmatically control the editing state
+6. Read-Only States: Use readOnly when you want to show editable-looking text that cannot be modified
 
 ## Props
 

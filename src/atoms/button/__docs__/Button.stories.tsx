@@ -1,27 +1,11 @@
 import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import type Button from '../Button';
-import { ButtonExample } from './Button.example';
+import Button from '../Button';
 
 const meta: Meta<typeof Button> = {
-  argTypes: {
-    text: { control: 'text' },
-    disabled: { control: 'boolean' },
-    type: {
-      control: 'select',
-      options: ['button', 'submit', 'reset'],
-    },
-    icon: {
-      control: 'select',
-      options: Object.values(IconName),
-    },
-    view: {
-      control: 'select',
-      options: Object.values(ButtonView),
-    },
-    extended: { control: 'boolean' },
-  },
+  title: 'Atoms/Button',
+  component: Button,
   args: {
     text: 'Button',
     type: 'button',
@@ -29,8 +13,43 @@ const meta: Meta<typeof Button> = {
     disabled: false,
     extended: false,
   },
-  component: ButtonExample,
-  title: 'Atoms/Button',
+  argTypes: {
+    text: {
+      control: 'text',
+      description: 'The text content displayed on the button',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the button is disabled',
+    },
+    type: {
+      control: 'select',
+      options: ['button', 'submit', 'reset'],
+      description: 'The HTML button type attribute',
+    },
+    icon: {
+      control: 'select',
+      options: Object.values(IconName),
+      description: 'Icon to display alongside the button text',
+    },
+    view: {
+      control: 'select',
+      options: Object.values(ButtonView),
+      description: 'Visual style variant of the button',
+    },
+    extended: {
+      control: 'boolean',
+      description: 'Whether the button should take full available width',
+    },
+    tooltip: {
+      control: 'text',
+      description: 'Tooltip text shown on hover',
+    },
+    label: {
+      control: 'text',
+      description: 'Accessibility label for icon-only buttons',
+    },
+  },
 };
 
 export default meta;

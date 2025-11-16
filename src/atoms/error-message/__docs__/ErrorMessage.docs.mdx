@@ -5,7 +5,7 @@ import * as ErrorMessageStories from './ErrorMessage.stories';
 
 # ErrorMessage
 
-The `ErrorMessage` component allows users to add a clear error description to an editable input field.
+A validation error message component designed to display form validation errors with proper accessibility attributes and visibility control.
 
 ## Usage
 
@@ -27,14 +27,14 @@ const AgeInput = () => {
 };
 ```
 
-### When to Use
+## Best Practices
 
-- When you need a styled error message for a validated user input.
-
-### Accessibility Notes
-
-- Don't forget to connect the error message with an input via errorId.
-- The text of the message should be short and clear.
+1. Accessibility: Always provide a meaningful errorId that matches the aria-describedby attribute of the associated form field
+2. Visibility Management: Use the visible prop to conditionally show/hide errors based on validation state
+3. Clear Messaging: Provide specific, actionable error messages that help users understand how to fix the issue
+4. Form Association: Ensure the errorId is properly linked to the form field using aria-describedby for screen reader compatibility
+5. Testing: Use the testId prop for reliable end-to-end testing of error states
+6. Styling: Apply consistent error styling through CSS classes while maintaining high color contrast for readability
 
 ## Props
 

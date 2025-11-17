@@ -23,9 +23,9 @@
   gap: var(--cl-l-gap);
   border-radius: var(--cl-border-radius);
   padding: var(--cl-m-gap);
-  width: 8rem;
-  height: 8rem;
-  @include typography.core-font(base);
+  width: 6rem;
+  height: 6rem;
+  @include typography.core-font(small);
 
   &:hover {
     cursor: pointer;

@@ -24,26 +24,13 @@ const PageBreadcrumbs = () => (
 );
 ```
 
-### Features
+## Best Practices
 
-- _W3C Compliant_: Follows WAI-ARIA Breadcrumb pattern
+- _Flexible Navigation_: Mix of linked and non-linked items
+- _Responsive Design_: Adapts to different screen sizes
 - _Accessibility_: Proper semantic structure and screen reader support
 - _Visual Separators_: Icon-based separators that are ignored by screen readers
 - _Icon Support_: Optional icons for enhanced visual context
-- _Responsive Design_: Adapts to different screen sizes
-- _Flexible Navigation_: Mix of linked and non-linked items
-
-### Accessibility Notes
-
-- Uses `<nav>` with aria-label="Breadcrumb"
-- Ordered list (`<ol>`) for proper hierarchy
-- `aria-current="page"` for the current page item
-- Visual separators hidden from screen readers
-- Icons have `aria-hidden="true"` when decorative
-- Clear navigation landmark with descriptive label
-- Full keyboard accessibility for linked items
-- Proper focus management
-- Logical tab order
 
 ## Props
 

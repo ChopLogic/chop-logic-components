@@ -14,6 +14,48 @@ const MULTI_SELECT_VALUES: MultiSelectValue[] = [
 const meta: Meta<typeof MultiSelect> = {
   component: MultiSelectExample,
   title: 'Molecules/MultiSelect',
+  argTypes: {
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the multi-select component',
+    },
+    name: {
+      control: 'text',
+      description: 'Name attribute for form submission',
+    },
+    label: {
+      control: 'text',
+      description: 'Label text displayed above the multi-select',
+    },
+    options: {
+      control: 'object',
+      description: 'Array of available options for selection',
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text shown when no options are selected',
+    },
+    onChange: {
+      action: 'changed',
+      description: 'Callback function called when selected values change',
+    },
+    required: {
+      control: 'boolean',
+      description: 'Whether the field is required',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the multi-select is disabled',
+    },
+    defaultValue: {
+      control: 'text',
+      description: 'Default selected value(s)',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom styling',
+    },
+  },
 };
 
 export default meta;

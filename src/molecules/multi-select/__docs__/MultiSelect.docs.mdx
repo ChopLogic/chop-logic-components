@@ -5,7 +5,7 @@ import * as MultiSelect from './MultiSelect.stories';
 
 # MultiSelect
 
-The `MultiSelect` component provides an accessible, customizable multi-selection dropdown with keyboard navigation, search filtering, and flexible options management.
+A multi-selection input component that allows users to select multiple options from a dropdown list. Supports search functionality, custom options, and flexible selection management with proper accessibility features.
 
 ## Usage
 
@@ -31,25 +31,16 @@ const PreferencesForm = () => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Keyboard Navigation_:
-
-- Tab to focus the control
-- Arrow keys to navigate options
-- Enter to select/deselect
-- Escape to close dropdown
-
-_Screen Readers_:
-
-- Proper ARIA attributes for selected state
-- Announcement of options count
-- Clear status messages
-
-_Focus Management_:
-
-- Trap focus within dropdown when open
-- Return focus to trigger when closed
+1. _Clear Labeling_: Always provide a descriptive label that explains what options are available
+2. _Accessibility_: Ensure proper ARIA labels and keyboard navigation for the dropdown and selection items
+3. _Option Organization_: Group related options logically and consider alphabetical sorting for long lists
+4. _Selection Feedback_: Clearly indicate selected items and provide visual feedback when options are toggled
+5. _Search Functionality_: Implement search/filter for lists with more than 10 options to improve usability
+6. _Placeholder Text_: Use helpful placeholder text that guides users on what to select
+7. _Required Fields_: Mark required fields clearly and provide validation feedback
+8. _Disabled States_: Use disabled state appropriately when selection is not currently available
 
 ## Props
 

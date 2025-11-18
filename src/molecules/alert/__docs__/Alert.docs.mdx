@@ -5,7 +5,7 @@ import * as Alert from './Alert.stories';
 
 # Alert
 
-The `Alert` component provides a customizable popup for warnings and messages with auto-close function after timeout.
+A flexible alert component that displays contextual feedback messages to users. Supports multiple modes (info, success, warning, error) with automatic closing, custom icons, and customizable timing.
 
 ## Usage
 
@@ -28,38 +28,14 @@ const NotificationSystem = () => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Focus Management_:
-
-- Focus returns to trigger element when closed
-- Close button is keyboard accessible
-
-_Screen Readers:_
-
-- Announces alert content when appears
-- Announces severity level
-- Provides clear close action
-
-_Color Contrast_:
-
-- Ensure sufficient contrast for all modes
-- Test in high contrast modes
-- Provide alternative indicators for color-blind users
-
-### Best Practices
-
-_Content Guidelines_:
-
-- Keep titles short (1-5 words)
-- Limit messages to 1-2 sentences
-- Use clear, actionable language
-
-_Timing_:
-
-- Use auto-close for non-critical alerts
-- Allow sufficient reading time (minimum 5s)
-- Consider pause-on-hover for auto-closing alerts
+1. _Contextual Modes_: Use appropriate alert modes to convey the message importance.
+2. _Auto-close Timing_: Set appropriate autoCloseDelay values based on message importance (shorter for info, longer for errors).
+3. _Icon Selection_: Choose icons that reinforce the message type and improve visual recognition.
+4. _Content Clarity_: Provide clear, concise titles and descriptive messages.
+5. _Accessibility_: Ensure proper color contrast and include ARIA labels for different alert types.
+6. _User Control_: Allow users to dismiss important alerts manually when autoClose is disabled.
 
 ## Props
 

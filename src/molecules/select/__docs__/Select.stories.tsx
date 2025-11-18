@@ -12,6 +12,48 @@ const SELECT_LANGUAGES: SelectValue[] = [
 const meta: Meta<typeof SelectExample> = {
   component: SelectExample,
   title: 'Molecules/Select',
+  argTypes: {
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the select component',
+    },
+    name: {
+      control: 'text',
+      description: 'Name attribute for form submission',
+    },
+    label: {
+      control: 'text',
+      description: 'Label text displayed above the select',
+    },
+    options: {
+      control: 'object',
+      description: 'Array of available options for selection',
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text shown when no options are selected',
+    },
+    onChange: {
+      action: 'changed',
+      description: 'Callback function called when selected values change',
+    },
+    required: {
+      control: 'boolean',
+      description: 'Whether the field is required',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the select is disabled',
+    },
+    defaultValue: {
+      control: 'text',
+      description: 'Default selected value(s)',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom styling',
+    },
+  },
 };
 
 export default meta;

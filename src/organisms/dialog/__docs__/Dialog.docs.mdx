@@ -7,7 +7,7 @@ import * as Dialog from './Dialog.stories';
 
 The `Dialog` allows you to render a responsive pop-up window with any content. The dialog appearance trigger can be a button or any event on the page. If there are several dialogs, they will appear on top of each other in the order they are called. When adding a dialog, you must think through the conditions for opening and closing it, so props `isOpened` and `onClose` are mandatory.
 
-### Usage
+## Usage
 
 ```tsx
 import Dialog from 'chop-logic-components';
@@ -25,46 +25,27 @@ const ConfirmationDialog = ({ isOpen, onClose }) => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Focus Management_:
-
-- Focus is trapped within the dialog when open
-- Focus returns to the triggering element when closed
-- Close button is keyboard accessible
-
-_Screen Readers_:
-
-- Announces dialog title when opened
-- Announces role="dialog" and aria-modal="true"
-- Provides clear close action
-
-_Keyboard Navigation_:
-
-- Escape key closes dialog
-- Tab cycles through focusable elements
-- Shift+Tab reverses focus order
-
-### Best Practices
-
-_Content Structure_:
-
-- Keep titles concise
-- Organize content logically
-- Place primary actions on the right
-- Include a visible close button
-
-_Behavior_:
-
-- Close on overlay click (optional)
-- Prevent body scroll when open
-- Consider stacking order for multiple dialogs
-
-_Performance_:
-
-- Load heavy content dynamically
-- Consider virtualization for long content
-- Memoize dialog contents when appropriate
+1. _Content Structure_:
+   - Keep titles concise
+   - Organize content logically
+   - Place primary actions on the right
+2. _User Experience_:
+   - Avoid overwhelming users with too much information
+   - Use dialogs for critical interactions
+   - Provide clear exit options
+3. _Performance_:
+   - Load heavy content dynamically
+   - Consider virtualization for long content
+   - Memoize dialog contents when appropriate
+4. _Accessibility_:
+   - Focus is trapped within the dialog when open
+   - Escape key closes dialog
+   - Announces role="dialog" and aria-modal="true"
+   - Test with screen readers
+   - Ensure keyboard-only navigation
+   - Use ARIA attributes appropriately
 
 ## Props
 

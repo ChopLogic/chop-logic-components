@@ -6,6 +6,52 @@ import { GridExample } from './Grid.example';
 const meta: Meta<typeof Grid> = {
   component: GridExample,
   title: 'Organisms/Grid',
+  argTypes: {
+    columns: {
+      control: 'object',
+      description: 'Array of column definitions for the grid',
+    },
+    data: {
+      control: 'object',
+      description: 'Array of data items to display in the grid',
+    },
+    caption: {
+      control: 'text',
+      description: 'Optional caption/title for the grid',
+    },
+    selectable: {
+      control: 'boolean',
+      description: 'Whether rows can be selected',
+    },
+    renderDataItem: {
+      control: 'object',
+      description: 'Custom render function for grid cells',
+    },
+    onSelect: {
+      action: 'selected',
+      description: 'Callback function when rows are selected',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom styling',
+    },
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the grid',
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles for the grid',
+    },
+    title: {
+      control: 'text',
+      description: 'Accessibility title for the grid',
+    },
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
+    },
+  },
 };
 
 export default meta;

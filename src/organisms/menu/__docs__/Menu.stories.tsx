@@ -114,6 +114,8 @@ const meta: Meta<typeof Menu> = {
   component: MenuExample,
   argTypes: {
     items: {
+      control: 'object',
+      description: 'Array of menu items to display',
       table: {
         defaultValue: { summary: `[]` },
         type: { summary: `MenuItem[]` },
@@ -122,6 +124,7 @@ const meta: Meta<typeof Menu> = {
     mode: {
       control: 'radio',
       options: Object.values(OrientationMode),
+      description: 'Orientation of the menu (vertical or horizontal)',
       table: {
         defaultValue: { summary: OrientationMode.Horizontal },
         type: { summary: '"vertical" or "horizontal"' },
@@ -130,10 +133,31 @@ const meta: Meta<typeof Menu> = {
     openedOn: {
       control: 'radio',
       options: ['hover', 'click'],
+      description: 'Interaction method for opening nested menus',
       table: {
         defaultValue: { summary: 'click' },
         type: { summary: '"hover" or "click"' },
       },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom menu styling',
+    },
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the menu component',
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles for the menu container',
+    },
+    title: {
+      control: 'text',
+      description: 'Accessibility title for the menu',
+    },
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
     },
   },
   args: {

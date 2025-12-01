@@ -6,9 +6,14 @@ const meta: Meta<typeof PortalExample> = {
   title: 'Atoms/Portal',
   component: PortalExample,
   argTypes: {
+    // Content
     children: {
-      description: 'React element to be rendered in the portal.',
-      control: { type: 'text' },
+      control: 'text',
+      description: 'React element to be rendered in the portal',
+      table: {
+        type: { summary: 'ReactNode' },
+        category: 'Content',
+      },
     },
   },
   args: {

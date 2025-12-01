@@ -5,51 +5,118 @@ const meta: Meta<typeof Image> = {
   title: 'Atoms/Image',
   component: Image,
   argTypes: {
+    // Content
     src: {
       control: 'text',
       description: 'The main image source URL',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
     alt: {
       control: 'text',
       description: 'Alternative text description for accessibility',
+      table: {
+        type: { summary: 'string' },
+        category: 'Accessibility',
+      },
     },
     caption: {
       control: 'text',
       description: 'Optional caption displayed below the image',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
+    // Styling
     width: {
       control: 'text',
       description: 'Width of the image (pixels or percentage)',
+      table: {
+        type: { summary: 'string | number' },
+        category: 'Styling',
+      },
     },
     height: {
       control: 'text',
       description: 'Height of the image (pixels or percentage)',
+      table: {
+        type: { summary: 'string | number' },
+        category: 'Styling',
+      },
     },
     aspectRatio: {
       control: 'text',
       description: 'Aspect ratio (e.g., "16/9", "4/3", "1")',
+      table: {
+        type: { summary: 'string | number' },
+        category: 'Styling',
+      },
     },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    // Behavior
     loading: {
       control: 'select',
       options: ['lazy', 'eager'],
       description: 'Loading behavior',
+      table: {
+        type: { summary: "'lazy' | 'eager'" },
+        defaultValue: { summary: 'lazy' },
+        category: 'Behavior',
+      },
     },
     decoding: {
       control: 'select',
       options: ['sync', 'async', 'auto'],
       description: 'Decoding behavior',
+      table: {
+        type: { summary: "'sync' | 'async' | 'auto'" },
+        defaultValue: { summary: 'async' },
+        category: 'Behavior',
+      },
     },
+    // Accessibility
     decorative: {
       control: 'boolean',
       description: 'Whether the image is decorative (hides alt text from screen readers)',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Accessibility',
+      },
     },
-    className: {
-      control: 'text',
-      description: 'Additional CSS class for custom styling',
-    },
+    // Interaction
     onError: {
       control: 'object',
       description: 'An optional callback function triggered on image load error',
+      table: {
+        type: { summary: '(error: Event) => void' },
+        category: 'Interaction',
+      },
+    },
+    sources: {
+      control: 'object',
+      description: 'Array of source objects for responsive images',
+      table: {
+        type: { summary: 'Array<{ src: string; descriptor?: string; media?: string }>' },
+        category: 'Content',
+      },
+    },
+    sizes: {
+      control: 'text',
+      description: 'Sizes attribute for responsive images',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
   },
   args: {

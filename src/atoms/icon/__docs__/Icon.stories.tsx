@@ -18,6 +18,67 @@ const meta: Meta<typeof Icon> = {
     name: {
       control: 'select',
       options: Object.values(IconName),
+      description: 'The icon name to display',
+      table: {
+        type: { summary: 'IconName' },
+        category: 'Content',
+      },
+    },
+    title: {
+      control: 'text',
+      description: 'Tooltip text shown on hover',
+      table: {
+        type: { summary: 'string' },
+        category: 'Interaction',
+      },
+    },
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the icon element',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS class names for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles to apply to the icon',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+    testId: {
+      control: 'text',
+      description: 'Test ID used for automated testing',
+      table: {
+        type: { summary: 'string' },
+        category: 'Testing',
+      },
+    },
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'string' },
+        category: 'Accessibility',
+      },
+    },
+    hidden: {
+      control: 'boolean',
+      description: 'Whether the icon is hidden from assistive technologies',
+      table: {
+        type: { summary: 'string' },
+        category: 'Accessibility',
+      },
     },
   },
 };

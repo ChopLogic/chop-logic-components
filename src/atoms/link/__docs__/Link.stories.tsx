@@ -7,37 +7,68 @@ const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
   argTypes: {
-    href: {
-      control: 'text',
-      description: 'The URL the link points to',
-    },
+    // Content
     children: {
       control: 'text',
       description: 'Link text content',
+      table: {
+        type: { summary: 'string | ReactNode' },
+        category: 'Content',
+      },
     },
     icon: {
       control: 'select',
       options: Object.values(IconName),
       description: 'Optional icon to display with the link',
+      table: {
+        type: { summary: 'IconName' },
+        category: 'Content',
+      },
     },
-    iconPosition: {
-      control: 'radio',
-      options: ['left', 'right'],
-      description: 'Position of the icon relative to the text',
+    // Behavior
+    href: {
+      control: 'text',
+      description: 'The URL the link points to',
+      table: {
+        type: { summary: 'string' },
+        category: 'Behavior',
+      },
     },
     external: {
       control: 'boolean',
       description: 'Whether the link points to an external site',
-      defaultValue: false,
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Behavior',
+      },
     },
-    disabled: {
-      control: 'boolean',
-      description: 'Whether the link is disabled',
-      defaultValue: false,
+    // Styling
+    iconPosition: {
+      control: 'radio',
+      options: ['left', 'right'],
+      description: 'Position of the icon relative to the text',
+      table: {
+        type: { summary: "'left' | 'right'" },
+        defaultValue: { summary: 'left' },
+        category: 'Styling',
+      },
     },
     className: {
       control: 'text',
       description: 'Additional CSS class for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    // State
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the link is disabled',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
     },
   },
   args: {

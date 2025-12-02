@@ -5,39 +5,114 @@ import { AlertExample } from './Alert.example';
 
 const meta: Meta<typeof AlertExample> = {
   argTypes: {
+    // Content
     title: {
       control: 'text',
       description: 'The main title of the alert',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
     message: {
       control: 'text',
       description: 'The detailed message content',
-    },
-    mode: {
-      control: 'select',
-      options: Object.values(AlertMode),
-      description: 'The visual style and intent of the alert',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
     icon: {
       control: 'select',
       options: Object.values(IconName),
       description: 'Custom icon to display. Defaults to mode-appropriate icon if not specified',
+      table: {
+        type: { summary: 'IconName' },
+        category: 'Content',
+      },
     },
-    autoClose: {
-      control: 'boolean',
-      description: 'Whether the alert should automatically close after delay',
-    },
-    autoCloseDelay: {
-      control: 'number',
-      description: 'Time in milliseconds before auto-closing (if autoClose is true)',
-    },
-    onClose: {
-      action: 'closed',
-      description: 'Callback function when alert is closed',
+    // Styling
+    mode: {
+      control: 'select',
+      options: Object.values(AlertMode),
+      description: 'The visual style and intent of the alert',
+      table: {
+        type: { summary: 'AlertMode' },
+        defaultValue: { summary: 'AlertMode.Info' },
+        category: 'Styling',
+      },
     },
     className: {
       control: 'text',
       description: 'Additional CSS class for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    style: {
+      control: 'object',
+      description: 'Inline styles for the search wrapper',
+      table: {
+        type: { summary: 'CSSProperties' },
+        defaultValue: { summary: 'undefined' },
+        category: 'Styling',
+      },
+    },
+    // Behavior
+    autoClose: {
+      control: 'boolean',
+      description: 'Whether the alert should automatically close after delay',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'true' },
+        category: 'Behavior',
+      },
+    },
+    autoCloseDelay: {
+      control: 'number',
+      description: 'Time in milliseconds before auto-closing (if autoClose is true)',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: '3000' },
+        category: 'Behavior',
+      },
+    },
+    // Interaction
+    onClose: {
+      action: 'closed',
+      description: 'Callback function when alert is closed',
+      table: {
+        type: { summary: '() => void' },
+        category: 'Interaction',
+      },
+    },
+    isOpened: {
+      control: 'boolean',
+      description: 'Controls the visibility of the alert',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Interaction',
+      },
+    },
+    // HTML attributes
+    id: {
+      control: 'text',
+      description: 'The unique ID for the search input (auto-generated if not provided)',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'undefined' },
+        category: 'HTML Attributes',
+      },
+    },
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for the search input',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 'undefined' },
+        category: 'HTML Attributes',
+      },
     },
   },
   args: {

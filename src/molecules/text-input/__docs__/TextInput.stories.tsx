@@ -5,6 +5,196 @@ import { TextInputExample } from './TextInput.example';
 const meta: Meta<typeof TextInputExample> = {
   component: TextInputExample,
   title: 'Molecules/TextInput',
+  argTypes: {
+    // Content
+    label: {
+      control: 'text',
+      description: 'Label text displayed above the input',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text shown when input is empty',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'Error message displayed when validation fails',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    // Behavior
+    type: {
+      control: 'select',
+      options: ['text', 'email', 'password'],
+      description: 'Input type attribute',
+      table: {
+        type: { summary: "'text' | 'email' | 'password'" },
+        defaultValue: { summary: 'text' },
+        category: 'Behavior',
+      },
+    },
+    clearable: {
+      control: 'boolean',
+      description: 'Whether to show a clear button when input has value',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Behavior',
+      },
+    },
+    // State
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the input is disabled',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    readOnly: {
+      control: 'boolean',
+      description: 'Whether the input is read-only',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    // Validation
+    required: {
+      control: 'boolean',
+      description: 'Whether the field is required',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Validation',
+      },
+    },
+    validator: {
+      control: 'object',
+      description: 'Custom validation function or regex pattern',
+      table: {
+        type: { summary: '(value: string) => boolean | { regexp: string }' },
+        category: 'Validation',
+      },
+    },
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the input',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    name: {
+      control: 'text',
+      description: 'Name attribute for form submission',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    // Content - Additional
+    defaultValue: {
+      control: 'text',
+      description: 'Default value for the input field',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    // Behavior - Additional
+    maxLength: {
+      control: 'number',
+      description: 'Maximum number of characters allowed in the input',
+      table: {
+        type: { summary: 'number' },
+        category: 'Behavior',
+      },
+    },
+    autoComplete: {
+      control: 'text',
+      description: 'HTML autocomplete attribute value',
+      table: {
+        type: { summary: 'HTMLInputAutoCompleteAttribute' },
+        category: 'Behavior',
+      },
+    },
+    // Interaction
+    onChange: {
+      action: 'changed',
+      description: 'Callback function called when input value changes',
+      table: {
+        type: { summary: 'ChangeEventHandler<HTMLInputElement>' },
+        category: 'Interaction',
+      },
+    },
+    onBlur: {
+      action: 'blurred',
+      description: 'Callback function triggered when the input loses focus',
+      table: {
+        type: { summary: 'FocusEventHandler<HTMLInputElement>' },
+        category: 'Interaction',
+      },
+    },
+    onFocus: {
+      action: 'focused',
+      description: 'Callback function triggered when the input receives focus',
+      table: {
+        type: { summary: 'FocusEventHandler<HTMLInputElement>' },
+        category: 'Interaction',
+      },
+    },
+    onClear: {
+      action: 'cleared',
+      description: 'Callback function triggered when the clear button is clicked',
+      table: {
+        type: { summary: '() => void' },
+        category: 'Interaction',
+      },
+    },
+    title: {
+      control: 'text',
+      description: 'Tooltip text shown on hover',
+      table: {
+        type: { summary: 'string' },
+        category: 'Interaction',
+      },
+    },
+    // Styling
+    className: {
+      control: 'text',
+      description: 'Additional CSS class names for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles to apply to the input',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+    // Accessibility
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
+      },
+    },
+  },
 };
 
 export default meta;

@@ -7,49 +7,99 @@ const meta: Meta<typeof Grid> = {
   component: GridExample,
   title: 'Organisms/Grid',
   argTypes: {
-    columns: {
-      control: 'object',
-      description: 'Array of column definitions for the grid',
-    },
+    // Content
     data: {
       control: 'object',
       description: 'Array of data items to display in the grid',
+      table: {
+        type: { summary: 'Record<string, any>[]' },
+        category: 'Content',
+      },
+    },
+    columns: {
+      control: 'object',
+      description: 'Array of column definitions for the grid',
+      table: {
+        type: { summary: 'GridColumn[]' },
+        category: 'Content',
+      },
     },
     caption: {
       control: 'text',
       description: 'Optional caption/title for the grid',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
+    // Behavior
     selectable: {
       control: 'boolean',
       description: 'Whether rows can be selected',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Behavior',
+      },
     },
     renderDataItem: {
       control: 'object',
       description: 'Custom render function for grid cells',
+      table: {
+        type: { summary: '(item: Record<string, any>, field: string) => ReactNode' },
+        category: 'Behavior',
+      },
     },
+    // Interaction
     onSelect: {
       action: 'selected',
       description: 'Callback function when rows are selected',
+      table: {
+        type: { summary: '(ids: string[]) => void' },
+        category: 'Interaction',
+      },
     },
+    // Styling
     className: {
       control: 'text',
       description: 'Additional CSS class for custom styling',
-    },
-    id: {
-      control: 'text',
-      description: 'Unique identifier for the grid',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
     },
     style: {
       control: 'object',
       description: 'Inline CSS styles for the grid',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the grid',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
     },
     title: {
       control: 'text',
       description: 'Accessibility title for the grid',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
     },
+    // Accessibility
     tabIndex: {
       control: 'number',
       description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
+      },
     },
   },
 };

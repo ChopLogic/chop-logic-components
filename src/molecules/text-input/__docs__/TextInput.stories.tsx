@@ -255,7 +255,6 @@ export const EmailInput: Story = {
     disabled: false,
     clearable: true,
     errorMessage: 'This is not a valid email',
-    // eslint-disable-next-line no-useless-escape
     validator: { regexp: `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$` },
   },
   argTypes: {

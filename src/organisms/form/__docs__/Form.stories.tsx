@@ -16,47 +16,100 @@ const meta: Meta<typeof Form> = {
     onClickSubmit: (data) => console.log(data),
   },
   argTypes: {
-    initialValues: {
-      control: 'object',
-      description: 'Initial values for form fields (key-value pairs)',
-    },
-    hasReset: {
-      control: 'boolean',
-      description: 'Whether to enable form reset functionality',
-    },
-    onClickSubmit: {
-      action: 'submitted',
-      description: 'Callback function called when form is submitted',
-    },
-    onReset: {
-      description: 'Custom reset handler (overrides default reset behavior)',
-    },
-    onSubmit: {
-      description: 'Custom submit handler (overrides default submit behavior)',
-    },
+    // Content
     children: {
       control: 'text',
       description: 'Form content including input fields and buttons',
+      table: {
+        type: { summary: 'ReactNode' },
+        category: 'Content',
+      },
     },
+    // State
+    initialValues: {
+      control: 'object',
+      description: 'Initial values for form fields (key-value pairs)',
+      table: {
+        type: { summary: 'Record<string, any>' },
+        category: 'State',
+      },
+    },
+    // Behavior
+    hasReset: {
+      control: 'boolean',
+      description: 'Whether to enable form reset functionality',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Behavior',
+      },
+    },
+    // Interaction
+    onClickSubmit: {
+      action: 'submitted',
+      description: 'Callback function called when form is submitted',
+      table: {
+        type: { summary: '(data: Record<string, any>) => void' },
+        category: 'Interaction',
+      },
+    },
+    onReset: {
+      action: 'reset',
+      description: 'Custom reset handler (overrides default reset behavior)',
+      table: {
+        type: { summary: '() => void' },
+        category: 'Interaction',
+      },
+    },
+    onSubmit: {
+      action: 'submit',
+      description: 'Custom submit handler (overrides default submit behavior)',
+      table: {
+        type: { summary: '(data: Record<string, any>) => void' },
+        category: 'Interaction',
+      },
+    },
+    // Styling
     className: {
       control: 'text',
       description: 'Additional CSS class for custom styling',
-    },
-    id: {
-      control: 'text',
-      description: 'Unique identifier for the form',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
     },
     style: {
       control: 'object',
       description: 'Inline CSS styles for the form container',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the form',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
     },
     title: {
       control: 'text',
       description: 'Accessibility title for the form',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
     },
+    // Accessibility
     tabIndex: {
       control: 'number',
       description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
+      },
     },
   },
 };

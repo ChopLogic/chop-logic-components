@@ -7,29 +7,57 @@ const meta: Meta<typeof Breadcrumbs> = {
   title: 'Molecules/Breadcrumbs',
   component: Breadcrumbs,
   argTypes: {
+    // Content
     items: {
       control: 'object',
       description: 'Array of breadcrumb items',
+      table: {
+        type: { summary: 'BreadcrumbItem[]' },
+        category: 'Content',
+      },
     },
+    // Styling
     className: {
       control: 'text',
       description: 'Additional CSS class for custom styling',
-    },
-    id: {
-      control: 'text',
-      description: 'Unique identifier for the breadcrumbs',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
     },
     style: {
       control: 'object',
       description: 'Inline styles for the breadcrumbs container',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
     },
-    tabIndex: {
-      control: 'number',
-      description: 'Tab index for the breadcrumbs container',
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the breadcrumbs',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
     },
     title: {
       control: 'text',
       description: 'Title attribute for the breadcrumbs container',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    // Accessibility
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for the breadcrumbs container',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
+      },
     },
   },
   args: {

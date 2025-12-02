@@ -5,18 +5,15 @@ import { PortalExample } from './Portal.example';
 const meta: Meta<typeof PortalExample> = {
   title: 'Atoms/Portal',
   component: PortalExample,
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'A portal component that renders its children into a newly created div appended to the body.',
-      },
-    },
-  },
   argTypes: {
+    // Content
     children: {
-      description: 'React element to be rendered in the portal.',
-      control: { type: 'text' },
+      control: 'text',
+      description: 'React element to be rendered in the portal',
+      table: {
+        type: { summary: 'ReactNode' },
+        category: 'Content',
+      },
     },
   },
   args: {

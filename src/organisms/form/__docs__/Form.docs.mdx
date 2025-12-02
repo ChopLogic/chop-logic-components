@@ -26,45 +26,24 @@ const UserForm = () => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Form Structure_:
-
-- Proper form element semantics
-- Field labels associated with inputs
-- Logical tab order
-
-_Validation_:
-
-- Clear error messages
-- ARIA attributes for invalid fields
-- Focus management for errors
-
-_Keyboard Navigation_:
-
-- Tab through form fields
-- Enter to submit
-- Escape to reset (when enabled)
-
-### Best Practices
-
-_Layout_:
-
-- Use appropriate column counts for form complexity
-- Group related fields together
-- Maintain consistent spacing
-
-_Validation_:
-
-- Provide clear error messages
-- Validate on blur and submit
-- Consider real-time validation for complex forms
-
-_Performance_:
-
-- Memoize form components when possible
-- Consider dynamic loading for large forms
-- Optimize re-renders with controlled components
+1. _Layout_:
+   - Use appropriate column counts for form complexity
+   - Group related fields together
+   - Maintain consistent spacing
+2. _Validation_:
+   - Provide clear error messages
+   - Validate on blur and submit
+   - Consider real-time validation for complex forms
+3. _Performance_:
+   - Memoize form components when possible
+   - Consider dynamic loading for large forms
+   - Optimize re-renders with controlled components
+4. _Accessibility_:
+   - Ensure all form controls are keyboard accessible
+   - Use ARIA attributes for dynamic content updates
+   - Test with screen readers
 
 ## Props
 

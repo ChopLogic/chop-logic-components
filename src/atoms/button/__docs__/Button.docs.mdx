@@ -25,23 +25,13 @@ const ExampleForm = () => (
 );
 ```
 
-### Accessibility Notes
+## Best Practices
 
-1. Automatic ARIA labeling
-2. Keyboard focusable
-3. Proper disabled state semantics
-4. Tooltip integration
-5. Screen reader support for icon buttons
-
-### Best Practices
-
-- Always provide labels for icon-only buttons
-- Use primary buttons sparingly for the most important actions
-- Combine icons with text when space allows
-- Consider button hierarchy in forms and dialogs
-- Test keyboard navigation for all interactive elements
-- Use appropriate button types (submit/reset/button) in forms
-- Respect disabled states without removing interactive elements
+1. _Accessibility_: Always provide a label prop for icon-only buttons to ensure screen reader compatibility.
+2. _Visual Hierarchy_: Use primary buttons for main actions and secondary buttons for less important actions.
+3. _State Management_: Use the disabled state appropriately to prevent user confusion.
+4. _Tooltips_: Add tooltips for buttons that need additional context, especially icon-only buttons.
+5. _Icons_: Choose icons that are universally recognizable and match the button's purpose.
 
 ## Props
 

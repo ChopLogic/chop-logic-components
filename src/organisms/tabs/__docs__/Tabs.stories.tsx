@@ -36,61 +36,14 @@ const initialTabs: ChopLogicTabItem[] = [
 
 const meta: Meta<typeof TabsExample> = {
   argTypes: {
+    // Content
     tabs: {
       control: 'object',
       description: 'Array of tab items to display',
       table: {
         type: { summary: 'ChopLogicTabItem[]' },
         defaultValue: { summary: '[]' },
-      },
-    },
-    defaultTabId: {
-      control: 'text',
-      description: 'Initially selected tab ID',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'first tab ID' },
-      },
-    },
-    mode: {
-      control: 'radio',
-      options: Object.values(OrientationMode),
-      description: 'Orientation of the tabs',
-      table: {
-        type: { summary: 'OrientationMode' },
-        defaultValue: { summary: 'OrientationMode.Horizontal' },
-      },
-    },
-    stretched: {
-      control: 'boolean',
-      description: 'Whether tabs should stretch to fill available space',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    editable: {
-      control: 'boolean',
-      description: 'Whether tab titles can be edited',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    extendable: {
-      control: 'boolean',
-      description: 'Whether new tabs can be added',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    extendedTabLabel: {
-      control: 'text',
-      description: 'Default label for newly added tabs',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '"New Tab"' },
+        category: 'Content',
       },
     },
     extendedTabContent: {
@@ -99,14 +52,72 @@ const meta: Meta<typeof TabsExample> = {
       table: {
         type: { summary: 'ReactElement' },
         defaultValue: { summary: '<div></div>' },
+        category: 'Content',
       },
     },
+    extendedTabLabel: {
+      control: 'text',
+      description: 'Default label for newly added tabs',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '"New Tab"' },
+        category: 'Content',
+      },
+    },
+    // Behavior
+    mode: {
+      control: 'radio',
+      options: Object.values(OrientationMode),
+      description: 'Orientation of the tabs',
+      table: {
+        type: { summary: 'OrientationMode' },
+        defaultValue: { summary: 'OrientationMode.Horizontal' },
+        category: 'Behavior',
+      },
+    },
+    defaultTabId: {
+      control: 'text',
+      description: 'Initially selected tab ID',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'first tab ID' },
+        category: 'Behavior',
+      },
+    },
+    stretched: {
+      control: 'boolean',
+      description: 'Whether tabs should stretch to fill available space',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    editable: {
+      control: 'boolean',
+      description: 'Whether tab titles can be edited',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    extendable: {
+      control: 'boolean',
+      description: 'Whether new tabs can be added',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    // Interaction
     onTabTitleChange: {
       action: 'onTabTitleChange',
       description: 'Callback when a tab title is changed',
       table: {
         type: { summary: '(tabId: string, newTitle: string) => void' },
-        category: 'Callbacks',
+        category: 'Interaction',
       },
     },
     onTabAdd: {
@@ -114,7 +125,7 @@ const meta: Meta<typeof TabsExample> = {
       description: 'Callback when a new tab is added',
       table: {
         type: { summary: '() => void' },
-        category: 'Callbacks',
+        category: 'Interaction',
       },
     },
     onTabSelect: {
@@ -122,7 +133,7 @@ const meta: Meta<typeof TabsExample> = {
       description: 'Callback when a tab is selected',
       table: {
         type: { summary: '(id: string) => void' },
-        category: 'Callbacks',
+        category: 'Interaction',
       },
     },
     onTabDelete: {
@@ -130,9 +141,10 @@ const meta: Meta<typeof TabsExample> = {
       description: 'Callback when a tab is deleted',
       table: {
         type: { summary: '(id: string) => void' },
-        category: 'Callbacks',
+        category: 'Interaction',
       },
     },
+    // Styling
     className: {
       control: 'text',
       description: 'Additional CSS class for the root element',
@@ -149,12 +161,13 @@ const meta: Meta<typeof TabsExample> = {
         category: 'Styling',
       },
     },
+    // Identification
     id: {
       control: 'text',
       description: 'HTML id attribute for the root element',
       table: {
         type: { summary: 'string' },
-        category: 'DOM Attributes',
+        category: 'Identification',
       },
     },
     title: {
@@ -162,15 +175,16 @@ const meta: Meta<typeof TabsExample> = {
       description: 'HTML title attribute for the root element',
       table: {
         type: { summary: 'string' },
-        category: 'DOM Attributes',
+        category: 'Identification',
       },
     },
+    // Accessibility
     tabIndex: {
       control: 'number',
       description: 'HTML tab-index attribute for the root element',
       table: {
         type: { summary: 'number' },
-        category: 'DOM Attributes',
+        category: 'Accessibility',
       },
     },
   },

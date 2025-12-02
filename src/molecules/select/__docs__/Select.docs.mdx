@@ -31,46 +31,11 @@ const CountrySelector = () => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Keyboard Navigation_:
-
-- Tab to focus the control
-- Arrow keys to navigate options
-- Enter to select
-- Escape to close dropdown
-
-_Screen Readers_:
-
-- Announces selected option
-- Announces when dropdown opens/closes
-- Describes available options
-
-_Focus Management_:
-
-- Trap focus within dropdown when open
-- Return focus to trigger when closed
-- Maintain focus state during interactions
-
-### Best Practices
-
-_Option Organization_:
-
-- Sort options logically (alphabetically, numerically, etc.)
-- Group related options when appropriate
-- Limit to ~50 options (consider search for more)
-
-_Selection Clarity_:
-
-- Use clear, descriptive labels
-- Consider icons for visual reinforcement
-- Show selected value prominently
-
-_Performance_:
-
-- Virtualize long option lists
-- Memoize options when possible
-- Avoid complex components in dropdown items
+1. _Option Organization_: Sort options logically (alphabetically, numerically, etc.) and group related options when appropriate.
+2. _Selection Clarity_: Use clear, descriptive labels.
+3. _Performance_: Virtualize long option lists and memoize options when possible.
 
 ## Props
 

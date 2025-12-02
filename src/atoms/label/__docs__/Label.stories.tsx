@@ -6,31 +6,61 @@ const meta: Meta<typeof Label> = {
   title: 'Atoms/Label',
   component: Label,
   argTypes: {
+    // Content
     label: {
       control: 'text',
       description: 'The text content of the label',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
     },
-    required: {
-      control: 'boolean',
-      description: 'Whether the associated field is required',
+    icon: {
+      control: 'select',
+      options: Object.values(IconName),
+      description: 'Optional icon element to display with the label',
+      table: {
+        type: { summary: 'IconName' },
+        category: 'Content',
+      },
     },
+    // Styling
+    iconPosition: {
+      control: 'radio',
+      options: ['left', 'right'],
+      description: 'Position of the icon relative to the text',
+      table: {
+        type: { summary: "'left' | 'right'" },
+        defaultValue: { summary: 'left' },
+        category: 'Styling',
+      },
+    },
+    // Association
     inputId: {
       control: 'text',
       description: 'ID of the associated input element',
+      table: {
+        type: { summary: 'string' },
+        category: 'Association',
+      },
     },
+    // Validation
+    required: {
+      control: 'boolean',
+      description: 'Whether the associated field is required',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Validation',
+      },
+    },
+    // Accessibility
     isTextHidden: {
       control: 'boolean',
       description: 'Visually hides the label text (still accessible to screen readers)',
-    },
-    icon: {
-      description: 'Optional icon element to display with the label',
-      control: 'select',
-      options: Object.values(IconName),
-    },
-    iconPosition: {
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      description: 'Position of the icon relative to the text',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Accessibility',
+      },
     },
   },
   args: {

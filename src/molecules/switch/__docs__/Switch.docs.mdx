@@ -19,22 +19,14 @@ const NotificationSettings = () => {
 };
 ```
 
-### Features
-
-- _WAI-ARIA Compliant_: Follows switch role pattern with proper ARIA attributes
-- _Keyboard Accessible_: Space and Enter keys toggle the switch
-- _Screen Reader Support_: Proper announcements for state changes
-- _Form Integration_: Hidden input for form submission compatibility
-- _Accessibility_: High contrast and reduced motion support
-- _Visual Feedback_: Clear visual states for on/off and disabled
-
 ### Best Practices
 
-- Labels should describe the functionality, not the state (avoid labels like "Turn on/off" - use "Notifications" instead)
-- Labels should remain constant regardless of switch state
-- Use for binary choices only (no indeterminate states)
-- Provide immediate feedback when toggled
-- Consider debouncing for operations with side effects
+1. _Accessibility_:
+   - Labels should describe the functionality, not the state (avoid labels like "Turn on/off" - use "Notifications" instead).
+   - Labels should remain constant regardless of switch state.
+   - Use for binary choices only (no indeterminate states).
+2. _Interactivity_: Provide immediate feedback when toggled.
+3. _Performance_: Consider debouncing for operations with side effects.
 
 ## Props
 

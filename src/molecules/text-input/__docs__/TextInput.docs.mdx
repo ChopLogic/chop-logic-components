@@ -29,44 +29,20 @@ const LoginForm = () => {
 };
 ```
 
-### Accessibility Notes
+## Best Practices
 
-_Keyboard Navigation_:
-
-- Tab to focus the input
-- Clear button accessible via keyboard
-- Password toggle accessible via keyboard
-
-_Screen Readers_:
-
-- Announces label and required state
-- Announces validation errors
-- Describes clear button action
-
-_Focus Management_:
-
-- Clear focus states for all interactive elements
-- Maintains focus during interactions
-
-### Best Practices
-
-_Labeling_:
-
-- Always provide a meaningful label
-- Use placeholder text sparingly (not as a label replacement)
-- Ensure proper label-input association
-
-_Validation_:
-
-- Provide clear error messages
-- Validate on blur as well as submit
-- Consider real-time validation for long forms
-
-_Mobile Considerations_:
-
-- Use appropriate input types for virtual keyboards
-- Ensure touch targets are large enough
-- Test with screen magnifiers
+1. _Labeling_:
+   - Always provide a meaningful label
+   - Use placeholder text sparingly (not as a label replacement)
+   - Ensure proper label-input association
+2. _Validation_:
+   - Provide clear error messages
+   - Validate on blur as well as submit
+   - Consider real-time validation for long forms
+3. _Accessibility_:
+   - Ensure clear focus states for all interactive elements
+   - Ensure Clear and Password Toggle buttons are keyboard accessible
+   - Use ARIA attributes for dynamic content updates
 
 ## Props
 

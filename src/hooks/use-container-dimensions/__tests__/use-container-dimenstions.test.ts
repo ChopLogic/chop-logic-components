@@ -150,7 +150,6 @@ describe('useContainerDimensions', () => {
 
     // Set ref to null
     const nullRef = { current: null as unknown as HTMLElement };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rerender({ ref: nullRef, isVisible: true });
 
     // Should maintain previous dimensions

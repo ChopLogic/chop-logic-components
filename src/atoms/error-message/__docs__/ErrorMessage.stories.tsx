@@ -5,7 +5,53 @@ import ErrorMessage from '../ErrorMessage';
 const meta: Meta<typeof ErrorMessage> = {
   title: 'Atoms/ErrorMessage',
   component: ErrorMessage,
-  tags: ['autodocs'],
+  argTypes: {
+    // Content
+    message: {
+      control: 'text',
+      description: 'The error message text to display',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    // State
+    visible: {
+      control: 'boolean',
+      description: 'Controls whether the error message is visible',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    // Styling
+    className: {
+      control: 'text',
+      description: 'Additional CSS class names for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    // Accessibility
+    errorId: {
+      control: 'text',
+      description: 'Unique ID for the error message, used for accessibility with aria-describedby',
+      table: {
+        type: { summary: 'string' },
+        category: 'Accessibility',
+      },
+    },
+    // Testing
+    testId: {
+      control: 'text',
+      description: 'Test ID used for automated testing',
+      table: {
+        type: { summary: 'string' },
+        category: 'Testing',
+      },
+    },
+  },
 };
 
 export default meta;

@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
 import * as PortalStories from './Portal.stories';
 
 <Meta of={PortalStories} title="Portal" />
@@ -22,8 +22,15 @@ const MyModalComponent = () => (
 export default MyModalComponent;
 ```
 
-### Props
+## Best Practices
 
-| Prop       | Type                 | Description                                 | Default | Required |
-| ---------- | -------------------- | ------------------------------------------- | ------- | -------- |
-| `children` | `React.ReactElement` | React element to be rendered in the portal. | `null`  | No       |
+1. _Accessibility_: Ensure portal content is properly accessible via keyboard navigation and screen readers.
+2. _Z-index Management_: Coordinate z-index values across portal content to maintain proper layering.
+3. _Event Bubbling_: Remember that events from portal content bubble through the React tree, not the DOM tree.
+4. _Container Selection_: Use specific container elements when you need precise control over portal placement.
+5. _Cleanup_: Portal content is automatically cleaned up when the component unmounts.
+6. _Use Cases_: Ideal for modals, tooltips, dropdowns, and any content that needs to escape overflow:hidden or z-index constraints.
+
+## Props
+
+<Controls />

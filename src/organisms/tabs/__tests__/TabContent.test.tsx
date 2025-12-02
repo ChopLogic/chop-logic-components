@@ -190,7 +190,6 @@ describe('TabContent', () => {
     });
 
     it('uses extended content when tab content is null', () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const tabsWithNullContent: ChopLogicTabItem[] = [
         { id: 'tab1', title: 'Tab 1', content: null as unknown as ReactElement },
       ];
@@ -210,7 +209,6 @@ describe('TabContent', () => {
     });
 
     it('uses extended content when tab content is undefined', () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const tabsWithUndefinedContent: ChopLogicTabItem[] = [
         { id: 'tab1', title: 'Tab 1', content: undefined as unknown as ReactElement },
       ];

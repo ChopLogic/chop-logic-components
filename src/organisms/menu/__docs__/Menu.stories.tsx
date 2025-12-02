@@ -113,26 +113,78 @@ const meta: Meta<typeof Menu> = {
   title: 'Organisms/Menu',
   component: MenuExample,
   argTypes: {
+    // Content
     items: {
+      control: 'object',
+      description: 'Array of menu items to display',
       table: {
         defaultValue: { summary: `[]` },
         type: { summary: `MenuItem[]` },
+        category: 'Content',
       },
     },
+    // Behavior
     mode: {
       control: 'radio',
       options: Object.values(OrientationMode),
+      description: 'Orientation of the menu (vertical or horizontal)',
       table: {
         defaultValue: { summary: OrientationMode.Horizontal },
-        type: { summary: '"vertical" or "horizontal"' },
+        type: { summary: '"vertical" | "horizontal"' },
+        category: 'Behavior',
       },
     },
     openedOn: {
       control: 'radio',
       options: ['hover', 'click'],
+      description: 'Interaction method for opening nested menus',
       table: {
         defaultValue: { summary: 'click' },
-        type: { summary: '"hover" or "click"' },
+        type: { summary: '"hover" | "click"' },
+        category: 'Behavior',
+      },
+    },
+    // Styling
+    className: {
+      control: 'text',
+      description: 'Additional CSS class for custom menu styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles for the menu container',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the menu component',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    title: {
+      control: 'text',
+      description: 'Accessibility title for the menu',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    // Accessibility
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
       },
     },
   },

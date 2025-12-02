@@ -1,27 +1,11 @@
 import { ButtonView, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import type Button from '../Button';
-import { ButtonExample } from './Button.example';
+import Button from '../Button';
 
 const meta: Meta<typeof Button> = {
-  argTypes: {
-    text: { control: 'text' },
-    disabled: { control: 'boolean' },
-    type: {
-      control: 'select',
-      options: ['button', 'submit', 'reset'],
-    },
-    icon: {
-      control: 'select',
-      options: Object.values(IconName),
-    },
-    view: {
-      control: 'select',
-      options: Object.values(ButtonView),
-    },
-    extended: { control: 'boolean' },
-  },
+  title: 'Atoms/Button',
+  component: Button,
   args: {
     text: 'Button',
     type: 'button',
@@ -29,8 +13,175 @@ const meta: Meta<typeof Button> = {
     disabled: false,
     extended: false,
   },
-  component: ButtonExample,
-  title: 'Atoms/Button',
+  argTypes: {
+    // Content
+    text: {
+      control: 'text',
+      description: 'The text content displayed on the button',
+      table: {
+        type: { summary: 'string' },
+        category: 'Content',
+      },
+    },
+    icon: {
+      control: 'select',
+      options: Object.values(IconName),
+      description: 'Icon to display alongside the button text',
+      table: {
+        type: { summary: 'IconName' },
+        category: 'Content',
+      },
+    },
+    // Styling
+    view: {
+      control: 'select',
+      options: Object.values(ButtonView),
+      description: 'Visual style variant of the button',
+      table: {
+        type: { summary: 'ButtonView' },
+        category: 'Styling',
+      },
+    },
+    extended: {
+      control: 'boolean',
+      description: 'Whether the button should take full available width',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Styling',
+      },
+    },
+    // Behavior
+    type: {
+      control: 'select',
+      options: ['button', 'submit', 'reset'],
+      description: 'The HTML button type attribute',
+      table: {
+        type: { summary: "'button' | 'submit' | 'reset'" },
+        defaultValue: { summary: 'button' },
+        category: 'Behavior',
+      },
+    },
+    // State
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the button is disabled',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    // Interaction
+    tooltip: {
+      control: 'text',
+      description: 'Tooltip text shown on hover',
+      table: {
+        type: { summary: 'string' },
+        category: 'Interaction',
+      },
+    },
+    // Accessibility
+    label: {
+      control: 'text',
+      description: 'Accessibility label for icon-only buttons',
+      table: {
+        type: { summary: 'string' },
+        category: 'Accessibility',
+      },
+    },
+    tabIndex: {
+      control: 'number',
+      description: 'Tab index for keyboard navigation',
+      table: {
+        type: { summary: 'number' },
+        category: 'Accessibility',
+      },
+    },
+    // Interaction
+    onClick: {
+      action: 'clicked',
+      description: 'Callback function triggered when the button is clicked',
+      table: {
+        type: { summary: 'MouseEventHandler<HTMLButtonElement>' },
+        category: 'Interaction',
+      },
+    },
+    onFocus: {
+      action: 'focused',
+      description: 'Callback function triggered when the button receives focus',
+      table: {
+        type: { summary: 'FocusEventHandler<HTMLButtonElement>' },
+        category: 'Interaction',
+      },
+    },
+    onBlur: {
+      action: 'blurred',
+      description: 'Callback function triggered when the button loses focus',
+      table: {
+        type: { summary: 'FocusEventHandler<HTMLButtonElement>' },
+        category: 'Interaction',
+      },
+    },
+    title: {
+      control: 'text',
+      description: 'Tooltip text shown on hover',
+      table: {
+        type: { summary: 'string' },
+        category: 'Interaction',
+      },
+    },
+    visibleOn: {
+      control: 'radio',
+      options: ['hover', 'click', 'focus', 'contextmenu'],
+      description: 'Event that triggers tooltip visibility',
+      table: {
+        type: { summary: "'hover' | 'click' | 'focus' | 'contextmenu'" },
+        category: 'Interaction',
+      },
+    },
+    // Identification
+    id: {
+      control: 'text',
+      description: 'Unique identifier for the button element',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    name: {
+      control: 'text',
+      description: 'The name attribute for the button element (useful for form submission)',
+      table: {
+        type: { summary: 'string' },
+        category: 'Identification',
+      },
+    },
+    // Validation
+    required: {
+      control: 'boolean',
+      description: 'Whether the button is required (for form validation)',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Validation',
+      },
+    },
+    // Styling
+    className: {
+      control: 'text',
+      description: 'Additional CSS class names for custom styling',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    style: {
+      control: 'object',
+      description: 'Inline CSS styles to apply to the button',
+      table: {
+        type: { summary: 'CSSProperties' },
+        category: 'Styling',
+      },
+    },
+  },
 };
 
 export default meta;

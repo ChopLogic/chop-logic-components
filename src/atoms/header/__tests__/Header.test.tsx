@@ -18,15 +18,19 @@ describe('Header component', () => {
     expect(header).toHaveTextContent(testContent);
   });
 
-  it.each(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const)(
-    'renders as %s when specified',
-    (level) => {
-      render(<Header as={level}>{level} Header</Header>);
-      const header = screen.getByRole('heading', { level: parseInt(level[1], 10) });
-      expect(header).toBeInTheDocument();
-      expect(header.tagName.toLowerCase()).toBe(level);
-    },
-  );
+  it.each([
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+  ] as const)('renders as %s when specified', (level) => {
+    render(<Header as={level}>{level} Header</Header>);
+    const header = screen.getByRole('heading', { level: parseInt(level[1], 10) });
+    expect(header).toBeInTheDocument();
+    expect(header.tagName.toLowerCase()).toBe(level);
+  });
 
   it('applies custom className correctly', () => {
     const customClass = 'custom-class';

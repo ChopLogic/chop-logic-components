@@ -1,5 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "files": {
+    "includes": ["**", "!**/dist", "!**/coverage", "!**/node_modules", "!**/storybook-static"]
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -23,8 +26,5 @@
       "quoteStyle": "single",
       "semicolons": "always"
     }
-  },
-  "files": {
-    "includes": ["**", "!**/dist", "!**/coverage", "!**/node_modules", "!**/storybook-static"]
   }
 }

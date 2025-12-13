@@ -1,6 +1,6 @@
 import type { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
 import * as matchers from '@testing-library/jest-dom/matchers';
-import { expect, vi } from 'vitest';
+import { expect } from 'vitest';
 
 declare module 'vitest' {
   interface Assertion<T> extends jest.Matchers<void, T>, TestingLibraryMatchers<T, void> {}
@@ -10,15 +10,23 @@ expect.extend(matchers);
 
 // Mock ResizeObserver globally
 class ResizeObserverMock {
+  callback: ResizeObserverCallback;
+
   constructor(callback: ResizeObserverCallback) {
-    // Store the callback if needed
     this.callback = callback;
   }
 
-  callback: ResizeObserverCallback;
-  observe = vi.fn();
-  unobserve = vi.fn();
-  disconnect = vi.fn();
+  observe() {
+    // Mock implementation
+  }
+
+  unobserve() {
+    // Mock implementation
+  }
+
+  disconnect() {
+    // Mock implementation
+  }
 }
 
 Object.defineProperty(globalThis, 'ResizeObserver', {

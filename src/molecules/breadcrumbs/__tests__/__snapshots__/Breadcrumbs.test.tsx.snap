@@ -4,13 +4,13 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="_breadcrumbs_e10a49"
+    class="_breadcrumbs_4627c1"
   >
     <ol
-      class="_breadcrumbs_list_e10a49"
+      class="_breadcrumbs_list_4627c1"
     >
       <li
-        class="_breadcrumbs_item_e10a49"
+        class="_breadcrumbs_item_4627c1"
       >
         <a
           data-icon="home"
@@ -30,7 +30,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
         chevron-right icon
       </span>
       <li
-        class="_breadcrumbs_item_e10a49"
+        class="_breadcrumbs_item_4627c1"
       >
         <a
           data-icon="projects"
@@ -50,7 +50,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
         chevron-right icon
       </span>
       <li
-        class="_breadcrumbs_item_e10a49"
+        class="_breadcrumbs_item_4627c1"
       >
         <a
           data-icon="settings"
@@ -70,11 +70,11 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
         chevron-right icon
       </span>
       <li
-        class="_breadcrumbs_item_e10a49"
+        class="_breadcrumbs_item_4627c1"
       >
         <span
           aria-current="page"
-          class="_breadcrumbs_text_e10a49"
+          class="_breadcrumbs_text_4627c1"
         >
           <span
             aria-hidden="true"

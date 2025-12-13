@@ -3,10 +3,10 @@
 exports[`Menu Component > renders a menu bar with the correct role 1`] = `
 <DocumentFragment>
   <menu
-    class="_menuBar_b8ce27 _menuBar__vertical_b8ce27"
+    class="_menuBar_764de9 _menuBar__vertical_764de9"
   >
     <li
-      class="_menuLeaf_f4b00b"
+      class="_menuLeaf_aa1135"
       role="menuitem"
       tabindex="0"
     >
@@ -17,18 +17,18 @@ exports[`Menu Component > renders a menu bar with the correct role 1`] = `
     <li
       aria-expanded="false"
       aria-haspopup="true"
-      class="_subMenu_0275f8"
+      class="_subMenu_f3a9f0"
       role="menuitem"
       tabindex="0"
     >
       <span
-        class="_text_0275f8"
+        class="_text_f3a9f0"
       >
         <span>
           Item 2
         </span>
         <svg
-          class="_icon_3b2ece"
+          class="_icon_71f013"
           fill="currentColor"
           height="1em"
           viewBox="0 0 24 24"

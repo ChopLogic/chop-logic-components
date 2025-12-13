@@ -3,53 +3,53 @@
 exports[`Grid > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_grid_wrapper_384728"
+    class="_grid_wrapper_694ee9"
   >
     <table
-      class="_grid_384728 test-class"
+      class="_grid_694ee9 test-class"
       style="width: 100px;"
       tabindex="-1"
     >
       <colgroup>
         <col
-          class="_column_08065d _column__first_08065d"
+          class="_column_5c4bf7 _column__first_5c4bf7"
         />
         <col
-          class="_column_08065d"
+          class="_column_5c4bf7"
         />
         <col
-          class="_column_08065d"
+          class="_column_5c4bf7"
         />
         <col
-          class="_column_08065d"
+          class="_column_5c4bf7"
         />
         <col
-          class="_column_08065d"
+          class="_column_5c4bf7"
         />
       </colgroup>
       <thead
-        class="_head_7f4cec"
+        class="_head_3a4c36"
       >
         <tr
-          class="_head_row_7f4cec"
+          class="_head_row_3a4c36"
         >
           <th
-            class="_headerCell_d2069a"
+            class="_headerCell_4a3cef"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_all_grid-id"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_all_grid-id"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -65,50 +65,50 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </th>
           <th
-            class="_headerCell_37da90"
+            class="_headerCell_f27c12"
           >
             Company
           </th>
           <th
-            class="_headerCell_37da90"
+            class="_headerCell_f27c12"
           >
             Contact
           </th>
           <th
-            class="_headerCell_37da90"
+            class="_headerCell_f27c12"
           >
             Country
           </th>
           <th
-            class="_headerCell_37da90"
+            class="_headerCell_f27c12"
           >
             Phone
           </th>
         </tr>
       </thead>
       <tbody
-        class="_body_0a5981"
+        class="_body_1a0459"
       >
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row1"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row1"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -124,44 +124,44 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           />
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Maria
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Germany
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row2"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row2"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -177,44 +177,44 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           />
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Francisco
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Mexico
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row3"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row3"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -230,46 +230,46 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Ernst Handel
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Roland Mendel
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Austria
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row4"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row4"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -285,46 +285,46 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Island Trading
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Helen Bennett
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             UK
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row5"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row5"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -340,44 +340,44 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Laughing Bacchus
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           />
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Canada
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2c96fd"
+          class="_row_9cbf9f"
         >
           <td
-            class="_cell_4fae7d"
+            class="_cell_c1f5d3"
           >
             <div
-              class="_checkbox_a434a4"
+              class="_checkbox_11028a"
             >
               <input
-                class="_checkbox_input_a434a4"
+                class="_checkbox_input_11028a"
                 id="select_row_row6"
                 type="checkbox"
               />
               <label
-                class="_label_c20562"
+                class="_label_7c3a56"
                 for="select_row_row6"
               >
                 <svg
-                  class="_icon_3b2ece"
+                  class="_icon_71f013"
                   fill="currentColor"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -393,20 +393,20 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           />
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Giovanni
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             Italy
           </td>
           <td
-            class="_cell_ae74a7"
+            class="_cell_a877c3"
           >
             123-345-7890
           </td>

@@ -5,16 +5,16 @@ exports[`SubMenu > should match the snapshot 1`] = `
   <li
     aria-expanded="true"
     aria-haspopup="true"
-    class="_subMenu_0275f8"
+    class="_subMenu_f3a9f0"
     role="menuitem"
     tabindex="0"
   >
     <span
-      class="_text_0275f8"
+      class="_text_f3a9f0"
     >
       <span>
         <svg
-          class="_icon_3b2ece"
+          class="_icon_71f013"
           fill="currentColor"
           height="1em"
           viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ exports[`SubMenu > should match the snapshot 1`] = `
         Item without Link
       </span>
       <svg
-        class="_icon_3b2ece"
+        class="_icon_71f013"
         fill="currentColor"
         height="1em"
         viewBox="0 0 24 24"

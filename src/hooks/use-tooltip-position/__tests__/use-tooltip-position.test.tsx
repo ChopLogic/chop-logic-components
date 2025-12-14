@@ -12,6 +12,13 @@ vi.mock('../use-container-dimensions', () => ({
   })),
 }));
 
+type MockedThisObserverType = {
+  callback?: ResizeObserverCallback;
+  observe: typeof mockObserve;
+  disconnect: typeof mockDisconnect;
+  unobserve: typeof mockUnobserve;
+};
+
 const mockObserve = vi.fn();
 const mockDisconnect = vi.fn();
 const mockUnobserve = vi.fn();
@@ -29,12 +36,15 @@ beforeEach(() => {
   // Update ResizeObserver mock implementation
   vi.stubGlobal(
     'ResizeObserver',
-    vi.fn().mockImplementation((callback) => ({
-      observe: mockObserve,
-      disconnect: mockDisconnect,
-      unobserve: mockUnobserve,
-      callback,
-    })),
+    vi.fn(function ResizeObserverMock(
+      this: MockedThisObserverType,
+      callback: ResizeObserverCallback,
+    ) {
+      this.callback = callback;
+      this.observe = mockObserve;
+      this.disconnect = mockDisconnect;
+      this.unobserve = mockUnobserve;
+    }),
   );
 });
 

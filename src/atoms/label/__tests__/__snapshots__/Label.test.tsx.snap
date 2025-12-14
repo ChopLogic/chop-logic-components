@@ -3,7 +3,7 @@
 exports[`Label > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_c20562"
+    class="_label_7c3a56"
     for="test-input-id"
   >
     <span>
@@ -16,7 +16,7 @@ exports[`Label > should render correctly as not required label 1`] = `
 exports[`Label > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_c20562"
+    class="_label_7c3a56"
     for="test-input-id"
   >
     <span>
@@ -34,7 +34,7 @@ exports[`Label > should render correctly as required label 1`] = `
 exports[`Label > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
-    class="_label_c20562"
+    class="_label_7c3a56"
     for="test-input-id"
   />
 </DocumentFragment>
@@ -43,11 +43,11 @@ exports[`Label > should render correctly without text 1`] = `
 exports[`Label > should render left icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_c20562"
+    class="_label_7c3a56"
     for="test-input-id"
   >
     <svg
-      class="_icon_3b2ece"
+      class="_icon_71f013"
       fill="currentColor"
       height="1em"
       viewBox="0 0 512 512"
@@ -73,11 +73,11 @@ exports[`Label > should render left icon 1`] = `
 exports[`Label > should render right icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_c20562"
+    class="_label_7c3a56"
     for="test-input-id"
   >
     <svg
-      class="_icon_3b2ece"
+      class="_icon_71f013"
       fill="currentColor"
       height="1em"
       viewBox="0 0 512 512"

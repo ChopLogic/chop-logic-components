@@ -3,13 +3,13 @@
 exports[`MenuLeaf > should match the snapshot 1`] = `
 <DocumentFragment>
   <li
-    class="_menuLeaf_f4b00b"
+    class="_menuLeaf_aa1135"
     role="menuitem"
     tabindex="0"
   >
     <svg
       aria-hidden="true"
-      class="_icon_3b2ece"
+      class="_icon_71f013"
       fill="currentColor"
       height="1em"
       viewBox="0 0 1024 1024"

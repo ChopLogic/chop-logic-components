@@ -3,21 +3,21 @@
 exports[`Tabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_tabs_19db3f test-class"
+    class="_tabs_45b1c2 test-class"
     id="tabs-id"
   >
     <div
-      class="_tabList_7b8ac2"
+      class="_tabList_55507f"
       data-testid="tab-list"
       role="tablist"
     >
       <span
-        class="_tab_wrapper_54926d _tab_wrapper__selected_54926d _tab_wrapper__stretched_54926d"
+        class="_tab_wrapper_ad1653 _tab_wrapper__selected_ad1653 _tab_wrapper__stretched_ad1653"
       >
         <button
           aria-controls="tabpanel_tab-1"
           aria-selected="true"
-          class="_tab_54926d"
+          class="_tab_ad1653"
           id="tab-1"
           role="tab"
         >
@@ -25,12 +25,12 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
+        class="_tab_wrapper_ad1653 _tab_wrapper__stretched_ad1653 _tab_wrapper__inactive_ad1653"
       >
         <button
           aria-controls="tabpanel_tab-2"
           aria-selected="false"
-          class="_tab_54926d"
+          class="_tab_ad1653"
           id="tab-2"
           role="tab"
         >
@@ -38,12 +38,12 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_54926d _tab_wrapper__stretched_54926d _tab_wrapper__inactive_54926d"
+        class="_tab_wrapper_ad1653 _tab_wrapper__stretched_ad1653 _tab_wrapper__inactive_ad1653"
       >
         <button
           aria-controls="tabpanel_tab-3"
           aria-selected="false"
-          class="_tab_54926d"
+          class="_tab_ad1653"
           id="tab-3"
           role="tab"
         >
@@ -53,7 +53,7 @@ exports[`Tabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="_tabContent_7c3dbf"
+      class="_tabContent_74d9f6"
       data-testid="tab-content"
       id="tabpanel_tab-1"
       role="tabpanel"

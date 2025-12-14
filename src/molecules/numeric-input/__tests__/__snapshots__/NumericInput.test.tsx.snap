@@ -3,11 +3,11 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_numeric_d310e9"
+    class="_numeric_aa8372"
     style="width: 400px;"
   >
     <label
-      class="_label_c20562"
+      class="_label_7c3a56"
       for="numeric-input"
     >
       <span>
@@ -15,12 +15,12 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_097c9a"
+      class="_wrapper_fdb8b0"
     >
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="_input_097c9a"
+        class="_input_fdb8b0"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"
@@ -33,11 +33,11 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="_button_8ab38b"
+          class="_button_6f2c1b"
           type="button"
         >
           <svg
-            class="_icon_3b2ece"
+            class="_icon_71f013"
             fill="currentColor"
             height="1em"
             viewBox="0 0 16 16"
@@ -52,11 +52,11 @@ exports[`NumericInput > should match the snapshot 1`] = `
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="_button_8ab38b"
+          class="_button_6f2c1b"
           type="button"
         >
           <svg
-            class="_icon_3b2ece"
+            class="_icon_71f013"
             fill="currentColor"
             height="1em"
             viewBox="0 0 16 16"
@@ -72,7 +72,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_2b3768 _errorMessage_d310e9"
+        class="_errorMessage_092799 _errorMessage_aa8372"
         id="numeric-input_error"
       >
         Error!

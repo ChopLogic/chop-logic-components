@@ -1,0 +1,52 @@
+@use "/src/styles/typography";
+
+.details {
+  display: flex;
+  flex-direction: column;
+
+  &_summary {
+    @include typography.core-font(base, bold);
+    color: var(--cl-primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--cl-l-gap);
+    border-bottom: var(--cl-light-border);
+
+    &:hover {
+      text-shadow: var(--cl-text-shadow);
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: var(--cl-outline-border);
+      outline-offset: -4px;
+    }
+  }
+
+  &_content {
+    @include typography.core-font(base);
+    color: var(--cl-primary-color);
+    padding: var(--cl-l-gap);
+  }
+
+  &_icon {
+    transition: transform 0.3s ease;
+  }
+
+  &[open] &_summary {
+    border-bottom: none;
+  }
+
+  &[open] &_content {
+    border-bottom: var(--cl-light-border);
+  }
+
+  &[open] &_icon {
+    transform: rotate(180deg);
+  }
+}

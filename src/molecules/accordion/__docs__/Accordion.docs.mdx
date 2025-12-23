@@ -1,0 +1,48 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as AccordionStories from './Accordion.stories';
+
+<Meta of={AccordionStories} title="Accordion" />
+
+# Accordion
+
+The `Accordion` component provides a collapsible list of items, allowing users to expand and collapse content sections. It uses native HTML `<details>` and `<summary>` elements for semantic structure and built-in accessibility.
+
+## Usage
+
+```tsx
+import { Accordion } from 'chop-logic-components';
+
+const FAQSection = () => {
+  const items = [
+    {
+      summary: 'How does it work?',
+      children: 'The accordion component uses HTML details elements for collapsible content.',
+    },
+    {
+      summary: 'Is it accessible?',
+      children: 'Yes, it uses semantic HTML and supports keyboard navigation.',
+    },
+  ];
+
+  return <Accordion items={items} />;
+};
+```
+
+## Best Practices
+
+1. _Content Structure_:
+   - Keep summary text concise and descriptive
+   - Use clear language that indicates expandable content
+   - Avoid very long content blocks within items
+2. _Accessibility_:
+   - Summaries should clearly describe the content
+   - Uses semantic HTML (`<details>` and `<summary>`)
+   - Keyboard accessible by default (native browser behavior)
+   - Chevron icon provides visual feedback for expand/collapse state
+3. _User Experience_:
+   - Consider the order of items for logical flow
+   - Use for FAQs, feature lists, or content organization
+
+## Props
+
+<Controls />

@@ -8,6 +8,7 @@ export type {
   SelectValue,
   TextInputValidator,
 } from './_common';
+export type { AccordionItemProps, AccordionProps } from './accordion';
 export type { AlertProps } from './alert';
 export type { Breadcrumb, BreadcrumbsProps } from './breadcrumbs';
 export type { ButtonProps } from './button';

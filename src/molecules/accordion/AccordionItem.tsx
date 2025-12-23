@@ -1,9 +1,10 @@
 import { Icon } from '@atoms';
 import { IconName } from '@enums';
 import type { AccordionItemProps } from '@models';
+import type { FC } from 'react';
 import styles from './AccordionItem.module.scss';
 
-export function AccordionItem({ summary, children }: AccordionItemProps) {
+export const AccordionItem: FC<AccordionItemProps> = ({ summary, children }) => {
   return (
     <details className={styles.details}>
       <summary className={styles.details_summary}>
@@ -12,9 +13,10 @@ export function AccordionItem({ summary, children }: AccordionItemProps) {
           name={IconName.ChevronDown}
           className={styles.details_icon}
           aria-label="Toggle Details"
+          testId="accordion-icon"
         />
       </summary>
       <div className={styles.details_content}>{children}</div>
     </details>
   );
-}
+};

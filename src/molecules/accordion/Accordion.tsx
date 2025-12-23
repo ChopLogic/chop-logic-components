@@ -1,9 +1,10 @@
 import type { AccordionItemProps, AccordionProps } from '@models';
 import { getClassName } from '@utils';
+import type { FC } from 'react';
 import styles from './Accordion.module.scss';
 import { AccordionItem } from './AccordionItem';
 
-export function Accordion({ items, className }: AccordionProps) {
+const Accordion: FC<AccordionProps> = ({ items, className }) => {
   const accordionClass = getClassName([styles.accordion, className]);
 
   return (
@@ -13,6 +14,6 @@ export function Accordion({ items, className }: AccordionProps) {
       ))}
     </div>
   );
-}
+};
 
-Accordion.displayName = 'Accordion';
+export default Accordion;

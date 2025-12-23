@@ -1,3 +1,4 @@
+export { default as Accordion } from './accordion/Accordion';
 export { default as Alert } from './alert/Alert';
 export { default as Breadcrumbs } from './breadcrumbs/Breadcrumbs';
 export { default as Checkbox } from './checkbox/Checkbox';

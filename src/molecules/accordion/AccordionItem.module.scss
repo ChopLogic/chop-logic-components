@@ -31,7 +31,7 @@
   &_content {
     @include typography.core-font(base);
     color: var(--cl-primary-color);
-    padding: var(--cl-m-gap) var(--cl-l-gap);
+    padding: var(--cl-l-gap);
   }
 
   &_icon {

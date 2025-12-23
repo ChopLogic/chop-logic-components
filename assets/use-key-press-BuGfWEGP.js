@@ -1,1 +1,0 @@
-import{r}from"./iframe-DJejKD7f.js";const a=({ref:t,keyCode:s,onKeyPress:n})=>{r.useEffect(()=>{const o=e=>{(e==null?void 0:e.code)===s&&(t!=null&&t.current)&&n()};return document.addEventListener("keydown",o,!1),()=>{document.removeEventListener("keydown",o,!1)}},[t,s,n])};export{a as u};

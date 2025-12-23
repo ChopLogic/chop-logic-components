@@ -1,1 +1,0 @@
-import{r as n}from"./iframe-BBnnbBfy.js";const h=({ref:t,isVisible:s})=>{const[e,i]=n.useState({width:0,height:0});return n.useEffect(()=>{t!=null&&t.current&&s&&i({width:t.current.offsetWidth,height:t.current.offsetHeight})},[t,s]),e};export{h as u};

@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { withTooltip } from '../with-tooltip';
 
-vi.mock('@atoms', () => ({
+vi.mock('@components/atoms', () => ({
   Tooltip: ({ children, tooltipContent }: { tooltipContent: string } & PropsWithChildren) => (
     <div data-testid="tooltip" data-tooltip={tooltipContent}>
       {children}

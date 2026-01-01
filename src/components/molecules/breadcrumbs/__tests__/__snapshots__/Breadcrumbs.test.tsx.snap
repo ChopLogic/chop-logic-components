@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Breadcrumbs > matches the snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    aria-label="Breadcrumb"
+    class="_breadcrumbs_f319fb"
+  >
+    <ol
+      class="_breadcrumbs_list_f319fb"
+    >
+      <li
+        class="_breadcrumbs_item_f319fb"
+      >
+        <a
+          data-icon="home"
+          data-icon-position="left"
+          data-testid="breadcrumb-link"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <span
+        aria-hidden="true"
+        data-hidden="true"
+        data-icon-name="chevron-right"
+        data-testid="breadcrumb-icon"
+      >
+        chevron-right icon
+      </span>
+      <li
+        class="_breadcrumbs_item_f319fb"
+      >
+        <a
+          data-icon="projects"
+          data-icon-position="left"
+          data-testid="breadcrumb-link"
+          href="/products"
+        >
+          Products
+        </a>
+      </li>
+      <span
+        aria-hidden="true"
+        data-hidden="true"
+        data-icon-name="chevron-right"
+        data-testid="breadcrumb-icon"
+      >
+        chevron-right icon
+      </span>
+      <li
+        class="_breadcrumbs_item_f319fb"
+      >
+        <a
+          data-icon="settings"
+          data-icon-position="left"
+          data-testid="breadcrumb-link"
+          href="/products/electronics"
+        >
+          Electronics
+        </a>
+      </li>
+      <span
+        aria-hidden="true"
+        data-hidden="true"
+        data-icon-name="chevron-right"
+        data-testid="breadcrumb-icon"
+      >
+        chevron-right icon
+      </span>
+      <li
+        class="_breadcrumbs_item_f319fb"
+      >
+        <span
+          aria-current="page"
+          class="_breadcrumbs_text_f319fb"
+        >
+          <span
+            aria-hidden="true"
+            data-hidden="true"
+            data-icon-name="phone"
+            data-testid="breadcrumb-icon"
+          >
+            phone icon
+          </span>
+          Smartphones
+        </span>
+      </li>
+    </ol>
+  </nav>
+</DocumentFragment>
+`;

@@ -56,9 +56,7 @@ export default defineConfig({
       { find: '@hocs', replacement: path.resolve(__dirname, 'src/hocs') },
       { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
       { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
-      { find: '@atoms', replacement: path.resolve(__dirname, 'src/atoms') },
-      { find: '@molecules', replacement: path.resolve(__dirname, 'src/molecules') },
-      { find: '@organisms', replacement: path.resolve(__dirname, 'src/organisms') },
+      { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
     ],
   },
   test: {

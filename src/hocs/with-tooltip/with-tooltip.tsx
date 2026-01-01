@@ -1,4 +1,4 @@
-import { Tooltip } from '@atoms';
+import { Tooltip } from '@components/atoms';
 import type { ComponentType, FC } from 'react';
 
 type WithTooltipProps = {

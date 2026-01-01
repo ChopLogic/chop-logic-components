@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tabs > should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_tabs_8ab983 test-class"
+    id="tabs-id"
+  >
+    <div
+      class="_tabList_97c491"
+      data-testid="tab-list"
+      role="tablist"
+    >
+      <span
+        class="_tab_wrapper_403a0a _tab_wrapper__selected_403a0a _tab_wrapper__stretched_403a0a"
+      >
+        <button
+          aria-controls="tabpanel_tab-1"
+          aria-selected="true"
+          class="_tab_403a0a"
+          id="tab-1"
+          role="tab"
+        >
+          Tab 1
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_403a0a _tab_wrapper__stretched_403a0a _tab_wrapper__inactive_403a0a"
+      >
+        <button
+          aria-controls="tabpanel_tab-2"
+          aria-selected="false"
+          class="_tab_403a0a"
+          id="tab-2"
+          role="tab"
+        >
+          Tab 2
+        </button>
+      </span>
+      <span
+        class="_tab_wrapper_403a0a _tab_wrapper__stretched_403a0a _tab_wrapper__inactive_403a0a"
+      >
+        <button
+          aria-controls="tabpanel_tab-3"
+          aria-selected="false"
+          class="_tab_403a0a"
+          id="tab-3"
+          role="tab"
+        >
+          Tab 3
+        </button>
+      </span>
+    </div>
+    <div
+      aria-labelledby="tab-1"
+      class="_tabContent_5ac944"
+      data-testid="tab-content"
+      id="tabpanel_tab-1"
+      role="tabpanel"
+    >
+      Content 1
+    </div>
+  </div>
+</DocumentFragment>
+`;

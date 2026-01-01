@@ -28,9 +28,7 @@
       "@hocs/*": ["hocs/*"],
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
-      "@atoms/*": ["atoms/*"],
-      "@molecules/*": ["molecules/*"],
-      "@organisms/*": ["organisms/*"]
+      "@components/*": ["components/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

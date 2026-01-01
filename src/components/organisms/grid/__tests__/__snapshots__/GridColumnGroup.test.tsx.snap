@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GridBody > should match the snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <colgroup>
+      <col
+        class="_column_9c4a25 _column__first_9c4a25"
+      />
+      <col
+        class="_column_9c4a25 _column__highlighted_9c4a25"
+      />
+      <col
+        class="_column_9c4a25 column-class"
+      />
+      <col
+        class="_column_9c4a25"
+      />
+    </colgroup>
+  </table>
+</DocumentFragment>
+`;

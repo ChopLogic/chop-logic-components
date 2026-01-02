@@ -1,7 +1,7 @@
-import { withFigureCaption } from '@hocs';
 import type { ImageProps } from '@models';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
+import { withFigureCaption } from '../../hocs';
 import { BasicImage } from './BasicImage';
 import { FallbackImage } from './FallBackImage';
 import styles from './Image.module.scss';

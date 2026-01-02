@@ -1,9 +1,9 @@
 import { Icon } from '@components/atoms';
 import { ButtonView } from '@enums';
-import { withTooltip } from '@hocs';
 import type { ButtonProps } from '@models';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
+import { withTooltip } from '../../hocs';
 
 import styles from './Button.module.scss';
 import { IconButton } from './icon-button/IconButton';

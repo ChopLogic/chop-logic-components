@@ -25,7 +25,6 @@
       "@models/*": ["models/*"],
       "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
-      "@hocs/*": ["hocs/*"],
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"]

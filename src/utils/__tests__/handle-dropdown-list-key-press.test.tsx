@@ -1,5 +1,5 @@
-import type { SelectValue } from '@models';
 import { render } from '@testing-library/react';
+import type { SelectValue } from '@types';
 import { handleDropdownListKeyPress } from '@utils';
 import type React from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';

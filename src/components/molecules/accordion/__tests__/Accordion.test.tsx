@@ -1,5 +1,5 @@
-import type { AccordionItemProps } from '@models';
 import { render, screen } from '@testing-library/react';
+import type { AccordionItemProps } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 
 import Accordion from '../Accordion';

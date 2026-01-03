@@ -1,7 +1,7 @@
 import { Button, Input, Label } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import type { SearchProps } from '@models';
+import type { SearchProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 

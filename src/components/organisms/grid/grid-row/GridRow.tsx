@@ -1,4 +1,4 @@
-import type { GridRowValue } from '@models';
+import type { GridRowValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

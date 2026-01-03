@@ -1,6 +1,6 @@
 import { Button } from '@components/atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
-import type { ChopLogicTabItem } from '@models';
+import type { ChopLogicTabItem } from '@types';
 import { getClassName, moveFocusOnElementById } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
 

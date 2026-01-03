@@ -1,6 +1,6 @@
-import type { TooltipProps } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { TooltipProps } from '@types';
 import { describe, expect, it } from 'vitest';
 
 import Tooltip from '../Tooltip';

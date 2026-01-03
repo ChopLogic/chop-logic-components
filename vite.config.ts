@@ -50,7 +50,7 @@ export default defineConfig({
       { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
       { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
       { find: '@enums', replacement: path.resolve(__dirname, 'src/enums') },
-      { find: '@models', replacement: path.resolve(__dirname, 'src/models') },
+      { find: '@types', replacement: path.resolve(__dirname, 'src/types') },
       { find: '@contexts', replacement: path.resolve(__dirname, 'src/contexts') },
       { find: '@icons', replacement: path.resolve(__dirname, 'src/icons') },
       { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },

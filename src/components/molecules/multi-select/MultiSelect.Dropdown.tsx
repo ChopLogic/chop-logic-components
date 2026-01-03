@@ -1,4 +1,4 @@
-import type { MultiSelectValue } from '@models';
+import type { MultiSelectValue } from '@types';
 import { getClassName, handleDropdownListKeyPress } from '@utils';
 import type { FC } from 'react';
 

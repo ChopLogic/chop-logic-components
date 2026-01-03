@@ -1,7 +1,7 @@
 import { Button, ErrorMessage, Input, Label } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import type { TextInputProps } from '@models';
+import type { TextInputProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

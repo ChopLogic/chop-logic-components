@@ -1,4 +1,4 @@
-import type { ImageProps } from '@models';
+import type { ImageProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
 import { withFigureCaption } from '../../hocs';

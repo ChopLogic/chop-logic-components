@@ -1,5 +1,5 @@
 import { useElementIds } from '@hooks';
-import type { GridItem } from '@models';
+import type { GridItem } from '@types';
 import { useState } from 'react';
 
 export const useGridController = ({

@@ -1,6 +1,6 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import type { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
+import type { ChopLogicRegExpWithFlags, TextInputValidator } from '@types';
 import {
   type ChangeEvent,
   type ChangeEventHandler,

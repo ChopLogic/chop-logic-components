@@ -1,6 +1,6 @@
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
-import type { AlertProps } from '@models';
+import type { AlertProps } from '@types';
 import { type FC, useState } from 'react';
 
 import Alert from '../Alert';

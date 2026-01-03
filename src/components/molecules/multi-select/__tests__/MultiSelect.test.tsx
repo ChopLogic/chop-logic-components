@@ -1,7 +1,7 @@
 import { Form } from '@components/organisms';
-import type { SelectValue } from '@models';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { SelectValue } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 
 import MultiSelect from '../MultiSelect';

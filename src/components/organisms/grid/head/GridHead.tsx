@@ -1,4 +1,4 @@
-import type { GridColumn } from '@models';
+import type { GridColumn } from '@types';
 import type { FC } from 'react';
 
 import { GridHeaderCell } from '../header-cell/HeaderCell';

@@ -1,4 +1,4 @@
-import type { NumericInputValidator } from '@models';
+import type { NumericInputValidator } from '@types';
 import { describe, expect, it } from 'vitest';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from '../NumericInput.helpers';

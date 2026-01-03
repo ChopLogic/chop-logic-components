@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import type { MenuItem } from '@models';
+import type { MenuItem } from '@types';
 import { getClassName } from '@utils';
 import { type FC, type PropsWithChildren, useState } from 'react';
 

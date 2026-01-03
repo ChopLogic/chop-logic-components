@@ -1,4 +1,4 @@
-import type { GridColumn, GridItem, GridRowValue, RenderDataItemCallback } from '@models';
+import type { GridColumn, GridItem, GridRowValue, RenderDataItemCallback } from '@types';
 import type { ReactElement } from 'react';
 
 export function getGridRowValues({

@@ -1,6 +1,6 @@
 import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
-import type { MultiSelectValue } from '@models';
+import type { MultiSelectValue } from '@types';
 import type { FC } from 'react';
 
 import styles from '../select/combobox/Combobox.module.scss';

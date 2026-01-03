@@ -1,5 +1,5 @@
 import { Tabs } from '@components/organisms';
-import type { TabsProps } from '@models';
+import type { TabsProps } from '@types';
 
 export const TabsExample: React.FC<TabsProps> = (props) => {
   const handleTabTitleChange = (tabId: string, newTitle: string) => {

@@ -1,6 +1,6 @@
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
-import type { DialogProps } from '@models';
+import type { DialogProps } from '@types';
 import { type FC, useState } from 'react';
 
 import Dialog from '../Dialog';

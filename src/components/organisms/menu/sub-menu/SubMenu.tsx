@@ -1,7 +1,7 @@
 import { Icon } from '@components/atoms';
 import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
-import type { MenuItem } from '@models';
+import type { MenuItem } from '@types';
 import { type FC, type KeyboardEvent, type PropsWithChildren, useRef } from 'react';
 
 import styles from './SubMenu.module.scss';

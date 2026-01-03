@@ -1,5 +1,5 @@
-import type { NumericInputProps } from '@models';
 import styles from '@styles/storybook/ResponsiveWrapper.module.scss';
+import type { NumericInputProps } from '@types';
 import type { FC } from 'react';
 import NumericInput from '../NumericInput';
 

@@ -5,4 +5,4 @@ export * from './components/organisms';
 export * from './contexts';
 export * from './enums';
 export * from './hooks';
-export * from './models';
+export * from './types';

@@ -1,4 +1,4 @@
-import type { GridColumn } from '@models';
+import type { GridColumn } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

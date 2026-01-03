@@ -1,6 +1,6 @@
 import { Portal } from '@components/atoms';
 import { TooltipContainer } from '@enums';
-import type { TooltipProps } from '@models';
+import type { TooltipProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC, MouseEvent } from 'react';
 

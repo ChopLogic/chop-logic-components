@@ -1,6 +1,6 @@
 import { OrientationMode } from '@enums';
-import type { ButtonProps } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { ButtonProps } from '@types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { TabButton } from '../button/TabButton';

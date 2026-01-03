@@ -1,4 +1,4 @@
-import type { AccordionItemProps, AccordionProps } from '@models';
+import type { AccordionItemProps, AccordionProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 import styles from './Accordion.module.scss';

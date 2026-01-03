@@ -1,6 +1,6 @@
 import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
 import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
-import type { MultiSelectValue } from '@models';
+import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
 

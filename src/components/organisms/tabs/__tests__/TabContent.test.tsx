@@ -1,5 +1,5 @@
-import type { ChopLogicTabItem } from '@models';
 import { render, screen } from '@testing-library/react';
+import type { ChopLogicTabItem } from '@types';
 import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { TabContent } from '../content/TabContent';

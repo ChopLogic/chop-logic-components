@@ -1,5 +1,5 @@
-import type { MultiSelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { MultiSelectValue } from '@types';
 
 import type MultiSelect from '../MultiSelect';
 import { MultiSelectExample } from './MultiSelect.example';

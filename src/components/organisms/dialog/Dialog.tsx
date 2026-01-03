@@ -1,7 +1,7 @@
 import { Button, Header, Portal } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
-import type { DialogProps } from '@models';
+import type { DialogProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 

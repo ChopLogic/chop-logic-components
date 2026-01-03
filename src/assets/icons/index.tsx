@@ -1,5 +1,5 @@
 import { IconName } from '@enums';
-import type { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@types';
 import type { ReactElement } from 'react';
 
 import ArrowDownIcon from './svg/ArrowDownIcon';

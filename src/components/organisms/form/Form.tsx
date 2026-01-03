@@ -1,7 +1,7 @@
 import { Button } from '@components/atoms';
 import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
-import type { FormProps } from '@models';
+import type { FormProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useMemo } from 'react';
 

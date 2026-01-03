@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import type { HeaderProps } from '@models';
+import type { HeaderProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

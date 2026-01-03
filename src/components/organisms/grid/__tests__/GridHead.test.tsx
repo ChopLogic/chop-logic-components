@@ -1,5 +1,5 @@
-import type { GridColumn } from '@models';
 import { render } from '@testing-library/react';
+import type { GridColumn } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 import { GridHead } from '../head/GridHead';
 

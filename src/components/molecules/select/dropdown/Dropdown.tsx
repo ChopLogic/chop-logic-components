@@ -1,4 +1,4 @@
-import type { SelectValue } from '@models';
+import type { SelectValue } from '@types';
 import { getClassName, handleDropdownListKeyPress, moveFocusOnElementById } from '@utils';
 import type { FC } from 'react';
 

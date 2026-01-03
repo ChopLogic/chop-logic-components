@@ -1,5 +1,5 @@
-import type { TextInputProps } from '@models';
 import styles from '@styles/storybook/ResponsiveWrapper.module.scss';
+import type { TextInputProps } from '@types';
 import type { FC } from 'react';
 
 import TextInput from '../TextInput';

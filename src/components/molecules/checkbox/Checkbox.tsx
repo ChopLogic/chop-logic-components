@@ -1,7 +1,7 @@
 import { Label } from '@components/atoms';
 import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
-import type { CheckboxProps } from '@models';
+import type { CheckboxProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

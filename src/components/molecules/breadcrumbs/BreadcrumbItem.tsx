@@ -1,6 +1,6 @@
 import { Icon, Link } from '@components/atoms';
 import { IconName } from '@enums';
-import type { Breadcrumb } from '@models';
+import type { Breadcrumb } from '@types';
 import type { FC } from 'react';
 
 import styles from './Breadcrumbs.module.scss';

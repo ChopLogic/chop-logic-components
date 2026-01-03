@@ -1,4 +1,4 @@
-import type { BreadcrumbsProps } from '@models';
+import type { BreadcrumbsProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

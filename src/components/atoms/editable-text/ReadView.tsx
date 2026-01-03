@@ -1,4 +1,4 @@
-import type { ChopLogicComponentProps } from '@models';
+import type { ChopLogicComponentProps } from '@types';
 import type { FC } from 'react';
 
 interface ReadViewProps extends ChopLogicComponentProps {

@@ -1,4 +1,4 @@
-import type { EditableTextProps } from '@models';
+import type { EditableTextProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useCallback, useRef } from 'react';
 

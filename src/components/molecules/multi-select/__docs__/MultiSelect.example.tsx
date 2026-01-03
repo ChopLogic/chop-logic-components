@@ -1,5 +1,5 @@
-import type { MultiSelectProps } from '@models';
 import styles from '@styles/storybook/ResponsiveWrapper.module.scss';
+import type { MultiSelectProps } from '@types';
 import type { FC } from 'react';
 import MultiSelect from '../MultiSelect';
 

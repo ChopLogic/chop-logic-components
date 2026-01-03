@@ -1,4 +1,4 @@
-import type { FormValues, SelectValue } from '@models';
+import type { FormValues, SelectValue } from '@types';
 
 export function getSelectInitialValue({
   name,

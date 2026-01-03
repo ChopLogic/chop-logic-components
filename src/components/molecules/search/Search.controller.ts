@@ -1,5 +1,5 @@
 import { useDebounce } from '@hooks';
-import type { SearchProps } from '@models';
+import type { SearchProps } from '@types';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 export function useSearchController({

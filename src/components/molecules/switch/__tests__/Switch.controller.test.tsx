@@ -1,6 +1,6 @@
 import { FormContext } from '@contexts';
-import type { FormContextProps } from '@models';
 import { act, renderHook } from '@testing-library/react';
+import type { FormContextProps } from '@types';
 import { type KeyboardEvent, useEffect } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSwitchController } from '../Switch.controller';

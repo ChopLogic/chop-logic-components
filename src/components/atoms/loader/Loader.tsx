@@ -1,5 +1,5 @@
 import { LoaderView } from '@enums';
-import type { LoaderProps } from '@models';
+import type { LoaderProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

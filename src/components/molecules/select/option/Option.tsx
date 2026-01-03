@@ -1,5 +1,5 @@
 import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon';
-import type { SelectValue } from '@models';
+import type { SelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
 

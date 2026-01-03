@@ -1,5 +1,5 @@
-import type { SelectValue } from '@models';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { SelectValue } from '@types';
 
 import { SelectExample } from './Select.example';
 

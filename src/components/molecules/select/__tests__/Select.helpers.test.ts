@@ -1,4 +1,4 @@
-import type { SelectValue } from '@models';
+import type { SelectValue } from '@types';
 import { describe, expect, it } from 'vitest';
 
 import { getSelectInitialValue } from '../Select.helpers';

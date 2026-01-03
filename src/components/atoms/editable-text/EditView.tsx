@@ -1,4 +1,4 @@
-import type { ChopLogicComponentProps } from '@models';
+import type { ChopLogicComponentProps } from '@types';
 import { type FC, type RefObject, useCallback } from 'react';
 
 interface EditViewProps extends ChopLogicComponentProps {

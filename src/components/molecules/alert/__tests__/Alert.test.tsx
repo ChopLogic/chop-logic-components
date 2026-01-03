@@ -1,7 +1,7 @@
 import { AlertMode } from '@enums';
-import type { AlertProps } from '@models';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { AlertProps } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 
 import Alert from '../Alert';

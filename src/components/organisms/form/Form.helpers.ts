@@ -1,4 +1,4 @@
-import type { FormInputParams, FormValidationState, FormValues } from '@models';
+import type { FormInputParams, FormValidationState, FormValues } from '@types';
 
 export function getInitialValidationState(data?: FormValues): FormValidationState {
   if (!data) return [];

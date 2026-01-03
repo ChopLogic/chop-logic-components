@@ -1,4 +1,4 @@
-import type { SwitchProps } from '@models';
+import type { SwitchProps } from '@types';
 import { useState } from 'react';
 
 import Switch from '../Switch';

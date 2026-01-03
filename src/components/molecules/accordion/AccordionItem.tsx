@@ -1,6 +1,6 @@
 import { Icon } from '@components/atoms';
 import { IconName } from '@enums';
-import type { AccordionItemProps } from '@models';
+import type { AccordionItemProps } from '@types';
 import type { FC } from 'react';
 import styles from './AccordionItem.module.scss';
 

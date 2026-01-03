@@ -1,4 +1,4 @@
-import type { ImageSource } from '@models';
+import type { ImageSource } from '@types';
 import type { FC } from 'react';
 import { BasicImage } from './BasicImage';
 import styles from './Image.module.scss';

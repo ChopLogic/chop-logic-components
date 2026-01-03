@@ -1,4 +1,4 @@
-import type { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@types';
 
 const GraduateIcon = ({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) => (
   <svg

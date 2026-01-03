@@ -1,4 +1,4 @@
-import type { ChopLogicRegExpWithFlags, TextInputValidator } from '@models';
+import type { ChopLogicRegExpWithFlags, TextInputValidator } from '@types';
 import { describe, expect, it } from 'vitest';
 
 import { getTextInputInitialValue, validateTextInputValue } from '../TextInput.helpers';

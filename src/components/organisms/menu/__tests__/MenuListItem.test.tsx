@@ -1,6 +1,6 @@
 import { OrientationMode } from '@enums';
-import type { MenuItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { MenuItem } from '@types';
 import type { PropsWithChildren } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 

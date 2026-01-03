@@ -1,4 +1,4 @@
-import type { FormValues, MultiSelectValue, SelectValue } from '@models';
+import type { FormValues, MultiSelectValue, SelectValue } from '@types';
 import { describe, expect, it } from 'vitest';
 
 import { getMultiSelectFormValues, getMultiSelectInitialValues } from '../MultiSelect.helpers';

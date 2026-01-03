@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import type { LinkProps } from '@models';
+import type { LinkProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

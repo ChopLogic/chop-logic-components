@@ -1,6 +1,6 @@
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
-import type { TooltipProps } from '@models';
+import type { TooltipProps } from '@types';
 import type { FC } from 'react';
 
 import Tooltip from '../Tooltip';

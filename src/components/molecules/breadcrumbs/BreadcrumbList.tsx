@@ -1,4 +1,4 @@
-import type { Breadcrumb } from '@models';
+import type { Breadcrumb } from '@types';
 import type { FC } from 'react';
 
 import BreadcrumbItem from './BreadcrumbItem';

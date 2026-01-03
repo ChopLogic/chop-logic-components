@@ -1,4 +1,4 @@
-import type { ChopLogicTabItem } from '@models';
+import type { ChopLogicTabItem } from '@types';
 import type { FC, ReactElement } from 'react';
 
 import styles from './TabContent.module.scss';

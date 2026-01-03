@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import type { MenuProps } from '@models';
+import type { MenuProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

@@ -1,7 +1,7 @@
 import { Button, Header, Portal } from '@components/atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
 import { useAutoClose, useIsMounted } from '@hooks';
-import type { AlertProps } from '@models';
+import type { AlertProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

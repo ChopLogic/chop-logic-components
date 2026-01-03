@@ -7,8 +7,8 @@ import {
   TextInput,
 } from '@components/molecules';
 import { Form } from '@components/organisms';
-import type { FormProps, FormValues, SelectValue } from '@models';
 import styles from '@styles/storybook/Container.module.scss';
+import type { FormProps, FormValues, SelectValue } from '@types';
 import { type FC, useState } from 'react';
 
 const SELECT_LANGUAGES: SelectValue[] = [

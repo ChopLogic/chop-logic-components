@@ -1,4 +1,4 @@
-import type { FormValues, MultiSelectValue, SelectValue } from '@models';
+import type { FormValues, MultiSelectValue, SelectValue } from '@types';
 
 export function getMultiSelectInitialValues({
   name,

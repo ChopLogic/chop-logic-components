@@ -1,4 +1,4 @@
-import type { SwitchProps } from '@models';
+import type { SwitchProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

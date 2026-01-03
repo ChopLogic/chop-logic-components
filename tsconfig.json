@@ -22,7 +22,7 @@
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
       "@enums/*": ["enums/*"],
-      "@models/*": ["models/*"],
+      "@types/*": ["types/*"],
       "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
       "@styles/*": ["styles/*"],

@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import type { MenuItem } from '@models';
+import type { MenuItem } from '@types';
 import type { ReactElement } from 'react';
 
 import styles from './MenuLeaf.module.scss';

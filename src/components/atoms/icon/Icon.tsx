@@ -1,5 +1,5 @@
 import { IconDictionary } from '@assets/icons';
-import type { IconProps } from '@models';
+import type { IconProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 

@@ -1,6 +1,6 @@
 import { Label } from '@components/atoms';
 import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
-import type { SelectProps } from '@models';
+import type { SelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 

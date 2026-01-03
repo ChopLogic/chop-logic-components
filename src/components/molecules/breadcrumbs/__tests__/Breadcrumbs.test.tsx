@@ -1,6 +1,6 @@
 import { IconName } from '@enums';
-import type { Breadcrumb } from '@models';
 import { render, screen } from '@testing-library/react';
+import type { Breadcrumb } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 import Breadcrumbs from '../Breadcrumbs';
 

@@ -1,6 +1,6 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import type { MultiSelectValue, SelectValue } from '@models';
+import type { MultiSelectValue, SelectValue } from '@types';
 import { useCallback, useContext, useRef, useState } from 'react';
 
 import {

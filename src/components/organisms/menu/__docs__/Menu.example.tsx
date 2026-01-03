@@ -1,6 +1,6 @@
 import { Menu } from '@components/organisms';
 import { OrientationMode } from '@enums';
-import type { MenuProps } from '@models';
+import type { MenuProps } from '@types';
 import type { FC } from 'react';
 
 const MenuExample: FC<MenuProps> = ({

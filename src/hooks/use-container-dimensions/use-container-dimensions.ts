@@ -1,4 +1,4 @@
-import type { Dimensions } from '@models';
+import type { Dimensions } from '@types';
 import { type RefObject, useEffect, useState } from 'react';
 
 type useContainerDimensionsParams = {

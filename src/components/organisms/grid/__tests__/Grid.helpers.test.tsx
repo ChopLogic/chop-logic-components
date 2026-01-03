@@ -1,4 +1,4 @@
-import type { GridColumn, GridItem } from '@models';
+import type { GridColumn, GridItem } from '@types';
 import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 

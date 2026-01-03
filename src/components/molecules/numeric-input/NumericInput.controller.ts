@@ -1,6 +1,6 @@
 import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
-import type { NumericInputValidator } from '@models';
+import type { NumericInputValidator } from '@types';
 import {
   type ChangeEvent,
   type ChangeEventHandler,

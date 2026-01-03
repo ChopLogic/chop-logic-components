@@ -1,6 +1,6 @@
 import { OrientationMode } from '@enums';
-import type { ButtonProps, ChopLogicTabItem } from '@models';
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { ButtonProps, ChopLogicTabItem } from '@types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { TabList } from '../list/TabList';

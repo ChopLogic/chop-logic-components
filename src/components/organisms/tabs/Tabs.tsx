@@ -1,5 +1,5 @@
 import { OrientationMode } from '@enums';
-import type { ChopLogicTabItem, TabsProps } from '@models';
+import type { ChopLogicTabItem, TabsProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
 

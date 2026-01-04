@@ -23,7 +23,6 @@
       "@utils/*": ["utils/*"],
       "@enums/*": ["enums/*"],
       "@types/*": ["types/*"],
-      "@contexts/*": ["contexts/*"],
       "@icons/*": ["icons/*"],
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],

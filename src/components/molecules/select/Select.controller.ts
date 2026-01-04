@@ -1,7 +1,7 @@
-import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import type { SelectValue } from '@types';
 import { useCallback, useContext, useRef, useState } from 'react';
+import { FormContext } from '../../contexts';
 
 import { getSelectInitialValue } from './Select.helpers';
 

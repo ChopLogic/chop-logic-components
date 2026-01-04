@@ -1,9 +1,9 @@
 import { Button } from '@components/atoms';
-import { FormContext } from '@contexts';
 import { ButtonView, IconName } from '@enums';
 import type { FormProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useMemo } from 'react';
+import { FormContext } from '../../contexts';
 
 import { useFormController } from './Form.controller';
 import styles from './Form.module.scss';

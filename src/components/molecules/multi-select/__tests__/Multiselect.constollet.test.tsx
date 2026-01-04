@@ -1,7 +1,7 @@
-import { FormContext } from '@contexts';
 import { act, renderHook } from '@testing-library/react';
 import type { FormContextProps, MultiSelectValue, SelectValue } from '@types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { FormContext } from '../../../contexts';
 import { useMultiSelectController } from '../MultiSelect.controller';
 
 // Mock the dependencies

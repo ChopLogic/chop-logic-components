@@ -1,4 +1,4 @@
-import { FormContext } from '@contexts';
+import { FormContext } from '@components/contexts';
 import { useContext, useEffect } from 'react';
 
 export const useResetFormInput = (onReset: () => void) => {

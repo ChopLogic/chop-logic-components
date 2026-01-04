@@ -1,4 +1,3 @@
-import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import type { NumericInputValidator } from '@types';
 import {
@@ -9,6 +8,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { FormContext } from '../../contexts';
 
 import { getNumericInputInitialValue, validateNumericInputValue } from './NumericInput.helpers';
 

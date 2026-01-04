@@ -1,6 +1,6 @@
-import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import { type KeyboardEvent, useCallback, useContext, useRef, useState } from 'react';
+import { FormContext } from '../../contexts';
 
 import { getSwitchInitialValue } from './Switch.helpers';
 

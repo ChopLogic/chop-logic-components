@@ -1,4 +1,3 @@
-import { FormContext } from '@contexts';
 import { useResetFormInput } from '@hooks';
 import {
   type ChangeEvent,
@@ -8,6 +7,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { FormContext } from '../../contexts';
 
 import { getCheckboxInitialValue } from './Checkbox.helpers';
 

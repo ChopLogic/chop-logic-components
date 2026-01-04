@@ -46,15 +46,13 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },
-      { find: '@elements', replacement: path.resolve(__dirname, 'src/elements') },
-      { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
-      { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
-      { find: '@enums', replacement: path.resolve(__dirname, 'src/enums') },
-      { find: '@types', replacement: path.resolve(__dirname, 'src/types') },
-      { find: '@icons', replacement: path.resolve(__dirname, 'src/icons') },
-      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
       { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
       { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
+      { find: '@enums', replacement: path.resolve(__dirname, 'src/enums') },
+      { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
+      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
+      { find: '@types', replacement: path.resolve(__dirname, 'src/types') },
+      { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
     ],
   },
   test: {

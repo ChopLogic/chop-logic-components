@@ -18,15 +18,13 @@
     "baseUrl": "./src",
     "paths": {
       "@*": ["*"],
-      "@elements/*": ["elements/*"],
-      "@hooks/*": ["hooks/*"],
-      "@utils/*": ["utils/*"],
-      "@enums/*": ["enums/*"],
-      "@types/*": ["types/*"],
-      "@icons/*": ["icons/*"],
-      "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@enums/*": ["enums/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

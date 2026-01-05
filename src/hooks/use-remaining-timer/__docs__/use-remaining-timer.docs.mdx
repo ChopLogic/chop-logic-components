@@ -1,0 +1,92 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Story from './use-remaining-timer.stories';
+
+<Meta of={Story} title="Hooks/useRemainingTimer" />
+
+# useRemainingTimer
+
+A React hook that manages a countdown timer with auto-close functionality. It tracks the remaining time as a percentage and automatically triggers a callback when the timer expires. The timer pauses when the element is hovered over, providing a better user experience for time-sensitive content like alerts or notifications.
+
+## Features
+
+- **Auto-Close Functionality**: Automatically closes elements after a specified delay
+- **Pause on Hover**: Timer pauses when hovering, allowing users time to interact
+- **Percentage-based Tracking**: Returns remaining time as a percentage (0-100)
+- **Smooth Countdown**: Uses `requestAnimationFrame` for smooth animations
+- **Smart State Management**: Handles opened/closed state and hover interactions
+
+## Usage
+
+```tsx
+import { useRemainingTimer } from 'chop-logic-components';
+import { useRef, useState } from 'react';
+
+const AutoCloseAlert = () => {
+  const [isOpened, setIsOpened] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const alertRef = useRef<HTMLDivElement>(null);
+
+  const remainingPercentage = useRemainingTimer({
+    isOpened,
+    isHovered,
+    onClose: () => setIsOpened(false),
+    autoCloseDelay: 5000,
+  });
+
+  if (!isOpened) return null;
+
+  return (
+    <div
+      ref={alertRef}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        padding: '1rem',
+        border: '1px solid #2196f3',
+        borderRadius: '4px',
+        background: '#e3f2fd',
+      }}
+    >
+      <div>Alert message here</div>
+      <div
+        style={{
+          height: '3px',
+          background: '#2196f3',
+          marginTop: '0.5rem',
+          width: `${remainingPercentage}%`,
+          transition: 'width 0.05s linear',
+        }}
+      />
+    </div>
+  );
+};
+```
+
+## Parameters
+
+| Parameter          | Type         | Description                                          |
+| ------------------ | ------------ | ---------------------------------------------------- |
+| **isOpened**       | `boolean`    | Whether the element is currently open                |
+| **isHovered**      | `boolean`    | Whether the element is being hovered                 |
+| **onClose**        | `() => void` | Callback function when timer expires                 |
+| **autoCloseDelay** | `number`     | Delay in milliseconds before closing (default: 3000) |
+
+## Return Value
+
+Returns a number between 0 and 100 representing the percentage of time remaining.
+
+## Common Use Cases
+
+- **Toast Notifications**: Auto-dismiss notifications with progress indicator
+- **Alert Messages**: Show alerts that automatically disappear
+- **Temporary Overlays**: Close overlays after a period of time
+- **Time-sensitive Messages**: Display messages that auto-close with visual feedback
+- **Undo Actions**: Show undo prompts with countdown timers
+
+## Best Practices
+
+- Always manage `isOpened` and `isHovered` state in the parent component
+- Use the returned percentage to create a visual countdown bar
+- Combine with CSS transitions for smooth animations
+- Pause on hover to give users time to read important messages
+- Use reasonable delays (typically 3-5 seconds for notifications)

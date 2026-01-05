@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-export function useIsHovered(ref: RefObject<HTMLElement>, isMounted = true) {
+export function useIsHovered(ref: RefObject<HTMLElement | null>, isMounted = true) {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {

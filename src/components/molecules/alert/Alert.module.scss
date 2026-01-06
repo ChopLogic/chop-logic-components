@@ -47,3 +47,24 @@
     top: var(--cl-m-gap);
   }
 }
+
+.progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--cl-s-gap);
+  border: none;
+  background-color: var(--cl-primary-background);
+
+  &::-webkit-progress-bar {
+    background-color: var(--cl-primary-background);
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--cl-highlight-background);
+  }
+
+  &::-moz-progress-bar {
+    background-color: var(--cl-highlight-background);
+  }
+}

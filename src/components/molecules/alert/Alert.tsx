@@ -1,12 +1,13 @@
 import { Button, Header, Portal } from '@components/atoms';
 import { AlertMode, ButtonView, IconName } from '@enums';
-import { useAutoClose, useIsMounted } from '@hooks';
+import { useIsHovered, useIsMounted, useRemainingTimer } from '@hooks';
 import type { AlertProps } from '@types';
 import { getClassName } from '@utils';
-import type { FC } from 'react';
+import { type FC, useRef } from 'react';
 
 import { getAlertIcon, getAlertTitle } from './Alert.helpers';
 import styles from './Alert.module.scss';
+import { AlertProgressBar } from './AlertProgressBar';
 
 const Alert: FC<AlertProps> = ({
   isOpened,
@@ -21,11 +22,13 @@ const Alert: FC<AlertProps> = ({
 }) => {
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isHovered = useIsHovered(containerRef, isMounted);
 
-  useAutoClose({
-    isOpened,
+  const remainingPercentage = useRemainingTimer({
+    isOpened: isMounted,
+    isHovered,
     onClose,
-    autoClose,
     autoCloseDelay,
   });
 
@@ -36,7 +39,10 @@ const Alert: FC<AlertProps> = ({
 
   return (
     <Portal>
-      <div className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}>
+      <div
+        ref={containerRef}
+        className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}
+      >
         <div {...rest} className={styles.content}>
           <Button
             icon={IconName.Cancel}
@@ -51,6 +57,7 @@ const Alert: FC<AlertProps> = ({
             </Header>
           </header>
           <p>{message}</p>
+          {autoClose && <AlertProgressBar remainingPercentage={remainingPercentage} />}
         </div>
       </div>
     </Portal>

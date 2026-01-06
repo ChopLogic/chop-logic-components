@@ -86,4 +86,43 @@ describe('Alert', () => {
       expect(screen.getByRole('heading')).toHaveTextContent('Everything is okay');
     });
   });
+
+  it('should not render progress bar when autoClose is false', async () => {
+    renderAlert({ isOpened: true, autoClose: false });
+    const progressBar = screen.queryByRole('progressbar');
+    await waitFor(() => {
+      expect(progressBar).not.toBeInTheDocument();
+    });
+  });
+
+  it('should render progress bar when autoClose is true', async () => {
+    renderAlert({ isOpened: true, autoClose: true });
+    const progressBar = screen.getByRole('progressbar');
+    await waitFor(() => {
+      expect(progressBar).toBeInTheDocument();
+    });
+  });
+
+  it('should pass remainingPercentage to AlertProgressBar', async () => {
+    renderAlert({ isOpened: true, autoClose: true });
+    const progressBar = screen.getByRole('progressbar') as HTMLProgressElement;
+    await waitFor(() => {
+      expect(progressBar).toHaveAttribute('value');
+      expect(progressBar.value).toBeGreaterThanOrEqual(0);
+      expect(progressBar.value).toBeLessThanOrEqual(100);
+    });
+  });
+
+  it('should update progress bar value over time', async () => {
+    renderAlert({ isOpened: true, autoClose: true, autoCloseDelay: 5000 });
+    const progressBar = screen.getByRole('progressbar') as HTMLProgressElement;
+    const initialValue = progressBar.value;
+
+    await waitFor(
+      () => {
+        expect(progressBar.value).toBeLessThan(initialValue);
+      },
+      { timeout: 1000 },
+    );
+  });
 });

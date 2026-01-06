@@ -2,8 +2,8 @@ import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
 import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
 import type { MultiSelectValue } from '@types';
 import type { FC } from 'react';
-
 import styles from '../select/combobox/Combobox.module.scss';
+import { MultiSelectComboboxSelectedValues } from './MultiSelectComboboxSelectedValues';
 
 type Props = {
   opened: boolean;
@@ -28,17 +28,7 @@ export const MultiSelectCombobox: FC<Props> = ({
   required,
   values,
 }) => {
-  const selectedLabels = values?.filter((value) => value.selected).map((value) => value.label);
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
-  let selectedValues = <span>{placeholder}</span>;
-
-  if (selectedLabels && selectedLabels.length === values?.length) {
-    selectedValues = <span>All items selected</span>;
-  } else if (selectedLabels && selectedLabels.length === 1) {
-    selectedValues = <span>{selectedLabels[0]}</span>;
-  } else if (selectedLabels && selectedLabels.length > 1) {
-    selectedValues = <span>{`${selectedLabels.length} items selected`}</span>;
-  }
 
   return (
     <button
@@ -55,7 +45,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       aria-required={required}
       className={styles.combobox}
     >
-      {selectedValues}
+      <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
       {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
     </button>
   );

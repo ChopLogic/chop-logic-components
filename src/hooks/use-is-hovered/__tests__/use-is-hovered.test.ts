@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -32,7 +32,10 @@ describe('useIsHovered', () => {
       return useIsHovered(ref);
     });
 
-    mockElement.dispatchEvent(new MouseEvent('mouseenter'));
+    act(() => {
+      mockElement.dispatchEvent(new MouseEvent('mouseenter'));
+    });
+
     await waitFor(() => {
       expect(result.current).toBe(true);
     });
@@ -44,12 +47,18 @@ describe('useIsHovered', () => {
       return useIsHovered(ref);
     });
 
-    mockElement.dispatchEvent(new MouseEvent('mouseenter'));
+    act(() => {
+      mockElement.dispatchEvent(new MouseEvent('mouseenter'));
+    });
+
     await waitFor(() => {
       expect(result.current).toBe(true);
     });
 
-    mockElement.dispatchEvent(new MouseEvent('mouseleave'));
+    act(() => {
+      mockElement.dispatchEvent(new MouseEvent('mouseleave'));
+    });
+
     await waitFor(() => {
       expect(result.current).toBe(false);
     });

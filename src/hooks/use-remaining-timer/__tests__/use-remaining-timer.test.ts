@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { useRemainingTimer } from '../use-remaining-timer';
@@ -44,8 +44,10 @@ describe('useRemainingTimer', () => {
       { initialProps: { isHovered: false } },
     );
 
-    vi.advanceTimersByTime(500);
-    vi.advanceTimersByTime(1000);
+    act(() => {
+      vi.advanceTimersByTime(500);
+      vi.advanceTimersByTime(1000);
+    });
 
     expect(onClose).not.toHaveBeenCalled();
   });
@@ -61,7 +63,10 @@ describe('useRemainingTimer', () => {
       }),
     );
 
-    vi.advanceTimersByTime(1500);
+    act(() => {
+      vi.advanceTimersByTime(1500);
+    });
+
     expect(onClose).toHaveBeenCalled();
   });
 
@@ -78,7 +83,10 @@ describe('useRemainingTimer', () => {
       { initialProps: { isOpened: true } },
     );
 
-    vi.advanceTimersByTime(500);
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
+
     rerender({ isOpened: false });
 
     expect(result.current).toBe(100);
@@ -95,7 +103,10 @@ describe('useRemainingTimer', () => {
       }),
     );
 
-    vi.advanceTimersByTime(2000);
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+
     expect(onClose).not.toHaveBeenCalled();
   });
 });

@@ -1,0 +1,113 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Image snapshot tests > BasicImage should match snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt="Snapshot image"
+    class="_img_21bef9"
+    decoding="async"
+    loading="lazy"
+    src="snapshot.jpg"
+  />
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > FallbackImage should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_fallback_21bef9"
+  >
+    <svg
+      aria-hidden="true"
+      class="_fallback_icon_21bef9"
+      data-testid="fallback-icon"
+    >
+      image icon
+    </svg>
+    <span
+      class="_fallback_text_21bef9"
+    >
+      Image not available
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
+<DocumentFragment>
+  <figure
+    class="_figure_d6588c"
+  >
+    <div
+      class="_image_21bef9"
+    >
+      <img
+        alt="Snapshot image"
+        class="_img_21bef9"
+        decoding="async"
+        loading="lazy"
+        src="snapshot.jpg"
+      />
+    </div>
+    <figcaption
+      class="_figure_caption_d6588c"
+    >
+      Snapshot Image
+    </figcaption>
+  </figure>
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
+<DocumentFragment>
+  <picture
+    class="_picture_21bef9"
+  >
+    <source
+      media="(max-width: 480px)"
+      srcset="https://picsum.photos/400/300 400w"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcset="https://picsum.photos/800/600 800w"
+    />
+    <source
+      srcset="https://picsum.photos/1200/900 1200w"
+    />
+    <img
+      alt="Snapshot image"
+      class="_img_21bef9"
+      decoding="async"
+      loading="lazy"
+      src="snapshot.jpg"
+    />
+  </picture>
+</DocumentFragment>
+`;
+
+exports[`Image snapshot tests > ResponsivePicture should match snapshot with empty descriptors 1`] = `
+<DocumentFragment>
+  <picture
+    class="_picture_21bef9"
+  >
+    <source
+      media="(max-width: 480px)"
+      srcset="https://picsum.photos/400/300"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcset="https://picsum.photos/800/600"
+    />
+    <source
+      srcset="https://picsum.photos/1200/900"
+    />
+    <img
+      alt="Snapshot image"
+      class="_img_21bef9"
+      decoding="async"
+      loading="lazy"
+      src="snapshot.jpg"
+    />
+  </picture>
+</DocumentFragment>
+`;

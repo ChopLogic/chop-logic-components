@@ -1,7 +1,7 @@
-import { Button } from '@atoms';
+import { Button } from '@components/atoms';
+import { Dialog } from '@components/organisms';
 import { ButtonView } from '@enums';
 import { useAutoClose } from '@hooks';
-import { Dialog } from '@organisms';
 import { type FC, useState } from 'react';
 
 export const UseAutoCloseExample: FC = () => {

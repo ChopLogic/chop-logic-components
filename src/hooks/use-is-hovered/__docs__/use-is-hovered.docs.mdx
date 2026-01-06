@@ -1,0 +1,66 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as Story from './use-is-hovered.stories';
+
+<Meta of={Story} title="Hooks/useIsHovered" />
+
+# useIsHovered
+
+A React hook that tracks whether an element is being hovered over. This hook simplifies hover state management by attaching mouse enter and leave event listeners to a referenced element.
+
+## Features
+
+- **Simple Hover Tracking**: Easily determine if an element is hovered
+- **Ref-based**: Works with React refs for maximum flexibility
+- **Conditional Activation**: Optional `isMounted` parameter to control tracking
+- **Automatic Cleanup**: Proper cleanup of event listeners on unmount
+
+## Usage
+
+```tsx
+import { useIsHovered } from 'chop-logic-components';
+import { useRef } from 'react';
+
+const HoverableComponent = () => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const isHovered = useIsHovered(elementRef);
+
+  return (
+    <div
+      ref={elementRef}
+      style={{
+        padding: '1rem',
+        background: isHovered ? '#e8f5e9' : '#fff',
+        transition: 'background 0.2s',
+      }}
+    >
+      {isHovered ? 'You are hovering over me!' : 'Hover over me'}
+    </div>
+  );
+};
+```
+
+## Parameters
+
+| Parameter     | Type                     | Description                                                                               |
+| ------------- | ------------------------ | ----------------------------------------------------------------------------------------- |
+| **ref**       | `RefObject<HTMLElement>` | React ref pointing to the element to track                                                |
+| **isMounted** | `boolean` (optional)     | Enable/disable hover tracking (default: `true`) for elements like popups or modal windows |
+
+## Return Value
+
+Returns a boolean indicating whether the element is currently hovered.
+
+## Common Use Cases
+
+- **Interactive Buttons**: Change appearance on hover
+- **Dropdown Triggers**: Show/hide content on hover
+- **UI Feedback**: Display additional information on hover
+- **Conditional Styling**: Apply styles based on hover state
+- **Tooltip Triggers**: Show tooltips when hovering
+
+## Best Practices
+
+- Always attach the ref to the element you want to track
+- Use the `isMounted` parameter to conditionally disable tracking if needed
+- Combine with CSS transitions for smooth hover effects
+- Consider using CSS `:hover` pseudo-class for simple styling; use this hook for complex interactions

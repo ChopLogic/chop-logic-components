@@ -1,5 +1,5 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
-import { ThemeProvider } from '../src/contexts';
+import { ThemeProvider } from '../src/components/contexts';
 import { ThemeMode } from '../src/enums';
 
 const preview: Preview = {

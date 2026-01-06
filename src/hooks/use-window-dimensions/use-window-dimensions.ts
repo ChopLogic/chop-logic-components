@@ -1,4 +1,4 @@
-import type { Dimensions } from '@models';
+import type { Dimensions } from '@types';
 import { useEffect, useState } from 'react';
 
 function getWindowDimensions(): Dimensions {

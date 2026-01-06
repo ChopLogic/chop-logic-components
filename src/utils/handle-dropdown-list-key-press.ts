@@ -1,4 +1,4 @@
-import type { SelectValue } from '@models';
+import type { SelectValue } from '@types';
 import type { KeyboardEvent } from 'react';
 
 import { moveFocusOnElementById } from './move-focus-on-element-by-id';

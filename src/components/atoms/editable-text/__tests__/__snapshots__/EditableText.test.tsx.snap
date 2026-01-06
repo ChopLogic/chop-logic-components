@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EditableText > renders ReadView by default 1`] = `
+<DocumentFragment>
+  <span
+    aria-label="Editable text"
+    class="_editableText_1336ba"
+    role="button"
+    tabindex="0"
+  >
+    Initial Value
+  </span>
+</DocumentFragment>
+`;

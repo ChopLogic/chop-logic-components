@@ -1,4 +1,4 @@
-import type { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@types';
 
 function ChevronDownIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (

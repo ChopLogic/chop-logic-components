@@ -10,13 +10,18 @@ Chop Logic Components is a React component library designed to provide reusable,
 - **SCSS Variables**: Centralized styling variables for consistent theming.
 - **SCSS Mixins**: Support for reusable styles and responsive design.
 
-
+  
 Key directories:
-- `src/atoms/`: Basic building blocks (e.g., `Button`, `Icon`, `Image`).
-- `src/molecules/`: Composed components (e.g., `TextInput`, `MultiSelect`, `Breadcrumbs`).
-- `src/organisms/`: High-level components (e.g., `Form`, `Grid`, `Dialog`).
+- `src/assets/`: Static assets like icons (e.g., SVG files).
+- `src/components/atoms/`: Basic building blocks (e.g., `Button`, `Icon`, `Image`).
+- `src/components/molecules/`: Composed components (e.g., `TextInput`, `MultiSelect`, `Breadcrumbs`).
+- `src/components/organisms/`: High-level components (e.g., `Form`, `Grid`, `Dialog`).
+- `src/components/hocs/`: Higher-order components (e.g., `withTooltip()`).
+- `src/components/contexts/`: React contexts for shared state (e.g., `ThemeContext`, `FormContext`).
 - `src/hooks/`: Custom hooks (e.g., `use-tooltip-position`, `use-key-press`).
 - `src/styles/`: SCSS files for common and reusable rules, such as themes, typography, mixins, and variables.
+- `src/enums/`: Enumerations (e.g., `button-view.ts`).
+- `src/types/`: Shared TypeScript type definitions (e.g., `alert.ts`).
 - `src/utils/`: Utility functions (e.g., `get-class-name.ts`).
 
 ## Developer Workflows

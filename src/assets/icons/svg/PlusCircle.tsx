@@ -1,4 +1,4 @@
-import type { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@types';
 
 function PlusCircleIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (

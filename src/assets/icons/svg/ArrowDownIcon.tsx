@@ -1,4 +1,4 @@
-import type { ChopLogicSVGElementProps } from '@models';
+import type { ChopLogicSVGElementProps } from '@types';
 
 function ArrowDownIcon({ title, ...rest }: Readonly<ChopLogicSVGElementProps>) {
   return (

@@ -34,7 +34,7 @@ export const InteractiveRemainingTimerDemo = ({
     >
       <div>
         <NumericInput
-          controlled
+          stateless
           label="Auto-close delay (ms):"
           id={delayInputId}
           name={delayInputId}

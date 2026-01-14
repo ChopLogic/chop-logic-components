@@ -23,7 +23,6 @@ export function useNumericInputController({
   step,
   required,
   validator,
-  controlled = false,
 }: {
   name: string;
   defaultValue?: string | number | readonly string[];
@@ -35,7 +34,6 @@ export function useNumericInputController({
   step: number;
   required: boolean;
   validator?: NumericInputValidator;
-  controlled?: boolean;
 }) {
   const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getNumericInputInitialValue({ initialValues, defaultValue, name });
@@ -51,8 +49,6 @@ export function useNumericInputController({
   initialValueRef.current = initialValue;
 
   const updateValue = (value: number) => {
-    if (controlled) return;
-
     setValue(value);
     const valid = validateNumericInputValue({ value, required, validator, maxValue, minValue });
     setValid(valid);

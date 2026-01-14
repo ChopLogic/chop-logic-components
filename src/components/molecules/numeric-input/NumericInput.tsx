@@ -16,7 +16,8 @@ const NumericInput: FC<NumericInputProps> = ({
   onChange,
   onBlur,
   onFocus,
-  onSpinButtonClick,
+  onIncrement,
+  onDecrement,
   validator,
   min,
   max,
@@ -29,10 +30,12 @@ const NumericInput: FC<NumericInputProps> = ({
   defaultValue = 0,
   step = 1,
   className,
+  controlled = false,
+  value: controlledValue,
   ...rest
 }) => {
   const { elementId, errorId } = useElementIds(id);
-  const { value, valid, handleChange, increment, decrement, minValue, maxValue } =
+  const { value, valid, handleChange, handleDecrement, handleIncrement, minValue, maxValue } =
     useNumericInputController({
       name,
       defaultValue,
@@ -42,7 +45,9 @@ const NumericInput: FC<NumericInputProps> = ({
       required,
       validator,
       step,
-      onSpinButtonClick,
+      onDecrement,
+      onIncrement,
+      controlled,
     });
   const inputClass = getClassName([styles.numeric, className]);
 
@@ -59,10 +64,10 @@ const NumericInput: FC<NumericInputProps> = ({
         placeholder="0"
         aria-invalid={!valid}
         aria-errormessage={errorId}
-        value={value.toString()}
-        onChange={handleChange}
-        min={minValue}
-        max={maxValue}
+        value={controlled ? controlledValue?.toString() : value.toString()}
+        onChange={controlled ? onChange : handleChange}
+        min={controlled ? min : minValue}
+        max={controlled ? max : maxValue}
         step={step}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -71,14 +76,14 @@ const NumericInput: FC<NumericInputProps> = ({
         {hasSpinButtons && (
           <span>
             <Button
-              onClick={decrement}
+              onClick={controlled ? onDecrement : handleDecrement}
               view={ButtonView.Inner}
               label={`Decrement value for ${label}`}
               icon={IconName.ChevronLeft}
               disabled={disabled}
             />
             <Button
-              onClick={increment}
+              onClick={controlled ? onIncrement : handleIncrement}
               view={ButtonView.Inner}
               label={`Increment value for ${label}`}
               icon={IconName.ChevronRight}

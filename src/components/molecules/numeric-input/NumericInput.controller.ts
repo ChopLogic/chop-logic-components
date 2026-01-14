@@ -16,22 +16,26 @@ export function useNumericInputController({
   name,
   defaultValue,
   onChange,
-  onSpinButtonClick,
+  onDecrement,
+  onIncrement,
   min,
   max,
   step,
   required,
   validator,
+  controlled = false,
 }: {
   name: string;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onSpinButtonClick?: (value?: number) => void;
+  onIncrement?: () => void;
+  onDecrement?: () => void;
   min?: string | number;
   max?: string | number;
   step: number;
   required: boolean;
   validator?: NumericInputValidator;
+  controlled?: boolean;
 }) {
   const { onChangeFormInput, initialValues } = useContext(FormContext);
   const initialValue = getNumericInputInitialValue({ initialValues, defaultValue, name });
@@ -47,6 +51,8 @@ export function useNumericInputController({
   initialValueRef.current = initialValue;
 
   const updateValue = (value: number) => {
+    if (controlled) return;
+
     setValue(value);
     const valid = validateNumericInputValue({ value, required, validator, maxValue, minValue });
     setValid(valid);
@@ -59,14 +65,14 @@ export function useNumericInputController({
     onChange?.(event);
   };
 
-  const increment = () => {
+  const handleIncrement = () => {
     updateValue(value + step);
-    onSpinButtonClick?.(value + step);
+    onIncrement?.();
   };
 
-  const decrement = () => {
+  const handleDecrement = () => {
     updateValue(value - step);
-    onSpinButtonClick?.(value - step);
+    onDecrement?.();
   };
 
   const handleReset = useCallback(() => {
@@ -83,7 +89,7 @@ export function useNumericInputController({
     valid,
     minValue,
     maxValue,
-    increment,
-    decrement,
+    handleIncrement,
+    handleDecrement,
   };
 }

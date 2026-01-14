@@ -11,7 +11,8 @@ export interface NumericInputProps extends ChopLogicInputProps {
   step?: number;
   readOnly?: boolean;
   defaultValue?: number;
-  onSpinButtonClick?: (value?: number) => void;
+  onIncrement?: () => void;
+  onDecrement?: () => void;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;

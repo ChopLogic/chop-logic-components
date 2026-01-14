@@ -67,6 +67,23 @@ const meta: Meta<typeof NumericInputExample> = {
         category: 'Behavior',
       },
     },
+    controlled: {
+      control: 'boolean',
+      description: 'When true, the input is controlled externally via the value prop',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    value: {
+      control: 'number',
+      description: 'The controlled numeric value (used when controlled is true)',
+      table: {
+        type: { summary: 'number' },
+        category: 'Behavior',
+      },
+    },
     // State
     disabled: {
       control: 'boolean',
@@ -143,9 +160,17 @@ const meta: Meta<typeof NumericInputExample> = {
         category: 'Interaction',
       },
     },
-    onSpinButtonClick: {
-      action: 'spinButtonClicked',
-      description: 'Callback function triggered when spin buttons are clicked',
+    onIncrement: {
+      action: 'incremented',
+      description: 'Callback function triggered when the increment button is clicked',
+      table: {
+        type: { summary: '(value?: number) => void' },
+        category: 'Interaction',
+      },
+    },
+    onDecrement: {
+      action: 'decremented',
+      description: 'Callback function triggered when the decrement button is clicked',
       table: {
         type: { summary: '(value?: number) => void' },
         category: 'Interaction',

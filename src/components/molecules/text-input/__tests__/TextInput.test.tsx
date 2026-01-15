@@ -165,4 +165,131 @@ describe('TextInput', () => {
     const errorMessage = await screen.findByText('Only latin letters are allowed');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
   });
+
+  // Stateless mode tests
+  describe('Stateless mode', () => {
+    it('should use stateless value when stateless prop is true', () => {
+      const { rerender } = render(
+        <TextInput {...testProps} stateless value="hello" onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByRole('textbox');
+      expect(input).toHaveValue('hello');
+
+      rerender(<TextInput {...testProps} stateless value="world" onChange={vi.fn()} />);
+      expect(input).toHaveValue('world');
+    });
+
+    it('should call onChange when input changes in stateless mode', async () => {
+      const handleChange = vi.fn();
+      render(<TextInput {...testProps} stateless value="test" onChange={handleChange} />);
+
+      const input = screen.getByRole('textbox');
+      await userEvent.type(input, 'ing');
+
+      expect(handleChange).toHaveBeenCalled();
+    });
+
+    it('should not update internal state when stateless is true', async () => {
+      const { rerender } = render(
+        <TextInput {...testProps} stateless value="initial" onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByRole('textbox');
+      await userEvent.clear(input);
+      await userEvent.type(input, 'changed');
+
+      // Input should still show initial value because stateless mode doesn't update internal state
+      expect(input).toHaveValue('initial');
+
+      // Only update when parent re-renders with new value
+      rerender(<TextInput {...testProps} stateless value="updated" onChange={vi.fn()} />);
+      expect(input).toHaveValue('updated');
+    });
+
+    it('should render correctly with stateless mode and no value prop', () => {
+      render(<TextInput {...testProps} stateless onChange={vi.fn()} />);
+
+      const input = screen.getByRole('textbox');
+      expect(input).toBeInTheDocument();
+      expect(input).toHaveValue('');
+    });
+
+    it('should display the Clear button in stateless mode', async () => {
+      render(<TextInput {...testProps} stateless value="test" onChange={vi.fn()} />);
+      expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+
+    it('should call onClear handler in stateless mode', async () => {
+      const mockClear = vi.fn();
+      const mockChange = vi.fn();
+      render(
+        <TextInput
+          {...testProps}
+          stateless
+          value="test"
+          onChange={mockChange}
+          onClear={mockClear}
+        />,
+      );
+
+      await userEvent.click(screen.getByRole('button'));
+
+      expect(mockClear).toHaveBeenCalledOnce();
+      expect(mockChange).toHaveBeenCalled();
+    });
+
+    it('should toggle password visibility in stateless mode', async () => {
+      render(
+        <TextInput {...testProps} stateless type="password" value="secret" onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByPlaceholderText(testProps.placeholder);
+      expect(input).toHaveAttribute('type', 'password');
+
+      await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+      expect(input).toHaveAttribute('type', 'text');
+
+      await userEvent.click(screen.getByLabelText('Toggle password visibility'));
+      expect(input).toHaveAttribute('type', 'password');
+    });
+
+    it('should respect maxLength in stateless mode', async () => {
+      render(<TextInput {...testProps} stateless value="test" maxLength={5} onChange={vi.fn()} />);
+
+      const input = screen.getByRole('textbox');
+      expect(input).toHaveAttribute('maxlength', '5');
+    });
+
+    it('should display error message in stateless mode', () => {
+      const testMessage = 'Test Error';
+      render(
+        <TextInput
+          {...testProps}
+          stateless
+          value="invalid"
+          errorMessage={testMessage}
+          onChange={vi.fn()}
+        />,
+      );
+      expect(screen.getByText(testMessage)).toBeInTheDocument();
+    });
+
+    it('should not show clearable button when clearable is false in stateless mode', () => {
+      render(
+        <TextInput {...testProps} stateless value="test" clearable={false} onChange={vi.fn()} />,
+      );
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+
+    it('should be disabled in stateless mode when disabled prop is true', () => {
+      render(<TextInput {...testProps} stateless value="test" disabled onChange={vi.fn()} />);
+      expect(screen.getByRole('textbox')).toBeDisabled();
+    });
+
+    it('should support readOnly in stateless mode', () => {
+      render(<TextInput {...testProps} stateless value="test" readOnly onChange={vi.fn()} />);
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
+    });
+  });
 });

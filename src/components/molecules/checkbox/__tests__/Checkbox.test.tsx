@@ -81,4 +81,67 @@ describe('Checkbox', () => {
     );
     expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
+
+  // Stateless mode tests
+  describe('Stateless mode', () => {
+    it('should use stateless checked prop when stateless is true', () => {
+      const { rerender } = render(
+        <Checkbox {...testProps} stateless checked={true} onChange={vi.fn()} />,
+      );
+
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeChecked();
+
+      rerender(<Checkbox {...testProps} stateless checked={false} onChange={vi.fn()} />);
+      expect(checkbox).not.toBeChecked();
+    });
+
+    it('should call onChange when checkbox is toggled in stateless mode', async () => {
+      const handleChange = vi.fn();
+      render(<Checkbox {...testProps} stateless checked={false} onChange={handleChange} />);
+
+      const checkbox = screen.getByRole('checkbox');
+      await userEvent.click(checkbox);
+
+      expect(handleChange).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not update internal state when stateless is true', async () => {
+      const { rerender } = render(
+        <Checkbox {...testProps} stateless checked={false} onChange={vi.fn()} />,
+      );
+
+      const checkbox = screen.getByRole('checkbox');
+      await userEvent.click(checkbox);
+
+      // Checkbox should still be unchecked because stateless mode doesn't update internal state
+      expect(checkbox).not.toBeChecked();
+
+      // Only update when parent re-renders with new checked value
+      rerender(<Checkbox {...testProps} stateless checked={true} onChange={vi.fn()} />);
+      expect(checkbox).toBeChecked();
+    });
+
+    it('should render correctly with stateless mode and no checked prop', () => {
+      render(<Checkbox {...testProps} stateless onChange={vi.fn()} />);
+
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeInTheDocument();
+      expect(checkbox).not.toBeChecked();
+    });
+
+    it('should be disabled in stateless mode when disabled prop is true', () => {
+      render(<Checkbox {...testProps} stateless checked={false} disabled onChange={vi.fn()} />);
+      expect(screen.getByRole('checkbox')).toBeDisabled();
+    });
+
+    it('should toggle on Space key press in stateless mode', async () => {
+      const mockOnChange = vi.fn();
+      render(<Checkbox {...testProps} stateless checked={false} onChange={mockOnChange} />);
+      const checkbox = screen.getByRole('checkbox');
+      checkbox.focus();
+      await userEvent.keyboard('[Space]');
+      expect(mockOnChange).toHaveBeenCalledOnce();
+    });
+  });
 });

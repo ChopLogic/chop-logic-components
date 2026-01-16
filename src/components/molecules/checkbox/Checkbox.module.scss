@@ -10,10 +10,6 @@
   overflow: hidden;
   @include mixins.ripple();
 
-  & svg {
-    color: var(--cl-primary-color);
-  }
-
   &__checked {
     svg {
       color: var(--cl-accent-color);

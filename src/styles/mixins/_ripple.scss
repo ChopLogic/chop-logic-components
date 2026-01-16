@@ -8,10 +8,6 @@
     background: var(--cl-primary-background)
       radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center/15000%;
     color: var(--cl-tint-color);
-
-    svg {
-      color: var(--cl-tint-color);
-    }
   }
 
   &:active {

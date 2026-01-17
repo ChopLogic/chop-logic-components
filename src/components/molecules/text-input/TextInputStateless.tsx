@@ -1,10 +1,10 @@
-import { Button, ErrorMessage, Input, Label } from '@components/atoms';
-import { ButtonView, IconName } from '@enums';
+import { ErrorMessage, Input, Label } from '@components/atoms';
 import type { TextInputProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
 
 import styles from './TextInput.module.scss';
+import TextInputButtons from './TextInputButtons';
 
 const TextInputStateless: FC<TextInputProps> = ({
   name,
@@ -28,9 +28,8 @@ const TextInputStateless: FC<TextInputProps> = ({
   className,
   ...rest
 }) => {
-  // Generate elementId and errorId from id prop without useElementIds hook for SSR compatibility
-  const elementId = id || `text-input-${Math.random().toString(36).slice(2, 9)}`;
-  const errorId = `${elementId}-error`;
+  const elementId = id ?? `text-input-${name}`;
+  const errorId = `${name}-error`;
   const [passwordShown, setPasswordShown] = useState(false);
   const isPasswordButtonVisible = type === 'password';
   const inputClass = getClassName([styles.wrapper, className]);
@@ -68,26 +67,15 @@ const TextInputStateless: FC<TextInputProps> = ({
         onFocus={onFocus}
         tabIndex={tabIndex}
       >
-        <span>
-          {clearable && (
-            <Button
-              view={ButtonView.Inner}
-              onClick={handleClear}
-              label={`Clear input for ${label}`}
-              icon={IconName.Remove}
-              disabled={disabled}
-            />
-          )}
-          {isPasswordButtonVisible && (
-            <Button
-              onClick={togglePassword}
-              view={ButtonView.Inner}
-              label="Toggle password visibility"
-              icon={passwordShown ? IconName.Hide : IconName.Show}
-              disabled={disabled}
-            />
-          )}
-        </span>
+        <TextInputButtons
+          clearable={clearable}
+          isPasswordButtonVisible={isPasswordButtonVisible}
+          handleClear={handleClear}
+          togglePassword={togglePassword}
+          passwordShown={passwordShown}
+          label={label}
+          disabled={disabled}
+        />
         <ErrorMessage
           errorId={errorId}
           message={errorMessage}

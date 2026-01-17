@@ -29,9 +29,8 @@ const NumericInputStateless: FC<NumericInputProps> = ({
   value,
   ...rest
 }) => {
-  // Generate errorId from id prop without useElementIds hook for SSR compatibility
-  const elementId = id || `numeric-input-${Math.random().toString(36).slice(2, 9)}`;
-  const errorId = `${elementId}-error`;
+  const elementId = id ?? `numeric-input-${name}`;
+  const errorId = `${name}-error`;
   const inputClass = getClassName([styles.numeric, className]);
 
   return (

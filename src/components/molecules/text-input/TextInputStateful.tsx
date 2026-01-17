@@ -1,5 +1,4 @@
-import { Button, ErrorMessage, Input, Label } from '@components/atoms';
-import { ButtonView, IconName } from '@enums';
+import { ErrorMessage, Input, Label } from '@components/atoms';
 import { useElementIds } from '@hooks';
 import type { TextInputProps } from '@types';
 import { getClassName } from '@utils';
@@ -7,6 +6,7 @@ import type { FC } from 'react';
 
 import { useTextInputController } from './TextInput.controller';
 import styles from './TextInput.module.scss';
+import TextInputButtons from './TextInputButtons';
 
 const TextInputStateful: FC<TextInputProps> = ({
   name,
@@ -66,26 +66,15 @@ const TextInputStateful: FC<TextInputProps> = ({
         onFocus={onFocus}
         tabIndex={tabIndex}
       >
-        <span>
-          {clearable && (
-            <Button
-              view={ButtonView.Inner}
-              onClick={handleClear}
-              label={`Clear input for ${label}`}
-              icon={IconName.Remove}
-              disabled={disabled}
-            />
-          )}
-          {isPasswordButtonVisible && (
-            <Button
-              onClick={togglePassword}
-              view={ButtonView.Inner}
-              label="Toggle password visibility"
-              icon={passwordShown ? IconName.Hide : IconName.Show}
-              disabled={disabled}
-            />
-          )}
-        </span>
+        <TextInputButtons
+          clearable={clearable}
+          isPasswordButtonVisible={isPasswordButtonVisible}
+          handleClear={handleClear}
+          togglePassword={togglePassword}
+          passwordShown={passwordShown}
+          label={label}
+          disabled={disabled}
+        />
         <ErrorMessage
           errorId={errorId}
           message={errorMessage}

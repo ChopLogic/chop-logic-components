@@ -20,8 +20,7 @@ const CheckboxStateless: FC<CheckboxProps> = ({
   style,
   tabIndex,
 }) => {
-  // Generate elementId from id prop without useElementIds hook for SSR compatibility
-  const elementId = id || `checkbox-${Math.random().toString(36).slice(2, 9)}`;
+  const elementId = id ?? `checkbox-${name}`;
   const checkboxClass = getClassName([
     styles.checkbox,
     className,

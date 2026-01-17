@@ -1,1 +1,0 @@
-import{r as e}from"./iframe-C2ng--48.js";const o=e.createContext({});try{o.displayName="FormContext",o.__docgenInfo={description:"",displayName:"FormContext",props:{}}}catch(t){}const a=t=>{const{resetSignal:r}=e.useContext(o);e.useEffect(()=>{r&&t()},[r,t])};export{o as F,a as u};

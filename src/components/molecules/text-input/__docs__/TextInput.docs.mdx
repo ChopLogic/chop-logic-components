@@ -5,28 +5,45 @@ import * as TextInput from './TextInput.stories';
 
 # TextInput
 
-The `TextInput` component provides a flexible, accessible text input field with validation, clear button, and password visibility toggle.
+The `TextInput` component is a flexible text input field that supports both stateful and stateless modes. It includes validation, clear button, and password visibility toggle features.
 
 ## Usage
+
+### Stateful (Default)
+
+When `stateless` is false or omitted, the component manages its own state internally. Perfect for simple forms where you don't need external control.
 
 ```tsx
 import TextInput from 'chop-logic-components';
 
-const LoginForm = () => {
-  const [email, setEmail] = React.useState('');
+<TextInput
+  name="email"
+  label="Email address"
+  type="email"
+  placeholder="Enter your email"
+  required
+  onChange={(event) => console.log(event)}
+/>;
+```
 
-  return (
-    <TextInput
-      name="email"
-      label="Email address"
-      type="email"
-      placeholder="Enter your email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      required
-    />
-  );
-};
+### Stateless
+
+When `stateless` is true, the component is fully controlled via the `value` prop. You manage state externally and provide all handlers.
+
+```tsx
+import TextInput from 'chop-logic-components';
+
+const [message, setMessage] = useState('');
+
+<TextInput
+  name="message"
+  label="Your Message"
+  stateless
+  value={message}
+  placeholder="Type your message..."
+  onChange={(event) => setMessage(event.target.value)}
+  onClear={() => setMessage('')}
+/>;
 ```
 
 ## Best Practices
@@ -43,6 +60,9 @@ const LoginForm = () => {
    - Ensure clear focus states for all interactive elements
    - Ensure Clear and Password Toggle buttons are keyboard accessible
    - Use ARIA attributes for dynamic content updates
+4. _Controlled vs Uncontrolled_:
+   - Use stateful mode (default) for simple, isolated inputs
+   - Use stateless mode when you need fine-grained control or integration with state management
 
 ## Props
 

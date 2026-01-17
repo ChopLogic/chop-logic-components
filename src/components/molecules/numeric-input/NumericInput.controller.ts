@@ -16,7 +16,8 @@ export function useNumericInputController({
   name,
   defaultValue,
   onChange,
-  onSpinButtonClick,
+  onDecrement,
+  onIncrement,
   min,
   max,
   step,
@@ -26,7 +27,8 @@ export function useNumericInputController({
   name: string;
   defaultValue?: string | number | readonly string[];
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onSpinButtonClick?: (value?: number) => void;
+  onIncrement?: () => void;
+  onDecrement?: () => void;
   min?: string | number;
   max?: string | number;
   step: number;
@@ -59,14 +61,14 @@ export function useNumericInputController({
     onChange?.(event);
   };
 
-  const increment = () => {
+  const handleIncrement = () => {
     updateValue(value + step);
-    onSpinButtonClick?.(value + step);
+    onIncrement?.();
   };
 
-  const decrement = () => {
+  const handleDecrement = () => {
     updateValue(value - step);
-    onSpinButtonClick?.(value - step);
+    onDecrement?.();
   };
 
   const handleReset = useCallback(() => {
@@ -83,7 +85,7 @@ export function useNumericInputController({
     valid,
     minValue,
     maxValue,
-    increment,
-    decrement,
+    handleIncrement,
+    handleDecrement,
   };
 }

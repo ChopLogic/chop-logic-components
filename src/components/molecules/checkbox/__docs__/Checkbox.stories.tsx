@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 
 import type Checkbox from '../Checkbox';
 import { CheckboxExample } from './Checkbox.example';
@@ -66,6 +67,24 @@ const meta: Meta<typeof Checkbox> = {
     noLabel: {
       control: 'boolean',
       description: 'Whether to hide the label visually (still accessible to screen readers)',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'Behavior',
+      },
+    },
+    stateless: {
+      control: 'boolean',
+      description:
+        'When true, the checkbox is stateless and controlled externally via the checked prop',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    checked: {
+      control: 'boolean',
+      description: 'The external checked state (used when stateless is true)',
       table: {
         type: { summary: 'boolean' },
         category: 'Behavior',
@@ -159,11 +178,28 @@ export const RightIconCheckbox: Story = {
     defaultChecked: false,
     iconPosition: 'right',
   },
-  argTypes: {
-    iconPosition: {
-      control: 'select',
-      options: ['left', 'right'],
-    },
+};
+
+export const Stateless: Story = {
+  args: {
+    id: 'newsletter-checkbox',
+    name: 'subscribeNewsletter',
+    label: 'Subscribe to newsletter',
+    stateless: true,
+    checked: true,
+    required: false,
+    disabled: false,
+    noLabel: false,
+    iconPosition: 'left',
+  },
+  render: (args) => {
+    const [isSubscribed, setIsSubscribed] = useState(args.checked ?? false);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setIsSubscribed(event.target.checked);
+    };
+
+    return <CheckboxExample {...args} checked={isSubscribed} onChange={handleChange} />;
   },
 };
 

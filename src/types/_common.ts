@@ -13,6 +13,8 @@ export interface ChopLogicInputProps extends ChopLogicComponentProps {
   name: string;
   disabled?: boolean;
   required?: boolean;
+  stateless?: boolean;
+  value?: string | number | readonly string[];
 }
 
 export type SelectValue = {

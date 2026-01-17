@@ -1,4 +1,5 @@
 import { Button } from '@components/atoms';
+import { NumericInput } from '@components/molecules';
 import styles from '@styles/storybook/Container.module.scss';
 import { useId, useState } from 'react';
 import { useRemainingTimer } from '../use-remaining-timer';
@@ -32,24 +33,18 @@ export const InteractiveRemainingTimerDemo = ({
       className={styles.container}
     >
       <div>
-        <label htmlFor={delayInputId} style={{ display: 'block', marginBottom: '0.5rem' }}>
-          <strong>Auto-close delay (ms):</strong>
-        </label>
-        <input
+        <NumericInput
+          stateless
+          label="Auto-close delay (ms):"
           id={delayInputId}
-          type="number"
-          min="1000"
-          max="10000"
-          step="500"
+          name={delayInputId}
+          min={1000}
+          max={10000}
+          step={500}
           value={autoCloseDelay}
           onChange={(e) => setAutoCloseDelay(Number(e.target.value))}
-          style={{
-            padding: '0.5rem',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            width: '100%',
-            boxSizing: 'border-box',
-          }}
+          onIncrement={() => setAutoCloseDelay(autoCloseDelay + 500)}
+          onDecrement={() => setAutoCloseDelay(autoCloseDelay - 500)}
         />
       </div>
 

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 
 import { NumericInputExample } from './NumericInput.example';
 
@@ -64,6 +65,23 @@ const meta: Meta<typeof NumericInputExample> = {
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'true' },
+        category: 'Behavior',
+      },
+    },
+    stateless: {
+      control: 'boolean',
+      description: 'When true, the input is stateless and controlled externally via the value prop',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    value: {
+      control: 'number',
+      description: 'The external numeric value (used when stateless is true)',
+      table: {
+        type: { summary: 'number' },
         category: 'Behavior',
       },
     },
@@ -143,9 +161,17 @@ const meta: Meta<typeof NumericInputExample> = {
         category: 'Interaction',
       },
     },
-    onSpinButtonClick: {
-      action: 'spinButtonClicked',
-      description: 'Callback function triggered when spin buttons are clicked',
+    onIncrement: {
+      action: 'incremented',
+      description: 'Callback function triggered when the increment button is clicked',
+      table: {
+        type: { summary: '(value?: number) => void' },
+        category: 'Interaction',
+      },
+    },
+    onDecrement: {
+      action: 'decremented',
+      description: 'Callback function triggered when the decrement button is clicked',
       table: {
         type: { summary: '(value?: number) => void' },
         category: 'Interaction',
@@ -191,7 +217,7 @@ const meta: Meta<typeof NumericInputExample> = {
 export default meta;
 type Story = StoryObj<typeof NumericInputExample>;
 
-export const Example: Story = {
+export const StatefulWithValidation: Story = {
   args: {
     name: 'age',
     label: 'Enter your age:',
@@ -206,5 +232,46 @@ export const Example: Story = {
     hasSpinButtons: true,
     errorMessage: 'Enter a number between 1 and 99',
     validator: (age) => !!age && age >= 1 && age < 100,
+  },
+};
+
+export const Stateless: Story = {
+  args: {
+    name: 'product-quantity',
+    label: 'Product Quantity:',
+    id: 'quantity-input',
+    stateless: true,
+    value: 5,
+    max: 50,
+    min: 1,
+    step: 1,
+    disabled: false,
+    readOnly: false,
+    hasSpinButtons: true,
+  },
+  render: (args) => {
+    const [quantity, setQuantity] = useState(args.value || 5);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setQuantity(Number(event.target.value));
+    };
+
+    const handleIncrement = () => {
+      setQuantity((prev) => Math.min(prev + (args.step || 1), args.max || 50));
+    };
+
+    const handleDecrement = () => {
+      setQuantity((prev) => Math.max(prev - (args.step || 1), args.min || 1));
+    };
+
+    return (
+      <NumericInputExample
+        {...args}
+        value={quantity}
+        onChange={handleChange}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+      />
+    );
   },
 };

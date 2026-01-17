@@ -124,14 +124,22 @@ describe('NumericInput', () => {
     expect(screen.getByLabelText(`Increment value for ${testProps.label}`)).toBeDisabled();
   });
 
-  it('should call onSpinButtonClick', async () => {
-    const mockedCallback = vi.fn();
-    render(<NumericInput {...testProps} onSpinButtonClick={mockedCallback} />);
+  it('should call increment and decrement callbacks', async () => {
+    const mockedIncrementCallback = vi.fn();
+    const mockedDecrementCallback = vi.fn();
+    render(
+      <NumericInput
+        {...testProps}
+        onIncrement={mockedIncrementCallback}
+        onDecrement={mockedDecrementCallback}
+      />,
+    );
 
     await userEvent.click(screen.getByLabelText(`Increment value for ${testProps.label}`));
     await userEvent.click(screen.getByLabelText(`Decrement value for ${testProps.label}`));
 
-    expect(mockedCallback).toHaveBeenCalledTimes(2);
+    expect(mockedIncrementCallback).toHaveBeenCalledTimes(1);
+    expect(mockedDecrementCallback).toHaveBeenCalledTimes(1);
   });
 
   it('should take an initial value from the form context', async () => {
@@ -176,5 +184,98 @@ describe('NumericInput', () => {
     fireEvent.change(input, { target: { value: '4' } });
     const errorMessage = await screen.findByText('Incorrect value');
     expect(errorMessage).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  // Stateless mode tests
+  describe('Stateless mode', () => {
+    it('should use stateless value when stateless prop is true', () => {
+      const { rerender } = render(
+        <NumericInput {...testProps} stateless value={42} onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByRole('spinbutton');
+      expect(input).toHaveValue(42);
+
+      rerender(<NumericInput {...testProps} stateless value={99} onChange={vi.fn()} />);
+      expect(input).toHaveValue(99);
+    });
+
+    it('should call onChange when input changes in stateless mode', () => {
+      const handleChange = vi.fn();
+      render(<NumericInput {...testProps} stateless value={10} onChange={handleChange} />);
+
+      const input = screen.getByRole('spinbutton');
+      fireEvent.change(input, { target: { value: '15' } });
+
+      expect(handleChange).toHaveBeenCalledTimes(1);
+    });
+
+    it('should use stateless min/max constraints when stateless is true', () => {
+      render(
+        <NumericInput {...testProps} stateless value={5} min={1} max={10} onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByRole('spinbutton');
+      expect(input).toHaveAttribute('min', '1');
+      expect(input).toHaveAttribute('max', '10');
+    });
+
+    it('should call onIncrement in stateless mode', async () => {
+      const mockedIncrement = vi.fn();
+      render(
+        <NumericInput
+          {...testProps}
+          stateless
+          value={5}
+          onChange={vi.fn()}
+          onIncrement={mockedIncrement}
+        />,
+      );
+
+      await userEvent.click(screen.getByLabelText(`Increment value for ${testProps.label}`));
+
+      expect(mockedIncrement).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call onDecrement in stateless mode', async () => {
+      const mockedDecrement = vi.fn();
+      render(
+        <NumericInput
+          {...testProps}
+          stateless
+          value={5}
+          onChange={vi.fn()}
+          onDecrement={mockedDecrement}
+        />,
+      );
+
+      await userEvent.click(screen.getByLabelText(`Decrement value for ${testProps.label}`));
+
+      expect(mockedDecrement).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not update internal state when stateless is true', async () => {
+      const { rerender } = render(
+        <NumericInput {...testProps} stateless value={10} onChange={vi.fn()} />,
+      );
+
+      const input = screen.getByRole('spinbutton');
+      fireEvent.change(input, { target: { value: '20' } });
+
+      // Input should still show 10 because stateless mode doesn't update internal state
+      expect(input).toHaveValue(10);
+
+      // Only update when parent re-renders with new value
+      rerender(<NumericInput {...testProps} stateless value={20} onChange={vi.fn()} />);
+      expect(input).toHaveValue(20);
+    });
+
+    it('should render correctly with stateless mode and no value prop', () => {
+      render(<NumericInput {...testProps} stateless onChange={vi.fn()} />);
+
+      const input = screen.getByRole('spinbutton');
+      expect(input).toBeInTheDocument();
+      expect(input).toHaveValue(null);
+    });
   });
 });

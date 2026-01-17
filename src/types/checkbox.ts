@@ -7,4 +7,5 @@ export interface CheckboxProps extends ChopLogicInputProps {
   iconPosition?: 'left' | 'right';
   onChange?: ChangeEventHandler<HTMLInputElement>;
   defaultChecked?: boolean;
+  checked?: boolean;
 }

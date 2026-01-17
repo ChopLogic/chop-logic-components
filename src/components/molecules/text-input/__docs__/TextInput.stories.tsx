@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 
 import { TextInputExample } from './TextInput.example';
 
@@ -124,6 +125,23 @@ const meta: Meta<typeof TextInputExample> = {
       description: 'HTML autocomplete attribute value',
       table: {
         type: { summary: 'HTMLInputAutoCompleteAttribute' },
+        category: 'Behavior',
+      },
+    },
+    stateless: {
+      control: 'boolean',
+      description: 'When true, the input is stateless and controlled externally via the value prop',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    value: {
+      control: 'text',
+      description: 'The external string value (used when stateless is true)',
+      table: {
+        type: { summary: 'string' },
         category: 'Behavior',
       },
     },
@@ -263,5 +281,35 @@ export const EmailInput: Story = {
       options: ['text', 'email', 'password'],
     },
     validator: { control: 'object' },
+  },
+};
+
+export const Stateless: Story = {
+  args: {
+    name: 'message',
+    label: 'Your Message:',
+    id: 'message-input',
+    stateless: true,
+    value: 'Hello',
+    placeholder: 'Type your message...',
+    type: 'text',
+    disabled: false,
+    readOnly: false,
+    clearable: true,
+  },
+  render: (args) => {
+    const [message, setMessage] = useState(args.value || '');
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setMessage(event.target.value);
+    };
+
+    const handleClear = () => {
+      setMessage('');
+    };
+
+    return (
+      <TextInputExample {...args} value={message} onChange={handleChange} onClear={handleClear} />
+    );
   },
 };

@@ -5,37 +5,54 @@ import * as CheckboxStories from './Checkbox.stories';
 
 # Checkbox
 
-The `Checkbox` component provides a customizable, accessible checkbox input with label support, validation states, and flexible icon positioning.
+The `Checkbox` component is a customizable, accessible checkbox input that supports both stateful and stateless modes. It includes label support, validation states, and flexible icon positioning.
 
 ## Usage
+
+### Stateful (Default)
+
+When `stateless` is false or omitted, the component manages its own state internally. Perfect for simple forms where you don't need external control.
 
 ```tsx
 import Checkbox from 'chop-logic-components';
 
-const PreferencesForm = () => {
-  const [newsletter, setNewsletter] = React.useState(false);
+<Checkbox
+  name="newsletter"
+  label="Subscribe to newsletter"
+  defaultChecked={false}
+  onChange={(event) => console.log(event)}
+/>;
+```
 
-  return (
-    <form>
-      <Checkbox
-        name="newsletter"
-        label="Subscribe to newsletter"
-        checked={newsletter}
-        onChange={(e) => setNewsletter(e.target.checked)}
-      />
-    </form>
-  );
-};
+### Stateless
+
+When `stateless` is true, the component is fully controlled via the `checked` prop. You manage state externally and provide all handlers.
+
+```tsx
+import Checkbox from 'chop-logic-components';
+
+const [isSubscribed, setIsSubscribed] = useState(false);
+
+<Checkbox
+  name="newsletter"
+  label="Subscribe to newsletter"
+  stateless
+  checked={isSubscribed}
+  onChange={(event) => setIsSubscribed(event.target.checked)}
+/>;
 ```
 
 ## Best Practices
 
 1. _Label Clarity_: Use clear, concise labels that describe the action.
 2. _Grouping_: Use consistent icon positioning within groups.
-3. _Default States_: Set sensible defaults for defaultChecked.
+3. _Default States_: Set sensible defaults for defaultChecked (stateful) or checked (stateless).
 4. _Spacing_: Maintain consistent spacing between checkboxes.
 5. _Feedback_: Provide immediate visual feedback on state changes.
-6. _Accessibility Notes_:
+6. _Controlled vs Uncontrolled_:
+   - Use stateful mode (default) for simple, isolated checkboxes
+   - Use stateless mode when you need fine-grained control or integration with state management
+7. _Accessibility Notes_:
    - Always provide a meaningful label prop (even when using noLabel);
    - Use required prop for form validation requirements;
    - Ensure proper color contrast for all states;

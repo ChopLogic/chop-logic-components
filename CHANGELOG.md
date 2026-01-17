@@ -8,6 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Upgraded npm dependencies
+- Updated README.md
+
+## [3.7.1] - 2026-01-17
+
+### Changed
+
 - Refactored `TextInput` component with stateless mode support
 - Refactored `NumericInput` component with stateless mode support
 - Refactored `Checkbox` component with stateless mode support

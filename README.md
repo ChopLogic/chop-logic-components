@@ -14,16 +14,6 @@
 [![Keep a changelog](https://img.shields.io/badge/Keep%20a%20changelog-1.1.0-E05735?logo=keep-a-changelog&labelColor)](https://keepachangelog.com/en/1.1.0/)
 [![Semantic versioning](https://img.shields.io/badge/SemVer-2.0.0-3F4551?logo=semver&labelColor)](https://semver.org/spec/v2.0.0)
 
-buhtz
-on Oct 14, 2024
-
-Interesting. The first use case for a badge that make sense to me. How do you count unreleased changes? Number of commit since the last release tag? Or commits with a specific tag (e.g. feat: commit msg) or entries in the first section (unreleased) of the CHANGELOG?
-charphi
-on Oct 14, 2024
-
-I'm just counting the entries in the first section (unreleased) of the CHANGELOG.md
-
-
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
 

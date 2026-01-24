@@ -31,6 +31,7 @@
     "typecheck": "tsc --pretty --noEmit",
     "test": "vitest",
     "test:ci": "vitest run --passWithNoTests",
+    "test:mutation": "stryker run",
     "coverage": "vitest run --coverage",
     "release:version": "node scripts/release-version.js"
   },
@@ -68,6 +69,8 @@
     "@storybook/addon-a11y": "^10.2.0",
     "@storybook/addon-docs": "^10.2.0",
     "@storybook/react-vite": "^10.2.0",
+    "@stryker-mutator/core": "^9.4.0",
+    "@stryker-mutator/vitest-runner": "^9.4.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^25.0.10",

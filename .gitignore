@@ -138,3 +138,6 @@ dist
 #storybook build directory
 storybook-static
 *storybook.log
+
+# stryker temp files
+.stryker-tmp

@@ -65,6 +65,7 @@
     "@biomejs/biome": "^2.3.12",
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
+    "@storybook/addon-a11y": "^10.2.0",
     "@storybook/addon-docs": "^10.2.0",
     "@storybook/react-vite": "^10.2.0",
     "@testing-library/jest-dom": "^6.9.1",

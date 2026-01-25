@@ -1,0 +1,1 @@
+import{r as u}from"./iframe-CD-frcvH.js";function m(t,r=!0){const[a,s]=u.useState(!1);return u.useEffect(()=>{const e=t.current;if(!e||!r)return;const n=()=>s(!0),o=()=>s(!1);return e.addEventListener("mouseenter",n),e.addEventListener("mouseleave",o),()=>{e.removeEventListener("mouseenter",n),e.removeEventListener("mouseleave",o)}},[t,r]),a}export{m as u};

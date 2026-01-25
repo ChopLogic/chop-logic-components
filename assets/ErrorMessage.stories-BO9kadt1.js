@@ -1,0 +1,9 @@
+var d=Object.defineProperty,g=Object.defineProperties;var y=Object.getOwnPropertyDescriptors;var i=Object.getOwnPropertySymbols;var u=Object.prototype.hasOwnProperty,p=Object.prototype.propertyIsEnumerable;var n=(r,e,t)=>e in r?d(r,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):r[e]=t,o=(r,e)=>{for(var t in e||(e={}))u.call(e,t)&&n(r,t,e[t]);if(i)for(var t of i(e))p.call(e,t)&&n(r,t,e[t]);return r},a=(r,e)=>g(r,y(e));import{E as b}from"./ErrorMessage-BdcIUYTL.js";const f={title:"Atoms/ErrorMessage",component:b,argTypes:{message:{control:"text",description:"The error message text to display",table:{type:{summary:"string"},category:"Content"}},visible:{control:"boolean",description:"Controls whether the error message is visible",table:{type:{summary:"boolean"},category:"State"}},className:{control:"text",description:"Additional CSS class names for custom styling",table:{type:{summary:"string"},category:"Styling"}},errorId:{control:"text",description:"Unique ID for the error message, used for accessibility with aria-describedby",table:{type:{summary:"string"},category:"Accessibility"}},testId:{control:"text",description:"Test ID used for automated testing",table:{type:{summary:"string"},category:"Testing"}}}},s={args:{errorId:"error-id",visible:!0,message:"Incorrect value",testId:"test-id",className:"test-class"}};var c,l,m;s.parameters=a(o({},s.parameters),{docs:a(o({},(c=s.parameters)==null?void 0:c.docs),{source:o({originalSource:`{
+  args: {
+    errorId: 'error-id',
+    visible: true,
+    message: 'Incorrect value',
+    testId: 'test-id',
+    className: 'test-class'
+  }
+}`},(m=(l=s.parameters)==null?void 0:l.docs)==null?void 0:m.source)})});const I=["Default"],x=Object.freeze(Object.defineProperty({__proto__:null,Default:s,__namedExportsOrder:I,default:f},Symbol.toStringTag,{value:"Module"}));export{x as E};

@@ -27,19 +27,21 @@ const NumericInputStateless: FC<NumericInputProps> = ({
   step = 1,
   className,
   value,
-  ...rest
+  defaultValue,
+  style,
 }) => {
   const elementId = id ?? `numeric-input-${name}`;
   const errorId = `${name}-error`;
   const inputClass = getClassName([styles.numeric, className]);
 
   return (
-    <div {...rest} className={inputClass}>
+    <div style={style} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
         name={name}
         type="number"
+        defaultValue={defaultValue}
         disabled={disabled}
         required={required}
         readOnly={readOnly}

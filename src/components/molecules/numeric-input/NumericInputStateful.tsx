@@ -30,7 +30,7 @@ const NumericInputStateful: FC<NumericInputProps> = ({
   defaultValue = 0,
   step = 1,
   className,
-  ...rest
+  style,
 }) => {
   const { elementId, errorId } = useElementIds(id);
   const { value, valid, handleChange, handleDecrement, handleIncrement, minValue, maxValue } =
@@ -49,7 +49,7 @@ const NumericInputStateful: FC<NumericInputProps> = ({
   const inputClass = getClassName([styles.numeric, className]);
 
   return (
-    <div {...rest} className={inputClass}>
+    <div style={style} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}

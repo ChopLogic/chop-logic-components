@@ -31,6 +31,21 @@ describe('useRemainingTimer', () => {
     expect(result.current).toBe(100);
   });
 
+  it('returns default value when autoClose is false', () => {
+    const onClose = vi.fn();
+    const { result } = renderHook(() =>
+      useRemainingTimer({
+        isOpened: true,
+        isHovered: false,
+        onClose,
+        autoCloseDelay: 1000,
+        autoClose: false,
+      }),
+    );
+
+    expect(result.current).toBe(100);
+  });
+
   it('pauses timer when hovered', () => {
     const onClose = vi.fn();
     renderHook(

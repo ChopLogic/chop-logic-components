@@ -4,6 +4,7 @@ type UseRemainingTimerProps = {
   isOpened: boolean;
   isHovered: boolean;
   onClose: () => void;
+  autoClose?: boolean;
   autoCloseDelay?: number;
 };
 
@@ -11,6 +12,7 @@ export function useRemainingTimer({
   isOpened,
   isHovered,
   onClose,
+  autoClose = true,
   autoCloseDelay = 3000,
 }: UseRemainingTimerProps) {
   const [remainingPercentage, setRemainingPercentage] = useState(100);
@@ -19,6 +21,8 @@ export function useRemainingTimer({
   const animationFrameRef = useRef<number>(0);
 
   useEffect(() => {
+    if (!autoClose) return;
+
     if (!isOpened) {
       setRemainingPercentage(100);
       elapsedTimeRef.current = 0;
@@ -59,7 +63,7 @@ export function useRemainingTimer({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isOpened, isHovered, onClose, autoCloseDelay]);
+  }, [isOpened, isHovered, onClose, autoCloseDelay, autoClose]);
 
   return remainingPercentage;
 }

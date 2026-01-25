@@ -29,7 +29,7 @@ const TextInputStateful: FC<TextInputProps> = ({
   autoComplete = 'off',
   type = 'text',
   className,
-  ...rest
+  style,
 }) => {
   const { value, valid, handleChange, handleClear, passwordShown, togglePassword } =
     useTextInputController({
@@ -45,7 +45,7 @@ const TextInputStateful: FC<TextInputProps> = ({
   const inputClass = getClassName([styles.wrapper, className]);
 
   return (
-    <div {...rest} className={inputClass}>
+    <div style={style} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}

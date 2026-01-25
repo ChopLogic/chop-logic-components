@@ -4,6 +4,24 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.7.3] - 2026-01-25
+
+### Added
+
+- a11ty plugin for Storybook accessibility testing
+- added Stryker configuration for mutation testing
+- added mutation testing workflow for GitHub actions
+
+### Changed
+
+- Updated `TextInput` component to filter out incorrect props from DOM
+- Updated `NumericInput` component to filter out incorrect props from DOM
+
+### Fixed
+
+- Fixed auto-close functionality for Alert component
+
+
 ## [3.7.2] - 2026-01-17
 
 ### Changed

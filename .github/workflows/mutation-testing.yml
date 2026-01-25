@@ -1,0 +1,75 @@
+name: mutation testing
+
+on:
+  schedule:
+    # Monthly: First day of each month at 2 AM UTC
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+
+jobs:
+  mutation-testing:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run mutation tests
+        run: npm run test:mutation
+
+      - name: Upload mutation report to artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mutation-report
+          path: reports/mutation/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Deploy mutation report to separate branch
+        if: always()
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports/mutation
+          destination_dir: ./reports/${{ github.run_number }}
+          publish_branch: mutation-reports
+          keep_files: true
+
+      - name: Comment PR with mutation score (if applicable)
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const reportPath = path.join(process.env.GITHUB_WORKSPACE, 'reports/mutation/metrics.json');
+            
+            if (fs.existsSync(reportPath)) {
+              const metrics = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+              const score = metrics.score?.toFixed(2) || 'N/A';
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## Mutation Testing Report\n\n**Mutation Score:** ${score}%\n\nFull report available in [artifacts](${context.payload.pull_request.html_url}/checks).`
+              });
+            }
+
+      - name: Clean up mutation reports from workflow
+        if: always()
+        run: rm -rf reports/mutation

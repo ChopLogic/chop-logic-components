@@ -141,3 +141,5 @@ storybook-static
 
 # stryker temp files
 .stryker-tmp
+# Generated reports
+reports/

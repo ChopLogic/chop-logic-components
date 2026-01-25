@@ -26,7 +26,8 @@ const TextInputStateless: FC<TextInputProps> = ({
   autoComplete = 'off',
   type = 'text',
   className,
-  ...rest
+  style,
+  defaultValue,
 }) => {
   const elementId = id ?? `text-input-${name}`;
   const errorId = `${name}-error`;
@@ -46,7 +47,7 @@ const TextInputStateless: FC<TextInputProps> = ({
   };
 
   return (
-    <div {...rest} className={inputClass}>
+    <div style={style} className={inputClass}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
@@ -56,6 +57,7 @@ const TextInputStateless: FC<TextInputProps> = ({
         placeholder={placeholder}
         required={required}
         readOnly={readOnly}
+        defaultValue={defaultValue}
         autoComplete={autoComplete}
         aria-invalid={!!errorMessage}
         aria-errormessage={errorId}

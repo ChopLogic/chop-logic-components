@@ -95,6 +95,13 @@ describe('Alert', () => {
     });
   });
 
+  it('should not render the close button if autoClose is true', () => {
+    const onCloseMock = vi.fn();
+    renderAlert({ isOpened: true, onClose: onCloseMock, autoClose: true });
+    const closeButton = screen.queryByRole('button', { name: /close/i });
+    expect(closeButton).not.toBeInTheDocument();
+  });
+
   it('should render progress bar when autoClose is true', async () => {
     renderAlert({ isOpened: true, autoClose: true });
     const progressBar = screen.getByRole('progressbar');

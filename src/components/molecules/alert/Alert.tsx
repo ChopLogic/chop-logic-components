@@ -24,6 +24,7 @@ const Alert: FC<AlertProps> = ({
   const isClosing = isMounted && !isOpened;
   const containerRef = useRef<HTMLDivElement>(null);
   const isHovered = useIsHovered(containerRef, isMounted);
+  const isCloseButtonVisible = !autoClose;
 
   const remainingPercentage = useRemainingTimer({
     isOpened: isMounted,
@@ -44,13 +45,15 @@ const Alert: FC<AlertProps> = ({
         className={getClassName([styles.wrapper, { [styles.wrapper__closing]: isClosing }])}
       >
         <div {...rest} className={styles.content}>
-          <Button
-            icon={IconName.Cancel}
-            view={ButtonView.Icon}
-            label="Close alert popup"
-            onClick={onClose}
-            className={styles.content_button}
-          />
+          {isCloseButtonVisible && (
+            <Button
+              icon={IconName.Cancel}
+              view={ButtonView.Icon}
+              label="Close alert"
+              onClick={onClose}
+              className={styles.content_button}
+            />
+          )}
           <header>
             <Header icon={alertTitleIcon} as="h3">
               {alertTitle}

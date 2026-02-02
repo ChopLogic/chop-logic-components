@@ -8,11 +8,11 @@
 
 <!-- List major changes made in this PR. Mark with x -->
 
-- [ ] Bug fix (non-breaking change that fixes an issue)
-- [ ] New feature (non-breaking change that adds functionality)
-- [ ] Documentation update or refactoring
+- [ ] New feature
+- [ ] Bug fix
+- [ ] Storybook update
 - [ ] Tests update
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Breaking change
 
 ## 📝 Additional Context & Screenshots
 

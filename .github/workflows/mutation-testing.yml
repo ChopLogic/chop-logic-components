@@ -1,4 +1,4 @@
-name: mutation testing
+name: Mutation Testing
 
 on:
   schedule:

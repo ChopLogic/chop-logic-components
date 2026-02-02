@@ -1,5 +1,5 @@
 name: Bug Report
-description: File a bug report.
+description: File a bug report
 title: "[Bug]: "
 labels: ["Components"]
 projects: ["ChopLogic/1"]
@@ -17,7 +17,7 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: input
     id: expected_behavior
     attributes:
       label: Expected Behavior
@@ -26,7 +26,7 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: input
     id: actual_behavior
     attributes:
       label: Actual Behavior

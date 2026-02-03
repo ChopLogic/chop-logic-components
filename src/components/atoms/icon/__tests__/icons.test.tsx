@@ -1,7 +1,7 @@
-import { IconDictionary } from '@assets/icons';
 import type { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import { IconDictionary } from '../Icon';
 
 describe('SVG Icons', () => {
   it('should match the snapshot', () => {

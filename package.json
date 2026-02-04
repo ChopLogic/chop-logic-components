@@ -16,7 +16,7 @@
   "sideEffects": false,
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "build": "tsc && vite build",
+    "build": "tsc -p ./tsconfig.build.json && vite build",
     "build:storybook": "storybook build",
     "prepare": "npm run build && husky",
     "format": "npm run format:biome && npm run format:prettier",

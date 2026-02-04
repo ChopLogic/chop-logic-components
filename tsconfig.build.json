@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": false,
+    "declaration": true,
+    "moduleDetection": "force",
+    "allowImportingTsExtensions": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 0,
+    "outDir": "./dist",
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "reports",
+    "coverage",
+    "src/**/__tests__/**",
+    "src/**/__docs__/**",
+    "src/**/stories/**",
+    "src/**/*.test.*",
+    "src/**/*.spec.*"
+  ]
+}

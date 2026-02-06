@@ -28,6 +28,7 @@ export default defineConfig({
         },
       },
     },
+    copyPublicDir: false,
     sourcemap: true,
     emptyOutDir: true,
     minify: 'esbuild', // Minify the output

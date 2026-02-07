@@ -3,11 +3,9 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { defineConfig } from 'vite';
-// import dts from 'vite-plugin-dts';
+import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { coverageConfigDefaults } from 'vitest/config';
-
-import { peerDependencies } from './package.json';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -17,14 +15,14 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/main.ts'),
       name: 'chop-logic-components',
       fileName: (format) => `index.${format}.js`,
-      formats: ['cjs', 'es'],
+      formats: ['es'],
     },
     rollupOptions: {
-      external: Object.keys(peerDependencies),
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
-        exports: 'named', // Enable tree shaking
-        compact: true, // Minify output
-        preserveModules: false, // Preserve module structure for better tree shaking (Set to false for single bundle)
+        exports: 'named',
+        compact: true,
+        preserveModules: false,
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
@@ -32,19 +30,16 @@ export default defineConfig({
       },
     },
     copyPublicDir: false,
-    sourcemap: true,
-    minify: 'esbuild', // Minify the output
-    target: 'es2015', // Enable better tree shaking
-    cssCodeSplit: true, // Enable CSS code splitting
-    cssMinify: true, // Minify CSS
-    emptyOutDir: false,
+    cssCodeSplit: true,
+    cssMinify: true,
+    emptyOutDir: true,
   },
   plugins: [
-    // dts({
-    //   exclude: ['**/__tests__/**', '**/__docs__/**', '**/stories/**', '**/*.test.*', '**/*.spec.*'],
-    //   insertTypesEntry: true,
-    //   rollupTypes: true, // Bundles all declarations into one file
-    // }),
+    dts({
+      tsconfigPath: 'tsconfig.build.json',
+      insertTypesEntry: true,
+      rollupTypes: true, // Bundles all declarations into one file
+    }),
     libInjectCss(),
   ],
   resolve: {
@@ -64,6 +59,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
     coverage: {
+      reporter: ['text', 'lcov', 'clover'],
       exclude: [
         '**/docs/**',
         'scripts/**',
@@ -73,7 +69,10 @@ export default defineConfig({
         '**/storybook-static/**',
         ...coverageConfigDefaults.exclude,
       ],
-      reporter: ['text', 'lcov', 'clover'],
+      thresholds: {
+        functions: 95, // Requires 95% function coverage
+        lines: -10, // Require that no more than 10 lines are uncovered
+      },
     },
   },
 });

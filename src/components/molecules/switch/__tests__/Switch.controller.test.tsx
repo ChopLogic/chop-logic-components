@@ -1,8 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
-import type { FormContextProps } from '@types';
 import { type KeyboardEvent, useEffect } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { FormContext } from '../../../contexts';
+import { FormContext, type FormContextProps } from '../../../contexts';
 import { useSwitchController } from '../Switch.controller';
 
 // Mock the dependencies

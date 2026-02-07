@@ -7,16 +7,18 @@
   "version": "3.7.3",
   "description": "Reusable React components and hooks for the Chop Logic project",
   "type": "module",
-  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "build": "tsc -p ./tsconfig.build.json && vite build",
+    "prepublishOnly": "npm run build",
+    "build": "vite build",
     "build:storybook": "storybook build",
     "prepare": "npm run build && husky",
     "format": "npm run format:biome && npm run format:prettier",

@@ -13,7 +13,6 @@ export type { AlertProps } from './alert';
 export type { Breadcrumb, BreadcrumbsProps } from './breadcrumbs';
 export type { ButtonProps } from './button';
 export type { CheckboxProps } from './checkbox';
-export type { FormContextProps, ThemeContextProps } from './contexts';
 export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';

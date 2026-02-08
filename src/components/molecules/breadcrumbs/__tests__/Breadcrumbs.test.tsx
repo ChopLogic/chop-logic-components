@@ -91,9 +91,7 @@ describe('Breadcrumbs', () => {
   it('renders separator icons between breadcrumb items', () => {
     render(<Breadcrumbs items={mockItems} />);
 
-    const separatorIcons = screen
-      .getAllByTestId('breadcrumb-icon')
-      .filter((icon) => icon.getAttribute('data-icon-name') === IconName.ChevronRight);
+    const separatorIcons = screen.getAllByTestId('breadcrumb-separator');
 
     expect(separatorIcons).toHaveLength(3); // 3 separators for 4 items
   });
@@ -137,9 +135,7 @@ describe('Breadcrumbs', () => {
     render(<Breadcrumbs items={itemsWithoutIcons} />);
 
     // Should still render separators
-    const separatorIcons = screen
-      .getAllByTestId('breadcrumb-icon')
-      .filter((icon) => icon.getAttribute('data-icon-name') === IconName.ChevronRight);
+    const separatorIcons = screen.getAllByTestId('breadcrumb-separator');
     expect(separatorIcons).toHaveLength(2);
   });
 
@@ -194,9 +190,7 @@ describe('Breadcrumbs', () => {
     expect(screen.getByText('Current')).toHaveAttribute('aria-current', 'page');
 
     // One separator
-    const separatorIcons = screen
-      .getAllByTestId('breadcrumb-icon')
-      .filter((icon) => icon.getAttribute('data-icon-name') === IconName.ChevronRight);
+    const separatorIcons = screen.getAllByTestId('breadcrumb-separator');
     expect(separatorIcons).toHaveLength(1);
   });
 

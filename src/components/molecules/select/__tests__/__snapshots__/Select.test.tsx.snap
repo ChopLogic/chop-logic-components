@@ -10,7 +10,9 @@ exports[`Select > should render correctly 1`] = `
       class="_label_5091d6"
       for="select-id"
     >
-      <span>
+      <span
+        class="_label_text_5091d6"
+      >
         Select your language
       </span>
     </label>
@@ -29,7 +31,7 @@ exports[`Select > should render correctly 1`] = `
         Not selected
       </span>
       <span
-        class="_icon_afc5be chop-icon__chevron-down"
+        class="_combobox_icon_73f518 _icon_afc5be chop-icon__chevron-up"
       />
     </button>
     <ul

@@ -1,6 +1,7 @@
 import { Icon } from '@components/atoms';
 import { IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
+import { getClassName } from '@utils';
 import type { FC } from 'react';
 import styles from '../select/combobox/Combobox.module.scss';
 import { MultiSelectComboboxSelectedValues } from './MultiSelectComboboxSelectedValues';
@@ -29,6 +30,10 @@ export const MultiSelectCombobox: FC<Props> = ({
   values,
 }) => {
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
+  const iconClass = getClassName([
+    styles.combobox_icon,
+    { [styles.combobox_icon__opened]: opened },
+  ]);
 
   return (
     <button
@@ -46,7 +51,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
-      {opened ? <Icon name={IconName.ChevronUp} /> : <Icon name={IconName.ChevronDown} />}
+      <Icon name={IconName.ChevronUp} className={iconClass} />
     </button>
   );
 };

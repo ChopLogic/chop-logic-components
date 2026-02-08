@@ -10,7 +10,9 @@ exports[`TextInput > should render the input correctly 1`] = `
       class="_label_5091d6"
       for="test-input-id"
     >
-      <span>
+      <span
+        class="_label_text_5091d6"
+      >
         Test Input
       </span>
     </label>
@@ -62,7 +64,9 @@ exports[`TextInput > should render the required input correctly 1`] = `
       class="_label_5091d6"
       for="test-input-id"
     >
-      <span>
+      <span
+        class="_label_text_5091d6"
+      >
         Test Input
         <abbr
           title="required"

@@ -1,5 +1,4 @@
 import { Icon, Link } from '@components/atoms';
-import { IconName } from '@enums';
 import type { Breadcrumb } from '@types';
 import type { FC } from 'react';
 
@@ -25,7 +24,15 @@ const BreadcrumbItem: FC<{
           </span>
         )}
       </li>
-      {!isLastItem && <Icon name={IconName.ChevronRight} hidden />}
+      {!isLastItem && (
+        <span
+          aria-hidden="true"
+          data-testid="breadcrumb-separator"
+          className={styles.breadcrumbs_separator}
+        >
+          /
+        </span>
+      )}
     </>
   );
 };

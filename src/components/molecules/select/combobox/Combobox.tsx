@@ -1,6 +1,7 @@
 import { Icon } from '@components/atoms';
 import { IconName } from '@enums';
 import type { SelectValue } from '@types';
+import { getClassName } from '@utils';
 import type { FC } from 'react';
 import styles from './Combobox.module.scss';
 
@@ -27,6 +28,11 @@ export const SelectCombobox: FC<Props> = ({
   disabled,
   required,
 }) => {
+  const iconClass = getClassName([
+    styles.combobox_icon,
+    { [styles.combobox_icon__opened]: opened },
+  ]);
+
   return (
     <button
       type="button"
@@ -43,7 +49,7 @@ export const SelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
-      {opened ? <Icon name={IconName.ChevronUp} /> : <Icon name={IconName.ChevronDown} />}
+      <Icon name={IconName.ChevronUp} className={iconClass} />
     </button>
   );
 };

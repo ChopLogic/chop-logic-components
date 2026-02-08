@@ -7,8 +7,8 @@ import Link from '../Link';
 
 // Mock the Icon component
 vi.mock('@components/atoms', () => ({
-  Icon: vi.fn(({ className, 'aria-hidden': ariaHidden }) => (
-    <span className={className} aria-hidden={ariaHidden} data-testid="mock-icon" />
+  Icon: vi.fn(({ className }) => (
+    <span className={className} aria-hidden={true} data-testid="mock-icon" />
   )),
 }));
 

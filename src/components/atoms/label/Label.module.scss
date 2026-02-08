@@ -12,10 +12,17 @@
     cursor: pointer;
   }
 
-  & + span {
+  &_text {
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &_icon::before {
+    color: var(--cl-primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   & abbr {

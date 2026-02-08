@@ -22,7 +22,7 @@ exports[`SelectGridRowCheckbox > should match the snapshot 1`] = `
               for="select_row_grid-id"
             >
               <span
-                class="_icon_afc5be chop-icon__check-square"
+                class="_label_icon_5091d6 _icon_afc5be chop-icon__check-square"
               />
             </label>
           </div>

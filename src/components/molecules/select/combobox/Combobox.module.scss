@@ -23,18 +23,6 @@
     @include typography.core-font(base);
   }
 
-  svg {
-    cursor: pointer;
-    color: var(--cl-primary-color);
-    height: var(--cl-icon-size);
-    width: var(--cl-icon-size);
-
-    &:hover {
-      color: var(--cl-tint-color);
-      filter: var(--cl-drop-shadow);
-    }
-  }
-
   &:focus-visible {
     outline: var(--cl-outline-border);
     outline-offset: 2px;
@@ -42,5 +30,13 @@
 
   &[disabled] {
     @include mixins.disabled();
+  }
+
+  &_icon {
+    transition: transform 0.3s ease;
+
+    &__opened {
+      transform: rotate(180deg);
+    }
   }
 }

@@ -19,9 +19,7 @@ const Link: FC<LinkProps> = ({
   const linkClass = getClassName([styles.link, className, { [styles.link__disabled]: disabled }]);
   const isExternal = external || href.startsWith('http') || href.startsWith('//');
   const linkTarget = isExternal ? target || '_blank' : target;
-  const iconElement = icon ? (
-    <Icon name={icon} className={styles.link_icon} aria-hidden="true" />
-  ) : null;
+  const iconElement = icon ? <Icon name={icon} className={styles.link_icon} hidden /> : null;
   const isLeftIcon = icon && iconPosition === 'left';
   const isRightIcon = icon && iconPosition === 'right';
 

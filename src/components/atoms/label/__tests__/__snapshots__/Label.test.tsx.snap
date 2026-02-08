@@ -6,7 +6,9 @@ exports[`Label > should render correctly as not required label 1`] = `
     class="_label_5091d6"
     for="test-input-id"
   >
-    <span>
+    <span
+      class="_label_text_5091d6"
+    >
       Test label
     </span>
   </label>
@@ -19,7 +21,9 @@ exports[`Label > should render correctly as required label 1`] = `
     class="_label_5091d6"
     for="test-input-id"
   >
-    <span>
+    <span
+      class="_label_text_5091d6"
+    >
       Test label
       <abbr
         title="required"
@@ -47,9 +51,11 @@ exports[`Label > should render left icon 1`] = `
     for="test-input-id"
   >
     <span
-      class="_icon_afc5be chop-icon__arrow-left"
+      class="_label_icon_5091d6 _icon_afc5be chop-icon__arrow-left"
     />
-    <span>
+    <span
+      class="_label_text_5091d6"
+    >
       Test label
     </span>
   </label>
@@ -62,11 +68,13 @@ exports[`Label > should render right icon 1`] = `
     class="_label_5091d6"
     for="test-input-id"
   >
-    <span>
+    <span
+      class="_label_text_5091d6"
+    >
       Test label
     </span>
     <span
-      class="_icon_afc5be chop-icon__arrow-down-right"
+      class="_label_icon_5091d6 _icon_afc5be chop-icon__arrow-down-right"
     />
   </label>
 </DocumentFragment>

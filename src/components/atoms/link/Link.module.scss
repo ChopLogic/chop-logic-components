@@ -21,7 +21,6 @@
 
   &:hover {
     text-shadow: var(--cl-text-shadow);
-    text-decoration: underline;
   }
 
   &__disabled {
@@ -30,9 +29,16 @@
 
   &_text {
     @include typography.core-font(base);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  &_icon {
+  &_icon::before {
     color: var(--cl-tint-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -103,7 +103,7 @@ export const HiddenText: Story = {
   args: {
     label: 'Delete',
     isTextHidden: true,
-    icon: IconName.Delete,
+    icon: IconName.Trash2,
     iconPosition: 'left',
   },
   parameters: {

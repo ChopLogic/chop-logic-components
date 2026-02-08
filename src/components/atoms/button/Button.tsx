@@ -36,7 +36,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           className={extendedClass}
           {...rest}
         >
-          <Icon name={icon} />
+          <Icon name={icon} className={styles.icon} />
           {text}
         </PrimaryButton>
       );
@@ -50,7 +50,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           className={extendedClass}
           {...rest}
         >
-          <Icon name={icon} />
+          <Icon name={icon} className={styles.icon} />
           {text}
         </SecondaryButton>
       );
@@ -64,7 +64,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           {...rest}
           className={className}
         >
-          <Icon name={icon} />
+          <Icon name={icon} className={styles.icon} />
         </IconButton>
       );
     case ButtonView.Inner:

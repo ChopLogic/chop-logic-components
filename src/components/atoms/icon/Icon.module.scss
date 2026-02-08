@@ -1,3 +1,11 @@
 .icon {
   color: var(--cl-primary-color);
+
+  &::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--cl-icon-size);
+    width: var(--cl-icon-size);
+  }
 }

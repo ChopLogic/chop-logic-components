@@ -23,17 +23,18 @@ const Label: FC<LabelProps> = ({
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
+  const IconElement = <Icon name={icon} className={styles.label_icon} />;
 
   return (
     <label className={styles.label} htmlFor={inputId}>
-      {isLeftIconVisible && <Icon name={icon} />}
+      {isLeftIconVisible && IconElement}
       {!isTextHidden && (
-        <span>
+        <span className={styles.label_text}>
           {label}
           {required && <abbr title="required">*</abbr>}
         </span>
       )}
-      {isRightIconVisible && <Icon name={icon} />}
+      {isRightIconVisible && IconElement}
     </label>
   );
 };

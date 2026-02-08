@@ -15,9 +15,11 @@ exports[`Checkbox > should render the input correctly 1`] = `
       for="test-checkbox-id"
     >
       <span
-        class="_icon_afc5be chop-icon__square"
+        class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
       />
-      <span>
+      <span
+        class="_label_text_5091d6"
+      >
         Test label
       </span>
     </label>

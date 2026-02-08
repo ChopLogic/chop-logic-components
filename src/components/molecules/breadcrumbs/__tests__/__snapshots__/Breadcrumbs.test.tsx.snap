@@ -23,11 +23,10 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chop-icon__chevron-right"
-        data-testid="breadcrumb-icon"
+        class="_breadcrumbs_separator_f319fb"
+        data-testid="breadcrumb-separator"
       >
-        chop-icon__chevron-right icon
+        /
       </span>
       <li
         class="_breadcrumbs_item_f319fb"
@@ -43,11 +42,10 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chop-icon__chevron-right"
-        data-testid="breadcrumb-icon"
+        class="_breadcrumbs_separator_f319fb"
+        data-testid="breadcrumb-separator"
       >
-        chop-icon__chevron-right icon
+        /
       </span>
       <li
         class="_breadcrumbs_item_f319fb"
@@ -63,11 +61,10 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chop-icon__chevron-right"
-        data-testid="breadcrumb-icon"
+        class="_breadcrumbs_separator_f319fb"
+        data-testid="breadcrumb-separator"
       >
-        chop-icon__chevron-right icon
+        /
       </span>
       <li
         class="_breadcrumbs_item_f319fb"

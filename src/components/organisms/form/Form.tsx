@@ -36,12 +36,12 @@ const Form: FC<FormProps> = ({
         {children}
         <div className={styles.form_buttons}>
           {hasReset && (
-            <Button type="reset" text="Reset" icon={IconName.Clear} view={ButtonView.Secondary} />
+            <Button type="reset" text="Reset" icon={IconName.Delete} view={ButtonView.Secondary} />
           )}
           <Button
             type="submit"
             text="Submit"
-            icon={IconName.Forward}
+            icon={IconName.ArrowRight}
             extended={!hasReset}
             disabled={!valid}
           />

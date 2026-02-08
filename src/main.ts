@@ -1,4 +1,3 @@
-export * from './assets/icons';
 export * from './components/atoms';
 export * from './components/contexts';
 export * from './components/hocs';

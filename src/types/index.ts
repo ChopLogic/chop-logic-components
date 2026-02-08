@@ -18,7 +18,6 @@ export type { EditableTextProps } from './editable-text';
 export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';
 export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
 export type { HeaderProps } from './header';
-export type { ChopLogicSVGElementProps, IconProps } from './icon';
 export type { ImageProps, ImageSource } from './image';
 export type { LinkProps } from './link';
 export type { LoaderProps } from './loader';

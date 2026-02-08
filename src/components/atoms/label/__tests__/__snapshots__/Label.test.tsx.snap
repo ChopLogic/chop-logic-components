@@ -46,23 +46,9 @@ exports[`Label > should render left icon 1`] = `
     class="_label_5091d6"
     for="test-input-id"
   >
-    <svg
-      class="_icon_afc5be"
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M328 112L184 256l144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
+    <span
+      class="_icon_afc5be chop-icon__arrow-left"
+    />
     <span>
       Test label
     </span>
@@ -76,26 +62,12 @@ exports[`Label > should render right icon 1`] = `
     class="_label_5091d6"
     for="test-input-id"
   >
-    <svg
-      class="_icon_afc5be"
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M184 112l144 144-144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
     <span>
       Test label
     </span>
+    <span
+      class="_icon_afc5be chop-icon__arrow-down-right"
+    />
   </label>
 </DocumentFragment>
 `;

@@ -85,7 +85,7 @@ export const Primary: Story = {
 export const WithLeftIcon: Story = {
   args: {
     label: 'Login into the account',
-    icon: IconName.Login,
+    icon: IconName.LogIn,
     iconPosition: 'left',
   },
 };
@@ -93,7 +93,7 @@ export const WithLeftIcon: Story = {
 export const WithRightIcon: Story = {
   args: {
     label: 'Password',
-    icon: IconName.Hide,
+    icon: IconName.EyeOff,
     iconPosition: 'right',
     required: true,
   },

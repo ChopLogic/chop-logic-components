@@ -25,7 +25,7 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
       <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
         <div ref={modalRef} role="dialog" aria-modal="true" {...rest} className={styles.layout}>
           <Button
-            icon={IconName.Cancel}
+            icon={IconName.X}
             view={ButtonView.Icon}
             label="Close modal window"
             onClick={onClose}

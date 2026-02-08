@@ -1,8 +1,7 @@
-import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
-import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
+import { Icon } from '@components/atoms';
+import { IconName } from '@enums';
 import type { SelectValue } from '@types';
 import type { FC } from 'react';
-
 import styles from './Combobox.module.scss';
 
 type Props = {
@@ -44,7 +43,7 @@ export const SelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
-      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      {opened ? <Icon name={IconName.ChevronUp} /> : <Icon name={IconName.ChevronDown} />}
     </button>
   );
 };

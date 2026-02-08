@@ -47,7 +47,7 @@ const Alert: FC<AlertProps> = ({
         <div {...rest} className={styles.content}>
           {isCloseButtonVisible && (
             <Button
-              icon={IconName.Cancel}
+              icon={IconName.X}
               view={ButtonView.Icon}
               label="Close alert"
               onClick={onClose}

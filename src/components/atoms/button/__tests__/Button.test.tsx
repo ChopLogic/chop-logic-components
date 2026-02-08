@@ -110,7 +110,7 @@ describe('Button', () => {
   it('renders icon when provided', () => {
     render(<Button {...defaultProps} icon={IconName.Save} />);
 
-    expect(screen.getByTestId('icon-save')).toBeInTheDocument();
+    expect(screen.getByTestId('icon-chop-icon__save')).toBeInTheDocument();
   });
 
   it('passes aria-label to the button', () => {
@@ -132,7 +132,7 @@ describe('Button', () => {
   it('renders only icon for IconButton view', () => {
     render(<Button {...defaultProps} view={ButtonView.Icon} icon={IconName.Save} />);
 
-    expect(screen.getByTestId('icon-save')).toBeInTheDocument();
+    expect(screen.getByTestId('icon-chop-icon__save')).toBeInTheDocument();
     // Text should not be rendered for icon buttons
     expect(screen.queryByText('Click me')).not.toBeInTheDocument();
   });

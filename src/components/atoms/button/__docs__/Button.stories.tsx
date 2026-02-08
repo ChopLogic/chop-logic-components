@@ -199,14 +199,14 @@ export const Secondary: Story = {
   args: {
     text: 'Learn more...',
     view: ButtonView.Secondary,
-    icon: IconName.Forward,
+    icon: IconName.ChevronLeft,
   },
 };
 
 export const Icon: Story = {
   args: {
     view: ButtonView.Icon,
-    icon: IconName.Cancel,
+    icon: IconName.X,
     label: 'Cancel',
   },
 };
@@ -223,7 +223,7 @@ export const Disabled: Story = {
   args: {
     text: 'Disabled',
     view: ButtonView.Primary,
-    icon: IconName.Clear,
+    icon: IconName.XSquare,
     disabled: true,
   },
 };

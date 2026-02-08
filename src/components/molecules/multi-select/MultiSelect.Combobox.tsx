@@ -1,5 +1,5 @@
-import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
-import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
+import { Icon } from '@components/atoms';
+import { IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import type { FC } from 'react';
 import styles from '../select/combobox/Combobox.module.scss';
@@ -46,7 +46,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
-      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      {opened ? <Icon name={IconName.ChevronUp} /> : <Icon name={IconName.ChevronDown} />}
     </button>
   );
 };

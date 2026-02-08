@@ -143,7 +143,7 @@ export const SuccessAlert: Story = {
     title: 'Success!',
     message: 'Your profile has been updated successfully.',
     mode: AlertMode.Success,
-    icon: IconName.CheckMark,
+    icon: IconName.CheckCircle,
     autoClose: true,
     autoCloseDelay: 3000,
   },
@@ -154,7 +154,7 @@ export const WarningAlert: Story = {
     title: 'Warning',
     message: 'Your storage is almost full. Consider cleaning up unused files.',
     mode: AlertMode.Warning,
-    icon: IconName.Warning,
+    icon: IconName.AlertTriangle,
     autoClose: false,
   },
 };
@@ -165,7 +165,7 @@ export const ErrorAlert: Story = {
     message:
       'Failed to connect to the server. Please check your internet connection and try again.',
     mode: AlertMode.Error,
-    icon: IconName.Error,
+    icon: IconName.XOctagon,
     autoClose: false,
   },
 };

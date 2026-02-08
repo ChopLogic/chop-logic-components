@@ -1,9 +1,8 @@
-import CheckboxCheckedIcon from '@assets/icons/svg/CheckboxCheckedIcon';
-import CheckboxUncheckedIcon from '@assets/icons/svg/CheckboxUncheckedIcon';
+import { Icon } from '@components/atoms';
+import { IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
-
 import styles from '../select/option/Option.module.scss';
 
 type Props = {
@@ -42,7 +41,7 @@ export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
       onClick={() => onSelect(id)}
       className={optionClass}
     >
-      {selected ? <CheckboxCheckedIcon /> : <CheckboxUncheckedIcon />}
+      {selected ? <Icon name={IconName.CheckSquare} /> : <Icon name={IconName.Square} />}
       <span>{label}</span>
     </li>
   );

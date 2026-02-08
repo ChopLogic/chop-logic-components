@@ -109,7 +109,7 @@ describe('TabButton', () => {
   it('shows edit button when editable and selected', () => {
     render(<TabButton {...defaultProps} editable={true} />);
 
-    expect(screen.getByTestId('button-edit')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__edit')).toBeInTheDocument();
     expect(screen.getByLabelText('Edit tab')).toBeInTheDocument();
   });
 
@@ -128,7 +128,7 @@ describe('TabButton', () => {
   it('enters edit mode when edit button is clicked', () => {
     render(<TabButton {...defaultProps} editable={true} />);
 
-    const editButton = screen.getByTestId('button-edit');
+    const editButton = screen.getByLabelText('Edit tab');
     fireEvent.click(editButton);
 
     expect(screen.getByTestId('tab-edit-input')).toBeInTheDocument();
@@ -148,7 +148,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -163,7 +163,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -178,7 +178,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -194,7 +194,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -210,7 +210,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -224,7 +224,7 @@ describe('TabButton', () => {
       const onTabTitleChange = vi.fn();
       render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
 
-      const editButton = screen.getByTestId('button-edit');
+      const editButton = screen.getByTestId('button-chop-icon__edit');
       fireEvent.click(editButton);
 
       const input = screen.getByTestId('edit-input');
@@ -238,7 +238,7 @@ describe('TabButton', () => {
     const onTabDelete = vi.fn();
     render(<TabButton {...defaultProps} extendable={true} onTabDelete={onTabDelete} />);
 
-    expect(screen.getByTestId('button-delete')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__delete')).toBeInTheDocument();
     expect(screen.getByLabelText('Delete tab')).toBeInTheDocument();
   });
 
@@ -246,7 +246,7 @@ describe('TabButton', () => {
     const onTabDelete = vi.fn();
     render(<TabButton {...defaultProps} extendable={true} onTabDelete={onTabDelete} />);
 
-    const deleteButton = screen.getByTestId('button-delete');
+    const deleteButton = screen.getByTestId('button-chop-icon__delete');
     fireEvent.click(deleteButton);
 
     expect(onTabDelete).toHaveBeenCalledWith('tab-1');
@@ -286,7 +286,7 @@ describe('TabButton', () => {
     render(<TabButton {...defaultProps} editable={true} />);
 
     // Enter edit mode
-    const editButton = screen.getByTestId('button-edit');
+    const editButton = screen.getByTestId('button-chop-icon__edit');
     fireEvent.click(editButton);
 
     // Try to click the tab (which is now replaced by edit input)

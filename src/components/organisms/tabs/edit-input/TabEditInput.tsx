@@ -53,13 +53,13 @@ export const TabEditInput: FC<Props> = ({
       <span className={styles.editContainer_buttons}>
         <Button
           view={ButtonView.Icon}
-          icon={IconName.CheckMark}
+          icon={IconName.Check}
           onClick={onSave}
           label="Save tab title"
         />
         <Button
           view={ButtonView.Icon}
-          icon={IconName.Cancel}
+          icon={IconName.X}
           onClick={onCancel}
           label="Cancel tab title change"
           id={cancelButtonId}

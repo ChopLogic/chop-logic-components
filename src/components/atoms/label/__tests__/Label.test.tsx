@@ -28,14 +28,14 @@ describe('Label', () => {
 
   it('should render left icon', () => {
     const { asFragment } = render(
-      <Label {...testProps} required={false} icon={IconName.Back} iconPosition="left" />,
+      <Label {...testProps} required={false} icon={IconName.ArrowLeft} iconPosition="left" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render right icon', () => {
     const { asFragment } = render(
-      <Label {...testProps} required={false} icon={IconName.Forward} iconPosition="left" />,
+      <Label {...testProps} required={false} icon={IconName.ArrowDownRight} iconPosition="right" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

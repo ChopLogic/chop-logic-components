@@ -46,7 +46,7 @@ export const GridCheckbox: FC<Props> = ({
         inputId={elementId}
         isTextHidden={true}
         iconPosition="left"
-        icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
+        icon={checked ? IconName.CheckSquare : IconName.Square}
       />
     </div>
   );

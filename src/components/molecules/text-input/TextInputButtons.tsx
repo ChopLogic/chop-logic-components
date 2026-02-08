@@ -27,7 +27,7 @@ const TextInputButtons: FC<{
           view={ButtonView.Inner}
           onClick={handleClear}
           label={`Clear input for ${label}`}
-          icon={IconName.Remove}
+          icon={IconName.Delete}
           disabled={disabled}
         />
       )}
@@ -36,7 +36,7 @@ const TextInputButtons: FC<{
           onClick={togglePassword}
           view={ButtonView.Inner}
           label="Toggle password visibility"
-          icon={passwordShown ? IconName.Hide : IconName.Show}
+          icon={passwordShown ? IconName.EyeOff : IconName.Eye}
           disabled={disabled}
         />
       )}

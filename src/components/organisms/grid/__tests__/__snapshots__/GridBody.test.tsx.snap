@@ -24,19 +24,9 @@ exports[`GridBody > should match the snapshot 1`] = `
               class="_label_5091d6"
               for="select_row_row1"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="_icon_afc5be chop-icon__square"
+              />
             </label>
           </div>
         </td>
@@ -74,19 +64,9 @@ exports[`GridBody > should match the snapshot 1`] = `
               class="_label_5091d6"
               for="select_row_row2"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="_icon_afc5be chop-icon__square"
+              />
             </label>
           </div>
         </td>
@@ -124,19 +104,9 @@ exports[`GridBody > should match the snapshot 1`] = `
               class="_label_5091d6"
               for="select_row_row3"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="_icon_afc5be chop-icon__square"
+              />
             </label>
           </div>
         </td>

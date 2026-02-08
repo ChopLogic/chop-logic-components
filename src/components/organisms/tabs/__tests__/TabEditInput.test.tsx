@@ -48,8 +48,8 @@ describe('TabEditInput', () => {
   it('renders save and cancel buttons', () => {
     render(<TabEditInput {...defaultProps} />);
 
-    expect(screen.getByTestId('button-check-mark')).toBeInTheDocument();
-    expect(screen.getByTestId('button-cancel')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__check')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__x')).toBeInTheDocument();
     expect(screen.getByLabelText('Save tab title')).toBeInTheDocument();
     expect(screen.getByLabelText('Cancel tab title change')).toBeInTheDocument();
   });
@@ -84,7 +84,7 @@ describe('TabEditInput', () => {
   it('calls onSave when save button is clicked', () => {
     render(<TabEditInput {...defaultProps} />);
 
-    const saveButton = screen.getByTestId('button-check-mark');
+    const saveButton = screen.getByTestId('button-chop-icon__check');
     fireEvent.click(saveButton);
 
     expect(defaultProps.onSave).toHaveBeenCalledOnce();
@@ -93,7 +93,7 @@ describe('TabEditInput', () => {
   it('calls onCancel when cancel button is clicked', () => {
     render(<TabEditInput {...defaultProps} />);
 
-    const cancelButton = screen.getByTestId('button-cancel');
+    const cancelButton = screen.getByTestId('button-chop-icon__x');
     fireEvent.click(cancelButton);
 
     expect(defaultProps.onCancel).toHaveBeenCalledOnce();
@@ -116,7 +116,7 @@ describe('TabEditInput', () => {
     render(<TabEditInput {...defaultProps} />);
 
     const input = screen.getByDisplayValue('Test Tab');
-    const saveButton = screen.getByTestId('button-check-mark');
+    const saveButton = screen.getByTestId('button-chop-icon__check');
 
     // Simulate blur event caused by save button
     // Note: The component only checks for cancel button ID, so save button should trigger blur
@@ -130,7 +130,7 @@ describe('TabEditInput', () => {
   it('applies correct cancel button ID', () => {
     render(<TabEditInput {...defaultProps} />);
 
-    const cancelButton = screen.getByTestId('button-cancel');
+    const cancelButton = screen.getByTestId('button-chop-icon__x');
     expect(cancelButton).toHaveAttribute('id', 'cancel-button-1');
   });
 
@@ -212,8 +212,8 @@ describe('TabEditInput', () => {
 
     // Verify the basic structure is rendered
     expect(screen.getByDisplayValue('Test Tab')).toBeInTheDocument();
-    expect(screen.getByTestId('button-check-mark')).toBeInTheDocument();
-    expect(screen.getByTestId('button-cancel')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__check')).toBeInTheDocument();
+    expect(screen.getByTestId('button-chop-icon__x')).toBeInTheDocument();
   });
 
   it('handles component re-renders efficiently', () => {

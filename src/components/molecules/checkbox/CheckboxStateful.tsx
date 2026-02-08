@@ -50,7 +50,7 @@ const CheckboxStateful: FC<CheckboxProps> = ({
         required={required}
         inputId={elementId}
         isTextHidden={noLabel}
-        icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
+        icon={checked ? IconName.CheckSquare : IconName.Square}
         iconPosition={iconPosition}
       />
     </div>

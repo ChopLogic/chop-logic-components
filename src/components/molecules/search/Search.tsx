@@ -94,7 +94,7 @@ const Search: FC<SearchProps> = ({
               view={ButtonView.Inner}
               onClick={handleClearWithFocus}
               label={`Clear search input for ${label}`}
-              icon={IconName.Remove}
+              icon={IconName.Delete}
             />
           )}
           {isSearchButtonVisible && (

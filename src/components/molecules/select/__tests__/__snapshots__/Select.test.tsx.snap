@@ -28,18 +28,9 @@ exports[`Select > should render correctly 1`] = `
       <span>
         Not selected
       </span>
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
-        />
-      </svg>
+      <span
+        class="_icon_afc5be chop-icon__chevron-down"
+      />
     </button>
     <ul
       class="_dropdown_8c0dbb"

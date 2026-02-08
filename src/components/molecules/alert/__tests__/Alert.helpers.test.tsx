@@ -29,10 +29,10 @@ describe('Alert.helpers', () => {
 
     it('returns default icon based on mode', () => {
       expect(getAlertIcon(AlertMode.Info)).toBe(IconName.Info);
-      expect(getAlertIcon(AlertMode.Warning)).toBe(IconName.Warning);
-      expect(getAlertIcon(AlertMode.Error)).toBe(IconName.Error);
-      expect(getAlertIcon(AlertMode.Success)).toBe(IconName.CheckboxChecked);
-      expect(getAlertIcon(AlertMode.Help)).toBe(IconName.Help);
+      expect(getAlertIcon(AlertMode.Warning)).toBe(IconName.AlertTriangle);
+      expect(getAlertIcon(AlertMode.Error)).toBe(IconName.XOctagon);
+      expect(getAlertIcon(AlertMode.Success)).toBe(IconName.CheckCircle);
+      expect(getAlertIcon(AlertMode.Help)).toBe(IconName.LifeBuoy);
     });
 
     it('returns undefined for unknown mode', () => {

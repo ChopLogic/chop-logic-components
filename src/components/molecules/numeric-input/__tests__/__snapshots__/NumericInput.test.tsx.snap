@@ -36,38 +36,18 @@ exports[`NumericInput > should match the snapshot 1`] = `
           class="_button_a095c4"
           type="button"
         >
-          <svg
-            class="_icon_afc5be"
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
-              fill-rule="evenodd"
-            />
-          </svg>
+          <span
+            class="_icon_afc5be chop-icon__chevron-left"
+          />
         </button>
         <button
           aria-label="Increment value for Quantity"
           class="_button_a095c4"
           type="button"
         >
-          <svg
-            class="_icon_afc5be"
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
-              fill-rule="evenodd"
-            />
-          </svg>
+          <span
+            class="_icon_afc5be chop-icon__chevron-right"
+          />
         </button>
       </span>
       <span

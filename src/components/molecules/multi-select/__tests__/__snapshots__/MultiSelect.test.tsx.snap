@@ -29,18 +29,9 @@ exports[`MultiSelect > should render correctly 1`] = `
       <span>
         Not selected
       </span>
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        height="1em"
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M21.886 5.536A1.002 1.002 0 0021 5H3a1.002 1.002 0 00-.822 1.569l9 13a.998.998 0 001.644 0l9-13a.998.998 0 00.064-1.033zM12 17.243L4.908 7h14.184L12 17.243z"
-        />
-      </svg>
+      <span
+        class="_icon_afc5be chop-icon__chevron-down"
+      />
     </button>
     <ul
       class="_dropdown_8c0dbb"
@@ -55,19 +46,9 @@ exports[`MultiSelect > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-            fill="currentColor"
-          />
-        </svg>
+        <span
+          class="_icon_afc5be chop-icon__square"
+        />
         <span>
           English
         </span>
@@ -79,19 +60,9 @@ exports[`MultiSelect > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-            fill="currentColor"
-          />
-        </svg>
+        <span
+          class="_icon_afc5be chop-icon__square"
+        />
         <span>
           Spanish
         </span>
@@ -103,19 +74,9 @@ exports[`MultiSelect > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-            fill="currentColor"
-          />
-        </svg>
+        <span
+          class="_icon_afc5be chop-icon__square"
+        />
         <span>
           French
         </span>
@@ -127,19 +88,9 @@ exports[`MultiSelect > should render correctly 1`] = `
         role="option"
         tabindex="0"
       >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-            fill="currentColor"
-          />
-        </svg>
+        <span
+          class="_icon_afc5be chop-icon__square"
+        />
         <span>
           German
         </span>

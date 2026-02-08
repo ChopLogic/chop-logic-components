@@ -13,7 +13,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
         class="_breadcrumbs_item_f319fb"
       >
         <a
-          data-icon="home"
+          data-icon="chop-icon__home"
           data-icon-position="left"
           data-testid="breadcrumb-link"
           href="/"
@@ -24,16 +24,16 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       <span
         aria-hidden="true"
         data-hidden="true"
-        data-icon-name="chevron-right"
+        data-icon-name="chop-icon__chevron-right"
         data-testid="breadcrumb-icon"
       >
-        chevron-right icon
+        chop-icon__chevron-right icon
       </span>
       <li
         class="_breadcrumbs_item_f319fb"
       >
         <a
-          data-icon="projects"
+          data-icon="chop-icon__activity"
           data-icon-position="left"
           data-testid="breadcrumb-link"
           href="/products"
@@ -44,16 +44,16 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       <span
         aria-hidden="true"
         data-hidden="true"
-        data-icon-name="chevron-right"
+        data-icon-name="chop-icon__chevron-right"
         data-testid="breadcrumb-icon"
       >
-        chevron-right icon
+        chop-icon__chevron-right icon
       </span>
       <li
         class="_breadcrumbs_item_f319fb"
       >
         <a
-          data-icon="settings"
+          data-icon="chop-icon__settings"
           data-icon-position="left"
           data-testid="breadcrumb-link"
           href="/products/electronics"
@@ -64,10 +64,10 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       <span
         aria-hidden="true"
         data-hidden="true"
-        data-icon-name="chevron-right"
+        data-icon-name="chop-icon__chevron-right"
         data-testid="breadcrumb-icon"
       >
-        chevron-right icon
+        chop-icon__chevron-right icon
       </span>
       <li
         class="_breadcrumbs_item_f319fb"
@@ -79,10 +79,10 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
           <span
             aria-hidden="true"
             data-hidden="true"
-            data-icon-name="phone"
+            data-icon-name="chop-icon__phone"
             data-testid="breadcrumb-icon"
           >
-            phone icon
+            chop-icon__phone icon
           </span>
           Smartphones
         </span>

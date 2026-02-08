@@ -25,7 +25,7 @@ vi.mock('@components/atoms', () => ({
 describe('Breadcrumbs', () => {
   const mockItems = [
     { label: 'Home', icon: IconName.Home, link: '/' },
-    { label: 'Products', icon: IconName.Projects, link: '/products' },
+    { label: 'Products', icon: IconName.Activity, link: '/products' },
     { label: 'Electronics', icon: IconName.Settings, link: '/products/electronics' },
     { label: 'Smartphones', icon: IconName.Phone },
   ];
@@ -123,7 +123,7 @@ describe('Breadcrumbs', () => {
     const links = screen.getAllByTestId('breadcrumb-link');
     expect(links[0]).toHaveAttribute('data-icon', IconName.Home);
     expect(links[0]).toHaveAttribute('data-icon-position', 'left');
-    expect(links[1]).toHaveAttribute('data-icon', IconName.Projects);
+    expect(links[1]).toHaveAttribute('data-icon', IconName.Activity);
     expect(links[1]).toHaveAttribute('data-icon-position', 'left');
   });
 

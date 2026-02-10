@@ -39,7 +39,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__chevron-left"
+            class="_icon_afc5be chop-icon__chevron-left _icon__medium_afc5be"
           />
         </button>
         <button
@@ -48,7 +48,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__chevron-right"
+            class="_icon_afc5be chop-icon__chevron-right _icon__medium_afc5be"
           />
         </button>
       </span>

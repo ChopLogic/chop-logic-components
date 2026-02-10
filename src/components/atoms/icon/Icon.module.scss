@@ -1,11 +1,21 @@
 .icon {
   color: var(--cl-primary-color);
 
-  &::before {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--cl-icon-size);
-    width: var(--cl-icon-size);
+  display: inline-flex;
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+  align-items: center;
+  justify-content: center;
+
+  &__small {
+    font-size: var(--cl-small-font-size);
+  }
+
+  &__medium {
+    font-size: var(--cl-base-font-size);
+  }
+
+  &__large {
+    font-size: var(--cl-header-font-size);
   }
 }

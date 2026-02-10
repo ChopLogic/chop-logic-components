@@ -49,7 +49,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_all_grid-id"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -98,7 +98,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row1"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -141,7 +141,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row2"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -184,7 +184,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row3"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -229,7 +229,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row4"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -274,7 +274,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row5"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>
@@ -317,7 +317,7 @@ exports[`Grid > should match the snapshot 1`] = `
                 for="select_row_row6"
               >
                 <span
-                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square"
+                  class="_label_icon_5091d6 _icon_afc5be chop-icon__square _icon__medium_afc5be"
                 />
               </label>
             </div>

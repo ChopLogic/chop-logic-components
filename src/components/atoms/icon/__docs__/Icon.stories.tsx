@@ -11,8 +11,8 @@ const meta: Meta<typeof Icon> = {
     title: 'Home icon',
     id: 'icon-id',
     className: 'icon-class',
-    style: { width: '36px', height: '36px' },
     testId: 'icon-test-id',
+    size: 'large',
   },
   argTypes: {
     name: {
@@ -22,6 +22,15 @@ const meta: Meta<typeof Icon> = {
       table: {
         type: { summary: 'IconName' },
         category: 'Content',
+      },
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: 'The size of the icon',
+      table: {
+        type: { summary: 'small | medium | large' },
+        category: 'Styling',
       },
     },
     title: {

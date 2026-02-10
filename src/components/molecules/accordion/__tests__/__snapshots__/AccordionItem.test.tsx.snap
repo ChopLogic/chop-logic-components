@@ -11,7 +11,7 @@ exports[`AccordionItem > renders correctly 1`] = `
       Test Summary
       <span
         aria-label="Toggle Details"
-        class="_details_icon_27c3bd _icon_afc5be chop-icon__chevron-down"
+        class="_details_icon_27c3bd _icon_afc5be chop-icon__chevron-down _icon__medium_afc5be"
         data-testid="accordion-icon"
       />
     </summary>

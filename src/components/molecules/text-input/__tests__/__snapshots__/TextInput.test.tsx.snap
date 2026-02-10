@@ -38,7 +38,7 @@ exports[`TextInput > should render the input correctly 1`] = `
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__delete"
+            class="_icon_afc5be chop-icon__delete _icon__medium_afc5be"
           />
         </button>
       </span>
@@ -98,7 +98,7 @@ exports[`TextInput > should render the required input correctly 1`] = `
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__delete"
+            class="_icon_afc5be chop-icon__delete _icon__medium_afc5be"
           />
         </button>
       </span>

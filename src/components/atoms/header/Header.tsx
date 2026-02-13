@@ -1,4 +1,3 @@
-import { Icon } from '@components/atoms';
 import type { HeaderProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -10,6 +9,7 @@ const Header: FC<HeaderProps> = ({ as = 'h1', icon, children, className, ...rest
   const headerClass = getClassName([
     className,
     styles.header,
+    icon,
     {
       [styles.header__h1]: as === 'h1',
       [styles.header__h2]: as === 'h2',
@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ as = 'h1', icon, children, className, ...rest
 
   return (
     <HeaderTag className={headerClass} {...rest}>
-      {icon && <Icon name={icon} className={styles.header_icon} />} {children}
+      {children}
     </HeaderTag>
   );
 };

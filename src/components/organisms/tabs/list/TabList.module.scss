@@ -22,7 +22,13 @@
     overflow-y: auto;
   }
 
-  &_addButton {
-    align-self: flex-end;
+  & > span:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      width: 100%;
+    }
   }
 }

@@ -27,7 +27,7 @@
   background-color: var(--cl-primary-background);
   box-shadow: var(--cl-box-shadow);
   color: var(--cl-primary-color);
-  padding: var(--cl-m-gap) var(--cl-l-gap);
+  padding: var(--cl-l-gap) var(--cl-xl-gap);
   height: 90%;
   position: absolute;
   bottom: 0;
@@ -38,8 +38,8 @@
 
   &_button {
     position: absolute;
-    right: var(--cl-m-gap);
-    top: var(--cl-m-gap);
+    right: var(--cl-l-gap);
+    top: var(--cl-l-gap);
   }
 
   @include breakpoints.md-up {

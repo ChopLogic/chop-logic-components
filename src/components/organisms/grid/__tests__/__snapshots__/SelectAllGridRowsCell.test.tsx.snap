@@ -22,7 +22,7 @@ exports[`SelectAllRowsCell > should match the snapshot 1`] = `
               for="select_all_grid-id"
             >
               <span
-                class="_label_icon_5091d6 _icon_afc5be chop-icon__check-square _icon__medium_afc5be"
+                class="_icon_afc5be chop-icon__check-square _icon__large_afc5be"
               />
             </label>
           </div>

@@ -150,7 +150,7 @@ export const TabButton: FC<Props> = ({
               {isEditToggleVisible && (
                 <Button
                   view={ButtonView.Icon}
-                  icon={IconName.Edit}
+                  icon={IconName.Edit3}
                   onClick={toggleEditMode}
                   label="Edit tab"
                   tooltip="Edit tab"
@@ -159,7 +159,7 @@ export const TabButton: FC<Props> = ({
               {isDeleteButtonVisible && (
                 <Button
                   view={ButtonView.Icon}
-                  icon={IconName.Delete}
+                  icon={IconName.Trash2}
                   onClick={() => onTabDelete?.(tabId)}
                   label="Delete tab"
                   tooltip="Delete tab"

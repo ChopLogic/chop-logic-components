@@ -46,6 +46,7 @@ export const GridCheckbox: FC<Props> = ({
         inputId={elementId}
         isTextHidden={true}
         iconPosition="left"
+        iconSize="l"
         icon={checked ? IconName.CheckSquare : IconName.Square}
       />
     </div>

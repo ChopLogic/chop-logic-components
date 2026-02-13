@@ -21,7 +21,7 @@ export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, classNa
       disabled={disabled}
       {...rest}
     >
-      <Icon name={icon} />
+      <Icon name={icon} size="l" />
     </button>
   );
 };

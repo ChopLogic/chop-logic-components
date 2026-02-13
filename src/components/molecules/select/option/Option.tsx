@@ -48,7 +48,7 @@ export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) 
       className={optionClass}
     >
       <span>{label}</span>
-      {selected && <Icon name={IconName.Check} />}
+      {selected && <Icon name={IconName.Check} size="l" />}
     </li>
   );
 };

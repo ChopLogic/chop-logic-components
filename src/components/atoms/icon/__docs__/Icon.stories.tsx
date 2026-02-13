@@ -12,7 +12,7 @@ const meta: Meta<typeof Icon> = {
     id: 'icon-id',
     className: 'icon-class',
     testId: 'icon-test-id',
-    size: 'large',
+    size: 'xl',
   },
   argTypes: {
     name: {
@@ -26,10 +26,10 @@ const meta: Meta<typeof Icon> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['s', 'm', 'l', 'xl'],
       description: 'The size of the icon',
       table: {
-        type: { summary: 'small | medium | large' },
+        type: { summary: 's | m | l | xl' },
         category: 'Styling',
       },
     },

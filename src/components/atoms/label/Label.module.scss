@@ -2,7 +2,7 @@
 
 .label {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: var(--cl-s-gap);
   color: var(--cl-primary-color);
   @include typography.core-font(small);
@@ -16,13 +16,6 @@
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  &_icon::before {
-    color: var(--cl-primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   & abbr {

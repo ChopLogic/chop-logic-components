@@ -24,6 +24,7 @@
     cursor: pointer;
     gap: var(--cl-m-gap);
     @include typography.core-font(base);
+    align-items: center;
 
     &:hover,
     &:active {

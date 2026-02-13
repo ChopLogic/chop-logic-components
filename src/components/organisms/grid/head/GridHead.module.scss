@@ -5,8 +5,8 @@
   @include typography.core-font(base, 700);
 
   &_row {
-    border-top: var(--cl-light-border);
-    border-bottom: var(--cl-light-border);
+    border-top: var(--cl-primary-border);
+    border-bottom: var(--cl-primary-border);
     background-color: var(--cl-primary-background);
   }
 }

@@ -15,6 +15,7 @@
   cursor: pointer;
   height: var(--cl-icon-size);
   width: var(--cl-icon-size);
+  transition: 0.1s all;
 
   &:focus-visible {
     outline: var(--cl-outline-border);
@@ -24,7 +25,6 @@
   &:hover,
   &:active {
     transform: scale(1.2);
-    color: var(--cl-highlight-background) !important;
     filter: var(--cl-drop-shadow);
   }
 

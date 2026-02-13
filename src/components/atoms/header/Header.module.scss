@@ -4,9 +4,9 @@
   margin: 0;
   color: var(--cl-primary-color);
 
-  &_icon {
-    vertical-align: text-top;
-    display: inline-block;
+  &::before {
+    padding-right: var(--cl-m-gap);
+    vertical-align: -4px;
   }
 
   &__h1 {

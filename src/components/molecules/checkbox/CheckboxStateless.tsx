@@ -49,6 +49,7 @@ const CheckboxStateless: FC<CheckboxProps> = ({
         isTextHidden={noLabel}
         icon={checked ? IconName.CheckSquare : IconName.Square}
         iconPosition={iconPosition}
+        iconSize="l"
       />
     </div>
   );

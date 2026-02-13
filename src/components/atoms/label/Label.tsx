@@ -11,6 +11,7 @@ type LabelProps = {
   isTextHidden?: boolean;
   icon?: IconName;
   iconPosition?: 'left' | 'right';
+  iconSize?: 's' | 'm' | 'l' | 'xl';
 };
 
 const Label: FC<LabelProps> = ({
@@ -20,10 +21,11 @@ const Label: FC<LabelProps> = ({
   icon,
   iconPosition,
   isTextHidden = false,
+  iconSize = 'm',
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
-  const IconElement = <Icon name={icon} className={styles.label_icon} />;
+  const IconElement = <Icon name={icon} size={iconSize} />;
 
   return (
     <label className={styles.label} htmlFor={inputId}>

@@ -18,6 +18,14 @@
   a {
     color: var(--cl-tint-color);
   }
+
+  &_icon {
+    transition: transform 0.3s ease;
+
+    &__opened {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .text {

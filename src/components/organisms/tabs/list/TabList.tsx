@@ -109,7 +109,6 @@ export const TabList: FC<Props> = ({
           view={ButtonView.Icon}
           icon={IconName.PlusCircle}
           onClick={onTabAdd}
-          className={styles.tabList_addButton}
         />
       )}
     </div>

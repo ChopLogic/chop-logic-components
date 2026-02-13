@@ -36,7 +36,7 @@
   background: var(--cl-primary-background);
   padding: var(--cl-m-gap) var(--cl-l-gap);
   box-shadow: var(--cl-box-shadow);
-  border: var(--cl-light-border);
+  border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);
   position: relative;
   @include typography.core-font(base);

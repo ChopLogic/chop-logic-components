@@ -9,10 +9,10 @@ export interface IconProps extends ChopLogicComponentProps {
   testId?: string;
   title?: string;
   hidden?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l' | 'xl';
 }
 
-const Icon: FC<IconProps> = ({ name, testId, className, hidden, size = 'medium', ...rest }) => {
+const Icon: FC<IconProps> = ({ name, testId, className, hidden, size = 'm', ...rest }) => {
   if (!name) return null;
 
   const iconClass = getClassName([
@@ -20,9 +20,10 @@ const Icon: FC<IconProps> = ({ name, testId, className, hidden, size = 'medium',
     styles.icon,
     name,
     {
-      [styles.icon__small]: size === 'small',
-      [styles.icon__medium]: size === 'medium',
-      [styles.icon__large]: size === 'large',
+      [styles.icon__small]: size === 's',
+      [styles.icon__medium]: size === 'm',
+      [styles.icon__large]: size === 'l',
+      [styles.icon__xlarge]: size === 'xl',
     },
   ]);
 

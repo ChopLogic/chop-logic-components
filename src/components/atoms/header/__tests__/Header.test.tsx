@@ -1,12 +1,8 @@
 import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import Header from '../Header';
-
-vi.mock('@components/atoms', () => ({
-  Icon: () => <span data-testid="choplogic-icon">Mock icon</span>,
-}));
 
 describe('Header component', () => {
   it('renders as h1 by default with correct content', () => {
@@ -44,8 +40,7 @@ describe('Header component', () => {
     const testIcon = IconName.Delete;
     render(<Header icon={testIcon}>With Icon</Header>);
 
-    const icon = screen.getByTestId('choplogic-icon');
-    expect(icon).toBeInTheDocument();
+    expect(screen.getByRole('heading')).toHaveClass(testIcon);
   });
 
   it('does not render icon when not provided', () => {
@@ -75,9 +70,8 @@ describe('Header component', () => {
     render(<Header icon={testIcon}>{testContent}</Header>);
 
     const header = screen.getByRole('heading');
-    const icon = screen.getByTestId('choplogic-icon');
 
     expect(header).toHaveTextContent(testContent);
-    expect(icon).toBeInTheDocument();
+    expect(header).toHaveClass(testIcon);
   });
 });

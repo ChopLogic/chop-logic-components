@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     padding: var(--cl-l-gap);
-    border-bottom: var(--cl-light-border);
+    border-bottom: var(--cl-primary-border);
 
     &:hover {
       text-shadow: var(--cl-text-shadow);
@@ -43,7 +43,7 @@
   }
 
   &[open] &_content {
-    border-bottom: var(--cl-light-border);
+    border-bottom: var(--cl-primary-border);
   }
 
   &[open] &_icon {

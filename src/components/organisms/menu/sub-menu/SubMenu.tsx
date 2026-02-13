@@ -2,8 +2,8 @@ import { Icon } from '@components/atoms';
 import { IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import type { MenuItem } from '@types';
+import { getClassName } from '@utils/get-class-name';
 import { type FC, type KeyboardEvent, type PropsWithChildren, useRef } from 'react';
-
 import styles from './SubMenu.module.scss';
 
 type Props = PropsWithChildren & {
@@ -29,6 +29,10 @@ export const SubMenu: FC<Props> = ({
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
+  const iconClass = getClassName([
+    styles.subMenu_icon,
+    { [styles.subMenu_icon__opened]: isSubMenuOpened },
+  ]);
 
   const itemContent = link ? (
     <a href={link} target="_blank" rel="noreferrer">
@@ -75,7 +79,7 @@ export const SubMenu: FC<Props> = ({
         onKeyDown={handleKeyDown}
       >
         {itemContent}
-        <Icon name={isSubMenuOpened ? IconName.ArrowUp : IconName.ArrowDown} />
+        <Icon name={IconName.ChevronDown} className={iconClass} />
       </span>
       {isSubMenuOpened && children}
     </li>

@@ -49,7 +49,7 @@ export const SelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
-      <Icon name={IconName.ChevronUp} className={iconClass} />
+      <Icon name={IconName.ChevronDown} className={iconClass} size="l" />
     </button>
   );
 };

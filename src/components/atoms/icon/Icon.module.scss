@@ -16,6 +16,10 @@
   }
 
   &__large {
+    font-size: var(--larger-font-size);
+  }
+
+  &__xlarge {
     font-size: var(--cl-header-font-size);
   }
 }

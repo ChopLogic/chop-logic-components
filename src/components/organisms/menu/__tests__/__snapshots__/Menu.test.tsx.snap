@@ -28,7 +28,7 @@ exports[`Menu Component > renders a menu bar with the correct role 1`] = `
           Item 2
         </span>
         <span
-          class="_icon_afc5be chop-icon__arrow-down _icon__medium_afc5be"
+          class="_subMenu_icon_007bcc _icon_afc5be chop-icon__chevron-down _icon__medium_afc5be"
         />
       </span>
     </li>

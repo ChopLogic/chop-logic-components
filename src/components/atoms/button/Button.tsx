@@ -64,7 +64,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           {...rest}
           className={className}
         >
-          <Icon name={icon} className={styles.icon} />
+          <Icon name={icon} className={styles.icon} size="l" />
         </IconButton>
       );
     case ButtonView.Inner:

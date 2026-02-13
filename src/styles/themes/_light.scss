@@ -28,7 +28,7 @@
   --cl-text-shadow: 2.4px 2.4px 3.2px hsla(345, 49%, 21%, 0.3);
   // Borders
   --cl-primary-border: 1px solid hsla(195, 100%, 6%, 32%);
-  --cl-light-border: 1px solid hsla(345, 49%, 21%, 32%);
+  --cl-light-border: 1px dashed hsla(345, 49%, 21%, 32%);
   --cl-accent-border: 1px solid hsl(356, 100%, 53%);
   --cl-outline-border: 1px solid hsl(345, 49%, 21%);
 }

@@ -41,6 +41,10 @@
         top: 0;
         left: var(--cl-xs-gap);
       }
+
+      & .tab_buttons {
+        flex-direction: column;
+      }
     }
 
     &__stretched {

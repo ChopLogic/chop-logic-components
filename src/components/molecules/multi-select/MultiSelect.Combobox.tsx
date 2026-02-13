@@ -51,7 +51,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       className={styles.combobox}
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
-      <Icon name={IconName.ChevronUp} className={iconClass} />
+      <Icon name={IconName.ChevronDown} className={iconClass} size="l" />
     </button>
   );
 };

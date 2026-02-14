@@ -1,6 +1,6 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import { Button } from '@components/atoms';
 import { NumericInput } from '@components/molecules';
-import styles from '@styles/storybook/Container.module.scss';
 import { useId, useState } from 'react';
 import { useRemainingTimer } from '../use-remaining-timer';
 

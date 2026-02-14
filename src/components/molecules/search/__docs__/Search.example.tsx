@@ -1,5 +1,5 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import { Header } from '@components/atoms';
-import styles from '@styles/storybook/Container.module.scss';
 import wrapperStyles from '@styles/storybook/ResponsiveWrapper.module.scss';
 import type { SearchProps } from '@types';
 import { type FC, useState } from 'react';

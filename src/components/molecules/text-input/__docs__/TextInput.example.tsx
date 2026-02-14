@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/ResponsiveWrapper.module.scss';
+import styles from '@__docs__/styles/ResponsiveWrapper.module.scss';
 import type { TextInputProps } from '@types';
 import type { FC } from 'react';
 

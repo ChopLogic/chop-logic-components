@@ -1,5 +1,5 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import { useKeyPress } from '@hooks';
-import styles from '@styles/storybook/Container.module.scss';
 import { useRef } from 'react';
 
 export const UseKeyPressExample = () => {

@@ -1,5 +1,5 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import { Checkbox } from '@components/molecules';
-import styles from '@styles/storybook/Container.module.scss';
 import { useId, useRef, useState } from 'react';
 import { useIsHovered } from '../use-is-hovered';
 

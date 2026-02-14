@@ -1,3 +1,4 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import {
   Checkbox,
   MultiSelect,
@@ -7,7 +8,6 @@ import {
   TextInput,
 } from '@components/molecules';
 import { Form } from '@components/organisms';
-import styles from '@styles/storybook/Container.module.scss';
 import type { FormProps, FormValues, SelectValue } from '@types';
 import { type FC, useState } from 'react';
 

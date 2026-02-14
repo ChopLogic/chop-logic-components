@@ -52,6 +52,7 @@ export default defineConfig({
       { find: '@styles', replacement: resolve(__dirname, 'src/styles') },
       { find: '@types', replacement: resolve(__dirname, 'src/types') },
       { find: '@utils', replacement: resolve(__dirname, 'src/utils') },
+      { find: '@__docs__', replacement: resolve(__dirname, 'src/__docs__') },
     ],
   },
   test: {

@@ -1,6 +1,6 @@
+import styles from '@__docs__/styles/Container.module.scss';
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
-import styles from '@styles/storybook/Container.module.scss';
 import { useState } from 'react';
 
 import { useIsMounted } from '../use-is-mounted';

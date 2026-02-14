@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import styles from '@__docs__/styles/Container.module.scss';
 import { useRef, useState } from 'react';
 
 import { useTooltipPosition } from '../use-tooltip-position';

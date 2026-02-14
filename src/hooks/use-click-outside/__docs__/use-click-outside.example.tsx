@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import styles from '@__docs__/styles/Container.module.scss';
 import { useRef } from 'react';
 
 import { useClickOutside } from '../use-click-outside';

@@ -2,12 +2,23 @@
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { coverageConfigDefaults } from 'vitest/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Custom plugin to exclude __docs__ folders from the build
+const excludeDocsPlugin = (): Plugin => ({
+  name: 'exclude-docs',
+  resolveId(id) {
+    if (id.includes('__docs__') || id.includes('__tests__')) {
+      return { id, external: true };
+    }
+    return null;
+  },
+});
 
 export default defineConfig({
   build: {
@@ -22,7 +33,18 @@ export default defineConfig({
       output: {
         exports: 'named',
         compact: true,
-        preserveModules: false,
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: (chunkInfo) => {
+          // Main entry file gets index.es.js
+          if (chunkInfo.name === 'main') {
+            return 'index.es.js';
+          }
+          // Other entry files keep their original structure
+          return '[name].js';
+        },
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name][extname]',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
@@ -35,10 +57,12 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
+    excludeDocsPlugin(),
     dts({
       tsconfigPath: 'tsconfig.build.json',
       insertTypesEntry: true,
-      rollupTypes: true, // Bundles all declarations into one file
+      rollupTypes: true,
+      exclude: ['**/__docs__/**', '**/__tests__/**'],
     }),
     libInjectCss(),
   ],

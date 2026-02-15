@@ -1,0 +1,230 @@
+/**
+ * Chop Logic Components - Main CSS File
+ *
+ * This file contains all CSS variables and animations used in the Chop Logic Components library.
+ * It replaces SCSS variable definitions with pure CSS variables for gradual migration to CSS-only styling.
+ *
+ * Import this file in your project to use the component theming and variables:
+ * @import './node_modules/chop-logic-components/main.css';
+ *
+ * Theme Switching:
+ * - Default theme is "light"
+ * - Add class "cl-components-dark-theme" to the root element to switch to dark theme:
+ *   document.documentElement.classList.add('cl-components-dark-theme');
+ */
+
+/* ============================================================================
+   ROOT VARIABLES - Base sizes, typography, and spacing
+   ============================================================================ */
+
+:root {
+  /* Typography */
+  --cl-core-font: Arial, Helvetica, sans-serif;
+  --cl-monospace-font: "Courier New", Courier, monospace;
+  --cl-fancy-font: Georgia, "Times New Roman", Times, serif;
+
+  /* Font Sizes */
+  --cl-small-font-size: 0.8rem;
+  --cl-base-font-size: 1rem;
+  --cl-larger-font-size: 1.2rem;
+  --cl-header-font-size: 2rem;
+
+  /* Spacing (Gap) */
+  --cl-xs-gap: 2px;
+  --cl-s-gap: 4px;
+  --cl-m-gap: 8px;
+  --cl-l-gap: 16px;
+  --cl-xl-gap: 32px;
+
+  /* Component Sizes */
+  --cl-icon-size: 20px;
+  --cl-thumb-size: 24px;
+  --cl-border-radius: 4px;
+
+  /* Z-Index Scale */
+  --cl-z-index-base: 1;
+  --cl-z-index-popup: 100;
+  --cl-z-index-modal: 200;
+
+  /* Responsive Typography Sizes */
+  --cl-typography-h1-mobile: 2.25rem;
+  --cl-typography-h1-tablet: 2.5rem;
+  --cl-typography-h1-desktop: 3rem;
+
+  --cl-typography-h2-mobile: 2rem;
+  --cl-typography-h2-tablet: 2.25rem;
+  --cl-typography-h2-desktop: 2.5rem;
+
+  --cl-typography-h3-mobile: 1.75rem;
+  --cl-typography-h3-tablet: 2rem;
+  --cl-typography-h3-desktop: 2.25rem;
+
+  --cl-typography-h4-mobile: 1.5rem;
+  --cl-typography-h4-tablet: 1.75rem;
+  --cl-typography-h4-desktop: 2rem;
+
+  --cl-typography-h5-mobile: 1.25rem;
+  --cl-typography-h5-tablet: 1.5rem;
+  --cl-typography-h5-desktop: 1.75rem;
+
+  --cl-typography-h6-mobile: 1rem;
+  --cl-typography-h6-tablet: 1.125rem;
+  --cl-typography-h6-desktop: 1.25rem;
+
+  --cl-typography-base-mobile: 1rem;
+  --cl-typography-base-tablet: 1.125rem;
+  --cl-typography-base-desktop: 1.25rem;
+
+  --cl-typography-small-mobile: 0.875rem;
+  --cl-typography-small-tablet: 1rem;
+  --cl-typography-small-desktop: 1.125rem;
+
+  /* Breakpoints (for reference in media queries) */
+  --cl-breakpoint-sm: 640px;
+  --cl-breakpoint-md: 768px;
+  --cl-breakpoint-lg: 1024px;
+  --cl-breakpoint-xl: 1280px;
+  --cl-breakpoint-xxl: 1536px;
+
+  /* Light Theme Colors (Default) */
+  --cl-primary-color: hsl(195, 100%, 6%);
+  --cl-tint-color: hsl(345, 49%, 21%);
+  --cl-accent-color: hsl(356, 100%, 53%);
+  --cl-primary-background: hsl(0, 0%, 100%);
+  --cl-tint-background: hsl(0, 0%, 80%);
+  --cl-highlight-background: hsl(40, 100%, 58%);
+  --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
+
+  /* Light Theme Gradients */
+  --cl-accent-gradient: linear-gradient(
+    to left,
+    hsl(356, 100%, 21%) 0%,
+    hsl(356, 100%, 32%) 8%,
+    hsl(356, 100%, 32%) 92%,
+    hsl(356, 100%, 21%) 100%
+  );
+  --cl-shadow-gradient: linear-gradient(
+    to left,
+    hsl(0, 0%, 24%) 0%,
+    hsl(0, 0%, 32%) 8%,
+    hsl(0, 0%, 32%) 92%,
+    hsl(0, 0%, 24%) 100%
+  );
+
+  /* Light Theme Shadows */
+  --cl-box-shadow: hsla(195, 100%, 6%, 0.15) 2.4px 2.4px 3.2px;
+  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(195, 100%, 6%, 0.15));
+  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(345, 49%, 21%, 0.3);
+
+  /* Light Theme Borders */
+  --cl-primary-border: 1px solid hsla(195, 100%, 6%, 32%);
+  --cl-light-border: 1px dashed hsla(345, 49%, 21%, 32%);
+  --cl-accent-border: 1px solid hsl(356, 100%, 53%);
+  --cl-outline-border: 1px solid hsl(345, 49%, 21%);
+}
+
+/* ============================================================================
+   DARK THEME
+   ============================================================================ */
+
+.cl-components-dark-theme {
+  /* Dark Theme Colors */
+  --cl-primary-color: hsl(57, 64%, 74%);
+  --cl-tint-color: hsl(43, 87%, 66%);
+  --cl-accent-color: hsl(23, 72%, 53%);
+  --cl-primary-background: hsl(328, 19%, 15%);
+  --cl-tint-background: hsl(328, 20%, 28%);
+  --cl-highlight-background: hsl(24, 55%, 34%);
+  --cl-shadow-background: hsla(24, 55%, 34%, 0.3);
+
+  /* Dark Theme Gradients */
+  --cl-accent-gradient: linear-gradient(
+    to left,
+    hsl(23, 72%, 26%) 0%,
+    hsl(23, 72%, 30%) 8%,
+    hsl(23, 72%, 30%) 92%,
+    hsl(23, 72%, 26%) 100%
+  );
+  --cl-shadow-gradient: linear-gradient(
+    to left,
+    hsl(328, 19%, 24%) 0%,
+    hsl(328, 19%, 30%) 8%,
+    hsl(328, 19%, 30%) 92%,
+    hsl(328, 19%, 24%) 100%
+  );
+
+  /* Dark Theme Shadows */
+  --cl-box-shadow: hsla(24, 55%, 34%, 0.15) 2.4px 2.4px 3.2px;
+  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(43, 87%, 66%, 0.3);
+  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(24, 55%, 34%, 0.15));
+
+  /* Dark Theme Borders */
+  --cl-primary-border: 1px solid hsla(57, 64%, 74%, 32%);
+  --cl-light-border: 1px dashed hsl(43, 87%, 66%, 32%);
+  --cl-accent-border: 1px solid hsl(23, 72%, 53%);
+  --cl-outline-border: 1px solid hsl(43, 87%, 66%);
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes cl-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cl-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Utility classes for animations */
+.cl-fade-in {
+  animation: cl-fade-in ease 400ms;
+}
+
+.cl-fade-out {
+  animation: cl-fade-out ease 400ms;
+}
+
+/* ============================================================================
+   UTILITY CLASSES FOR COMMON PATTERNS
+   
+   Note: These are CSS-only replacements for SCSS mixins that could not be
+   converted to variable definitions. For more complex patterns, consider
+   keeping them in component-specific SCSS files.
+   ============================================================================ */
+
+/**
+ * Disabled State
+ * Usage: Add class "cl-disabled" to disabled elements
+ */
+.cl-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/**
+ * Menu Bar Layout
+ * Usage: Apply to <ul> or <ol> elements for horizontal menu styling
+ */
+.cl-menu-bar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--cl-s-gap);
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}

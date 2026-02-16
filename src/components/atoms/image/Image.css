@@ -1,0 +1,70 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-image {
+  object-fit: cover;
+  border-radius: var(--cl-border-radius);
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+.cl-image__img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-image__picture {
+  display: block;
+  object-fit: cover;
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-image__fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cl-image__fallback-icon {
+  width: 148px;
+  height: 148px;
+}
+
+.cl-image__fallback-icon::before {
+  font-size: 6rem;
+}
+
+.cl-image__fallback-text {
+  text-align: center;
+  padding-top: var(--cl-s-gap);
+  color: var(--cl-primary-color);
+
+  /* Typography: Core font, small size variant */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+   MEDIA QUERIES
+   ============================================================================ */
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-image__fallback-text {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-image__fallback-text {
+    font-size: var(--cl-typography-small-desktop);
+  }
+}

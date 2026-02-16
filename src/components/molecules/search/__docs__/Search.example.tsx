@@ -1,6 +1,6 @@
 import styles from '@__docs__/styles/Container.module.scss';
+import wrapperStyles from '@__docs__/styles/ResponsiveWrapper.module.scss';
 import { Header } from '@components/atoms';
-import wrapperStyles from '@styles/storybook/ResponsiveWrapper.module.scss';
 import type { SearchProps } from '@types';
 import { type FC, useState } from 'react';
 import Search from '../Search';

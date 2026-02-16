@@ -31,6 +31,27 @@ describe('Image', () => {
     expect(screen.queryByTestId('fallback-icon')).not.toBeInTheDocument();
   });
 
+  it('should apply cl-image BEM class to wrapper', () => {
+    const { container } = render(<Image {...defaultProps} />);
+    const wrapper = container.querySelector('.cl-image');
+
+    expect(wrapper).toBeInTheDocument();
+  });
+
+  it('should apply cl-image__img BEM class to img element', () => {
+    render(<Image {...defaultProps} />);
+
+    const img = screen.getByRole('img');
+    expect(img).toHaveClass('cl-image__img');
+  });
+
+  it('should apply custom className along with cl-image', () => {
+    const { container } = render(<Image {...defaultProps} className="custom-class" />);
+    const wrapper = container.querySelector('.cl-image.custom-class');
+
+    expect(wrapper).toBeInTheDocument();
+  });
+
   it('should not have alt text if image is decorative', () => {
     render(<Image {...defaultProps} decorative={true} />);
 
@@ -45,6 +66,21 @@ describe('Image', () => {
 
     expect(screen.getByTestId('fallback-icon')).toBeInTheDocument();
     expect(screen.getByText('Image not available')).toBeInTheDocument();
+  });
+
+  it('should apply BEM classes to fallback elements', () => {
+    const { container } = render(<Image {...defaultProps} />);
+
+    const image = screen.getByRole('img');
+    fireEvent.error(image);
+
+    const fallback = container.querySelector('.cl-image__fallback');
+    const fallbackIcon = container.querySelector('.cl-image__fallback-icon');
+    const fallbackText = container.querySelector('.cl-image__fallback-text');
+
+    expect(fallback).toBeInTheDocument();
+    expect(fallbackIcon).toBeInTheDocument();
+    expect(fallbackText).toBeInTheDocument();
   });
 
   it('shows fallback when responsive image fails to load', () => {
@@ -63,6 +99,21 @@ describe('Image', () => {
 
     expect(screen.getByTestId('fallback-icon')).toBeInTheDocument();
     expect(screen.getByText('Image not available')).toBeInTheDocument();
+  });
+
+  it('should apply cl-image__picture BEM class to picture element', () => {
+    const propsWithSources = {
+      ...defaultProps,
+      sources: [
+        { src: 'test-400.jpg', descriptor: '400w' },
+        { src: 'test-800.jpg', descriptor: '800w' },
+      ],
+    };
+
+    const { container } = render(<Image {...propsWithSources} />);
+
+    const picture = container.querySelector('.cl-image__picture');
+    expect(picture).toBeInTheDocument();
   });
 
   it('calls original onError handler when provided', () => {

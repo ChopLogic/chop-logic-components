@@ -1,7 +1,6 @@
 import type { ImageSource } from '@types';
 import type { FC } from 'react';
 import { BasicImage } from './BasicImage';
-import styles from './Image.module.scss';
 
 type Props = {
   sources: ImageSource[];
@@ -17,7 +16,7 @@ type Props = {
 
 export const ResponsivePicture: FC<Props> = ({ sources = [], ...rest }) => {
   return (
-    <picture className={styles.picture}>
+    <picture className="cl-image__picture">
       {sources.map((source, index) => (
         <source
           key={`${source.src}-${index}`}

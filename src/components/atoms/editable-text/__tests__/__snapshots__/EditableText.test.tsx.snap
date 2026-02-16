@@ -4,7 +4,7 @@ exports[`EditableText > renders ReadView by default 1`] = `
 <DocumentFragment>
   <span
     aria-label="Editable text"
-    class="_editableText_1336ba"
+    class="cl-editable-text"
     role="button"
     tabindex="0"
   >

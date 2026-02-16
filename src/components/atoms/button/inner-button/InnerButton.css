@@ -1,0 +1,29 @@
+.cl-inner-button {
+  animation: cl-fade-in ease 400ms;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  height: var(--cl-icon-size);
+  width: var(--cl-icon-size);
+  transition: 0.1s all;
+}
+
+.cl-inner-button:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: -1px;
+}
+
+.cl-inner-button:hover,
+.cl-inner-button:active {
+  transform: scale(1.2);
+  filter: var(--cl-drop-shadow);
+}
+
+.cl-inner-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}

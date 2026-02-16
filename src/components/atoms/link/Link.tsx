@@ -3,7 +3,7 @@ import type { LinkProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 
-import styles from './Link.module.scss';
+import './Link.css';
 
 const Link: FC<LinkProps> = ({
   href,
@@ -16,10 +16,10 @@ const Link: FC<LinkProps> = ({
   target,
   ...rest
 }) => {
-  const linkClass = getClassName([styles.link, className, { [styles.link__disabled]: disabled }]);
+  const linkClass = getClassName(['cl-link', className, { 'cl-link_disabled': disabled }]);
   const isExternal = external || href.startsWith('http') || href.startsWith('//');
   const linkTarget = isExternal ? target || '_blank' : target;
-  const iconElement = icon ? <Icon name={icon} className={styles.link_icon} hidden /> : null;
+  const iconElement = icon ? <Icon name={icon} className="cl-link__icon" hidden /> : null;
   const isLeftIcon = icon && iconPosition === 'left';
   const isRightIcon = icon && iconPosition === 'right';
 
@@ -38,7 +38,7 @@ const Link: FC<LinkProps> = ({
       {...rest}
     >
       {isLeftIcon && iconElement}
-      <span className={styles.link_text}>{children}</span>
+      <span className="cl-link__text">{children}</span>
       {isRightIcon && iconElement}
     </a>
   );

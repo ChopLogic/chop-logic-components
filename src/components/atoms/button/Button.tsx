@@ -4,8 +4,7 @@ import type { ButtonProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 import { withTooltip } from '../../hocs';
-
-import styles from './Button.module.scss';
+import './Button.css';
 import { IconButton } from './icon-button/IconButton';
 import { InnerButton } from './inner-button/InnerButton';
 import { PrimaryButton } from './primary-button/PrimaryButton';
@@ -23,7 +22,7 @@ const ButtonSelector: FC<ButtonProps> = ({
   className,
   ...rest
 }) => {
-  const extendedClass = getClassName([className, { [styles.extended]: extended }]);
+  const extendedClass = getClassName([className, { 'cl-button_extended': extended }]);
 
   switch (view) {
     case ButtonView.Primary:
@@ -36,7 +35,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           className={extendedClass}
           {...rest}
         >
-          <Icon name={icon} className={styles.icon} />
+          <Icon name={icon} className="cl-button__icon" />
           {text}
         </PrimaryButton>
       );
@@ -50,7 +49,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           className={extendedClass}
           {...rest}
         >
-          <Icon name={icon} className={styles.icon} />
+          <Icon name={icon} className="cl-button__icon" />
           {text}
         </SecondaryButton>
       );
@@ -64,7 +63,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           {...rest}
           className={className}
         >
-          <Icon name={icon} className={styles.icon} size="l" />
+          <Icon name={icon} className="cl-button__icon" size="l" />
         </IconButton>
       );
     case ButtonView.Inner:

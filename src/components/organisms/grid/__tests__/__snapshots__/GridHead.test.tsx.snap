@@ -21,11 +21,11 @@ exports[`GridHead > should match the snapshot 1`] = `
               type="checkbox"
             />
             <label
-              class="_label_5091d6"
+              class="cl-label"
               for="select_all_test-grid-id"
             >
               <span
-                class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                class="cl-icon chop-icon__square cl-icon_large"
               />
             </label>
           </div>

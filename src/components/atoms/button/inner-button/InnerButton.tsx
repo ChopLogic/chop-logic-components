@@ -2,8 +2,7 @@ import { Icon } from '@components/atoms';
 import type { IconName } from '@enums';
 import { getClassName } from '@utils';
 import type { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
-
-import styles from './InnerButton.module.scss';
+import './InnerButton.css';
 
 type Props = {
   label?: string;
@@ -14,7 +13,7 @@ type Props = {
 export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
   return (
     <button
-      className={getClassName([styles.button, className])}
+      className={getClassName(['cl-inner-button', className])}
       onClick={onClick}
       aria-label={label}
       type="button"

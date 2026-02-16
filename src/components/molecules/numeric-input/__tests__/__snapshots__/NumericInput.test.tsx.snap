@@ -7,22 +7,22 @@ exports[`NumericInput > should match the snapshot 1`] = `
     style="width: 400px;"
   >
     <label
-      class="_label_5091d6"
+      class="cl-label"
       for="numeric-input"
     >
       <span
-        class="_label_text_5091d6"
+        class="cl-label__text"
       >
         Quantity
       </span>
     </label>
     <div
-      class="_wrapper_358de2"
+      class="cl-input__wrapper"
     >
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="_input_358de2"
+        class="cl-input__field"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"
@@ -35,26 +35,26 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__chevron-left _icon__large_afc5be"
+            class="cl-icon chop-icon__chevron-left cl-icon_large"
           />
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__chevron-right _icon__large_afc5be"
+            class="cl-icon chop-icon__chevron-right cl-icon_large"
           />
         </button>
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_2a3830 _errorMessage_f26bd3"
+        class="cl-error-message _errorMessage_f26bd3"
         id="numeric-input_error"
       >
         Error!

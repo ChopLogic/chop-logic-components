@@ -7,24 +7,24 @@ exports[`TextInput > should render the input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="_label_5091d6"
+      class="cl-label"
       for="test-input-id"
     >
       <span
-        class="_label_text_5091d6"
+        class="cl-label__text"
       >
         Test Input
       </span>
     </label>
     <div
-      class="_wrapper_358de2"
+      class="cl-input__wrapper"
     >
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
         aria-readonly="false"
         autocomplete="off"
-        class="_input_358de2"
+        class="cl-input__field"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -34,17 +34,17 @@ exports[`TextInput > should render the input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__delete _icon__large_afc5be"
+            class="cl-icon chop-icon__delete cl-icon_large"
           />
         </button>
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_2a3830 _errorMessage_c37d8e"
+        class="cl-error-message _errorMessage_c37d8e"
         id="test-input-id_error"
       >
         Error!
@@ -61,14 +61,15 @@ exports[`TextInput > should render the required input correctly 1`] = `
     style="width: 600px;"
   >
     <label
-      class="_label_5091d6"
+      class="cl-label"
       for="test-input-id"
     >
       <span
-        class="_label_text_5091d6"
+        class="cl-label__text"
       >
         Test Input
         <abbr
+          class="cl-label__required"
           title="required"
         >
           *
@@ -76,14 +77,14 @@ exports[`TextInput > should render the required input correctly 1`] = `
       </span>
     </label>
     <div
-      class="_wrapper_358de2"
+      class="cl-input__wrapper"
     >
       <input
         aria-errormessage="test-input-id_error"
         aria-invalid="false"
         aria-readonly="false"
         autocomplete="off"
-        class="_input_358de2"
+        class="cl-input__field"
         id="test-input-id"
         name="test"
         placeholder="Enter text here..."
@@ -94,17 +95,17 @@ exports[`TextInput > should render the required input correctly 1`] = `
       <span>
         <button
           aria-label="Clear input for Test Input"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
           <span
-            class="_icon_afc5be chop-icon__delete _icon__large_afc5be"
+            class="cl-icon chop-icon__delete cl-icon_large"
           />
         </button>
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_2a3830 _errorMessage_c37d8e"
+        class="cl-error-message _errorMessage_c37d8e"
         id="test-input-id_error"
       >
         Error!

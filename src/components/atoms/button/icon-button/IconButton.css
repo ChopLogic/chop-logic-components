@@ -1,0 +1,26 @@
+.cl-icon-button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--cl-m-gap);
+  border-radius: 50%;
+  background: transparent;
+  width: fit-content;
+  transition: 0.1s all;
+}
+
+.cl-icon-button:hover {
+  transform: scale(1.2);
+  filter: var(--cl-drop-shadow);
+}
+
+.cl-icon-button:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-icon-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}

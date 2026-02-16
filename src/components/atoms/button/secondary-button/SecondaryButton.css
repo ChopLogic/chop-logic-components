@@ -1,0 +1,50 @@
+.cl-secondary-button {
+  color: var(--cl-primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-m-gap) var(--cl-l-gap);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  background: transparent;
+
+  /* Typography: core font base */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-base-font-size);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+
+  /* Font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Ripple effect */
+  background-position: center;
+  transition: background 0.3s;
+}
+
+.cl-secondary-button:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+  background-size: 15000%;
+}
+
+.cl-secondary-button:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.cl-secondary-button:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-secondary-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}

@@ -3,11 +3,11 @@
 exports[`Label > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
     for="test-input-id"
   >
     <span
-      class="_label_text_5091d6"
+      class="cl-label__text"
     >
       Test label
     </span>
@@ -18,14 +18,15 @@ exports[`Label > should render correctly as not required label 1`] = `
 exports[`Label > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
     for="test-input-id"
   >
     <span
-      class="_label_text_5091d6"
+      class="cl-label__text"
     >
       Test label
       <abbr
+        class="cl-label__required"
         title="required"
       >
         *
@@ -38,7 +39,7 @@ exports[`Label > should render correctly as required label 1`] = `
 exports[`Label > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
     for="test-input-id"
   />
 </DocumentFragment>
@@ -47,14 +48,14 @@ exports[`Label > should render correctly without text 1`] = `
 exports[`Label > should render left icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
     for="test-input-id"
   >
     <span
-      class="_icon_afc5be chop-icon__arrow-left _icon__medium_afc5be"
+      class="cl-icon chop-icon__arrow-left cl-icon_medium"
     />
     <span
-      class="_label_text_5091d6"
+      class="cl-label__text"
     >
       Test label
     </span>
@@ -65,16 +66,16 @@ exports[`Label > should render left icon 1`] = `
 exports[`Label > should render right icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
     for="test-input-id"
   >
     <span
-      class="_label_text_5091d6"
+      class="cl-label__text"
     >
       Test label
     </span>
     <span
-      class="_icon_afc5be chop-icon__arrow-down-right _icon__medium_afc5be"
+      class="cl-icon chop-icon__arrow-down-right cl-icon_medium"
     />
   </label>
 </DocumentFragment>

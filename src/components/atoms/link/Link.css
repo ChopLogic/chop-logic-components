@@ -1,0 +1,51 @@
+.cl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cl-s-gap);
+  text-decoration: none;
+  color: var(--cl-tint-color);
+  transition: all 0.2s ease;
+}
+
+.cl-link:focus {
+  outline: var(--cl-outline-border);
+  outline-offset: 2px;
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.cl-link:hover {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-link_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cl-link__text {
+  /* Typography: core font base */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-base-font-size);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+
+  /* Font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-link__text:hover {
+  text-decoration: underline;
+}
+
+.cl-link__icon::before {
+  color: var(--cl-tint-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

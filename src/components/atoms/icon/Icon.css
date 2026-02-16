@@ -1,0 +1,24 @@
+.cl-icon {
+  color: var(--cl-primary-color);
+  display: inline-flex;
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+  align-items: center;
+  justify-content: center;
+}
+
+.cl-icon_small {
+  font-size: var(--cl-small-font-size);
+}
+
+.cl-icon_medium {
+  font-size: var(--cl-base-font-size);
+}
+
+.cl-icon_large {
+  font-size: var(--cl-larger-font-size);
+}
+
+.cl-icon_xlarge {
+  font-size: var(--cl-header-font-size);
+}

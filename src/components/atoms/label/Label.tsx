@@ -1,8 +1,7 @@
 import { Icon } from '@components/atoms';
 import type { IconName } from '@enums';
 import type { FC } from 'react';
-
-import styles from './Label.module.scss';
+import './Label.css';
 
 type LabelProps = {
   label: string;
@@ -28,12 +27,16 @@ const Label: FC<LabelProps> = ({
   const IconElement = <Icon name={icon} size={iconSize} />;
 
   return (
-    <label className={styles.label} htmlFor={inputId}>
+    <label className="cl-label" htmlFor={inputId}>
       {isLeftIconVisible && IconElement}
       {!isTextHidden && (
-        <span className={styles.label_text}>
+        <span className="cl-label__text">
           {label}
-          {required && <abbr title="required">*</abbr>}
+          {required && (
+            <abbr className="cl-label__required" title="required">
+              *
+            </abbr>
+          )}
         </span>
       )}
       {isRightIconVisible && IconElement}

@@ -45,11 +45,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_all_grid-id"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -94,11 +94,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row1"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -137,11 +137,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row2"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -180,11 +180,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row3"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -225,11 +225,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row4"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -270,11 +270,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row5"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>
@@ -313,11 +313,11 @@ exports[`Grid > should match the snapshot 1`] = `
                 type="checkbox"
               />
               <label
-                class="_label_5091d6"
+                class="cl-label"
                 for="select_row_row6"
               >
                 <span
-                  class="_icon_afc5be chop-icon__square _icon__large_afc5be"
+                  class="cl-icon chop-icon__square cl-icon_large"
                 />
               </label>
             </div>

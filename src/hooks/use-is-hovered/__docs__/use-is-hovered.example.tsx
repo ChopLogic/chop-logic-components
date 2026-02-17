@@ -1,4 +1,4 @@
-import styles from '@__docs__/styles/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { Checkbox } from '@components/molecules';
 import { useId, useRef, useState } from 'react';
 import { useIsHovered } from '../use-is-hovered';
@@ -10,10 +10,10 @@ export const InteractiveHoverDemo = ({ isMounted: initialIsMounted }: { isMounte
   const toggleId = useId();
 
   return (
-    <div style={{ padding: '1rem', border: 'none' }} className={styles.container}>
+    <div style={{ padding: '1rem', border: 'none' }} className="container">
       <div
         ref={hoverElementRef}
-        className={styles.container}
+        className="container"
         style={{
           padding: '2rem',
           borderRadius: '8px',

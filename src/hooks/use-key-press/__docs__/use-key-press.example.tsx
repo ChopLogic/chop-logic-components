@@ -1,4 +1,4 @@
-import styles from '@__docs__/styles/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { useKeyPress } from '@hooks';
 import { useRef } from 'react';
 
@@ -12,7 +12,7 @@ export const UseKeyPressExample = () => {
   useKeyPress({ ref, keyCode: 'Space', onKeyPress: handleKeyPress });
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <input type="text" ref={ref} placeholder="Focus and Press Space key" />
     </div>
   );

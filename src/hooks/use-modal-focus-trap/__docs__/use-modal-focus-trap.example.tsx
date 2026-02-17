@@ -1,4 +1,4 @@
-import styles from '@__docs__/styles/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
 import { useRef, useState } from 'react';
@@ -15,7 +15,7 @@ export const UseModalFocusTrapExample = () => {
     <div style={{ padding: '1rem' }}>
       <Button onClick={() => setIsOpened(true)} text="Open modal" view={ButtonView.Secondary} />
       {isOpened && (
-        <div ref={modalRef} tabIndex={-1} className={styles.container}>
+        <div ref={modalRef} tabIndex={-1} className="container">
           <button type="button" onClick={() => setIsOpened(false)}>
             Close Modal
           </button>

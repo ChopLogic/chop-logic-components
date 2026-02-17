@@ -1,4 +1,4 @@
-import styles from '@__docs__/styles/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { Button } from '@components/atoms';
 import { NumericInput } from '@components/molecules';
 import { useId, useState } from 'react';
@@ -30,7 +30,7 @@ export const InteractiveRemainingTimerDemo = ({
   return (
     <div
       style={{ padding: '1rem', minWidth: '300px', gap: '1rem', border: 'none' }}
-      className={styles.container}
+      className="container"
     >
       <div>
         <NumericInput

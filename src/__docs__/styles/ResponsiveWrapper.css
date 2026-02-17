@@ -1,0 +1,24 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.responsiveWrapper {
+  width: 90% !important;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .responsiveWrapper {
+    width: 60% !important;
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .responsiveWrapper {
+    width: 50% !important;
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-xl)) {
+  .responsiveWrapper {
+    width: 40% !important;
+  }
+}

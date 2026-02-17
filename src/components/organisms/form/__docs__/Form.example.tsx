@@ -1,4 +1,4 @@
-import styles from '@__docs__/styles/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import {
   Checkbox,
   MultiSelect,
@@ -81,7 +81,7 @@ export const FormExample: FC<FormProps> = (props) => {
         <Switch name="isAgreedToCollectAnalytics" label="Send Analytics" />
       </Form>
       {data && (
-        <div className={styles.container} style={{ marginTop: '2rem' }}>
+        <div className="container" style={{ marginTop: '2rem' }}>
           <table style={{ textAlign: 'left' }}>
             <thead>
               <tr>

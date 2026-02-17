@@ -5,19 +5,19 @@
   width: 90% !important;
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .responsiveWrapper {
     width: 60% !important;
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .responsiveWrapper {
     width: 50% !important;
   }
 }
 
-@media (min-width: var(--cl-breakpoint-xl)) {
+@media (min-width: 1280px) {
   .responsiveWrapper {
     width: 40% !important;
   }

@@ -12,6 +12,7 @@
 [class^="chop-icon__"]::before,
 [class*=" chop-icon__"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
+  /* biome-ignore lint/a11y/useGenericFontNames: custom font-face for icons */
   font-family: "chop-logic-icons" !important;
   font-style: normal;
   font-weight: normal;

@@ -32,7 +32,7 @@
   width: 90vw;
 }
 
-@media screen and (min-width: var(--cl-breakpoint-lg)) {
+@media screen and (min-width: 1024px) {
   .cl-alert {
     width: 50vw;
     transform: none;
@@ -65,13 +65,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-alert__content {
     font-size: var(--cl-typography-base-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-alert__content {
     font-size: var(--cl-typography-base-desktop);
   }

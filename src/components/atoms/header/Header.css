@@ -5,7 +5,6 @@
 
 .cl-header::before {
   padding-right: var(--cl-m-gap);
-  vertical-align: -4px;
 }
 
 .cl-header__h1 {
@@ -20,13 +19,13 @@
   font-size: var(--cl-typography-h1-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h1 {
     font-size: var(--cl-typography-h1-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h1 {
     font-size: var(--cl-typography-h1-desktop);
   }
@@ -43,13 +42,13 @@
   font-size: var(--cl-typography-h2-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h2 {
     font-size: var(--cl-typography-h2-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h2 {
     font-size: var(--cl-typography-h2-desktop);
   }
@@ -66,13 +65,13 @@
   font-size: var(--cl-typography-h3-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h3 {
     font-size: var(--cl-typography-h3-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h3 {
     font-size: var(--cl-typography-h3-desktop);
   }
@@ -88,13 +87,13 @@
   font-size: var(--cl-typography-h4-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h4 {
     font-size: var(--cl-typography-h4-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h4 {
     font-size: var(--cl-typography-h4-desktop);
   }
@@ -110,13 +109,13 @@
   font-size: var(--cl-typography-h5-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h5 {
     font-size: var(--cl-typography-h5-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h5 {
     font-size: var(--cl-typography-h5-desktop);
   }
@@ -132,13 +131,13 @@
   font-size: var(--cl-typography-h6-mobile);
 }
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-header__h6 {
     font-size: var(--cl-typography-h6-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-header__h6 {
     font-size: var(--cl-typography-h6-desktop);
   }

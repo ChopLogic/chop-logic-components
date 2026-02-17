@@ -1,4 +1,5 @@
-import '@styles/root.scss';
+import '@styles/main.css';
+import '@styles/icons.css';
 
 import { ThemeMode } from '@enums';
 import { type FC, type ReactNode, useEffect, useMemo, useState } from 'react';

@@ -26,14 +26,14 @@
 }
 
 /* Responsive font size for tablet */
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-tooltip {
     font-size: var(--cl-typography-small-tablet);
   }
 }
 
 /* Responsive font size for desktop */
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-tooltip {
     font-size: var(--cl-typography-small-desktop);
   }

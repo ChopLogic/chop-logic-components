@@ -36,7 +36,7 @@ exports[`Image snapshot tests > FallbackImage should match snapshot 1`] = `
 exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
 <DocumentFragment>
   <figure
-    class="_figure_d6588c"
+    class="cl-figure"
   >
     <div
       class="cl-image"
@@ -50,7 +50,7 @@ exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
       />
     </div>
     <figcaption
-      class="_figure_caption_d6588c"
+      class="cl-figure__caption"
     >
       Snapshot Image
     </figcaption>

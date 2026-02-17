@@ -1,0 +1,11 @@
+.cl-figure {
+  margin: 0;
+  display: block;
+}
+
+.cl-figure__caption {
+  text-align: center;
+  padding-top: var(--cl-s-gap);
+  color: var(--cl-primary-color);
+  font-size: var(--cl-typography-small);
+}

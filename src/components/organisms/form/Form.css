@@ -9,19 +9,19 @@
   grid-template-rows: auto;
 }
 
-@media screen and (min-width: var(--cl-breakpoint-md)) {
+@media screen and (min-width: 640px) {
   .cl-form {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: var(--cl-breakpoint-lg)) {
+@media screen and (min-width: 1024px) {
   .cl-form {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (min-width: var(--cl-breakpoint-xl)) {
+@media screen and (min-width: 1280px) {
   .cl-form {
     grid-template-columns: repeat(4, 1fr);
   }

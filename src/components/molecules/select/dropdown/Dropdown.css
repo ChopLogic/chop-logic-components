@@ -23,14 +23,14 @@
   top: 76px;
 }
 
-@media screen and (min-width: var(--cl-breakpoint-md)) {
+@media screen and (min-width: 640px) {
   .cl-select-dropdown {
     top: 82px;
     max-height: 220px;
   }
 }
 
-@media screen and (min-width: var(--cl-breakpoint-lg)) {
+@media screen and (min-width: 1024px) {
   .cl-select-dropdown {
     top: 88px;
     max-height: 260px;

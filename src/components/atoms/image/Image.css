@@ -57,13 +57,13 @@
    MEDIA QUERIES
    ============================================================================ */
 
-@media (min-width: var(--cl-breakpoint-md)) {
+@media (min-width: 640px) {
   .cl-image__fallback-text {
     font-size: var(--cl-typography-small-tablet);
   }
 }
 
-@media (min-width: var(--cl-breakpoint-lg)) {
+@media (min-width: 1024px) {
   .cl-image__fallback-text {
     font-size: var(--cl-typography-small-desktop);
   }

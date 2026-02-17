@@ -1,7 +1,7 @@
 import type { ChopLogicTabItem } from '@types';
 import type { FC, ReactElement } from 'react';
 
-import styles from './TabContent.module.scss';
+import './TabContent.css';
 
 export const TabContent: FC<{
   tabs: ChopLogicTabItem[];
@@ -19,7 +19,7 @@ export const TabContent: FC<{
       data-testid="tab-content"
       aria-labelledby={selectedTabId}
       id={contentId}
-      className={styles.tabContent}
+      className="cl-tab-content"
     >
       {isExtendedTab ? extendedTabContent : content}
     </div>

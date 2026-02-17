@@ -1,7 +1,7 @@
 import type { ChangeEvent, FC } from 'react';
 
 import { GridCheckbox } from '../checkbox/GridCheckbox';
-import styles from './SelectAllGridRowsCell.module.scss';
+import './SelectAllGridRowsCell.css';
 
 type Props = {
   gridId: string;
@@ -28,7 +28,7 @@ export const SelectAllGridRowsCell: FC<Props> = ({
   };
 
   return (
-    <th className={styles.headerCell}>
+    <th className="cl-header-cell">
       <GridCheckbox
         label="Select all rows"
         onChange={handleSelectAll}

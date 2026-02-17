@@ -1,0 +1,69 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-grid-checkbox {
+  display: flex;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-s-gap);
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  transition: background 0.3s;
+}
+
+.cl-grid-checkbox:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+}
+
+.cl-grid-checkbox:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-grid-checkbox svg {
+  color: var(--cl-primary-color);
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+}
+
+.cl-grid-checkbox label {
+  cursor: pointer;
+  gap: var(--cl-s-gap);
+  font-size: var(--cl-small-font-size);
+}
+
+.cl-grid-checkbox label:hover,
+.cl-grid-checkbox label:active {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-grid-checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 4px;
+  left: 0;
+  margin: 0;
+}
+
+.cl-grid-checkbox__input:focus-visible + label {
+  outline: var(--cl-outline-border);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-grid-checkbox_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

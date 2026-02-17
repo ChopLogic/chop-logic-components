@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { GridDataCell } from '../data-cell/GridDataCell';
 import { SelectGridRowCell } from '../select-grid-row-cell/SelectGridRowCell';
-import styles from './GridRow.module.scss';
+import './GridRow.css';
 
 type Props = {
   rowId: string;
@@ -28,7 +28,7 @@ export const GridRow: FC<Props> = ({
   const selected = selectedIds.includes(rowId);
 
   return (
-    <tr className={getClassName([styles.row, { [styles.row__selected]: selected }])}>
+    <tr className={getClassName(['cl-grid-row', { 'cl-grid-row_selected': selected }])}>
       {selectable && (
         <SelectGridRowCell
           rowId={rowId}

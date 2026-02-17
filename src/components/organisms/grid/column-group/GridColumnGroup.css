@@ -1,0 +1,19 @@
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-grid-column-group__column {
+  border-right: var(--cl-primary-border);
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-grid-column-group__column_first {
+  border-left: var(--cl-primary-border);
+}
+
+.cl-grid-column-group__column_highlighted {
+  background-color: var(--cl-highlight-background);
+}

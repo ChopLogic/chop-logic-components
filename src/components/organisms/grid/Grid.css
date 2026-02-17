@@ -1,0 +1,38 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-grid {
+  border-collapse: collapse;
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-grid__caption {
+  color: var(--cl-primary-color);
+  padding: var(--cl-m-gap);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-grid__caption {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-grid__caption {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-grid__wrapper {
+  overflow-x: auto;
+}

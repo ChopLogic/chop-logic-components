@@ -1,0 +1,29 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-tab-content {
+  color: var(--cl-primary-color);
+  border-top: var(--cl-primary-border);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-l-gap);
+  flex-grow: 1;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-tab-content {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-tab-content {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

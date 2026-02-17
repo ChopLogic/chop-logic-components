@@ -1,0 +1,56 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-menu-leaf {
+  color: var(--cl-primary-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--cl-m-gap);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+  background-position: center;
+  transition: background 0.3s;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-menu-leaf {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-menu-leaf {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-menu-leaf:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+}
+
+.cl-menu-leaf:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.cl-menu-leaf:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-menu-leaf a {
+  color: var(--cl-tint-color);
+}

@@ -4,19 +4,19 @@ exports[`GridHead > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <thead
-      class="_head_3e15c7"
+      class="cl-grid-head"
     >
       <tr
-        class="_head_row_3e15c7"
+        class="cl-grid-head__row"
       >
         <th
-          class="_headerCell_849111"
+          class="cl-header-cell"
         >
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_all_test-grid-id"
               type="checkbox"
             />
@@ -31,17 +31,17 @@ exports[`GridHead > should match the snapshot 1`] = `
           </div>
         </th>
         <th
-          class="_headerCell_b798d8"
+          class="cl-header-cell"
         >
           Col 1
         </th>
         <th
-          class="_headerCell_b798d8"
+          class="cl-header-cell"
         >
           Col 2
         </th>
         <th
-          class="_headerCell_b798d8"
+          class="cl-header-cell"
         >
           Col 3
         </th>

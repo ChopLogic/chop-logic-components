@@ -1,0 +1,40 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-form {
+  display: grid;
+  align-items: end;
+  gap: var(--cl-l-gap);
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+@media screen and (min-width: var(--cl-breakpoint-md)) {
+  .cl-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: var(--cl-breakpoint-lg)) {
+  .cl-form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: var(--cl-breakpoint-xl)) {
+  .cl-form {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-form__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--cl-l-gap);
+  grid-column: 1 / -1;
+}

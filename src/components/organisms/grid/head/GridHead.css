@@ -1,0 +1,35 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-grid-head {
+  color: var(--cl-primary-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-grid-head {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-grid-head {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-grid-head__row {
+  border-top: var(--cl-primary-border);
+  border-bottom: var(--cl-primary-border);
+  background-color: var(--cl-primary-background);
+}

@@ -2,7 +2,7 @@ import { Icon } from '@components/atoms';
 import type { MenuItem } from '@types';
 import type { ReactElement } from 'react';
 
-import styles from './MenuLeaf.module.scss';
+import './MenuLeaf.css';
 
 export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
   const { icon, link, label, onFocus, onClick, onHover } = item;
@@ -24,7 +24,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
 
   return (
     <li
-      className={styles.menuLeaf}
+      className="cl-menu-leaf"
       tabIndex={0}
       role="menuitem"
       onFocus={onFocus}

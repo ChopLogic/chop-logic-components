@@ -4,19 +4,19 @@ exports[`GridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="_body_4abb59"
+      class="cl-grid-body"
     >
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
         <td
-          class="_cell_06c8d1"
+          class="cl-grid-data-cell"
         >
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row1"
               type="checkbox"
             />
@@ -31,32 +31,32 @@ exports[`GridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 1
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 2
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 3
         </td>
       </tr>
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
         <td
-          class="_cell_06c8d1"
+          class="cl-grid-data-cell"
         >
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row2"
               type="checkbox"
             />
@@ -71,32 +71,32 @@ exports[`GridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 5
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 6
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 7
         </td>
       </tr>
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
         <td
-          class="_cell_06c8d1"
+          class="cl-grid-data-cell"
         >
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row3"
               type="checkbox"
             />
@@ -111,17 +111,17 @@ exports[`GridBody > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 9
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 10
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 11
         </td>

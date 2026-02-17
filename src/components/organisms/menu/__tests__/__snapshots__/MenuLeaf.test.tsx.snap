@@ -3,7 +3,7 @@
 exports[`MenuLeaf > should match the snapshot 1`] = `
 <DocumentFragment>
   <li
-    class="_menuLeaf_35fbff"
+    class="cl-menu-leaf"
     role="menuitem"
     tabindex="0"
   >

@@ -5,16 +5,16 @@ exports[`GridRow > should match the snapshot 1`] = `
   <table>
     <tbody>
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
         <td
-          class="_cell_06c8d1"
+          class="cl-grid-data-cell"
         >
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_item-1"
               type="checkbox"
             />
@@ -29,17 +29,17 @@ exports[`GridRow > should match the snapshot 1`] = `
           </div>
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 1
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           Value 2
         </td>
         <td
-          class="_cell_f56690"
+          class="cl-grid-data-cell"
         >
           <span>
             Value 3

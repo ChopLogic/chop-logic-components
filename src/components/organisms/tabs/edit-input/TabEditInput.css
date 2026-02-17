@@ -1,0 +1,54 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-tab-edit-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cl-s-gap);
+  width: 100%;
+  padding: 0 var(--cl-s-gap);
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-tab-edit-container__input {
+  flex: 1;
+  padding-block: 0;
+  padding-inline: 0;
+  padding: var(--cl-s-gap);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  background: transparent;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-tab-edit-container__input {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-tab-edit-container__input {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-tab-edit-container__input:focus-visible,
+.cl-tab-edit-container__input:focus {
+  outline: none;
+}
+
+.cl-tab-edit-container__buttons {
+  display: flex;
+  align-items: center;
+}

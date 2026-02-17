@@ -3,21 +3,21 @@
 exports[`Tabs > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_tabs_8ab983 test-class"
+    class="cl-tabs test-class"
     id="tabs-id"
   >
     <div
-      class="_tabList_97c491"
+      class="cl-tab-list"
       data-testid="tab-list"
       role="tablist"
     >
       <span
-        class="_tab_wrapper_403a0a _tab_wrapper__selected_403a0a _tab_wrapper__stretched_403a0a"
+        class="cl-tab__wrapper cl-tab__wrapper_selected cl-tab__wrapper_stretched"
       >
         <button
           aria-controls="tabpanel_tab-1"
           aria-selected="true"
-          class="_tab_403a0a"
+          class="cl-tab"
           id="tab-1"
           role="tab"
         >
@@ -25,12 +25,12 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_403a0a _tab_wrapper__stretched_403a0a _tab_wrapper__inactive_403a0a"
+        class="cl-tab__wrapper cl-tab__wrapper_stretched cl-tab__wrapper_inactive"
       >
         <button
           aria-controls="tabpanel_tab-2"
           aria-selected="false"
-          class="_tab_403a0a"
+          class="cl-tab"
           id="tab-2"
           role="tab"
         >
@@ -38,12 +38,12 @@ exports[`Tabs > should match the snapshot 1`] = `
         </button>
       </span>
       <span
-        class="_tab_wrapper_403a0a _tab_wrapper__stretched_403a0a _tab_wrapper__inactive_403a0a"
+        class="cl-tab__wrapper cl-tab__wrapper_stretched cl-tab__wrapper_inactive"
       >
         <button
           aria-controls="tabpanel_tab-3"
           aria-selected="false"
-          class="_tab_403a0a"
+          class="cl-tab"
           id="tab-3"
           role="tab"
         >
@@ -53,7 +53,7 @@ exports[`Tabs > should match the snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tab-1"
-      class="_tabContent_5ac944"
+      class="cl-tab-content"
       data-testid="tab-content"
       id="tabpanel_tab-1"
       role="tabpanel"

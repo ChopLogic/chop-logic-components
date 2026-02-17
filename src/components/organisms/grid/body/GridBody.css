@@ -1,0 +1,25 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-grid-body {
+  color: var(--cl-primary-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-grid-body {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-grid-body {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

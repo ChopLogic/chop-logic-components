@@ -5,12 +5,12 @@ exports[`SubMenu > should match the snapshot 1`] = `
   <li
     aria-expanded="true"
     aria-haspopup="true"
-    class="_subMenu_007bcc"
+    class="cl-sub-menu"
     role="menuitem"
     tabindex="0"
   >
     <span
-      class="_text_007bcc"
+      class="cl-sub-menu__text"
     >
       <span>
         <span
@@ -19,7 +19,7 @@ exports[`SubMenu > should match the snapshot 1`] = `
         Item without Link
       </span>
       <span
-        class="_subMenu_icon_007bcc _subMenu_icon__opened_007bcc cl-icon chop-icon__chevron-down cl-icon_medium"
+        class="cl-sub-menu__icon cl-sub-menu__icon_opened cl-icon chop-icon__chevron-down cl-icon_medium"
       />
     </span>
     <div>

@@ -2,10 +2,10 @@ import type { GridProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 
+import './Grid.css';
 import { GridBody } from './body/GridBody';
 import { GridColumnGroup } from './column-group/GridColumnGroup';
 import { useGridController } from './Grid.controller';
-import styles from './Grid.module.scss';
 import { GridHead } from './head/GridHead';
 
 const Grid: FC<GridProps> = ({
@@ -31,9 +31,9 @@ const Grid: FC<GridProps> = ({
   } = useGridController({ id, data, onSelect });
 
   return (
-    <div className={styles.grid_wrapper}>
-      <table {...rest} className={getClassName([styles.grid, className])}>
-        {caption && <caption className={styles.grid_caption}>{caption}</caption>}
+    <div className="cl-grid__wrapper">
+      <table {...rest} className={getClassName(['cl-grid', className])}>
+        {caption && <caption className="cl-grid__caption">{caption}</caption>}
         <GridColumnGroup columns={columns} selectable={selectable} />
         <GridHead
           gridId={elementId}

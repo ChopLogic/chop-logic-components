@@ -4,7 +4,7 @@ import { useClickOutside } from '@hooks';
 import type { MenuItem } from '@types';
 import { getClassName } from '@utils/get-class-name';
 import { type FC, type KeyboardEvent, type PropsWithChildren, useRef } from 'react';
-import styles from './SubMenu.module.scss';
+import './SubMenu.css';
 
 type Props = PropsWithChildren & {
   item: MenuItem;
@@ -30,8 +30,8 @@ export const SubMenu: FC<Props> = ({
   const ref = useRef(null);
   const dependentRef = useRef(null);
   const iconClass = getClassName([
-    styles.subMenu_icon,
-    { [styles.subMenu_icon__opened]: isSubMenuOpened },
+    'cl-sub-menu__icon',
+    { 'cl-sub-menu__icon_opened': isSubMenuOpened },
   ]);
 
   const itemContent = link ? (
@@ -62,7 +62,7 @@ export const SubMenu: FC<Props> = ({
 
   return (
     <li
-      className={styles.subMenu}
+      className="cl-sub-menu"
       tabIndex={0}
       role="menuitem"
       aria-haspopup="true"
@@ -73,7 +73,7 @@ export const SubMenu: FC<Props> = ({
       ref={ref}
     >
       <span
-        className={styles.text}
+        className="cl-sub-menu__text"
         ref={dependentRef}
         onClick={toggleSubMenu}
         onKeyDown={handleKeyDown}

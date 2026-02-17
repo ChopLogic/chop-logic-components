@@ -1,0 +1,50 @@
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+@keyframes cl-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-sub-menu-bar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--cl-s-gap);
+  justify-content: flex-start;
+  width: 100%;
+  animation: cl-fade-in ease 400ms;
+  flex-direction: column;
+  padding-left: var(--cl-l-gap);
+  margin-left: var(--cl-l-gap);
+  margin-top: var(--cl-s-gap);
+  box-sizing: border-box;
+  border-left: var(--cl-primary-border);
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-sub-menu-bar_horizontal {
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  width: max-content;
+  border-radius: var(--cl-border-radius);
+  border: var(--cl-primary-border);
+  box-shadow: var(--cl-box-shadow);
+  background-color: var(--cl-primary-background);
+  padding: var(--cl-m-gap);
+  margin: 0;
+  z-index: 100;
+}

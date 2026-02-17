@@ -3,44 +3,44 @@
 exports[`Grid > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_grid_wrapper_54d0a5"
+    class="cl-grid__wrapper"
   >
     <table
-      class="_grid_54d0a5 test-class"
+      class="cl-grid test-class"
       style="width: 100px;"
       tabindex="-1"
     >
       <colgroup>
         <col
-          class="_column_9c4a25 _column__first_9c4a25"
+          class="cl-grid-column__column cl-grid-column__column_first"
         />
         <col
-          class="_column_9c4a25"
+          class="cl-grid-column__column"
         />
         <col
-          class="_column_9c4a25"
+          class="cl-grid-column__column"
         />
         <col
-          class="_column_9c4a25"
+          class="cl-grid-column__column"
         />
         <col
-          class="_column_9c4a25"
+          class="cl-grid-column__column"
         />
       </colgroup>
       <thead
-        class="_head_3e15c7"
+        class="cl-grid-head"
       >
         <tr
-          class="_head_row_3e15c7"
+          class="cl-grid-head__row"
         >
           <th
-            class="_headerCell_849111"
+            class="cl-header-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_all_grid-id"
                 type="checkbox"
               />
@@ -55,41 +55,41 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </th>
           <th
-            class="_headerCell_b798d8"
+            class="cl-header-cell"
           >
             Company
           </th>
           <th
-            class="_headerCell_b798d8"
+            class="cl-header-cell"
           >
             Contact
           </th>
           <th
-            class="_headerCell_b798d8"
+            class="cl-header-cell"
           >
             Country
           </th>
           <th
-            class="_headerCell_b798d8"
+            class="cl-header-cell"
           >
             Phone
           </th>
         </tr>
       </thead>
       <tbody
-        class="_body_4abb59"
+        class="cl-grid-body"
       >
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row1"
                 type="checkbox"
               />
@@ -104,35 +104,35 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           />
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Maria
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Germany
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row2"
                 type="checkbox"
               />
@@ -147,35 +147,35 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           />
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Francisco
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Mexico
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row3"
                 type="checkbox"
               />
@@ -190,37 +190,37 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Ernst Handel
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Roland Mendel
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Austria
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row4"
                 type="checkbox"
               />
@@ -235,37 +235,37 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Island Trading
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Helen Bennett
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             UK
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row5"
                 type="checkbox"
               />
@@ -280,35 +280,35 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Laughing Bacchus
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           />
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Canada
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>
         </tr>
         <tr
-          class="_row_2ee1c8"
+          class="cl-grid-row"
         >
           <td
-            class="_cell_06c8d1"
+            class="cl-grid-data-cell"
           >
             <div
-              class="_checkbox_9bd529"
+              class="cl-grid-checkbox"
             >
               <input
-                class="_checkbox_input_9bd529"
+                class="cl-grid-checkbox__input"
                 id="select_row_row6"
                 type="checkbox"
               />
@@ -323,20 +323,20 @@ exports[`Grid > should match the snapshot 1`] = `
             </div>
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           />
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Giovanni
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             Italy
           </td>
           <td
-            class="_cell_f56690"
+            class="cl-grid-data-cell"
           >
             123-345-7890
           </td>

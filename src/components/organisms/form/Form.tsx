@@ -6,7 +6,7 @@ import { type FC, useMemo } from 'react';
 import { FormContext } from '../../contexts';
 
 import { useFormController } from './Form.controller';
-import styles from './Form.module.scss';
+import './Form.css';
 
 const Form: FC<FormProps> = ({
   children,
@@ -24,7 +24,7 @@ const Form: FC<FormProps> = ({
     onSubmit,
     onClickSubmit,
   });
-  const formClass = getClassName([styles.form, className]);
+  const formClass = getClassName(['cl-form', className]);
   const contextValue = useMemo(
     () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal }),
     [handleInputChange, initialValues, resetSignal],
@@ -34,7 +34,7 @@ const Form: FC<FormProps> = ({
     <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={formClass}>
       <FormContext.Provider value={contextValue}>
         {children}
-        <div className={styles.form_buttons}>
+        <div className="cl-form__buttons">
           {hasReset && (
             <Button type="reset" text="Reset" icon={IconName.Delete} view={ButtonView.Secondary} />
           )}

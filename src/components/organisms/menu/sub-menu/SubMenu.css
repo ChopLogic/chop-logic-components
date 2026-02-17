@@ -1,0 +1,97 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-sub-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  position: relative;
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-sub-menu:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-sub-menu a {
+  color: var(--cl-tint-color);
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-sub-menu__icon {
+  transition: transform 0.3s ease;
+}
+
+.cl-sub-menu__text {
+  color: var(--cl-primary-color);
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  gap: var(--cl-m-gap);
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background: transparent;
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+  background-position: center;
+  transition: background 0.3s;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-sub-menu__text {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-sub-menu__text {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-sub-menu__text:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-sub-menu__text:hover svg {
+  filter: var(--cl-drop-shadow);
+}
+
+.cl-sub-menu__text:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.cl-sub-menu__text span {
+  display: flex;
+  gap: var(--cl-m-gap);
+  align-items: center;
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-sub-menu__icon_opened {
+  transform: rotate(180deg);
+}

@@ -3,7 +3,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 
 import { useSwitchController } from './Switch.controller';
-import styles from './Switch.module.scss';
+import './Switch.css';
 
 const Switch: FC<SwitchProps> = ({
   checked,
@@ -27,11 +27,11 @@ const Switch: FC<SwitchProps> = ({
   });
 
   const switchClass = getClassName([
-    styles.switch,
+    'cl-switch',
     className,
     {
-      [styles.switch__checked]: controlledChecked,
-      [styles.switch__disabled]: disabled,
+      'cl-switch__checked': controlledChecked,
+      'cl-switch_disabled': disabled,
     },
   ]);
 
@@ -58,18 +58,18 @@ const Switch: FC<SwitchProps> = ({
         value={value}
         checked={controlledChecked}
         disabled={disabled}
-        className={styles.switch_input}
+        className="cl-switch__input"
         readOnly
         data-testid="switch-input"
       />
-      <span className={styles.switch_label}>{label}</span>
+      <span className="cl-switch__label">{label}</span>
       {hasIndicator && (
-        <span className={styles.switch_indicator} aria-hidden="true">
+        <span className="cl-switch__indicator" aria-hidden="true">
           {controlledChecked ? 'On' : 'Off'}
         </span>
       )}
-      <span className={styles.switch_track}>
-        <span className={styles.switch_thumb} />
+      <span className="cl-switch__track">
+        <span className="cl-switch__thumb" />
       </span>
     </div>
   );

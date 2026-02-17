@@ -3,7 +3,7 @@ import { IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
-import styles from '../select/option/Option.module.scss';
+import '../select/option/Option.css';
 
 type Props = {
   value: MultiSelectValue;
@@ -13,9 +13,9 @@ type Props = {
 export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
   const { id, label, selected } = value;
   const optionClass = getClassName([
-    styles.option,
-    styles.option__multi,
-    { [styles.option__selected]: selected },
+    'cl-select-option',
+    'cl-select-option_multi',
+    { 'cl-select-option_selected': selected },
   ]);
 
   const handleKeyDown = (id: string) => (e: KeyboardEvent<HTMLLIElement>) => {

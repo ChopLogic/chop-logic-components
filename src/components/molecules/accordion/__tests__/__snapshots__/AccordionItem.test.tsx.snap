@@ -3,20 +3,20 @@
 exports[`AccordionItem > renders correctly 1`] = `
 <DocumentFragment>
   <details
-    class="_details_27c3bd"
+    class="cl-accordion-item"
   >
     <summary
-      class="_details_summary_27c3bd"
+      class="cl-accordion-item__summary"
     >
       Test Summary
       <span
         aria-label="Toggle Details"
-        class="_details_icon_27c3bd cl-icon chop-icon__chevron-down cl-icon_medium"
+        class="cl-accordion-item__icon cl-icon chop-icon__chevron-down cl-icon_medium"
         data-testid="accordion-icon"
       />
     </summary>
     <div
-      class="_details_content_27c3bd"
+      class="cl-accordion-item__content"
     >
       Test content
     </div>

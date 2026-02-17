@@ -5,7 +5,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 import Button from '../../atoms/button/Button';
 
-import styles from './NumericInput.module.scss';
+import './NumericInput.css';
 
 const NumericInputStateless: FC<NumericInputProps> = ({
   name,
@@ -32,7 +32,7 @@ const NumericInputStateless: FC<NumericInputProps> = ({
 }) => {
   const elementId = id ?? `numeric-input-${name}`;
   const errorId = `${name}-error`;
-  const inputClass = getClassName([styles.numeric, className]);
+  const inputClass = getClassName(['cl-numeric-input', className]);
 
   return (
     <div style={style} className={inputClass}>
@@ -79,7 +79,7 @@ const NumericInputStateless: FC<NumericInputProps> = ({
           errorId={errorId}
           message={errorMessage}
           visible={!!errorMessage}
-          className={styles.errorMessage}
+          className="cl-numeric-input__error-message"
         />
       </Input>
     </div>

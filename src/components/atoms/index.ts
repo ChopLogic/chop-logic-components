@@ -7,6 +7,5 @@ export { default as Image } from './image/Image';
 export { default as Input } from './input/Input';
 export { default as Label } from './label/Label';
 export { default as Link } from './link/Link';
-export { default as Loader } from './loader/Loader';
 export { default as Portal } from './portal/Portal';
 export { default as Tooltip } from './tooltip/Tooltip';

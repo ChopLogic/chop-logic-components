@@ -1,0 +1,52 @@
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-breadcrumbs__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--cl-m-gap);
+}
+
+.cl-breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+.cl-breadcrumbs__text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cl-s-gap);
+  color: var(--cl-tint-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-breadcrumbs__text {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-breadcrumbs__text {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-breadcrumbs__text svg {
+  color: var(--cl-tint-color);
+}
+
+.cl-breadcrumbs__separator {
+  color: var(--cl-tint-color);
+}

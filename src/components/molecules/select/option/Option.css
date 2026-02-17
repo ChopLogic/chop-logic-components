@@ -1,0 +1,59 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-select-option {
+  padding: var(--cl-m-gap);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--cl-m-gap);
+  color: var(--cl-primary-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-select-option {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-select-option {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-select-option:hover,
+.cl-select-option:active {
+  color: var(--cl-accent-color);
+}
+
+.cl-select-option:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: -4px;
+}
+
+.cl-select-option svg {
+  color: var(--cl-primary-color);
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-select-option_selected svg {
+  color: var(--cl-accent-color);
+}
+
+.cl-select-option_multi {
+  justify-content: flex-start;
+}

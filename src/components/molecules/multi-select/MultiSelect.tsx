@@ -4,7 +4,7 @@ import type { MultiSelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 
-import styles from '../select/Select.module.scss';
+import '../select/Select.css';
 import { MultiSelectCombobox } from './MultiSelect.Combobox';
 import { useMultiSelectController } from './MultiSelect.controller';
 import { MultiSelectDropdown } from './MultiSelect.Dropdown';
@@ -30,7 +30,7 @@ const MultiSelect: FC<MultiSelectProps> = ({
     defaultValue,
     onChange,
   });
-  const multiSelectClass = getClassName([styles.wrapper, className]);
+  const multiSelectClass = getClassName(['cl-select', className]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });

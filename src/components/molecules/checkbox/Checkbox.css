@@ -1,0 +1,89 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-checkbox {
+  display: flex;
+  gap: var(--cl-m-gap);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  transition: background 0.3s;
+}
+
+.cl-checkbox:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+}
+
+.cl-checkbox:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-checkbox label {
+  cursor: pointer;
+  gap: var(--cl-m-gap);
+  color: var(--cl-primary-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  align-items: center;
+  display: flex;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-checkbox label {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-checkbox label {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-checkbox label:hover,
+.cl-checkbox label:active {
+  text-shadow: none;
+}
+
+.cl-checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 4px;
+  left: 0;
+  margin: 0;
+}
+
+.cl-checkbox input:focus-visible + label {
+  outline: var(--cl-outline-border);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-checkbox_checked svg {
+  color: var(--cl-accent-color);
+}
+
+.cl-checkbox_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

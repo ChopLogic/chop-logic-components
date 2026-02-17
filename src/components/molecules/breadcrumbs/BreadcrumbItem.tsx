@@ -2,8 +2,6 @@ import { Icon, Link } from '@components/atoms';
 import type { Breadcrumb } from '@types';
 import type { FC } from 'react';
 
-import styles from './Breadcrumbs.module.scss';
-
 const BreadcrumbItem: FC<{
   item: Breadcrumb;
   isLastItem: boolean;
@@ -12,13 +10,13 @@ const BreadcrumbItem: FC<{
 
   return (
     <>
-      <li className={styles.breadcrumbs_item}>
+      <li className="cl-breadcrumbs__item">
         {isLink ? (
           <Link href={item?.link ?? ''} icon={item.icon} iconPosition="left">
             {item.label}
           </Link>
         ) : (
-          <span aria-current={isLastItem ? 'page' : undefined} className={styles.breadcrumbs_text}>
+          <span aria-current={isLastItem ? 'page' : undefined} className="cl-breadcrumbs__text">
             {item.icon && <Icon name={item.icon} hidden />}
             {item.label}
           </span>
@@ -28,7 +26,7 @@ const BreadcrumbItem: FC<{
         <span
           aria-hidden="true"
           data-testid="breadcrumb-separator"
-          className={styles.breadcrumbs_separator}
+          className="cl-breadcrumbs__separator"
         >
           /
         </span>

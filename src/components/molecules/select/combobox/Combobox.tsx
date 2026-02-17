@@ -3,7 +3,7 @@ import { IconName } from '@enums';
 import type { SelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
-import styles from './Combobox.module.scss';
+import './Combobox.css';
 
 type Props = {
   opened: boolean;
@@ -29,8 +29,8 @@ export const SelectCombobox: FC<Props> = ({
   required,
 }) => {
   const iconClass = getClassName([
-    styles.combobox_icon,
-    { [styles.combobox_icon__opened]: opened },
+    'cl-select-combobox__icon',
+    { 'cl-select-combobox__icon_opened': opened },
   ]);
 
   return (
@@ -46,7 +46,7 @@ export const SelectCombobox: FC<Props> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
-      className={styles.combobox}
+      className="cl-select-combobox"
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
       <Icon name={IconName.ChevronDown} className={iconClass} size="l" />

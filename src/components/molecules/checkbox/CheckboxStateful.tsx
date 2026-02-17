@@ -6,7 +6,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 
 import { useCheckboxController } from './Checkbox.controller';
-import styles from './Checkbox.module.scss';
+import './Checkbox.css';
 
 const CheckboxStateful: FC<CheckboxProps> = ({
   name,
@@ -25,11 +25,11 @@ const CheckboxStateful: FC<CheckboxProps> = ({
   const { handleChange, checked } = useCheckboxController({ name, defaultChecked, onChange });
   const { elementId } = useElementIds(id);
   const checkboxClass = getClassName([
-    styles.checkbox,
+    'cl-checkbox',
     className,
     {
-      [styles.checkbox__disabled]: !!disabled,
-      [styles.checkbox__checked]: checked,
+      'cl-checkbox_disabled': !!disabled,
+      'cl-checkbox_checked': checked,
     },
   ]);
 

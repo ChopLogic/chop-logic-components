@@ -3,7 +3,7 @@ import { IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
-import styles from '../select/combobox/Combobox.module.scss';
+import '../select/combobox/Combobox.css';
 import { MultiSelectComboboxSelectedValues } from './MultiSelectComboboxSelectedValues';
 
 type Props = {
@@ -31,8 +31,8 @@ export const MultiSelectCombobox: FC<Props> = ({
 }) => {
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
   const iconClass = getClassName([
-    styles.combobox_icon,
-    { [styles.combobox_icon__opened]: opened },
+    'cl-select-combobox__icon',
+    { 'cl-select-combobox__icon_opened': opened },
   ]);
 
   return (
@@ -48,7 +48,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
-      className={styles.combobox}
+      className="cl-select-combobox"
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
       <Icon name={IconName.ChevronDown} className={iconClass} size="l" />

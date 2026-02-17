@@ -4,13 +4,13 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="_breadcrumbs_f319fb"
+    class="cl-breadcrumbs"
   >
     <ol
-      class="_breadcrumbs_list_f319fb"
+      class="cl-breadcrumbs__list"
     >
       <li
-        class="_breadcrumbs_item_f319fb"
+        class="cl-breadcrumbs__item"
       >
         <a
           data-icon="chop-icon__home"
@@ -23,13 +23,13 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        class="_breadcrumbs_separator_f319fb"
+        class="cl-breadcrumbs__separator"
         data-testid="breadcrumb-separator"
       >
         /
       </span>
       <li
-        class="_breadcrumbs_item_f319fb"
+        class="cl-breadcrumbs__item"
       >
         <a
           data-icon="chop-icon__activity"
@@ -42,13 +42,13 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        class="_breadcrumbs_separator_f319fb"
+        class="cl-breadcrumbs__separator"
         data-testid="breadcrumb-separator"
       >
         /
       </span>
       <li
-        class="_breadcrumbs_item_f319fb"
+        class="cl-breadcrumbs__item"
       >
         <a
           data-icon="chop-icon__settings"
@@ -61,17 +61,17 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       </li>
       <span
         aria-hidden="true"
-        class="_breadcrumbs_separator_f319fb"
+        class="cl-breadcrumbs__separator"
         data-testid="breadcrumb-separator"
       >
         /
       </span>
       <li
-        class="_breadcrumbs_item_f319fb"
+        class="cl-breadcrumbs__item"
       >
         <span
           aria-current="page"
-          class="_breadcrumbs_text_f319fb"
+          class="cl-breadcrumbs__text"
         >
           <span
             aria-hidden="true"

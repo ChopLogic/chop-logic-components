@@ -3,7 +3,7 @@
 exports[`TextInput > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_wrapper_c37d8e test-class"
+    class="cl-text-input test-class"
     style="width: 600px;"
   >
     <label
@@ -44,7 +44,7 @@ exports[`TextInput > should render the input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="cl-error-message _errorMessage_c37d8e"
+        class="cl-error-message cl-text-input__error-message"
         id="test-input-id_error"
       >
         Error!
@@ -57,7 +57,7 @@ exports[`TextInput > should render the input correctly 1`] = `
 exports[`TextInput > should render the required input correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_wrapper_c37d8e test-class"
+    class="cl-text-input test-class"
     style="width: 600px;"
   >
     <label
@@ -105,7 +105,7 @@ exports[`TextInput > should render the required input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="cl-error-message _errorMessage_c37d8e"
+        class="cl-error-message cl-text-input__error-message"
         id="test-input-id_error"
       >
         Error!

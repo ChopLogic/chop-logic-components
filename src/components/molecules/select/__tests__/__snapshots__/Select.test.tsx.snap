@@ -3,7 +3,7 @@
 exports[`Select > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="_wrapper_25b6f4 test-class"
+    class="cl-select test-class"
     style="width: 400px;"
   >
     <label
@@ -21,7 +21,7 @@ exports[`Select > should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-required="false"
-      class="_combobox_73f518"
+      class="cl-select-combobox"
       id="select-id"
       name="language"
       role="combobox"
@@ -31,18 +31,18 @@ exports[`Select > should render correctly 1`] = `
         Not selected
       </span>
       <span
-        class="_combobox_icon_73f518 cl-icon chop-icon__chevron-down cl-icon_large"
+        class="cl-select-combobox__icon cl-icon chop-icon__chevron-down cl-icon_large"
       />
     </button>
     <ul
-      class="_dropdown_8c0dbb"
+      class="cl-select-dropdown"
       id="select-id_dropdown"
       role="listbox"
       tabindex="-1"
     >
       <li
         aria-selected="false"
-        class="_option_33c476"
+        class="cl-select-option"
         id="57b5a856-bc4b-4c2f-8295-9f44434fafc7"
         role="option"
         tabindex="0"
@@ -53,7 +53,7 @@ exports[`Select > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="_option_33c476"
+        class="cl-select-option"
         id="b4b08a09-e287-400b-ba65-afd6ae1f6fd7"
         role="option"
         tabindex="0"
@@ -64,7 +64,7 @@ exports[`Select > should render correctly 1`] = `
       </li>
       <li
         aria-selected="false"
-        class="_option_33c476"
+        class="cl-select-option"
         id="641fc722-af5a-4426-8f8a-1566cc492b91"
         role="option"
         tabindex="0"

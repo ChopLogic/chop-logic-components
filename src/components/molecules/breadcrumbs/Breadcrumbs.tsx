@@ -2,8 +2,8 @@ import type { BreadcrumbsProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 
+import './Breadcrumbs.css';
 import BreadcrumbList from './BreadcrumbList';
-import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({
   items,
@@ -14,7 +14,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
   title,
   ...rest
 }) => {
-  const breadcrumbsClass = getClassName([styles.breadcrumbs, className]);
+  const breadcrumbsClass = getClassName(['cl-breadcrumbs', className]);
 
   if (!items || items.length === 0) {
     return null;

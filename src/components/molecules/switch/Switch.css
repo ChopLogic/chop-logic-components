@@ -1,0 +1,135 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-switch {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--cl-l-gap);
+  padding: var(--cl-m-gap);
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  border-radius: var(--cl-border-radius);
+  outline: none;
+  background-position: center;
+}
+
+.cl-switch:hover {
+  background:
+    var(--cl-primary-background)
+    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+  color: var(--cl-tint-color);
+}
+
+.cl-switch:active {
+  background-color: var(--cl-shadow-background);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.cl-switch:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-switch__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cl-switch__label {
+  color: var(--cl-primary-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-switch__label {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-switch__label {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-switch__track {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  background-color: var(--cl-tint-background);
+  border-radius: 14px;
+  transition: background-color 0.2s ease;
+  order: 3;
+  flex-shrink: 0;
+}
+
+.cl-switch__checked .cl-switch__track {
+  background-color: var(--cl-accent-color);
+}
+
+.cl-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: var(--cl-thumb-size);
+  height: var(--cl-thumb-size);
+  background-color: var(--cl-primary-background);
+  border-radius: 50%;
+  box-shadow: var(--cl-box-shadow);
+  transition: transform 0.2s ease;
+}
+
+.cl-switch__checked .cl-switch__thumb {
+  transform: translateX(24px);
+}
+
+.cl-switch__indicator {
+  color: var(--cl-accent-color);
+  text-transform: uppercase;
+  display: inline-block;
+  width: var(--cl-thumb-size);
+  text-align: center;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: var(--cl-breakpoint-md)) {
+  .cl-switch__indicator {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+@media (min-width: var(--cl-breakpoint-lg)) {
+  .cl-switch__indicator {
+    font-size: var(--cl-typography-small-desktop);
+  }
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-switch_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

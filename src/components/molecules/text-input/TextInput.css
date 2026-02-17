@@ -1,0 +1,32 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-text-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+  width: 100%;
+}
+
+/* ============================================================================
+   ELEMENTS
+   ============================================================================ */
+
+.cl-text-input__error-message {
+  position: absolute;
+  right: 0;
+  opacity: 0.8;
+  top: 44px;
+}
+
+@media screen and (min-width: var(--cl-breakpoint-md)) {
+  .cl-text-input__error-message {
+    top: 48px;
+  }
+}
+
+@media screen and (min-width: var(--cl-breakpoint-lg)) {
+  .cl-text-input__error-message {
+    top: 52px;
+  }
+}

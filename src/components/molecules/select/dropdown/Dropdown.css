@@ -1,0 +1,47 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-select-dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.3s linear;
+  position: absolute;
+  background: var(--cl-primary-background);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 100;
+  width: 100%;
+  border: var(--cl-primary-border);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  overflow-y: auto;
+  max-height: 180px;
+  left: 0;
+  top: 76px;
+}
+
+@media screen and (min-width: var(--cl-breakpoint-md)) {
+  .cl-select-dropdown {
+    top: 82px;
+    max-height: 220px;
+  }
+}
+
+@media screen and (min-width: var(--cl-breakpoint-lg)) {
+  .cl-select-dropdown {
+    top: 88px;
+    max-height: 260px;
+  }
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-select-dropdown_opened {
+  visibility: visible;
+  opacity: 1;
+}

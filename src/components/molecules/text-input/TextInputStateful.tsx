@@ -5,7 +5,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 
 import { useTextInputController } from './TextInput.controller';
-import styles from './TextInput.module.scss';
+import './TextInput.css';
 import TextInputButtons from './TextInputButtons';
 
 const TextInputStateful: FC<TextInputProps> = ({
@@ -42,7 +42,7 @@ const TextInputStateful: FC<TextInputProps> = ({
     });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
-  const inputClass = getClassName([styles.wrapper, className]);
+  const inputClass = getClassName(['cl-text-input', className]);
 
   return (
     <div style={style} className={inputClass}>
@@ -79,7 +79,7 @@ const TextInputStateful: FC<TextInputProps> = ({
           errorId={errorId}
           message={errorMessage}
           visible={!valid}
-          className={styles.errorMessage}
+          className="cl-text-input__error-message"
         />
       </Input>
     </div>

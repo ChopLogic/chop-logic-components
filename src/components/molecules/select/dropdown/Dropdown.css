@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: 100;
+  z-index: var(--cl-z-index-popup);
   width: 100%;
   border: var(--cl-primary-border);
   border-radius: var(--cl-border-radius);

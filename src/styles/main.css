@@ -2,10 +2,9 @@
  * Chop Logic Components - Main CSS File
  *
  * This file contains all CSS variables and animations used in the Chop Logic Components library.
- * It replaces SCSS variable definitions with pure CSS variables for gradual migration to CSS-only styling.
  *
  * Import this file in your project to use the component theming and variables:
- * @import './node_modules/chop-logic-components/main.css';
+ * @import './node_modules/chop-logic-components/styles/main.css';
  *
  * Theme Switching:
  * - Default theme is "light"
@@ -43,8 +42,9 @@
 
   /* Z-Index Scale */
   --cl-z-index-base: 1;
-  --cl-z-index-popup: 100;
-  --cl-z-index-modal: 200;
+  --cl-z-index-menu: 5;
+  --cl-z-index-popup: 10;
+  --cl-z-index-modal: 20;
 
   /* Responsive Typography Sizes */
   --cl-typography-h1-mobile: 2.25rem;
@@ -194,37 +194,4 @@
 
 .cl-fade-out {
   animation: cl-fade-out ease 400ms;
-}
-
-/* ============================================================================
-   UTILITY CLASSES FOR COMMON PATTERNS
-   
-   Note: These are CSS-only replacements for SCSS mixins that could not be
-   converted to variable definitions. For more complex patterns, consider
-   keeping them in component-specific SCSS files.
-   ============================================================================ */
-
-/**
- * Disabled State
- * Usage: Add class "cl-disabled" to disabled elements
- */
-.cl-disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/**
- * Menu Bar Layout
- * Usage: Apply to <ul> or <ol> elements for horizontal menu styling
- */
-.cl-menu-bar {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-inline-start: 0;
-  display: flex;
-  gap: var(--cl-s-gap);
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
 }

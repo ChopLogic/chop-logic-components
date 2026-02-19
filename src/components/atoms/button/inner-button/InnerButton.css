@@ -8,7 +8,7 @@
   cursor: pointer;
   height: var(--cl-icon-size);
   width: var(--cl-icon-size);
-  transition: 0.1s all;
+  transition: all 150ms ease;
 }
 
 .cl-inner-button:focus-visible {
@@ -16,10 +16,13 @@
   outline-offset: -1px;
 }
 
-.cl-inner-button:hover,
-.cl-inner-button:active {
-  transform: scale(1.2);
+.cl-inner-button:hover {
+  transform: scale(1.15);
   filter: var(--cl-drop-shadow);
+}
+
+.cl-inner-button:active {
+  transform: scale(0.95);
 }
 
 .cl-inner-button[disabled] {

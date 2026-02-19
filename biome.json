@@ -1,12 +1,19 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
   "files": {
-    "includes": ["**", "!**/dist", "!**/coverage", "!**/node_modules", "!**/storybook-static"],
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/coverage",
+      "!**/node_modules",
+      "!**/storybook-static",
+      "!**/src/styles/icons.css"
+    ],
     "ignoreUnknown": true
   },
   "overrides": [
     {
-      "includes": ["**/*.md", "**/*.mdx", "**/*.scss"],
+      "includes": ["**/*.md", "**/*.mdx"],
       "linter": {
         "enabled": false
       },

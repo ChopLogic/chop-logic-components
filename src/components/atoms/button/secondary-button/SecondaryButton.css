@@ -8,6 +8,16 @@
   align-items: baseline;
   justify-content: center;
   gap: var(--cl-s-gap);
+  transition: all 150ms ease;
+}
+
+.cl-secondary-button:hover {
+  border-color: var(--cl-primary-color);
+  box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1);
+}
+
+.cl-secondary-button:active {
+  transform: scale(0.98);
 }
 
 .cl-secondary-button__text {

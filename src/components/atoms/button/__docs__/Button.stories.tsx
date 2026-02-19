@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
     view: ButtonView.Primary,
     disabled: false,
     extended: false,
+    onClick: () => console.log('Button clicked!'),
   },
   argTypes: {
     // Content
@@ -155,15 +156,6 @@ const meta: Meta<typeof Button> = {
         category: 'Identification',
       },
     },
-    // Validation
-    required: {
-      control: 'boolean',
-      description: 'Whether the button is required (for form validation)',
-      table: {
-        type: { summary: 'boolean' },
-        category: 'Validation',
-      },
-    },
     // Styling
     className: {
       control: 'text',
@@ -214,8 +206,17 @@ export const Icon: Story = {
 export const WithTooltip: Story = {
   args: {
     text: 'Hover On Me',
-    view: ButtonView.Secondary,
+    view: ButtonView.Primary,
     tooltip: 'This button does nothing...',
+  },
+};
+
+export const IconWithTooltip: Story = {
+  args: {
+    view: ButtonView.Icon,
+    icon: IconName.ThumbsUp,
+    label: 'Thumbs Up',
+    tooltip: 'Like this!',
   },
 };
 

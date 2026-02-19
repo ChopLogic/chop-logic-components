@@ -1,4 +1,4 @@
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import Icon from '../Icon';
@@ -12,7 +12,7 @@ const meta: Meta<typeof Icon> = {
     id: 'icon-id',
     className: 'icon-class',
     testId: 'icon-test-id',
-    size: 'xl',
+    size: ElementSize.ExtraLarge,
   },
   argTypes: {
     name: {
@@ -26,10 +26,10 @@ const meta: Meta<typeof Icon> = {
     },
     size: {
       control: 'select',
-      options: ['s', 'm', 'l', 'xl'],
+      options: Object.values(ElementSize),
       description: 'The size of the icon',
       table: {
-        type: { summary: 's | m | l | xl' },
+        type: { summary: 'ElementSize' },
         category: 'Styling',
       },
     },

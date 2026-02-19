@@ -22,3 +22,7 @@
 .cl-icon_xlarge {
   font-size: var(--cl-header-font-size);
 }
+
+.cl-icon_2xlarge {
+  font-size: var(--cl-header-font-size);
+}

@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
@@ -42,9 +42,9 @@ export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
       className={optionClass}
     >
       {selected ? (
-        <Icon name={IconName.CheckSquare} size="l" />
+        <Icon name={IconName.CheckSquare} size={ElementSize.Large} />
       ) : (
-        <Icon name={IconName.Square} size="l" />
+        <Icon name={IconName.Square} size={ElementSize.Large} />
       )}
       <span>{label}</span>
     </li>

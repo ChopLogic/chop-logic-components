@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { SelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
@@ -48,7 +48,7 @@ export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) 
       className={optionClass}
     >
       <span>{label}</span>
-      {selected && <Icon name={IconName.Check} size="l" />}
+      {selected && <Icon name={IconName.Check} size={ElementSize.Large} />}
     </li>
   );
 };

@@ -1,11 +1,12 @@
 import { getClassName } from '@utils';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
 import './SecondaryButton.css';
+import { Icon } from '@components/atoms';
+import type { ButtonProps } from '@types';
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren;
-
-export const SecondaryButton: FC<Props> = ({ children, className, ...rest }) => (
+export const SecondaryButton: FC<ButtonProps> = ({ icon, text, className, ...rest }) => (
   <button {...rest} className={getClassName(['cl-secondary-button', className])}>
-    {children}
+    {icon && <Icon name={icon} className="cl-secondary-button__icon" />}
+    <span className="cl-secondary-button__text">{text}</span>
   </button>
 );

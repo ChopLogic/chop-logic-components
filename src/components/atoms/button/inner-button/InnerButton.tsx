@@ -1,16 +1,18 @@
 import { Icon } from '@components/atoms';
-import type { IconName } from '@enums';
+import { ElementSize } from '@enums';
 import { getClassName } from '@utils';
-import type { ButtonHTMLAttributes, FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 import './InnerButton.css';
+import type { ButtonProps } from '@types';
 
-type Props = {
-  label?: string;
-  icon?: IconName;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, className, ...rest }) => {
+export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
+  onClick,
+  label,
+  icon,
+  disabled,
+  className,
+  ...rest
+}) => {
   return (
     <button
       className={getClassName(['cl-inner-button', className])}
@@ -20,7 +22,7 @@ export const InnerButton: FC<Props> = ({ onClick, label, icon, disabled, classNa
       disabled={disabled}
       {...rest}
     >
-      <Icon name={icon} size="l" />
+      <Icon name={icon} size={ElementSize.Medium} />
     </button>
   );
 };

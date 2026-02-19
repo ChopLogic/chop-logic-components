@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { MultiSelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -51,7 +51,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       className="cl-select-combobox"
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
-      <Icon name={IconName.ChevronDown} className={iconClass} size="l" />
+      <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Large} />
     </button>
   );
 };

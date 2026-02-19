@@ -1,16 +1,11 @@
 import type { ButtonView, IconName } from '@enums';
-import type { FocusEventHandler, MouseEventHandler } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 
-import type { ChopLogicInputProps } from './_common';
-
-export interface ButtonProps extends Partial<ChopLogicInputProps> {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  onFocus?: FocusEventHandler<HTMLButtonElement>;
-  onBlur?: FocusEventHandler<HTMLButtonElement>;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   view?: ButtonView;
   icon?: IconName;
   text?: string;
   extended?: boolean;
-  type?: 'button' | 'reset' | 'submit';
   tooltip?: string;
+  label?: string;
 }

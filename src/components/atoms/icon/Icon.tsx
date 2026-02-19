@@ -1,4 +1,4 @@
-import type { IconName } from '@enums';
+import { ElementSize, type IconName } from '@enums';
 import type { ChopLogicComponentProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -7,12 +7,18 @@ import './Icon.css';
 export interface IconProps extends ChopLogicComponentProps {
   name?: IconName;
   testId?: string;
-  title?: string;
   hidden?: boolean;
-  size?: 's' | 'm' | 'l' | 'xl';
+  size?: ElementSize;
 }
 
-const Icon: FC<IconProps> = ({ name, testId, className, hidden, size = 'm', ...rest }) => {
+const Icon: FC<IconProps> = ({
+  name,
+  testId,
+  className,
+  hidden,
+  size = ElementSize.Medium,
+  ...rest
+}) => {
   if (!name) return null;
 
   const iconClass = getClassName([
@@ -20,10 +26,11 @@ const Icon: FC<IconProps> = ({ name, testId, className, hidden, size = 'm', ...r
     'cl-icon',
     name,
     {
-      'cl-icon_small': size === 's',
-      'cl-icon_medium': size === 'm',
-      'cl-icon_large': size === 'l',
-      'cl-icon_xlarge': size === 'xl',
+      'cl-icon_small': size === ElementSize.Small,
+      'cl-icon_medium': size === ElementSize.Medium,
+      'cl-icon_large': size === ElementSize.Large,
+      'cl-icon_xlarge': size === ElementSize.ExtraLarge,
+      'cl-icon_2xlarge': size === ElementSize.ExtraExtraLarge,
     },
   ]);
 

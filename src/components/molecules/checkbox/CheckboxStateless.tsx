@@ -1,5 +1,5 @@
 import { Label } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { CheckboxProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -49,7 +49,7 @@ const CheckboxStateless: FC<CheckboxProps> = ({
         isTextHidden={noLabel}
         icon={checked ? IconName.CheckSquare : IconName.Square}
         iconPosition={iconPosition}
-        iconSize="l"
+        iconSize={ElementSize.Large}
       />
     </div>
   );

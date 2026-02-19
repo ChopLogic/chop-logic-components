@@ -1,30 +1,16 @@
-/**
- * Chop Logic Button Component Styles
- * BEM Naming Convention with "cl-" prefix
- *
- * Block: .cl-button
- * Modifiers:
- *   - .cl-button_extended (full width)
- *   - .cl-button_primary (primary style)
- *   - .cl-button_secondary (secondary style)
- *   - .cl-button_icon (icon button)
- *   - .cl-button_inner (inner button)
- *   - .cl-button_disabled
- * Elements:
- *   - .cl-button__icon (icon element)
- */
-
-/**
- * Extended button - full width
- */
-.cl-button_extended {
-  width: 100% !important;
+/* Focus styles */
+.cl-button:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: var(--cl-s-gap);
 }
 
-/**
- * Icon element styling
- */
-.cl-button__icon::before {
-  font-size: var(--cl-base-font-size);
-  color: var(--cl-primary-color);
+/* Disabled state */
+.cl-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Extended variant */
+.cl-button_extended {
+  width: 100%;
 }

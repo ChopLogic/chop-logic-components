@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import type { IconName } from '@enums';
+import { ElementSize, type IconName } from '@enums';
 import type { FC } from 'react';
 import './Label.css';
 
@@ -10,7 +10,7 @@ type LabelProps = {
   isTextHidden?: boolean;
   icon?: IconName;
   iconPosition?: 'left' | 'right';
-  iconSize?: 's' | 'm' | 'l' | 'xl';
+  iconSize?: ElementSize;
 };
 
 const Label: FC<LabelProps> = ({
@@ -20,7 +20,7 @@ const Label: FC<LabelProps> = ({
   icon,
   iconPosition,
   isTextHidden = false,
-  iconSize = 'm',
+  iconSize = ElementSize.Medium,
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';

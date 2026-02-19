@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { SelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -49,7 +49,7 @@ export const SelectCombobox: FC<Props> = ({
       className="cl-select-combobox"
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
-      <Icon name={IconName.ChevronDown} className={iconClass} size="l" />
+      <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Large} />
     </button>
   );
 };

@@ -8,16 +8,10 @@
   border-radius: 50%;
   background: transparent;
   width: fit-content;
-  transition: 0.1s all;
 }
 
-.cl-icon-button:hover {
-  transform: scale(1.2);
-  filter: var(--cl-drop-shadow);
-}
-
-.cl-icon-button:focus-visible {
-  outline: var(--cl-outline-border);
+.cl-icon-button__icon::before {
+  color: var(--cl-primary-color);
 }
 
 .cl-icon-button[disabled] {

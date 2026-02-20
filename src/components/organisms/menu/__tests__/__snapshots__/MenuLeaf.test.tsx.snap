@@ -9,7 +9,7 @@ exports[`MenuLeaf > should match the snapshot 1`] = `
   >
     <span
       aria-hidden="true"
-      class="cl-icon chop-icon__home cl-icon_medium"
+      class="cl-icon chop-icon__home cl-icon_small"
     />
     <span>
       Go Home

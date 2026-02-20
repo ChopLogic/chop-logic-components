@@ -14,12 +14,12 @@ exports[`SubMenu > should match the snapshot 1`] = `
     >
       <span>
         <span
-          class="cl-icon chop-icon__arrow-down cl-icon_medium"
+          class="cl-icon chop-icon__arrow-down cl-icon_small"
         />
         Item without Link
       </span>
       <span
-        class="cl-sub-menu__icon cl-sub-menu__icon_opened cl-icon chop-icon__chevron-down cl-icon_medium"
+        class="cl-sub-menu__icon cl-sub-menu__icon_opened cl-icon chop-icon__chevron-down cl-icon_small"
       />
     </span>
     <div>

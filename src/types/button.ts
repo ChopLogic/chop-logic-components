@@ -1,4 +1,4 @@
-import type { ButtonView, IconName } from '@enums';
+import type { ButtonView, ElementSize, IconName } from '@enums';
 import type { ButtonHTMLAttributes } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,4 +8,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   extended?: boolean;
   tooltip?: string;
   label?: string;
+  iconSize?: ElementSize;
 }

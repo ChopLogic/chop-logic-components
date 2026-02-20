@@ -11,5 +11,5 @@
    ============================================================================ */
 
 .cl-grid-row_selected {
-  background-color: var(--cl-tint-background);
+  background-color: var(--cl-highlight-background);
 }

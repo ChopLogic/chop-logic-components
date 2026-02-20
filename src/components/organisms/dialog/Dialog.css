@@ -24,7 +24,7 @@
   background-color: var(--cl-primary-background);
   box-shadow: var(--cl-box-shadow);
   color: var(--cl-primary-color);
-  padding: var(--cl-l-gap) var(--cl-xl-gap);
+  padding: var(--cl-l-gap);
   height: 90%;
   position: absolute;
   bottom: 0;
@@ -40,22 +40,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cl-dialog__button {
+  position: absolute;
+  right: var(--cl-s-gap);
+  top: var(--cl-s-gap);
+}
+
 @media (min-width: 640px) {
   .cl-dialog__layout {
     font-size: var(--cl-typography-base-tablet);
+  }
+
+  .cl-dialog__button {
+    right: var(--cl-m-gap);
+    top: var(--cl-m-gap);
   }
 }
 
 @media (min-width: 1024px) {
   .cl-dialog__layout {
     font-size: var(--cl-typography-base-desktop);
+    padding: var(--cl-xl-gap);
   }
-}
 
-.cl-dialog__button {
-  position: absolute;
-  right: var(--cl-l-gap);
-  top: var(--cl-l-gap);
+  .cl-dialog__button {
+    right: var(--cl-l-gap);
+    top: var(--cl-l-gap);
+  }
 }
 
 @media screen and (min-width: 640px) {

@@ -7,9 +7,7 @@ exports[`GridRow > should match the snapshot 1`] = `
       <tr
         class="cl-grid-row"
       >
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <div
             class="cl-grid-checkbox"
           >
@@ -28,19 +26,13 @@ exports[`GridRow > should match the snapshot 1`] = `
             </label>
           </div>
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 1
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 2
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <span>
             Value 3
           </span>

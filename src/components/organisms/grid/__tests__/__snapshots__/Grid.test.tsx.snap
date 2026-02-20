@@ -12,19 +12,19 @@ exports[`Grid > should match the snapshot 1`] = `
     >
       <colgroup>
         <col
-          class="cl-grid-column__column cl-grid-column__column_first"
+          class="cl-grid-column cl-grid-column_first cl-grid-column_check"
         />
         <col
-          class="cl-grid-column__column"
+          class="cl-grid-column"
         />
         <col
-          class="cl-grid-column__column"
+          class="cl-grid-column"
         />
         <col
-          class="cl-grid-column__column"
+          class="cl-grid-column"
         />
         <col
-          class="cl-grid-column__column"
+          class="cl-grid-column"
         />
       </colgroup>
       <thead
@@ -33,9 +33,7 @@ exports[`Grid > should match the snapshot 1`] = `
         <tr
           class="cl-grid-head__row"
         >
-          <th
-            class="cl-header-cell"
-          >
+          <th>
             <div
               class="cl-grid-checkbox"
             >
@@ -54,24 +52,16 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </th>
-          <th
-            class="cl-header-cell"
-          >
+          <th>
             Company
           </th>
-          <th
-            class="cl-header-cell"
-          >
+          <th>
             Contact
           </th>
-          <th
-            class="cl-header-cell"
-          >
+          <th>
             Country
           </th>
-          <th
-            class="cl-header-cell"
-          >
+          <th>
             Phone
           </th>
         </tr>
@@ -82,9 +72,7 @@ exports[`Grid > should match the snapshot 1`] = `
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -103,31 +91,21 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          />
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td />
+          <td>
             Maria
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Germany
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -146,31 +124,21 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          />
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td />
+          <td>
             Francisco
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Mexico
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -189,33 +157,23 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Ernst Handel
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Roland Mendel
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Austria
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -234,33 +192,23 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Island Trading
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Helen Bennett
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             UK
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -279,31 +227,21 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Laughing Bacchus
           </td>
-          <td
-            class="cl-grid-data-cell"
-          />
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td />
+          <td>
             Canada
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>
         <tr
           class="cl-grid-row"
         >
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             <div
               class="cl-grid-checkbox"
             >
@@ -322,22 +260,14 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </td>
-          <td
-            class="cl-grid-data-cell"
-          />
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td />
+          <td>
             Giovanni
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             Italy
           </td>
-          <td
-            class="cl-grid-data-cell"
-          >
+          <td>
             123-345-7890
           </td>
         </tr>

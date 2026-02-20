@@ -5,9 +5,7 @@ exports[`SelectGridRowCheckbox > should match the snapshot 1`] = `
   <table>
     <thead>
       <tr>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <div
             class="cl-grid-checkbox cl-grid-checkbox_checked"
           >

@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-grid-body {
   color: var(--cl-primary-color);
   font-family: var(--cl-core-font);
@@ -12,14 +9,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cl-grid-body td {
+  padding: var(--cl-xs-gap);
+}
+
 @media (min-width: 640px) {
   .cl-grid-body {
     font-size: var(--cl-typography-base-tablet);
+  }
+
+  .cl-grid-body td {
+    padding: var(--cl-s-gap);
   }
 }
 
 @media (min-width: 1024px) {
   .cl-grid-body {
     font-size: var(--cl-typography-base-desktop);
+  }
+
+  .cl-grid-body td {
+    padding: var(--cl-m-gap);
   }
 }

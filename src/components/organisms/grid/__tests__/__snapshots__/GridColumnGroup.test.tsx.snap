@@ -5,16 +5,16 @@ exports[`GridBody > should match the snapshot 1`] = `
   <table>
     <colgroup>
       <col
-        class="cl-grid-column__column cl-grid-column__column_first"
+        class="cl-grid-column cl-grid-column_first cl-grid-column_check"
       />
       <col
-        class="cl-grid-column__column cl-grid-column__column_highlighted"
+        class="cl-grid-column cl-grid-column_highlighted"
       />
       <col
-        class="cl-grid-column__column column-class"
+        class="cl-grid-column column-class"
       />
       <col
-        class="cl-grid-column__column"
+        class="cl-grid-column"
       />
     </colgroup>
   </table>

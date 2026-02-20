@@ -2,7 +2,7 @@
    ELEMENTS
    ============================================================================ */
 
-.cl-grid-column-group__column {
+.cl-grid-column {
   border-right: var(--cl-primary-border);
 }
 
@@ -10,10 +10,10 @@
    MODIFIERS
    ============================================================================ */
 
-.cl-grid-column-group__column_first {
+.cl-grid-column_first {
   border-left: var(--cl-primary-border);
 }
 
-.cl-grid-column-group__column_highlighted {
+.cl-grid-column_highlighted {
   background-color: var(--cl-highlight-background);
 }

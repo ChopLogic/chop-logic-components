@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-sub-menu-bar {
   list-style: none;
   margin: 0;
@@ -19,14 +16,10 @@
   border-left: var(--cl-primary-border);
 }
 
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
-
 .cl-sub-menu-bar_horizontal {
   position: absolute;
   top: 100%;
-  left: 40%;
+  left: 0%;
   width: max-content;
   border-radius: var(--cl-border-radius);
   border: var(--cl-primary-border);

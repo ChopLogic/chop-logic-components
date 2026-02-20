@@ -1,5 +1,5 @@
 import { Button } from '@components/atoms';
-import { ButtonView, IconName, OrientationMode } from '@enums';
+import { ButtonView, ElementSize, IconName, OrientationMode } from '@enums';
 import { getClassName } from '@utils';
 import { type FC, useEffect, useId, useRef, useState } from 'react';
 
@@ -154,6 +154,7 @@ export const TabButton: FC<Props> = ({
                   onClick={toggleEditMode}
                   label="Edit tab"
                   tooltip="Edit tab"
+                  iconSize={ElementSize.Small}
                 />
               )}
               {isDeleteButtonVisible && (
@@ -163,6 +164,7 @@ export const TabButton: FC<Props> = ({
                   onClick={() => onTabDelete?.(tabId)}
                   label="Delete tab"
                   tooltip="Delete tab"
+                  iconSize={ElementSize.Small}
                 />
               )}
             </span>

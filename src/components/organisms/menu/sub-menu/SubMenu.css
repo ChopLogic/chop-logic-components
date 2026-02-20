@@ -17,7 +17,8 @@
 }
 
 .cl-sub-menu a {
-  color: var(--cl-tint-color);
+  color: var(--cl-primary-color);
+  text-decoration: none;
 }
 
 /* ============================================================================
@@ -68,7 +69,6 @@
   background:
     var(--cl-primary-background)
     radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-tint-color);
   text-shadow: var(--cl-text-shadow);
 }
 

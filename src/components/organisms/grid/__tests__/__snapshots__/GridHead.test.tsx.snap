@@ -9,9 +9,7 @@ exports[`GridHead > should match the snapshot 1`] = `
       <tr
         class="cl-grid-head__row"
       >
-        <th
-          class="cl-header-cell"
-        >
+        <th>
           <div
             class="cl-grid-checkbox"
           >
@@ -30,19 +28,13 @@ exports[`GridHead > should match the snapshot 1`] = `
             </label>
           </div>
         </th>
-        <th
-          class="cl-header-cell"
-        >
+        <th>
           Col 1
         </th>
-        <th
-          class="cl-header-cell"
-        >
+        <th>
           Col 2
         </th>
-        <th
-          class="cl-header-cell"
-        >
+        <th>
           Col 3
         </th>
       </tr>

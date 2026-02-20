@@ -11,6 +11,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
   icon,
   disabled,
   className,
+  iconSize = ElementSize.Small,
   ...rest
 }) => {
   return (
@@ -22,7 +23,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
       disabled={disabled}
       {...rest}
     >
-      <Icon name={icon} size={ElementSize.Small} />
+      <Icon name={icon} size={iconSize} />
     </button>
   );
 };

@@ -38,7 +38,6 @@
   background:
     var(--cl-primary-background)
     radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-tint-color);
 }
 
 .cl-menu-leaf:active {
@@ -52,5 +51,5 @@
 }
 
 .cl-menu-leaf a {
-  color: var(--cl-tint-color);
+  color: var(--cl-primary-color);
 }

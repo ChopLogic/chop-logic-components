@@ -12,15 +12,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cl-grid-head th {
+  padding: var(--cl-xs-gap);
+}
+
 @media (min-width: 640px) {
   .cl-grid-head {
     font-size: var(--cl-typography-base-tablet);
+  }
+
+  .cl-grid-head th {
+    padding: var(--cl-s-gap);
   }
 }
 
 @media (min-width: 1024px) {
   .cl-grid-head {
     font-size: var(--cl-typography-base-desktop);
+  }
+
+  .cl-grid-head th {
+    padding: var(--cl-m-gap);
   }
 }
 

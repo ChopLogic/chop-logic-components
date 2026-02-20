@@ -8,31 +8,11 @@
   position: relative;
   overflow: hidden;
   background-position: center;
-  transition: background 0.3s;
-}
-
-.cl-grid-checkbox:hover {
-  background:
-    var(--cl-primary-background)
-    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-tint-color);
-}
-
-.cl-grid-checkbox:active {
-  background-color: var(--cl-shadow-background);
-  background-size: 100%;
-  transition: background 0s;
 }
 
 /* ============================================================================
    ELEMENTS
    ============================================================================ */
-
-.cl-grid-checkbox svg {
-  color: var(--cl-primary-color);
-  width: var(--cl-icon-size);
-  height: var(--cl-icon-size);
-}
 
 .cl-grid-checkbox label {
   cursor: pointer;
@@ -56,7 +36,7 @@
 
 .cl-grid-checkbox__input:focus-visible + label {
   outline: var(--cl-outline-border);
-  outline-offset: 2px;
+  outline-offset: var(--cl-xs-gap);
 }
 
 /* ============================================================================

@@ -3,6 +3,7 @@ import type { MenuItem } from '@types';
 import type { ReactElement } from 'react';
 
 import './MenuLeaf.css';
+import { ElementSize } from '@enums';
 
 export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
   const { icon, link, label, onFocus, onClick, onHover } = item;
@@ -32,7 +33,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
       onKeyDown={handleKeyDown}
       onMouseOver={onHover}
     >
-      <Icon name={icon} hidden />
+      <Icon name={icon} hidden size={ElementSize.Small} />
       {leafContent}
     </li>
   );

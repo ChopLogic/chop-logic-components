@@ -9,9 +9,7 @@ exports[`GridBody > should match the snapshot 1`] = `
       <tr
         class="cl-grid-row"
       >
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <div
             class="cl-grid-checkbox"
           >
@@ -30,28 +28,20 @@ exports[`GridBody > should match the snapshot 1`] = `
             </label>
           </div>
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 1
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 2
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 3
         </td>
       </tr>
       <tr
         class="cl-grid-row"
       >
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <div
             class="cl-grid-checkbox"
           >
@@ -70,28 +60,20 @@ exports[`GridBody > should match the snapshot 1`] = `
             </label>
           </div>
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 5
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 6
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 7
         </td>
       </tr>
       <tr
         class="cl-grid-row"
       >
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           <div
             class="cl-grid-checkbox"
           >
@@ -110,19 +92,13 @@ exports[`GridBody > should match the snapshot 1`] = `
             </label>
           </div>
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 9
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 10
         </td>
-        <td
-          class="cl-grid-data-cell"
-        >
+        <td>
           Value 11
         </td>
       </tr>

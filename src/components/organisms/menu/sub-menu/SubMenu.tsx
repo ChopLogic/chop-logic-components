@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName, OrientationMode } from '@enums';
+import { ElementSize, IconName, OrientationMode } from '@enums';
 import { useClickOutside } from '@hooks';
 import type { MenuItem } from '@types';
 import { getClassName } from '@utils/get-class-name';
@@ -36,12 +36,12 @@ export const SubMenu: FC<Props> = ({
 
   const itemContent = link ? (
     <a href={link} target="_blank" rel="noreferrer">
-      <Icon name={icon} />
+      <Icon name={icon} size={ElementSize.Small} />
       {label}
     </a>
   ) : (
     <span>
-      <Icon name={icon} />
+      <Icon name={icon} size={ElementSize.Small} />
       {label}
     </span>
   );
@@ -79,7 +79,7 @@ export const SubMenu: FC<Props> = ({
         onKeyDown={handleKeyDown}
       >
         {itemContent}
-        <Icon name={IconName.ChevronDown} className={iconClass} />
+        <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
       </span>
       {isSubMenuOpened && children}
     </li>

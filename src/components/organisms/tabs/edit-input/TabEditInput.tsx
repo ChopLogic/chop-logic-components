@@ -1,5 +1,5 @@
 import { Button } from '@components/atoms';
-import { ButtonView, IconName } from '@enums';
+import { ButtonView, ElementSize, IconName } from '@enums';
 import { type FC, useEffect, useRef } from 'react';
 
 import './TabEditInput.css';
@@ -56,6 +56,7 @@ export const TabEditInput: FC<Props> = ({
           icon={IconName.Check}
           onClick={onSave}
           label="Save tab title"
+          iconSize={ElementSize.Small}
         />
         <Button
           view={ButtonView.Icon}
@@ -63,6 +64,7 @@ export const TabEditInput: FC<Props> = ({
           onClick={onCancel}
           label="Cancel tab title change"
           id={cancelButtonId}
+          iconSize={ElementSize.Small}
         />
       </span>
     </div>

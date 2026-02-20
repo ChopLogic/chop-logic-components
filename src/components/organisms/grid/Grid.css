@@ -14,7 +14,7 @@
   padding: var(--cl-m-gap);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;

@@ -5,9 +5,15 @@ import { Icon } from '@components/atoms';
 import { ElementSize } from '@enums';
 import type { ButtonProps } from '@types';
 
-export const PrimaryButton: FC<ButtonProps> = ({ icon, text, className, ...rest }) => (
+export const PrimaryButton: FC<ButtonProps> = ({
+  icon,
+  text,
+  className,
+  iconSize = ElementSize.Small,
+  ...rest
+}) => (
   <button {...rest} className={getClassName(['cl-primary-button', className])}>
-    {icon && <Icon name={icon} className="cl-primary-button__icon" size={ElementSize.Small} />}
+    {icon && <Icon name={icon} className="cl-primary-button__icon" size={iconSize} />}
     <span className="cl-primary-button__text">{text}</span>
   </button>
 );

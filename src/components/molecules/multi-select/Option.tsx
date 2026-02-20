@@ -42,9 +42,9 @@ export const MultiSelectOption: FC<Props> = ({ value, onSelect }) => {
       className={optionClass}
     >
       {selected ? (
-        <Icon name={IconName.CheckSquare} size={ElementSize.Large} />
+        <Icon name={IconName.CheckSquare} size={ElementSize.Small} />
       ) : (
-        <Icon name={IconName.Square} size={ElementSize.Large} />
+        <Icon name={IconName.Square} size={ElementSize.Small} />
       )}
       <span>{label}</span>
     </li>

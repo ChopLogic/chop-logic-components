@@ -31,7 +31,7 @@ exports[`Select > should render correctly 1`] = `
         Not selected
       </span>
       <span
-        class="cl-select-combobox__icon cl-icon chop-icon__chevron-down cl-icon_large"
+        class="cl-select-combobox__icon cl-icon chop-icon__chevron-down cl-icon_small"
       />
     </button>
     <ul

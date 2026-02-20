@@ -5,7 +5,7 @@
   background-color: var(--cl-primary-background);
   border: var(--cl-accent-border);
   color: var(--cl-accent-color);
-  padding: var(--cl-m-gap);
+  padding: var(--cl-s-gap) var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
@@ -17,8 +17,6 @@
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
-
-  /* Font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,5 +1,5 @@
 import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { AccordionItemProps } from '@types';
 import type { FC } from 'react';
 import './AccordionItem.css';
@@ -14,6 +14,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ summary, children }) => 
           className="cl-accordion-item__icon"
           aria-label="Toggle Details"
           testId="accordion-icon"
+          size={ElementSize.Small}
         />
       </summary>
       <div className="cl-accordion-item__content">{children}</div>

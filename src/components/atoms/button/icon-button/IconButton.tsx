@@ -8,6 +8,6 @@ import type { ButtonProps } from '@types';
 
 export const IconButton: FC<Omit<ButtonProps, 'text'>> = ({ icon, className, label, ...rest }) => (
   <button {...rest} aria-label={label} className={getClassName(['cl-icon-button', className])}>
-    {icon && <Icon name={icon} className="cl-icon-button__icon" size={ElementSize.Large} />}
+    {icon && <Icon name={icon} className="cl-icon-button__icon" size={ElementSize.Medium} />}
   </button>
 );

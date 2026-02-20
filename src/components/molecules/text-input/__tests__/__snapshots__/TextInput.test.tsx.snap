@@ -38,7 +38,7 @@ exports[`TextInput > should render the input correctly 1`] = `
           type="button"
         >
           <span
-            class="cl-icon chop-icon__delete cl-icon_medium"
+            class="cl-icon chop-icon__delete cl-icon_small"
           />
         </button>
       </span>
@@ -99,7 +99,7 @@ exports[`TextInput > should render the required input correctly 1`] = `
           type="button"
         >
           <span
-            class="cl-icon chop-icon__delete cl-icon_medium"
+            class="cl-icon chop-icon__delete cl-icon_small"
           />
         </button>
       </span>

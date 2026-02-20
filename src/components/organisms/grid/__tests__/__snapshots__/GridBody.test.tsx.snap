@@ -25,7 +25,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row1"
             >
               <span
-                class="cl-icon chop-icon__square cl-icon_large"
+                class="cl-icon chop-icon__square cl-icon_extra-small"
               />
             </label>
           </div>
@@ -65,7 +65,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row2"
             >
               <span
-                class="cl-icon chop-icon__square cl-icon_large"
+                class="cl-icon chop-icon__square cl-icon_extra-small"
               />
             </label>
           </div>
@@ -105,7 +105,7 @@ exports[`GridBody > should match the snapshot 1`] = `
               for="select_row_row3"
             >
               <span
-                class="cl-icon chop-icon__square cl-icon_large"
+                class="cl-icon chop-icon__square cl-icon_extra-small"
               />
             </label>
           </div>

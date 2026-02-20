@@ -4,6 +4,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 
 import './Link.css';
+import { ElementSize } from '@enums';
 
 const Link: FC<LinkProps> = ({
   href,
@@ -19,7 +20,9 @@ const Link: FC<LinkProps> = ({
   const linkClass = getClassName(['cl-link', className, { 'cl-link_disabled': disabled }]);
   const isExternal = external || href.startsWith('http') || href.startsWith('//');
   const linkTarget = isExternal ? target || '_blank' : target;
-  const iconElement = icon ? <Icon name={icon} className="cl-link__icon" hidden /> : null;
+  const iconElement = icon ? (
+    <Icon name={icon} className="cl-link__icon" hidden size={ElementSize.Small} />
+  ) : null;
   const isLeftIcon = icon && iconPosition === 'left';
   const isRightIcon = icon && iconPosition === 'right';
 

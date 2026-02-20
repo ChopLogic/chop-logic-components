@@ -52,7 +52,7 @@ const CheckboxStateful: FC<CheckboxProps> = ({
         isTextHidden={noLabel}
         icon={checked ? IconName.CheckSquare : IconName.Square}
         iconPosition={iconPosition}
-        iconSize={ElementSize.Large}
+        iconSize={ElementSize.Medium}
       />
     </div>
   );

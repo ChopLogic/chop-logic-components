@@ -7,5 +7,17 @@
   text-align: center;
   padding-top: var(--cl-s-gap);
   color: var(--cl-primary-color);
-  font-size: var(--cl-typography-small);
+  font-size: var(--cl-typography-small-mobile);
+}
+
+@media (min-width: 640px) {
+  .cl-figure__caption {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-figure__caption {
+    font-size: var(--cl-typography-small-desktop);
+  }
 }

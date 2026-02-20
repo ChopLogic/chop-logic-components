@@ -51,7 +51,7 @@ export const MultiSelectCombobox: FC<Props> = ({
       className="cl-select-combobox"
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
-      <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Large} />
+      <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
     </button>
   );
 };

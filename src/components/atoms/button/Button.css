@@ -1,3 +1,12 @@
+/* Common button styles */
+.cl-button {
+  font-size: var(--cl-typography-base-mobile);
+  padding: var(--cl-m-gap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Focus styles */
 .cl-button:focus-visible {
   outline: var(--cl-outline-border);
@@ -13,4 +22,17 @@
 /* Extended variant */
 .cl-button_extended {
   width: 100%;
+}
+
+@media (min-width: 640px) {
+  .cl-button {
+    font-size: var(--cl-typography-base-tablet);
+    padding: var(--cl-m-gap) var(--cl-l-gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-button {
+    font-size: var(--cl-typography-base-desktop);
+  }
 }

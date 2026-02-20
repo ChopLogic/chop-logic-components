@@ -30,18 +30,9 @@
    ============================================================================ */
 
 .cl-checkbox label {
-  cursor: pointer;
-  gap: var(--cl-m-gap);
-  color: var(--cl-primary-color);
-  font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
-  font-weight: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   align-items: center;
-  display: flex;
+  gap: var(--cl-m-gap);
 }
 
 @media (min-width: 640px) {
@@ -72,7 +63,7 @@
 
 .cl-checkbox input:focus-visible + label {
   outline: var(--cl-outline-border);
-  outline-offset: 2px;
+  outline-offset: var(--cl-s-gap);
 }
 
 /* ============================================================================

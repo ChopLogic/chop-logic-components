@@ -1,5 +1,5 @@
 import { Label } from '@components/atoms';
-import { ElementSize, IconName } from '@enums';
+import { IconName } from '@enums';
 import { useElementIds } from '@hooks';
 import { getClassName } from '@utils';
 import type { FC, InputHTMLAttributes } from 'react';
@@ -46,7 +46,6 @@ export const GridCheckbox: FC<Props> = ({
         inputId={elementId}
         isTextHidden={true}
         iconPosition="left"
-        iconSize={ElementSize.Large}
         icon={checked ? IconName.CheckSquare : IconName.Square}
       />
     </div>

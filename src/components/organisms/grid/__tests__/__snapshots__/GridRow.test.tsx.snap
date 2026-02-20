@@ -23,7 +23,7 @@ exports[`GridRow > should match the snapshot 1`] = `
               for="select_row_item-1"
             >
               <span
-                class="cl-icon chop-icon__square cl-icon_large"
+                class="cl-icon chop-icon__square cl-icon_extra-small"
               />
             </label>
           </div>

@@ -22,7 +22,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
       disabled={disabled}
       {...rest}
     >
-      <Icon name={icon} size={ElementSize.Medium} />
+      <Icon name={icon} size={ElementSize.Small} />
     </button>
   );
 };

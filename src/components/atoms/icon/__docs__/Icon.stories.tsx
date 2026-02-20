@@ -12,7 +12,7 @@ const meta: Meta<typeof Icon> = {
     id: 'icon-id',
     className: 'icon-class',
     testId: 'icon-test-id',
-    size: ElementSize.ExtraLarge,
+    size: ElementSize.Large,
   },
   argTypes: {
     name: {

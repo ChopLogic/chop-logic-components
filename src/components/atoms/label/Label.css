@@ -10,8 +10,6 @@
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
-
-  /* Font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

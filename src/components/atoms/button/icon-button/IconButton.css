@@ -1,9 +1,6 @@
 .cl-icon-button {
   border: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: var(--cl-m-gap);
   border-radius: 50%;
   background: transparent;

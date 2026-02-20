@@ -26,6 +26,7 @@ const Icon: FC<IconProps> = ({
     'cl-icon',
     name,
     {
+      'cl-icon_extra-small': size === ElementSize.ExtraSmall,
       'cl-icon_small': size === ElementSize.Small,
       'cl-icon_medium': size === ElementSize.Medium,
       'cl-icon_large': size === ElementSize.Large,

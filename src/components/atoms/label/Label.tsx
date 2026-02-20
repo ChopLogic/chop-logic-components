@@ -20,7 +20,7 @@ const Label: FC<LabelProps> = ({
   icon,
   iconPosition,
   isTextHidden = false,
-  iconSize = ElementSize.Medium,
+  iconSize = ElementSize.ExtraSmall,
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';

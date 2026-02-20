@@ -52,7 +52,7 @@ exports[`Label > should render left icon 1`] = `
     for="test-input-id"
   >
     <span
-      class="cl-icon chop-icon__arrow-left cl-icon_medium"
+      class="cl-icon chop-icon__arrow-left cl-icon_extra-small"
     />
     <span
       class="cl-label__text"
@@ -75,7 +75,7 @@ exports[`Label > should render right icon 1`] = `
       Test label
     </span>
     <span
-      class="cl-icon chop-icon__arrow-down-right cl-icon_medium"
+      class="cl-icon chop-icon__arrow-down-right cl-icon_extra-small"
     />
   </label>
 </DocumentFragment>

@@ -1,12 +1,8 @@
 .cl-secondary-button {
   background: transparent;
   cursor: pointer;
-  padding: var(--cl-m-gap) var(--cl-l-gap);
   border-radius: var(--cl-border-radius);
   border: var(--cl-primary-border);
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
   gap: var(--cl-s-gap);
   transition: all 150ms ease;
 }
@@ -22,7 +18,7 @@
 
 .cl-secondary-button__text {
   font-family: var(--cl-core-font);
-  font-size: var(--cl-base-font-size);
+  font-size: inherit;
   color: var(--cl-primary-color);
   font-weight: normal;
   line-height: 1.5;

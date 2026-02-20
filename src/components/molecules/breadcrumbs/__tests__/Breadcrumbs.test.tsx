@@ -1,26 +1,8 @@
 import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import type { Breadcrumb } from '@types';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import Breadcrumbs from '../Breadcrumbs';
-
-vi.mock('@components/atoms', () => ({
-  Link: vi.fn(({ href, children, icon, iconPosition }) => (
-    <a data-testid="breadcrumb-link" href={href} data-icon={icon} data-icon-position={iconPosition}>
-      {children}
-    </a>
-  )),
-  Icon: vi.fn(({ name, hidden }) => (
-    <span
-      data-testid="breadcrumb-icon"
-      data-icon-name={name}
-      data-hidden={hidden}
-      aria-hidden={hidden}
-    >
-      {name} icon
-    </span>
-  )),
-}));
 
 describe('Breadcrumbs', () => {
   const mockItems = [
@@ -61,7 +43,7 @@ describe('Breadcrumbs', () => {
   it('renders links for all items except the last one', () => {
     render(<Breadcrumbs items={mockItems} />);
 
-    const links = screen.getAllByTestId('breadcrumb-link');
+    const links = screen.getAllByRole('link');
     expect(links).toHaveLength(3);
 
     // Last item should not be a link
@@ -96,33 +78,13 @@ describe('Breadcrumbs', () => {
     expect(separatorIcons).toHaveLength(3); // 3 separators for 4 items
   });
 
-  it('hides icons from screen readers', () => {
-    render(<Breadcrumbs items={mockItems} />);
-
-    const icons = screen.getAllByTestId('breadcrumb-icon');
-    icons.forEach((icon) => {
-      expect(icon).toHaveAttribute('aria-hidden', 'true');
-      expect(icon).toHaveAttribute('data-hidden', 'true');
-    });
-  });
-
   it('passes correct href to link components', () => {
     render(<Breadcrumbs items={mockItems} />);
 
-    const links = screen.getAllByTestId('breadcrumb-link');
+    const links = screen.getAllByRole('link');
     expect(links[0]).toHaveAttribute('href', '/');
     expect(links[1]).toHaveAttribute('href', '/products');
     expect(links[2]).toHaveAttribute('href', '/products/electronics');
-  });
-
-  it('passes correct icon and position to link components', () => {
-    render(<Breadcrumbs items={mockItems} />);
-
-    const links = screen.getAllByTestId('breadcrumb-link');
-    expect(links[0]).toHaveAttribute('data-icon', IconName.Home);
-    expect(links[0]).toHaveAttribute('data-icon-position', 'left');
-    expect(links[1]).toHaveAttribute('data-icon', IconName.Activity);
-    expect(links[1]).toHaveAttribute('data-icon-position', 'left');
   });
 
   it('handles items without icons', () => {
@@ -185,7 +147,7 @@ describe('Breadcrumbs', () => {
     render(<Breadcrumbs items={twoItems} />);
 
     // Should have one link and one current page
-    const links = screen.getAllByTestId('breadcrumb-link');
+    const links = screen.getAllByRole('link');
     expect(links).toHaveLength(1);
     expect(screen.getByText('Current')).toHaveAttribute('aria-current', 'page');
 

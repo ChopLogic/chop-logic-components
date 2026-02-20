@@ -9,7 +9,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--cl-m-gap);
+  gap: var(--cl-s-gap);
 }
 
 .cl-breadcrumbs__item {
@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--cl-s-gap);
-  color: var(--cl-tint-color);
+  color: var(--cl-primary-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;
@@ -41,12 +41,4 @@
   .cl-breadcrumbs__text {
     font-size: var(--cl-typography-base-desktop);
   }
-}
-
-.cl-breadcrumbs__text svg {
-  color: var(--cl-tint-color);
-}
-
-.cl-breadcrumbs__separator {
-  color: var(--cl-tint-color);
 }

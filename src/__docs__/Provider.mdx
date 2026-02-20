@@ -17,13 +17,14 @@ import { ThemeProvider } from 'chop-logic-components';
 ```
 
 ```tsx
-import { ThemeProvider, ThemeMode } from 'chop-logic-components';
+import { ThemeProvider, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
 import { Decorator } from '@storybook/react';
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
   const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
-  const storybookMode = backgroundColor === '#2B2B2BFF' ? ThemeMode.Dark : ThemeMode.Light;
+  const storybookMode =
+    backgroundColor === '#2B2B2BFF' ? CL_DARK_THEME_CLASS : CL_LIGHT_THEME_CLASS;
 
   return (
     <ThemeProvider injectedMode={storybookMode}>
@@ -42,15 +43,19 @@ export const decorators = [withTheme];
 The <code>useTheme()</code> hook provides access to the theme context and allows to change the theme.
 
 ```tsx
-import { useTheme, ThemeMode } from 'chop-logic-components';
+import { useTheme, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
 
 export const ThemeToggleButton = () => {
   const { mode, setMode } = useTheme();
 
   const toggleTheme = () => {
-    setMode(mode === ThemeMode.Dark ? ThemeMode.Light : ThemeMode.Dark);
+    setMode(mode === CL_DARK_THEME_CLASS ? CL_LIGHT_THEME_CLASS : CL_DARK_THEME_CLASS);
   };
 
-  return <button onClick={toggleTheme}>Toggle to {mode === 'dark' ? 'Light' : 'Dark'} Mode</button>;
+  return (
+    <button onClick={toggleTheme}>
+      Toggle to {mode === CL_DARK_THEME_CLASS ? 'Light' : 'Dark'} Mode
+    </button>
+  );
 };
 ```

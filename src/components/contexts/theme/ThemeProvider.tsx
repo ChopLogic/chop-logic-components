@@ -1,27 +1,28 @@
 import '@styles/main.css';
 import '@styles/icons.css';
 
-import { ThemeMode } from '@enums';
 import { type FC, type ReactNode, useEffect, useMemo, useState } from 'react';
 
-import { ThemeContext } from './ThemeContext';
+import { CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS, ThemeContext } from './ThemeContext';
+
+type ThemeMode = typeof CL_LIGHT_THEME_CLASS | typeof CL_DARK_THEME_CLASS;
 
 export const ThemeProvider: FC<{ children: ReactNode; injectedMode?: ThemeMode }> = ({
   children,
   injectedMode,
 }) => {
-  const [mode, setMode] = useState(ThemeMode.Light);
+  const [mode, setMode] = useState<ThemeMode>(CL_LIGHT_THEME_CLASS);
 
   useEffect(() => {
     if (mode && typeof mode === 'string') {
-      document.body.classList.remove(ThemeMode.Light, ThemeMode.Dark);
+      document.body.classList.remove(CL_LIGHT_THEME_CLASS, CL_DARK_THEME_CLASS);
       document.body.classList.add(mode);
     }
   }, [mode]);
 
   useEffect(() => {
     if (injectedMode && typeof injectedMode === 'string') {
-      document.body.classList.remove(ThemeMode.Light, ThemeMode.Dark);
+      document.body.classList.remove(CL_LIGHT_THEME_CLASS, CL_DARK_THEME_CLASS);
       document.body.classList.add(injectedMode);
     }
   }, [injectedMode]);

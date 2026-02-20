@@ -1,6 +1,6 @@
 import { getClassName } from '@utils';
 import type { FC } from 'react';
-import { withTooltip } from '../../hocs';
+import { withTooltip } from '../../hocs/with-tooltip/with-tooltip';
 import './Button.css';
 
 import { ButtonView } from '@enums';

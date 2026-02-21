@@ -12,13 +12,65 @@
   "files": [
     "/dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js"
+    },
+    "./atoms/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/atoms/*/index.js"
+    },
+    "./molecules/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/molecules/*/index.js"
+    },
+    "./organisms/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/organisms/*/index.js"
+    },
+    "./hocs/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/hocs/*/index.js"
+    },
+    "./contexts/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/contexts/*/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/hooks/index.js"
+    },
+    "./hooks/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/hooks/*/index.js"
+    },
+    "./enums": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/enums/index.js"
+    },
+    "./utils": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/utils/index.js"
+    },
+    "./styles": {
+      "import": "./dist/styles/main.css"
+    },
+    "./styles/main": {
+      "import": "./dist/styles/main.css"
+    },
+    "./styles/icons": {
+      "import": "./dist/styles/icons.css"
+    }
+  },
   "sideEffects": [
-    "**/*.css"
+    "./dist/styles/**/*.css",
+    "./dist/components/**/*.css"
   ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
     "prepublishOnly": "npm run build",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-exports.js",
     "build:storybook": "storybook build",
     "prepare": "npm run build && husky",
     "format": "npm run format:biome && npm run format:prettier",

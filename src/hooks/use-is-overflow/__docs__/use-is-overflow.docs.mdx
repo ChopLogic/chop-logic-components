@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Hooks/useIsOverflow" />
 
@@ -14,15 +14,15 @@ The `useIsOverflow` hook detects when content overflows its container in either 
 ## Usage
 
 ```tsx
-import { useRef } from 'react';
-import { useIsOverflow } from 'chop-logic-components';
+import { useRef } from "react";
+import { useIsOverflow } from "chop-logic-components";
 
 const OverflowComponent = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isWidthOverflow = useIsOverflow({ ref: containerRef, dimension: 'width' });
+  const isWidthOverflow = useIsOverflow({ ref: containerRef, dimension: "width" });
 
   return (
-    <div ref={containerRef} className={isWidthOverflow ? 'has-overflow' : ''}>
+    <div ref={containerRef} className={isWidthOverflow ? "has-overflow" : ""}>
       {/* Long content that might overflow */}
     </div>
   );

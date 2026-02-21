@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as Alert from './Alert.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as Alert from "./Alert.stories";
 
 <Meta of={Alert} title="Alert" />
 
@@ -10,21 +10,12 @@ A flexible alert component that displays contextual feedback messages to users. 
 ## Usage
 
 ```tsx
-import Alert, { AlertMode } from 'chop-logic-components';
+import Alert, { AlertMode } from "chop-logic-components";
 
 const NotificationSystem = () => {
   const [alertOpen, setAlertOpen] = React.useState(true);
 
-  return (
-    <Alert
-      isOpened={alertOpen}
-      onClose={() => setAlertOpen(false)}
-      mode={AlertMode.Success}
-      title="Action completed"
-      message="Your changes have been saved successfully."
-      autoClose
-    />
-  );
+  return <Alert isOpened={alertOpen} onClose={() => setAlertOpen(false)} mode={AlertMode.Success} title="Action completed" message="Your changes have been saved successfully." autoClose />;
 };
 ```
 

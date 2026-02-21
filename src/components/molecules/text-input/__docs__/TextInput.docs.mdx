@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as TextInput from './TextInput.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as TextInput from "./TextInput.stories";
 
 <Meta of={TextInput} title="TextInput" />
 
@@ -14,16 +14,9 @@ The `TextInput` component is a flexible text input field that supports both stat
 When `stateless` is false or omitted, the component manages its own state internally. Perfect for simple forms where you don't need external control.
 
 ```tsx
-import TextInput from 'chop-logic-components';
+import TextInput from "chop-logic-components";
 
-<TextInput
-  name="email"
-  label="Email address"
-  type="email"
-  placeholder="Enter your email"
-  required
-  onChange={(event) => console.log(event)}
-/>;
+<TextInput name="email" label="Email address" type="email" placeholder="Enter your email" required onChange={(event) => console.log(event)} />;
 ```
 
 ### Stateless
@@ -31,19 +24,11 @@ import TextInput from 'chop-logic-components';
 When `stateless` is true, the component is fully controlled via the `value` prop. You manage state externally and provide all handlers.
 
 ```tsx
-import TextInput from 'chop-logic-components';
+import TextInput from "chop-logic-components";
 
-const [message, setMessage] = useState('');
+const [message, setMessage] = useState("");
 
-<TextInput
-  name="message"
-  label="Your Message"
-  stateless
-  value={message}
-  placeholder="Type your message..."
-  onChange={(event) => setMessage(event.target.value)}
-  onClear={() => setMessage('')}
-/>;
+<TextInput name="message" label="Your Message" stateless value={message} placeholder="Type your message..." onChange={(event) => setMessage(event.target.value)} onClear={() => setMessage("")} />;
 ```
 
 ## Best Practices

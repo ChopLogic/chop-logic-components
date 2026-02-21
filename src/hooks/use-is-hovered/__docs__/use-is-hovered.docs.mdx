@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Story from './use-is-hovered.stories';
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Story from "./use-is-hovered.stories";
 
 <Meta of={Story} title="Hooks/useIsHovered" />
 
@@ -17,8 +17,8 @@ A React hook that tracks whether an element is being hovered over. This hook sim
 ## Usage
 
 ```tsx
-import { useIsHovered } from 'chop-logic-components';
-import { useRef } from 'react';
+import { useIsHovered } from "chop-logic-components";
+import { useRef } from "react";
 
 const HoverableComponent = () => {
   const elementRef = useRef<HTMLDivElement>(null);
@@ -28,12 +28,12 @@ const HoverableComponent = () => {
     <div
       ref={elementRef}
       style={{
-        padding: '1rem',
-        background: isHovered ? '#e8f5e9' : '#fff',
-        transition: 'background 0.2s',
+        padding: "1rem",
+        background: isHovered ? "#e8f5e9" : "#fff",
+        transition: "background 0.2s",
       }}
     >
-      {isHovered ? 'You are hovering over me!' : 'Hover over me'}
+      {isHovered ? "You are hovering over me!" : "Hover over me"}
     </div>
   );
 };

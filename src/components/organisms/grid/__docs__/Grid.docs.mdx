@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as GridStories from './Grid.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as GridStories from "./Grid.stories";
 
 <Meta of={GridStories} title="Grid" />
 
@@ -10,29 +10,21 @@ The `Grid` component provides a flexible, interactive data table with column def
 ### Usage
 
 ```tsx
-import Grid from 'chop-logic-components';
+import Grid from "chop-logic-components";
 
 const UserGrid = () => {
   const columns = [
-    { field: 'name', title: 'Name' },
-    { field: 'email', title: 'Email' },
-    { field: 'role', title: 'Role' },
+    { field: "name", title: "Name" },
+    { field: "email", title: "Email" },
+    { field: "role", title: "Role" },
   ];
 
   const data = [
-    { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-    { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
+    { id: "1", name: "John Doe", email: "john@example.com", role: "Admin" },
+    { id: "2", name: "Jane Smith", email: "jane@example.com", role: "User" },
   ];
 
-  return (
-    <Grid
-      columns={columns}
-      data={data}
-      caption="User Management"
-      selectable
-      onSelect={(ids) => console.log('Selected IDs:', ids)}
-    />
-  );
+  return <Grid columns={columns} data={data} caption="User Management" selectable onSelect={(ids) => console.log("Selected IDs:", ids)} />;
 };
 ```
 

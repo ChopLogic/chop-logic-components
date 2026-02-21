@@ -101,7 +101,6 @@ function generateIndexFiles() {
     for (const entry of hookDirs) {
       if (entry.isDirectory() && entry.name.startsWith('use-')) {
         const hookDir = path.join(hooksPath, entry.name);
-        const hookName = entry.name.replace(/-/g, '-');
         const jsFiles = fs
           .readdirSync(hookDir)
           .filter((f) => f.endsWith('.js') && f !== 'index.js');
@@ -129,7 +128,6 @@ function generateIndexFiles() {
       if (hookDirs.length > 0) {
         let content = '';
         for (const hookDir of hookDirs) {
-          const camelCaseName = hookDir.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
           content += `export * from './${hookDir}/index.js';\n`;
         }
         fs.writeFileSync(hooksIndexPath, content, 'utf8');

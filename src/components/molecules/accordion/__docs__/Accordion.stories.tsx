@@ -119,7 +119,7 @@ export const MultipleItems: Story = {
       {
         summary: 'Styling',
         children:
-          'All components use SCSS modules with support for responsive design and accessible styling patterns.',
+          'All components use BEM CSS with support for responsive design and accessible styling patterns.',
       },
       {
         summary: 'Documentation',

@@ -2,7 +2,6 @@
 *.*
 
 # Only format these file types with Prettier
-!*.scss
 !*.mdx
 
 # Common directories to ignore

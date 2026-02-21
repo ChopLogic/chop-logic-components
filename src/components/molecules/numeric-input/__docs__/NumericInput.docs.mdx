@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as Stories from './NumericInput.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./NumericInput.stories";
 
 <Meta of={Stories} title="NumericInput" />
 
@@ -14,16 +14,9 @@ The `NumericInput` component is a flexible numeric input field that supports bot
 When `stateless` is false or omitted, the component manages its own state internally. Perfect for simple forms where you don't need external control.
 
 ```tsx
-import NumericInput from 'chop-logic-components';
+import NumericInput from "chop-logic-components";
 
-<NumericInput
-  name="quantity"
-  label="Quantity"
-  defaultValue={1}
-  min={1}
-  max={10}
-  onChange={(event) => console.log(event)}
-/>;
+<NumericInput name="quantity" label="Quantity" defaultValue={1} min={1} max={10} onChange={(event) => console.log(event)} />;
 ```
 
 ### Stateless
@@ -31,7 +24,7 @@ import NumericInput from 'chop-logic-components';
 When `stateless` is true, the component is fully controlled via the `value` prop. You manage state externally and provide all handlers.
 
 ```tsx
-import NumericInput from 'chop-logic-components';
+import NumericInput from "chop-logic-components";
 
 const [quantity, setQuantity] = useState(5);
 

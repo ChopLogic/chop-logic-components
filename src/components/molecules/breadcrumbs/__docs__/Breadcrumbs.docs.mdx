@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as BreadcrumbsStories from './Breadcrumbs.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as BreadcrumbsStories from "./Breadcrumbs.stories";
 
 <Meta of={BreadcrumbsStories} title="Breadcrumbs" />
 
@@ -10,15 +10,15 @@ The `Breadcrumbs` component provides an accessible navigation aid that helps use
 ## Usage
 
 ```tsx
-import Breadcrumbs, { IconName } from 'chop-logic-components';
+import Breadcrumbs, { IconName } from "chop-logic-components";
 
 const PageBreadcrumbs = () => (
   <Breadcrumbs
     items={[
-      { label: 'Home', icon: IconName.Home, link: '/' },
-      { label: 'Products', link: '/products' },
-      { label: 'Electronics', link: '/products/electronics' },
-      { label: 'Smartphones' }, // Current page - no link
+      { label: "Home", icon: IconName.Home, link: "/" },
+      { label: "Products", link: "/products" },
+      { label: "Electronics", link: "/products/electronics" },
+      { label: "Smartphones" }, // Current page - no link
     ]}
   />
 );

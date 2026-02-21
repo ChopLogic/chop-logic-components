@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Theming/Provider" />
 
@@ -13,8 +13,8 @@ It supports both dynamic switching via a hook and injected mode through the `inj
 ### Basic Example
 
 ```tsx
-import { ThemeProvider } from 'chop-logic-components';
-import App from './App';
+import { ThemeProvider } from "chop-logic-components";
+import App from "./App";
 
 export function Root() {
   return (
@@ -30,7 +30,7 @@ export function Root() {
 Use `injectedMode` to set a fixed theme without allowing user switching:
 
 ```tsx
-import { ThemeProvider, CL_DARK_THEME_CLASS } from 'chop-logic-components';
+import { ThemeProvider, CL_DARK_THEME_CLASS } from "chop-logic-components";
 
 export function App() {
   return (
@@ -44,14 +44,13 @@ export function App() {
 ### Storybook Integration
 
 ```tsx
-import { ThemeProvider, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
-import { Decorator } from '@storybook/react';
+import { ThemeProvider, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from "chop-logic-components";
+import { Decorator } from "@storybook/react";
 
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
-  const backgroundColor = backgrounds?.value ?? '#FFFFFFFF';
-  const storybookMode =
-    backgroundColor === '#2B2B2BFF' ? CL_DARK_THEME_CLASS : CL_LIGHT_THEME_CLASS;
+  const backgroundColor = backgrounds?.value ?? "#FFFFFFFF";
+  const storybookMode = backgroundColor === "#2B2B2BFF" ? CL_DARK_THEME_CLASS : CL_LIGHT_THEME_CLASS;
 
   return (
     <ThemeProvider injectedMode={storybookMode}>
@@ -74,7 +73,7 @@ The <code>useTheme()</code> hook provides access to the theme context and allows
 > **Note**: This hook only works inside a `<ThemeProvider>` component in React projects.
 
 ```tsx
-import { useTheme, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
+import { useTheme, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from "chop-logic-components";
 
 export function ThemeToggleButton() {
   const { mode, setMode } = useTheme();
@@ -83,11 +82,7 @@ export function ThemeToggleButton() {
     setMode(mode === CL_DARK_THEME_CLASS ? CL_LIGHT_THEME_CLASS : CL_DARK_THEME_CLASS);
   };
 
-  return (
-    <button onClick={toggleTheme}>
-      Toggle to {mode === CL_DARK_THEME_CLASS ? 'Light' : 'Dark'} Mode
-    </button>
-  );
+  return <button onClick={toggleTheme}>Toggle to {mode === CL_DARK_THEME_CLASS ? "Light" : "Dark"} Mode</button>;
 }
 ```
 
@@ -103,21 +98,21 @@ For projects that don't use React Context (e.g., Astro, plain HTML, other framew
 ```tsx
 // Toggle theme by adding/removing class
 function toggleTheme() {
-  const isDarkMode = document.documentElement.classList.toggle('cl-components-dark-theme');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  const isDarkMode = document.documentElement.classList.toggle("cl-components-dark-theme");
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 }
 
 // Restore theme on page load
 function initTheme() {
-  const theme = localStorage.getItem('theme') || 'light';
-  if (theme === 'dark') {
-    document.documentElement.classList.add('cl-components-dark-theme');
+  const theme = localStorage.getItem("theme") || "light";
+  if (theme === "dark") {
+    document.documentElement.classList.add("cl-components-dark-theme");
   }
 }
 
 // Initialize on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTheme);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTheme);
 } else {
   initTheme();
 }
@@ -160,7 +155,7 @@ import 'chop-logic-components/styles/main';
 Both React and HTML/JS projects use the same theme class names:
 
 ```tsx
-import { CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
+import { CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from "chop-logic-components";
 
 // CL_DARK_THEME_CLASS = 'cl-components-dark-theme'
 // CL_LIGHT_THEME_CLASS = 'cl-components-light-theme' (default, can be omitted)

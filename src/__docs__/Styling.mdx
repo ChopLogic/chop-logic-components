@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Theming/Styling" />
 
@@ -22,7 +22,7 @@ The library follows these principles:
 If you use the `ThemeProvider` component, **both `main.css` and `icons.css` are automatically imported**. You don't need to import them separately:
 
 ```tsx
-import { ThemeProvider } from 'chop-logic-components';
+import { ThemeProvider } from "chop-logic-components";
 
 export function App() {
   return <ThemeProvider>{/* CSS is already loaded - use components directly */}</ThemeProvider>;
@@ -34,10 +34,10 @@ export function App() {
 If you're **not** using ThemeProvider, manually import the theme CSS:
 
 ```tsx
-import 'chop-logic-components/styles/main'; // Includes both main.css and icons.css
+import "chop-logic-components/styles/main"; // Includes both main.css and icons.css
 
-import Button from 'chop-logic-components/atoms/button';
-import Icon from 'chop-logic-components/atoms/icon';
+import Button from "chop-logic-components/atoms/button";
+import Icon from "chop-logic-components/atoms/icon";
 ```
 
 The `main.css` file contains:
@@ -56,8 +56,8 @@ The `main.css` file contains:
 Use `ThemeProvider` which automatically includes all CSS:
 
 ```tsx
-import { ThemeProvider } from 'chop-logic-components';
-import { Button, Input, useDebounce } from 'chop-logic-components';
+import { ThemeProvider } from "chop-logic-components";
+import { Button, Input, useDebounce } from "chop-logic-components";
 
 export function App() {
   return (
@@ -88,11 +88,11 @@ export function App() {
 Import only the components you need, manually manage CSS:
 
 ```tsx
-import 'chop-logic-components/styles/main'; // Import theme CSS once at app root
+import "chop-logic-components/styles/main"; // Import theme CSS once at app root
 
-import Button from 'chop-logic-components/atoms/button'; // CSS auto-included
-import Input from 'chop-logic-components/atoms/input'; // CSS auto-included
-import { useDebounce } from 'chop-logic-components/hooks/use-debounce';
+import Button from "chop-logic-components/atoms/button"; // CSS auto-included
+import Input from "chop-logic-components/atoms/input"; // CSS auto-included
+import { useDebounce } from "chop-logic-components/hooks/use-debounce";
 
 export function MyApp() {
   return (
@@ -124,8 +124,8 @@ export function MyApp() {
 For projects that don't need theming:
 
 ```tsx
-import { Button, Input } from 'chop-logic-components';
-import 'chop-logic-components/styles/main'; // Import theme CSS
+import { Button, Input } from "chop-logic-components";
+import "chop-logic-components/styles/main"; // Import theme CSS
 
 export function MyApp() {
   return (
@@ -153,13 +153,13 @@ export function MyApp() {
 
 ```tsx
 // main.tsx
-import { ThemeProvider } from 'chop-logic-components';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { ThemeProvider } from "chop-logic-components";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App';
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>
       <App />
@@ -174,10 +174,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 ```tsx
 // app/layout.tsx
-'use client';
+"use client";
 
-import { ThemeProvider } from 'chop-logic-components';
-import { ReactNode } from 'react';
+import { ThemeProvider } from "chop-logic-components";
+import { ReactNode } from "react";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -214,7 +214,7 @@ Then use components in your Astro pages or React components:
 
 ```tsx
 // src/components/MyButton.tsx (React component wrapped with client:load)
-import Button from 'chop-logic-components/atoms/button';
+import Button from "chop-logic-components/atoms/button";
 
 export default function MyButton() {
   return <Button>Click me</Button>;
@@ -241,8 +241,8 @@ import MyButton from '../components/MyButton';
 
 ```tsx
 // app/root.tsx
-import { ThemeProvider } from 'chop-logic-components';
-import { Outlet } from '@remix-run/react';
+import { ThemeProvider } from "chop-logic-components";
+import { Outlet } from "@remix-run/react";
 
 export default function App() {
   return (
@@ -264,8 +264,8 @@ If not using ThemeProvider:
 
 ```tsx
 // app/root.tsx
-import 'chop-logic-components/styles/main';
-import { Outlet } from '@remix-run/react';
+import "chop-logic-components/styles/main";
+import { Outlet } from "@remix-run/react";
 
 export default function App() {
   return (
@@ -312,13 +312,13 @@ The library supports light and dark themes using CSS variable overrides.
 ### With ThemeProvider (React)
 
 ```tsx
-import { ThemeProvider, useTheme } from 'chop-logic-components';
-import 'chop-logic-components/styles/main';
+import { ThemeProvider, useTheme } from "chop-logic-components";
+import "chop-logic-components/styles/main";
 
 function ThemeToggle() {
   const { mode, setMode } = useTheme();
 
-  return <button onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}>Toggle Theme</button>;
+  return <button onClick={() => setMode(mode === "dark" ? "light" : "dark")}>Toggle Theme</button>;
 }
 
 export function App() {
@@ -340,19 +340,19 @@ For projects without React Context support (like Astro):
 ```tsx
 // Toggle theme by adding/removing class on document root
 function toggleTheme() {
-  const isDarkMode = document.documentElement.classList.toggle('cl-components-dark-theme');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  const isDarkMode = document.documentElement.classList.toggle("cl-components-dark-theme");
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 }
 
 // On page load, restore theme preference
 function initTheme() {
-  const theme = localStorage.getItem('theme') || 'light';
-  if (theme === 'dark') {
-    document.documentElement.classList.add('cl-components-dark-theme');
+  const theme = localStorage.getItem("theme") || "light";
+  if (theme === "dark") {
+    document.documentElement.classList.add("cl-components-dark-theme");
   }
 }
 
-window.addEventListener('DOMContentLoaded', initTheme);
+window.addEventListener("DOMContentLoaded", initTheme);
 ```
 
 ```astro
@@ -394,8 +394,8 @@ import 'chop-logic-components/styles/main';
 **Solution**: Make sure to import `main.css` before using components:
 
 ```tsx
-import 'chop-logic-components/styles/main'; // Always first
-import Button from 'chop-logic-components/atoms/button';
+import "chop-logic-components/styles/main"; // Always first
+import Button from "chop-logic-components/atoms/button";
 ```
 
 ### CSS variables undefined
@@ -406,7 +406,7 @@ import Button from 'chop-logic-components/atoms/button';
 
 ```tsx
 // In your root component or layout
-import 'chop-logic-components/styles/main';
+import "chop-logic-components/styles/main";
 ```
 
 ### Styles conflict with custom CSS
@@ -417,7 +417,7 @@ import 'chop-logic-components/styles/main';
 
 ```tsx
 // Option 1: CSS Modules
-import styles from './MyComponent.module.css';
+import styles from "./MyComponent.module.css";
 
 export function MyComponent() {
   return <div className={styles.container}>{/* content */}</div>;
@@ -426,7 +426,7 @@ export function MyComponent() {
 
 ```tsx
 // Option 2: CSS-in-JS (e.g., styled-components)
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   color: var(--cl-primary-color);
@@ -446,8 +446,8 @@ export function MyComponent() {
 **Solution**: Ensure `main.css` is imported:
 
 ```tsx
-import 'chop-logic-components/styles/main';
-import { ThemeProvider } from 'chop-logic-components';
+import "chop-logic-components/styles/main";
+import { ThemeProvider } from "chop-logic-components";
 
 export function App() {
   return <ThemeProvider>{/* app */}</ThemeProvider>;

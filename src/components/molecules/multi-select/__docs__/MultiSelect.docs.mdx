@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as MultiSelect from './MultiSelect.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as MultiSelect from "./MultiSelect.stories";
 
 <Meta of={MultiSelect} title="MultiSelect" />
 
@@ -10,24 +10,17 @@ A multi-selection input component that allows users to select multiple options f
 ## Usage
 
 ```tsx
-import MultiSelect from 'chop-logic-components';
+import MultiSelect from "chop-logic-components";
 
 const PreferencesForm = () => {
   const [selected, setSelected] = React.useState([]);
   const options = [
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-    { value: 'angular', label: 'Angular' },
+    { value: "react", label: "React" },
+    { value: "vue", label: "Vue" },
+    { value: "angular", label: "Angular" },
   ];
 
-  return (
-    <MultiSelect
-      name="frameworks"
-      label="Select preferred frameworks"
-      options={options}
-      onChange={(values) => setSelected(values)}
-    />
-  );
+  return <MultiSelect name="frameworks" label="Select preferred frameworks" options={options} onChange={(values) => setSelected(values)} />;
 };
 ```
 

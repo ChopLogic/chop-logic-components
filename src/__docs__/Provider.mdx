@@ -4,17 +4,44 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## Theme Provider
 
-The <code>ThemeProvider</code> component wraps your app or Storybook preview to enable light and dark theme switching using React Context.
+The <code>ThemeProvider</code> component wraps your app to enable light and dark theme switching using React Context.
+
+**Important**: `ThemeProvider` automatically imports `main.css` (which includes CSS variables and icons) — you don't need to import them separately.
 
 It supports both dynamic switching via a hook and injected mode through the `injectedMode` prop.
 
+### Basic Example
+
 ```tsx
 import { ThemeProvider } from 'chop-logic-components';
+import App from './App';
 
-<ThemeProvider>
-  <App />
-</ThemeProvider>;
+export function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
 ```
+
+### Injected Mode (Fixed Theme)
+
+Use `injectedMode` to set a fixed theme without allowing user switching:
+
+```tsx
+import { ThemeProvider, CL_DARK_THEME_CLASS } from 'chop-logic-components';
+
+export function App() {
+  return (
+    <ThemeProvider injectedMode={CL_DARK_THEME_CLASS}>
+      <div>{/* content always in dark mode */}</div>
+    </ThemeProvider>
+  );
+}
+```
+
+### Storybook Integration
 
 ```tsx
 import { ThemeProvider, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
@@ -38,14 +65,18 @@ const withTheme: Decorator = (StoryFn, context) => {
 export const decorators = [withTheme];
 ```
 
+> **Note**: CSS is automatically included by `ThemeProvider`, so you don't need to import it in your preview configuration.
+
 ## Theme Hook
 
-The <code>useTheme()</code> hook provides access to the theme context and allows to change the theme.
+The <code>useTheme()</code> hook provides access to the theme context and allows you to change the theme programmatically.
+
+> **Note**: This hook only works inside a `<ThemeProvider>` component in React projects.
 
 ```tsx
 import { useTheme, CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
 
-export const ThemeToggleButton = () => {
+export function ThemeToggleButton() {
   const { mode, setMode } = useTheme();
 
   const toggleTheme = () => {
@@ -57,5 +88,105 @@ export const ThemeToggleButton = () => {
       Toggle to {mode === CL_DARK_THEME_CLASS ? 'Light' : 'Dark'} Mode
     </button>
   );
-};
+}
 ```
+
+### Hook Properties
+
+- **`mode`**: Current theme class (`CL_DARK_THEME_CLASS` or `CL_LIGHT_THEME_CLASS`)
+- **`setMode(mode)`**: Update the current theme
+
+## Manual Theme Switching (Non-React)
+
+For projects that don't use React Context (e.g., Astro, plain HTML, other frameworks), you can manually toggle the theme by manipulating the DOM:
+
+```tsx
+// Toggle theme by adding/removing class
+function toggleTheme() {
+  const isDarkMode = document.documentElement.classList.toggle('cl-components-dark-theme');
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Restore theme on page load
+function initTheme() {
+  const theme = localStorage.getItem('theme') || 'light';
+  if (theme === 'dark') {
+    document.documentElement.classList.add('cl-components-dark-theme');
+  }
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTheme);
+} else {
+  initTheme();
+}
+```
+
+### Astro Example
+
+```astro
+---
+// src/layouts/Layout.astro
+import 'chop-logic-components/styles/main';
+---
+
+<html>
+  <head>
+    <title>My App</title>
+    <script>
+      // Initialize theme from localStorage
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('cl-components-dark-theme');
+      }
+    </script>
+  </head>
+  <body>
+    <button id="theme-toggle">Toggle Theme</button>
+  </body>
+</html>
+
+<script>
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('cl-components-dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+```
+
+### Theme Constants
+
+Both React and HTML/JS projects use the same theme class names:
+
+```tsx
+import { CL_DARK_THEME_CLASS, CL_LIGHT_THEME_CLASS } from 'chop-logic-components';
+
+// CL_DARK_THEME_CLASS = 'cl-components-dark-theme'
+// CL_LIGHT_THEME_CLASS = 'cl-components-light-theme' (default, can be omitted)
+```
+
+For non-React projects, the classes are just strings:
+
+```html
+<!-- Light theme (default) -->
+<html>
+  <!-- or explicitly: <html class="cl-components-light-theme"> -->
+  <!-- components here get light theme colors -->
+</html>
+
+<!-- Dark theme -->
+<html class="cl-components-dark-theme">
+  <!-- components here get dark theme colors -->
+</html>
+```
+
+## CSS Variables
+
+All theme colors are defined as CSS variables in `main.css` and can be customized. See the [Styling and CSS](/?path=/docs/styling-css--docs) page for:
+
+- Complete list of available CSS variables
+- How to use them in custom styles
+- How theming affects your CSS
+
+For visual reference of the color palette, see the [Colors](/?path=/docs/theming-colors--docs) page.

@@ -1,5 +1,5 @@
 .cl-icon {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   display: inline-flex;
   width: var(--cl-icon-size);
   height: var(--cl-icon-size);

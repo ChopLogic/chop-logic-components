@@ -19,13 +19,13 @@
 
 .cl-switch:hover {
   background:
-    var(--cl-primary-background)
-    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-secondary-color);
+    var(--cl-base-background-color)
+    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
+  color: var(--cl-accent-a10);
 }
 
 .cl-switch:active {
-  background-color: var(--cl-shadow-background);
+  background-color: hsla(0, 0%, 0%, 0.3);
   background-size: 100%;
   transition: background 0s;
 }
@@ -45,7 +45,7 @@
 }
 
 .cl-switch__label {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;
@@ -71,7 +71,7 @@
   position: relative;
   width: 52px;
   height: 28px;
-  background-color: var(--cl-secondary-background);
+  background-color: var(--cl-surface-a10);
   border-radius: 14px;
   transition: background-color 0.2s ease;
   order: 3;
@@ -79,7 +79,7 @@
 }
 
 .cl-switch__checked .cl-switch__track {
-  background-color: var(--cl-accent-color);
+  background-color: var(--cl-accent-a0);
 }
 
 .cl-switch__thumb {
@@ -88,7 +88,7 @@
   left: 2px;
   width: var(--cl-thumb-size);
   height: var(--cl-thumb-size);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
   border-radius: 50%;
   box-shadow: var(--cl-box-shadow);
   transition: transform 0.2s ease;
@@ -99,7 +99,7 @@
 }
 
 .cl-switch__indicator {
-  color: var(--cl-accent-color);
+  color: var(--cl-accent-a0);
   text-transform: uppercase;
   display: inline-block;
   width: var(--cl-thumb-size);

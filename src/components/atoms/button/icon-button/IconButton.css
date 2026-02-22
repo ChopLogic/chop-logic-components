@@ -9,7 +9,7 @@
 }
 
 .cl-icon-button__icon::before {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
 }
 
 .cl-icon-button:hover {

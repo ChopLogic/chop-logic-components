@@ -2,7 +2,7 @@
    BLOCK
    ============================================================================ */
 .cl-tab {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   background: transparent;
   outline: none;
   border: none;
@@ -51,7 +51,7 @@
   gap: var(--cl-l-gap);
   border-radius: var(--cl-border-radius);
   border: var(--cl-light-border);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
 }
 
 .cl-tab__buttons {
@@ -68,7 +68,7 @@
 .cl-tab__wrapper_selected {
   top: var(--cl-xs-gap);
   box-shadow: var(--cl-box-shadow);
-  border: var(--cl-primary-border);
+  border: var(--cl-accent-border);
 }
 
 .cl-tab__wrapper_vertical .cl-tab__wrapper_selected {

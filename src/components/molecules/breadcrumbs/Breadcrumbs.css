@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--cl-s-gap);
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;

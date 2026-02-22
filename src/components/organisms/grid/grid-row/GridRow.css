@@ -2,8 +2,8 @@
    BLOCK
    ============================================================================ */
 .cl-grid-row {
-  border-bottom: var(--cl-primary-border);
-  background-color: var(--cl-primary-background);
+  border-bottom: var(--cl-accent-border);
+  background-color: var(--cl-base-background-color);
 }
 
 /* ============================================================================
@@ -11,5 +11,5 @@
    ============================================================================ */
 
 .cl-grid-row_selected {
-  background-color: var(--cl-highlight-background);
+  background-color: var(--cl-surface-tonal-a0);
 }

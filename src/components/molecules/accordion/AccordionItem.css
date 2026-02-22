@@ -20,13 +20,13 @@
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: 700;
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--cl-l-gap);
-  border-bottom: var(--cl-primary-border);
+  border-bottom: var(--cl-accent-border);
   line-height: 1.5;
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +59,7 @@
 }
 
 .cl-accordion-item__content {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   padding: var(--cl-l-gap);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
@@ -95,7 +95,7 @@
 }
 
 .cl-accordion-item[open] .cl-accordion-item__content {
-  border-bottom: var(--cl-primary-border);
+  border-bottom: var(--cl-accent-border);
 }
 
 .cl-accordion-item[open] .cl-accordion-item__icon {

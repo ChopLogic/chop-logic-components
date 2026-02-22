@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--cl-shadow-background);
+  background-color: hsla(0, 0%, 0%, 0.3);
 }
 
 /* ============================================================================
@@ -21,9 +21,9 @@
 
 .cl-dialog__layout {
   z-index: var(--cl-z-index-modal);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
   box-shadow: var(--cl-box-shadow);
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   padding: var(--cl-l-gap);
   height: 90%;
   position: absolute;

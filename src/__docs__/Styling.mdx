@@ -285,8 +285,8 @@ All colors, sizes, and spacing are defined as CSS variables in `main.css`. You c
 
 ```css
 .my-custom-component {
-  color: var(--cl-primary-color);
-  background-color: var(--cl-primary-background);
+  color: var(--cl-accent-color);
+  background-color: var(--cl-accent-background);
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   font-family: var(--cl-core-font);
@@ -296,8 +296,8 @@ All colors, sizes, and spacing are defined as CSS variables in `main.css`. You c
 
 **Key variables:**
 
-- **Colors**: `--cl-primary-color`, `--cl-accent-color`, `--cl-tint-color`
-- **Backgrounds**: `--cl-primary-background`, `--cl-highlight-background`
+- **Colors**: `--cl-accent-color`, `--cl-accent-color`, `--cl-tint-color`
+- **Backgrounds**: `--cl-accent-background`, `--cl-highlight-background`
 - **Spacing**: `--cl-xs-gap`, `--cl-s-gap`, `--cl-m-gap`, `--cl-l-gap`, `--cl-xl-gap`
 - **Fonts**: `--cl-core-font`, `--cl-monospace-font`, `--cl-fancy-font`
 - **Sizes**: `--cl-icon-size`, `--cl-thumb-size`, `--cl-border-radius`
@@ -429,7 +429,7 @@ export function MyComponent() {
 import styled from "styled-components";
 
 const Container = styled.div`
-  color: var(--cl-primary-color);
+  color: var(--cl-accent-color);
 `;
 
 export function MyComponent() {

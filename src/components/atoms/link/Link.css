@@ -4,7 +4,7 @@
   gap: var(--cl-s-gap);
   text-decoration: none;
   transition: all 0.2s ease;
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
 }
 
 .cl-link:focus {
@@ -18,7 +18,7 @@
 }
 
 .cl-link:visited {
-  color: var(--cl-secondary-color);
+  color: var(--cl-accent-a10);
 }
 
 .cl-link:hover {

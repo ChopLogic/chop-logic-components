@@ -17,7 +17,7 @@
 }
 
 .cl-sub-menu a {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   text-decoration: none;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .cl-sub-menu__text {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -67,8 +67,8 @@
 
 .cl-sub-menu__text:hover {
   background:
-    var(--cl-primary-background)
-    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+    var(--cl-base-background-color)
+    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
   text-shadow: var(--cl-text-shadow);
 }
 
@@ -77,7 +77,7 @@
 }
 
 .cl-sub-menu__text:active {
-  background-color: var(--cl-shadow-background);
+  background-color: hsla(0, 0%, 0%, 0.3);
   background-size: 100%;
   transition: background 0s;
 }

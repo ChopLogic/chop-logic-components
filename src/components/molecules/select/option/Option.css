@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--cl-m-gap);
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;
@@ -32,7 +32,7 @@
 
 .cl-select-option:hover,
 .cl-select-option:active {
-  color: var(--cl-accent-color);
+  color: var(--cl-accent-a0);
 }
 
 .cl-select-option:focus-visible {
@@ -41,7 +41,7 @@
 }
 
 .cl-select-option svg {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   width: var(--cl-icon-size);
   height: var(--cl-icon-size);
 }
@@ -51,7 +51,7 @@
    ============================================================================ */
 
 .cl-select-option_selected svg {
-  color: var(--cl-accent-color);
+  color: var(--cl-accent-a0);
 }
 
 .cl-select-option_multi {

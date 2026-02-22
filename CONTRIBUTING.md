@@ -242,8 +242,8 @@ The library uses **pure CSS with BEM naming** and **CSS variables** for theming.
 
 .cl-component {
   /* Base styles */
-  color: var(--cl-primary-color);
-  background-color: var(--cl-primary-background);
+  color: var(--cl-base-font-color);
+  background-color: var(--cl-base-background-color);
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   font-family: var(--cl-core-font);
@@ -260,7 +260,7 @@ The library uses **pure CSS with BEM naming** and **CSS variables** for theming.
 .cl-component_disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  color: var(--cl-shadow-background);
+  color: hsla(0, 0%, 0%, 0.3);
 }
 
 .cl-component_large {
@@ -270,18 +270,18 @@ The library uses **pure CSS with BEM naming** and **CSS variables** for theming.
 
 /* State - interaction state */
 .cl-component:hover:not(.cl-component_disabled) {
-  background-color: var(--cl-highlight-background);
+  background-color: var(--cl-surface-tonal-a0);
 }
 
 .cl-component:focus {
-  outline: 2px solid var(--cl-accent-color);
+  outline: 2px solid var(--cl-accent-a0);
   outline-offset: 2px;
 }
 
 /* Dark theme support via CSS variables */
 :root.cl-components-dark-theme .cl-component {
-  color: var(--cl-primary-color); /* CSS variable overridden in dark theme */
-  background-color: var(--cl-primary-background);
+  color: var(--cl-base-font-color); /* CSS variable overridden in dark theme */
+  background-color: var(--cl-base-background-color);
 }
 ```
 
@@ -335,12 +335,16 @@ export const useCustomHook = (params: HookParams): HookReturn => {
 Always use CSS variables from `main.css` in your component styles:
 
 **Theme Colors:**
-- `--cl-primary-color` - Primary text/foreground color
-- `--cl-accent-color` - Accent color for highlights
-- `--cl-secondary-color` - Tint color for secondary elements
-- `--cl-primary-background` - Main background color
-- `--cl-highlight-background` - Highlight/hover background
-- `--cl-shadow-background` - Shadow/dark background
+- `--cl-base-font-color` - Primary text/foreground color
+- `--cl-base-background-color` - Main background color
+- `--cl-accent-a0` - Primary accent color for highlights
+- `--cl-accent-a10` - Primary color variant for interactive states
+- `--cl-surface-a10` - Surface color for component backgrounds
+- `--cl-surface-tonal-a0` - Tonal surface color for highlights
+- `--cl-success-a0` - Success state color
+- `--cl-warning-a0` - Warning state color
+- `--cl-danger-a0` - Danger/error state color
+- `--cl-info-a0` - Info state color
 
 **Spacing:**
 - `--cl-xs-gap` (2px), `--cl-s-gap` (4px), `--cl-m-gap` (8px), `--cl-l-gap` (16px), `--cl-xl-gap` (32px)

@@ -9,16 +9,16 @@
   align-items: center;
   gap: var(--cl-m-gap);
   padding: var(--cl-m-gap);
-  border: var(--cl-primary-border);
+  border: var(--cl-accent-border);
   border-radius: var(--cl-border-radius);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 .cl-select-combobox > span:nth-child(1) {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: var(--cl-core-font);

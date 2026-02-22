@@ -1,5 +1,5 @@
 .cl-editable-text {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   border-radius: var(--cl-border-radius);
   display: inline-block;
 

@@ -2,12 +2,12 @@
    BLOCK
    ============================================================================ */
 .cl-menu-leaf {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--cl-m-gap);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   cursor: pointer;
@@ -36,12 +36,12 @@
 
 .cl-menu-leaf:hover {
   background:
-    var(--cl-primary-background)
-    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
+    var(--cl-base-background-color)
+    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
 }
 
 .cl-menu-leaf:active {
-  background-color: var(--cl-shadow-background);
+  background-color: hsla(0, 0%, 0%, 0.3);
   background-size: 100%;
   transition: background 0s;
 }
@@ -51,5 +51,5 @@
 }
 
 .cl-menu-leaf a {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
 }

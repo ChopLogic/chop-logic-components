@@ -2,13 +2,13 @@
   background: transparent;
   cursor: pointer;
   border-radius: var(--cl-border-radius);
-  border: var(--cl-primary-border);
+  border: var(--cl-accent-border);
   gap: var(--cl-s-gap);
   transition: all 150ms ease;
 }
 
 .cl-secondary-button:hover {
-  border-color: var(--cl-primary-color);
+  border-color: var(--cl-accent-color);
   box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1);
 }
 
@@ -19,7 +19,7 @@
 .cl-secondary-button__text {
   font-family: var(--cl-core-font);
   font-size: inherit;
-  color: var(--cl-primary-color);
+  color: var(--cl-accent-color);
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
@@ -28,6 +28,6 @@
 }
 
 .cl-secondary-button__icon::before {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   margin-right: var(--cl-s-gap);
 }

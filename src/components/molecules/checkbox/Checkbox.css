@@ -14,13 +14,13 @@
 
 .cl-checkbox:hover {
   background:
-    var(--cl-primary-background)
-    radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-secondary-color);
+    var(--cl-base-background-color)
+    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
+  color: var(--cl-accent-a10);
 }
 
 .cl-checkbox:active {
-  background-color: var(--cl-shadow-background);
+  background-color: hsla(0, 0%, 0%, 0.3);
   background-size: 100%;
   transition: background 0s;
 }
@@ -71,7 +71,7 @@
    ============================================================================ */
 
 .cl-checkbox_checked svg {
-  color: var(--cl-accent-color);
+  color: var(--cl-accent-a0);
 }
 
 .cl-checkbox_disabled {

@@ -24,7 +24,7 @@
 .cl-primary-button__text {
   font-family: var(--cl-core-font);
   font-size: inherit;
-  color: var(--cl-primary-background);
+  color: var(--cl-base-background-color);
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
@@ -33,5 +33,5 @@
 }
 
 .cl-primary-button__icon::before {
-  color: var(--cl-primary-background);
+  color: var(--cl-base-background-color);
 }

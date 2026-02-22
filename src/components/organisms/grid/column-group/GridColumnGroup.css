@@ -3,7 +3,7 @@
    ============================================================================ */
 
 .cl-grid-column {
-  border-right: var(--cl-primary-border);
+  border-right: var(--cl-accent-border);
 }
 
 /* ============================================================================
@@ -11,9 +11,9 @@
    ============================================================================ */
 
 .cl-grid-column_first {
-  border-left: var(--cl-primary-border);
+  border-left: var(--cl-accent-border);
 }
 
 .cl-grid-column_highlighted {
-  background-color: var(--cl-highlight-background);
+  background-color: var(--cl-surface-tonal-a0);
 }

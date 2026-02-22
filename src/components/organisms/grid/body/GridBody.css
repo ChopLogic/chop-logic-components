@@ -1,5 +1,5 @@
 .cl-grid-body {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;

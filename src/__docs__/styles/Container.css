@@ -2,8 +2,8 @@
    BLOCK
    ============================================================================ */
 .container {
-  color: var(--cl-primary-color);
-  background-color: var(--cl-primary-background);
+  color: var(--cl-accent-color);
+  background-color: var(--cl-accent-background);
   padding: var(--cl-l-gap);
   margin: var(--cl-l-gap);
   border: var(--cl-light-border);

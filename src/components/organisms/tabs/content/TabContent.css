@@ -1,7 +1,7 @@
 .cl-tab-content {
-  color: var(--cl-primary-color);
-  border-top: var(--cl-primary-border);
-  background-color: var(--cl-primary-background);
+  color: var(--cl-base-font-color);
+  border-top: var(--cl-accent-border);
+  background-color: var(--cl-base-background-color);
   padding: var(--cl-l-gap);
   flex-grow: 1;
   font-family: var(--cl-core-font);

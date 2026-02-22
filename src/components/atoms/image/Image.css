@@ -40,7 +40,7 @@
 .cl-image__fallback-text {
   text-align: center;
   padding-top: var(--cl-s-gap);
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
 
   /* Typography: Core font, small size variant */
   font-family: var(--cl-core-font);

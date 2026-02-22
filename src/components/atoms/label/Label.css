@@ -2,7 +2,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--cl-s-gap);
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
 
   /* Typography: core font small */
   font-family: var(--cl-core-font);
@@ -42,6 +42,6 @@
 .cl-label__required {
   text-decoration: none;
   cursor: pointer;
-  color: var(--cl-accent-color);
+  color: var(--cl-accent-a0);
   margin-left: var(--cl-s-gap);
 }

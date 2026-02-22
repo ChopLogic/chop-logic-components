@@ -2,7 +2,7 @@
    BLOCK
    ============================================================================ */
 .cl-grid-head {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: 700;
@@ -41,7 +41,7 @@
    ============================================================================ */
 
 .cl-grid-head__row {
-  border-top: var(--cl-primary-border);
-  border-bottom: var(--cl-primary-border);
-  background-color: var(--cl-primary-background);
+  border-top: var(--cl-accent-border);
+  border-bottom: var(--cl-accent-border);
+  background-color: var(--cl-accent-background);
 }

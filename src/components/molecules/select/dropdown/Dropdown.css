@@ -8,13 +8,13 @@
     visibility 0s,
     opacity 0.3s linear;
   position: absolute;
-  background: var(--cl-primary-background);
+  background: var(--cl-base-background-color);
   margin: 0;
   padding: 0;
   list-style: none;
   z-index: var(--cl-z-index-popup);
   width: 100%;
-  border: var(--cl-primary-border);
+  border: var(--cl-accent-border);
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);
   overflow-y: auto;

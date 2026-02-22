@@ -10,7 +10,7 @@
    ============================================================================ */
 
 .cl-grid__caption {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   padding: var(--cl-m-gap);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);

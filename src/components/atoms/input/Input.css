@@ -2,10 +2,10 @@
   display: flex;
   gap: var(--cl-m-gap);
   align-items: center;
-  border: var(--cl-primary-border);
+  border: var(--cl-accent-border);
   border-radius: var(--cl-border-radius);
   padding: var(--cl-m-gap);
-  background-color: var(--cl-primary-background);
+  background-color: var(--cl-base-background-color);
   position: relative;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .cl-input__field {
-  color: var(--cl-primary-color);
+  color: var(--cl-base-font-color);
   padding: 0;
   border: none;
   display: inline-block;

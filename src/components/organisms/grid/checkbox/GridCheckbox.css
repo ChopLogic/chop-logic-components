@@ -17,7 +17,7 @@
 .cl-grid-checkbox label {
   cursor: pointer;
   gap: var(--cl-s-gap);
-  font-size: var(--cl-small-font-size);
+  font-size: var(--cl-typography-small-mobile);
 }
 
 .cl-grid-checkbox label:hover,

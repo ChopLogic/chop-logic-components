@@ -76,11 +76,11 @@
 }
 
 .cl-alert__progress-bar::-webkit-progress-value {
-  background-color: var(--cl-highlight-background);
+  background-color: var(--cl-secondary-color);
 }
 
 .cl-alert__progress-bar::-moz-progress-bar {
-  background-color: var(--cl-highlight-background);
+  background-color: var(--cl-secondary-color);
 }
 
 /* ============================================================================

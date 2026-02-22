@@ -17,7 +17,7 @@ export const InteractiveHoverDemo = ({ isMounted: initialIsMounted }: { isMounte
         style={{
           padding: '2rem',
           borderRadius: '8px',
-          background: isHovered ? 'var(--cl-tint-background)' : 'transparent',
+          background: isHovered ? 'var(--cl-secondary-background)' : 'transparent',
           transition: 'all 0.2s ease',
           textAlign: 'center',
           minHeight: '150px',

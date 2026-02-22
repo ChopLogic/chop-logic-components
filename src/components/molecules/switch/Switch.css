@@ -21,7 +21,7 @@
   background:
     var(--cl-primary-background)
     radial-gradient(circle, transparent 1%, var(--cl-primary-background) 1%) center / 15000%;
-  color: var(--cl-tint-color);
+  color: var(--cl-secondary-color);
 }
 
 .cl-switch:active {
@@ -71,7 +71,7 @@
   position: relative;
   width: 52px;
   height: 28px;
-  background-color: var(--cl-tint-background);
+  background-color: var(--cl-secondary-background);
   border-radius: 14px;
   transition: background-color 0.2s ease;
   order: 3;

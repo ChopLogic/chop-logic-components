@@ -247,7 +247,7 @@ The library uses **pure CSS with BEM naming** and **CSS variables** for theming.
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   font-family: var(--cl-core-font);
-  font-size: var(--cl-base-font-size);
+  font-size: var(--cl-typography-base-mobile);
 }
 
 /* Element - part of component */
@@ -265,7 +265,7 @@ The library uses **pure CSS with BEM naming** and **CSS variables** for theming.
 
 .cl-component_large {
   padding: var(--cl-l-gap);
-  font-size: var(--cl-larger-font-size);
+  font-size: var(--cl-typography-h1-desktop);
 }
 
 /* State - interaction state */
@@ -337,7 +337,7 @@ Always use CSS variables from `main.css` in your component styles:
 **Theme Colors:**
 - `--cl-primary-color` - Primary text/foreground color
 - `--cl-accent-color` - Accent color for highlights
-- `--cl-tint-color` - Tint color for secondary elements
+- `--cl-secondary-color` - Tint color for secondary elements
 - `--cl-primary-background` - Main background color
 - `--cl-highlight-background` - Highlight/hover background
 - `--cl-shadow-background` - Shadow/dark background
@@ -348,8 +348,8 @@ Always use CSS variables from `main.css` in your component styles:
 **Typography:**
 - `--cl-core-font` - Primary font
 - `--cl-monospace-font` - Monospace font
-- `--cl-base-font-size` - Base font size
-- `--cl-larger-font-size` - Larger text
+- `--cl-typography-base-mobile` - Base font size for mobile screens
+- `--cl-typography-base-desktop` - Base font size for desktop screens
 
 **Component Sizes:**
 - `--cl-icon-size` (20px)

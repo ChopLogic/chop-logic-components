@@ -22,12 +22,6 @@
   --cl-monospace-font: "Courier New", Courier, monospace;
   --cl-fancy-font: Georgia, "Times New Roman", Times, serif;
 
-  /* Font Sizes */
-  --cl-small-font-size: 0.8rem;
-  --cl-base-font-size: 1rem;
-  --cl-larger-font-size: 1.2rem;
-  --cl-header-font-size: 2rem;
-
   /* Spacing (Gap) */
   --cl-xs-gap: 2px;
   --cl-s-gap: 4px;
@@ -87,41 +81,78 @@
   --cl-breakpoint-xl: 1280px;
   --cl-breakpoint-xxl: 1536px;
 
-  /* Light Theme Colors (Default) */
-  --cl-primary-color: hsl(195, 100%, 6%);
-  --cl-tint-color: hsl(345, 49%, 21%);
-  --cl-accent-color: hsl(356, 100%, 53%);
+  /** Base colors */
+  --cl-primary-font-color: #000000;
+  --cl-primary-background-color: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #8d1c12;
+  --clr-primary-a10: #7d1c11;
+  --clr-primary-a20: #6d1b10;
+  --clr-primary-a30: #5e190f;
+  --clr-primary-a40: #4f180e;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #ffffff;
+  --clr-surface-a10: #f0f0f0;
+  --clr-surface-a20: #e1e1e1;
+  --clr-surface-a30: #d3d3d3;
+  --clr-surface-a40: #c5c5c5;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-a0: #f7e8e4;
+  --clr-surface-tonal-a10: #e9dcd8;
+  --clr-surface-tonal-a20: #dbd0cd;
+  --clr-surface-tonal-a30: #cec4c2;
+  --clr-surface-tonal-a40: #c0b8b6;
+
+  /** Success colors */
+  --clr-success-a0: #1b7f5c;
+  --clr-success-a10: #28be8a;
+  --clr-success-a20: #58dbad;
+
+  /** Warning colors */
+  --clr-warning-a0: #b8871f;
+  --clr-warning-a10: #dfae44;
+  --clr-warning-a20: #ebca85;
+
+  /** Danger colors */
+  --clr-danger-a0: #b13535;
+  --clr-danger-a10: #d06262;
+  --clr-danger-a20: #e29d9d;
+
+  /** Info colors */
+  --clr-info-a0: #1e56a3;
+  --clr-info-a10: #347ada;
+  --clr-info-a20: #74a4e6;
+
+  /* Old Light Theme Colors */
+  --cl-primary-color: hsl(243, 87%, 9%);
+  --cl-secondary-color: hsl(243, 75%, 59%);
+  --cl-accent-color: hsl(243, 80%, 34%);
   --cl-primary-background: hsl(0, 0%, 100%);
-  --cl-tint-background: hsl(0, 0%, 80%);
-  --cl-highlight-background: hsl(40, 100%, 58%);
-  --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
+  --cl-secondary-background: hsl(243, 55%, 80%);
+  --cl-highlight-background: hsl(240, 20%, 98%);
+  --cl-shadow-background: hsla(243, 87%, 9%, 0.3);
 
   /* Light Theme Gradients */
   --cl-accent-gradient: linear-gradient(
-    to left,
-    hsl(356, 100%, 21%) 0%,
-    hsl(356, 100%, 32%) 8%,
-    hsl(356, 100%, 32%) 92%,
-    hsl(356, 100%, 21%) 100%
-  );
-  --cl-shadow-gradient: linear-gradient(
-    to left,
-    hsl(0, 0%, 24%) 0%,
-    hsl(0, 0%, 32%) 8%,
-    hsl(0, 0%, 32%) 92%,
-    hsl(0, 0%, 24%) 100%
+    135deg,
+    hsl(243, 80%, 34%) 0%,
+    hsl(243, 78%, 46%) 50%,
+    hsl(243, 75%, 59%) 100%
   );
 
   /* Light Theme Shadows */
-  --cl-box-shadow: hsla(195, 100%, 6%, 0.15) 2.4px 2.4px 3.2px;
-  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(195, 100%, 6%, 0.15));
-  --cl-text-shadow: 2.4px 2.4px 3.2px hsla(345, 49%, 21%, 0.3);
+  --cl-box-shadow: hsl(243, 55%, 80%) 2.4px 2.4px 3.2px;
+  --cl-text-shadow: 2.4px 2.4px 3.2px hsl(243, 55%, 80%, 0.3);
+  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsl(243, 55%, 80%, 0.3));
 
   /* Light Theme Borders */
-  --cl-primary-border: 1px solid hsla(195, 100%, 6%, 32%);
-  --cl-light-border: 1px dashed hsla(345, 49%, 21%, 32%);
-  --cl-accent-border: 1px solid hsl(356, 100%, 53%);
-  --cl-outline-border: 1px solid hsl(345, 49%, 21%);
+  --cl-primary-border: 1px solid hsl(243, 87%, 9%);
+  --cl-light-border: 1px dashed hsl(243, 75%, 59%);
+  --cl-accent-border: 1px solid hsl(243, 80%, 34%);
+  --cl-outline-border: 1px solid hsl(243, 87%, 9%);
 }
 
 /* ============================================================================
@@ -129,33 +160,62 @@
    ============================================================================ */
 
 .cl-components-dark-theme {
-  /* Dark Theme Colors */
-  --cl-primary-color: hsl(57, 64%, 74%);
-  --cl-tint-color: hsl(43, 87%, 66%);
-  --cl-accent-color: hsl(23, 72%, 53%);
-  --cl-primary-background: hsl(328, 19%, 15%);
-  --cl-tint-background: hsl(328, 20%, 28%);
-  --cl-highlight-background: hsl(24, 55%, 34%);
-  --cl-shadow-background: hsla(24, 55%, 34%, 0.3);
+  /* Old Dark Theme Colors */
+  --cl-primary-color: #fefefe;
+  --cl-secondary-color: #ae3d05;
+  --cl-accent-color: #ef2602;
+  --cl-primary-background: #070605;
+  --cl-secondary-background: #2e231e;
+  --cl-highlight-background: #9d8a7f;
+  --cl-shadow-background: hsla(243, 87%, 9%, 0.3);
+
+  /** Base colors */
+  --cl-primary-background-color: #000000;
+  --cl-primary-font-color: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #eb5cbe;
+  --clr-primary-a10: #ef71c5;
+  --clr-primary-a20: #f385cc;
+  --clr-primary-a30: #f697d4;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #121212;
+  --clr-surface-a10: #282828;
+  --clr-surface-a20: #3f3f3f;
+  --clr-surface-a30: #575757;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-a0: #251a21;
+  --clr-surface-tonal-a10: #3a2f36;
+  --clr-surface-tonal-a20: #4f464c;
+  --clr-surface-tonal-a30: #665d63;
+
+  /** Success colors */
+  --clr-success-a0: #22946e;
+  --clr-success-a10: #47d5a6;
+  --clr-success-a20: #9ae8ce;
+
+  /** Warning colors */
+  --clr-warning-a0: #a87a2a;
+  --clr-warning-a10: #d7ac61;
+  --clr-warning-a20: #ecd7b2;
+
+  /** Danger colors */
+  --clr-danger-a0: #9c2121;
+  --clr-danger-a10: #d94a4a;
+  --clr-danger-a20: #eb9e9e;
+
+  /** Info colors */
+  --clr-info-a0: #21498a;
+  --clr-info-a10: #4077d1;
+  --clr-info-a20: #92b2e5;
 
   /* Dark Theme Gradients */
-  --cl-accent-gradient: linear-gradient(
-    to left,
-    hsl(23, 72%, 26%) 0%,
-    hsl(23, 72%, 30%) 8%,
-    hsl(23, 72%, 30%) 92%,
-    hsl(23, 72%, 26%) 100%
-  );
-  --cl-shadow-gradient: linear-gradient(
-    to left,
-    hsl(328, 19%, 24%) 0%,
-    hsl(328, 19%, 30%) 8%,
-    hsl(328, 19%, 30%) 92%,
-    hsl(328, 19%, 24%) 100%
-  );
+  --cl-accent-gradient: linear-gradient(135deg, #ae3d05 0%, #ce3504 50%, #ef2602 100%);
 
   /* Dark Theme Shadows */
-  --cl-box-shadow: hsla(24, 55%, 34%, 0.15) 2.4px 2.4px 3.2px;
+  --cl-box-shadow: #2e231e 2.4px 2.4px 3.2px;
   --cl-text-shadow: 2.4px 2.4px 3.2px hsla(43, 87%, 66%, 0.3);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px hsla(24, 55%, 34%, 0.15));
 

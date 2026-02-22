@@ -18,7 +18,7 @@
 }
 
 .cl-link:visited {
-  color: var(--cl-tint-color);
+  color: var(--cl-secondary-color);
 }
 
 .cl-link:hover {
@@ -33,7 +33,7 @@
 .cl-link__text {
   /* Typography: core font base */
   font-family: var(--cl-core-font);
-  font-size: var(--cl-base-font-size);
+  font-size: var(--cl-typography-base-mobile);
   color: inherit;
   font-weight: normal;
   line-height: 1.5;

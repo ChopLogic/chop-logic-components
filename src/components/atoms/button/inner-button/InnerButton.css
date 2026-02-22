@@ -18,6 +18,10 @@
   filter: var(--cl-drop-shadow);
 }
 
+.cl-inner-button:hover .cl-inner-button__icon::before {
+  color: var(--cl-accent-a10);
+}
+
 .cl-inner-button:active {
   transform: scale(0.95);
 }

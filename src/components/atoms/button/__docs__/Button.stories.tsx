@@ -1,4 +1,4 @@
-import { ButtonView, IconName } from '@enums';
+import { ButtonView, ElementSize, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import Button from '../Button';
@@ -48,6 +48,15 @@ const meta: Meta<typeof Button> = {
       description: 'Whether the button should take full available width',
       table: {
         type: { summary: 'boolean' },
+        category: 'Styling',
+      },
+    },
+    iconSize: {
+      control: 'select',
+      options: Object.values(ElementSize),
+      description: 'The size of the icon',
+      table: {
+        type: { summary: 'ElementSize' },
         category: 'Styling',
       },
     },

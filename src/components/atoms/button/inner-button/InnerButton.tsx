@@ -23,7 +23,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
       disabled={disabled}
       {...rest}
     >
-      <Icon name={icon} size={iconSize} />
+      <Icon name={icon} size={iconSize} className="cl-inner-button__icon" />
     </button>
   );
 };

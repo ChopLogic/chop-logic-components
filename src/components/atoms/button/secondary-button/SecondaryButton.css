@@ -1,25 +1,26 @@
 .cl-secondary-button {
-  background: transparent;
+  background: var(--cl-surface-a10);
   cursor: pointer;
   border-radius: var(--cl-border-radius);
-  border: var(--cl-accent-border);
+  border: none;
   gap: var(--cl-s-gap);
   transition: all 150ms ease;
+  box-shadow: var(--cl-box-shadow);
 }
 
 .cl-secondary-button:hover {
-  border-color: var(--cl-accent-color);
-  box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1);
+  box-shadow: var(--cl-box-shadow-extended);
 }
 
 .cl-secondary-button:active {
   transform: scale(0.98);
+  box-shadow: var(--cl-box-shadow);
 }
 
 .cl-secondary-button__text {
   font-family: var(--cl-core-font);
   font-size: inherit;
-  color: var(--cl-accent-color);
+  color: var(--cl-base-font-color);
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;

@@ -3,7 +3,7 @@
   background: transparent;
   cursor: pointer;
   border-radius: var(--cl-border-radius);
-  background: var(--cl-accent-gradient);
+  background: var(--cl-accent-a0);
   box-shadow: var(--cl-box-shadow);
   gap: var(--cl-s-gap);
   transition: all 150ms ease;
@@ -11,9 +11,7 @@
 
 .cl-primary-button:hover {
   filter: brightness(1.1);
-  box-shadow:
-    var(--cl-box-shadow),
-    0 4px 8px hsla(0, 0%, 0%, 0.2);
+  box-shadow: var(--cl-box-shadow-extended);
 }
 
 .cl-primary-button:active {

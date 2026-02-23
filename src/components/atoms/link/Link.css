@@ -4,7 +4,7 @@
   gap: var(--cl-s-gap);
   text-decoration: none;
   transition: all 0.2s ease;
-  color: var(--cl-base-font-color);
+  color: var(--cl-info-a0);
 }
 
 .cl-link:focus {
@@ -18,7 +18,7 @@
 }
 
 .cl-link:visited {
-  color: var(--cl-accent-a10);
+  color: var(--cl-info-a20);
 }
 
 .cl-link:hover {
@@ -41,6 +41,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
+}
+
+.cl-link__icon::before {
+  color: var(--cl-info-a0);
 }
 
 @media (min-width: 640px) {

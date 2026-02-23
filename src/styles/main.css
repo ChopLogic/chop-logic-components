@@ -141,7 +141,7 @@
 
   /* Theme Borders */
   --cl-accent-border: 1px solid #8d1c12;
-  --cl-light-border: 1px dashed #d3d3d3;
+  --cl-light-border: 1px solid #c0b8b6;
   --cl-outline-border: 1px solid #000000;
 }
 
@@ -152,7 +152,7 @@
 .cl-components-dark-theme {
   /** Base colors */
   --cl-base-background-color: #000000;
-  --cl-base-font-color: #ffffff;
+  --cl-base-font-color: rgb(255, 255, 255);
 
   /** Theme primary colors */
   --cl-accent-a0: #eb5cbe;
@@ -196,15 +196,15 @@
   --cl-accent-gradient: linear-gradient(135deg, #eb5cbe 0%, #ef71c5 50%, #f385cc 100%);
 
   /* Dark Theme Shadows */
-  --cl-box-shadow: rgba(246, 151, 212, 0.3) 2.4px 2.4px 3.2px;
-  --cl-box-shadow-extended: rgba(246, 151, 212, 0.3) 4.8px 4.8px 6.4px;
-  --cl-text-shadow: 2.4px 2.4px 3.2px rgba(246, 151, 212, 0.3);
-  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(246, 151, 212, 0.3));
+  --cl-box-shadow: rgba(255, 255, 255, 0.5) 2.4px 2.4px 3.2px;
+  --cl-box-shadow-extended: rgba(255, 255, 255, 0.5) 4px 4px 5px;
+  --cl-text-shadow: 2.4px 2.4px 3.2px rgba(255, 255, 255, 0.5);
+  --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(255, 255, 255, 0.5));
 
   /* Dark Theme Borders */
   --cl-accent-border: 1px solid #eb5cbe;
-  --cl-light-border: 1px dashed #3f3f3f;
-  --cl-outline-border: 2px solid #ef71c5;
+  --cl-light-border: 1px solid #665d63;
+  --cl-outline-border: 1px solid #ffffff;
 }
 
 /* ============================================================================

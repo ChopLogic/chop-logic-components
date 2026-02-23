@@ -3,8 +3,8 @@
   max-width: 100%;
   z-index: var(--cl-z-index-popup);
   background-color: var(--cl-base-background-color);
-  border: var(--cl-accent-border);
-  color: var(--cl-accent-a0);
+  border: var(--cl-danger-border);
+  color: var(--cl-danger-a0);
   padding: var(--cl-s-gap) var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);

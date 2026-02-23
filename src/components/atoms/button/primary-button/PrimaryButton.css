@@ -1,9 +1,8 @@
 .cl-primary-button {
   border: none;
-  background: transparent;
   cursor: pointer;
   border-radius: var(--cl-border-radius);
-  background: var(--cl-accent-a0);
+  background: var(--cl-accent-gradient);
   box-shadow: var(--cl-box-shadow);
   gap: var(--cl-s-gap);
   transition: all 150ms ease;

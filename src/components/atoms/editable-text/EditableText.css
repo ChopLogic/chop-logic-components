@@ -17,13 +17,14 @@
 
 .cl-editable-text:hover,
 .cl-editable-text:focus {
-  outline: var(--cl-outline-border);
+  outline: var(--cl-accent-border);
   outline-offset: var(--cl-xs-gap);
 }
 
 .cl-editable-text_edit-mode {
   border: none;
-  outline: var(--cl-outline-border);
+  background: transparent;
+  outline: var(--cl-accent-border);
   outline-offset: var(--cl-xs-gap);
   min-width: var(--cl-l-gap);
 }
@@ -36,7 +37,7 @@
 .cl-editable-text_empty {
   min-width: var(--cl-l-gap);
   min-height: 24px;
-  outline: var(--cl-outline-border);
+  outline: var(--cl-accent-border);
   outline-offset: var(--cl-xs-gap);
 }
 

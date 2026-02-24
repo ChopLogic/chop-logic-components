@@ -36,7 +36,7 @@
   border-radius: var(--cl-border-radius);
   position: relative;
   font-family: var(--cl-core-font);
-  font-size: var(--cl-typography-base-mobile);
+  font-size: var(--cl-typography-small-mobile);
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
@@ -44,16 +44,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cl-alert__header {
+  padding-right: var(--cl-thumb-size);
+}
+
 @media (min-width: 640px) {
   .cl-alert__content {
-    font-size: var(--cl-typography-base-tablet);
+    font-size: var(--cl-typography-small-tablet);
   }
 }
 
 @media (min-width: 1024px) {
   .cl-alert__content {
-    font-size: var(--cl-typography-base-desktop);
+    font-size: var(--cl-typography-small-desktop);
   }
+}
+
+.cl-alert__message {
+  margin: var(--cl-m-gap) 0;
 }
 
 .cl-alert__button {
@@ -89,4 +97,64 @@
 
 .cl-alert_closing {
   animation: cl-fade-out ease 400ms;
+}
+
+.cl-alert_success .cl-alert__content {
+  border: var(--cl-success-border);
+  color: var(--cl-success-a0);
+}
+
+.cl-alert_success .cl-alert__header {
+  border-bottom: var(--cl-success-border);
+  color: var(--cl-success-a0);
+}
+
+.cl-alert_success .cl-alert__button span::before {
+  color: var(--cl-success-a0);
+}
+
+.cl-alert_error .cl-alert__content {
+  border: var(--cl-danger-border);
+  color: var(--cl-danger-a0);
+}
+
+.cl-alert_error .cl-alert__button span::before {
+  color: var(--cl-danger-a0);
+}
+
+.cl-alert_error .cl-alert__header {
+  border-bottom: var(--cl-danger-border);
+  color: var(--cl-danger-a0);
+}
+
+.cl-alert_warning .cl-alert__content {
+  border: var(--cl-warning-border);
+  color: var(--cl-warning-a0);
+}
+
+.cl-alert_warning .cl-alert__header {
+  border-bottom: var(--cl-warning-border);
+  color: var(--cl-warning-a0);
+}
+
+.cl-alert_warning .cl-alert__button span::before {
+  color: var(--cl-warning-a0);
+}
+
+.cl-alert_info .cl-alert__content {
+  border: var(--cl-info-border);
+  color: var(--cl-info-a0);
+}
+
+.cl-alert_info .cl-alert__header {
+  border-bottom: var(--cl-info-border);
+  color: var(--cl-info-a0);
+}
+
+.cl-alert_info .cl-alert__button span::before {
+  color: var(--cl-info-a0);
+}
+
+.cl-alert_help .cl-alert__content {
+  border: var(--cl-light-border);
 }

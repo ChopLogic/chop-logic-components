@@ -18,7 +18,7 @@
 }
 
 .cl-icon-button:hover .cl-icon-button__icon::before {
-  color: var(--cl-accent-a10);
+  color: var(--cl-accent-a0);
 }
 
 .cl-icon-button:active {

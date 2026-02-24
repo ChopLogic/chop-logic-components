@@ -1,5 +1,5 @@
 import { Button, Header, Portal } from '@components/atoms';
-import { AlertMode, ButtonView, IconName } from '@enums';
+import { AlertMode, ButtonView, ElementSize, IconName } from '@enums';
 import { useIsHovered, useIsMounted, useRemainingTimer } from '@hooks';
 import type { AlertProps } from '@types';
 import { getClassName } from '@utils';
@@ -37,29 +37,32 @@ const Alert: FC<AlertProps> = ({
 
   const alertTitle = getAlertTitle(mode, title);
   const alertTitleIcon = getAlertIcon(mode, icon);
+  const alertClassName = getClassName([
+    'cl-alert',
+    `cl-alert_${mode.toLowerCase()}`,
+    { 'cl-alert_closing': isClosing },
+  ]);
 
   return (
     <Portal>
-      <div
-        ref={containerRef}
-        className={getClassName(['cl-alert', { 'cl-alert_closing': isClosing }])}
-      >
+      <div ref={containerRef} className={alertClassName}>
         <div {...rest} className="cl-alert__content">
           {isCloseButtonVisible && (
             <Button
               icon={IconName.X}
               view={ButtonView.Icon}
+              iconSize={ElementSize.Medium}
               label="Close alert"
               onClick={onClose}
               className="cl-alert__button"
             />
           )}
           <header>
-            <Header icon={alertTitleIcon} as="h3">
+            <Header icon={alertTitleIcon} as="h3" className="cl-alert__header">
               {alertTitle}
             </Header>
           </header>
-          <p>{message}</p>
+          <p className="cl-alert__message">{message}</p>
           {autoClose && <AlertProgressBar remainingPercentage={remainingPercentage} />}
         </div>
       </div>

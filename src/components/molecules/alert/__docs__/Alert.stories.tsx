@@ -143,7 +143,6 @@ export const SuccessAlert: Story = {
     title: 'Success!',
     message: 'Your profile has been updated successfully.',
     mode: AlertMode.Success,
-    icon: IconName.CheckCircle,
     autoClose: true,
     autoCloseDelay: 3000,
   },
@@ -152,9 +151,8 @@ export const SuccessAlert: Story = {
 export const WarningAlert: Story = {
   args: {
     title: 'Warning',
-    message: 'Your storage is almost full. Consider cleaning up unused files.',
     mode: AlertMode.Warning,
-    icon: IconName.AlertTriangle,
+    message: 'Your storage is almost full. Consider cleaning up unused files.',
     autoClose: false,
   },
 };
@@ -162,20 +160,19 @@ export const WarningAlert: Story = {
 export const ErrorAlert: Story = {
   args: {
     title: 'Error',
+    mode: AlertMode.Error,
     message:
       'Failed to connect to the server. Please check your internet connection and try again.',
-    mode: AlertMode.Error,
-    icon: IconName.XOctagon,
     autoClose: false,
   },
 };
 
 export const LongMessage: Story = {
   args: {
-    title: 'Terms and Conditions Update',
+    title: 'Usage Terms Update',
     message:
       'We have updated our terms and conditions to provide better clarity on data usage policies. These changes reflect our ongoing commitment to transparency and user privacy. Please review the updated documentation at your convenience.',
-    mode: AlertMode.Info,
+    mode: AlertMode.Help,
     autoClose: false,
   },
 };

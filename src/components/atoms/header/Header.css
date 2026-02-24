@@ -8,7 +8,7 @@
 }
 
 .cl-header__h1 {
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
   /* Typography: fancy font h1 bold with responsive sizes */
   font-family: var(--cl-fancy-font);
   font-weight: 700;
@@ -32,7 +32,7 @@
 }
 
 .cl-header__h2 {
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
   font-family: var(--cl-fancy-font);
   font-weight: 700;
   line-height: 1.5;
@@ -55,7 +55,7 @@
 }
 
 .cl-header__h3 {
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
   font-family: var(--cl-fancy-font);
   font-weight: 700;
   line-height: 1.5;

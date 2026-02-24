@@ -7,6 +7,7 @@
   color: var(--cl-danger-a0);
   padding: var(--cl-s-gap) var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
+  border: var(--cl-danger-border);
   box-shadow: var(--cl-box-shadow);
   pointer-events: none;
   animation: cl-fade-in ease 400ms;

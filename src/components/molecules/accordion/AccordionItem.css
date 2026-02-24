@@ -26,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--cl-l-gap);
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
   line-height: 1.5;
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
@@ -95,7 +95,7 @@
 }
 
 .cl-accordion-item[open] .cl-accordion-item__content {
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
 }
 
 .cl-accordion-item[open] .cl-accordion-item__icon {

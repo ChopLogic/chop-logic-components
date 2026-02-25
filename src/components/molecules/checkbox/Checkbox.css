@@ -1,33 +1,7 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-checkbox {
-  display: flex;
-  gap: var(--cl-m-gap);
-  padding: var(--cl-m-gap);
-  border-radius: var(--cl-border-radius);
-  position: relative;
   overflow: hidden;
-  background-position: center;
-  transition: background 0.3s;
+  padding: 0 var(--cl-xs-gap);
 }
-
-.cl-checkbox:hover {
-  background:
-    var(--cl-base-background-color)
-    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
-  color: var(--cl-accent-a10);
-}
-
-.cl-checkbox:active {
-  background-color: hsla(0, 0%, 0%, 0.3);
-  background-size: 100%;
-  transition: background 0s;
-}
-
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
 
 .cl-checkbox label {
   font-size: var(--cl-typography-base-mobile);
@@ -36,20 +10,15 @@
 }
 
 @media (min-width: 640px) {
-  .cl-checkbox label {
+  .cl-checkbox .cl-label__text {
     font-size: var(--cl-typography-base-tablet);
   }
 }
 
 @media (min-width: 1024px) {
-  .cl-checkbox label {
+  .cl-checkbox .cl-label__text {
     font-size: var(--cl-typography-base-desktop);
   }
-}
-
-.cl-checkbox label:hover,
-.cl-checkbox label:active {
-  text-shadow: none;
 }
 
 .cl-checkbox input {
@@ -65,10 +34,6 @@
   outline: var(--cl-outline-border);
   outline-offset: var(--cl-s-gap);
 }
-
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
 
 .cl-checkbox_checked svg {
   color: var(--cl-accent-a0);

@@ -200,7 +200,7 @@
   /* Dark Theme Shadows */
   --cl-box-shadow: rgba(255, 255, 255, 0.3) 2.4px 2.4px 3.2px;
   --cl-box-shadow-extended: rgba(255, 255, 255, 0.3) 4px 4px 5px;
-  --cl-text-shadow: 2.4px 2.4px 3.2px rgba(255, 255, 255, 0.3);
+  --cl-text-shadow: 2.4px 2.4px 3.2px rgba(255, 255, 255, 0.5);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(255, 255, 255, 0.3));
 
   /* Dark Theme Borders */

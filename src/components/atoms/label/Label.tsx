@@ -2,6 +2,7 @@ import { Icon } from '@components/atoms';
 import { ElementSize, type IconName } from '@enums';
 import type { FC } from 'react';
 import './Label.css';
+import { getClassName } from '@utils';
 
 type LabelProps = {
   label: string;
@@ -11,6 +12,8 @@ type LabelProps = {
   icon?: IconName;
   iconPosition?: 'left' | 'right';
   iconSize?: ElementSize;
+  disabled?: boolean;
+  className?: string;
 };
 
 const Label: FC<LabelProps> = ({
@@ -21,13 +24,16 @@ const Label: FC<LabelProps> = ({
   iconPosition,
   isTextHidden = false,
   iconSize = ElementSize.ExtraSmall,
+  disabled = false,
+  className,
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
   const IconElement = <Icon name={icon} size={iconSize} />;
+  const labelClass = getClassName(['cl-label', className, { 'cl-label_disabled': disabled }]);
 
   return (
-    <label className="cl-label" htmlFor={inputId}>
+    <label className={labelClass} htmlFor={inputId}>
       {isLeftIconVisible && IconElement}
       {!isTextHidden && (
         <span className="cl-label__text">

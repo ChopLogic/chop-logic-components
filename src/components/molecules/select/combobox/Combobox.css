@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-select-combobox {
   text-align: left;
   cursor: pointer;
@@ -9,12 +6,13 @@
   align-items: center;
   gap: var(--cl-m-gap);
   padding: var(--cl-m-gap);
-  border: var(--cl-accent-border);
+  border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
   background-color: var(--cl-base-background-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  background-color: var(--cl-surface-a10);
 }
 
 .cl-select-combobox > span:nth-child(1) {
@@ -51,10 +49,6 @@
   pointer-events: none;
   opacity: 0.5;
 }
-
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
 
 .cl-select-combobox__icon {
   transition: transform 0.3s ease;

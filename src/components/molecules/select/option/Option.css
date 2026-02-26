@@ -1,12 +1,9 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-select-option {
   padding: var(--cl-m-gap);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: var(--cl-m-gap);
   color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
@@ -32,7 +29,7 @@
 
 .cl-select-option:hover,
 .cl-select-option:active {
-  color: var(--cl-accent-a0);
+  text-shadow: var(--cl-text-shadow);
 }
 
 .cl-select-option:focus-visible {
@@ -45,10 +42,6 @@
   width: var(--cl-icon-size);
   height: var(--cl-icon-size);
 }
-
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
 
 .cl-select-option_selected svg {
   color: var(--cl-accent-a0);

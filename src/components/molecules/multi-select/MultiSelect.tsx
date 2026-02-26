@@ -37,7 +37,7 @@ const MultiSelect: FC<MultiSelectProps> = ({
 
   return (
     <div ref={ref} {...rest} className={multiSelectClass}>
-      <Label label={label} required={required} inputId={elementId} />
+      <Label label={label} required={required} inputId={elementId} disabled={disabled} />
       <MultiSelectCombobox
         name={name}
         opened={opened}

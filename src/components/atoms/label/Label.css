@@ -3,8 +3,6 @@
   align-items: baseline;
   gap: var(--cl-s-gap);
   color: var(--cl-base-font-color);
-
-  /* Typography: core font small */
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-small-mobile);
   font-weight: normal;
@@ -14,14 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Responsive font size for tablet */
 @media (min-width: 640px) {
   .cl-label {
     font-size: var(--cl-typography-small-tablet);
   }
 }
 
-/* Responsive font size for desktop */
 @media (min-width: 1024px) {
   .cl-label {
     font-size: var(--cl-typography-small-desktop);
@@ -44,4 +40,9 @@
   cursor: pointer;
   color: var(--cl-accent-a0);
   margin-left: var(--cl-s-gap);
+}
+
+.cl-label_disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

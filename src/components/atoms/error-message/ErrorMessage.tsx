@@ -24,7 +24,13 @@ const ErrorMessage: FC<ErrorMessageProps> = ({
   ]);
 
   return (
-    <span id={errorId} className={errorClass} data-testid={testId} aria-hidden={!visible}>
+    <span
+      id={errorId}
+      className={errorClass}
+      data-testid={testId}
+      aria-hidden={!visible}
+      aria-live="polite"
+    >
       {message}
     </span>
   );

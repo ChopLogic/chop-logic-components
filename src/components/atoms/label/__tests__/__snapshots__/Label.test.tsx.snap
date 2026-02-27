@@ -4,6 +4,7 @@ exports[`Label > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
     class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
     <span
@@ -19,6 +20,7 @@ exports[`Label > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
     class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
     <span
@@ -40,6 +42,7 @@ exports[`Label > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
     class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   />
 </DocumentFragment>
@@ -49,6 +52,7 @@ exports[`Label > should render left icon 1`] = `
 <DocumentFragment>
   <label
     class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
     <span
@@ -67,6 +71,7 @@ exports[`Label > should render right icon 1`] = `
 <DocumentFragment>
   <label
     class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
     <span

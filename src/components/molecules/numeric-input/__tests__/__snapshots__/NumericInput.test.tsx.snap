@@ -54,6 +54,7 @@ exports[`NumericInput > should match the snapshot 1`] = `
       </span>
       <span
         aria-hidden="true"
+        aria-live="polite"
         class="cl-error-message cl-numeric-input__error-message"
         id="numeric-input_error"
       >

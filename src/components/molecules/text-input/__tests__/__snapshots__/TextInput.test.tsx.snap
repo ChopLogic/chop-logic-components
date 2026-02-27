@@ -44,6 +44,7 @@ exports[`TextInput > should render the input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
+        aria-live="polite"
         class="cl-error-message cl-text-input__error-message"
         id="test-input-id_error"
       >
@@ -105,6 +106,7 @@ exports[`TextInput > should render the required input correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
+        aria-live="polite"
         class="cl-error-message cl-text-input__error-message"
         id="test-input-id_error"
       >

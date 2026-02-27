@@ -2,10 +2,10 @@
   display: flex;
   gap: var(--cl-m-gap);
   align-items: center;
-  border: var(--cl-accent-border);
+  border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
   padding: var(--cl-m-gap);
-  background-color: var(--cl-base-background-color);
+  background-color: var(--cl-surface-a10);
   position: relative;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .cl-input__wrapper:has(input[aria-invalid="true"]) {
-  border: var(--cl-accent-border);
+  border: var(--cl-danger-border);
 }
 
 .cl-input__wrapper:has(input[disabled]) {

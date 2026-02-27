@@ -14,6 +14,7 @@ type LabelProps = {
   iconSize?: ElementSize;
   disabled?: boolean;
   className?: string;
+  testId?: string;
 };
 
 const Label: FC<LabelProps> = ({
@@ -26,6 +27,7 @@ const Label: FC<LabelProps> = ({
   iconSize = ElementSize.ExtraSmall,
   disabled = false,
   className,
+  testId,
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
@@ -33,7 +35,7 @@ const Label: FC<LabelProps> = ({
   const labelClass = getClassName(['cl-label', className, { 'cl-label_disabled': disabled }]);
 
   return (
-    <label className={labelClass} htmlFor={inputId}>
+    <label className={labelClass} htmlFor={inputId} data-testid={testId}>
       {isLeftIconVisible && IconElement}
       {!isTextHidden && (
         <span className="cl-label__text">

@@ -14,7 +14,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       >
         <a
           aria-disabled="false"
-          class="cl-link"
+          class="cl-link cl-breadcrumbs__link"
           href="/"
         >
           <span
@@ -37,7 +37,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       >
         <a
           aria-disabled="false"
-          class="cl-link"
+          class="cl-link cl-breadcrumbs__link"
           href="/products"
         >
           <span
@@ -60,7 +60,7 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
       >
         <a
           aria-disabled="false"
-          class="cl-link"
+          class="cl-link cl-breadcrumbs__link"
           href="/products/electronics"
         >
           <span

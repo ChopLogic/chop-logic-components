@@ -1,6 +1,7 @@
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
+.cl-breadcrumbs {
+  display: inline-block;
+  background-color: transparent;
+}
 
 .cl-breadcrumbs__list {
   display: flex;
@@ -29,6 +30,14 @@
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-breadcrumbs__link {
+  color: var(--cl-base-font-color) !important;
+}
+
+.cl-breadcrumbs__link span::before {
+  color: var(--cl-base-font-color);
 }
 
 @media (min-width: 640px) {

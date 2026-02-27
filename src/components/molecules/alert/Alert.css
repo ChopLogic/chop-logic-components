@@ -84,11 +84,11 @@
 }
 
 .cl-alert__progress-bar::-webkit-progress-value {
-  background-color: var(--cl-accent-a10);
+  background-color: var(--cl-surface-tonal-a30);
 }
 
 .cl-alert__progress-bar::-moz-progress-bar {
-  background-color: var(--cl-accent-a10);
+  background-color: var(--cl-surface-tonal-a30);
 }
 
 /* ============================================================================
@@ -99,6 +99,7 @@
   animation: cl-fade-out ease 400ms;
 }
 
+/* Success */
 .cl-alert_success .cl-alert__content {
   border: var(--cl-success-border);
   color: var(--cl-success-a0);
@@ -112,6 +113,16 @@
 .cl-alert_success .cl-alert__button span::before {
   color: var(--cl-success-a0);
 }
+
+.cl-alert_success .cl-alert__progress-bar::-webkit-progress-value {
+  background-color: var(--cl-success-a0);
+}
+
+.cl-alert_success .cl-alert__progress-bar::-moz-progress-bar {
+  background-color: var(--cl-success-a0);
+}
+
+/* Error */
 
 .cl-alert_error .cl-alert__content {
   border: var(--cl-danger-border);
@@ -127,6 +138,16 @@
   color: var(--cl-danger-a0);
 }
 
+.cl-alert_error .cl-alert__progress-bar::-webkit-progress-value {
+  background-color: var(--cl-danger-a0);
+}
+
+.cl-alert_error .cl-alert__progress-bar::-moz-progress-bar {
+  background-color: var(--cl-danger-a0);
+}
+
+/* Warning */
+
 .cl-alert_warning .cl-alert__content {
   border: var(--cl-warning-border);
   color: var(--cl-warning-a0);
@@ -141,6 +162,16 @@
   color: var(--cl-warning-a0);
 }
 
+.cl-alert_warning .cl-alert__progress-bar::-webkit-progress-value {
+  background-color: var(--cl-warning-a0);
+}
+
+.cl-alert_warning .cl-alert__progress-bar::-moz-progress-bar {
+  background-color: var(--cl-warning-a0);
+}
+
+/* Info */
+
 .cl-alert_info .cl-alert__content {
   border: var(--cl-info-border);
   color: var(--cl-info-a0);
@@ -154,6 +185,16 @@
 .cl-alert_info .cl-alert__button span::before {
   color: var(--cl-info-a0);
 }
+
+.cl-alert_info .cl-alert__progress-bar::-webkit-progress-value {
+  background-color: var(--cl-info-a0);
+}
+
+.cl-alert_info .cl-alert__progress-bar::-moz-progress-bar {
+  background-color: var(--cl-info-a0);
+}
+
+/* Help */
 
 .cl-alert_help .cl-alert__content {
   border: var(--cl-light-border);

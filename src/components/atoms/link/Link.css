@@ -18,7 +18,7 @@
 }
 
 .cl-link:visited {
-  color: var(--cl-info-a20);
+  color: var(--cl-warning-a0);
 }
 
 .cl-link:hover {

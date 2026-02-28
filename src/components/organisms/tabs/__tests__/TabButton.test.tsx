@@ -295,4 +295,143 @@ describe('TabButton', () => {
 
     expect(defaultProps.onTabSelect).not.toHaveBeenCalled();
   });
+
+  describe('Input Focus and Selection', () => {
+    it('should render input in edit mode with correct value', () => {
+      render(<TabButton {...defaultProps} editable={true} />);
+
+      expect(screen.queryByTestId('edit-input')).not.toBeInTheDocument();
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input') as HTMLInputElement;
+      expect(editInput).toBeInTheDocument();
+      expect(editInput.value).toBe('Test Tab');
+    });
+
+    it('should update input value when title prop changes during edit mode', () => {
+      const { rerender } = render(<TabButton {...defaultProps} editable={true} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      let editInput = screen.getByTestId('edit-input') as HTMLInputElement;
+      expect(editInput.value).toBe('Test Tab');
+
+      rerender(<TabButton {...defaultProps} editable={true} title="New Title" />);
+
+      editInput = screen.getByTestId('edit-input') as HTMLInputElement;
+      expect(editInput.value).toBe('New Title');
+    });
+
+    it('should trigger useEffect that calls focus and select on input when entering edit mode', () => {
+      const { rerender } = render(
+        <TabButton {...defaultProps} editable={true} isSelected={false} />,
+      );
+
+      // Not in edit mode yet
+      expect(screen.queryByTestId('edit-input')).not.toBeInTheDocument();
+
+      // Select the tab first
+      rerender(<TabButton {...defaultProps} editable={true} isSelected={true} />);
+
+      // Enter edit mode
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      // Input should be rendered and available
+      const editInput = screen.getByTestId('edit-input') as HTMLInputElement;
+      expect(editInput).toBeInTheDocument();
+      expect(editInput).toHaveAttribute('data-testid', 'edit-input');
+      // Verify the input is properly initialized with the tab title
+      expect(editInput.value).toBe('Test Tab');
+    });
+  });
+
+  describe('Input Blur Handling', () => {
+    it('should save title change on blur when relatedTarget is not the cancel button', () => {
+      const onTabTitleChange = vi.fn();
+      render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input');
+      fireEvent.change(editInput, { target: { value: 'New Title' } });
+
+      // Simulate blur with relatedTarget not being the cancel button
+      const otherElement = document.createElement('button');
+      fireEvent.blur(editInput, { relatedTarget: otherElement });
+
+      expect(onTabTitleChange).toHaveBeenCalledWith('New Title');
+      expect(screen.queryByTestId('tab-edit-input')).not.toBeInTheDocument();
+    });
+
+    it('should not save title change on blur when relatedTarget is the cancel button', () => {
+      const onTabTitleChange = vi.fn();
+      render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input');
+      fireEvent.change(editInput, { target: { value: 'New Title' } });
+
+      const cancelButton = screen.getByTestId('cancel-button');
+      // Simulate blur with relatedTarget being the cancel button
+      fireEvent.blur(editInput, { relatedTarget: cancelButton });
+
+      expect(onTabTitleChange).not.toHaveBeenCalled();
+      expect(screen.getByTestId('tab-edit-input')).toBeInTheDocument();
+    });
+
+    it('should not save empty title on blur', () => {
+      const onTabTitleChange = vi.fn();
+      render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input');
+      fireEvent.change(editInput, { target: { value: '   ' } });
+
+      const otherElement = document.createElement('button');
+      fireEvent.blur(editInput, { relatedTarget: otherElement });
+
+      expect(onTabTitleChange).not.toHaveBeenCalled();
+    });
+
+    it('should not save unchanged title on blur', () => {
+      const onTabTitleChange = vi.fn();
+      render(<TabButton {...defaultProps} editable={true} onTabTitleChange={onTabTitleChange} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input');
+      // Don't change the value, keep it as 'Test Tab'
+
+      const otherElement = document.createElement('button');
+      fireEvent.blur(editInput, { relatedTarget: otherElement });
+
+      expect(onTabTitleChange).not.toHaveBeenCalled();
+    });
+
+    it('should reset to original title on blur with empty value', () => {
+      render(<TabButton {...defaultProps} editable={true} />);
+
+      const editButton = screen.getByTestId('button-chop-icon__edit-3');
+      fireEvent.click(editButton);
+
+      const editInput = screen.getByTestId('edit-input');
+      fireEvent.change(editInput, { target: { value: '   ' } });
+
+      const otherElement = document.createElement('button');
+      fireEvent.blur(editInput, { relatedTarget: otherElement });
+
+      expect(screen.queryByTestId('tab-edit-input')).not.toBeInTheDocument();
+      expect(screen.getByRole('tab')).toHaveTextContent('Test Tab');
+    });
+  });
 });

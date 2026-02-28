@@ -1,0 +1,1 @@
+import{r as u}from"./iframe-DP4TfwvB.js";const d=({ref:t,onClickOutsideHandler:s,dependentRef:e})=>{u.useEffect(()=>{const n=o=>{const r=t?.current&&!t.current.contains(o.target),c=!e?.current?!0:!e?.current?.contains(o.target);r&&c&&s()};return document.addEventListener("mousedown",n),()=>{document.removeEventListener("mousedown",n)}},[t,e,s])};export{d as u};

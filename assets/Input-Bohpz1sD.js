@@ -1,0 +1,1 @@
+import{r as a,j as p}from"./iframe-Doc73XE3.js";const r=({children:t,...s},e)=>p.jsxs("div",{className:"cl-input__wrapper",children:[p.jsx("input",{...s,className:"cl-input__field",ref:e}),t]}),c=a.forwardRef(r);try{r.displayName="Input",r.__docgenInfo={description:"",displayName:"Input",props:{}}}catch{}export{c as I};

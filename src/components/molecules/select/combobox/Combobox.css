@@ -8,7 +8,6 @@
   padding: var(--cl-m-gap);
   border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
-  background-color: var(--cl-base-background-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

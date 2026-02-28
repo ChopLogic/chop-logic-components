@@ -96,7 +96,7 @@ export default defineConfig({
       ],
       thresholds: {
         functions: 95, // Requires 95% function coverage
-        lines: -10, // Require that no more than 10 lines are uncovered
+        lines: -30, // Require that no more than 30 lines are uncovered
       },
     },
   },

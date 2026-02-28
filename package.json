@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/ChopLogic/chop-logic-components.git"
   },
-  "version": "3.7.3",
+  "version": "4.0.0",
   "description": "Reusable React components and hooks for the Chop Logic project",
   "type": "module",
   "module": "dist/index.es.js",

@@ -81,7 +81,10 @@ export const FormExample: FC<FormProps> = (props) => {
         <Switch name="isAgreedToCollectAnalytics" label="Send Analytics" />
       </Form>
       {data && (
-        <div className="container" style={{ marginTop: '2rem' }}>
+        <div
+          className="container"
+          style={{ marginTop: '2rem', color: 'var(--cl-base-font-color)' }}
+        >
           <table style={{ textAlign: 'left' }}>
             <thead>
               <tr>

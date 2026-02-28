@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-grid-head {
   color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
@@ -36,12 +33,8 @@
   }
 }
 
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
-
 .cl-grid-head__row {
-  border-top: var(--cl-accent-border);
-  border-bottom: var(--cl-accent-border);
+  border-top: var(--cl-light-border);
+  border-bottom: var(--cl-light-border);
   background-color: var(--cl-accent-background);
 }

@@ -20,7 +20,12 @@ export const SearchExample: FC<SearchProps> = ({ onSearch, ...rest }) => {
   return (
     <div
       className="responsiveWrapper"
-      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        color: 'var(--cl-base-font-color)',
+      }}
     >
       <Search {...rest} onSearch={handleSearch} onClear={handleClear} />
       {searchTerms.length > 0 && (

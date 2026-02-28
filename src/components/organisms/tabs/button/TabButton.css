@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-tab {
   color: var(--cl-base-font-color);
   background: transparent;
@@ -39,10 +36,6 @@
   outline-offset: -4px;
 }
 
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
-
 .cl-tab__wrapper {
   position: relative;
   display: flex;
@@ -51,7 +44,7 @@
   gap: var(--cl-l-gap);
   border-radius: var(--cl-border-radius);
   border: var(--cl-light-border);
-  background-color: var(--cl-base-background-color);
+  background-color: var(--cl-surface-a10);
 }
 
 .cl-tab__buttons {
@@ -61,14 +54,11 @@
   gap: 0;
 }
 
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
-
 .cl-tab__wrapper_selected {
   top: var(--cl-xs-gap);
   box-shadow: var(--cl-box-shadow);
-  border: var(--cl-accent-border);
+  border: var(--cl-light-border);
+  background-color: var(--cl-base-background-color);
 }
 
 .cl-tab__wrapper_vertical .cl-tab__wrapper_selected {

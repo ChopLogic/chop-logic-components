@@ -1,14 +1,7 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-grid-row {
-  border-bottom: var(--cl-accent-border);
+  border-bottom: var(--cl-light-border);
   background-color: var(--cl-base-background-color);
 }
-
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
 
 .cl-grid-row_selected {
   background-color: var(--cl-surface-tonal-a0);

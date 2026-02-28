@@ -1,6 +1,6 @@
 .cl-tab-content {
   color: var(--cl-base-font-color);
-  border-top: var(--cl-accent-border);
+  border-top: var(--cl-light-border);
   background-color: var(--cl-base-background-color);
   padding: var(--cl-l-gap);
   flex-grow: 1;

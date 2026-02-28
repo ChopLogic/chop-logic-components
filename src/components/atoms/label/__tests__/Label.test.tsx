@@ -39,7 +39,7 @@ describe('Label', () => {
     expect(screen.getByTestId(testProps.testId)).toHaveClass('cl-label_disabled');
   });
 
-  it('should a className as a prop', () => {
+  it('should accept a className as a prop', () => {
     render(
       <Label {...testProps} required={false} icon={IconName.ArrowLeft} className="custom-class" />,
     );

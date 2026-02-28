@@ -21,14 +21,6 @@
   text-decoration: none;
 }
 
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
-
-.cl-sub-menu__icon {
-  transition: transform 0.3s ease;
-}
-
 .cl-sub-menu__text {
   color: var(--cl-base-font-color);
   position: relative;
@@ -42,8 +34,6 @@
   padding: var(--cl-m-gap);
   border-radius: var(--cl-border-radius);
   cursor: pointer;
-  background-position: center;
-  transition: background 0.3s;
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
   font-weight: normal;
@@ -66,9 +56,6 @@
 }
 
 .cl-sub-menu__text:hover {
-  background:
-    var(--cl-base-background-color)
-    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
   text-shadow: var(--cl-text-shadow);
 }
 
@@ -76,21 +63,11 @@
   filter: var(--cl-drop-shadow);
 }
 
-.cl-sub-menu__text:active {
-  background-color: hsla(0, 0%, 0%, 0.3);
-  background-size: 100%;
-  transition: background 0s;
-}
-
 .cl-sub-menu__text span {
   display: flex;
   gap: var(--cl-m-gap);
   align-items: center;
 }
-
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
 
 .cl-sub-menu__icon_opened {
   transform: rotate(180deg);

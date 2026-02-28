@@ -13,7 +13,7 @@
   margin-left: var(--cl-l-gap);
   margin-top: var(--cl-s-gap);
   box-sizing: border-box;
-  border-left: var(--cl-accent-border);
+  border-left: var(--cl-light-border);
 }
 
 .cl-sub-menu-bar_horizontal {
@@ -22,7 +22,7 @@
   left: 0%;
   width: max-content;
   border-radius: var(--cl-border-radius);
-  border: var(--cl-accent-border);
+  border: var(--cl-light-border);
   box-shadow: var(--cl-box-shadow);
   background-color: var(--cl-base-background-color);
   padding: var(--cl-m-gap);

@@ -1,17 +1,9 @@
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
-
 .cl-grid-column {
-  border-right: var(--cl-accent-border);
+  border-right: var(--cl-light-border);
 }
 
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
-
 .cl-grid-column_first {
-  border-left: var(--cl-accent-border);
+  border-left: var(--cl-light-border);
 }
 
 .cl-grid-column_highlighted {

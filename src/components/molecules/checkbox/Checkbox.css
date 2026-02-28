@@ -1,6 +1,9 @@
 .cl-checkbox {
   overflow: hidden;
-  padding: 0 var(--cl-xs-gap);
+  padding: var(--cl-m-gap);
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .cl-checkbox label {

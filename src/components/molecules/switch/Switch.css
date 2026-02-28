@@ -1,9 +1,6 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-switch {
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: var(--cl-l-gap);
   padding: var(--cl-m-gap);
@@ -18,25 +15,12 @@
 }
 
 .cl-switch:hover {
-  background:
-    var(--cl-base-background-color)
-    radial-gradient(circle, transparent 1%, var(--cl-base-background-color) 1%) center / 15000%;
-  color: var(--cl-accent-a10);
-}
-
-.cl-switch:active {
-  background-color: hsla(0, 0%, 0%, 0.3);
-  background-size: 100%;
-  transition: background 0s;
+  text-shadow: var(--cl-text-shadow);
 }
 
 .cl-switch:focus-visible {
   outline: var(--cl-outline-border);
 }
-
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
 
 .cl-switch__input {
   position: absolute;

@@ -1,6 +1,3 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-tab-edit-container {
   display: flex;
   align-items: center;
@@ -10,10 +7,6 @@
   padding: 0 var(--cl-s-gap);
 }
 
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
-
 .cl-tab-edit-container__input {
   flex: 1;
   padding-block: 0;
@@ -21,6 +14,7 @@
   padding: var(--cl-s-gap);
   border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
+  color: var(--cl-base-font-color);
   background: transparent;
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);

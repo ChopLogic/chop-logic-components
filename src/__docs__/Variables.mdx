@@ -1,0 +1,371 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+<Meta title="Theming/Variables" />
+
+# CSS Variables & Theming
+
+The Chop Logic Components library uses **CSS custom properties** (CSS variables) for complete theming control. All colors, spacing, typography, and sizing are defined in [src/styles/main.css](/docs/theming-variables--docs) to ensure consistency across light and dark modes.
+
+## Design Philosophy
+
+Our styling approach is built on three core principles:
+
+1. **CSS Variables First**: All design tokens are defined as CSS custom properties in `:root` and theme-specific selectors
+2. **Centralized Theming**: Single source of truth in `main.css` for all theme values
+3. **Dynamic Theme Switching**: Themes are switched by adding/removing the `cl-components-dark-theme` class on the root element
+
+## Color Palette
+
+### Light Theme Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Base Colors"
+    subtitle="Primary foreground and background"
+    colors={{
+      "--cl-base-font-color": "#000000",
+      "--cl-base-background-color": "#ffffff",
+    }}
+  />
+  <ColorItem
+    title="Accent Colors"
+    subtitle="Primary theme colors"
+    colors={{
+      "--cl-accent-a0": "#8d1c12",
+      "--cl-accent-a10": "#7d1c11",
+      "--cl-accent-a20": "#6d1b10",
+      "--cl-accent-a30": "#5e190f",
+    }}
+  />
+  <ColorItem
+    title="Surface Colors"
+    subtitle="Background surfaces and cards"
+    colors={{
+      "--cl-surface-a0": "#ffffff",
+      "--cl-surface-a10": "#f0f0f0",
+      "--cl-surface-a20": "#e1e1e1",
+      "--cl-surface-a30": "#d3d3d3",
+    }}
+  />
+  <ColorItem
+    title="Surface Tonal Colors"
+    subtitle="Tinted surface backgrounds"
+    colors={{
+      "--cl-surface-tonal-a0": "#f7e8e4",
+      "--cl-surface-tonal-a10": "#e9dcd8",
+      "--cl-surface-tonal-a20": "#dbd0cd",
+      "--cl-surface-tonal-a30": "#cec4c2",
+    }}
+  />
+  <ColorItem
+    title="Success Colors"
+    subtitle="For success states and confirmations"
+    colors={{
+      "--cl-success-a0": "#1b7f5c",
+      "--cl-success-a10": "#28be8a",
+      "--cl-success-a20": "#58dbad",
+    }}
+  />
+  <ColorItem
+    title="Warning Colors"
+    subtitle="For warning states and alerts"
+    colors={{
+      "--cl-warning-a0": "#b8871f",
+      "--cl-warning-a10": "#dfae44",
+      "--cl-warning-a20": "#ebca85",
+    }}
+  />
+  <ColorItem
+    title="Danger Colors"
+    subtitle="For error and destructive actions"
+    colors={{
+      "--cl-danger-a0": "#b13535",
+      "--cl-danger-a10": "#d06262",
+      "--cl-danger-a20": "#e29d9d",
+    }}
+  />
+  <ColorItem
+    title="Info Colors"
+    subtitle="For informational content"
+    colors={{
+      "--cl-info-a0": "#1e56a3",
+      "--cl-info-a10": "#347ada",
+      "--cl-info-a20": "#74a4e6",
+    }}
+  />
+</ColorPalette>
+
+### Dark Theme Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Base Colors"
+    subtitle="Primary foreground and background"
+    colors={{
+      "--cl-base-font-color": "#ffffff",
+      "--cl-base-background-color": "#000000",
+    }}
+  />
+  <ColorItem
+    title="Accent Colors"
+    subtitle="Primary theme colors"
+    colors={{
+      "--cl-accent-a0": "#eb5cbe",
+      "--cl-accent-a10": "#ef71c5",
+      "--cl-accent-a20": "#f385cc",
+      "--cl-accent-a30": "#f697d4",
+    }}
+  />
+  <ColorItem
+    title="Surface Colors"
+    subtitle="Background surfaces and cards"
+    colors={{
+      "--cl-surface-a0": "#121212",
+      "--cl-surface-a10": "#282828",
+      "--cl-surface-a20": "#3f3f3f",
+      "--cl-surface-a30": "#575757",
+    }}
+  />
+  <ColorItem
+    title="Surface Tonal Colors"
+    subtitle="Tinted surface backgrounds"
+    colors={{
+      "--cl-surface-tonal-a0": "#251a21",
+      "--cl-surface-tonal-a10": "#3a2f36",
+      "--cl-surface-tonal-a20": "#4f464c",
+      "--cl-surface-tonal-a30": "#665d63",
+    }}
+  />
+  <ColorItem
+    title="Success Colors"
+    subtitle="For success states and confirmations"
+    colors={{
+      "--cl-success-a0": "#22946e",
+      "--cl-success-a10": "#47d5a6",
+      "--cl-success-a20": "#9ae8ce",
+    }}
+  />
+  <ColorItem
+    title="Warning Colors"
+    subtitle="For warning states and alerts"
+    colors={{
+      "--cl-warning-a0": "#a87a2a",
+      "--cl-warning-a10": "#d7ac61",
+      "--cl-warning-a20": "#ecd7b2",
+    }}
+  />
+  <ColorItem
+    title="Danger Colors"
+    subtitle="For error and destructive actions"
+    colors={{
+      "--cl-danger-a0": "#9c2121",
+      "--cl-danger-a10": "#d94a4a;",
+      "--cl-danger-a20": "#eb9e9e",
+    }}
+  />
+  <ColorItem
+    title="Info Colors"
+    subtitle="For informational content"
+    colors={{
+      "--cl-info-a0": "#21498a",
+      "--cl-info-a10": "#4077d1",
+      "--cl-info-a20": "#92b2e5",
+    }}
+  />
+</ColorPalette>
+
+## Theme Gradients & Effects
+
+All themes include predefined gradients and shadow effects:
+
+- **`--cl-accent-gradient`**: Primary accent gradient for visual emphasis
+- **`--cl-box-shadow`**: Standard shadow for depth (2.4px offset)
+- **`--cl-box-shadow-extended`**: Extended shadow for elevated elements (4.8px offset)
+- **`--cl-text-shadow`**: Text shadow for text-on-color combinations
+- **`--cl-drop-shadow`**: Drop shadow filter for images and special elements
+
+## Border Variables
+
+Pre-defined border styles for semantic states:
+
+- **`--cl-accent-border`**: Primary accent border
+- **`--cl-success-border`**: Green border for success states
+- **`--cl-danger-border`**: Red border for error states
+- **`--cl-warning-border`**: Orange border for warning states
+- **`--cl-info-border`**: Blue border for info states
+- **`--cl-light-border`**: Light gray border for subtle divisions
+- **`--cl-outline-border`**: High-contrast outline border
+
+## Typography Variables
+
+### Font Families
+
+- **`--cl-core-font`**: `Arial, Helvetica, sans-serif` — Main font for UI text
+- **`--cl-monospace-font`**: `"Courier New", Courier, monospace` — Code and technical content
+- **`--cl-fancy-font`**: `Georgia, "Times New Roman", Times, serif` — Decorative text
+
+### Responsive Font Sizes
+
+The library supports responsive typography that scales across device sizes:
+
+#### Headings
+
+- **H1**: `2.25rem` (mobile) → `2.5rem` (tablet) → `3rem` (desktop)
+- **H2**: `2rem` (mobile) → `2.25rem` (tablet) → `2.5rem` (desktop)
+- **H3**: `1.75rem` (mobile) → `2rem` (tablet) → `2.25rem` (desktop)
+- **H4**: `1.5rem` (mobile) → `1.75rem` (tablet) → `2rem` (desktop)
+- **H5**: `1.25rem` (mobile) → `1.5rem` (tablet) → `1.75rem` (desktop)
+- **H6**: `1rem` (mobile) → `1.125rem` (tablet) → `1.25rem` (desktop)
+
+#### Body Text
+
+- **Base**: `1rem` (mobile) → `1.125rem` (tablet) → `1.25rem` (desktop)
+- **Small**: `0.875rem` (mobile) → `1rem` (tablet) → `1.125rem` (desktop)
+
+**Usage in CSS:**
+
+```css
+h1 {
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-h1-mobile);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--cl-typography-h1-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--cl-typography-h1-desktop);
+  }
+}
+```
+
+## Spacing (Gap) Variables
+
+Consistent spacing scale for margins, padding, and gaps:
+
+- **`--cl-xs-gap`**: `2px` — Minimal spacing
+- **`--cl-s-gap`**: `4px` — Small spacing
+- **`--cl-m-gap`**: `8px` — Medium spacing (most common)
+- **`--cl-l-gap`**: `16px` — Large spacing
+- **`--cl-xl-gap`**: `32px` — Extra large spacing
+- **`--cl-xxl-gap`**: `64px` — Maximum spacing
+
+**Usage Example:**
+
+```css
+.cl-card {
+  padding: var(--cl-l-gap);
+  gap: var(--cl-m-gap);
+}
+```
+
+## Component Sizing Variables
+
+### Standard Sizes
+
+- **`--cl-icon-size`**: `20px` — Standard icon dimensions
+- **`--cl-thumb-size`**: `24px` — Thumbnail and toggle switch sizes
+- **`--cl-border-radius`**: `4px` — Standard corner rounding
+
+## Z-Index Scale
+
+Predictable stacking context for layered components:
+
+- **`--cl-z-index-base`**: `1` — Default element layer
+- **`--cl-z-index-menu`**: `5` — Dropdown menus and tooltips
+- **`--cl-z-index-popup`**: `10` — Popovers and floating panels
+- **`--cl-z-index-modal`**: `20` — Modals and dialogs (highest)
+
+**Usage Example:**
+
+```css
+.cl-tooltip {
+  z-index: var(--cl-z-index-menu);
+}
+
+.cl-modal {
+  z-index: var(--cl-z-index-modal);
+}
+```
+
+## Using CSS Variables in Components
+
+All Chop Logic Components use these CSS variables internally. You can customize the entire theme by overriding these variables in your application:
+
+### Global Theme Override
+
+```css
+/* Override theme colors globally */
+:root {
+  --cl-accent-a0: #your-primary-color;
+  --cl-success-a0: #your-success-color;
+  --cl-warning-a0: #your-warning-color;
+}
+
+/* Override dark theme */
+.cl-components-dark-theme {
+  --cl-accent-a0: #your-dark-primary-color;
+}
+```
+
+### Component-Specific Customization
+
+```css
+/* Customize a specific component's colors */
+.my-custom-button {
+  --cl-accent-a0: #custom-color;
+  --cl-accent-a10: #custom-color-lighter;
+}
+```
+
+## Implementation Reference
+
+All Chop Logic Components follow this variable pattern when implementing styles. Here's a typical example:
+
+```css
+.cl-button {
+  /* Use semantic color variables */
+  background-color: var(--cl-accent-a0);
+  color: var(--cl-surface-a0);
+  border: var(--cl-accent-border);
+
+  /* Use standard spacing */
+  padding: var(--cl-m-gap) var(--cl-l-gap);
+
+  /* Use typography variables */
+  font-family: var(--cl-core-font);
+
+  /* Use shadow effects */
+  box-shadow: var(--cl-box-shadow);
+
+  /* Z-index for stacking */
+  z-index: var(--cl-z-index-base);
+
+  /* Border radius */
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-button:hover {
+  background-color: var(--cl-accent-a10);
+}
+
+/* Dark theme automatically applies via CSS variable override */
+```
+
+## Best Practices
+
+1. **Always use CSS variables** instead of hardcoded colors in component styles
+2. **Use semantic color names** (`--cl-success-a0` instead of `--cl-base-font-color`) for intent clarity
+3. **Leverage spacing scale** to maintain visual hierarchy and consistency
+4. **Follow BEM naming** with the `cl-` prefix for all class names
+5. **Test both themes** to ensure colors have sufficient contrast in light and dark modes
+6. **Document custom variables** if you add theme-specific tokens beyond the standard set
+
+## Related Documentation
+
+- [Styling Guide](/docs/theming-styling--docs) — CSS architecture and import patterns
+- [Theme Provider](/docs/theming-provider--docs) — React context for theme management

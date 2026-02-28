@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { getGridRowValues } from '../Grid.helpers';
 
 import { GridRow } from '../grid-row/GridRow';
-import styles from './GridBody.module.scss';
+import './GridBody.css';
 
 type Props = {
   data: GridItem[];
@@ -25,7 +25,7 @@ export const GridBody: FC<Props> = ({
   columns,
 }) => {
   return (
-    <tbody className={styles.body}>
+    <tbody className="cl-grid-body">
       {data.map((item) => {
         const gridRowValues = getGridRowValues({ item, columns, renderDataItem });
         return (

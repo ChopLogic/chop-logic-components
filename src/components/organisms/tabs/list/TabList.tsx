@@ -5,7 +5,7 @@ import { getClassName, moveFocusOnElementById } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
 
 import { TabButton } from '../button/TabButton';
-import styles from './TabList.module.scss';
+import './TabList.css';
 
 type Props = {
   tabs: ChopLogicTabItem[];
@@ -37,8 +37,8 @@ export const TabList: FC<Props> = ({
   onTabDelete,
 }) => {
   const listClass = getClassName([
-    styles.tabList,
-    { [styles.tabList__vertical]: mode === OrientationMode.Vertical },
+    'cl-tab-list',
+    { 'cl-tab-list_vertical': mode === OrientationMode.Vertical },
   ]);
 
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -109,7 +109,6 @@ export const TabList: FC<Props> = ({
           view={ButtonView.Icon}
           icon={IconName.PlusCircle}
           onClick={onTabAdd}
-          className={styles.tabList_addButton}
         />
       )}
     </div>

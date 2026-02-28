@@ -1,0 +1,8 @@
+.cl-grid-row {
+  border-bottom: var(--cl-light-border);
+  background-color: var(--cl-base-background-color);
+}
+
+.cl-grid-row_selected {
+  background-color: var(--cl-surface-tonal-a0);
+}

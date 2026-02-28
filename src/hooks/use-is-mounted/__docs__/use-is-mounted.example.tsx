@@ -1,6 +1,6 @@
+import '@__docs__/styles/Container.css';
 import { Button } from '@components/atoms';
 import { ButtonView } from '@enums';
-import styles from '@styles/storybook/Container.module.scss';
 import { useState } from 'react';
 
 import { useIsMounted } from '../use-is-mounted';
@@ -24,7 +24,7 @@ export const UseIsMountedExample = () => {
         view={ButtonView.Secondary}
       />
       {isMounted && (
-        <div className={styles.container}>
+        <div className="container">
           New component is mounted! After the second click on the Toggle button it will be unmounted
           in 1 second.
         </div>

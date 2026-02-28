@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import type { FC, PropsWithChildren } from 'react';
 
 import Portal from '../Portal';
@@ -6,7 +6,7 @@ import Portal from '../Portal';
 export const PortalExample: FC<PropsWithChildren> = (props) => {
   return (
     <Portal>
-      <div className={styles.container}>{props.children}</div>
+      <div className="container">{props.children}</div>
     </Portal>
   );
 };

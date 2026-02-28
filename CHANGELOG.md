@@ -4,6 +4,30 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2026-02-28
+
+### Added
+
+- New CSS variables documentation page (`Variables.mdx`) with complete reference for theming
+- Comprehensive CSS variable system for colors, typography, spacing, sizing, and z-index values
+- Support for dynamic theme switching using CSS variables
+
+### Changed
+
+- **BREAKING**: Replaced SASS with pure CSS in all components for better performance and smaller bundle size
+- Refactored all component styles to use CSS variables for consistent theming
+- Updated all component styles to follow the new CSS variable naming conventions
+- Improved theme support with centralized CSS variables in `main.css`
+- Updated documentation with detailed styling guide and CSS variables reference
+- Optimized build script and output build size
+- Upgraded Storybook to latest version
+- Upgraded all npm dependencies to latest compatible versions
+
+### Removed
+
+- All SASS/SCSS files and dependencies
+- Legacy CSS-in-JS patterns
+
 ## [3.7.3] - 2026-01-25
 
 ### Added

@@ -1,12 +1,19 @@
 import { getClassName } from '@utils';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
+import './IconButton.css';
 
-import styles from './IconButton.module.scss';
+import { Icon } from '@components/atoms';
+import { ElementSize } from '@enums';
+import type { ButtonProps } from '@types';
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren;
-
-export const IconButton: FC<Props> = ({ children, className, ...rest }) => (
-  <button {...rest} className={getClassName([styles.button, className])}>
-    {children}
+export const IconButton: FC<Omit<ButtonProps, 'text'>> = ({
+  icon,
+  className,
+  label,
+  iconSize = ElementSize.Medium,
+  ...rest
+}) => (
+  <button {...rest} aria-label={label} className={getClassName(['cl-icon-button', className])}>
+    {icon && <Icon name={icon} className="cl-icon-button__icon" size={iconSize} />}
   </button>
 );

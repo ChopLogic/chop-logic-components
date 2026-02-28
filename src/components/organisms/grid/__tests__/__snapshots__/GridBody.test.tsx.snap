@@ -4,155 +4,101 @@ exports[`GridBody > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="_body_4abb59"
+      class="cl-grid-body"
     >
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
-        <td
-          class="_cell_06c8d1"
-        >
+        <td>
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row1"
               type="checkbox"
             />
             <label
-              class="_label_5091d6"
+              class="cl-label"
               for="select_row_row1"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="cl-icon chop-icon__square cl-icon_extra-small"
+              />
             </label>
           </div>
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 1
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 2
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 3
         </td>
       </tr>
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
-        <td
-          class="_cell_06c8d1"
-        >
+        <td>
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row2"
               type="checkbox"
             />
             <label
-              class="_label_5091d6"
+              class="cl-label"
               for="select_row_row2"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="cl-icon chop-icon__square cl-icon_extra-small"
+              />
             </label>
           </div>
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 5
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 6
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 7
         </td>
       </tr>
       <tr
-        class="_row_2ee1c8"
+        class="cl-grid-row"
       >
-        <td
-          class="_cell_06c8d1"
-        >
+        <td>
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_row_row3"
               type="checkbox"
             />
             <label
-              class="_label_5091d6"
+              class="cl-label"
               for="select_row_row3"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="cl-icon chop-icon__square cl-icon_extra-small"
+              />
             </label>
           </div>
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 9
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 10
         </td>
-        <td
-          class="_cell_f56690"
-        >
+        <td>
           Value 11
         </td>
       </tr>

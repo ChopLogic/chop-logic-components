@@ -1,0 +1,44 @@
+.cl-menu-leaf {
+  color: var(--cl-base-font-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--cl-m-gap);
+  background-color: var(--cl-base-background-color);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+  background-position: center;
+  transition: background 0.3s;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-menu-leaf {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-menu-leaf {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-menu-leaf:hover {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-menu-leaf:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-menu-leaf a {
+  color: var(--cl-base-font-color);
+}

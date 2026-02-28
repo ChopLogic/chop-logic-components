@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Stories from './use-key-press.stories';
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Stories from "./use-key-press.stories";
 
 <Meta of={Stories} title="Hooks/useKeyPress" />
 
@@ -10,17 +10,17 @@ The `useKeyPress` hook listens for a specific key press event and calls a callba
 ### Usage
 
 ```tsx
-import React, { useRef } from 'react';
-import { useKeyPress } from 'chop-logic-components';
+import React, { useRef } from "react";
+import { useKeyPress } from "chop-logic-components";
 
 const ExampleComponent = () => {
   const ref = useRef(null);
 
   const handleKeyPress = () => {
-    console.log('Key pressed!');
+    console.log("Key pressed!");
   };
 
-  useKeyPress({ ref, keyCode: 'Enter', onKeyPress: handleKeyPress });
+  useKeyPress({ ref, keyCode: "Enter", onKeyPress: handleKeyPress });
 
   return (
     <div ref={ref} tabIndex={0}>

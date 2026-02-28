@@ -3,7 +3,7 @@
 exports[`Accordion > renders correctly with default props 1`] = `
 <DocumentFragment>
   <div
-    class="_accordion_374253"
+    class="cl-accordion"
   >
     <div
       data-summary="Section 1"

@@ -4,10 +4,10 @@ import type { SelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 
+import './Select.css';
 import { SelectCombobox } from './combobox/Combobox';
 import { SelectDropdown } from './dropdown/Dropdown';
 import { useSelectController } from './Select.controller';
-import styles from './Select.module.scss';
 
 const Select: FC<SelectProps> = ({
   options,
@@ -31,7 +31,7 @@ const Select: FC<SelectProps> = ({
       defaultValue,
       name,
     });
-  const selectClass = getClassName([styles.wrapper, className]);
+  const selectClass = getClassName(['cl-select', className]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });

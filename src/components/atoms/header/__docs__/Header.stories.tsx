@@ -58,7 +58,7 @@ const meta: Meta<typeof Header> = {
   args: {
     as: 'h1',
     children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    icon: IconName.Documents,
+    icon: IconName.Anchor,
     className: 'header-class',
     id: 'header-id',
   },

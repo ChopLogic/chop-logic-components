@@ -4,7 +4,7 @@ import { getClassName } from '@utils';
 import type { FC } from 'react';
 
 import { MenuListItem } from './list-item/MenuListItem';
-import styles from './Menu.module.scss';
+import './Menu.css';
 
 const Menu: FC<MenuProps> = ({
   items = [],
@@ -14,9 +14,9 @@ const Menu: FC<MenuProps> = ({
   ...rest
 }) => {
   const menuClass = getClassName([
-    styles.menuBar,
+    'cl-menu-bar',
     className,
-    { [styles.menuBar__vertical]: mode === OrientationMode.Vertical },
+    { 'cl-menu-bar_vertical': mode === OrientationMode.Vertical },
   ]);
 
   return (

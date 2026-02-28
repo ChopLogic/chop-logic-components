@@ -1,9 +1,9 @@
-import CheckMarkIcon from '@assets/icons/svg/CheckMarkIcon';
+import { Icon } from '@components/atoms';
+import { ElementSize, IconName } from '@enums';
 import type { SelectValue } from '@types';
 import { getClassName } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
-
-import styles from './Option.module.scss';
+import './Option.css';
 
 type Props = {
   value: SelectValue;
@@ -14,7 +14,7 @@ type Props = {
 
 export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) => {
   const { id, label } = value;
-  const optionClass = getClassName([styles.option, { [styles.option__selected]: selected }]);
+  const optionClass = getClassName(['cl-select-option', { 'cl-select-option_selected': selected }]);
 
   const handleOptionSelect = (id: string) => {
     if (selected) {
@@ -48,7 +48,7 @@ export const SelectOption: FC<Props> = ({ value, selected, onSelect, onClear }) 
       className={optionClass}
     >
       <span>{label}</span>
-      {selected && <CheckMarkIcon />}
+      {selected && <Icon name={IconName.Check} size={ElementSize.Small} />}
     </li>
   );
 };

@@ -4,7 +4,7 @@ exports[`Image snapshot tests > BasicImage should match snapshot 1`] = `
 <DocumentFragment>
   <img
     alt="Snapshot image"
-    class="_img_21bef9"
+    class="cl-image__img"
     decoding="async"
     loading="lazy"
     src="snapshot.jpg"
@@ -15,17 +15,17 @@ exports[`Image snapshot tests > BasicImage should match snapshot 1`] = `
 exports[`Image snapshot tests > FallbackImage should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_fallback_21bef9"
+    class="cl-image__fallback"
   >
     <svg
       aria-hidden="true"
-      class="_fallback_icon_21bef9"
+      class="cl-image__fallback-icon"
       data-testid="fallback-icon"
     >
-      image icon
+      chop-icon__image icon
     </svg>
     <span
-      class="_fallback_text_21bef9"
+      class="cl-image__fallback-text"
     >
       Image not available
     </span>
@@ -36,21 +36,21 @@ exports[`Image snapshot tests > FallbackImage should match snapshot 1`] = `
 exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
 <DocumentFragment>
   <figure
-    class="_figure_d6588c"
+    class="cl-figure"
   >
     <div
-      class="_image_21bef9"
+      class="cl-image"
     >
       <img
         alt="Snapshot image"
-        class="_img_21bef9"
+        class="cl-image__img"
         decoding="async"
         loading="lazy"
         src="snapshot.jpg"
       />
     </div>
     <figcaption
-      class="_figure_caption_d6588c"
+      class="cl-figure__caption"
     >
       Snapshot Image
     </figcaption>
@@ -61,7 +61,7 @@ exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
 exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
 <DocumentFragment>
   <picture
-    class="_picture_21bef9"
+    class="cl-image__picture"
   >
     <source
       media="(max-width: 480px)"
@@ -76,7 +76,7 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
     />
     <img
       alt="Snapshot image"
-      class="_img_21bef9"
+      class="cl-image__img"
       decoding="async"
       loading="lazy"
       src="snapshot.jpg"
@@ -88,7 +88,7 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
 exports[`Image snapshot tests > ResponsivePicture should match snapshot with empty descriptors 1`] = `
 <DocumentFragment>
   <picture
-    class="_picture_21bef9"
+    class="cl-image__picture"
   >
     <source
       media="(max-width: 480px)"
@@ -103,7 +103,7 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot with emp
     />
     <img
       alt="Snapshot image"
-      class="_img_21bef9"
+      class="cl-image__img"
       decoding="async"
       loading="lazy"
       src="snapshot.jpg"

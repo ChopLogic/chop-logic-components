@@ -1,12 +1,19 @@
 import { getClassName } from '@utils';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
+import './SecondaryButton.css';
+import { Icon } from '@components/atoms';
+import { ElementSize } from '@enums';
+import type { ButtonProps } from '@types';
 
-import styles from './SecondaryButton.module.scss';
-
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren;
-
-export const SecondaryButton: FC<Props> = ({ children, className, ...rest }) => (
-  <button {...rest} className={getClassName([styles.button, className])}>
-    {children}
+export const SecondaryButton: FC<ButtonProps> = ({
+  icon,
+  text,
+  className,
+  iconSize = ElementSize.Small,
+  ...rest
+}) => (
+  <button {...rest} className={getClassName(['cl-secondary-button', className])}>
+    {icon && <Icon name={icon} className="cl-secondary-button__icon" size={iconSize} />}
+    <span className="cl-secondary-button__text">{text}</span>
   </button>
 );

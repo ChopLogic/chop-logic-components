@@ -62,8 +62,8 @@ describe('Grid', () => {
   it('should call onSelect() handler when a checkbox is clicked', async () => {
     const mockSelect = vi.fn();
     render(<Grid {...testProps} selectable caption="Test Caption" onSelect={mockSelect} />);
-    const firstCheckbox = screen.getAllByRole('checkbox')[0];
-    const secondCheckbox = screen.getAllByRole('checkbox')[1];
+    const firstCheckbox = screen.getAllByRole('checkbox')[0] as HTMLElement;
+    const secondCheckbox = screen.getAllByRole('checkbox')[1] as HTMLElement;
     await userEvent.click(firstCheckbox);
     expect(mockSelect).toHaveBeenCalledWith(['row1', 'row2', 'row3', 'row4', 'row5', 'row6']);
     await userEvent.click(firstCheckbox);

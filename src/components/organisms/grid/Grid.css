@@ -1,0 +1,31 @@
+.cl-grid {
+  border-collapse: collapse;
+}
+
+.cl-grid__caption {
+  color: var(--cl-base-font-color);
+  padding: var(--cl-m-gap);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-grid__caption {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-grid__caption {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-grid__wrapper {
+  overflow-x: auto;
+}

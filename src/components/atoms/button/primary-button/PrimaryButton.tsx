@@ -1,14 +1,19 @@
 import { getClassName } from '@utils';
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
+import './PrimaryButton.css';
+import { Icon } from '@components/atoms';
+import { ElementSize } from '@enums';
+import type { ButtonProps } from '@types';
 
-import styles from './PrimaryButton.module.scss';
-
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren;
-
-export const PrimaryButton: FC<Props> = ({ children, className, ...rest }) => (
-  <button {...rest} className={getClassName([styles.button, className])}>
-    <span className={styles.button_shadow}></span>
-    <span className={styles.button_edge}></span>
-    <span className={styles.button_front}>{children}</span>
+export const PrimaryButton: FC<ButtonProps> = ({
+  icon,
+  text,
+  className,
+  iconSize = ElementSize.Small,
+  ...rest
+}) => (
+  <button {...rest} className={getClassName(['cl-primary-button', className])}>
+    {icon && <Icon name={icon} className="cl-primary-button__icon" size={iconSize} />}
+    <span className="cl-primary-button__text">{text}</span>
   </button>
 );

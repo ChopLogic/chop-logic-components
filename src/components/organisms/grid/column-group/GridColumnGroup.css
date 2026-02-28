@@ -1,0 +1,11 @@
+.cl-grid-column {
+  border-right: var(--cl-light-border);
+}
+
+.cl-grid-column_first {
+  border-left: var(--cl-light-border);
+}
+
+.cl-grid-column_highlighted {
+  background-color: var(--cl-surface-tonal-a0);
+}

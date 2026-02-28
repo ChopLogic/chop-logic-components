@@ -1,0 +1,42 @@
+.cl-grid-checkbox {
+  display: flex;
+  gap: var(--cl-s-gap);
+  padding: var(--cl-s-gap);
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+}
+
+.cl-grid-checkbox label {
+  cursor: pointer;
+  gap: var(--cl-s-gap);
+  font-size: var(--cl-typography-small-mobile);
+}
+
+.cl-grid-checkbox label:hover,
+.cl-grid-checkbox label:active {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-grid-checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 4px;
+  left: 0;
+  margin: 0;
+}
+
+.cl-grid-checkbox__input:focus-visible + label {
+  outline: var(--cl-outline-border);
+  outline-offset: var(--cl-xs-gap);
+}
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+
+.cl-grid-checkbox_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

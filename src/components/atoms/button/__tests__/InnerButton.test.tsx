@@ -9,7 +9,7 @@ describe('InnerButton', () => {
   const testProps = {
     onClick: vi.fn(),
     label: 'Test input',
-    icon: IconName.Remove,
+    icon: IconName.Delete,
   };
 
   it('should have the accessible label', () => {

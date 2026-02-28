@@ -3,10 +3,13 @@
 exports[`Label > should render correctly as not required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
-    <span>
+    <span
+      class="cl-label__text"
+    >
       Test label
     </span>
   </label>
@@ -16,12 +19,16 @@ exports[`Label > should render correctly as not required label 1`] = `
 exports[`Label > should render correctly as required label 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
-    <span>
+    <span
+      class="cl-label__text"
+    >
       Test label
       <abbr
+        class="cl-label__required"
         title="required"
       >
         *
@@ -34,7 +41,8 @@ exports[`Label > should render correctly as required label 1`] = `
 exports[`Label > should render correctly without text 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   />
 </DocumentFragment>
@@ -43,27 +51,16 @@ exports[`Label > should render correctly without text 1`] = `
 exports[`Label > should render left icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
-    <svg
-      class="_icon_afc5be"
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="cl-icon chop-icon__arrow-left cl-icon_extra-small"
+    />
+    <span
+      class="cl-label__text"
     >
-      <path
-        d="M328 112L184 256l144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
-    <span>
       Test label
     </span>
   </label>
@@ -73,29 +70,18 @@ exports[`Label > should render left icon 1`] = `
 exports[`Label > should render right icon 1`] = `
 <DocumentFragment>
   <label
-    class="_label_5091d6"
+    class="cl-label"
+    data-testid="test-label"
     for="test-input-id"
   >
-    <svg
-      class="_icon_afc5be"
-      fill="currentColor"
-      height="1em"
-      viewBox="0 0 512 512"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="cl-label__text"
     >
-      <path
-        d="M184 112l144 144-144 144"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="48"
-      />
-    </svg>
-    <span>
       Test label
     </span>
+    <span
+      class="cl-icon chop-icon__arrow-down-right cl-icon_extra-small"
+    />
   </label>
 </DocumentFragment>
 `;

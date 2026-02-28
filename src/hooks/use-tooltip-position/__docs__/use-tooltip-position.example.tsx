@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { useRef, useState } from 'react';
 
 import { useTooltipPosition } from '../use-tooltip-position';
@@ -20,7 +20,7 @@ export const UseTooltipPositionExample = () => {
       </button>
       {isOpened && (
         <div
-          className={styles.container}
+          className="container"
           ref={tooltipRef}
           style={{ position: 'absolute', top: `${top}px`, left: `${left}px` }}
         >

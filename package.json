@@ -7,24 +7,78 @@
   "version": "3.7.3",
   "description": "Reusable React components and hooks for the Chop Logic project",
   "type": "module",
-  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
-  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js"
+    },
+    "./atoms/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/atoms/*/index.js"
+    },
+    "./molecules/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/molecules/*/index.js"
+    },
+    "./organisms/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/organisms/*/index.js"
+    },
+    "./hocs/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/hocs/*/index.js"
+    },
+    "./contexts/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/components/contexts/*/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/hooks/index.js"
+    },
+    "./hooks/*": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/hooks/*/index.js"
+    },
+    "./enums": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/enums/index.js"
+    },
+    "./utils": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/utils/index.js"
+    },
+    "./styles": {
+      "import": "./dist/styles/main.css"
+    },
+    "./styles/main": {
+      "import": "./dist/styles/main.css"
+    },
+    "./styles/icons": {
+      "import": "./dist/styles/icons.css"
+    }
+  },
+  "sideEffects": [
+    "./dist/styles/**/*.css",
+    "./dist/components/**/*.css"
+  ],
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "build": "tsc && vite build",
+    "prepublishOnly": "npm run build",
+    "build": "vite build && node scripts/generate-exports.js",
     "build:storybook": "storybook build",
     "prepare": "npm run build && husky",
     "format": "npm run format:biome && npm run format:prettier",
     "format:biome": "biome format --write",
-    "format:prettier": "prettier --write \"**/*.{scss,mdx,md}\"",
+    "format:prettier": "prettier --write \"**/*.{mdx,md}\"",
     "lint": "npm run lint:biome && npm run lint:prettier",
     "lint:biome": "biome check",
-    "lint:prettier": "prettier --check \"**/*.{scss,mdx,md}\"",
+    "lint:prettier": "prettier --check \"**/*.{mdx,md}\"",
     "lint:errors": "biome check --diagnostic-level error --max-diagnostics 100",
     "lint:warnings": "biome check --diagnostic-level warn --max-diagnostics 100",
     "lint:fix": "biome check --write",
@@ -39,13 +93,13 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*.{js,jsx,ts,tsx,json}": [
+    "*.{js,jsx,ts,tsx,json,css}": [
       "biome format --write",
       "biome check --write",
       "biome check --diagnostic-level error",
       "npm run test:ci"
     ],
-    "*.{scss,md,mdx}": [
+    "*.{md,mdx}": [
       "prettier --write"
     ]
   },
@@ -63,28 +117,27 @@
   },
   "homepage": "https://choplogic.github.io/chop-logic-components",
   "devDependencies": {
-    "@biomejs/biome": "^2.3.12",
-    "@commitlint/cli": "^20.3.1",
-    "@commitlint/config-conventional": "^20.3.1",
-    "@storybook/addon-a11y": "^10.2.0",
-    "@storybook/addon-docs": "^10.2.0",
-    "@storybook/react-vite": "^10.2.0",
-    "@stryker-mutator/core": "^9.4.0",
-    "@stryker-mutator/vitest-runner": "^9.4.0",
+    "@biomejs/biome": "^2.4.4",
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@storybook/addon-a11y": "^10.2.13",
+    "@storybook/addon-docs": "^10.2.13",
+    "@storybook/react-vite": "^10.2.13",
+    "@stryker-mutator/core": "^9.6.0",
+    "@stryker-mutator/vitest-runner": "^9.6.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/node": "^25.0.10",
-    "@types/react": "^19.2.9",
+    "@types/node": "^25.3.2",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitest/coverage-v8": "^4.0.18",
-    "globals": "^17.1.0",
+    "globals": "^17.3.0",
     "husky": "^9.1.7",
     "husky-init": "^8.0.0",
-    "jsdom": "^27.4.0",
+    "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "remark-gfm": "^4.0.1",
-    "sass": "^1.97.3",
-    "storybook": "^10.2.0",
+    "storybook": "^10.2.13",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4",

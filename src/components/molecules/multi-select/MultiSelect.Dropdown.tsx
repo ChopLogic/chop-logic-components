@@ -2,7 +2,7 @@ import type { MultiSelectValue } from '@types';
 import { getClassName, handleDropdownListKeyPress } from '@utils';
 import type { FC } from 'react';
 
-import styles from '../select/dropdown/Dropdown.module.scss';
+import '../select/dropdown/Dropdown.css';
 import { MultiSelectOption } from './Option';
 
 type Props = {
@@ -20,7 +20,10 @@ export const MultiSelectDropdown: FC<Props> = ({
   onSelect,
   dropdownId,
 }) => {
-  const dropdownClass = getClassName([styles.dropdown, { [styles.dropdown__opened]: opened }]);
+  const dropdownClass = getClassName([
+    'cl-select-dropdown',
+    { 'cl-select-dropdown_opened': opened },
+  ]);
 
   return (
     <ul

@@ -3,24 +3,26 @@
 exports[`NumericInput > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="_numeric_f26bd3"
+    class="cl-numeric-input"
     style="width: 400px;"
   >
     <label
-      class="_label_5091d6"
+      class="cl-label"
       for="numeric-input"
     >
-      <span>
+      <span
+        class="cl-label__text"
+      >
         Quantity
       </span>
     </label>
     <div
-      class="_wrapper_358de2"
+      class="cl-input__wrapper"
     >
       <input
         aria-errormessage="numeric-input_error"
         aria-invalid="false"
-        class="_input_358de2"
+        class="cl-input__field"
         id="numeric-input"
         max="9007199254740991"
         min="-9007199254740991"
@@ -33,46 +35,27 @@ exports[`NumericInput > should match the snapshot 1`] = `
       <span>
         <button
           aria-label="Decrement value for Quantity"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
-          <svg
-            class="_icon_afc5be"
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z"
-              fill-rule="evenodd"
-            />
-          </svg>
+          <span
+            class="cl-inner-button__icon cl-icon chop-icon__chevron-left cl-icon_small"
+          />
         </button>
         <button
           aria-label="Increment value for Quantity"
-          class="_button_a095c4"
+          class="cl-inner-button"
           type="button"
         >
-          <svg
-            class="_icon_afc5be"
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.776 1.553a.5.5 0 01.671.223l3 6a.5.5 0 010 .448l-3 6a.5.5 0 11-.894-.448L9.44 8 6.553 2.224a.5.5 0 01.223-.671z"
-              fill-rule="evenodd"
-            />
-          </svg>
+          <span
+            class="cl-inner-button__icon cl-icon chop-icon__chevron-right cl-icon_small"
+          />
         </button>
       </span>
       <span
         aria-hidden="true"
-        class="_errorMessage_2a3830 _errorMessage_f26bd3"
+        aria-live="polite"
+        class="cl-error-message cl-numeric-input__error-message"
         id="numeric-input_error"
       >
         Error!

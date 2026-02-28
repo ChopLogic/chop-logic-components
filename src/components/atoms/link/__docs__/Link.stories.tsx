@@ -119,7 +119,7 @@ export const EmailLink: Story = {
   args: {
     children: 'Contact Us',
     href: 'mailto:hello@example.com',
-    icon: IconName.Email,
+    icon: IconName.Mail,
   },
 };
 
@@ -136,6 +136,6 @@ export const DisabledLink: Story = {
     children: 'Disabled Link',
     disabled: true,
     href: '#',
-    icon: IconName.Cancel,
+    icon: IconName.XSquare,
   },
 };

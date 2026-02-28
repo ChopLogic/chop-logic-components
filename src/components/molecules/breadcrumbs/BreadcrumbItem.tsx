@@ -1,9 +1,7 @@
 import { Icon, Link } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { Breadcrumb } from '@types';
 import type { FC } from 'react';
-
-import styles from './Breadcrumbs.module.scss';
 
 const BreadcrumbItem: FC<{
   item: Breadcrumb;
@@ -13,19 +11,26 @@ const BreadcrumbItem: FC<{
 
   return (
     <>
-      <li className={styles.breadcrumbs_item}>
+      <li className="cl-breadcrumbs__item">
         {isLink ? (
-          <Link href={item?.link ?? ''} icon={item.icon} iconPosition="left">
+          <Link
+            href={item?.link ?? ''}
+            icon={item.icon}
+            iconPosition="left"
+            className="cl-breadcrumbs__link"
+          >
             {item.label}
           </Link>
         ) : (
-          <span aria-current={isLastItem ? 'page' : undefined} className={styles.breadcrumbs_text}>
+          <span aria-current={isLastItem ? 'page' : undefined} className="cl-breadcrumbs__text">
             {item.icon && <Icon name={item.icon} hidden />}
             {item.label}
           </span>
         )}
       </li>
-      {!isLastItem && <Icon name={IconName.ChevronRight} hidden />}
+      {!isLastItem && (
+        <Icon name={IconName.ChevronRight} size={ElementSize.Small} testId="breadcrumb-separator" />
+      )}
     </>
   );
 };

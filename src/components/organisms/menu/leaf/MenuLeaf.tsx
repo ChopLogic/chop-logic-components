@@ -2,7 +2,8 @@ import { Icon } from '@components/atoms';
 import type { MenuItem } from '@types';
 import type { ReactElement } from 'react';
 
-import styles from './MenuLeaf.module.scss';
+import './MenuLeaf.css';
+import { ElementSize } from '@enums';
 
 export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
   const { icon, link, label, onFocus, onClick, onHover } = item;
@@ -24,7 +25,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
 
   return (
     <li
-      className={styles.menuLeaf}
+      className="cl-menu-leaf"
       tabIndex={0}
       role="menuitem"
       onFocus={onFocus}
@@ -32,7 +33,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
       onKeyDown={handleKeyDown}
       onMouseOver={onHover}
     >
-      <Icon name={icon} hidden />
+      <Icon name={icon} hidden size={ElementSize.Small} />
       {leafContent}
     </li>
   );

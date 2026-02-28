@@ -97,6 +97,6 @@ export const Example: Story = {
   args: {
     isOpened: false,
     title: 'Please read this dialog',
-    icon: IconName.Help,
+    icon: IconName.Info,
   },
 };

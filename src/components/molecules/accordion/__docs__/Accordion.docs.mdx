@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as AccordionStories from './Accordion.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as AccordionStories from "./Accordion.stories";
 
 <Meta of={AccordionStories} title="Accordion" />
 
@@ -10,17 +10,17 @@ The `Accordion` component provides a collapsible list of items, allowing users t
 ## Usage
 
 ```tsx
-import { Accordion } from 'chop-logic-components';
+import { Accordion } from "chop-logic-components";
 
 const FAQSection = () => {
   const items = [
     {
-      summary: 'How does it work?',
-      children: 'The accordion component uses HTML details elements for collapsible content.',
+      summary: "How does it work?",
+      children: "The accordion component uses HTML details elements for collapsible content.",
     },
     {
-      summary: 'Is it accessible?',
-      children: 'Yes, it uses semantic HTML and supports keyboard navigation.',
+      summary: "Is it accessible?",
+      children: "Yes, it uses semantic HTML and supports keyboard navigation.",
     },
   ];
 

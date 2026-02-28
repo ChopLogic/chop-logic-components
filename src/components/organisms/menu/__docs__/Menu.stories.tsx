@@ -39,19 +39,19 @@ const ITEMS: MenuItem[] = [
               {
                 id: 'item-18',
                 label: '2023',
-                icon: IconName.CheckMark,
+                icon: IconName.Check,
                 onHover: () => console.log('Hover item-18'),
               },
               {
                 id: 'item-19',
                 label: '2024',
-                icon: IconName.CheckMark,
+                icon: IconName.Check,
                 onClick: () => console.log('Click item-18'),
               },
               {
                 id: 'item-20',
                 label: '2025',
-                icon: IconName.CheckMark,
+                icon: IconName.Check,
                 onFocus: () => console.log('Focus item-18'),
                 link: 'https://github.com/',
               },
@@ -72,7 +72,7 @@ const ITEMS: MenuItem[] = [
   {
     id: 'item-3',
     label: 'Admissions',
-    icon: IconName.Login,
+    icon: IconName.User,
     nestedItems: [
       {
         id: 'item-12',
@@ -91,7 +91,7 @@ const ITEMS: MenuItem[] = [
   {
     id: 'item-4',
     label: 'Academics',
-    icon: IconName.Graduate,
+    icon: IconName.Book,
     nestedItems: [
       {
         id: 'item-15',

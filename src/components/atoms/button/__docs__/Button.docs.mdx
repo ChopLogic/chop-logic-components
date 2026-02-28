@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as ButtonStories from './Button.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as ButtonStories from "./Button.stories";
 
 <Meta of={ButtonStories} title="Button" />
 
@@ -10,16 +10,11 @@ The `Button` component provides a flexible, accessible button with multiple visu
 ## Usage
 
 ```tsx
-import Button, { ButtonView, IconName } from 'chop-logic-components';
+import Button, { ButtonView, IconName } from "chop-logic-components";
 
 const ExampleForm = () => (
   <form>
-    <Button
-      view={ButtonView.Primary}
-      text="Submit"
-      icon={IconName.Check}
-      onClick={() => console.log('Clicked!')}
-    />
+    <Button view={ButtonView.Primary} text="Submit" icon={IconName.Check} onClick={() => console.log("Clicked!")} />
     <Button view={ButtonView.Icon} icon={IconName.Settings} label="Settings" />
   </form>
 );

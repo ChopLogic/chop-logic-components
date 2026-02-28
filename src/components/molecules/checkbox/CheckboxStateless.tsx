@@ -1,10 +1,10 @@
 import { Label } from '@components/atoms';
-import { IconName } from '@enums';
+import { ElementSize, IconName } from '@enums';
 import type { CheckboxProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 
-import styles from './Checkbox.module.scss';
+import './Checkbox.css';
 
 const CheckboxStateless: FC<CheckboxProps> = ({
   name,
@@ -22,11 +22,11 @@ const CheckboxStateless: FC<CheckboxProps> = ({
 }) => {
   const elementId = id ?? `checkbox-${name}`;
   const checkboxClass = getClassName([
-    styles.checkbox,
+    'cl-checkbox',
     className,
     {
-      [styles.checkbox__disabled]: !!disabled,
-      [styles.checkbox__checked]: checked,
+      'cl-checkbox_disabled': !!disabled,
+      'cl-checkbox_checked': !!checked,
     },
   ]);
 
@@ -47,8 +47,9 @@ const CheckboxStateless: FC<CheckboxProps> = ({
         required={required}
         inputId={elementId}
         isTextHidden={noLabel}
-        icon={checked ? IconName.CheckboxChecked : IconName.CheckboxUnchecked}
+        icon={checked ? IconName.CheckSquare : IconName.Square}
         iconPosition={iconPosition}
+        iconSize={ElementSize.Medium}
       />
     </div>
   );

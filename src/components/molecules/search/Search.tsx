@@ -5,8 +5,8 @@ import type { SearchProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 
+import './Search.css';
 import { useSearchController } from './Search.controller';
-import styles from './Search.module.scss';
 
 const Search: FC<SearchProps> = ({
   label,
@@ -32,7 +32,7 @@ const Search: FC<SearchProps> = ({
 }) => {
   const { elementId } = useElementIds(id);
   const inputRef = useRef<HTMLInputElement>(null);
-  const inputClass = getClassName([styles.wrapper, className]);
+  const inputClass = getClassName(['cl-search', className]);
 
   const {
     searchValue,
@@ -94,7 +94,7 @@ const Search: FC<SearchProps> = ({
               view={ButtonView.Inner}
               onClick={handleClearWithFocus}
               label={`Clear search input for ${label}`}
-              icon={IconName.Remove}
+              icon={IconName.Delete}
             />
           )}
           {isSearchButtonVisible && (

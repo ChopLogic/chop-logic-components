@@ -2,7 +2,7 @@ import type { GridColumn } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
 
-import styles from './GridColumnGroup.module.scss';
+import './GridColumnGroup.css';
 
 export const GridColumnGroup: FC<{ columns: GridColumn[]; selectable: boolean }> = ({
   columns,
@@ -10,16 +10,16 @@ export const GridColumnGroup: FC<{ columns: GridColumn[]; selectable: boolean }>
 }) => {
   return (
     <colgroup>
-      {selectable && <col className={getClassName([styles.column, styles.column__first])} />}
+      {selectable && <col className="cl-grid-column cl-grid-column_first cl-grid-column_check" />}
       {columns.map((column, index) => (
         <col
           key={column?.title}
           className={getClassName([
-            styles.column,
+            'cl-grid-column',
             column?.className,
             {
-              [styles.column__first]: index === 0 && !selectable,
-              [styles.column__highlighted]: !!column?.highlighted,
+              'cl-grid-column_first': index === 0 && !selectable,
+              'cl-grid-column_highlighted': !!column?.highlighted,
             },
           ])}
         />

@@ -5,7 +5,7 @@ import { type FC, type PropsWithChildren, useState } from 'react';
 
 import { MenuLeaf } from '../leaf/MenuLeaf';
 import { SubMenu } from '../sub-menu/SubMenu';
-import styles from './MenuListItem.module.scss';
+import './MenuListItem.css';
 
 type Props = PropsWithChildren & {
   item: MenuItem;
@@ -17,8 +17,8 @@ export const MenuListItem: FC<Props> = ({ item, mode, openedOn }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
   const subMenuBarClass = getClassName([
-    styles.subMenuBar,
-    { [styles.subMenuBar__horizontal]: mode === OrientationMode.Horizontal },
+    'cl-sub-menu-bar',
+    { 'cl-sub-menu-bar_horizontal': mode === OrientationMode.Horizontal },
   ]);
 
   if (isLeaf) {

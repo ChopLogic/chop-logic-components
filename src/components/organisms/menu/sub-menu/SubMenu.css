@@ -1,0 +1,74 @@
+/* ============================================================================
+   BLOCK
+   ============================================================================ */
+.cl-sub-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  position: relative;
+  border-radius: var(--cl-border-radius);
+}
+
+.cl-sub-menu:focus-visible {
+  outline: var(--cl-outline-border);
+}
+
+.cl-sub-menu a {
+  color: var(--cl-base-font-color);
+  text-decoration: none;
+}
+
+.cl-sub-menu__text {
+  color: var(--cl-base-font-color);
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  gap: var(--cl-m-gap);
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background: transparent;
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  cursor: pointer;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-sub-menu__text {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-sub-menu__text {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-sub-menu__text:hover {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-sub-menu__text:hover svg {
+  filter: var(--cl-drop-shadow);
+}
+
+.cl-sub-menu__text span {
+  display: flex;
+  gap: var(--cl-m-gap);
+  align-items: center;
+}
+
+.cl-sub-menu__icon_opened {
+  transform: rotate(180deg);
+}

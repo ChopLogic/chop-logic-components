@@ -1,0 +1,34 @@
+.cl-grid-body {
+  color: var(--cl-base-font-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-grid-body td {
+  padding: var(--cl-xs-gap);
+}
+
+@media (min-width: 640px) {
+  .cl-grid-body {
+    font-size: var(--cl-typography-base-tablet);
+  }
+
+  .cl-grid-body td {
+    padding: var(--cl-s-gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-grid-body {
+    font-size: var(--cl-typography-base-desktop);
+  }
+
+  .cl-grid-body td {
+    padding: var(--cl-m-gap);
+  }
+}

@@ -1,8 +1,7 @@
 import type { EditableTextProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useCallback, useRef } from 'react';
-
-import styles from './EditableText.module.scss';
+import './EditableText.css';
 import { EditView } from './EditView';
 import { ReadView } from './ReadView';
 import { useEditModeState } from './useEditModeState';
@@ -55,12 +54,12 @@ const EditableText: FC<EditableTextProps> = ({
   );
 
   const containerClass = getClassName([
-    styles.editableText,
+    'cl-editable-text',
     className,
     {
-      [styles.editableText__editMode]: editMode,
-      [styles.editableText__readOnly]: readOnly,
-      [styles.editableText__empty]: !internalValue,
+      'cl-editable-text_edit-mode': editMode,
+      'cl-editable-text_read-only': readOnly,
+      'cl-editable-text_empty': !internalValue,
     },
   ]);
 

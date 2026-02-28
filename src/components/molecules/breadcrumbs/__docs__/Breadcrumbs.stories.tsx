@@ -63,8 +63,8 @@ const meta: Meta<typeof Breadcrumbs> = {
   args: {
     items: [
       { label: 'Home', icon: IconName.Home, link: '/' },
-      { label: 'Documents', icon: IconName.Documents, link: '/documents' },
-      { label: 'Projects', icon: IconName.Projects, link: '/documents/projects' },
+      { label: 'Documents', icon: IconName.BookOpen, link: '/documents' },
+      { label: 'Projects', icon: IconName.Cast, link: '/documents/projects' },
       { label: 'Report' },
     ],
   },

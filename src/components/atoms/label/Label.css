@@ -1,0 +1,48 @@
+.cl-label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--cl-s-gap);
+  color: var(--cl-base-font-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-label {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-label {
+    font-size: var(--cl-typography-small-desktop);
+  }
+}
+
+.cl-label:hover {
+  text-shadow: var(--cl-text-shadow);
+  cursor: pointer;
+}
+
+.cl-label__text {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cl-label__required {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--cl-accent-a0);
+  margin-left: var(--cl-s-gap);
+}
+
+.cl-label_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

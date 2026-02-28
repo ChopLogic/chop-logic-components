@@ -1,0 +1,41 @@
+.cl-select-dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.3s linear;
+  position: absolute;
+  background: var(--cl-base-background-color);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: var(--cl-z-index-popup);
+  width: 100%;
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  overflow-y: auto;
+  max-height: 180px;
+  left: 0;
+  top: 76px;
+  background-color: var(--cl-surface-a10);
+}
+
+@media screen and (min-width: 640px) {
+  .cl-select-dropdown {
+    top: 82px;
+    max-height: 220px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cl-select-dropdown {
+    top: 88px;
+    max-height: 260px;
+  }
+}
+
+.cl-select-dropdown_opened {
+  visibility: visible;
+  opacity: 1;
+}

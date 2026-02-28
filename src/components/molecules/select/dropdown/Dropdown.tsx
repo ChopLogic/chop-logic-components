@@ -2,8 +2,8 @@ import type { SelectValue } from '@types';
 import { getClassName, handleDropdownListKeyPress, moveFocusOnElementById } from '@utils';
 import type { FC } from 'react';
 
+import './Dropdown.css';
 import { SelectOption } from '../option/Option';
-import styles from './Dropdown.module.scss';
 
 type Props = {
   options: SelectValue[];
@@ -31,7 +31,10 @@ export const SelectDropdown: FC<Props> = ({
     onClose();
     moveFocusOnElementById(comboboxId);
   };
-  const dropdownClass = getClassName([styles.dropdown, { [styles.dropdown__opened]: opened }]);
+  const dropdownClass = getClassName([
+    'cl-select-dropdown',
+    { 'cl-select-dropdown_opened': opened },
+  ]);
 
   return (
     <ul

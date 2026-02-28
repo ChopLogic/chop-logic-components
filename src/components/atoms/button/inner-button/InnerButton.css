@@ -1,0 +1,32 @@
+.cl-inner-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: var(--cl-icon-size);
+  width: var(--cl-icon-size);
+  transition: all 150ms ease;
+}
+
+.cl-inner-button:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: -1px;
+}
+
+.cl-inner-button:hover {
+  transform: scale(1.15);
+  filter: var(--cl-drop-shadow);
+}
+
+.cl-inner-button:hover .cl-inner-button__icon::before {
+  color: var(--cl-accent-a10);
+}
+
+.cl-inner-button:active {
+  transform: scale(0.95);
+}
+
+.cl-inner-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}

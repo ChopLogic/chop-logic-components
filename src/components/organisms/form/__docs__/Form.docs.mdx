@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as FormStories from './Form.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as FormStories from "./Form.stories";
 
 <Meta of={FormStories} title="Form" />
 
@@ -10,15 +10,15 @@ The `Form` component provides a structured, accessible form container with built
 ## Usage
 
 ```tsx
-import { Form, TextInput } from 'chop-logic-components';
+import { Form, TextInput } from "chop-logic-components";
 
 const UserForm = () => {
   const handleSubmit = (values) => {
-    console.log('Form submitted with:', values);
+    console.log("Form submitted with:", values);
   };
 
   return (
-    <Form initialValues={{ firstName: '', lastName: '' }} onSubmit={handleSubmit}>
+    <Form initialValues={{ firstName: "", lastName: "" }} onSubmit={handleSubmit}>
       <TextInput name="firstName" label="First Name" />
       <TextInput name="lastName" label="Last Name" />
     </Form>

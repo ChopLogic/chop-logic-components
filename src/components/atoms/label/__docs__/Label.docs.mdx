@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as LabelStories from './Label.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as LabelStories from "./Label.stories";
 
 <Meta of={LabelStories} title="Atoms/Label" />
 
@@ -10,17 +10,11 @@ The `Label` component provides an accessible label for form inputs with optional
 ## Usage
 
 ```tsx
-import { Label, IconName } from 'chop-logic-components';
+import { Label, IconName } from "chop-logic-components";
 
 const FormField = () => (
   <div>
-    <Label
-      label="Email"
-      required={true}
-      inputId="email-input"
-      icon={IconName.Mail}
-      iconPosition="left"
-    />
+    <Label label="Email" required={true} inputId="email-input" icon={IconName.Mail} iconPosition="left" />
     <input id="email-input" type="email" />
   </div>
 );

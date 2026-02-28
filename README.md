@@ -47,12 +47,12 @@ yarn add chop-logic-components
 | `build`           | Builds the TypeScript types and compiles the library using Vite.                                                                                      |
 | `build:storybook` | Builds a static version of Storybook into the `storybook-static` directory.                                                                           |
 | `prepare`         | Runs the production build and sets up Husky git hooks.                                                                                                |
-| `format`          | Formats all files using both Biome (for JS/TS) and Prettier (for SCSS/MDX).                                                                          |
-| `format:biome`    | Formats JS, TS, JSON, and MD files using Biome.                                                                                                      |
-| `format:prettier` | Formats SCSS and MDX files using Prettier.                                                                                                           |
+| `format`          | Formats all files using both Biome (for JS/TS) and Prettier (for MD/MDX).                                                                          |
+| `format:biome`    | Formats JS, TS, JSON, and CSS files using Biome.                                                                                                      |
+| `format:prettier` | Formats MD and MDX files using Prettier.                                                                                                           |
 | `lint`            | Runs both Biome and Prettier linters to check code style and quality.                                                                                 |
 | `lint:biome`      | Runs Biome linter on JS/TS files.                                                                                                                    |
-| `lint:prettier`   | Checks formatting of SCSS and MDX files using Prettier.                                                                                              |
+| `lint:prettier`   | Checks formatting of MD and MDX files using Prettier.                                                                                              |
 | `lint:errors`     | Shows only error-level diagnostics from Biome (limited to 100 issues).                                                                                |
 | `lint:warnings`   | Shows only warning-level diagnostics from Biome (limited to 100 issues).                                                                              |
 | `lint:fix`        | Automatically fixes Biome issues where possible.                                                                                                      |

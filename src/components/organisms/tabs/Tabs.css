@@ -1,0 +1,9 @@
+.cl-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cl-tabs_vertical {
+  flex-direction: row;
+}

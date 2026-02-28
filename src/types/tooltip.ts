@@ -1,4 +1,4 @@
-import type { TooltipContainer } from '@enums';
+import type { SemanticColor, TooltipContainer } from '@enums';
 import type { PropsWithChildren, ReactElement } from 'react';
 
 import type { ChopLogicComponentProps } from './_common';
@@ -9,4 +9,5 @@ export interface TooltipProps extends PropsWithChildren, ChopLogicComponentProps
   visibleOn?: 'hover' | 'click' | 'focus' | 'contextmenu';
   autoClose?: boolean;
   autoCloseDelay?: number;
+  color?: SemanticColor;
 }

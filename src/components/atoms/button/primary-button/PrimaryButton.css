@@ -1,0 +1,34 @@
+.cl-primary-button {
+  border: none;
+  cursor: pointer;
+  border-radius: var(--cl-border-radius);
+  background: var(--cl-accent-gradient);
+  box-shadow: var(--cl-box-shadow);
+  gap: var(--cl-s-gap);
+  transition: all 150ms ease;
+}
+
+.cl-primary-button:hover {
+  filter: brightness(1.1);
+  box-shadow: var(--cl-box-shadow-extended);
+}
+
+.cl-primary-button:active {
+  transform: scale(0.98);
+  box-shadow: var(--cl-box-shadow);
+}
+
+.cl-primary-button__text {
+  font-family: var(--cl-core-font);
+  font-size: inherit;
+  color: var(--cl-base-background-color);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-primary-button__icon::before {
+  color: var(--cl-base-background-color);
+}

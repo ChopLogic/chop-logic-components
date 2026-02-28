@@ -68,7 +68,7 @@ describe('MultiSelect', () => {
     render(<MultiSelect {...testProps} />);
     const combobox = screen.getByRole('combobox');
     await userEvent.click(combobox);
-    const option = screen.getAllByRole('option')[0];
+    const option = screen.getAllByRole('option')[0] as HTMLElement;
     await userEvent.click(option);
     expect(testProps.onChange).toHaveBeenCalledOnce();
   });
@@ -162,7 +162,7 @@ describe('MultiSelect', () => {
     render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
-    const options = screen.getAllByRole('option');
+    const options = screen.getAllByRole('option') as [HTMLElement, HTMLElement];
     options[0].focus();
     await userEvent.keyboard('[ArrowDown]');
     expect(options[1]).toHaveFocus();
@@ -172,7 +172,7 @@ describe('MultiSelect', () => {
     render(<MultiSelect {...testProps} />);
     await userEvent.click(screen.getByRole('combobox'));
 
-    const options = screen.getAllByRole('option');
+    const options = screen.getAllByRole('option') as [HTMLElement, HTMLElement];
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');
     expect(options[0]).toHaveFocus();

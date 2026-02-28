@@ -1,0 +1,62 @@
+.cl-tooltip {
+  color: var(--cl-base-font-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: var(--cl-z-index-popup);
+  background-color: var(--cl-surface-a0);
+  border: var(--cl-light-border);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  pointer-events: none;
+  white-space: nowrap;
+  animation: cl-fade-in ease 400ms;
+
+  /* Typography: core font small */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-tooltip_info {
+  background-color: var(--cl-info-a0);
+  color: white;
+  border: none;
+}
+
+.cl-tooltip_success {
+  background-color: var(--cl-success-a0);
+  color: white;
+  border: none;
+}
+
+.cl-tooltip_danger {
+  background-color: var(--cl-danger-a0);
+  color: white;
+  border: none;
+}
+
+.cl-tooltip_warning {
+  background-color: var(--cl-warning-a0);
+  color: white;
+  border: none;
+}
+
+/* Responsive font size for tablet */
+@media (min-width: 640px) {
+  .cl-tooltip {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+/* Responsive font size for desktop */
+@media (min-width: 1024px) {
+  .cl-tooltip {
+    font-size: var(--cl-typography-small-desktop);
+  }
+}

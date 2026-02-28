@@ -1,5 +1,5 @@
 import type { ComponentType, FC } from 'react';
-import styles from './Figure.module.scss';
+import './Figure.css';
 
 type WithFigureCaptionProps = {
   caption?: string;
@@ -10,9 +10,9 @@ export function withFigureCaption<P extends object>(
 ): FC<P & WithFigureCaptionProps> {
   return ({ caption, ...props }: WithFigureCaptionProps) =>
     caption?.trim()?.length ? (
-      <figure className={styles.figure}>
+      <figure className="cl-figure">
         <Component {...(props as P)} />
-        <figcaption className={styles.figure_caption}>{caption}</figcaption>
+        <figcaption className="cl-figure__caption">{caption}</figcaption>
       </figure>
     ) : (
       <Component {...(props as P)} />

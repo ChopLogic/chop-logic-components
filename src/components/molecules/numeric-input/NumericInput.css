@@ -1,0 +1,24 @@
+.cl-numeric-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+  width: 100%;
+}
+
+.cl-numeric-input__error-message {
+  position: absolute;
+  right: 0;
+  top: 44px;
+}
+
+@media screen and (min-width: 640px) {
+  .cl-numeric-input__error-message {
+    top: 48px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cl-numeric-input__error-message {
+    top: 52px;
+  }
+}

@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { useRef } from 'react';
 
 import { useClickOutside } from '../use-click-outside';
@@ -11,7 +11,7 @@ export const UseClickOutsideExample = () => {
   });
 
   return (
-    <div className={styles.container} ref={ref}>
+    <div className="container" ref={ref}>
       Click outside this box to trigger the handler.
     </div>
   );

@@ -1,58 +1,82 @@
 /// <reference types="vitest" />
-import * as path from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { coverageConfigDefaults } from 'vitest/config';
 
-import { peerDependencies } from './package.json';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Custom plugin to exclude __docs__ folders from the build
+const excludeDocsPlugin = (): Plugin => ({
+  name: 'exclude-docs',
+  resolveId(id) {
+    if (id.includes('__docs__') || id.includes('__tests__')) {
+      return { id, external: true };
+    }
+    return null;
+  },
+});
 
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/index.ts',
+      entry: resolve(__dirname, 'src/main.ts'),
       name: 'chop-logic-components',
       fileName: (format) => `index.${format}.js`,
-      formats: ['cjs', 'es'],
+      formats: ['es'],
     },
     rollupOptions: {
-      external: Object.keys(peerDependencies),
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
-        exports: 'named', // Enable tree shaking
-        compact: true, // Minify output
-        preserveModules: false, // Preserve module structure for better tree shaking (Set to false for single bundle)
+        exports: 'named',
+        compact: true,
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: (chunkInfo) => {
+          // Main entry file gets index.es.js
+          if (chunkInfo.name === 'main') {
+            return 'index.es.js';
+          }
+          // Other entry files keep their original structure
+          return '[name].js';
+        },
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name][extname]',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
         },
       },
     },
-    sourcemap: true,
+    copyPublicDir: false,
+    cssCodeSplit: true,
+    cssMinify: true,
     emptyOutDir: true,
-    minify: 'esbuild', // Minify the output
-    target: 'es2015', // Enable better tree shaking
-    cssCodeSplit: true, // Enable CSS code splitting
-    cssMinify: true, // Minify CSS
   },
   plugins: [
+    excludeDocsPlugin(),
     dts({
-      exclude: ['**/__tests__/**', '**/__docs__/**', '**/stories/**', '**/*.test.*', '**/*.spec.*'],
+      tsconfigPath: 'tsconfig.build.json',
       insertTypesEntry: true,
-      rollupTypes: true, // Bundles all declarations into one file
+      rollupTypes: true,
+      exclude: ['**/__docs__/**', '**/__tests__/**'],
     }),
     libInjectCss(),
   ],
   resolve: {
     alias: [
-      { find: '@', replacement: path.resolve(__dirname, 'src') },
-      { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
-      { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
-      { find: '@enums', replacement: path.resolve(__dirname, 'src/enums') },
-      { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
-      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
-      { find: '@types', replacement: path.resolve(__dirname, 'src/types') },
-      { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
+      { find: '@', replacement: resolve(__dirname, 'src') },
+      { find: '@assets', replacement: resolve(__dirname, 'src/assets') },
+      { find: '@components', replacement: resolve(__dirname, 'src/components') },
+      { find: '@enums', replacement: resolve(__dirname, 'src/enums') },
+      { find: '@hooks', replacement: resolve(__dirname, 'src/hooks') },
+      { find: '@styles', replacement: resolve(__dirname, 'src/styles') },
+      { find: '@types', replacement: resolve(__dirname, 'src/types') },
+      { find: '@utils', replacement: resolve(__dirname, 'src/utils') },
+      { find: '@__docs__', replacement: resolve(__dirname, 'src/__docs__') },
     ],
   },
   test: {
@@ -60,6 +84,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
     coverage: {
+      reporter: ['text', 'lcov', 'clover'],
       exclude: [
         '**/docs/**',
         'scripts/**',
@@ -69,7 +94,10 @@ export default defineConfig({
         '**/storybook-static/**',
         ...coverageConfigDefaults.exclude,
       ],
-      reporter: ['text', 'lcov', 'clover'],
+      thresholds: {
+        functions: 95, // Requires 95% function coverage
+        lines: -30, // Require that no more than 30 lines are uncovered
+      },
     },
   },
 });

@@ -1,0 +1,34 @@
+.cl-secondary-button {
+  background: var(--cl-surface-a10);
+  cursor: pointer;
+  border-radius: var(--cl-border-radius);
+  border: none;
+  gap: var(--cl-s-gap);
+  transition: all 150ms ease;
+  box-shadow: var(--cl-box-shadow);
+}
+
+.cl-secondary-button:hover {
+  box-shadow: var(--cl-box-shadow-extended);
+}
+
+.cl-secondary-button:active {
+  transform: scale(0.98);
+  box-shadow: var(--cl-box-shadow);
+}
+
+.cl-secondary-button__text {
+  font-family: var(--cl-core-font);
+  font-size: inherit;
+  color: var(--cl-base-font-color);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-secondary-button__icon::before {
+  color: var(--cl-base-font-color);
+  margin-right: var(--cl-s-gap);
+}

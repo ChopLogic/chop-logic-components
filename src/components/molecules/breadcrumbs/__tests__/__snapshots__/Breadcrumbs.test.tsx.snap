@@ -4,86 +4,91 @@ exports[`Breadcrumbs > matches the snapshot 1`] = `
 <DocumentFragment>
   <nav
     aria-label="Breadcrumb"
-    class="_breadcrumbs_f319fb"
+    class="cl-breadcrumbs"
   >
     <ol
-      class="_breadcrumbs_list_f319fb"
+      class="cl-breadcrumbs__list"
     >
       <li
-        class="_breadcrumbs_item_f319fb"
+        class="cl-breadcrumbs__item"
       >
         <a
-          data-icon="home"
-          data-icon-position="left"
-          data-testid="breadcrumb-link"
+          aria-disabled="false"
+          class="cl-link cl-breadcrumbs__link"
           href="/"
-        >
-          Home
-        </a>
-      </li>
-      <span
-        aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chevron-right"
-        data-testid="breadcrumb-icon"
-      >
-        chevron-right icon
-      </span>
-      <li
-        class="_breadcrumbs_item_f319fb"
-      >
-        <a
-          data-icon="projects"
-          data-icon-position="left"
-          data-testid="breadcrumb-link"
-          href="/products"
-        >
-          Products
-        </a>
-      </li>
-      <span
-        aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chevron-right"
-        data-testid="breadcrumb-icon"
-      >
-        chevron-right icon
-      </span>
-      <li
-        class="_breadcrumbs_item_f319fb"
-      >
-        <a
-          data-icon="settings"
-          data-icon-position="left"
-          data-testid="breadcrumb-link"
-          href="/products/electronics"
-        >
-          Electronics
-        </a>
-      </li>
-      <span
-        aria-hidden="true"
-        data-hidden="true"
-        data-icon-name="chevron-right"
-        data-testid="breadcrumb-icon"
-      >
-        chevron-right icon
-      </span>
-      <li
-        class="_breadcrumbs_item_f319fb"
-      >
-        <span
-          aria-current="page"
-          class="_breadcrumbs_text_f319fb"
         >
           <span
             aria-hidden="true"
-            data-hidden="true"
-            data-icon-name="phone"
-            data-testid="breadcrumb-icon"
+            class="cl-link__icon cl-icon chop-icon__home cl-icon_small"
+          />
+          <span
+            class="cl-link__text"
           >
-            phone icon
+            Home
           </span>
+        </a>
+      </li>
+      <span
+        class="cl-icon chop-icon__chevron-right cl-icon_small"
+        data-testid="breadcrumb-separator"
+      />
+      <li
+        class="cl-breadcrumbs__item"
+      >
+        <a
+          aria-disabled="false"
+          class="cl-link cl-breadcrumbs__link"
+          href="/products"
+        >
+          <span
+            aria-hidden="true"
+            class="cl-link__icon cl-icon chop-icon__activity cl-icon_small"
+          />
+          <span
+            class="cl-link__text"
+          >
+            Products
+          </span>
+        </a>
+      </li>
+      <span
+        class="cl-icon chop-icon__chevron-right cl-icon_small"
+        data-testid="breadcrumb-separator"
+      />
+      <li
+        class="cl-breadcrumbs__item"
+      >
+        <a
+          aria-disabled="false"
+          class="cl-link cl-breadcrumbs__link"
+          href="/products/electronics"
+        >
+          <span
+            aria-hidden="true"
+            class="cl-link__icon cl-icon chop-icon__settings cl-icon_small"
+          />
+          <span
+            class="cl-link__text"
+          >
+            Electronics
+          </span>
+        </a>
+      </li>
+      <span
+        class="cl-icon chop-icon__chevron-right cl-icon_small"
+        data-testid="breadcrumb-separator"
+      />
+      <li
+        class="cl-breadcrumbs__item"
+      >
+        <span
+          aria-current="page"
+          class="cl-breadcrumbs__text"
+        >
+          <span
+            aria-hidden="true"
+            class="cl-icon chop-icon__phone cl-icon_medium"
+          />
           Smartphones
         </span>
       </li>

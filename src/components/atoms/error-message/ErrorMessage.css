@@ -1,0 +1,40 @@
+.cl-error-message {
+  display: none;
+  max-width: 100%;
+  z-index: var(--cl-z-index-popup);
+  background-color: var(--cl-surface-a10);
+  color: var(--cl-base-font-color);
+  padding: var(--cl-s-gap) var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  border: var(--cl-danger-border);
+  box-shadow: var(--cl-box-shadow);
+  pointer-events: none;
+  animation: cl-fade-in ease 400ms;
+
+  /* Typography: core font small */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive font size for tablet */
+@media (min-width: 640px) {
+  .cl-error-message {
+    font-size: var(--cl-typography-small-tablet);
+  }
+}
+
+/* Responsive font size for desktop */
+@media (min-width: 1024px) {
+  .cl-error-message {
+    font-size: var(--cl-typography-small-desktop);
+  }
+}
+
+.cl-error-message_visible {
+  display: block;
+}

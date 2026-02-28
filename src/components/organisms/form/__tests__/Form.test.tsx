@@ -74,8 +74,8 @@ describe('Form', () => {
     const numericInput = screen.getByRole('spinbutton');
     const checkboxInput = screen.getByRole('checkbox');
 
-    await userEvent.type(textInputs[0], 'test1');
-    await userEvent.type(textInputs[1], 'test2');
+    await userEvent.type(textInputs[0] as HTMLElement, 'test1');
+    await userEvent.type(textInputs[1] as HTMLElement, 'test2');
     await userEvent.type(numericInput, '55');
     await userEvent.click(checkboxInput);
 
@@ -99,8 +99,8 @@ describe('Form', () => {
     const numericInput = screen.getByRole('spinbutton');
     const checkboxInput = screen.getByRole('checkbox');
 
-    await userEvent.type(textInputs[0], 'test1');
-    await userEvent.type(textInputs[1], 'test2');
+    await userEvent.type(textInputs[0] as HTMLElement, 'test1');
+    await userEvent.type(textInputs[1] as HTMLElement, 'test2');
     await userEvent.type(numericInput, '55');
     await userEvent.click(checkboxInput);
 

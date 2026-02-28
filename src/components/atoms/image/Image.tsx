@@ -4,7 +4,7 @@ import { type FC, useState } from 'react';
 import { withFigureCaption } from '../../hocs';
 import { BasicImage } from './BasicImage';
 import { FallbackImage } from './FallBackImage';
-import styles from './Image.module.scss';
+import './Image.css';
 import { ResponsivePicture } from './ResponsivePicture';
 
 const ImageContainer: FC<ImageProps> = ({
@@ -16,7 +16,7 @@ const ImageContainer: FC<ImageProps> = ({
   ...rest
 }) => {
   const [hasError, setHasError] = useState(false);
-  const wrapperClass = getClassName([styles.image, className]);
+  const wrapperClass = getClassName(['cl-image', className]);
   const hasResponsiveSources = sources.length > 0;
   const finalAlt = decorative ? '' : alt;
 

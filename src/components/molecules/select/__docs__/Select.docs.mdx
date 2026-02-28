@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as Select from './Select.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as Select from "./Select.stories";
 
 <Meta of={Select} title="Select" />
 
@@ -10,24 +10,17 @@ The `Select` component provides an accessible, customizable dropdown select inpu
 ## Usage
 
 ```tsx
-import Select from 'chop-logic-components';
+import Select from "chop-logic-components";
 
 const CountrySelector = () => {
-  const [country, setCountry] = React.useState('');
+  const [country, setCountry] = React.useState("");
   const countries = [
-    { value: 'us', label: 'United States' },
-    { value: 'ca', label: 'Canada' },
-    { value: 'mx', label: 'Mexico' },
+    { value: "us", label: "United States" },
+    { value: "ca", label: "Canada" },
+    { value: "mx", label: "Mexico" },
   ];
 
-  return (
-    <Select
-      name="country"
-      label="Select country"
-      options={countries}
-      onChange={(value) => setCountry(value)}
-    />
-  );
+  return <Select name="country" label="Select country" options={countries} onChange={(value) => setCountry(value)} />;
 };
 ```
 

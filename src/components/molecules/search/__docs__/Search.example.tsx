@@ -1,6 +1,6 @@
+import '@__docs__/styles/Container.css';
+import '@__docs__/styles/ResponsiveWrapper.css';
 import { Header } from '@components/atoms';
-import styles from '@styles/storybook/Container.module.scss';
-import wrapperStyles from '@styles/storybook/ResponsiveWrapper.module.scss';
 import type { SearchProps } from '@types';
 import { type FC, useState } from 'react';
 import Search from '../Search';
@@ -19,12 +19,17 @@ export const SearchExample: FC<SearchProps> = ({ onSearch, ...rest }) => {
 
   return (
     <div
-      className={wrapperStyles.responsiveWrapper}
-      style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+      className="responsiveWrapper"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        color: 'var(--cl-base-font-color)',
+      }}
     >
       <Search {...rest} onSearch={handleSearch} onClear={handleClear} />
       {searchTerms.length > 0 && (
-        <div className={styles.container} style={{ margin: 0 }}>
+        <div className="container" style={{ margin: 0 }}>
           <Header as="h5">You searched for: </Header>
           {searchTerms.map((term) => (
             <div key={term}>{term}</div>

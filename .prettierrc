@@ -1,5 +1,5 @@
 {
-  "printWidth": 100,
+  "printWidth": 250,
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
@@ -8,7 +8,7 @@
   "bracketSpacing": true,
   "overrides": [
     {
-      "files": ["*.scss", "*.css"],
+      "files": ["*.mdx", "*.md"],
       "options": {
         "singleQuote": false
       }

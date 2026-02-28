@@ -1,0 +1,58 @@
+.cl-select-combobox {
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--cl-m-gap);
+  padding: var(--cl-m-gap);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: var(--cl-surface-a10);
+}
+
+.cl-select-combobox > span:nth-child(1) {
+  color: var(--cl-base-font-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-select-combobox > span:nth-child(1) {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-select-combobox > span:nth-child(1) {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-select-combobox:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: 2px;
+}
+
+.cl-select-combobox[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cl-select-combobox__icon {
+  transition: transform 0.3s ease;
+}
+
+.cl-select-combobox__icon_opened {
+  transform: rotate(180deg);
+}

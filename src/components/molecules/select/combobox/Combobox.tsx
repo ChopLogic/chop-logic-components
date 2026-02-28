@@ -1,9 +1,9 @@
-import ArrowDownIcon from '@assets/icons/svg/ArrowDownIcon';
-import ArrowUpIcon from '@assets/icons/svg/ArrowUpIcon';
+import { Icon } from '@components/atoms';
+import { ElementSize, IconName } from '@enums';
 import type { SelectValue } from '@types';
+import { getClassName } from '@utils';
 import type { FC } from 'react';
-
-import styles from './Combobox.module.scss';
+import './Combobox.css';
 
 type Props = {
   opened: boolean;
@@ -28,6 +28,11 @@ export const SelectCombobox: FC<Props> = ({
   disabled,
   required,
 }) => {
+  const iconClass = getClassName([
+    'cl-select-combobox__icon',
+    { 'cl-select-combobox__icon_opened': opened },
+  ]);
+
   return (
     <button
       type="button"
@@ -41,10 +46,10 @@ export const SelectCombobox: FC<Props> = ({
       onClick={onClick}
       disabled={disabled}
       aria-required={required}
-      className={styles.combobox}
+      className="cl-select-combobox"
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
-      {opened ? <ArrowUpIcon /> : <ArrowDownIcon />}
+      <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
     </button>
   );
 };

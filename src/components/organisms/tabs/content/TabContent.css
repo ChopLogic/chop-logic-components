@@ -1,0 +1,26 @@
+.cl-tab-content {
+  color: var(--cl-base-font-color);
+  border-top: var(--cl-light-border);
+  background-color: var(--cl-base-background-color);
+  padding: var(--cl-l-gap);
+  flex-grow: 1;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-tab-content {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-tab-content {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

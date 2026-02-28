@@ -1,0 +1,52 @@
+.cl-select-option {
+  padding: var(--cl-m-gap);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--cl-m-gap);
+  color: var(--cl-base-font-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-select-option {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-select-option {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-select-option:hover,
+.cl-select-option:active {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-select-option:focus-visible {
+  outline: var(--cl-outline-border);
+  outline-offset: -4px;
+}
+
+.cl-select-option svg {
+  color: var(--cl-base-font-color);
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+}
+
+.cl-select-option_selected svg {
+  color: var(--cl-accent-a0);
+}
+
+.cl-select-option_multi {
+  justify-content: flex-start;
+}

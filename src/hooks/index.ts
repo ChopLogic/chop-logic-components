@@ -10,6 +10,6 @@ export { useKeyPress } from './use-key-press/use-key-press';
 export { useModalFocusTrap } from './use-modal-focus-trap/use-modal-focus-trap';
 export { useRemainingTimer } from './use-remaining-timer/use-remaining-timer';
 export { useResetFormInput } from './use-reset-form-input/use-reset-form-input';
-export { useTheme } from './use-theme/use-chop-logic-theme';
+export { useTheme } from './use-theme/use-theme';
 export { useTooltipPosition } from './use-tooltip-position/use-tooltip-position';
 export { useWindowDimensions } from './use-window-dimensions/use-window-dimensions';

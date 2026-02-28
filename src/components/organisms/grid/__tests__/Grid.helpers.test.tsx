@@ -1,4 +1,4 @@
-import type { GridColumn, GridItem } from '@types';
+import type { GridColumn, GridItem, GridRowValue } from '@types';
 import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
@@ -81,7 +81,10 @@ describe('getGridRowValues', () => {
       <span>{(item[field] as string).toUpperCase()}</span>
     );
 
-    const result = getGridRowValues({ item, columns, renderDataItem });
+    const result = getGridRowValues({ item, columns, renderDataItem }) as [
+      GridRowValue,
+      GridRowValue,
+    ];
 
     expect((result[0].value as ReactElement<HTMLTableRowElement>).props.children).toBe('TEST-ID');
     expect((result[1].value as ReactElement<HTMLTableRowElement>).props.children).toBe(

@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as MenuStories from './Menu.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as MenuStories from "./Menu.stories";
 
 <Meta of={MenuStories} title="Menu" />
 
@@ -10,20 +10,20 @@ The `Menu` component provides an accessible navigation menu with support for bot
 ## Usage
 
 ```tsx
-import Menu, { OrientationMode } from 'chop-logic-components';
+import Menu, { OrientationMode } from "chop-logic-components";
 
 const AppMenu = () => {
   const menuItems = [
     {
-      id: 'home',
-      label: 'Home',
-      link: '/home',
+      id: "home",
+      label: "Home",
+      link: "/home",
       icon: IconName.Home,
     },
     {
-      id: 'products',
-      label: 'Products',
-      nestedItems: [{ id: 'product-1', label: 'Product 1', link: '/products/1' }],
+      id: "products",
+      label: "Products",
+      nestedItems: [{ id: "product-1", label: "Product 1", link: "/products/1" }],
     },
   ];
 

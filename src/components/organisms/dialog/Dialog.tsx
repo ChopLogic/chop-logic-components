@@ -5,7 +5,7 @@ import type { DialogProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 
-import styles from './Dialog.module.scss';
+import './Dialog.css';
 
 const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...rest }) => {
   const isMounted = useIsMounted(isOpened);
@@ -22,14 +22,14 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
 
   return (
     <Portal>
-      <div className={getClassName([styles.dialog, { [styles.dialog__closing]: isClosing }])}>
-        <div ref={modalRef} role="dialog" aria-modal="true" {...rest} className={styles.layout}>
+      <div className={getClassName(['cl-dialog', { 'cl-dialog_closing': isClosing }])}>
+        <div ref={modalRef} role="dialog" aria-modal="true" {...rest} className="cl-dialog__layout">
           <Button
-            icon={IconName.Cancel}
+            icon={IconName.X}
             view={ButtonView.Icon}
             label="Close modal window"
             onClick={onClose}
-            className={styles.layout_button}
+            className="cl-dialog__button"
           />
           <header>
             <Header as="h3" icon={icon}>

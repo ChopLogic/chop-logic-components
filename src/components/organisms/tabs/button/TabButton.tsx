@@ -1,10 +1,10 @@
 import { Button } from '@components/atoms';
-import { ButtonView, IconName, OrientationMode } from '@enums';
+import { ButtonView, ElementSize, IconName, OrientationMode } from '@enums';
 import { getClassName } from '@utils';
 import { type FC, useEffect, useId, useRef, useState } from 'react';
 
 import { TabEditInput } from '../edit-input/TabEditInput';
-import styles from './TabButton.module.scss';
+import './TabButton.css';
 
 type Props = {
   title: string;
@@ -44,14 +44,14 @@ export const TabButton: FC<Props> = ({
   const hasAdditionalButtons = isEditToggleVisible || isDeleteButtonVisible;
 
   const wrapperClass = getClassName([
-    styles.tab_wrapper,
+    'cl-tab__wrapper',
     {
-      [styles.tab_wrapper__disabled]: isDisabled,
-      [styles.tab_wrapper__vertical]: mode === OrientationMode.Vertical,
-      [styles.tab_wrapper__selected]: isSelected,
-      [styles.tab_wrapper__stretched]: stretched,
-      [styles.tab_wrapper__editable]: editable,
-      [styles.tab_wrapper__inactive]: !isSelected,
+      'cl-tab__wrapper_disabled': isDisabled,
+      'cl-tab__wrapper_vertical': mode === OrientationMode.Vertical,
+      'cl-tab__wrapper_selected': isSelected,
+      'cl-tab__wrapper_stretched': stretched,
+      'cl-tab__wrapper_editable': editable,
+      'cl-tab__wrapper_inactive': !isSelected,
     },
   ]);
 
@@ -140,29 +140,31 @@ export const TabButton: FC<Props> = ({
             onClick={handleTabClick}
             aria-selected={isSelected}
             aria-controls={tabPanelId}
-            className={styles.tab}
+            className="cl-tab"
             disabled={isDisabled}
           >
             {editValue}
           </button>
           {hasAdditionalButtons && (
-            <span className={styles.tab_buttons}>
+            <span className="cl-tab__buttons">
               {isEditToggleVisible && (
                 <Button
                   view={ButtonView.Icon}
-                  icon={IconName.Edit}
+                  icon={IconName.Edit3}
                   onClick={toggleEditMode}
                   label="Edit tab"
                   tooltip="Edit tab"
+                  iconSize={ElementSize.Small}
                 />
               )}
               {isDeleteButtonVisible && (
                 <Button
                   view={ButtonView.Icon}
-                  icon={IconName.Delete}
+                  icon={IconName.Trash2}
                   onClick={() => onTabDelete?.(tabId)}
                   label="Delete tab"
                   tooltip="Delete tab"
+                  iconSize={ElementSize.Small}
                 />
               )}
             </span>

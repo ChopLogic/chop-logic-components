@@ -136,7 +136,7 @@ Please use the following branch name conventions:
 
 Please follow these guidelines to maintain code consistency:
 
-- Follow the project's existing coding style (Prettier for SCSS and MD(X) files and Biome.js for everything else).
+- Follow the project's existing coding style (Prettier for MD(X) files and Biome.js for everything else).
 - Write clear and concise documentation.
 - Prefer functional components and hooks.
 - Use TypeScript for type safety.
@@ -151,7 +151,7 @@ Please follow these guidelines to maintain code consistency:
 - `src/components/hocs/`: Higher-order components (e.g., `withTooltip()`).
 - `src/components/contexts/`: React contexts for shared state (e.g., `ThemeContext`, `FormContext`).
 - `src/hooks/`: Custom hooks (e.g., `use-tooltip-position`, `use-key-press`).
-- `src/styles/`: SCSS files for common and reusable rules, such as themes, typography, mixins, and variables.
+- `src/styles/`: Pure CSS files with CSS variables for theming, typography, and design tokens (main.css, icons.css).
 - `src/enums/`: Enumerations (e.g., `button-view.ts`).
 - `src/types/`: Shared TypeScript type definitions (e.g., `alert.ts`).
 - `src/utils/`: Utility functions (e.g., `get-class-name.ts`).
@@ -160,7 +160,7 @@ Please follow these guidelines to maintain code consistency:
 - Components: `PascalCase.tsx` (e.g., `Search.tsx`)
 - Hooks: `camelCase.ts` (e.g., `useDebounce.ts`)
 - Utilities: `camelCase.ts` (e.g., `getClassName.ts`)
-- Styles: `Component.module.scss`
+- Styles: `Component.css`
 - Tests: `__tests__/Component.test.tsx`
 - Stories: `__docs__/Component.stories.tsx`
 - Documentation: `__docs__/Component.docs.mdx`
@@ -168,9 +168,9 @@ Please follow these guidelines to maintain code consistency:
 
 ### Base Component Structure
 ```typescript
+import './Component.css';
 import { getClassName } from '@utils';
 import { FC } from 'react';
-import styles from './Component.module.scss';
 
 export interface ComponentProps extends ChopLogicComponentProps {
   // Required props first
@@ -189,10 +189,11 @@ const Component: FC<ComponentProps> = ({
   ...rest
 }) => {
   const componentClass = getClassName([
-    styles.component,
+    'cl-component',
     className,
     {
-      [styles.component__modifier]: condition,
+      'cl-component_disabled': isDisabled,
+      'cl-component__modifier': condition,
     },
   ]);
 
@@ -233,50 +234,82 @@ const handleKeyDown = (event: React.KeyboardEvent) => {
 ```
 
 ### Styling Conventions
-```scss
-@use "/src/styles/breakpoints";
-@use "/src/styles/typography";
-@use "/src/styles/mixins";
 
-// SCSS Module Structure
-.component {
-  // Base styles
-  color: var(--cl-primary-color);
-  
-  &__modifier {
-    // Modifier styles
-    @include mixins.disabled();
-  }
-  
-  &--state {
-    // State styles
-  }
-  
-  // Child elements
-  &_child {
-    // Child styles
-    @include typography.core-font(base);
-  }
+The library uses **pure CSS with BEM naming** and **CSS variables** for theming. Follow these patterns:
 
-  // Responsive design
-  @include breakpoints.md-up {
-    // Tablet styles
-  }
+```css
+/* Component.css - Use BEM naming with cl- prefix */
+
+.cl-component {
+  /* Base styles */
+  color: var(--cl-base-font-color);
+  background-color: var(--cl-base-background-color);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+}
+
+/* Element - part of component */
+.cl-component__inner {
+  display: flex;
+  gap: var(--cl-s-gap);
+}
+
+/* Modifier - variation of component */
+.cl-component_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: hsla(0, 0%, 0%, 0.3);
+}
+
+.cl-component_large {
+  padding: var(--cl-l-gap);
+  font-size: var(--cl-typography-h1-desktop);
+}
+
+/* State - interaction state */
+.cl-component:hover:not(.cl-component_disabled) {
+  background-color: var(--cl-surface-tonal-a0);
+}
+
+.cl-component:focus {
+  outline: 2px solid var(--cl-accent-a0);
+  outline-offset: 2px;
+}
+
+/* Dark theme support via CSS variables */
+:root.cl-components-dark-theme .cl-component {
+  color: var(--cl-base-font-color); /* CSS variable overridden in dark theme */
+  background-color: var(--cl-base-background-color);
 }
 ```
 
+**Key Guidelines:**
+- Use BEM naming: `.cl-block__element_modifier`
+- Leverage CSS variables from `main.css` (colors, spacing, fonts, sizes)
+- Avoid hard-coded values
+- Support both light and dark themes via CSS variables
+- Keep styles component-scoped in separate CSS files
+
 ### getClassName Utility
+
+Use the `getClassName` utility for conditional class names. It accepts an array of strings and conditional objects:
+
 ```typescript
 // Always use for conditional classes
 const className = getClassName([
-  styles.base,
-  className, // User-provided classes
+  'cl-component', // Base class
+  className,      // User-provided classes
   {
-    [styles.active]: isActive,
-    [styles.disabled]: isDisabled,
+    'cl-component_active': isActive,
+    'cl-component_disabled': isDisabled,
+    'cl-component__large': size === 'large',
   },
 ]);
 ```
+
+This ensures proper class merging and prevents class name conflicts.
 
 ### Hook Development Pattern
 ```typescript
@@ -296,6 +329,38 @@ export const useCustomHook = (params: HookParams): HookReturn => {
   };
 };
 ```
+
+## Styling with CSS Variables
+
+Always use CSS variables from `main.css` in your component styles:
+
+**Theme Colors:**
+- `--cl-base-font-color` - Primary text/foreground color
+- `--cl-base-background-color` - Main background color
+- `--cl-accent-a0` - Primary accent color for highlights
+- `--cl-accent-a10` - Primary color variant for interactive states
+- `--cl-surface-a10` - Surface color for component backgrounds
+- `--cl-surface-tonal-a0` - Tonal surface color for highlights
+- `--cl-success-a0` - Success state color
+- `--cl-warning-a0` - Warning state color
+- `--cl-danger-a0` - Danger/error state color
+- `--cl-info-a0` - Info state color
+
+**Spacing:**
+- `--cl-xs-gap` (2px), `--cl-s-gap` (4px), `--cl-m-gap` (8px), `--cl-l-gap` (16px), `--cl-xl-gap` (32px)
+
+**Typography:**
+- `--cl-core-font` - Primary font
+- `--cl-monospace-font` - Monospace font
+- `--cl-typography-base-mobile` - Base font size for mobile screens
+- `--cl-typography-base-desktop` - Base font size for desktop screens
+
+**Component Sizes:**
+- `--cl-icon-size` (20px)
+- `--cl-border-radius` (4px)
+- `--cl-z-index-base`, `--cl-z-index-menu`, `--cl-z-index-popup`, `--cl-z-index-modal`
+
+CSS variables automatically adapt to light/dark themes. See [Styling and CSS](https://choplogic.github.io/chop-logic-components/?path=/docs/styling-css--docs) documentation.
 
 ## Documentation Standards
 

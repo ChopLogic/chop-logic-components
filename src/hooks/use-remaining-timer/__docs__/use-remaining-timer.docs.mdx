@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Story from './use-remaining-timer.stories';
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Story from "./use-remaining-timer.stories";
 
 <Meta of={Story} title="Hooks/useRemainingTimer" />
 
@@ -18,8 +18,8 @@ A React hook that manages a countdown timer with auto-close functionality. It tr
 ## Usage
 
 ```tsx
-import { useRemainingTimer } from 'chop-logic-components';
-import { useRef, useState } from 'react';
+import { useRemainingTimer } from "chop-logic-components";
+import { useRef, useState } from "react";
 
 const AutoCloseAlert = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -41,20 +41,20 @@ const AutoCloseAlert = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        padding: '1rem',
-        border: '1px solid #2196f3',
-        borderRadius: '4px',
-        background: '#e3f2fd',
+        padding: "1rem",
+        border: "1px solid #2196f3",
+        borderRadius: "4px",
+        background: "#e3f2fd",
       }}
     >
       <div>Alert message here</div>
       <div
         style={{
-          height: '3px',
-          background: '#2196f3',
-          marginTop: '0.5rem',
+          height: "3px",
+          background: "#2196f3",
+          marginTop: "0.5rem",
           width: `${remainingPercentage}%`,
-          transition: 'width 0.05s linear',
+          transition: "width 0.05s linear",
         }}
       />
     </div>

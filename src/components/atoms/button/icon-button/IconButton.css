@@ -1,0 +1,31 @@
+.cl-icon-button {
+  border: none;
+  cursor: pointer;
+  padding: var(--cl-m-gap);
+  border-radius: 50%;
+  background: transparent;
+  width: fit-content;
+  transition: all 150ms ease;
+}
+
+.cl-icon-button__icon::before {
+  color: var(--cl-base-font-color);
+}
+
+.cl-icon-button:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px hsla(0, 0%, 0%, 0.15));
+}
+
+.cl-icon-button:hover .cl-icon-button__icon::before {
+  color: var(--cl-accent-a0);
+}
+
+.cl-icon-button:active {
+  transform: scale(0.95);
+}
+
+.cl-icon-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}

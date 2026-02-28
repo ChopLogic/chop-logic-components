@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as TabsStories from './Tabs.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as TabsStories from "./Tabs.stories";
 
 <Meta of={TabsStories} title="Tabs" />
 
@@ -10,18 +10,18 @@ The `Tabs` component provides an accessible tabbed interface with support for bo
 ## Usage
 
 ```tsx
-import Tabs, { OrientationMode } from 'chop-logic-components';
+import Tabs, { OrientationMode } from "chop-logic-components";
 
 const ProductTabs = () => {
   const tabs = [
     {
-      id: 'details',
-      title: 'Details',
+      id: "details",
+      title: "Details",
       content: <ProductDetails />,
     },
     {
-      id: 'specs',
-      title: 'Specifications',
+      id: "specs",
+      title: "Specifications",
       content: <ProductSpecs />,
     },
   ];

@@ -5,7 +5,7 @@ import { type FC, useState } from 'react';
 
 import { TabContent } from './content/TabContent';
 import { TabList } from './list/TabList';
-import styles from './Tabs.module.scss';
+import './Tabs.css';
 
 const Tabs: FC<TabsProps> = ({
   tabs: initialTabs,
@@ -31,9 +31,9 @@ const Tabs: FC<TabsProps> = ({
   const defaultId = defaultTabId && tabIds.includes(defaultTabId) ? defaultTabId : tabIds[0];
   const [selectedTabId, setSelectedTabId] = useState(defaultId);
   const tabsClass = getClassName([
-    styles.tabs,
+    'cl-tabs',
     className,
-    { [styles.tabs__vertical]: mode === OrientationMode.Vertical },
+    { 'cl-tabs_vertical': mode === OrientationMode.Vertical },
   ]);
 
   const handleTabSelect = (id: string) => {

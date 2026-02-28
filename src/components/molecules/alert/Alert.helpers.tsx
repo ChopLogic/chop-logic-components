@@ -28,13 +28,13 @@ export function getAlertIcon(mode: AlertMode, icon?: IconName): IconName | undef
     case AlertMode.Info:
       return IconName.Info;
     case AlertMode.Warning:
-      return IconName.Warning;
+      return IconName.AlertTriangle;
     case AlertMode.Error:
-      return IconName.Error;
+      return IconName.XOctagon;
     case AlertMode.Success:
-      return IconName.CheckboxChecked;
+      return IconName.CheckCircle;
     case AlertMode.Help:
-      return IconName.Help;
+      return IconName.LifeBuoy;
     default:
       return;
   }

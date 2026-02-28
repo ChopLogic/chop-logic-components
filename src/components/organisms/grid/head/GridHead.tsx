@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { GridHeaderCell } from '../header-cell/HeaderCell';
 import { SelectAllGridRowsCell } from '../select-all-grid-rows-cell/SelectAllGridRowsCell';
-import styles from './GridHead.module.scss';
+import './GridHead.css';
 
 type GridHeadProps = {
   columns: GridColumn[];
@@ -25,8 +25,8 @@ export const GridHead: FC<GridHeadProps> = ({
   isAllCheckboxDisabled = false,
 }) => {
   return (
-    <thead className={styles.head}>
-      <tr className={styles.head_row}>
+    <thead className="cl-grid-head">
+      <tr className="cl-grid-head__row">
         {selectable && (
           <SelectAllGridRowsCell
             isAllSelected={isAllSelected}

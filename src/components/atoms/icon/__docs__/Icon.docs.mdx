@@ -1,7 +1,7 @@
-import { Meta, IconGallery, IconItem, Controls } from '@storybook/addon-docs/blocks';
-import * as IconStories from './Icon.stories';
-import { Icon } from '@components/atoms';
-import { IconName } from '@enums';
+import { Meta, IconGallery, IconItem, Controls } from "@storybook/addon-docs/blocks";
+import * as IconStories from "./Icon.stories";
+import { Icon } from "@components/atoms";
+import { ElementSize, IconName } from "@enums";
 
 <Meta of={IconStories} title="Icon" />
 
@@ -14,7 +14,7 @@ The `Icon` component allows you to render one of the icons from the list as an S
 <IconGallery>
   {Object.entries(IconName).map(([key, value]) => (
     <IconItem name={key} key={key}>
-      <Icon name={value} />
+      <Icon name={value} size={ElementSize.Small} />
     </IconItem>
   ))}
 </IconGallery>
@@ -22,7 +22,7 @@ The `Icon` component allows you to render one of the icons from the list as an S
 ## Usage
 
 ```tsx
-import { Icon, IconName } from 'chop-logic-components';
+import { Icon, IconName } from "chop-logic-components";
 
 const MyButton = () => (
   <button>

@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as CheckboxStories from './Checkbox.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as CheckboxStories from "./Checkbox.stories";
 
 <Meta of={CheckboxStories} title="Checkbox" />
 
@@ -14,14 +14,9 @@ The `Checkbox` component is a customizable, accessible checkbox input that suppo
 When `stateless` is false or omitted, the component manages its own state internally. Perfect for simple forms where you don't need external control.
 
 ```tsx
-import Checkbox from 'chop-logic-components';
+import Checkbox from "chop-logic-components";
 
-<Checkbox
-  name="newsletter"
-  label="Subscribe to newsletter"
-  defaultChecked={false}
-  onChange={(event) => console.log(event)}
-/>;
+<Checkbox name="newsletter" label="Subscribe to newsletter" defaultChecked={false} onChange={(event) => console.log(event)} />;
 ```
 
 ### Stateless
@@ -29,17 +24,11 @@ import Checkbox from 'chop-logic-components';
 When `stateless` is true, the component is fully controlled via the `checked` prop. You manage state externally and provide all handlers.
 
 ```tsx
-import Checkbox from 'chop-logic-components';
+import Checkbox from "chop-logic-components";
 
 const [isSubscribed, setIsSubscribed] = useState(false);
 
-<Checkbox
-  name="newsletter"
-  label="Subscribe to newsletter"
-  stateless
-  checked={isSubscribed}
-  onChange={(event) => setIsSubscribed(event.target.checked)}
-/>;
+<Checkbox name="newsletter" label="Subscribe to newsletter" stateless checked={isSubscribed} onChange={(event) => setIsSubscribed(event.target.checked)} />;
 ```
 
 ## Best Practices

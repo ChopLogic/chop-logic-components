@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Stories from './use-modal-focus-trap.stories';
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Stories from "./use-modal-focus-trap.stories";
 
 <Meta of={Stories} title="Hooks/useModalFocusTrap" />
 
@@ -10,8 +10,8 @@ The `useModalFocusTrap` hook ensures that focus is trapped within an open modal 
 ### Usage
 
 ```tsx
-import React, { useRef, useState } from 'react';
-import { useModalFocusTrap } from 'chop-logic-components';
+import React, { useRef, useState } from "react";
+import { useModalFocusTrap } from "chop-logic-components";
 
 const ExampleModal = () => {
   const modalRef = useRef<HTMLDivElement>(null);

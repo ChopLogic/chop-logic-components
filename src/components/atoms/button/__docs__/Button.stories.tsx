@@ -1,4 +1,4 @@
-import { ButtonView, IconName } from '@enums';
+import { ButtonView, ElementSize, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import Button from '../Button';
@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
     view: ButtonView.Primary,
     disabled: false,
     extended: false,
+    onClick: () => console.log('Button clicked!'),
   },
   argTypes: {
     // Content
@@ -47,6 +48,15 @@ const meta: Meta<typeof Button> = {
       description: 'Whether the button should take full available width',
       table: {
         type: { summary: 'boolean' },
+        category: 'Styling',
+      },
+    },
+    iconSize: {
+      control: 'select',
+      options: Object.values(ElementSize),
+      description: 'The size of the icon',
+      table: {
+        type: { summary: 'ElementSize' },
         category: 'Styling',
       },
     },
@@ -155,15 +165,6 @@ const meta: Meta<typeof Button> = {
         category: 'Identification',
       },
     },
-    // Validation
-    required: {
-      control: 'boolean',
-      description: 'Whether the button is required (for form validation)',
-      table: {
-        type: { summary: 'boolean' },
-        category: 'Validation',
-      },
-    },
     // Styling
     className: {
       control: 'text',
@@ -199,23 +200,32 @@ export const Secondary: Story = {
   args: {
     text: 'Learn more...',
     view: ButtonView.Secondary,
-    icon: IconName.Forward,
+    icon: IconName.ChevronsRight,
   },
 };
 
 export const Icon: Story = {
   args: {
     view: ButtonView.Icon,
-    icon: IconName.Cancel,
-    label: 'Cancel',
+    icon: IconName.Star,
+    label: 'Favorite',
   },
 };
 
 export const WithTooltip: Story = {
   args: {
     text: 'Hover On Me',
-    view: ButtonView.Secondary,
+    view: ButtonView.Primary,
     tooltip: 'This button does nothing...',
+  },
+};
+
+export const IconWithTooltip: Story = {
+  args: {
+    view: ButtonView.Icon,
+    icon: IconName.ThumbsUp,
+    label: 'Thumbs Up',
+    tooltip: 'Like this!',
   },
 };
 
@@ -223,7 +233,7 @@ export const Disabled: Story = {
   args: {
     text: 'Disabled',
     view: ButtonView.Primary,
-    icon: IconName.Clear,
+    icon: IconName.PhoneOff,
     disabled: true,
   },
 };

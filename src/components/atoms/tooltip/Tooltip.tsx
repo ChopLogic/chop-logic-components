@@ -1,11 +1,10 @@
 import { Portal } from '@components/atoms';
-import { TooltipContainer } from '@enums';
+import { SemanticColor, TooltipContainer } from '@enums';
 import type { TooltipProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC, MouseEvent } from 'react';
-
+import './Tooltip.css';
 import { useTooltipController } from './Tooltip.controller';
-import styles from './Tooltip.module.scss';
 
 const Tooltip: FC<TooltipProps> = ({
   children,
@@ -17,6 +16,7 @@ const Tooltip: FC<TooltipProps> = ({
   visibleOn = 'hover',
   autoClose = false,
   autoCloseDelay = 3000,
+  color = SemanticColor.Default,
   ...rest
 }) => {
   const ContainerComponent = containerTag;
@@ -32,7 +32,11 @@ const Tooltip: FC<TooltipProps> = ({
     wrapperRef,
     tooltipRef,
   } = useTooltipController({ id, autoClose, autoCloseDelay });
-  const tooltipClass = getClassName([styles.tooltip, className]);
+  const tooltipClass = getClassName([
+    'cl-tooltip',
+    className,
+    { [`cl-tooltip_${color}`]: color !== SemanticColor.Default },
+  ]);
 
   return (
     <ContainerComponent

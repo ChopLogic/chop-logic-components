@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import * as Stories from './use-tooltip-position.stories';
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Stories from "./use-tooltip-position.stories";
 
 <Meta of={Stories} title="Hooks/useTooltipPosition" />
 
@@ -10,8 +10,8 @@ The `useTooltipPosition` hook calculates and manages the position of a tooltip r
 ### Usage
 
 ```tsx
-import React, { useRef, useState } from 'react';
-import { useTooltipPosition } from 'chop-logic-components';
+import React, { useRef, useState } from "react";
+import { useTooltipPosition } from "chop-logic-components";
 
 const ExampleComponent = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -28,11 +28,11 @@ const ExampleComponent = () => {
         <div
           ref={tooltipRef}
           style={{
-            position: 'absolute',
+            position: "absolute",
             top: `${top}px`,
             left: `${left}px`,
-            border: '1px solid black',
-            padding: '10px',
+            border: "1px solid black",
+            padding: "10px",
           }}
         >
           Tooltip Content

@@ -1,5 +1,5 @@
 import type { Tooltip } from '@components/atoms';
-import { TooltipContainer } from '@enums';
+import { SemanticColor, TooltipContainer } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TooltipExample } from './Tooltip.example';
@@ -115,6 +115,16 @@ export const VisibleOnHover: Story = {
         type: { summary: 'string' },
         defaultValue: { summary: 'undefined' },
         category: 'HTML Attributes',
+      },
+    },
+    color: {
+      control: 'select',
+      options: Object.values(SemanticColor),
+      description: 'Semantic color of the tooltip',
+      table: {
+        defaultValue: { summary: 'default' },
+        type: { summary: 'SemanticColor' },
+        category: 'Styling',
       },
     },
   },

@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as SearchStories from './Search.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as SearchStories from "./Search.stories";
 
 <Meta of={SearchStories} title="Molecules/Search" />
 
@@ -10,28 +10,20 @@ The `Search` component provides a versatile search input with debounce functiona
 ## Usage
 
 ```tsx
-import Search from 'chop-logic-components';
+import Search from "chop-logic-components";
 
 const ProductSearch = () => {
   const handleSearch = (searchTerm: string) => {
-    console.log('Searching for:', searchTerm);
+    console.log("Searching for:", searchTerm);
     // Perform API call or filter logic here
   };
 
   const handleClear = () => {
-    console.log('Search cleared');
+    console.log("Search cleared");
     // Reset search results here
   };
 
-  return (
-    <Search
-      label="Search products"
-      onSearch={handleSearch}
-      onClear={handleClear}
-      placeholder="Search by name or category..."
-      debounceDelay={300}
-    />
-  );
+  return <Search label="Search products" onSearch={handleSearch} onClear={handleClear} placeholder="Search by name or category..." debounceDelay={300} />;
 };
 ```
 

@@ -4,55 +4,37 @@ exports[`GridHead > should match the snapshot 1`] = `
 <DocumentFragment>
   <table>
     <thead
-      class="_head_3e15c7"
+      class="cl-grid-head"
     >
       <tr
-        class="_head_row_3e15c7"
+        class="cl-grid-head__row"
       >
-        <th
-          class="_headerCell_849111"
-        >
+        <th>
           <div
-            class="_checkbox_9bd529"
+            class="cl-grid-checkbox"
           >
             <input
-              class="_checkbox_input_9bd529"
+              class="cl-grid-checkbox__input"
               id="select_all_test-grid-id"
               type="checkbox"
             />
             <label
-              class="_label_5091d6"
+              class="cl-label"
               for="select_all_test-grid-id"
             >
-              <svg
-                class="_icon_afc5be"
-                fill="currentColor"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14H2V2h12v12z"
-                  fill="currentColor"
-                />
-              </svg>
+              <span
+                class="cl-icon chop-icon__square cl-icon_extra-small"
+              />
             </label>
           </div>
         </th>
-        <th
-          class="_headerCell_b798d8"
-        >
+        <th>
           Col 1
         </th>
-        <th
-          class="_headerCell_b798d8"
-        >
+        <th>
           Col 2
         </th>
-        <th
-          class="_headerCell_b798d8"
-        >
+        <th>
           Col 3
         </th>
       </tr>

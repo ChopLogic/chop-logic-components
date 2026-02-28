@@ -1,5 +1,5 @@
-import { Meta, Controls } from '@storybook/addon-docs/blocks';
-import * as ErrorMessageStories from './ErrorMessage.stories';
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as ErrorMessageStories from "./ErrorMessage.stories";
 
 <Meta of={ErrorMessageStories} title="ErrorMessage" />
 
@@ -10,12 +10,12 @@ A validation error message component designed to display form validation errors 
 ## Usage
 
 ```tsx
-import ErrorMessage from 'chop-logic-components';
+import ErrorMessage from "chop-logic-components";
 
 const AgeInput = () => {
   const [age, setAge] = React.useState(0);
-  const errorId = 'age-input-error';
-  const errorMessage = 'Enter a number between 1 and 99';
+  const errorId = "age-input-error";
+  const errorMessage = "Enter a number between 1 and 99";
   const isErrorMessageVisible = age < 1 || age > 99;
 
   return (

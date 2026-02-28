@@ -1,8 +1,8 @@
 import { Icon } from '@components/atoms';
-import type { IconName } from '@enums';
+import { ElementSize, type IconName } from '@enums';
 import type { FC } from 'react';
-
-import styles from './Label.module.scss';
+import './Label.css';
+import { getClassName } from '@utils';
 
 type LabelProps = {
   label: string;
@@ -11,6 +11,10 @@ type LabelProps = {
   isTextHidden?: boolean;
   icon?: IconName;
   iconPosition?: 'left' | 'right';
+  iconSize?: ElementSize;
+  disabled?: boolean;
+  className?: string;
+  testId?: string;
 };
 
 const Label: FC<LabelProps> = ({
@@ -20,20 +24,30 @@ const Label: FC<LabelProps> = ({
   icon,
   iconPosition,
   isTextHidden = false,
+  iconSize = ElementSize.ExtraSmall,
+  disabled = false,
+  className,
+  testId,
 }) => {
   const isLeftIconVisible = !!icon && iconPosition === 'left';
   const isRightIconVisible = !!icon && iconPosition === 'right';
+  const IconElement = <Icon name={icon} size={iconSize} />;
+  const labelClass = getClassName(['cl-label', className, { 'cl-label_disabled': disabled }]);
 
   return (
-    <label className={styles.label} htmlFor={inputId}>
-      {isLeftIconVisible && <Icon name={icon} />}
+    <label className={labelClass} htmlFor={inputId} data-testid={testId}>
+      {isLeftIconVisible && IconElement}
       {!isTextHidden && (
-        <span>
+        <span className="cl-label__text">
           {label}
-          {required && <abbr title="required">*</abbr>}
+          {required && (
+            <abbr className="cl-label__required" title="required">
+              *
+            </abbr>
+          )}
         </span>
       )}
-      {isRightIconVisible && <Icon name={icon} />}
+      {isRightIconVisible && IconElement}
     </label>
   );
 };

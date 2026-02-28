@@ -3,7 +3,7 @@ import type { TextInputProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
 
-import styles from './TextInput.module.scss';
+import './TextInput.css';
 import TextInputButtons from './TextInputButtons';
 
 const TextInputStateless: FC<TextInputProps> = ({
@@ -33,7 +33,7 @@ const TextInputStateless: FC<TextInputProps> = ({
   const errorId = `${name}-error`;
   const [passwordShown, setPasswordShown] = useState(false);
   const isPasswordButtonVisible = type === 'password';
-  const inputClass = getClassName([styles.wrapper, className]);
+  const inputClass = getClassName(['cl-text-input', className]);
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -82,7 +82,7 @@ const TextInputStateless: FC<TextInputProps> = ({
           errorId={errorId}
           message={errorMessage}
           visible={!!errorMessage}
-          className={styles.errorMessage}
+          className="cl-text-input__error-message"
         />
       </Input>
     </div>

@@ -5,14 +5,14 @@ import {
   type PropsWithChildren,
 } from 'react';
 
-import styles from './Input.module.scss';
+import './Input.css';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & PropsWithChildren;
 
 const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ children, ...rest }, ref) => {
   return (
-    <div className={styles.wrapper}>
-      <input {...rest} className={styles.input} ref={ref} />
+    <div className="cl-input__wrapper">
+      <input {...rest} className="cl-input__field" ref={ref} />
       {children}
     </div>
   );

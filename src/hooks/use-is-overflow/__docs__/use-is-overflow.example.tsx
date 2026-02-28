@@ -1,4 +1,4 @@
-import styles from '@styles/storybook/Container.module.scss';
+import '@__docs__/styles/Container.css';
 import { type CSSProperties, type FC, useRef } from 'react';
 
 import { useIsOverflow } from '../use-is-overflow';
@@ -17,7 +17,7 @@ export const UseIsOverflowExample: FC<{ text: string }> = ({ text }) => {
   const isWidthOverflow = useIsOverflow({ ref: containerRef, dimension: 'width', isMounted: true });
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <div style={containerStyles} ref={containerRef}>
         {text}
       </div>

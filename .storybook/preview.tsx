@@ -1,12 +1,15 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
-import { ThemeProvider } from '../src/components/contexts';
-import { ThemeMode } from '../src/enums';
+import {
+  CL_DARK_THEME_CLASS,
+  CL_LIGHT_THEME_CLASS,
+  ThemeProvider,
+} from '../src/components/contexts';
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        dark: { name: 'dark', value: '#2E1F27' },
+        dark: { name: 'dark', value: '#000000' },
         light: { name: 'light', value: '#FFFFFF' },
       },
     },
@@ -21,17 +24,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Introduction',
-          'Theming',
-          'Contributing',
-          'Changelog',
-          'Atoms',
-          'Molecules',
-          'Organisms',
-          'Hooks',
-          '*',
-        ],
+        order: ['Introduction', 'Atoms', 'Molecules', 'Organisms', 'Hooks', 'Theming', '*'],
       },
     },
   },
@@ -51,7 +44,7 @@ const STORY_WRAPPER_STYLES = {
 const withTheme: Decorator = (StoryFn, context) => {
   const { backgrounds } = context.globals;
   const background = backgrounds?.value ?? 'light';
-  const storybookMode = background === 'dark' ? ThemeMode.Dark : ThemeMode.Light;
+  const storybookMode = background === 'dark' ? CL_DARK_THEME_CLASS : CL_LIGHT_THEME_CLASS;
 
   return (
     <ThemeProvider injectedMode={storybookMode}>

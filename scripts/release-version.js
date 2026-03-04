@@ -33,8 +33,11 @@ try {
   console.log(`🏷️ Creating annotated tag ${tag}...`);
   runCommand('git', ['tag', '-a', tag, '-m', `Release ${tag}`]);
 
-  console.log(`🚀 Pushing to origin...`);
-  runCommand('git', ['push', 'origin', 'main', '--follow-tags']);
+  console.log(`🚀 Pushing branch to origin...`);
+  runCommand('git', ['push', 'origin', 'main']);
+
+  console.log(`🚀 Pushing tag to origin...`);
+  runCommand('git', ['push', 'origin', tag]);
 
   console.log(`✅ Release prepared and pushed as ${tag}`);
 } catch (error) {

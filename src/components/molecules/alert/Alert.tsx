@@ -31,6 +31,7 @@ const Alert: FC<AlertProps> = ({
     isHovered,
     onClose,
     autoCloseDelay,
+    autoClose,
   });
 
   if (!isMounted) return null;

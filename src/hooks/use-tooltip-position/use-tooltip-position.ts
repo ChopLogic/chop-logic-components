@@ -31,7 +31,8 @@ export const useTooltipPosition = ({
       if (!rect) return;
 
       let top = Math.round(rect.bottom + spacing);
-      let left = Math.round(rect.left);
+      // Center the tooltip horizontally under the wrapper
+      let left = Math.round(rect.left + rect.width / 2 - tooltipWidth / 2);
 
       // Adjust position if tooltip goes beyond the viewport
       if (top + tooltipHeight > window.innerHeight) {

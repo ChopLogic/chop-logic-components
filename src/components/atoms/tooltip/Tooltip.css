@@ -12,6 +12,11 @@
   pointer-events: none;
   white-space: nowrap;
   animation: cl-fade-in ease 400ms;
+  max-width: 80vw;
+  text-wrap: wrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   /* Typography: core font small */
   font-family: var(--cl-core-font);
@@ -51,6 +56,7 @@
 @media (min-width: 640px) {
   .cl-tooltip {
     font-size: var(--cl-typography-small-tablet);
+    max-width: 60vw;
   }
 }
 
@@ -58,5 +64,6 @@
 @media (min-width: 1024px) {
   .cl-tooltip {
     font-size: var(--cl-typography-small-desktop);
+    max-width: 30vw;
   }
 }

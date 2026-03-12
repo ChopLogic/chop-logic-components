@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
-import { coverageConfigDefaults } from 'vitest/config';
+import { configDefaults, coverageConfigDefaults } from 'vitest/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -83,6 +83,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
+    exclude: [...configDefaults.exclude, '.stryker-tmp/*'],
     coverage: {
       reporter: ['text', 'lcov', 'clover'],
       exclude: [

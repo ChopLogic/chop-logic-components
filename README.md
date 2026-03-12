@@ -18,6 +18,10 @@
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
 
+## 📚 About This Library
+
+Chop Logic Components follows **Atomic Design** principles with **Fully Typed TypeScript** components. All styling uses **pure CSS with CSS variables** (BEM naming convention with `cl-` prefix) for consistent theming across light and dark modes. Built for developer productivity with comprehensive Storybook documentation and accessibility-first approach.
+
 ## ✨ Features
 
 Chop Logic is designed to speed up development by providing reusable, accessible, and highly customizable components.
@@ -61,6 +65,7 @@ yarn add chop-logic-components
 | `test`            | Runs unit tests using Vitest in watch mode (interactive).                                                                                             |
 | `test:ci`         | Runs tests once in CI mode and allows empty test sets.                                                                                                |
 | `coverage`        | Runs tests and generates a coverage report using Vitest.                                                                                              |
+| `test:mutation`   | Runs mutation testing using Stryker to verify test quality.                                                                                           |
 | `release:version` | Bumps the version (`patch`, `minor`, or `major`), commits the change, creates a Git tag, and pushes to `main`. Usage: `npm run release:version patch` |
 
 ## 🛠 Contributing

@@ -1,1 +1,0 @@
-import{r as o}from"./iframe-Cr_R5OpT.js";const a=({ref:e,keyCode:t,onKeyPress:r})=>{o.useEffect(()=>{const s=n=>{n?.code===t&&e?.current&&r()};return document.addEventListener("keydown",s,!1),()=>{document.removeEventListener("keydown",s,!1)}},[e,t,r])};export{a as u};

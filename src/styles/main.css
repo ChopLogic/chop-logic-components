@@ -141,7 +141,6 @@
   --cl-danger-border: 1px solid #d94a4a;
   --cl-success-border: 1px solid #28be8a;
   --cl-warning-border: 1px solid #dfae44;
-  --cl-danger-border: 1px solid #d06262;
   --cl-info-border: 1px solid #347ada;
   --cl-light-border: 1px solid #c0b8b6;
   --cl-outline-border: 1px solid #000000;
@@ -175,9 +174,9 @@
   --cl-surface-tonal-a30: #665d63;
 
   /** Success colors */
-  --cl-success-a0: #22946e;
+  --cl-success-a0: #9ae8ce;
   --cl-success-a10: #47d5a6;
-  --cl-success-a20: #9ae8ce;
+  --cl-success-a20: #22946e;
 
   /** Warning colors */
   --cl-warning-a0: #a87a2a;
@@ -185,14 +184,14 @@
   --cl-warning-a20: #ecd7b2;
 
   /** Danger colors */
-  --cl-danger-a0: #9c2121;
+  --cl-danger-a0: #eb9e9e;
   --cl-danger-a10: #d94a4a;
-  --cl-danger-a20: #eb9e9e;
+  --cl-danger-a20: #9c2121;
 
   /** Info colors */
-  --cl-info-a0: #21498a;
+  --cl-info-a0: #92b2e5;
   --cl-info-a10: #4077d1;
-  --cl-info-a20: #92b2e5;
+  --cl-info-a20: #21498a;
 
   /* Dark Theme Gradients */
   --cl-accent-gradient: linear-gradient(135deg, #eb5cbe 0%, #ef71c5 50%, #f385cc 100%);
@@ -208,7 +207,6 @@
   --cl-danger-border: 1px solid #d94a4a;
   --cl-success-border: 1px solid #47d5a6;
   --cl-warning-border: 1px solid #d7ac61;
-  --cl-danger-border: 1px solid #d94a4a;
   --cl-info-border: 1px solid #4077d1;
   --cl-light-border: 1px solid #665d63;
   --cl-outline-border: 1px solid #ffffff;

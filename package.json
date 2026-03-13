@@ -93,10 +93,9 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*.{js,jsx,ts,tsx,json,css}": [
-      "biome format --write",
-      "biome check --write",
-      "biome check --diagnostic-level error",
+    "*": [
+      "npm run lint:fix",
+      "npm run format",
       "npm run test:ci"
     ],
     "*.{md,mdx}": [
@@ -117,31 +116,31 @@
   },
   "homepage": "https://choplogic.github.io/chop-logic-components",
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
-    "@commitlint/cli": "^20.4.3",
-    "@commitlint/config-conventional": "^20.4.3",
-    "@storybook/addon-a11y": "^10.2.17",
-    "@storybook/addon-docs": "^10.2.17",
-    "@storybook/react-vite": "^10.2.17",
+    "@biomejs/biome": "^2.4.7",
+    "@commitlint/cli": "^20.4.4",
+    "@commitlint/config-conventional": "^20.4.4",
+    "@storybook/addon-a11y": "^10.2.19",
+    "@storybook/addon-docs": "^10.2.19",
+    "@storybook/react-vite": "^10.2.19",
     "@stryker-mutator/core": "^9.6.0",
     "@stryker-mutator/vitest-runner": "^9.6.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/node": "^25.4.0",
+    "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/coverage-v8": "^4.1.0",
     "husky": "^9.1.7",
     "husky-init": "^8.0.0",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "remark-gfm": "^4.0.1",
-    "storybook": "^10.2.17",
+    "storybook": "^10.2.19",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
+    "vite": "^8.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-lib-inject-css": "^2.2.2",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.0"
   },
   "overrides": {
     "storybook": "$storybook"

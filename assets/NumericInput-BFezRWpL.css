@@ -1,0 +1,1 @@
+.cl-numeric-input{gap:var(--cl-m-gap);flex-direction:column;width:100%;display:flex}.cl-numeric-input__error-message{position:absolute;top:44px;right:0}@media screen and (width>=640px){.cl-numeric-input__error-message{top:48px}}@media screen and (width>=1024px){.cl-numeric-input__error-message{top:52px}}

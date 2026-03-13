@@ -5,6 +5,7 @@
       "**",
       "!**/dist",
       "!**/coverage",
+      "!**/reports",
       "!**/node_modules",
       "!**/storybook-static",
       "!**/src/styles/icons.css"

@@ -17,9 +17,9 @@ type Props = {
 export const ResponsivePicture: FC<Props> = ({ sources = [], ...rest }) => {
   return (
     <picture className="cl-image__picture">
-      {sources.map((source, index) => (
+      {sources.map((source) => (
         <source
-          key={`${source.src}-${index}`}
+          key={source.src}
           srcSet={source.descriptor ? `${source.src} ${source.descriptor}` : source.src}
           media={source.media}
           type={source.type}

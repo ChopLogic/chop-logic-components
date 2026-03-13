@@ -93,7 +93,7 @@
     "*.(ts|tsx)": [
       "bash -c 'npm run typecheck'"
     ],
-    "*": [
+    "*.{ts,tsx,js,css}": [
       "npm run lint:fix",
       "npm run format",
       "npm run test:ci"

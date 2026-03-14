@@ -2,7 +2,7 @@
   background: var(--cl-surface-a10);
   cursor: pointer;
   border-radius: var(--cl-border-radius);
-  border: none;
+  border: var(--cl-light-border);
   gap: var(--cl-s-gap);
   transition: all 150ms ease;
   box-shadow: var(--cl-box-shadow);

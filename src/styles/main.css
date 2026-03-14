@@ -135,10 +135,11 @@
   --cl-box-shadow-extended: rgba(0, 0, 0, 0.2) 4.8px 4.8px 6.4px;
   --cl-text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.15);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(0, 0, 0, 0.15));
+  --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
 
   /* Theme Borders */
   --cl-accent-border: 1px solid #8d1c12;
-  --cl-danger-border: 1px solid #d94a4a;
+  --cl-danger-border: 1px solid #d06262;
   --cl-success-border: 1px solid #28be8a;
   --cl-warning-border: 1px solid #dfae44;
   --cl-info-border: 1px solid #347ada;
@@ -201,6 +202,7 @@
   --cl-box-shadow-extended: rgba(255, 255, 255, 0.3) 4px 4px 5px;
   --cl-text-shadow: 2.4px 2.4px 3.2px rgba(255, 255, 255, 0.5);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(255, 255, 255, 0.3));
+  --cl-shadow-background: hsla(0, 0%, 100%, 0.3);
 
   /* Dark Theme Borders */
   --cl-accent-border: 1px solid #eb5cbe;

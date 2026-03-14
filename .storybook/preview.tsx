@@ -1,4 +1,5 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
+import React from 'react';
 import {
   CL_DARK_THEME_CLASS,
   CL_LIGHT_THEME_CLASS,
@@ -38,7 +39,7 @@ const STORY_WRAPPER_STYLES = {
   alignItems: 'center',
   padding: '1rem',
   margin: '1rem 0',
-  fontFamily: 'Helvetica, Arial, sans-serif',
+  fontFamily: 'Arial, Helvetica, sans-serif',
 };
 
 const withTheme: Decorator = (StoryFn, context) => {

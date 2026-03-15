@@ -2,25 +2,29 @@
 
 ![Chop Logic](public/logo.jpeg)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Pages](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml)
+#### Code Quality Checks
 [![codecov](https://codecov.io/gh/ChopLogic/chop-logic-components/graph/badge.svg?token=0M1IKB16FN)](https://codecov.io/gh/ChopLogic/chop-logic-components)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FChopLogic%2Fchop-logic-components%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/ChopLogic/chop-logic-components/main)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ChopLogic_chop-logic-components&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ChopLogic_chop-logic-components)
+[![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
+
+#### Deployments
+[![GitHub Pages](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/github-pages.yml)
 [![NPM](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/npm.yml)
+
+#### Standards
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
-[![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
-[![Code Style: Prettier](https://img.shields.io/badge/Code_Style-Prettier-ff69b4.svg?style=flat)](https://prettier.io)
 [![Keep a changelog](https://img.shields.io/badge/Keep%20a%20changelog-1.1.0-E05735?logo=keep-a-changelog&labelColor)](https://keepachangelog.com/en/1.1.0/)
 [![Semantic versioning](https://img.shields.io/badge/SemVer-2.0.0-3F4551?logo=semver&labelColor)](https://semver.org/spec/v2.0.0)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FChopLogic%2Fchop-logic-components%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/ChopLogic/chop-logic-components/main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Welcome to **Chop Logic Components**, a React components library packed with a variety of **styled
 components** and **custom hooks** that are easy to integrate into any React project.
 
 ## 📚 About This Library
 
-Chop Logic Components follows **Atomic Design** principles with **Fully Typed TypeScript** components. All styling uses **pure CSS with CSS variables** (BEM naming convention with `cl-` prefix) for consistent theming across light and dark modes. Built for developer productivity with comprehensive Storybook documentation and accessibility-first approach.
+Chop Logic Components follows **Atomic Design** principles with **Fully Typed TypeScript** components. All styling uses **pure CSS with CSS variables** (BEM naming convention with `cl-` prefix) for consistent theming across light and dark modes. Built for developer productivity with comprehensive [Storybook documentation](https://choplogic.github.io/chop-logic-components) and accessibility-first approach.
 
 ## ✨ Features
 
@@ -30,9 +34,9 @@ Components has the tools to make it easier.
 
 ## 🔗 Links
 
-- [Storybook Playground](https://choplogic.github.io/chop-logic-components)
-- [Changelog](CHANGELOG.md)
 - [NPM package](https://www.npmjs.com/package/chop-logic-components)
+- [Playground](https://choplogic.github.io/chop-logic-components)
+- [Changelog](CHANGELOG.md)
 
 ## 📦 Installation
 

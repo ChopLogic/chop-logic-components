@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(0, 0%, 0%, 0.3);
+  background-color: var(--cl-shadow-background);
 }
 
 .cl-dialog__layout {

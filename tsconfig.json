@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "paths": {
-      "@*": ["*"],
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@enums/*": ["enums/*"],
-      "@hooks/*": ["hooks/*"],
-      "@styles/*": ["styles/*"],
-      "@types/*": ["types/*"],
-      "@utils/*": ["utils/*"]
+      "@*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@enums/*": ["./src/enums/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@__docs__/*": ["./src/__docs__/*"]
     },
     "types": ["node", "@testing-library/jest-dom"],
     "target": "ESNext",

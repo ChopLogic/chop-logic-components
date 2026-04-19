@@ -1,0 +1,41 @@
+---
+description: Vitest + React Testing Library — Chop Logic
+globs: "**/__tests__/**,**/*.test.tsx,**/*.test.ts"
+alwaysApply: false
+---
+
+# Testing
+
+- **Vitest** + **React Testing Library**; colocate under `__tests__/Component.test.tsx`.
+- Before PR: ensure tests pass (`npm run test` locally, `npm run test:ci` for CI-style).
+- **Mock** external dependencies; use `vi` from Vitest.
+
+## Components
+
+```tsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, expect, it, vi, beforeEach } from 'vitest';
+import Component from '../Component';
+
+describe('Component', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('renders', () => {
+    render(<Component {...defaultProps} />);
+  });
+
+  it('handles interaction', () => {
+    render(<Component {...defaultProps} />);
+    fireEvent.click(screen.getByRole('button'));
+  });
+
+  it('is accessible', () => {
+    render(<Component {...defaultProps} />);
+    expect(screen.getByRole('button')).toHaveAttribute('aria-label');
+  });
+});
+```
+
+## Hooks
+
+Use `renderHook` + `act` from `@testing-library/react`; assert `result.current`.

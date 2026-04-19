@@ -1,0 +1,32 @@
+---
+description: Pure CSS, BEM (cl-), design tokens — Chop Logic
+globs: "**/*.css"
+alwaysApply: false
+---
+
+# CSS & BEM (`cl-`)
+
+## Pattern
+
+`.cl-block-name__element-name_modifier-name_modifier-value`
+
+- Lowercase Latin; words separated by **hyphens**.
+- Block ↔ element: **`__`**; modifiers: **`_`** (omit value for boolean modifiers).
+
+## Implementation rules
+
+- One scoped **`Component.css`** per component; **no hard-coded** colors/spacing when a variable exists.
+- Use **`var(--cl-*)`** from `src/main.css` (e.g. `--cl-base-font-color`, `--cl-m-gap`, `--cl-accent-a0`, `--cl-border-radius`).
+- Theme: variables switch for light default and **dark** when `.cl-components-dark-theme` is active (see `main.css` / Storybook).
+
+```css
+.cl-widget {
+  color: var(--cl-base-font-color);
+  padding: var(--cl-m-gap);
+  border-radius: var(--cl-border-radius);
+}
+.cl-widget__label { display: flex; gap: var(--cl-s-gap); }
+.cl-widget_disabled { opacity: 0.5; cursor: not-allowed; }
+```
+
+Compose class names in TSX with **`getClassName`**, not string concatenation for conditionals.

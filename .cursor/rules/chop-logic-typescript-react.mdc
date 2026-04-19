@@ -1,0 +1,49 @@
+---
+description: TS/React components, hooks, naming, accessibility — Chop Logic
+globs: "**/src/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript & React
+
+## Naming
+
+| Kind | Pattern | Example |
+|------|---------|---------|
+| Components | `PascalCase.tsx` | `Search.tsx` |
+| Hooks | `camelCase.ts` | `useDebounce.ts` |
+| Utilities | `camelCase.ts` | `getClassName.ts` |
+
+Colocate **tests** `__tests__/Component.test.tsx`, **Storybook** `__docs__/Component.{stories.tsx,docs.mdx,example.tsx}`.
+
+## Component shape
+
+- Extend shared props via something like `ComponentProps extends ChopLogicComponentProps`.
+- Destructure with sensible defaults; spread `...rest` onto the root element when appropriate.
+- Import `./Component.css`; build `className` with `getClassName(['cl-block', className, { 'cl-block_modifier': cond }])`.
+
+```tsx
+const rootClass = getClassName([
+  'cl-mywidget',
+  className,
+  { 'cl-mywidget_disabled': disabled },
+]);
+return <div className={rootClass} {...rest}>...</div>;
+```
+
+## Hooks
+
+Export `useThing = (params): Return => { ... }` with typed params/return; cleanup in `useEffect` when needed.
+
+## Accessibility & behavior
+
+- Semantic HTML; correct **ARIA** roles/labels/descriptions.
+- **Keyboard:** support **Enter** and **Space** where interactive; manage **focus** for dialogs/menus.
+- Interactive components: handle **loading** and **error** states.
+- Layout: responsive, sensible heading hierarchy.
+
+## Stack notes
+
+- **React 19** patterns where appropriate.
+- Shared types live in **`src/types/`** (not `src/models/`).
+- Mock externals in tests.

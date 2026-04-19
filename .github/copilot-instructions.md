@@ -38,7 +38,7 @@ Key directories:
 
 ## Project-Specific Conventions
 1. **Atomic Design**: Follow the `atoms`, `molecules`, `organisms` hierarchy for component organization.
-2. **TypeScript**: All components and utilities are strongly typed. Use `src/models/` for shared type definitions.
+2. **TypeScript**: All components and utilities are strongly typed. Use `src/types/` for shared type definitions.
 3. **CSS & BEM Styling**: Use pure CSS files with BEM naming convention. See the [CSS & BEM](#css--bem-styling) section below.
 4. **Testing**: Write unit tests using Vitest and React Testing Library. Place test files alongside the components they test in `__tests__` folder. A test file should ne called `Component.test.tsx`.
 5. **Icons**: Use `src/assets/icons/` for SVG assets. Reference them in `src/enums/icon-name.ts`.

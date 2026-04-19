@@ -1,0 +1,43 @@
+---
+description: Chop Logic Components — project identity, layout, workflows, Git conventions
+alwaysApply: true
+---
+
+# Chop Logic Components — core context
+
+React component library: **Atomic Design** (`atoms` → `molecules` → `organisms`), **TypeScript**, **pure CSS + BEM** (`cl-` prefix), **CSS variables** in `src/main.css`, light/dark themes (dark: `.cl-components-dark-theme` on `documentElement`).
+
+**Authoritative docs for agents:** [.github/copilot-instructions.md](.github/copilot-instructions.md), [CONTRIBUTING.md](CONTRIBUTING.md), [README.md](README.md).
+
+## Source layout
+
+| Area | Path |
+|------|------|
+| Atoms / molecules / organisms | `src/components/{atoms,molecules,organisms}/` |
+| HOCs, contexts | `src/components/hocs/`, `src/components/contexts/` |
+| Hooks | `src/hooks/` |
+| Styles (themes, mixins, tokens) | `src/styles/` |
+| Icons (SVG), icon enum | `src/assets/icons/`, `src/enums/icon-name.ts` |
+| Shared types | `src/types/` |
+| Shared enums / utils | `src/enums/`, `src/utils/` |
+
+Use **`getClassName`** from `@utils` for conditional BEM classes. Prefer **functional components and hooks**. Follow **Biome** (JS/TS/CSS/JSON) and **Prettier** (MD/MDX); do not violate Biome rules.
+
+## NPM scripts (when to run)
+
+| Goal | Command |
+|------|---------|
+| Library build | `npm run build` |
+| Storybook dev | `npm start` |
+| Storybook static build | `npm run build:storybook` |
+| CI-style tests | `npm run test:ci` |
+| Lint | `npm run lint` / fix: `npm run lint:fix` |
+| Types | `npm run typecheck` |
+| Format | `npm run format` |
+| Coverage | `npm run coverage` |
+
+## Git & PR
+
+- **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) — types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test` (enforced by hook).
+- **Branches:** `feat/*`, `fix/*`.
+- PRs: focused, link issues, CI green; document new behavior in Storybook when relevant.

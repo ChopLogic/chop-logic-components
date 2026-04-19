@@ -1,0 +1,42 @@
+---
+description: Storybook __docs__ — stories, MDX, examples — Chop Logic
+globs: "**/__docs__/**/*.{tsx,mdx}"
+alwaysApply: false
+---
+
+# Storybook documentation
+
+Per component, keep a **`__docs__`** folder with:
+
+| File | Role |
+|------|------|
+| `Component.stories.tsx` | Stories + `Meta` / `StoryObj` |
+| `Component.docs.mdx` | MDX docs with `<Meta>`, `<Controls />` |
+| `Component.example.tsx` | Optional wrapper for Storybook; omit if the component can be imported directly in stories |
+
+## Stories
+
+```tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import Component from './Component.example'; // or direct import
+
+const meta = {
+  title: 'Category/Component',
+  component: Component,
+  argTypes: { /* controls */ },
+  args: { /* defaults */ },
+} satisfies Meta<typeof Component>;
+
+export default meta;
+type Story = StoryObj<typeof Component>;
+export const Default: Story = { args: { } };
+```
+
+## MDX skeleton
+
+- `import { Meta, Controls } from '@storybook/addon-docs/blocks'`
+- `import * as ComponentStories from './Component.stories'`
+- `<Meta of={ComponentStories} title='Category/Component' />`
+- Sections: overview, usage, best practices (a11y), `<Controls />` for props.
+
+New features should be **visible and documented** in Storybook when it helps consumers.

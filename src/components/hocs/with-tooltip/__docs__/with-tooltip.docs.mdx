@@ -1,0 +1,41 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as WithTooltipStories from "./with-tooltip.stories";
+
+<Meta of={WithTooltipStories} title="withTooltip" />
+
+# withTooltip
+
+The `withTooltip` higher-order component wraps any component with the library `Tooltip` when a non-empty `tooltip` string is provided. If `tooltip` is omitted or empty, the wrapped component renders unchanged.
+
+The design-system `Button` already uses this HOC internally; use `withTooltip` directly when you need tooltip behavior around a custom component.
+
+## Usage
+
+```tsx
+import { withTooltip } from "chop-logic-components";
+
+type Props = { title: string };
+
+const Card: React.FC<Props> = ({ title }) => <article>{title}</article>;
+
+const CardWithOptionalTooltip = withTooltip(Card);
+
+const Example = () => (
+  <>
+    <CardWithOptionalTooltip title="Plain card" />
+    <CardWithOptionalTooltip title="Annotated card" tooltip="Extra context on hover" visibleOn="hover" />
+  </>
+);
+```
+
+## Best practices
+
+1. _Conditional tooltips_: Rely on the optional `tooltip` prop so the same component works with and without a tooltip (no redundant wrappers).
+2. _Triggers_: Match `visibleOn` to the interaction you document (hover for discoverability on desktop; click or focus where hover is unreliable).
+3. _Accessibility_: Prefer concise tooltip text; for essential information, expose it in visible copy or labels, not only in the tooltip.
+
+## Props
+
+Controls below target the demo wrapper. Any props accepted by your wrapped component are passed through; the HOC adds optional `tooltip` and `visibleOn`.
+
+<Controls />

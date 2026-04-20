@@ -4,6 +4,18 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.0] - 2026-04-19
+
+### Added
+
+- `withErrorBoundary` HOC for wrapping components in a React error boundary with `ErrorMessage` fallback
+- Storybook documentation for `withTooltip`, `withFigureCaption`, and `withErrorBoundary` higher-order components
+
+### Changed
+
+- Upgraded Storybook to v10.3.5 and updated npm dependencies
+- Upgraded TypeScript to v6
+
 ## [4.0.3] - 2026-03-13
 
 ### Fixed

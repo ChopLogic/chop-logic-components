@@ -1,0 +1,47 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as WithErrorBoundaryStories from "./with-error-boundary.stories";
+
+<Meta of={WithErrorBoundaryStories} title="withErrorBoundary" />
+
+# withErrorBoundary
+
+The `withErrorBoundary` higher-order component always wraps your component in a React error boundary. When a rendering error occurs in that subtree, the fallback UI is the design-system **`ErrorMessage`** atom (visible) instead of breaking the surrounding app. Optional **`errorMessage`** sets the message string; optional **`onError`** runs once from `componentDidCatch` after an error is caught.
+
+React error boundaries do **not** catch errors inside event handlers, async code, or server rendering unless those errors are surfaced into render (for example via state).
+
+## Usage
+
+```tsx
+import { withErrorBoundary } from "chop-logic-components";
+
+type Props = { userId: string };
+
+const Profile: React.FC<Props> = ({ userId }) => {
+  // ...
+  return <section>{userId}</section>;
+};
+
+const SafeProfile = withErrorBoundary(Profile);
+
+const Example = () => (
+  <SafeProfile
+    userId="123"
+    errorMessage="Could not load this profile."
+    onError={() => {
+      /* e.g. log to monitoring */
+    }}
+  />
+);
+```
+
+## Best practices
+
+1. _Scope_: Wrap feature or route-sized chunks so a failure does not hide the entire page unless that is intentional.
+2. _Messages_: Use `errorMessage` for user-facing, short copy; rely on `onError` (or product logging) for diagnostics, not on raw stack traces in the UI.
+3. _Recovery_: The boundary stays in the error state until remount (e.g. navigation or `key` change). Design a retry or refresh path if users need to recover without a full reload.
+
+## Props
+
+The controls below drive the **demo** wrapper. Your wrapped component receives its own props; the HOC adds optional **`errorMessage`** and **`onError`**. Use the **simulateThrow** control only in this story to force a render error and inspect the fallback.
+
+<Controls />

@@ -1,0 +1,41 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as WithFigureCaptionStories from "./with-figure-caption.stories";
+
+<Meta of={WithFigureCaptionStories} title="withFigureCaption" />
+
+# withFigureCaption
+
+The `withFigureCaption` HOC wraps a component in a semantic `<figure>` with a `<figcaption>` when `caption` is a non-empty string after trimming. If `caption` is omitted, empty, or only whitespace, the wrapped component renders as usual with no figure wrapper.
+
+The design-system `Image` component applies this HOC so consumers can pass `caption` on `Image`; use `withFigureCaption` when you want the same behavior around other media or content.
+
+## Usage
+
+```tsx
+import { withFigureCaption } from "chop-logic-components";
+
+type Props = { src: string; alt: string };
+
+const Photo: React.FC<Props> = ({ src, alt }) => <img src={src} alt={alt} />;
+
+const PhotoWithOptionalCaption = withFigureCaption(Photo);
+
+const Example = () => (
+  <>
+    <PhotoWithOptionalCaption src="/a.jpg" alt="Product" />
+    <PhotoWithOptionalCaption src="/b.jpg" alt="Diagram" caption="Figure 1: System overview" />
+  </>
+);
+```
+
+## Best practices
+
+1. _Semantics_: Use for real figures (images, diagrams, quoted excerpts) where a caption describes the content; avoid purely decorative wrappers.
+2. _Whitespace_: Empty or whitespace-only captions intentionally skip the figure shell—validate user input if you need stricter rules.
+3. _Accessibility_: Always provide meaningful `alt` on images; the caption complements but does not replace alternative text.
+
+## Props
+
+Controls below apply to the demo wrapper. Your wrapped component receives its own props; the HOC adds optional `caption`.
+
+<Controls />

@@ -1,1 +1,0 @@
-import{c as e,h as t}from"./theming-DxFdc5l8.js";e();export{t as color};

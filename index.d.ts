@@ -901,6 +901,13 @@ declare type useTooltipPositionParams = {
 
 export declare function useWindowDimensions(): Dimensions;
 
+export declare function withErrorBoundary<P extends object>(ComponentToWrap: ComponentType<P>): FC<P & WithErrorBoundaryProps>;
+
+export declare type WithErrorBoundaryProps = {
+    errorMessage?: string;
+    onError?: () => void;
+};
+
 export declare function withFigureCaption<P extends object>(Component: ComponentType<P>): FC<P & WithFigureCaptionProps>;
 
 declare type WithFigureCaptionProps = {

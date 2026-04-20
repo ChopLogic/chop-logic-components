@@ -45,7 +45,7 @@
       window.LOGLEVEL = 'info';
       window.FRAMEWORK_OPTIONS = {};
       window.CHANNEL_OPTIONS = {};
-      window.FEATURES = {"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":true,"viewport":true,"highlight":true,"controls":true,"interactions":true,"actions":true,"backgrounds":true,"outline":true,"measure":true,"sidebarOnboardingChecklist":true};
+      window.FEATURES = {"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":true,"viewport":true,"highlight":true,"controls":true,"interactions":true,"actions":true,"backgrounds":true,"outline":true,"measure":true,"sidebarOnboardingChecklist":true,"componentsManifest":false};
       window.STORIES = [{"titlePrefix":"","directory":"./src","files":"**/__docs__/*.stories.tsx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)__docs__\\/(?!\\.)(?=.)[^/]*?\\.stories\\.tsx)$"},{"titlePrefix":"","directory":"./src","files":"**/__docs__/*.mdx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)__docs__\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"}];
       window.DOCS_OPTIONS = {"defaultName":"Docs"};
       window.TAGS_OPTIONS = {};
@@ -547,13 +547,18 @@
   }
 </script>
 
-    <script type="module" crossorigin src="./assets/iframe-VhwcvEo8.js"></script>
+    <script type="module" crossorigin src="./assets/iframe-DhK19CUu.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/chunk-BneVvdWh.js">
-    <link rel="modulepreload" crossorigin href="./assets/preload-helper-nVtPd9zc.js">
-    <link rel="modulepreload" crossorigin href="./assets/react-l7Y7wVQj.js">
-    <link rel="modulepreload" crossorigin href="./assets/chunk-3LY4VQVK-Di70sXb8.js">
-    <link rel="modulepreload" crossorigin href="./assets/csf-w9PT11_Q.js">
-    <link rel="stylesheet" crossorigin href="./assets/iframe-DZM2FzU8.css">
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-CV6hqhE5.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-4BE7D4DS-BcMxU9-0.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-SL3VIQZ3-CuhCFKJd.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-4HHWW5MW.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-CNat5962.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-A242L54C-BY7o5QOM.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-IYCKG66Y-DwzeRX6a.js">
+    <link rel="modulepreload" crossorigin href="./assets/docs-tools-wc5fzYKi.js">
+    <link rel="modulepreload" crossorigin href="./assets/contexts-BAfQgOoI.js">
+    <link rel="stylesheet" crossorigin href="./assets/contexts-DZM2FzU8.css">
   </head>
 
   <body>
@@ -685,10 +690,10 @@
         if (hostname !== 'localhost' && globalThis.CONFIG_TYPE === 'DEVELOPMENT') {
           const message = `Failed to load the Storybook preview file 'vite-app.js':
 
-It looks like you're visiting the Storybook development server on another hostname than localhost: '${hostname}', but you haven't configured the necessary security features to support this.
-Please re-run your Storybook development server with the '--host ${hostname}' flag, or manually configure your Vite allowedHosts configuration with viteFinal.
+      It looks like you're visiting the Storybook development server on another hostname than localhost: '${hostname}', but you haven't configured the necessary security features to support this.
+      Please re-run your Storybook development server with the '--host ${hostname}' flag, or manually configure your Vite allowedHosts configuration with viteFinal.
 
-See:`;
+      See:`;
           const docs = [
             'https://storybook.js.org/docs/api/cli-options#dev',
             'https://storybook.js.org/docs/api/main-config/main-config-vite-final',
@@ -700,7 +705,7 @@ See:`;
             `<p style="color: red; max-width: 70ch">${message.replaceAll(
               '\n',
               '<br/>'
-            )}<ul>${docs.map((doc) => `<li><a href='${doc}' target='_blank'>${doc}</a></li>`).join('')}<ul></p>`;
+            )}<ul>${docs.map((doc) => `<li><a href='${doc}' target='_blank'>${doc}</a></li>`).join('')}</ul></p>`;
           return;
         }
       }

@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distPath = path.join(__dirname, '../dist');
+const defaultDistPath = path.join(__dirname, '../dist');
 
 /**
  * Generates index.js files in component directories to enable proper exports.
@@ -12,15 +12,15 @@ const distPath = path.join(__dirname, '../dist');
  *   - import { useDebounce } from 'chop-logic-components/hooks/use-debounce'
  */
 
-// Convert kebab-case to PascalCase
-function toPascalCase(str) {
+/** Convert kebab-case to PascalCase */
+export function toPascalCase(str) {
   return str
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join('');
 }
 
-function getAllComponentDirs(basePath) {
+export function getAllComponentDirs(basePath) {
   const dirs = [];
 
   function traverse(currentPath) {
@@ -68,7 +68,11 @@ function getAllComponentDirs(basePath) {
   return dirs;
 }
 
-function generateIndexFiles() {
+/**
+ * @param {string} [overrideDistPath] - Defaults to project `dist/`
+ */
+export function generateIndexFiles(overrideDistPath = defaultDistPath) {
+  const distPath = overrideDistPath;
   const componentsPath = path.join(distPath, 'components');
   const hooksPath = path.join(distPath, 'hooks');
 
@@ -120,14 +124,14 @@ function generateIndexFiles() {
     // Generate a root hooks index.js if it doesn't exist
     const hooksIndexPath = path.join(hooksPath, 'index.js');
     if (!fs.existsSync(hooksIndexPath)) {
-      const hookDirs = fs
+      const hookDirNames = fs
         .readdirSync(hooksPath, { withFileTypes: true })
         .filter((e) => e.isDirectory() && e.name.startsWith('use-'))
         .map((e) => e.name);
 
-      if (hookDirs.length > 0) {
+      if (hookDirNames.length > 0) {
         let content = '';
-        for (const hookDir of hookDirs) {
+        for (const hookDir of hookDirNames) {
           content += `export * from './${hookDir}/index.js';\n`;
         }
         fs.writeFileSync(hooksIndexPath, content, 'utf8');
@@ -175,9 +179,15 @@ function generateIndexFiles() {
   console.log('\n✓ All export index files generated successfully');
 }
 
-try {
-  generateIndexFiles();
-} catch (error) {
-  console.error('Error generating export files:', error);
-  process.exit(1);
+const isMainModule =
+  Boolean(process.argv[1]) &&
+  path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1]);
+
+if (isMainModule) {
+  try {
+    generateIndexFiles();
+  } catch (error) {
+    console.error('Error generating export files:', error);
+    process.exit(1);
+  }
 }

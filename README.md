@@ -3,6 +3,7 @@
 ![Chop Logic](public/logo.jpeg)
 
 #### Code Quality Checks
+[![CI](https://github.com/ChopLogic/chop-logic-components/actions/workflows/ci.yml/badge.svg)](https://github.com/ChopLogic/chop-logic-components/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/ChopLogic/chop-logic-components/graph/badge.svg?token=0M1IKB16FN)](https://codecov.io/gh/ChopLogic/chop-logic-components)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FChopLogic%2Fchop-logic-components%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/ChopLogic/chop-logic-components/main)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ChopLogic_chop-logic-components&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ChopLogic_chop-logic-components)
@@ -38,6 +39,15 @@ Components has the tools to make it easier.
 - [Playground](https://choplogic.github.io/chop-logic-components)
 - [Changelog](CHANGELOG.md)
 
+## Quality assurance
+
+Automated checks include [**CI**](https://github.com/ChopLogic/chop-logic-components/actions/workflows/ci.yml)
+(typecheck, lint, unit tests, library build, Storybook test runner), [**Codecov**](https://codecov.io/gh/ChopLogic/chop-logic-components),
+[**SonarCloud**](https://sonarcloud.io/summary/new_code?id=ChopLogic_chop-logic-components), and scheduled
+[**mutation testing**](https://dashboard.stryker-mutator.io/reports/github.com/ChopLogic/chop-logic-components/main).
+Contributor workflow and coverage expectations are described in [CONTRIBUTING.md](CONTRIBUTING.md); architectural
+decisions are recorded under [docs/adr/](docs/adr/).
+
 ## 📦 Installation
 
 To get started with Chop Logic, install it via npm or yarn:
@@ -68,6 +78,7 @@ yarn add chop-logic-components
 | `typecheck`       | Performs a full type check without emitting output.                                                                                                   |
 | `test`            | Runs unit tests using Vitest in watch mode (interactive).                                                                                             |
 | `test:ci`         | Runs tests once in CI mode and allows empty test sets.                                                                                                |
+| `test:integration` | Builds Storybook and runs the Storybook test runner (Playwright) against static output—integration smoke tests.                                     |
 | `coverage`        | Runs tests and generates a coverage report using Vitest.                                                                                              |
 | `test:mutation`   | Runs mutation testing using Stryker to verify test quality.                                                                                           |
 | `release:version` | Bumps the version (`patch`, `minor`, or `major`), commits the change, creates a Git tag, and pushes to `main`. Usage: `npm run release:version patch` |

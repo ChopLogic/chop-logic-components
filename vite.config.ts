@@ -94,9 +94,10 @@ export default defineConfig({
         '**/storybook-static/**',
         ...coverageConfigDefaults.exclude,
       ],
+      // Policy: see CONTRIBUTING.md — enforce high function coverage and cap uncovered lines (not stmt/branch %).
       thresholds: {
-        functions: 95, // Requires 95% function coverage
-        lines: -30, // Require that no more than 30 lines are uncovered
+        functions: 95,
+        lines: -30,
       },
     },
   },

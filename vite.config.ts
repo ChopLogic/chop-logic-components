@@ -59,8 +59,10 @@ export default defineConfig({
     excludeDocsPlugin(),
     dts({
       tsconfigPath: 'tsconfig.build.json',
+      // Align declaration output with Rollup's preserveModulesRoot: 'src' — without this,
+      // tsc mirrors src/ under dist/ and duplicates dist/components vs dist/src/components.
+      entryRoot: resolve(__dirname, 'src'),
       insertTypesEntry: true,
-      rollupTypes: true,
       exclude: ['**/__docs__/**', '**/__tests__/**'],
     }),
     libInjectCss(),

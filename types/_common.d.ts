@@ -1,0 +1,35 @@
+import { CSSProperties } from '../../node_modules/react';
+export interface ChopLogicComponentProps {
+    id?: string;
+    className?: string;
+    style?: CSSProperties;
+    tabIndex?: number;
+    title?: string;
+}
+export interface ChopLogicInputProps extends ChopLogicComponentProps {
+    label: string;
+    name: string;
+    disabled?: boolean;
+    required?: boolean;
+    stateless?: boolean;
+    value?: string | number | readonly string[];
+}
+export type SelectValue = {
+    id: string;
+    label: string;
+} & {
+    [key in string]: unknown;
+};
+export type MultiSelectValue = SelectValue & {
+    selected: boolean;
+};
+export type NumericInputValidator = (input?: number) => boolean;
+export type TextInputValidator = (input: string) => boolean;
+export type ChopLogicRegExpWithFlags = {
+    regexp: string;
+    flags?: string;
+};
+export type Dimensions = {
+    width: number;
+    height: number;
+};

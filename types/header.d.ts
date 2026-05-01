@@ -1,0 +1,9 @@
+import { IconName } from '../enums';
+import { HTMLAttributes, ReactNode } from '../../node_modules/react';
+type HeaderLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export interface HeaderProps extends HTMLAttributes<HTMLHeadingElement> {
+    children: ReactNode;
+    as?: HeaderLevel;
+    icon?: IconName;
+}
+export {};

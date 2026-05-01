@@ -25,7 +25,16 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Introduction', 'Atoms', 'Molecules', 'Organisms', 'Hooks', 'Theming', '*'],
+        order: [
+          'Introduction',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Hooks',
+          'Utilities',
+          'Theming',
+          '*',
+        ],
       },
     },
   },

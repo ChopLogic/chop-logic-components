@@ -1,0 +1,3 @@
+# Default reviewers for pull requests (enable in Settings → Code review → Require code owner reviews).
+# Uncomment and replace with your GitHub username or @OrgName/team-slug:
+* @SavouryGin

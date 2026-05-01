@@ -44,6 +44,6 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false
   },
-  "include": ["src"],
+  "include": ["src", "scripts/__tests__/**/*", "scripts/*.d.ts"],
   "exclude": ["dist", "node_modules", "reports", "coverage"]
 }

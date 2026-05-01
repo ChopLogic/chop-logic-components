@@ -3,6 +3,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useSearchController } from '../Search.controller';
 
+import { renderSearchController } from './Search.controller.test.helpers';
+
 describe('useSearchController', () => {
   beforeEach(() => {
     vi.useFakeTimers();
@@ -14,87 +16,46 @@ describe('useSearchController', () => {
 
   describe('initial state', () => {
     it('should initialize with empty search value', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(result.current.searchValue).toBe('');
     });
 
     it('should set isSearchButtonVisible to false in automatic mode', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(result.current.isSearchButtonVisible).toBe(false);
     });
 
     it('should set isSearchButtonVisible to true in manual mode', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'manual',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ searchMode: 'manual' });
 
       expect(result.current.isSearchButtonVisible).toBe(true);
     });
 
     it('should set isLabelIconVisible to true in automatic mode', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(result.current.isLabelIconVisible).toBe(true);
     });
 
     it('should set isLabelIconVisible to false in manual mode', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'manual',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ searchMode: 'manual' });
 
       expect(result.current.isLabelIconVisible).toBe(false);
     });
 
     it('should initialize isClearButtonVisible to false', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(result.current.isClearButtonVisible).toBe(false);
     });
 
     it('should initialize isSearchValueValid to false', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        minLength: 1,
+        maxLength: 50,
+      });
 
       expect(result.current.isSearchValueValid).toBe(false);
     });
@@ -102,13 +63,7 @@ describe('useSearchController', () => {
 
   describe('handleChange', () => {
     it('should update searchValue on input change', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       const event = {
         target: { value: 'test' },
@@ -122,13 +77,7 @@ describe('useSearchController', () => {
     });
 
     it('should update isClearButtonVisible when search value is entered', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(result.current.isClearButtonVisible).toBe(false);
 
@@ -144,15 +93,10 @@ describe('useSearchController', () => {
     });
 
     it('should update isSearchValueValid based on minLength and maxLength', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          minLength: 2,
-          maxLength: 5,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        minLength: 2,
+        maxLength: 5,
+      });
 
       // Value too short
       let event = {
@@ -189,15 +133,10 @@ describe('useSearchController', () => {
     });
 
     it('should invalidate if search value is only whitespace', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        minLength: 1,
+        maxLength: 50,
+      });
 
       const event = {
         target: { value: '   ' },
@@ -213,13 +152,7 @@ describe('useSearchController', () => {
 
   describe('handleClear', () => {
     it('should clear search value', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       // Set a value first
       act(() => {
@@ -240,14 +173,7 @@ describe('useSearchController', () => {
 
     it('should call onClear callback when provided', () => {
       const onClear = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          onClear,
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ onClear });
 
       act(() => {
         result.current.handleClear();
@@ -257,13 +183,7 @@ describe('useSearchController', () => {
     });
 
     it('should not throw error if onClear is not provided', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       expect(() => {
         act(() => {
@@ -276,13 +196,10 @@ describe('useSearchController', () => {
   describe('handleSearchClick', () => {
     it('should call onSearch with current search value in manual mode', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'manual',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        searchMode: 'manual',
+      });
 
       // Set a search value
       act(() => {
@@ -324,15 +241,11 @@ describe('useSearchController', () => {
   describe('automatic search with debounce', () => {
     it('should trigger onSearch after debounce delay in automatic mode', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 1,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -354,15 +267,11 @@ describe('useSearchController', () => {
 
     it('should not trigger search if value is invalid during debounce', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 3,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 3,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -379,15 +288,11 @@ describe('useSearchController', () => {
 
     it('should not trigger search if value is only whitespace', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 1,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -404,15 +309,11 @@ describe('useSearchController', () => {
 
     it('should cancel previous debounce when value changes', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 1,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -451,15 +352,12 @@ describe('useSearchController', () => {
 
     it('should not trigger search in manual mode during debounce', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'manual',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        searchMode: 'manual',
+        minLength: 1,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -479,13 +377,7 @@ describe('useSearchController', () => {
   describe('handleKeyDown', () => {
     it('should trigger search on Enter key press', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ onSearch });
 
       act(() => {
         result.current.handleChange({
@@ -509,14 +401,7 @@ describe('useSearchController', () => {
     it('should clear search on Escape key press', () => {
       const onSearch = vi.fn();
       const onClear = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          onClear,
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ onSearch, onClear });
 
       act(() => {
         result.current.handleChange({
@@ -542,13 +427,7 @@ describe('useSearchController', () => {
 
     it('should not prevent default for other keys', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ onSearch });
 
       const event = {
         key: 'a',
@@ -565,14 +444,7 @@ describe('useSearchController', () => {
 
   describe('validation constraints', () => {
     it('should validate minLength constraint', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          minLength: 5,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ minLength: 5 });
 
       act(() => {
         result.current.handleChange({
@@ -592,14 +464,7 @@ describe('useSearchController', () => {
     });
 
     it('should validate maxLength constraint', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          maxLength: 5,
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController({ maxLength: 5 });
 
       act(() => {
         result.current.handleChange({
@@ -619,13 +484,7 @@ describe('useSearchController', () => {
     });
 
     it('should use default minLength of 1', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       act(() => {
         result.current.handleChange({
@@ -637,13 +496,7 @@ describe('useSearchController', () => {
     });
 
     it('should use default maxLength of 50', () => {
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch: vi.fn(),
-          searchMode: 'automatic',
-          debounceDelay: 500,
-        }),
-      );
+      const { result } = renderSearchController();
 
       const value = 'a'.repeat(50);
 
@@ -669,15 +522,12 @@ describe('useSearchController', () => {
   describe('debounce delay configuration', () => {
     it('should respect custom debounce delay', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-          debounceDelay: 1000,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 1,
+        maxLength: 50,
+        debounceDelay: 1000,
+      });
 
       act(() => {
         result.current.handleChange({
@@ -702,14 +552,11 @@ describe('useSearchController', () => {
 
     it('should use default debounce delay of 500', () => {
       const onSearch = vi.fn();
-      const { result } = renderHook(() =>
-        useSearchController({
-          onSearch,
-          searchMode: 'automatic',
-          minLength: 1,
-          maxLength: 50,
-        }),
-      );
+      const { result } = renderSearchController({
+        onSearch,
+        minLength: 1,
+        maxLength: 50,
+      });
 
       act(() => {
         result.current.handleChange({

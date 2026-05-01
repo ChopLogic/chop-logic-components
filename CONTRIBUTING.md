@@ -420,13 +420,32 @@ export const Default: Story = {
 
 ## Testing
 
-We use **Vitest** and **React Testing Library** for testing. Ensure all tests pass before submitting changes:
+We use **Vitest** and **React Testing Library** for unit and hook tests. **Integration** coverage is provided by the
+**Storybook test runner** (`@storybook/test-runner`): it builds static Storybook, serves it, and runs Playwright-based
+smoke tests against stories (composition, rendering, and addon checks). Run locally:
+
+```sh
+npm run test:integration
+```
+
+Ensure all tests pass before submitting changes:
 
 ```sh
 npm run test
 ```
 
 Write tests for new components and features to maintain quality and prevent regressions.
+
+### Coverage thresholds
+
+`vite.config.ts` configures Vitest coverage with:
+
+- **Functions:** minimum **95%** (hard threshold).
+- **Lines:** failures if **more than 30** lines are uncovered (relative gate for this codebase size).
+
+**Statements** and **branches** do not use numeric thresholds so we avoid noisy failures on generated or branching-heavy
+UI code; focus stays on **function coverage** and keeping **uncovered line count** small. Adjust tests when you add
+non-trivial logic.
 
 ### Component Testing Pattern
 ```typescript
@@ -484,6 +503,16 @@ describe('useCustomHook', () => {
   });
 });
 ```
+
+## Continuous integration and reviews
+
+- **CI** ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs on pushes to `main` and on **pull requests**:
+  typecheck, Biome (errors), Prettier on Markdown/MDX, unit tests, library build, then Storybook build + test runner.
+- **Coverage** uploads to Codecov from [`.github/workflows/codecov.yml`](.github/workflows/codecov.yml).
+- Enable **branch protection** on `main` in repository settings: require the CI workflow to pass and require at least
+  one approval where appropriate.
+- Optional **code owners**: add entries in [`.github/CODEOWNERS`](.github/CODEOWNERS) with your GitHub username or
+  `@Org/team` so review requests route consistently.
 
 ## License
 

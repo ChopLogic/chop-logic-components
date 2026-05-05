@@ -1,1 +1,0 @@
-import{a as e,n as t}from"./chunk-DnJy8xQt.js";import{T as n}from"./iframe-D3cobFKZ.js";var r,i,a=t((()=>{r=e(n(),1),i=(e,t)=>{let[n,i]=(0,r.useState)(e);return(0,r.useEffect)(()=>{let n=setTimeout(()=>{i(e)},t);return()=>{clearTimeout(n)}},[e,t]),n}}));export{i as n,a as t};

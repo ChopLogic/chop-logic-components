@@ -1,0 +1,94 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Gallery.stories";
+
+<Meta of={Stories} title="Gallery" />
+
+# Gallery
+
+The `Gallery` component displays a collection of images in one of three layout modes: **Grid**, **Masonry**, or **Carousel**. It uses CSS-first layout techniques with minimal JavaScript, reuses the existing Image atom for rendering, and provides full accessibility support including keyboard navigation for carousel controls.
+
+## Usage
+
+### Grid Layout
+
+Displays images in a uniform NxM grid with configurable columns and optional row constraints.
+
+```tsx
+import { Gallery } from "chop-logic-components";
+
+const PhotoGrid = () => {
+  const images = [
+    { src: "/photos/landscape-1.jpg", alt: "Mountain sunrise" },
+    { src: "/photos/landscape-2.jpg", alt: "Ocean sunset" },
+    { src: "/photos/landscape-3.jpg", alt: "Forest trail" },
+    { src: "/photos/landscape-4.jpg", alt: "Desert dunes" },
+    { src: "/photos/landscape-5.jpg", alt: "City skyline" },
+    { src: "/photos/landscape-6.jpg", alt: "River valley" },
+  ];
+
+  return <Gallery images={images} layout="grid" columns={3} rows={2} gap="12px" label="Landscape photos" />;
+};
+```
+
+### Masonry Layout
+
+Packs images of varying heights tightly together using CSS columns, with responsive column counts that adapt to the viewport width.
+
+```tsx
+import { Gallery } from "chop-logic-components";
+
+const MasonryWall = () => {
+  const images = [
+    { src: "/photos/portrait-1.jpg", alt: "Studio portrait" },
+    { src: "/photos/wide-2.jpg", alt: "Panoramic view" },
+    { src: "/photos/square-3.jpg", alt: "Product shot" },
+    { src: "/photos/tall-4.jpg", alt: "Tower building" },
+    { src: "/photos/wide-5.jpg", alt: "Beach horizon" },
+  ];
+
+  return <Gallery images={images} layout="masonry" columns={3} gap="8px" label="Mixed photo collection" />;
+};
+```
+
+### Carousel Layout
+
+Displays images in a horizontally scrollable row with Previous and Next navigation buttons that appear based on scroll position.
+
+```tsx
+import { Gallery } from "chop-logic-components";
+
+const ImageCarousel = () => {
+  const images = [
+    { src: "/photos/slide-1.jpg", alt: "First slide" },
+    { src: "/photos/slide-2.jpg", alt: "Second slide" },
+    { src: "/photos/slide-3.jpg", alt: "Third slide" },
+    { src: "/photos/slide-4.jpg", alt: "Fourth slide" },
+    { src: "/photos/slide-5.jpg", alt: "Fifth slide" },
+  ];
+
+  return <Gallery images={images} layout="carousel" gap="16px" label="Featured images" />;
+};
+```
+
+## Best Practices
+
+1. _Image Content_:
+   - Always provide meaningful `alt` text for each image
+   - Use the `decorative` prop on images that are purely visual
+   - Optimize image file sizes for faster loading
+2. _Layout Selection_:
+   - Use **Grid** for uniform collections where consistent sizing matters
+   - Use **Masonry** for images with varying aspect ratios
+   - Use **Carousel** for featured content or when horizontal space is limited
+3. _Responsive Behavior_:
+   - Grid automatically reduces to 2 columns on mobile viewports
+   - Masonry adapts from 1 to 3 columns across breakpoints
+   - Carousel supports native touch scrolling on mobile devices
+4. _Accessibility_:
+   - Provide a descriptive `label` prop for screen readers
+   - Carousel navigation buttons are keyboard accessible via Tab, Enter, and Space
+   - Navigation buttons are removed from the accessibility tree when hidden
+
+## Props
+
+<Controls />

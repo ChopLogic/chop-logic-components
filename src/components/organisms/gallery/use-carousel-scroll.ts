@@ -43,12 +43,14 @@ export const useCarouselScroll = (
 
     updateButtonVisibility();
 
+    const resizeObserver = new ResizeObserver(updateButtonVisibility);
+    resizeObserver.observe(container);
+
     container.addEventListener('scroll', updateButtonVisibility);
-    window.addEventListener('resize', updateButtonVisibility);
 
     return () => {
       container.removeEventListener('scroll', updateButtonVisibility);
-      window.removeEventListener('resize', updateButtonVisibility);
+      resizeObserver.disconnect();
     };
   }, [layout, containerRef, updateButtonVisibility]);
 

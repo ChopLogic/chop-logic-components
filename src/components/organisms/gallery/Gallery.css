@@ -20,16 +20,21 @@
 
 .cl-gallery__button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  height: 100%;
 }
 
 .cl-gallery__button_prev {
-  left: var(--cl-m-gap);
+  left: var(--cl-l-gap);
 }
 
 .cl-gallery__button_next {
-  right: var(--cl-m-gap);
+  right: var(--cl-l-gap);
+}
+
+.cl-gallery__button_prev .cl-icon-button__icon::before,
+.cl-gallery__button_next .cl-icon-button__icon::before {
+  color: white !important;
 }
 
 /* ============================================================================

@@ -5,7 +5,7 @@ import { getClassName } from '@utils';
 import { type CSSProperties, type FC, useRef } from 'react';
 
 import './Gallery.css';
-import { useCarouselScroll } from './useCarouselScroll';
+import { useCarouselScroll } from './use-carousel-scroll';
 
 const Gallery: FC<GalleryProps> = ({
   images = [],

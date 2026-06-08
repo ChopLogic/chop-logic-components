@@ -2,8 +2,9 @@ import { Button, Image } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
 import type { GalleryProps } from '@types';
 import { getClassName } from '@utils';
-import { type CSSProperties, type FC, useRef } from 'react';
+import { type CSSProperties, type FC, useCallback, useRef, useState } from 'react';
 
+import FullscreenViewer from './fullscreen-viewer/FullscreenViewer';
 import './Gallery.css';
 import { useCarouselScroll } from './use-carousel-scroll';
 
@@ -16,9 +17,44 @@ const Gallery: FC<GalleryProps> = ({
   label,
   className,
   title,
+  enableFullscreen = false,
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Fullscreen viewer state management
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const triggerRef = useRef<HTMLElement | null>(null);
+
+  const openViewer = useCallback((index: number, element: HTMLElement) => {
+    triggerRef.current = element;
+    setCurrentImageIndex(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeViewer = useCallback(() => {
+    setIsViewerOpen(false);
+    // Focus restoration happens after animation completes
+    setTimeout(() => {
+      triggerRef.current?.focus();
+      triggerRef.current = null;
+    }, 300);
+  }, []);
+
+  // Navigation handler for FullscreenViewer (used in task 6.4)
+  const handleNavigate = useCallback((index: number) => {
+    setCurrentImageIndex(index);
+  }, []);
+
+  // Keyboard handler for image activation (Enter/Space)
+  const handleImageKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openViewer(index, e.currentTarget);
+    }
+  };
+
   const { showPrev, showNext, scrollForward, scrollBackward } = useCarouselScroll(
     containerRef,
     layout,
@@ -51,8 +87,16 @@ const Gallery: FC<GalleryProps> = ({
         style={containerStyle}
         {...(layout === 'carousel' ? { 'aria-roledescription': 'carousel' } : {})}
       >
-        {images.map((item) => (
-          <div key={item.src} className="cl-gallery__item">
+        {images.map((item, index) => (
+          <div
+            key={item.src}
+            className="cl-gallery__item"
+            tabIndex={enableFullscreen ? 0 : undefined}
+            role={enableFullscreen ? 'button' : undefined}
+            aria-haspopup={enableFullscreen ? 'dialog' : undefined}
+            onClick={enableFullscreen ? (e) => openViewer(index, e.currentTarget) : undefined}
+            onKeyDown={enableFullscreen ? (e) => handleImageKeyDown(e, index) : undefined}
+          >
             <Image {...item} />
           </div>
         ))}
@@ -78,6 +122,15 @@ const Gallery: FC<GalleryProps> = ({
             aria-hidden={!showNext}
           />
         </>
+      )}
+      {enableFullscreen && (
+        <FullscreenViewer
+          images={images}
+          currentIndex={currentImageIndex}
+          isOpen={isViewerOpen}
+          onClose={closeViewer}
+          onNavigate={handleNavigate}
+        />
       )}
     </section>
   );

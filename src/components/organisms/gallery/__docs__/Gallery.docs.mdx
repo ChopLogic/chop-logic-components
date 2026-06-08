@@ -70,24 +70,59 @@ const ImageCarousel = () => {
 };
 ```
 
+### Fullscreen Mode
+
+Enable fullscreen viewing by setting `enableFullscreen={true}`. Users can click any image to open it in a fullscreen overlay with navigation controls. The fullscreen viewer supports keyboard navigation (Arrow keys to navigate, Escape to close) and clicking outside the image to close.
+
+```tsx
+import { Gallery } from "chop-logic-components";
+
+const FullscreenGallery = () => {
+  const images = [
+    { src: "/photos/landscape-1.jpg", alt: "Mountain sunrise", caption: "Sunrise over the mountains" },
+    { src: "/photos/landscape-2.jpg", alt: "Ocean sunset", caption: "Peaceful ocean sunset" },
+    { src: "/photos/landscape-3.jpg", alt: "Forest trail", caption: "Enchanted forest path" },
+  ];
+
+  return <Gallery images={images} layout="grid" columns={3} enableFullscreen label="Photo gallery with fullscreen" />;
+};
+```
+
+#### Fullscreen Features
+
+- **Click to open**: Click any image to view it in fullscreen
+- **Keyboard activation**: Press Enter or Space on a focused image to open fullscreen
+- **Navigation**: Use Previous/Next buttons or Arrow keys to browse images
+- **Close options**: Click the close button, press Escape, or click outside the image
+- **Image counter**: Shows current position (e.g., "2 / 5") when multiple images exist
+- **Captions**: Displays image captions below the fullscreen image when provided
+- **Focus management**: Returns focus to the triggering image when closing
+
 ## Best Practices
 
 1. _Image Content_:
    - Always provide meaningful `alt` text for each image
    - Use the `decorative` prop on images that are purely visual
    - Optimize image file sizes for faster loading
+   - Add `caption` to images when enabling fullscreen for additional context
 2. _Layout Selection_:
    - Use **Grid** for uniform collections where consistent sizing matters
    - Use **Masonry** for images with varying aspect ratios
    - Use **Carousel** for featured content or when horizontal space is limited
-3. _Responsive Behavior_:
+3. _Fullscreen Mode_:
+   - Enable fullscreen for galleries where users benefit from viewing larger images
+   - Provide high-resolution images when fullscreen is enabled
+   - Use captions to give context about images in fullscreen view
+   - Works with all layout modes (grid, masonry, carousel)
+4. _Responsive Behavior_:
    - Grid automatically reduces to 2 columns on mobile viewports
    - Masonry adapts from 1 to 3 columns across breakpoints
    - Carousel supports native touch scrolling on mobile devices
-4. _Accessibility_:
+5. _Accessibility_:
    - Provide a descriptive `label` prop for screen readers
    - Carousel navigation buttons are keyboard accessible via Tab, Enter, and Space
    - Navigation buttons are removed from the accessibility tree when hidden
+   - Fullscreen viewer supports full keyboard navigation and focus management
 
 ## Props
 

@@ -36,6 +36,39 @@ export const carouselImages: GalleryItem[] = [
   { src: 'https://picsum.photos/seed/25/600/400', alt: 'Carousel image 6' },
 ];
 
+export const fullscreenImages: GalleryItem[] = [
+  {
+    src: 'https://picsum.photos/seed/fs1/800/600',
+    alt: 'Mountain landscape',
+    caption: 'Mountain landscape at sunset',
+  },
+  {
+    src: 'https://picsum.photos/seed/fs2/800/600',
+    alt: 'Ocean waves',
+    caption: 'Peaceful ocean waves',
+  },
+  {
+    src: 'https://picsum.photos/seed/fs3/800/600',
+    alt: 'Forest trail',
+    caption: 'Enchanted forest trail',
+  },
+  {
+    src: 'https://picsum.photos/seed/fs4/800/600',
+    alt: 'City skyline',
+    caption: 'City skyline at night',
+  },
+  {
+    src: 'https://picsum.photos/seed/fs5/800/600',
+    alt: 'Desert dunes',
+    caption: 'Golden desert dunes',
+  },
+  {
+    src: 'https://picsum.photos/seed/fs6/800/600',
+    alt: 'Waterfall',
+    caption: 'Majestic waterfall',
+  },
+];
+
 const GalleryExample: FC<GalleryProps> = (props) => {
   return <Gallery {...props} />;
 };

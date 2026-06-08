@@ -1,0 +1,141 @@
+/* ============================================================================
+   FULLSCREEN VIEWER - Modal overlay for displaying gallery images
+   ============================================================================ */
+
+/* Block
+   ============================================================================ */
+
+.cl-fullscreen-viewer {
+  animation: cl-fade-in ease 400ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--cl-z-index-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cl-shadow-background);
+}
+
+/* Modifiers
+   ============================================================================ */
+
+.cl-fullscreen-viewer_closing {
+  animation: cl-fade-out ease 400ms;
+}
+
+/* Elements
+   ============================================================================ */
+
+.cl-fullscreen-viewer__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cl-fullscreen-viewer__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.cl-fullscreen-viewer__image-container {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cl-fullscreen-viewer__image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cl-fullscreen-viewer__caption {
+  color: white;
+  margin-top: var(--cl-m-gap);
+  text-align: center;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+}
+
+/* Close Button
+   ============================================================================ */
+
+.cl-fullscreen-viewer__close-button {
+  position: absolute;
+  top: var(--cl-m-gap);
+  right: var(--cl-m-gap);
+  z-index: 1;
+}
+
+/* Navigation Buttons
+   ============================================================================ */
+
+.cl-fullscreen-viewer__nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.cl-fullscreen-viewer__nav-button_prev {
+  left: var(--cl-l-gap);
+}
+
+.cl-fullscreen-viewer__nav-button_next {
+  right: var(--cl-l-gap);
+}
+
+/* Counter
+   ============================================================================ */
+
+.cl-fullscreen-viewer__counter {
+  position: absolute;
+  bottom: var(--cl-l-gap);
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+}
+
+/* Responsive Adjustments
+   ============================================================================ */
+
+@media (min-width: 640px) {
+  .cl-fullscreen-viewer__close-button {
+    top: var(--cl-l-gap);
+    right: var(--cl-l-gap);
+  }
+
+  .cl-fullscreen-viewer__caption {
+    font-size: var(--cl-typography-base-tablet);
+  }
+
+  .cl-fullscreen-viewer__counter {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-fullscreen-viewer__caption {
+    font-size: var(--cl-typography-base-desktop);
+  }
+
+  .cl-fullscreen-viewer__counter {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

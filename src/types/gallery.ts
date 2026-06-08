@@ -21,4 +21,6 @@ export interface GalleryProps extends ChopLogicComponentProps {
   gap?: string;
   /** Accessible label for the gallery region */
   label?: string;
+  /** Enable fullscreen viewing mode when clicking images */
+  enableFullscreen?: boolean;
 }

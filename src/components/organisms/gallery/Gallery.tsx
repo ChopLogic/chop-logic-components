@@ -4,7 +4,7 @@ import type { GalleryProps } from '@types';
 import { getClassName } from '@utils';
 import { type CSSProperties, type FC, useCallback, useRef, useState } from 'react';
 
-import FullscreenViewer from './fullscreen-viewer/FullscreenViewer';
+import FullscreenViewer from './FullscreenViewer';
 import './Gallery.css';
 import { useCarouselScroll } from './use-carousel-scroll';
 

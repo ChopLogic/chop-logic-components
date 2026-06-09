@@ -136,6 +136,7 @@
   --cl-text-shadow: 2.4px 2.4px 3.2px rgba(0, 0, 0, 0.15);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(0, 0, 0, 0.15));
   --cl-shadow-background: hsla(0, 0%, 0%, 0.3);
+  --cl-shadow-background-deep: hsla(0, 0%, 0%, 0.8);
 
   /* Theme Borders */
   --cl-accent-border: 1px solid #8d1c12;
@@ -203,6 +204,7 @@
   --cl-text-shadow: 2.4px 2.4px 3.2px rgba(255, 255, 255, 0.5);
   --cl-drop-shadow: drop-shadow(2.4px 2.4px 3.2px rgba(255, 255, 255, 0.3));
   --cl-shadow-background: hsla(0, 0%, 100%, 0.3);
+  --cl-shadow-background-deep: hsla(0, 0%, 0%, 0.8);
 
   /* Dark Theme Borders */
   --cl-accent-border: 1px solid #eb5cbe;

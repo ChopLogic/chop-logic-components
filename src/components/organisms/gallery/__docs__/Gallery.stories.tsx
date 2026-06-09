@@ -323,26 +323,3 @@ export const FullscreenCarousel: Story = {
     },
   },
 };
-
-export const FullscreenSingleImage: Story = {
-  args: {
-    layout: 'grid',
-    columns: 1,
-    enableFullscreen: true,
-    images: [
-      {
-        src: 'https://picsum.photos/seed/single/1200/800',
-        alt: 'Single featured image',
-        caption: 'A single image gallery with fullscreen support',
-      },
-    ],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Single image gallery with fullscreen mode. Navigation buttons and counter are hidden when there is only one image.',
-      },
-    },
-  },
-};

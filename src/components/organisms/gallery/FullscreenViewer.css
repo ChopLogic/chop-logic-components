@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--cl-shadow-background);
+  background-color: var(--cl-shadow-background-deep);
 }
 
 /* Modifiers
@@ -78,7 +78,7 @@
   position: absolute;
   top: var(--cl-m-gap);
   right: var(--cl-m-gap);
-  z-index: 1;
+  z-index: var(--cl-z-index-menu);
 }
 
 /* Navigation Buttons
@@ -86,9 +86,14 @@
 
 .cl-fullscreen-viewer__nav-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+  height: 90%;
+  top: 5%;
+  z-index: var(--cl-z-index-base);
+}
+
+.cl-fullscreen-viewer__nav-button .cl-icon-button__icon::before,
+.cl-fullscreen-viewer__close-button .cl-icon-button__icon::before {
+  color: white !important;
 }
 
 .cl-fullscreen-viewer__nav-button_prev {
@@ -106,8 +111,7 @@
   position: absolute;
   bottom: var(--cl-l-gap);
   left: 50%;
-  transform: translateX(-50%);
-  color: white;
+  color: var(--cl-base-background-color);
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-base-mobile);
 }

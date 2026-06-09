@@ -8,15 +8,10 @@ import { type FC, useEffect, useRef } from 'react';
 import './FullscreenViewer.css';
 
 export interface FullscreenViewerProps {
-  /** Array of gallery images */
   images: GalleryItem[];
-  /** Index of currently displayed image */
   currentIndex: number;
-  /** Whether the viewer is currently open */
   isOpen: boolean;
-  /** Callback to close the viewer */
   onClose: () => void;
-  /** Callback to navigate to a specific image index */
   onNavigate: (index: number) => void;
 }
 
@@ -31,13 +26,9 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
   const isMounted = useIsMounted(isOpen, 300);
   const isClosing = isMounted && !isOpen;
 
-  // Focus trap for accessibility (Req 6.1)
   useModalFocusTrap({ modalRef: viewerRef, isOpened: isOpen });
-
-  // Escape key to close (Req 6.2)
   useKeyPress({ keyCode: 'Escape', ref: viewerRef, onKeyPress: onClose });
 
-  // Arrow key navigation (Req 6.3, 6.4)
   useEffect(() => {
     const handleArrowKeys = (e: KeyboardEvent) => {
       if (e.code === 'ArrowLeft' && currentIndex > 0) {
@@ -61,7 +52,6 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
     return null;
   }
 
-  // Extract caption from image props, remaining props go to Image component
   const { caption, ...imageProps } = currentImage;
 
   const viewerClass = getClassName([
@@ -69,14 +59,10 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
     { 'cl-fullscreen-viewer_closing': isClosing },
   ]);
 
-  // Only show counter when there's more than one image
   const showCounter = images.length > 1;
-
-  // Navigation visibility based on current index bounds
   const showPreviousButton = currentIndex > 0;
   const showNextButton = currentIndex < images.length - 1;
 
-  // Navigation handlers
   const handlePrevious = () => {
     onNavigate(currentIndex - 1);
   };
@@ -85,14 +71,12 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
     onNavigate(currentIndex + 1);
   };
 
-  // Overlay click handler - only close if clicking directly on overlay, not children
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
   };
 
-  // Overlay keyboard handler for accessibility
   const handleOverlayKeyDown = (e: React.KeyboardEvent) => {
     if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) {
       e.preventDefault();

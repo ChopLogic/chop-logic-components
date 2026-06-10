@@ -67,12 +67,15 @@ const Gallery: FC<GalleryProps> = ({
     { 'cl-gallery__container_masonry': layout === 'masonry' },
     { 'cl-gallery__container_carousel': layout === 'carousel' },
   ]);
-
   const containerStyle: CSSProperties = {
     '--gallery-columns': columns,
     '--gallery-rows': rows,
     '--gallery-gap': gap,
   } as CSSProperties;
+  const itemClass = getClassName([
+    'cl-gallery__item',
+    { 'cl-gallery__item_fullscreen': enableFullscreen },
+  ]);
 
   return (
     <section
@@ -90,7 +93,7 @@ const Gallery: FC<GalleryProps> = ({
         {images.map((item, index) => (
           <div
             key={item.src}
-            className="cl-gallery__item"
+            className={itemClass}
             tabIndex={enableFullscreen ? 0 : undefined}
             role={enableFullscreen ? 'button' : undefined}
             aria-haspopup={enableFullscreen ? 'dialog' : undefined}

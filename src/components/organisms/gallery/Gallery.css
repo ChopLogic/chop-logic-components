@@ -18,6 +18,10 @@
   overflow: hidden;
 }
 
+.cl-gallery__item_fullscreen {
+  cursor: pointer;
+}
+
 .cl-gallery__button {
   position: absolute;
   top: 0;

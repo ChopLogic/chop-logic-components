@@ -187,101 +187,6 @@ export const Carousel: Story = {
   },
 };
 
-export const FullscreenGrid: Story = {
-  args: {
-    layout: 'grid',
-    columns: 3,
-    enableFullscreen: true,
-    images: [
-      {
-        src: 'https://picsum.photos/seed/fs1/800/600',
-        alt: 'Mountain landscape',
-        caption: 'Mountain landscape at sunset',
-      },
-      {
-        src: 'https://picsum.photos/seed/fs2/800/600',
-        alt: 'Ocean waves',
-        caption: 'Peaceful ocean waves',
-      },
-      {
-        src: 'https://picsum.photos/seed/fs3/800/600',
-        alt: 'Forest trail',
-        caption: 'Enchanted forest trail',
-      },
-      {
-        src: 'https://picsum.photos/seed/fs4/800/600',
-        alt: 'City skyline',
-        caption: 'City skyline at night',
-      },
-      {
-        src: 'https://picsum.photos/seed/fs5/800/600',
-        alt: 'Desert dunes',
-        caption: 'Golden desert dunes',
-      },
-      {
-        src: 'https://picsum.photos/seed/fs6/800/600',
-        alt: 'Waterfall',
-        caption: 'Majestic waterfall',
-      },
-    ],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Grid gallery with fullscreen mode enabled. Click on any image to open it in a fullscreen viewer with navigation controls. Supports keyboard navigation (Arrow keys, Escape) and click outside to close.',
-      },
-    },
-  },
-};
-
-export const FullscreenMasonry: Story = {
-  args: {
-    layout: 'masonry',
-    enableFullscreen: true,
-    images: [
-      {
-        src: 'https://picsum.photos/seed/fsm1/400/600',
-        alt: 'Tall portrait 1',
-        caption: 'Portrait photography',
-      },
-      {
-        src: 'https://picsum.photos/seed/fsm2/400/300',
-        alt: 'Landscape shot',
-        caption: 'Wide landscape view',
-      },
-      {
-        src: 'https://picsum.photos/seed/fsm3/400/400',
-        alt: 'Square composition',
-        caption: 'Square format image',
-      },
-      {
-        src: 'https://picsum.photos/seed/fsm4/400/500',
-        alt: 'Medium portrait',
-        caption: 'Medium portrait shot',
-      },
-      {
-        src: 'https://picsum.photos/seed/fsm5/400/350',
-        alt: 'Nature scene',
-        caption: 'Beautiful nature scene',
-      },
-      {
-        src: 'https://picsum.photos/seed/fsm6/400/550',
-        alt: 'Tall image',
-        caption: 'Vertical composition',
-      },
-    ],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Masonry gallery with fullscreen mode enabled. Images with varying heights can be viewed in fullscreen with captions displayed below.',
-      },
-    },
-  },
-};
-
 export const FullscreenCarousel: Story = {
   args: {
     layout: 'carousel',
@@ -319,6 +224,90 @@ export const FullscreenCarousel: Story = {
       description: {
         story:
           'Carousel gallery with fullscreen mode enabled. Combines horizontal scrolling with fullscreen viewing capability.',
+      },
+    },
+  },
+};
+
+export const FullscreenGridWithResponsiveSources: Story = {
+  args: {
+    layout: 'grid',
+    columns: 3,
+    enableFullscreen: true,
+    images: [
+      {
+        src: 'https://picsum.photos/seed/resp1/400/300',
+        alt: 'Responsive image 1',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp1/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp1/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp1/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp1/1600/1200', descriptor: '1600w' },
+        ],
+      },
+      {
+        src: 'https://picsum.photos/seed/resp2/400/300',
+        alt: 'Responsive image 2',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp2/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp2/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp2/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp2/1600/1200', descriptor: '1600w' },
+        ],
+      },
+      {
+        src: 'https://picsum.photos/seed/resp3/400/300',
+        alt: 'Responsive image 3',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp3/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp3/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp3/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp3/1600/1200', descriptor: '1600w' },
+        ],
+      },
+      {
+        src: 'https://picsum.photos/seed/resp4/400/300',
+        alt: 'Responsive image 4',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp4/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp4/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp4/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp4/1600/1200', descriptor: '1600w' },
+        ],
+      },
+      {
+        src: 'https://picsum.photos/seed/resp5/400/300',
+        alt: 'Responsive image 5',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp5/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp5/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp5/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp5/1600/1200', descriptor: '1600w' },
+        ],
+      },
+      {
+        src: 'https://picsum.photos/seed/resp6/400/300',
+        alt: 'Responsive image 6',
+        caption: 'Opens largest resolution (1600px) in fullscreen',
+        sources: [
+          { src: 'https://picsum.photos/seed/resp6/400/300', descriptor: '400w' },
+          { src: 'https://picsum.photos/seed/resp6/800/600', descriptor: '800w' },
+          { src: 'https://picsum.photos/seed/resp6/1200/900', descriptor: '1200w' },
+          { src: 'https://picsum.photos/seed/resp6/1600/1200', descriptor: '1600w' },
+        ],
+      },
+    ],
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Gallery with responsive image sources. Thumbnails use browser-selected resolution based on viewport, while fullscreen mode automatically displays the largest available resolution (1600px width in this example). Open browser DevTools Network tab to verify the fullscreen view loads the highest resolution image.',
       },
     },
   },

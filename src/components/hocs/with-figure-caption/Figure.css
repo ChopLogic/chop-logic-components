@@ -5,6 +5,7 @@
 
 .cl-figure__caption {
   text-align: center;
+  font-family: var(--cl-core-font);
   padding-top: var(--cl-s-gap);
   color: var(--cl-base-font-color);
   font-size: var(--cl-typography-small-mobile);

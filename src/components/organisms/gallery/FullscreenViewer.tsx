@@ -3,9 +3,10 @@ import { ButtonView, IconName } from '@enums';
 import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
 import type { GalleryItem } from '@types';
 import { getClassName } from '@utils';
-import { type FC, useEffect, useRef } from 'react';
+import { type FC, useEffect, useMemo, useRef } from 'react';
 
 import './FullscreenViewer.css';
+import { getFullscreenImageProps } from './Gallery.helpers';
 
 export interface FullscreenViewerProps {
   images: GalleryItem[];
@@ -42,17 +43,18 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
     return () => document.removeEventListener('keydown', handleArrowKeys);
   }, [currentIndex, images.length, onNavigate]);
 
-  if (!isMounted) {
-    return null;
-  }
-
   const currentImage = images[currentIndex];
 
-  if (!currentImage) {
+  const fullscreenImageProps = useMemo(() => {
+    if (!currentImage) {
+      return null;
+    }
+    return getFullscreenImageProps(currentImage);
+  }, [currentImage]);
+
+  if (!isMounted || !currentImage || !fullscreenImageProps) {
     return null;
   }
-
-  const { caption, ...imageProps } = currentImage;
 
   const viewerClass = getClassName([
     'cl-fullscreen-viewer',
@@ -117,10 +119,7 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
           role="presentation"
         >
           <div className="cl-fullscreen-viewer__image-container">
-            <Image {...imageProps} loading="eager" />
-            {caption && (
-              <figcaption className="cl-fullscreen-viewer__caption">{caption}</figcaption>
-            )}
+            <Image {...fullscreenImageProps} caption={currentImage.caption} loading="eager" />
           </div>
           {showCounter && (
             <span className="cl-fullscreen-viewer__counter" aria-live="polite">

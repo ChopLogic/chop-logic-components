@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import type { GalleryMode } from '@types';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useCarouselScroll } from '../use-carousel-scroll';
+import { useCarouselScroll } from '../hooks/use-carousel-scroll';
 
 // Helpers to configure a mock scroll container
 const makeContainer = (scrollLeft: number, scrollWidth: number, clientWidth: number) => {

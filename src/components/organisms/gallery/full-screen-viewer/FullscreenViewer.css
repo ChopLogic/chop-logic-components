@@ -1,0 +1,17 @@
+.cl-fullscreen-viewer {
+  animation: cl-fade-in ease 400ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--cl-z-index-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cl-shadow-background-deep);
+}
+
+.cl-fullscreen-viewer_closing {
+  animation: cl-fade-out ease 400ms;
+}

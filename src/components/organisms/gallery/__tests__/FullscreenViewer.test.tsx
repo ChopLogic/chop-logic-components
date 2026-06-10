@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import type { GalleryItem } from '@types';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import FullscreenViewer from '../FullscreenViewer';
+import FullscreenViewer from '../full-screen-viewer/FullscreenViewer';
 
 describe('FullscreenViewer', () => {
   const defaultImages: GalleryItem[] = [

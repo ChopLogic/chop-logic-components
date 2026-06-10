@@ -1,0 +1,20 @@
+.cl-fullscreen-viewer__counter {
+  position: absolute;
+  bottom: var(--cl-l-gap);
+  left: 50%;
+  color: white !important;
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+}
+
+@media (min-width: 640px) {
+  .cl-fullscreen-viewer__counter {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-fullscreen-viewer__counter {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

@@ -1,51 +1,11 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
-
 .cl-gallery {
   position: relative;
 }
-
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
 
 .cl-gallery__container {
   width: 100%;
 }
 
-.cl-gallery__item {
-  overflow: hidden;
-}
-
-.cl-gallery__item_fullscreen {
-  cursor: pointer;
-}
-
-.cl-gallery__button {
-  position: absolute;
-  top: 0;
-  height: 100%;
-}
-
-.cl-gallery__button_prev {
-  left: var(--cl-l-gap);
-}
-
-.cl-gallery__button_next {
-  right: var(--cl-l-gap);
-}
-
-.cl-gallery__button_prev .cl-icon-button__icon::before,
-.cl-gallery__button_next .cl-icon-button__icon::before {
-  color: white !important;
-}
-
-/* ============================================================================
-   MODIFIERS
-   ============================================================================ */
-
-/* Grid layout */
 .cl-gallery__container_grid {
   display: grid;
   grid-template-columns: repeat(min(var(--gallery-columns), 2), 1fr);
@@ -75,7 +35,6 @@
   object-fit: cover;
 }
 
-/* Masonry layout */
 .cl-gallery__container_masonry {
   column-count: 1;
   column-gap: var(--gallery-gap, var(--cl-m-gap));
@@ -86,7 +45,6 @@
   margin-bottom: var(--gallery-gap, var(--cl-m-gap));
 }
 
-/* Carousel layout */
 .cl-gallery__container_carousel {
   display: flex;
   flex-wrap: nowrap;
@@ -103,10 +61,6 @@
 .cl-gallery__container_carousel .cl-gallery__item {
   flex-shrink: 0;
 }
-
-/* ============================================================================
-   MEDIA QUERIES
-   ============================================================================ */
 
 @media (min-width: 640px) {
   .cl-gallery__container_grid {

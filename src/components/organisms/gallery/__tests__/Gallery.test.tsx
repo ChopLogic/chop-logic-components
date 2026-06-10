@@ -6,7 +6,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import Gallery from '../Gallery';
 
 // Mock the useCarouselScroll hook
-vi.mock('../use-carousel-scroll', () => ({
+vi.mock('../hooks/use-carousel-scroll', () => ({
   useCarouselScroll: vi.fn(() => ({
     showPrev: false,
     showNext: true,
@@ -16,7 +16,7 @@ vi.mock('../use-carousel-scroll', () => ({
 }));
 
 // Import the mocked module to control its behavior in tests
-import { useCarouselScroll } from '../use-carousel-scroll';
+import { useCarouselScroll } from '../hooks/use-carousel-scroll';
 
 const mockUseCarouselScroll = vi.mocked(useCarouselScroll);
 

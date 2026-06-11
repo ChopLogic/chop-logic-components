@@ -9,11 +9,13 @@ export const getLargestImageSource = (sources: ImageSource[]): ImageSource | und
   let largestWidth = 0;
 
   for (const source of sources) {
-    const widthMatch = source.descriptor?.match(/(\d+)w/);
+    const descriptor = source.descriptor?.trim();
 
-    if (widthMatch) {
-      const width = Number.parseInt(widthMatch[1], 10);
-      if (width > largestWidth) {
+    if (descriptor && descriptor.endsWith('w')) {
+      const widthStr = descriptor.slice(0, -1);
+      const width = Number.parseInt(widthStr, 10);
+
+      if (!Number.isNaN(width) && width > largestWidth) {
         largestWidth = width;
         largestSource = source;
       }

@@ -143,3 +143,6 @@ storybook-static
 .stryker-tmp
 # Generated reports
 reports/
+
+# Kiro local files
+.kiro/specs

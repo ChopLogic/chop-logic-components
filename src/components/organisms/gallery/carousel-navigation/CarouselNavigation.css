@@ -1,0 +1,18 @@
+.cl-gallery__button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.cl-gallery__button_prev {
+  left: var(--cl-l-gap);
+}
+
+.cl-gallery__button_next {
+  right: var(--cl-l-gap);
+}
+
+.cl-gallery__button_prev .cl-icon-button__icon::before,
+.cl-gallery__button_next .cl-icon-button__icon::before {
+  color: white !important;
+}

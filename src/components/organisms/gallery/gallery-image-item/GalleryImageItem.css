@@ -1,0 +1,7 @@
+.cl-gallery__item {
+  overflow: hidden;
+}
+
+.cl-gallery__item_fullscreen {
+  cursor: pointer;
+}

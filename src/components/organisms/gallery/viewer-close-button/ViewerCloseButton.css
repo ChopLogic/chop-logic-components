@@ -1,0 +1,17 @@
+.cl-fullscreen-viewer__close-button {
+  position: absolute;
+  top: var(--cl-m-gap);
+  right: var(--cl-m-gap);
+  z-index: var(--cl-z-index-menu);
+}
+
+.cl-fullscreen-viewer__close-button .cl-icon-button__icon::before {
+  color: white !important;
+}
+
+@media (min-width: 640px) {
+  .cl-fullscreen-viewer__close-button {
+    top: var(--cl-l-gap);
+    right: var(--cl-l-gap);
+  }
+}

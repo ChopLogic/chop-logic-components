@@ -1,0 +1,18 @@
+.cl-fullscreen-viewer__nav-button {
+  position: absolute;
+  height: 90%;
+  top: 5%;
+  z-index: var(--cl-z-index-base);
+}
+
+.cl-fullscreen-viewer__nav-button .cl-icon-button__icon::before {
+  color: white !important;
+}
+
+.cl-fullscreen-viewer__nav-button_prev {
+  left: var(--cl-l-gap);
+}
+
+.cl-fullscreen-viewer__nav-button_next {
+  right: var(--cl-l-gap);
+}

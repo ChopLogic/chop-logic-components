@@ -55,7 +55,7 @@ const Gallery: FC<GalleryProps> = ({
         ref={containerRef}
         className={containerClass}
         style={containerStyle}
-        {...(layout === 'carousel' ? { 'aria-roledescription': 'carousel' } : {})}
+        tabIndex={layout === 'carousel' ? 0 : undefined}
       >
         {images.map((item, index) => (
           <GalleryImageItem

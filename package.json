@@ -83,7 +83,7 @@
     "lint:warnings": "biome check --diagnostic-level warn --max-diagnostics 100",
     "lint:fix": "biome check --write",
     "typecheck": "tsc --pretty --noEmit",
-    "test": "vitest",
+    "test": "vitest --watch",
     "test:ci": "vitest run --passWithNoTests",
     "test:integration": "npm run build:storybook && start-server-and-test 'http-server storybook-static -p 6006 -s' http://127.0.0.1:6006 test-storybook",
     "test:mutation": "stryker run",

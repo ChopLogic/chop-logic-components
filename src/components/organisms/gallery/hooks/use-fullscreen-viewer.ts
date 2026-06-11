@@ -22,7 +22,6 @@ export const useFullscreenViewer = (): FullscreenViewerState => {
 
   const closeViewer = useCallback(() => {
     setIsViewerOpen(false);
-    // Focus restoration happens after animation completes
     setTimeout(() => {
       triggerRef.current?.focus();
       triggerRef.current = null;

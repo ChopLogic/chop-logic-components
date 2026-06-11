@@ -4,7 +4,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useCarouselScroll } from '../hooks/use-carousel-scroll';
 
-// Helpers to configure a mock scroll container
 const makeContainer = (scrollLeft: number, scrollWidth: number, clientWidth: number) => {
   const container = document.createElement('div');
   Object.defineProperties(container, {
@@ -27,7 +26,6 @@ describe('useCarouselScroll', () => {
     observeMock = vi.fn();
     disconnectMock = vi.fn();
 
-    // Must be a real constructor function so `new ResizeObserver(...)` works
     vi.stubGlobal('ResizeObserver', function (this: unknown, callback: ResizeObserverCallback) {
       resizeObserverCallback = callback;
       return { observe: observeMock, disconnect: disconnectMock };

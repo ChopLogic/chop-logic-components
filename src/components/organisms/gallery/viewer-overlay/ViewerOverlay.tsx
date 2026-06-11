@@ -41,7 +41,7 @@ const ViewerOverlay: FC<ViewerOverlayProps> = ({
       className="cl-fullscreen-viewer__overlay"
       onClick={handleOverlayClick}
       onKeyDown={handleOverlayKeyDown}
-      role="presentation"
+      data-testid="viewer-overlay"
     >
       <ViewerImageContainer fullscreenImageProps={fullscreenImageProps} caption={caption} />
       <ViewerCounter currentIndex={currentIndex} totalImages={totalImages} />

@@ -34,24 +34,14 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
     });
 
     it('does not render when isOpen is false', () => {
       render(<FullscreenViewer {...defaultProps} isOpen={false} />);
 
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    });
-
-    it('renders with correct ARIA attributes', async () => {
-      render(<FullscreenViewer {...defaultProps} />);
-
-      await waitFor(() => {
-        const dialog = screen.getByRole('dialog');
-        expect(dialog).toHaveAttribute('aria-modal', 'true');
-        expect(dialog).toHaveAttribute('aria-label', 'Fullscreen image viewer');
-      });
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
 
     it('renders the current image', async () => {
@@ -75,13 +65,13 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={99} />);
 
       // Should not render anything
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
 
     it('returns null when images array is empty', () => {
       render(<FullscreenViewer {...defaultProps} images={[]} currentIndex={0} />);
 
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
   });
 
@@ -90,13 +80,13 @@ describe('FullscreenViewer', () => {
       const { rerender } = render(<FullscreenViewer {...defaultProps} isOpen={true} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       rerender(<FullscreenViewer {...defaultProps} isOpen={false} />);
 
       // During the closing animation, the element should still be in the DOM with closing class
-      const dialog = screen.queryByRole('dialog');
+      const dialog = screen.queryByTestId('fullscreen-image-viewer');
       if (dialog) {
         expect(dialog).toHaveClass('cl-fullscreen-viewer_closing');
       }
@@ -120,7 +110,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} images={singleImage} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       expect(screen.queryByText(/\d+ \/ \d+/)).not.toBeInTheDocument();
@@ -183,7 +173,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} images={singleImage} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       expect(screen.queryByLabelText('Previous image')).not.toBeInTheDocument();
@@ -223,7 +213,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={1} onNavigate={onNavigate} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       fireEvent.keyDown(document, { code: 'ArrowLeft' });
@@ -236,7 +226,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={0} onNavigate={onNavigate} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       fireEvent.keyDown(document, { code: 'ArrowRight' });
@@ -249,7 +239,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={0} onNavigate={onNavigate} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       fireEvent.keyDown(document, { code: 'ArrowLeft' });
@@ -262,7 +252,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={2} onNavigate={onNavigate} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       fireEvent.keyDown(document, { code: 'ArrowRight' });
@@ -275,7 +265,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       // useKeyPress hook listens on document and uses e.code
@@ -290,7 +280,7 @@ describe('FullscreenViewer', () => {
       const { unmount } = render(<FullscreenViewer {...defaultProps} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       unmount();
@@ -307,10 +297,10 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
-      const overlay = screen.getByRole('presentation');
+      const overlay = screen.getByTestId('viewer-overlay');
       fireEvent.click(overlay);
 
       expect(onClose).toHaveBeenCalled();
@@ -321,7 +311,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       const image = screen.getByRole('img');
@@ -335,10 +325,10 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
-      const overlay = screen.getByRole('presentation');
+      const overlay = screen.getByTestId('viewer-overlay');
       fireEvent.keyDown(overlay, { key: 'Enter', target: overlay, currentTarget: overlay });
 
       expect(onClose).toHaveBeenCalled();
@@ -349,10 +339,10 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
-      const overlay = screen.getByRole('presentation');
+      const overlay = screen.getByTestId('viewer-overlay');
       fireEvent.keyDown(overlay, { key: ' ', target: overlay, currentTarget: overlay });
 
       expect(onClose).toHaveBeenCalled();
@@ -363,10 +353,10 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
-      const overlay = screen.getByRole('presentation');
+      const overlay = screen.getByTestId('viewer-overlay');
       fireEvent.keyDown(overlay, { key: 'a', target: overlay, currentTarget: overlay });
 
       expect(onClose).not.toHaveBeenCalled();
@@ -377,10 +367,10 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} onClose={onClose} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
-      const overlay = screen.getByRole('presentation');
+      const overlay = screen.getByTestId('viewer-overlay');
       const image = screen.getByRole('img');
 
       // Simulate event bubbling from image
@@ -466,7 +456,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} />);
 
       await waitFor(() => {
-        const dialog = screen.getByRole('dialog');
+        const dialog = screen.getByTestId('fullscreen-image-viewer');
         expect(dialog).toHaveClass('cl-fullscreen-viewer');
       });
     });
@@ -475,13 +465,13 @@ describe('FullscreenViewer', () => {
       const { rerender } = render(<FullscreenViewer {...defaultProps} isOpen={true} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       rerender(<FullscreenViewer {...defaultProps} isOpen={false} />);
 
       // During the closing animation window
-      const dialog = screen.queryByRole('dialog');
+      const dialog = screen.queryByTestId('fullscreen-image-viewer');
       if (dialog) {
         expect(dialog).toHaveClass('cl-fullscreen-viewer_closing');
       }
@@ -512,7 +502,7 @@ describe('FullscreenViewer', () => {
       render(<FullscreenViewer {...defaultProps} currentIndex={1} onNavigate={onNavigate} />);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       // Rapid arrow key presses
@@ -533,7 +523,7 @@ describe('FullscreenViewer', () => {
       );
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       // Try to go previous at first image

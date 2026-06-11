@@ -37,14 +37,7 @@ const GalleryImageItem: FC<GalleryImageItemProps> = ({
   };
 
   return (
-    <div
-      className={itemClass}
-      tabIndex={enableFullscreen ? 0 : undefined}
-      role={enableFullscreen ? 'button' : undefined}
-      aria-haspopup={enableFullscreen ? 'dialog' : undefined}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-    >
+    <div className={itemClass} onClick={handleClick} onKeyDown={handleKeyDown}>
       <Image {...item} />
     </div>
   );

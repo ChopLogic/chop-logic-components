@@ -22,7 +22,7 @@ export const getLargestImageSource = (sources: ImageSource[]): ImageSource | und
     }
   }
 
-  return largestSource ?? sources[sources.length - 1];
+  return largestSource ?? sources.at(-1);
 };
 
 export const getFullscreenImageProps = (image: GalleryItem): Omit<ImageProps, 'caption'> => {

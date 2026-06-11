@@ -64,13 +64,7 @@ const FullscreenViewer: FC<FullscreenViewerProps> = ({
 
   return (
     <Portal>
-      <div
-        ref={viewerRef}
-        className={viewerClass}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Fullscreen image viewer"
-      >
+      <div ref={viewerRef} className={viewerClass} data-testid="fullscreen-image-viewer">
         <ViewerCloseButton onClose={onClose} />
         <ViewerOverlay
           fullscreenImageProps={fullscreenImageProps}

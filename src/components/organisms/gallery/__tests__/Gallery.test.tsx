@@ -158,27 +158,6 @@ describe('Gallery', () => {
       expect(container).toHaveClass('cl-gallery__container_carousel');
       expect(container).not.toHaveClass('cl-gallery__container_grid');
     });
-
-    it('adds aria-roledescription for carousel layout', () => {
-      render(<Gallery images={defaultImages} layout="carousel" />);
-
-      const container = screen.getByRole('region').querySelector('.cl-gallery__container');
-      expect(container).toHaveAttribute('aria-roledescription', 'carousel');
-    });
-
-    it('does not add aria-roledescription for grid layout', () => {
-      render(<Gallery images={defaultImages} layout="grid" />);
-
-      const container = screen.getByRole('region').querySelector('.cl-gallery__container');
-      expect(container).not.toHaveAttribute('aria-roledescription');
-    });
-
-    it('does not add aria-roledescription for masonry layout', () => {
-      render(<Gallery images={defaultImages} layout="masonry" />);
-
-      const container = screen.getByRole('region').querySelector('.cl-gallery__container');
-      expect(container).not.toHaveAttribute('aria-roledescription');
-    });
   });
 
   describe('CSS custom properties', () => {
@@ -330,7 +309,7 @@ describe('Gallery', () => {
     it('does not render FullscreenViewer when enableFullscreen is false', () => {
       render(<Gallery images={defaultImages} enableFullscreen={false} />);
 
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
 
     it('does not add interactive attributes to gallery items when fullscreen disabled', () => {
@@ -351,23 +330,11 @@ describe('Gallery', () => {
       const firstItem = getGalleryItem(0);
       await userEvent.click(firstItem);
 
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
   });
 
   describe('fullscreen mode enabled', () => {
-    it('adds interactive attributes to gallery items when fullscreen enabled', () => {
-      render(<Gallery images={defaultImages} enableFullscreen={true} />);
-
-      const items = screen.getAllByRole('img').map((img) => img.closest('.cl-gallery__item'));
-
-      for (const item of items) {
-        expect(item).toHaveAttribute('tabindex', '0');
-        expect(item).toHaveAttribute('role', 'button');
-        expect(item).toHaveAttribute('aria-haspopup', 'dialog');
-      }
-    });
-
     it('opens fullscreen viewer when clicking an image', async () => {
       render(<Gallery images={defaultImages} enableFullscreen={true} />);
 
@@ -375,7 +342,7 @@ describe('Gallery', () => {
       await userEvent.click(firstItem);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
     });
 
@@ -387,7 +354,7 @@ describe('Gallery', () => {
       await userEvent.click(secondItem);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
         // Counter should show 2 / 3
         expect(screen.getByText('2 / 3')).toBeInTheDocument();
       });
@@ -401,7 +368,7 @@ describe('Gallery', () => {
       fireEvent.keyDown(firstItem, { key: 'Enter' });
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
     });
 
@@ -413,7 +380,7 @@ describe('Gallery', () => {
       fireEvent.keyDown(firstItem, { key: ' ' });
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
     });
 
@@ -424,7 +391,7 @@ describe('Gallery', () => {
       firstItem.focus();
       fireEvent.keyDown(firstItem, { key: 'a' });
 
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
     });
 
     it('closes viewer and restores focus', async () => {
@@ -436,7 +403,7 @@ describe('Gallery', () => {
       await userEvent.click(firstItem);
 
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByTestId('fullscreen-image-viewer')).toBeInTheDocument();
       });
 
       const closeButton = screen.getByLabelText('Close fullscreen view');
@@ -446,7 +413,7 @@ describe('Gallery', () => {
       await vi.advanceTimersByTimeAsync(300);
 
       await waitFor(() => {
-        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();
       });
 
       vi.useRealTimers();

@@ -5,8 +5,6 @@ exports[`Image snapshot tests > BasicImage should match snapshot 1`] = `
   <img
     alt="Snapshot image"
     class="cl-image__img"
-    decoding="async"
-    loading="lazy"
     src="snapshot.jpg"
   />
 </DocumentFragment>
@@ -44,8 +42,6 @@ exports[`Image snapshot tests > Image with caption should match snapshot 1`] = `
       <img
         alt="Snapshot image"
         class="cl-image__img"
-        decoding="async"
-        loading="lazy"
         src="snapshot.jpg"
       />
     </div>
@@ -77,8 +73,6 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
     <img
       alt="Snapshot image"
       class="cl-image__img"
-      decoding="async"
-      loading="lazy"
       src="snapshot.jpg"
     />
   </picture>
@@ -104,8 +98,6 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot with emp
     <img
       alt="Snapshot image"
       class="cl-image__img"
-      decoding="async"
-      loading="lazy"
       src="snapshot.jpg"
     />
   </picture>

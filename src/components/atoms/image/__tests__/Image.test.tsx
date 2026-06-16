@@ -58,6 +58,13 @@ describe('Image', () => {
     expect(screen.queryByAltText(defaultProps.alt)).not.toBeInTheDocument();
   });
 
+  it('should set aspect ration style when defined', () => {
+    render(<Image {...defaultProps} aspectRatio="16/9" />);
+
+    const img = screen.getByRole('img');
+    expect(img).toHaveStyle('aspect-ratio: 16/9');
+  });
+
   it('shows fallback when basic image fails to load', () => {
     render(<Image {...defaultProps} />);
 

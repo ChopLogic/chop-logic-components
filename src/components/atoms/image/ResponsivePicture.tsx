@@ -15,7 +15,7 @@ type Props = {
   onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 };
 
-export const ResponsivePicture: FC<Props> = ({ sources = [], ...rest }) => {
+export const ResponsivePicture: FC<Props> = ({ sources = [], sizes, ...rest }) => {
   return (
     <picture className="cl-image__picture">
       {sources.map((source) => (
@@ -24,9 +24,10 @@ export const ResponsivePicture: FC<Props> = ({ sources = [], ...rest }) => {
           srcSet={source.descriptor ? `${source.src} ${source.descriptor}` : source.src}
           media={source.media}
           type={source.type}
+          sizes={sizes}
         />
       ))}
-      <BasicImage {...rest} />
+      <BasicImage sizes={sizes} {...rest} />
     </picture>
   );
 };

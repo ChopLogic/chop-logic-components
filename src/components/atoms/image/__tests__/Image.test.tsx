@@ -123,6 +123,41 @@ describe('Image', () => {
     expect(picture).toBeInTheDocument();
   });
 
+  it('should pass sizes attribute to source elements', () => {
+    const propsWithSources = {
+      ...defaultProps,
+      sources: [
+        { src: 'test-400.jpg', descriptor: '400w' },
+        { src: 'test-800.jpg', descriptor: '800w' },
+      ],
+      sizes: '(max-width: 480px) 400px, 800px',
+    };
+
+    const { container } = render(<Image {...propsWithSources} />);
+
+    const sourceElements = container.querySelectorAll('source');
+    for (const source of sourceElements) {
+      expect(source).toHaveAttribute('sizes', '(max-width: 480px) 400px, 800px');
+    }
+  });
+
+  it('should not set sizes on source elements when sizes prop is not provided', () => {
+    const propsWithSources = {
+      ...defaultProps,
+      sources: [
+        { src: 'test-400.jpg', descriptor: '400w' },
+        { src: 'test-800.jpg', descriptor: '800w' },
+      ],
+    };
+
+    const { container } = render(<Image {...propsWithSources} />);
+
+    const sourceElements = container.querySelectorAll('source');
+    for (const source of sourceElements) {
+      expect(source).not.toHaveAttribute('sizes');
+    }
+  });
+
   it('calls original onError handler when provided', () => {
     const onError = vi.fn();
     render(<Image {...defaultProps} onError={onError} />);

@@ -90,13 +90,8 @@ describe('Gallery.helpers', () => {
 
     it('handles sources with additional properties', () => {
       const sources: ImageSource[] = [
-        { src: '/small.jpg', descriptor: '480w', media: '(max-width: 600px)', type: 'image/webp' },
-        {
-          src: '/large.jpg',
-          descriptor: '1920w',
-          media: '(min-width: 1200px)',
-          type: 'image/webp',
-        },
+        { src: '/small.jpg', descriptor: '480w', type: 'image/webp' },
+        { src: '/large.jpg', descriptor: '1920w', type: 'image/webp' },
       ];
 
       const result = getLargestImageSource(sources);
@@ -104,7 +99,6 @@ describe('Gallery.helpers', () => {
       expect(result).toEqual({
         src: '/large.jpg',
         descriptor: '1920w',
-        media: '(min-width: 1200px)',
         type: 'image/webp',
       });
     });

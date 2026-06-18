@@ -59,27 +59,17 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot 1`] = `
   <picture
     class="cl-image__picture"
   >
-    <source
-      media="(max-width: 480px)"
-      srcset="https://picsum.photos/400/300 400w"
-    />
-    <source
-      media="(max-width: 1024px)"
-      srcset="https://picsum.photos/800/600 800w"
-    />
-    <source
-      srcset="https://picsum.photos/1200/900 1200w"
-    />
     <img
       alt="Snapshot image"
       class="cl-image__img"
       src="snapshot.jpg"
+      srcset="https://picsum.photos/400/300 400w, https://picsum.photos/800/600 800w, https://picsum.photos/1200/900 1200w"
     />
   </picture>
 </DocumentFragment>
 `;
 
-exports[`Image snapshot tests > ResponsivePicture should match snapshot with empty descriptors 1`] = `
+exports[`Image snapshot tests > ResponsivePicture should match snapshot with art direction sources 1`] = `
 <DocumentFragment>
   <picture
     class="cl-image__picture"
@@ -91,9 +81,6 @@ exports[`Image snapshot tests > ResponsivePicture should match snapshot with emp
     <source
       media="(max-width: 1024px)"
       srcset="https://picsum.photos/800/600"
-    />
-    <source
-      srcset="https://picsum.photos/1200/900"
     />
     <img
       alt="Snapshot image"

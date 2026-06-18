@@ -46,10 +46,9 @@ describe('Image', () => {
   });
 
   it('should apply custom className along with cl-image', () => {
-    const { container } = render(<Image {...defaultProps} className="custom-class" />);
-    const wrapper = container.querySelector('.cl-image.custom-class');
-
-    expect(wrapper).toBeInTheDocument();
+    render(<Image {...defaultProps} className="custom-class" />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveClass('custom-class');
   });
 
   it('should not have alt text if image is decorative', () => {
@@ -123,7 +122,7 @@ describe('Image', () => {
     expect(picture).toBeInTheDocument();
   });
 
-  it('should pass sizes attribute to source elements', () => {
+  it('should pass sizes attribute to img element for resolution switching', () => {
     const propsWithSources = {
       ...defaultProps,
       sources: [
@@ -133,15 +132,14 @@ describe('Image', () => {
       sizes: '(max-width: 480px) 400px, 800px',
     };
 
-    const { container } = render(<Image {...propsWithSources} />);
+    render(<Image {...propsWithSources} />);
 
-    const sourceElements = container.querySelectorAll('source');
-    for (const source of sourceElements) {
-      expect(source).toHaveAttribute('sizes', '(max-width: 480px) 400px, 800px');
-    }
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('sizes', '(max-width: 480px) 400px, 800px');
+    expect(img).toHaveAttribute('srcset', 'test-400.jpg 400w, test-800.jpg 800w');
   });
 
-  it('should not set sizes on source elements when sizes prop is not provided', () => {
+  it('should not set sizes on img when sizes prop is not provided', () => {
     const propsWithSources = {
       ...defaultProps,
       sources: [
@@ -150,12 +148,27 @@ describe('Image', () => {
       ],
     };
 
+    render(<Image {...propsWithSources} />);
+
+    const img = screen.getByRole('img');
+    expect(img).not.toHaveAttribute('sizes');
+  });
+
+  it('should render source elements for art direction sources', () => {
+    const propsWithSources = {
+      ...defaultProps,
+      sources: [
+        { src: 'test-mobile.jpg', media: '(max-width: 480px)' },
+        { src: 'test-tablet.jpg', media: '(max-width: 1024px)' },
+      ],
+    };
+
     const { container } = render(<Image {...propsWithSources} />);
 
     const sourceElements = container.querySelectorAll('source');
-    for (const source of sourceElements) {
-      expect(source).not.toHaveAttribute('sizes');
-    }
+    expect(sourceElements).toHaveLength(2);
+    expect(sourceElements[0]).toHaveAttribute('media', '(max-width: 480px)');
+    expect(sourceElements[1]).toHaveAttribute('media', '(max-width: 1024px)');
   });
 
   it('calls original onError handler when provided', () => {
@@ -204,12 +217,10 @@ describe('Image snapshot tests', () => {
       {
         src: 'https://picsum.photos/400/300',
         descriptor: '400w',
-        media: '(max-width: 480px)',
       },
       {
         src: 'https://picsum.photos/800/600',
         descriptor: '800w',
-        media: '(max-width: 1024px)',
       },
       {
         src: 'https://picsum.photos/1200/900',
@@ -223,7 +234,7 @@ describe('Image snapshot tests', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ResponsivePicture should match snapshot with empty descriptors', () => {
+  it('ResponsivePicture should match snapshot with art direction sources', () => {
     const mockedSources = [
       {
         src: 'https://picsum.photos/400/300',
@@ -232,9 +243,6 @@ describe('Image snapshot tests', () => {
       {
         src: 'https://picsum.photos/800/600',
         media: '(max-width: 1024px)',
-      },
-      {
-        src: 'https://picsum.photos/1200/900',
       },
     ];
 

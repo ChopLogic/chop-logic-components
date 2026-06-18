@@ -19,7 +19,13 @@ export type { FormInputParams, FormProps, FormValidationState, FormValues } from
 export type { GalleryItem, GalleryMode, GalleryProps } from './gallery';
 export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
 export type { HeaderProps } from './header';
-export type { ImageProps, ImageSource } from './image';
+export type {
+  ArtDirectionSource,
+  ImageProps,
+  ImageSource,
+  PlainSource,
+  ResolutionSource,
+} from './image';
 export type { LinkProps } from './link';
 export type { LoaderProps } from './loader';
 export type { MenuItem, MenuProps } from './menu';

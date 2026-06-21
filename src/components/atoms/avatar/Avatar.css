@@ -1,0 +1,38 @@
+.cl-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cl-avatar__image {
+  width: var(--cl-xl-gap);
+  height: var(--cl-xl-gap);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cl-avatar__fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--cl-xl-gap);
+  height: var(--cl-xl-gap);
+  border-radius: 50%;
+  background-color: var(--cl-surface-tonal-a10);
+  color: var(--cl-base-font-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: bold;
+}
+
+.cl-avatar__link {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 50%;
+}
+
+.cl-avatar__link:focus {
+  outline: 2px solid var(--cl-accent-a0);
+  outline-offset: 2px;
+}

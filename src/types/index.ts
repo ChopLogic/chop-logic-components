@@ -31,6 +31,7 @@ export type { LoaderProps } from './loader';
 export type { MenuItem, MenuProps } from './menu';
 export type { MultiSelectProps } from './multi-select';
 export type { NumericInputProps } from './numeric';
+export type { Author, AvatarProps, PreviewCardProps, TagData, TagProps } from './preview-card';
 export type { SearchProps } from './search';
 export type { SelectProps } from './select';
 export type { SwitchProps } from './switch';

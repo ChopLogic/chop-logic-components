@@ -1,0 +1,12 @@
+.cl-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--cl-xs-gap) var(--cl-m-gap);
+  border-radius: var(--cl-l-gap);
+  background-color: var(--cl-tag-color, var(--cl-surface-tonal-a0));
+  color: var(--cl-base-font-color);
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-small-mobile);
+  line-height: 1.4;
+  white-space: nowrap;
+}

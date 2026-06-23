@@ -1,13 +1,18 @@
 import { LinkTarget } from '@enums';
 import { fireEvent, render, screen } from '@testing-library/react';
 import type { AvatarProps } from '@types';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import Avatar from '../Avatar';
 
+vi.mock('@components/hocs', () => ({
+  withTooltip: vi.fn((Component) => Component),
+  withFigureCaption: vi.fn((Component) => Component),
+}));
+
 const defaultProps: AvatarProps = {
   name: 'John Doe',
-  email: 'john@example.com',
+  tooltip: 'john@example.com',
   imageUrl: 'https://example.com/avatar.jpg',
 };
 

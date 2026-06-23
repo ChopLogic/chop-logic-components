@@ -5,7 +5,7 @@ import type { ImageProps } from './image';
 export interface Author {
   id: string;
   name: string;
-  email: string;
+  tooltip: string;
   imageUrl: string;
   link?: string;
   linkTarget?: LinkTarget;
@@ -20,8 +20,8 @@ export interface TagData {
 
 export interface AvatarProps extends ChopLogicComponentProps {
   name: string;
-  email: string;
   imageUrl: string;
+  tooltip?: string;
   link?: string;
   linkTarget?: LinkTarget;
 }

@@ -2,6 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: var(--cl-light-border);
+  border-radius: 50%;
 }
 
 .cl-avatar__image {

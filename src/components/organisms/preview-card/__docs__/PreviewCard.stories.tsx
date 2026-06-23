@@ -7,14 +7,14 @@ const sampleAuthors = [
   {
     id: '1',
     name: 'Jane Smith',
-    email: 'jane@example.com',
+    tooltip: 'jane@example.com',
     imageUrl: 'https://i.pravatar.cc/150?img=1',
     link: 'https://example.com/jane',
   },
   {
     id: '2',
     name: 'John Doe',
-    email: 'john@example.com',
+    tooltip: 'john@example.com',
     imageUrl: 'https://i.pravatar.cc/150?img=2',
   },
 ];

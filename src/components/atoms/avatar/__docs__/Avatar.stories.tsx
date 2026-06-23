@@ -16,9 +16,9 @@ const meta: Meta<typeof Avatar> = {
         category: 'Content',
       },
     },
-    email: {
+    tooltip: {
       control: 'text',
-      description: 'Author email address',
+      description: 'A tooltip text',
       table: {
         type: { summary: 'string' },
         category: 'Content',
@@ -100,7 +100,7 @@ const meta: Meta<typeof Avatar> = {
   },
   args: {
     name: 'Jane Doe',
-    email: 'jane.doe@example.com',
+    tooltip: 'jane.doe@example.com',
     imageUrl: 'https://i.pravatar.cc/150?img=1',
   },
 };
@@ -111,7 +111,7 @@ type Story = StoryObj<typeof Avatar>;
 export const Default: Story = {
   args: {
     name: 'Jane Doe',
-    email: 'jane.doe@example.com',
+    tooltip: 'jane.doe@example.com',
     imageUrl: 'https://i.pravatar.cc/150?img=1',
   },
 };
@@ -119,7 +119,7 @@ export const Default: Story = {
 export const WithFallback: Story = {
   args: {
     name: 'John Smith',
-    email: 'john.smith@example.com',
+    tooltip: 'John Smith',
     imageUrl: 'https://broken-url.example/avatar.jpg',
   },
 };
@@ -127,7 +127,7 @@ export const WithFallback: Story = {
 export const WithLink: Story = {
   args: {
     name: 'Jane Doe',
-    email: 'jane.doe@example.com',
+    tooltip: 'Jane Doe Profile',
     imageUrl: 'https://i.pravatar.cc/150?img=1',
     link: 'https://example.com/profile/jane',
     linkTarget: LinkTarget.Self,
@@ -137,7 +137,7 @@ export const WithLink: Story = {
 export const WithExternalLink: Story = {
   args: {
     name: 'Jane Doe',
-    email: 'jane.doe@example.com',
+    tooltip: 'jane.doe@example.com',
     imageUrl: 'https://i.pravatar.cc/150?img=1',
     link: 'https://example.com/profile/jane',
     linkTarget: LinkTarget.Blank,

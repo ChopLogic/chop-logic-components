@@ -1,3 +1,4 @@
+import { withTooltip } from '@components/hocs';
 import './Avatar.css';
 
 import { LinkTarget } from '@enums';
@@ -5,12 +6,13 @@ import type { AvatarProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useState } from 'react';
 
-const Avatar: FC<AvatarProps> = ({
+const AvatarContainer: FC<AvatarProps> = ({
   name,
   imageUrl,
   link,
   linkTarget = LinkTarget.Self,
   className,
+  tooltip,
   ...rest
 }) => {
   const [hasError, setHasError] = useState(false);
@@ -47,5 +49,7 @@ const Avatar: FC<AvatarProps> = ({
     </span>
   );
 };
+
+const Avatar = withTooltip(AvatarContainer);
 
 export default Avatar;

@@ -23,7 +23,12 @@ describe('PreviewCard', () => {
       const { container } = renderPreviewCard({
         summary: 'A brief summary',
         authors: [
-          { id: '1', name: 'Author One', email: 'a@b.com', imageUrl: 'https://example.com/a.jpg' },
+          {
+            id: '1',
+            name: 'Author One',
+            tooltip: 'a@b.com',
+            imageUrl: 'https://example.com/a.jpg',
+          },
         ],
         tags: [{ id: '1', name: 'React' }],
       });
@@ -102,10 +107,15 @@ describe('PreviewCard', () => {
           {
             id: '1',
             name: 'Alice',
-            email: 'alice@test.com',
+            tooltip: 'alice@test.com',
             imageUrl: 'https://example.com/alice.jpg',
           },
-          { id: '2', name: 'Bob', email: 'bob@test.com', imageUrl: 'https://example.com/bob.jpg' },
+          {
+            id: '2',
+            name: 'Bob',
+            tooltip: 'bob@test.com',
+            imageUrl: 'https://example.com/bob.jpg',
+          },
         ],
       });
 

@@ -18,7 +18,7 @@ const meta: Meta<typeof Tag> = {
         category: 'Content',
       },
     },
-    description: {
+    tooltip: {
       control: 'text',
       description: 'Optional tooltip description shown on hover',
       table: {
@@ -68,6 +68,15 @@ const meta: Meta<typeof Tag> = {
         category: 'Accessibility',
       },
     },
+    visibleOn: {
+      control: 'radio',
+      options: ['hover', 'click', 'focus', 'contextmenu'],
+      description: 'Event that triggers tooltip visibility',
+      table: {
+        type: { summary: "'hover' | 'click' | 'focus' | 'contextmenu'" },
+        category: 'Accessibility',
+      },
+    },
     // Identification
     id: {
       control: 'text',
@@ -89,30 +98,17 @@ export const Default: Story = {
   },
 };
 
-export const WithDescription: Story = {
+export const WithTooltip: Story = {
   args: {
     name: 'TypeScript',
-    description: 'A strongly typed programming language that builds on JavaScript',
+    tooltip: 'A strongly typed programming language that builds on JavaScript',
   },
 };
 
 export const WithColor: Story = {
   args: {
-    name: 'Success',
-    color: '#4CAF50',
-  },
-};
-
-export const WithEmptyName: Story = {
-  args: {
-    name: '',
-  },
-};
-
-export const WithAllProps: Story = {
-  args: {
     name: 'Frontend',
-    description: 'Technologies related to client-side development',
+    tooltip: 'Technologies related to client-side development',
     color: '#2196F3',
   },
 };

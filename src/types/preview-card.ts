@@ -28,7 +28,7 @@ export interface AvatarProps extends ChopLogicComponentProps {
 
 export interface TagProps extends ChopLogicComponentProps {
   name: string;
-  description?: string;
+  tooltip?: string;
   color?: string;
 }
 

@@ -5,7 +5,7 @@ import * as TagStories from "./Tag.stories";
 
 # Tag
 
-The `Tag` component renders a keyword or category label as an inline pill. It supports an optional tooltip description shown on hover and a custom background color via CSS custom properties.
+The `Tag` component renders a keyword or category label as an inline pill. It supports an optional tooltip tooltip shown on hover and a custom background color via CSS custom properties.
 
 ## Usage
 
@@ -14,14 +14,14 @@ import { Tag } from "chop-logic-components";
 
 <Tag name="React" />
 
-<Tag name="TypeScript" description="A typed superset of JavaScript" />
+<Tag name="TypeScript" tooltip="A typed superset of JavaScript" />
 
 <Tag name="Success" color="#4CAF50" />
 ```
 
 ## Best Practices
 
-1. _Accessibility_: When a `description` is provided, it is exposed via a Tooltip with `aria-describedby`, allowing screen readers to announce additional context when the tag receives focus.
+1. _Accessibility_: When a `tooltip` is provided, it is exposed via a Tooltip with `aria-describedby`, allowing screen readers to announce additional context when the tag receives focus.
 2. _Color Usage_: Use the `color` prop sparingly for semantic meaning (e.g., category differentiation). The default theme color works well in most cases.
 3. _Empty Names_: Avoid passing an empty `name` prop in production — the tag will render with no visible text, which may confuse users.
 4. _Keyboard Navigation_: Tags are focusable via `tabIndex`. When focused, screen readers announce the tag label from its text content.

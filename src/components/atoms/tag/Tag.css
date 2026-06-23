@@ -1,12 +1,37 @@
 .cl-tag {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   padding: var(--cl-xs-gap) var(--cl-m-gap);
   border-radius: var(--cl-l-gap);
   background-color: var(--cl-tag-color, var(--cl-surface-tonal-a0));
-  color: var(--cl-base-font-color);
+  white-space: nowrap;
+  max-width: 30vw;
+  text-wrap: wrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   font-family: var(--cl-core-font);
   font-size: var(--cl-typography-small-mobile);
-  line-height: 1.4;
-  white-space: nowrap;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive font size for tablet */
+@media (min-width: 640px) {
+  .cl-tag {
+    font-size: var(--cl-typography-small-tablet);
+    padding: var(--cl-s-gap) var(--cl-l-gap);
+    max-width: 20vw;
+  }
+}
+
+/* Responsive font size for desktop */
+@media (min-width: 1024px) {
+  .cl-tag {
+    font-size: var(--cl-typography-small-desktop);
+    max-width: 10vw;
+  }
 }

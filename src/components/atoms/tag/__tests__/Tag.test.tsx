@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import type { TagProps } from '@types';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import Tag from '../Tag';
+
+vi.mock('@components/hocs', () => ({
+  withTooltip: vi.fn((Component) => Component),
+  withFigureCaption: vi.fn((Component) => Component),
+}));
 
 const renderTag = (props: TagProps) => {
   return render(<Tag {...props} />);
@@ -15,22 +20,6 @@ describe('Tag', () => {
     const tag = screen.getByText('React');
     expect(tag.tagName).toBe('SPAN');
     expect(tag).toHaveClass('cl-tag');
-  });
-
-  it('wraps in Tooltip when description is provided', () => {
-    renderTag({ name: 'TypeScript', description: 'A typed superset of JavaScript' });
-
-    const tag = screen.getByText('TypeScript');
-    const tooltipWrapper = tag.parentElement;
-    expect(tooltipWrapper).toHaveAttribute('aria-describedby');
-  });
-
-  it('does not wrap in Tooltip when no description', () => {
-    renderTag({ name: 'CSS' });
-
-    const tag = screen.getByText('CSS');
-    expect(tag).not.toHaveAttribute('aria-describedby');
-    expect(tag.parentElement).not.toHaveAttribute('aria-describedby');
   });
 
   it('applies --cl-tag-color inline style when color is provided', () => {

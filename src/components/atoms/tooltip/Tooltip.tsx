@@ -51,7 +51,7 @@ const Tooltip: FC<TooltipProps> = ({
       }
       tabIndex={-1}
       ref={wrapperRef}
-      aria-describedby={elementId}
+      aria-describedby={isOpened ? elementId : undefined}
     >
       {children}
       {isOpened && (

@@ -24,7 +24,7 @@ const sampleTags = [
     id: '1',
     name: 'React',
     color: '#61DAFB',
-    description: 'A JavaScript library for building UIs',
+    tooltip: 'A JavaScript library for building UIs',
   },
   { id: '2', name: 'TypeScript', color: '#3178C6' },
   { id: '3', name: 'CSS' },

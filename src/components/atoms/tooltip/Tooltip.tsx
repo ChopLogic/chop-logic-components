@@ -40,7 +40,7 @@ const Tooltip: FC<TooltipProps> = ({
 
   return (
     <ContainerComponent
-      style={{ position: 'relative', cursor: 'pointer' }}
+      style={{ position: 'relative', cursor: 'pointer', lineHeight: 0 }}
       onClick={visibleOn === 'click' ? toggleTooltip : undefined}
       onMouseOver={visibleOn === 'hover' ? openTooltip : undefined}
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}

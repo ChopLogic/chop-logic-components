@@ -24,7 +24,7 @@ const ArticlePreview = () => {
         { id: "2", name: "John Doe", email: "john@example.com", imageUrl: "/avatars/john.jpg" },
       ]}
       tags={[
-        { id: "1", name: "React", color: "#61DAFB", description: "A JavaScript library for building UIs" },
+        { id: "1", name: "React", color: "#61DAFB", tooltip: "A JavaScript library for building UIs" },
         { id: "2", name: "TypeScript", color: "#3178C6" },
       ]}
     />
@@ -54,7 +54,7 @@ The card renders these sections in order: image link, title (`h3`), optional sum
    - Each author can have an independent link with its own target
 3. _Accessibility_:
    - The root `<article>` element has an `aria-label` derived from the title
-   - The image link includes an `aria-label` "View article: {title}"
+   - The image link includes an `aria-label` "View article: title"
    - External links announce "(opens in new window)" to screen readers
    - Authors and tags sections use semantic `<ul>` lists with `aria-label`
    - Test with keyboard navigation and screen readers

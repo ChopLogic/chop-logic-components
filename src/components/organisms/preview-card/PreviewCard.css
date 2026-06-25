@@ -7,6 +7,12 @@
   background-color: var(--cl-surface-a0);
   color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
+  width: 30rem;
+}
+
+.cl-preview-card__image {
+  border-radius: 0 !important;
+  border-bottom: var(--cl-light-border);
 }
 
 .cl-preview-card__image-link {
@@ -23,8 +29,6 @@
 .cl-preview-card__title {
   margin: 0;
   padding: var(--cl-l-gap) var(--cl-l-gap) var(--cl-s-gap);
-  font-size: var(--cl-typography-h5-mobile);
-  color: var(--cl-base-font-color);
 }
 
 .cl-preview-card__summary {

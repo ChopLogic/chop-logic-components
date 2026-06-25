@@ -1,6 +1,6 @@
 import './PreviewCard.css';
 
-import { Avatar, Image, Tag } from '@components/atoms';
+import { Avatar, Header, Image, Tag } from '@components/atoms';
 import { LinkTarget } from '@enums';
 import type { PreviewCardProps } from '@types';
 import { getClassName } from '@utils';
@@ -33,10 +33,12 @@ const PreviewCard: FC<PreviewCardProps> = ({
         aria-label={anchorLabel}
         className="cl-preview-card__image-link"
       >
-        <Image {...image} />
+        <Image {...image} className="cl-preview-card__image" />
       </a>
 
-      <h3 className="cl-preview-card__title">{title}</h3>
+      <Header as="h5" className="cl-preview-card__title">
+        {title}
+      </Header>
 
       {summary && <p className="cl-preview-card__summary">{summary}</p>}
 

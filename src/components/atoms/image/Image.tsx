@@ -4,6 +4,7 @@ import { withFigureCaption } from '../../hocs';
 import { BasicImage } from './BasicImage';
 import { FallbackImage } from './FallBackImage';
 import './Image.css';
+import { getClassName } from '@utils';
 import { ResponsivePicture } from './ResponsivePicture';
 
 const ImageContainer: FC<ImageProps> = ({
@@ -11,11 +12,13 @@ const ImageContainer: FC<ImageProps> = ({
   sources = [],
   decorative = false,
   onError,
+  className,
   ...rest
 }) => {
   const [hasError, setHasError] = useState(false);
   const hasResponsiveSources = sources.length > 0;
   const finalAlt = decorative ? '' : alt;
+  const imageClass = getClassName(['cl-image', className]);
 
   const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
     setHasError(true);
@@ -26,11 +29,13 @@ const ImageContainer: FC<ImageProps> = ({
     return <FallbackImage />;
   }
 
-  return hasResponsiveSources ? (
-    <ResponsivePicture alt={finalAlt} sources={sources} onError={handleError} {...rest} />
-  ) : (
-    <div className="cl-image">
-      <BasicImage alt={finalAlt} onError={handleError} {...rest} />
+  return (
+    <div className={imageClass}>
+      {hasResponsiveSources ? (
+        <ResponsivePicture alt={finalAlt} sources={sources} onError={handleError} {...rest} />
+      ) : (
+        <BasicImage alt={finalAlt} onError={handleError} {...rest} />
+      )}
     </div>
   );
 };

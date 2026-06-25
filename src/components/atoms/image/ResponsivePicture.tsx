@@ -12,7 +12,6 @@ type Props = {
   loading?: 'lazy' | 'eager';
   decoding?: 'sync' | 'async' | 'auto';
   aspectRatio?: string;
-  className?: string;
   onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 };
 

@@ -46,9 +46,9 @@ describe('Image', () => {
   });
 
   it('should apply custom className along with cl-image', () => {
-    render(<Image {...defaultProps} className="custom-class" />);
-    const img = screen.getByRole('img');
-    expect(img).toHaveClass('custom-class');
+    const { container } = render(<Image {...defaultProps} className="custom-class" />);
+    const wrapper = container.querySelector('.cl-image.custom-class');
+    expect(wrapper).toBeInTheDocument();
   });
 
   it('should not have alt text if image is decorative', () => {

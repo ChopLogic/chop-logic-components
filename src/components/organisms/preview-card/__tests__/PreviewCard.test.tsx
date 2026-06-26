@@ -37,7 +37,7 @@ describe('PreviewCard', () => {
       const children = Array.from(article.children);
 
       expect(children[0]).toHaveClass('cl-preview-card__image-link');
-      expect(children[1].tagName).toBe('H5');
+      expect(children[1].tagName).toBe('H6');
       expect(children[2].tagName).toBe('P');
       expect(children[3]).toHaveAttribute('aria-label', 'Authors');
       expect(children[4]).toHaveAttribute('aria-label', 'Tags');
@@ -76,10 +76,10 @@ describe('PreviewCard', () => {
   });
 
   describe('title', () => {
-    it('renders title as h3 element', () => {
+    it('renders title as h6 element', () => {
       renderPreviewCard({ title: 'My Article' });
 
-      const heading = screen.getByRole('heading', { level: 5 });
+      const heading = screen.getByRole('heading', { level: 6 });
       expect(heading).toHaveTextContent('My Article');
     });
   });

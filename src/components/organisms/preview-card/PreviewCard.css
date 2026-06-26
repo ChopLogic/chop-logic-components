@@ -7,6 +7,7 @@
   background-color: var(--cl-surface-a0);
   color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);
+  box-shadow: var(--cl-box-shadow);
   width: 30rem;
 }
 
@@ -34,9 +35,6 @@
 .cl-preview-card__summary {
   margin: 0;
   padding: 0 var(--cl-l-gap) var(--cl-m-gap);
-  font-size: var(--cl-typography-base-mobile);
-  color: var(--cl-base-font-color);
-  opacity: 0.8;
 }
 
 .cl-preview-card__authors {
@@ -50,6 +48,9 @@
 
 .cl-preview-card__author-item {
   display: inline-flex;
+  align-items: center;
+  gap: var(--cl-s-gap);
+  font-style: italic;
 }
 
 .cl-preview-card__tags {
@@ -63,4 +64,30 @@
 
 .cl-preview-card__tag-item {
   display: inline-flex;
+}
+
+.cl-preview-card__summary,
+.cl-preview-card__author-item {
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .cl-preview-card__summary,
+  .cl-preview-card__author-item {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-preview-card__summary,
+  .cl-preview-card__author-item {
+    font-size: var(--cl-typography-base-desktop);
+  }
 }

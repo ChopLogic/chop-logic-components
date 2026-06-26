@@ -36,7 +36,7 @@ const PreviewCard: FC<PreviewCardProps> = ({
         <Image {...image} className="cl-preview-card__image" />
       </a>
 
-      <Header as="h5" className="cl-preview-card__title">
+      <Header as="h6" className="cl-preview-card__title">
         {title}
       </Header>
 
@@ -47,6 +47,7 @@ const PreviewCard: FC<PreviewCardProps> = ({
           {authors.map((author) => (
             <li key={author.id} className="cl-preview-card__author-item">
               <Avatar {...author} />
+              <span>{author.name}</span>
             </li>
           ))}
         </ul>

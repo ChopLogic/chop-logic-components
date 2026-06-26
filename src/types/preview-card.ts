@@ -5,8 +5,8 @@ import type { ImageProps } from './image';
 export interface Author {
   id: string;
   name: string;
-  tooltip: string;
   imageUrl: string;
+  tooltip?: string;
   link?: string;
   linkTarget?: LinkTarget;
 }

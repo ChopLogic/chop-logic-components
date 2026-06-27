@@ -1,9 +1,22 @@
-export interface ImageSource {
+export interface ArtDirectionSource {
     src: string;
-    descriptor?: string;
-    media?: string;
+    media: string;
     type?: string;
+    descriptor?: never;
 }
+export interface ResolutionSource {
+    src: string;
+    descriptor: string;
+    type?: string;
+    media?: never;
+}
+export interface PlainSource {
+    src: string;
+    type?: string;
+    media?: never;
+    descriptor?: never;
+}
+export type ImageSource = ArtDirectionSource | ResolutionSource | PlainSource;
 export interface ImageProps {
     src: string;
     alt: string;

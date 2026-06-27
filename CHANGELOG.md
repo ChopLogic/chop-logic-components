@@ -4,12 +4,29 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.0] - 2026-06-27
+
+### Added
+
+- `Avatar` atomic component
+- `Tag` atomic component
+- `PreviewCard` organism to display article previews with author avatars and tags
+
+### Changed
+
+- Upgraded Storybook to v10.4.6 and updated npm dependencies
+
+### Fixed
+
+- Sizes attribute not being passed to ResponsivePicture component
+- Resolution and art direction sources for Responsive images inside `Image` and `Gallery` components
+- Medium and small SonarQube maintainability issues
+
 ## [4.2.0] - 2026-06-11
 
 ### Added
 
 - `Gallery` component with different display modes (grid, masonry and carousel) and fullscreen view support
-- Storybook documentation for `withTooltip`, `withFigureCaption`, and `withErrorBoundary` higher-order components
 
 ### Changed
 

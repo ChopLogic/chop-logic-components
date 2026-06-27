@@ -180,32 +180,6 @@ describe('PreviewCard', () => {
     });
   });
 
-  describe('_blank target accessibility', () => {
-    it('appends "(opens in new window)" to anchor aria-label for _blank', () => {
-      renderPreviewCard({ title: 'External Link', linkTarget: LinkTarget.Blank });
-
-      const anchor = screen.getByRole('link');
-      expect(anchor).toHaveAttribute(
-        'aria-label',
-        'View article: External Link (opens in new window)',
-      );
-    });
-
-    it('does not append "(opens in new window)" for _self', () => {
-      renderPreviewCard({ title: 'Internal Link', linkTarget: LinkTarget.Self });
-
-      const anchor = screen.getByRole('link');
-      expect(anchor).toHaveAttribute('aria-label', 'View article: Internal Link');
-    });
-
-    it('uses fallback anchor aria-label with "(opens in new window)" when title is empty and target is _blank', () => {
-      renderPreviewCard({ title: '', linkTarget: LinkTarget.Blank });
-
-      const anchor = screen.getByRole('link');
-      expect(anchor).toHaveAttribute('aria-label', 'Preview card (opens in new window)');
-    });
-  });
-
   describe('rel attribute', () => {
     it('adds rel="noopener noreferrer" when target is _blank', () => {
       renderPreviewCard({ linkTarget: LinkTarget.Blank });

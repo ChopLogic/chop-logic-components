@@ -61,7 +61,7 @@ export function withErrorBoundary<P extends object>(
     onError,
     ...props
   }: P & WithErrorBoundaryProps) => {
-    const boundaryId = useId().replace(/:/g, '');
+    const boundaryId = useId().replaceAll(':', '');
     const errorId = `cl-error-boundary-${boundaryId}`;
 
     return (

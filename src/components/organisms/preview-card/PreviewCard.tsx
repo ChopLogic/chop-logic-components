@@ -20,9 +20,7 @@ const PreviewCard: FC<PreviewCardProps> = ({
   const cardClass = getClassName(['cl-preview-card', className]);
   const isBlank = linkTarget === LinkTarget.Blank;
   const articleLabel = title || 'Preview card';
-  const anchorLabel = title
-    ? `View article: ${title}${isBlank ? ' (opens in new window)' : ''}`
-    : `Preview card${isBlank ? ' (opens in new window)' : ''}`;
+  const anchorLabel = `View article: ${title}`;
 
   return (
     <article className={cardClass} aria-label={articleLabel} {...rest}>

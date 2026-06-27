@@ -1,24 +1,20 @@
-/* ============================================================================
-   BLOCK
-   ============================================================================ */
 .cl-image {
-  object-fit: cover;
   border-radius: var(--cl-border-radius);
+  line-height: 0;
 }
 
-/* ============================================================================
-   ELEMENTS
-   ============================================================================ */
 .cl-image__img {
+  display: block;
   max-width: 100%;
+  object-fit: cover;
   height: auto;
-  border-radius: var(--cl-border-radius);
+  border-radius: inherit;
 }
 
 .cl-image__picture {
   display: block;
   object-fit: cover;
-  border-radius: var(--cl-border-radius);
+  border-radius: inherit;
 }
 
 .cl-image__fallback {
@@ -52,10 +48,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* ============================================================================
-   MEDIA QUERIES
-   ============================================================================ */
 
 @media (min-width: 640px) {
   .cl-image__fallback-text {

@@ -156,18 +156,16 @@ export const WithAspectRatio: Story = {
 
 export const ResponsiveWithSources: Story = {
   args: {
-    src: 'https://picsum.photos/800/600',
+    src: 'https://picsum.photos/1200/900',
     alt: 'Responsive image example',
     sources: [
       {
         src: 'https://picsum.photos/400/300',
         descriptor: '400w',
-        media: '(max-width: 480px)',
       },
       {
         src: 'https://picsum.photos/800/600',
         descriptor: '800w',
-        media: '(max-width: 1024px)',
       },
       {
         src: 'https://picsum.photos/1200/900',
@@ -175,7 +173,25 @@ export const ResponsiveWithSources: Story = {
       },
     ],
     sizes: '(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px',
-    caption: 'An example of a responsive image with multiple sources',
+    caption: 'Resolution switching: browser picks optimal image size',
+  },
+};
+
+export const ArtDirectionSources: Story = {
+  args: {
+    src: 'https://picsum.photos/1200/900',
+    alt: 'Art direction image example',
+    sources: [
+      {
+        src: 'https://picsum.photos/400/300',
+        media: '(max-width: 480px)',
+      },
+      {
+        src: 'https://picsum.photos/800/600',
+        media: '(max-width: 1024px)',
+      },
+    ],
+    caption: 'Art direction: different images per breakpoint',
   },
 };
 

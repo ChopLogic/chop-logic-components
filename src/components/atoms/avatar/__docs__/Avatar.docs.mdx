@@ -1,0 +1,41 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as AvatarStories from "./Avatar.stories";
+
+<Meta of={AvatarStories} title="Atoms/Avatar" />
+
+# Avatar
+
+A small circular image component representing an author or user. Supports linking, fallback behavior when the image fails to load, and accessible labeling.
+
+## Usage
+
+```tsx
+import { Avatar } from 'chop-logic-components';
+import { LinkTarget } from 'chop-logic-components';
+
+// Basic avatar
+<Avatar
+  name="Jane Doe"
+  imageUrl="https://example.com/avatar.jpg"
+/>
+
+// Avatar with link
+<Avatar
+  name="Jane Doe"
+  tooltip="jane.doe@example.com"
+  imageUrl="https://example.com/avatar.jpg"
+  link="https://example.com/profile/jane"
+  linkTarget={LinkTarget.Blank}
+/>
+```
+
+## Best Practices
+
+- _Accessibility_: The component automatically uses the `name` prop as `alt` text on the image, ensuring screen readers can identify the person represented.
+- _Fallback Behavior_: When the image URL is broken or unavailable, the component displays the uppercase first letter of the name in a styled circle. The fallback includes an `aria-label` for screen reader support.
+- _External Links_: When `linkTarget` is set to `_blank`, the component adds `rel="noopener noreferrer"` for security and appends "(opens in new window)" to the `aria-label` for screen reader users.
+- _Keyboard Navigation_: Linked avatars use a semantic `<a>` element, making them naturally focusable and navigable via keyboard.
+
+## Props
+
+<Controls />

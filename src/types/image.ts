@@ -1,9 +1,27 @@
-export interface ImageSource {
+// Art-direction source: browser picks by media query
+export interface ArtDirectionSource {
   src: string;
-  descriptor?: string;
-  media?: string;
+  media: string;
   type?: string;
+  descriptor?: never;
 }
+
+// Resolution-switching source: browser picks optimal size from srcSet + sizes
+export interface ResolutionSource {
+  src: string;
+  descriptor: string;
+  type?: string;
+  media?: never;
+}
+
+export interface PlainSource {
+  src: string;
+  type?: string;
+  media?: never;
+  descriptor?: never;
+}
+
+export type ImageSource = ArtDirectionSource | ResolutionSource | PlainSource;
 
 export interface ImageProps {
   src: string;

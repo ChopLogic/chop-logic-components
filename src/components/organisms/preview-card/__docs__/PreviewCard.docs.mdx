@@ -1,0 +1,67 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as PreviewCardStories from "./PreviewCard.stories";
+
+<Meta of={PreviewCardStories} title="PreviewCard" />
+
+# PreviewCard
+
+The `PreviewCard` is an organism component that displays an article or external resource preview in a card layout. It composes the `Avatar` and `Tag` atom components along with the existing `Image` atom to present a rich content summary including an image, title, summary text, a list of authors, and keyword tags.
+
+## Usage
+
+```tsx
+import { PreviewCard } from "chop-logic-components";
+
+const ArticlePreview = () => {
+  return (
+    <PreviewCard
+      link="https://example.com/article"
+      image={{ src: "/images/article.jpg", alt: "Article cover" }}
+      title="Building Accessible Component Libraries"
+      summary="A guide to creating reusable, accessible React components."
+      authors={[
+        { id: "1", name: "Jane Smith", email: "jane@example.com", imageUrl: "/avatars/jane.jpg", link: "https://example.com/jane" },
+        { id: "2", name: "John Doe", email: "john@example.com", imageUrl: "/avatars/john.jpg" },
+      ]}
+      tags={[
+        { id: "1", name: "React", color: "#61DAFB", tooltip: "A JavaScript library for building UIs" },
+        { id: "2", name: "TypeScript", color: "#3178C6" },
+      ]}
+    />
+  );
+};
+```
+
+## Composition
+
+PreviewCard composes the following components:
+
+- **Image** (atom) — renders the card header image with responsive behavior and fallback
+- **Avatar** (atom) — renders each author as a circular image with optional link and fallback letter
+- **Tag** (atom) — renders each tag as an inline label with optional tooltip and custom color
+
+The card renders these sections in order: image link, title (`h3`), optional summary (`p`), optional authors list (`ul`), and optional tags list (`ul`). When `authors` or `tags` arrays are empty, their respective sections are omitted entirely.
+
+## Best Practices
+
+1. _Content_:
+   - Provide a meaningful `title` for both visual display and accessibility
+   - Use descriptive `alt` text for the card image
+   - Keep `summary` concise — it serves as a teaser
+2. _Links_:
+   - Use `linkTarget="_blank"` for external resources
+   - The component automatically adds `rel="noopener noreferrer"` for blank targets
+   - Each author can have an independent link with its own target
+3. _Accessibility_:
+   - The root `<article>` element has an `aria-label` derived from the title
+   - The image link includes an `aria-label` "View article: title"
+   - External links announce "(opens in new window)" to screen readers
+   - Authors and tags sections use semantic `<ul>` lists with `aria-label`
+   - Test with keyboard navigation and screen readers
+4. _Theming_:
+   - All colors use CSS variables and respond to light/dark theme automatically
+   - Tags accept custom `color` for visual categorization
+
+## Props
+
+<Controls />

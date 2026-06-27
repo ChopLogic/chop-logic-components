@@ -1,3 +1,4 @@
+export { default as Avatar } from './avatar/Avatar';
 export { default as Button } from './button/Button';
 export { default as EditableText } from './editable-text/EditableText';
 export { default as ErrorMessage } from './error-message/ErrorMessage';
@@ -8,4 +9,5 @@ export { default as Input } from './input/Input';
 export { default as Label } from './label/Label';
 export { default as Link } from './link/Link';
 export { default as Portal } from './portal/Portal';
+export { default as Tag } from './tag/Tag';
 export { default as Tooltip } from './tooltip/Tooltip';

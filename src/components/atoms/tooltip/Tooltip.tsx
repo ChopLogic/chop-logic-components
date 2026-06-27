@@ -40,7 +40,7 @@ const Tooltip: FC<TooltipProps> = ({
 
   return (
     <ContainerComponent
-      style={{ position: 'relative', cursor: 'pointer' }}
+      style={{ position: 'relative', cursor: 'pointer', lineHeight: 0 }}
       onClick={visibleOn === 'click' ? toggleTooltip : undefined}
       onMouseOver={visibleOn === 'hover' ? openTooltip : undefined}
       onMouseLeave={visibleOn === 'hover' ? closeTooltip : undefined}
@@ -51,7 +51,7 @@ const Tooltip: FC<TooltipProps> = ({
       }
       tabIndex={-1}
       ref={wrapperRef}
-      aria-describedby={elementId}
+      aria-describedby={isOpened ? elementId : undefined}
     >
       {children}
       {isOpened && (

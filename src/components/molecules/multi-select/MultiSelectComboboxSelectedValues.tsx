@@ -7,9 +7,9 @@ type Props = {
 };
 
 export const MultiSelectComboboxSelectedValues: FC<Props> = ({ values, placeholder }) => {
-  const selectedLabels = !values
-    ? []
-    : values.filter((value) => value.selected).map((value) => value.label);
+  const selectedLabels = values
+    ? values.filter((value) => value.selected).map((value) => value.label)
+    : [];
 
   const allItemsSelected = selectedLabels.length !== 0 && selectedLabels.length === values?.length;
   const singleItemSelected = selectedLabels.length === 1;

@@ -1,6 +1,7 @@
 .cl-figure {
   margin: 0;
   display: block;
+  border-radius: var(--cl-border-radius);
 }
 
 .cl-figure__caption {

@@ -11,7 +11,7 @@ export const getLargestImageSource = (sources: ImageSource[]): ImageSource | und
   for (const source of sources) {
     const descriptor = source.descriptor?.trim();
 
-    if (descriptor && descriptor.endsWith('w')) {
+    if (descriptor?.endsWith('w')) {
       const widthStr = descriptor.slice(0, -1);
       const width = Number.parseInt(widthStr, 10);
 

@@ -4,8 +4,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Button from '../Button';
 
-vi.mock('@hocs', () => ({
+vi.mock('@components/hocs', () => ({
   withTooltip: vi.fn((Component) => Component),
+  withFigureCaption: vi.fn((Component) => Component),
 }));
 
 describe('Button', () => {

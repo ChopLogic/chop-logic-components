@@ -13,37 +13,60 @@ const Form: FC<FormProps> = ({
   initialValues,
   onReset,
   onSubmit,
-  onClickSubmit,
+  action,
+  actionInitialState,
+  onActionComplete,
+  resetOnSuccess = false,
   hasReset = true,
   className,
-  ...rest
 }) => {
-  const { handleInputChange, handleSubmit, handleReset, resetSignal, valid } = useFormController({
+  const {
+    handleInputChange,
+    handleSubmit,
+    handleReset,
+    formAction,
+    resetSignal,
+    valid,
+    isPending,
+  } = useFormController({
     initialValues,
+    resetOnSuccess,
     onReset,
     onSubmit,
-    onClickSubmit,
+    action,
+    actionInitialState,
+    onActionComplete,
   });
-  const formClass = getClassName(['cl-form', className]);
+
+  const formClass = getClassName(['cl-form', className, { 'cl-form_pending': isPending }]);
+
   const contextValue = useMemo(
-    () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal }),
-    [handleInputChange, initialValues, resetSignal],
+    () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal, isPending }),
+    [handleInputChange, initialValues, resetSignal, isPending],
   );
 
+  const formProps = action ? { action: formAction } : { onSubmit: handleSubmit };
+
   return (
-    <form onSubmit={handleSubmit} onReset={handleReset} {...rest} className={formClass}>
+    <form {...formProps} onReset={handleReset} className={formClass}>
       <FormContext.Provider value={contextValue}>
         {children}
         <div className="cl-form__buttons">
           {hasReset && (
-            <Button type="reset" text="Reset" icon={IconName.Delete} view={ButtonView.Secondary} />
+            <Button
+              type="reset"
+              text="Clear"
+              icon={IconName.Trash}
+              view={ButtonView.Secondary}
+              disabled={isPending}
+            />
           )}
           <Button
             type="submit"
             text="Submit"
             icon={IconName.ArrowRight}
             extended={!hasReset}
-            disabled={!valid}
+            disabled={!valid || isPending}
           />
         </div>
       </FormContext.Provider>

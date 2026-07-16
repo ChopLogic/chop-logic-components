@@ -107,8 +107,7 @@
     "chop-logic",
     "react",
     "typescript",
-    "storybook",
-    "styled-components"
+    "storybook"
   ],
   "author": "Dmitrii Suroviagin",
   "license": "MIT",
@@ -134,7 +133,6 @@
     "@vitest/coverage-v8": "^4.1.10",
     "http-server": "^14.1.1",
     "husky": "^9.1.7",
-    "husky-init": "^8.0.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.9.5",
     "remark-gfm": "^4.0.1",

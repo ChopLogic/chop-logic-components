@@ -131,6 +131,7 @@ Please use the following branch name conventions:
 
 - `feat/*` – For features and updates
 - `fix/*` – For fixes and small tasks
+- `chore/*` – For routine tasks and dependency updates
 
 ## Coding Guidelines
 

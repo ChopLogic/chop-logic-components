@@ -1,1 +1,0 @@
-import{i as e,s as t}from"./preload-helper-CT_b8DTk.js";import{$ as n}from"./iframe-DO3n-0Jb.js";var r,i,a=e((()=>{r=t(n(),1),i=({ref:e,isVisible:t})=>{let[n,i]=(0,r.useState)({width:0,height:0});return(0,r.useEffect)(()=>{e?.current&&t&&i({width:e.current.offsetWidth,height:e.current.offsetHeight})},[e,t]),n}}));export{i as n,a as t};

@@ -5,20 +5,25 @@ import * as FormStories from "./Form.stories";
 
 # Form
 
-The `Form` component provides a structured, accessible form container with built-in state management, validation, and responsive layout capabilities.
+The `Form` component provides a structured, accessible form container with built-in state management, validation, pending state tracking, and responsive layout. It supports two submission flows leveraging React 19 APIs.
 
-## Usage
+## Controlled Flow (onSubmit)
+
+The controlled flow collects typed `FormValues` from controlled inputs and passes them to `onSubmit`. Async handlers automatically trigger a pending state.
 
 ```tsx
 import { Form, TextInput } from "chop-logic-components";
 
 const UserForm = () => {
-  const handleSubmit = (values) => {
-    console.log("Form submitted with:", values);
+  const handleSubmit = async (values) => {
+    await fetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify(values),
+    });
   };
 
   return (
-    <Form initialValues={{ firstName: "", lastName: "" }} onSubmit={handleSubmit}>
+    <Form initialValues={{ firstName: "", lastName: "" }} onSubmit={handleSubmit} resetOnSuccess>
       <TextInput name="firstName" label="First Name" />
       <TextInput name="lastName" label="Last Name" />
     </Form>
@@ -26,24 +31,64 @@ const UserForm = () => {
 };
 ```
 
+## Action Flow (React 19 form action)
+
+The action flow uses React 19's native `<form action>` pattern. The form receives `FormData` and runs inside a Transition with automatic pending state via `useActionState`.
+
+```tsx
+import { Form, TextInput } from "chop-logic-components";
+
+const ContactForm = () => {
+  const submitAction = async (prevState, formData) => {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    });
+    return response.ok ? "success" : "error";
+  };
+
+  return (
+    <Form action={submitAction} actionInitialState={null} onActionComplete={(state) => console.log("Result:", state)}>
+      <TextInput name="name" label="Name" />
+      <TextInput name="email" label="Email" type="email" />
+    </Form>
+  );
+};
+```
+
+## Pending State
+
+Both flows automatically track pending state during async submission:
+
+- Submit and reset buttons are disabled
+- The form applies a `cl-form_pending` CSS class (reduced opacity)
+- Child components can read `isPending` via `FormContext` or the `useFormPending` hook
+
+```tsx
+import { useFormPending } from "chop-logic-components";
+
+const CustomInput = () => {
+  const isPending = useFormPending();
+  return <input disabled={isPending} />;
+};
+```
+
 ## Best Practices
 
-1. _Layout_:
-   - Use appropriate column counts for form complexity
-   - Group related fields together
-   - Maintain consistent spacing
+1. _Submission Flow_:
+   - Use `onSubmit` for rich client forms that need typed data and controlled inputs
+   - Use `action` for simpler forms or when progressive enhancement matters
+   - Do not provide both; if both are set, `action` takes priority
 2. _Validation_:
-   - Provide clear error messages
-   - Validate on blur and submit
-   - Consider real-time validation for complex forms
-3. _Performance_:
-   - Memoize form components when possible
-   - Consider dynamic loading for large forms
-   - Optimize re-renders with controlled components
+   - Provide clear error messages on each input
+   - The submit button is automatically disabled when validation fails
+3. _Reset_:
+   - Use `resetOnSuccess` for contact forms or data entry forms
+   - Omit it for search/filter forms where values should persist
 4. _Accessibility_:
-   - Ensure all form controls are keyboard accessible
+   - All form controls are keyboard accessible
+   - Buttons announce their disabled state to screen readers
    - Use ARIA attributes for dynamic content updates
-   - Test with screen readers
 
 ## Props
 

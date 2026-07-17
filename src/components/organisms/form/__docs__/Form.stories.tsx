@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Form from '../Form';
-import { FormExample } from './Form.example';
+import { FormExample, FormWithActionExample } from './Form.example';
 
 const meta: Meta<typeof Form> = {
   component: FormExample,
@@ -13,7 +13,6 @@ const meta: Meta<typeof Form> = {
       lastName: 'Doe',
       age: 42,
     },
-    onClickSubmit: (data) => console.log(data),
   },
   argTypes: {
     // Content
@@ -30,41 +29,64 @@ const meta: Meta<typeof Form> = {
       control: 'object',
       description: 'Initial values for form fields (key-value pairs)',
       table: {
-        type: { summary: 'Record<string, any>' },
+        type: { summary: 'FormValues' },
         category: 'State',
       },
     },
     // Behavior
     hasReset: {
       control: 'boolean',
-      description: 'Whether to enable form reset functionality',
+      description: 'Whether to show the reset button',
       table: {
         type: { summary: 'boolean' },
+        defaultValue: { summary: 'true' },
+        category: 'Behavior',
+      },
+    },
+    resetOnSuccess: {
+      control: 'boolean',
+      description: 'Reset form to initial values after successful submission',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
         category: 'Behavior',
       },
     },
     // Interaction
-    onClickSubmit: {
+    onSubmit: {
       action: 'submitted',
-      description: 'Callback function called when form is submitted',
+      description: 'Controlled flow: callback receiving typed FormValues on submit',
       table: {
-        type: { summary: '(data: Record<string, any>) => void' },
+        type: { summary: '(data: FormValues) => void | Promise<void>' },
+        category: 'Interaction',
+      },
+    },
+    action: {
+      description: 'Action flow: React 19 form action receiving (prevState, FormData)',
+      table: {
+        type: { summary: '(prevState: T, formData: FormData) => T | Promise<T>' },
+        category: 'Interaction',
+      },
+    },
+    actionInitialState: {
+      description: 'Action flow: an initial state for useActionState hooks',
+      table: {
+        type: { summary: 'Awaited<TActionState>' },
+        category: 'Interaction',
+      },
+    },
+    onActionComplete: {
+      description: 'Callback fired with the action result state after action completes',
+      table: {
+        type: { summary: '(state: T) => void' },
         category: 'Interaction',
       },
     },
     onReset: {
       action: 'reset',
-      description: 'Custom reset handler (overrides default reset behavior)',
+      description: 'Custom reset handler called when reset button is clicked',
       table: {
-        type: { summary: '() => void' },
-        category: 'Interaction',
-      },
-    },
-    onSubmit: {
-      action: 'submit',
-      description: 'Custom submit handler (overrides default submit behavior)',
-      table: {
-        type: { summary: '(data: Record<string, any>) => void' },
+        type: { summary: 'FormEventHandler<HTMLFormElement>' },
         category: 'Interaction',
       },
     },
@@ -118,4 +140,29 @@ export default meta;
 
 type Story = StoryObj<typeof Form>;
 
-export const Example: Story = {};
+export const Default: Story = {};
+
+export const WithAction: Story = {
+  render: () => <FormWithActionExample />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Uses React 19 action flow with a simulated 2-second async submission. The form shows a pending state with disabled inputs during submission.',
+      },
+    },
+  },
+};
+
+export const WithResetOnSuccess: Story = {
+  args: {
+    resetOnSuccess: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Form resets all fields to initial values after a successful submission.',
+      },
+    },
+  },
+};

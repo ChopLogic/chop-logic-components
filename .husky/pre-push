@@ -1,0 +1,9 @@
+branch=$(git symbolic-ref --short HEAD)
+pattern="^(main|gh-pages|mutation-reports|feat\/[a-zA-Z0-9-]+|fix\/[a-zA-Z0-9-]+|chore\/[a-zA-Z0-9-]+)$"
+
+if ! echo "$branch" | grep -qE "$pattern"; then
+  echo "Error: Branch name '$branch' does not match the allowed pattern." >&2
+  echo "Allowed formats: main, feat/[name], fix/[name], chore/[name]" >&2
+  echo "Where [name] contains only letters, digits, and hyphens." >&2
+  exit 1
+fi

@@ -5,6 +5,7 @@ export interface FormContextProps {
   onChangeFormInput?: (params: FormInputParams) => void;
   initialValues?: FormValues;
   resetSignal?: number;
+  isPending?: boolean;
 }
 
-export const FormContext = createContext<FormContextProps>({});
+export const FormContext = createContext<FormContextProps>({ isPending: false });

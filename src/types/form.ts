@@ -12,10 +12,18 @@ export interface FormInputParams {
   valid?: boolean;
 }
 
-export interface FormProps extends PropsWithChildren, ChopLogicComponentProps {
+export interface FormProps<TActionState = void> extends PropsWithChildren, ChopLogicComponentProps {
+  // Shared
   initialValues?: FormValues;
   hasReset?: boolean;
-  onClickSubmit?: (data: FormValues) => void;
+  resetOnSuccess?: boolean;
+
+  // Action flow (React 19 native <form action>)
+  action?: (prevState: TActionState, formData: FormData) => TActionState | Promise<TActionState>;
+  actionInitialState?: TActionState;
+  onActionComplete?: (state: TActionState) => void;
+
+  // Controlled flow
+  onSubmit?: (data: FormValues) => void | Promise<void>;
   onReset?: FormEventHandler<HTMLFormElement>;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
 }

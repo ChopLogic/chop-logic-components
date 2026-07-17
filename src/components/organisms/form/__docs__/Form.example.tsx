@@ -24,6 +24,9 @@ const MULTI_SELECT_VALUES: SelectValue[] = [
   { id: 'pr-lang-4', label: 'C#' },
 ];
 
+/**
+ * Controlled flow example using onSubmit with FormValues.
+ */
 export const FormExample: FC<FormProps> = (props) => {
   const [data, setData] = useState<FormValues>();
 
@@ -34,13 +37,19 @@ export const FormExample: FC<FormProps> = (props) => {
     isSubscribed: true,
   };
 
+  const handleSubmit = async (values: FormValues) => {
+    // Simulate async operation
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setData(values);
+  };
+
   return (
     <div>
       <Form
         {...props}
         initialValues={initialValues}
         onReset={() => setData(undefined)}
-        onClickSubmit={(data) => setData(data)}
+        onSubmit={handleSubmit}
       >
         <TextInput
           name="firstName"
@@ -62,7 +71,7 @@ export const FormExample: FC<FormProps> = (props) => {
           required
           clearable
           errorMessage="This is not a valid email"
-          validator={{ regexp: `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$` }}
+          validator={{ regexp: '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$' }}
         />
         <NumericInput
           name="age"
@@ -105,6 +114,48 @@ export const FormExample: FC<FormProps> = (props) => {
               })}
             </tbody>
           </table>
+        </div>
+      )}
+    </div>
+  );
+};
+
+/**
+ * Action flow example using React 19 form action with FormData.
+ * Demonstrates pending state during async submission.
+ */
+export const FormWithActionExample: FC = () => {
+  const [result, setResult] = useState<string>();
+
+  // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+  const formAction = async (_prevState: void, formData: FormData) => {
+    // Simulate a 2-second async operation
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    setResult(`Submitted: ${name} (${email})`);
+  };
+
+  return (
+    <div>
+      <Form action={formAction}>
+        <TextInput name="name" label="Name" />
+        <TextInput
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="Enter your email"
+          required
+          errorMessage="This is not a valid email"
+          validator={{ regexp: '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$' }}
+        />
+      </Form>
+      {result && (
+        <div
+          className="container"
+          style={{ marginTop: '2rem', color: 'var(--cl-base-font-color)' }}
+        >
+          <p>{result}</p>
         </div>
       )}
     </div>

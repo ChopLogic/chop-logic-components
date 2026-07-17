@@ -4,6 +4,32 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.4.0] - 2026-07-17
+
+### Added
+
+- React 19 `useActionState` integration in the `Form` component for native `<form action>` support
+- `isPending` state exposed via `FormContext` during async form submissions
+- `useFormPending` hook for child components to read the form's pending state
+- `action` prop on `Form` for React 19 native form action flow with `FormData`
+- `resetOnSuccess` prop on `Form` to optionally reset fields after successful submission
+- `onActionComplete` callback prop on `Form` to receive action result state
+- `.cl-form_pending` CSS modifier with reduced opacity and disabled pointer events
+- Comprehensive tests for both action and controlled submission flows
+
+### Changed
+
+- `Form` component refactored to support two submission flows: `action` (React 19 native) and `onSubmit` (controlled)
+- `onSubmit` prop signature changed to `(data: FormValues) => void | Promise<void>` with async support and automatic pending state tracking
+- Submit and reset buttons are now automatically disabled during pending state
+- `FormContext` extended with `isPending` field
+- Upgraded Storybook to v10.5.2 and updated npm dependencies
+- Updated dependabot job 
+
+### Removed
+
+- `onClickSubmit` prop from `Form` (replaced by `onSubmit`)
+
 ## [4.3.0] - 2026-06-27
 
 ### Added

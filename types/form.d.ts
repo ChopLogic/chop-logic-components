@@ -9,10 +9,13 @@ export interface FormInputParams {
     value: unknown;
     valid?: boolean;
 }
-export interface FormProps extends PropsWithChildren, ChopLogicComponentProps {
+export interface FormProps<TActionState = void> extends PropsWithChildren, ChopLogicComponentProps {
     initialValues?: FormValues;
     hasReset?: boolean;
-    onClickSubmit?: (data: FormValues) => void;
+    resetOnSuccess?: boolean;
+    action?: (prevState: TActionState, formData: FormData) => TActionState | Promise<TActionState>;
+    actionInitialState?: TActionState;
+    onActionComplete?: (state: TActionState) => void;
+    onSubmit?: (data: FormValues) => void | Promise<void>;
     onReset?: FormEventHandler<HTMLFormElement>;
-    onSubmit?: FormEventHandler<HTMLFormElement>;
 }

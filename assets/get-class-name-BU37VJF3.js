@@ -1,1 +1,0 @@
-import{i as e}from"./preload-helper-CT_b8DTk.js";function t(e){return e.map(e=>{if(typeof e==`string`)return e.trim();if(typeof e==`object`){let t=[];for(let n in e)e[n]&&t.push(n.trim());return t.join(` `)}return``}).filter(e=>!!e).join(` `)}var n=e((()=>{}));export{n,t};

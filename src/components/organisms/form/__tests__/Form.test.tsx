@@ -338,5 +338,183 @@ describe('Form', () => {
       expect(numericInput).toHaveValue(55);
       expect(checkboxInput).toBeChecked();
     });
+
+    it('should apply custom className alongside cl-form', () => {
+      const { container } = render(
+        <Form className="custom-class">
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const form = container.querySelector('form') as HTMLFormElement;
+      expect(form).toHaveClass('cl-form');
+      expect(form).toHaveClass('custom-class');
+    });
+
+    it('should render the Reset button by default (hasReset defaults to true)', () => {
+      render(
+        <Form>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      expect(screen.getByText('Clear')).toBeInTheDocument();
+    });
+
+    it('should call onReset callback when Clear button is clicked', async () => {
+      const mockReset = vi.fn();
+      render(
+        <Form onReset={mockReset}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      await userEvent.click(screen.getByText('Clear'));
+
+      expect(mockReset).toHaveBeenCalledOnce();
+    });
+
+    it('should extend submit button when hasReset is false', () => {
+      const { container } = render(
+        <Form hasReset={false}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const submitButton = container.querySelector('button[type="submit"]') as HTMLButtonElement;
+      expect(submitButton).toBeInTheDocument();
+      // The submit button should have the extended class when hasReset is false
+      expect(submitButton.className).toContain('extended');
+    });
+
+    it('should render form with cl-form class', () => {
+      const { container } = render(
+        <Form>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const form = container.querySelector('form') as HTMLFormElement;
+      expect(form).toHaveClass('cl-form');
+    });
+
+    it('should render children inside the form', () => {
+      render(
+        <Form>
+          <TextInput name="field1" label="Field 1" />
+          <TextInput name="field2" label="Field 2" />
+        </Form>,
+      );
+
+      expect(screen.getAllByRole('textbox')).toHaveLength(2);
+    });
+
+    it('should render without initialValues', () => {
+      render(
+        <Form>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const input = screen.getByRole('textbox');
+      expect(input).toHaveValue('');
+    });
+
+    it('should enable submit button when form is valid', () => {
+      render(
+        <Form onSubmit={vi.fn()}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const submitButton = screen.getByText('Submit').closest('button') as HTMLButtonElement;
+      expect(submitButton).not.toBeDisabled();
+    });
+  });
+
+  describe('action flow integration', () => {
+    it('should submit form data via action when action prop is used', async () => {
+      // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+      const mockAction = vi.fn(async (_prev: void, _fd: FormData) => {});
+
+      render(
+        <Form action={mockAction}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      await userEvent.type(screen.getByRole('textbox'), 'Alice');
+      await userEvent.click(screen.getByText('Submit'));
+
+      await waitFor(() => {
+        expect(mockAction).toHaveBeenCalled();
+      });
+    });
+
+    it('should call onActionComplete after action resolves', async () => {
+      const mockOnComplete = vi.fn();
+      // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+      const mockAction = vi.fn(async (_prev: void, _fd: FormData) => {});
+
+      render(
+        <Form action={mockAction} onActionComplete={mockOnComplete}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      await userEvent.click(screen.getByText('Submit'));
+
+      await waitFor(() => {
+        expect(mockOnComplete).toHaveBeenCalled();
+      });
+    });
+
+    it('should not have onSubmit handler on form when action is provided', () => {
+      // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+      const mockAction = vi.fn(async (_prev: void, _fd: FormData) => {});
+
+      const { container } = render(
+        <Form action={mockAction}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const form = container.querySelector('form') as HTMLFormElement;
+      // The form should use action, not onSubmit
+      expect(form.getAttribute('onsubmit')).toBeNull();
+    });
+
+    it('should render Reset button in action flow by default', () => {
+      // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+      const mockAction = vi.fn(async (_prev: void, _fd: FormData) => {});
+
+      render(
+        <Form action={mockAction}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      expect(screen.getByText('Clear')).toBeInTheDocument();
+    });
+
+    it('should reset form in action flow when Clear is clicked', async () => {
+      // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+      const mockAction = vi.fn(async (_prev: void, _fd: FormData) => {});
+
+      render(
+        <Form action={mockAction} initialValues={{ name: 'initial' }}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const input = screen.getByRole('textbox');
+      await userEvent.clear(input);
+      await userEvent.type(input, 'changed');
+      expect(input).toHaveValue('changed');
+
+      await userEvent.click(screen.getByText('Clear'));
+
+      expect(input).toHaveValue('initial');
+    });
   });
 });

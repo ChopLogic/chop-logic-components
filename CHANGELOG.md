@@ -4,7 +4,7 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [4.4.0] - 2026-07-01
+## [4.4.0] - 2026-07-17
 
 ### Added
 
@@ -23,7 +23,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `onSubmit` prop signature changed to `(data: FormValues) => void | Promise<void>` with async support and automatic pending state tracking
 - Submit and reset buttons are now automatically disabled during pending state
 - `FormContext` extended with `isPending` field
-- Upgraded Storybook to v10.5.0 and updated npm dependencies
+- Upgraded Storybook to v10.5.2 and updated npm dependencies
+- Updated dependabot job 
 
 ### Removed
 

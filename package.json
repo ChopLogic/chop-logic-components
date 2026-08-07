@@ -134,7 +134,7 @@
     "@vitest/coverage-v8": "^4.1.10",
     "http-server": "^14.1.1",
     "husky": "^9.1.7",
-    "jsdom": "^29.1.1",
+    "jsdom": "^30.0.1",
     "prettier": "^3.9.5",
     "remark-gfm": "^4.0.1",
     "start-server-and-test": "^3.0.11",

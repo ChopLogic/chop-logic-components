@@ -1,4 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import { startTransition } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { useFormController } from '../Form.controller';
@@ -203,7 +204,7 @@ describe('useFormController', () => {
       const formData = new FormData();
 
       await act(async () => {
-        result.current.formAction?.(formData);
+        startTransition(() => result.current.formAction?.(formData));
       });
 
       await waitFor(() => {
@@ -228,7 +229,7 @@ describe('useFormController', () => {
       const formData = new FormData();
 
       await act(async () => {
-        result.current.formAction?.(formData);
+        startTransition(() => result.current.formAction?.(formData));
       });
 
       await waitFor(() => {
@@ -251,7 +252,7 @@ describe('useFormController', () => {
       const formData = new FormData();
 
       await act(async () => {
-        result.current.formAction?.(formData);
+        startTransition(() => result.current.formAction?.(formData));
       });
 
       await waitFor(() => {
@@ -274,7 +275,7 @@ describe('useFormController', () => {
       const formData = new FormData();
 
       await act(async () => {
-        result.current.formAction?.(formData);
+        startTransition(() => result.current.formAction?.(formData));
       });
 
       await waitFor(() => {

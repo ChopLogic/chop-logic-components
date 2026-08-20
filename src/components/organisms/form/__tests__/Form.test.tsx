@@ -1,6 +1,6 @@
 import { Checkbox, NumericInput, TextInput } from '@components/molecules';
 import { Form } from '@components/organisms';
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
 import { describe, expect, it, vi } from 'vitest';
@@ -66,7 +66,9 @@ describe('Form', () => {
       });
 
       // Resolve the submit
-      await resolveSubmit();
+      await act(async () => {
+        resolveSubmit();
+      });
 
       // Should no longer be pending
       await waitFor(() => {
@@ -95,7 +97,9 @@ describe('Form', () => {
         expect(submitButton).toBeDisabled();
       });
 
-      await resolveSubmit();
+      await act(async () => {
+        resolveSubmit();
+      });
 
       await waitFor(() => {
         expect(submitButton).not.toBeDisabled();
@@ -123,7 +127,9 @@ describe('Form', () => {
         expect(resetButton).toBeDisabled();
       });
 
-      await resolveSubmit();
+      await act(async () => {
+        resolveSubmit();
+      });
 
       await waitFor(() => {
         expect(resetButton).not.toBeDisabled();
@@ -153,7 +159,9 @@ describe('Form', () => {
         expect(form).toHaveClass('cl-form_pending');
       });
 
-      await resolveSubmit();
+      await act(async () => {
+        resolveSubmit();
+      });
 
       await waitFor(() => {
         expect(form).not.toHaveClass('cl-form_pending');

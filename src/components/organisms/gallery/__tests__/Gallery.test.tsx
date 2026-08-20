@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { GalleryItem } from '@types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -410,7 +410,9 @@ describe('Gallery', () => {
       await userEvent.click(closeButton);
 
       // Wait for focus restoration timeout
-      await vi.advanceTimersByTimeAsync(300);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(300);
+      });
 
       await waitFor(() => {
         expect(screen.queryByTestId('fullscreen-image-viewer')).not.toBeInTheDocument();

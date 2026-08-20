@@ -11,9 +11,15 @@ export const IconButton: FC<Omit<ButtonProps, 'text'>> = ({
   className,
   label,
   iconSize = ElementSize.Medium,
+  type = 'button',
   ...rest
 }) => (
-  <button {...rest} aria-label={label} className={getClassName(['cl-icon-button', className])}>
+  <button
+    {...rest}
+    type={type}
+    aria-label={label}
+    className={getClassName(['cl-icon-button', className])}
+  >
     {icon && <Icon name={icon} className="cl-icon-button__icon" size={iconSize} />}
   </button>
 );

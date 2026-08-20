@@ -10,9 +10,10 @@ export const SecondaryButton: FC<ButtonProps> = ({
   text,
   className,
   iconSize = ElementSize.Small,
+  type = 'button',
   ...rest
 }) => (
-  <button {...rest} className={getClassName(['cl-secondary-button', className])}>
+  <button {...rest} type={type} className={getClassName(['cl-secondary-button', className])}>
     {icon && <Icon name={icon} className="cl-secondary-button__icon" size={iconSize} />}
     <span className="cl-secondary-button__text">{text}</span>
   </button>

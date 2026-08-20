@@ -30,7 +30,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies and build
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Lint
         run: npm run lint:errors

@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{f as t}from"./iframe-BxXWrdMh.js";var n,r;function i(){return(i=e((()=>{n=t(),r=({ref:e,isVisible:t})=>{let[r,i]=(0,n.useState)({width:0,height:0});return(0,n.useEffect)(()=>{e?.current&&t&&i({width:e.current.offsetWidth,height:e.current.offsetHeight})},[e,t]),r}})))()}export{r as n,i as t};

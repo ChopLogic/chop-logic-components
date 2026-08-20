@@ -1,0 +1,35 @@
+import{n as e,r as t}from"./rolldown-runtime-DkW27tQK.js";import{n}from"./iframe-BxXWrdMh.js";import{i as r,n as i,r as a,t as o}from"./Icon-CVXcUl-n.js";import{n as s,t as c}from"./icon-name-Cjfw6W7s.js";import{t as l}from"./get-class-name-ekH_fREr.js";import{n as u,t as d}from"./Link-CTBY9M3I.js";var f,p;function m(){return(m=e((()=>{i(),u(),r(),s(),f=n(),p=({item:e,isLastItem:t})=>{let n=!!e.link&&!t;return(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(`li`,{className:`cl-breadcrumbs__item`,children:n?(0,f.jsx)(d,{href:e?.link??``,icon:e.icon,iconPosition:`left`,className:`cl-breadcrumbs__link`,children:e.label}):(0,f.jsxs)(`span`,{"aria-current":t?`page`:void 0,className:`cl-breadcrumbs__text`,children:[e.icon&&(0,f.jsx)(o,{name:e.icon,hidden:!0}),e.label]})}),!t&&(0,f.jsx)(o,{name:c.ChevronRight,size:a.Small,testId:`breadcrumb-separator`})]})};try{p.displayName=`BreadcrumbItem`,p.__docgenInfo={description:``,displayName:`BreadcrumbItem`,filePath:`/home/runner/work/chop-logic-components/chop-logic-components/src/components/molecules/breadcrumbs/BreadcrumbItem.tsx`,methods:[],props:{item:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/components/molecules/breadcrumbs/BreadcrumbItem.tsx`,name:`TypeLiteral`}],description:``,name:`item`,required:!0,tags:{},type:{name:`Breadcrumb`}},isLastItem:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/components/molecules/breadcrumbs/BreadcrumbItem.tsx`,name:`TypeLiteral`}],description:``,name:`isLastItem`,required:!0,tags:{},type:{name:`boolean`}}},tags:{}}}catch{}})))()}var h,g;function _(){return(_=e((()=>{m(),h=n(),g=({items:e})=>(0,h.jsx)(`ol`,{className:`cl-breadcrumbs__list`,children:e.map((t,n)=>(0,h.jsx)(p,{item:t,isLastItem:n===e.length-1},t.label))});try{g.displayName=`BreadcrumbList`,g.__docgenInfo={description:``,displayName:`BreadcrumbList`,filePath:`/home/runner/work/chop-logic-components/chop-logic-components/src/components/molecules/breadcrumbs/BreadcrumbList.tsx`,methods:[],props:{items:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/components/molecules/breadcrumbs/BreadcrumbList.tsx`,name:`TypeLiteral`}],description:``,name:`items`,required:!0,tags:{},type:{name:`Breadcrumb[]`}}},tags:{}}}catch{}})))()}var v,y;function b(){return(b=e((()=>{_(),v=n(),y=({items:e,className:t,id:n,style:r,tabIndex:i,title:a,...o})=>{let s=l([`cl-breadcrumbs`,t]);return!e||e.length===0?null:(0,v.jsx)(`nav`,{"aria-label":`Breadcrumb`,className:s,id:n,style:r,tabIndex:i,title:a,...o,children:(0,v.jsx)(g,{items:e})})};try{y.displayName=`Breadcrumbs`,y.__docgenInfo={description:``,displayName:`Breadcrumbs`,filePath:`/home/runner/work/chop-logic-components/chop-logic-components/src/components/molecules/breadcrumbs/Breadcrumbs.tsx`,methods:[],props:{items:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/breadcrumbs.ts`,name:`BreadcrumbsProps`}],description:``,name:`items`,parent:{fileName:`chop-logic-components/src/types/breadcrumbs.ts`,name:`BreadcrumbsProps`},required:!0,tags:{},type:{name:`Breadcrumb[]`}},id:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`}],description:``,name:`id`,parent:{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`},required:!1,tags:{},type:{name:`string`}},className:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`}],description:``,name:`className`,parent:{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`},required:!1,tags:{},type:{name:`string`}},style:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`}],description:``,name:`style`,parent:{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`},required:!1,tags:{},type:{name:`CSSProperties`}},tabIndex:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`}],description:``,name:`tabIndex`,parent:{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`},required:!1,tags:{},type:{name:`number`}},title:{defaultValue:null,declarations:[{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`}],description:``,name:`title`,parent:{fileName:`chop-logic-components/src/types/_common.ts`,name:`ChopLogicComponentProps`},required:!1,tags:{},type:{name:`string`}}},tags:{}}}catch{}})))()}var x=t({Default:()=>C,WithoutIcons:()=>w,WithoutLinks:()=>T,__namedExportsOrder:()=>E,default:()=>S}),S,C,w,T,E;function D(){return(D=e((()=>{s(),b(),S={title:`Molecules/Breadcrumbs`,component:y,argTypes:{items:{control:`object`,description:`Array of breadcrumb items`,table:{type:{summary:`BreadcrumbItem[]`},category:`Content`}},className:{control:`text`,description:`Additional CSS class for custom styling`,table:{type:{summary:`string`},category:`Styling`}},style:{control:`object`,description:`Inline styles for the breadcrumbs container`,table:{type:{summary:`CSSProperties`},category:`Styling`}},id:{control:`text`,description:`Unique identifier for the breadcrumbs`,table:{type:{summary:`string`},category:`Identification`}},title:{control:`text`,description:`Title attribute for the breadcrumbs container`,table:{type:{summary:`string`},category:`Identification`}},tabIndex:{control:`number`,description:`Tab index for the breadcrumbs container`,table:{type:{summary:`number`},category:`Accessibility`}}},args:{items:[{label:`Home`,icon:c.Home,link:`/`},{label:`Documents`,icon:c.BookOpen,link:`/documents`},{label:`Projects`,icon:c.Cast,link:`/documents/projects`},{label:`Report`}]}},C={},w={args:{items:[{label:`Home`,link:`/`},{label:`Settings`,link:`/settings`},{label:`Account`,link:`/settings/account`},{label:`Privacy`}]}},T={args:{items:[{label:`Home`},{label:`Products`},{label:`Electronics`},{label:`Smartphones`}]},parameters:{docs:{description:{story:`Breadcrumbs without any links - useful for static navigation paths.`}}}},C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{}`,...C.parameters?.docs?.source}}},w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
+  args: {
+    items: [{
+      label: 'Home',
+      link: '/'
+    }, {
+      label: 'Settings',
+      link: '/settings'
+    }, {
+      label: 'Account',
+      link: '/settings/account'
+    }, {
+      label: 'Privacy'
+    }]
+  }
+}`,...w.parameters?.docs?.source}}},T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`{
+  args: {
+    items: [{
+      label: 'Home'
+    }, {
+      label: 'Products'
+    }, {
+      label: 'Electronics'
+    }, {
+      label: 'Smartphones'
+    }]
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Breadcrumbs without any links - useful for static navigation paths.'
+      }
+    }
+  }
+}`,...T.parameters?.docs?.source}}},E=[`Default`,`WithoutIcons`,`WithoutLinks`]})))()}export{D as n,x as t};

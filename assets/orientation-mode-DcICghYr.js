@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t;function n(){return(n=e((()=>{t=function(e){return e.Vertical=`vertical`,e.Horizontal=`horizontal`,e}({})})))()}export{n,t};

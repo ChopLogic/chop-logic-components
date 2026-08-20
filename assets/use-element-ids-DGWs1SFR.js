@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{f as t}from"./iframe-BxXWrdMh.js";function n(e){let t=(0,r.useId)(),n=e??t;return{elementId:n,errorId:`${n}_error`,dropdownId:`${n}_dropdown`}}var r;function i(){return(i=e((()=>{r=t()})))()}export{n,i as t};

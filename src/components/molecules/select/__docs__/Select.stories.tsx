@@ -55,6 +55,15 @@ const meta: Meta<typeof SelectExample> = {
         category: 'State',
       },
     },
+    isLoading: {
+      control: 'boolean',
+      description:
+        'Whether the select is in loading state. Shows shimmer animation and prevents interaction.',
+      table: {
+        type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
     // Validation
     required: {
       control: 'boolean',
@@ -143,5 +152,16 @@ export const Example: Story = {
     onChange: (value) => console.log(value),
     required: false,
     disabled: false,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    id: 'loading-select',
+    label: 'Select your language',
+    options: SELECT_LANGUAGES,
+    name: 'language',
+    placeholder: 'Select your language',
+    isLoading: true,
   },
 };

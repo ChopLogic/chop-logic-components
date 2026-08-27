@@ -16,6 +16,7 @@ type Props = {
   values?: MultiSelectValue[];
   placeholder?: string;
   name: string;
+  isLoading?: boolean;
 };
 
 export const MultiSelectCombobox: FC<Props> = ({
@@ -28,11 +29,16 @@ export const MultiSelectCombobox: FC<Props> = ({
   disabled,
   required,
   values,
+  isLoading = false,
 }) => {
   const selectedIds = values?.filter((value) => value.selected).map((value) => value.id);
   const iconClass = getClassName([
     'cl-select-combobox__icon',
     { 'cl-select-combobox__icon_opened': opened },
+  ]);
+  const comboboxClass = getClassName([
+    'cl-select-combobox',
+    { 'cl-select-combobox_loading': isLoading },
   ]);
 
   return (
@@ -46,12 +52,14 @@ export const MultiSelectCombobox: FC<Props> = ({
       aria-controls={dropdownId}
       id={comboboxId}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       aria-required={required}
-      className="cl-select-combobox"
+      aria-busy={isLoading}
+      className={comboboxClass}
     >
       <MultiSelectComboboxSelectedValues values={values} placeholder={placeholder} />
       <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
+      {isLoading && <div className="cl-select-combobox__shimmer" />}
     </button>
   );
 };

@@ -3,6 +3,7 @@
 exports[`MultiSelect > should render correctly 1`] = `
 <DocumentFragment>
   <div
+    aria-busy="false"
     class="cl-select test-class"
     style="width: 400px;"
   >
@@ -17,6 +18,7 @@ exports[`MultiSelect > should render correctly 1`] = `
       </span>
     </label>
     <button
+      aria-busy="false"
       aria-controls="multi-select-id_dropdown"
       aria-expanded="false"
       aria-haspopup="listbox"

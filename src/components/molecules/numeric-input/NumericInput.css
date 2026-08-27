@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.cl-numeric-input_loading {
+  pointer-events: none;
+}
+
 .cl-numeric-input__error-message {
   position: absolute;
   right: 0;

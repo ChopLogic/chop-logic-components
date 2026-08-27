@@ -1,6 +1,6 @@
 import { ErrorMessage, Input, Label } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
-import { useElementIds } from '@hooks';
+import { useElementIds, useFormLoading } from '@hooks';
 import type { NumericInputProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -31,7 +31,9 @@ const NumericInputStateful: FC<NumericInputProps> = ({
   step = 1,
   className,
   style,
+  isLoading: isLoadingProp,
 }) => {
+  const isLoading = useFormLoading(isLoadingProp);
   const { elementId, errorId } = useElementIds(id);
   const { value, valid, handleChange, handleDecrement, handleIncrement, minValue, maxValue } =
     useNumericInputController({
@@ -46,10 +48,14 @@ const NumericInputStateful: FC<NumericInputProps> = ({
       onDecrement,
       onIncrement,
     });
-  const inputClass = getClassName(['cl-numeric-input', className]);
+  const inputClass = getClassName([
+    'cl-numeric-input',
+    className,
+    { 'cl-numeric-input_loading': isLoading },
+  ]);
 
   return (
-    <div style={style} className={inputClass}>
+    <div style={style} className={inputClass} aria-busy={isLoading}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
@@ -57,10 +63,11 @@ const NumericInputStateful: FC<NumericInputProps> = ({
         type="number"
         disabled={disabled}
         required={required}
-        readOnly={readOnly}
+        readOnly={readOnly || isLoading}
         placeholder="0"
         aria-invalid={!valid}
         aria-errormessage={errorId}
+        aria-readonly={readOnly || isLoading}
         value={value.toString()}
         onChange={handleChange}
         min={minValue}
@@ -77,14 +84,14 @@ const NumericInputStateful: FC<NumericInputProps> = ({
               view={ButtonView.Inner}
               label={`Decrement value for ${label}`}
               icon={IconName.ChevronLeft}
-              disabled={disabled}
+              disabled={disabled || isLoading}
             />
             <Button
               onClick={handleIncrement}
               view={ButtonView.Inner}
               label={`Increment value for ${label}`}
               icon={IconName.ChevronRight}
-              disabled={disabled}
+              disabled={disabled || isLoading}
             />
           </span>
         )}
@@ -94,6 +101,7 @@ const NumericInputStateful: FC<NumericInputProps> = ({
           visible={!valid}
           className="cl-numeric-input__error-message"
         />
+        {isLoading && <div className="cl-input__shimmer" />}
       </Input>
     </div>
   );

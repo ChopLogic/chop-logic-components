@@ -20,6 +20,16 @@
   opacity: 0.5;
 }
 
+/* Loading state */
+.cl-button_loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cl-button__icon_spinning {
+  animation: cl-spin 1s linear infinite;
+}
+
 /* Extended variant */
 .cl-button_extended {
   width: 100%;

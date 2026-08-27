@@ -6,6 +6,9 @@ import { TextInputExample } from './TextInput.example';
 const meta: Meta<typeof TextInputExample> = {
   component: TextInputExample,
   title: 'Molecules/TextInput',
+  args: {
+    isLoading: false,
+  },
   argTypes: {
     // Content
     label: {
@@ -65,6 +68,16 @@ const meta: Meta<typeof TextInputExample> = {
       description: 'Whether the input is read-only',
       table: {
         type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    isLoading: {
+      control: 'boolean',
+      description:
+        'Whether the input is in a loading state. When true, shows a shimmer animation over the input area, makes the input readonly, and sets aria-busy for accessibility.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
         category: 'State',
       },
     },
@@ -311,5 +324,20 @@ export const Stateless: Story = {
     return (
       <TextInputExample {...args} value={message} onChange={handleChange} onClear={handleClear} />
     );
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    label: 'Email Address',
+    name: 'email',
+    id: 'loading-email-input',
+    placeholder: 'Enter your email...',
+    type: 'email',
+    isLoading: true,
+    defaultValue: 'user@example.com',
+    required: false,
+    disabled: false,
+    clearable: true,
   },
 };

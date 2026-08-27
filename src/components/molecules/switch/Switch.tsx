@@ -1,3 +1,4 @@
+import { useFormLoading } from '@hooks';
 import type { SwitchProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -15,7 +16,9 @@ const Switch: FC<SwitchProps> = ({
   name,
   value = 'on',
   hasIndicator,
+  isLoading: isLoadingProp,
 }) => {
+  const isLoading = useFormLoading(isLoadingProp);
   const {
     checked: controlledChecked,
     handleChange,
@@ -26,17 +29,20 @@ const Switch: FC<SwitchProps> = ({
     onChange,
   });
 
+  const isDisabledOrLoading = disabled || isLoading;
+
   const switchClass = getClassName([
     'cl-switch',
     className,
     {
       'cl-switch__checked': controlledChecked,
       'cl-switch_disabled': disabled,
+      'cl-switch_loading': isLoading,
     },
   ]);
 
   const handleClick = () => {
-    if (!disabled) {
+    if (!isDisabledOrLoading) {
       handleChange(!controlledChecked);
     }
   };
@@ -46,10 +52,11 @@ const Switch: FC<SwitchProps> = ({
       role="switch"
       aria-checked={controlledChecked}
       aria-label={label}
-      tabIndex={disabled ? -1 : 0}
+      aria-busy={isLoading}
+      tabIndex={isDisabledOrLoading ? -1 : 0}
       className={switchClass}
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
+      onKeyDown={isDisabledOrLoading ? undefined : handleKeyDown}
       id={id}
     >
       <input
@@ -57,7 +64,7 @@ const Switch: FC<SwitchProps> = ({
         name={name}
         value={value}
         checked={controlledChecked}
-        disabled={disabled}
+        disabled={isDisabledOrLoading}
         className="cl-switch__input"
         readOnly
         data-testid="switch-input"

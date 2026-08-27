@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Form from '../Form';
-import { FormExample, FormWithActionExample } from './Form.example';
+import { FormExample, FormLoadingStateExample, FormWithActionExample } from './Form.example';
 
 const meta: Meta<typeof Form> = {
   component: FormExample,
@@ -162,6 +162,41 @@ export const WithResetOnSuccess: Story = {
     docs: {
       description: {
         story: 'Form resets all fields to initial values after a successful submission.',
+      },
+    },
+  },
+};
+
+export const LoadingState: Story = {
+  render: () => <FormLoadingStateExample />,
+  parameters: {
+    docs: {
+      description: {
+        story: `Demonstrates automatic loading state propagation to all child components via FormContext.
+
+When the form is in a pending state (during async submission), all nested interactive components automatically receive \`isLoading=true\`:
+
+- **TextInput, NumericInput, Search, Select, MultiSelect**: Display a shimmer animation over the input area
+- **Checkbox, Switch**: Show disabled-like appearance with reduced opacity
+- **Submit Button**: Shows a spinning loader icon instead of the regular icon
+
+Click the Submit button to see the loading state in action. The form remains in loading state for 4 seconds to clearly demonstrate the visual feedback.
+
+### When to Use Loading State vs Disabled State
+
+| Use Loading State When | Use Disabled State When |
+|------------------------|------------------------|
+| An async operation is in progress | User lacks permission to interact |
+| Waiting for data to load or submit | Form validation has failed |
+| Processing user input server-side | A prerequisite action is required |
+
+### How Components Inherit Loading State
+
+1. The Form component tracks pending state internally via \`isPending\`
+2. When \`isPending\` is true, the Form sets \`isLoading: true\` in FormContext
+3. All nested interactive components read \`isLoading\` from FormContext via the \`useFormLoading\` hook
+4. If a component has an explicit \`isLoading\` prop, it takes precedence over the context value
+        `,
       },
     },
   },

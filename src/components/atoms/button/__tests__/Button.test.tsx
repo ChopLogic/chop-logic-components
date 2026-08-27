@@ -1,5 +1,6 @@
 import { ButtonView, IconName } from '@enums';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Button from '../Button';
@@ -132,5 +133,102 @@ describe('Button', () => {
 
     expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  describe('loading state', () => {
+    it('should render Loader icon when isLoading is true and icon is provided (Primary view)', () => {
+      render(<Button {...defaultProps} icon={IconName.Save} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      const icon = button.querySelector('.cl-primary-button__icon');
+
+      expect(icon).toHaveClass('chop-icon__loader');
+      expect(icon).toHaveClass('cl-button__icon_spinning');
+    });
+
+    it('should render Loader icon when isLoading is true and icon is provided (Secondary view)', () => {
+      render(
+        <Button
+          {...defaultProps}
+          icon={IconName.Save}
+          isLoading={true}
+          view={ButtonView.Secondary}
+        />,
+      );
+
+      const button = screen.getByRole('button');
+      const icon = button.querySelector('.cl-secondary-button__icon');
+
+      expect(icon).toHaveClass('chop-icon__loader');
+      expect(icon).toHaveClass('cl-button__icon_spinning');
+    });
+
+    it('should render Loader icon when isLoading is true (Icon view)', () => {
+      render(
+        <Button {...defaultProps} icon={IconName.Save} isLoading={true} view={ButtonView.Icon} />,
+      );
+
+      const button = screen.getByRole('button');
+      const icon = button.querySelector('.cl-icon-button__icon');
+
+      expect(icon).toHaveClass('chop-icon__loader');
+      expect(icon).toHaveClass('cl-button__icon_spinning');
+    });
+
+    it('should not call onClick when isLoading is true', async () => {
+      const mockedCallback = vi.fn();
+      render(<Button {...defaultProps} onClick={mockedCallback} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      await userEvent.click(button);
+
+      expect(mockedCallback).not.toHaveBeenCalled();
+    });
+
+    it('should have aria-busy="true" when isLoading is true', () => {
+      render(<Button {...defaultProps} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should have cl-button_loading class when isLoading is true', () => {
+      render(<Button {...defaultProps} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('cl-button_loading');
+    });
+
+    it('should not have aria-busy when isLoading is false', () => {
+      render(<Button {...defaultProps} isLoading={false} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-busy', 'false');
+    });
+
+    it('should not have cl-button_loading class when isLoading is false', () => {
+      render(<Button {...defaultProps} isLoading={false} />);
+
+      const button = screen.getByRole('button');
+      expect(button).not.toHaveClass('cl-button_loading');
+    });
+
+    it('should pass isLoading prop to Secondary view button', () => {
+      render(<Button {...defaultProps} isLoading={true} view={ButtonView.Secondary} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('cl-button_loading');
+      expect(button).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should pass isLoading prop to Icon view button', () => {
+      render(
+        <Button {...defaultProps} icon={IconName.Save} isLoading={true} view={ButtonView.Icon} />,
+      );
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('cl-button_loading');
+      expect(button).toHaveAttribute('aria-busy', 'true');
+    });
   });
 });

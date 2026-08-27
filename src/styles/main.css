@@ -238,6 +238,24 @@
   }
 }
 
+@keyframes cl-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes cl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Utility classes for animations */
 .cl-fade-in {
   animation: cl-fade-in ease 400ms;

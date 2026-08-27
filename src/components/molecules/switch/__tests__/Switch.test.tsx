@@ -99,3 +99,83 @@ describe('Switch', () => {
     expect(defaultProps.onChange).not.toHaveBeenCalled();
   });
 });
+
+// Loading state tests
+describe('Loading state', () => {
+  const loadingTestProps = {
+    checked: false,
+    onChange: vi.fn(),
+    label: 'Test Switch',
+    id: 'test-switch',
+    name: 'test-switch',
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should have loading BEM modifier class when isLoading is true', () => {
+    render(<Switch {...loadingTestProps} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    expect(switchElement).toHaveClass('cl-switch_loading');
+  });
+
+  it('should not have loading BEM modifier class when isLoading is false', () => {
+    render(<Switch {...loadingTestProps} isLoading={false} />);
+    const switchElement = screen.getByRole('switch');
+    expect(switchElement).not.toHaveClass('cl-switch_loading');
+  });
+
+  it('should have aria-busy="true" when isLoading is true', () => {
+    render(<Switch {...loadingTestProps} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    expect(switchElement).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should NOT toggle on click when isLoading is true', async () => {
+    const mockOnChange = vi.fn();
+    render(<Switch {...loadingTestProps} onChange={mockOnChange} isLoading />);
+    await userEvent.click(screen.getByRole('switch'));
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+
+  it('should NOT toggle on Space key press when isLoading is true', async () => {
+    const mockOnChange = vi.fn();
+    render(<Switch {...loadingTestProps} onChange={mockOnChange} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    switchElement.focus();
+    await userEvent.keyboard('{ }');
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+
+  it('should NOT toggle on Enter key press when isLoading is true', async () => {
+    const mockOnChange = vi.fn();
+    render(<Switch {...loadingTestProps} onChange={mockOnChange} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    switchElement.focus();
+    await userEvent.keyboard('{Enter}');
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+
+  it('should have negative tabIndex when isLoading is true', () => {
+    render(<Switch {...loadingTestProps} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    expect(switchElement).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('should have disabled input when isLoading is true', () => {
+    render(<Switch {...loadingTestProps} isLoading />);
+    const input = screen.getByTestId('switch-input');
+    expect(input).toBeDisabled();
+  });
+
+  it('should keep checked state unchanged after interaction when isLoading is true', async () => {
+    const mockOnChange = vi.fn();
+    render(<Switch {...loadingTestProps} checked={true} onChange={mockOnChange} isLoading />);
+    const switchElement = screen.getByRole('switch');
+    expect(switchElement).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(switchElement);
+    expect(switchElement).toHaveAttribute('aria-checked', 'true');
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+});

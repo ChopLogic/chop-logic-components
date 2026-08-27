@@ -41,7 +41,13 @@ const Form: FC<FormProps> = ({
   const formClass = getClassName(['cl-form', className, { 'cl-form_pending': isPending }]);
 
   const contextValue = useMemo(
-    () => ({ onChangeFormInput: handleInputChange, initialValues, resetSignal, isPending }),
+    () => ({
+      onChangeFormInput: handleInputChange,
+      initialValues,
+      resetSignal,
+      isPending,
+      isLoading: isPending,
+    }),
     [handleInputChange, initialValues, resetSignal, isPending],
   );
 
@@ -66,7 +72,8 @@ const Form: FC<FormProps> = ({
             text="Submit"
             icon={IconName.ArrowRight}
             extended={!hasReset}
-            disabled={!valid || isPending}
+            disabled={!valid}
+            isLoading={isPending}
           />
         </div>
       </FormContext.Provider>

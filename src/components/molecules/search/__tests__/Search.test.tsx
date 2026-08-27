@@ -7,6 +7,7 @@ import Search from '../Search';
 vi.mock('@hooks', () => ({
   useElementIds: vi.fn(() => ({ elementId: 'test-search' })),
   useDebounce: vi.fn((value) => value),
+  useFormLoading: vi.fn((explicitProp) => explicitProp ?? false),
 }));
 
 vi.mock('@components/atoms', () => ({

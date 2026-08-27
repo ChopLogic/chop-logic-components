@@ -1,5 +1,5 @@
 import { Label } from '@components/atoms';
-import { useClickOutside, useElementIds, useKeyPress } from '@hooks';
+import { useClickOutside, useElementIds, useFormLoading, useKeyPress } from '@hooks';
 import type { MultiSelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
@@ -20,8 +20,10 @@ const MultiSelect: FC<MultiSelectProps> = ({
   defaultValue,
   id,
   className,
+  isLoading: isLoadingProp,
   ...rest
 }) => {
+  const isLoading = useFormLoading(isLoadingProp);
   const ref = useRef(null);
   const { elementId, dropdownId } = useElementIds(id);
   const { handleClose, handleSelect, handleToggle, opened, values } = useMultiSelectController({
@@ -30,24 +32,35 @@ const MultiSelect: FC<MultiSelectProps> = ({
     defaultValue,
     onChange,
   });
-  const multiSelectClass = getClassName(['cl-select', className]);
+  const multiSelectClass = getClassName([
+    'cl-select',
+    className,
+    { 'cl-multi-select_loading': isLoading },
+  ]);
 
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
+  // Prevent dropdown toggle when loading
+  const handleToggleWithLoading = () => {
+    if (isLoading) return;
+    handleToggle();
+  };
+
   return (
-    <div ref={ref} {...rest} className={multiSelectClass}>
+    <div ref={ref} {...rest} className={multiSelectClass} aria-busy={isLoading}>
       <Label label={label} required={required} inputId={elementId} disabled={disabled} />
       <MultiSelectCombobox
         name={name}
         opened={opened}
         comboboxId={elementId}
         dropdownId={dropdownId}
-        onClick={handleToggle}
+        onClick={handleToggleWithLoading}
         values={values}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
+        isLoading={isLoading}
       />
       <MultiSelectDropdown
         options={values}

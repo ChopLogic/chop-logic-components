@@ -117,3 +117,8 @@
   pointer-events: none;
   opacity: 0.5;
 }
+
+.cl-switch_loading {
+  pointer-events: none;
+  opacity: 0.5;
+}

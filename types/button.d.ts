@@ -8,4 +8,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     tooltip?: string;
     label?: string;
     iconSize?: ElementSize;
+    isLoading?: boolean;
 }

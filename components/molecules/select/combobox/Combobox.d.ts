@@ -10,6 +10,7 @@ type Props = {
     selected?: SelectValue;
     placeholder?: string;
     name: string;
+    isLoading?: boolean;
 };
 export declare const SelectCombobox: FC<Props>;
 export {};

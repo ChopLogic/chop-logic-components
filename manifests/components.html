@@ -588,13 +588,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">7/44 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">43/44 infos</a><span class="filter-pill ok" aria-disabled="true">119 stories ok</span><a class="filter-pill ok" data-k="docs" href="#filter-docs">48 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">7/44 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">43/44 infos</a><span class="filter-pill ok" aria-disabled="true">123 stories ok</span><a class="filter-pill ok" data-k="docs" href="#filter-docs">48 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note ok" style="margin-bottom: 16px;">
-              Using <code>react-docgen-typescript</code>. Generation took <strong>3.8s</strong>.
+              Using <code>react-docgen-typescript</code>. Generation took <strong>4.1s</strong>.
             </div>
     <h2 class="section-title">Components</h2>
     <div class="grid" role="list">
@@ -1421,9 +1421,9 @@ const PageBreadcrumbs = () =&gt; (
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-4-atoms-button-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-4-atoms-button-props" class="badge ok as-toggle">9 prop types</label>
         <label for="c-4-atoms-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-4-atoms-button-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-4-atoms-button-stories" class="badge ok as-toggle">7 stories</label>
         <label for="c-4-atoms-button-docs" class="badge ok as-toggle">1 doc</label>
         
       </div>
@@ -1457,7 +1457,7 @@ const PageBreadcrumbs = () =&gt; (
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">8 prop types</span>
+              <span class="badge ok">9 prop types</span>
             </div>
             <pre><code>Component: src/components/atoms/button/Button.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -1466,6 +1466,8 @@ const PageBreadcrumbs = () =&gt; (
 icon?: IconName
 
 iconSize?: ElementSize
+
+isLoading?: boolean
 
 label?: string
 
@@ -1504,6 +1506,7 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Primary}
     disabled={false}
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     icon={IconName.Copy} /&gt;;</code></pre>
             </div>
@@ -1520,6 +1523,7 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Secondary}
     disabled={false}
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     icon={IconName.ChevronsRight} /&gt;;</code></pre>
             </div>
@@ -1536,6 +1540,7 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Icon}
     disabled={false}
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     icon={IconName.Star}
     label=&quot;Favorite&quot; /&gt;;</code></pre>
@@ -1553,6 +1558,7 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Primary}
     disabled={false}
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     tooltip=&quot;This button does nothing...&quot; /&gt;;</code></pre>
             </div>
@@ -1569,6 +1575,7 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Icon}
     disabled={false}
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     icon={IconName.ThumbsUp}
     label=&quot;Thumbs Up&quot;
@@ -1587,8 +1594,26 @@ visibleOn?: &quot;hover&quot; | &quot;click&quot; | &quot;focus&quot; | &quot;co
     view={ButtonView.Primary}
     disabled
     extended={false}
+    isLoading={false}
     onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
     icon={IconName.PhoneOff} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loading</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Loading = () =&gt; &lt;Button
+    text=&quot;Submitting...&quot;
+    type=&quot;button&quot;
+    view={ButtonView.Primary}
+    disabled={false}
+    extended={false}
+    isLoading
+    onClick={() =&gt; console.log(&#39;Button clicked!&#39;)}
+    icon={IconName.Check} /&gt;;</code></pre>
             </div>
         </div>
     
@@ -1653,7 +1678,7 @@ const ExampleForm = () =&gt; (
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> CheckboxExample</h2>
       <div class="badges">
-        <label for="c-5-molecules-checkbox-props" class="badge ok as-toggle">16 prop types</label>
+        <label for="c-5-molecules-checkbox-props" class="badge ok as-toggle">17 prop types</label>
         <label for="c-5-molecules-checkbox-info" class="badge info as-toggle">1 info</label>
         <label for="c-5-molecules-checkbox-stories" class="badge ok as-toggle">4 stories</label>
         <label for="c-5-molecules-checkbox-docs" class="badge ok as-toggle">1 doc</label>
@@ -1689,7 +1714,7 @@ const ExampleForm = () =&gt; (
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">16 prop types</span>
+              <span class="badge ok">17 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/checkbox/__docs__/Checkbox.example.tsx::CheckboxExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -1704,6 +1729,8 @@ disabled?: boolean
 iconPosition?: &quot;left&quot; | &quot;right&quot;
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -2400,7 +2427,7 @@ const AgeInput = () =&gt; {
       <div class="badges">
         <label for="c-9-organisms-form-props" class="badge ok as-toggle">13 prop types</label>
         
-        <label for="c-9-organisms-form-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-9-organisms-form-stories" class="badge ok as-toggle">4 stories</label>
         <label for="c-9-organisms-form-docs" class="badge ok as-toggle">1 doc</label>
         
       </div>
@@ -2467,7 +2494,7 @@ title?: string</code></pre>
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { FormExample, FormWithActionExample } from "chop-logic-components";</code></pre>
+                <pre><code>import { FormExample, FormLoadingStateExample, FormWithActionExample } from "chop-logic-components";</code></pre>
               </div>
           
           
@@ -2510,6 +2537,15 @@ title?: string</code></pre>
       age: 42,
     }}
     resetOnSuccess /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loading State</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoadingState = () =&gt; &lt;FormLoadingStateExample /&gt;;</code></pre>
             </div>
         </div>
     
@@ -2597,6 +2633,47 @@ const CustomInput = () =&gt; {
   return &lt;input disabled={isPending} /&gt;;
 };
 ```
+
+## Loading State Propagation
+
+When the Form is in a pending state (e.g., during async submission), it automatically propagates `isLoading=true` to all nested interactive components via `FormContext`. This provides visual feedback without requiring you to manually set `isLoading` on each field.
+
+### Visual Treatment by Component Type
+
+| Component Type                                       | Loading Visual                                 |
+| ---------------------------------------------------- | ---------------------------------------------- |
+| TextInput, NumericInput, Search, Select, MultiSelect | Shimmer animation over input area              |
+| Checkbox, Switch                                     | Disabled-like appearance (reduced opacity)     |
+| Button (with icon)                                   | Spinning loader icon replaces the regular icon |
+| Button (without icon)                                | Disabled-like appearance                       |
+
+### Explicit Override
+
+If you need a specific component to NOT show loading state during form submission, you can explicitly set `isLoading={false}` on that component. The explicit prop always takes precedence over the context value.
+
+```tsx
+&lt;Form action={submitAction}&gt;
+  &lt;TextInput name=&quot;name&quot; label=&quot;Name&quot; /&gt;
+  {/* This input will NOT show loading state even during form submission */}
+  &lt;TextInput name=&quot;email&quot; label=&quot;Email&quot; isLoading={false} /&gt;
+&lt;/Form&gt;
+```
+
+## Loading State vs Disabled State
+
+Understanding when to use loading state versus disabled state helps provide clear user feedback:
+
+| Use Loading State When             | Use Disabled State When                           |
+| ---------------------------------- | ------------------------------------------------- |
+| An async operation is in progress  | User lacks permission to interact                 |
+| Waiting for data to load or submit | Form validation has failed                        |
+| Processing user input server-side  | A prerequisite action is required first           |
+| Fetching options for a select      | Field is not applicable based on other selections |
+
+**Key differences:**
+
+- **Loading state** indicates a temporary wait; the user _will_ be able to interact once the operation completes
+- **Disabled state** indicates the user _cannot_ interact, often due to permissions or validation
 
 ## Best Practices
 
@@ -5007,7 +5084,7 @@ const AppMenu = () =&gt; {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelectExample</h2>
       <div class="badges">
-        <label for="c-21-molecules-multiselect-props" class="badge ok as-toggle">15 prop types</label>
+        <label for="c-21-molecules-multiselect-props" class="badge ok as-toggle">16 prop types</label>
         <label for="c-21-molecules-multiselect-info" class="badge info as-toggle">1 info</label>
         <label for="c-21-molecules-multiselect-stories" class="badge ok as-toggle">1 story</label>
         <label for="c-21-molecules-multiselect-docs" class="badge ok as-toggle">1 doc</label>
@@ -5043,7 +5120,7 @@ const AppMenu = () =&gt; {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">15 prop types</span>
+              <span class="badge ok">16 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/multi-select/__docs__/MultiSelect.example.tsx::MultiSelectExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -5054,6 +5131,8 @@ defaultValue?: string | number | readonly string[]
 disabled?: boolean
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -5178,7 +5257,7 @@ const PreferencesForm = () =&gt; {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> NumericInputExample</h2>
       <div class="badges">
-        <label for="c-22-molecules-numericinput-props" class="badge ok as-toggle">24 prop types</label>
+        <label for="c-22-molecules-numericinput-props" class="badge ok as-toggle">25 prop types</label>
         <label for="c-22-molecules-numericinput-info" class="badge info as-toggle">1 info</label>
         <label for="c-22-molecules-numericinput-stories" class="badge ok as-toggle">2 stories</label>
         <label for="c-22-molecules-numericinput-docs" class="badge ok as-toggle">1 doc</label>
@@ -5214,7 +5293,7 @@ const PreferencesForm = () =&gt; {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">24 prop types</span>
+              <span class="badge ok">25 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/numeric-input/__docs__/NumericInput.example.tsx::NumericInputExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -5229,6 +5308,8 @@ errorMessage?: string
 hasSpinButtons?: boolean
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -5803,7 +5884,7 @@ The card renders these sections in order: image link, title (`h3`), optional sum
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SearchExample</h2>
       <div class="badges">
-        <label for="c-25-molecules-search-props" class="badge ok as-toggle">23 prop types</label>
+        <label for="c-25-molecules-search-props" class="badge ok as-toggle">24 prop types</label>
         <label for="c-25-molecules-search-info" class="badge info as-toggle">1 info</label>
         <label for="c-25-molecules-search-stories" class="badge ok as-toggle">4 stories</label>
         <label for="c-25-molecules-search-docs" class="badge ok as-toggle">1 doc</label>
@@ -5839,7 +5920,7 @@ The card renders these sections in order: image link, title (`h3`), optional sum
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">23 prop types</span>
+              <span class="badge ok">24 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/search/__docs__/Search.example.tsx::SearchExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -5854,6 +5935,8 @@ debounceDelay?: number
 disabled?: boolean
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -6049,9 +6132,9 @@ const ProductSearch = () =&gt; {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SelectExample</h2>
       <div class="badges">
-        <label for="c-26-molecules-select-props" class="badge ok as-toggle">15 prop types</label>
+        <label for="c-26-molecules-select-props" class="badge ok as-toggle">16 prop types</label>
         <label for="c-26-molecules-select-info" class="badge info as-toggle">1 info</label>
-        <label for="c-26-molecules-select-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-26-molecules-select-stories" class="badge ok as-toggle">2 stories</label>
         <label for="c-26-molecules-select-docs" class="badge ok as-toggle">1 doc</label>
         
       </div>
@@ -6085,7 +6168,7 @@ const ProductSearch = () =&gt; {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">15 prop types</span>
+              <span class="badge ok">16 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/select/__docs__/Select.example.tsx::SelectExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -6096,6 +6179,8 @@ defaultValue?: string | number | readonly string[]
 disabled?: boolean
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -6149,6 +6234,21 @@ value?: string | number | readonly string[]</code></pre>
     onChange={(value) =&gt; console.log(value)}
     required={false}
     disabled={false} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loading</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Loading = () =&gt; &lt;SelectExample
+    id=&quot;loading-select&quot;
+    label=&quot;Select your language&quot;
+    options={SELECT_LANGUAGES}
+    name=&quot;language&quot;
+    placeholder=&quot;Select your language&quot;
+    isLoading /&gt;;</code></pre>
             </div>
         </div>
     
@@ -6215,7 +6315,7 @@ const CountrySelector = () =&gt; {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SwitchExample</h2>
       <div class="badges">
-        <label for="c-27-molecules-switch-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-27-molecules-switch-props" class="badge ok as-toggle">11 prop types</label>
         <label for="c-27-molecules-switch-info" class="badge info as-toggle">1 info</label>
         <label for="c-27-molecules-switch-stories" class="badge ok as-toggle">3 stories</label>
         <label for="c-27-molecules-switch-docs" class="badge ok as-toggle">1 doc</label>
@@ -6251,7 +6351,7 @@ const CountrySelector = () =&gt; {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">10 prop types</span>
+              <span class="badge ok">11 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/switch/__docs__/Switch.example.tsx::SwitchExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -6264,6 +6364,8 @@ disabled?: boolean
 hasIndicator?: boolean
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -6837,9 +6939,9 @@ import { Tag } from &quot;chop-logic-components&quot;;
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextInputExample</h2>
       <div class="badges">
-        <label for="c-30-molecules-textinput-props" class="badge ok as-toggle">24 prop types</label>
+        <label for="c-30-molecules-textinput-props" class="badge ok as-toggle">25 prop types</label>
         <label for="c-30-molecules-textinput-info" class="badge info as-toggle">1 info</label>
-        <label for="c-30-molecules-textinput-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-30-molecules-textinput-stories" class="badge ok as-toggle">5 stories</label>
         <label for="c-30-molecules-textinput-docs" class="badge ok as-toggle">1 doc</label>
         
       </div>
@@ -6873,7 +6975,7 @@ import { Tag } from &quot;chop-logic-components&quot;;
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">24 prop types</span>
+              <span class="badge ok">25 prop types</span>
             </div>
             <pre><code>Component: src/components/molecules/text-input/__docs__/TextInput.example.tsx::TextInputExample</code></pre>
             <pre><code>Props:</code></pre>
@@ -6890,6 +6992,8 @@ disabled?: boolean
 errorMessage?: string
 
 id?: string
+
+isLoading?: boolean
 
 label: string
 
@@ -6947,6 +7051,7 @@ value?: string | number | readonly string[]</code></pre>
               
               
               <pre><code>const DefaultTextInput = () =&gt; &lt;TextInputExample
+    isLoading={false}
     placeholder=&quot;Type here...&quot;
     label=&quot;Enter the formula&quot;
     name=&quot;formula&quot;
@@ -6966,6 +7071,7 @@ value?: string | number | readonly string[]</code></pre>
               
               
               <pre><code>const PasswordInput = () =&gt; &lt;TextInputExample
+    isLoading={false}
     placeholder=&quot;Enter your password&quot;
     label=&quot;Password&quot;
     name=&quot;pwd&quot;
@@ -6985,6 +7091,7 @@ value?: string | number | readonly string[]</code></pre>
               
               
               <pre><code>const EmailInput = () =&gt; &lt;TextInputExample
+    isLoading={false}
     placeholder=&quot;Enter your email&quot;
     label=&quot;Email&quot;
     name=&quot;email&quot;
@@ -7016,6 +7123,7 @@ value?: string | number | readonly string[]</code></pre>
 
     return (
         &lt;TextInputExample
+            isLoading={false}
             name=&quot;message&quot;
             label=&quot;Your Message:&quot;
             id=&quot;message-input&quot;
@@ -7030,6 +7138,25 @@ value?: string | number | readonly string[]</code></pre>
             onClear={handleClear} /&gt;
     );
 };</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loading</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Loading = () =&gt; &lt;TextInputExample
+    isLoading
+    label=&quot;Email Address&quot;
+    name=&quot;email&quot;
+    id=&quot;loading-email-input&quot;
+    placeholder=&quot;Enter your email...&quot;
+    type=&quot;email&quot;
+    defaultValue=&quot;user@example.com&quot;
+    required={false}
+    disabled={false}
+    clearable /&gt;;</code></pre>
             </div>
         </div>
     

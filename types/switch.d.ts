@@ -10,4 +10,5 @@ export interface SwitchProps {
     id?: string;
     className?: string;
     style?: CSSProperties;
+    isLoading?: boolean;
 }

@@ -10,6 +10,7 @@ type Props = {
     values?: MultiSelectValue[];
     placeholder?: string;
     name: string;
+    isLoading?: boolean;
 };
 export declare const MultiSelectCombobox: FC<Props>;
 export {};

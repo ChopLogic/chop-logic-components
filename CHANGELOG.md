@@ -4,6 +4,28 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.5.0] - 2026-08-28
+
+### Added
+
+- Form loading state support: all interactive components (`TextInput`, `NumericInput`, `Search`, `Select`, `MultiSelect`, `Checkbox`, `Switch`, `Button`) accept an optional `isLoading` prop
+- `useFormLoading` hook that resolves the effective loading state from an explicit prop or `FormContext`
+- `isLoading` field in `FormContext`, automatically set to `true` during async form submissions
+- Shimmer animation (`cl-shimmer` keyframe) for input components during loading state
+- Spinning loader icon (`cl-spin` keyframe) replacing the regular icon on buttons during loading state
+- Disabled-like appearance for `Checkbox` and `Switch` components during loading state
+- Loading state Storybook stories and documentation for `Button`, `TextInput`, `Select`, and `Form`
+
+### Changed
+
+- `Form` submit button now uses `isLoading` with a spinning icon instead of `disabled` to indicate pending state
+- `FormContext` extended with `isLoading` field alongside existing `isPending`
+- `Button`, `PrimaryButton`, `SecondaryButton`, and `IconButton` prevent click events and set `aria-busy` when loading
+- Input components (`TextInput`, `NumericInput`, `Search`) become readonly with a shimmer overlay when loading
+- `Select` and `MultiSelect` prevent dropdown opening and show shimmer on the combobox when loading
+- Updated Form documentation (MDX) with loading state propagation guide and loading vs disabled comparison
+- Upgraded Storybook and updated npm dependencies
+
 ## [4.4.0] - 2026-07-17
 
 ### Added

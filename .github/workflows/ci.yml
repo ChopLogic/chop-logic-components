@@ -59,7 +59,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Install Playwright (Chromium) for test runner
-        run: npx --yes playwright@1.59.1 install chromium
+        run: ./node_modules/.bin/playwright install --with-deps chromium
 
       - name: Build Storybook and run integration tests
         run: npm run test:integration

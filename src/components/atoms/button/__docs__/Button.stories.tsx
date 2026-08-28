@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
     view: ButtonView.Primary,
     disabled: false,
     extended: false,
+    isLoading: false,
     onClick: () => console.log('Button clicked!'),
   },
   argTypes: {
@@ -77,6 +78,16 @@ const meta: Meta<typeof Button> = {
       description: 'Whether the button is disabled',
       table: {
         type: { summary: 'boolean' },
+        category: 'State',
+      },
+    },
+    isLoading: {
+      control: 'boolean',
+      description:
+        'Whether the button is in a loading state. When true, shows a spinning loader icon (if icon is provided), prevents click events, and sets aria-busy for accessibility.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
         category: 'State',
       },
     },
@@ -235,5 +246,22 @@ export const Disabled: Story = {
     view: ButtonView.Primary,
     icon: IconName.PhoneOff,
     disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    text: 'Submitting...',
+    view: ButtonView.Primary,
+    icon: IconName.Check,
+    isLoading: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'When `isLoading` is true and an icon is provided, the button displays a spinning loader icon in place of the regular icon. The button also prevents click events and sets `aria-busy="true"` for accessibility.',
+      },
+    },
   },
 };

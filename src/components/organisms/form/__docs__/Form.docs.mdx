@@ -73,6 +73,47 @@ const CustomInput = () => {
 };
 ```
 
+## Loading State Propagation
+
+When the Form is in a pending state (e.g., during async submission), it automatically propagates `isLoading=true` to all nested interactive components via `FormContext`. This provides visual feedback without requiring you to manually set `isLoading` on each field.
+
+### Visual Treatment by Component Type
+
+| Component Type                                       | Loading Visual                                 |
+| ---------------------------------------------------- | ---------------------------------------------- |
+| TextInput, NumericInput, Search, Select, MultiSelect | Shimmer animation over input area              |
+| Checkbox, Switch                                     | Disabled-like appearance (reduced opacity)     |
+| Button (with icon)                                   | Spinning loader icon replaces the regular icon |
+| Button (without icon)                                | Disabled-like appearance                       |
+
+### Explicit Override
+
+If you need a specific component to NOT show loading state during form submission, you can explicitly set `isLoading={false}` on that component. The explicit prop always takes precedence over the context value.
+
+```tsx
+<Form action={submitAction}>
+  <TextInput name="name" label="Name" />
+  {/* This input will NOT show loading state even during form submission */}
+  <TextInput name="email" label="Email" isLoading={false} />
+</Form>
+```
+
+## Loading State vs Disabled State
+
+Understanding when to use loading state versus disabled state helps provide clear user feedback:
+
+| Use Loading State When             | Use Disabled State When                           |
+| ---------------------------------- | ------------------------------------------------- |
+| An async operation is in progress  | User lacks permission to interact                 |
+| Waiting for data to load or submit | Form validation has failed                        |
+| Processing user input server-side  | A prerequisite action is required first           |
+| Fetching options for a select      | Field is not applicable based on other selections |
+
+**Key differences:**
+
+- **Loading state** indicates a temporary wait; the user _will_ be able to interact once the operation completes
+- **Disabled state** indicates the user _cannot_ interact, often due to permissions or validation
+
 ## Best Practices
 
 1. _Submission Flow_:

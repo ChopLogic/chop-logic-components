@@ -15,6 +15,7 @@ type Props = {
   selected?: SelectValue;
   placeholder?: string;
   name: string;
+  isLoading?: boolean;
 };
 
 export const SelectCombobox: FC<Props> = ({
@@ -27,10 +28,16 @@ export const SelectCombobox: FC<Props> = ({
   placeholder,
   disabled,
   required,
+  isLoading = false,
 }) => {
   const iconClass = getClassName([
     'cl-select-combobox__icon',
     { 'cl-select-combobox__icon_opened': opened },
+  ]);
+
+  const comboboxClass = getClassName([
+    'cl-select-combobox',
+    { 'cl-select-combobox_loading': isLoading },
   ]);
 
   return (
@@ -44,12 +51,13 @@ export const SelectCombobox: FC<Props> = ({
       aria-controls={dropdownId}
       id={comboboxId}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       aria-required={required}
-      className="cl-select-combobox"
+      className={comboboxClass}
     >
       {selected?.label ? <span>{selected?.label}</span> : <span>{placeholder}</span>}
       <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
+      {isLoading && <div className="cl-select-combobox__shimmer" />}
     </button>
   );
 };

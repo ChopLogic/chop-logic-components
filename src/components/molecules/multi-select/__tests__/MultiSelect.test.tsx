@@ -189,3 +189,70 @@ describe('MultiSelect', () => {
     expect(screen.getByText('2 items selected')).toBeInTheDocument();
   });
 });
+
+describe('MultiSelect loading state', () => {
+  const MULTI_SELECT_VALUES: SelectValue[] = [
+    { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
+    { id: '583e8b60-0177-4e38-a423-4b1d5d0a2236', label: 'Spanish' },
+    { id: 'b20bea7b-8172-4d12-b172-d5feac02d863', label: 'French' },
+    { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },
+  ];
+
+  const testProps = {
+    id: 'multi-select-id',
+    className: 'test-class',
+    style: { width: '400px' },
+    name: 'languages',
+    label: 'Select your languages',
+    options: MULTI_SELECT_VALUES,
+    onChange: vi.fn(),
+    placeholder: 'Not selected',
+  };
+
+  it('should have aria-busy="true" on the wrapper when isLoading is true', () => {
+    const { container } = render(<MultiSelect {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should have cl-multi-select_loading class when isLoading is true', () => {
+    const { container } = render(<MultiSelect {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveClass('cl-multi-select_loading');
+  });
+
+  it('should have aria-busy="true" on the combobox when isLoading is true', () => {
+    render(<MultiSelect {...testProps} isLoading={true} />);
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should disable the combobox when isLoading is true', () => {
+    render(<MultiSelect {...testProps} isLoading={true} />);
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toBeDisabled();
+  });
+
+  it('should render shimmer element when isLoading is true', () => {
+    const { container } = render(<MultiSelect {...testProps} isLoading={true} />);
+    expect(container.querySelector('.cl-select-combobox__shimmer')).toBeInTheDocument();
+  });
+
+  it('should not render shimmer element when isLoading is false', () => {
+    const { container } = render(<MultiSelect {...testProps} isLoading={false} />);
+    expect(container.querySelector('.cl-select-combobox__shimmer')).not.toBeInTheDocument();
+  });
+
+  it('should keep the combobox collapsed when clicking while loading', async () => {
+    render(<MultiSelect {...testProps} isLoading={true} />);
+    const combobox = screen.getByRole('combobox');
+    await userEvent.click(combobox);
+    expect(combobox).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('should have cl-select-combobox_loading class on combobox when isLoading is true', () => {
+    const { container } = render(<MultiSelect {...testProps} isLoading={true} />);
+    const combobox = container.querySelector('.cl-select-combobox');
+    expect(combobox).toHaveClass('cl-select-combobox_loading');
+  });
+});

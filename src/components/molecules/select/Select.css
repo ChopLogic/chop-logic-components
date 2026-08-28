@@ -6,3 +6,11 @@
   gap: var(--cl-m-gap);
   background: transparent;
 }
+
+.cl-select_loading {
+  pointer-events: none;
+}
+
+.cl-multi-select_loading {
+  pointer-events: none;
+}

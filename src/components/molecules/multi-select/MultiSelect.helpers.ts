@@ -19,7 +19,7 @@ export function getMultiSelectInitialValues({
     }
 
     if (!initialValues?.[name] && Array.isArray(defaultValue)) {
-      selected = defaultValue.some((item) => item === option.id);
+      selected = defaultValue.includes(option.id);
     }
 
     return { ...option, selected };

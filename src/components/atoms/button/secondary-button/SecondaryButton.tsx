@@ -1,9 +1,9 @@
-import { getClassName } from '@utils';
 import type { FC } from 'react';
 import './SecondaryButton.css';
 import { Icon } from '@components/atoms';
 import { ElementSize } from '@enums';
 import type { ButtonProps } from '@types';
+import { getButtonLoadingProps } from '../getButtonLoadingProps';
 
 export const SecondaryButton: FC<ButtonProps> = ({
   icon,
@@ -11,10 +11,29 @@ export const SecondaryButton: FC<ButtonProps> = ({
   className,
   iconSize = ElementSize.Small,
   type = 'button',
+  isLoading = false,
+  onClick,
   ...rest
-}) => (
-  <button {...rest} type={type} className={getClassName(['cl-secondary-button', className])}>
-    {icon && <Icon name={icon} className="cl-secondary-button__icon" size={iconSize} />}
-    <span className="cl-secondary-button__text">{text}</span>
-  </button>
-);
+}) => {
+  const { buttonClass, iconClass, displayIcon, handleClick } = getButtonLoadingProps({
+    baseClass: 'cl-secondary-button',
+    iconBaseClass: 'cl-secondary-button__icon',
+    className,
+    isLoading,
+    icon,
+    onClick,
+  });
+
+  return (
+    <button
+      {...rest}
+      type={type}
+      className={buttonClass}
+      onClick={handleClick}
+      aria-busy={isLoading}
+    >
+      {displayIcon && <Icon name={displayIcon} className={iconClass} size={iconSize} />}
+      <span className="cl-secondary-button__text">{text}</span>
+    </button>
+  );
+};

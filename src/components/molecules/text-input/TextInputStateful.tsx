@@ -1,5 +1,5 @@
 import { ErrorMessage, Input, Label } from '@components/atoms';
-import { useElementIds } from '@hooks';
+import { useElementIds, useFormLoading } from '@hooks';
 import type { TextInputProps } from '@types';
 import { getClassName } from '@utils';
 import type { FC } from 'react';
@@ -30,7 +30,9 @@ const TextInputStateful: FC<TextInputProps> = ({
   type = 'text',
   className,
   style,
+  isLoading: isLoadingProp,
 }) => {
+  const isLoading = useFormLoading(isLoadingProp);
   const { value, valid, handleChange, handleClear, passwordShown, togglePassword } =
     useTextInputController({
       defaultValue,
@@ -42,10 +44,14 @@ const TextInputStateful: FC<TextInputProps> = ({
     });
   const { elementId, errorId } = useElementIds(id);
   const isPasswordButtonVisible = type === 'password';
-  const inputClass = getClassName(['cl-text-input', className]);
+  const inputClass = getClassName([
+    'cl-text-input',
+    className,
+    { 'cl-text-input_loading': isLoading },
+  ]);
 
   return (
-    <div style={style} className={inputClass}>
+    <div style={style} className={inputClass} aria-busy={isLoading}>
       <Label label={label} required={required} inputId={elementId} />
       <Input
         id={elementId}
@@ -54,11 +60,11 @@ const TextInputStateful: FC<TextInputProps> = ({
         disabled={disabled}
         placeholder={placeholder}
         required={required}
-        readOnly={readOnly}
+        readOnly={readOnly || isLoading}
         autoComplete={autoComplete}
         aria-invalid={!valid}
         aria-errormessage={errorId}
-        aria-readonly={readOnly}
+        aria-readonly={readOnly || isLoading}
         value={value}
         onChange={handleChange}
         maxLength={maxLength}
@@ -73,7 +79,7 @@ const TextInputStateful: FC<TextInputProps> = ({
           togglePassword={togglePassword}
           passwordShown={passwordShown}
           label={label}
-          disabled={disabled}
+          disabled={disabled || isLoading}
         />
         <ErrorMessage
           errorId={errorId}
@@ -81,6 +87,7 @@ const TextInputStateful: FC<TextInputProps> = ({
           visible={!valid}
           className="cl-text-input__error-message"
         />
+        {isLoading && <div className="cl-input__shimmer" />}
       </Input>
     </div>
   );

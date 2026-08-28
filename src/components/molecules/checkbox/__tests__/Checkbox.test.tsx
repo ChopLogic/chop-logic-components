@@ -145,3 +145,99 @@ describe('Checkbox', () => {
     });
   });
 });
+
+// Loading state tests
+describe('Loading state', () => {
+  const testProps = {
+    id: 'test-checkbox-id',
+    name: 'checkbox',
+    label: 'Test label',
+  };
+
+  it('should have loading BEM modifier class when isLoading is true', () => {
+    render(<Checkbox {...testProps} isLoading />);
+    const container = screen.getByRole('checkbox').closest('.cl-checkbox');
+    expect(container).toHaveClass('cl-checkbox_loading');
+  });
+
+  it('should not have loading BEM modifier class when isLoading is false', () => {
+    render(<Checkbox {...testProps} isLoading={false} />);
+    const container = screen.getByRole('checkbox').closest('.cl-checkbox');
+    expect(container).not.toHaveClass('cl-checkbox_loading');
+  });
+
+  it('should have aria-busy="true" when isLoading is true', () => {
+    render(<Checkbox {...testProps} isLoading />);
+    const container = screen.getByRole('checkbox').closest('.cl-checkbox');
+    expect(container).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should NOT change checked state on click when isLoading is true', async () => {
+    render(<Checkbox {...testProps} isLoading />);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).not.toBeChecked();
+    await userEvent.click(checkbox);
+    expect(checkbox).not.toBeChecked();
+  });
+
+  it('should NOT change checked state on click when isLoading is true (starting checked)', async () => {
+    render(<Checkbox {...testProps} isLoading defaultChecked />);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toBeChecked();
+    await userEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+  });
+
+  it('should NOT change checked state on Space key press when isLoading is true', async () => {
+    render(<Checkbox {...testProps} isLoading />);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).not.toBeChecked();
+    checkbox.focus();
+    await userEvent.keyboard('[Space]');
+    expect(checkbox).not.toBeChecked();
+  });
+
+  it('should NOT call onChange handler when isLoading is true', async () => {
+    const mockOnChange = vi.fn();
+    render(<Checkbox {...testProps} isLoading onChange={mockOnChange} />);
+    const checkbox = screen.getByRole('checkbox');
+    await userEvent.click(checkbox);
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+
+  it('should be disabled when isLoading is true (input element)', () => {
+    render(<Checkbox {...testProps} isLoading />);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toBeDisabled();
+  });
+
+  // Stateless mode loading tests
+  describe('Stateless mode with loading', () => {
+    it('should have loading class when isLoading is true in stateless mode', () => {
+      render(<Checkbox {...testProps} stateless checked={false} isLoading onChange={vi.fn()} />);
+      const container = screen.getByRole('checkbox').closest('.cl-checkbox');
+      expect(container).toHaveClass('cl-checkbox_loading');
+    });
+
+    it('should NOT call onChange on click when isLoading is true in stateless mode', async () => {
+      const mockOnChange = vi.fn();
+      render(
+        <Checkbox {...testProps} stateless checked={false} isLoading onChange={mockOnChange} />,
+      );
+      const checkbox = screen.getByRole('checkbox');
+      await userEvent.click(checkbox);
+      expect(mockOnChange).not.toHaveBeenCalled();
+    });
+
+    it('should NOT call onChange on Space key press when isLoading is true in stateless mode', async () => {
+      const mockOnChange = vi.fn();
+      render(
+        <Checkbox {...testProps} stateless checked={false} isLoading onChange={mockOnChange} />,
+      );
+      const checkbox = screen.getByRole('checkbox');
+      checkbox.focus();
+      await userEvent.keyboard('[Space]');
+      expect(mockOnChange).not.toHaveBeenCalled();
+    });
+  });
+});

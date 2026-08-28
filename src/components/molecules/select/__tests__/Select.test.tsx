@@ -134,4 +134,74 @@ describe('Select', () => {
     const combobox = screen.getByRole('combobox');
     expect(combobox).toHaveValue(SELECT_LANGUAGES[2].id);
   });
+
+  // Loading state tests
+  describe('Loading state', () => {
+    it('should render shimmer overlay when isLoading is true', () => {
+      const { container } = render(<Select {...testProps} isLoading />);
+      expect(container.querySelector('.cl-select-combobox__shimmer')).toBeInTheDocument();
+    });
+
+    it('should not render shimmer overlay when isLoading is false', () => {
+      const { container } = render(<Select {...testProps} isLoading={false} />);
+      expect(container.querySelector('.cl-select-combobox__shimmer')).not.toBeInTheDocument();
+    });
+
+    it('should not render shimmer overlay when isLoading prop is not provided', () => {
+      const { container } = render(<Select {...testProps} />);
+      expect(container.querySelector('.cl-select-combobox__shimmer')).not.toBeInTheDocument();
+    });
+
+    it('should set aria-busy to true when isLoading is true', () => {
+      const { container } = render(<Select {...testProps} isLoading />);
+      const wrapperDiv = container.querySelector('.cl-select');
+      expect(wrapperDiv).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should apply loading modifier class when isLoading is true', () => {
+      const { container } = render(<Select {...testProps} isLoading />);
+      expect(container.querySelector('.cl-select_loading')).toBeInTheDocument();
+    });
+
+    it('should disable combobox when isLoading is true', () => {
+      render(<Select {...testProps} isLoading />);
+      expect(screen.getByRole('combobox')).toBeDisabled();
+    });
+
+    it('should prevent dropdown from opening when isLoading is true', async () => {
+      render(<Select {...testProps} isLoading />);
+      const combobox = screen.getByRole('combobox');
+      await userEvent.click(combobox);
+      // Dropdown exists but should not have the opened class
+      expect(combobox).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should not call onChange handler when isLoading is true', async () => {
+      const mockedOnChange = vi.fn();
+      render(<Select {...testProps} isLoading onChange={mockedOnChange} />);
+      const combobox = screen.getByRole('combobox');
+      await userEvent.click(combobox);
+      // Combobox is disabled, so click has no effect
+      expect(combobox).toHaveAttribute('aria-expanded', 'false');
+      expect(mockedOnChange).not.toHaveBeenCalled();
+    });
+
+    it('should render shimmer inside combobox, not covering the label', () => {
+      const { container } = render(<Select {...testProps} isLoading />);
+      const label = screen.getByText(testProps.label);
+      const shimmer = container.querySelector('.cl-select-combobox__shimmer');
+
+      // Label should not contain the shimmer
+      expect(label.querySelector('.cl-select-combobox__shimmer')).toBeNull();
+
+      // Shimmer should be inside the combobox
+      const combobox = container.querySelector('.cl-select-combobox');
+      expect(combobox).toContainElement(shimmer as HTMLElement);
+    });
+
+    it('should apply loading modifier class to combobox when isLoading is true', () => {
+      const { container } = render(<Select {...testProps} isLoading />);
+      expect(container.querySelector('.cl-select-combobox_loading')).toBeInTheDocument();
+    });
+  });
 });

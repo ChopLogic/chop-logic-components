@@ -1,3 +1,4 @@
+import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import { PointerEventsCheckLevel, userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -53,5 +54,55 @@ describe('IconButton', () => {
     button.focus();
     await userEvent.keyboard('{Enter}');
     expect(mockedCallback).toHaveBeenCalledOnce();
+  });
+
+  describe('loading state', () => {
+    it('should render Loader icon when isLoading is true and icon is provided', () => {
+      render(<IconButton {...testProps} icon={IconName.Save} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      const icon = button.querySelector('.cl-icon-button__icon');
+
+      expect(icon).toHaveClass('chop-icon__loader');
+      expect(icon).toHaveClass('cl-button__icon_spinning');
+    });
+
+    it('should not call onClick when isLoading is true', async () => {
+      const mockedCallback = vi.fn();
+      render(<IconButton {...testProps} onClick={mockedCallback} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      await userEvent.click(button);
+
+      expect(mockedCallback).not.toHaveBeenCalled();
+    });
+
+    it('should have aria-busy="true" when isLoading is true', () => {
+      render(<IconButton {...testProps} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should have cl-button_loading class when isLoading is true', () => {
+      render(<IconButton {...testProps} isLoading={true} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('cl-button_loading');
+    });
+
+    it('should not have aria-busy when isLoading is false', () => {
+      render(<IconButton {...testProps} isLoading={false} />);
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-busy', 'false');
+    });
+
+    it('should not have cl-button_loading class when isLoading is false', () => {
+      render(<IconButton {...testProps} isLoading={false} />);
+
+      const button = screen.getByRole('button');
+      expect(button).not.toHaveClass('cl-button_loading');
+    });
   });
 });

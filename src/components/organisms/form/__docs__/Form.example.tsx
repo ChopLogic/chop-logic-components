@@ -161,3 +161,65 @@ export const FormWithActionExample: FC = () => {
     </div>
   );
 };
+
+/**
+ * Loading state example demonstrating automatic propagation to child components.
+ * When the form is pending (during async submission), all nested interactive
+ * components automatically receive isLoading=true via FormContext.
+ *
+ * This example showcases:
+ * - TextInput with shimmer animation during loading
+ * - NumericInput with shimmer animation during loading
+ * - Select with shimmer animation during loading
+ * - MultiSelect with shimmer animation during loading
+ * - Checkbox with disabled-like appearance during loading
+ * - Switch with disabled-like appearance during loading
+ * - Submit button with spinning loader icon during loading
+ */
+export const FormLoadingStateExample: FC = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
+  const formAction = async (_prevState: void, formData: FormData) => {
+    setStatus('submitting');
+    // Simulate a 4-second async operation to clearly show loading states
+    await new Promise((resolve) => setTimeout(resolve, 4000));
+    const name = formData.get('fullName') as string;
+    console.log('Submitted:', name);
+    setStatus('success');
+    // Reset status after showing success
+    setTimeout(() => setStatus('idle'), 2000);
+  };
+
+  return (
+    <div>
+      <div style={{ marginBottom: '1rem', color: 'var(--cl-base-font-color)' }}>
+        <strong>Status:</strong> {status === 'idle' && 'Ready to submit'}
+        {status === 'submitting' && 'Submitting... (watch all components show loading state)'}
+        {status === 'success' && 'Success!'}
+      </div>
+      <Form action={formAction}>
+        <TextInput name="fullName" label="Full Name" placeholder="Enter your full name" />
+        <TextInput
+          name="email"
+          label="Email Address"
+          type="email"
+          placeholder="Enter your email"
+          required
+          errorMessage="Please enter a valid email"
+          validator={{ regexp: '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$' }}
+        />
+        <NumericInput
+          name="age"
+          label="Age"
+          validator={(age) => !!age && age >= 18 && age <= 120}
+          errorMessage="Age must be between 18 and 120"
+        />
+        <Select name="country" label="Country" options={SELECT_LANGUAGES} />
+        <MultiSelect name="interests" label="Interests" options={MULTI_SELECT_VALUES} />
+        <Checkbox name="termsAccepted" label="I accept the Terms and Conditions" required />
+        <Switch name="newsletter" label="Subscribe to newsletter" />
+      </Form>
+    </div>
+  );
+};

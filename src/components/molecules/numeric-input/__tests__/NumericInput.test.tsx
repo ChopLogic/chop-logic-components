@@ -279,3 +279,116 @@ describe('NumericInput', () => {
     });
   });
 });
+
+describe('NumericInput loading state (stateful)', () => {
+  const testProps = {
+    id: 'numeric-input',
+    name: 'quantity',
+    label: 'Quantity',
+    style: { width: '400px' },
+  };
+
+  it('should have aria-busy="true" when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should have cl-numeric-input_loading class when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveClass('cl-numeric-input_loading');
+  });
+
+  it('should set input to readOnly when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    const input = screen.getByRole('spinbutton');
+    expect(input).toHaveAttribute('readOnly');
+  });
+
+  it('should have aria-readonly when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    const input = screen.getByRole('spinbutton');
+    expect(input).toHaveAttribute('aria-readonly', 'true');
+  });
+
+  it('should disable spin buttons when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    expect(screen.getByLabelText('Decrement value for Quantity')).toBeDisabled();
+    expect(screen.getByLabelText('Increment value for Quantity')).toBeDisabled();
+  });
+
+  it('should render shimmer element when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    expect(container.querySelector('.cl-input__shimmer')).toBeInTheDocument();
+  });
+
+  it('should not render shimmer element when isLoading is false', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={false} />);
+    expect(container.querySelector('.cl-input__shimmer')).not.toBeInTheDocument();
+  });
+
+  it('should not have cl-numeric-input_loading class when isLoading is false', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={false} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).not.toHaveClass('cl-numeric-input_loading');
+  });
+});
+
+describe('NumericInput loading state (stateless)', () => {
+  const testProps = {
+    id: 'numeric-input-stateless',
+    name: 'amount',
+    label: 'Amount',
+    stateless: true as const,
+    value: 5,
+    onChange: vi.fn(),
+    style: { width: '400px' },
+  };
+
+  it('should have aria-busy="true" when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should have cl-numeric-input_loading class when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveClass('cl-numeric-input_loading');
+  });
+
+  it('should set input to readOnly when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    const input = screen.getByRole('spinbutton');
+    expect(input).toHaveAttribute('readOnly');
+  });
+
+  it('should have aria-readonly when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    const input = screen.getByRole('spinbutton');
+    expect(input).toHaveAttribute('aria-readonly', 'true');
+  });
+
+  it('should disable spin buttons when isLoading is true', () => {
+    render(<NumericInput {...testProps} isLoading={true} />);
+    expect(screen.getByLabelText('Decrement value for Amount')).toBeDisabled();
+    expect(screen.getByLabelText('Increment value for Amount')).toBeDisabled();
+  });
+
+  it('should render shimmer element when isLoading is true', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={true} />);
+    expect(container.querySelector('.cl-input__shimmer')).toBeInTheDocument();
+  });
+
+  it('should not render shimmer element when isLoading is false', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={false} />);
+    expect(container.querySelector('.cl-input__shimmer')).not.toBeInTheDocument();
+  });
+
+  it('should not have cl-numeric-input_loading class when isLoading is false', () => {
+    const { container } = render(<NumericInput {...testProps} isLoading={false} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).not.toHaveClass('cl-numeric-input_loading');
+  });
+});

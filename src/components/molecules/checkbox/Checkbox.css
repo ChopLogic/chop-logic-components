@@ -46,3 +46,8 @@
   pointer-events: none;
   opacity: 0.5;
 }
+
+.cl-checkbox_loading {
+  pointer-events: none;
+  opacity: 0.5;
+}

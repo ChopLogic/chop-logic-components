@@ -12,6 +12,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   background-color: var(--cl-surface-a10);
+  position: relative;
 }
 
 .cl-select-combobox > span:nth-child(1) {
@@ -55,4 +56,39 @@
 
 .cl-select-combobox__icon_opened {
   transform: rotate(180deg);
+}
+
+/* Loading state */
+.cl-select-combobox_loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cl-select-combobox__shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: var(--cl-border-radius);
+  pointer-events: none;
+}
+
+.cl-select-combobox__shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--cl-surface-a10) 25%,
+    var(--cl-surface-a30) 50%,
+    var(--cl-surface-a10) 75%,
+    transparent 100%
+  );
+  animation: cl-shimmer 1.5s ease-in-out infinite;
 }

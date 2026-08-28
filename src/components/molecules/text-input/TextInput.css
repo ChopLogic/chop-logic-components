@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.cl-text-input_loading {
+  pointer-events: none;
+}
+
 .cl-text-input__error-message {
   position: absolute;
   right: 0;

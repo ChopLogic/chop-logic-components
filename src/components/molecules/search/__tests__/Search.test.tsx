@@ -7,6 +7,7 @@ import Search from '../Search';
 vi.mock('@hooks', () => ({
   useElementIds: vi.fn(() => ({ elementId: 'test-search' })),
   useDebounce: vi.fn((value) => value),
+  useFormLoading: vi.fn((explicitProp) => explicitProp ?? false),
 }));
 
 vi.mock('@components/atoms', () => ({
@@ -232,5 +233,108 @@ describe('Search', () => {
     await user.type(input, 'quick typing test');
 
     expect(input).toHaveValue('quick typing test');
+  });
+});
+
+describe('Search loading state', () => {
+  const defaultProps = {
+    label: 'Search products',
+    name: 'q',
+    onSearch: vi.fn(),
+    onClear: vi.fn(),
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('should have aria-busy="true" when isLoading is true', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('should have cl-search_loading class when isLoading is true', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={true} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveClass('cl-search_loading');
+  });
+
+  it('should set input to readOnly when isLoading is true', () => {
+    render(<Search {...defaultProps} isLoading={true} />);
+    const input = screen.getByTestId('search-input');
+    expect(input).toHaveAttribute('readOnly');
+  });
+
+  it('should render shimmer element when isLoading is true', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={true} />);
+    expect(container.querySelector('.cl-input__shimmer')).toBeInTheDocument();
+  });
+
+  it('should not render shimmer element when isLoading is false', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={false} />);
+    expect(container.querySelector('.cl-input__shimmer')).not.toBeInTheDocument();
+  });
+
+  it('should not call onClear when clear button is clicked while loading', async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(<Search {...defaultProps} isLoading={false} />);
+
+    const input = screen.getByTestId('search-input');
+    await user.type(input, 'test');
+    expect(screen.getByTestId('clear-button')).toBeInTheDocument();
+
+    rerender(<Search {...defaultProps} isLoading={true} />);
+
+    const clearButton = screen.getByTestId('clear-button');
+    await user.click(clearButton);
+
+    expect(defaultProps.onClear).not.toHaveBeenCalled();
+  });
+
+  it('should not call onSearch when search button is clicked while loading in manual mode', async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(<Search {...defaultProps} searchMode="manual" isLoading={false} />);
+
+    const input = screen.getByTestId('search-input');
+    await user.type(input, 'test');
+
+    rerender(<Search {...defaultProps} searchMode="manual" isLoading={true} />);
+
+    const searchButton = screen.getByTestId('search-button');
+    await user.click(searchButton);
+
+    expect(defaultProps.onSearch).not.toHaveBeenCalled();
+  });
+
+  it('should block Enter key when isLoading is true', async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(<Search {...defaultProps} isLoading={false} />);
+
+    const input = screen.getByTestId('search-input');
+    await user.type(input, 'test');
+
+    defaultProps.onSearch.mockClear();
+    rerender(<Search {...defaultProps} isLoading={true} />);
+
+    await user.keyboard('{Enter}');
+
+    expect(defaultProps.onSearch).not.toHaveBeenCalled();
+  });
+
+  it('should not have aria-busy when isLoading is false', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={false} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).toHaveAttribute('aria-busy', 'false');
+  });
+
+  it('should not have cl-search_loading class when isLoading is false', () => {
+    const { container } = render(<Search {...defaultProps} isLoading={false} />);
+    const wrapper = container.firstElementChild;
+    expect(wrapper).not.toHaveClass('cl-search_loading');
   });
 });

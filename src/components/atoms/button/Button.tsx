@@ -19,6 +19,7 @@ const ButtonSelector: FC<ButtonProps> = ({
   label,
   className,
   iconSize,
+  isLoading,
   ...rest
 }) => {
   const extendedClass = getClassName([className, 'cl-button', { 'cl-button_extended': extended }]);
@@ -32,6 +33,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           text={text}
           aria-label={label}
           iconSize={iconSize}
+          isLoading={isLoading}
           {...rest}
         />
       );
@@ -43,12 +45,20 @@ const ButtonSelector: FC<ButtonProps> = ({
           text={text}
           aria-label={label}
           iconSize={iconSize}
+          isLoading={isLoading}
           {...rest}
         />
       );
     case ButtonView.Icon:
       return (
-        <IconButton label={label} icon={icon} iconSize={iconSize} {...rest} className={className} />
+        <IconButton
+          label={label}
+          icon={icon}
+          iconSize={iconSize}
+          isLoading={isLoading}
+          {...rest}
+          className={className}
+        />
       );
     case ButtonView.Inner:
       return (
@@ -56,6 +66,7 @@ const ButtonSelector: FC<ButtonProps> = ({
           label={label}
           icon={icon}
           iconSize={iconSize}
+          isLoading={isLoading}
           {...rest}
           className={className}
         ></InnerButton>

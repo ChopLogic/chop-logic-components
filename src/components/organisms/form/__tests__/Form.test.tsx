@@ -8,9 +8,13 @@ import { describe, expect, it, vi } from 'vitest';
 import { FormContext } from '../../../contexts';
 
 // Helper component to read context values in tests
-function ContextReader({ onContext }: { onContext: (ctx: { isPending?: boolean }) => void }) {
+function ContextReader({
+  onContext,
+}: {
+  onContext: (ctx: { isPending?: boolean; isLoading?: boolean }) => void;
+}) {
   const ctx = useContext(FormContext);
-  onContext({ isPending: ctx.isPending });
+  onContext({ isPending: ctx.isPending, isLoading: ctx.isLoading });
   return null;
 }
 
@@ -56,13 +60,13 @@ describe('Form', () => {
       );
 
       // Initially not pending
-      expect(contextSpy).toHaveBeenLastCalledWith({ isPending: false });
+      expect(contextSpy).toHaveBeenLastCalledWith(expect.objectContaining({ isPending: false }));
 
       await userEvent.click(screen.getByText('Submit'));
 
       // Should be pending during async operation
       await waitFor(() => {
-        expect(contextSpy).toHaveBeenLastCalledWith({ isPending: true });
+        expect(contextSpy).toHaveBeenLastCalledWith(expect.objectContaining({ isPending: true }));
       });
 
       // Resolve the submit
@@ -72,11 +76,11 @@ describe('Form', () => {
 
       // Should no longer be pending
       await waitFor(() => {
-        expect(contextSpy).toHaveBeenLastCalledWith({ isPending: false });
+        expect(contextSpy).toHaveBeenLastCalledWith(expect.objectContaining({ isPending: false }));
       });
     });
 
-    it('should disable submit button during pending state', async () => {
+    it('should show submit button in loading state during pending', async () => {
       let resolveSubmit: () => void = () => {};
       const asyncSubmit = () =>
         new Promise<void>((resolve) => {
@@ -94,7 +98,9 @@ describe('Form', () => {
       await userEvent.click(submitButton);
 
       await waitFor(() => {
-        expect(submitButton).toBeDisabled();
+        expect(submitButton).toHaveAttribute('aria-busy', 'true');
+        expect(submitButton).toHaveClass('cl-button_loading');
+        expect(submitButton).not.toBeDisabled();
       });
 
       await act(async () => {
@@ -102,7 +108,8 @@ describe('Form', () => {
       });
 
       await waitFor(() => {
-        expect(submitButton).not.toBeDisabled();
+        expect(submitButton).toHaveAttribute('aria-busy', 'false');
+        expect(submitButton).not.toHaveClass('cl-button_loading');
       });
     });
 
@@ -212,6 +219,202 @@ describe('Form', () => {
     });
   });
 
+  describe('loading state propagation', () => {
+    it('should include isLoading in FormContext', () => {
+      const contextSpy = vi.fn();
+
+      render(
+        <Form>
+          <ContextReader onContext={contextSpy} />
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      expect(contextSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          isLoading: false,
+        }),
+      );
+    });
+
+    it('should propagate isLoading: true to context when isPending is true', async () => {
+      let resolveSubmit: () => void = () => {};
+      const asyncSubmit = () =>
+        new Promise<void>((resolve) => {
+          resolveSubmit = resolve;
+        });
+
+      const contextSpy = vi.fn();
+
+      render(
+        <Form onSubmit={asyncSubmit}>
+          <ContextReader onContext={contextSpy} />
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      // Initially isLoading is false
+      expect(contextSpy).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          isLoading: false,
+          isPending: false,
+        }),
+      );
+
+      await userEvent.click(screen.getByText('Submit'));
+
+      // During pending, isLoading should be true
+      await waitFor(() => {
+        expect(contextSpy).toHaveBeenLastCalledWith(
+          expect.objectContaining({
+            isLoading: true,
+            isPending: true,
+          }),
+        );
+      });
+
+      await act(async () => {
+        resolveSubmit();
+      });
+
+      // After resolving, isLoading should be false again
+      await waitFor(() => {
+        expect(contextSpy).toHaveBeenLastCalledWith(
+          expect.objectContaining({
+            isLoading: false,
+            isPending: false,
+          }),
+        );
+      });
+    });
+
+    it('should propagate loading state to nested TextInput components', async () => {
+      let resolveSubmit: () => void = () => {};
+      const asyncSubmit = () =>
+        new Promise<void>((resolve) => {
+          resolveSubmit = resolve;
+        });
+
+      const { container } = render(
+        <Form onSubmit={asyncSubmit}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const textInputWrapper = container.querySelector('.cl-text-input');
+
+      // Initially not loading
+      expect(textInputWrapper).not.toHaveClass('cl-text-input_loading');
+      expect(textInputWrapper).toHaveAttribute('aria-busy', 'false');
+
+      await userEvent.click(screen.getByText('Submit'));
+
+      // During pending, TextInput should show loading state
+      await waitFor(() => {
+        expect(textInputWrapper).toHaveClass('cl-text-input_loading');
+        expect(textInputWrapper).toHaveAttribute('aria-busy', 'true');
+      });
+
+      await act(async () => {
+        resolveSubmit();
+      });
+
+      // After resolving, TextInput should not be loading
+      await waitFor(() => {
+        expect(textInputWrapper).not.toHaveClass('cl-text-input_loading');
+        expect(textInputWrapper).toHaveAttribute('aria-busy', 'false');
+      });
+    });
+
+    it('should allow explicit isLoading prop to override context value', async () => {
+      let resolveSubmit: () => void = () => {};
+      const asyncSubmit = () =>
+        new Promise<void>((resolve) => {
+          resolveSubmit = resolve;
+        });
+
+      const { container } = render(
+        <Form onSubmit={asyncSubmit}>
+          <TextInput name="name1" label="Name 1" />
+          <TextInput name="name2" label="Name 2" isLoading={false} />
+        </Form>,
+      );
+
+      const textInputWrappers = container.querySelectorAll('.cl-text-input');
+      const textInput1 = textInputWrappers[0];
+      const textInput2 = textInputWrappers[1];
+
+      await userEvent.click(screen.getByText('Submit'));
+
+      // During pending, first TextInput should use context loading state
+      await waitFor(() => {
+        expect(textInput1).toHaveClass('cl-text-input_loading');
+        expect(textInput1).toHaveAttribute('aria-busy', 'true');
+      });
+
+      // Second TextInput has explicit isLoading={false}, should override context
+      expect(textInput2).not.toHaveClass('cl-text-input_loading');
+      expect(textInput2).toHaveAttribute('aria-busy', 'false');
+
+      await act(async () => {
+        resolveSubmit();
+      });
+    });
+
+    it('should allow explicit isLoading={true} to override context when form is not pending', () => {
+      const { container } = render(
+        <Form>
+          <TextInput name="name1" label="Name 1" />
+          <TextInput name="name2" label="Name 2" isLoading={true} />
+        </Form>,
+      );
+
+      const textInputWrappers = container.querySelectorAll('.cl-text-input');
+      const textInput1 = textInputWrappers[0];
+      const textInput2 = textInputWrappers[1];
+
+      // First TextInput uses context (not loading)
+      expect(textInput1).not.toHaveClass('cl-text-input_loading');
+      expect(textInput1).toHaveAttribute('aria-busy', 'false');
+
+      // Second TextInput has explicit isLoading={true}, should override context
+      expect(textInput2).toHaveClass('cl-text-input_loading');
+      expect(textInput2).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should not disable submit button when using loading state', async () => {
+      let resolveSubmit: () => void = () => {};
+      const asyncSubmit = () =>
+        new Promise<void>((resolve) => {
+          resolveSubmit = resolve;
+        });
+
+      render(
+        <Form onSubmit={asyncSubmit}>
+          <TextInput name="name" label="Name" />
+        </Form>,
+      );
+
+      const submitButton = screen.getByText('Submit').closest('button') as HTMLButtonElement;
+
+      // Submit button should not be disabled initially (form is valid)
+      expect(submitButton).not.toBeDisabled();
+
+      await userEvent.click(submitButton);
+
+      // During pending, submit button should have loading state but NOT be disabled
+      await waitFor(() => {
+        expect(submitButton).toHaveAttribute('aria-busy', 'true');
+        expect(submitButton).toHaveClass('cl-button_loading');
+        expect(submitButton).not.toBeDisabled();
+      });
+
+      await act(async () => {
+        resolveSubmit();
+      });
+    });
+  });
+
   describe('action flow', () => {
     it('should render form with action attribute when action prop is provided', () => {
       // biome-ignore lint/suspicious/noConfusingVoidType: matches FormProps<void> default generic
@@ -241,7 +444,7 @@ describe('Form', () => {
       );
 
       // Initially not pending
-      expect(contextSpy).toHaveBeenLastCalledWith({ isPending: false });
+      expect(contextSpy).toHaveBeenLastCalledWith(expect.objectContaining({ isPending: false }));
     });
   });
 

@@ -6,6 +6,7 @@ export interface FormContextProps {
   initialValues?: FormValues;
   resetSignal?: number;
   isPending?: boolean;
+  isLoading?: boolean;
 }
 
-export const FormContext = createContext<FormContextProps>({ isPending: false });
+export const FormContext = createContext<FormContextProps>({ isPending: false, isLoading: false });

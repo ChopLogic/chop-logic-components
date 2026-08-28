@@ -292,4 +292,83 @@ describe('TextInput', () => {
       expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
     });
   });
+
+  // Loading state tests
+  describe('Loading state', () => {
+    it('should render shimmer overlay when isLoading is true', () => {
+      const { container } = render(<TextInput {...testProps} isLoading />);
+      expect(container.querySelector('.cl-input__shimmer')).toBeInTheDocument();
+    });
+
+    it('should not render shimmer overlay when isLoading is false', () => {
+      const { container } = render(<TextInput {...testProps} isLoading={false} />);
+      expect(container.querySelector('.cl-input__shimmer')).not.toBeInTheDocument();
+    });
+
+    it('should not render shimmer overlay when isLoading prop is not provided', () => {
+      const { container } = render(<TextInput {...testProps} />);
+      expect(container.querySelector('.cl-input__shimmer')).not.toBeInTheDocument();
+    });
+
+    it('should set aria-busy to true when isLoading is true', () => {
+      const { container } = render(<TextInput {...testProps} isLoading />);
+      const wrapperDiv = container.querySelector('.cl-text-input');
+      expect(wrapperDiv).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should apply loading modifier class when isLoading is true', () => {
+      const { container } = render(<TextInput {...testProps} isLoading />);
+      expect(container.querySelector('.cl-text-input_loading')).toBeInTheDocument();
+    });
+
+    it('should make input readonly when isLoading is true', () => {
+      render(<TextInput {...testProps} isLoading />);
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
+    });
+
+    it('should prevent text entry when isLoading is true', async () => {
+      render(<TextInput {...testProps} isLoading />);
+      const input = screen.getByRole('textbox');
+      expect(input).toHaveValue('');
+      await userEvent.type(input, 'test');
+      expect(input).toHaveValue('');
+    });
+
+    it('should not call onChange handler when isLoading is true', async () => {
+      const mockedOnChange = vi.fn();
+      render(<TextInput {...testProps} isLoading onChange={mockedOnChange} />);
+      const input = screen.getByRole('textbox');
+      await userEvent.type(input, 'test');
+      expect(mockedOnChange).not.toHaveBeenCalled();
+    });
+
+    it('should render shimmer inside input wrapper, not covering the label', () => {
+      const { container } = render(<TextInput {...testProps} isLoading />);
+      const label = screen.getByText(testProps.label);
+      const shimmer = container.querySelector('.cl-input__shimmer');
+
+      // Label should not contain the shimmer
+      expect(label.querySelector('.cl-input__shimmer')).toBeNull();
+
+      // Shimmer should be inside the input wrapper, not at the same level as label
+      const inputWrapper = container.querySelector('.cl-input__wrapper');
+      expect(inputWrapper).toContainElement(shimmer as HTMLElement);
+    });
+
+    it('should disable clear button when isLoading is true', async () => {
+      render(<TextInput {...testProps} isLoading value="test" />);
+      const clearButton = screen.queryByRole('button');
+      if (clearButton) {
+        expect(clearButton).toBeDisabled();
+      }
+    });
+
+    it('should work with stateless mode when isLoading is true', () => {
+      const { container } = render(
+        <TextInput {...testProps} stateless value="test" isLoading onChange={vi.fn()} />,
+      );
+      expect(container.querySelector('.cl-input__shimmer')).toBeInTheDocument();
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-readonly', 'true');
+    });
+  });
 });

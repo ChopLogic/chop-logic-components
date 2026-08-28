@@ -3,6 +3,7 @@
 exports[`Checkbox > should render the input correctly 1`] = `
 <DocumentFragment>
   <div
+    aria-busy="false"
     class="cl-checkbox"
   >
     <input

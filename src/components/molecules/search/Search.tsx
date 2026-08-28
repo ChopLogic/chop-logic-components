@@ -1,6 +1,6 @@
 import { Button, Input, Label } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
-import { useElementIds } from '@hooks';
+import { useElementIds, useFormLoading } from '@hooks';
 import type { SearchProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
@@ -28,11 +28,13 @@ const Search: FC<SearchProps> = ({
   autoComplete = 'off',
   debounceDelay = 500,
   required,
+  isLoading: isLoadingProp,
   ...rest
 }) => {
+  const isLoading = useFormLoading(isLoadingProp);
   const { elementId } = useElementIds(id);
   const inputRef = useRef<HTMLInputElement>(null);
-  const inputClass = getClassName(['cl-search', className]);
+  const inputClass = getClassName(['cl-search', className, { 'cl-search_loading': isLoading }]);
 
   const {
     searchValue,
@@ -54,14 +56,28 @@ const Search: FC<SearchProps> = ({
   });
 
   const handleClearWithFocus = () => {
+    if (isLoading) return;
     handleClear();
     if (inputRef.current) {
       inputRef.current.focus();
     }
   };
 
+  const handleSearchClickWithLoading = () => {
+    if (isLoading) return;
+    handleSearchClick();
+  };
+
+  const handleKeyDownWithLoading = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (isLoading && event.key === 'Enter') {
+      event.preventDefault();
+      return;
+    }
+    handleKeyDown(event);
+  };
+
   return (
-    <div {...rest} className={inputClass}>
+    <div {...rest} className={inputClass} aria-busy={isLoading}>
       <Label
         label={label}
         required={!!required}
@@ -76,10 +92,12 @@ const Search: FC<SearchProps> = ({
         type="search"
         value={searchValue}
         onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        onKeyDown={handleKeyDownWithLoading}
         onBlur={onBlur}
         onFocus={onFocus}
         disabled={disabled}
+        readOnly={isLoading}
+        aria-readonly={isLoading || undefined}
         placeholder={placeholder}
         autoComplete={autoComplete}
         maxLength={maxLength}
@@ -95,18 +113,20 @@ const Search: FC<SearchProps> = ({
               onClick={handleClearWithFocus}
               label={`Clear search input for ${label}`}
               icon={IconName.Delete}
+              disabled={isLoading}
             />
           )}
           {isSearchButtonVisible && (
             <Button
               view={ButtonView.Inner}
-              onClick={handleSearchClick}
+              onClick={handleSearchClickWithLoading}
               label="Perform search"
               icon={IconName.Search}
-              disabled={disabled || !isSearchValueValid}
+              disabled={disabled || isLoading || !isSearchValueValid}
             />
           )}
         </span>
+        {isLoading && <div className="cl-input__shimmer" />}
       </Input>
     </div>
   );

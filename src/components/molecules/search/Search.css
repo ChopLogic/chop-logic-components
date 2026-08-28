@@ -32,3 +32,10 @@
 .cl-search input:placeholder-shown + span {
   display: inline-block;
 }
+
+/* ============================================================================
+   MODIFIERS
+   ============================================================================ */
+.cl-search_loading {
+  pointer-events: none;
+}

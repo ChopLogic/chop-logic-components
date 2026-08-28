@@ -1,10 +1,9 @@
-import { getClassName } from '@utils';
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 import './IconButton.css';
-
 import { Icon } from '@components/atoms';
-import { ElementSize, IconName } from '@enums';
+import { ElementSize } from '@enums';
 import type { ButtonProps } from '@types';
+import { getButtonLoadingProps } from '../getButtonLoadingProps';
 
 export const IconButton: FC<Omit<ButtonProps, 'text'>> = ({
   icon,
@@ -16,25 +15,14 @@ export const IconButton: FC<Omit<ButtonProps, 'text'>> = ({
   onClick,
   ...rest
 }) => {
-  const buttonClass = getClassName([
-    'cl-icon-button',
+  const { buttonClass, iconClass, displayIcon, handleClick } = getButtonLoadingProps({
+    baseClass: 'cl-icon-button',
+    iconBaseClass: 'cl-icon-button__icon',
     className,
-    { 'cl-button_loading': isLoading },
-  ]);
-  const iconClass = getClassName([
-    'cl-icon-button__icon',
-    { 'cl-button__icon_spinning': isLoading },
-  ]);
-
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (isLoading) {
-      e.preventDefault();
-      return;
-    }
-    onClick?.(e);
-  };
-
-  const displayIcon = isLoading ? IconName.Loader : icon;
+    isLoading,
+    icon,
+    onClick,
+  });
 
   return (
     <button

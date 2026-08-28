@@ -1,9 +1,9 @@
-import { getClassName } from '@utils';
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 import './PrimaryButton.css';
 import { Icon } from '@components/atoms';
-import { ElementSize, IconName } from '@enums';
+import { ElementSize } from '@enums';
 import type { ButtonProps } from '@types';
+import { getButtonLoadingProps } from '../getButtonLoadingProps';
 
 export const PrimaryButton: FC<ButtonProps> = ({
   icon,
@@ -16,23 +16,14 @@ export const PrimaryButton: FC<ButtonProps> = ({
   onClick,
   ...rest
 }) => {
-  const buttonClass = getClassName([
-    'cl-primary-button',
+  const { buttonClass, iconClass, displayIcon, handleClick } = getButtonLoadingProps({
+    baseClass: 'cl-primary-button',
+    iconBaseClass: 'cl-primary-button__icon',
     className,
-    { 'cl-button_loading': isLoading },
-  ]);
-  const iconClass = getClassName([
-    'cl-primary-button__icon',
-    { 'cl-button__icon_spinning': isLoading },
-  ]);
-
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (isLoading) {
-      e.preventDefault();
-      return;
-    }
-    onClick?.(e);
-  };
+    isLoading,
+    icon,
+    onClick,
+  });
 
   return (
     <button
@@ -43,9 +34,7 @@ export const PrimaryButton: FC<ButtonProps> = ({
       disabled={disabled}
       aria-busy={isLoading}
     >
-      {icon && (
-        <Icon name={isLoading ? IconName.Loader : icon} className={iconClass} size={iconSize} />
-      )}
+      {displayIcon && <Icon name={displayIcon} className={iconClass} size={iconSize} />}
       <span className="cl-primary-button__text">{text}</span>
     </button>
   );

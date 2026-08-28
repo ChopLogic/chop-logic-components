@@ -1,9 +1,9 @@
-import { getClassName } from '@utils';
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 import './SecondaryButton.css';
 import { Icon } from '@components/atoms';
-import { ElementSize, IconName } from '@enums';
+import { ElementSize } from '@enums';
 import type { ButtonProps } from '@types';
+import { getButtonLoadingProps } from '../getButtonLoadingProps';
 
 export const SecondaryButton: FC<ButtonProps> = ({
   icon,
@@ -15,23 +15,14 @@ export const SecondaryButton: FC<ButtonProps> = ({
   onClick,
   ...rest
 }) => {
-  const buttonClass = getClassName([
-    'cl-secondary-button',
+  const { buttonClass, iconClass, displayIcon, handleClick } = getButtonLoadingProps({
+    baseClass: 'cl-secondary-button',
+    iconBaseClass: 'cl-secondary-button__icon',
     className,
-    { 'cl-button_loading': isLoading },
-  ]);
-  const iconClass = getClassName([
-    'cl-secondary-button__icon',
-    { 'cl-button__icon_spinning': isLoading },
-  ]);
-
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (isLoading) {
-      e.preventDefault();
-      return;
-    }
-    onClick?.(e);
-  };
+    isLoading,
+    icon,
+    onClick,
+  });
 
   return (
     <button
@@ -41,9 +32,7 @@ export const SecondaryButton: FC<ButtonProps> = ({
       onClick={handleClick}
       aria-busy={isLoading}
     >
-      {icon && (
-        <Icon name={isLoading ? IconName.Loader : icon} className={iconClass} size={iconSize} />
-      )}
+      {displayIcon && <Icon name={displayIcon} className={iconClass} size={iconSize} />}
       <span className="cl-secondary-button__text">{text}</span>
     </button>
   );

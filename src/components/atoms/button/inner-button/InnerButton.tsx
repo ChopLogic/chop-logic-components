@@ -1,9 +1,9 @@
 import { Icon } from '@components/atoms';
 import { ElementSize } from '@enums';
-import { getClassName } from '@utils';
 import type { FC } from 'react';
 import './InnerButton.css';
 import type { ButtonProps } from '@types';
+import { getButtonLoadingProps } from '../getButtonLoadingProps';
 
 export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
   onClick,
@@ -15,17 +15,26 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
   isLoading,
   ...rest
 }) => {
+  const { buttonClass, iconClass, displayIcon, handleClick } = getButtonLoadingProps({
+    baseClass: 'cl-inner-button',
+    iconBaseClass: 'cl-inner-button__icon',
+    className,
+    isLoading,
+    icon,
+    onClick,
+  });
+
   return (
     <button
-      className={getClassName(['cl-inner-button', className])}
-      onClick={onClick}
+      className={buttonClass}
+      onClick={handleClick}
       aria-label={label}
       type="button"
       disabled={disabled}
       aria-busy={isLoading}
       {...rest}
     >
-      <Icon name={icon} size={iconSize} className="cl-inner-button__icon" />
+      {displayIcon && <Icon name={icon} size={iconSize} className={iconClass} />}
     </button>
   );
 };

@@ -4,7 +4,7 @@ interface ButtonLoadingParams {
     baseClass: string;
     iconBaseClass: string;
     className?: string;
-    isLoading: boolean;
+    isLoading?: boolean;
     icon?: IconName;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -14,5 +14,5 @@ interface ButtonLoadingProps {
     displayIcon: IconName | undefined;
     handleClick: (e: MouseEvent<HTMLButtonElement>) => void;
 }
-export declare const getButtonLoadingProps: ({ baseClass, iconBaseClass, className, isLoading, icon, onClick, }: ButtonLoadingParams) => ButtonLoadingProps;
+export declare const getButtonLoadingProps: ({ baseClass, iconBaseClass, className, icon, onClick, isLoading, }: ButtonLoadingParams) => ButtonLoadingProps;
 export {};

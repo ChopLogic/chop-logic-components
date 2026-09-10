@@ -5,6 +5,7 @@ type Props = PropsWithChildren & {
     item: MenuItem;
     mode: OrientationMode;
     openedOn?: 'hover' | 'click';
+    level: number;
 };
 export declare const MenuListItem: FC<Props>;
 export {};

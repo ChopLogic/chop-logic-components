@@ -9,6 +9,7 @@ type Props = PropsWithChildren & {
     closeSubMenu: () => void;
     openSubMenu: () => void;
     openedOn?: 'hover' | 'click';
+    isNested?: boolean;
 };
 export declare const SubMenu: FC<Props>;
 export {};

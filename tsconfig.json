@@ -11,7 +11,7 @@
       "@utils/*": ["./src/utils/*"],
       "@__docs__/*": ["./src/__docs__/*"]
     },
-    "types": ["node", "@testing-library/jest-dom"],
+    "types": ["node", "@testing-library/jest-dom/vitest"],
     "target": "ESNext",
     "jsx": "react-jsx",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],

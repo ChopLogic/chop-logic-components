@@ -51,7 +51,7 @@ describe('EditableText', () => {
     await userEvent.click(screen.getByText(defaultProps.value));
     const input = screen.getByRole('textbox');
 
-    await userEvent.type(input, '{Enter}');
+    await userEvent.type(input, ' updated{Enter}');
 
     expect(defaultProps.onChange).toHaveBeenCalled();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();

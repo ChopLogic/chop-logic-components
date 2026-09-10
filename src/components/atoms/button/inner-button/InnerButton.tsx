@@ -12,6 +12,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
   disabled,
   className,
   iconSize = ElementSize.Small,
+  isLoading,
   ...rest
 }) => {
   return (
@@ -21,6 +22,7 @@ export const InnerButton: FC<Omit<ButtonProps, 'text'>> = ({
       aria-label={label}
       type="button"
       disabled={disabled}
+      aria-busy={isLoading}
       {...rest}
     >
       <Icon name={icon} size={iconSize} className="cl-inner-button__icon" />

@@ -22,7 +22,7 @@ const Menu: FC<MenuProps> = ({
   return (
     <menu {...rest} className={menuClass}>
       {items.map((item) => (
-        <MenuListItem key={item.id} item={item} mode={mode} openedOn={openedOn} />
+        <MenuListItem key={item.id} item={item} mode={mode} openedOn={openedOn} level={0} />
       ))}
     </menu>
   );

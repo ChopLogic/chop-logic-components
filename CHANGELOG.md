@@ -4,6 +4,23 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.5.1] - 2026-09-10
+
+### Added
+
+- `DeeplyNestedHorizontalMenu` Storybook story demonstrating Mac-style cascading submenus with 5 levels of nesting
+- `MenuItem` interface documentation in Menu MDX docs
+
+### Changed
+
+- Horizontal menu nested submenus now cascade to the right (like macOS application menus) instead of appearing below and overlapping the parent
+- Nested submenus in horizontal mode display a right-pointing chevron icon instead of down-pointing
+- Updated Menu documentation with cascading submenu behavior description and best practices
+
+### Fixed
+
+- `isLoading` prop being passed to DOM in `InnerButton` component (React warning: "React does not recognize the `isLoading` prop on a DOM element")
+
 ## [4.5.0] - 2026-08-28
 
 ### Added

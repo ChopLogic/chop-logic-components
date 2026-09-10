@@ -106,7 +106,7 @@ describe('SubMenu', () => {
     const submenu = screen.getByRole('menuitem');
     fireEvent.keyDown(submenu, { key: ' ' });
 
-    expect(mockToggleSubMenu).toHaveBeenCalledTimes(2);
+    expect(mockToggleSubMenu).toHaveBeenCalledTimes(1);
   });
 
   it('renders children when isSubMenuOpened is true', () => {

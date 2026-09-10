@@ -19,7 +19,7 @@
 .cl-sub-menu-bar_horizontal {
   position: absolute;
   top: 100%;
-  left: 0%;
+  left: 0;
   width: max-content;
   border-radius: var(--cl-border-radius);
   border: var(--cl-light-border);
@@ -28,4 +28,9 @@
   padding: var(--cl-m-gap);
   margin: 0;
   z-index: var(--cl-z-index-menu);
+}
+
+.cl-sub-menu-bar_nested {
+  top: 0;
+  left: 100%;
 }

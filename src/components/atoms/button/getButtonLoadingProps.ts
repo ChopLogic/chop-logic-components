@@ -6,7 +6,7 @@ interface ButtonLoadingParams {
   baseClass: string;
   iconBaseClass: string;
   className?: string;
-  isLoading: boolean;
+  isLoading?: boolean;
   icon?: IconName;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -22,9 +22,9 @@ export const getButtonLoadingProps = ({
   baseClass,
   iconBaseClass,
   className,
-  isLoading,
   icon,
   onClick,
+  isLoading = false,
 }: ButtonLoadingParams): ButtonLoadingProps => {
   const buttonClass = getClassName([baseClass, className, { 'cl-button_loading': isLoading }]);
   const iconClass = getClassName([iconBaseClass, { 'cl-button__icon_spinning': isLoading }]);

@@ -14,6 +14,7 @@ type Props = PropsWithChildren & {
   closeSubMenu: () => void;
   openSubMenu: () => void;
   openedOn?: 'hover' | 'click';
+  isNested?: boolean;
 };
 
 export const SubMenu: FC<Props> = ({
@@ -25,13 +26,15 @@ export const SubMenu: FC<Props> = ({
   openedOn,
   mode,
   children,
+  isNested = false,
 }) => {
   const { icon, link, label } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
+  const chevronIcon = isNested ? IconName.ChevronRight : IconName.ChevronDown;
   const iconClass = getClassName([
     'cl-sub-menu__icon',
-    { 'cl-sub-menu__icon_opened': isSubMenuOpened },
+    { 'cl-sub-menu__icon_opened': isSubMenuOpened && !isNested },
   ]);
 
   const itemContent = link ? (
@@ -79,7 +82,7 @@ export const SubMenu: FC<Props> = ({
         onKeyDown={handleKeyDown}
       >
         {itemContent}
-        <Icon name={IconName.ChevronDown} className={iconClass} size={ElementSize.Small} />
+        <Icon name={chevronIcon} className={iconClass} size={ElementSize.Small} />
       </span>
       {isSubMenuOpened && children}
     </li>

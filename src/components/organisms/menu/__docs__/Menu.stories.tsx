@@ -109,6 +109,233 @@ const ITEMS: MenuItem[] = [
   },
 ];
 
+const DEEPLY_NESTED_ITEMS: MenuItem[] = [
+  {
+    id: 'file',
+    label: 'File',
+    icon: IconName.File,
+    nestedItems: [
+      {
+        id: 'file-new',
+        label: 'New',
+        icon: IconName.FilePlus,
+        nestedItems: [
+          {
+            id: 'file-new-project',
+            label: 'Project',
+            nestedItems: [
+              {
+                id: 'file-new-project-react',
+                label: 'React',
+                nestedItems: [
+                  {
+                    id: 'file-new-project-react-ts',
+                    label: 'TypeScript',
+                    icon: IconName.Code,
+                  },
+                  {
+                    id: 'file-new-project-react-js',
+                    label: 'JavaScript',
+                    icon: IconName.Code,
+                  },
+                ],
+              },
+              {
+                id: 'file-new-project-vue',
+                label: 'Vue',
+              },
+              {
+                id: 'file-new-project-angular',
+                label: 'Angular',
+              },
+            ],
+          },
+          {
+            id: 'file-new-file',
+            label: 'File',
+          },
+          {
+            id: 'file-new-folder',
+            label: 'Folder',
+          },
+        ],
+      },
+      {
+        id: 'file-open',
+        label: 'Open',
+        icon: IconName.FolderPlus,
+        nestedItems: [
+          {
+            id: 'file-open-file',
+            label: 'Open File...',
+          },
+          {
+            id: 'file-open-folder',
+            label: 'Open Folder...',
+          },
+          {
+            id: 'file-open-recent',
+            label: 'Open Recent',
+            nestedItems: [
+              {
+                id: 'file-open-recent-1',
+                label: 'project-alpha',
+              },
+              {
+                id: 'file-open-recent-2',
+                label: 'project-beta',
+              },
+              {
+                id: 'file-open-recent-more',
+                label: 'More...',
+                nestedItems: [
+                  {
+                    id: 'file-open-recent-3',
+                    label: 'project-gamma',
+                  },
+                  {
+                    id: 'file-open-recent-4',
+                    label: 'project-delta',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'file-save',
+        label: 'Save',
+        icon: IconName.Save,
+      },
+      {
+        id: 'file-save-as',
+        label: 'Save As...',
+      },
+    ],
+  },
+  {
+    id: 'edit',
+    label: 'Edit',
+    icon: IconName.Edit,
+    nestedItems: [
+      {
+        id: 'edit-undo',
+        label: 'Undo',
+        icon: IconName.RotateCcw,
+      },
+      {
+        id: 'edit-redo',
+        label: 'Redo',
+        icon: IconName.RotateCw,
+      },
+      {
+        id: 'edit-cut',
+        label: 'Cut',
+        icon: IconName.Scissors,
+      },
+      {
+        id: 'edit-copy',
+        label: 'Copy',
+        icon: IconName.Copy,
+      },
+      {
+        id: 'edit-paste',
+        label: 'Paste',
+        icon: IconName.Clipboard,
+      },
+    ],
+  },
+  {
+    id: 'view',
+    label: 'View',
+    icon: IconName.Eye,
+    nestedItems: [
+      {
+        id: 'view-appearance',
+        label: 'Appearance',
+        nestedItems: [
+          {
+            id: 'view-appearance-theme',
+            label: 'Theme',
+            nestedItems: [
+              {
+                id: 'view-appearance-theme-light',
+                label: 'Light',
+                icon: IconName.Sun,
+              },
+              {
+                id: 'view-appearance-theme-dark',
+                label: 'Dark',
+                icon: IconName.Moon,
+              },
+              {
+                id: 'view-appearance-theme-system',
+                label: 'System',
+                icon: IconName.Monitor,
+              },
+            ],
+          },
+          {
+            id: 'view-appearance-zoom',
+            label: 'Zoom',
+            nestedItems: [
+              {
+                id: 'view-appearance-zoom-in',
+                label: 'Zoom In',
+                icon: IconName.ZoomIn,
+              },
+              {
+                id: 'view-appearance-zoom-out',
+                label: 'Zoom Out',
+                icon: IconName.ZoomOut,
+              },
+              {
+                id: 'view-appearance-zoom-reset',
+                label: 'Reset Zoom',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'view-layout',
+        label: 'Layout',
+        nestedItems: [
+          {
+            id: 'view-layout-sidebar',
+            label: 'Toggle Sidebar',
+            icon: IconName.Sidebar,
+          },
+          {
+            id: 'view-layout-fullscreen',
+            label: 'Toggle Full Screen',
+            icon: IconName.Maximize,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'help',
+    label: 'Help',
+    icon: IconName.HelpCircle,
+    nestedItems: [
+      {
+        id: 'help-docs',
+        label: 'Documentation',
+        icon: IconName.Book,
+        link: 'https://github.com/',
+      },
+      {
+        id: 'help-about',
+        label: 'About',
+        icon: IconName.Info,
+      },
+    ],
+  },
+];
+
 const meta: Meta<typeof Menu> = {
   title: 'Organisms/Menu',
   component: MenuExample,
@@ -129,7 +356,7 @@ const meta: Meta<typeof Menu> = {
       options: Object.values(OrientationMode),
       description: 'Orientation of the menu (vertical or horizontal)',
       table: {
-        defaultValue: { summary: OrientationMode.Horizontal },
+        defaultValue: { summary: OrientationMode.Vertical },
         type: { summary: '"vertical" | "horizontal"' },
         category: 'Behavior',
       },
@@ -137,7 +364,8 @@ const meta: Meta<typeof Menu> = {
     openedOn: {
       control: 'radio',
       options: ['hover', 'click'],
-      description: 'Interaction method for opening nested menus',
+      description:
+        'Interaction method for opening nested menus. Use "hover" for quick access, "click" for complex menus.',
       table: {
         defaultValue: { summary: 'click' },
         type: { summary: '"hover" | "click"' },
@@ -210,6 +438,14 @@ export const VerticalMenu: Story = {
 
 export const HorizontalMenu: Story = {
   args: {
+    mode: OrientationMode.Horizontal,
+    openedOn: 'hover',
+  },
+};
+
+export const DeeplyNestedHorizontalMenu: Story = {
+  args: {
+    items: DEEPLY_NESTED_ITEMS,
     mode: OrientationMode.Horizontal,
     openedOn: 'hover',
   },

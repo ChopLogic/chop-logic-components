@@ -7,6 +7,8 @@ import * as MenuStories from "./Menu.stories";
 
 The `Menu` component provides an accessible navigation menu with support for both vertical and horizontal orientations, nested items, and flexible interaction modes.
 
+In horizontal mode, nested submenus cascade to the right (similar to macOS application menus), while the first-level dropdown appears below the menu bar.
+
 ## Usage
 
 ```tsx
@@ -31,15 +33,30 @@ const AppMenu = () => {
 };
 ```
 
+## MenuItem Interface
+
+Each menu item can have the following properties:
+
+| Property      | Type         | Description                                        |
+| ------------- | ------------ | -------------------------------------------------- |
+| `id`          | `string`     | Unique identifier for the menu item (required)     |
+| `label`       | `string`     | Display text for the menu item (required)          |
+| `nestedItems` | `MenuItem[]` | Array of child menu items for creating submenus    |
+| `icon`        | `IconName`   | Icon to display before the label                   |
+| `link`        | `string`     | URL to navigate to when clicked (opens in new tab) |
+| `onClick`     | `() => void` | Callback function when item is clicked             |
+| `onHover`     | `() => void` | Callback function when item is hovered             |
+| `onFocus`     | `() => void` | Callback function when item receives focus         |
+
 ## Best Practices
 
 1. _Organization_:
-   - Limit nesting depth (recommend max 2-3 levels)
+   - In horizontal mode, nested submenus appear to the right, enabling deep nesting
    - Group related items together
    - Sort items logically
 2. _Interaction_:
-   - Use hover activation for quick access
-   - Use click activation for complex menus
+   - Use `openedOn="hover"` for quick access in horizontal menus
+   - Use `openedOn="click"` for vertical menus or complex navigation
    - Provide visual feedback for active items
 3. _Performance_:
    - Memoize menu items when possible

@@ -11,14 +11,17 @@ type Props = PropsWithChildren & {
   item: MenuItem;
   mode: OrientationMode;
   openedOn?: 'hover' | 'click';
+  level: number;
 };
 
-export const MenuListItem: FC<Props> = ({ item, mode, openedOn }) => {
+export const MenuListItem: FC<Props> = ({ item, mode, openedOn, level }) => {
   const isLeaf = !item?.nestedItems?.length;
   const [isSubMenuOpened, setIsSubMenuOpened] = useState(false);
+  const isNested = level > 0 && mode === OrientationMode.Horizontal;
   const subMenuBarClass = getClassName([
     'cl-sub-menu-bar',
     { 'cl-sub-menu-bar_horizontal': mode === OrientationMode.Horizontal },
+    { 'cl-sub-menu-bar_nested': isNested },
   ]);
 
   if (isLeaf) {
@@ -46,10 +49,17 @@ export const MenuListItem: FC<Props> = ({ item, mode, openedOn }) => {
       openSubMenu={openSubMenu}
       mode={mode}
       openedOn={openedOn}
+      isNested={isNested}
     >
       <ul className={subMenuBarClass} role="menu" aria-label={item.label}>
         {item?.nestedItems?.map((child) => (
-          <MenuListItem item={child} key={child.id} mode={mode} openedOn={openedOn} />
+          <MenuListItem
+            item={child}
+            key={child.id}
+            mode={mode}
+            openedOn={openedOn}
+            level={level + 1}
+          />
         ))}
       </ul>
     </SubMenu>

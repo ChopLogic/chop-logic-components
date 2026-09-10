@@ -38,13 +38,13 @@ describe('MenuListItem', () => {
 
   it('should match the snapshot', () => {
     const { asFragment } = render(
-      <MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />,
+      <MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} level={0} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders MenuLeaf for leaf nodes', () => {
-    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} level={0} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toBeInTheDocument();
@@ -52,14 +52,14 @@ describe('MenuListItem', () => {
   });
 
   it('renders SubMenu for non-leaf nodes', () => {
-    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} level={0} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
   });
 
   it('toggles SubMenu state when toggleSubMenu is called', () => {
-    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} level={0} />);
 
     const toggleButton = screen.getByText(/toggle submenu/i);
     fireEvent.click(toggleButton);
@@ -69,14 +69,14 @@ describe('MenuListItem', () => {
   });
 
   it('renders nested items recursively', () => {
-    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} level={0} />);
 
     expect(screen.getByText('Child Item 1')).toBeInTheDocument();
     expect(screen.getByText('Child Item 2')).toBeInTheDocument();
   });
 
   it('passes correct props to SubMenu', () => {
-    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={nestedItem} mode={OrientationMode.Horizontal} level={0} />);
 
     const subMenu = screen.getByTestId('submenu');
     expect(subMenu).toBeInTheDocument();
@@ -85,7 +85,7 @@ describe('MenuListItem', () => {
   });
 
   it('passes correct props to MenuLeaf', () => {
-    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} />);
+    render(<MenuListItem item={leafItem} mode={OrientationMode.Horizontal} level={0} />);
 
     const menuLeaf = screen.getByTestId('menu-leaf');
     expect(menuLeaf).toHaveTextContent('Leaf Item');

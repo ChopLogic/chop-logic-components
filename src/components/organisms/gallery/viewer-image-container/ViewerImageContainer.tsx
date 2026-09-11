@@ -6,7 +6,7 @@ import './ViewerImageContainer.css';
 
 interface ViewerImageContainerProps {
   fullscreenImageProps: Omit<ImageProps, 'caption'>;
-  caption?: GalleryItem['caption'];
+  caption: GalleryItem['caption'];
 }
 
 const ViewerImageContainer: FC<ViewerImageContainerProps> = ({ fullscreenImageProps, caption }) => {

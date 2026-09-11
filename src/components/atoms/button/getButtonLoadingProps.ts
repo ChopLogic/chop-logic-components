@@ -28,7 +28,8 @@ export const getButtonLoadingProps = ({
 }: ButtonLoadingParams): ButtonLoadingProps => {
   const buttonClass = getClassName([baseClass, className, { 'cl-button_loading': isLoading }]);
   const iconClass = getClassName([iconBaseClass, { 'cl-button__icon_spinning': isLoading }]);
-  const displayIcon = icon ? (isLoading ? IconName.Loader : icon) : undefined;
+  const resultIcon = isLoading ? IconName.Loader : icon;
+  const displayIcon = icon ? resultIcon : undefined;
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (isLoading) {

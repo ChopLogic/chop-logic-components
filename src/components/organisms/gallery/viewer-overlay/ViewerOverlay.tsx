@@ -8,7 +8,7 @@ import './ViewerOverlay.css';
 
 export interface ViewerOverlayProps {
   fullscreenImageProps: Omit<ImageProps, 'caption'>;
-  caption?: GalleryItem['caption'];
+  caption: GalleryItem['caption'];
   currentIndex: number;
   totalImages: number;
   onClose: () => void;

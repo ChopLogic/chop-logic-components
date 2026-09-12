@@ -1,7 +1,7 @@
 import { Button } from '@components/atoms';
 import { ButtonView, IconName, OrientationMode } from '@enums';
-import type { ChopLogicTabItem } from '@types';
-import { getClassName, moveFocusOnElementById } from '@utils';
+import type { ChopLogicTabItem, ListNavigationOrientation } from '@types';
+import { getClassName, handleListKeyNavigation } from '@utils';
 import type { FC, KeyboardEvent } from 'react';
 
 import { TabButton } from '../button/TabButton';
@@ -22,6 +22,10 @@ type Props = {
   onTabDelete?: (id: string) => void;
 };
 
+function getNavigationOrientation(mode: OrientationMode): ListNavigationOrientation {
+  return mode === OrientationMode.Horizontal ? 'horizontal' : 'vertical';
+}
+
 export const TabList: FC<Props> = ({
   tabs,
   onTabSelect,
@@ -41,42 +45,17 @@ export const TabList: FC<Props> = ({
     { 'cl-tab-list_vertical': mode === OrientationMode.Vertical },
   ]);
 
+  // Create navigation items from tab IDs
+  const navigationItems = tabIds.map((id) => ({ id }));
+  const orientation = getNavigationOrientation(mode);
+
   const handleListKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    const currentFocusedTabIndex = tabIds.indexOf(selectedTabId);
-
-    // Early return for non-navigation keys
-    if (!['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].includes(e.key)) {
-      return;
-    }
-
-    e.preventDefault();
-
-    // Check if key should be ignored based on mode
-    if (
-      (e.key === 'ArrowUp' && mode === OrientationMode.Horizontal) ||
-      (e.key === 'ArrowLeft' && mode === OrientationMode.Vertical)
-    ) {
-      return;
-    }
-
-    const isPrevious = e.key === 'ArrowLeft' || e.key === 'ArrowUp';
-    const newIndex = isPrevious
-      ? getPreviousIndex(currentFocusedTabIndex, tabIds.length)
-      : getNextIndex(currentFocusedTabIndex, tabIds.length);
-
-    const newTabId = tabIds[newIndex];
-    if (newTabId) {
-      moveFocusOnElementById(newTabId);
-      onTabSelect(newTabId);
-    }
-  };
-
-  const getPreviousIndex = (currentIndex: number, totalTabs: number): number => {
-    return currentIndex - 1 >= 0 ? currentIndex - 1 : totalTabs - 1;
-  };
-
-  const getNextIndex = (currentIndex: number, totalTabs: number): number => {
-    return currentIndex === totalTabs - 1 ? 0 : currentIndex + 1;
+    handleListKeyNavigation({
+      event: e,
+      items: navigationItems,
+      orientation,
+      onSelect: onTabSelect,
+    });
   };
 
   return (

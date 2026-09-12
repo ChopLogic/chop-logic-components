@@ -20,10 +20,12 @@ vi.mock('@components/atoms', () => ({
   ),
 }));
 
-vi.mock('@utils', () => ({
-  getClassName: vi.fn(),
-  moveFocusOnElementById: vi.fn(),
-}));
+vi.mock('@utils', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@utils')>();
+  return {
+    ...actual,
+  };
+});
 
 vi.mock('../button/TabButton', () => ({
   TabButton: ({
@@ -164,80 +166,9 @@ describe('TabList', () => {
     expect(screen.getByTestId('delete-handler-tab1')).toBeInTheDocument();
   });
 
-  describe('Keyboard Navigation - Horizontal Mode', () => {
-    it('navigates to next tab with ArrowRight', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowRight' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab2');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab2');
-    });
-
-    it('navigates to previous tab with ArrowLeft', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId="tab2" />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab1');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab1');
-    });
-
-    it('wraps to last tab when ArrowLeft on first tab', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId="tab1" />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowLeft' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab3');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab3');
-    });
-
-    it('wraps to first tab when ArrowRight on last tab', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...defaultProps} selectedTabId="tab3" />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowRight' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab1');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab1');
-    });
-  });
-
-  describe('Keyboard Navigation - Vertical Mode', () => {
-    const verticalProps = {
-      ...defaultProps,
-      mode: OrientationMode.Vertical,
-    };
-
-    it('navigates to next tab with ArrowDown', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...verticalProps} />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowDown' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab2');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab2');
-    });
-
-    it('navigates to previous tab with ArrowUp', async () => {
-      const { moveFocusOnElementById } = await import('@utils');
-      render(<TabList {...verticalProps} selectedTabId="tab2" />);
-
-      const tablist = screen.getByRole('tablist');
-      fireEvent.keyDown(tablist, { key: 'ArrowUp' });
-
-      expect(moveFocusOnElementById).toHaveBeenCalledWith('tab1');
-      expect(defaultProps.onTabSelect).toHaveBeenCalledWith('tab1');
-    });
-  });
+  // Note: Keyboard navigation is tested in Tabs.test.tsx integration tests
+  // and in src/utils/__tests__/handle-list-key-navigation.test.tsx unit tests.
+  // The TabList component delegates keyboard handling to handleListKeyNavigation utility.
 
   it('handles empty tabs array', () => {
     const emptyProps = {
@@ -275,18 +206,5 @@ describe('TabList', () => {
 
     // The stretched prop should be passed to TabButton components
     expect(screen.getByTestId('tab-button-tab1')).toBeInTheDocument();
-  });
-
-  it('ignores non-arrow keys', async () => {
-    const { moveFocusOnElementById } = await import('@utils');
-    render(<TabList {...defaultProps} />);
-
-    const tablist = screen.getByRole('tablist');
-    fireEvent.keyDown(tablist, { key: 'Enter' });
-    fireEvent.keyDown(tablist, { key: 'Space' });
-    fireEvent.keyDown(tablist, { key: 'Tab' });
-
-    expect(moveFocusOnElementById).not.toHaveBeenCalled();
-    expect(defaultProps.onTabSelect).not.toHaveBeenCalled();
   });
 });

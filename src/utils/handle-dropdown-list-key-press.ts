@@ -1,7 +1,7 @@
 import type { SelectValue } from '@types';
 import type { KeyboardEvent } from 'react';
 
-import { moveFocusOnElementById } from './move-focus-on-element-by-id';
+import { handleListKeyNavigation } from './handle-list-key-navigation';
 
 export function handleDropdownListKeyPress({
   e,
@@ -12,37 +12,10 @@ export function handleDropdownListKeyPress({
   options: SelectValue[];
   onClose: () => void;
 }) {
-  let focusedId: string = '';
-
-  for (const option of options) {
-    const element = document.getElementById(option.id);
-    if (element === document.activeElement) {
-      focusedId = option.id;
-    }
-  }
-
-  const currentFocusIndex = options.findIndex((value) => value.id === focusedId);
-
-  switch (e.key) {
-    case 'Escape':
-      e.preventDefault();
-      onClose();
-      break;
-    case 'ArrowUp': {
-      e.preventDefault();
-      const previousOptionIndex =
-        currentFocusIndex - 1 >= 0 ? currentFocusIndex - 1 : options.length - 1;
-      const previousValue = options[previousOptionIndex];
-      if (previousValue) moveFocusOnElementById(previousValue.id);
-      break;
-    }
-    case 'ArrowDown':
-    case 'Tab': {
-      e.preventDefault();
-      const nextOptionIndex = currentFocusIndex === options.length - 1 ? 0 : currentFocusIndex + 1;
-      const nextValue = options[nextOptionIndex];
-      if (nextValue) moveFocusOnElementById(nextValue.id);
-      break;
-    }
-  }
+  handleListKeyNavigation({
+    event: e,
+    items: options,
+    orientation: 'vertical',
+    onClose,
+  });
 }

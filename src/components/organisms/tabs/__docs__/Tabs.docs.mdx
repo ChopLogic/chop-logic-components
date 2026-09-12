@@ -10,10 +10,11 @@ The `Tabs` component provides an accessible tabbed interface with support for bo
 ## Usage
 
 ```tsx
-import Tabs, { OrientationMode } from "chop-logic-components";
+import { Tabs, OrientationMode } from "chop-logic-components";
+import type { ChopLogicTabItem } from "chop-logic-components";
 
 const ProductTabs = () => {
-  const tabs = [
+  const tabs: ChopLogicTabItem[] = [
     {
       id: "details",
       title: "Details",
@@ -24,31 +25,85 @@ const ProductTabs = () => {
       title: "Specifications",
       content: <ProductSpecs />,
     },
+    {
+      id: "reviews",
+      title: "Reviews",
+      content: <ProductReviews />,
+      disabled: true, // Optional: disable specific tabs
+    },
   ];
 
-  return <Tabs tabs={tabs} mode={OrientationMode.Horizontal} defaultTabId="specs" />;
+  return <Tabs tabs={tabs} mode={OrientationMode.Horizontal} defaultTabId="details" onTabSelect={(id) => console.log(`Selected tab: ${id}`)} />;
 };
 ```
 
-### Best Practices
+## Accessibility
 
-1. _Organization_:
+The Tabs component implements comprehensive accessibility features following the WAI-ARIA Tabs pattern.
+
+### Keyboard Navigation
+
+#### Horizontal Mode
+
+| Key          | Action                          |
+| ------------ | ------------------------------- |
+| `ArrowRight` | Move to and select next tab     |
+| `ArrowLeft`  | Move to and select previous tab |
+| `Home`       | Move to and select first tab    |
+| `End`        | Move to and select last tab     |
+| `Tab`        | Move focus out of tab list      |
+
+#### Vertical Mode
+
+| Key         | Action                          |
+| ----------- | ------------------------------- |
+| `ArrowDown` | Move to and select next tab     |
+| `ArrowUp`   | Move to and select previous tab |
+| `Home`      | Move to and select first tab    |
+| `End`       | Move to and select last tab     |
+| `Tab`       | Move focus out of tab list      |
+
+### ARIA Attributes
+
+- Tab list uses `role="tablist"` with `aria-orientation` matching the mode
+- Each tab button uses `role="tab"` with `aria-selected` and `aria-controls`
+- Tab panels use `role="tabpanel"` with `aria-labelledby` referencing the tab
+- Disabled tabs have `aria-disabled="true"` and are skipped during keyboard navigation
+
+### Focus Management
+
+- Only the active tab is in the tab sequence (`tabIndex={0}`)
+- Inactive tabs have `tabIndex={-1}` and are navigated via arrow keys
+- Disabled tabs are skipped during keyboard navigation
+- Focus follows selection (arrow keys both move focus and activate the tab)
+
+## Best Practices
+
+1. **Organization**:
    - Keep tab titles concise (1-2 words)
    - Group related content together
    - Limit number of tabs (recommend max 5-7)
-2. _Content_:
+
+2. **Content**:
    - Load heavy content dynamically
    - Consider lazy-loading hidden tabs
-   - Maintain consistent tab heights
-3. _States_:
-   - Clearly indicate active tab
+   - Maintain consistent tab heights when possible
+
+3. **States**:
+   - Clearly indicate the active tab
    - Visually distinguish disabled tabs
    - Provide loading states for async content
-4. _Dynamic Tab Management_:
+
+4. **Dynamic Tab Management**:
    - Provide meaningful default names for new tabs
    - Consider implementing tab reordering if needed
    - Validate tab titles to prevent empty or duplicate names
    - Provide undo functionality for accidental tab deletion
+
+5. **Orientation Choice**:
+   - Use horizontal tabs for primary navigation
+   - Use vertical tabs for sidebar navigation or when tab labels are longer
+   - Consider responsive design: vertical may work better on narrow screens
 
 ## Props
 

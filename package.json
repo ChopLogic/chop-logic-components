@@ -87,6 +87,8 @@
     "test": "vitest --watch",
     "test:ci": "vitest run --passWithNoTests",
     "test:integration": "npm run build:storybook && start-server-and-test 'http-server storybook-static -p 6006 -s' http://127.0.0.1:6006 test-storybook",
+    "a11y": "npm run build:storybook && start-server-and-test 'http-server storybook-static -p 6006 -s' http://127.0.0.1:6006 'test-storybook'",
+    "a11y:dev": "test-storybook --url http://127.0.0.1:6006",
     "test:mutation": "stryker run",
     "coverage": "vitest run --coverage",
     "release:version": "node scripts/release-version.js"
@@ -132,6 +134,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitest/coverage-v8": "^5.0.0",
+    "axe-playwright": "^2.2.2",
     "http-server": "^14.1.1",
     "husky": "^9.1.7",
     "jsdom": "^30.0.1",

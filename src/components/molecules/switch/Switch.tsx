@@ -67,6 +67,8 @@ const Switch: FC<SwitchProps> = ({
         disabled={isDisabledOrLoading}
         className="cl-switch__input"
         readOnly
+        tabIndex={-1}
+        aria-hidden="true"
         data-testid="switch-input"
       />
       <span className="cl-switch__label">{label}</span>

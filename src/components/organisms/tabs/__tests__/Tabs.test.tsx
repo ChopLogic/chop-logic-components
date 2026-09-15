@@ -66,6 +66,56 @@ describe('Tabs', () => {
     expect(screen.getByText('Content 3')).toBeInTheDocument();
   });
 
+  it('should select the first tab when Home is pressed', async () => {
+    render(<Tabs {...testProps} />);
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+
+    // Navigate to Tab 3
+    const firstTab = screen.getByText('Tab 1');
+    firstTab.focus();
+    await userEvent.keyboard('[ArrowRight]');
+    await userEvent.keyboard('[ArrowRight]');
+    expect(screen.getByText('Content 3')).toBeInTheDocument();
+
+    // Press Home to go back to Tab 1
+    await userEvent.keyboard('[Home]');
+    expect(screen.queryByText('Content 3')).not.toBeInTheDocument();
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+  });
+
+  it('should select the last tab when End is pressed', async () => {
+    render(<Tabs {...testProps} />);
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+
+    const firstTab = screen.getByText('Tab 1');
+    firstTab.focus();
+
+    // Press End to go to the last tab
+    await userEvent.keyboard('[End]');
+    expect(screen.queryByText('Content 1')).not.toBeInTheDocument();
+    expect(screen.getByText('Content 3')).toBeInTheDocument();
+  });
+
+  it('should support Home/End in vertical mode', async () => {
+    render(<Tabs {...testProps} mode={OrientationMode.Vertical} />);
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+
+    const firstTab = screen.getByText('Tab 1');
+    firstTab.focus();
+
+    // Navigate with ArrowDown in vertical mode
+    await userEvent.keyboard('[ArrowDown]');
+    expect(screen.getByText('Content 2')).toBeInTheDocument();
+
+    // Press End to go to the last tab
+    await userEvent.keyboard('[End]');
+    expect(screen.getByText('Content 3')).toBeInTheDocument();
+
+    // Press Home to go back to first tab
+    await userEvent.keyboard('[Home]');
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+  });
+
   describe('Editable Tabs', () => {
     it('should allow editing tab titles when editable is true', async () => {
       const onTabTitleChange = vi.fn();

@@ -125,6 +125,24 @@ describe('Select', () => {
     expect(options[0]).toHaveFocus();
   });
 
+  it('should move focus to the first option by pressing Home', async () => {
+    render(<Select {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+    const options = screen.getAllByRole('option');
+    options[2].focus();
+    await userEvent.keyboard('[Home]');
+    expect(options[0]).toHaveFocus();
+  });
+
+  it('should move focus to the last option by pressing End', async () => {
+    render(<Select {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.keyboard('[End]');
+    expect(options[2]).toHaveFocus();
+  });
+
   it('should take an initial value from the form context', async () => {
     render(
       <Form initialValues={{ language: SELECT_LANGUAGES[2] }}>

@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { TabEditInput } from '../edit-input/TabEditInput';
 
-// Mock the Button component
+// Mock the Button and Label components
 vi.mock('@components/atoms', () => ({
   Button: ({ icon, onClick, label, id }: ButtonProps) => (
     <button
@@ -16,6 +16,11 @@ vi.mock('@components/atoms', () => ({
     >
       {icon} Button
     </button>
+  ),
+  Label: ({ label, inputId }: { label: string; inputId: string }) => (
+    <label htmlFor={inputId} data-testid="label">
+      {label}
+    </label>
   ),
 }));
 

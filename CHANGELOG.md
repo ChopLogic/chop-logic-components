@@ -4,6 +4,27 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.5.2] - 2026-09-15
+
+### Added
+
+- Keyboard `Home` and `End` support for list-based navigation: `Home` moves focus to the first item and `End` to the last, in `Tabs`, `Select`, and `MultiSelect` dropdowns
+- Generic `handleListKeyNavigation` utility handling `Home`/`End`, arrow keys, `Tab`, and `Escape`, with configurable `vertical`, `horizontal`, or `both` orientation
+- `ListNavigationItem` and `ListNavigationOrientation` exported types
+- Mobile slide animations for the `Dialog` component: the panel slides up from the bottom on open and down on close, using new `cl-slide-in-up` and `cl-slide-out-down` keyframes and utility classes (fade remains on tablet and larger screens)
+- `a11y` and `a11y:dev` npm scripts running axe-core accessibility checks against Storybook stories, documented in the README
+
+### Changed
+
+- `Tabs`, `Select`, and `MultiSelect` dropdown keyboard handling refactored to share the common `handleListKeyNavigation` utility
+- `Dialog` now links its title to the dialog element via `aria-labelledby` and a generated `id` for improved screen reader support
+- `Switch` hidden input is now excluded from the tab order (`tabIndex={-1}`, `aria-hidden`) so focus lands on the interactive control only
+- `ViewerImageContainer` and `ViewerOverlay` now require the `caption` prop
+
+### Fixed
+
+- `TabEditInput` now includes an associated visually hidden `Label` for the edit field, resolving a missing form label accessibility issue
+
 ## [4.5.1] - 2026-09-10
 
 ### Added

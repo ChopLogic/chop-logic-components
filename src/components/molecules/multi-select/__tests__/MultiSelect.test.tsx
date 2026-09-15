@@ -178,6 +178,26 @@ describe('MultiSelect', () => {
     expect(options[0]).toHaveFocus();
   });
 
+  it('should move focus to the first option by pressing Home', async () => {
+    render(<MultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
+    const options = screen.getAllByRole('option');
+    options[3].focus();
+    await userEvent.keyboard('[Home]');
+    expect(options[0]).toHaveFocus();
+  });
+
+  it('should move focus to the last option by pressing End', async () => {
+    render(<MultiSelect {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.keyboard('[End]');
+    expect(options[3]).toHaveFocus();
+  });
+
   it('should take an initial value from the form context', async () => {
     render(
       <Form initialValues={{ languages: [MULTI_SELECT_VALUES[2], MULTI_SELECT_VALUES[3]] }}>

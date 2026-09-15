@@ -1,4 +1,4 @@
-import { Button } from '@components/atoms';
+import { Button, Label } from '@components/atoms';
 import { ButtonView, ElementSize, IconName } from '@enums';
 import { type FC, useEffect, useRef } from 'react';
 
@@ -28,6 +28,7 @@ export const TabEditInput: FC<Props> = ({
   cancelButtonId,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const inputId = `${tabId}-input`;
 
   // Focus input when entering edit mode
   useEffect(() => {
@@ -39,9 +40,10 @@ export const TabEditInput: FC<Props> = ({
 
   return (
     <div className="cl-tab-edit-container">
+      <Label label="Edit tab title" inputId={inputId} isTextHidden required={false} />
       <input
         ref={inputRef}
-        id={`${tabId}-input`}
+        id={inputId}
         type="text"
         value={editValue}
         onChange={onInputChange}

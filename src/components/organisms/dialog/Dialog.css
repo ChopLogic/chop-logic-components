@@ -19,6 +19,8 @@
   color: var(--cl-base-font-color);
   padding: var(--cl-l-gap);
   height: 90%;
+  width: 100%;
+  box-sizing: border-box;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -35,8 +37,8 @@
 
 .cl-dialog__button {
   position: absolute;
-  right: var(--cl-s-gap);
-  top: var(--cl-s-gap);
+  right: var(--cl-xs-gap);
+  top: var(--cl-xs-gap);
 }
 
 @media (min-width: 640px) {
@@ -68,8 +70,8 @@
     height: fit-content;
     position: relative;
     min-width: 40%;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
     border-bottom-left-radius: var(--cl-border-radius);
     border-bottom-right-radius: var(--cl-border-radius);
   }
@@ -77,4 +79,21 @@
 
 .cl-dialog_closing {
   animation: cl-fade-out ease 400ms;
+}
+
+/* On mobile the layout panel is anchored to the bottom edge, so it slides
+   up on open and down on close while the backdrop keeps fading. */
+.cl-dialog__layout {
+  animation: cl-slide-in-up ease 400ms;
+}
+
+.cl-dialog_closing .cl-dialog__layout {
+  animation: cl-slide-out-down ease 400ms;
+}
+
+@media screen and (min-width: 640px) {
+  .cl-dialog__layout,
+  .cl-dialog_closing .cl-dialog__layout {
+    animation: none;
+  }
 }

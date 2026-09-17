@@ -26,6 +26,18 @@ describe('Tabs', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should have aria-orientation="horizontal" by default', () => {
+    render(<Tabs {...testProps} />);
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).toHaveAttribute('aria-orientation', 'horizontal');
+  });
+
+  it('should have aria-orientation="vertical" in vertical mode', () => {
+    render(<Tabs {...testProps} mode={OrientationMode.Vertical} />);
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).toHaveAttribute('aria-orientation', 'vertical');
+  });
+
   it('should render another tab content when user clicks on tabs', async () => {
     render(<Tabs {...testProps} />);
     expect(screen.getByText('Content 1')).toBeInTheDocument();

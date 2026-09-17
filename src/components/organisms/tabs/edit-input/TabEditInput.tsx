@@ -1,4 +1,4 @@
-import { Button, Label } from '@components/atoms';
+import { Button } from '@components/atoms';
 import { ButtonView, ElementSize, IconName } from '@enums';
 import { type FC, useEffect, useRef } from 'react';
 
@@ -40,7 +40,6 @@ export const TabEditInput: FC<Props> = ({
 
   return (
     <div className="cl-tab-edit-container">
-      <Label label="Edit tab title" inputId={inputId} isTextHidden required={false} />
       <input
         ref={inputRef}
         id={inputId}
@@ -51,6 +50,7 @@ export const TabEditInput: FC<Props> = ({
         onKeyDown={onInputKeyDown}
         className="cl-tab-edit-container__input"
         maxLength={50}
+        aria-label="Edit tab title"
       />
       <span className="cl-tab-edit-container__buttons">
         <Button

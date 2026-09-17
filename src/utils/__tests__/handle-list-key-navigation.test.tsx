@@ -317,6 +317,15 @@ describe('handleListKeyNavigation', () => {
       expect(event.preventDefault).not.toHaveBeenCalled();
     });
 
+    it('should call onClose when Escape is pressed with empty items', () => {
+      const event = createKeyboardEvent('Escape');
+
+      handleListKeyNavigation({ event, items: [], onClose });
+
+      expect(onClose).toHaveBeenCalledTimes(1);
+      expect(event.preventDefault).toHaveBeenCalled();
+    });
+
     it('should handle single item', () => {
       const singleItem = [{ id: 'item-1' }];
       document.getElementById('item-1')?.focus();

@@ -7,6 +7,7 @@ exports[`Tabs > should match the snapshot 1`] = `
     id="tabs-id"
   >
     <div
+      aria-orientation="horizontal"
       class="cl-tab-list"
       data-testid="tab-list"
       role="tablist"

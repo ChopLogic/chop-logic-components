@@ -59,7 +59,13 @@ export const TabList: FC<Props> = ({
   };
 
   return (
-    <div role="tablist" data-testid="tab-list" onKeyDown={handleListKeyDown} className={listClass}>
+    <div
+      role="tablist"
+      aria-orientation={mode === OrientationMode.Vertical ? 'vertical' : 'horizontal'}
+      data-testid="tab-list"
+      onKeyDown={handleListKeyDown}
+      className={listClass}
+    >
       {tabs.map(({ id, title, disabled }, index) => {
         return (
           <TabButton

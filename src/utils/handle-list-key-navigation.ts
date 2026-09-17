@@ -75,6 +75,10 @@ export function handleListKeyNavigation<T extends ListNavigationItem>({
   onSelect,
 }: HandleListKeyNavigationParams<T>): void {
   if (items.length === 0) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      onClose?.();
+    }
     return;
   }
 

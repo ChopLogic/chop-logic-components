@@ -35,23 +35,17 @@ function getNextIndex(currentIndex: number, totalItems: number): number {
 }
 
 function isPreviousKey(key: string, orientation: ListNavigationOrientation): boolean {
-  if (key === 'ArrowUp') {
-    return orientation === 'vertical' || orientation === 'both';
-  }
-  if (key === 'ArrowLeft') {
-    return orientation === 'horizontal' || orientation === 'both';
-  }
-  return false;
+  return (
+    (key === 'ArrowUp' && (orientation === 'vertical' || orientation === 'both')) ||
+    (key === 'ArrowLeft' && (orientation === 'horizontal' || orientation === 'both'))
+  );
 }
 
 function isNextKey(key: string, orientation: ListNavigationOrientation): boolean {
-  if (key === 'ArrowDown') {
-    return orientation === 'vertical' || orientation === 'both';
-  }
-  if (key === 'ArrowRight') {
-    return orientation === 'horizontal' || orientation === 'both';
-  }
-  return false;
+  return (
+    (key === 'ArrowDown' && (orientation === 'vertical' || orientation === 'both')) ||
+    (key === 'ArrowRight' && (orientation === 'horizontal' || orientation === 'both'))
+  );
 }
 
 /**

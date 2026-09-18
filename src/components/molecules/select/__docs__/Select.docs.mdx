@@ -5,30 +5,63 @@ import * as Select from "./Select.stories";
 
 # Select
 
-The `Select` component provides an accessible, customizable dropdown select input with keyboard navigation and flexible options management.
+The `Select` component provides an accessible, customizable dropdown select input with full keyboard navigation and flexible options management.
 
 ## Usage
 
 ```tsx
-import Select from "chop-logic-components";
+import { Select, SelectValue } from "chop-logic-components";
 
 const CountrySelector = () => {
-  const [country, setCountry] = React.useState("");
+  const [country, setCountry] = React.useState<SelectValue | undefined>();
   const countries = [
-    { value: "us", label: "United States" },
-    { value: "ca", label: "Canada" },
-    { value: "mx", label: "Mexico" },
+    { id: "us", label: "United States" },
+    { id: "ca", label: "Canada" },
+    { id: "mx", label: "Mexico" },
   ];
 
   return <Select name="country" label="Select country" options={countries} onChange={(value) => setCountry(value)} />;
 };
 ```
 
+## Accessibility
+
+The Select component implements comprehensive accessibility features following WAI-ARIA guidelines.
+
+### Keyboard Navigation
+
+| Key               | Action                                               |
+| ----------------- | ---------------------------------------------------- |
+| `Enter` / `Space` | Open dropdown (when closed) or select focused option |
+| `Escape`          | Close dropdown without selecting                     |
+| `ArrowDown`       | Move focus to next option                            |
+| `ArrowUp`         | Move focus to previous option                        |
+| `Home`            | Move focus to first option                           |
+| `End`             | Move focus to last option                            |
+| `Tab`             | Move focus out of the dropdown                       |
+
+### ARIA Attributes
+
+- Uses `role="listbox"` for the dropdown list
+- Each option has `role="option"` with appropriate `aria-selected` state
+- The trigger button has `aria-haspopup="listbox"` and `aria-expanded`
+- Required fields have `aria-required="true"`
+- Label is properly associated with the select control
+
+### Focus Management
+
+- Focus is trapped within the dropdown when open
+- Focus returns to the trigger button when the dropdown is closed
+- Disabled options are skipped during keyboard navigation
+
 ## Best Practices
 
-1. _Option Organization_: Sort options logically (alphabetically, numerically, etc.) and group related options when appropriate.
-2. _Selection Clarity_: Use clear, descriptive labels.
-3. _Performance_: Virtualize long option lists and memoize options when possible.
+1. **Clear Labeling**: Always provide a descriptive label that explains what the user should select.
+2. **Option Organization**: Sort options logically (alphabetically, by frequency of use) and keep the list manageable.
+3. **Placeholder Text**: Use helpful placeholder text that guides users (e.g., "Select a country" rather than "Choose").
+4. **Required Fields**: Clearly indicate required fields using the `required` prop.
+5. **Loading States**: Use `isLoading` when fetching options asynchronously to provide feedback.
+6. **Disabled States**: Provide visual feedback when selection is not available.
 
 ## Props
 

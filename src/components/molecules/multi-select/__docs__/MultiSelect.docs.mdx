@@ -5,35 +5,66 @@ import * as MultiSelect from "./MultiSelect.stories";
 
 # MultiSelect
 
-A multi-selection input component that allows users to select multiple options from a dropdown list. Supports search functionality, custom options, and flexible selection management with proper accessibility features.
+A multi-selection input component that allows users to select multiple options from a dropdown list. Supports full keyboard navigation and proper accessibility features.
 
 ## Usage
 
 ```tsx
-import MultiSelect from "chop-logic-components";
+import { MultiSelect } from "chop-logic-components";
+import type { SelectValue } from "chop-logic-components";
 
 const PreferencesForm = () => {
-  const [selected, setSelected] = React.useState([]);
+  const [selected, setSelected] = React.useState<SelectValue[]>([]);
   const options = [
-    { value: "react", label: "React" },
-    { value: "vue", label: "Vue" },
-    { value: "angular", label: "Angular" },
+    { id: "react", label: "React" },
+    { id: "vue", label: "Vue" },
+    { id: "angular", label: "Angular" },
   ];
 
-  return <MultiSelect name="frameworks" label="Select preferred frameworks" options={options} onChange={(values) => setSelected(values)} />;
+  return <MultiSelect name="frameworks" label="Select preferred frameworks" options={options} onChange={(values) => setSelected(values ?? [])} />;
 };
 ```
 
+## Accessibility
+
+The MultiSelect component implements comprehensive accessibility features following WAI-ARIA guidelines.
+
+### Keyboard Navigation
+
+| Key               | Action                                                            |
+| ----------------- | ----------------------------------------------------------------- |
+| `Enter` / `Space` | Open dropdown (when closed) or toggle selection on focused option |
+| `Escape`          | Close dropdown                                                    |
+| `ArrowDown`       | Move focus to next option                                         |
+| `ArrowUp`         | Move focus to previous option                                     |
+| `Home`            | Move focus to first option                                        |
+| `End`             | Move focus to last option                                         |
+| `Tab`             | Move focus out of the dropdown                                    |
+
+### ARIA Attributes
+
+- Uses `role="listbox"` with `aria-multiselectable="true"` for the dropdown list
+- Each option has `role="option"` with appropriate `aria-selected` state
+- The trigger button has `aria-haspopup="listbox"` and `aria-expanded`
+- Required fields have `aria-required="true"`
+- Label is properly associated with the multi-select control
+
+### Focus Management
+
+- Focus is trapped within the dropdown when open
+- Focus returns to the trigger button when the dropdown is closed
+- Disabled options are skipped during keyboard navigation
+
 ## Best Practices
 
-1. _Clear Labeling_: Always provide a descriptive label that explains what options are available
-2. _Accessibility_: Ensure proper ARIA labels and keyboard navigation for the dropdown and selection items
-3. _Option Organization_: Group related options logically and consider alphabetical sorting for long lists
-4. _Selection Feedback_: Clearly indicate selected items and provide visual feedback when options are toggled
-5. _Search Functionality_: Implement search/filter for lists with more than 10 options to improve usability
-6. _Placeholder Text_: Use helpful placeholder text that guides users on what to select
-7. _Required Fields_: Mark required fields clearly and provide validation feedback
-8. _Disabled States_: Use disabled state appropriately when selection is not currently available
+1. **Clear Labeling**: Always provide a descriptive label that explains what options are available.
+2. **Option Organization**: Group related options logically and consider alphabetical sorting for long lists.
+3. **Selection Feedback**: The component clearly indicates selected items with checkmarks and a count in the trigger.
+4. **Placeholder Text**: Use helpful placeholder text that guides users on what to select.
+5. **Required Fields**: Mark required fields clearly using the `required` prop.
+6. **Loading States**: Use `isLoading` when fetching options asynchronously.
+7. **Disabled States**: Use disabled state when selection is not currently available.
+8. **Reasonable List Size**: For very long lists (50+ items), consider using a searchable select or categorized options.
 
 ## Props
 

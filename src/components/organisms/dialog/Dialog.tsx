@@ -1,15 +1,17 @@
 import { Button, Header, Portal } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
-import { useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
+import { useElementIds, useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
 import type { DialogProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
 
 import './Dialog.css';
 
-const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...rest }) => {
+const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, id, ...rest }) => {
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
+  const { elementId } = useElementIds(id);
+  const titleId = `${elementId}-title`;
 
   const modalRef = useRef(null);
 
@@ -23,7 +25,15 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
   return (
     <Portal>
       <div className={getClassName(['cl-dialog', { 'cl-dialog_closing': isClosing }])}>
-        <div ref={modalRef} role="dialog" aria-modal="true" {...rest} className="cl-dialog__layout">
+        <div
+          ref={modalRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          id={elementId}
+          {...rest}
+          className="cl-dialog__layout"
+        >
           <Button
             icon={IconName.X}
             view={ButtonView.Icon}
@@ -32,7 +42,7 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, ...
             className="cl-dialog__button"
           />
           <header>
-            <Header as="h3" icon={icon}>
+            <Header as="h3" icon={icon} id={titleId}>
               {title}
             </Header>
           </header>

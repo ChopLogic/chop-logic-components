@@ -99,12 +99,10 @@ describe('Select', () => {
 
     const options = screen.getAllByRole('option');
     options[0].focus();
+    // Tab should move focus out of the dropdown (natural browser behavior)
+    // This is the correct accessibility behavior - Tab navigates between components, not within
     await userEvent.tab();
-    expect(options[1]).toHaveFocus();
-    await userEvent.tab();
-    expect(options[2]).toHaveFocus();
-    await userEvent.tab();
-    expect(options[0]).toHaveFocus();
+    expect(options[0]).not.toHaveFocus();
   });
 
   it('should move focus to the next option by pressing ArrowDown button', async () => {
@@ -123,6 +121,24 @@ describe('Select', () => {
     options[1].focus();
     await userEvent.keyboard('[ArrowUp]');
     expect(options[0]).toHaveFocus();
+  });
+
+  it('should move focus to the first option by pressing Home', async () => {
+    render(<Select {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+    const options = screen.getAllByRole('option');
+    options[2].focus();
+    await userEvent.keyboard('[Home]');
+    expect(options[0]).toHaveFocus();
+  });
+
+  it('should move focus to the last option by pressing End', async () => {
+    render(<Select {...testProps} />);
+    await userEvent.click(screen.getByRole('combobox'));
+    const options = screen.getAllByRole('option');
+    options[0].focus();
+    await userEvent.keyboard('[End]');
+    expect(options[2]).toHaveFocus();
   });
 
   it('should take an initial value from the form context', async () => {

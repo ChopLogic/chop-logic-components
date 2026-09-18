@@ -238,6 +238,24 @@
   }
 }
 
+@keyframes cl-slide-in-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cl-slide-out-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
 @keyframes cl-shimmer {
   0% {
     transform: translateX(-100%);
@@ -263,4 +281,12 @@
 
 .cl-fade-out {
   animation: cl-fade-out ease 400ms;
+}
+
+.cl-slide-in-up {
+  animation: cl-slide-in-up ease 400ms;
+}
+
+.cl-slide-out-down {
+  animation: cl-slide-out-down ease 400ms;
 }

@@ -28,6 +28,7 @@ export const TabEditInput: FC<Props> = ({
   cancelButtonId,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const inputId = `${tabId}-input`;
 
   // Focus input when entering edit mode
   useEffect(() => {
@@ -41,7 +42,7 @@ export const TabEditInput: FC<Props> = ({
     <div className="cl-tab-edit-container">
       <input
         ref={inputRef}
-        id={`${tabId}-input`}
+        id={inputId}
         type="text"
         value={editValue}
         onChange={onInputChange}
@@ -49,6 +50,7 @@ export const TabEditInput: FC<Props> = ({
         onKeyDown={onInputKeyDown}
         className="cl-tab-edit-container__input"
         maxLength={50}
+        aria-label="Edit tab title"
       />
       <span className="cl-tab-edit-container__buttons">
         <Button

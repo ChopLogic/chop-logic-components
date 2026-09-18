@@ -133,13 +133,14 @@ describe('handleListKeyNavigation', () => {
       expect(document.activeElement?.id).toBe('item-3');
     });
 
-    it('should focus the next item when Tab is pressed', () => {
-      document.getElementById('item-1')?.focus();
+    it('should NOT respond to Tab - allows natural focus movement', () => {
+      document.getElementById('item-2')?.focus();
       const event = createKeyboardEvent('Tab');
 
       handleListKeyNavigation({ event, items, orientation: 'vertical' });
 
       expect(document.activeElement?.id).toBe('item-2');
+      expect(event.preventDefault).not.toHaveBeenCalled();
     });
 
     it('should NOT respond to ArrowLeft in vertical orientation', () => {

@@ -90,7 +90,7 @@ describe('handleDropdownListKeyPress', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  it('focuses on the next option when Tab is pressed', () => {
+  it('does NOT intercept Tab - allows natural focus movement out of the dropdown', () => {
     document.getElementById('option-1')?.focus();
     const event = new KeyboardEvent('keydown', { key: 'Tab' });
     handleDropdownListKeyPress({
@@ -99,7 +99,9 @@ describe('handleDropdownListKeyPress', () => {
       onClose,
     });
 
-    expect(document.activeElement?.id).toBe('option-2');
+    // Tab should not change focus within the dropdown - it allows natural browser behavior
+    // to move focus out of the component (accessibility best practice)
+    expect(document.activeElement?.id).toBe('option-1');
   });
 
   it('focuses on the first option when Home is pressed', () => {

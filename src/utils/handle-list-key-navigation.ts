@@ -45,7 +45,7 @@ function isPreviousKey(key: string, orientation: ListNavigationOrientation): boo
 }
 
 function isNextKey(key: string, orientation: ListNavigationOrientation): boolean {
-  if (key === 'ArrowDown' || key === 'Tab') {
+  if (key === 'ArrowDown') {
     return orientation === 'vertical' || orientation === 'both';
   }
   if (key === 'ArrowRight') {
@@ -62,7 +62,6 @@ function isNextKey(key: string, orientation: ListNavigationOrientation): boolean
  * - End: Navigate to last item
  * - ArrowUp/ArrowDown: Navigate previous/next (vertical orientation)
  * - ArrowLeft/ArrowRight: Navigate previous/next (horizontal orientation)
- * - Tab: Navigate to next item (vertical orientation)
  * - Escape: Close the list (calls onClose callback)
  *
  * When `onSelect` is provided, selecting an item will also trigger the callback,
@@ -111,8 +110,7 @@ export function handleListKeyNavigation<T extends ListNavigationItem>({
     }
 
     case 'ArrowDown':
-    case 'ArrowRight':
-    case 'Tab': {
+    case 'ArrowRight': {
       if (isNextKey(event.key, orientation)) {
         event.preventDefault();
         newIndex = getNextIndex(currentIndex, items.length);

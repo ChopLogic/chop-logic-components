@@ -33,6 +33,7 @@
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation: cl-slide-in-up ease 400ms;
 }
 
 .cl-dialog__button {
@@ -83,10 +84,6 @@
 
 /* On mobile the layout panel is anchored to the bottom edge, so it slides
    up on open and down on close while the backdrop keeps fading. */
-.cl-dialog__layout {
-  animation: cl-slide-in-up ease 400ms;
-}
-
 .cl-dialog_closing .cl-dialog__layout {
   animation: cl-slide-out-down ease 400ms;
 }

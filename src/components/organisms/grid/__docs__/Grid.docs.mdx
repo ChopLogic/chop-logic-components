@@ -5,7 +5,7 @@ import * as GridStories from "./Grid.stories";
 
 # Grid
 
-The `Grid` component provides a flexible, interactive data table with column definitions, selection capabilities, and customizable rendering.
+The `Grid` component provides a flexible, interactive data table with column definitions, selection capabilities, sorting functionality, and customizable rendering.
 
 ### Usage
 
@@ -28,6 +28,69 @@ const UserGrid = () => {
 };
 ```
 
+## Column Sorting
+
+The Grid supports column sorting with click-to-sort buttons in column headers. Users can sort data alphabetically by clicking the sort button, cycling through ascending, descending, and unsorted states.
+
+### Sort Cycle
+
+Clicking a sort button cycles through three states:
+
+1. **Unsorted** (initial) → click → **Ascending** (A-Z)
+2. **Ascending** → click → **Descending** (Z-A)
+3. **Descending** → click → **Unsorted** (original order)
+
+Clicking a different column's sort button clears the previous sort and starts ascending on the new column.
+
+### Uncontrolled Mode
+
+In uncontrolled mode, the Grid manages sort state internally. This is the simplest approach for basic sorting needs.
+
+```tsx
+import { Grid } from "chop-logic-components";
+
+// Simple uncontrolled sorting - Grid manages state internally
+<Grid columns={columns} data={data} sortableByDefault={true} onSortChange={(state) => console.log("Sort changed:", state)} />;
+```
+
+### Controlled Mode
+
+In controlled mode, the parent component manages sort state via props. This is useful for synchronizing with application state or implementing server-side sorting.
+
+```tsx
+import { useState } from "react";
+import { Grid, GridSortDirection } from "chop-logic-components";
+
+// Controlled sorting - parent manages state
+const SortableGrid = () => {
+  const [sortState, setSortState] = useState({
+    field: "name",
+    direction: GridSortDirection.Asc,
+  });
+
+  return <Grid columns={columns} data={data} sortableByDefault={true} sortField={sortState.field} sortDirection={sortState.direction} onSortChange={(state) => setSortState(state)} />;
+};
+```
+
+### Mixed Sortability
+
+You can configure sortability per column using the `sortable` property. This allows you to make some columns sortable while keeping others (like action columns) non-sortable.
+
+```tsx
+import { Grid } from "chop-logic-components";
+
+// Some columns sortable, others not
+const columns = [
+  { field: "name", title: "Name", sortable: true },
+  { field: "email", title: "Email", sortable: true },
+  { field: "actions", title: "Actions", sortable: false },
+];
+
+<Grid columns={columns} data={data} />;
+```
+
+When `sortableByDefault` is `true`, all columns are sortable unless explicitly marked with `sortable: false`. When `sortableByDefault` is `false` (the default), only columns with `sortable: true` are sortable.
+
 ## Best Practices
 
 1. _Performance_:
@@ -42,6 +105,10 @@ const UserGrid = () => {
    - Provide clear visual feedback
    - Consider bulk actions for selected items
    - Disable non-applicable rows
+4. _Sorting_:
+   - Use `sortableByDefault` for data-heavy grids where all columns should be sortable
+   - Use `sortable: false` on columns that contain non-sortable content (like action buttons)
+   - For server-side sorting, use controlled mode and handle data fetching in `onSortChange`
 
 ## Props
 

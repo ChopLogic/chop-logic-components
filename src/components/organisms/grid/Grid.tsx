@@ -16,6 +16,10 @@ const Grid: FC<GridProps> = ({
   renderDataItem,
   caption,
   selectable = false,
+  sortableByDefault = false,
+  sortField,
+  sortDirection,
+  onSortChange,
   className,
   ...rest
 }) => {
@@ -28,7 +32,10 @@ const Grid: FC<GridProps> = ({
     handleDeselectRowById,
     handleSelectRowById,
     selectedIds,
-  } = useGridController({ id, data, onSelect });
+    sortState,
+    sortedData,
+    handleSortClick,
+  } = useGridController({ id, data, onSelect, sortField, sortDirection, onSortChange });
 
   return (
     <div className="cl-grid__wrapper">
@@ -43,10 +50,13 @@ const Grid: FC<GridProps> = ({
           deselectAll={handleDeselectAll}
           isAllSelected={isAllSelected}
           isAllCheckboxDisabled={isAllCheckboxDisabled}
+          sortableByDefault={sortableByDefault}
+          sortState={sortState}
+          onSortClick={handleSortClick}
         />
         <GridBody
           columns={columns}
-          data={data}
+          data={sortedData}
           selectable={selectable}
           selectRowById={handleSelectRowById}
           deselectRowById={handleDeselectRowById}

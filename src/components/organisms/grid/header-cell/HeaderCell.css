@@ -1,0 +1,11 @@
+.cl-grid-header-cell_sortable .cl-grid-header-cell__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cl-s-gap);
+}
+
+.cl-grid-header-cell__title {
+  flex: 1;
+  min-width: 0;
+}

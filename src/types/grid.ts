@@ -1,6 +1,12 @@
+import type { GridSortDirection } from '@enums';
 import type { ReactElement } from 'react';
 
 import type { ChopLogicComponentProps } from './_common';
+
+export type GridSortState = {
+  field: string | null;
+  direction: GridSortDirection | null;
+};
 
 export interface GridProps extends ChopLogicComponentProps {
   columns: GridColumn[];
@@ -9,6 +15,10 @@ export interface GridProps extends ChopLogicComponentProps {
   selectable?: boolean;
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
+  sortableByDefault?: boolean;
+  sortField?: string;
+  sortDirection?: GridSortDirection;
+  onSortChange?: (state: GridSortState) => void;
 }
 
 export type GridColumn = {
@@ -17,6 +27,7 @@ export type GridColumn = {
   component?: ReactElement;
   highlighted?: boolean;
   className?: string;
+  sortable?: boolean;
 };
 
 export type GridItem = {

@@ -17,7 +17,14 @@ export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';
 export type { GalleryItem, GalleryMode, GalleryProps } from './gallery';
-export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
+export type {
+  GridColumn,
+  GridItem,
+  GridProps,
+  GridRowValue,
+  GridSortState,
+  RenderDataItemCallback,
+} from './grid';
 export type { HeaderProps } from './header';
 export type {
   ArtDirectionSource,

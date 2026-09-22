@@ -13,11 +13,11 @@ export type SortButtonProps = {
 const getIcon = (direction: GridSortDirection | null): IconName => {
   switch (direction) {
     case GridSortDirection.Asc:
-      return IconName.ChevronsUp;
+      return IconName.ArrowUpCircle;
     case GridSortDirection.Desc:
-      return IconName.ChevronsDown;
+      return IconName.ArrowDownCircle;
     default:
-      return IconName.PlusSquare;
+      return IconName.Circle;
   }
 };
 

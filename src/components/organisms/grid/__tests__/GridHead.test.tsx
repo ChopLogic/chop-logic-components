@@ -384,11 +384,11 @@ describe('GridHead', () => {
 
       // Name should have ChevronsUp (unsorted)
       const nameIcon = nameButton.querySelector('.cl-icon');
-      expect(nameIcon).toHaveClass('chop-icon__plus-square');
+      expect(nameIcon).toHaveClass('chop-icon__circle');
 
       // Age should have ChevronDown (sorted desc)
       const ageIcon = ageButton.querySelector('.cl-icon');
-      expect(ageIcon).toHaveClass('chop-icon__chevrons-down');
+      expect(ageIcon).toHaveClass('chop-icon__arrow-down-circle');
     });
   });
 

@@ -76,7 +76,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__plus-square cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
               />
             </button>
           </div>
@@ -99,7 +99,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__plus-square cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
               />
             </button>
           </div>
@@ -122,7 +122,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__plus-square cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
               />
             </button>
           </div>
@@ -160,7 +160,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__chevrons-up cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__arrow-up-circle cl-icon_small"
               />
             </button>
           </div>
@@ -183,7 +183,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__plus-square cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
               />
             </button>
           </div>
@@ -206,7 +206,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               type="button"
             >
               <span
-                class="cl-icon-button__icon cl-icon chop-icon__plus-square cl-icon_small"
+                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
               />
             </button>
           </div>

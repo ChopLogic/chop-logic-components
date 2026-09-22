@@ -2,7 +2,7 @@ import { GridSortDirection } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Grid from '../Grid';
-import { ControlledSortGridExample, GridExample } from './Grid.example';
+import { GridExample } from './Grid.example';
 
 const meta: Meta<typeof Grid> = {
   component: GridExample,
@@ -320,21 +320,6 @@ export const SortableGrid: Story = {
       { title: 'Phone', field: 'phone' },
     ],
     data: sampleData,
-  },
-};
-
-export const ControlledSortGrid: Story = {
-  render: (args) => <ControlledSortGridExample {...args} />,
-  args: {
-    caption: 'Controlled Sort Grid',
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
-    data: sampleData,
-    sortableByDefault: true,
   },
 };
 

@@ -87,7 +87,7 @@ describe('GridHeaderCell', () => {
 
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
-      expect(icon).toHaveClass('chop-icon__plus-square');
+      expect(icon).toHaveClass('chop-icon__circle');
     });
 
     it('should display ChevronsUp icon when sortDirection is asc', () => {
@@ -108,7 +108,7 @@ describe('GridHeaderCell', () => {
 
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
-      expect(icon).toHaveClass('chop-icon__chevrons-up');
+      expect(icon).toHaveClass('chop-icon__arrow-up-circle');
     });
 
     it('should display ChevronsDown icon when sortDirection is desc', () => {
@@ -129,7 +129,7 @@ describe('GridHeaderCell', () => {
 
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
-      expect(icon).toHaveClass('chop-icon__chevrons-down');
+      expect(icon).toHaveClass('chop-icon__arrow-down-circle');
     });
 
     it('should default to null direction (PlusSquare) when sortDirection is undefined', () => {
@@ -145,7 +145,7 @@ describe('GridHeaderCell', () => {
 
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
-      expect(icon).toHaveClass('chop-icon__plus-square');
+      expect(icon).toHaveClass('chop-icon__circle');
     });
   });
 

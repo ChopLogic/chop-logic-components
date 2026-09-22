@@ -17,7 +17,7 @@ describe('SortButton', () => {
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
       expect(icon).toBeInTheDocument();
-      expect(icon).toHaveClass('chop-icon__plus-square');
+      expect(icon).toHaveClass('chop-icon__circle');
     });
 
     it('should render ChevronsUp icon when direction is asc', () => {
@@ -25,7 +25,7 @@ describe('SortButton', () => {
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
       expect(icon).toBeInTheDocument();
-      expect(icon).toHaveClass('chop-icon__chevrons-up');
+      expect(icon).toHaveClass('chop-icon__arrow-up-circle');
     });
 
     it('should render ChevronsDown icon when direction is desc', () => {
@@ -33,7 +33,7 @@ describe('SortButton', () => {
       const button = screen.getByRole('button');
       const icon = button.querySelector('.cl-icon');
       expect(icon).toBeInTheDocument();
-      expect(icon).toHaveClass('chop-icon__chevrons-down');
+      expect(icon).toHaveClass('chop-icon__arrow-down-circle');
     });
   });
 

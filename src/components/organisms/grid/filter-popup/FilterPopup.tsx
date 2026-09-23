@@ -1,0 +1,189 @@
+import './FilterPopup.css';
+
+import { PrimaryButton } from '@components/atoms/button/primary-button/PrimaryButton';
+import { SecondaryButton } from '@components/atoms/button/secondary-button/SecondaryButton';
+import { Checkbox, TextInput } from '@components/molecules';
+import { GridFilterType } from '@enums';
+import { useClickOutside, useKeyPress, useModalFocusTrap } from '@hooks';
+import type { GridFilterCondition } from '@types';
+import {
+  type ChangeEvent,
+  type FC,
+  type RefObject,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+} from 'react';
+
+import { FILTER_TYPE_LABELS, FILTER_TYPES } from './FilterPopup.helpers';
+
+export type FilterPopupProps = {
+  columnTitle?: string;
+  popupId: string;
+  hasActiveConditions: boolean;
+  buttonRef?: RefObject<HTMLButtonElement | null>;
+  onApply: (condition: GridFilterCondition) => void;
+  onClear: () => void;
+  onCancel: () => void;
+};
+
+export const FilterPopup: FC<FilterPopupProps> = ({
+  columnTitle,
+  popupId,
+  hasActiveConditions,
+  buttonRef,
+  onApply,
+  onClear,
+  onCancel,
+}) => {
+  const [type, setType] = useState<GridFilterType>(GridFilterType.StartsWith);
+  const [value, setValue] = useState<string>('');
+  const [caseSensitive, setCaseSensitive] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const popupRef = useRef<HTMLDivElement>(null);
+  const firstInputRef = useRef<HTMLInputElement>(null);
+  const uniqueId = useId();
+
+  const ariaLabel = columnTitle ? `Filter ${columnTitle}` : 'Filter column';
+  const typeGroupName = `filter-type-${popupId}-${uniqueId}`;
+  const textInputId = `filter-value-${popupId}-${uniqueId}`;
+  const caseSensitiveId = `filter-case-${popupId}-${uniqueId}`;
+
+  // Focus the first control on open
+  useEffect(() => {
+    if (firstInputRef.current) {
+      firstInputRef.current.focus();
+    }
+  }, []);
+
+  // Close on click outside (excluding the filter button itself)
+  useClickOutside({
+    ref: popupRef,
+    onClickOutsideHandler: onCancel,
+    dependentRef: buttonRef,
+  });
+
+  // Close on Escape key
+  useKeyPress({
+    keyCode: 'Escape',
+    ref: popupRef,
+    onKeyPress: onCancel,
+  });
+
+  // Focus trap within popup
+  useModalFocusTrap({
+    modalRef: popupRef,
+    isOpened: true,
+  });
+
+  const handleTypeChange = (selectedType: GridFilterType) => {
+    setType(selectedType);
+    setError(null);
+  };
+
+  const handleValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    if (error && e.target.value.trim().length > 0) {
+      setError(null);
+    }
+  };
+
+  const handleCaseSensitiveChange = () => {
+    setCaseSensitive((prev) => !prev);
+  };
+
+  const handleApply = () => {
+    if (value.trim().length === 0) {
+      setError('Filter value is required');
+      return;
+    }
+
+    onApply({
+      type,
+      value,
+      caseSensitive,
+    });
+  };
+
+  const handleClear = () => {
+    onClear();
+  };
+
+  const handleCancel = () => {
+    onCancel();
+  };
+
+  return (
+    <div
+      ref={popupRef}
+      id={popupId}
+      role="dialog"
+      aria-modal="true"
+      aria-label={ariaLabel}
+      className="cl-grid-filter-popup"
+    >
+      <div className="cl-grid-filter-popup__types" role="radiogroup" aria-label="Filter type">
+        {FILTER_TYPES.map((filterType, index) => (
+          <label key={filterType} className="cl-grid-filter-popup__type-option">
+            <input
+              ref={index === 0 ? firstInputRef : undefined}
+              type="radio"
+              name={typeGroupName}
+              value={filterType}
+              checked={type === filterType}
+              onChange={() => handleTypeChange(filterType)}
+              aria-label={FILTER_TYPE_LABELS[filterType]}
+            />
+            <span className="cl-grid-filter-popup__type-label">
+              {FILTER_TYPE_LABELS[filterType]}
+            </span>
+          </label>
+        ))}
+      </div>
+
+      <div className="cl-grid-filter-popup__field">
+        <TextInput
+          stateless
+          id={textInputId}
+          name="filter-value"
+          label="Filter value"
+          value={value}
+          onChange={handleValueChange}
+          maxLength={1000}
+          placeholder="Enter filter value..."
+          clearable={false}
+        />
+      </div>
+
+      {error && (
+        <div className="cl-grid-filter-popup__error" role="alert">
+          {error}
+        </div>
+      )}
+
+      <div className="cl-grid-filter-popup__toggle">
+        <Checkbox
+          stateless
+          id={caseSensitiveId}
+          name="case-sensitive"
+          label="Case sensitive"
+          checked={caseSensitive}
+          onChange={handleCaseSensitiveChange}
+        />
+      </div>
+
+      <div className="cl-grid-filter-popup__actions">
+        <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
+        <SecondaryButton text="Cancel" onClick={handleCancel} aria-label="Cancel filter" />
+        <SecondaryButton
+          text="Clear"
+          onClick={handleClear}
+          disabled={!hasActiveConditions}
+          aria-label="Clear filter"
+        />
+      </div>
+    </div>
+  );
+};

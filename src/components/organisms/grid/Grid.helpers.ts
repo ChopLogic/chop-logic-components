@@ -1,6 +1,8 @@
-import { GridSortDirection } from '@enums';
+import { GridFilterType, GridSortDirection } from '@enums';
 import type {
   GridColumn,
+  GridFilterCondition,
+  GridFilterState,
   GridItem,
   GridRowValue,
   GridSortState,
@@ -92,4 +94,45 @@ export function getNextSortState(current: GridSortState, clickedField: string): 
     case GridSortDirection.Desc:
       return { field: null, direction: null };
   }
+}
+
+function isActiveCondition(condition: GridFilterCondition): boolean {
+  return condition.value.trim().length > 0;
+}
+
+function coerceFieldValue(value: unknown): string {
+  return value === null || value === undefined ? '' : String(value);
+}
+
+function matchesCondition(fieldValue: unknown, condition: GridFilterCondition): boolean {
+  const haystackRaw = coerceFieldValue(fieldValue);
+  const needleRaw = condition.value;
+
+  const haystack = condition.caseSensitive ? haystackRaw : haystackRaw.toLowerCase();
+  const needle = condition.caseSensitive ? needleRaw : needleRaw.toLowerCase();
+
+  switch (condition.type) {
+    case GridFilterType.StartsWith:
+      return haystack.startsWith(needle);
+    case GridFilterType.Includes:
+      return haystack.includes(needle);
+    case GridFilterType.Equals:
+      return haystack === needle;
+    default:
+      return true;
+  }
+}
+
+export function filterGridData(data: GridItem[], filterState: GridFilterState): GridItem[] {
+  const activeEntries = Object.entries(filterState)
+    .map(([field, conditions]) => [field, conditions.filter(isActiveCondition)] as const)
+    .filter(([, conditions]) => conditions.length > 0);
+
+  if (activeEntries.length === 0) return data;
+
+  return data.filter((item) =>
+    activeEntries.every(([field, conditions]) =>
+      conditions.every((condition) => matchesCondition(item[field], condition)),
+    ),
+  );
 }

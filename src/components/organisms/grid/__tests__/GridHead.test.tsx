@@ -1,9 +1,9 @@
-import { GridSortDirection } from '@enums';
+import { GridFilterType, GridSortDirection } from '@enums';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import type { GridColumn, GridSortState } from '@types';
+import type { GridColumn, GridFilterState, GridSortState } from '@types';
 import { describe, expect, it, vi } from 'vitest';
-import { GridHead } from '../head/GridHead';
+import { GridHead, isFilterable } from '../head/GridHead';
 
 describe('GridHead', () => {
   const columns: GridColumn[] = [
@@ -17,6 +17,8 @@ describe('GridHead', () => {
     direction: null,
   };
 
+  const defaultFilterState: GridFilterState = {};
+
   const testProps = {
     columns,
     gridId: 'test-grid-id',
@@ -27,6 +29,10 @@ describe('GridHead', () => {
     sortableByDefault: false,
     sortState: defaultSortState,
     onSortClick: vi.fn(),
+    filterableByDefault: false,
+    filterState: defaultFilterState,
+    onApplyFilter: vi.fn(),
+    onClearFilter: vi.fn(),
   };
 
   it('should match the snapshot', () => {
@@ -445,6 +451,337 @@ describe('GridHead', () => {
             selectable={false}
             sortState={sortState}
           />
+        </table>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
+});
+
+describe('isFilterable helper', () => {
+  describe('column.filterable is explicitly true', () => {
+    it('should return true when column.filterable=true and filterableByDefault=true', () => {
+      const column: GridColumn = { field: 'test', filterable: true };
+      expect(isFilterable(column, true)).toBe(true);
+    });
+
+    it('should return true when column.filterable=true and filterableByDefault=false', () => {
+      const column: GridColumn = { field: 'test', filterable: true };
+      expect(isFilterable(column, false)).toBe(true);
+    });
+  });
+
+  describe('column.filterable is explicitly false', () => {
+    it('should return false when column.filterable=false and filterableByDefault=true', () => {
+      const column: GridColumn = { field: 'test', filterable: false };
+      expect(isFilterable(column, true)).toBe(false);
+    });
+
+    it('should return false when column.filterable=false and filterableByDefault=false', () => {
+      const column: GridColumn = { field: 'test', filterable: false };
+      expect(isFilterable(column, false)).toBe(false);
+    });
+  });
+
+  describe('column.filterable is omitted', () => {
+    it('should return true when column.filterable is omitted and filterableByDefault=true', () => {
+      const column: GridColumn = { field: 'test' };
+      expect(isFilterable(column, true)).toBe(true);
+    });
+
+    it('should return false when column.filterable is omitted and filterableByDefault=false', () => {
+      const column: GridColumn = { field: 'test' };
+      expect(isFilterable(column, false)).toBe(false);
+    });
+  });
+});
+
+describe('GridHead filter prop threading', () => {
+  const defaultSortState: GridSortState = {
+    field: null,
+    direction: null,
+  };
+
+  const defaultFilterState: GridFilterState = {};
+
+  const baseProps = {
+    columns: [
+      { title: 'Name', field: 'name' },
+      { title: 'Age', field: 'age' },
+    ] as GridColumn[],
+    gridId: 'test-grid-id',
+    selectable: false,
+    selectAll: vi.fn(),
+    deselectAll: vi.fn(),
+    isAllSelected: false,
+    sortableByDefault: false,
+    sortState: defaultSortState,
+    onSortClick: vi.fn(),
+    filterableByDefault: false,
+    filterState: defaultFilterState,
+    onApplyFilter: vi.fn(),
+    onClearFilter: vi.fn(),
+  };
+
+  describe('filterability resolution with explicit column.filterable values', () => {
+    it('should render filter button when column.filterable is explicitly true', () => {
+      const columnsWithExplicitFilterable: GridColumn[] = [
+        { title: 'Filterable Col', field: 'filterableField', filterable: true },
+        { title: 'Non-filterable Col', field: 'nonFilterableField', filterable: false },
+      ];
+
+      render(
+        <table>
+          <GridHead
+            {...baseProps}
+            columns={columnsWithExplicitFilterable}
+            filterableByDefault={false}
+          />
+        </table>,
+      );
+
+      const filterButtons = screen.getAllByRole('button', { name: /filter/i });
+      expect(filterButtons).toHaveLength(1);
+      expect(screen.getByRole('button', { name: /filter by filterable col/i })).toBeInTheDocument();
+    });
+
+    it('should NOT render filter button when column.filterable is explicitly false', () => {
+      const columnsWithExplicitFalse: GridColumn[] = [
+        { title: 'Non-filterable Col', field: 'nonFilterableField', filterable: false },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={columnsWithExplicitFalse} filterableByDefault={true} />
+        </table>,
+      );
+
+      expect(screen.queryByRole('button', { name: /filter/i })).not.toBeInTheDocument();
+    });
+  });
+
+  describe('filterability resolution with filterableByDefault', () => {
+    it('should render filter buttons for all columns when filterableByDefault is true and no explicit filterable', () => {
+      const columnsWithoutFilterable: GridColumn[] = [
+        { title: 'Col A', field: 'fieldA' },
+        { title: 'Col B', field: 'fieldB' },
+        { title: 'Col C', field: 'fieldC' },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={columnsWithoutFilterable} filterableByDefault={true} />
+        </table>,
+      );
+
+      const filterButtons = screen.getAllByRole('button', { name: /filter/i });
+      expect(filterButtons).toHaveLength(3);
+    });
+
+    it('should NOT render filter buttons when filterableByDefault is false and no explicit filterable', () => {
+      const columnsWithoutFilterable: GridColumn[] = [
+        { title: 'Col A', field: 'fieldA' },
+        { title: 'Col B', field: 'fieldB' },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={columnsWithoutFilterable} filterableByDefault={false} />
+        </table>,
+      );
+
+      expect(screen.queryByRole('button', { name: /filter/i })).not.toBeInTheDocument();
+    });
+  });
+
+  describe('explicit filterable overrides filterableByDefault', () => {
+    it('should render filter button when column.filterable=true overrides filterableByDefault=false', () => {
+      const mixedColumns: GridColumn[] = [
+        { title: 'Explicit True', field: 'explicitTrue', filterable: true },
+        { title: 'Implicit False', field: 'implicitFalse' },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={mixedColumns} filterableByDefault={false} />
+        </table>,
+      );
+
+      const filterButtons = screen.getAllByRole('button', { name: /filter/i });
+      expect(filterButtons).toHaveLength(1);
+      expect(screen.getByRole('button', { name: /filter by explicit true/i })).toBeInTheDocument();
+    });
+
+    it('should NOT render filter button when column.filterable=false overrides filterableByDefault=true', () => {
+      const mixedColumns: GridColumn[] = [
+        { title: 'Explicit False', field: 'explicitFalse', filterable: false },
+        { title: 'Implicit True', field: 'implicitTrue' },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={mixedColumns} filterableByDefault={true} />
+        </table>,
+      );
+
+      const filterButtons = screen.getAllByRole('button', { name: /filter/i });
+      expect(filterButtons).toHaveLength(1);
+      expect(screen.getByRole('button', { name: /filter by implicit true/i })).toBeInTheDocument();
+    });
+  });
+
+  describe('onApplyFilter callback', () => {
+    it('should call onApplyFilter with correct field when a filter is applied', async () => {
+      const onApplyFilter = vi.fn();
+      const columnsWithFilterable: GridColumn[] = [
+        { title: 'Name', field: 'name', filterable: true },
+        { title: 'Age', field: 'age', filterable: true },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={columnsWithFilterable} onApplyFilter={onApplyFilter} />
+        </table>,
+      );
+
+      // Open the filter popup for the Name column
+      const nameFilterButton = screen.getByRole('button', { name: /filter by name/i });
+      await userEvent.click(nameFilterButton);
+
+      // Enter a filter value and apply
+      const textInput = screen.getByRole('textbox');
+      await userEvent.type(textInput, 'test value');
+
+      const applyButton = screen.getByRole('button', { name: /apply/i });
+      await userEvent.click(applyButton);
+
+      expect(onApplyFilter).toHaveBeenCalledTimes(1);
+      expect(onApplyFilter).toHaveBeenCalledWith(
+        'name',
+        expect.objectContaining({
+          value: 'test value',
+        }),
+      );
+    });
+  });
+
+  describe('onClearFilter callback', () => {
+    it('should call onClearFilter with correct field when clear is clicked', async () => {
+      const onClearFilter = vi.fn();
+      const columnsWithFilterable: GridColumn[] = [
+        { title: 'Name', field: 'name', filterable: true },
+      ];
+
+      const filterState: GridFilterState = {
+        name: [{ type: GridFilterType.StartsWith, value: 'test', caseSensitive: false }],
+      };
+
+      render(
+        <table>
+          <GridHead
+            {...baseProps}
+            columns={columnsWithFilterable}
+            filterState={filterState}
+            onClearFilter={onClearFilter}
+          />
+        </table>,
+      );
+
+      // Open the filter popup
+      const filterButton = screen.getByRole('button', { name: /filter by name/i });
+      await userEvent.click(filterButton);
+
+      // Click clear
+      const clearButton = screen.getByRole('button', { name: /clear/i });
+      await userEvent.click(clearButton);
+
+      expect(onClearFilter).toHaveBeenCalledTimes(1);
+      expect(onClearFilter).toHaveBeenCalledWith('name');
+    });
+  });
+
+  describe('columnConditions prop threading', () => {
+    it('should pass columnConditions from filterState to the correct column', async () => {
+      const columnsWithFilterable: GridColumn[] = [
+        { title: 'Name', field: 'name', filterable: true },
+        { title: 'Age', field: 'age', filterable: true },
+      ];
+
+      const filterState: GridFilterState = {
+        name: [{ type: GridFilterType.StartsWith, value: 'test', caseSensitive: false }],
+      };
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={columnsWithFilterable} filterState={filterState} />
+        </table>,
+      );
+
+      // The Name column's filter button should show as active (has conditions)
+      const nameFilterButton = screen.getByRole('button', { name: /filter by name/i });
+      expect(nameFilterButton).toHaveClass('cl-grid-filter-button_active');
+
+      // The Age column's filter button should not be active
+      const ageFilterButton = screen.getByRole('button', { name: /filter by age/i });
+      expect(ageFilterButton).not.toHaveClass('cl-grid-filter-button_active');
+    });
+  });
+
+  describe('mixed sortable and filterable configuration', () => {
+    it('should correctly handle columns with both sortable and filterable', () => {
+      const mixedColumns: GridColumn[] = [
+        { title: 'Both', field: 'both', sortable: true, filterable: true },
+        { title: 'Sort Only', field: 'sortOnly', sortable: true, filterable: false },
+        { title: 'Filter Only', field: 'filterOnly', sortable: false, filterable: true },
+        { title: 'Neither', field: 'neither', sortable: false, filterable: false },
+      ];
+
+      render(
+        <table>
+          <GridHead {...baseProps} columns={mixedColumns} />
+        </table>,
+      );
+
+      // Both column should have both buttons
+      expect(screen.getByRole('button', { name: /sort by both/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /filter by both/i })).toBeInTheDocument();
+
+      // Sort Only column should have only sort button
+      expect(screen.getByRole('button', { name: /sort by sort only/i })).toBeInTheDocument();
+      expect(
+        screen.queryByRole('button', { name: /filter by sort only/i }),
+      ).not.toBeInTheDocument();
+
+      // Filter Only column should have only filter button
+      expect(
+        screen.queryByRole('button', { name: /sort by filter only/i }),
+      ).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /filter by filter only/i })).toBeInTheDocument();
+
+      // Neither column should have no buttons
+      expect(screen.queryByRole('button', { name: /sort by neither/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /filter by neither/i })).not.toBeInTheDocument();
+    });
+  });
+
+  describe('snapshot with filtering enabled', () => {
+    it('should match snapshot with filterableByDefault=true', () => {
+      const { asFragment } = render(
+        <table>
+          <GridHead {...baseProps} filterableByDefault={true} />
+        </table>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should match snapshot with active filter conditions', () => {
+      const filterState: GridFilterState = {
+        name: [{ type: GridFilterType.StartsWith, value: 'test', caseSensitive: false }],
+      };
+
+      const { asFragment } = render(
+        <table>
+          <GridHead {...baseProps} filterableByDefault={true} filterState={filterState} />
         </table>,
       );
       expect(asFragment()).toMatchSnapshot();

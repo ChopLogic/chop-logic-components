@@ -1,9 +1,9 @@
 import type { GridSortDirection } from '@enums';
 import { useElementIds } from '@hooks';
-import type { GridItem, GridSortState } from '@types';
+import type { GridFilterCondition, GridFilterState, GridItem, GridSortState } from '@types';
 import { useState } from 'react';
 
-import { getNextSortState, sortGridData } from './Grid.helpers';
+import { filterGridData, getNextSortState, sortGridData } from './Grid.helpers';
 
 export const useGridController = ({
   data,
@@ -12,6 +12,8 @@ export const useGridController = ({
   sortField,
   sortDirection,
   onSortChange,
+  filterState,
+  onFilterChange,
 }: {
   data: GridItem[];
   id?: string;
@@ -19,6 +21,8 @@ export const useGridController = ({
   sortField?: string;
   sortDirection?: GridSortDirection;
   onSortChange?: (state: GridSortState) => void;
+  filterState?: GridFilterState;
+  onFilterChange?: (state: GridFilterState) => void;
 }) => {
   const { elementId } = useElementIds(id);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -48,7 +52,42 @@ export const useGridController = ({
     onSortChange?.(nextState);
   };
 
-  const sortedData = sortGridData(data, currentSortState);
+  const isControlledFilter = filterState !== undefined;
+
+  const [internalFilterState, setInternalFilterState] = useState<GridFilterState>({});
+
+  const currentFilterState: GridFilterState = isControlledFilter
+    ? filterState
+    : internalFilterState;
+
+  const handleApplyFilter = (field: string, condition: GridFilterCondition) => {
+    const next: GridFilterState = {
+      ...currentFilterState,
+      [field]: [...(currentFilterState[field] ?? []), condition],
+    };
+    if (!isControlledFilter) {
+      setInternalFilterState(next);
+    }
+    onFilterChange?.(next);
+  };
+
+  const handleClearFilter = (field: string) => {
+    if (!currentFilterState[field]?.length) return;
+    const next = { ...currentFilterState };
+    delete next[field];
+    if (!isControlledFilter) {
+      setInternalFilterState(next);
+    }
+    onFilterChange?.(next);
+  };
+
+  const filteredData = filterGridData(data, currentFilterState);
+  const filteredAndSortedData = sortGridData(filteredData, currentSortState);
+
+  const hasActiveFilters = Object.values(currentFilterState).some((conditions) =>
+    conditions.some((condition) => condition.value.trim().length > 0),
+  );
+  const isEmpty = data.length > 0 && hasActiveFilters && filteredAndSortedData.length === 0;
 
   const handleSelect = (ids: string[]) => {
     setSelectedIds(ids);
@@ -83,7 +122,12 @@ export const useGridController = ({
     handleSelectRowById,
     handleDeselectRowById,
     sortState: currentSortState,
-    sortedData,
+    sortedData: filteredAndSortedData,
     handleSortClick,
+    filterState: currentFilterState,
+    filteredAndSortedData,
+    handleApplyFilter,
+    handleClearFilter,
+    isEmpty,
   };
 };

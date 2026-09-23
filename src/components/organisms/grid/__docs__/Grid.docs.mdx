@@ -5,7 +5,7 @@ import * as GridStories from "./Grid.stories";
 
 # Grid
 
-The `Grid` component provides a flexible, interactive data table with column definitions, selection capabilities, sorting functionality, and customizable rendering.
+The `Grid` component provides a flexible, interactive data table with column definitions, selection capabilities, sorting functionality, filtering functionality, and customizable rendering.
 
 ### Usage
 
@@ -91,6 +91,95 @@ const columns = [
 
 When `sortableByDefault` is `true`, all columns are sortable unless explicitly marked with `sortable: false`. When `sortableByDefault` is `false` (the default), only columns with `sortable: true` are sortable.
 
+## Column Filtering
+
+The Grid supports column filtering to narrow down displayed rows based on text conditions. Filterable columns display a filter button in the header that opens a popup with filter options.
+
+### Filter Types
+
+The filter popup offers three filter types:
+
+- **Starts with**: Matches rows where the column value begins with the filter text
+- **Includes**: Matches rows where the column value contains the filter text
+- **Equals to**: Matches rows where the column value exactly matches the filter text
+
+Each filter condition can be case-sensitive or case-insensitive (default).
+
+### Uncontrolled Mode
+
+In uncontrolled mode, the Grid manages filter state internally. This is the simplest approach for basic filtering needs.
+
+```tsx
+import { Grid } from "chop-logic-components";
+
+// Simple uncontrolled filtering - Grid manages state internally
+<Grid columns={columns} data={data} filterableByDefault={true} onFilterChange={(state) => console.log("Filter changed:", state)} />;
+```
+
+### Controlled Mode
+
+In controlled mode, the parent component manages filter state via the `filterState` prop. This is useful for synchronizing with application state, implementing server-side filtering, or persisting filters.
+
+```tsx
+import { useState } from "react";
+import { Grid, GridFilterType } from "chop-logic-components";
+
+// Controlled filtering - parent manages state
+const FilterableGrid = () => {
+  const [filterState, setFilterState] = useState({
+    name: [{ type: GridFilterType.Includes, value: "john", caseSensitive: false }],
+  });
+
+  return <Grid columns={columns} data={data} filterableByDefault={true} filterState={filterState} onFilterChange={setFilterState} />;
+};
+```
+
+### Mixed Filterability
+
+You can configure filterability per column using the `filterable` property on column definitions. This allows you to make some columns filterable while keeping others (like action columns) non-filterable.
+
+```tsx
+import { Grid } from "chop-logic-components";
+
+// Some columns filterable, others not
+const columns = [
+  { field: "name", title: "Name", filterable: true },
+  { field: "email", title: "Email", filterable: true },
+  { field: "actions", title: "Actions", filterable: false },
+];
+
+<Grid columns={columns} data={data} />;
+```
+
+When `filterableByDefault` is `true`, all columns are filterable unless explicitly marked with `filterable: false`. When `filterableByDefault` is `false` (the default), only columns with `filterable: true` are filterable.
+
+### Filter Props Reference
+
+| Prop                  | Type                               | Description                                                                                                                                                                       |
+| --------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filterable`          | `boolean`                          | Column-level property. When `true`, the column is filterable regardless of `filterableByDefault`. When `false`, the column is not filterable regardless of `filterableByDefault`. |
+| `filterableByDefault` | `boolean`                          | Grid-level property. When `true`, all columns are filterable by default. When `false` or omitted, columns are not filterable unless explicitly set with `filterable: true`.       |
+| `filterState`         | `GridFilterState`                  | Controlled filter state. An object mapping column field names to arrays of filter conditions. When provided, the Grid operates in controlled mode.                                |
+| `onFilterChange`      | `(state: GridFilterState) => void` | Callback invoked when filter state changes. Receives the updated filter state. Called in both controlled and uncontrolled modes.                                                  |
+
+### Combined Filtering Logic
+
+- Multiple filter conditions on the same column combine with **AND** logic
+- Filters across different columns also combine with **AND** logic
+- Empty or whitespace-only filter values are treated as inactive
+- When no rows match the active filters, the Grid displays "No data matches the applied filters"
+
+### Filtering and Sorting Together
+
+When both filtering and sorting are active, filtering is applied first, then sorting. Only the rows that match the filter conditions are sorted and displayed.
+
+```tsx
+import { Grid } from "chop-logic-components";
+
+// Grid with both sorting and filtering enabled
+<Grid columns={columns} data={data} sortableByDefault={true} filterableByDefault={true} />;
+```
+
 ## Best Practices
 
 1. _Performance_:
@@ -109,6 +198,11 @@ When `sortableByDefault` is `true`, all columns are sortable unless explicitly m
    - Use `sortableByDefault` for data-heavy grids where all columns should be sortable
    - Use `sortable: false` on columns that contain non-sortable content (like action buttons)
    - For server-side sorting, use controlled mode and handle data fetching in `onSortChange`
+5. _Filtering_:
+   - Use `filterableByDefault` for data-heavy grids where users need to find specific records
+   - Use `filterable: false` on columns that contain non-filterable content (like action buttons or images)
+   - For server-side filtering, use controlled mode and handle data fetching in `onFilterChange`
+   - Consider combining filtering with sorting for a complete data exploration experience
 
 ## Props
 

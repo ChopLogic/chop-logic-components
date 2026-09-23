@@ -69,16 +69,20 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 1
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 1 ascending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 1 ascending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
         <th
@@ -92,16 +96,20 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 2
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 2 ascending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 2 ascending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
         <th
@@ -115,16 +123,20 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 3
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 3 ascending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 3 ascending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
       </tr>
@@ -153,16 +165,20 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 1
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 1 descending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__arrow-up-circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 1 descending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__arrow-up-circle cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
         <th
@@ -176,16 +192,20 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 2
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 2 ascending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 2 ascending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
         <th
@@ -199,16 +219,166 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
             >
               Col 3
             </span>
-            <button
-              aria-busy="false"
-              aria-label="Sort by Col 3 ascending"
-              class="cl-icon-button cl-grid-sort-button"
-              type="button"
+            <div
+              class="cl-grid-header-cell__controls"
             >
-              <span
-                class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
-              />
-            </button>
+              <button
+                aria-busy="false"
+                aria-label="Sort by Col 3 ascending"
+                class="cl-icon-button cl-grid-sort-button"
+                type="button"
+              >
+                <span
+                  class="cl-icon-button__icon cl-icon chop-icon__circle cl-icon_small"
+                />
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`GridHead filter prop threading > snapshot with filtering enabled > should match snapshot with active filter conditions 1`] = `
+<DocumentFragment>
+  <table>
+    <thead
+      class="cl-grid-head"
+    >
+      <tr
+        class="cl-grid-head__row"
+      >
+        <th
+          class="cl-grid-header-cell cl-grid-header-cell_filterable"
+        >
+          <div
+            class="cl-grid-header-cell__content"
+          >
+            <span
+              class="cl-grid-header-cell__title"
+            >
+              Name
+            </span>
+            <div
+              class="cl-grid-header-cell__controls"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="Filter by Name"
+                class="cl-grid-filter-button cl-grid-filter-button_active"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="cl-grid-filter-button__icon cl-icon chop-icon__filter cl-icon_small"
+                />
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="cl-grid-header-cell cl-grid-header-cell_filterable"
+        >
+          <div
+            class="cl-grid-header-cell__content"
+          >
+            <span
+              class="cl-grid-header-cell__title"
+            >
+              Age
+            </span>
+            <div
+              class="cl-grid-header-cell__controls"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="Filter by Age"
+                class="cl-grid-filter-button"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="cl-grid-filter-button__icon cl-icon chop-icon__filter cl-icon_small"
+                />
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`GridHead filter prop threading > snapshot with filtering enabled > should match snapshot with filterableByDefault=true 1`] = `
+<DocumentFragment>
+  <table>
+    <thead
+      class="cl-grid-head"
+    >
+      <tr
+        class="cl-grid-head__row"
+      >
+        <th
+          class="cl-grid-header-cell cl-grid-header-cell_filterable"
+        >
+          <div
+            class="cl-grid-header-cell__content"
+          >
+            <span
+              class="cl-grid-header-cell__title"
+            >
+              Name
+            </span>
+            <div
+              class="cl-grid-header-cell__controls"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="Filter by Name"
+                class="cl-grid-filter-button"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="cl-grid-filter-button__icon cl-icon chop-icon__filter cl-icon_small"
+                />
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="cl-grid-header-cell cl-grid-header-cell_filterable"
+        >
+          <div
+            class="cl-grid-header-cell__content"
+          >
+            <span
+              class="cl-grid-header-cell__title"
+            >
+              Age
+            </span>
+            <div
+              class="cl-grid-header-cell__controls"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="Filter by Age"
+                class="cl-grid-filter-button"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="cl-grid-filter-button__icon cl-icon chop-icon__filter cl-icon_small"
+                />
+              </button>
+            </div>
           </div>
         </th>
       </tr>

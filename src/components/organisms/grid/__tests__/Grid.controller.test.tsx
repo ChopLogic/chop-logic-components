@@ -1,5 +1,6 @@
-import { GridSortDirection } from '@enums';
+import { GridFilterType, GridSortDirection } from '@enums';
 import { act, renderHook } from '@testing-library/react';
+import type { GridFilterCondition, GridFilterState } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 
 import { useGridController } from '../Grid.controller';
@@ -577,6 +578,535 @@ describe('useGridController', () => {
       );
 
       expect(result.current.elementId).toBe('custom-grid-id');
+    });
+  });
+});
+
+describe('useGridController - Filter State Management', () => {
+  const mockData = [
+    { id: 'row1', name: 'Charlie', country: 'Germany' },
+    { id: 'row2', name: 'Alice', country: 'Mexico' },
+    { id: 'row3', name: 'Bob', country: 'Austria' },
+  ];
+
+  const createCondition = (
+    value: string,
+    type: GridFilterType = GridFilterType.Includes,
+    caseSensitive = false,
+  ): GridFilterCondition => ({
+    type,
+    value,
+    caseSensitive,
+  });
+
+  describe('Initial filter state', () => {
+    it('should initialize filterState as empty object when no filterState prop', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      expect(result.current.filterState).toEqual({});
+    });
+
+    it('should return filteredAndSortedData equal to original data when no filter applied', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      expect(result.current.filteredAndSortedData).toEqual(mockData);
+    });
+
+    it('should initialize isEmpty as false when data has rows and no filters', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      expect(result.current.isEmpty).toBe(false);
+    });
+  });
+
+  describe('Uncontrolled filter mode (no filterState prop)', () => {
+    it('should update internal filterState when handleApplyFilter is called', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Alice'));
+      });
+
+      expect(result.current.filterState).toEqual({
+        name: [createCondition('Alice')],
+      });
+    });
+
+    it('should append conditions when multiple filters applied to same column', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('A', GridFilterType.StartsWith));
+      });
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('ice', GridFilterType.Includes));
+      });
+
+      expect(result.current.filterState.name).toHaveLength(2);
+      expect(result.current.filterState.name[0].value).toBe('A');
+      expect(result.current.filterState.name[1].value).toBe('ice');
+    });
+
+    it('should filter data based on applied conditions', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Alice', GridFilterType.Equals));
+      });
+
+      expect(result.current.filteredAndSortedData).toHaveLength(1);
+      expect(result.current.filteredAndSortedData[0].name).toBe('Alice');
+    });
+
+    it('should invoke onFilterChange with new state when provided', () => {
+      const mockOnFilterChange = vi.fn();
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      const condition = createCondition('test');
+
+      act(() => {
+        result.current.handleApplyFilter('name', condition);
+      });
+
+      expect(mockOnFilterChange).toHaveBeenCalledWith({
+        name: [condition],
+      });
+    });
+
+    it('should clear filter conditions for a specific column', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('A'));
+        result.current.handleApplyFilter('country', createCondition('G'));
+      });
+
+      act(() => {
+        result.current.handleClearFilter('name');
+      });
+
+      expect(result.current.filterState.name).toBeUndefined();
+      expect(result.current.filterState.country).toHaveLength(1);
+    });
+
+    it('should no-op when clearing a column with no conditions', () => {
+      const mockOnFilterChange = vi.fn();
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      act(() => {
+        result.current.handleClearFilter('name');
+      });
+
+      expect(mockOnFilterChange).not.toHaveBeenCalled();
+      expect(result.current.filterState).toEqual({});
+    });
+
+    it('should only clear the specified column, leaving others unchanged', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('A'));
+        result.current.handleApplyFilter('country', createCondition('G'));
+      });
+
+      act(() => {
+        result.current.handleClearFilter('name');
+      });
+
+      expect(result.current.filterState).toEqual({
+        country: [createCondition('G')],
+      });
+    });
+  });
+
+  describe('Controlled filter mode (filterState prop provided) - Req 9.3, 9.4', () => {
+    it('should reflect filterState from provided props, not internal state', () => {
+      const externalFilterState: GridFilterState = {
+        name: [createCondition('Alice')],
+      };
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: externalFilterState,
+        }),
+      );
+
+      expect(result.current.filterState).toEqual(externalFilterState);
+    });
+
+    it('should derive displayed rows exclusively from filterState prop', () => {
+      const externalFilterState: GridFilterState = {
+        name: [createCondition('Alice', GridFilterType.Equals)],
+      };
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: externalFilterState,
+        }),
+      );
+
+      expect(result.current.filteredAndSortedData).toHaveLength(1);
+      expect(result.current.filteredAndSortedData[0].name).toBe('Alice');
+    });
+
+    it('should NOT update internal state when handleApplyFilter is called', () => {
+      const mockOnFilterChange = vi.fn();
+      const externalFilterState: GridFilterState = {
+        name: [createCondition('Alice')],
+      };
+
+      const { result, rerender } = renderHook(
+        ({ filterState }) =>
+          useGridController({
+            data: mockData,
+            filterState,
+            onFilterChange: mockOnFilterChange,
+          }),
+        {
+          initialProps: { filterState: externalFilterState },
+        },
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Bob'));
+      });
+
+      // filterState should still reflect props
+      expect(result.current.filterState).toEqual(externalFilterState);
+
+      // Callback should be invoked with computed next state
+      expect(mockOnFilterChange).toHaveBeenCalledWith({
+        name: [createCondition('Alice'), createCondition('Bob')],
+      });
+
+      // Simulate parent updating props in response to callback
+      const updatedFilterState: GridFilterState = {
+        name: [createCondition('Alice'), createCondition('Bob')],
+      };
+      rerender({ filterState: updatedFilterState });
+
+      expect(result.current.filterState).toEqual(updatedFilterState);
+    });
+
+    it('should leave displayed rows unchanged when onFilterChange not provided', () => {
+      const externalFilterState: GridFilterState = {
+        name: [createCondition('Alice', GridFilterType.Equals)],
+      };
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: externalFilterState,
+          // no onFilterChange
+        }),
+      );
+
+      const initialData = result.current.filteredAndSortedData;
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Bob'));
+      });
+
+      // Rows should remain unchanged because the prop wasn't updated
+      expect(result.current.filteredAndSortedData).toEqual(initialData);
+      expect(result.current.filteredAndSortedData).toHaveLength(1);
+    });
+
+    it('should invoke onFilterChange when clearing in controlled mode', () => {
+      const mockOnFilterChange = vi.fn();
+      const externalFilterState: GridFilterState = {
+        name: [createCondition('Alice')],
+        country: [createCondition('G')],
+      };
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: externalFilterState,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      act(() => {
+        result.current.handleClearFilter('name');
+      });
+
+      expect(mockOnFilterChange).toHaveBeenCalledWith({
+        country: [createCondition('G')],
+      });
+    });
+  });
+
+  describe('Filter-before-sort pipeline', () => {
+    it('should apply filtering before sorting', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          sortField: 'name',
+          sortDirection: GridSortDirection.Asc,
+        }),
+      );
+
+      // Initially sorted: Alice, Bob, Charlie
+      expect(result.current.filteredAndSortedData.map((d) => d.name)).toEqual([
+        'Alice',
+        'Bob',
+        'Charlie',
+      ]);
+
+      act(() => {
+        // Filter to only names containing 'li'
+        result.current.handleApplyFilter('name', createCondition('li'));
+      });
+
+      // Only Alice and Charlie match; sorted ascending: Alice, Charlie
+      expect(result.current.filteredAndSortedData).toHaveLength(2);
+      expect(result.current.filteredAndSortedData.map((d) => d.name)).toEqual(['Alice', 'Charlie']);
+    });
+
+    it('should order only retained rows according to the sort', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          sortField: 'name',
+          sortDirection: GridSortDirection.Desc,
+        }),
+      );
+
+      act(() => {
+        // Filter to exclude Bob
+        result.current.handleApplyFilter('name', createCondition('Bob', GridFilterType.Equals));
+      });
+
+      // Only Bob matches, descending order
+      expect(result.current.filteredAndSortedData).toHaveLength(1);
+      expect(result.current.filteredAndSortedData[0].name).toBe('Bob');
+
+      act(() => {
+        result.current.handleClearFilter('name');
+      });
+
+      // All rows now, sorted descending
+      expect(result.current.filteredAndSortedData.map((d) => d.name)).toEqual([
+        'Charlie',
+        'Bob',
+        'Alice',
+      ]);
+    });
+  });
+
+  describe('Empty state derivation', () => {
+    it('should set isEmpty to true when data has rows, filters are active, and result is empty', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        // Filter that matches nothing
+        result.current.handleApplyFilter('name', createCondition('NoMatch', GridFilterType.Equals));
+      });
+
+      expect(result.current.isEmpty).toBe(true);
+      expect(result.current.filteredAndSortedData).toHaveLength(0);
+    });
+
+    it('should set isEmpty to false when data is originally empty', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: [],
+        }),
+      );
+
+      expect(result.current.isEmpty).toBe(false);
+    });
+
+    it('should set isEmpty to false when no active filters', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      expect(result.current.isEmpty).toBe(false);
+    });
+
+    it('should set isEmpty to false when filters exist but rows are retained', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Alice', GridFilterType.Equals));
+      });
+
+      expect(result.current.isEmpty).toBe(false);
+      expect(result.current.filteredAndSortedData).toHaveLength(1);
+    });
+
+    it('should treat blank/whitespace-only filter values as inactive for isEmpty check', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: {
+            name: [createCondition('   ')],
+          },
+        }),
+      );
+
+      // Whitespace-only condition is inactive, so isEmpty should be false
+      expect(result.current.isEmpty).toBe(false);
+      // All rows should be returned since the condition is inactive
+      expect(result.current.filteredAndSortedData).toHaveLength(3);
+    });
+  });
+
+  describe('Mode detection for filtering', () => {
+    it('should be in uncontrolled filter mode when filterState prop is not provided', () => {
+      const mockOnFilterChange = vi.fn();
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('test'));
+      });
+
+      // Should update internal state
+      expect(result.current.filterState).toEqual({
+        name: [createCondition('test')],
+      });
+
+      // And also call the callback
+      expect(mockOnFilterChange).toHaveBeenCalled();
+    });
+
+    it('should be in controlled filter mode when filterState prop is provided', () => {
+      const mockOnFilterChange = vi.fn();
+      const externalFilterState: GridFilterState = {};
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: externalFilterState,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('test'));
+      });
+
+      // filterState should remain as provided (controlled mode doesn't update internal state)
+      expect(result.current.filterState).toEqual({});
+
+      // But callback should be invoked
+      expect(mockOnFilterChange).toHaveBeenCalled();
+    });
+
+    it('should be in controlled filter mode even with empty filterState object', () => {
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          filterState: {},
+        }),
+      );
+
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('test'));
+      });
+
+      // In controlled mode, internal state doesn't change
+      expect(result.current.filterState).toEqual({});
+    });
+  });
+
+  describe('Combined sort and filter state', () => {
+    it('should maintain both sort and filter states independently', () => {
+      const mockOnSortChange = vi.fn();
+      const mockOnFilterChange = vi.fn();
+
+      const { result } = renderHook(() =>
+        useGridController({
+          data: mockData,
+          onSortChange: mockOnSortChange,
+          onFilterChange: mockOnFilterChange,
+        }),
+      );
+
+      // Apply filter
+      act(() => {
+        result.current.handleApplyFilter('name', createCondition('Alice', GridFilterType.Equals));
+      });
+
+      // Apply sort
+      act(() => {
+        result.current.handleSortClick('name');
+      });
+
+      expect(result.current.filterState).toEqual({
+        name: [createCondition('Alice', GridFilterType.Equals)],
+      });
+      expect(result.current.sortState).toEqual({
+        field: 'name',
+        direction: GridSortDirection.Asc,
+      });
+
+      expect(mockOnFilterChange).toHaveBeenCalled();
+      expect(mockOnSortChange).toHaveBeenCalled();
     });
   });
 });

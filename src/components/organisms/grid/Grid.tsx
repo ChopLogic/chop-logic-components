@@ -20,6 +20,9 @@ const Grid: FC<GridProps> = ({
   sortField,
   sortDirection,
   onSortChange,
+  filterableByDefault = false,
+  filterState,
+  onFilterChange,
   className,
   ...rest
 }) => {
@@ -33,9 +36,24 @@ const Grid: FC<GridProps> = ({
     handleSelectRowById,
     selectedIds,
     sortState,
-    sortedData,
     handleSortClick,
-  } = useGridController({ id, data, onSelect, sortField, sortDirection, onSortChange });
+    filterState: currentFilterState,
+    filteredAndSortedData,
+    handleApplyFilter,
+    handleClearFilter,
+    isEmpty,
+  } = useGridController({
+    id,
+    data,
+    onSelect,
+    sortField,
+    sortDirection,
+    onSortChange,
+    filterState,
+    onFilterChange,
+  });
+
+  const colSpan = columns.length + (selectable ? 1 : 0);
 
   return (
     <div className="cl-grid__wrapper">
@@ -53,15 +71,21 @@ const Grid: FC<GridProps> = ({
           sortableByDefault={sortableByDefault}
           sortState={sortState}
           onSortClick={handleSortClick}
+          filterableByDefault={filterableByDefault}
+          filterState={currentFilterState}
+          onApplyFilter={handleApplyFilter}
+          onClearFilter={handleClearFilter}
         />
         <GridBody
           columns={columns}
-          data={sortedData}
+          data={filteredAndSortedData}
           selectable={selectable}
           selectRowById={handleSelectRowById}
           deselectRowById={handleDeselectRowById}
           selectedIds={selectedIds}
           renderDataItem={renderDataItem}
+          isEmpty={isEmpty}
+          colSpan={colSpan}
         />
       </table>
     </div>

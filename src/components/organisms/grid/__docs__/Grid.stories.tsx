@@ -2,7 +2,7 @@ import { GridSortDirection } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Grid from '../Grid';
-import { GridExample } from './Grid.example';
+import { ControlledFilterExample, GridExample } from './Grid.example';
 
 const meta: Meta<typeof Grid> = {
   component: GridExample,
@@ -68,6 +68,23 @@ const meta: Meta<typeof Grid> = {
         category: 'Behavior',
       },
     },
+    filterableByDefault: {
+      control: 'boolean',
+      description: 'Whether all columns are filterable by default',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Behavior',
+      },
+    },
+    filterState: {
+      control: 'object',
+      description: 'Current filter state (controlled mode)',
+      table: {
+        type: { summary: 'GridFilterState' },
+        category: 'Behavior',
+      },
+    },
     renderDataItem: {
       control: 'object',
       description: 'Custom render function for grid cells',
@@ -90,6 +107,14 @@ const meta: Meta<typeof Grid> = {
       description: 'Callback when sort state changes',
       table: {
         type: { summary: '(state: GridSortState) => void' },
+        category: 'Interaction',
+      },
+    },
+    onFilterChange: {
+      action: 'filterChanged',
+      description: 'Callback when filter state changes',
+      table: {
+        type: { summary: '(state: GridFilterState) => void' },
         category: 'Interaction',
       },
     },
@@ -335,4 +360,51 @@ export const MixedSortabilityGrid: Story = {
     ],
     data: sampleData,
   },
+};
+
+export const FilterableGrid: Story = {
+  args: {
+    filterableByDefault: true,
+    caption: 'Filterable Contact List',
+    columns: [
+      { title: 'Company', field: 'company' },
+      { title: 'Contact', field: 'contact' },
+      { title: 'Country', field: 'country' },
+      { title: 'Phone', field: 'phone' },
+    ],
+    data: sampleData,
+  },
+};
+
+export const MixedFilterabilityGrid: Story = {
+  args: {
+    filterableByDefault: false,
+    caption: 'Mixed Filterability Grid',
+    columns: [
+      { title: 'Company', field: 'company', filterable: true },
+      { title: 'Contact', field: 'contact', filterable: true },
+      { title: 'Country', field: 'country', filterable: false },
+      { title: 'Phone', field: 'phone' }, // uses default (false)
+    ],
+    data: sampleData,
+  },
+};
+
+export const SortableAndFilterableGrid: Story = {
+  args: {
+    sortableByDefault: true,
+    filterableByDefault: true,
+    caption: 'Sortable & Filterable Contact List',
+    columns: [
+      { title: 'Company', field: 'company' },
+      { title: 'Contact', field: 'contact' },
+      { title: 'Country', field: 'country' },
+      { title: 'Phone', field: 'phone' },
+    ],
+    data: sampleData,
+  },
+};
+
+export const ControlledFilterGrid: Story = {
+  render: () => <ControlledFilterExample />,
 };

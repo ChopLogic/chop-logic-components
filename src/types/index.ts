@@ -19,6 +19,9 @@ export type { FormInputParams, FormProps, FormValidationState, FormValues } from
 export type { GalleryItem, GalleryMode, GalleryProps } from './gallery';
 export type {
   GridColumn,
+  GridColumnFilter,
+  GridFilterCondition,
+  GridFilterState,
   GridItem,
   GridProps,
   GridRowValue,

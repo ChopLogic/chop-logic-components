@@ -1,6 +1,7 @@
-import { GridSortDirection } from '@enums';
+import { GridFilterType, GridSortDirection } from '@enums';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { GridFilterState } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 
 import Grid from '../Grid';
@@ -329,6 +330,329 @@ describe('Grid', () => {
           field: 'city',
           direction: GridSortDirection.Asc,
         });
+      });
+    });
+  });
+
+  describe('Filtering', () => {
+    const filterableProps = {
+      id: 'filterable-grid',
+      columns: [
+        { title: 'Name', field: 'name' },
+        { title: 'City', field: 'city' },
+        { title: 'Country', field: 'country' },
+      ],
+      data: [
+        { id: 'row1', name: 'Alice', city: 'Amsterdam', country: 'Netherlands' },
+        { id: 'row2', name: 'Bob', city: 'Berlin', country: 'Germany' },
+        { id: 'row3', name: 'Charlie', city: 'Copenhagen', country: 'Denmark' },
+        { id: 'row4', name: 'Diana', city: 'Dublin', country: 'Ireland' },
+        { id: 'row5', name: 'Adam', city: 'Athens', country: 'Greece' },
+      ],
+    };
+
+    // Helper function to get data cell values from a specific column index
+    const getColumnValues = (columnIndex: number): string[] => {
+      const rows = screen.getAllByRole('row');
+      // Skip header row (index 0)
+      const dataRows = rows.slice(1);
+      return dataRows.map((row) => {
+        const cells = within(row).queryAllByRole('cell');
+        return cells[columnIndex]?.textContent ?? '';
+      });
+    };
+
+    // Helper to open filter popup for a column
+    const openFilterPopup = async (columnTitle: string) => {
+      const filterButton = screen.getByRole('button', {
+        name: new RegExp(`filter by ${columnTitle}`, 'i'),
+      });
+      await userEvent.click(filterButton);
+      return filterButton;
+    };
+
+    // Helper to apply a filter
+    const applyFilter = async (value: string) => {
+      const filterInput = screen.getByRole('textbox', { name: /filter value/i });
+      await userEvent.clear(filterInput);
+      await userEvent.type(filterInput, value);
+      const applyButton = screen.getByRole('button', { name: /apply filter/i });
+      await userEvent.click(applyButton);
+    };
+
+    // Helper to clear filter from popup
+    const clearFilter = async () => {
+      const clearButton = screen.getByRole('button', { name: /clear filter/i });
+      await userEvent.click(clearButton);
+    };
+
+    describe('Uncontrolled Mode', () => {
+      // Requirements: 9.7, 6.5
+      it('should narrow displayed rows when a filter is applied and restore when cleared', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Initial: all 5 rows (Alice, Bob, Charlie, Diana, Adam)
+        expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);
+
+        // Open filter popup for Name column
+        await openFilterPopup('Name');
+
+        // Apply filter that starts with 'A'
+        await applyFilter('A');
+
+        // Should now show only Alice and Adam
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+
+        // Open filter popup again
+        await openFilterPopup('Name');
+
+        // Clear the filter
+        await clearFilter();
+
+        // Close popup
+        const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
+        await userEvent.click(cancelButton);
+
+        // Should restore all rows
+        expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);
+      });
+
+      it('should invoke onFilterChange callback in uncontrolled mode', async () => {
+        const mockOnFilterChange = vi.fn();
+        render(
+          <Grid {...filterableProps} filterableByDefault onFilterChange={mockOnFilterChange} />,
+        );
+
+        // Open filter popup for Name column
+        await openFilterPopup('Name');
+
+        // Apply filter
+        await applyFilter('A');
+
+        expect(mockOnFilterChange).toHaveBeenCalledWith({
+          name: [
+            {
+              type: GridFilterType.StartsWith,
+              value: 'A',
+              caseSensitive: false,
+            },
+          ],
+        });
+      });
+    });
+
+    describe('Controlled Mode', () => {
+      // Requirements: 9.4, 9.5, 9.6
+      it('should display data filtered according to filterState prop', () => {
+        const controlledFilterState: GridFilterState = {
+          name: [{ type: GridFilterType.StartsWith, value: 'A', caseSensitive: false }],
+        };
+
+        render(
+          <Grid {...filterableProps} filterableByDefault filterState={controlledFilterState} />,
+        );
+
+        // Data should be filtered to only names starting with 'A': Alice, Adam
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+      });
+
+      it('should invoke onFilterChange but NOT change display in controlled mode', async () => {
+        const mockOnFilterChange = vi.fn();
+        const controlledFilterState: GridFilterState = {
+          name: [{ type: GridFilterType.StartsWith, value: 'A', caseSensitive: false }],
+        };
+
+        render(
+          <Grid
+            {...filterableProps}
+            filterableByDefault
+            filterState={controlledFilterState}
+            onFilterChange={mockOnFilterChange}
+          />,
+        );
+
+        // Initial: filtered to names starting with 'A'
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+
+        // Open filter popup for Name column
+        await openFilterPopup('Name');
+
+        // Apply a new filter (should call onFilterChange but not change display)
+        await applyFilter('B');
+
+        // onFilterChange should be called with appended condition
+        expect(mockOnFilterChange).toHaveBeenCalledWith({
+          name: [
+            { type: GridFilterType.StartsWith, value: 'A', caseSensitive: false },
+            { type: GridFilterType.StartsWith, value: 'B', caseSensitive: false },
+          ],
+        });
+
+        // But display should NOT change - still controlled by props
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+      });
+
+      it('should NOT modify display when onFilterChange is not provided in controlled mode', async () => {
+        const controlledFilterState: GridFilterState = {
+          name: [{ type: GridFilterType.StartsWith, value: 'A', caseSensitive: false }],
+        };
+
+        render(
+          <Grid {...filterableProps} filterableByDefault filterState={controlledFilterState} />,
+        );
+
+        // Initial: filtered to names starting with 'A'
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+
+        // Open filter popup for Name column
+        await openFilterPopup('Name');
+
+        // Apply a new filter
+        await applyFilter('B');
+
+        // Display should NOT change - no callback to update state
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+      });
+    });
+
+    describe('Filter + Sort Pipeline', () => {
+      // Requirements: 7.4, 7.5
+      it('should order only retained rows when both filtering and sorting are active', async () => {
+        render(<Grid {...filterableProps} filterableByDefault sortableByDefault />);
+
+        // Initial order: Alice, Bob, Charlie, Diana, Adam
+        expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);
+
+        // Apply filter for names starting with 'A'
+        await openFilterPopup('Name');
+        await applyFilter('A');
+
+        // Filtered: Alice, Adam
+        expect(getColumnValues(0)).toEqual(['Alice', 'Adam']);
+
+        // Now sort ascending by Name
+        const nameSortButton = screen.getByRole('button', { name: /sort by name ascending/i });
+        await userEvent.click(nameSortButton);
+
+        // Should sort only the retained rows: Adam, Alice
+        expect(getColumnValues(0)).toEqual(['Adam', 'Alice']);
+      });
+
+      it('should exclude non-matching rows from the sorted result', async () => {
+        render(<Grid {...filterableProps} filterableByDefault sortableByDefault />);
+
+        // Sort first, then filter
+        const nameSortButton = screen.getByRole('button', { name: /sort by name ascending/i });
+        await userEvent.click(nameSortButton);
+
+        // After ascending sort: Adam, Alice, Bob, Charlie, Diana
+        expect(getColumnValues(0)).toEqual(['Adam', 'Alice', 'Bob', 'Charlie', 'Diana']);
+
+        // Apply filter for names starting with 'B' or 'C' (using Includes)
+        await openFilterPopup('Name');
+
+        // Select Includes filter type
+        const includesRadio = screen.getByRole('radio', { name: /includes/i });
+        await userEvent.click(includesRadio);
+
+        await applyFilter('ob');
+
+        // Should show only Bob (filtered and sorted)
+        expect(getColumnValues(0)).toEqual(['Bob']);
+      });
+    });
+
+    describe('Empty State', () => {
+      // Requirements: 8.1, 8.4, 8.5
+      it('should display empty state message when no rows match the filter', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Apply filter that matches nothing
+        await openFilterPopup('Name');
+        await applyFilter('XYZ');
+
+        // Should show empty state message
+        expect(screen.getByText('No data matches the applied filters')).toBeInTheDocument();
+      });
+
+      it('should keep header row visible when empty state is displayed', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Apply filter that matches nothing
+        await openFilterPopup('Name');
+        await applyFilter('XYZ');
+
+        // Header row should still be visible with column titles
+        expect(screen.getByRole('columnheader', { name: /name/i })).toBeInTheDocument();
+        expect(screen.getByRole('columnheader', { name: /city/i })).toBeInTheDocument();
+        expect(screen.getByRole('columnheader', { name: /country/i })).toBeInTheDocument();
+      });
+
+      it('should restore rows when filter is relaxed', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Apply filter that matches nothing
+        await openFilterPopup('Name');
+        await applyFilter('XYZ');
+
+        // Empty state should be shown
+        expect(screen.getByText('No data matches the applied filters')).toBeInTheDocument();
+
+        // Open filter popup and clear
+        await openFilterPopup('Name');
+        await clearFilter();
+
+        // Close popup
+        const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
+        await userEvent.click(cancelButton);
+
+        // Rows should be restored
+        expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);
+        expect(screen.queryByText('No data matches the applied filters')).not.toBeInTheDocument();
+      });
+    });
+
+    describe('At-Most-One-Popup', () => {
+      // Requirements: 3.8
+      it('should close the first popup when opening a second column popup', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Open filter popup for Name column
+        await openFilterPopup('Name');
+
+        // Verify Name popup is open
+        expect(screen.getByRole('dialog', { name: /filter name/i })).toBeInTheDocument();
+
+        // Open filter popup for City column
+        const cityFilterButton = screen.getByRole('button', { name: /filter by city/i });
+        await userEvent.click(cityFilterButton);
+
+        // City popup should be open
+        expect(screen.getByRole('dialog', { name: /filter city/i })).toBeInTheDocument();
+
+        // Only one popup should be visible
+        const dialogs = screen.getAllByRole('dialog');
+        expect(dialogs).toHaveLength(1);
+        expect(dialogs[0]).toHaveAttribute('aria-label', 'Filter City');
+      });
+
+      it('should maintain at most one popup open at any time', async () => {
+        render(<Grid {...filterableProps} filterableByDefault />);
+
+        // Open Name popup
+        await openFilterPopup('Name');
+        expect(screen.getAllByRole('dialog')).toHaveLength(1);
+
+        // Open City popup (Name should close)
+        await openFilterPopup('City');
+        expect(screen.getAllByRole('dialog')).toHaveLength(1);
+
+        // Open Country popup (City should close)
+        await openFilterPopup('Country');
+        expect(screen.getAllByRole('dialog')).toHaveLength(1);
+
+        // Verify only Country popup is open
+        expect(screen.getByRole('dialog', { name: /filter country/i })).toBeInTheDocument();
       });
     });
   });

@@ -14,7 +14,7 @@
 }
 
 .cl-grid-filter-button_active .cl-grid-filter-button__icon::before {
-  color: var(--cl-info-a0);
+  color: var(--cl-accent-a0);
 }
 
 .cl-grid-filter-button:hover {
@@ -23,7 +23,7 @@
 }
 
 .cl-grid-filter-button:hover .cl-grid-filter-button__icon::before {
-  color: var(--cl-accent-a0);
+  color: var(--cl-info-a0);
 }
 
 .cl-grid-filter-button:active {

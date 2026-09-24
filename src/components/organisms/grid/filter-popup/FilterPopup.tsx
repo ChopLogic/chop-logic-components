@@ -167,19 +167,17 @@ export const FilterPopup: FC<FilterPopupProps> = ({
           ))}
         </div>
 
-        <div className="cl-grid-filter-popup__field">
-          <TextInput
-            stateless
-            id={textInputId}
-            name="filter-value"
-            label="Filter value"
-            value={value}
-            onChange={handleValueChange}
-            maxLength={1000}
-            placeholder="Enter filter value..."
-            clearable={false}
-          />
-        </div>
+        <TextInput
+          stateless
+          id={textInputId}
+          name="filter-value"
+          label="Filter value"
+          value={value}
+          onChange={handleValueChange}
+          maxLength={1000}
+          placeholder="Enter filter value..."
+          clearable={false}
+        />
 
         {error && (
           <div className="cl-grid-filter-popup__error" role="alert">
@@ -187,25 +185,24 @@ export const FilterPopup: FC<FilterPopupProps> = ({
           </div>
         )}
 
-        <div className="cl-grid-filter-popup__toggle">
-          <Checkbox
-            stateless
-            id={caseSensitiveId}
-            name="case-sensitive"
-            label="Case sensitive"
-            checked={caseSensitive}
-            onChange={handleCaseSensitiveChange}
-          />
-        </div>
+        <Checkbox
+          stateless
+          id={caseSensitiveId}
+          name="case-sensitive"
+          label="Case sensitive"
+          checked={caseSensitive}
+          onChange={handleCaseSensitiveChange}
+          className="cl-grid-filter-popup__checkbox"
+        />
 
         <div className="cl-grid-filter-popup__actions">
-          <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
           <SecondaryButton
             text="Clear"
             onClick={handleClear}
             disabled={!hasActiveConditions}
             aria-label="Clear filter"
           />
+          <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
         </div>
       </div>
     </Portal>

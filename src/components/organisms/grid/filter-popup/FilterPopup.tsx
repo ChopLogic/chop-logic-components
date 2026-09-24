@@ -1,10 +1,11 @@
 import './FilterPopup.css';
 
+import { Portal } from '@components/atoms';
 import { PrimaryButton } from '@components/atoms/button/primary-button/PrimaryButton';
 import { SecondaryButton } from '@components/atoms/button/secondary-button/SecondaryButton';
 import { Checkbox, TextInput } from '@components/molecules';
 import { GridFilterType } from '@enums';
-import { useClickOutside, useKeyPress, useModalFocusTrap } from '@hooks';
+import { useAnchorPosition, useClickOutside, useKeyPress, useModalFocusTrap } from '@hooks';
 import type { GridFilterCondition } from '@types';
 import {
   type ChangeEvent,
@@ -45,6 +46,15 @@ export const FilterPopup: FC<FilterPopupProps> = ({
   const popupRef = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLInputElement>(null);
   const uniqueId = useId();
+
+  const { top, left } = useAnchorPosition({
+    anchorRef: buttonRef ?? { current: null },
+    floatingRef: popupRef,
+    isOpened: true,
+  });
+
+  // Hide until position is calculated to prevent flash at (0, 0)
+  const isPositioned = top !== 0 || left !== 0;
 
   const ariaLabel = columnTitle ? `Filter ${columnTitle}` : 'Filter column';
   const typeGroupName = `filter-type-${popupId}-${uniqueId}`;
@@ -116,74 +126,77 @@ export const FilterPopup: FC<FilterPopupProps> = ({
   };
 
   return (
-    <div
-      ref={popupRef}
-      id={popupId}
-      role="dialog"
-      aria-modal="true"
-      aria-label={ariaLabel}
-      className="cl-grid-filter-popup"
-    >
-      <div className="cl-grid-filter-popup__types" role="radiogroup" aria-label="Filter type">
-        {FILTER_TYPES.map((filterType, index) => (
-          <label key={filterType} className="cl-grid-filter-popup__type-option">
-            <input
-              ref={index === 0 ? firstInputRef : undefined}
-              type="radio"
-              name={typeGroupName}
-              value={filterType}
-              checked={type === filterType}
-              onChange={() => handleTypeChange(filterType)}
-              aria-label={FILTER_TYPE_LABELS[filterType]}
-            />
-            <span className="cl-grid-filter-popup__type-label">
-              {FILTER_TYPE_LABELS[filterType]}
-            </span>
-          </label>
-        ))}
-      </div>
-
-      <div className="cl-grid-filter-popup__field">
-        <TextInput
-          stateless
-          id={textInputId}
-          name="filter-value"
-          label="Filter value"
-          value={value}
-          onChange={handleValueChange}
-          maxLength={1000}
-          placeholder="Enter filter value..."
-          clearable={false}
-        />
-      </div>
-
-      {error && (
-        <div className="cl-grid-filter-popup__error" role="alert">
-          {error}
+    <Portal>
+      <div
+        ref={popupRef}
+        id={popupId}
+        role="dialog"
+        aria-modal="true"
+        aria-label={ariaLabel}
+        className="cl-grid-filter-popup"
+        style={{ top, left, opacity: isPositioned ? 1 : 0 }}
+      >
+        <div className="cl-grid-filter-popup__types" role="radiogroup" aria-label="Filter type">
+          {FILTER_TYPES.map((filterType, index) => (
+            <label key={filterType} className="cl-grid-filter-popup__type-option">
+              <input
+                ref={index === 0 ? firstInputRef : undefined}
+                type="radio"
+                name={typeGroupName}
+                value={filterType}
+                checked={type === filterType}
+                onChange={() => handleTypeChange(filterType)}
+                aria-label={FILTER_TYPE_LABELS[filterType]}
+              />
+              <span className="cl-grid-filter-popup__type-label">
+                {FILTER_TYPE_LABELS[filterType]}
+              </span>
+            </label>
+          ))}
         </div>
-      )}
 
-      <div className="cl-grid-filter-popup__toggle">
-        <Checkbox
-          stateless
-          id={caseSensitiveId}
-          name="case-sensitive"
-          label="Case sensitive"
-          checked={caseSensitive}
-          onChange={handleCaseSensitiveChange}
-        />
-      </div>
+        <div className="cl-grid-filter-popup__field">
+          <TextInput
+            stateless
+            id={textInputId}
+            name="filter-value"
+            label="Filter value"
+            value={value}
+            onChange={handleValueChange}
+            maxLength={1000}
+            placeholder="Enter filter value..."
+            clearable={false}
+          />
+        </div>
 
-      <div className="cl-grid-filter-popup__actions">
-        <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
-        <SecondaryButton text="Cancel" onClick={handleCancel} aria-label="Cancel filter" />
-        <SecondaryButton
-          text="Clear"
-          onClick={handleClear}
-          disabled={!hasActiveConditions}
-          aria-label="Clear filter"
-        />
+        {error && (
+          <div className="cl-grid-filter-popup__error" role="alert">
+            {error}
+          </div>
+        )}
+
+        <div className="cl-grid-filter-popup__toggle">
+          <Checkbox
+            stateless
+            id={caseSensitiveId}
+            name="case-sensitive"
+            label="Case sensitive"
+            checked={caseSensitive}
+            onChange={handleCaseSensitiveChange}
+          />
+        </div>
+
+        <div className="cl-grid-filter-popup__actions">
+          <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
+          <SecondaryButton text="Cancel" onClick={handleCancel} aria-label="Cancel filter" />
+          <SecondaryButton
+            text="Clear"
+            onClick={handleClear}
+            disabled={!hasActiveConditions}
+            aria-label="Clear filter"
+          />
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 };

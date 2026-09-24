@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import type { RefObject } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useTooltipPosition } from '../use-tooltip-position';
+import { useAnchorPosition } from '../use-anchor-position';
 
 type MockedThisObserverType = {
   callback?: ResizeObserverCallback;
@@ -36,12 +36,12 @@ beforeEach(() => {
   );
 });
 
-describe('useTooltipPosition', () => {
+describe('useAnchorPosition', () => {
   const createMockRefs = (
-    wrapperRect?: Partial<DOMRect>,
-    tooltipDimensions?: { offsetWidth: number; offsetHeight: number },
+    anchorRect?: Partial<DOMRect>,
+    floatingDimensions?: { offsetWidth: number; offsetHeight: number },
   ) => {
-    const defaultWrapperRect = {
+    const defaultAnchorRect = {
       top: 100,
       left: 100,
       bottom: 150,
@@ -49,13 +49,13 @@ describe('useTooltipPosition', () => {
       height: 50,
     };
 
-    const defaultTooltipDimensions = { offsetWidth: 100, offsetHeight: 50 };
+    const defaultFloatingDimensions = { offsetWidth: 100, offsetHeight: 50 };
 
-    const wrapperRef = {
+    const anchorRef = {
       current: {
         getBoundingClientRect: () => ({
-          ...defaultWrapperRect,
-          ...wrapperRect,
+          ...defaultAnchorRect,
+          ...anchorRect,
           right: 0,
           x: 0,
           y: 0,
@@ -64,14 +64,14 @@ describe('useTooltipPosition', () => {
       },
     } as unknown as RefObject<HTMLDivElement>;
 
-    const tooltipDims = { ...defaultTooltipDimensions, ...tooltipDimensions };
-    const tooltipRef = {
+    const floatingDims = { ...defaultFloatingDimensions, ...floatingDimensions };
+    const floatingRef = {
       current: {
-        offsetWidth: tooltipDims.offsetWidth,
-        offsetHeight: tooltipDims.offsetHeight,
+        offsetWidth: floatingDims.offsetWidth,
+        offsetHeight: floatingDims.offsetHeight,
         getBoundingClientRect: () => ({
-          width: tooltipDims.offsetWidth,
-          height: tooltipDims.offsetHeight,
+          width: floatingDims.offsetWidth,
+          height: floatingDims.offsetHeight,
           x: 0,
           y: 0,
           right: 0,
@@ -83,36 +83,36 @@ describe('useTooltipPosition', () => {
       },
     } as unknown as RefObject<HTMLDivElement>;
 
-    return { wrapperRef, tooltipRef };
+    return { anchorRef, floatingRef };
   };
 
-  it('should center tooltip horizontally under the wrapper', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({
+  it('should center floating element horizontally under the anchor', () => {
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 100,
       width: 200,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 8,
       }),
     );
 
-    // Center calculation: left (100) + width/2 (100) - tooltipWidth/2 (50) = 150
+    // Center calculation: left (100) + width/2 (100) - floatingWidth/2 (50) = 150
     expect(result.current.left).toBe(150);
   });
 
-  it('should position tooltip below wrapper when space available', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({ bottom: 150 });
+  it('should position floating element below anchor when space available', () => {
+    const { anchorRef, floatingRef } = createMockRefs({ bottom: 150 });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 8,
       }),
@@ -121,17 +121,17 @@ describe('useTooltipPosition', () => {
     expect(result.current.top).toBe(158);
   });
 
-  it('should position tooltip above wrapper when bottom space unavailable', () => {
+  it('should position floating element above anchor when bottom space unavailable', () => {
     window.innerHeight = 600;
-    const { wrapperRef, tooltipRef } = createMockRefs({
+    const { anchorRef, floatingRef } = createMockRefs({
       top: 500,
       bottom: 550,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 8,
       }),
@@ -141,12 +141,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should respect custom spacing parameter', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({ bottom: 150 });
+    const { anchorRef, floatingRef } = createMockRefs({ bottom: 150 });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 20,
       }),
@@ -156,12 +156,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should use default spacing of 4 when not provided', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({ bottom: 150 });
+    const { anchorRef, floatingRef } = createMockRefs({ bottom: 150 });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -169,18 +169,18 @@ describe('useTooltipPosition', () => {
     expect(result.current.top).toBe(154);
   });
 
-  it('should adjust left when tooltip overflows right edge', () => {
+  it('should adjust left when floating element overflows right edge', () => {
     window.innerWidth = 800;
-    const { wrapperRef, tooltipRef } = createMockRefs({
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 750,
       width: 50,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 4,
       }),
@@ -189,17 +189,17 @@ describe('useTooltipPosition', () => {
     expect(result.current.left).toBe(696);
   });
 
-  it('should adjust left when tooltip overflows left edge', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({
+  it('should adjust left when floating element overflows left edge', () => {
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 10,
       width: 20,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 4,
       }),
@@ -209,12 +209,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should not calculate position when isOpened is false', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: false,
       }),
     );
@@ -223,14 +223,14 @@ describe('useTooltipPosition', () => {
     expect(mockObserve).not.toHaveBeenCalled();
   });
 
-  it('should not calculate position when wrapperRef is null', () => {
-    const { tooltipRef } = createMockRefs();
-    const wrapperRef = { current: null } as unknown as RefObject<HTMLElement>;
+  it('should not calculate position when anchorRef is null', () => {
+    const { floatingRef } = createMockRefs();
+    const anchorRef = { current: null } as unknown as RefObject<HTMLElement>;
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -239,17 +239,17 @@ describe('useTooltipPosition', () => {
   });
 
   it('should handle getBoundingClientRect returning null', () => {
-    const { tooltipRef } = createMockRefs();
-    const wrapperRef = {
+    const { floatingRef } = createMockRefs();
+    const anchorRef = {
       current: {
         getBoundingClientRect: () => null,
       },
     } as unknown as RefObject<HTMLElement>;
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -258,12 +258,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should set up ResizeObserver when opened', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -272,12 +272,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should cleanup ResizeObserver on unmount', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     const { unmount } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -289,12 +289,12 @@ describe('useTooltipPosition', () => {
 
   it('should not set up ResizeObserver when isOpened is false', () => {
     mockObserve.mockClear();
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: false,
       }),
     );
@@ -303,12 +303,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should recalculate on ResizeObserver callback', async () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 8,
       }),
@@ -316,7 +316,7 @@ describe('useTooltipPosition', () => {
 
     expect(result.current.left).toBe(150);
 
-    wrapperRef.current.getBoundingClientRect = () => ({
+    anchorRef.current.getBoundingClientRect = () => ({
       top: 200,
       left: 300,
       bottom: 250,
@@ -336,8 +336,8 @@ describe('useTooltipPosition', () => {
       resizeCallback([], {} as ResizeObserver);
     });
 
-    // New position should be: left (300) + width/2 (100) - tooltipWidth/2 (50) = 350
-    // But since wrapper dimensions haven't changed, we need to wait for state update
+    // New position should be: left (300) + width/2 (100) - floatingWidth/2 (50) = 350
+    // But since anchor dimensions haven't changed, we need to wait for state update
     await waitFor(
       () => {
         expect(result.current.left).toBe(350);
@@ -350,13 +350,13 @@ describe('useTooltipPosition', () => {
   });
 
   it('should recalculate when isOpened changes', async () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     const { result, rerender } = renderHook(
       ({ isOpened }: { isOpened: boolean }) =>
-        useTooltipPosition({
-          wrapperRef,
-          tooltipRef,
+        useAnchorPosition({
+          anchorRef,
+          floatingRef,
           isOpened,
         }),
       { initialProps: { isOpened: false } },
@@ -372,13 +372,13 @@ describe('useTooltipPosition', () => {
   });
 
   it('should recalculate when spacing changes', async () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({ bottom: 150 });
+    const { anchorRef, floatingRef } = createMockRefs({ bottom: 150 });
 
     const { result, rerender } = renderHook(
       ({ spacing }: { spacing: number }) =>
-        useTooltipPosition({
-          wrapperRef,
-          tooltipRef,
+        useAnchorPosition({
+          anchorRef,
+          floatingRef,
           isOpened: true,
           spacing,
         }),
@@ -395,12 +395,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should handle zero spacing', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({ bottom: 150 });
+    const { anchorRef, floatingRef } = createMockRefs({ bottom: 150 });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 0,
       }),
@@ -409,17 +409,17 @@ describe('useTooltipPosition', () => {
     expect(result.current.top).toBe(150);
   });
 
-  it('should handle very small wrapper width', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({
+  it('should handle very small anchor width', () => {
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 400,
       width: 1,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -427,17 +427,17 @@ describe('useTooltipPosition', () => {
     expect(result.current.left).toBe(351);
   });
 
-  it('should handle wrapper at left viewport edge', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({
+  it('should handle anchor at left viewport edge', () => {
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 0,
       width: 100,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -445,18 +445,18 @@ describe('useTooltipPosition', () => {
     expect(result.current.left).toBe(0);
   });
 
-  it('should handle wrapper at right viewport edge', () => {
+  it('should handle anchor at right viewport edge', () => {
     window.innerWidth = 800;
-    const { wrapperRef, tooltipRef } = createMockRefs({
+    const { anchorRef, floatingRef } = createMockRefs({
       left: 700,
       width: 100,
       bottom: 150,
     });
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -465,8 +465,8 @@ describe('useTooltipPosition', () => {
     expect(result.current.left).toBe(700);
   });
 
-  it('should position tooltip considering viewport constraints', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs({
+  it('should position floating element considering viewport constraints', () => {
+    const { anchorRef, floatingRef } = createMockRefs({
       top: 100,
       left: 100,
       bottom: 150,
@@ -477,9 +477,9 @@ describe('useTooltipPosition', () => {
     window.innerHeight = 300;
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
         spacing: 8,
       }),
@@ -490,12 +490,12 @@ describe('useTooltipPosition', () => {
   });
 
   it('should return numeric coordinates', () => {
-    const { wrapperRef, tooltipRef } = createMockRefs();
+    const { anchorRef, floatingRef } = createMockRefs();
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
         isOpened: true,
       }),
     );
@@ -506,14 +506,14 @@ describe('useTooltipPosition', () => {
     expect(result.current.left).toBeGreaterThanOrEqual(0);
   });
 
-  it('should handle large tooltip positioning', () => {
-    const { wrapperRef } = createMockRefs({
+  it('should handle large floating element positioning', () => {
+    const { anchorRef } = createMockRefs({
       left: 200,
       width: 100,
       bottom: 150,
     });
 
-    const largeTooltipRef = {
+    const largeFloatingRef = {
       current: {
         offsetWidth: 500,
         offsetHeight: 100,
@@ -532,9 +532,9 @@ describe('useTooltipPosition', () => {
     } as unknown as RefObject<HTMLDivElement>;
 
     const { result } = renderHook(() =>
-      useTooltipPosition({
-        wrapperRef,
-        tooltipRef: largeTooltipRef,
+      useAnchorPosition({
+        anchorRef,
+        floatingRef: largeFloatingRef,
         isOpened: true,
       }),
     );

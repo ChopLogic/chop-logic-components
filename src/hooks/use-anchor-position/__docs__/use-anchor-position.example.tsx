@@ -1,30 +1,30 @@
 import '@__docs__/styles/Container.css';
 import { useRef, useState } from 'react';
 
-import { useTooltipPosition } from '../use-tooltip-position';
+import { useAnchorPosition } from '../use-anchor-position';
 
-export const UseTooltipPositionExample = () => {
+export const UseAnchorPositionExample = () => {
   const [isOpened, setIsOpened] = useState(false);
-  const wrapperRef = useRef(null);
-  const tooltipRef = useRef(null);
-  const { top, left } = useTooltipPosition({
-    wrapperRef,
-    tooltipRef,
+  const anchorRef = useRef(null);
+  const floatingRef = useRef(null);
+  const { top, left } = useAnchorPosition({
+    anchorRef,
+    floatingRef,
     isOpened,
   });
 
   return (
     <div>
-      <button type="button" onClick={() => setIsOpened(!isOpened)} ref={wrapperRef}>
+      <button type="button" onClick={() => setIsOpened(!isOpened)} ref={anchorRef}>
         Click me
       </button>
       {isOpened && (
         <div
           className="container"
-          ref={tooltipRef}
+          ref={floatingRef}
           style={{ position: 'absolute', top: `${top}px`, left: `${left}px` }}
         >
-          Tooltip Content
+          Floating Content
         </div>
       )}
     </div>

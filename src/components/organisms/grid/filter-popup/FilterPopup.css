@@ -1,6 +1,6 @@
 .cl-grid-filter-popup {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   z-index: var(--cl-z-index-popup);
   min-width: 240px;

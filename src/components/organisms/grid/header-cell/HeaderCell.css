@@ -19,10 +19,3 @@
   flex: 1;
   min-width: 0;
 }
-
-.cl-grid-header-cell__controls {
-  display: flex;
-  align-items: center;
-  gap: var(--cl-xs-gap);
-  flex-shrink: 0;
-}

@@ -1,3 +1,4 @@
+import { GridFilterType } from '@enums';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -10,7 +11,7 @@ describe('FilterPopup', () => {
     hasActiveConditions: false,
     onApply: vi.fn(),
     onClear: vi.fn(),
-    onCancel: vi.fn(),
+    onClose: vi.fn(),
   };
 
   const renderFilterPopup = (props: Partial<FilterPopupProps> = {}) => {
@@ -152,17 +153,17 @@ describe('FilterPopup', () => {
     });
   });
 
-  describe('Apply, Cancel, Clear controls', () => {
+  describe('Apply, Clear controls', () => {
     it('should render Apply button', () => {
       renderFilterPopup();
       const applyButton = screen.getByRole('button', { name: /apply filter/i });
       expect(applyButton).toBeInTheDocument();
     });
 
-    it('should render Cancel button', () => {
+    it('should not render a Cancel button', () => {
       renderFilterPopup();
-      const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
-      expect(cancelButton).toBeInTheDocument();
+      const cancelButton = screen.queryByRole('button', { name: /cancel filter/i });
+      expect(cancelButton).not.toBeInTheDocument();
     });
 
     it('should render Clear button', () => {
@@ -265,15 +266,55 @@ describe('FilterPopup', () => {
     });
   });
 
-  describe('Cancel behavior', () => {
-    it('should call onCancel when Cancel button is clicked', async () => {
-      const onCancel = vi.fn();
-      renderFilterPopup({ onCancel });
-      const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
+  describe('prefill from previous conditions', () => {
+    it('should prefill the input with the last applied condition value', () => {
+      renderFilterPopup({
+        columnConditions: [{ type: GridFilterType.Includes, value: 'Alice', caseSensitive: false }],
+      });
 
-      await userEvent.click(cancelButton);
+      const input = screen.getByRole('textbox', { name: /filter value/i });
+      expect(input).toHaveValue('Alice');
+    });
 
-      expect(onCancel).toHaveBeenCalledTimes(1);
+    it('should prefill the selected filter type from the last applied condition', () => {
+      renderFilterPopup({
+        columnConditions: [{ type: GridFilterType.Equals, value: 'Bob', caseSensitive: false }],
+      });
+
+      expect(screen.getByLabelText('Equals to')).toBeChecked();
+      expect(screen.getByLabelText('Starts with')).not.toBeChecked();
+    });
+
+    it('should prefill the case-sensitive toggle from the last applied condition', () => {
+      renderFilterPopup({
+        columnConditions: [{ type: GridFilterType.Includes, value: 'Bob', caseSensitive: true }],
+      });
+
+      const checkbox = screen.getByRole('checkbox', { name: /case sensitive/i });
+      expect(checkbox).toBeChecked();
+    });
+
+    it('should use the most recent condition when multiple exist', () => {
+      renderFilterPopup({
+        columnConditions: [
+          { type: GridFilterType.StartsWith, value: 'A', caseSensitive: false },
+          { type: GridFilterType.Equals, value: 'Alice', caseSensitive: true },
+        ],
+      });
+
+      const input = screen.getByRole('textbox', { name: /filter value/i });
+      expect(input).toHaveValue('Alice');
+      expect(screen.getByLabelText('Equals to')).toBeChecked();
+      expect(screen.getByRole('checkbox', { name: /case sensitive/i })).toBeChecked();
+    });
+
+    it('should fall back to defaults when no conditions are provided', () => {
+      renderFilterPopup();
+
+      const input = screen.getByRole('textbox', { name: /filter value/i });
+      expect(input).toHaveValue('');
+      expect(screen.getByLabelText('Starts with')).toBeChecked();
+      expect(screen.getByRole('checkbox', { name: /case sensitive/i })).not.toBeChecked();
     });
   });
 
@@ -302,35 +343,35 @@ describe('FilterPopup', () => {
   });
 
   describe('Escape key closes popup', () => {
-    it('should call onCancel when Escape key is pressed', async () => {
-      const onCancel = vi.fn();
-      renderFilterPopup({ onCancel });
+    it('should call onClose when Escape key is pressed', async () => {
+      const onClose = vi.fn();
+      renderFilterPopup({ onClose });
 
       await userEvent.keyboard('{Escape}');
 
-      expect(onCancel).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('click outside closes popup', () => {
-    it('should call onCancel when clicking outside the popup', async () => {
-      const onCancel = vi.fn();
-      const { container } = renderFilterPopup({ onCancel });
+    it('should call onClose when clicking outside the popup', async () => {
+      const onClose = vi.fn();
+      const { container } = renderFilterPopup({ onClose });
 
       // Simulate click outside by clicking on the container (outside dialog)
       await userEvent.click(container);
 
-      expect(onCancel).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(1);
     });
 
-    it('should not call onCancel when clicking inside the popup', async () => {
-      const onCancel = vi.fn();
-      renderFilterPopup({ onCancel });
+    it('should not call onClose when clicking inside the popup', async () => {
+      const onClose = vi.fn();
+      renderFilterPopup({ onClose });
       const dialog = screen.getByRole('dialog');
 
       await userEvent.click(dialog);
 
-      expect(onCancel).not.toHaveBeenCalled();
+      expect(onClose).not.toHaveBeenCalled();
     });
   });
 
@@ -404,12 +445,6 @@ describe('FilterPopup', () => {
       renderFilterPopup();
       const applyButton = screen.getByRole('button', { name: /apply filter/i });
       expect(applyButton).toBeInTheDocument();
-    });
-
-    it('should have accessible label for Cancel button', () => {
-      renderFilterPopup();
-      const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
-      expect(cancelButton).toBeInTheDocument();
     });
 
     it('should have accessible label for Clear button', () => {

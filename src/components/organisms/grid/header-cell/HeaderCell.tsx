@@ -5,9 +5,8 @@ import type { GridFilterCondition } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useId, useRef, useState } from 'react';
 
-import { FilterButton } from '../filter-button/FilterButton';
 import { FilterPopup } from '../filter-popup/FilterPopup';
-import { SortButton } from '../sort-button/SortButton';
+import { HeaderControls } from '../header-controls/HeaderControls';
 
 export type GridHeaderCellProps = {
   title?: string;
@@ -46,7 +45,6 @@ export const GridHeaderCell: FC<GridHeaderCellProps> = ({
 
   const closePopup = () => {
     setPopupOpen(false);
-    // Return focus to the FilterButton after popup closes
     filterButtonRef.current?.focus();
   };
 
@@ -67,7 +65,7 @@ export const GridHeaderCell: FC<GridHeaderCellProps> = ({
     onClearFilter?.();
   };
 
-  const handleCancel = () => {
+  const handleClose = () => {
     closePopup();
   };
 
@@ -86,33 +84,27 @@ export const GridHeaderCell: FC<GridHeaderCellProps> = ({
       <th className={cellClass}>
         <div className="cl-grid-header-cell__content">
           <span className="cl-grid-header-cell__title">{content}</span>
-          <div className="cl-grid-header-cell__controls">
-            {hasSortButton && onSortClick && (
-              <SortButton
-                direction={sortDirection ?? null}
-                columnTitle={title}
-                onClick={onSortClick}
-              />
-            )}
-            {hasFilterButton && (
-              <FilterButton
-                ref={filterButtonRef}
-                columnTitle={title}
-                isActive={isActive}
-                isOpen={isPopupOpen}
-                onClick={toggle}
-              />
-            )}
-          </div>
+          <HeaderControls
+            columnTitle={title}
+            hasSortButton={hasSortButton}
+            sortDirection={sortDirection}
+            onSortClick={onSortClick}
+            hasFilterButton={hasFilterButton}
+            isFilterActive={isActive}
+            isFilterOpen={isPopupOpen}
+            filterButtonRef={filterButtonRef}
+            onFilterToggle={toggle}
+          />
           {isPopupOpen && (
             <FilterPopup
               columnTitle={title}
               popupId={popupId}
               hasActiveConditions={isActive}
+              columnConditions={columnConditions}
               buttonRef={filterButtonRef}
               onApply={handleApply}
               onClear={handleClear}
-              onCancel={handleCancel}
+              onClose={handleClose}
             />
           )}
         </div>

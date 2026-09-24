@@ -410,8 +410,7 @@ describe('Grid', () => {
         await clearFilter();
 
         // Close popup
-        const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
-        await userEvent.click(cancelButton);
+        await userEvent.keyboard('{Escape}');
 
         // Should restore all rows
         expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);
@@ -603,8 +602,7 @@ describe('Grid', () => {
         await clearFilter();
 
         // Close popup
-        const cancelButton = screen.getByRole('button', { name: /cancel filter/i });
-        await userEvent.click(cancelButton);
+        await userEvent.keyboard('{Escape}');
 
         // Rows should be restored
         expect(getColumnValues(0)).toEqual(['Alice', 'Bob', 'Charlie', 'Diana', 'Adam']);

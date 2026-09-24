@@ -70,7 +70,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 1
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -97,7 +97,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 2
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -124,7 +124,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 3
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -166,7 +166,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 1
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -193,7 +193,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 2
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -220,7 +220,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
               Col 3
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-busy="false"
@@ -262,7 +262,7 @@ exports[`GridHead filter prop threading > snapshot with filtering enabled > shou
               Name
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-expanded="false"
@@ -291,7 +291,7 @@ exports[`GridHead filter prop threading > snapshot with filtering enabled > shou
               Age
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-expanded="false"
@@ -335,7 +335,7 @@ exports[`GridHead filter prop threading > snapshot with filtering enabled > shou
               Name
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-expanded="false"
@@ -364,7 +364,7 @@ exports[`GridHead filter prop threading > snapshot with filtering enabled > shou
               Age
             </span>
             <div
-              class="cl-grid-header-cell__controls"
+              class="cl-grid-header-controls"
             >
               <button
                 aria-expanded="false"

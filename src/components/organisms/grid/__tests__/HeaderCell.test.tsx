@@ -579,7 +579,7 @@ describe('FilterPopup toggle open/close', () => {
 });
 
 describe('focus return after popup closes', () => {
-  it('should return focus to FilterButton when Cancel is clicked', async () => {
+  it('should return focus to FilterButton when popup is closed via Escape', async () => {
     render(
       <table>
         <thead>
@@ -593,8 +593,7 @@ describe('focus return after popup closes', () => {
     const filterButton = screen.getByRole('button', { name: /filter/i });
     await userEvent.click(filterButton);
 
-    const cancelButton = screen.getByRole('button', { name: /cancel/i });
-    await userEvent.click(cancelButton);
+    await userEvent.keyboard('{Escape}');
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(filterButton).toHaveFocus();
@@ -622,7 +621,7 @@ describe('focus return after popup closes', () => {
   });
 });
 
-describe('apply/clear/cancel callback wiring', () => {
+describe('apply/clear/close callback wiring', () => {
   it('should call onApplyFilter with the condition when Apply is clicked', async () => {
     const onApplyFilter = vi.fn();
     render(
@@ -687,7 +686,7 @@ describe('apply/clear/cancel callback wiring', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('should close popup and not call any filter handlers when Cancel is clicked', async () => {
+  it('should close popup and not call any filter handlers when closed via Escape', async () => {
     const onApplyFilter = vi.fn();
     const onClearFilter = vi.fn();
     render(
@@ -708,8 +707,7 @@ describe('apply/clear/cancel callback wiring', () => {
     const filterButton = screen.getByRole('button', { name: /filter/i });
     await userEvent.click(filterButton);
 
-    const cancelButton = screen.getByRole('button', { name: /cancel/i });
-    await userEvent.click(cancelButton);
+    await userEvent.keyboard('{Escape}');
 
     expect(onApplyFilter).not.toHaveBeenCalled();
     expect(onClearFilter).not.toHaveBeenCalled();

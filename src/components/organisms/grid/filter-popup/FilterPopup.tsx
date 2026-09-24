@@ -23,24 +23,43 @@ export type FilterPopupProps = {
   columnTitle?: string;
   popupId: string;
   hasActiveConditions: boolean;
+  columnConditions?: GridFilterCondition[];
   buttonRef?: RefObject<HTMLButtonElement | null>;
   onApply: (condition: GridFilterCondition) => void;
   onClear: () => void;
-  onCancel: () => void;
+  onClose: () => void;
+};
+
+const DEFAULT_TYPE = GridFilterType.StartsWith;
+
+// Prefill the form from the last previously applied condition so users can see
+// and edit what they entered before, instead of starting from a blank form.
+const getInitialCondition = (
+  columnConditions?: GridFilterCondition[],
+): Pick<GridFilterCondition, 'type' | 'value' | 'caseSensitive'> => {
+  const lastCondition = columnConditions?.at(-1);
+
+  return {
+    type: lastCondition?.type ?? DEFAULT_TYPE,
+    value: lastCondition?.value ?? '',
+    caseSensitive: lastCondition?.caseSensitive ?? false,
+  };
 };
 
 export const FilterPopup: FC<FilterPopupProps> = ({
   columnTitle,
   popupId,
   hasActiveConditions,
+  columnConditions,
   buttonRef,
   onApply,
   onClear,
-  onCancel,
+  onClose,
 }) => {
-  const [type, setType] = useState<GridFilterType>(GridFilterType.StartsWith);
-  const [value, setValue] = useState<string>('');
-  const [caseSensitive, setCaseSensitive] = useState<boolean>(false);
+  const initialCondition = getInitialCondition(columnConditions);
+  const [type, setType] = useState<GridFilterType>(initialCondition.type);
+  const [value, setValue] = useState<string>(initialCondition.value);
+  const [caseSensitive, setCaseSensitive] = useState<boolean>(initialCondition.caseSensitive);
   const [error, setError] = useState<string | null>(null);
 
   const popupRef = useRef<HTMLDivElement>(null);
@@ -68,21 +87,18 @@ export const FilterPopup: FC<FilterPopupProps> = ({
     }
   }, []);
 
-  // Close on click outside (excluding the filter button itself)
   useClickOutside({
     ref: popupRef,
-    onClickOutsideHandler: onCancel,
+    onClickOutsideHandler: onClose,
     dependentRef: buttonRef,
   });
 
-  // Close on Escape key
   useKeyPress({
     keyCode: 'Escape',
     ref: popupRef,
-    onKeyPress: onCancel,
+    onKeyPress: onClose,
   });
 
-  // Focus trap within popup
   useModalFocusTrap({
     modalRef: popupRef,
     isOpened: true,
@@ -119,10 +135,6 @@ export const FilterPopup: FC<FilterPopupProps> = ({
 
   const handleClear = () => {
     onClear();
-  };
-
-  const handleCancel = () => {
-    onCancel();
   };
 
   return (
@@ -188,7 +200,6 @@ export const FilterPopup: FC<FilterPopupProps> = ({
 
         <div className="cl-grid-filter-popup__actions">
           <PrimaryButton text="Apply" onClick={handleApply} aria-label="Apply filter" />
-          <SecondaryButton text="Cancel" onClick={handleCancel} aria-label="Cancel filter" />
           <SecondaryButton
             text="Clear"
             onClick={handleClear}

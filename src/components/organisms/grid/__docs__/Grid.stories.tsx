@@ -2,7 +2,7 @@ import { GridSortDirection } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Grid from '../Grid';
-import { ControlledFilterExample, GridExample } from './Grid.example';
+import { ControlledFilterExample, GridExample, sampleColumns, sampleData } from './Grid.example';
 
 const meta: Meta<typeof Grid> = {
   component: GridExample,
@@ -179,171 +179,26 @@ export const DefaultGrid: Story = {
       );
     },
     caption: 'Contact List',
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
-    data: [
-      {
-        id: 'row1',
-        company: 'Alfreds Futterkiste',
-        contact: 'Maria Anders',
-        country: 'Germany',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row2',
-        company: 'Centro comercial Moctezuma',
-        contact: 'Francisco Chang',
-        country: 'Mexico',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row3',
-        company: 'Ernst Handel',
-        contact: 'Roland Mendel',
-        country: 'Austria',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row4',
-        company: 'Island Trading',
-        contact: 'Helen Bennett',
-        country: 'UK',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row5',
-        company: 'Laughing Bacchus Winecellars',
-        contact: 'Yoshi Tannamuri',
-        country: 'Canada',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row6',
-        company: 'Magazzini Alimentari Riuniti',
-        contact: 'Giovanni Rovelli',
-        country: 'Italy',
-        phone: '123-345-7890',
-      },
-    ],
+    columns: sampleColumns,
+    data: sampleData,
   },
 };
 
 export const SelectableGrid: Story = {
   args: {
     selectable: true,
+    caption: 'Selectable Contact List',
     onSelect: (ids: string[]) => console.log(ids),
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
-    data: [
-      {
-        id: 'row1',
-        company: 'Alfreds Futterkiste',
-        contact: 'Maria Anders',
-        country: 'Germany',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row2',
-        company: 'Centro comercial Moctezuma',
-        contact: 'Francisco Chang',
-        country: 'Mexico',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row3',
-        company: 'Ernst Handel',
-        contact: 'Roland Mendel',
-        country: 'Austria',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row4',
-        company: 'Island Trading',
-        contact: 'Helen Bennett',
-        country: 'UK',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row5',
-        company: 'Laughing Bacchus Winecellars',
-        contact: 'Yoshi Tannamuri',
-        country: 'Canada',
-        phone: '123-345-7890',
-      },
-      {
-        id: 'row6',
-        company: 'Magazzini Alimentari Riuniti',
-        contact: 'Giovanni Rovelli',
-        country: 'Italy',
-        phone: '123-345-7890',
-      },
-    ],
+    columns: sampleColumns,
+    data: sampleData,
   },
 };
-
-const sampleData = [
-  {
-    id: 'row1',
-    company: 'Alfreds Futterkiste',
-    contact: 'Maria Anders',
-    country: 'Germany',
-    phone: '123-345-7890',
-  },
-  {
-    id: 'row2',
-    company: 'Centro comercial Moctezuma',
-    contact: 'Francisco Chang',
-    country: 'Mexico',
-    phone: '234-456-8901',
-  },
-  {
-    id: 'row3',
-    company: 'Ernst Handel',
-    contact: 'Roland Mendel',
-    country: 'Austria',
-    phone: '345-567-9012',
-  },
-  {
-    id: 'row4',
-    company: 'Island Trading',
-    contact: 'Helen Bennett',
-    country: 'UK',
-    phone: '456-678-0123',
-  },
-  {
-    id: 'row5',
-    company: 'Laughing Bacchus Winecellars',
-    contact: 'Yoshi Tannamuri',
-    country: 'Canada',
-    phone: '567-789-1234',
-  },
-  {
-    id: 'row6',
-    company: 'Magazzini Alimentari Riuniti',
-    contact: 'Giovanni Rovelli',
-    country: 'Italy',
-    phone: '678-890-2345',
-  },
-];
 
 export const SortableGrid: Story = {
   args: {
     sortableByDefault: true,
     caption: 'Sortable Contact List',
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
+    columns: sampleColumns,
     data: sampleData,
   },
 };
@@ -355,7 +210,11 @@ export const MixedSortabilityGrid: Story = {
     columns: [
       { title: 'Company', field: 'company', sortable: true },
       { title: 'Contact', field: 'contact', sortable: true },
-      { title: 'Country', field: 'country', sortable: false },
+      { title: 'Email', field: 'email', sortable: false },
+      { title: 'Country', field: 'country', sortable: true },
+      { title: 'City', field: 'city', sortable: false },
+      { title: 'Role', field: 'role', sortable: true },
+      { title: 'Status', field: 'status', sortable: true },
       { title: 'Phone', field: 'phone' }, // uses default (false)
     ],
     data: sampleData,
@@ -366,12 +225,7 @@ export const FilterableGrid: Story = {
   args: {
     filterableByDefault: true,
     caption: 'Filterable Contact List',
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
+    columns: sampleColumns,
     data: sampleData,
   },
 };
@@ -383,7 +237,11 @@ export const MixedFilterabilityGrid: Story = {
     columns: [
       { title: 'Company', field: 'company', filterable: true },
       { title: 'Contact', field: 'contact', filterable: true },
+      { title: 'Email', field: 'email', filterable: true },
       { title: 'Country', field: 'country', filterable: false },
+      { title: 'City', field: 'city', filterable: true },
+      { title: 'Role', field: 'role', filterable: true },
+      { title: 'Status', field: 'status', filterable: false },
       { title: 'Phone', field: 'phone' }, // uses default (false)
     ],
     data: sampleData,
@@ -395,12 +253,7 @@ export const SortableAndFilterableGrid: Story = {
     sortableByDefault: true,
     filterableByDefault: true,
     caption: 'Sortable & Filterable Contact List',
-    columns: [
-      { title: 'Company', field: 'company' },
-      { title: 'Contact', field: 'contact' },
-      { title: 'Country', field: 'country' },
-      { title: 'Phone', field: 'phone' },
-    ],
+    columns: sampleColumns,
     data: sampleData,
   },
 };

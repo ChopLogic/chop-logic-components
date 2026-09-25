@@ -15,30 +15,6 @@
   gap: var(--cl-l-gap);
 }
 
-.cl-grid-filter-popup__types {
-  display: flex;
-  flex-direction: column;
-  gap: var(--cl-s-gap);
-}
-
-.cl-grid-filter-popup__type-option {
-  display: flex;
-  align-items: center;
-  gap: var(--cl-s-gap);
-  cursor: pointer;
-}
-
-.cl-grid-filter-popup__type-option input[type="radio"] {
-  margin: 0;
-  cursor: pointer;
-}
-
-.cl-grid-filter-popup__type-label {
-  font-size: var(--cl-typography-base-mobile);
-  color: var(--cl-base-font-color);
-  cursor: pointer;
-}
-
 .cl-grid-filter-popup__checkbox {
   padding-top: 0;
   padding-bottom: 0;

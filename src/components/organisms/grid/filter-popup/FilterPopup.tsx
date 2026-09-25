@@ -1,6 +1,6 @@
 import './FilterPopup.css';
 
-import { Portal } from '@components/atoms';
+import { Portal, RadioGroup } from '@components/atoms';
 import { PrimaryButton } from '@components/atoms/button/primary-button/PrimaryButton';
 import { SecondaryButton } from '@components/atoms/button/secondary-button/SecondaryButton';
 import { Checkbox, TextInput } from '@components/molecules';
@@ -17,7 +17,7 @@ import {
   useState,
 } from 'react';
 
-import { FILTER_TYPE_LABELS, FILTER_TYPES } from './FilterPopup.helpers';
+import { FILTER_TYPE_OPTIONS } from './FilterPopup.helpers';
 
 export type FilterPopupProps = {
   columnTitle?: string;
@@ -63,7 +63,6 @@ export const FilterPopup: FC<FilterPopupProps> = ({
   const [error, setError] = useState<string | null>(null);
 
   const popupRef = useRef<HTMLDivElement>(null);
-  const firstInputRef = useRef<HTMLInputElement>(null);
   const uniqueId = useId();
 
   const { top, left } = useAnchorPosition({
@@ -80,11 +79,11 @@ export const FilterPopup: FC<FilterPopupProps> = ({
   const textInputId = `filter-value-${popupId}-${uniqueId}`;
   const caseSensitiveId = `filter-case-${popupId}-${uniqueId}`;
 
-  // Focus the first control on open
+  // Focus the first radio option on open. RadioGroup manages its own inner
+  // refs, so we query the first radio input within the popup container.
   useEffect(() => {
-    if (firstInputRef.current) {
-      firstInputRef.current.focus();
-    }
+    const firstRadio = popupRef.current?.querySelector<HTMLInputElement>('input[type="radio"]');
+    firstRadio?.focus();
   }, []);
 
   useClickOutside({
@@ -148,24 +147,15 @@ export const FilterPopup: FC<FilterPopupProps> = ({
         className="cl-grid-filter-popup"
         style={{ top, left, opacity: isPositioned ? 1 : 0 }}
       >
-        <div className="cl-grid-filter-popup__types" role="radiogroup" aria-label="Filter type">
-          {FILTER_TYPES.map((filterType, index) => (
-            <label key={filterType} className="cl-grid-filter-popup__type-option">
-              <input
-                ref={index === 0 ? firstInputRef : undefined}
-                type="radio"
-                name={typeGroupName}
-                value={filterType}
-                checked={type === filterType}
-                onChange={() => handleTypeChange(filterType)}
-                aria-label={FILTER_TYPE_LABELS[filterType]}
-              />
-              <span className="cl-grid-filter-popup__type-label">
-                {FILTER_TYPE_LABELS[filterType]}
-              </span>
-            </label>
-          ))}
-        </div>
+        <RadioGroup
+          stateless
+          name={typeGroupName}
+          label="Filter type"
+          options={FILTER_TYPE_OPTIONS}
+          value={type}
+          onChange={(value) => handleTypeChange(value as GridFilterType)}
+          className="cl-grid-filter-popup__types"
+        />
 
         <TextInput
           stateless

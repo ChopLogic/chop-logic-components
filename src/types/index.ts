@@ -43,6 +43,7 @@ export type { MultiSelectProps } from './multi-select';
 export type { ListNavigationItem, ListNavigationOrientation } from './navigation';
 export type { NumericInputProps } from './numeric';
 export type { Author, AvatarProps, PreviewCardProps, TagData, TagProps } from './preview-card';
+export type { RadioGroupOption, RadioGroupProps } from './radio-group';
 export type { SearchProps } from './search';
 export type { SelectProps } from './select';
 export type { SwitchProps } from './switch';

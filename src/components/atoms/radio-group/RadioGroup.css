@@ -1,0 +1,106 @@
+.cl-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-m-gap);
+  font-family: var(--cl-core-font);
+}
+
+.cl-radio-group_horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cl-radio-group_disabled {
+  pointer-events: none;
+}
+
+.cl-radio-group_loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.cl-radio-group__option {
+  display: flex;
+  align-items: center;
+  gap: var(--cl-s-gap);
+  cursor: pointer;
+  padding: var(--cl-xs-gap);
+  border-radius: var(--cl-border-radius);
+  transition: background-color 150ms ease;
+}
+
+.cl-radio-group__option:hover:not(.cl-radio-group__option_disabled) {
+  text-shadow: var(--cl-text-shadow);
+}
+
+.cl-radio-group__option_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cl-radio-group__option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.cl-radio-group__circle {
+  width: var(--cl-icon-size);
+  height: var(--cl-icon-size);
+  border: 2px solid var(--cl-base-font-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 150ms ease;
+}
+
+.cl-radio-group__circle::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 150ms ease;
+}
+
+.cl-radio-group_invalid .cl-radio-group__circle {
+  border-color: var(--cl-danger-a0);
+}
+
+.cl-radio-group__option_checked .cl-radio-group__circle {
+  border-color: var(--cl-accent-a0);
+}
+
+.cl-radio-group__option_checked .cl-radio-group__circle::after {
+  background-color: var(--cl-accent-a0);
+}
+
+.cl-radio-group__option input:focus-visible + .cl-radio-group__circle {
+  outline: var(--cl-outline-border);
+  outline-offset: var(--cl-s-gap);
+}
+
+.cl-radio-group__label {
+  font-size: var(--cl-typography-base-mobile);
+  color: var(--cl-base-font-color);
+}
+
+.cl-radio-group_invalid .cl-radio-group__label {
+  color: var(--cl-danger-a0);
+}
+
+@media (min-width: 640px) {
+  .cl-radio-group__label {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-radio-group__label {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

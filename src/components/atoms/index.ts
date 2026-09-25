@@ -9,5 +9,6 @@ export { default as Input } from './input/Input';
 export { default as Label } from './label/Label';
 export { default as Link } from './link/Link';
 export { default as Portal } from './portal/Portal';
+export { default as RadioGroup } from './radio-group/RadioGroup';
 export { default as Tag } from './tag/Tag';
 export { default as Tooltip } from './tooltip/Tooltip';

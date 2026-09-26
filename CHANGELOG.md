@@ -4,6 +4,26 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.6.0] - 2026-09-26
+
+### Added
+
+- Column sorting for the `Grid` component: sortable columns display a `SortButton` in the header that cycles ascending → descending → unsorted, with support for both uncontrolled and controlled usage
+- `Grid` sorting props: `sortable` per column, `sortableByDefault`, controlled `sortField`/`sortDirection`, and an `onSortChange` callback returning the current `GridSortState`
+- Column filtering for the `Grid` component: filterable columns display a `FilterButton` that opens a `FilterPopup` for building per-column filter conditions
+- `Grid` filtering props: `filterable` per column, `filterableByDefault`, controlled `filterState`, and an `onFilterChange` callback returning the current `GridFilterState`
+- Filter conditions support `startsWith`, `includes`, and `equals` match types with an optional case-sensitive flag
+- `GridEmptyState` shown when sorting/filtering leaves no matching rows
+- `GridSortDirection` (`asc`/`desc`) and `GridFilterType` (`startsWith`/`includes`/`equals`) exported enums
+- `GridSortState`, `GridFilterState`, `GridFilterCondition`, and `GridColumnFilter` exported types
+- New `RadioGroup` atom with stateful and stateless variants: renders a `role="radiogroup"` with selectable options, supports `vertical` and `horizontal` orientation, and integrates with form loading state
+- `RadioGroup` keyboard support: roving tab index, arrow-key navigation between options, and `Space` to select the focused option
+- `RadioGroupProps` and `RadioGroupOption` exported types
+
+### Changed
+
+- `Grid` header rendering refactored into `HeaderCell` and `HeaderControls`, with grid state managed by the extracted `useGridSort`, `useGridFilter`, and `useGridSelection` hooks
+
 ## [4.5.2] - 2026-09-18
 
 ### Added

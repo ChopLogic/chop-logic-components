@@ -1,0 +1,6 @@
+.cl-grid-header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--cl-xs-gap);
+  flex-shrink: 0;
+}

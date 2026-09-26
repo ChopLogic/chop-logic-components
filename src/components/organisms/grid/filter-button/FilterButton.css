@@ -1,0 +1,31 @@
+.cl-grid-filter-button {
+  border: none;
+  cursor: pointer;
+  padding: var(--cl-xs-gap);
+  border-radius: 50%;
+  background: transparent;
+  width: fit-content;
+  flex-shrink: 0;
+  transition: all 150ms ease;
+}
+
+.cl-grid-filter-button__icon::before {
+  color: var(--cl-base-font-color);
+}
+
+.cl-grid-filter-button_active .cl-grid-filter-button__icon::before {
+  color: var(--cl-accent-a0);
+}
+
+.cl-grid-filter-button:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px hsla(0, 0%, 0%, 0.15));
+}
+
+.cl-grid-filter-button:hover .cl-grid-filter-button__icon::before {
+  color: var(--cl-info-a0);
+}
+
+.cl-grid-filter-button:active {
+  transform: scale(0.95);
+}

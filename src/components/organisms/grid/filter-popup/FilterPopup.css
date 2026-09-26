@@ -1,0 +1,33 @@
+.cl-grid-filter-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--cl-z-index-popup);
+  min-width: 240px;
+  padding: var(--cl-l-gap);
+  background-color: var(--cl-surface-a0);
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  box-shadow: var(--cl-box-shadow);
+  font-family: var(--cl-core-font);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-l-gap);
+}
+
+.cl-grid-filter-popup__checkbox {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cl-grid-filter-popup__error {
+  color: var(--cl-danger-a0);
+  font-size: var(--cl-typography-small-mobile);
+  margin-bottom: var(--cl-m-gap);
+}
+
+.cl-grid-filter-popup__actions {
+  display: flex;
+  gap: var(--cl-s-gap);
+  justify-content: space-between;
+}

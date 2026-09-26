@@ -1,0 +1,10 @@
+.cl-grid-empty-state {
+  display: table-row;
+}
+
+.cl-grid-empty-state__cell {
+  text-align: center;
+  padding: var(--cl-l-gap);
+  color: var(--cl-base-font-color);
+  background-color: var(--cl-surface-tonal-a0);
+}

@@ -17,7 +17,17 @@ export type { DialogProps } from './dialog';
 export type { EditableTextProps } from './editable-text';
 export type { FormInputParams, FormProps, FormValidationState, FormValues } from './form';
 export type { GalleryItem, GalleryMode, GalleryProps } from './gallery';
-export type { GridColumn, GridItem, GridProps, GridRowValue, RenderDataItemCallback } from './grid';
+export type {
+  GridColumn,
+  GridColumnFilter,
+  GridFilterCondition,
+  GridFilterState,
+  GridItem,
+  GridProps,
+  GridRowValue,
+  GridSortState,
+  RenderDataItemCallback,
+} from './grid';
 export type { HeaderProps } from './header';
 export type {
   ArtDirectionSource,
@@ -33,6 +43,7 @@ export type { MultiSelectProps } from './multi-select';
 export type { ListNavigationItem, ListNavigationOrientation } from './navigation';
 export type { NumericInputProps } from './numeric';
 export type { Author, AvatarProps, PreviewCardProps, TagData, TagProps } from './preview-card';
+export type { RadioGroupOption, RadioGroupProps } from './radio-group';
 export type { SearchProps } from './search';
 export type { SelectProps } from './select';
 export type { SwitchProps } from './switch';

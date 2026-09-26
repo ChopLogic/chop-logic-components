@@ -1,3 +1,4 @@
+export { useAnchorPosition } from './use-anchor-position/use-anchor-position';
 export { useAutoClose } from './use-auto-close/use-auto-close';
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
@@ -13,5 +14,4 @@ export { useModalFocusTrap } from './use-modal-focus-trap/use-modal-focus-trap';
 export { useRemainingTimer } from './use-remaining-timer/use-remaining-timer';
 export { useResetFormInput } from './use-reset-form-input/use-reset-form-input';
 export { useTheme } from './use-theme/use-theme';
-export { useTooltipPosition } from './use-tooltip-position/use-tooltip-position';
 export { useWindowDimensions } from './use-window-dimensions/use-window-dimensions';

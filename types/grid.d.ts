@@ -1,5 +1,17 @@
+import { GridFilterType, GridSortDirection } from '../enums';
 import { ReactElement } from '../../node_modules/react';
 import { ChopLogicComponentProps } from './_common';
+export type GridFilterCondition = {
+    type: GridFilterType;
+    value: string;
+    caseSensitive: boolean;
+};
+export type GridColumnFilter = GridFilterCondition[];
+export type GridFilterState = Record<string, GridFilterCondition[]>;
+export type GridSortState = {
+    field: string | null;
+    direction: GridSortDirection | null;
+};
 export interface GridProps extends ChopLogicComponentProps {
     columns: GridColumn[];
     data: GridItem[];
@@ -7,6 +19,13 @@ export interface GridProps extends ChopLogicComponentProps {
     selectable?: boolean;
     renderDataItem?: RenderDataItemCallback;
     onSelect?: (ids: string[]) => void;
+    sortableByDefault?: boolean;
+    sortField?: string | null;
+    sortDirection?: GridSortDirection | null;
+    onSortChange?: (state: GridSortState) => void;
+    filterableByDefault?: boolean;
+    filterState?: GridFilterState;
+    onFilterChange?: (state: GridFilterState) => void;
 }
 export type GridColumn = {
     field: string;
@@ -14,6 +33,8 @@ export type GridColumn = {
     component?: ReactElement;
     highlighted?: boolean;
     className?: string;
+    sortable?: boolean;
+    filterable?: boolean;
 };
 export type GridItem = {
     id: string;

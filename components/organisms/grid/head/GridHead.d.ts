@@ -1,4 +1,4 @@
-import { GridColumn } from '../../../../types';
+import { GridColumn, GridFilterCondition, GridFilterState, GridSortState } from '../../../../types';
 import { FC } from '../../../../../node_modules/react';
 type GridHeadProps = {
     columns: GridColumn[];
@@ -8,6 +8,14 @@ type GridHeadProps = {
     isAllCheckboxDisabled?: boolean;
     selectAll: () => void;
     deselectAll: () => void;
+    sortableByDefault: boolean;
+    sortState: GridSortState;
+    onSortClick: (field: string) => void;
+    filterableByDefault: boolean;
+    filterState: GridFilterState;
+    onApplyFilter: (field: string, condition: GridFilterCondition) => void;
+    onClearFilter: (field: string) => void;
 };
+export declare const isFilterable: (column: GridColumn, filterableByDefault: boolean) => boolean;
 export declare const GridHead: FC<GridHeadProps>;
 export {};

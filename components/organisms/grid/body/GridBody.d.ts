@@ -8,6 +8,8 @@ type Props = {
     deselectRowById: (id: string) => void;
     renderDataItem?: RenderDataItemCallback;
     selectable: boolean;
+    isEmpty: boolean;
+    colSpan: number;
 };
 export declare const GridBody: FC<Props>;
 export {};

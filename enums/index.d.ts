@@ -1,6 +1,8 @@
 export { AlertMode } from './alert-mode';
 export { ButtonView } from './button-view';
 export { ElementSize } from './element-size';
+export { GridFilterType } from './grid-filter-type';
+export { GridSortDirection } from './grid-sort-direction';
 export { IconName } from './icon-name';
 export { LinkTarget } from './link-target';
 export { LoaderView } from './loader-view';

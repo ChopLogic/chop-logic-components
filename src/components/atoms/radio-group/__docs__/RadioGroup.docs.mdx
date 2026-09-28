@@ -1,0 +1,140 @@
+import { Meta, Controls } from "@storybook/addon-docs/blocks";
+import * as RadioGroupStories from "./RadioGroup.stories";
+
+<Meta of={RadioGroupStories} title="Atoms/RadioGroup" />
+
+# RadioGroup
+
+The `RadioGroup` component is a customizable, accessible group of mutually exclusive radio options. It supports both stateful and stateless modes, vertical or horizontal layouts, group-level and per-option disabling, a loading state, and full keyboard navigation.
+
+## Usage
+
+### Stateful (Default)
+
+When `stateless` is false or omitted, the component manages its own selection internally. Provide `defaultValue` to set the initially selected option and `onChange` to react to selection changes.
+
+```tsx
+import { RadioGroup } from "chop-logic-components";
+
+const options = [
+  { value: "small", label: "Small" },
+  { value: "medium", label: "Medium" },
+  { value: "large", label: "Large" },
+];
+
+<RadioGroup name="size" label="Select a size" options={options} defaultValue="medium" onChange={(value) => console.log(value)} />;
+```
+
+### Stateless
+
+When `stateless` is true, the component is fully controlled via the `value` prop. You manage the selection externally and update it from `onChange`.
+
+```tsx
+import { RadioGroup } from "chop-logic-components";
+
+const options = [
+  { value: "small", label: "Small" },
+  { value: "medium", label: "Medium" },
+  { value: "large", label: "Large" },
+];
+
+const [size, setSize] = useState("medium");
+
+<RadioGroup name="size" label="Select a size" options={options} stateless value={size} onChange={setSize} />;
+```
+
+### Orientation
+
+Options are laid out vertically by default. Set `orientation="horizontal"` to arrange them in a row.
+
+```tsx
+<RadioGroup name="size" label="Select a size" options={options} orientation="horizontal" />
+```
+
+### Disabled and loading states
+
+Disable the whole group with `disabled`, disable a single option via the option's `disabled` flag, or set `isLoading` to block interaction while data is in flight.
+
+```tsx
+// Disable the entire group
+<RadioGroup name="size" label="Select a size" options={options} disabled />
+
+// Disable a single option
+<RadioGroup
+  name="size"
+  label="Select a size"
+  options={[
+    { value: "small", label: "Small" },
+    { value: "medium", label: "Medium", disabled: true },
+    { value: "large", label: "Large" },
+  ]}
+/>
+
+// Loading state
+<RadioGroup name="size" label="Select a size" options={options} isLoading />
+```
+
+## Props
+
+| Prop           | Type                         | Default      | Description                                                               |
+| -------------- | ---------------------------- | ------------ | ------------------------------------------------------------------------- |
+| `options`      | `RadioGroupOption[]`         | —            | Options to render. Each has `value`, `label`, and optional `disabled`.    |
+| `label`        | `string`                     | —            | Accessible label applied to the group via `aria-label`.                   |
+| `name`         | `string`                     | —            | Shared `name` for the underlying radio inputs; also seeds the group `id`. |
+| `orientation`  | `'vertical' \| 'horizontal'` | `'vertical'` | Layout direction of the options.                                          |
+| `onChange`     | `(value: string) => void`    | —            | Called with the selected value whenever the selection changes.            |
+| `defaultValue` | `string`                     | —            | Initially selected value in stateful mode.                                |
+| `value`        | `string`                     | —            | Controlled selected value used when `stateless` is true.                  |
+| `stateless`    | `boolean`                    | `false`      | When true, selection is controlled externally via `value`.                |
+| `disabled`     | `boolean`                    | `false`      | Disables the entire group.                                                |
+| `isLoading`    | `boolean`                    | `false`      | Marks the group as busy and blocks interaction.                           |
+| `required`     | `boolean`                    | `false`      | Marks a selection as required (`aria-required`).                          |
+
+Each `RadioGroupOption` has the shape `{ value: string; label: string; disabled?: boolean }`.
+
+<Controls />
+
+## Accessibility
+
+- The container renders with `role="radiogroup"` and is labelled by the `label` prop through `aria-label`.
+- `aria-orientation` reflects the current `orientation` so assistive technologies announce the layout.
+- `aria-required` is set from the `required` prop, and `aria-busy` is set while `isLoading` is true.
+- Selection state is exposed through the native radio inputs, so `aria-checked` semantics are handled by the browser.
+- Keyboard support:
+  - Tab moves focus into and out of the group as a single stop (roving `tabindex`); the selected option — or the first enabled option when nothing is selected — is the tab target.
+  - Arrow keys (Up/Down and Left/Right) move between options, wrapping at the boundaries and skipping disabled options.
+  - Space selects the currently focused option.
+- Disabled options and disabled groups are removed from pointer and keyboard interaction.
+- Always pass a meaningful `label` so the group is announced correctly.
+
+## Theming
+
+The component is styled with pure CSS using the `cl-` prefixed BEM classes (`.cl-radio-group`, `.cl-radio-group__option`, `.cl-radio-group__circle`, `.cl-radio-group__label`) and consumes design tokens from `src/styles/main.css`. No colors or spacing are hard-coded.
+
+Key CSS variables used:
+
+- `--cl-accent-a0` — fill and border color of the selected radio circle.
+- `--cl-base-font-color` — default circle border and label text color.
+- `--cl-danger-a0` — border and label color for the invalid state.
+- `--cl-surface-tonal-a0` — hover background for enabled options.
+- `--cl-outline-border` — focus outline shown on `:focus-visible`.
+- Spacing (`--cl-m-gap`, `--cl-s-gap`, `--cl-xs-gap`), radius (`--cl-border-radius`), icon size (`--cl-icon-size`), and typography (`--cl-core-font`, `--cl-typography-base-*`).
+
+Light theme is the default (defined in `:root`). Dark theme activates automatically when the `cl-components-dark-theme` class is present on the document element:
+
+```ts
+document.documentElement.classList.add("cl-components-dark-theme");
+```
+
+All theme-aware variables switch values under that class, so the RadioGroup adapts to light and dark themes without any component-level changes.
+
+## Best Practices
+
+1. _Clear options_: Use concise, mutually exclusive option labels.
+2. _Meaningful label_: Always provide the `label` prop for accessibility.
+3. _Sensible defaults_: Set `defaultValue` (stateful) or `value` (stateless) to a valid option.
+4. _Controlled vs uncontrolled_:
+   - Use stateful mode (default) for simple, isolated groups.
+   - Use stateless mode to integrate with external state management.
+5. _Orientation_: Prefer vertical layout for long lists; use horizontal for a small number of short options.
+6. _Disabled options_: Disable individual options rather than removing them when their availability may change.

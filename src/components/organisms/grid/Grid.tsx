@@ -16,6 +16,13 @@ const Grid: FC<GridProps> = ({
   renderDataItem,
   caption,
   selectable = false,
+  sortableByDefault = false,
+  sortField,
+  sortDirection,
+  onSortChange,
+  filterableByDefault = false,
+  filterState,
+  onFilterChange,
   className,
   ...rest
 }) => {
@@ -28,7 +35,25 @@ const Grid: FC<GridProps> = ({
     handleDeselectRowById,
     handleSelectRowById,
     selectedIds,
-  } = useGridController({ id, data, onSelect });
+    sortState,
+    handleSortClick,
+    filterState: currentFilterState,
+    filteredAndSortedData,
+    handleApplyFilter,
+    handleClearFilter,
+    isEmpty,
+  } = useGridController({
+    id,
+    data,
+    onSelect,
+    sortField,
+    sortDirection,
+    onSortChange,
+    filterState,
+    onFilterChange,
+  });
+
+  const colSpan = columns.length + (selectable ? 1 : 0);
 
   return (
     <div className="cl-grid__wrapper">
@@ -43,15 +68,24 @@ const Grid: FC<GridProps> = ({
           deselectAll={handleDeselectAll}
           isAllSelected={isAllSelected}
           isAllCheckboxDisabled={isAllCheckboxDisabled}
+          sortableByDefault={sortableByDefault}
+          sortState={sortState}
+          onSortClick={handleSortClick}
+          filterableByDefault={filterableByDefault}
+          filterState={currentFilterState}
+          onApplyFilter={handleApplyFilter}
+          onClearFilter={handleClearFilter}
         />
         <GridBody
           columns={columns}
-          data={data}
+          data={filteredAndSortedData}
           selectable={selectable}
           selectRowById={handleSelectRowById}
           deselectRowById={handleDeselectRowById}
           selectedIds={selectedIds}
           renderDataItem={renderDataItem}
+          isEmpty={isEmpty}
+          colSpan={colSpan}
         />
       </table>
     </div>

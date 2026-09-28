@@ -52,16 +52,24 @@ exports[`Grid > should match the snapshot 1`] = `
               </label>
             </div>
           </th>
-          <th>
+          <th
+            class="cl-grid-header-cell"
+          >
             Company
           </th>
-          <th>
+          <th
+            class="cl-grid-header-cell"
+          >
             Contact
           </th>
-          <th>
+          <th
+            class="cl-grid-header-cell"
+          >
             Country
           </th>
-          <th>
+          <th
+            class="cl-grid-header-cell"
+          >
             Phone
           </th>
         </tr>

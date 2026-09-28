@@ -1,9 +1,9 @@
 import {
+  useAnchorPosition,
   useAutoClose,
   useClickOutside,
   useElementIds,
   useKeyPress,
-  useTooltipPosition,
 } from '@hooks';
 import { type MouseEvent, useRef, useState } from 'react';
 
@@ -17,7 +17,11 @@ export const useTooltipController = ({ id, autoClose, autoCloseDelay }: Params) 
   const [isOpened, setIsOpened] = useState(false);
   const wrapperRef = useRef(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const { top, left } = useTooltipPosition({ wrapperRef, tooltipRef, isOpened });
+  const { top, left } = useAnchorPosition({
+    anchorRef: wrapperRef,
+    floatingRef: tooltipRef,
+    isOpened,
+  });
   const { elementId } = useElementIds(id);
 
   const closeTooltip = () => setIsOpened(false);

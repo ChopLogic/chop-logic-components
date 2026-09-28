@@ -1,0 +1,5 @@
+.cl-grid-sort-button {
+  padding: var(--cl-xs-gap);
+  margin-left: var(--cl-s-gap);
+  flex-shrink: 0;
+}

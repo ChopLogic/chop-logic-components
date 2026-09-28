@@ -1,8 +1,15 @@
-import type { GridColumn, GridItem, GridRowValue } from '@types';
+import { type GridFilterType, GridSortDirection } from '@enums';
+import type {
+  GridColumn,
+  GridFilterCondition,
+  GridItem,
+  GridRowValue,
+  GridSortState,
+} from '@types';
 import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { getGridRowValues } from '../Grid.helpers';
+import { filterGridData, getGridRowValues, getNextSortState, sortGridData } from '../Grid.helpers';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {
@@ -120,5 +127,108 @@ describe('getGridRowValues', () => {
         value: 'Alice',
       },
     ]);
+  });
+});
+
+describe('getNextSortState', () => {
+  it('starts ascending when a different column is clicked', () => {
+    const current: GridSortState = { field: 'name', direction: GridSortDirection.Asc };
+
+    expect(getNextSortState(current, 'age')).toEqual({
+      field: 'age',
+      direction: GridSortDirection.Asc,
+    });
+  });
+
+  it('starts ascending when the current direction is null', () => {
+    const current: GridSortState = { field: null, direction: null };
+
+    expect(getNextSortState(current, 'name')).toEqual({
+      field: 'name',
+      direction: GridSortDirection.Asc,
+    });
+  });
+
+  it('cycles from ascending to descending on the same column', () => {
+    const current: GridSortState = { field: 'name', direction: GridSortDirection.Asc };
+
+    expect(getNextSortState(current, 'name')).toEqual({
+      field: 'name',
+      direction: GridSortDirection.Desc,
+    });
+  });
+
+  it('resets to unsorted when the same column is descending', () => {
+    const current: GridSortState = { field: 'name', direction: GridSortDirection.Desc };
+
+    expect(getNextSortState(current, 'name')).toEqual({
+      field: null,
+      direction: null,
+    });
+  });
+});
+
+describe('filterGridData - unknown condition type', () => {
+  it('retains all rows when the condition type is not recognized', () => {
+    const data: GridItem[] = [
+      { id: '1', name: 'Alice' },
+      { id: '2', name: 'Bob' },
+    ];
+
+    const unknownCondition = {
+      type: 'unknown' as unknown as GridFilterType,
+      value: 'z',
+      caseSensitive: false,
+    } as GridFilterCondition;
+
+    const result = filterGridData(data, { name: [unknownCondition] });
+
+    expect(result).toEqual(data);
+  });
+});
+
+describe('sortGridData - object-valued cells', () => {
+  it('sorts object values by serialized content, not "[object Object]"', () => {
+    const data: GridItem[] = [
+      { id: '1', meta: { rank: 3 } },
+      { id: '2', meta: { rank: 1 } },
+      { id: '3', meta: { rank: 2 } },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Asc });
+
+    // Serialized as {"rank":1}, {"rank":2}, {"rank":3} — string compare orders them by rank.
+    // If every object collapsed to "[object Object]" they would compare equal and stay
+    // in original order (1, 3, 2), so this asserts the coercion actually distinguishes them.
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
+  });
+
+  it('reverses object ordering for descending direction', () => {
+    const data: GridItem[] = [
+      { id: '1', meta: { rank: 1 } },
+      { id: '2', meta: { rank: 3 } },
+      { id: '3', meta: { rank: 2 } },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Desc });
+
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
+  });
+
+  it('treats unserializable (circular) object values as empty and sorts them first ascending', () => {
+    const circular: Record<string, unknown> = {};
+    circular.self = circular;
+
+    const data: GridItem[] = [
+      { id: '1', meta: 'beta' },
+      { id: '2', meta: circular },
+      { id: '3', meta: 'alpha' },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Asc });
+
+    // The circular value coerces to '' and, per the empty-first rule, sorts ahead of
+    // the string values, which then order alphabetically.
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
   });
 });

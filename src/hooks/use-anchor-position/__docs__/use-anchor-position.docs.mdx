@@ -1,0 +1,66 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Stories from "./use-anchor-position.stories";
+
+<Meta of={Stories} title="Hooks/useAnchorPosition" />
+
+# useAnchorPosition
+
+The `useAnchorPosition` hook calculates and manages the position of a floating element (tooltip, popup, dropdown, etc.) relative to an anchor element.
+
+## Usage
+
+```tsx
+import React, { useRef, useState } from "react";
+import { useAnchorPosition } from "chop-logic-components";
+
+const ExampleComponent = () => {
+  const [isOpened, setIsOpened] = useState(false);
+  const anchorRef = useRef<HTMLElement>(null);
+  const floatingRef = useRef<HTMLElement>(null);
+  const { top, left } = useAnchorPosition({ anchorRef, floatingRef, isOpened });
+
+  return (
+    <div>
+      <button onClick={() => setIsOpened(!isOpened)} ref={anchorRef}>
+        Click me
+      </button>
+      {isOpened && (
+        <div
+          ref={floatingRef}
+          style={{
+            position: "absolute",
+            top: `${top}px`,
+            left: `${left}px`,
+            border: "1px solid black",
+            padding: "10px",
+          }}
+        >
+          Floating Content
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Params
+
+| Param           | Type                           | Description                                                                      |
+| --------------- | ------------------------------ | -------------------------------------------------------------------------------- |
+| **anchorRef**   | `React.RefObject<HTMLElement>` | A ref to the anchor element that the floating element is positioned relative to. |
+| **floatingRef** | `React.RefObject<HTMLElement>` | A ref to the floating element (tooltip, popup, dropdown, etc.).                  |
+| **isOpened**    | `boolean`                      | A boolean indicating whether the floating element is visible.                    |
+| **spacing**     | `number`                       | The spacing between the floating and anchor elements. Default is 4px.            |
+
+## Returns
+
+**position** `{ top: number, left: number }`: Coordinates for positioning the floating element in the viewport.
+
+## Behavior
+
+- Centers the floating element horizontally under the anchor
+- Flips above the anchor when there's not enough space below
+- Clamps to viewport edges to prevent overflow
+- Updates position on window resize

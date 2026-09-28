@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import type { GridColumn, GridItem } from '@types';
 import { describe, expect, it, vi } from 'vitest';
 import { GridBody } from '../body/GridBody';
@@ -23,6 +23,8 @@ describe('GridBody', () => {
     deselectRowById: vi.fn(),
     selectable: true,
     selectedIds: [],
+    isEmpty: false,
+    colSpan: 4,
   };
 
   it('should match the snapshot', () => {
@@ -32,5 +34,55 @@ describe('GridBody', () => {
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  describe('empty state rendering', () => {
+    it('should render GridEmptyState when isEmpty is true', () => {
+      render(
+        <table>
+          <GridBody {...testProps} isEmpty={true} colSpan={4} />
+        </table>,
+      );
+
+      expect(screen.getByText('No data matches the applied filters')).toBeInTheDocument();
+      expect(screen.queryAllByRole('row')).toHaveLength(1);
+    });
+
+    it('should render data rows when isEmpty is false', () => {
+      render(
+        <table>
+          <GridBody {...testProps} isEmpty={false} />
+        </table>,
+      );
+
+      expect(screen.queryByText('No data matches the applied filters')).not.toBeInTheDocument();
+      // 3 data rows
+      const rows = screen.getAllByRole('row');
+      expect(rows).toHaveLength(3);
+    });
+
+    it('should forward correct colSpan to GridEmptyState', () => {
+      const colSpan = 5;
+      render(
+        <table>
+          <GridBody {...testProps} isEmpty={true} colSpan={colSpan} />
+        </table>,
+      );
+
+      const cell = screen.getByText('No data matches the applied filters').closest('td');
+      expect(cell).toHaveAttribute('colspan', String(colSpan));
+    });
+
+    it('should forward colSpan for selectable grid (columns + 1)', () => {
+      const colSpan = columns.length + 1; // 3 columns + 1 for selection
+      render(
+        <table>
+          <GridBody {...testProps} isEmpty={true} colSpan={colSpan} />
+        </table>,
+      );
+
+      const cell = screen.getByText('No data matches the applied filters').closest('td');
+      expect(cell).toHaveAttribute('colspan', String(colSpan));
+    });
   });
 });

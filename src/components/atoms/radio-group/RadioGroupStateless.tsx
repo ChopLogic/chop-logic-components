@@ -2,11 +2,10 @@ import { useFormLoading } from '@hooks';
 import type { RadioGroupProps } from '@types';
 import { getClassName } from '@utils';
 import { createRef, type FC, type KeyboardEvent, type RefObject, useMemo } from 'react';
-
 import { useRadioGroupNavigation } from './RadioGroup.controller';
+import { RadioGroupOptionContainer } from './RadioGroupOptionContainer';
 
 import './RadioGroup.css';
-import { RadioGroupOptionContainer } from './ReadioGroup.option';
 
 const RadioGroupStateless: FC<RadioGroupProps> = ({
   name,

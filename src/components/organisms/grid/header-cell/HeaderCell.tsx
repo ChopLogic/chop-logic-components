@@ -1,6 +1,6 @@
 import './HeaderCell.css';
 
-import type { GridSortDirection } from '@enums';
+import { GridSortDirection } from '@enums';
 import type { GridFilterCondition } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useId, useRef, useState } from 'react';
@@ -11,7 +11,6 @@ import { HeaderControls } from '../header-controls/HeaderControls';
 export type GridHeaderCellProps = {
   title?: string;
   component?: React.ReactElement;
-  columnField?: string;
   sortable?: boolean;
   sortDirection?: GridSortDirection | null;
   onSortClick?: () => void;
@@ -21,10 +20,14 @@ export type GridHeaderCellProps = {
   onClearFilter?: () => void;
 };
 
+const ariaSortMap: Record<GridSortDirection, 'ascending' | 'descending'> = {
+  [GridSortDirection.Asc]: 'ascending',
+  [GridSortDirection.Desc]: 'descending',
+};
+
 export const GridHeaderCell: FC<GridHeaderCellProps> = ({
   title,
   component,
-  columnField,
   sortable,
   sortDirection,
   onSortClick,
@@ -38,8 +41,9 @@ export const GridHeaderCell: FC<GridHeaderCellProps> = ({
   const uniqueId = useId();
 
   const content = component ?? title ?? '';
-  const isActive = (columnConditions?.length ?? 0) > 0;
-  const popupId = `filter-popup-${columnField ?? uniqueId}`;
+  const isActive =
+    columnConditions?.some((condition) => condition.value.trim().length > 0) ?? false;
+  const popupId = `filter-popup-${uniqueId}`;
 
   const openPopup = () => setPopupOpen(true);
 
@@ -79,9 +83,11 @@ export const GridHeaderCell: FC<GridHeaderCellProps> = ({
     { 'cl-grid-header-cell_filterable': hasFilterButton },
   ]);
 
+  const ariaSort = sortDirection ? ariaSortMap[sortDirection] : undefined;
+
   if (hasControls) {
     return (
-      <th className={cellClass}>
+      <th className={cellClass} aria-sort={hasSortButton ? ariaSort : undefined}>
         <div className="cl-grid-header-cell__content">
           <span className="cl-grid-header-cell__title">{content}</span>
           <HeaderControls

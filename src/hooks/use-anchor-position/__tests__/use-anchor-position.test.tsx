@@ -302,6 +302,93 @@ describe('useAnchorPosition', () => {
     expect(mockObserve).not.toHaveBeenCalled();
   });
 
+  it('should register a captured scroll listener when opened', () => {
+    const addSpy = vi.spyOn(window, 'addEventListener');
+    const { anchorRef, floatingRef } = createMockRefs();
+
+    renderHook(() =>
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
+        isOpened: true,
+      }),
+    );
+
+    expect(addSpy).toHaveBeenCalledWith('scroll', expect.any(Function), true);
+    addSpy.mockRestore();
+  });
+
+  it('should not register a scroll listener when isOpened is false', () => {
+    const addSpy = vi.spyOn(window, 'addEventListener');
+    const { anchorRef, floatingRef } = createMockRefs();
+
+    renderHook(() =>
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
+        isOpened: false,
+      }),
+    );
+
+    expect(addSpy).not.toHaveBeenCalledWith('scroll', expect.any(Function), true);
+    addSpy.mockRestore();
+  });
+
+  it('should remove the captured scroll listener on unmount', () => {
+    const removeSpy = vi.spyOn(window, 'removeEventListener');
+    const { anchorRef, floatingRef } = createMockRefs();
+
+    const { unmount } = renderHook(() =>
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
+        isOpened: true,
+      }),
+    );
+
+    unmount();
+
+    expect(removeSpy).toHaveBeenCalledWith('scroll', expect.any(Function), true);
+    removeSpy.mockRestore();
+  });
+
+  it('should recalculate position on scroll', async () => {
+    const { anchorRef, floatingRef } = createMockRefs();
+
+    const { result } = renderHook(() =>
+      useAnchorPosition({
+        anchorRef,
+        floatingRef,
+        isOpened: true,
+        spacing: 8,
+      }),
+    );
+
+    expect(result.current.left).toBe(150);
+
+    // Anchor moves in the viewport (as it would when a container scrolls)
+    anchorRef.current.getBoundingClientRect = () => ({
+      top: 200,
+      left: 300,
+      bottom: 250,
+      width: 200,
+      height: 50,
+      right: 0,
+      x: 0,
+      y: 0,
+      toJSON: vi.fn(),
+    });
+
+    act(() => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+
+    // New center: left (300) + width/2 (100) - floatingWidth/2 (50) = 350
+    await waitFor(() => {
+      expect(result.current.left).toBe(350);
+    });
+  });
+
   it('should recalculate on ResizeObserver callback', async () => {
     const { anchorRef, floatingRef } = createMockRefs();
 

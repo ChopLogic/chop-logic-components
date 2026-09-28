@@ -155,6 +155,7 @@ exports[`GridHead > snapshot with sorting enabled > should match snapshot with s
         class="cl-grid-head__row"
       >
         <th
+          aria-sort="ascending"
           class="cl-grid-header-cell cl-grid-header-cell_sortable"
         >
           <div

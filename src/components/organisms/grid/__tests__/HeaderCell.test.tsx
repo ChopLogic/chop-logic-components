@@ -766,6 +766,118 @@ describe('header cell structure with filtering', () => {
   });
 });
 
+describe('aria-sort on sorted header', () => {
+  it('should set aria-sort="ascending" when sortDirection is asc', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              sortable={true}
+              sortDirection={GridSortDirection.Asc}
+              onSortClick={vi.fn()}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).toHaveAttribute('aria-sort', 'ascending');
+  });
+
+  it('should set aria-sort="descending" when sortDirection is desc', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              sortable={true}
+              sortDirection={GridSortDirection.Desc}
+              onSortClick={vi.fn()}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).toHaveAttribute('aria-sort', 'descending');
+  });
+
+  it('should NOT set aria-sort when sortDirection is null', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              sortable={true}
+              sortDirection={null}
+              onSortClick={vi.fn()}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).not.toHaveAttribute('aria-sort');
+  });
+
+  it('should NOT set aria-sort when sortDirection is undefined', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell title="Name" sortable={true} onSortClick={vi.fn()} />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).not.toHaveAttribute('aria-sort');
+  });
+
+  it('should NOT set aria-sort on a filter-only (non-sortable) header', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              sortable={false}
+              sortDirection={GridSortDirection.Asc}
+              filterable={true}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).not.toHaveAttribute('aria-sort');
+  });
+
+  it('should NOT set aria-sort on a plain header with no controls', () => {
+    const { container } = render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell title="Name" />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const th = container.querySelector('th');
+    expect(th).not.toHaveAttribute('aria-sort');
+  });
+});
+
 describe('FilterButton active state', () => {
   it('should show active state when columnConditions has items', () => {
     render(
@@ -816,5 +928,48 @@ describe('FilterButton active state', () => {
 
     const filterButton = screen.getByRole('button', { name: /filter/i });
     expect(filterButton).not.toHaveClass('cl-grid-filter-button_active');
+  });
+
+  it('should NOT show active state when all conditions have whitespace-only values', () => {
+    render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              filterable={true}
+              columnConditions={[
+                { type: GridFilterType.StartsWith, value: '   ', caseSensitive: false },
+              ]}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const filterButton = screen.getByRole('button', { name: /filter/i });
+    expect(filterButton).not.toHaveClass('cl-grid-filter-button_active');
+  });
+
+  it('should show active state when at least one condition has a non-whitespace value', () => {
+    render(
+      <table>
+        <thead>
+          <tr>
+            <GridHeaderCell
+              title="Name"
+              filterable={true}
+              columnConditions={[
+                { type: GridFilterType.StartsWith, value: '   ', caseSensitive: false },
+                { type: GridFilterType.Includes, value: 'test', caseSensitive: false },
+              ]}
+            />
+          </tr>
+        </thead>
+      </table>,
+    );
+
+    const filterButton = screen.getByRole('button', { name: /filter/i });
+    expect(filterButton).toHaveClass('cl-grid-filter-button_active');
   });
 });

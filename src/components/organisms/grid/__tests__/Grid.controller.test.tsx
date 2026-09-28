@@ -365,6 +365,60 @@ describe('useGridController', () => {
         direction: GridSortDirection.Asc,
       });
     });
+
+    it('should stay controlled and reflect the cleared state fed back via props', () => {
+      const mockOnSortChange = vi.fn();
+
+      const { result, rerender } = renderHook(
+        ({
+          sortField,
+          sortDirection,
+        }: {
+          sortField: string | null;
+          sortDirection: GridSortDirection | null;
+        }) =>
+          useGridController({
+            data: mockData,
+            sortField,
+            sortDirection,
+            onSortChange: mockOnSortChange,
+          }),
+        {
+          initialProps: {
+            sortField: 'name' as string | null,
+            sortDirection: GridSortDirection.Desc as GridSortDirection | null,
+          },
+        },
+      );
+
+      // Third click on a desc column clears sorting
+      act(() => {
+        result.current.handleSortClick('name');
+      });
+
+      expect(mockOnSortChange).toHaveBeenCalledWith({
+        field: null,
+        direction: null,
+      });
+
+      // Parent feeds the cleared state straight back into the controlled props
+      rerender({ sortField: null, sortDirection: null });
+
+      // Still controlled: reflects the cleared props, does not fall back to internal state
+      expect(result.current.sortState).toEqual({ field: null, direction: null });
+
+      // A subsequent click computes asc from the cleared state and stays controlled
+      act(() => {
+        result.current.handleSortClick('name');
+      });
+
+      expect(mockOnSortChange).toHaveBeenLastCalledWith({
+        field: 'name',
+        direction: GridSortDirection.Asc,
+      });
+      // sortState still reflects props (null), proving controlled mode held
+      expect(result.current.sortState).toEqual({ field: null, direction: null });
+    });
   });
 
   describe('Mode detection', () => {

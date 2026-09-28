@@ -130,22 +130,6 @@ const meta: Meta<typeof RadioGroup> = {
         category: 'Identification',
       },
     },
-    tabIndex: {
-      control: 'number',
-      description: 'Tab index for keyboard navigation',
-      table: {
-        type: { summary: 'number' },
-        category: 'HTML Attributes',
-      },
-    },
-    title: {
-      control: 'text',
-      description: 'Tooltip text shown on hover',
-      table: {
-        type: { summary: 'string' },
-        category: 'HTML Attributes',
-      },
-    },
   },
 };
 

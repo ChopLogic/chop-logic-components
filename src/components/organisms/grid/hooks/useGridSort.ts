@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { getNextSortState } from '../Grid.helpers';
 
 export type UseGridSortParams = {
-  sortField?: string;
-  sortDirection?: GridSortDirection;
+  sortField?: string | null;
+  sortDirection?: GridSortDirection | null;
   onSortChange?: (state: GridSortState) => void;
 };
 
@@ -28,7 +28,7 @@ export const useGridSort = ({
   });
 
   const sortState: GridSortState = isControlled
-    ? { field: sortField, direction: sortDirection }
+    ? { field: sortField ?? null, direction: sortDirection ?? null }
     : internalSortState;
 
   const handleSortClick = (field: string) => {

@@ -6,9 +6,10 @@ export interface RadioGroupOption {
   disabled?: boolean;
 }
 
-export interface RadioGroupProps extends ChopLogicInputProps {
+export interface RadioGroupProps extends Omit<ChopLogicInputProps, 'title' | 'tabIndex'> {
   options: RadioGroupOption[];
   orientation?: 'vertical' | 'horizontal';
+  value?: string;
   onChange?: (value: string) => void;
   defaultValue?: string;
 }

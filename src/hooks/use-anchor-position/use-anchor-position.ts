@@ -51,12 +51,16 @@ export const useAnchorPosition = ({
     // Initial position calculation
     updatePosition();
 
-    // Set up resize observer for window changes
+    // Recalculate for viewport size changes and for scrolling containers.
+    // Scroll is listened in the capture phase so scrolls inside nested
+    // containers (which do not bubble) still trigger a reposition.
     const resizeObserver = new ResizeObserver(updatePosition);
     resizeObserver.observe(document.documentElement);
+    window.addEventListener('scroll', updatePosition, true);
 
     return () => {
       resizeObserver.disconnect();
+      window.removeEventListener('scroll', updatePosition, true);
     };
   }, [isOpened, anchorRef, floatingHeight, floatingWidth, spacing]);
 

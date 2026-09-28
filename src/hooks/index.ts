@@ -1,4 +1,7 @@
-export { useAnchorPosition } from './use-anchor-position/use-anchor-position';
+export {
+  useAnchorPosition,
+  useAnchorPosition as useTooltipPosition,
+} from './use-anchor-position/use-anchor-position';
 export { useAutoClose } from './use-auto-close/use-auto-close';
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';

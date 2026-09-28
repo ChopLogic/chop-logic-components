@@ -20,8 +20,8 @@ export const useGridController = ({
   data: GridItem[];
   id?: string;
   onSelect?: (ids: string[]) => void;
-  sortField?: string;
-  sortDirection?: GridSortDirection;
+  sortField?: string | null;
+  sortDirection?: GridSortDirection | null;
   onSortChange?: (state: GridSortState) => void;
   filterState?: GridFilterState;
   onFilterChange?: (state: GridFilterState) => void;

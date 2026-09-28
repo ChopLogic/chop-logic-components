@@ -69,7 +69,6 @@ export const GridHead: FC<GridHeadProps> = ({
             key={`${column.field}_${gridId}`}
             title={column.title}
             component={column.component}
-            columnField={column.field}
             sortable={isSortable(column, sortableByDefault)}
             sortDirection={sortState.field === column.field ? sortState.direction : null}
             onSortClick={() => onSortClick(column.field)}

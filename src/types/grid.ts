@@ -26,8 +26,8 @@ export interface GridProps extends ChopLogicComponentProps {
   renderDataItem?: RenderDataItemCallback;
   onSelect?: (ids: string[]) => void;
   sortableByDefault?: boolean;
-  sortField?: string;
-  sortDirection?: GridSortDirection;
+  sortField?: string | null;
+  sortDirection?: GridSortDirection | null;
   onSortChange?: (state: GridSortState) => void;
   filterableByDefault?: boolean;
   filterState?: GridFilterState;

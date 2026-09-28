@@ -9,7 +9,7 @@ import type {
 import type { ReactElement } from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { filterGridData, getGridRowValues, getNextSortState } from '../Grid.helpers';
+import { filterGridData, getGridRowValues, getNextSortState, sortGridData } from '../Grid.helpers';
 
 describe('getGridRowValues', () => {
   it('should return correct values for each column when fields exist in item', () => {
@@ -184,5 +184,51 @@ describe('filterGridData - unknown condition type', () => {
     const result = filterGridData(data, { name: [unknownCondition] });
 
     expect(result).toEqual(data);
+  });
+});
+
+describe('sortGridData - object-valued cells', () => {
+  it('sorts object values by serialized content, not "[object Object]"', () => {
+    const data: GridItem[] = [
+      { id: '1', meta: { rank: 3 } },
+      { id: '2', meta: { rank: 1 } },
+      { id: '3', meta: { rank: 2 } },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Asc });
+
+    // Serialized as {"rank":1}, {"rank":2}, {"rank":3} — string compare orders them by rank.
+    // If every object collapsed to "[object Object]" they would compare equal and stay
+    // in original order (1, 3, 2), so this asserts the coercion actually distinguishes them.
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
+  });
+
+  it('reverses object ordering for descending direction', () => {
+    const data: GridItem[] = [
+      { id: '1', meta: { rank: 1 } },
+      { id: '2', meta: { rank: 3 } },
+      { id: '3', meta: { rank: 2 } },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Desc });
+
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
+  });
+
+  it('treats unserializable (circular) object values as empty and sorts them first ascending', () => {
+    const circular: Record<string, unknown> = {};
+    circular.self = circular;
+
+    const data: GridItem[] = [
+      { id: '1', meta: 'beta' },
+      { id: '2', meta: circular },
+      { id: '3', meta: 'alpha' },
+    ];
+
+    const sorted = sortGridData(data, { field: 'meta', direction: GridSortDirection.Asc });
+
+    // The circular value coerces to '' and, per the empty-first rule, sorts ahead of
+    // the string values, which then order alphabetically.
+    expect(sorted.map((item) => item.id)).toEqual(['2', '3', '1']);
   });
 });

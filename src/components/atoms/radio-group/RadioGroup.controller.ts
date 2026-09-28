@@ -7,8 +7,8 @@ export interface RadioGroupNavigationParams {
   isLoading?: boolean;
 }
 
-const ARROW_KEYS = ['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'];
-const FORWARD_KEYS = ['ArrowDown', 'ArrowRight'];
+const ARROW_KEYS = new Set(['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft']);
+const FORWARD_KEYS = new Set(['ArrowDown', 'ArrowRight']);
 
 export function useRadioGroupNavigation({
   options,
@@ -28,7 +28,8 @@ export function useRadioGroupNavigation({
 
     let nextIndex = currentIndex;
 
-    for (let step = 0; step < options.length; step += 1) {
+    // Iterate at most once per option to find the next enabled one, wrapping around.
+    for (const _step of options.keys()) {
       nextIndex = (nextIndex + direction + options.length) % options.length;
 
       if (!options[nextIndex]?.disabled) {
@@ -46,13 +47,13 @@ export function useRadioGroupNavigation({
   ): void => {
     const { key } = event;
 
-    if (!ARROW_KEYS.includes(key)) {
+    if (!ARROW_KEYS.has(key)) {
       return;
     }
 
     event.preventDefault();
 
-    const direction: 1 | -1 = FORWARD_KEYS.includes(key) ? 1 : -1;
+    const direction: 1 | -1 = FORWARD_KEYS.has(key) ? 1 : -1;
     const nextIndex = getNextEnabledIndex(currentIndex, direction);
 
     if (nextIndex !== -1) {

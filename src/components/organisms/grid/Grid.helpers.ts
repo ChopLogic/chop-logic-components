@@ -22,8 +22,8 @@ export function sortGridData(data: GridItem[], sortState: GridSortState): GridIt
   const indexed = data.map((item, index) => ({ item, index }));
 
   indexed.sort((a, b) => {
-    const aValue = String(a.item[field] ?? '').toLowerCase();
-    const bValue = String(b.item[field] ?? '').toLowerCase();
+    const aValue = coerceFieldValue(a.item[field]).toLowerCase();
+    const bValue = coerceFieldValue(b.item[field]).toLowerCase();
 
     // Empty values sort first in ascending, last in descending
     if (aValue === '' && bValue !== '') {
@@ -101,7 +101,19 @@ function isActiveCondition(condition: GridFilterCondition): boolean {
 }
 
 function coerceFieldValue(value: unknown): string {
-  return value === null || value === undefined ? '' : String(value);
+  if (value === null || value === undefined) {
+    return '';
+  }
+
+  if (typeof value === 'object') {
+    try {
+      return JSON.stringify(value) ?? '';
+    } catch {
+      return '';
+    }
+  }
+
+  return String(value);
 }
 
 function matchesCondition(fieldValue: unknown, condition: GridFilterCondition): boolean {

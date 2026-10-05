@@ -10,11 +10,13 @@ const ITEMS: MenuItem[] = [
     id: 'item-1',
     label: 'Home',
     icon: IconName.Home,
+    className: 'menu-item-highlighted',
   },
   {
     id: 'item-2',
     label: 'About',
     icon: IconName.Info,
+    className: 'menu-item-highlighted',
     nestedItems: [
       {
         id: 'item-5',

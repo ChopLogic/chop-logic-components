@@ -17,4 +17,5 @@ export interface MenuItem {
   onClick?: () => void;
   onHover?: () => void;
   onFocus?: () => void;
+  className?: string;
 }

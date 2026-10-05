@@ -40,6 +40,13 @@ describe('MenuLeaf', () => {
     expect(screen.getByRole('menuitem')).toBeInTheDocument();
   });
 
+  it('should apply a custom className alongside the base class', () => {
+    render(<MenuLeaf item={{ ...testLabeledItem, className: 'custom-leaf' }} />);
+    const menuItem = screen.getByRole('menuitem');
+    expect(menuItem).toHaveClass('cl-menu-leaf');
+    expect(menuItem).toHaveClass('custom-leaf');
+  });
+
   it('should call onClick handler when clicked', async () => {
     render(<MenuLeaf item={testLabeledItem} />);
     await userEvent.click(screen.getByText(testLabeledItem.label));

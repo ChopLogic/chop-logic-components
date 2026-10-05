@@ -36,6 +36,7 @@ export const SubMenu: FC<Props> = ({
     'cl-sub-menu__icon',
     { 'cl-sub-menu__icon_opened': isSubMenuOpened && !isNested },
   ]);
+  const subMenuClass = getClassName(['cl-sub-menu', item.className]);
 
   const itemContent = link ? (
     <a href={link} target="_blank" rel="noreferrer">
@@ -65,7 +66,7 @@ export const SubMenu: FC<Props> = ({
 
   return (
     <li
-      className="cl-sub-menu"
+      className={subMenuClass}
       tabIndex={0}
       role="menuitem"
       aria-haspopup="true"

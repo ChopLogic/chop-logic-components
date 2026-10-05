@@ -73,6 +73,23 @@ describe('SubMenu', () => {
     expect(span).toBeInTheDocument();
   });
 
+  it('should apply a custom className alongside the base class', () => {
+    render(
+      <SubMenu
+        item={{ ...itemWithoutLink, className: 'custom-sub-menu' }}
+        isSubMenuOpened={false}
+        toggleSubMenu={mockToggleSubMenu}
+        closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
+        mode={OrientationMode.Horizontal}
+      />,
+    );
+
+    const menuItem = screen.getByRole('menuitem');
+    expect(menuItem).toHaveClass('cl-sub-menu');
+    expect(menuItem).toHaveClass('custom-sub-menu');
+  });
+
   it('calls toggleSubMenu on click', () => {
     render(
       <SubMenu

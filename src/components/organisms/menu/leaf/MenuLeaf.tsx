@@ -1,12 +1,13 @@
 import { Icon } from '@components/atoms';
-import type { MenuItem } from '@types';
-import type { ReactElement } from 'react';
-
-import './MenuLeaf.css';
 import { ElementSize } from '@enums';
+import type { MenuItem } from '@types';
+import { getClassName } from '@utils';
+import type { ReactElement } from 'react';
+import './MenuLeaf.css';
 
 export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
   const { icon, link, label, onFocus, onClick, onHover } = item;
+  const leafClass = getClassName(['cl-menu-leaf', item.className]);
 
   const leafContent = link ? (
     <a href={link} target="_blank" rel="noreferrer">
@@ -25,7 +26,7 @@ export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
 
   return (
     <li
-      className="cl-menu-leaf"
+      className={leafClass}
       tabIndex={0}
       role="menuitem"
       onFocus={onFocus}

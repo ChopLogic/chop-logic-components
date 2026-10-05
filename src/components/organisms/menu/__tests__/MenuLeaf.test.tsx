@@ -1,5 +1,5 @@
 import { IconName } from '@enums';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { MenuLeaf } from '../leaf/MenuLeaf';
@@ -50,7 +50,48 @@ describe('MenuLeaf', () => {
   it('should call onClick handler when clicked', async () => {
     render(<MenuLeaf item={testLabeledItem} />);
     await userEvent.click(screen.getByText(testLabeledItem.label));
+    await waitFor(() => {
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+    });
+  });
+
+  it('should flash the item before firing onClick, then clear the flash', async () => {
+    render(<MenuLeaf item={testLabeledItem} />);
+    const menuItem = screen.getByRole('menuitem');
+
+    await userEvent.click(menuItem);
+
+    // The item is highlighted immediately and onClick is deferred until the flash ends.
+    expect(menuItem).toHaveClass('cl-menu-leaf_activated');
+    expect(testLabeledItem.onClick).not.toHaveBeenCalled();
+
+    await waitFor(() => {
+      expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+    });
     expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+  });
+
+  it('should call closeMenu after the flash when an action item is activated', async () => {
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={testLabeledItem} closeMenu={closeMenu} />);
+
+    await userEvent.click(screen.getByRole('menuitem'));
+
+    await waitFor(() => {
+      expect(closeMenu).toHaveBeenCalledOnce();
+    });
+    expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+  });
+
+  it('should close the menu immediately for link items without flashing', async () => {
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={testLinkItem} closeMenu={closeMenu} />);
+
+    const menuItem = screen.getByRole('menuitem');
+    await userEvent.click(menuItem);
+
+    expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+    expect(closeMenu).toHaveBeenCalledOnce();
   });
 
   describe('keyboard interactions', () => {
@@ -58,7 +99,9 @@ describe('MenuLeaf', () => {
       render(<MenuLeaf item={testLabeledItem} />);
       const menuItem = screen.getByRole('menuitem');
       await userEvent.type(menuItem, '{Enter}');
-      expect(testLabeledItem.onClick).toHaveBeenCalled();
+      await waitFor(() => {
+        expect(testLabeledItem.onClick).toHaveBeenCalled();
+      });
     });
 
     it('should stop event propagation on keydown', async () => {

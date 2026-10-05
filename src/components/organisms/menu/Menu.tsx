@@ -1,7 +1,7 @@
 import { OrientationMode } from '@enums';
 import type { MenuProps } from '@types';
 import { getClassName } from '@utils';
-import type { FC } from 'react';
+import { type FC, useCallback, useState } from 'react';
 
 import { MenuListItem } from './list-item/MenuListItem';
 import './Menu.css';
@@ -13,6 +13,12 @@ const Menu: FC<MenuProps> = ({
   className,
   ...rest
 }) => {
+  // Bumping this counter signals every open submenu to collapse. It is used to
+  // close the whole menu after a leaf is activated (macOS-style flash + close).
+  const [closeEpoch, setCloseEpoch] = useState(0);
+
+  const closeMenu = useCallback(() => setCloseEpoch((epoch) => epoch + 1), []);
+
   const menuClass = getClassName([
     'cl-menu-bar',
     className,
@@ -22,7 +28,15 @@ const Menu: FC<MenuProps> = ({
   return (
     <menu {...rest} className={menuClass}>
       {items.map((item) => (
-        <MenuListItem key={item.id} item={item} mode={mode} openedOn={openedOn} level={0} />
+        <MenuListItem
+          key={item.id}
+          item={item}
+          mode={mode}
+          openedOn={openedOn}
+          level={0}
+          closeEpoch={closeEpoch}
+          closeMenu={closeMenu}
+        />
       ))}
     </menu>
   );

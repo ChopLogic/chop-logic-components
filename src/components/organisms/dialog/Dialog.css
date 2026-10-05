@@ -36,6 +36,10 @@
   animation: cl-slide-in-up ease 400ms;
 }
 
+.dialog__content {
+  height: 100%;
+}
+
 .cl-dialog__button {
   position: absolute;
   right: var(--cl-xs-gap);

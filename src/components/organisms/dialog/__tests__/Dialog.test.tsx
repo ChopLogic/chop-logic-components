@@ -69,4 +69,40 @@ describe('Dialog', () => {
       expect(testProps.onClose).toHaveBeenCalledOnce();
     });
   });
+
+  it('should apply the contentClassName to the content wrapper', async () => {
+    render(
+      <Dialog {...testProps} isOpened={true} contentClassName="custom-content">
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.querySelector('.cl-dialog__content')).toHaveClass('custom-content');
+    });
+  });
+
+  it('should apply the headerClassName to the header element', async () => {
+    render(
+      <Dialog {...testProps} isOpened={true} headerClassName="custom-header">
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.querySelector('header')).toHaveClass('custom-header');
+    });
+  });
+
+  it('should apply the bodyClassName to the body wrapper', async () => {
+    render(
+      <Dialog {...testProps} isOpened={true} bodyClassName="custom-body">
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('Dialog content').parentElement).toHaveClass('custom-body');
+    });
+  });
 });

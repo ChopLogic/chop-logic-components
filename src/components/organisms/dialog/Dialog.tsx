@@ -7,11 +7,23 @@ import { type FC, useRef } from 'react';
 
 import './Dialog.css';
 
-const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, id, ...rest }) => {
+const Dialog: FC<DialogProps> = ({
+  isOpened,
+  onClose,
+  title,
+  children,
+  icon,
+  id,
+  contentClassName,
+  headerClassName,
+  bodyClassName,
+  ...rest
+}) => {
   const isMounted = useIsMounted(isOpened);
   const isClosing = isMounted && !isOpened;
   const { elementId } = useElementIds(id);
   const titleId = `${elementId}-title`;
+  const contentClass = getClassName(['cl-dialog__content', contentClassName]);
 
   const modalRef = useRef(null);
 
@@ -41,12 +53,14 @@ const Dialog: FC<DialogProps> = ({ isOpened, onClose, title, children, icon, id,
             onClick={onClose}
             className="cl-dialog__button"
           />
-          <header>
-            <Header as="h3" icon={icon} id={titleId}>
-              {title}
-            </Header>
-          </header>
-          <div>{children}</div>
+          <div className={contentClass}>
+            <header className={headerClassName}>
+              <Header as="h3" icon={icon} id={titleId}>
+                {title}
+              </Header>
+            </header>
+            <div className={bodyClassName}>{children}</div>
+          </div>
         </div>
       </div>
     </Portal>

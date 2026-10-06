@@ -4,6 +4,20 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.6.1] - 2026-10-06
+
+### Added
+
+- Optional `icon` prop on the `Switch` component, rendering a decorative icon before the label
+- `target` prop on `MenuItem` to control the anchor target of link items, defaulting to `_blank`
+- `className` prop on `MenuItem` for per-item custom styling, applied to both leaf and submenu items
+- `headerClassName`, `bodyClassName`, and `contentClassName` props on the `Dialog` component for styling the header, body, and content wrapper
+
+### Changed
+
+- Menu items now briefly flash before activating (macOS-style confirmation): when an action item is clicked or activated with `Enter`, it highlights, then runs its `onClick` and, in horizontal mode, closes the menu; the flash is skipped when the user prefers reduced motion
+- `MenuItem` link items now emit `rel="noreferrer"` only when the target is `_blank`
+
 ## [4.6.0] - 2026-09-28
 
 ### Added

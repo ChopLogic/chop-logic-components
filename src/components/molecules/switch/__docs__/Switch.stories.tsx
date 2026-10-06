@@ -1,3 +1,4 @@
+import { IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { SwitchExample } from './Switch.example';
@@ -28,6 +29,15 @@ const meta: Meta<typeof SwitchExample> = {
       description: 'Whether to show an indicator inside the switch thumb',
       table: {
         type: { summary: 'boolean' },
+        category: 'Content',
+      },
+    },
+    icon: {
+      control: 'select',
+      options: Object.values(IconName),
+      description: 'Optional icon displayed before the label',
+      table: {
+        type: { summary: 'IconName' },
         category: 'Content',
       },
     },
@@ -121,5 +131,12 @@ export const WithIndicator: Story = {
     label: 'Bluetooth',
     checked: true,
     hasIndicator: true,
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    label: 'Notifications',
+    icon: IconName.Bell,
   },
 };

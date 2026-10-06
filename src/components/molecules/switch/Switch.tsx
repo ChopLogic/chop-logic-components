@@ -1,3 +1,5 @@
+import { Icon } from '@components/atoms';
+import { ElementSize } from '@enums';
 import { useFormLoading } from '@hooks';
 import type { SwitchProps } from '@types';
 import { getClassName } from '@utils';
@@ -16,6 +18,7 @@ const Switch: FC<SwitchProps> = ({
   name,
   value = 'on',
   hasIndicator,
+  icon,
   isLoading: isLoadingProp,
 }) => {
   const isLoading = useFormLoading(isLoadingProp);
@@ -71,6 +74,7 @@ const Switch: FC<SwitchProps> = ({
         aria-hidden="true"
         data-testid="switch-input"
       />
+      <Icon name={icon} hidden size={ElementSize.Small} className="cl-switch__icon" />
       <span className="cl-switch__label">{label}</span>
       {hasIndicator && (
         <span className="cl-switch__indicator" aria-hidden="true">

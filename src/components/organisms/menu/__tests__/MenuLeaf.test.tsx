@@ -35,6 +35,20 @@ describe('MenuLeaf', () => {
     expect(screen.getByRole('link')).toBeInTheDocument();
   });
 
+  it('should default the link target to _blank with a safe rel', () => {
+    render(<MenuLeaf item={testLinkItem} />);
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noreferrer');
+  });
+
+  it('should respect a custom link target and omit rel for non-blank targets', () => {
+    render(<MenuLeaf item={{ ...testLinkItem, target: '_self' }} />);
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('target', '_self');
+    expect(link).not.toHaveAttribute('rel');
+  });
+
   it('should have accessible role', () => {
     render(<MenuLeaf item={testLinkItem} />);
     expect(screen.getByRole('menuitem')).toBeInTheDocument();

@@ -56,6 +56,7 @@ const ITEMS: MenuItem[] = [
                 icon: IconName.Check,
                 onFocus: () => console.log('Focus item-18'),
                 link: 'https://github.com/',
+                target: '_self',
               },
             ],
           },

@@ -57,6 +57,40 @@ describe('SubMenu', () => {
     expect(link).toHaveAttribute('href', 'https://example.com');
   });
 
+  it('defaults the link target to _blank with a safe rel', () => {
+    render(
+      <SubMenu
+        item={itemWithLink}
+        isSubMenuOpened={false}
+        toggleSubMenu={mockToggleSubMenu}
+        closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
+        mode={OrientationMode.Horizontal}
+      />,
+    );
+
+    const link = screen.getByRole('link', { name: /item with link/i });
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noreferrer');
+  });
+
+  it('respects a custom link target and omits rel for non-blank targets', () => {
+    render(
+      <SubMenu
+        item={{ ...itemWithLink, target: '_self' }}
+        isSubMenuOpened={false}
+        toggleSubMenu={mockToggleSubMenu}
+        closeSubMenu={mockCloseSubMenu}
+        openSubMenu={mockOpenSubMenu}
+        mode={OrientationMode.Horizontal}
+      />,
+    );
+
+    const link = screen.getByRole('link', { name: /item with link/i });
+    expect(link).toHaveAttribute('target', '_self');
+    expect(link).not.toHaveAttribute('rel');
+  });
+
   it('renders correctly without a link', () => {
     render(
       <SubMenu

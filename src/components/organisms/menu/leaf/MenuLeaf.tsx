@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
-  const { icon, link, label, onFocus, onClick, onHover } = item;
+  const { icon, link, label, target = '_blank', onFocus, onClick, onHover } = item;
   const [isActivated, setIsActivated] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -38,7 +38,7 @@ export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
   };
 
   const leafContent = link ? (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
       {label}
     </a>
   ) : (

@@ -5,7 +5,7 @@ import { RadioGroupExample } from './RadioGroup.example';
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroupExample,
-  title: 'Atoms/RadioGroup',
+  title: 'Molecules/RadioGroup',
   argTypes: {
     // Content
     label: {

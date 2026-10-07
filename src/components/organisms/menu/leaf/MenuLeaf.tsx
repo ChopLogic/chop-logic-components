@@ -55,6 +55,7 @@ export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
 
   const handleClick = () => {
     if (link) {
+      onClick?.();
       closeMenu?.();
       return;
     }

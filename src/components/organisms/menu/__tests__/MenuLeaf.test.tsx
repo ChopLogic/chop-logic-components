@@ -121,6 +121,17 @@ describe('MenuLeaf', () => {
     expect(closeMenu).toHaveBeenCalledOnce();
   });
 
+  it('should call onClick for link items before closing the menu', async () => {
+    const onClick = vi.fn();
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={{ ...testLinkItem, onClick }} closeMenu={closeMenu} />);
+
+    await userEvent.click(screen.getByRole('menuitem'));
+
+    expect(onClick).toHaveBeenCalledOnce();
+    expect(closeMenu).toHaveBeenCalledOnce();
+  });
+
   describe('keyboard interactions', () => {
     it('should call onClick handler when Enter is pressed', async () => {
       render(<MenuLeaf item={testLabeledItem} />);

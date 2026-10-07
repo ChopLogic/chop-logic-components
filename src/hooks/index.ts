@@ -14,6 +14,7 @@ export { useIsMounted } from './use-is-mounted/use-is-mounted';
 export { useIsOverflow } from './use-is-overflow/use-is-overflow';
 export { useKeyPress } from './use-key-press/use-key-press';
 export { useModalFocusTrap } from './use-modal-focus-trap/use-modal-focus-trap';
+export { usePrefersReducedMotion } from './use-prefers-reduced-motion/use-prefers-reduced-motion';
 export { useRemainingTimer } from './use-remaining-timer/use-remaining-timer';
 export { useResetFormInput } from './use-reset-form-input/use-reset-form-input';
 export { useTheme } from './use-theme/use-theme';

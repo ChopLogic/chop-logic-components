@@ -1,8 +1,16 @@
 import { IconName } from '@enums';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MenuLeaf } from '../leaf/MenuLeaf';
+
+const mockMatchMedia = (prefersReducedMotion: boolean) => {
+  return vi.fn().mockImplementation(() => ({
+    matches: prefersReducedMotion,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }));
+};
 
 describe('MenuLeaf', () => {
   const testLabeledItem = {
@@ -23,6 +31,11 @@ describe('MenuLeaf', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    window.matchMedia = mockMatchMedia(false);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it('should match the snapshot', () => {
@@ -143,6 +156,30 @@ describe('MenuLeaf', () => {
       const menuItem = screen.getByRole('menuitem');
       await userEvent.hover(menuItem);
       expect(testLabeledItem.onHover).toHaveBeenCalledOnce();
+    });
+  });
+
+  describe('reduced motion', () => {
+    it('should skip flash and call onClick immediately when reduced motion is preferred', async () => {
+      window.matchMedia = mockMatchMedia(true);
+      render(<MenuLeaf item={testLabeledItem} />);
+      const menuItem = screen.getByRole('menuitem');
+
+      await userEvent.click(menuItem);
+
+      expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+    });
+
+    it('should call closeMenu immediately when reduced motion is preferred', async () => {
+      window.matchMedia = mockMatchMedia(true);
+      const closeMenu = vi.fn();
+      render(<MenuLeaf item={testLabeledItem} closeMenu={closeMenu} />);
+
+      await userEvent.click(screen.getByRole('menuitem'));
+
+      expect(closeMenu).toHaveBeenCalledOnce();
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
     });
   });
 });

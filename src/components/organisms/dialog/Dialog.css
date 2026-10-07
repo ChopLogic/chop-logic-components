@@ -36,7 +36,7 @@
   animation: cl-slide-in-up ease 400ms;
 }
 
-.dialog__content {
+.cl-dialog__content {
   height: 100%;
 }
 

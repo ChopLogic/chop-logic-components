@@ -1,5 +1,6 @@
 import { Icon } from '@components/atoms';
 import { ElementSize } from '@enums';
+import { usePrefersReducedMotion } from '@hooks';
 import type { MenuItem } from '@types';
 import { getClassName } from '@utils';
 import { type ReactElement, useEffect, useRef, useState } from 'react';
@@ -16,6 +17,7 @@ export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
   const { icon, link, label, target = '_blank', onFocus, onClick, onHover } = item;
   const [isActivated, setIsActivated] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const leafClass = getClassName([
     'cl-menu-leaf',
@@ -28,6 +30,12 @@ export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
   }, []);
 
   const activate = () => {
+    if (prefersReducedMotion) {
+      onClick?.();
+      closeMenu?.();
+      return;
+    }
+
     setIsActivated(true);
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {

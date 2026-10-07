@@ -6,6 +6,8 @@ type Props = PropsWithChildren & {
     mode: OrientationMode;
     openedOn?: 'hover' | 'click';
     level: number;
+    closeEpoch: number;
+    closeMenu: () => void;
 };
 export declare const MenuListItem: FC<Props>;
 export {};

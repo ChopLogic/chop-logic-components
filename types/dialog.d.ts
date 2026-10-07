@@ -6,4 +6,7 @@ export interface DialogProps extends ChopLogicComponentProps, PropsWithChildren 
     onClose: () => void;
     title: string;
     icon?: IconName;
+    headerClassName?: string;
+    bodyClassName?: string;
+    contentClassName?: string;
 }

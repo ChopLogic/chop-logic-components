@@ -1,5 +1,8 @@
 import { MenuItem } from '../../../../types';
 import { ReactElement } from '../../../../../node_modules/react';
-export declare const MenuLeaf: ({ item }: {
+type Props = {
     item: MenuItem;
-}) => ReactElement;
+    closeMenu?: () => void;
+};
+export declare const MenuLeaf: ({ item, closeMenu }: Props) => ReactElement;
+export {};

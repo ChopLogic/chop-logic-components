@@ -12,11 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `target` prop on `MenuItem` to control the anchor target of link items, defaulting to `_blank`
 - `className` prop on `MenuItem` for per-item custom styling, applied to both leaf and submenu items
 - `headerClassName`, `bodyClassName`, and `contentClassName` props on the `Dialog` component for styling the header, body, and content wrapper
+- A new `usePrefersReducedMotion` hook with an interactive Storybook demo
 
 ### Changed
 
 - Menu items now briefly flash before activating (macOS-style confirmation): when an action item is clicked or activated with `Enter`, it highlights, then runs its `onClick` and, in horizontal mode, closes the menu; the flash is skipped when the user prefers reduced motion
 - `MenuItem` link items now emit `rel="noreferrer"` only when the target is `_blank`
+
+### Removed
+- Storybook test runner and test:integration command is removed due to compatibility issues with CI environment. A new integration testing approach will be delivered shortly.
 
 ## [4.6.0] - 2026-09-28
 

@@ -60,7 +60,6 @@ Chop Logic Components is a React 19 component library following **Atomic Design*
 | Type check | `npm run typecheck` |
 | Format | `npm run format` |
 | Coverage | `npm run coverage` |
-| Integration tests | `npm run test:integration` |
 | Mutation tests | `npm run test:mutation` |
 
 ## Git Conventions

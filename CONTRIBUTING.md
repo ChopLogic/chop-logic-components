@@ -421,13 +421,7 @@ export const Default: Story = {
 
 ## Testing
 
-We use **Vitest** and **React Testing Library** for unit and hook tests. **Integration** coverage is provided by the
-**Storybook test runner** (`@storybook/test-runner`): it builds static Storybook, serves it, and runs Playwright-based
-smoke tests against stories (composition, rendering, and addon checks). Run locally:
-
-```sh
-npm run test:integration
-```
+We use **Vitest** and **React Testing Library** for unit and hook tests.
 
 Ensure all tests pass before submitting changes:
 

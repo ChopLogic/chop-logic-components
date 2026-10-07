@@ -1,8 +1,16 @@
 import { IconName } from '@enums';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MenuLeaf } from '../leaf/MenuLeaf';
+
+const mockMatchMedia = (prefersReducedMotion: boolean) => {
+  return vi.fn().mockImplementation(() => ({
+    matches: prefersReducedMotion,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }));
+};
 
 describe('MenuLeaf', () => {
   const testLabeledItem = {
@@ -23,6 +31,11 @@ describe('MenuLeaf', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    window.matchMedia = mockMatchMedia(false);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it('should match the snapshot', () => {
@@ -35,15 +48,88 @@ describe('MenuLeaf', () => {
     expect(screen.getByRole('link')).toBeInTheDocument();
   });
 
+  it('should default the link target to _blank with a safe rel', () => {
+    render(<MenuLeaf item={testLinkItem} />);
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noreferrer');
+  });
+
+  it('should respect a custom link target and omit rel for non-blank targets', () => {
+    render(<MenuLeaf item={{ ...testLinkItem, target: '_self' }} />);
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('target', '_self');
+    expect(link).not.toHaveAttribute('rel');
+  });
+
   it('should have accessible role', () => {
     render(<MenuLeaf item={testLinkItem} />);
     expect(screen.getByRole('menuitem')).toBeInTheDocument();
   });
 
+  it('should apply a custom className alongside the base class', () => {
+    render(<MenuLeaf item={{ ...testLabeledItem, className: 'custom-leaf' }} />);
+    const menuItem = screen.getByRole('menuitem');
+    expect(menuItem).toHaveClass('cl-menu-leaf');
+    expect(menuItem).toHaveClass('custom-leaf');
+  });
+
   it('should call onClick handler when clicked', async () => {
     render(<MenuLeaf item={testLabeledItem} />);
     await userEvent.click(screen.getByText(testLabeledItem.label));
+    await waitFor(() => {
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+    });
+  });
+
+  it('should flash the item before firing onClick, then clear the flash', async () => {
+    render(<MenuLeaf item={testLabeledItem} />);
+    const menuItem = screen.getByRole('menuitem');
+
+    await userEvent.click(menuItem);
+
+    // The item is highlighted immediately and onClick is deferred until the flash ends.
+    expect(menuItem).toHaveClass('cl-menu-leaf_activated');
+    expect(testLabeledItem.onClick).not.toHaveBeenCalled();
+
+    await waitFor(() => {
+      expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+    });
     expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+  });
+
+  it('should call closeMenu after the flash when an action item is activated', async () => {
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={testLabeledItem} closeMenu={closeMenu} />);
+
+    await userEvent.click(screen.getByRole('menuitem'));
+
+    await waitFor(() => {
+      expect(closeMenu).toHaveBeenCalledOnce();
+    });
+    expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+  });
+
+  it('should close the menu immediately for link items without flashing', async () => {
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={testLinkItem} closeMenu={closeMenu} />);
+
+    const menuItem = screen.getByRole('menuitem');
+    await userEvent.click(menuItem);
+
+    expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+    expect(closeMenu).toHaveBeenCalledOnce();
+  });
+
+  it('should call onClick for link items before closing the menu', async () => {
+    const onClick = vi.fn();
+    const closeMenu = vi.fn();
+    render(<MenuLeaf item={{ ...testLinkItem, onClick }} closeMenu={closeMenu} />);
+
+    await userEvent.click(screen.getByRole('menuitem'));
+
+    expect(onClick).toHaveBeenCalledOnce();
+    expect(closeMenu).toHaveBeenCalledOnce();
   });
 
   describe('keyboard interactions', () => {
@@ -51,7 +137,9 @@ describe('MenuLeaf', () => {
       render(<MenuLeaf item={testLabeledItem} />);
       const menuItem = screen.getByRole('menuitem');
       await userEvent.type(menuItem, '{Enter}');
-      expect(testLabeledItem.onClick).toHaveBeenCalled();
+      await waitFor(() => {
+        expect(testLabeledItem.onClick).toHaveBeenCalled();
+      });
     });
 
     it('should stop event propagation on keydown', async () => {
@@ -79,6 +167,30 @@ describe('MenuLeaf', () => {
       const menuItem = screen.getByRole('menuitem');
       await userEvent.hover(menuItem);
       expect(testLabeledItem.onHover).toHaveBeenCalledOnce();
+    });
+  });
+
+  describe('reduced motion', () => {
+    it('should skip flash and call onClick immediately when reduced motion is preferred', async () => {
+      window.matchMedia = mockMatchMedia(true);
+      render(<MenuLeaf item={testLabeledItem} />);
+      const menuItem = screen.getByRole('menuitem');
+
+      await userEvent.click(menuItem);
+
+      expect(menuItem).not.toHaveClass('cl-menu-leaf_activated');
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
+    });
+
+    it('should call closeMenu immediately when reduced motion is preferred', async () => {
+      window.matchMedia = mockMatchMedia(true);
+      const closeMenu = vi.fn();
+      render(<MenuLeaf item={testLabeledItem} closeMenu={closeMenu} />);
+
+      await userEvent.click(screen.getByRole('menuitem'));
+
+      expect(closeMenu).toHaveBeenCalledOnce();
+      expect(testLabeledItem.onClick).toHaveBeenCalledOnce();
     });
   });
 });

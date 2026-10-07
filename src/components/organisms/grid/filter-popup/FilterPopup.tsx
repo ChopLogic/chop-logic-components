@@ -1,9 +1,9 @@
 import './FilterPopup.css';
 
-import { Portal, RadioGroup } from '@components/atoms';
+import { Portal } from '@components/atoms';
 import { PrimaryButton } from '@components/atoms/button/primary-button/PrimaryButton';
 import { SecondaryButton } from '@components/atoms/button/secondary-button/SecondaryButton';
-import { Checkbox, TextInput } from '@components/molecules';
+import { Checkbox, RadioGroup, TextInput } from '@components/molecules';
 import { GridFilterType } from '@enums';
 import { useAnchorPosition, useClickOutside, useKeyPress, useModalFocusTrap } from '@hooks';
 import type { GridFilterCondition } from '@types';

@@ -1,4 +1,5 @@
 import type { IconName, OrientationMode } from '@enums';
+import type { HTMLAttributeAnchorTarget } from 'react';
 
 import type { ChopLogicComponentProps } from './_common';
 
@@ -14,7 +15,9 @@ export interface MenuItem {
   nestedItems?: MenuItem[];
   icon?: IconName;
   link?: string;
+  target?: HTMLAttributeAnchorTarget;
   onClick?: () => void;
   onHover?: () => void;
   onFocus?: () => void;
+  className?: string;
 }

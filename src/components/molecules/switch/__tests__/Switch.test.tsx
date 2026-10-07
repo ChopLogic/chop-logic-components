@@ -1,3 +1,4 @@
+import { IconName } from '@enums';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -63,6 +64,31 @@ describe('Switch', () => {
 
     const indicator = screen.queryByText('On');
     expect(indicator).not.toBeInTheDocument();
+  });
+
+  it('renders an icon before the label when the icon prop is provided', () => {
+    const { container } = render(<Switch {...defaultProps} icon={IconName.Bell} />);
+
+    const icon = container.querySelector('.cl-switch__icon');
+    expect(icon).toBeInTheDocument();
+    expect(icon).toHaveClass(IconName.Bell);
+
+    // The icon should precede the label in the DOM order.
+    const label = screen.getByText('Test Switch');
+    expect(icon?.compareDocumentPosition(label)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+
+  it('does not render an icon when the icon prop is omitted', () => {
+    const { container } = render(<Switch {...defaultProps} />);
+
+    expect(container.querySelector('.cl-switch__icon')).not.toBeInTheDocument();
+  });
+
+  it('keeps the decorative icon hidden from assistive tech', () => {
+    const { container } = render(<Switch {...defaultProps} icon={IconName.Bell} />);
+
+    const icon = container.querySelector('.cl-switch__icon');
+    expect(icon).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('handles Space key for toggling', async () => {

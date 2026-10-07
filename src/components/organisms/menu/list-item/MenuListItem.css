@@ -25,7 +25,7 @@
   border: var(--cl-light-border);
   box-shadow: var(--cl-box-shadow);
   background-color: var(--cl-base-background-color);
-  padding: var(--cl-m-gap);
+  padding: var(--cl-m-gap) var(--cl-l-gap);
   margin: 0;
   z-index: var(--cl-z-index-menu);
 }

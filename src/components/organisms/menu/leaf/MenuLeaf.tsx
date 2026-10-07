@@ -1,35 +1,81 @@
 import { Icon } from '@components/atoms';
-import type { MenuItem } from '@types';
-import type { ReactElement } from 'react';
-
-import './MenuLeaf.css';
 import { ElementSize } from '@enums';
+import { usePrefersReducedMotion } from '@hooks';
+import type { MenuItem } from '@types';
+import { getClassName } from '@utils';
+import { type ReactElement, useEffect, useRef, useState } from 'react';
+import './MenuLeaf.css';
 
-export const MenuLeaf = ({ item }: { item: MenuItem }): ReactElement => {
-  const { icon, link, label, onFocus, onClick, onHover } = item;
+const MENU_LEAF_FLASH_DURATION = 150;
+
+type Props = {
+  item: MenuItem;
+  closeMenu?: () => void;
+};
+
+export const MenuLeaf = ({ item, closeMenu }: Props): ReactElement => {
+  const { icon, link, label, target = '_blank', onFocus, onClick, onHover } = item;
+  const [isActivated, setIsActivated] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  const leafClass = getClassName([
+    'cl-menu-leaf',
+    item.className,
+    { 'cl-menu-leaf_activated': isActivated },
+  ]);
+
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
+  const activate = () => {
+    if (prefersReducedMotion) {
+      onClick?.();
+      closeMenu?.();
+      return;
+    }
+
+    setIsActivated(true);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setIsActivated(false);
+      onClick?.();
+      closeMenu?.();
+    }, MENU_LEAF_FLASH_DURATION);
+  };
 
   const leafContent = link ? (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
       {label}
     </a>
   ) : (
     <span>{label}</span>
   );
 
+  const handleClick = () => {
+    if (link) {
+      onClick?.();
+      closeMenu?.();
+      return;
+    }
+    activate();
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
     e.stopPropagation();
     if (e.key === 'Enter') {
-      onClick?.();
+      handleClick();
     }
   };
 
   return (
     <li
-      className="cl-menu-leaf"
+      className={leafClass}
       tabIndex={0}
       role="menuitem"
       onFocus={onFocus}
-      onClick={onClick}
+      onClick={handleClick}
       onKeyDown={handleKeyDown}
       onMouseOver={onHover}
     >

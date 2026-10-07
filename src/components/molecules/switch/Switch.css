@@ -28,6 +28,12 @@
   pointer-events: none;
 }
 
+.cl-switch__icon {
+  flex-shrink: 0;
+  margin-right: calc(var(--cl-m-gap) - var(--cl-l-gap));
+  color: var(--cl-base-font-color);
+}
+
 .cl-switch__label {
   color: var(--cl-base-font-color);
   font-family: var(--cl-core-font);

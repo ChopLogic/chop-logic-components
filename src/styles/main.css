@@ -274,6 +274,18 @@
   }
 }
 
+@keyframes cl-blink {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--cl-surface-a10);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
 /* Utility classes for animations */
 .cl-fade-in {
   animation: cl-fade-in ease 400ms;

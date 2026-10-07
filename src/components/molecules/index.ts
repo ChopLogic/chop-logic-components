@@ -4,6 +4,7 @@ export { default as Breadcrumbs } from './breadcrumbs/Breadcrumbs';
 export { default as Checkbox } from './checkbox/Checkbox';
 export { default as MultiSelect } from './multi-select/MultiSelect';
 export { default as NumericInput } from './numeric-input/NumericInput';
+export { default as RadioGroup } from './radio-group/RadioGroup';
 export { default as Search } from './search/Search';
 export { default as Select } from './select/Select';
 export { default as Switch } from './switch/Switch';

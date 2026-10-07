@@ -61,6 +61,30 @@ const meta: Meta<typeof Dialog> = {
         category: 'Styling',
       },
     },
+    contentClassName: {
+      control: 'text',
+      description: 'Additional CSS class applied to the dialog content wrapper',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    headerClassName: {
+      control: 'text',
+      description: 'Additional CSS class applied to the dialog header element',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
+    bodyClassName: {
+      control: 'text',
+      description: 'Additional CSS class applied to the dialog body wrapper',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
     style: {
       control: 'object',
       description: 'Inline CSS styles to apply to the input',

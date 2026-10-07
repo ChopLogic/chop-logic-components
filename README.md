@@ -78,7 +78,6 @@ yarn add chop-logic-components
 | `typecheck`       | Performs a full type check without emitting output.                                                                                                   |
 | `test`            | Runs unit tests using Vitest in watch mode (interactive).                                                                                             |
 | `test:ci`         | Runs tests once in CI mode and allows empty test sets.                                                                                                |
-| `test:integration` | Builds Storybook and runs the Storybook test runner (Playwright) against static output—integration smoke tests.                                     |
 | `a11y`            | Builds and serves Storybook, then runs accessibility (axe-core) checks against every story and prints all violations to the console.                  |
 | `a11y:dev`        | Runs the accessibility checks against an already-running Storybook (`npm start`) at `http://127.0.0.1:6006`, for faster local iteration.              |
 | `coverage`        | Runs tests and generates a coverage report using Vitest.                                                                                              |

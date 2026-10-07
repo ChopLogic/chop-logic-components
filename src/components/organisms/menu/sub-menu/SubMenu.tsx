@@ -28,7 +28,7 @@ export const SubMenu: FC<Props> = ({
   children,
   isNested = false,
 }) => {
-  const { icon, link, label } = item;
+  const { icon, link, label, target = '_blank' } = item;
   const ref = useRef(null);
   const dependentRef = useRef(null);
   const chevronIcon = isNested ? IconName.ChevronRight : IconName.ChevronDown;
@@ -36,9 +36,10 @@ export const SubMenu: FC<Props> = ({
     'cl-sub-menu__icon',
     { 'cl-sub-menu__icon_opened': isSubMenuOpened && !isNested },
   ]);
+  const subMenuClass = getClassName(['cl-sub-menu', item.className]);
 
   const itemContent = link ? (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} target={target} rel={target === '_blank' ? 'noreferrer' : undefined}>
       <Icon name={icon} size={ElementSize.Small} />
       {label}
     </a>
@@ -65,7 +66,7 @@ export const SubMenu: FC<Props> = ({
 
   return (
     <li
-      className="cl-sub-menu"
+      className={subMenuClass}
       tabIndex={0}
       role="menuitem"
       aria-haspopup="true"

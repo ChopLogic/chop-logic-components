@@ -1,3 +1,4 @@
+import type { IconName } from '@enums';
 import type { CSSProperties } from 'react';
 
 export interface SwitchProps {
@@ -5,6 +6,7 @@ export interface SwitchProps {
   onChange?: (checked: boolean) => void;
   value?: string;
   hasIndicator?: boolean;
+  icon?: IconName;
   label: string;
   name: string;
   disabled?: boolean;

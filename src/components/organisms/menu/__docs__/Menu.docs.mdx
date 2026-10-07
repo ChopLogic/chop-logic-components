@@ -37,16 +37,18 @@ const AppMenu = () => {
 
 Each menu item can have the following properties:
 
-| Property      | Type         | Description                                        |
-| ------------- | ------------ | -------------------------------------------------- |
-| `id`          | `string`     | Unique identifier for the menu item (required)     |
-| `label`       | `string`     | Display text for the menu item (required)          |
-| `nestedItems` | `MenuItem[]` | Array of child menu items for creating submenus    |
-| `icon`        | `IconName`   | Icon to display before the label                   |
-| `link`        | `string`     | URL to navigate to when clicked (opens in new tab) |
-| `onClick`     | `() => void` | Callback function when item is clicked             |
-| `onHover`     | `() => void` | Callback function when item is hovered             |
-| `onFocus`     | `() => void` | Callback function when item receives focus         |
+| Property      | Type                        | Description                                      |
+| ------------- | --------------------------- | ------------------------------------------------ |
+| `id`          | `string`                    | Unique identifier for the menu item (required)   |
+| `label`       | `string`                    | Display text for the menu item (required)        |
+| `nestedItems` | `MenuItem[]`                | Array of child menu items for creating submenus  |
+| `icon`        | `IconName`                  | Icon to display before the label                 |
+| `link`        | `string`                    | URL to navigate to when clicked                  |
+| `target`      | `HTMLAttributeAnchorTarget` | Anchor target for `link` (defaults to `_blank`)  |
+| `onClick`     | `() => void`                | Callback function when item is clicked           |
+| `onHover`     | `() => void`                | Callback function when item is hovered           |
+| `onFocus`     | `() => void`                | Callback function when item receives focus       |
+| `className`   | `string`                    | Additional CSS class applied to the item element |
 
 ## Best Practices
 

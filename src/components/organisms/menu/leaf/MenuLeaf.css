@@ -5,7 +5,7 @@
   align-items: center;
   gap: var(--cl-m-gap);
   background-color: var(--cl-base-background-color);
-  padding: var(--cl-m-gap);
+  padding: var(--cl-m-gap) 0;
   border-radius: var(--cl-border-radius);
   cursor: pointer;
   background-position: center;
@@ -28,6 +28,16 @@
 @media (min-width: 1024px) {
   .cl-menu-leaf {
     font-size: var(--cl-typography-base-desktop);
+  }
+}
+
+.cl-menu-leaf_activated {
+  animation: cl-blink 150ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cl-menu-leaf_activated {
+    animation: none;
   }
 }
 

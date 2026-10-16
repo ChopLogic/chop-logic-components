@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Dialog from '../Dialog';
 
@@ -11,6 +11,19 @@ describe('Dialog', () => {
     className: 'dialog-class',
     onClose: vi.fn(),
   };
+
+  let originalOverflow: string;
+
+  beforeEach(() => {
+    originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = '';
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    document.body.style.overflow = originalOverflow;
+    vi.restoreAllMocks();
+  });
 
   it('should render the dialog correctly after a delay', async () => {
     render(
@@ -103,6 +116,40 @@ describe('Dialog', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Dialog content').parentElement).toHaveClass('custom-body');
+    });
+  });
+
+  it('should set overflow hidden on body when dialog is opened', async () => {
+    render(
+      <Dialog {...testProps} isOpened={true}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('hidden');
+    });
+  });
+
+  it('should restore body overflow when dialog is closed', async () => {
+    const { rerender } = render(
+      <Dialog {...testProps} isOpened={true}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('hidden');
+    });
+
+    rerender(
+      <Dialog {...testProps} isOpened={false}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('');
     });
   });
 });

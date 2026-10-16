@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import * as Stories from "./use-body-scroll-lock.stories";
+
+<Meta of={Stories} title="Hooks/useBodyScrollLock" />
+
+# useBodyScrollLock
+
+The `useBodyScrollLock` hook prevents the page body from scrolling when active. This is useful for modal dialogs, full-screen menus, or any overlay that should capture user attention and prevent background scrolling.
+
+## Features
+
+- Prevents body scrolling by setting `overflow: hidden` on the body element
+- Preserves and restores scroll position when unlocked
+- Automatically cleans up on component unmount
+- Preserves any existing overflow style when restoring
+
+### Usage
+
+```tsx
+import React, { useState } from "react";
+import { useBodyScrollLock } from "chop-logic-components";
+
+const ExampleModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useBodyScrollLock({ isLocked: isOpen });
+
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      {isOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Modal Title</h2>
+            <p>The page cannot be scrolled while this modal is open.</p>
+            <button onClick={() => setIsOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ExampleModal;
+```
+
+### Params
+
+| Param        | Type      | Description                                                           |
+| ------------ | --------- | --------------------------------------------------------------------- |
+| **isLocked** | `boolean` | When `true`, prevents body scrolling. When `false`, allows scrolling. |
+
+### Returns
+
+`void`
+
+### Best Practices
+
+1. **Use with modals and overlays**: This hook is designed for components that overlay the page content and should prevent interaction with the background.
+
+2. **Pair with focus trapping**: For accessible modals, combine this hook with `useModalFocusTrap` to ensure both scroll and focus are properly managed.
+
+3. **Single lock at a time**: Avoid having multiple components trying to lock scroll simultaneously. The hook stores the original overflow value when locking, so nested locks may not restore correctly.
+
+4. **Cleanup is automatic**: The hook automatically restores scroll position and overflow style when the component unmounts, so you don't need to handle cleanup manually.

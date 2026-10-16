@@ -1,6 +1,12 @@
 import { Button, Header, Portal } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
-import { useElementIds, useIsMounted, useKeyPress, useModalFocusTrap } from '@hooks';
+import {
+  useBodyScrollLock,
+  useElementIds,
+  useIsMounted,
+  useKeyPress,
+  useModalFocusTrap,
+} from '@hooks';
 import type { DialogProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
@@ -29,6 +35,7 @@ const Dialog: FC<DialogProps> = ({
 
   useModalFocusTrap({ modalRef, isOpened });
   useKeyPress({ keyCode: 'Escape', ref: modalRef, onKeyPress: onClose });
+  useBodyScrollLock({ isLocked: isOpened });
 
   if (!isMounted) {
     return null;

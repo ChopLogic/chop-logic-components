@@ -39,3 +39,10 @@ Object.defineProperty(globalThis, 'innerHeight', {
   configurable: true,
   value: 768,
 });
+
+// Mock window.scrollTo (not implemented in jsdom)
+Object.defineProperty(globalThis, 'scrollTo', {
+  writable: true,
+  configurable: true,
+  value: () => {},
+});

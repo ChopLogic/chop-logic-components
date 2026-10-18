@@ -30,6 +30,7 @@ const Dialog: FC<DialogProps> = ({
   const { elementId } = useElementIds(id);
   const titleId = `${elementId}-title`;
   const contentClass = getClassName(['cl-dialog__content', contentClassName]);
+  const bodyClass = getClassName(['cl-dialog__body', bodyClassName]);
 
   const modalRef = useRef(null);
 
@@ -66,7 +67,7 @@ const Dialog: FC<DialogProps> = ({
                 {title}
               </Header>
             </header>
-            <div className={bodyClassName}>{children}</div>
+            <div className={bodyClass}>{children}</div>
           </div>
         </div>
       </div>

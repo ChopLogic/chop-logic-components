@@ -7,10 +7,22 @@ import * as Dialog from "./Dialog.stories";
 
 The `Dialog` allows you to render a responsive pop-up window with any content. The dialog appearance trigger can be a button or any event on the page. If there are several dialogs, they will appear on top of each other in the order they are called. When adding a dialog, you must think through the conditions for opening and closing it, so props `isOpened` and `onClose` are mandatory.
 
+## Variants
+
+The Dialog supports three display variants controlled by the `variant` prop:
+
+| Variant       | Desktop/Tablet (≥640px)                   | Mobile (&lt;640px)                            |
+| ------------- | ----------------------------------------- | --------------------------------------------- |
+| `Default`     | Centered, content-based size              | Slides up from bottom, 90% height, full width |
+| `DrawerRight` | Slides from right, 25% width, full height | Slides from right, 90% width, full height     |
+| `DrawerLeft`  | Slides from left, 25% width, full height  | Slides from left, 90% width, full height      |
+
 ## Usage
 
+### Default Dialog
+
 ```tsx
-import Dialog from "chop-logic-components";
+import { Dialog } from "chop-logic-components";
 
 const ConfirmationDialog = ({ isOpen, onClose }) => {
   return (
@@ -25,21 +37,49 @@ const ConfirmationDialog = ({ isOpen, onClose }) => {
 };
 ```
 
+### Drawer Variants
+
+```tsx
+import { Dialog, DialogVariant } from "chop-logic-components";
+
+// Right drawer - slides in from the right edge
+const RightDrawer = ({ isOpen, onClose }) => {
+  return (
+    <Dialog isOpened={isOpen} onClose={onClose} title="Settings" variant={DialogVariant.DrawerRight}>
+      <p>Settings panel content...</p>
+    </Dialog>
+  );
+};
+
+// Left drawer - slides in from the left edge
+const LeftDrawer = ({ isOpen, onClose }) => {
+  return (
+    <Dialog isOpened={isOpen} onClose={onClose} title="Navigation" variant={DialogVariant.DrawerLeft}>
+      <nav>Navigation menu...</nav>
+    </Dialog>
+  );
+};
+```
+
 ## Best Practices
 
 1. _Content Structure_:
    - Keep titles concise
    - Organize content logically
    - Place primary actions on the right
-2. _User Experience_:
+2. _Variant Selection_:
+   - Use `Default` for confirmations, alerts, and focused tasks
+   - Use `DrawerRight` for settings panels, detail views, and property editors
+   - Use `DrawerLeft` for navigation menus and sidebars
+3. _User Experience_:
    - Avoid overwhelming users with too much information
    - Use dialogs for critical interactions
    - Provide clear exit options
-3. _Performance_:
+4. _Performance_:
    - Load heavy content dynamically
    - Consider virtualization for long content
    - Memoize dialog contents when appropriate
-4. _Accessibility_:
+5. _Accessibility_:
    - Focus is trapped within the dialog when open
    - Escape key closes dialog
    - Announces role="dialog" and aria-modal="true"

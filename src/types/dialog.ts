@@ -1,4 +1,4 @@
-import type { IconName } from '@enums';
+import type { DialogVariant, IconName } from '@enums';
 import type { PropsWithChildren } from 'react';
 
 import type { ChopLogicComponentProps } from './_common';
@@ -11,4 +11,6 @@ export interface DialogProps extends ChopLogicComponentProps, PropsWithChildren 
   headerClassName?: string;
   bodyClassName?: string;
   contentClassName?: string;
+  closeButtonClassName?: string;
+  variant?: DialogVariant;
 }

@@ -1,4 +1,4 @@
-import { IconName } from '@enums';
+import { DialogVariant, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Dialog from '../Dialog';
@@ -43,6 +43,18 @@ const meta: Meta<typeof Dialog> = {
         category: 'Content',
       },
     },
+    // Appearance
+    variant: {
+      control: 'select',
+      options: Object.values(DialogVariant),
+      description:
+        'Display variant: default (centered/bottom-sheet), drawer-right (slides from right), drawer-left (slides from left)',
+      table: {
+        type: { summary: 'DialogVariant' },
+        defaultValue: { summary: 'DialogVariant.Default' },
+        category: 'Appearance',
+      },
+    },
     // Interaction
     onClose: {
       action: 'closed',
@@ -85,6 +97,14 @@ const meta: Meta<typeof Dialog> = {
         category: 'Styling',
       },
     },
+    closeButtonClassName: {
+      control: 'text',
+      description: 'Additional CSS class applied to the close button of the dialog',
+      table: {
+        type: { summary: 'string' },
+        category: 'Styling',
+      },
+    },
     style: {
       control: 'object',
       description: 'Inline CSS styles to apply to the input',
@@ -122,5 +142,24 @@ export const Example: Story = {
     isOpened: false,
     title: 'Please read this dialog',
     icon: IconName.Info,
+    variant: DialogVariant.Default,
+  },
+};
+
+export const DrawerRight: Story = {
+  args: {
+    isOpened: false,
+    title: 'Right Drawer',
+    icon: IconName.Menu,
+    variant: DialogVariant.DrawerRight,
+  },
+};
+
+export const DrawerLeft: Story = {
+  args: {
+    isOpened: false,
+    title: 'Left Drawer',
+    icon: IconName.Menu,
+    variant: DialogVariant.DrawerLeft,
   },
 };

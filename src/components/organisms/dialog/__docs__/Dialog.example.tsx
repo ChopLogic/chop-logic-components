@@ -5,7 +5,7 @@ import { type FC, useState } from 'react';
 
 import Dialog from '../Dialog';
 
-export const DialogExample: FC<DialogProps> = ({ onClose, title, ...rest }) => {
+export const DialogExample: FC<DialogProps> = ({ onClose, title, variant, ...rest }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const handleOpen = () => setIsOpened(true);
@@ -31,7 +31,7 @@ export const DialogExample: FC<DialogProps> = ({ onClose, title, ...rest }) => {
   return (
     <div>
       <Button text="Open dialog" onClick={handleOpen} view={ButtonView.Secondary} />
-      <Dialog {...rest} isOpened={isOpened} onClose={handleClose} title={title}>
+      <Dialog {...rest} isOpened={isOpened} onClose={handleClose} title={title} variant={variant}>
         {modalContent}
       </Dialog>
     </div>

@@ -1,5 +1,5 @@
 import { Button, Header, Portal } from '@components/atoms';
-import { ButtonView, IconName } from '@enums';
+import { ButtonView, DialogVariant, IconName } from '@enums';
 import {
   useBodyScrollLock,
   useElementIds,
@@ -23,6 +23,8 @@ const Dialog: FC<DialogProps> = ({
   contentClassName,
   headerClassName,
   bodyClassName,
+  closeButtonClassName,
+  variant = DialogVariant.Default,
   ...rest
 }) => {
   const isMounted = useIsMounted(isOpened);
@@ -31,6 +33,11 @@ const Dialog: FC<DialogProps> = ({
   const titleId = `${elementId}-title`;
   const contentClass = getClassName(['cl-dialog__content', contentClassName]);
   const bodyClass = getClassName(['cl-dialog__body', bodyClassName]);
+  const layoutClass = getClassName([
+    'cl-dialog__layout',
+    { [`cl-dialog__layout_variant_${variant}`]: variant !== DialogVariant.Default },
+  ]);
+  const buttonClass = getClassName(['cl-dialog__button', closeButtonClassName]);
 
   const modalRef = useRef(null);
 
@@ -52,14 +59,14 @@ const Dialog: FC<DialogProps> = ({
           aria-labelledby={titleId}
           id={elementId}
           {...rest}
-          className="cl-dialog__layout"
+          className={layoutClass}
         >
           <Button
             icon={IconName.X}
             view={ButtonView.Icon}
             label="Close modal window"
             onClick={onClose}
-            className="cl-dialog__button"
+            className={buttonClass}
           />
           <div className={contentClass}>
             <header className={headerClassName}>

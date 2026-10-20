@@ -44,6 +44,8 @@
 
 .cl-dialog__body {
   height: 100%;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .cl-dialog__button {

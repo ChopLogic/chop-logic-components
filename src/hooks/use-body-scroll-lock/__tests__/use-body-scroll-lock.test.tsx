@@ -25,13 +25,13 @@ describe('useBodyScrollLock', () => {
     _resetScrollLockState();
   });
 
-  it('should set overflow hidden on body when isLocked is true', () => {
+  it('should set overflow clip on body when isLocked is true', () => {
     render(<TestComponent isLocked={true} />);
 
-    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.overflow).toBe('clip');
   });
 
-  it('should not set overflow hidden on body when isLocked is false', () => {
+  it('should not set overflow clip on body when isLocked is false', () => {
     render(<TestComponent isLocked={false} />);
 
     expect(document.body.style.overflow).toBe('');
@@ -40,7 +40,7 @@ describe('useBodyScrollLock', () => {
   it('should restore original overflow when isLocked becomes false', () => {
     const { rerender } = render(<TestComponent isLocked={true} />);
 
-    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.overflow).toBe('clip');
 
     rerender(<TestComponent isLocked={false} />);
 
@@ -52,7 +52,7 @@ describe('useBodyScrollLock', () => {
 
     const { rerender } = render(<TestComponent isLocked={true} />);
 
-    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.overflow).toBe('clip');
 
     rerender(<TestComponent isLocked={false} />);
 
@@ -64,7 +64,7 @@ describe('useBodyScrollLock', () => {
 
     const { unmount } = render(<TestComponent isLocked={true} />);
 
-    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.overflow).toBe('clip');
 
     unmount();
 
@@ -77,7 +77,7 @@ describe('useBodyScrollLock', () => {
 
     const { unmount } = render(<TestComponent isLocked={true} />);
 
-    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.overflow).toBe('clip');
 
     unmount();
 
@@ -88,15 +88,15 @@ describe('useBodyScrollLock', () => {
     it('should keep body locked when closing first dialog while second remains open (A opens, B opens, A closes, B closes)', () => {
       // Dialog A opens
       const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B opens
       const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog A closes - body should still be locked because B is open
       rerenderA(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B closes - now body should be unlocked
       rerenderB(<TestComponent isLocked={false} />);
@@ -106,15 +106,15 @@ describe('useBodyScrollLock', () => {
     it('should keep body locked when closing second dialog while first remains open (A opens, B opens, B closes, A closes)', () => {
       // Dialog A opens
       const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B opens
       const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B closes - body should still be locked because A is open
       rerenderB(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog A closes - now body should be unlocked
       rerenderA(<TestComponent isLocked={false} />);
@@ -142,15 +142,15 @@ describe('useBodyScrollLock', () => {
     it('should handle unmounting stacked dialogs correctly', () => {
       // Dialog A opens
       const { unmount: unmountA } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B opens
       const { unmount: unmountB } = render(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog A unmounts - body should still be locked
       unmountA();
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Dialog B unmounts - now body should be unlocked
       unmountB();
@@ -165,14 +165,14 @@ describe('useBodyScrollLock', () => {
       // Dialog C opens
       const { rerender: rerenderC } = render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       // Close in reverse order (C, B, A)
       rerenderC(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       rerenderB(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
 
       rerenderA(<TestComponent isLocked={false} />);
       expect(document.body.style.overflow).toBe('');

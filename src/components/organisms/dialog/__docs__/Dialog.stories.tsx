@@ -137,7 +137,7 @@ const meta: Meta<typeof Dialog> = {
 export default meta;
 type Story = StoryObj<typeof Dialog>;
 
-export const Example: Story = {
+export const Default: Story = {
   args: {
     isOpened: false,
     title: 'Please read this dialog',

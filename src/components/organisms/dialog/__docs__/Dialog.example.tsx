@@ -19,7 +19,10 @@ export const DialogExample: FC<DialogProps> = ({ onClose, title, variant, ...res
       <p style={{ marginBottom: '20px' }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, neque soluta ullam
         repudiandae facere dolore modi reiciendis doloribus tempore. Magnam veniam ducimus
-        consectetur quasi vitae perferendis voluptatum quisquam numquam tempora.
+        consectetur quasi vitae perferendis voluptatum quisquam numquam tempora. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Sunt, neque soluta ullam repudiandae facere dolore
+        modi reiciendis doloribus tempore. Magnam veniam ducimus consectetur quasi vitae perferendis
+        voluptatum quisquam numquam tempora.
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button text="Action" view={ButtonView.Secondary} />

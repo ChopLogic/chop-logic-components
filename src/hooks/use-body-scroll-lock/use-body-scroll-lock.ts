@@ -23,10 +23,12 @@ export const useBodyScrollLock = ({ isLocked }: BodyScrollLockParams): void => {
     if (isLocked && !hasLockedRef.current) {
       // This instance is acquiring a lock
       if (activeLockCount === 0) {
-        // First lock: save the original state
+        // First lock: save the original state and apply lock
         savedScrollPosition = window.scrollY;
         savedOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
+
+        // Use 'clip' to prevent scrolling while preserving layout (no scrollbar removal shift)
+        document.body.style.overflow = 'clip';
       }
       activeLockCount++;
       hasLockedRef.current = true;

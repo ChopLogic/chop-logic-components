@@ -16,44 +16,39 @@ export const _resetScrollLockState = (): void => {
   savedOverflow = '';
 };
 
+export const acquireLock = (): void => {
+  if (activeLockCount === 0) {
+    savedScrollPosition = window.scrollY;
+    savedOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'clip';
+  }
+  activeLockCount++;
+};
+
+export const releaseLock = (): void => {
+  activeLockCount--;
+  if (activeLockCount === 0) {
+    document.body.style.overflow = savedOverflow;
+    window.scrollTo(0, savedScrollPosition);
+  }
+};
+
 export const useBodyScrollLock = ({ isLocked }: BodyScrollLockParams): void => {
   const hasLockedRef = useRef(false);
 
   useEffect(() => {
     if (isLocked && !hasLockedRef.current) {
-      // This instance is acquiring a lock
-      if (activeLockCount === 0) {
-        // First lock: save the original state and apply lock
-        savedScrollPosition = window.scrollY;
-        savedOverflow = document.body.style.overflow;
-
-        // Use 'clip' to prevent scrolling while preserving layout (no scrollbar removal shift)
-        document.body.style.overflow = 'clip';
-      }
-      activeLockCount++;
+      acquireLock();
       hasLockedRef.current = true;
     } else if (!isLocked && hasLockedRef.current) {
-      // This instance is releasing its lock
-      activeLockCount--;
+      releaseLock();
       hasLockedRef.current = false;
-
-      if (activeLockCount === 0) {
-        // Last lock released: restore original state
-        document.body.style.overflow = savedOverflow;
-        window.scrollTo(0, savedScrollPosition);
-      }
     }
 
     return () => {
-      // Cleanup on unmount: release lock if this instance held one
       if (hasLockedRef.current) {
-        activeLockCount--;
+        releaseLock();
         hasLockedRef.current = false;
-
-        if (activeLockCount === 0) {
-          document.body.style.overflow = savedOverflow;
-          window.scrollTo(0, savedScrollPosition);
-        }
       }
     };
   }, [isLocked]);

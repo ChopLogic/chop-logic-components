@@ -40,9 +40,6 @@ export const useBodyScrollLock = ({ isLocked }: BodyScrollLockParams): void => {
     if (isLocked && !hasLockedRef.current) {
       acquireLock();
       hasLockedRef.current = true;
-    } else if (!isLocked && hasLockedRef.current) {
-      releaseLock();
-      hasLockedRef.current = false;
     }
 
     return () => {

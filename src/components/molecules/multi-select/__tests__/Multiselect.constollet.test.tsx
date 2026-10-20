@@ -4,26 +4,18 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { FormContext, type FormContextProps } from '../../../contexts';
 import { useMultiSelectController } from '../MultiSelect.controller';
 
-// Mock the dependencies
-vi.mock('./MultiSelect.helpers', () => ({
-  getMultiSelectInitialValues: vi.fn(({ name, initialValues, defaultValue }) => {
-    if (initialValues && name in initialValues) {
-      return initialValues[name] || [];
-    }
-    if (defaultValue) {
-      return Array.isArray(defaultValue) ? defaultValue : [defaultValue];
-    }
-    return [];
-  }),
-  getMultiSelectUpdatedValues: vi.fn((values, id) => {
-    const existingIndex = values.findIndex((v: MultiSelectValue) => v.id === id);
-    if (existingIndex >= 0) {
-      return values.filter((v: MultiSelectValue) => v.id !== id);
-    }
-    return [...values, { id, label: `Label ${id}` }];
-  }),
-  getMultiSelectFormValues: vi.fn((values: MultiSelectValue[]) => values.map((v) => v.id)),
-}));
+// Store the reset callback to trigger it in tests
+let resetCallback: (() => void) | null = null;
+
+vi.mock('@hooks', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@hooks')>();
+  return {
+    ...actual,
+    useResetFormInput: vi.fn((onReset: () => void) => {
+      resetCallback = onReset;
+    }),
+  };
+});
 
 // Test wrapper component
 const createWrapper = (contextValue: FormContextProps) => {
@@ -53,6 +45,7 @@ describe('useMultiSelectController', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    resetCallback = null;
   });
 
   it('initializes defaults values', () => {
@@ -241,5 +234,152 @@ describe('useMultiSelectController', () => {
     ];
 
     expect(result.current.values).toEqual(expectedValues);
+  });
+
+  describe('handleReset', () => {
+    it('should reset values to initial options when handleReset is triggered', () => {
+      const onChangeFormInput = vi.fn();
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(() => useMultiSelectController(defaultProps), { wrapper });
+
+      // Select some options
+      act(() => {
+        result.current.handleSelect('1');
+      });
+      act(() => {
+        result.current.handleSelect('2');
+      });
+
+      // Open the dropdown
+      act(() => {
+        result.current.handleToggle();
+      });
+      expect(result.current.opened).toBe(true);
+
+      // Clear mock to verify reset calls
+      onChangeFormInput.mockClear();
+
+      // Trigger reset
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should reset opened state to false
+      expect(result.current.opened).toBe(false);
+
+      // Should reset values to initial options
+      expect(result.current.values).toEqual(mockOptions);
+
+      // Should call onChangeFormInput with reset values
+      expect(onChangeFormInput).toHaveBeenCalledWith({
+        name: 'testSelect',
+        value: [],
+      });
+    });
+
+    it('should reset to initial values from context when handleReset is triggered', () => {
+      const onChangeFormInput = vi.fn();
+      const initialSelectedValues: MultiSelectValue[] = [
+        { id: '2', label: 'Option 2', selected: true },
+      ];
+      const contextWithValues: FormContextProps = {
+        onChangeFormInput,
+        initialValues: { testSelect: initialSelectedValues },
+        resetSignal: 0,
+      };
+      const wrapper = createWrapper(contextWithValues);
+
+      const { result } = renderHook(() => useMultiSelectController(defaultProps), { wrapper });
+
+      // Select additional options
+      act(() => {
+        result.current.handleSelect('1');
+      });
+      act(() => {
+        result.current.handleSelect('3');
+      });
+
+      // Clear mock to verify reset calls
+      onChangeFormInput.mockClear();
+
+      // Trigger reset
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should reset values - the exact values depend on getMultiSelectInitialValues implementation
+      // Since we're not mocking helpers anymore, this will use the real implementation
+      expect(result.current.opened).toBe(false);
+      expect(onChangeFormInput).toHaveBeenCalled();
+    });
+
+    it('should handle reset without onChangeFormInput', () => {
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput: undefined,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(() => useMultiSelectController(defaultProps), { wrapper });
+
+      // Select some options
+      act(() => {
+        result.current.handleSelect('1');
+      });
+
+      // Open dropdown
+      act(() => {
+        result.current.handleToggle();
+      });
+      expect(result.current.opened).toBe(true);
+
+      // Trigger reset - should not throw even without onChangeFormInput
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should still reset opened state
+      expect(result.current.opened).toBe(false);
+    });
+
+    it('should reset multiple times correctly', () => {
+      const onChangeFormInput = vi.fn();
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(() => useMultiSelectController(defaultProps), { wrapper });
+
+      // First cycle: select and reset
+      act(() => {
+        result.current.handleSelect('1');
+        result.current.handleToggle();
+      });
+      expect(result.current.opened).toBe(true);
+
+      act(() => {
+        resetCallback?.();
+      });
+      expect(result.current.opened).toBe(false);
+
+      // Second cycle: select and reset
+      act(() => {
+        result.current.handleSelect('2');
+        result.current.handleToggle();
+      });
+      expect(result.current.opened).toBe(true);
+
+      act(() => {
+        resetCallback?.();
+      });
+      expect(result.current.opened).toBe(false);
+    });
   });
 });

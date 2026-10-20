@@ -1,5 +1,6 @@
 export { AlertMode } from './alert-mode';
 export { ButtonView } from './button-view';
+export { DialogVariant } from './dialog-variant';
 export { ElementSize } from './element-size';
 export { GridFilterType } from './grid-filter-type';
 export { GridSortDirection } from './grid-sort-direction';

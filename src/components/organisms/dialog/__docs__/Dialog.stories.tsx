@@ -2,7 +2,7 @@ import { DialogVariant, IconName } from '@enums';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type Dialog from '../Dialog';
-import { DialogExample } from './Dialog.example';
+import { DialogExample, StackedDialogsExample } from './Dialog.example';
 
 const meta: Meta<typeof Dialog> = {
   component: DialogExample,
@@ -161,5 +161,17 @@ export const DrawerLeft: Story = {
     title: 'Left Drawer',
     icon: IconName.Menu,
     variant: DialogVariant.DrawerLeft,
+  },
+};
+
+export const StackedDialogs: StoryObj<typeof StackedDialogsExample> = {
+  render: () => <StackedDialogsExample />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Demonstrates stacked dialogs with coordinated scroll locking. Open multiple dialogs and close them in any order - the page scroll should only be restored when ALL dialogs are closed.',
+      },
+    },
   },
 };

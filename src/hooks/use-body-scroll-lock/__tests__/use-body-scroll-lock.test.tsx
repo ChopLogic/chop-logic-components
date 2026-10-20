@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { useBodyScrollLock } from '../use-body-scroll-lock';
+import { _resetScrollLockState, useBodyScrollLock } from '../use-body-scroll-lock';
 
 const TestComponent = ({ isLocked }: { isLocked: boolean }) => {
   useBodyScrollLock({ isLocked });
@@ -16,11 +16,13 @@ describe('useBodyScrollLock', () => {
     document.body.style.overflow = '';
     Object.defineProperty(window, 'scrollY', { value: 0, writable: true });
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+    _resetScrollLockState();
   });
 
   afterEach(() => {
     document.body.style.overflow = originalOverflow;
     vi.restoreAllMocks();
+    _resetScrollLockState();
   });
 
   it('should set overflow hidden on body when isLocked is true', () => {
@@ -80,5 +82,100 @@ describe('useBodyScrollLock', () => {
     unmount();
 
     expect(document.body.style.overflow).toBe('auto');
+  });
+
+  describe('stacked dialogs coordination', () => {
+    it('should keep body locked when closing first dialog while second remains open (A opens, B opens, A closes, B closes)', () => {
+      // Dialog A opens
+      const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B opens
+      const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog A closes - body should still be locked because B is open
+      rerenderA(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B closes - now body should be unlocked
+      rerenderB(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('');
+    });
+
+    it('should keep body locked when closing second dialog while first remains open (A opens, B opens, B closes, A closes)', () => {
+      // Dialog A opens
+      const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B opens
+      const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B closes - body should still be locked because A is open
+      rerenderB(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog A closes - now body should be unlocked
+      rerenderA(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('');
+    });
+
+    it('should restore original scroll position only after all dialogs close', () => {
+      Object.defineProperty(window, 'scrollY', { value: 300, writable: true });
+
+      // Dialog A opens - captures scroll position
+      const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
+
+      // Dialog B opens
+      const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
+
+      // Dialog A closes - should NOT restore scroll yet
+      rerenderA(<TestComponent isLocked={false} />);
+      expect(window.scrollTo).not.toHaveBeenCalled();
+
+      // Dialog B closes - should restore scroll now
+      rerenderB(<TestComponent isLocked={false} />);
+      expect(window.scrollTo).toHaveBeenCalledWith(0, 300);
+    });
+
+    it('should handle unmounting stacked dialogs correctly', () => {
+      // Dialog A opens
+      const { unmount: unmountA } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B opens
+      const { unmount: unmountB } = render(<TestComponent isLocked={true} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog A unmounts - body should still be locked
+      unmountA();
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Dialog B unmounts - now body should be unlocked
+      unmountB();
+      expect(document.body.style.overflow).toBe('');
+    });
+
+    it('should handle three stacked dialogs', () => {
+      // Dialog A opens
+      const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
+      // Dialog B opens
+      const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
+      // Dialog C opens
+      const { rerender: rerenderC } = render(<TestComponent isLocked={true} />);
+
+      expect(document.body.style.overflow).toBe('hidden');
+
+      // Close in reverse order (C, B, A)
+      rerenderC(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      rerenderB(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('hidden');
+
+      rerenderA(<TestComponent isLocked={false} />);
+      expect(document.body.style.overflow).toBe('');
+    });
   });
 });

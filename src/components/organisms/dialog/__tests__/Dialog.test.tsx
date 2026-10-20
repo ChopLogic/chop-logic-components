@@ -120,7 +120,7 @@ describe('Dialog', () => {
     });
   });
 
-  it('should set overflow hidden on body when dialog is opened', async () => {
+  it('should set overflow clip on body when dialog is opened', async () => {
     render(
       <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
@@ -128,7 +128,7 @@ describe('Dialog', () => {
     );
 
     await waitFor(() => {
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
     });
   });
 
@@ -140,7 +140,7 @@ describe('Dialog', () => {
     );
 
     await waitFor(() => {
-      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.overflow).toBe('clip');
     });
 
     rerender(

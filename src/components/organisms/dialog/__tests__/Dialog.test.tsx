@@ -1,6 +1,7 @@
+import { DialogVariant } from '@enums';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Dialog from '../Dialog';
 
@@ -11,6 +12,19 @@ describe('Dialog', () => {
     className: 'dialog-class',
     onClose: vi.fn(),
   };
+
+  let originalOverflow: string;
+
+  beforeEach(() => {
+    originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = '';
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    document.body.style.overflow = originalOverflow;
+    vi.restoreAllMocks();
+  });
 
   it('should render the dialog correctly after a delay', async () => {
     render(
@@ -103,6 +117,126 @@ describe('Dialog', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Dialog content').parentElement).toHaveClass('custom-body');
+    });
+  });
+
+  it('should set overflow clip on body when dialog is opened', async () => {
+    render(
+      <Dialog {...testProps} isOpened={true}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('clip');
+    });
+  });
+
+  it('should restore body overflow when dialog is closed', async () => {
+    const { rerender } = render(
+      <Dialog {...testProps} isOpened={true}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('clip');
+    });
+
+    rerender(
+      <Dialog {...testProps} isOpened={false}>
+        <div>Dialog content</div>
+      </Dialog>,
+    );
+
+    await waitFor(() => {
+      expect(document.body.style.overflow).toBe('');
+    });
+  });
+
+  describe('Variants', () => {
+    it('should render default variant without variant modifier class', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const layout = document.querySelector('.cl-dialog__layout');
+        expect(layout).toBeInTheDocument();
+        expect(layout).not.toHaveClass('cl-dialog__layout_variant_default');
+        expect(layout).not.toHaveClass('cl-dialog__layout_variant_drawer-right');
+        expect(layout).not.toHaveClass('cl-dialog__layout_variant_drawer-left');
+      });
+    });
+
+    it('should render default variant when explicitly set without variant modifier class', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true} variant={DialogVariant.Default}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const layout = document.querySelector('.cl-dialog__layout');
+        expect(layout).toBeInTheDocument();
+        expect(layout).not.toHaveClass('cl-dialog__layout_variant_default');
+      });
+    });
+
+    it('should apply drawer-right variant class', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true} variant={DialogVariant.DrawerRight}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const layout = document.querySelector('.cl-dialog__layout');
+        expect(layout).toHaveClass('cl-dialog__layout_variant_drawer-right');
+      });
+    });
+
+    it('should apply drawer-left variant class', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true} variant={DialogVariant.DrawerLeft}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const layout = document.querySelector('.cl-dialog__layout');
+        expect(layout).toHaveClass('cl-dialog__layout_variant_drawer-left');
+      });
+    });
+
+    it('should position close button on the right for default variant', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const button = document.querySelector('.cl-dialog__button');
+        expect(button).toBeInTheDocument();
+        expect(button).not.toHaveClass('cl-dialog__button_left');
+      });
+    });
+
+    it('should position close button on the right for drawer-right variant', async () => {
+      render(
+        <Dialog {...testProps} isOpened={true} variant={DialogVariant.DrawerRight}>
+          <div>Dialog content</div>
+        </Dialog>,
+      );
+
+      await waitFor(() => {
+        const button = document.querySelector('.cl-dialog__button');
+        expect(button).toBeInTheDocument();
+        expect(button).not.toHaveClass('cl-dialog__button_left');
+      });
     });
   });
 });

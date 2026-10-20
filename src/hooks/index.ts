@@ -3,6 +3,7 @@ export {
   useAnchorPosition as useTooltipPosition,
 } from './use-anchor-position/use-anchor-position';
 export { useAutoClose } from './use-auto-close/use-auto-close';
+export { useBodyScrollLock } from './use-body-scroll-lock/use-body-scroll-lock';
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
 export { useDebounce } from './use-debounce/use-debounce';

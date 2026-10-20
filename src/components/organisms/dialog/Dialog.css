@@ -38,6 +38,14 @@
 
 .cl-dialog__content {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cl-dialog__body {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .cl-dialog__button {
@@ -55,6 +63,11 @@
     right: var(--cl-m-gap);
     top: var(--cl-m-gap);
   }
+
+  .cl-dialog__button_left {
+    right: auto;
+    left: var(--cl-m-gap);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -65,6 +78,11 @@
   .cl-dialog__button {
     right: var(--cl-l-gap);
     top: var(--cl-l-gap);
+  }
+
+  .cl-dialog__button_left {
+    right: auto;
+    left: var(--cl-l-gap);
   }
 }
 
@@ -95,5 +113,91 @@
   .cl-dialog__layout,
   .cl-dialog_closing .cl-dialog__layout {
     animation: none;
+  }
+}
+
+.cl-dialog__layout_variant_drawer-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: 90%;
+  height: 100%;
+  border-radius: 0;
+  border-top-left-radius: var(--cl-border-radius);
+  border-bottom-left-radius: var(--cl-border-radius);
+  animation: cl-slide-in-right ease 400ms;
+}
+
+.cl-dialog_closing .cl-dialog__layout_variant_drawer-right {
+  animation: cl-slide-out-right ease 400ms;
+}
+
+@media screen and (min-width: 640px) {
+  .cl-dialog__layout_variant_drawer-right {
+    width: 55%;
+    min-width: auto;
+    max-width: none;
+    max-height: none;
+    position: absolute;
+    animation: cl-slide-in-right ease 400ms;
+  }
+
+  .cl-dialog_closing .cl-dialog__layout_variant_drawer-right {
+    animation: cl-slide-out-right ease 400ms;
+  }
+}
+
+.cl-dialog__layout_variant_drawer-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 90%;
+  height: 100%;
+  border-radius: 0;
+  border-top-right-radius: var(--cl-border-radius);
+  border-bottom-right-radius: var(--cl-border-radius);
+  animation: cl-slide-in-left ease 400ms;
+}
+
+.cl-dialog_closing .cl-dialog__layout_variant_drawer-left {
+  animation: cl-slide-out-left ease 400ms;
+}
+
+@media screen and (min-width: 640px) {
+  .cl-dialog__layout_variant_drawer-left {
+    width: 55%;
+    min-width: auto;
+    max-width: none;
+    max-height: none;
+    position: absolute;
+    animation: cl-slide-in-left ease 400ms;
+  }
+
+  .cl-dialog_closing .cl-dialog__layout_variant_drawer-left {
+    animation: cl-slide-out-left ease 400ms;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cl-dialog__layout_variant_drawer-left {
+    width: 35%;
+  }
+
+  .cl-dialog__layout_variant_drawer-right {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cl-dialog__layout_variant_drawer-left {
+    width: 25%;
+  }
+
+  .cl-dialog__layout_variant_drawer-right {
+    width: 25%;
   }
 }

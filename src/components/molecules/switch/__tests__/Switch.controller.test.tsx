@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { type KeyboardEvent, useEffect } from 'react';
+import type { KeyboardEvent } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { FormContext, type FormContextProps } from '../../../contexts';
 import { useSwitchController } from '../Switch.controller';
@@ -14,14 +14,18 @@ vi.mock('./Switch.helpers', () => ({
   }),
 }));
 
-vi.mock('@hooks/useResetFormInput', () => ({
-  useResetFormInput: vi.fn(() => {
-    // Simulate the reset behavior - in real implementation this would be called on reset
-    useEffect(() => {
-      // This would be called when reset signal changes in real implementation
-    }, []);
-  }),
-}));
+// Store the reset callback to trigger it in tests
+let resetCallback: (() => void) | null = null;
+
+vi.mock('@hooks', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@hooks')>();
+  return {
+    ...actual,
+    useResetFormInput: vi.fn((onReset: () => void) => {
+      resetCallback = onReset;
+    }),
+  };
+});
 
 // Test wrapper component
 const createWrapper = (contextValue: FormContextProps) => {
@@ -45,6 +49,7 @@ describe('useSwitchController', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    resetCallback = null;
   });
 
   it('initializes with defaultChecked value when no initialValues provided', () => {
@@ -330,5 +335,141 @@ describe('useSwitchController', () => {
     const { result } = renderHook(() => useSwitchController({ name: 'testSwitch' }), { wrapper });
 
     expect(result.current.checked).toBe(false);
+  });
+
+  describe('handleReset', () => {
+    it('should reset to initial value when handleReset is triggered', () => {
+      const onChangeFormInput = vi.fn();
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(
+        () => useSwitchController({ ...defaultProps, defaultChecked: false }),
+        { wrapper },
+      );
+
+      // Change the value
+      act(() => {
+        result.current.handleChange(true);
+      });
+      expect(result.current.checked).toBe(true);
+
+      // Clear mock to verify reset calls
+      onChangeFormInput.mockClear();
+
+      // Trigger reset
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should reset to initial value (false)
+      expect(result.current.checked).toBe(false);
+      expect(onChangeFormInput).toHaveBeenCalledWith({
+        name: 'testSwitch',
+        value: false,
+      });
+    });
+
+    it('should reset to initial value from context when handleReset is triggered', () => {
+      const onChangeFormInput = vi.fn();
+      const contextWithValues: FormContextProps = {
+        onChangeFormInput,
+        initialValues: { testSwitch: true },
+        resetSignal: 0,
+      };
+      const wrapper = createWrapper(contextWithValues);
+
+      const { result } = renderHook(() => useSwitchController(defaultProps), { wrapper });
+
+      // Initial value should be true from context
+      expect(result.current.checked).toBe(true);
+
+      // Change the value to false
+      act(() => {
+        result.current.handleChange(false);
+      });
+      expect(result.current.checked).toBe(false);
+
+      // Clear mock to verify reset calls
+      onChangeFormInput.mockClear();
+
+      // Trigger reset
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should reset to initial value from context (true)
+      expect(result.current.checked).toBe(true);
+      expect(onChangeFormInput).toHaveBeenCalledWith({
+        name: 'testSwitch',
+        value: true,
+      });
+    });
+
+    it('should handle reset without onChangeFormInput', () => {
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput: undefined,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(
+        () => useSwitchController({ ...defaultProps, defaultChecked: true }),
+        { wrapper },
+      );
+
+      // Change the value
+      act(() => {
+        result.current.handleChange(false);
+      });
+      expect(result.current.checked).toBe(false);
+
+      // Trigger reset - should not throw even without onChangeFormInput
+      act(() => {
+        resetCallback?.();
+      });
+
+      // Should reset to initial value (true)
+      expect(result.current.checked).toBe(true);
+    });
+
+    it('should reset multiple times correctly', () => {
+      const onChangeFormInput = vi.fn();
+      const context: FormContextProps = {
+        ...defaultContext,
+        onChangeFormInput,
+      };
+      const wrapper = createWrapper(context);
+
+      const { result } = renderHook(
+        () => useSwitchController({ ...defaultProps, defaultChecked: false }),
+        { wrapper },
+      );
+
+      // First cycle: change and reset
+      act(() => {
+        result.current.handleChange(true);
+      });
+      expect(result.current.checked).toBe(true);
+
+      act(() => {
+        resetCallback?.();
+      });
+      expect(result.current.checked).toBe(false);
+
+      // Second cycle: change and reset
+      act(() => {
+        result.current.handleChange(true);
+      });
+      expect(result.current.checked).toBe(true);
+
+      act(() => {
+        resetCallback?.();
+      });
+      expect(result.current.checked).toBe(false);
+    });
   });
 });

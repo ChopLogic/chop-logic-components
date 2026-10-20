@@ -1,6 +1,6 @@
 import { IconName, OrientationMode } from '@enums';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { SubMenu } from '../sub-menu/SubMenu';
 
 vi.mock('@hooks', () => ({
@@ -11,6 +11,10 @@ describe('SubMenu', () => {
   const mockToggleSubMenu = vi.fn();
   const mockCloseSubMenu = vi.fn();
   const mockOpenSubMenu = vi.fn();
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
   const itemWithLink = {
     id: '1',

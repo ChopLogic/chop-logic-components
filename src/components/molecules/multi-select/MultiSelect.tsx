@@ -41,12 +41,6 @@ const MultiSelect: FC<MultiSelectProps> = ({
   useClickOutside({ ref, onClickOutsideHandler: handleClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
 
-  // Prevent dropdown toggle when loading
-  const handleToggleWithLoading = () => {
-    if (isLoading) return;
-    handleToggle();
-  };
-
   return (
     <div ref={ref} {...rest} className={multiSelectClass} aria-busy={isLoading}>
       <Label label={label} required={required} inputId={elementId} disabled={disabled} />
@@ -55,7 +49,7 @@ const MultiSelect: FC<MultiSelectProps> = ({
         opened={opened}
         comboboxId={elementId}
         dropdownId={dropdownId}
-        onClick={handleToggleWithLoading}
+        onClick={handleToggle}
         values={values}
         placeholder={placeholder}
         disabled={disabled}

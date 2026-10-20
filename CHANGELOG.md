@@ -4,6 +4,22 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.6.2] - 2026-10-19
+
+### Added
+
+- `variant` prop on the `Dialog` component with a new `DialogVariant` enum (`default`, `drawer-right`, `drawer-left`); drawer variants anchor the panel to the right or left edge and slide in/out horizontally, with responsive widths across breakpoints
+- `closeButtonClassName` prop on the `Dialog` component for styling the close button
+- A new `useBodyScrollLock` hook that locks body scroll while active and restores the previous scroll position and overflow on release, with an interactive Storybook demo
+- `DialogVariant` exported enum
+- `cl-slide-in-right`, `cl-slide-out-right`, `cl-slide-in-left`, and `cl-slide-out-left` keyframes and matching utility classes
+
+### Changed
+
+- `Dialog` now locks body scroll while open (via `useBodyScrollLock`) and restores it on close
+- `Dialog` content now uses a flex column layout with a dedicated `cl-dialog__body` element for consistent body height
+- Updated npm dependencies (Storybook 10.6.2, Vite 8.3.4, commitlint 21.2.4, prettier 3.9.10, and others; Vitest and `@vitest/coverage-v8` pinned to 4.1.12)
+
 ## [4.6.1] - 2026-10-06
 
 ### Added

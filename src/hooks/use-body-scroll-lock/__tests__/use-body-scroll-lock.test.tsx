@@ -5,6 +5,7 @@ import {
   _resetScrollLockState,
   acquireLock,
   releaseLock,
+  SCROLL_LOCK_CLASS,
   useBodyScrollLock,
 } from '../use-body-scroll-lock';
 
@@ -13,94 +14,86 @@ const TestComponent = ({ isLocked }: { isLocked: boolean }) => {
   return <div>Test Component</div>;
 };
 
-describe('useBodyScrollLock', () => {
-  let originalOverflow: string;
+const hasScrollLockClass = () => document.documentElement.classList.contains(SCROLL_LOCK_CLASS);
 
+describe('useBodyScrollLock', () => {
   beforeEach(() => {
-    originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove(SCROLL_LOCK_CLASS);
     Object.defineProperty(window, 'scrollY', { value: 0, writable: true });
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
     _resetScrollLockState();
   });
 
   afterEach(() => {
-    document.body.style.overflow = originalOverflow;
+    document.documentElement.classList.remove(SCROLL_LOCK_CLASS);
     vi.restoreAllMocks();
     _resetScrollLockState();
   });
 
   describe('acquireLock', () => {
-    it('should save state and set overflow clip on first lock', () => {
+    it('should add scroll lock class on first lock', () => {
       Object.defineProperty(window, 'scrollY', { value: 123, writable: true });
-      document.body.style.overflow = 'auto';
 
       acquireLock();
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
     });
 
-    it('should not change overflow if already locked', () => {
-      document.body.style.overflow = 'auto';
-
+    it('should not add class twice if already locked', () => {
       acquireLock(); // First lock
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
-      document.body.style.overflow = 'scroll'; // Manually change
-
-      acquireLock(); // Second lock - should not reset
-      expect(document.body.style.overflow).toBe('scroll');
+      acquireLock(); // Second lock - class should still be present (not duplicated)
+      expect(hasScrollLockClass()).toBe(true);
+      expect(document.documentElement.classList.length).toBe(1);
     });
   });
 
   describe('releaseLock', () => {
-    it('should restore state when last lock is released', () => {
+    it('should remove class and restore scroll when last lock is released', () => {
       Object.defineProperty(window, 'scrollY', { value: 456, writable: true });
-      document.body.style.overflow = 'visible';
 
       acquireLock();
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       releaseLock();
 
-      expect(document.body.style.overflow).toBe('visible');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).toHaveBeenCalledWith(0, 456);
     });
 
-    it('should not restore state when other locks remain', () => {
-      document.body.style.overflow = 'auto';
-
+    it('should not remove class when other locks remain', () => {
       acquireLock();
       acquireLock();
 
       releaseLock(); // One lock remains
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
       expect(window.scrollTo).not.toHaveBeenCalled();
     });
   });
 
   describe('hook integration', () => {
-    it('should set overflow clip on body when isLocked is true', () => {
+    it('should add scroll lock class when isLocked is true', () => {
       render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
     });
 
-    it('should not set overflow clip on body when isLocked is false', () => {
+    it('should not add scroll lock class when isLocked is false', () => {
       render(<TestComponent isLocked={false} />);
 
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
 
-    it('should restore original overflow when isLocked becomes false', () => {
+    it('should remove scroll lock class when isLocked becomes false', () => {
       const { rerender } = render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerender(<TestComponent isLocked={false} />);
 
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
 
     it('should restore scroll position when unlocked', () => {
@@ -108,7 +101,7 @@ describe('useBodyScrollLock', () => {
 
       const { rerender } = render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerender(<TestComponent isLocked={false} />);
 
@@ -120,24 +113,12 @@ describe('useBodyScrollLock', () => {
 
       const { unmount } = render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       unmount();
 
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).toHaveBeenCalledWith(0, 200);
-    });
-
-    it('should preserve original overflow value when restoring', () => {
-      document.body.style.overflow = 'auto';
-
-      const { unmount } = render(<TestComponent isLocked={true} />);
-
-      expect(document.body.style.overflow).toBe('clip');
-
-      unmount();
-
-      expect(document.body.style.overflow).toBe('auto');
     });
 
     it('should not restore state when unlocking if never locked', () => {
@@ -145,7 +126,7 @@ describe('useBodyScrollLock', () => {
 
       rerender(<TestComponent isLocked={false} />);
 
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).not.toHaveBeenCalled();
     });
 
@@ -154,7 +135,7 @@ describe('useBodyScrollLock', () => {
 
       unmount();
 
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).not.toHaveBeenCalled();
     });
 
@@ -162,23 +143,23 @@ describe('useBodyScrollLock', () => {
       Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
 
       const { rerender } = render(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
 
       rerender(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerender(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).toHaveBeenCalledWith(0, 100);
 
       vi.mocked(window.scrollTo).mockClear();
       Object.defineProperty(window, 'scrollY', { value: 200, writable: true });
 
       rerender(<TestComponent isLocked={true} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerender(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).toHaveBeenCalledWith(0, 200);
     });
   });
@@ -186,42 +167,41 @@ describe('useBodyScrollLock', () => {
   describe('single dialog unlock via rerender', () => {
     it('should release lock and restore state when single dialog transitions to unlocked', () => {
       Object.defineProperty(window, 'scrollY', { value: 999, writable: true });
-      document.body.style.overflow = 'visible';
 
       const { rerender } = render(<TestComponent isLocked={true} />);
 
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       act(() => {
         rerender(<TestComponent isLocked={false} />);
       });
 
-      expect(document.body.style.overflow).toBe('visible');
+      expect(hasScrollLockClass()).toBe(false);
       expect(window.scrollTo).toHaveBeenCalledWith(0, 999);
     });
   });
 
   describe('stacked dialogs coordination', () => {
-    it('should keep body locked when closing first dialog while second remains open', () => {
+    it('should keep scroll locked when closing first dialog while second remains open', () => {
       const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
       const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
 
       rerenderA(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerenderB(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
 
-    it('should keep body locked when closing second dialog while first remains open', () => {
+    it('should keep scroll locked when closing second dialog while first remains open', () => {
       const { rerender: rerenderA } = render(<TestComponent isLocked={true} />);
       const { rerender: rerenderB } = render(<TestComponent isLocked={true} />);
 
       rerenderB(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerenderA(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
 
     it('should restore scroll position only after all dialogs close', () => {
@@ -242,10 +222,10 @@ describe('useBodyScrollLock', () => {
       const { unmount: unmountB } = render(<TestComponent isLocked={true} />);
 
       unmountA();
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       unmountB();
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
 
     it('should handle three stacked dialogs', () => {
@@ -254,13 +234,13 @@ describe('useBodyScrollLock', () => {
       const { rerender: rerenderC } = render(<TestComponent isLocked={true} />);
 
       rerenderC(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerenderB(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
 
       rerenderA(<TestComponent isLocked={false} />);
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
   });
 });

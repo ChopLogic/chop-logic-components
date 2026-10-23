@@ -9,12 +9,12 @@ The `useBodyScrollLock` hook prevents the page body from scrolling when active. 
 
 ## Features
 
-- Prevents body scrolling by setting `overflow: hidden` on the body element
+- Prevents body scrolling by adding a CSS class (`cl-scroll-locked`) to the `html` element
 - Preserves and restores scroll position when unlocked
 - Automatically cleans up on component unmount
-- Preserves any existing overflow style when restoring
+- Supports stacked dialogs — scroll is restored only when all locks are released
 
-### Usage
+## Usage
 
 ```tsx
 import React, { useState } from "react";
@@ -44,22 +44,52 @@ const ExampleModal = () => {
 export default ExampleModal;
 ```
 
-### Params
+## Preventing Layout Shift
+
+When scroll is locked, the scrollbar disappears, which can cause a layout shift (content widens by the scrollbar width). To prevent this, add the following CSS rule to your global styles:
+
+```css
+html {
+  scrollbar-gutter: stable;
+}
+```
+
+The `scrollbar-gutter: stable` property reserves space for the scrollbar even when `overflow: hidden` is applied, keeping the content width constant.
+
+**Browser support:** Chrome 94+, Firefox 97+, Safari 18.2+, Edge 94+ (~95% global coverage as of 2024).
+
+For older browsers, the fallback is a minor layout shift when the scrollbar disappears, which is generally acceptable.
+
+## Params
 
 | Param        | Type      | Description                                                           |
 | ------------ | --------- | --------------------------------------------------------------------- |
 | **isLocked** | `boolean` | When `true`, prevents body scrolling. When `false`, allows scrolling. |
 
-### Returns
+## Returns
 
 `void`
 
-### Best Practices
+## How It Works
+
+The hook adds a `cl-scroll-locked` class to the `<html>` element when locked, which applies `overflow: hidden`. This class is defined in the library's `main.css`:
+
+```css
+.cl-scroll-locked {
+  overflow: hidden;
+}
+```
+
+When unlocked, the class is removed and the scroll position is restored.
+
+## Best Practices
 
 1. **Use with modals and overlays**: This hook is designed for components that overlay the page content and should prevent interaction with the background.
 
 2. **Pair with focus trapping**: For accessible modals, combine this hook with `useModalFocusTrap` to ensure both scroll and focus are properly managed.
 
-3. **Single lock at a time**: Avoid having multiple components trying to lock scroll simultaneously. The hook stores the original overflow value when locking, so nested locks may not restore correctly.
+3. **Add `scrollbar-gutter: stable`**: To prevent layout shift when the scrollbar disappears, add this CSS rule to your global styles on the `html` element.
 
-4. **Cleanup is automatic**: The hook automatically restores scroll position and overflow style when the component unmounts, so you don't need to handle cleanup manually.
+4. **Stacked dialogs work automatically**: Multiple components can use this hook simultaneously. Scroll will only be restored when all locks are released.
+
+5. **Cleanup is automatic**: The hook automatically restores scroll position when the component unmounts, so you don't need to handle cleanup manually.

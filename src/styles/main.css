@@ -354,3 +354,7 @@
 .cl-slide-out-left {
   animation: cl-slide-out-left ease 400ms;
 }
+
+.cl-scroll-locked {
+  overflow: hidden;
+}

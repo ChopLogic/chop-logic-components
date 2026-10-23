@@ -1,4 +1,5 @@
 import { DialogVariant } from '@enums';
+import { SCROLL_LOCK_CLASS } from '@hooks';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -13,16 +14,15 @@ describe('Dialog', () => {
     onClose: vi.fn(),
   };
 
-  let originalOverflow: string;
+  const hasScrollLockClass = () => document.documentElement.classList.contains(SCROLL_LOCK_CLASS);
 
   beforeEach(() => {
-    originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove(SCROLL_LOCK_CLASS);
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   });
 
   afterEach(() => {
-    document.body.style.overflow = originalOverflow;
+    document.documentElement.classList.remove(SCROLL_LOCK_CLASS);
     vi.restoreAllMocks();
   });
 
@@ -120,7 +120,7 @@ describe('Dialog', () => {
     });
   });
 
-  it('should set overflow clip on body when dialog is opened', async () => {
+  it('should add scroll lock class when dialog is opened', async () => {
     render(
       <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
@@ -128,11 +128,11 @@ describe('Dialog', () => {
     );
 
     await waitFor(() => {
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
     });
   });
 
-  it('should restore body overflow when dialog is closed', async () => {
+  it('should remove scroll lock class when dialog is closed', async () => {
     const { rerender } = render(
       <Dialog {...testProps} isOpened={true}>
         <div>Dialog content</div>
@@ -140,7 +140,7 @@ describe('Dialog', () => {
     );
 
     await waitFor(() => {
-      expect(document.body.style.overflow).toBe('clip');
+      expect(hasScrollLockClass()).toBe(true);
     });
 
     rerender(
@@ -150,7 +150,7 @@ describe('Dialog', () => {
     );
 
     await waitFor(() => {
-      expect(document.body.style.overflow).toBe('');
+      expect(hasScrollLockClass()).toBe(false);
     });
   });
 

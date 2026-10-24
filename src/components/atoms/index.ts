@@ -2,6 +2,7 @@ export { default as Avatar } from './avatar/Avatar';
 export { default as Button } from './button/Button';
 export { default as EditableText } from './editable-text/EditableText';
 export { default as ErrorMessage } from './error-message/ErrorMessage';
+export { default as FilterInput, type FilterInputProps } from './filter-input/FilterInput';
 export { default as Header } from './header/Header';
 export { default as Icon } from './icon/Icon';
 export { default as Image } from './image/Image';

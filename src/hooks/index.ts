@@ -11,6 +11,11 @@ export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
 export { useDebounce } from './use-debounce/use-debounce';
 export { useElementIds } from './use-element-ids/use-element-ids';
+export {
+  type UseFilterOptionsParams,
+  type UseFilterOptionsReturn,
+  useFilterOptions,
+} from './use-filter-options/use-filter-options';
 export { useFormLoading } from './use-form-loading/use-form-loading';
 export { useFormPending } from './use-form-pending/use-form-pending';
 export { useIsHovered } from './use-is-hovered/use-is-hovered';

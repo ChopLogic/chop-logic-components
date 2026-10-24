@@ -1,5 +1,11 @@
 import { Label } from '@components/atoms';
-import { useClickOutside, useElementIds, useFormLoading, useKeyPress } from '@hooks';
+import {
+  useClickOutside,
+  useElementIds,
+  useFilterOptions,
+  useFormLoading,
+  useKeyPress,
+} from '@hooks';
 import type { SelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
@@ -21,11 +27,16 @@ const Select: FC<SelectProps> = ({
   disabled = false,
   className,
   isLoading: isLoadingProp,
+  isSearchable = false,
+  searchPlaceholder = 'Filter options...',
   ...rest
 }) => {
   const isLoading = useFormLoading(isLoadingProp);
   const ref = useRef<HTMLDivElement>(null);
   const { elementId, dropdownId } = useElementIds(id);
+  const { filterQuery, filteredOptions, setFilterQuery, resetFilter } = useFilterOptions({
+    options,
+  });
   const { handleClear, handleClose, handleSelect, handleToggle, selected, opened } =
     useSelectController({
       options,
@@ -35,8 +46,13 @@ const Select: FC<SelectProps> = ({
     });
   const selectClass = getClassName(['cl-select', className, { 'cl-select_loading': isLoading }]);
 
-  useClickOutside({ ref, onClickOutsideHandler: handleClose });
-  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
+  const handleDropdownClose = () => {
+    resetFilter();
+    handleClose();
+  };
+
+  useClickOutside({ ref, onClickOutsideHandler: handleDropdownClose });
+  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleDropdownClose });
 
   // Prevent dropdown toggle when loading
   const handleComboboxClick = () => {
@@ -61,14 +77,19 @@ const Select: FC<SelectProps> = ({
         isLoading={isLoading}
       />
       <SelectDropdown
-        options={options}
+        options={filteredOptions}
         selected={selected}
         opened={isLoading ? false : opened}
-        onClose={handleClose}
+        onClose={handleDropdownClose}
         dropdownId={dropdownId}
         comboboxId={elementId}
         onSelect={handleSelect}
         onClear={handleClear}
+        isSearchable={isSearchable}
+        searchPlaceholder={searchPlaceholder}
+        filterQuery={filterQuery}
+        onFilterChange={setFilterQuery}
+        onFilterReset={resetFilter}
       />
     </div>
   );

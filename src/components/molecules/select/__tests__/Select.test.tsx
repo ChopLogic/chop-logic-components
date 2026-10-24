@@ -1,8 +1,8 @@
 import { Form } from '@components/organisms';
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { SelectValue } from '@types';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import Select from '../Select';
 
@@ -218,6 +218,253 @@ describe('Select', () => {
     it('should apply loading modifier class to combobox when isLoading is true', () => {
       const { container } = render(<Select {...testProps} isLoading />);
       expect(container.querySelector('.cl-select-combobox_loading')).toBeInTheDocument();
+    });
+  });
+
+  describe('Searchable functionality', () => {
+    const SEARCHABLE_OPTIONS: SelectValue[] = [
+      { id: '1', label: 'Apple' },
+      { id: '2', label: 'Banana' },
+      { id: '3', label: 'Cherry' },
+      { id: '4', label: 'Date' },
+      { id: '5', label: 'Elderberry' },
+    ];
+
+    const searchableProps = {
+      ...testProps,
+      options: SEARCHABLE_OPTIONS,
+      isSearchable: true,
+    };
+
+    const TWO_OPTIONS: SelectValue[] = [
+      { id: '1', label: 'Apple' },
+      { id: '2', label: 'Banana' },
+    ];
+
+    it('should not render filter input when isSearchable is false', async () => {
+      render(<Select {...testProps} isSearchable={false} />);
+      await userEvent.click(screen.getByRole('combobox'));
+      expect(screen.queryByPlaceholderText('Filter options...')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText('Filter options')).not.toBeInTheDocument();
+    });
+
+    it('should render filter input when isSearchable is true even with few options', async () => {
+      render(<Select {...testProps} options={TWO_OPTIONS} isSearchable />);
+      await userEvent.click(screen.getByRole('combobox'));
+      expect(screen.getByPlaceholderText('Filter options...')).toBeInTheDocument();
+      expect(screen.getByLabelText('Filter options')).toBeInTheDocument();
+    });
+
+    it('should render filter input when isSearchable is true', async () => {
+      render(<Select {...searchableProps} />);
+      await userEvent.click(screen.getByRole('combobox'));
+      expect(screen.getByPlaceholderText('Filter options...')).toBeInTheDocument();
+      expect(screen.getByLabelText('Filter options')).toBeInTheDocument();
+    });
+
+    it('should filter options as user types', async () => {
+      render(<Select {...searchableProps} />);
+      await userEvent.click(screen.getByRole('combobox'));
+
+      // All 5 options should be visible initially
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      // Type to filter - "erry" matches only "Cherry" and "Elderberry"
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      await userEvent.type(filterInput, 'erry');
+
+      // Only Cherry and Elderberry should remain visible (contain "erry")
+      const filteredOptions = screen.getAllByRole('option');
+      expect(filteredOptions).toHaveLength(2);
+      expect(filteredOptions.map((o) => o.textContent)).toEqual(
+        expect.arrayContaining(['Cherry', 'Elderberry']),
+      );
+    });
+
+    it('should display "No matching options" when filter returns empty', async () => {
+      render(<Select {...searchableProps} />);
+      await userEvent.click(screen.getByRole('combobox'));
+
+      // Type a query that matches nothing
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      await userEvent.type(filterInput, 'xyz');
+
+      // No options should be visible
+      expect(screen.queryAllByRole('option')).toHaveLength(0);
+
+      // "No matching options" message should be displayed with role="status"
+      expect(screen.getByRole('status')).toHaveTextContent('No matching options');
+    });
+
+    it('should reset filter when dropdown closes by clicking outside', async () => {
+      render(
+        <div>
+          <button type="button">Outside button</button>
+          <Select {...searchableProps} />
+        </div>,
+      );
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown and filter
+      await userEvent.click(combobox);
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      // Use "erry" which matches Cherry and Elderberry (2 options)
+      await userEvent.type(filterInput, 'erry');
+
+      // Verify filter is applied
+      expect(screen.getAllByRole('option')).toHaveLength(2);
+
+      // Close dropdown by clicking outside element
+      await userEvent.click(screen.getByText('Outside button'));
+
+      // Reopen dropdown - all options should be visible again
+      await userEvent.click(combobox);
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      // Filter input should be cleared
+      const newFilterInput = screen.getByPlaceholderText('Filter options...');
+      expect(newFilterInput).toHaveValue('');
+    });
+
+    it('should reset filter when dropdown closes by pressing Escape', async () => {
+      render(<Select {...searchableProps} />);
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown and filter
+      await userEvent.click(combobox);
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      // Use "ple" which matches Apple only, but need at least 3 options filtered for filter to show
+      // So use "a" which matches Apple, Banana, Date, Elderberry (4 options)
+      await userEvent.type(filterInput, 'pple');
+
+      // Verify filter is applied - only Apple matches "pple"
+      const filteredOptions = screen.getAllByRole('option');
+      expect(filteredOptions).toHaveLength(1);
+      expect(filteredOptions[0]).toHaveTextContent('Apple');
+
+      // Press Escape to close
+      await userEvent.keyboard('{Escape}');
+
+      // Reopen the dropdown
+      await userEvent.click(combobox);
+
+      // Filter should be reset, all options visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByPlaceholderText('Filter options...')).toHaveValue('');
+    });
+
+    describe('Aria-live announcements', () => {
+      beforeEach(() => {
+        vi.useFakeTimers({ shouldAdvanceTime: true });
+      });
+
+      afterEach(() => {
+        vi.useRealTimers();
+      });
+
+      it('should announce filtered count via aria-live region after debounce', async () => {
+        render(<Select {...searchableProps} />);
+
+        await userEvent.click(screen.getByRole('combobox'));
+
+        // Type to filter - "a" matches Apple, Banana, Date, Elderberry
+        const filterInput = screen.getByPlaceholderText('Filter options...');
+        await userEvent.type(filterInput, 'a');
+
+        // Find the aria-live region
+        const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+        expect(ariaLiveRegion).toBeInTheDocument();
+
+        // Fast-forward timers to trigger debounce (300ms)
+        await act(async () => {
+          vi.advanceTimersByTime(300);
+        });
+
+        // Should announce count of matching options
+        expect(ariaLiveRegion).toHaveTextContent(/\d+ options? available/);
+      });
+
+      it('should announce "No matching options" via aria-live region when filter returns empty', async () => {
+        render(<Select {...searchableProps} />);
+
+        await userEvent.click(screen.getByRole('combobox'));
+
+        // Type a query that matches nothing
+        const filterInput = screen.getByPlaceholderText('Filter options...');
+        await userEvent.type(filterInput, 'xyz');
+
+        // Find the aria-live region
+        const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+        expect(ariaLiveRegion).toBeInTheDocument();
+
+        // Fast-forward timers to trigger debounce (300ms)
+        await act(async () => {
+          vi.advanceTimersByTime(300);
+        });
+
+        // Should announce no matching options
+        expect(ariaLiveRegion).toHaveTextContent('No matching options');
+      });
+
+      it('should use singular form when only one option matches', async () => {
+        render(<Select {...searchableProps} />);
+
+        await userEvent.click(screen.getByRole('combobox'));
+
+        // Type to filter - "Cherry" matches only one option exactly
+        const filterInput = screen.getByPlaceholderText('Filter options...');
+        await userEvent.type(filterInput, 'Cherry');
+
+        // Find the aria-live region
+        const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+        expect(ariaLiveRegion).toBeInTheDocument();
+
+        // Fast-forward timers to trigger debounce (300ms)
+        await act(async () => {
+          vi.advanceTimersByTime(300);
+        });
+
+        // Should announce singular form
+        expect(ariaLiveRegion).toHaveTextContent('1 option available');
+      });
+    });
+
+    it('should use custom searchPlaceholder when provided', async () => {
+      render(<Select {...searchableProps} searchPlaceholder="Search fruits..." />);
+      await userEvent.click(screen.getByRole('combobox'));
+      expect(screen.getByPlaceholderText('Search fruits...')).toBeInTheDocument();
+    });
+
+    it('should filter options case-insensitively', async () => {
+      render(<Select {...searchableProps} />);
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      await userEvent.type(filterInput, 'APPLE');
+
+      const filteredOptions = screen.getAllByRole('option');
+      expect(filteredOptions).toHaveLength(1);
+      expect(filteredOptions[0]).toHaveTextContent('Apple');
+    });
+
+    it('should display all options when filter query is cleared', async () => {
+      render(<Select {...searchableProps} />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+
+      // Type to filter - "a" matches Apple, Banana, Date, Elderberry (4 options)
+      fireEvent.change(filterInput, { target: { value: 'a' } });
+
+      // Verify filter is applied (should be 4 options matching 'a')
+      expect(screen.getAllByRole('option').length).toBeLessThan(5);
+
+      // Clear the filter using fireEvent.change as specified in task
+      fireEvent.change(filterInput, { target: { value: '' } });
+
+      // All 5 options should be visible again
+      expect(screen.getAllByRole('option')).toHaveLength(5);
     });
   });
 });

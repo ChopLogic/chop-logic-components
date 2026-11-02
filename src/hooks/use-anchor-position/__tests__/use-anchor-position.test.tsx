@@ -15,6 +15,13 @@ const mockObserve = vi.fn();
 const mockDisconnect = vi.fn();
 const mockUnobserve = vi.fn();
 
+function ResizeObserverMock(this: MockedThisObserverType, callback: ResizeObserverCallback) {
+  this.callback = callback;
+  this.observe = mockObserve;
+  this.disconnect = mockDisconnect;
+  this.unobserve = mockUnobserve;
+}
+
 beforeEach(() => {
   window.innerWidth = 800;
   window.innerHeight = 600;
@@ -22,18 +29,7 @@ beforeEach(() => {
   mockDisconnect.mockClear();
   mockUnobserve.mockClear();
 
-  vi.stubGlobal(
-    'ResizeObserver',
-    vi.fn(function ResizeObserverMock(
-      this: MockedThisObserverType,
-      callback: ResizeObserverCallback,
-    ) {
-      this.callback = callback;
-      this.observe = mockObserve;
-      this.disconnect = mockDisconnect;
-      this.unobserve = mockUnobserve;
-    }),
-  );
+  vi.stubGlobal('ResizeObserver', vi.fn(ResizeObserverMock));
 });
 
 describe('useAnchorPosition', () => {

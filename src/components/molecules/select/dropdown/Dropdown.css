@@ -10,7 +10,7 @@
   padding: 0;
   list-style: none;
   z-index: var(--cl-z-index-popup);
-  width: 100%;
+  width: 99%;
   border: var(--cl-light-border);
   border-radius: var(--cl-border-radius);
   box-shadow: var(--cl-box-shadow);

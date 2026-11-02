@@ -6,6 +6,9 @@ const MockComponent = vi.fn((props: { alt: string; src: string }) => (
   <img src={props.src} alt={props.alt} data-testid="mock-image" />
 ));
 
+const TestComponent = () => <div>Test</div>;
+TestComponent.displayName = 'CustomDisplayName';
+
 describe('withFigureCaption', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -101,9 +104,6 @@ describe('withFigureCaption', () => {
   });
 
   it('does not modify the displayName of the wrapped component', () => {
-    const TestComponent = () => <div>Test</div>;
-    TestComponent.displayName = 'CustomDisplayName';
-
     const WrappedComponent = withFigureCaption(TestComponent);
 
     expect(WrappedComponent.displayName).toBeUndefined();

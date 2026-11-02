@@ -3,7 +3,7 @@ name: Mutation Testing
 on:
   schedule:
     # Monthly: First day of each month at 2 AM UTC
-    - cron: '0 2 1 * *'
+    - cron: "0 2 1 * *"
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci --ignore-scripts

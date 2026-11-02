@@ -10,6 +10,11 @@ export {
 export { useClickOutside } from './use-click-outside/use-click-outside';
 export { useContainerDimensions } from './use-container-dimensions/use-container-dimensions';
 export { useDebounce } from './use-debounce/use-debounce';
+export {
+  type UseDropdownSearchParams,
+  type UseDropdownSearchReturn,
+  useDropdownSearch,
+} from './use-dropdown-search/use-dropdown-search';
 export { useElementIds } from './use-element-ids/use-element-ids';
 export {
   type UseFilterOptionsParams,

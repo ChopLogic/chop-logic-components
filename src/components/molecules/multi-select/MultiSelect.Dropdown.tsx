@@ -1,13 +1,11 @@
 import { FilterInput } from '@components/atoms';
-import { useDebounce } from '@hooks';
+import { useDropdownSearch } from '@hooks';
 import type { MultiSelectValue } from '@types';
 import { getClassName, handleDropdownListKeyPress } from '@utils';
-import { type FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
 
 import '../select/dropdown/Dropdown.css';
 import { MultiSelectOption } from './Option';
-
-const ARIA_LIVE_DEBOUNCE_MS = 300;
 
 type Props = {
   options: MultiSelectValue[];
@@ -34,36 +32,15 @@ export const MultiSelectDropdown: FC<Props> = ({
   onFilterChange,
   onFilterReset,
 }) => {
-  const [ariaLiveMessage, setAriaLiveMessage] = useState('');
-  const debouncedFilterQuery = useDebounce(filterQuery, ARIA_LIVE_DEBOUNCE_MS);
-
-  const shouldRenderFilterInput = isSearchable;
-  const hasNoMatchingOptions = options.length === 0 && filterQuery.trim().length > 0;
-
-  useEffect(() => {
-    if (!opened || !isSearchable) {
-      setAriaLiveMessage('');
-      return;
-    }
-
-    if (debouncedFilterQuery.trim().length > 0) {
-      if (options.length === 0) {
-        setAriaLiveMessage('No matching options');
-      } else {
-        setAriaLiveMessage(`${options.length} option${options.length === 1 ? '' : 's'} available`);
-      }
-    } else {
-      setAriaLiveMessage('');
-    }
-  }, [debouncedFilterQuery, options.length, opened, isSearchable]);
-
-  const handleFilterChange = (value: string) => {
-    onFilterChange?.(value);
-  };
-
-  const handleFilterClear = () => {
-    onFilterReset?.();
-  };
+  const { ariaLiveMessage, hasNoMatchingOptions, handleFilterChange, handleFilterClear } =
+    useDropdownSearch({
+      optionsCount: options.length,
+      opened,
+      isSearchable,
+      filterQuery,
+      onFilterChange,
+      onFilterReset,
+    });
 
   const dropdownClass = getClassName([
     'cl-select-dropdown',
@@ -78,7 +55,7 @@ export const MultiSelectDropdown: FC<Props> = ({
       onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
       className={dropdownClass}
     >
-      {shouldRenderFilterInput && (
+      {isSearchable && (
         <li className="cl-select-dropdown__filter-container" role="presentation">
           <FilterInput
             value={filterQuery}

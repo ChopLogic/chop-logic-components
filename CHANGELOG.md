@@ -4,6 +4,18 @@ All notable changes to this project will be listed in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.7.0] - 2026-11-02
+
+### Added
+
+- Searchable option filtering for `Select` and `MultiSelect`, enabled with the `isSearchable` prop and configurable with `searchPlaceholder`; filtering matches option labels case-insensitively
+- A reusable `FilterInput` atom and `useFilterOptions` hook for filtering labeled options
+
+### Changed
+
+- Updated npm development dependencies, including Storybook 10.6.5, Vitest and `@vitest/coverage-v8` 5.0.5, Vite 8.3.5, Stryker 10.1.1, and Biome 2.6.4
+- Migrated the Biome configuration to the 2.6 schema and preset format
+
 ## [4.6.2] - 2026-10-19
 
 ### Added

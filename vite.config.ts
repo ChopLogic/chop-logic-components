@@ -84,6 +84,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setup-tests.ts',
+    pool: 'vmThreads',
     exclude: [...configDefaults.exclude, '.stryker-tmp/*'],
     coverage: {
       reporter: ['text', 'lcov', 'clover'],

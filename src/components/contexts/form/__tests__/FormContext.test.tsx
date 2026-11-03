@@ -9,6 +9,13 @@ function useFormContextValue() {
   return useContext(FormContext);
 }
 
+const DynamicWrapper: FC<PropsWithChildren> = ({ children }) => {
+  const [resetSignal, setResetSignal] = useState(0);
+  // Expose setter for testing
+  (globalThis as Record<string, unknown>).__setResetSignal = setResetSignal;
+  return <FormContext.Provider value={{ resetSignal }}>{children}</FormContext.Provider>;
+};
+
 describe('FormContext', () => {
   it('should default isPending to false when no provider is given', () => {
     const { result } = renderHook(() => useFormContextValue());
@@ -118,15 +125,6 @@ describe('FormContext', () => {
   });
 
   it('should reflect updated context when provider value changes', () => {
-    const signal = 0;
-
-    const DynamicWrapper: FC<PropsWithChildren> = ({ children }) => {
-      const [resetSignal, setResetSignal] = useState(signal);
-      // Expose setter for testing
-      (globalThis as Record<string, unknown>).__setResetSignal = setResetSignal;
-      return <FormContext.Provider value={{ resetSignal }}>{children}</FormContext.Provider>;
-    };
-
     const { result } = renderHook(() => useFormContextValue(), { wrapper: DynamicWrapper });
     expect(result.current.resetSignal).toBe(0);
 

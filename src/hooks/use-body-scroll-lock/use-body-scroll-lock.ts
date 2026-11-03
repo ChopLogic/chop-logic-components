@@ -4,23 +4,23 @@ type BodyScrollLockParams = {
   isLocked: boolean;
 };
 
+// CSS class applied to html element when scroll is locked
+export const SCROLL_LOCK_CLASS = 'cl-scroll-locked';
+
 // Module-level state to coordinate scroll locks across stacked dialogs
 let activeLockCount = 0;
 let savedScrollPosition = 0;
-let savedOverflow = '';
 
 // Export for testing purposes only
 export const _resetScrollLockState = (): void => {
   activeLockCount = 0;
   savedScrollPosition = 0;
-  savedOverflow = '';
 };
 
 export const acquireLock = (): void => {
   if (activeLockCount === 0) {
     savedScrollPosition = window.scrollY;
-    savedOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'clip';
+    document.documentElement.classList.add(SCROLL_LOCK_CLASS);
   }
   activeLockCount++;
 };
@@ -28,7 +28,7 @@ export const acquireLock = (): void => {
 export const releaseLock = (): void => {
   activeLockCount--;
   if (activeLockCount === 0) {
-    document.body.style.overflow = savedOverflow;
+    document.documentElement.classList.remove(SCROLL_LOCK_CLASS);
     window.scrollTo(0, savedScrollPosition);
   }
 };

@@ -1,8 +1,7 @@
+import { DropdownList } from '@components/molecules/select/dropdown/DropdownList';
 import type { MultiSelectValue } from '@types';
-import { getClassName, handleDropdownListKeyPress } from '@utils';
 import type { FC } from 'react';
 
-import '../select/dropdown/Dropdown.css';
 import { MultiSelectOption } from './Option';
 
 type Props = {
@@ -11,6 +10,11 @@ type Props = {
   dropdownId: string;
   onClose: () => void;
   onSelect: (id: string) => void;
+  isSearchable?: boolean;
+  searchPlaceholder?: string;
+  filterQuery?: string;
+  onFilterChange?: (value: string) => void;
+  onFilterReset?: () => void;
 };
 
 export const MultiSelectDropdown: FC<Props> = ({
@@ -19,23 +23,27 @@ export const MultiSelectDropdown: FC<Props> = ({
   onClose,
   onSelect,
   dropdownId,
+  isSearchable = false,
+  searchPlaceholder = 'Filter options...',
+  filterQuery = '',
+  onFilterChange,
+  onFilterReset,
 }) => {
-  const dropdownClass = getClassName([
-    'cl-select-dropdown',
-    { 'cl-select-dropdown_opened': opened },
-  ]);
-
   return (
-    <ul
-      role="listbox"
-      id={dropdownId}
-      tabIndex={-1}
-      onKeyDown={(e) => handleDropdownListKeyPress({ e, options, onClose })}
-      className={dropdownClass}
+    <DropdownList
+      options={options}
+      opened={opened}
+      onClose={onClose}
+      dropdownId={dropdownId}
+      isSearchable={isSearchable}
+      searchPlaceholder={searchPlaceholder}
+      filterQuery={filterQuery}
+      onFilterChange={onFilterChange}
+      onFilterReset={onFilterReset}
     >
       {options.map((item) => (
         <MultiSelectOption key={item.id} value={item} onSelect={() => onSelect(item.id)} />
       ))}
-    </ul>
+    </DropdownList>
   );
 };

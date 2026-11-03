@@ -12,6 +12,16 @@ const MULTI_SELECT_LANGUAGES: SelectValue[] = [
   { id: 'b2c3d4e5-f6a7-8901-bcde-f12345678901', label: 'Portuguese' },
 ];
 
+const SEARCHABLE_FRUITS: SelectValue[] = [
+  { id: 'apple', label: 'Apple' },
+  { id: 'banana', label: 'Banana' },
+  { id: 'cherry', label: 'Cherry' },
+  { id: 'dragonfruit', label: 'Dragonfruit' },
+  { id: 'elderberry', label: 'Elderberry' },
+  { id: 'fig', label: 'Fig' },
+  { id: 'grape', label: 'Grape' },
+];
+
 const meta: Meta<typeof MultiSelectExample> = {
   component: MultiSelectExample,
   title: 'Molecules/MultiSelect',
@@ -68,6 +78,25 @@ const meta: Meta<typeof MultiSelectExample> = {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
         category: 'State',
+      },
+    },
+    // Search
+    isSearchable: {
+      control: 'boolean',
+      description: 'Enables filter input in the dropdown to search through options.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Search',
+      },
+    },
+    searchPlaceholder: {
+      control: 'text',
+      description: 'Placeholder text for the search input when isSearchable is enabled.',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '"Filter options..."' },
+        category: 'Search',
       },
     },
     // Validation
@@ -241,6 +270,26 @@ export const ManyOptions: Story = {
       description: {
         story:
           'Multi-select with many options. Use keyboard navigation (Arrow keys, Home, End) to efficiently navigate long lists.',
+      },
+    },
+  },
+};
+
+export const Searchable: Story = {
+  args: {
+    id: 'searchable-multiselect',
+    label: 'Select your favorite fruits',
+    name: 'fruits',
+    placeholder: 'Choose fruits',
+    options: SEARCHABLE_FRUITS,
+    isSearchable: true,
+    searchPlaceholder: 'Search fruits...',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Multi-select with searchable/filterable functionality. When enabled, a filter input appears at the top of the dropdown, allowing users to quickly find options by typing. The filter performs case-insensitive substring matching on option labels.',
       },
     },
   },

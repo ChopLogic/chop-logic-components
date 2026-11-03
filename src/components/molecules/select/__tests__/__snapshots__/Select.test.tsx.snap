@@ -74,6 +74,11 @@ exports[`Select > should render correctly 1`] = `
           German
         </span>
       </li>
+      <li
+        aria-atomic="true"
+        aria-live="polite"
+        class="cl-select-dropdown__aria-live"
+      />
     </ul>
   </div>
 </DocumentFragment>

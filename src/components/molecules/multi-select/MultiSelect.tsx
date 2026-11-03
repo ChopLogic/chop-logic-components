@@ -1,5 +1,11 @@
 import { Label } from '@components/atoms';
-import { useClickOutside, useElementIds, useFormLoading, useKeyPress } from '@hooks';
+import {
+  useClickOutside,
+  useElementIds,
+  useFilterOptions,
+  useFormLoading,
+  useKeyPress,
+} from '@hooks';
 import type { MultiSelectProps } from '@types';
 import { getClassName } from '@utils';
 import { type FC, useRef } from 'react';
@@ -21,6 +27,8 @@ const MultiSelect: FC<MultiSelectProps> = ({
   id,
   className,
   isLoading: isLoadingProp,
+  isSearchable = false,
+  searchPlaceholder = 'Filter options...',
   ...rest
 }) => {
   const isLoading = useFormLoading(isLoadingProp);
@@ -32,14 +40,31 @@ const MultiSelect: FC<MultiSelectProps> = ({
     defaultValue,
     onChange,
   });
+
+  const { filterQuery, filteredOptions, setFilterQuery, resetFilter } = useFilterOptions({
+    options: values,
+  });
+
   const multiSelectClass = getClassName([
     'cl-select',
     className,
     { 'cl-multi-select_loading': isLoading },
   ]);
 
-  useClickOutside({ ref, onClickOutsideHandler: handleClose });
-  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleClose });
+  const handleCloseWithFilterReset = () => {
+    resetFilter();
+    handleClose();
+  };
+
+  const handleToggleWithFilterReset = () => {
+    if (opened) {
+      resetFilter();
+    }
+    handleToggle();
+  };
+
+  useClickOutside({ ref, onClickOutsideHandler: handleCloseWithFilterReset });
+  useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleCloseWithFilterReset });
 
   return (
     <div ref={ref} {...rest} className={multiSelectClass} aria-busy={isLoading}>
@@ -49,7 +74,7 @@ const MultiSelect: FC<MultiSelectProps> = ({
         opened={opened}
         comboboxId={elementId}
         dropdownId={dropdownId}
-        onClick={handleToggle}
+        onClick={handleToggleWithFilterReset}
         values={values}
         placeholder={placeholder}
         disabled={disabled}
@@ -57,11 +82,16 @@ const MultiSelect: FC<MultiSelectProps> = ({
         isLoading={isLoading}
       />
       <MultiSelectDropdown
-        options={values}
+        options={filteredOptions}
         opened={opened}
-        onClose={handleClose}
+        onClose={handleCloseWithFilterReset}
         dropdownId={dropdownId}
         onSelect={handleSelect}
+        isSearchable={isSearchable}
+        searchPlaceholder={searchPlaceholder}
+        filterQuery={filterQuery}
+        onFilterChange={setFilterQuery}
+        onFilterReset={resetFilter}
       />
     </div>
   );

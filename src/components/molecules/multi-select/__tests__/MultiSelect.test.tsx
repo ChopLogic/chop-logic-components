@@ -1,8 +1,8 @@
 import { Form } from '@components/organisms';
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { SelectValue } from '@types';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import MultiSelect from '../MultiSelect';
 
@@ -270,5 +270,344 @@ describe('MultiSelect loading state', () => {
     const { container } = render(<MultiSelect {...testProps} isLoading={true} />);
     const combobox = container.querySelector('.cl-select-combobox');
     expect(combobox).toHaveClass('cl-select-combobox_loading');
+  });
+});
+
+describe('MultiSelect searchable functionality', () => {
+  const MULTI_SELECT_VALUES: SelectValue[] = [
+    { id: '57b5a856-bc4b-4c2f-8295-9f44434fafc7', label: 'English' },
+    { id: '583e8b60-0177-4e38-a423-4b1d5d0a2236', label: 'Spanish' },
+    { id: 'b20bea7b-8172-4d12-b172-d5feac02d863', label: 'French' },
+    { id: '641fc722-af5a-4426-8f8a-1566cc492b91', label: 'German' },
+    { id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890', label: 'Italian' },
+  ];
+
+  const TWO_OPTIONS: SelectValue[] = [
+    { id: '1', label: 'Option 1' },
+    { id: '2', label: 'Option 2' },
+  ];
+
+  const testProps = {
+    id: 'multi-select-searchable',
+    name: 'languages',
+    label: 'Select your languages',
+    options: MULTI_SELECT_VALUES,
+    onChange: vi.fn(),
+    placeholder: 'Not selected',
+  };
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  describe('filter input rendering', () => {
+    it('should not render filter input when isSearchable is false', async () => {
+      render(<MultiSelect {...testProps} isSearchable={false} />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+      expect(screen.queryByPlaceholderText('Filter options...')).not.toBeInTheDocument();
+    });
+
+    it('should not render filter input when isSearchable is not provided', async () => {
+      render(<MultiSelect {...testProps} />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+    });
+
+    it('should render filter input when isSearchable is true even with few options', async () => {
+      render(<MultiSelect {...testProps} options={TWO_OPTIONS} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      expect(screen.getByRole('textbox')).toBeInTheDocument();
+    });
+
+    it('should render filter input when isSearchable is true', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      expect(filterInput).toBeInTheDocument();
+      expect(filterInput).toHaveAttribute('aria-label', 'Filter options');
+    });
+
+    it('should render filter input with custom placeholder', async () => {
+      render(<MultiSelect {...testProps} isSearchable searchPlaceholder="Search languages..." />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      expect(screen.getByPlaceholderText('Search languages...')).toBeInTheDocument();
+    });
+  });
+
+  describe('option filtering', () => {
+    it('should filter options as user types', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      // Initially all options are visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'Eng' } });
+
+      // Only English should match
+      const options = screen.getAllByRole('option');
+      expect(options).toHaveLength(1);
+      expect(options[0]).toHaveTextContent('English');
+    });
+
+    /**
+     * **Validates: Requirements 4.1**
+     * Filtering should be case-insensitive
+     */
+    it('should filter options case-insensitively', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'SPANISH' } });
+
+      const options = screen.getAllByRole('option');
+      expect(options).toHaveLength(1);
+      expect(options[0]).toHaveTextContent('Spanish');
+    });
+
+    it('should filter options by substring match', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'an' } }); // Matches German, Spanish, Italian
+
+      const options = screen.getAllByRole('option');
+      expect(options).toHaveLength(3);
+      expect(options.map((o) => o.textContent)).toEqual(
+        expect.arrayContaining(['Spanish', 'German', 'Italian']),
+      );
+    });
+
+    it('should display all options when filter query is empty', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      // Filter to "an" which matches Spanish, German, Italian (3 options)
+      fireEvent.change(filterInput, { target: { value: 'an' } });
+      expect(screen.getAllByRole('option')).toHaveLength(3);
+
+      // Clear the filter
+      fireEvent.change(filterInput, { target: { value: '' } });
+
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+    });
+
+    it('should display all options when filter query is whitespace only', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: '   ' } });
+
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+    });
+  });
+
+  describe('no matching options', () => {
+    it('should display "No matching options" when filter returns empty', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'xyz123' } });
+
+      expect(screen.queryAllByRole('option')).toHaveLength(0);
+      const noMatchMessage = screen.getByRole('status');
+      expect(noMatchMessage).toHaveTextContent('No matching options');
+    });
+
+    it('should have role="status" on "No matching options" message', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'nonexistent' } });
+
+      const statusMessage = screen.getByRole('status');
+      expect(statusMessage).toBeInTheDocument();
+      expect(statusMessage).toHaveTextContent('No matching options');
+    });
+  });
+
+  describe('filter reset on dropdown close', () => {
+    it('should reset filter when dropdown closes by clicking outside', async () => {
+      render(
+        <div>
+          <button type="button">Outside button</button>
+          <MultiSelect {...testProps} isSearchable />
+        </div>,
+      );
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'Eng' } });
+
+      // Verify filter is applied
+      expect(screen.getAllByRole('option')).toHaveLength(1);
+
+      // Click outside to close
+      await userEvent.click(screen.getByText('Outside button'));
+
+      // Reopen the dropdown
+      await userEvent.click(screen.getByRole('combobox'));
+
+      // Filter should be reset, all options visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
+
+    it('should reset filter when dropdown closes by pressing Escape', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await userEvent.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'Ger' } });
+
+      // Verify filter is applied
+      expect(screen.getAllByRole('option')).toHaveLength(1);
+
+      // Press Escape to close
+      await userEvent.keyboard('{Escape}');
+
+      // Reopen the dropdown
+      await userEvent.click(screen.getByRole('combobox'));
+
+      // Filter should be reset
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
+
+    it('should reset filter when dropdown closes by clicking the combobox', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown
+      await userEvent.click(combobox);
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'Spa' } });
+
+      // Verify filter is applied
+      expect(screen.getAllByRole('option')).toHaveLength(1);
+      expect(screen.getByRole('option')).toHaveTextContent('Spanish');
+
+      // Close dropdown by clicking combobox again
+      await userEvent.click(combobox);
+
+      // Reopen the dropdown
+      await userEvent.click(combobox);
+
+      // Filter should be reset, all options visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
+
+    it('should not reset filter when opening dropdown via combobox', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown (this should NOT trigger filter reset since we're opening, not closing)
+      await userEvent.click(combobox);
+
+      // Dropdown should be open with all options
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      // Filter input should be empty (not affected by the toggle)
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
+  });
+
+  describe('aria-live announcements', () => {
+    beforeEach(() => {
+      vi.useFakeTimers({ shouldAdvanceTime: true });
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it('should announce filtered count via aria-live region after debounce', async () => {
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await user.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'an' } }); // Matches Spanish, German, Italian
+
+      // Before debounce, aria-live message may not be updated
+      const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+      expect(ariaLiveRegion).toBeInTheDocument();
+
+      // Fast-forward timers to trigger debounce
+      await act(async () => {
+        vi.advanceTimersByTime(300);
+      });
+
+      // After debounce, should announce count
+      expect(ariaLiveRegion).toHaveTextContent('3 options available');
+    });
+
+    it('should announce "No matching options" via aria-live when no matches', async () => {
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await user.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'xyz' } });
+
+      // Fast-forward timers to trigger debounce
+      await act(async () => {
+        vi.advanceTimersByTime(300);
+      });
+
+      const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+      expect(ariaLiveRegion).toHaveTextContent('No matching options');
+    });
+
+    it('should use singular form when only one option matches', async () => {
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      await user.click(screen.getByRole('combobox'));
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'English' } });
+
+      // Fast-forward timers to trigger debounce
+      await act(async () => {
+        vi.advanceTimersByTime(300);
+      });
+
+      const ariaLiveRegion = document.querySelector('.cl-select-dropdown__aria-live');
+      expect(ariaLiveRegion).toHaveTextContent('1 option available');
+    });
   });
 });

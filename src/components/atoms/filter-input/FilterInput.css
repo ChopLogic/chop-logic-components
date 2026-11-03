@@ -1,0 +1,60 @@
+.cl-filter-input {
+  display: flex;
+  gap: var(--cl-m-gap);
+  align-items: center;
+  border: var(--cl-light-border);
+  border-radius: var(--cl-border-radius);
+  padding: var(--cl-m-gap);
+  background-color: var(--cl-surface-a10);
+}
+
+.cl-filter-input:has(input:focus) {
+  border: var(--cl-outline-border);
+}
+
+.cl-filter-input__field {
+  color: var(--cl-base-font-color);
+  padding: 0;
+  border: none;
+  display: inline-block;
+  background: transparent;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-grow: 1;
+  min-width: 0;
+
+  /* Typography: core font base */
+  font-family: var(--cl-core-font);
+  font-size: var(--cl-typography-base-mobile);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cl-filter-input__field:focus-visible {
+  outline: none;
+}
+
+.cl-filter-input__field::placeholder {
+  color: var(--cl-base-font-color);
+  opacity: 0.6;
+}
+
+.cl-filter-input__clear {
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .cl-filter-input__field {
+    font-size: var(--cl-typography-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cl-filter-input__field {
+    font-size: var(--cl-typography-base-desktop);
+  }
+}

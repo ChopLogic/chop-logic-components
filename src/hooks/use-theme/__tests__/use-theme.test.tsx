@@ -25,6 +25,17 @@ function TestComponent() {
   );
 }
 
+function ContextCheckComponent() {
+  const context = useTheme();
+
+  return (
+    <>
+      <div data-testid="has-mode">{context.mode ? 'yes' : 'no'}</div>
+      <div data-testid="has-setMode">{typeof context.setMode === 'function' ? 'yes' : 'no'}</div>
+    </>
+  );
+}
+
 describe('useTheme', () => {
   beforeEach(() => {
     document.body.className = ''; // reset body classes before each test
@@ -102,19 +113,6 @@ describe('useTheme', () => {
   });
 
   it('should provide both mode and setMode from context', () => {
-    function ContextCheckComponent() {
-      const context = useTheme();
-
-      return (
-        <>
-          <div data-testid="has-mode">{context.mode ? 'yes' : 'no'}</div>
-          <div data-testid="has-setMode">
-            {typeof context.setMode === 'function' ? 'yes' : 'no'}
-          </div>
-        </>
-      );
-    }
-
     render(
       <ThemeProvider>
         <ContextCheckComponent />

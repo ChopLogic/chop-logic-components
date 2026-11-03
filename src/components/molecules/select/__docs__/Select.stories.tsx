@@ -11,6 +11,19 @@ const SELECT_LANGUAGES: SelectValue[] = [
   { id: 'b2c3d4e5-f6g7-8h9i-0j1k-l2m3n4o5p6q7', label: 'Spanish' },
 ];
 
+const SELECT_PROGRAMMING_LANGUAGES: SelectValue[] = [
+  { id: 'pl-typescript', label: 'TypeScript' },
+  { id: 'pl-javascript', label: 'JavaScript' },
+  { id: 'pl-python', label: 'Python' },
+  { id: 'pl-rust', label: 'Rust' },
+  { id: 'pl-go', label: 'Go' },
+  { id: 'pl-java', label: 'Java' },
+  { id: 'pl-csharp', label: 'C#' },
+  { id: 'pl-cpp', label: 'C++' },
+  { id: 'pl-ruby', label: 'Ruby' },
+  { id: 'pl-swift', label: 'Swift' },
+];
+
 const meta: Meta<typeof SelectExample> = {
   component: SelectExample,
   title: 'Molecules/Select',
@@ -48,6 +61,25 @@ const meta: Meta<typeof SelectExample> = {
       table: {
         type: { summary: 'string | number | readonly string[]' },
         category: 'Content',
+      },
+    },
+    // Searchable
+    isSearchable: {
+      control: 'boolean',
+      description: 'Enables filter input in the dropdown for searching options.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+        category: 'Searchable',
+      },
+    },
+    searchPlaceholder: {
+      control: 'text',
+      description: 'Placeholder text for the filter input when `isSearchable` is enabled.',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '"Filter options..."' },
+        category: 'Searchable',
       },
     },
     // State
@@ -254,6 +286,26 @@ export const ManyOptions: Story = {
       description: {
         story:
           'Select with many options. Use keyboard navigation (Arrow keys, Home, End) to efficiently navigate long lists.',
+      },
+    },
+  },
+};
+
+export const Searchable: Story = {
+  args: {
+    id: 'searchable-select',
+    label: 'Select a programming language',
+    name: 'programming-language',
+    placeholder: 'Choose a language',
+    options: SELECT_PROGRAMMING_LANGUAGES,
+    isSearchable: true,
+    searchPlaceholder: 'Filter options...',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Searchable select with filter input. Type in the filter field to narrow down options.',
       },
     },
   },

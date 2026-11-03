@@ -44,11 +44,13 @@ export const useDropdownSearch = ({
       return;
     }
 
-    setAriaLiveMessage(
-      optionsCount === 0
-        ? 'No matching options'
-        : `${optionsCount} option${optionsCount === 1 ? '' : 's'} available`,
-    );
+    if (optionsCount === 0) {
+      setAriaLiveMessage('No matching options');
+      return;
+    }
+
+    const pluralSuffix = optionsCount === 1 ? '' : 's';
+    setAriaLiveMessage(`${optionsCount} option${pluralSuffix} available`);
   }, [debouncedFilterQuery, optionsCount, opened, isSearchable, filterQuery]);
 
   const handleFilterChange = (value: string) => {

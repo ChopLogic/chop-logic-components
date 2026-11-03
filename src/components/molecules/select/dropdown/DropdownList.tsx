@@ -55,7 +55,7 @@ export const DropdownList: FC<Props> = ({
       className={dropdownClass}
     >
       {isSearchable && (
-        <li className="cl-select-dropdown__filter-container" role="presentation">
+        <div className="cl-select-dropdown__filter-container">
           <FilterInput
             value={filterQuery}
             onChange={handleFilterChange}
@@ -63,12 +63,10 @@ export const DropdownList: FC<Props> = ({
             placeholder={searchPlaceholder}
             listboxId={dropdownId}
           />
-        </li>
+        </div>
       )}
       {hasNoMatchingOptions ? (
-        <li className="cl-select-dropdown__no-options" role="status">
-          No matching options
-        </li>
+        <output className="cl-select-dropdown__no-options">No matching options</output>
       ) : (
         children
       )}

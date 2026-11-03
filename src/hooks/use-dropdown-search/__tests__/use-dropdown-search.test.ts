@@ -119,4 +119,53 @@ describe('useDropdownSearch', () => {
       result.current.handleFilterClear();
     }).not.toThrow();
   });
+
+  it('does not announce intermediate results before debounce settles', () => {
+    // Start with empty query
+    const { result, rerender } = renderHook((props) => useDropdownSearch(props), {
+      initialProps: { ...defaultParams, filterQuery: '', optionsCount: 5 },
+    });
+
+    expect(result.current.ariaLiveMessage).toBe('');
+
+    // User types "a" — filterQuery changes but debouncedFilterQuery is still empty
+    // optionsCount also changes (simulating parent filtering immediately)
+    rerender({ ...defaultParams, filterQuery: 'a', optionsCount: 3 });
+
+    // Should NOT announce yet — debounce hasn't settled
+    expect(result.current.ariaLiveMessage).toBe('');
+
+    // User types "ab" — another keystroke before debounce
+    rerender({ ...defaultParams, filterQuery: 'ab', optionsCount: 2 });
+
+    // Still should NOT announce — waiting for debounce
+    expect(result.current.ariaLiveMessage).toBe('');
+
+    // Now advance timers to let debounce settle
+    advance();
+
+    // NOW it should announce the final count
+    expect(result.current.ariaLiveMessage).toBe('2 options available');
+  });
+
+  it('announces only once after debounce when optionsCount changes during typing', () => {
+    const { result, rerender } = renderHook((props) => useDropdownSearch(props), {
+      initialProps: { ...defaultParams, filterQuery: 'x', optionsCount: 5 },
+    });
+
+    // Let initial query settle
+    advance();
+    expect(result.current.ariaLiveMessage).toBe('5 options available');
+
+    // User types more — "xy"
+    rerender({ ...defaultParams, filterQuery: 'xy', optionsCount: 2 });
+
+    // Message should stay as previous (not update to intermediate count)
+    // because filterQuery !== debouncedFilterQuery
+    expect(result.current.ariaLiveMessage).toBe('5 options available');
+
+    // After debounce settles, it should update
+    advance();
+    expect(result.current.ariaLiveMessage).toBe('2 options available');
+  });
 });

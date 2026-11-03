@@ -34,6 +34,11 @@ export const useDropdownSearch = ({
   const hasNoMatchingOptions = optionsCount === 0 && filterQuery.trim().length > 0;
 
   useEffect(() => {
+    // Wait until the debounce settles before announcing
+    if (filterQuery !== debouncedFilterQuery) {
+      return;
+    }
+
     if (!opened || !isSearchable || debouncedFilterQuery.trim().length === 0) {
       setAriaLiveMessage('');
       return;
@@ -44,7 +49,7 @@ export const useDropdownSearch = ({
         ? 'No matching options'
         : `${optionsCount} option${optionsCount === 1 ? '' : 's'} available`,
     );
-  }, [debouncedFilterQuery, optionsCount, opened, isSearchable]);
+  }, [debouncedFilterQuery, optionsCount, opened, isSearchable, filterQuery]);
 
   const handleFilterChange = (value: string) => {
     onFilterChange?.(value);

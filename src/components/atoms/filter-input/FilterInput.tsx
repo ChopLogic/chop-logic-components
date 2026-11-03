@@ -1,7 +1,7 @@
 import { Button } from '@components/atoms';
 import { ButtonView, IconName } from '@enums';
 import { getClassName } from '@utils';
-import { type ChangeEvent, type FC, useRef } from 'react';
+import { type ChangeEvent, type FC, type KeyboardEvent, useRef } from 'react';
 
 import './FilterInput.css';
 
@@ -36,6 +36,15 @@ const FilterInput: FC<FilterInputProps> = ({
     inputRef.current?.focus();
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Home' || event.key === 'End') {
+      event.stopPropagation();
+    }
+    if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+      event.preventDefault();
+    }
+  };
+
   return (
     <div className={rootClass}>
       <input
@@ -44,6 +53,7 @@ const FilterInput: FC<FilterInputProps> = ({
         className="cl-filter-input__field"
         value={value}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         placeholder={placeholder}
         aria-label="Filter options"
         aria-controls={listboxId}

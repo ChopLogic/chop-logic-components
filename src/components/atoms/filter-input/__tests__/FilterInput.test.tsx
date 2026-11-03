@@ -243,6 +243,99 @@ describe('FilterInput', () => {
       expect(input).toHaveFocus();
     });
   });
+
+  describe('keyboard behavior', () => {
+    it('stops propagation of Home key to allow text caret movement', () => {
+      const parentKeyDownHandler = vi.fn();
+      render(
+        <div onKeyDown={parentKeyDownHandler}>
+          <FilterInput {...defaultProps} value="test value" />
+        </div>,
+      );
+
+      const input = screen.getByRole('textbox');
+      fireEvent.keyDown(input, { key: 'Home' });
+
+      expect(parentKeyDownHandler).not.toHaveBeenCalled();
+    });
+
+    it('stops propagation of End key to allow text caret movement', () => {
+      const parentKeyDownHandler = vi.fn();
+      render(
+        <div onKeyDown={parentKeyDownHandler}>
+          <FilterInput {...defaultProps} value="test value" />
+        </div>,
+      );
+
+      const input = screen.getByRole('textbox');
+      fireEvent.keyDown(input, { key: 'End' });
+
+      expect(parentKeyDownHandler).not.toHaveBeenCalled();
+    });
+
+    it('prevents default on Enter key to avoid form submission', () => {
+      render(
+        <form>
+          <FilterInput {...defaultProps} />
+        </form>,
+      );
+
+      const input = screen.getByRole('textbox');
+      const event = fireEvent.keyDown(input, { key: 'Enter' });
+
+      // fireEvent returns false if preventDefault was called
+      expect(event).toBe(false);
+    });
+
+    it('does not prevent Enter during IME composition', () => {
+      render(<FilterInput {...defaultProps} />);
+
+      const input = screen.getByRole('textbox');
+
+      // Create a keyboard event with isComposing set to true
+      const event = new KeyboardEvent('keydown', {
+        key: 'Enter',
+        bubbles: true,
+        cancelable: true,
+      });
+      // Override isComposing since it's read-only in the constructor
+      Object.defineProperty(event, 'isComposing', { value: true });
+
+      const wasNotPrevented = input.dispatchEvent(event);
+
+      // dispatchEvent returns true if preventDefault was NOT called
+      expect(wasNotPrevented).toBe(true);
+    });
+
+    it('allows Arrow keys to propagate for dropdown navigation', () => {
+      const parentKeyDownHandler = vi.fn();
+      render(
+        <div onKeyDown={parentKeyDownHandler}>
+          <FilterInput {...defaultProps} />
+        </div>,
+      );
+
+      const input = screen.getByRole('textbox');
+      fireEvent.keyDown(input, { key: 'ArrowDown' });
+      fireEvent.keyDown(input, { key: 'ArrowUp' });
+
+      expect(parentKeyDownHandler).toHaveBeenCalledTimes(2);
+    });
+
+    it('allows Escape key to propagate for closing dropdown', () => {
+      const parentKeyDownHandler = vi.fn();
+      render(
+        <div onKeyDown={parentKeyDownHandler}>
+          <FilterInput {...defaultProps} />
+        </div>,
+      );
+
+      const input = screen.getByRole('textbox');
+      fireEvent.keyDown(input, { key: 'Escape' });
+
+      expect(parentKeyDownHandler).toHaveBeenCalledTimes(1);
+    });
+  });
 });
 
 // Property-Based Tests using fast-check

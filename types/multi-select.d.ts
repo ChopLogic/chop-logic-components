@@ -4,4 +4,6 @@ export interface MultiSelectProps extends ChopLogicInputProps {
     onChange?: (values?: SelectValue[]) => void;
     defaultValue?: string | number | readonly string[];
     placeholder?: string;
+    isSearchable?: boolean;
+    searchPlaceholder?: string;
 }

@@ -9,6 +9,11 @@ type Props = {
     selected?: SelectValue;
     onSelect: (id: string) => void;
     onClear: () => void;
+    isSearchable?: boolean;
+    searchPlaceholder?: string;
+    filterQuery?: string;
+    onFilterChange?: (value: string) => void;
+    onFilterReset?: () => void;
 };
 export declare const SelectDropdown: FC<Props>;
 export {};

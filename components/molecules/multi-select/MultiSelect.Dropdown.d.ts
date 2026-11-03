@@ -6,6 +6,11 @@ type Props = {
     dropdownId: string;
     onClose: () => void;
     onSelect: (id: string) => void;
+    isSearchable?: boolean;
+    searchPlaceholder?: string;
+    filterQuery?: string;
+    onFilterChange?: (value: string) => void;
+    onFilterReset?: () => void;
 };
 export declare const MultiSelectDropdown: FC<Props>;
 export {};

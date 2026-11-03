@@ -4,4 +4,6 @@ export interface SelectProps extends ChopLogicInputProps {
     onChange?: (value?: SelectValue) => void;
     placeholder?: string;
     defaultValue?: string | number | readonly string[];
+    isSearchable?: boolean;
+    searchPlaceholder?: string;
 }

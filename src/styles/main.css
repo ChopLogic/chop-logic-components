@@ -41,6 +41,9 @@
   --cl-z-index-popup: 10;
   --cl-z-index-modal: 20;
 
+  /* Animation */
+  --cl-animation-duration: 400ms;
+
   /* Responsive Typography Sizes */
   --cl-typography-h1-mobile: 2.25rem;
   --cl-typography-h1-tablet: 2.5rem;
@@ -217,6 +220,16 @@
 }
 
 /* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cl-animation-duration: 0ms;
+  }
+}
+
+/* ============================================================================
    ANIMATIONS
    ============================================================================ */
 
@@ -324,35 +337,35 @@
 
 /* Utility classes for animations */
 .cl-fade-in {
-  animation: cl-fade-in ease 400ms;
+  animation: cl-fade-in ease var(--cl-animation-duration);
 }
 
 .cl-fade-out {
-  animation: cl-fade-out ease 400ms;
+  animation: cl-fade-out ease var(--cl-animation-duration);
 }
 
 .cl-slide-in-up {
-  animation: cl-slide-in-up ease 400ms;
+  animation: cl-slide-in-up ease var(--cl-animation-duration);
 }
 
 .cl-slide-out-down {
-  animation: cl-slide-out-down ease 400ms;
+  animation: cl-slide-out-down ease var(--cl-animation-duration);
 }
 
 .cl-slide-in-right {
-  animation: cl-slide-in-right ease 400ms;
+  animation: cl-slide-in-right ease var(--cl-animation-duration);
 }
 
 .cl-slide-out-right {
-  animation: cl-slide-out-right ease 400ms;
+  animation: cl-slide-out-right ease var(--cl-animation-duration);
 }
 
 .cl-slide-in-left {
-  animation: cl-slide-in-left ease 400ms;
+  animation: cl-slide-in-left ease var(--cl-animation-duration);
 }
 
 .cl-slide-out-left {
-  animation: cl-slide-out-left ease 400ms;
+  animation: cl-slide-out-left ease var(--cl-animation-duration);
 }
 
 .cl-scroll-locked {

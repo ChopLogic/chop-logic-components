@@ -353,6 +353,44 @@ describe('Select', () => {
       expect(screen.getByPlaceholderText('Filter options...')).toHaveValue('');
     });
 
+    it('should reset filter when dropdown closes by clicking the combobox', async () => {
+      render(<Select {...searchableProps} />);
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown and filter
+      await userEvent.click(combobox);
+      const filterInput = screen.getByPlaceholderText('Filter options...');
+      await userEvent.type(filterInput, 'Banana');
+
+      // Verify filter is applied - only Banana matches
+      expect(screen.getAllByRole('option')).toHaveLength(1);
+      expect(screen.getByRole('option')).toHaveTextContent('Banana');
+
+      // Close dropdown by clicking combobox again
+      await userEvent.click(combobox);
+
+      // Reopen dropdown
+      await userEvent.click(combobox);
+
+      // Filter should be reset, all options visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByPlaceholderText('Filter options...')).toHaveValue('');
+    });
+
+    it('should not reset filter when opening dropdown via combobox', async () => {
+      render(<Select {...searchableProps} />);
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown (this should NOT trigger filter reset since we're opening, not closing)
+      await userEvent.click(combobox);
+
+      // Dropdown should be open with all options
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      // Filter input should be empty (not affected by the toggle)
+      expect(screen.getByPlaceholderText('Filter options...')).toHaveValue('');
+    });
+
     describe('Aria-live announcements', () => {
       beforeEach(() => {
         vi.useFakeTimers({ shouldAdvanceTime: true });

@@ -500,6 +500,47 @@ describe('MultiSelect searchable functionality', () => {
       expect(screen.getAllByRole('option')).toHaveLength(5);
       expect(screen.getByRole('textbox')).toHaveValue('');
     });
+
+    it('should reset filter when dropdown closes by clicking the combobox', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown
+      await userEvent.click(combobox);
+
+      const filterInput = screen.getByRole('textbox');
+      fireEvent.change(filterInput, { target: { value: 'Spa' } });
+
+      // Verify filter is applied
+      expect(screen.getAllByRole('option')).toHaveLength(1);
+      expect(screen.getByRole('option')).toHaveTextContent('Spanish');
+
+      // Close dropdown by clicking combobox again
+      await userEvent.click(combobox);
+
+      // Reopen the dropdown
+      await userEvent.click(combobox);
+
+      // Filter should be reset, all options visible
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
+
+    it('should not reset filter when opening dropdown via combobox', async () => {
+      render(<MultiSelect {...testProps} isSearchable />);
+
+      const combobox = screen.getByRole('combobox');
+
+      // Open dropdown (this should NOT trigger filter reset since we're opening, not closing)
+      await userEvent.click(combobox);
+
+      // Dropdown should be open with all options
+      expect(screen.getAllByRole('option')).toHaveLength(5);
+
+      // Filter input should be empty (not affected by the toggle)
+      expect(screen.getByRole('textbox')).toHaveValue('');
+    });
   });
 
   describe('aria-live announcements', () => {

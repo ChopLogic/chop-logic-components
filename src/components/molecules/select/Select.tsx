@@ -54,9 +54,12 @@ const Select: FC<SelectProps> = ({
   useClickOutside({ ref, onClickOutsideHandler: handleDropdownClose });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleDropdownClose });
 
-  // Prevent dropdown toggle when loading
+  // Prevent dropdown toggle when loading; reset filter when closing
   const handleComboboxClick = () => {
     if (!isLoading) {
+      if (opened) {
+        resetFilter();
+      }
       handleToggle();
     }
   };

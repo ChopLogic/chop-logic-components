@@ -56,6 +56,13 @@ const MultiSelect: FC<MultiSelectProps> = ({
     handleClose();
   };
 
+  const handleToggleWithFilterReset = () => {
+    if (opened) {
+      resetFilter();
+    }
+    handleToggle();
+  };
+
   useClickOutside({ ref, onClickOutsideHandler: handleCloseWithFilterReset });
   useKeyPress({ keyCode: 'Escape', ref, onKeyPress: handleCloseWithFilterReset });
 
@@ -67,7 +74,7 @@ const MultiSelect: FC<MultiSelectProps> = ({
         opened={opened}
         comboboxId={elementId}
         dropdownId={dropdownId}
-        onClick={handleToggle}
+        onClick={handleToggleWithFilterReset}
         values={values}
         placeholder={placeholder}
         disabled={disabled}
